@@ -7,7 +7,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
       class="SubForm__SubFormWrapper-c4tqfs-0 eXUJzU"
     >
       <fieldset
-        class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
+        class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 qzrKg"
       >
         <label
           class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -30,14 +30,14 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                 DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq20…
               </div>
               <div
-                class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ sr-only"
+                class="sr-only Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
               >
                 <div
-                  class="relative flex flex-1 h-full"
+                  class="flex relative flex-1 h-full"
                 >
                   <input
                     aria-invalid="true"
-                    class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                    class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                     data-testid="select-list__input"
                     name="address"
                     readonly=""
@@ -46,7 +46,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                   />
                 </div>
                 <div
-                  class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+                  class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-danger-500 dark:divide-theme-secondary-800"
                 >
                   <span
                     data-errortext="The address could not be found"
@@ -86,11 +86,11 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                     class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE flex-shrink-0"
+                      class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE"
                       data-testid="Avatar"
                     >
                       <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                        class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                       >
                         <img
                           alt="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq20"
@@ -100,7 +100,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                       </div>
                     </div>
                     <div
-                      class="relative flex flex-1 h-full"
+                      class="flex relative flex-1 h-full"
                     >
                       <input
                         aria-autocomplete="list"
@@ -108,7 +108,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                         aria-invalid="true"
                         aria-labelledby="downshift-33-label"
                         autocomplete="off"
-                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                         data-testid="SelectDropdown__input"
                         id="downshift-33-input"
                         name="address"
@@ -117,7 +117,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                       />
                     </div>
                     <div
-                      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+                      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-danger-500 dark:divide-theme-secondary-800"
                     >
                       <span
                         data-errortext="The address could not be found"
@@ -166,7 +166,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
         </div>
       </fieldset>
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP my-4 w-full"
+        class="my-4 w-full OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
         type="button"
       >
         <div
@@ -183,7 +183,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
         class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
       >
         <div
-          class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+          class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
           role="table"
         >
           <table
@@ -196,13 +196,13 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                 role="row"
               >
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                   colspan="1"
                   data-testid="table__th--0"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden"
+                    class="flex hidden align-top flex-inline"
                   >
                     <div>
                       Avatar
@@ -210,13 +210,13 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                   </div>
                 </th>
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                   colspan="1"
                   data-testid="table__th--1"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden"
+                    class="flex hidden align-top flex-inline"
                   >
                     <div>
                       Address
@@ -224,13 +224,13 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                   </div>
                 </th>
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                   colspan="1"
                   data-testid="table__th--2"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden"
+                    class="flex hidden align-top flex-inline"
                   >
                     <div>
                       Action
@@ -250,11 +250,11 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                   class="py-6 w-14"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                     data-testid="Avatar"
                   >
                     <div
-                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                     >
                       <img
                         alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -281,7 +281,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                       class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                     >
                       <span
-                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                        class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
                         data-testid="Address__address"
                       >
                         D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -338,7 +338,7 @@ exports[`Add Participant should fail to find 1`] = `
       class="SubForm__SubFormWrapper-c4tqfs-0 eXUJzU"
     >
       <fieldset
-        class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
+        class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 qzrKg"
       >
         <label
           class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -361,14 +361,14 @@ exports[`Add Participant should fail to find 1`] = `
                 D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyiba…
               </div>
               <div
-                class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ sr-only"
+                class="sr-only Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
               >
                 <div
-                  class="relative flex flex-1 h-full"
+                  class="flex relative flex-1 h-full"
                 >
                   <input
                     aria-invalid="true"
-                    class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                    class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                     data-testid="select-list__input"
                     name="address"
                     readonly=""
@@ -377,7 +377,7 @@ exports[`Add Participant should fail to find 1`] = `
                   />
                 </div>
                 <div
-                  class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+                  class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-danger-500 dark:divide-theme-secondary-800"
                 >
                   <span
                     data-errortext="The address could not be found"
@@ -417,11 +417,11 @@ exports[`Add Participant should fail to find 1`] = `
                     class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE flex-shrink-0"
+                      class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE"
                       data-testid="Avatar"
                     >
                       <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                        class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                       >
                         <img
                           alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyiba"
@@ -431,7 +431,7 @@ exports[`Add Participant should fail to find 1`] = `
                       </div>
                     </div>
                     <div
-                      class="relative flex flex-1 h-full"
+                      class="flex relative flex-1 h-full"
                     >
                       <input
                         aria-autocomplete="list"
@@ -439,7 +439,7 @@ exports[`Add Participant should fail to find 1`] = `
                         aria-invalid="true"
                         aria-labelledby="downshift-0-label"
                         autocomplete="off"
-                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                         data-testid="SelectDropdown__input"
                         id="downshift-0-input"
                         name="address"
@@ -448,7 +448,7 @@ exports[`Add Participant should fail to find 1`] = `
                       />
                     </div>
                     <div
-                      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+                      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-danger-500 dark:divide-theme-secondary-800"
                     >
                       <span
                         data-errortext="The address could not be found"
@@ -497,7 +497,7 @@ exports[`Add Participant should fail to find 1`] = `
         </div>
       </fieldset>
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP my-4 w-full"
+        class="my-4 w-full OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
         type="button"
       >
         <div
@@ -514,7 +514,7 @@ exports[`Add Participant should fail to find 1`] = `
         class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
       >
         <div
-          class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+          class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
           role="table"
         >
           <table
@@ -527,13 +527,13 @@ exports[`Add Participant should fail to find 1`] = `
                 role="row"
               >
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                   colspan="1"
                   data-testid="table__th--0"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden"
+                    class="flex hidden align-top flex-inline"
                   >
                     <div>
                       Avatar
@@ -541,13 +541,13 @@ exports[`Add Participant should fail to find 1`] = `
                   </div>
                 </th>
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                   colspan="1"
                   data-testid="table__th--1"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden"
+                    class="flex hidden align-top flex-inline"
                   >
                     <div>
                       Address
@@ -555,13 +555,13 @@ exports[`Add Participant should fail to find 1`] = `
                   </div>
                 </th>
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                   colspan="1"
                   data-testid="table__th--2"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden"
+                    class="flex hidden align-top flex-inline"
                   >
                     <div>
                       Action
@@ -581,11 +581,11 @@ exports[`Add Participant should fail to find 1`] = `
                   class="py-6 w-14"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                     data-testid="Avatar"
                   >
                     <div
-                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                     >
                       <img
                         alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -612,7 +612,7 @@ exports[`Add Participant should fail to find 1`] = `
                       class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                     >
                       <span
-                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                        class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
                         data-testid="Address__address"
                       >
                         D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -669,7 +669,7 @@ exports[`Add Participant should fail with a duplicate address 1`] = `
       class="SubForm__SubFormWrapper-c4tqfs-0 eXUJzU"
     >
       <fieldset
-        class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
+        class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 qzrKg"
       >
         <label
           class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -692,14 +692,14 @@ exports[`Add Participant should fail with a duplicate address 1`] = `
                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD…
               </div>
               <div
-                class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ sr-only"
+                class="sr-only Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
               >
                 <div
-                  class="relative flex flex-1 h-full"
+                  class="flex relative flex-1 h-full"
                 >
                   <input
                     aria-invalid="true"
-                    class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                    class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                     data-testid="select-list__input"
                     name="address"
                     readonly=""
@@ -708,7 +708,7 @@ exports[`Add Participant should fail with a duplicate address 1`] = `
                   />
                 </div>
                 <div
-                  class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+                  class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-danger-500 dark:divide-theme-secondary-800"
                 >
                   <span
                     data-errortext="The address is already in the list"
@@ -748,11 +748,11 @@ exports[`Add Participant should fail with a duplicate address 1`] = `
                     class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE flex-shrink-0"
+                      class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE"
                       data-testid="Avatar"
                     >
                       <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                        class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                       >
                         <img
                           alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -762,7 +762,7 @@ exports[`Add Participant should fail with a duplicate address 1`] = `
                       </div>
                     </div>
                     <div
-                      class="relative flex flex-1 h-full"
+                      class="flex relative flex-1 h-full"
                     >
                       <input
                         aria-autocomplete="list"
@@ -770,7 +770,7 @@ exports[`Add Participant should fail with a duplicate address 1`] = `
                         aria-invalid="true"
                         aria-labelledby="downshift-26-label"
                         autocomplete="off"
-                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                         data-testid="SelectDropdown__input"
                         id="downshift-26-input"
                         name="address"
@@ -778,7 +778,7 @@ exports[`Add Participant should fail with a duplicate address 1`] = `
                         value="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                       />
                       <span
-                        class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
+                        class="flex absolute inset-y-0 items-center w-full font-normal opacity-50 pointer-events-none"
                         data-testid="Input__suggestion"
                       >
                         <span
@@ -789,7 +789,7 @@ exports[`Add Participant should fail with a duplicate address 1`] = `
                       </span>
                     </div>
                     <div
-                      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+                      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-danger-500 dark:divide-theme-secondary-800"
                     >
                       <span
                         data-errortext="The address is already in the list"
@@ -845,11 +845,11 @@ exports[`Add Participant should fail with a duplicate address 1`] = `
                           class="flex items-center space-x-2 whitespace-nowrap"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE flex-shrink-0 flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -862,7 +862,7 @@ exports[`Add Participant should fail with a duplicate address 1`] = `
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="font-semibold text-base text-theme-primary-600"
+                              class="text-base font-semibold text-theme-primary-600"
                               data-testid="Address__alias"
                             >
                               <span
@@ -873,7 +873,7 @@ exports[`Add Participant should fail with a duplicate address 1`] = `
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="Address__address"
                             >
                               D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -890,7 +890,7 @@ exports[`Add Participant should fail with a duplicate address 1`] = `
         </div>
       </fieldset>
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP my-4 w-full"
+        class="my-4 w-full OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
         type="button"
       >
         <div
@@ -907,7 +907,7 @@ exports[`Add Participant should fail with a duplicate address 1`] = `
         class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
       >
         <div
-          class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+          class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
           role="table"
         >
           <table
@@ -920,13 +920,13 @@ exports[`Add Participant should fail with a duplicate address 1`] = `
                 role="row"
               >
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                   colspan="1"
                   data-testid="table__th--0"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden"
+                    class="flex hidden align-top flex-inline"
                   >
                     <div>
                       Avatar
@@ -934,13 +934,13 @@ exports[`Add Participant should fail with a duplicate address 1`] = `
                   </div>
                 </th>
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                   colspan="1"
                   data-testid="table__th--1"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden"
+                    class="flex hidden align-top flex-inline"
                   >
                     <div>
                       Address
@@ -948,13 +948,13 @@ exports[`Add Participant should fail with a duplicate address 1`] = `
                   </div>
                 </th>
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                   colspan="1"
                   data-testid="table__th--2"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden"
+                    class="flex hidden align-top flex-inline"
                   >
                     <div>
                       Action
@@ -974,11 +974,11 @@ exports[`Add Participant should fail with a duplicate address 1`] = `
                   class="py-6 w-14"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                     data-testid="Avatar"
                   >
                     <div
-                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                     >
                       <img
                         alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -1005,7 +1005,7 @@ exports[`Add Participant should fail with a duplicate address 1`] = `
                       class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                     >
                       <span
-                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                        class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
                         data-testid="Address__address"
                       >
                         D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -1062,7 +1062,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
       class="SubForm__SubFormWrapper-c4tqfs-0 eXUJzU"
     >
       <fieldset
-        class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
+        class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 qzrKg"
       >
         <label
           class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -1085,14 +1085,14 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                 DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P…
               </div>
               <div
-                class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ sr-only"
+                class="sr-only Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
               >
                 <div
-                  class="relative flex flex-1 h-full"
+                  class="flex relative flex-1 h-full"
                 >
                   <input
                     aria-invalid="true"
-                    class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                    class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                     data-testid="select-list__input"
                     name="address"
                     readonly=""
@@ -1101,7 +1101,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                   />
                 </div>
                 <div
-                  class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+                  class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-danger-500 dark:divide-theme-secondary-800"
                 >
                   <span
                     data-errortext="The public key could not be found"
@@ -1141,11 +1141,11 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                     class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE flex-shrink-0"
+                      class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE"
                       data-testid="Avatar"
                     >
                       <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                        class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                       >
                         <img
                           alt="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
@@ -1155,7 +1155,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                       </div>
                     </div>
                     <div
-                      class="relative flex flex-1 h-full"
+                      class="flex relative flex-1 h-full"
                     >
                       <input
                         aria-autocomplete="list"
@@ -1163,7 +1163,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                         aria-invalid="true"
                         aria-labelledby="downshift-13-label"
                         autocomplete="off"
-                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                         data-testid="SelectDropdown__input"
                         id="downshift-13-input"
                         name="address"
@@ -1172,7 +1172,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                       />
                     </div>
                     <div
-                      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+                      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-danger-500 dark:divide-theme-secondary-800"
                     >
                       <span
                         data-errortext="The public key could not be found"
@@ -1221,7 +1221,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
         </div>
       </fieldset>
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP my-4 w-full"
+        class="my-4 w-full OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
         type="button"
       >
         <div
@@ -1238,7 +1238,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
         class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
       >
         <div
-          class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+          class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
           role="table"
         >
           <table
@@ -1251,13 +1251,13 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                 role="row"
               >
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                   colspan="1"
                   data-testid="table__th--0"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden"
+                    class="flex hidden align-top flex-inline"
                   >
                     <div>
                       Avatar
@@ -1265,13 +1265,13 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                   </div>
                 </th>
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                   colspan="1"
                   data-testid="table__th--1"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden"
+                    class="flex hidden align-top flex-inline"
                   >
                     <div>
                       Address
@@ -1279,13 +1279,13 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                   </div>
                 </th>
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                   colspan="1"
                   data-testid="table__th--2"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden"
+                    class="flex hidden align-top flex-inline"
                   >
                     <div>
                       Action
@@ -1305,11 +1305,11 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                   class="py-6 w-14"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                     data-testid="Avatar"
                   >
                     <div
-                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                     >
                       <img
                         alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -1336,7 +1336,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                       class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                     >
                       <span
-                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                        class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
                         data-testid="Address__address"
                       >
                         D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -1393,7 +1393,7 @@ exports[`Add Participant should render custom participants 1`] = `
       class="SubForm__SubFormWrapper-c4tqfs-0 eXUJzU"
     >
       <fieldset
-        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+        class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
       >
         <label
           class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -1416,14 +1416,14 @@ exports[`Add Participant should render custom participants 1`] = `
                 …
               </div>
               <div
-                class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
+                class="sr-only Input__InputWrapperStyled-wu99qs-0 jYUFQr"
               >
                 <div
-                  class="relative flex flex-1 h-full"
+                  class="flex relative flex-1 h-full"
                 >
                   <input
                     aria-invalid="false"
-                    class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                    class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                     data-testid="select-list__input"
                     name="address"
                     readonly=""
@@ -1454,10 +1454,10 @@ exports[`Add Participant should render custom participants 1`] = `
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
-                      class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 border-theme-secondary-200 dark:bg-theme-secondary-700 dark:border-theme-secondary-700 ring-theme-background"
+                      class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 border-theme-secondary-200 ring-theme-background dark:bg-theme-secondary-700 dark:border-theme-secondary-700"
                     />
                     <div
-                      class="relative flex flex-1 h-full"
+                      class="flex relative flex-1 h-full"
                     >
                       <input
                         aria-autocomplete="list"
@@ -1465,7 +1465,7 @@ exports[`Add Participant should render custom participants 1`] = `
                         aria-invalid="false"
                         aria-labelledby="downshift-88-label"
                         autocomplete="off"
-                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
+                        class="p-0 w-full bg-transparent border-none cursor-default focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                         data-testid="SelectDropdown__input"
                         id="downshift-88-input"
                         name="address"
@@ -1474,7 +1474,7 @@ exports[`Add Participant should render custom participants 1`] = `
                       />
                     </div>
                     <div
-                      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-primary-300 dark:divide-theme-secondary-800 dark:text-theme-secondary-600"
                     >
                       <div
                         class=""
@@ -1509,7 +1509,7 @@ exports[`Add Participant should render custom participants 1`] = `
         </div>
       </fieldset>
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ my-4 w-full"
+        class="my-4 w-full OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
         disabled=""
         type="button"
       >
@@ -1527,7 +1527,7 @@ exports[`Add Participant should render custom participants 1`] = `
         class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
       >
         <div
-          class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+          class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
           role="table"
         >
           <table
@@ -1540,13 +1540,13 @@ exports[`Add Participant should render custom participants 1`] = `
                 role="row"
               >
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                   colspan="1"
                   data-testid="table__th--0"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden"
+                    class="flex hidden align-top flex-inline"
                   >
                     <div>
                       Avatar
@@ -1554,13 +1554,13 @@ exports[`Add Participant should render custom participants 1`] = `
                   </div>
                 </th>
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                   colspan="1"
                   data-testid="table__th--1"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden"
+                    class="flex hidden align-top flex-inline"
                   >
                     <div>
                       Address
@@ -1568,13 +1568,13 @@ exports[`Add Participant should render custom participants 1`] = `
                   </div>
                 </th>
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                   colspan="1"
                   data-testid="table__th--2"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden"
+                    class="flex hidden align-top flex-inline"
                   >
                     <div>
                       Action
@@ -1594,11 +1594,11 @@ exports[`Add Participant should render custom participants 1`] = `
                   class="py-6 w-14"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                     data-testid="Avatar"
                   >
                     <div
-                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                     >
                       <img
                         alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
@@ -1625,7 +1625,7 @@ exports[`Add Participant should render custom participants 1`] = `
                       class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                     >
                       <span
-                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                        class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
                         data-testid="Address__address"
                       >
                         D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
@@ -1681,7 +1681,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
       class="SubForm__SubFormWrapper-c4tqfs-0 eXUJzU"
     >
       <fieldset
-        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+        class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
       >
         <label
           class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -1704,14 +1704,14 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                 …
               </div>
               <div
-                class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
+                class="sr-only Input__InputWrapperStyled-wu99qs-0 jYUFQr"
               >
                 <div
-                  class="relative flex flex-1 h-full"
+                  class="flex relative flex-1 h-full"
                 >
                   <input
                     aria-invalid="false"
-                    class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                    class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                     data-testid="select-list__input"
                     name="address"
                     readonly=""
@@ -1742,10 +1742,10 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
-                      class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 border-theme-secondary-200 dark:bg-theme-secondary-700 dark:border-theme-secondary-700 ring-theme-background"
+                      class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 border-theme-secondary-200 ring-theme-background dark:bg-theme-secondary-700 dark:border-theme-secondary-700"
                     />
                     <div
-                      class="relative flex flex-1 h-full"
+                      class="flex relative flex-1 h-full"
                     >
                       <input
                         aria-autocomplete="list"
@@ -1753,7 +1753,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                         aria-invalid="false"
                         aria-labelledby="downshift-67-label"
                         autocomplete="off"
-                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
+                        class="p-0 w-full bg-transparent border-none cursor-default focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                         data-testid="SelectDropdown__input"
                         id="downshift-67-input"
                         name="address"
@@ -1762,7 +1762,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                       />
                     </div>
                     <div
-                      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-primary-300 dark:divide-theme-secondary-800 dark:text-theme-secondary-600"
                     >
                       <div
                         class=""
@@ -1804,11 +1804,11 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                           class="flex items-center space-x-2 whitespace-nowrap"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE flex-shrink-0 flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -1821,7 +1821,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="font-semibold text-base text-theme-text"
+                              class="text-base font-semibold text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -1832,7 +1832,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="Address__address"
                             >
                               D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -1855,11 +1855,11 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                           class="flex items-center space-x-2 whitespace-nowrap"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE flex-shrink-0 flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
@@ -1872,7 +1872,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="font-semibold text-base text-theme-text"
+                              class="text-base font-semibold text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -1883,7 +1883,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="Address__address"
                             >
                               D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
@@ -1906,11 +1906,11 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                           class="flex items-center space-x-2 whitespace-nowrap"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE flex-shrink-0 flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
@@ -1923,7 +1923,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="font-semibold text-base text-theme-text"
+                              class="text-base font-semibold text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -1934,7 +1934,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="Address__address"
                             >
                               D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib
@@ -1957,11 +1957,11 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                           class="flex items-center space-x-2 whitespace-nowrap"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE flex-shrink-0 flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T"
@@ -1974,7 +1974,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="font-semibold text-base text-theme-text"
+                              class="text-base font-semibold text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -1985,7 +1985,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="Address__address"
                             >
                               DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T
@@ -2008,11 +2008,11 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                           class="flex items-center space-x-2 whitespace-nowrap"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE flex-shrink-0 flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f"
@@ -2025,7 +2025,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="font-semibold text-base text-theme-text"
+                              class="text-base font-semibold text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -2036,7 +2036,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="Address__address"
                             >
                               D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f
@@ -2059,11 +2059,11 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                           class="flex items-center space-x-2 whitespace-nowrap"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE flex-shrink-0 flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu"
@@ -2076,7 +2076,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="font-semibold text-base text-theme-text"
+                              class="text-base font-semibold text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -2087,7 +2087,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="Address__address"
                             >
                               DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu
@@ -2104,7 +2104,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
         </div>
       </fieldset>
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ my-4 w-full"
+        class="my-4 w-full OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
         disabled=""
         type="button"
       >
@@ -2122,7 +2122,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
         class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
       >
         <div
-          class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+          class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
           role="table"
         >
           <table
@@ -2135,13 +2135,13 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                 role="row"
               >
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                   colspan="1"
                   data-testid="table__th--0"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden"
+                    class="flex hidden align-top flex-inline"
                   >
                     <div>
                       Avatar
@@ -2149,13 +2149,13 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                   </div>
                 </th>
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                   colspan="1"
                   data-testid="table__th--1"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden"
+                    class="flex hidden align-top flex-inline"
                   >
                     <div>
                       Address
@@ -2163,13 +2163,13 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                   </div>
                 </th>
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                   colspan="1"
                   data-testid="table__th--2"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden"
+                    class="flex hidden align-top flex-inline"
                   >
                     <div>
                       Action
@@ -2189,11 +2189,11 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                   class="py-6 w-14"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                     data-testid="Avatar"
                   >
                     <div
-                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                     >
                       <img
                         alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -2220,7 +2220,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                       class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                     >
                       <span
-                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                        class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
                         data-testid="Address__address"
                       >
                         D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -2269,11 +2269,11 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                   class="py-6 w-14"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                     data-testid="Avatar"
                   >
                     <div
-                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                     >
                       <img
                         alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
@@ -2300,7 +2300,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                       class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                     >
                       <span
-                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                        class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
                         data-testid="Address__address"
                       >
                         D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib
@@ -2356,7 +2356,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
       class="SubForm__SubFormWrapper-c4tqfs-0 eXUJzU"
     >
       <fieldset
-        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+        class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
       >
         <label
           class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -2379,14 +2379,14 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                 …
               </div>
               <div
-                class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
+                class="sr-only Input__InputWrapperStyled-wu99qs-0 jYUFQr"
               >
                 <div
-                  class="relative flex flex-1 h-full"
+                  class="flex relative flex-1 h-full"
                 >
                   <input
                     aria-invalid="false"
-                    class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                    class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                     data-testid="select-list__input"
                     name="address"
                     readonly=""
@@ -2417,10 +2417,10 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
-                      class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 border-theme-secondary-200 dark:bg-theme-secondary-700 dark:border-theme-secondary-700 ring-theme-background"
+                      class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 border-theme-secondary-200 ring-theme-background dark:bg-theme-secondary-700 dark:border-theme-secondary-700"
                     />
                     <div
-                      class="relative flex flex-1 h-full"
+                      class="flex relative flex-1 h-full"
                     >
                       <input
                         aria-autocomplete="list"
@@ -2428,7 +2428,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                         aria-invalid="false"
                         aria-labelledby="downshift-46-label"
                         autocomplete="off"
-                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
+                        class="p-0 w-full bg-transparent border-none cursor-default focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                         data-testid="SelectDropdown__input"
                         id="downshift-46-input"
                         name="address"
@@ -2437,7 +2437,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                       />
                     </div>
                     <div
-                      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-primary-300 dark:divide-theme-secondary-800 dark:text-theme-secondary-600"
                     >
                       <div
                         class=""
@@ -2479,11 +2479,11 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                           class="flex items-center space-x-2 whitespace-nowrap"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE flex-shrink-0 flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -2496,7 +2496,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="font-semibold text-base text-theme-text"
+                              class="text-base font-semibold text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -2507,7 +2507,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="Address__address"
                             >
                               D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -2530,11 +2530,11 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                           class="flex items-center space-x-2 whitespace-nowrap"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE flex-shrink-0 flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
@@ -2547,7 +2547,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="font-semibold text-base text-theme-text"
+                              class="text-base font-semibold text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -2558,7 +2558,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="Address__address"
                             >
                               D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
@@ -2581,11 +2581,11 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                           class="flex items-center space-x-2 whitespace-nowrap"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE flex-shrink-0 flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
@@ -2598,7 +2598,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="font-semibold text-base text-theme-text"
+                              class="text-base font-semibold text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -2609,7 +2609,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="Address__address"
                             >
                               D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib
@@ -2632,11 +2632,11 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                           class="flex items-center space-x-2 whitespace-nowrap"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE flex-shrink-0 flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T"
@@ -2649,7 +2649,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="font-semibold text-base text-theme-text"
+                              class="text-base font-semibold text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -2660,7 +2660,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="Address__address"
                             >
                               DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T
@@ -2683,11 +2683,11 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                           class="flex items-center space-x-2 whitespace-nowrap"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE flex-shrink-0 flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f"
@@ -2700,7 +2700,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="font-semibold text-base text-theme-text"
+                              class="text-base font-semibold text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -2711,7 +2711,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="Address__address"
                             >
                               D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f
@@ -2734,11 +2734,11 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                           class="flex items-center space-x-2 whitespace-nowrap"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE flex-shrink-0 flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu"
@@ -2751,7 +2751,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="font-semibold text-base text-theme-text"
+                              class="text-base font-semibold text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -2762,7 +2762,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="Address__address"
                             >
                               DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu
@@ -2779,7 +2779,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
         </div>
       </fieldset>
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ my-4 w-full"
+        class="my-4 w-full OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
         disabled=""
         type="button"
       >
@@ -2797,7 +2797,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
         class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
       >
         <div
-          class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+          class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
           role="table"
         >
           <table
@@ -2810,13 +2810,13 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                 role="row"
               >
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                   colspan="1"
                   data-testid="table__th--0"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden"
+                    class="flex hidden align-top flex-inline"
                   >
                     <div>
                       Avatar
@@ -2824,13 +2824,13 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                   </div>
                 </th>
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                   colspan="1"
                   data-testid="table__th--1"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden"
+                    class="flex hidden align-top flex-inline"
                   >
                     <div>
                       Address
@@ -2838,13 +2838,13 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                   </div>
                 </th>
                 <th
-                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                  class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                   colspan="1"
                   data-testid="table__th--2"
                   role="columnheader"
                 >
                   <div
-                    class="flex flex-inline align-top hidden"
+                    class="flex hidden align-top flex-inline"
                   >
                     <div>
                       Action
@@ -2864,11 +2864,11 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                   class="py-6 w-14"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                     data-testid="Avatar"
                   >
                     <div
-                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                     >
                       <img
                         alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -2895,7 +2895,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                       class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                     >
                       <span
-                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                        class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
                         data-testid="Address__address"
                       >
                         D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -2944,11 +2944,11 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                   class="py-6 w-14"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                     data-testid="Avatar"
                   >
                     <div
-                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                     >
                       <img
                         alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
@@ -2975,7 +2975,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                       class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                     >
                       <span
-                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                        class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
                         data-testid="Address__address"
                       >
                         D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
