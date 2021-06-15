@@ -74,10 +74,7 @@ export const sendTransfer = (t: any) => ({
 				const shouldRequire = isSingleRecipient || !recipients.length;
 
 				if (!hasSufficientBalance) {
-					return t("TRANSACTION.VALIDATION.LOW_BALANCE", {
-						balance: balance?.toHuman(),
-						coinId: network?.coin(),
-					});
+					return t("TRANSACTION.VALIDATION.LOW_BALANCE");
 				}
 
 				if (shouldRequire) {

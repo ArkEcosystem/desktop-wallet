@@ -332,7 +332,8 @@ export const translations: { [key: string]: any } = {
 	},
 
 	VALIDATION: {
-		LOW_BALANCE: "The balance is too low ({{balance}} {{ coinId }})",
+		LOW_BALANCE: "The balance is too low",
+		LOW_BALANCE_AMOUNT: "The balance is too low ({{balance}} {{ coinId }})",
 		AMOUNT_BELOW_MINIMUM: "The amount is below the minimum ({{min}} {{ coinId }})",
 		FEE_NEGATIVE: "Fee cannot be negative",
 	},
