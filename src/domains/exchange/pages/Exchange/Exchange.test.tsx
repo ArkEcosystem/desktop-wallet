@@ -243,7 +243,7 @@ describe("Exchange", () => {
 
 		const title = plugin.config().title();
 
-		const { container, getAllByTestId, getByTestId, getByText } = renderWithRouter(
+		const { getAllByTestId, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/exchange">
 				<PluginProviders>
 					<Exchange />
