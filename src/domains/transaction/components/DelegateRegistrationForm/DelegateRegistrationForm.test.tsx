@@ -171,7 +171,7 @@ describe("DelegateRegistrationForm", () => {
 	});
 
 	it("should error if username is too long", async () => {
-		const { asFragment, form, getByTestId, getByText, rerender } = await renderComponent();
+		const { asFragment, form, getByTestId, rerender } = await renderComponent();
 
 		await act(async () => {
 			fireEvent.change(getByTestId("Input__username"), {
@@ -196,7 +196,7 @@ describe("DelegateRegistrationForm", () => {
 	});
 
 	it("should show error if username already exists", async () => {
-		const { asFragment, form, getByTestId, getByText, rerender } = await renderComponent();
+		const { asFragment, form, getByTestId, rerender } = await renderComponent();
 
 		await act(async () => {
 			fireEvent.change(getByTestId("Input__username"), { target: { value: "arkx" } });

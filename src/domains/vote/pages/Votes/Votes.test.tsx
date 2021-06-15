@@ -202,7 +202,7 @@ describe("Votes", () => {
 	});
 
 	it("should filter current delegates", async () => {
-		const walletSpy = jest.spyOn(wallet.voting(), "current").mockReturnValue([
+		jest.spyOn(wallet.voting(), "current").mockReturnValue([
 			new ReadOnlyWallet({
 				address: "D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr",
 				explorerLink: "",

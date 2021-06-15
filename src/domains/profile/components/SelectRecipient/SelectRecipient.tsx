@@ -28,7 +28,7 @@ const ProfileAvatar = ({ address }: any) => {
 	if (!address) {
 		return (
 			<Circle
-				className="bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+				className="bg-theme-secondary-200 border-theme-secondary-200 dark:bg-theme-secondary-700 dark:border-theme-secondary-700"
 				size="sm"
 				noShadow
 			/>
@@ -105,7 +105,7 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 
 		return (
 			<div>
-				<div data-testid="SelectRecipient__wrapper" className="relative flex items-center w-full text-left">
+				<div data-testid="SelectRecipient__wrapper" className="flex relative items-center w-full text-left">
 					<Select
 						showCaret={false}
 						isInvalid={isInvalidValue}

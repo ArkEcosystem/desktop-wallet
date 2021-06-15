@@ -29,7 +29,7 @@ export const FormStep = ({
 	const { env } = useEnvironmentContext();
 	const { t } = useTranslation();
 
-	const { findByType } = useFees({ profile });
+	const { findByType } = useFees(profile);
 	const form = useFormContext();
 	const { getValues, setValue, watch, register } = form;
 

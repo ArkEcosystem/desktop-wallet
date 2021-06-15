@@ -7,7 +7,7 @@ import { WalletListItemSkeleton } from "app/components/WalletListItem/WalletList
 import React, { memo } from "react";
 import { Trans, useTranslation } from "react-i18next";
 
-import { WalletListProps } from "./";
+import { WalletListProps } from ".";
 
 export const WalletsList = memo(
 	({

@@ -36,7 +36,7 @@ export const FormStep = ({
 	const fee = getValues("fee") || defaultFee;
 	const inputFeeSettings = watch("inputFeeSettings");
 
-	const { findByType } = useFees({ profile });
+	const { findByType } = useFees(profile);
 
 	useEffect(() => {
 		const setTransactionFees = async (senderWallet: ProfilesContracts.IReadWriteWallet) => {

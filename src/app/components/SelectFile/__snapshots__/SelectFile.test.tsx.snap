@@ -3,7 +3,7 @@
 exports[`SelectFile should render 1`] = `
 <div>
   <div
-    class="h-52 border-2 border-dashed rounded-lg mt-8 border-theme-secondary-300 dark:border-theme-secondary-800 p-2"
+    class="p-2 mt-8 h-52 rounded-lg border-2 border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
     data-testid="SelectFile"
   >
     <div
@@ -20,19 +20,19 @@ exports[`SelectFile should render 1`] = `
            
         </span>
         <button
-          class="relative font-semibold cursor-pointer link focus:outline-none group"
+          class="relative font-semibold cursor-pointer focus:outline-none link group"
           data-testid="SelectFile__browse-files"
           title="Click here to upload"
           type="button"
         >
           <div
-            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+            class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
           />
           Browse Files
         </button>
       </div>
       <div
-        class="font-semibold text-theme-secondary-500 text-sm mt-2"
+        class="mt-2 text-sm font-semibold text-theme-secondary-500"
       >
         Supported format is 
       </div>
@@ -44,7 +44,7 @@ exports[`SelectFile should render 1`] = `
 exports[`SelectFile should render with dwe file format 1`] = `
 <div>
   <div
-    class="h-52 border-2 border-dashed rounded-lg mt-8 border-theme-secondary-300 dark:border-theme-secondary-800 p-2"
+    class="p-2 mt-8 h-52 rounded-lg border-2 border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
     data-testid="SelectFile"
   >
     <div
@@ -70,19 +70,19 @@ exports[`SelectFile should render with dwe file format 1`] = `
            
         </span>
         <button
-          class="relative font-semibold cursor-pointer link focus:outline-none group"
+          class="relative font-semibold cursor-pointer focus:outline-none link group"
           data-testid="SelectFile__browse-files"
           title="Click here to upload"
           type="button"
         >
           <div
-            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+            class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
           />
           Browse Files
         </button>
       </div>
       <div
-        class="font-semibold text-theme-secondary-500 text-sm mt-2"
+        class="mt-2 text-sm font-semibold text-theme-secondary-500"
       >
         Supported format is .dwe
       </div>
@@ -94,7 +94,7 @@ exports[`SelectFile should render with dwe file format 1`] = `
 exports[`SelectFile should render with json file format 1`] = `
 <div>
   <div
-    class="h-52 border-2 border-dashed rounded-lg mt-8 border-theme-secondary-300 dark:border-theme-secondary-800 p-2"
+    class="p-2 mt-8 h-52 rounded-lg border-2 border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
     data-testid="SelectFile"
   >
     <div
@@ -120,19 +120,19 @@ exports[`SelectFile should render with json file format 1`] = `
            
         </span>
         <button
-          class="relative font-semibold cursor-pointer link focus:outline-none group"
+          class="relative font-semibold cursor-pointer focus:outline-none link group"
           data-testid="SelectFile__browse-files"
           title="Click here to upload"
           type="button"
         >
           <div
-            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+            class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
           />
           Browse Files
         </button>
       </div>
       <div
-        class="font-semibold text-theme-secondary-500 text-sm mt-2"
+        class="mt-2 text-sm font-semibold text-theme-secondary-500"
       >
         Supported format is .json
       </div>

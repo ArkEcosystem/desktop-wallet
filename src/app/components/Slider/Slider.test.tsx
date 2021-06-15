@@ -2,7 +2,7 @@ import { renderHook } from "@testing-library/react-hooks";
 import React from "react";
 import { render } from "testing-library";
 
-import { Slider, useSlider } from "./";
+import { Slider, useSlider } from ".";
 
 const data = [
 	{

@@ -3,15 +3,7 @@ import { act, renderHook } from "@testing-library/react-hooks";
 import { Form } from "app/components/Form";
 import React from "react";
 import { useForm } from "react-hook-form";
-import {
-	env,
-	fireEvent,
-	getDefaultProfileId,
-	getDefaultWalletId,
-	renderWithRouter,
-	screen,
-	waitFor,
-} from "utils/testing-library";
+import { env, fireEvent, getDefaultProfileId, renderWithRouter, screen, waitFor } from "utils/testing-library";
 
 import { AuthenticationStep } from "./AuthenticationStep";
 
@@ -142,7 +134,13 @@ describe("AuthenticationStep", () => {
 		jest.clearAllMocks();
 	});
 
-	it("should request mnemonic", async () => {
+	it("should request mnemonic if wallet was imported using mnemonic", async () => {
+		wallet = await profile.walletFactory().fromMnemonicWithBIP39({
+			mnemonic: "some random mnemonic",
+			coin: "ARK",
+			network: "ark.devnet",
+		});
+
 		jest.spyOn(wallet, "isSecondSignature").mockReturnValueOnce(false);
 
 		const { result } = renderHook(() => useForm({ mode: "onChange", shouldUnregister: false }));
@@ -160,6 +158,69 @@ describe("AuthenticationStep", () => {
 		});
 
 		await waitFor(() => expect(result.current.getValues()).toEqual({ mnemonic: "my mnemonic" }));
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should request mnemonic if wallet was imported using address", async () => {
+		wallet = await profile.walletFactory().fromAddress({
+			address: "DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq",
+			coin: "ARK",
+			network: "ark.devnet",
+		});
+
+		jest.spyOn(wallet, "isSecondSignature").mockReturnValueOnce(false);
+
+		const { result } = renderHook(() => useForm({ mode: "onChange", shouldUnregister: false }));
+		const { asFragment } = renderWithRouter(<Component form={result.current} />);
+
+		await waitFor(() => expect(screen.queryByTestId("AuthenticationStep__second-mnemonic")).toBeNull());
+		await waitFor(() => expect(screen.queryByTestId("AuthenticationStep__mnemonic")).toBeInTheDocument());
+
+		act(() => {
+			fireEvent.change(screen.getByTestId("AuthenticationStep__mnemonic"), {
+				target: {
+					value: "my mnemonic",
+				},
+			});
+		});
+
+		await waitFor(() => expect(result.current.getValues()).toEqual({ mnemonic: "my mnemonic" }));
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should request private key if wallet was imported using private key", async () => {
+		wallet = await profile.walletFactory().fromPrivateKey({
+			privateKey: "d8839c2432bfd0a67ef10a804ba991eabba19f154a3d707917681d45822a5712",
+			coin: "ARK",
+			network: "ark.devnet",
+		});
+
+		jest.spyOn(wallet, "isSecondSignature").mockReturnValueOnce(false);
+
+		const { result } = renderHook(() => useForm({ mode: "onChange", shouldUnregister: false }));
+		const { asFragment } = renderWithRouter(<Component form={result.current} />);
+
+		await waitFor(() => expect(screen.queryByTestId("AuthenticationStep__second-mnemonic")).toBeNull());
+		await waitFor(() => expect(screen.queryByTestId("AuthenticationStep__private-key")).toBeInTheDocument());
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should request WIF if wallet was imported using WIF", async () => {
+		wallet = await profile.walletFactory().fromWIF({
+			wif: "SGq4xLgZKCGxs7bjmwnBrWcT4C1ADFEermj846KC97FSv1WFD1dA",
+			coin: "ARK",
+			network: "ark.devnet",
+		});
+
+		jest.spyOn(wallet, "isSecondSignature").mockReturnValueOnce(false);
+
+		const { result } = renderHook(() => useForm({ mode: "onChange", shouldUnregister: false }));
+		const { asFragment } = renderWithRouter(<Component form={result.current} />);
+
+		await waitFor(() => expect(screen.queryByTestId("AuthenticationStep__second-mnemonic")).toBeNull());
+		await waitFor(() => expect(screen.queryByTestId("AuthenticationStep__wif")).toBeInTheDocument());
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -215,7 +276,7 @@ describe("AuthenticationStep", () => {
 		jest.spyOn(wallet, "isSecondSignature").mockReturnValueOnce(true);
 
 		const { result } = renderHook(() => useForm({ mode: "onChange", shouldUnregister: false }));
-		const { asFragment } = renderWithRouter(
+		renderWithRouter(
 			<Form context={result.current} onSubmit={() => void 0}>
 				<AuthenticationStep wallet={wallet} skipSecondSignature />
 			</Form>,
@@ -258,7 +319,9 @@ describe("AuthenticationStep", () => {
 	});
 
 	it("should render with encryption password input", async () => {
-		jest.spyOn(wallet.wif(), "exists").mockReturnValue(true);
+		jest.spyOn(wallet, "actsWithMnemonic").mockReturnValue(false);
+		jest.spyOn(wallet, "actsWithWifWithEncryption").mockReturnValue(true);
+		jest.spyOn(wallet.wif(), "get").mockResolvedValue("6PYR8Zq7e84mKXq3kxZyrZ8Zyt6iE89fCngdMgibQ5HjCd7Bt3k7wKc4ZL");
 
 		const { result } = renderHook(() => useForm({ mode: "onChange" }));
 		const { getByTestId } = renderWithRouter(
@@ -273,13 +336,9 @@ describe("AuthenticationStep", () => {
 	});
 
 	it("should render with encryption password input and second mnemonic", async () => {
-		wallet = profile.wallets().findById(getDefaultWalletId());
-
-		jest.spyOn(wallet.wif(), "exists").mockReturnValue(true);
-		jest.spyOn(wallet.wif(), "get").mockImplementation(() => {
-			const wif = "S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV";
-			return Promise.resolve(wif);
-		});
+		jest.spyOn(wallet, "actsWithMnemonic").mockReturnValue(false);
+		jest.spyOn(wallet, "actsWithWifWithEncryption").mockReturnValue(true);
+		jest.spyOn(wallet.wif(), "get").mockResolvedValue("6PYR8Zq7e84mKXq3kxZyrZ8Zyt6iE89fCngdMgibQ5HjCd7Bt3k7wKc4ZL");
 		jest.spyOn(wallet, "isSecondSignature").mockReturnValue(true);
 
 		const { result } = renderHook(() => useForm({ mode: "onChange" }));

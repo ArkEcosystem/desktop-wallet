@@ -14,11 +14,11 @@ export function FormHelperText({ children, ...props }: FormHelperTextProps) {
 	const errorMessage = props.errorMessage || fieldContext?.errorMessage;
 
 	if (isInvalid) {
-		return <p className="font-normal text-sm text-theme-danger-500">{errorMessage}</p>;
+		return <p className="text-sm font-normal text-theme-danger-500">{errorMessage}</p>;
 	}
 
 	if (children) {
-		return <p className="font-normal text-sm text-theme-secondary-500">{children}</p>;
+		return <p className="text-sm font-normal text-theme-secondary-500">{children}</p>;
 	}
 
 	return null;

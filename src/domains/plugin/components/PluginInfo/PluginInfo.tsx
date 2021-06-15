@@ -37,7 +37,7 @@ export const PluginInfo = ({ description, permissions, images, minimumVersion }:
 			{permissions.length ? (
 				<div className="mt-8">
 					<p className="font-bold">{t("PLUGINS.PLUGIN_INFO.PERMISSIONS")}</p>
-					<div className="mt-3 inline-flex items-baseline space-x-2">
+					<div className="inline-flex items-baseline mt-3 space-x-2">
 						<p className="mt-3 text-theme-secondary-600" data-testid="plugin-info__permissions">
 							<TruncateEnd maxChars={50} showTooltip={false} text={permissionsString} />
 						</p>

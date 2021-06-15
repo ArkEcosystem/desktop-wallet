@@ -9,8 +9,7 @@ import { Select } from "app/components/SelectDropdown";
 import { SelectProfileImage } from "app/components/SelectProfileImage";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useProfileJobs, useReloadPath } from "app/hooks";
-import { useValidation } from "app/hooks";
+import { useActiveProfile, useProfileJobs, useReloadPath, useValidation } from "app/hooks";
 import { useTheme } from "app/hooks/use-theme";
 import { PlatformSdkChoices } from "data";
 import { ResetProfile } from "domains/profile/components/ResetProfile";
@@ -286,7 +285,7 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 							</FormField>
 						</div>
 
-						<div className="flex flex-col w-2/4 ml-5">
+						<div className="flex flex-col ml-5 w-2/4">
 							<FormField name="language">
 								<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.LANGUAGE")} />
 								<Select

@@ -8,7 +8,7 @@ describe("TransactionRowInfo", () => {
 	it("should show vendor field", () => {
 		const { getByTestId } = render(
 			<TransactionRowInfo
-				transaction={{ ...TransactionFixture, isMultiSignature: () => false }}
+				transaction={{ ...TransactionFixture, isMultiSignatureRegistration: () => false }}
 				vendorField="test"
 			/>,
 		);
@@ -17,7 +17,7 @@ describe("TransactionRowInfo", () => {
 
 	it("should show multi signature", () => {
 		const { getByTestId } = render(
-			<TransactionRowInfo transaction={{ ...TransactionFixture, isMultiSignature: () => true }} />,
+			<TransactionRowInfo transaction={{ ...TransactionFixture, isMultiSignatureRegistration: () => true }} />,
 		);
 		expect(getByTestId("TransactionRowInfo__multiSignature")).toBeTruthy();
 	});
@@ -31,7 +31,7 @@ describe("TransactionRowInfo", () => {
 						...TransactionFixture.wallet(),
 						isLedger: () => true,
 					}),
-					isMultiSignature: () => true,
+					isMultiSignatureRegistration: () => true,
 				}}
 			/>,
 		);
@@ -42,7 +42,7 @@ describe("TransactionRowInfo", () => {
 		const { getByTestId } = render(
 			<TransactionRowInfo
 				vendorField="test"
-				transaction={{ ...TransactionFixture, isMultiSignature: () => true }}
+				transaction={{ ...TransactionFixture, isMultiSignatureRegistration: () => true }}
 			/>,
 		);
 		expect(getByTestId("TransactionRowInfo__vendorField")).toBeTruthy();

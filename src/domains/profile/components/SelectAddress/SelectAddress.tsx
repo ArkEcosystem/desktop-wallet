@@ -25,7 +25,7 @@ const WalletAvatar = ({ address }: any) => {
 	if (!address) {
 		return (
 			<Circle
-				className="bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+				className="bg-theme-secondary-200 border-theme-secondary-200 dark:bg-theme-secondary-700 dark:border-theme-secondary-700"
 				size="sm"
 				noShadow
 			/>
@@ -61,12 +61,12 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 			<>
 				<button
 					data-testid="SelectAddress__wrapper"
-					className="relative w-full rounded focus:outline-none focus:ring-2 focus:ring-theme-primary-400"
+					className="relative w-full rounded focus:ring-2 focus:outline-none focus:ring-theme-primary-400"
 					type="button"
 					onClick={() => setSearchWalletIsOpen(true)}
 					disabled={disabled}
 				>
-					<span className="absolute inset-0 flex items-center border border-transparent px-14 w-full">
+					<span className="flex absolute inset-0 items-center px-14 w-full border border-transparent">
 						<Address walletName={alias} address={selectedAddress} />
 					</span>
 

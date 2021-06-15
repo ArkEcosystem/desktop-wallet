@@ -9,7 +9,7 @@ type Props = {
 	showCurrencyColumn?: boolean | "";
 } & React.HTMLProps<any>;
 
-export const TransactionRowSkeleton = ({ showSignColumn, showCurrencyColumn, ...props }: Props) => {
+export const TransactionRowSkeleton = ({ showSignColumn, showCurrencyColumn }: Props) => {
 	const recipientWidth = useRandomNumber(120, 150);
 	const infoIconCount = useRandomNumber(0, 3);
 	const amountWidth = useRandomNumber(100, 130);

@@ -60,7 +60,7 @@ export const FormStep = ({ fees, wallet, step = 0.001, profile }: any) => {
 				paddingPosition="bottom"
 			/>
 
-			<div className="space-y-8">
+			<div className="space-y-5">
 				<FormField name="username">
 					<FormLabel label={t("TRANSACTION.DELEGATE_NAME")} />
 					<InputDefault

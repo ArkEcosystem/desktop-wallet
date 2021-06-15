@@ -1,9 +1,7 @@
-import { CURRENCIES } from "@arkecosystem/platform-sdk-intl";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
-import { Circle } from "app/components/Circle";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { NotificationsDropdown } from "app/components/Notifications";
@@ -34,7 +32,6 @@ interface MenuItem {
 
 interface NavigationBarProps {
 	title?: string;
-	backToUrl?: string;
 	isBackDisabled?: boolean;
 	profile?: Contracts.IProfile;
 	variant?: NavbarVariant;
@@ -66,59 +63,41 @@ const NavWrapper = styled.nav<{ noBorder?: boolean; noShadow?: boolean; scroll?:
 
 interface UserInfoProps {
 	avatarImage?: string;
-	exchangeCurrency?: string;
 	onUserAction?: any;
 	userActions?: Action[];
 	userInitials?: string;
 }
 
-const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, userInitials }: UserInfoProps) => {
-	const tickerConfig: typeof CURRENCIES["BTC"] | undefined = CURRENCIES[exchangeCurrency as keyof typeof CURRENCIES];
-
-	return (
-		<div className="flex my-0.5 ml-4 -space-x-2">
-			<Circle className="border-theme-primary-100 dark:border-theme-secondary-800" size="lg">
-				<span className="text-theme-secondary-text dark:text-theme-secondary-800">
-					{exchangeCurrency && (
-						<Icon
-							name={exchangeCurrency}
-							fallback={<span className="font-semibold">{tickerConfig?.symbol}</span>}
+const UserInfo = ({ onUserAction, avatarImage, userActions, userInitials }: UserInfoProps) => (
+	<Dropdown
+		onSelect={onUserAction}
+		options={userActions}
+		dropdownClass="mt-8"
+		toggleContent={(isOpen: boolean) => (
+			<div
+				className="relative justify-center items-center align-middle rounded-full cursor-pointer"
+				data-testid="navbar__useractions"
+			>
+				<Avatar size="lg" highlight={isOpen}>
+					{avatarImage?.endsWith("</svg>") ? (
+						<>
+							<img alt="Profile Avatar" src={`data:image/svg+xml;utf8,${avatarImage}`} />
+							<span className="absolute text-sm font-semibold text-theme-background dark:text-theme-text">
+								{userInitials}
+							</span>
+						</>
+					) : (
+						<img
+							alt="Profile Avatar"
+							className="object-cover w-11 h-11 bg-center bg-no-repeat bg-cover rounded-full"
+							src={avatarImage}
 						/>
 					)}
-				</span>
-			</Circle>
-
-			<Dropdown
-				onSelect={onUserAction}
-				options={userActions}
-				dropdownClass="mt-8"
-				toggleContent={(isOpen: boolean) => (
-					<div
-						className="relative items-center justify-center align-middle rounded-full cursor-pointer"
-						data-testid="navbar__useractions"
-					>
-						<Avatar size="lg" highlight={isOpen}>
-							{avatarImage?.endsWith("</svg>") ? (
-								<>
-									<img alt="Profile Avatar" src={`data:image/svg+xml;utf8,${avatarImage}`} />
-									<span className="absolute text-sm font-semibold text-theme-background dark:text-theme-text">
-										{userInitials}
-									</span>
-								</>
-							) : (
-								<img
-									alt="Profile Avatar"
-									className="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
-									src={avatarImage}
-								/>
-							)}
-						</Avatar>
-					</div>
-				)}
-			/>
-		</div>
-	);
-};
+				</Avatar>
+			</div>
+		)}
+	/>
+);
 
 export const NavigationButtonWrapper = styled.div`
 	${css`
@@ -134,7 +113,6 @@ const LogoContainer = styled.div`
 
 export const NavigationBar = ({
 	title,
-	backToUrl,
 	isBackDisabled,
 	profile,
 	variant,
@@ -167,9 +145,9 @@ export const NavigationBar = ({
 				<NavLink
 					to={menuItem.mountPath(profile.id())}
 					title={menuItem.title}
-					className="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+					className="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
 				>
-					<div className="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible" />
+					<div className="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400" />
 					{menuItem.title}
 				</NavLink>
 			</li>
@@ -180,8 +158,6 @@ export const NavigationBar = ({
 		const name = profile?.settings().get(Contracts.ProfileSetting.Name);
 		return name ? (name as string).slice(0, 2).toUpperCase() : undefined;
 	};
-
-	const getExchangeCurrency = () => profile?.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency);
 
 	const profileWalletsCount = profile?.wallets().count();
 	const wallets = useMemo(() => {
@@ -208,7 +184,7 @@ export const NavigationBar = ({
 			noShadow={noShadow}
 			scroll={scroll}
 		>
-			<div className="relative flex h-21">
+			<div className="flex relative h-21">
 				{variant === "full" && <BackButton className="flex w-12" disabled={isBackDisabled} />}
 
 				<div className={`flex flex-1 px-8 ${variant !== "full" ? "ml-12" : ""}`}>
@@ -222,7 +198,7 @@ export const NavigationBar = ({
 
 					{variant === "full" && (
 						<>
-							<ul className="flex ml-4 mr-auto space-x-8 h-21">{renderMenu()}</ul>
+							<ul className="flex mr-auto ml-4 space-x-8 h-21">{renderMenu()}</ul>
 
 							<div className="flex items-center my-auto space-x-4">
 								{profile && <NotificationsDropdown profile={profile} />}
@@ -239,7 +215,7 @@ export const NavigationBar = ({
 												variant="transparent"
 												onClick={() => history.push(`/profiles/${profile?.id()}/send-transfer`)}
 											>
-												<Icon name="Sent" width={18} height={18} className="p-1" />
+												<Icon name="Send" width={20} height={20} className="p-1" />
 											</Button>
 										</NavigationButtonWrapper>
 									</Tooltip>
@@ -266,12 +242,11 @@ export const NavigationBar = ({
 								<div className="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800" />
 							</div>
 
-							<div className="flex items-center my-auto ml-8">
+							<div className="flex items-center my-auto ml-8 space-x-4">
 								<Balance profile={profile} isLoading={profileIsSyncingExchangeRates} />
 
 								<UserInfo
 									userInitials={getUserInitials()}
-									exchangeCurrency={getExchangeCurrency()}
 									avatarImage={profile?.avatar()}
 									userActions={userActions}
 									onUserAction={(action: any) => {

@@ -73,7 +73,7 @@ export const WalletOverviewStep = () => {
 				<Icon name="FilePassword" className="text-black dark:text-theme-secondary-600" width={40} height={40} />
 			</div>
 
-			<div className="flex justify-end w-full space-x-3">
+			<div className="flex justify-end space-x-3 w-full">
 				<Clipboard variant="button" data={mnemonic} data-testid="CreateWallet__copy">
 					<Icon name="Copy" />
 					<span>{t("COMMON.COPY")}</span>

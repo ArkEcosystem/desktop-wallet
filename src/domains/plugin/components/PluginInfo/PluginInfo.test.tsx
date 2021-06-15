@@ -21,7 +21,7 @@ describe("PluginInfo", () => {
 	it("should render without permissions", () => {
 		const about = "Testing About text content";
 
-		const { asFragment, getByTestId, queryByTestId } = render(<PluginInfo description={about} permissions={[]} />);
+		const { asFragment, queryByTestId } = render(<PluginInfo description={about} permissions={[]} />);
 
 		expect(queryByTestId("plugin-info__permissions")).not.toBeInTheDocument();
 		expect(asFragment()).toMatchSnapshot();

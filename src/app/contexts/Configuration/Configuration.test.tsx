@@ -1,7 +1,7 @@
 import React from "react";
 import { act, fireEvent, render, renderWithRouter, waitFor } from "utils/testing-library";
 
-import { ConfigurationProvider } from "./";
+import { ConfigurationProvider } from ".";
 import { useConfiguration } from "./Configuration";
 
 describe("Configuration Context", () => {

@@ -6,7 +6,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { env, fireEvent, getDefaultProfileId, getDefaultWalletId, render, waitFor } from "utils/testing-library";
 
-import { ReceiveFundsForm } from "./";
+import { ReceiveFundsForm } from ".";
 
 let network: Networks.Network;
 

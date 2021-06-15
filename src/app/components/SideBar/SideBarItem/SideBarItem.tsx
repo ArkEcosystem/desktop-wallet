@@ -1,13 +1,12 @@
 import { Icon } from "app/components/Icon";
 import cn from "classnames";
 import React from "react";
-import { withRouter } from "react-router";
-import { RouteComponentProps } from "react-router";
+import { RouteComponentProps, withRouter } from "react-router-dom";
 
 import { ItemProps } from "../SideBar";
 
 export const SideBarItem = withRouter(
-	({ label, icon, itemKey, route, isActive, history, handleActiveItem }: ItemProps & RouteComponentProps) => {
+	({ label, icon, itemKey, isActive, handleActiveItem }: ItemProps & RouteComponentProps) => {
 		const handleClick = () => {
 			handleActiveItem(itemKey);
 		};

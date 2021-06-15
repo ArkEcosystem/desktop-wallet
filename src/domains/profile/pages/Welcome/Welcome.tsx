@@ -101,14 +101,14 @@ export const Welcome = () => {
 								: t("PROFILE.PAGE_WELCOME.WITHOUT_PROFILES.TITLE")}
 						</h2>
 
-						<p className="text-sm text-theme-secondary-text md:text-base">
+						<p className="text-sm md:text-base text-theme-secondary-text">
 							{hasProfiles
 								? t("PROFILE.PAGE_WELCOME.WITH_PROFILES.DESCRIPTION")
 								: t("PROFILE.PAGE_WELCOME.WITHOUT_PROFILES.DESCRIPTION")}
 						</p>
 
 						<div className="mt-8">
-							<div className="ml-4.5 -mb-4.5 flex flex-wrap justify-center">
+							<div className="flex flex-wrap justify-center ml-4.5 -mb-4.5">
 								{profiles.map((profile: Contracts.IProfile, index: number) => (
 									<ProfileCard
 										key={index}
@@ -129,12 +129,12 @@ export const Welcome = () => {
 											<Circle
 												size="xl"
 												noShadow
-												className="text-theme-primary-600 dark:text-white dark:group-hover:border-theme-secondary-800 dark:group-hover:bg-theme-secondary-800 group-hover:text-white group-hover:bg-theme-primary-700"
+												className="dark:text-white group-hover:text-white text-theme-primary-600 dark:group-hover:border-theme-secondary-800 dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-700"
 											>
 												<Icon name="Plus" width={12} height={12} />
 											</Circle>
 										</div>
-										<span className="mt-3 font-semibold text-theme-primary-600 dark:text-white max-w-32 truncate dark:group-hover:text-white group-hover:text-theme-primary-700">
+										<span className="mt-3 font-semibold dark:text-white text-theme-primary-600 max-w-32 truncate dark:group-hover:text-white group-hover:text-theme-primary-700">
 											{hasProfiles ? t("PROFILE.CREATE_PROFILE") : t("COMMON.CREATE")}
 										</span>
 									</div>
@@ -142,7 +142,7 @@ export const Welcome = () => {
 							</div>
 						</div>
 
-						<p className="text-sm text-theme-secondary-text md:text-base mt-16">
+						<p className="mt-16 text-sm md:text-base text-theme-secondary-text">
 							<span>{t("PROFILE.PAGE_WELCOME.HAS_EXPORTED_PROFILES")} </span>
 							<Link to="/profiles/import" title={t("PROFILE.PAGE_WELCOME.IMPORT_PROFILE_TITLE")}>
 								{t("PROFILE.PAGE_WELCOME.IMPORT_PROFILE")}

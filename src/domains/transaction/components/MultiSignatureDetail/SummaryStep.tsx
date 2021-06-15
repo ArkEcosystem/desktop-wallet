@@ -20,34 +20,6 @@ import { useTranslation } from "react-i18next";
 
 import { Signatures } from "./Signatures";
 
-const getType = (transaction: Contracts.SignedTransactionData): string => {
-	const type = transaction.get<number>("type");
-	const typeGroup = transaction.get<number>("typeGroup");
-	const asset = transaction.get<Record<string, any>>("asset");
-
-	if (type === 4 && typeGroup === 1) {
-		return "multiSignature";
-	}
-
-	if (type === 6) {
-		return "multiPayment";
-	}
-
-	if (type === 3 && asset?.votes?.[0].startsWith("-")) {
-		return "unvote";
-	}
-
-	if (type === 3) {
-		return "vote";
-	}
-
-	if (type === 5) {
-		return "ipfs";
-	}
-
-	return "transfer";
-};
-
 export const SummaryStep = ({
 	wallet,
 	transaction,
@@ -59,7 +31,7 @@ export const SummaryStep = ({
 	const { t } = useTranslation();
 	const [senderAddress, setSenderAddress] = useState("");
 
-	const type = getType(transaction);
+	const type = transaction.type();
 
 	const isTransferType = () => ["transfer", "multiPayment"].includes(type);
 
@@ -178,7 +150,7 @@ export const SummaryStep = ({
 				</div>
 			</TransactionDetail>
 
-			<div className="px-10 pt-6 mt-4 -mx-10 border-t border-theme-secondary-300 dark:border-theme-secondary-800">
+			<div className="px-10 pt-6 -mx-10 mt-4 border-t border-theme-secondary-300 dark:border-theme-secondary-800">
 				<Signatures transactionId={transaction.id()} publicKeys={participants} wallet={wallet} />
 			</div>
 		</section>

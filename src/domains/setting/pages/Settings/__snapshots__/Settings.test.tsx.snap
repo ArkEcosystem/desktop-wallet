@@ -10,7 +10,7 @@ exports[`Settings should not allow setting the current password as the new passw
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -42,18 +42,18 @@ exports[`Settings should not allow setting the current password as the new passw
             </div>
           </div>
           <ul
-            class="flex ml-4 mr-auto space-x-8 h-21"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Portfolio
               </a>
@@ -62,12 +62,12 @@ exports[`Settings should not allow setting the current password as the new passw
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Plugins
               </a>
@@ -76,12 +76,12 @@ exports[`Settings should not allow setting the current password as the new passw
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Exchange
               </a>
@@ -90,12 +90,12 @@ exports[`Settings should not allow setting the current password as the new passw
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 News
               </a>
@@ -132,7 +132,7 @@ exports[`Settings should not allow setting the current password as the new passw
                           </svg>
                         </div>
                         <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
                         >
                           <div
                             class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -163,12 +163,12 @@ exports[`Settings should not allow setting the current password as the new passw
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -211,7 +211,7 @@ exports[`Settings should not allow setting the current password as the new passw
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -219,7 +219,7 @@ exports[`Settings should not allow setting the current password as the new passw
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -233,56 +233,35 @@ exports[`Settings should not allow setting the current password as the new passw
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative justify-center items-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          TE
-                        </span>
-                      </div>
+                        TE
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -424,7 +403,7 @@ exports[`Settings should not allow setting the current password as the new passw
                     </div>
                   </div>
                   <form
-                    class="space-y-8"
+                    class="space-y-5"
                     data-testid="Form"
                     id="password-settings__form"
                   >
@@ -464,12 +443,12 @@ exports[`Settings should not allow setting the current password as the new passw
                             class=""
                           >
                             <button
-                              class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                              class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                               data-testid="InputPassword__toggle"
                               type="button"
                             >
                               <div
-                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                               />
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -536,12 +515,12 @@ exports[`Settings should not allow setting the current password as the new passw
                             class="pl-3"
                           >
                             <button
-                              class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                              class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                               data-testid="InputPassword__toggle"
                               type="button"
                             >
                               <div
-                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                               />
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -593,12 +572,12 @@ exports[`Settings should not allow setting the current password as the new passw
                             class=""
                           >
                             <button
-                              class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                              class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                               data-testid="InputPassword__toggle"
                               type="button"
                             >
                               <div
-                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                               />
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -652,7 +631,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -684,18 +663,18 @@ exports[`Settings should not update the uploaded avatar when removing focus from
             </div>
           </div>
           <ul
-            class="flex ml-4 mr-auto space-x-8 h-21"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Portfolio
               </a>
@@ -704,12 +683,12 @@ exports[`Settings should not update the uploaded avatar when removing focus from
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Plugins
               </a>
@@ -718,12 +697,12 @@ exports[`Settings should not update the uploaded avatar when removing focus from
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Exchange
               </a>
@@ -732,12 +711,12 @@ exports[`Settings should not update the uploaded avatar when removing focus from
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 News
               </a>
@@ -774,7 +753,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                           </svg>
                         </div>
                         <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
                         >
                           <div
                             class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -804,12 +783,12 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -851,7 +830,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -859,7 +838,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -873,56 +852,35 @@ exports[`Settings should not update the uploaded avatar when removing focus from
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative justify-center items-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -1061,7 +1019,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                   </div>
                 </div>
                 <form
-                  class="space-y-8"
+                  class="space-y-5"
                   data-testid="General-settings__form"
                 >
                   <div
@@ -1076,7 +1034,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                       class="group space-y-2 undefined"
                     >
                       <span
-                        class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary-600 text-theme-secondary-text"
+                        class="text-sm font-semibold transition-colors duration-100 cursor-default text-theme-secondary-text group-hover:text-theme-primary-600"
                       >
                         Select Profile Image
                       </span>
@@ -1096,12 +1054,12 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                               src="data:image/png;base64,dGVzdCBtbmVtb25pYw=="
                             />
                             <button
-                              class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
+                              class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                               data-testid="SelectProfileImage__upload-button"
                               type="button"
                             >
                               <div
-                                class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
+                                class="flex justify-center items-center h-full rounded-full dark:bg-black bg-theme-secondary-900 opacity-85"
                               >
                                 <div
                                   class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
@@ -1261,7 +1219,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                       class=""
                                     >
                                       <div
-                                        class="py-2 px-1 flex items-center justify-center"
+                                        class="flex justify-center items-center py-2 px-1"
                                         data-testid="SelectDropdown__caret"
                                       >
                                         <div
@@ -1375,7 +1333,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                       class=""
                                     >
                                       <div
-                                        class="py-2 px-1 flex items-center justify-center"
+                                        class="flex justify-center items-center py-2 px-1"
                                         data-testid="SelectDropdown__caret"
                                       >
                                         <div
@@ -1403,7 +1361,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                         </fieldset>
                       </div>
                       <div
-                        class="flex flex-col w-2/4 ml-5"
+                        class="flex flex-col ml-5 w-2/4"
                       >
                         <fieldset
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -1493,7 +1451,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                       class=""
                                     >
                                       <div
-                                        class="py-2 px-1 flex items-center justify-center"
+                                        class="flex justify-center items-center py-2 px-1"
                                         data-testid="SelectDropdown__caret"
                                       >
                                         <div
@@ -1607,7 +1565,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                       class=""
                                     >
                                       <div
-                                        class="py-2 px-1 flex items-center justify-center"
+                                        class="flex justify-center items-center py-2 px-1"
                                         data-testid="SelectDropdown__caret"
                                       >
                                         <div
@@ -1721,7 +1679,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                       class=""
                                     >
                                       <div
-                                        class="py-2 px-1 flex items-center justify-center"
+                                        class="flex justify-center items-center py-2 px-1"
                                         data-testid="SelectDropdown__caret"
                                       >
                                         <div
@@ -1924,7 +1882,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                         class=""
                                       >
                                         <div
-                                          class="py-2 px-1 flex items-center justify-center"
+                                          class="flex justify-center items-center py-2 px-1"
                                           data-testid="SelectDropdown__caret"
                                         >
                                           <div
@@ -2238,7 +2196,7 @@ exports[`Settings should render 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -2270,18 +2228,18 @@ exports[`Settings should render 1`] = `
             </div>
           </div>
           <ul
-            class="flex ml-4 mr-auto space-x-8 h-21"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Portfolio
               </a>
@@ -2290,12 +2248,12 @@ exports[`Settings should render 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Plugins
               </a>
@@ -2304,12 +2262,12 @@ exports[`Settings should render 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Exchange
               </a>
@@ -2318,12 +2276,12 @@ exports[`Settings should render 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 News
               </a>
@@ -2360,7 +2318,7 @@ exports[`Settings should render 1`] = `
                           </svg>
                         </div>
                         <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
                         >
                           <div
                             class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -2390,12 +2348,12 @@ exports[`Settings should render 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -2437,7 +2395,7 @@ exports[`Settings should render 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -2445,7 +2403,7 @@ exports[`Settings should render 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -2459,56 +2417,35 @@ exports[`Settings should render 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative justify-center items-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -2647,7 +2584,7 @@ exports[`Settings should render 1`] = `
                   </div>
                 </div>
                 <form
-                  class="space-y-8"
+                  class="space-y-5"
                   data-testid="General-settings__form"
                 >
                   <div
@@ -2662,7 +2599,7 @@ exports[`Settings should render 1`] = `
                       class="group space-y-2 undefined"
                     >
                       <span
-                        class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary-600 text-theme-secondary-text"
+                        class="text-sm font-semibold transition-colors duration-100 cursor-default text-theme-secondary-text group-hover:text-theme-primary-600"
                       >
                         Select Profile Image
                       </span>
@@ -2687,12 +2624,12 @@ exports[`Settings should render 1`] = `
                               JO
                             </span>
                             <button
-                              class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
+                              class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                               data-testid="SelectProfileImage__upload-button"
                               type="button"
                             >
                               <div
-                                class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
+                                class="flex justify-center items-center h-full rounded-full dark:bg-black bg-theme-secondary-900 opacity-85"
                               >
                                 <div
                                   class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
@@ -2833,7 +2770,7 @@ exports[`Settings should render 1`] = `
                                       class=""
                                     >
                                       <div
-                                        class="py-2 px-1 flex items-center justify-center"
+                                        class="flex justify-center items-center py-2 px-1"
                                         data-testid="SelectDropdown__caret"
                                       >
                                         <div
@@ -2947,7 +2884,7 @@ exports[`Settings should render 1`] = `
                                       class=""
                                     >
                                       <div
-                                        class="py-2 px-1 flex items-center justify-center"
+                                        class="flex justify-center items-center py-2 px-1"
                                         data-testid="SelectDropdown__caret"
                                       >
                                         <div
@@ -2975,7 +2912,7 @@ exports[`Settings should render 1`] = `
                         </fieldset>
                       </div>
                       <div
-                        class="flex flex-col w-2/4 ml-5"
+                        class="flex flex-col ml-5 w-2/4"
                       >
                         <fieldset
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -3065,7 +3002,7 @@ exports[`Settings should render 1`] = `
                                       class=""
                                     >
                                       <div
-                                        class="py-2 px-1 flex items-center justify-center"
+                                        class="flex justify-center items-center py-2 px-1"
                                         data-testid="SelectDropdown__caret"
                                       >
                                         <div
@@ -3179,7 +3116,7 @@ exports[`Settings should render 1`] = `
                                       class=""
                                     >
                                       <div
-                                        class="py-2 px-1 flex items-center justify-center"
+                                        class="flex justify-center items-center py-2 px-1"
                                         data-testid="SelectDropdown__caret"
                                       >
                                         <div
@@ -3293,7 +3230,7 @@ exports[`Settings should render 1`] = `
                                       class=""
                                     >
                                       <div
-                                        class="py-2 px-1 flex items-center justify-center"
+                                        class="flex justify-center items-center py-2 px-1"
                                         data-testid="SelectDropdown__caret"
                                       >
                                         <div
@@ -3496,7 +3433,7 @@ exports[`Settings should render 1`] = `
                                         class=""
                                       >
                                         <div
-                                          class="py-2 px-1 flex items-center justify-center"
+                                          class="flex justify-center items-center py-2 px-1"
                                           data-testid="SelectDropdown__caret"
                                         >
                                           <div
@@ -3810,7 +3747,7 @@ exports[`Settings should render export settings 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -3842,18 +3779,18 @@ exports[`Settings should render export settings 1`] = `
             </div>
           </div>
           <ul
-            class="flex ml-4 mr-auto space-x-8 h-21"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Portfolio
               </a>
@@ -3862,12 +3799,12 @@ exports[`Settings should render export settings 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Plugins
               </a>
@@ -3876,12 +3813,12 @@ exports[`Settings should render export settings 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Exchange
               </a>
@@ -3890,12 +3827,12 @@ exports[`Settings should render export settings 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 News
               </a>
@@ -3932,7 +3869,7 @@ exports[`Settings should render export settings 1`] = `
                           </svg>
                         </div>
                         <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
                         >
                           <div
                             class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -3963,12 +3900,12 @@ exports[`Settings should render export settings 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -4011,7 +3948,7 @@ exports[`Settings should render export settings 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -4019,7 +3956,7 @@ exports[`Settings should render export settings 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -4033,56 +3970,35 @@ exports[`Settings should render export settings 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative justify-center items-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          TE
-                        </span>
-                      </div>
+                        TE
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -4334,7 +4250,7 @@ exports[`Settings should render export settings 1`] = `
                     </li>
                   </ul>
                   <div
-                    class="flex justify-end w-full space-x-3 mt-8"
+                    class="flex justify-end mt-8 space-x-3 w-full"
                   >
                     <button
                       class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
@@ -4369,7 +4285,7 @@ exports[`Settings should render password settings 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -4401,18 +4317,18 @@ exports[`Settings should render password settings 1`] = `
             </div>
           </div>
           <ul
-            class="flex ml-4 mr-auto space-x-8 h-21"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Portfolio
               </a>
@@ -4421,12 +4337,12 @@ exports[`Settings should render password settings 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Plugins
               </a>
@@ -4435,12 +4351,12 @@ exports[`Settings should render password settings 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Exchange
               </a>
@@ -4449,12 +4365,12 @@ exports[`Settings should render password settings 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 News
               </a>
@@ -4491,7 +4407,7 @@ exports[`Settings should render password settings 1`] = `
                           </svg>
                         </div>
                         <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
                         >
                           <div
                             class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -4522,12 +4438,12 @@ exports[`Settings should render password settings 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -4570,7 +4486,7 @@ exports[`Settings should render password settings 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -4578,7 +4494,7 @@ exports[`Settings should render password settings 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -4592,56 +4508,35 @@ exports[`Settings should render password settings 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative justify-center items-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          TE
-                        </span>
-                      </div>
+                        TE
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -4783,7 +4678,7 @@ exports[`Settings should render password settings 1`] = `
                     </div>
                   </div>
                   <form
-                    class="space-y-8"
+                    class="space-y-5"
                     data-testid="Form"
                     id="password-settings__form"
                   >
@@ -4823,12 +4718,12 @@ exports[`Settings should render password settings 1`] = `
                             class=""
                           >
                             <button
-                              class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                              class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                               data-testid="InputPassword__toggle"
                               type="button"
                             >
                               <div
-                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                               />
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -4880,12 +4775,12 @@ exports[`Settings should render password settings 1`] = `
                             class=""
                           >
                             <button
-                              class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                              class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                               data-testid="InputPassword__toggle"
                               type="button"
                             >
                               <div
-                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                               />
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -4939,7 +4834,7 @@ exports[`Settings should set a password 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -4971,18 +4866,18 @@ exports[`Settings should set a password 1`] = `
             </div>
           </div>
           <ul
-            class="flex ml-4 mr-auto space-x-8 h-21"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Portfolio
               </a>
@@ -4991,12 +4886,12 @@ exports[`Settings should set a password 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Plugins
               </a>
@@ -5005,12 +4900,12 @@ exports[`Settings should set a password 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Exchange
               </a>
@@ -5019,12 +4914,12 @@ exports[`Settings should set a password 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 News
               </a>
@@ -5061,7 +4956,7 @@ exports[`Settings should set a password 1`] = `
                           </svg>
                         </div>
                         <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
                         >
                           <div
                             class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -5092,12 +4987,12 @@ exports[`Settings should set a password 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -5140,7 +5035,7 @@ exports[`Settings should set a password 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -5148,7 +5043,7 @@ exports[`Settings should set a password 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -5162,56 +5057,35 @@ exports[`Settings should set a password 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative justify-center items-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          TE
-                        </span>
-                      </div>
+                        TE
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -5353,7 +5227,7 @@ exports[`Settings should set a password 1`] = `
                     </div>
                   </div>
                   <form
-                    class="space-y-8"
+                    class="space-y-5"
                     data-testid="Form"
                     id="password-settings__form"
                   >
@@ -5393,12 +5267,12 @@ exports[`Settings should set a password 1`] = `
                             class=""
                           >
                             <button
-                              class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                              class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                               data-testid="InputPassword__toggle"
                               type="button"
                             >
                               <div
-                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                               />
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -5450,12 +5324,12 @@ exports[`Settings should set a password 1`] = `
                             class=""
                           >
                             <button
-                              class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                              class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                               data-testid="InputPassword__toggle"
                               type="button"
                             >
                               <div
-                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                               />
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -5507,12 +5381,12 @@ exports[`Settings should set a password 1`] = `
                             class=""
                           >
                             <button
-                              class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                              class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                               data-testid="InputPassword__toggle"
                               type="button"
                             >
                               <div
-                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                               />
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -5566,7 +5440,7 @@ exports[`Settings should show an error toast if the current password does not ma
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -5598,18 +5472,18 @@ exports[`Settings should show an error toast if the current password does not ma
             </div>
           </div>
           <ul
-            class="flex ml-4 mr-auto space-x-8 h-21"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Portfolio
               </a>
@@ -5618,12 +5492,12 @@ exports[`Settings should show an error toast if the current password does not ma
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Plugins
               </a>
@@ -5632,12 +5506,12 @@ exports[`Settings should show an error toast if the current password does not ma
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Exchange
               </a>
@@ -5646,12 +5520,12 @@ exports[`Settings should show an error toast if the current password does not ma
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 News
               </a>
@@ -5688,7 +5562,7 @@ exports[`Settings should show an error toast if the current password does not ma
                           </svg>
                         </div>
                         <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
                         >
                           <div
                             class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -5719,12 +5593,12 @@ exports[`Settings should show an error toast if the current password does not ma
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -5767,7 +5641,7 @@ exports[`Settings should show an error toast if the current password does not ma
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -5775,7 +5649,7 @@ exports[`Settings should show an error toast if the current password does not ma
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -5789,56 +5663,35 @@ exports[`Settings should show an error toast if the current password does not ma
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative justify-center items-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          TE
-                        </span>
-                      </div>
+                        TE
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -5980,7 +5833,7 @@ exports[`Settings should show an error toast if the current password does not ma
                     </div>
                   </div>
                   <form
-                    class="space-y-8"
+                    class="space-y-5"
                     data-testid="Form"
                     id="password-settings__form"
                   >
@@ -6020,12 +5873,12 @@ exports[`Settings should show an error toast if the current password does not ma
                             class=""
                           >
                             <button
-                              class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                              class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                               data-testid="InputPassword__toggle"
                               type="button"
                             >
                               <div
-                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                               />
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -6077,12 +5930,12 @@ exports[`Settings should show an error toast if the current password does not ma
                             class=""
                           >
                             <button
-                              class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                              class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                               data-testid="InputPassword__toggle"
                               type="button"
                             >
                               <div
-                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                               />
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -6134,12 +5987,12 @@ exports[`Settings should show an error toast if the current password does not ma
                             class=""
                           >
                             <button
-                              class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                              class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                               data-testid="InputPassword__toggle"
                               type="button"
                             >
                               <div
-                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                               />
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -6192,7 +6045,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -6224,18 +6077,18 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
             </div>
           </div>
           <ul
-            class="flex ml-4 mr-auto space-x-8 h-21"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Portfolio
               </a>
@@ -6244,12 +6097,12 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Plugins
               </a>
@@ -6258,12 +6111,12 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Exchange
               </a>
@@ -6272,12 +6125,12 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 News
               </a>
@@ -6314,7 +6167,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                           </svg>
                         </div>
                         <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
                         >
                           <div
                             class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -6345,12 +6198,12 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -6393,7 +6246,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -6401,7 +6254,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -6415,56 +6268,35 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative justify-center items-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          TE
-                        </span>
-                      </div>
+                        TE
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -6606,7 +6438,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                     </div>
                   </div>
                   <form
-                    class="space-y-8"
+                    class="space-y-5"
                     data-testid="Form"
                     id="password-settings__form"
                   >
@@ -6646,12 +6478,12 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                             class=""
                           >
                             <button
-                              class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                              class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                               data-testid="InputPassword__toggle"
                               type="button"
                             >
                               <div
-                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                               />
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -6718,12 +6550,12 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                             class="pl-3"
                           >
                             <button
-                              class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                              class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                               data-testid="InputPassword__toggle"
                               type="button"
                             >
                               <div
-                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                               />
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -6790,12 +6622,12 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                             class="pl-3"
                           >
                             <button
-                              class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                              class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                               data-testid="InputPassword__toggle"
                               type="button"
                             >
                               <div
-                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                               />
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -6849,7 +6681,7 @@ exports[`Settings should update profile 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -6881,18 +6713,18 @@ exports[`Settings should update profile 1`] = `
             </div>
           </div>
           <ul
-            class="flex ml-4 mr-auto space-x-8 h-21"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Portfolio
               </a>
@@ -6901,12 +6733,12 @@ exports[`Settings should update profile 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Plugins
               </a>
@@ -6915,12 +6747,12 @@ exports[`Settings should update profile 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Exchange
               </a>
@@ -6929,12 +6761,12 @@ exports[`Settings should update profile 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 News
               </a>
@@ -6971,7 +6803,7 @@ exports[`Settings should update profile 1`] = `
                           </svg>
                         </div>
                         <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
                         >
                           <div
                             class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -7001,12 +6833,12 @@ exports[`Settings should update profile 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -7048,7 +6880,7 @@ exports[`Settings should update profile 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -7056,7 +6888,7 @@ exports[`Settings should update profile 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -7070,56 +6902,35 @@ exports[`Settings should update profile 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative justify-center items-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          TE
-                        </span>
-                      </div>
+                        TE
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -7258,7 +7069,7 @@ exports[`Settings should update profile 1`] = `
                   </div>
                 </div>
                 <form
-                  class="space-y-8"
+                  class="space-y-5"
                   data-testid="General-settings__form"
                 >
                   <div
@@ -7273,7 +7084,7 @@ exports[`Settings should update profile 1`] = `
                       class="group space-y-2 undefined"
                     >
                       <span
-                        class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary-600 text-theme-secondary-text"
+                        class="text-sm font-semibold transition-colors duration-100 cursor-default text-theme-secondary-text group-hover:text-theme-primary-600"
                       >
                         Select Profile Image
                       </span>
@@ -7281,7 +7092,7 @@ exports[`Settings should update profile 1`] = `
                         class="flex flex-row"
                       >
                         <div
-                          class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-solid focus-within:border-theme-primary-400"
+                          class="p-1 w-20 h-20 rounded-md border-2 border-dashed focus-within:border-solid border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-theme-primary-400"
                         >
                           <div
                             class="overflow-hidden h-full rounded-full"
@@ -7437,7 +7248,7 @@ exports[`Settings should update profile 1`] = `
                                       class=""
                                     >
                                       <div
-                                        class="py-2 px-1 flex items-center justify-center"
+                                        class="flex justify-center items-center py-2 px-1"
                                         data-testid="SelectDropdown__caret"
                                       >
                                         <div
@@ -7551,7 +7362,7 @@ exports[`Settings should update profile 1`] = `
                                       class=""
                                     >
                                       <div
-                                        class="py-2 px-1 flex items-center justify-center"
+                                        class="flex justify-center items-center py-2 px-1"
                                         data-testid="SelectDropdown__caret"
                                       >
                                         <div
@@ -7579,7 +7390,7 @@ exports[`Settings should update profile 1`] = `
                         </fieldset>
                       </div>
                       <div
-                        class="flex flex-col w-2/4 ml-5"
+                        class="flex flex-col ml-5 w-2/4"
                       >
                         <fieldset
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -7669,7 +7480,7 @@ exports[`Settings should update profile 1`] = `
                                       class=""
                                     >
                                       <div
-                                        class="py-2 px-1 flex items-center justify-center"
+                                        class="flex justify-center items-center py-2 px-1"
                                         data-testid="SelectDropdown__caret"
                                       >
                                         <div
@@ -7783,7 +7594,7 @@ exports[`Settings should update profile 1`] = `
                                       class=""
                                     >
                                       <div
-                                        class="py-2 px-1 flex items-center justify-center"
+                                        class="flex justify-center items-center py-2 px-1"
                                         data-testid="SelectDropdown__caret"
                                       >
                                         <div
@@ -7897,7 +7708,7 @@ exports[`Settings should update profile 1`] = `
                                       class=""
                                     >
                                       <div
-                                        class="py-2 px-1 flex items-center justify-center"
+                                        class="flex justify-center items-center py-2 px-1"
                                         data-testid="SelectDropdown__caret"
                                       >
                                         <div
@@ -8101,7 +7912,7 @@ exports[`Settings should update profile 1`] = `
                                         class=""
                                       >
                                         <div
-                                          class="py-2 px-1 flex items-center justify-center"
+                                          class="flex justify-center items-center py-2 px-1"
                                           data-testid="SelectDropdown__caret"
                                         >
                                           <div
@@ -8415,7 +8226,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -8447,18 +8258,18 @@ exports[`Settings should update the avatar when removing focus from name input 1
             </div>
           </div>
           <ul
-            class="flex ml-4 mr-auto space-x-8 h-21"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Portfolio
               </a>
@@ -8467,12 +8278,12 @@ exports[`Settings should update the avatar when removing focus from name input 1
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Plugins
               </a>
@@ -8481,12 +8292,12 @@ exports[`Settings should update the avatar when removing focus from name input 1
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Exchange
               </a>
@@ -8495,12 +8306,12 @@ exports[`Settings should update the avatar when removing focus from name input 1
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 News
               </a>
@@ -8537,7 +8348,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                           </svg>
                         </div>
                         <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
                         >
                           <div
                             class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -8567,12 +8378,12 @@ exports[`Settings should update the avatar when removing focus from name input 1
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -8614,7 +8425,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -8622,7 +8433,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -8636,56 +8447,35 @@ exports[`Settings should update the avatar when removing focus from name input 1
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative justify-center items-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -8824,7 +8614,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                   </div>
                 </div>
                 <form
-                  class="space-y-8"
+                  class="space-y-5"
                   data-testid="General-settings__form"
                 >
                   <div
@@ -8839,7 +8629,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                       class="group space-y-2 undefined"
                     >
                       <span
-                        class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary-600 text-theme-secondary-text"
+                        class="text-sm font-semibold transition-colors duration-100 cursor-default text-theme-secondary-text group-hover:text-theme-primary-600"
                       >
                         Select Profile Image
                       </span>
@@ -8864,12 +8654,12 @@ exports[`Settings should update the avatar when removing focus from name input 1
                               T
                             </span>
                             <button
-                              class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
+                              class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                               data-testid="SelectProfileImage__upload-button"
                               type="button"
                             >
                               <div
-                                class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
+                                class="flex justify-center items-center h-full rounded-full dark:bg-black bg-theme-secondary-900 opacity-85"
                               >
                                 <div
                                   class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
@@ -9010,7 +8800,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                       class=""
                                     >
                                       <div
-                                        class="py-2 px-1 flex items-center justify-center"
+                                        class="flex justify-center items-center py-2 px-1"
                                         data-testid="SelectDropdown__caret"
                                       >
                                         <div
@@ -9124,7 +8914,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                       class=""
                                     >
                                       <div
-                                        class="py-2 px-1 flex items-center justify-center"
+                                        class="flex justify-center items-center py-2 px-1"
                                         data-testid="SelectDropdown__caret"
                                       >
                                         <div
@@ -9152,7 +8942,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                         </fieldset>
                       </div>
                       <div
-                        class="flex flex-col w-2/4 ml-5"
+                        class="flex flex-col ml-5 w-2/4"
                       >
                         <fieldset
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -9242,7 +9032,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                       class=""
                                     >
                                       <div
-                                        class="py-2 px-1 flex items-center justify-center"
+                                        class="flex justify-center items-center py-2 px-1"
                                         data-testid="SelectDropdown__caret"
                                       >
                                         <div
@@ -9356,7 +9146,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                       class=""
                                     >
                                       <div
-                                        class="py-2 px-1 flex items-center justify-center"
+                                        class="flex justify-center items-center py-2 px-1"
                                         data-testid="SelectDropdown__caret"
                                       >
                                         <div
@@ -9470,7 +9260,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                       class=""
                                     >
                                       <div
-                                        class="py-2 px-1 flex items-center justify-center"
+                                        class="flex justify-center items-center py-2 px-1"
                                         data-testid="SelectDropdown__caret"
                                       >
                                         <div
@@ -9673,7 +9463,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                         class=""
                                       >
                                         <div
-                                          class="py-2 px-1 flex items-center justify-center"
+                                          class="flex justify-center items-center py-2 px-1"
                                           data-testid="SelectDropdown__caret"
                                         >
                                           <div
@@ -9987,7 +9777,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -10019,18 +9809,18 @@ exports[`Settings should update the avatar when removing focus from name input 2
             </div>
           </div>
           <ul
-            class="flex ml-4 mr-auto space-x-8 h-21"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Portfolio
               </a>
@@ -10039,12 +9829,12 @@ exports[`Settings should update the avatar when removing focus from name input 2
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Plugins
               </a>
@@ -10053,12 +9843,12 @@ exports[`Settings should update the avatar when removing focus from name input 2
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Exchange
               </a>
@@ -10067,12 +9857,12 @@ exports[`Settings should update the avatar when removing focus from name input 2
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 News
               </a>
@@ -10109,7 +9899,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                           </svg>
                         </div>
                         <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
                         >
                           <div
                             class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -10139,12 +9929,12 @@ exports[`Settings should update the avatar when removing focus from name input 2
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -10186,7 +9976,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -10194,7 +9984,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -10208,56 +9998,35 @@ exports[`Settings should update the avatar when removing focus from name input 2
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative justify-center items-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -10396,7 +10165,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                   </div>
                 </div>
                 <form
-                  class="space-y-8"
+                  class="space-y-5"
                   data-testid="General-settings__form"
                 >
                   <div
@@ -10411,7 +10180,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                       class="group space-y-2 undefined"
                     >
                       <span
-                        class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary-600 text-theme-secondary-text"
+                        class="text-sm font-semibold transition-colors duration-100 cursor-default text-theme-secondary-text group-hover:text-theme-primary-600"
                       >
                         Select Profile Image
                       </span>
@@ -10419,7 +10188,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                         class="flex flex-row"
                       >
                         <div
-                          class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-solid focus-within:border-theme-primary-400"
+                          class="p-1 w-20 h-20 rounded-md border-2 border-dashed focus-within:border-solid border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-theme-primary-400"
                         >
                           <div
                             class="overflow-hidden h-full rounded-full"
@@ -10594,7 +10363,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                       class=""
                                     >
                                       <div
-                                        class="py-2 px-1 flex items-center justify-center"
+                                        class="flex justify-center items-center py-2 px-1"
                                         data-testid="SelectDropdown__caret"
                                       >
                                         <div
@@ -10708,7 +10477,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                       class=""
                                     >
                                       <div
-                                        class="py-2 px-1 flex items-center justify-center"
+                                        class="flex justify-center items-center py-2 px-1"
                                         data-testid="SelectDropdown__caret"
                                       >
                                         <div
@@ -10736,7 +10505,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                         </fieldset>
                       </div>
                       <div
-                        class="flex flex-col w-2/4 ml-5"
+                        class="flex flex-col ml-5 w-2/4"
                       >
                         <fieldset
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -10826,7 +10595,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                       class=""
                                     >
                                       <div
-                                        class="py-2 px-1 flex items-center justify-center"
+                                        class="flex justify-center items-center py-2 px-1"
                                         data-testid="SelectDropdown__caret"
                                       >
                                         <div
@@ -10940,7 +10709,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                       class=""
                                     >
                                       <div
-                                        class="py-2 px-1 flex items-center justify-center"
+                                        class="flex justify-center items-center py-2 px-1"
                                         data-testid="SelectDropdown__caret"
                                       >
                                         <div
@@ -11054,7 +10823,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                       class=""
                                     >
                                       <div
-                                        class="py-2 px-1 flex items-center justify-center"
+                                        class="flex justify-center items-center py-2 px-1"
                                         data-testid="SelectDropdown__caret"
                                       >
                                         <div
@@ -11257,7 +11026,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                         class=""
                                       >
                                         <div
-                                          class="py-2 px-1 flex items-center justify-center"
+                                          class="flex justify-center items-center py-2 px-1"
                                           data-testid="SelectDropdown__caret"
                                         >
                                           <div

@@ -307,13 +307,13 @@ export const Votes = () => {
 											position="right"
 											toggleContent={
 												<ControlButton isChanged={isFilterChanged}>
-													<div className="flex items-center justify-center w-5 h-5">
+													<div className="flex justify-center items-center w-5 h-5">
 														<Icon name="Filters" width={17} height={19} />
 													</div>
 												</ControlButton>
 											}
 										>
-											<div className="px-10 py-7 w-128">
+											<div className="py-7 px-10 w-128">
 												<FilterWallets {...filterProperties} />
 											</div>
 										</Dropdown>
@@ -334,7 +334,7 @@ export const Votes = () => {
 			{isEmptyObject(walletsByCoin) ? (
 				<Section>
 					<EmptyBlock>
-						<div className="flex items-center justify-between">
+						<div className="flex justify-between items-center">
 							<span>
 								<Trans
 									i18nKey="VOTE.VOTES_PAGE.EMPTY_MESSAGE"

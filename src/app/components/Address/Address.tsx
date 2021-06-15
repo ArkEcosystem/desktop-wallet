@@ -45,7 +45,7 @@ export const Address = ({
 	};
 
 	return (
-		<div className="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2">
+		<div className="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures">
 			{walletName && (
 				<span
 					data-testid="Address__alias"

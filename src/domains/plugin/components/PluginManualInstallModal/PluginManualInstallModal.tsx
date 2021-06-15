@@ -58,7 +58,7 @@ export const PluginManualInstallModal = ({ isOpen, onClose, onSuccess }: Props) 
 				</div>
 
 				<Form context={form} onSubmit={handleInstall}>
-					<FormField name="url" className="flex flex-col space-y-2 mt-6">
+					<FormField name="url" className="flex flex-col mt-6 space-y-2">
 						<FormLabel>{t("PLUGINS.MODAL_MANUAL_INSTALL_PLUGIN.REPOSITORY_URL")}</FormLabel>
 						<Input
 							data-testid="PluginManualInstallModal__input"
@@ -81,7 +81,7 @@ export const PluginManualInstallModal = ({ isOpen, onClose, onSuccess }: Props) 
 						/>
 					</FormField>
 
-					<div className="flex space-x-3 justify-end mt-8">
+					<div className="flex justify-end mt-8 space-x-3">
 						<Button
 							variant="secondary"
 							onClick={onClose}

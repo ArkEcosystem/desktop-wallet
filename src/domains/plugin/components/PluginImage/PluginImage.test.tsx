@@ -33,7 +33,7 @@ describe("PluginImage", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it.each(["xs", "sm", "md", "lg"])("should render with size '%s'", (size) => {
+	it.each(["xs", "sm", "md", "lg"])("should render with size '%s'", () => {
 		const { container } = render(<PluginImage />);
 		expect(screen.getByTestId("PluginImage__placeholder")).toBeInTheDocument();
 		expect(container).toMatchSnapshot();

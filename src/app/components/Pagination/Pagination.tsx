@@ -4,7 +4,7 @@ import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
 
-import { PaginationProps, PaginationSearch } from "./";
+import { PaginationProps, PaginationSearch } from ".";
 import { PaginationButton, PaginationWrapper } from "./Pagination.styles";
 
 const Wrapper = styled.nav`

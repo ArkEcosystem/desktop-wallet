@@ -17,7 +17,7 @@ export class FileSystemPluginService implements PluginService {
 		};
 	}
 
-	private async askUserToSaveFile(content: string, suggestedFileName?: string) {
+	private async askUserToSaveFile(content: string) {
 		const { filePath } = await electron.remote.dialog.showSaveDialog({});
 
 		/* istanbul ignore next */

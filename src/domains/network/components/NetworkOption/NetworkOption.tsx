@@ -25,7 +25,7 @@ export const NetworkOption = memo(({ disabled, network, iconSize = 30, iconClass
 
 	const iconColorClass = network.isLive() ? "text-theme-secondary-700" : "text-theme-primary-300";
 
-	const handleClick = (event: any) => {
+	const handleClick = () => {
 		if (!disabled) {
 			onClick?.();
 		}

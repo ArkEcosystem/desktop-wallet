@@ -28,7 +28,7 @@ const ToggleButtons = ({ isSingle, disableMultiple, onChange }: ToggleButtonProp
 				</div>
 				<div>
 					<Tooltip content={t("TRANSACTION.RECIPIENTS_HELPTEXT", { count: 64 })}>
-						<div className="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 questionmark">
+						<div className="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200">
 							<Icon width={10} height={10} name="QuestionMark" />
 						</div>
 					</Tooltip>
@@ -258,7 +258,7 @@ export const AddRecipient = ({
 			? {
 					end: (
 						<span className="text-sm font-semibold whitespace-no-break text-theme-secondary-500 dark:text-theme-secondary-700">
-							{t("COMMON.MAX")} {maximumAmount?.toHuman()}
+							{t("COMMON.MAX")} {maximumAmount?.toString()}
 						</span>
 					),
 			  }
@@ -280,7 +280,7 @@ export const AddRecipient = ({
 				noBackground={isSingle}
 				noPadding={isSingle}
 			>
-				<div className="space-y-8">
+				<div className="space-y-5">
 					<FormField name="recipientAddress">
 						<FormLabel
 							label={
@@ -335,7 +335,7 @@ export const AddRecipient = ({
 													? remainingBalance.minus(fee)
 													: remainingBalance;
 
-												setValue("displayAmount", remaining.toHuman());
+												setValue("displayAmount", remaining.toString());
 
 												setValue("amount", remaining.toString(), {
 													shouldValidate: true,
@@ -365,7 +365,7 @@ export const AddRecipient = ({
 						}
 						data-testid="AddRecipient__add-button"
 						variant="secondary"
-						className="w-full mt-4"
+						className="mt-4 w-full"
 						onClick={() =>
 							handleAddRecipient(
 								recipientAddress as string,
@@ -382,6 +382,7 @@ export const AddRecipient = ({
 			{!isSingle && addedRecipients.length > 0 && (
 				<div className="mt-3 border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800">
 					<RecipientList
+						normalizeAmount={false}
 						network={network}
 						recipients={addedRecipients}
 						onRemove={handleRemoveRecipient}

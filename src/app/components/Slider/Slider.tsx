@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useSlider } from "./";
+import { useSlider } from ".";
 
 interface SliderProps {
 	children?: any;
@@ -32,7 +32,7 @@ export const Slider = ({ children, data, options, className, paginationPosition 
 			)}
 
 			<div
-				className="overflow-hidden px-4.5 -mx-4.5 -mb-8 list-none slide-container"
+				className="overflow-hidden -mb-8 list-none px-4.5 -mx-4.5 slide-container"
 				style={{ height: `${containerHeight}px` }}
 			>
 				<div className={`h-full swiper-wrapper important:z-0 ${className || ""}`} ref={wrapperRef}>

@@ -193,7 +193,7 @@ export const DelegateTable = ({
 				}}
 			</Table>
 
-			<div className="flex justify-center w-full mt-8">
+			<div className="flex justify-center mt-8 w-full">
 				{totalDelegates > itemsPerPage! && !isPaginationDisabled && (
 					<Pagination
 						totalCount={totalDelegates}
@@ -206,7 +206,7 @@ export const DelegateTable = ({
 
 			<Footer data-testid="DelegateTable__footer">
 				<div className="container px-10 mx-auto">
-					<div className="flex font-semibold h-11">
+					<div className="flex h-11 font-semibold">
 						<div className="flex pr-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800">
 							<Avatar className="mr-2" size="lg" address={selectedWallet} noShadow />
 							<div className="flex flex-col space-y-2">

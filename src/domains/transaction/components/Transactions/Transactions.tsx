@@ -107,6 +107,7 @@ export const Transactions = memo(
 						className="mt-6"
 					/>
 				</div>
+
 				<Tabs
 					className="mb-8"
 					activeId={activeMode}
@@ -125,7 +126,7 @@ export const Transactions = memo(
 						});
 					}}
 				>
-					<TabList className="w-full">
+					<TabList className="w-full h-15">
 						<Tab tabId="all">{t("TRANSACTION.ALL")}</Tab>
 						<Tab tabId="received">{t("TRANSACTION.INCOMING")}</Tab>
 						<Tab tabId="sent">{t("TRANSACTION.OUTGOING")}</Tab>

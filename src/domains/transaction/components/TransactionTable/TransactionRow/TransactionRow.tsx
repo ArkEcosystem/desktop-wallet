@@ -17,7 +17,6 @@ import { TransactionRowSkeleton } from "./TransactionRowSkeleton";
 type Props = {
 	transaction: DTO.ExtendedTransactionData;
 	exchangeCurrency?: string;
-	isSignaturePending?: boolean;
 	onSign?: () => void;
 	onClick?: () => void;
 	walletName?: string;
@@ -34,7 +33,6 @@ export const TransactionRow = memo(
 		onSign,
 		onClick,
 		walletName,
-		isSignaturePending = false,
 		isLoading = false,
 		showExplorerLink = true,
 		showSignColumn = false,
@@ -46,11 +44,13 @@ export const TransactionRow = memo(
 			return (
 				<TransactionRowSkeleton
 					data-testid="TransactionRow__skeleton"
-					showCurrencyColumn={!!exchangeCurrency && !isSignaturePending}
-					showSignColumn={showSignColumn || isSignaturePending}
+					showCurrencyColumn={!!exchangeCurrency}
+					showSignColumn={showSignColumn}
 				/>
 			);
 		}
+
+		const isSignaturePending = showSignColumn && transaction.isMultiSignatureRegistration();
 
 		return (
 			<TableRow onClick={onClick} className={cn("group", className)} {...props}>

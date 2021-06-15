@@ -24,7 +24,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
 
-import { FormStep, ReviewStep, SummaryStep } from "./";
+import { FormStep, ReviewStep, SummaryStep } from ".";
 import { TransferLedgerReview } from "./LedgerReview";
 import { NetworkStep } from "./NetworkStep";
 
@@ -200,7 +200,16 @@ export const SendTransfer = () => {
 
 		clearErrors("mnemonic");
 
-		const { fee, mnemonic, secondMnemonic, recipients, smartbridge, encryptionPassword } = getValues();
+		const {
+			fee,
+			mnemonic,
+			secondMnemonic,
+			recipients,
+			smartbridge,
+			encryptionPassword,
+			wif,
+			privateKey,
+		} = getValues();
 		const isMultiPayment = recipients.length > 1;
 		const transactionType = isMultiPayment ? "multiPayment" : "transfer";
 
@@ -209,6 +218,8 @@ export const SendTransfer = () => {
 				mnemonic,
 				secondMnemonic,
 				encryptionPassword,
+				wif,
+				privateKey,
 			});
 
 			const transactionInput: Services.TransactionInputs = {
@@ -309,7 +320,7 @@ export const SendTransfer = () => {
 	return (
 		<Page profile={activeProfile}>
 			<Section className="flex-1">
-				<Form className="max-w-xl mx-auto" context={form} onSubmit={() => submitForm()}>
+				<Form className="mx-auto max-w-xl" context={form} onSubmit={() => submitForm()}>
 					<Tabs activeId={activeTab}>
 						<StepIndicator
 							size={showNetworkStep ? 5 : 4}
@@ -403,8 +414,11 @@ export const SendTransfer = () => {
 													type="submit"
 													data-testid="SendTransfer__button--submit"
 													disabled={!isValid || isSubmitting}
-													icon="Send"
 													isLoading={isSubmitting}
+													icon="Send"
+													iconWidth={16}
+													iconHeight={16}
+													iconPosition="right"
 												>
 													<span>{t("COMMON.SEND")}</span>
 												</Button>

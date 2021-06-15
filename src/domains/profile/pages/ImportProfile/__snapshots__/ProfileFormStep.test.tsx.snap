@@ -26,7 +26,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
       </div>
     </div>
     <div
-      class="px-10 pt-8 pb-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800 flex flex-col"
+      class="flex flex-col px-10 pt-8 pb-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
     >
       <div />
       <div
@@ -35,14 +35,14 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
       />
       <div>
         <form
-          class="space-y-8"
+          class="space-y-5"
           data-testid="CreateProfile__form"
         >
           <div
             class="mt-2"
           >
             <div
-              class="relative mt-8 space-y-8"
+              class="relative mt-8 space-y-5"
             >
               <div
                 class="flex justify-between items-end -mt-4"
@@ -105,12 +105,12 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                           AS
                         </span>
                         <button
-                          class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
+                          class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                           data-testid="SelectProfileImage__upload-button"
                           type="button"
                         >
                           <div
-                            class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
+                            class="flex justify-center items-center h-full rounded-full dark:bg-black bg-theme-secondary-900 opacity-85"
                           >
                             <div
                               class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
@@ -185,12 +185,12 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                       class="pl-3"
                     >
                       <button
-                        class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                        class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                         data-testid="InputPassword__toggle"
                         type="button"
                       >
                         <div
-                          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                         />
                         <div
                           class="sc-bdfBwQ fPrsah"
@@ -257,12 +257,12 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                       class="pl-3"
                     >
                       <button
-                        class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                        class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                         data-testid="InputPassword__toggle"
                         type="button"
                       >
                         <div
-                          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                         />
                         <div
                           class="sc-bdfBwQ fPrsah"
@@ -367,7 +367,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                             class=""
                           >
                             <div
-                              class="py-2 px-1 flex items-center justify-center"
+                              class="flex justify-center items-center py-2 px-1"
                               data-testid="SelectDropdown__caret"
                             >
                               <div
@@ -754,7 +754,7 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
       </div>
     </div>
     <div
-      class="px-10 pt-8 pb-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800 flex flex-col"
+      class="flex flex-col px-10 pt-8 pb-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
     >
       <div />
       <div
@@ -763,14 +763,14 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
       />
       <div>
         <form
-          class="space-y-8"
+          class="space-y-5"
           data-testid="CreateProfile__form"
         >
           <div
             class="mt-2"
           >
             <div
-              class="relative mt-8 space-y-8"
+              class="relative mt-8 space-y-5"
             >
               <div
                 class="flex justify-between items-end -mt-4"
@@ -833,12 +833,12 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
                           JO
                         </span>
                         <button
-                          class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
+                          class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                           data-testid="SelectProfileImage__upload-button"
                           type="button"
                         >
                           <div
-                            class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
+                            class="flex justify-center items-center h-full rounded-full dark:bg-black bg-theme-secondary-900 opacity-85"
                           >
                             <div
                               class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
@@ -898,12 +898,12 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
                       class=""
                     >
                       <button
-                        class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                        class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                         data-testid="InputPassword__toggle"
                         type="button"
                       >
                         <div
-                          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                         />
                         <div
                           class="sc-bdfBwQ fPrsah"
@@ -961,12 +961,12 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
                       class=""
                     >
                       <button
-                        class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                        class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                         data-testid="InputPassword__toggle"
                         type="button"
                       >
                         <div
-                          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                         />
                         <div
                           class="sc-bdfBwQ fPrsah"
@@ -1072,7 +1072,7 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
                             class=""
                           >
                             <div
-                              class="py-2 px-1 flex items-center justify-center"
+                              class="flex justify-center items-center py-2 px-1"
                               data-testid="SelectDropdown__caret"
                             >
                               <div
@@ -1224,7 +1224,7 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
       </div>
     </div>
     <div
-      class="px-10 pt-8 pb-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800 flex flex-col"
+      class="flex flex-col px-10 pt-8 pb-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
     >
       <div />
       <div
@@ -1233,14 +1233,14 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
       />
       <div>
         <form
-          class="space-y-8"
+          class="space-y-5"
           data-testid="CreateProfile__form"
         >
           <div
             class="mt-2"
           >
             <div
-              class="relative mt-8 space-y-8"
+              class="relative mt-8 space-y-5"
             >
               <div
                 class="flex justify-between items-end -mt-4"
@@ -1303,12 +1303,12 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
                           TE
                         </span>
                         <button
-                          class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
+                          class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                           data-testid="SelectProfileImage__upload-button"
                           type="button"
                         >
                           <div
-                            class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
+                            class="flex justify-center items-center h-full rounded-full dark:bg-black bg-theme-secondary-900 opacity-85"
                           >
                             <div
                               class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
@@ -1368,12 +1368,12 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
                       class=""
                     >
                       <button
-                        class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                        class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                         data-testid="InputPassword__toggle"
                         type="button"
                       >
                         <div
-                          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                         />
                         <div
                           class="sc-bdfBwQ fPrsah"
@@ -1431,12 +1431,12 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
                       class=""
                     >
                       <button
-                        class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                        class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                         data-testid="InputPassword__toggle"
                         type="button"
                       >
                         <div
-                          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                         />
                         <div
                           class="sc-bdfBwQ fPrsah"
@@ -1542,7 +1542,7 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
                             class=""
                           >
                             <div
-                              class="py-2 px-1 flex items-center justify-center"
+                              class="flex justify-center items-center py-2 px-1"
                               data-testid="SelectDropdown__caret"
                             >
                               <div
@@ -1694,7 +1694,7 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
       </div>
     </div>
     <div
-      class="px-10 pt-8 pb-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800 flex flex-col"
+      class="flex flex-col px-10 pt-8 pb-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
     >
       <div />
       <div
@@ -1703,14 +1703,14 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
       />
       <div>
         <form
-          class="space-y-8"
+          class="space-y-5"
           data-testid="CreateProfile__form"
         >
           <div
             class="mt-2"
           >
             <div
-              class="relative mt-8 space-y-8"
+              class="relative mt-8 space-y-5"
             >
               <div
                 class="flex justify-between items-end -mt-4"
@@ -1773,12 +1773,12 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
                           JO
                         </span>
                         <button
-                          class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
+                          class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                           data-testid="SelectProfileImage__upload-button"
                           type="button"
                         >
                           <div
-                            class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
+                            class="flex justify-center items-center h-full rounded-full dark:bg-black bg-theme-secondary-900 opacity-85"
                           >
                             <div
                               class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
@@ -1838,12 +1838,12 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
                       class=""
                     >
                       <button
-                        class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                        class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                         data-testid="InputPassword__toggle"
                         type="button"
                       >
                         <div
-                          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                         />
                         <div
                           class="sc-bdfBwQ fPrsah"
@@ -1901,12 +1901,12 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
                       class=""
                     >
                       <button
-                        class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                        class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                         data-testid="InputPassword__toggle"
                         type="button"
                       >
                         <div
-                          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                         />
                         <div
                           class="sc-bdfBwQ fPrsah"
@@ -2012,7 +2012,7 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
                             class=""
                           >
                             <div
-                              class="py-2 px-1 flex items-center justify-center"
+                              class="flex justify-center items-center py-2 px-1"
                               data-testid="SelectDropdown__caret"
                             >
                               <div
@@ -2164,7 +2164,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
       </div>
     </div>
     <div
-      class="px-10 pt-8 pb-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800 flex flex-col"
+      class="flex flex-col px-10 pt-8 pb-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
     >
       <div />
       <div
@@ -2173,14 +2173,14 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
       />
       <div>
         <form
-          class="space-y-8"
+          class="space-y-5"
           data-testid="CreateProfile__form"
         >
           <div
             class="mt-2"
           >
             <div
-              class="relative mt-8 space-y-8"
+              class="relative mt-8 space-y-5"
             >
               <div
                 class="flex justify-between items-end -mt-4"
@@ -2238,12 +2238,12 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                           src="data:image/png;base64,dGVzdCBtbmVtb25pYw=="
                         />
                         <button
-                          class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
+                          class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                           data-testid="SelectProfileImage__upload-button"
                           type="button"
                         >
                           <div
-                            class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
+                            class="flex justify-center items-center h-full rounded-full dark:bg-black bg-theme-secondary-900 opacity-85"
                           >
                             <div
                               class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
@@ -2322,12 +2322,12 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                       class=""
                     >
                       <button
-                        class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                        class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                         data-testid="InputPassword__toggle"
                         type="button"
                       >
                         <div
-                          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                         />
                         <div
                           class="sc-bdfBwQ fPrsah"
@@ -2379,12 +2379,12 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                       class=""
                     >
                       <button
-                        class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                        class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                         data-testid="InputPassword__toggle"
                         type="button"
                       >
                         <div
-                          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                         />
                         <div
                           class="sc-bdfBwQ fPrsah"
@@ -2489,7 +2489,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                             class=""
                           >
                             <div
-                              class="py-2 px-1 flex items-center justify-center"
+                              class="flex justify-center items-center py-2 px-1"
                               data-testid="SelectDropdown__caret"
                             >
                               <div
@@ -2872,7 +2872,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
       </div>
     </div>
     <div
-      class="px-10 pt-8 pb-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800 flex flex-col"
+      class="flex flex-col px-10 pt-8 pb-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
     >
       <div />
       <div
@@ -2881,14 +2881,14 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
       />
       <div>
         <form
-          class="space-y-8"
+          class="space-y-5"
           data-testid="CreateProfile__form"
         >
           <div
             class="mt-2"
           >
             <div
-              class="relative mt-8 space-y-8"
+              class="relative mt-8 space-y-5"
             >
               <div
                 class="flex justify-between items-end -mt-4"
@@ -2946,12 +2946,12 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                           src="data:image/png;base64,dGVzdCBtbmVtb25pYw=="
                         />
                         <button
-                          class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
+                          class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                           data-testid="SelectProfileImage__upload-button"
                           type="button"
                         >
                           <div
-                            class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
+                            class="flex justify-center items-center h-full rounded-full dark:bg-black bg-theme-secondary-900 opacity-85"
                           >
                             <div
                               class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
@@ -3030,12 +3030,12 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                       class=""
                     >
                       <button
-                        class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                        class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                         data-testid="InputPassword__toggle"
                         type="button"
                       >
                         <div
-                          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                         />
                         <div
                           class="sc-bdfBwQ fPrsah"
@@ -3093,12 +3093,12 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                       class=""
                     >
                       <button
-                        class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                        class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                         data-testid="InputPassword__toggle"
                         type="button"
                       >
                         <div
-                          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                         />
                         <div
                           class="sc-bdfBwQ fPrsah"
@@ -3203,7 +3203,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                             class=""
                           >
                             <div
-                              class="py-2 px-1 flex items-center justify-center"
+                              class="flex justify-center items-center py-2 px-1"
                               data-testid="SelectDropdown__caret"
                             >
                               <div
@@ -3586,7 +3586,7 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
       </div>
     </div>
     <div
-      class="px-10 pt-8 pb-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800 flex flex-col"
+      class="flex flex-col px-10 pt-8 pb-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
     >
       <div />
       <div
@@ -3595,14 +3595,14 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
       />
       <div>
         <form
-          class="space-y-8"
+          class="space-y-5"
           data-testid="CreateProfile__form"
         >
           <div
             class="mt-2"
           >
             <div
-              class="relative mt-8 space-y-8"
+              class="relative mt-8 space-y-5"
             >
               <div
                 class="flex justify-between items-end -mt-4"
@@ -3665,12 +3665,12 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                           TE
                         </span>
                         <button
-                          class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
+                          class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                           data-testid="SelectProfileImage__upload-button"
                           type="button"
                         >
                           <div
-                            class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
+                            class="flex justify-center items-center h-full rounded-full dark:bg-black bg-theme-secondary-900 opacity-85"
                           >
                             <div
                               class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
@@ -3730,12 +3730,12 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                       class=""
                     >
                       <button
-                        class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                        class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                         data-testid="InputPassword__toggle"
                         type="button"
                       >
                         <div
-                          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                         />
                         <div
                           class="sc-bdfBwQ fPrsah"
@@ -3793,12 +3793,12 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                       class=""
                     >
                       <button
-                        class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                        class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                         data-testid="InputPassword__toggle"
                         type="button"
                       >
                         <div
-                          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                         />
                         <div
                           class="sc-bdfBwQ fPrsah"
@@ -3875,7 +3875,7 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
       </div>
     </div>
     <div
-      class="px-10 pt-8 pb-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800 flex flex-col"
+      class="flex flex-col px-10 pt-8 pb-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
     >
       <div />
       <div
@@ -3884,14 +3884,14 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
       />
       <div>
         <form
-          class="space-y-8"
+          class="space-y-5"
           data-testid="CreateProfile__form"
         >
           <div
             class="mt-2"
           >
             <div
-              class="relative mt-8 space-y-8"
+              class="relative mt-8 space-y-5"
             >
               <div
                 class="flex justify-between items-end -mt-4"
@@ -3949,12 +3949,12 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                           src="data:image/png;base64,dGVzdCBtbmVtb25pYw=="
                         />
                         <button
-                          class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
+                          class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                           data-testid="SelectProfileImage__upload-button"
                           type="button"
                         >
                           <div
-                            class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
+                            class="flex justify-center items-center h-full rounded-full dark:bg-black bg-theme-secondary-900 opacity-85"
                           >
                             <div
                               class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
@@ -4033,12 +4033,12 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                       class=""
                     >
                       <button
-                        class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                        class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                         data-testid="InputPassword__toggle"
                         type="button"
                       >
                         <div
-                          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                         />
                         <div
                           class="sc-bdfBwQ fPrsah"
@@ -4096,12 +4096,12 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                       class=""
                     >
                       <button
-                        class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                        class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                         data-testid="InputPassword__toggle"
                         type="button"
                       >
                         <div
-                          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                         />
                         <div
                           class="sc-bdfBwQ fPrsah"
