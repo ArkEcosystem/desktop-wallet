@@ -88,7 +88,7 @@ export const Transactions = memo(
 
 		return (
 			<>
-				<div className="relative flex justify-between">
+				<div className="flex relative justify-between">
 					{title && title}
 
 					{!title && (
@@ -148,7 +148,7 @@ export const Transactions = memo(
 					<Button
 						data-testid="transactions__fetch-more-button"
 						variant="secondary"
-						className="w-full mt-10 mb-5"
+						className="mt-10 mb-5 w-full"
 						disabled={isLoadingMore}
 						onClick={() => fetchMore()}
 					>
