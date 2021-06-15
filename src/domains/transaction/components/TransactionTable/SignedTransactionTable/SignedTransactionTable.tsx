@@ -73,7 +73,7 @@ const StatusLabel = ({
 		return (
 			<Tooltip content={t("TRANSACTION.MULTISIGNATURE.READY")}>
 				<span className="p-1 text-theme-success-500">
-					<Icon name="Send" width={20} height={20} />
+					<Icon name="Send" width={16} height={16} />
 				</span>
 			</Tooltip>
 		);

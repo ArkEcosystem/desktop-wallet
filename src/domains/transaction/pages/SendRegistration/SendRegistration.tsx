@@ -231,8 +231,11 @@ export const SendRegistration = () => {
 										data-testid="Registration__send-button"
 										disabled={!isValid}
 										className="space-x-2"
-										icon="Send"
 										isLoading={isSubmitting}
+										icon="Send"
+										iconWidth={16}
+										iconHeight={16}
+										iconPosition="right"
 									>
 										<span>{t("COMMON.SEND")}</span>
 									</Button>

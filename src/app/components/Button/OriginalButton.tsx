@@ -13,12 +13,13 @@ type ButtonProps = {
 	icon?: string;
 	iconWidth?: number | string;
 	iconHeight?: number | string;
+	iconPosition?: "left" | "right";
 } & React.ButtonHTMLAttributes<any>;
 
 const StyledButton = styled.button<ButtonProps>(getStyles);
 
 export const OriginalButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
-	({ children, icon, isLoading, iconWidth = 14, iconHeight = 14, ...props }: ButtonProps, ref) => {
+	({ children, icon, isLoading, iconWidth, iconHeight, iconPosition, ...props }: ButtonProps, ref) => {
 		const renderContent = () => {
 			if (isLoading) {
 				return (
@@ -37,8 +38,9 @@ export const OriginalButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
 			return (
 				<>
-					{icon && <Icon name={icon} width={iconWidth} height={iconHeight} />}
+					{icon && iconPosition === "left" && <Icon name={icon} width={iconWidth} height={iconHeight} />}
 					{children}
+					{icon && iconPosition === "right" && <Icon name={icon} width={iconWidth} height={iconHeight} />}
 				</>
 			);
 		};
@@ -54,6 +56,9 @@ export const OriginalButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
 OriginalButton.defaultProps = {
 	type: "button",
 	variant: "primary",
+	iconWidth: 14,
+	iconHeight: 14,
+	iconPosition: "left",
 };
 
 OriginalButton.displayName = "Button";

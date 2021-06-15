@@ -401,8 +401,11 @@ export const SendTransfer = () => {
 													type="submit"
 													data-testid="SendTransfer__button--submit"
 													disabled={!isValid || isSubmitting}
-													icon="Send"
 													isLoading={isSubmitting}
+													icon="Send"
+													iconWidth={16}
+													iconHeight={16}
+													iconPosition="right"
 												>
 													<span>{t("COMMON.SEND")}</span>
 												</Button>
