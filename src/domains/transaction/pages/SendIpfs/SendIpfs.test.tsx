@@ -15,7 +15,6 @@ import {
 	fireEvent,
 	getDefaultProfileId,
 	render,
-	RenderResult,
 	renderWithRouter,
 	syncFees,
 	waitFor,

@@ -258,9 +258,7 @@ describe("Wallets", () => {
 
 	it("should open and close ledger import modal", async () => {
 		const unsubscribe = jest.fn();
-		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
-			return { unsubscribe };
-		});
+		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce(() => ({ unsubscribe }));
 
 		const { asFragment, getByTestId, getByText, queryByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">

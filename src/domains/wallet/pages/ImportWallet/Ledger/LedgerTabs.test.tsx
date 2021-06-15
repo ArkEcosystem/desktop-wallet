@@ -71,9 +71,7 @@ describe("LedgerTabs", () => {
 			["44'/1'/4'/0/0", "03d3c6889608074b44155ad2e6577c3368e27e6e129c457418eb3e5ed029544e8d"],
 		]);
 
-		jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
-			return { unsubscribe: jest.fn() };
-		});
+		jest.spyOn(transport, "listen").mockImplementationOnce(() => ({ unsubscribe: jest.fn() }));
 
 		jest.spyOn(wallet.coin(), "__construct").mockImplementation();
 		jest.spyOn(wallet.coin().ledger(), "getExtendedPublicKey").mockResolvedValue(wallet.publicKey()!);

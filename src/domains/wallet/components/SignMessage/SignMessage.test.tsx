@@ -272,9 +272,7 @@ describe("SignMessage", () => {
 
 		const unsubscribe = jest.fn();
 
-		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
-			return { unsubscribe };
-		});
+		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce(() => ({ unsubscribe }));
 
 		const signMessageSpy = jest
 			.spyOn(wallet.coin().ledger(), "signMessage")
@@ -333,9 +331,7 @@ describe("SignMessage", () => {
 
 		const unsubscribe = jest.fn();
 
-		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
-			return { unsubscribe };
-		});
+		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce(() => ({ unsubscribe }));
 
 		const consoleErrorMock = jest.spyOn(console, "error").mockImplementation(() => undefined);
 		const signMessageSpy = jest
@@ -406,9 +402,7 @@ describe("SignMessage", () => {
 
 		const unsubscribe = jest.fn();
 
-		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
-			return { unsubscribe };
-		});
+		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce(() => ({ unsubscribe }));
 
 		const { getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId">

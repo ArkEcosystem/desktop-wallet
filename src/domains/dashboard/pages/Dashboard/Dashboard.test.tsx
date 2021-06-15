@@ -153,9 +153,7 @@ describe("Dashboard", () => {
 
 	it("should navigate to import ledger page", async () => {
 		const unsubscribe = jest.fn();
-		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
-			return { unsubscribe };
-		});
+		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce(() => ({ unsubscribe }));
 		profile.markIntroductoryTutorialAsComplete();
 
 		const { asFragment, getByTestId, getByText, queryByText, getAllByRole } = renderWithRouter(

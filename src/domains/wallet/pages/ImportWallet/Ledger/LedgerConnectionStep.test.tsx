@@ -27,9 +27,7 @@ describe("LedgerConnectionStep", () => {
 		wallet = profile.wallets().first();
 		transport = createTransportReplayer(RecordStore.fromString(""));
 
-		jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
-			return { unsubscribe: jest.fn() };
-		});
+		jest.spyOn(transport, "listen").mockImplementationOnce(() => ({ unsubscribe: jest.fn() }));
 
 		jest.useFakeTimers();
 		jest.spyOn(wallet.coin(), "__construct").mockImplementation();

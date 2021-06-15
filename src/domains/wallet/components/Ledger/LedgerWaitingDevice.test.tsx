@@ -29,9 +29,7 @@ describe("LedgerWaitingDevice", () => {
 		const onDeviceAvailable = jest.fn();
 		const unsubscribe = jest.fn();
 
-		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
-			return { unsubscribe };
-		});
+		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce(() => ({ unsubscribe }));
 
 		render(
 			<LedgerProvider transport={transport}>

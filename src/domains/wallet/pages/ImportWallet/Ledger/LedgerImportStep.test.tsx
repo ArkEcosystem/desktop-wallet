@@ -52,9 +52,7 @@ describe("LedgerImportStep", () => {
 		wallet = profile.wallets().first();
 		transport = createTransportReplayer(RecordStore.fromString(""));
 
-		jest.spyOn(transport, "listen").mockImplementationOnce(() => {
-			return { unsubscribe: jest.fn() };
-		});
+		jest.spyOn(transport, "listen").mockImplementationOnce(() => ({ unsubscribe: jest.fn() }));
 
 		jest.useFakeTimers();
 	});

@@ -23,7 +23,6 @@ let wallet: Contracts.IReadWriteWallet;
 let profile: Contracts.IProfile;
 
 let resignationUrl: string;
-const dashboardUrl = `/profiles/${getDefaultProfileId()}/dashboard`;
 
 const passphrase = "v3wallet2";
 const history = createMemoryHistory();

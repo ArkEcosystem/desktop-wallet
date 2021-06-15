@@ -90,7 +90,7 @@ describe("UpdateWalletName", () => {
 	it("should show an error message for duplicate name", async () => {
 		const onSave = jest.fn();
 
-		const { asFragment, findByTestId, getByTestId, getByText } = render(
+		const { asFragment, getByTestId } = render(
 			<UpdateWalletName
 				walletId={wallet.id()}
 				currentAlias={wallet.alias()}

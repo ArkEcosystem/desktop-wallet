@@ -50,9 +50,7 @@ describe("Use Ledger Connection", () => {
 
 		const unsubscribe = jest.fn();
 
-		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
-			return { unsubscribe };
-		});
+		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce(() => ({ unsubscribe }));
 
 		render(<Component />);
 
@@ -110,9 +108,7 @@ describe("Use Ledger Connection", () => {
 
 		const unsubscribe = jest.fn();
 
-		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
-			return { unsubscribe };
-		});
+		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce(() => ({ unsubscribe }));
 
 		const { getAllByTestId } = render(<Component />);
 

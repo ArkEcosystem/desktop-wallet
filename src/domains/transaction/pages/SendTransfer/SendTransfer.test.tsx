@@ -1208,7 +1208,7 @@ describe("SendTransfer", () => {
 		const history = createMemoryHistory();
 		history.push(transferURL);
 
-		const { getAllByTestId, getByTestId, container } = renderWithRouter(
+		const { getAllByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
 				<LedgerProvider transport={getDefaultLedgerTransport()}>
 					<SendTransfer />
@@ -1296,7 +1296,7 @@ describe("SendTransfer", () => {
 			const history = createMemoryHistory();
 			history.push(transferURL);
 
-			const { getAllByTestId, getByTestId, container } = renderWithRouter(
+			const { getAllByTestId, getByTestId } = renderWithRouter(
 				<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
 					<LedgerProvider transport={getDefaultLedgerTransport()}>
 						<SendTransfer />

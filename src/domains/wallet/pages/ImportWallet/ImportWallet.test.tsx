@@ -791,9 +791,7 @@ describe("ImportWallet", () => {
 
 	it("should render as ledger import", async () => {
 		const transport: typeof Transport = createTransportReplayer(RecordStore.fromString(""));
-		jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
-			return { unsubscribe: jest.fn() };
-		});
+		jest.spyOn(transport, "listen").mockImplementationOnce(() => ({ unsubscribe: jest.fn() }));
 
 		const history = createMemoryHistory();
 
