@@ -37,7 +37,7 @@ test("should save settings", async (t) => {
 	await t.click(Selector("button").withText(translations.COMMON.SAVE));
 });
 
-test.only("should update converted balance in the navbar after changing the currency", async (t) => {
+test("should update converted balance in the navbar after changing the currency", async (t) => {
 	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 60000 });
 	await t.click(Selector("span").withText("John Doe"));
 	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok();
