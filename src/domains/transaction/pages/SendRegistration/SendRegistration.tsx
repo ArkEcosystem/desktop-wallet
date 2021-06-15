@@ -30,7 +30,7 @@ export const SendRegistration = () => {
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 	const [registrationForm, setRegistrationForm] = useState<SendRegistrationForm>();
 
-	const { registrationType } = useParams();
+	const { registrationType } = useParams<any>();
 
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();

@@ -24,7 +24,7 @@ import { useHistory, useParams } from "react-router-dom";
 export const Votes = () => {
 	const { t } = useTranslation();
 	const history = useHistory();
-	const { walletId: hasWalletId } = useParams();
+	const { walletId: hasWalletId } = useParams<any>();
 	const { env } = useEnvironmentContext();
 
 	const activeProfile = useActiveProfile();

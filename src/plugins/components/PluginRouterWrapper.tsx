@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 
 export const PluginRouterWrapper = ({ children }: { children: React.ReactNode }) => {
 	const { env } = useEnvironmentContext();
-	const { profileId } = useParams();
+	const { profileId } = useParams<any>();
 	const { pluginManager, trigger } = usePluginManagerContext();
 
 	const profile = useMemo(() => {

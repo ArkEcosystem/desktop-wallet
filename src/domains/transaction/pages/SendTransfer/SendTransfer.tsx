@@ -32,7 +32,7 @@ export const SendTransfer = () => {
 	const { t } = useTranslation();
 	const history = useHistory();
 	const profile = useActiveProfile();
-	const { walletId: hasWalletId } = useParams();
+	const { walletId: hasWalletId } = useParams<any>();
 
 	const queryParams = useQueryParams();
 
