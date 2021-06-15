@@ -21,10 +21,10 @@ exports[`WalletOverviewStep Render step should render 1`] = `
       </div>
     </div>
     <div
-      class="flex overflow-hidden flex-col p-4 space-y-4 rounded-lg sm:flex-row sm:items-center sm:space-y-0 sm:space-x-4 bg-theme-warning-50 dark:bg-theme-secondary-800"
+      class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
     >
       <div
-        class="flex flex-shrink-0 justify-center items-center w-11 h-11 text-white rounded-lg bg-theme-warning-600"
+        class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
       >
         <div
           class="sc-bdfBwQ hteSKx"
@@ -102,7 +102,7 @@ exports[`WalletOverviewStep Render step should render 1`] = `
         </p>
       </div>
       <div
-        class="text-black sc-bdfBwQ fTnhmh dark:text-theme-secondary-600"
+        class="sc-bdfBwQ fTnhmh text-black dark:text-theme-secondary-600"
         height="40"
         width="40"
       >
@@ -141,7 +141,7 @@ exports[`WalletOverviewStep Render step should render 1`] = `
         </button>
       </div>
       <button
-        class="flex items-center space-x-2 OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP flex items-center space-x-2"
         data-testid="CreateWallet__download"
         type="button"
       >

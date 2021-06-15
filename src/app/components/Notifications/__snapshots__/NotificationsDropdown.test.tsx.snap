@@ -21,7 +21,7 @@ exports[`Notifications should open and cancel wallet update notification modal 1
               class="flex relative items-center space-x-2"
             >
               <div
-                class="p-1 sc-bdfBwQ liSwOQ"
+                class="sc-bdfBwQ liSwOQ p-1"
                 height="18"
                 width="15"
               >
@@ -41,7 +41,7 @@ exports[`Notifications should open and cancel wallet update notification modal 1
         </div>
       </span>
       <div
-        class="absolute z-10 py-3 mt-3 mt-8 rounded-xl shadow-xl opacity-0 Dropdown__Wrapper-ocz1je-0 boXiNv bg-theme-background"
+        class="Dropdown__Wrapper-ocz1je-0 boXiNv opacity-0 mt-3 py-3 absolute z-10 bg-theme-background rounded-xl shadow-xl mt-8"
         data-testid="dropdown__content"
         style="opacity: 1; height: -30px; overflow-y: scroll;"
       >
@@ -165,14 +165,14 @@ exports[`Notifications should open and cancel wallet update notification modal 1
                       >
                         <td>
                           <div
-                            class="space-x-3 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE space-x-3"
                           >
                             <div
                               class="flex items-center -space-x-1"
                               data-testid="TransactionRowMode"
                             >
                               <div
-                                class="Circle__CircleWrapper-uw7h4j-0 byFmWC ring-theme-background border-theme-success-200 text-theme-success-600 dark:group-hover:ring-black dark:group-hover:bg-black dark:border-theme-success-600 group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
+                                class="Circle__CircleWrapper-uw7h4j-0 byFmWC ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                               >
                                 <div
                                   class="sc-bdfBwQ fPrsah"
@@ -186,11 +186,11 @@ exports[`Notifications should open and cancel wallet update notification modal 1
                                 </div>
                               </div>
                               <div
-                                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background dark:group-hover:ring-black dark:group-hover:bg-black group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
-                                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                                 >
                                   <img
                                     alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -204,7 +204,7 @@ exports[`Notifications should open and cancel wallet update notification modal 1
                               class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                             >
                               <span
-                                class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
+                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
                                 data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -214,10 +214,10 @@ exports[`Notifications should open and cancel wallet update notification modal 1
                         </td>
                         <td>
                           <div
-                            class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo justify-end"
                           >
                             <div
-                              class="whitespace-nowrap Label-sc-1tj9hzr-0 fMWESr"
+                              class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -236,14 +236,14 @@ exports[`Notifications should open and cancel wallet update notification modal 1
                       >
                         <td>
                           <div
-                            class="space-x-3 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE space-x-3"
                           >
                             <div
                               class="flex items-center -space-x-1"
                               data-testid="TransactionRowMode"
                             >
                               <div
-                                class="Circle__CircleWrapper-uw7h4j-0 byFmWC ring-theme-background border-theme-success-200 text-theme-success-600 dark:group-hover:ring-black dark:group-hover:bg-black dark:border-theme-success-600 group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
+                                class="Circle__CircleWrapper-uw7h4j-0 byFmWC ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                               >
                                 <div
                                   class="sc-bdfBwQ fPrsah"
@@ -257,11 +257,11 @@ exports[`Notifications should open and cancel wallet update notification modal 1
                                 </div>
                               </div>
                               <div
-                                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background dark:group-hover:ring-black dark:group-hover:bg-black group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
-                                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                                 >
                                   <img
                                     alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -275,7 +275,7 @@ exports[`Notifications should open and cancel wallet update notification modal 1
                               class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                             >
                               <span
-                                class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
+                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
                                 data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -285,10 +285,10 @@ exports[`Notifications should open and cancel wallet update notification modal 1
                         </td>
                         <td>
                           <div
-                            class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo justify-end"
                           >
                             <div
-                              class="whitespace-nowrap Label-sc-1tj9hzr-0 fMWESr"
+                              class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -326,7 +326,7 @@ exports[`Notifications should open and cancel wallet update notification modal 1
             class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
           >
             <button
-              class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
               data-testid="modal__close-btn"
               type="button"
             >
@@ -383,7 +383,7 @@ exports[`Notifications should open and cancel wallet update notification modal 1
                   class="flex flex-col justify-center space-x-0 sm:flex-row sm:space-x-3"
                 >
                   <button
-                    class="mt-2 sm:mt-0 OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP mt-2 sm:mt-0"
                     data-testid="WalletUpdate__cancel-button"
                     type="button"
                   >
@@ -436,7 +436,7 @@ exports[`Notifications should open and cancel wallet update notification modal 2
               class="flex relative items-center space-x-2"
             >
               <div
-                class="p-1 sc-bdfBwQ liSwOQ"
+                class="sc-bdfBwQ liSwOQ p-1"
                 height="18"
                 width="15"
               >
@@ -456,7 +456,7 @@ exports[`Notifications should open and cancel wallet update notification modal 2
         </div>
       </span>
       <div
-        class="absolute z-10 py-3 mt-3 mt-8 rounded-xl shadow-xl opacity-0 Dropdown__Wrapper-ocz1je-0 boXiNv bg-theme-background"
+        class="Dropdown__Wrapper-ocz1je-0 boXiNv opacity-0 mt-3 py-3 absolute z-10 bg-theme-background rounded-xl shadow-xl mt-8"
         data-testid="dropdown__content"
         style="opacity: 1; height: -30px; overflow-y: scroll;"
       >
@@ -580,14 +580,14 @@ exports[`Notifications should open and cancel wallet update notification modal 2
                       >
                         <td>
                           <div
-                            class="space-x-3 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE space-x-3"
                           >
                             <div
                               class="flex items-center -space-x-1"
                               data-testid="TransactionRowMode"
                             >
                               <div
-                                class="Circle__CircleWrapper-uw7h4j-0 byFmWC ring-theme-background border-theme-success-200 text-theme-success-600 dark:group-hover:ring-black dark:group-hover:bg-black dark:border-theme-success-600 group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
+                                class="Circle__CircleWrapper-uw7h4j-0 byFmWC ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                               >
                                 <div
                                   class="sc-bdfBwQ fPrsah"
@@ -601,11 +601,11 @@ exports[`Notifications should open and cancel wallet update notification modal 2
                                 </div>
                               </div>
                               <div
-                                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background dark:group-hover:ring-black dark:group-hover:bg-black group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
-                                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                                 >
                                   <img
                                     alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -619,7 +619,7 @@ exports[`Notifications should open and cancel wallet update notification modal 2
                               class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                             >
                               <span
-                                class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
+                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
                                 data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -629,10 +629,10 @@ exports[`Notifications should open and cancel wallet update notification modal 2
                         </td>
                         <td>
                           <div
-                            class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo justify-end"
                           >
                             <div
-                              class="whitespace-nowrap Label-sc-1tj9hzr-0 fMWESr"
+                              class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -651,14 +651,14 @@ exports[`Notifications should open and cancel wallet update notification modal 2
                       >
                         <td>
                           <div
-                            class="space-x-3 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE space-x-3"
                           >
                             <div
                               class="flex items-center -space-x-1"
                               data-testid="TransactionRowMode"
                             >
                               <div
-                                class="Circle__CircleWrapper-uw7h4j-0 byFmWC ring-theme-background border-theme-success-200 text-theme-success-600 dark:group-hover:ring-black dark:group-hover:bg-black dark:border-theme-success-600 group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
+                                class="Circle__CircleWrapper-uw7h4j-0 byFmWC ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                               >
                                 <div
                                   class="sc-bdfBwQ fPrsah"
@@ -672,11 +672,11 @@ exports[`Notifications should open and cancel wallet update notification modal 2
                                 </div>
                               </div>
                               <div
-                                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background dark:group-hover:ring-black dark:group-hover:bg-black group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
-                                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                                 >
                                   <img
                                     alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -690,7 +690,7 @@ exports[`Notifications should open and cancel wallet update notification modal 2
                               class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                             >
                               <span
-                                class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
+                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
                                 data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -700,10 +700,10 @@ exports[`Notifications should open and cancel wallet update notification modal 2
                         </td>
                         <td>
                           <div
-                            class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo justify-end"
                           >
                             <div
-                              class="whitespace-nowrap Label-sc-1tj9hzr-0 fMWESr"
+                              class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -750,7 +750,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
               class="flex relative items-center space-x-2"
             >
               <div
-                class="p-1 sc-bdfBwQ liSwOQ"
+                class="sc-bdfBwQ liSwOQ p-1"
                 height="18"
                 width="15"
               >
@@ -770,7 +770,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
         </div>
       </span>
       <div
-        class="absolute z-10 py-3 mt-3 mt-8 rounded-xl shadow-xl opacity-0 Dropdown__Wrapper-ocz1je-0 boXiNv bg-theme-background"
+        class="Dropdown__Wrapper-ocz1je-0 boXiNv opacity-0 mt-3 py-3 absolute z-10 bg-theme-background rounded-xl shadow-xl mt-8"
         data-testid="dropdown__content"
         style="opacity: 1; height: -30px; overflow-y: scroll;"
       >
@@ -894,14 +894,14 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                       >
                         <td>
                           <div
-                            class="space-x-3 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE space-x-3"
                           >
                             <div
                               class="flex items-center -space-x-1"
                               data-testid="TransactionRowMode"
                             >
                               <div
-                                class="Circle__CircleWrapper-uw7h4j-0 byFmWC ring-theme-background border-theme-success-200 text-theme-success-600 dark:group-hover:ring-black dark:group-hover:bg-black dark:border-theme-success-600 group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
+                                class="Circle__CircleWrapper-uw7h4j-0 byFmWC ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                               >
                                 <div
                                   class="sc-bdfBwQ fPrsah"
@@ -915,11 +915,11 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background dark:group-hover:ring-black dark:group-hover:bg-black group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
-                                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                                 >
                                   <img
                                     alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -933,7 +933,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                               class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                             >
                               <span
-                                class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
+                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
                                 data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -943,10 +943,10 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo justify-end"
                           >
                             <div
-                              class="whitespace-nowrap Label-sc-1tj9hzr-0 fMWESr"
+                              class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -965,14 +965,14 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                       >
                         <td>
                           <div
-                            class="space-x-3 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE space-x-3"
                           >
                             <div
                               class="flex items-center -space-x-1"
                               data-testid="TransactionRowMode"
                             >
                               <div
-                                class="Circle__CircleWrapper-uw7h4j-0 byFmWC ring-theme-background border-theme-success-200 text-theme-success-600 dark:group-hover:ring-black dark:group-hover:bg-black dark:border-theme-success-600 group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
+                                class="Circle__CircleWrapper-uw7h4j-0 byFmWC ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                               >
                                 <div
                                   class="sc-bdfBwQ fPrsah"
@@ -986,11 +986,11 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background dark:group-hover:ring-black dark:group-hover:bg-black group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
-                                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                                 >
                                   <img
                                     alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -1004,7 +1004,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                               class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                             >
                               <span
-                                class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
+                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
                                 data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -1014,10 +1014,10 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                         </td>
                         <td>
                           <div
-                            class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo justify-end"
                           >
                             <div
-                              class="whitespace-nowrap Label-sc-1tj9hzr-0 fMWESr"
+                              class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -1055,7 +1055,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
             class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
           >
             <button
-              class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
               data-testid="modal__close-btn"
               type="button"
             >
@@ -1104,7 +1104,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                       class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                     >
                       <span
-                        class="text-base font-semibold text-theme-text"
+                        class="font-semibold text-base text-theme-text"
                         data-testid="Address__alias"
                       >
                         <span
@@ -1115,7 +1115,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                         </span>
                       </span>
                       <span
-                        class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                        class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                         data-testid="Address__address"
                       >
                         DK1f5frUPTNqhFxoyDUHwN7VC2B4Uzhpmy
@@ -1127,11 +1127,11 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                   class="flex items-center -space-x-2"
                 >
                   <div
-                    class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
-                      class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
                       <img
                         alt="DK1f5frUPTNqhFxoyDUHwN7VC2B4Uzhpmy"
@@ -1161,7 +1161,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                       class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                     >
                       <span
-                        class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
+                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
                         data-testid="Address__address"
                       >
                         D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -1170,11 +1170,11 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                   data-testid="Avatar"
                 >
                   <div
-                    class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                    class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                   >
                     <img
                       alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -1218,7 +1218,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-success-300 text-theme-success-600 ring-theme-background dark:border-theme-success-600"
+                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-success-300 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                 >
                   <div
                     class="sc-bdfBwQ fPrsah"
@@ -1350,7 +1350,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                             class="align-middle"
                           >
                             <div
-                              class="inline-block flex-shrink-0 pb-px text-sm duration-200 sc-bdfBwQ fPrsah"
+                              class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
                               data-testid="Link__external"
                               height="1em"
                               width="1em"
@@ -1429,7 +1429,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                             class="align-middle"
                           >
                             <div
-                              class="inline-block flex-shrink-0 pb-px text-sm duration-200 sc-bdfBwQ fPrsah"
+                              class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
                               data-testid="Link__external"
                               height="1em"
                               width="1em"
@@ -1497,7 +1497,7 @@ exports[`Notifications should open and close transaction details modal 2`] = `
               class="flex relative items-center space-x-2"
             >
               <div
-                class="p-1 sc-bdfBwQ liSwOQ"
+                class="sc-bdfBwQ liSwOQ p-1"
                 height="18"
                 width="15"
               >
@@ -1517,7 +1517,7 @@ exports[`Notifications should open and close transaction details modal 2`] = `
         </div>
       </span>
       <div
-        class="absolute z-10 py-3 mt-3 mt-8 rounded-xl shadow-xl opacity-0 Dropdown__Wrapper-ocz1je-0 boXiNv bg-theme-background"
+        class="Dropdown__Wrapper-ocz1je-0 boXiNv opacity-0 mt-3 py-3 absolute z-10 bg-theme-background rounded-xl shadow-xl mt-8"
         data-testid="dropdown__content"
         style="opacity: 1; height: -30px; overflow-y: scroll;"
       >
@@ -1641,14 +1641,14 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                       >
                         <td>
                           <div
-                            class="space-x-3 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE space-x-3"
                           >
                             <div
                               class="flex items-center -space-x-1"
                               data-testid="TransactionRowMode"
                             >
                               <div
-                                class="Circle__CircleWrapper-uw7h4j-0 byFmWC ring-theme-background border-theme-success-200 text-theme-success-600 dark:group-hover:ring-black dark:group-hover:bg-black dark:border-theme-success-600 group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
+                                class="Circle__CircleWrapper-uw7h4j-0 byFmWC ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                               >
                                 <div
                                   class="sc-bdfBwQ fPrsah"
@@ -1662,11 +1662,11 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                                 </div>
                               </div>
                               <div
-                                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background dark:group-hover:ring-black dark:group-hover:bg-black group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
-                                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                                 >
                                   <img
                                     alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -1680,7 +1680,7 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                               class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                             >
                               <span
-                                class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
+                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
                                 data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -1690,10 +1690,10 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                         </td>
                         <td>
                           <div
-                            class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo justify-end"
                           >
                             <div
-                              class="whitespace-nowrap Label-sc-1tj9hzr-0 fMWESr"
+                              class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -1712,14 +1712,14 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                       >
                         <td>
                           <div
-                            class="space-x-3 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE space-x-3"
                           >
                             <div
                               class="flex items-center -space-x-1"
                               data-testid="TransactionRowMode"
                             >
                               <div
-                                class="Circle__CircleWrapper-uw7h4j-0 byFmWC ring-theme-background border-theme-success-200 text-theme-success-600 dark:group-hover:ring-black dark:group-hover:bg-black dark:border-theme-success-600 group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
+                                class="Circle__CircleWrapper-uw7h4j-0 byFmWC ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                               >
                                 <div
                                   class="sc-bdfBwQ fPrsah"
@@ -1733,11 +1733,11 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                                 </div>
                               </div>
                               <div
-                                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background dark:group-hover:ring-black dark:group-hover:bg-black group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
-                                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                                 >
                                   <img
                                     alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -1751,7 +1751,7 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                               class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                             >
                               <span
-                                class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
+                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
                                 data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -1761,10 +1761,10 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                         </td>
                         <td>
                           <div
-                            class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo justify-end"
                           >
                             <div
-                              class="whitespace-nowrap Label-sc-1tj9hzr-0 fMWESr"
+                              class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -1811,7 +1811,7 @@ exports[`Notifications should open and close wallet update notification modal 1`
               class="flex relative items-center space-x-2"
             >
               <div
-                class="p-1 sc-bdfBwQ liSwOQ"
+                class="sc-bdfBwQ liSwOQ p-1"
                 height="18"
                 width="15"
               >
@@ -1831,7 +1831,7 @@ exports[`Notifications should open and close wallet update notification modal 1`
         </div>
       </span>
       <div
-        class="absolute z-10 py-3 mt-3 mt-8 rounded-xl shadow-xl opacity-0 Dropdown__Wrapper-ocz1je-0 boXiNv bg-theme-background"
+        class="Dropdown__Wrapper-ocz1je-0 boXiNv opacity-0 mt-3 py-3 absolute z-10 bg-theme-background rounded-xl shadow-xl mt-8"
         data-testid="dropdown__content"
         style="opacity: 1; height: -30px; overflow-y: scroll;"
       >
@@ -1955,14 +1955,14 @@ exports[`Notifications should open and close wallet update notification modal 1`
                       >
                         <td>
                           <div
-                            class="space-x-3 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE space-x-3"
                           >
                             <div
                               class="flex items-center -space-x-1"
                               data-testid="TransactionRowMode"
                             >
                               <div
-                                class="Circle__CircleWrapper-uw7h4j-0 byFmWC ring-theme-background border-theme-success-200 text-theme-success-600 dark:group-hover:ring-black dark:group-hover:bg-black dark:border-theme-success-600 group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
+                                class="Circle__CircleWrapper-uw7h4j-0 byFmWC ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                               >
                                 <div
                                   class="sc-bdfBwQ fPrsah"
@@ -1976,11 +1976,11 @@ exports[`Notifications should open and close wallet update notification modal 1`
                                 </div>
                               </div>
                               <div
-                                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background dark:group-hover:ring-black dark:group-hover:bg-black group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
-                                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                                 >
                                   <img
                                     alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -1994,7 +1994,7 @@ exports[`Notifications should open and close wallet update notification modal 1`
                               class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                             >
                               <span
-                                class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
+                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
                                 data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -2004,10 +2004,10 @@ exports[`Notifications should open and close wallet update notification modal 1`
                         </td>
                         <td>
                           <div
-                            class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo justify-end"
                           >
                             <div
-                              class="whitespace-nowrap Label-sc-1tj9hzr-0 fMWESr"
+                              class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -2026,14 +2026,14 @@ exports[`Notifications should open and close wallet update notification modal 1`
                       >
                         <td>
                           <div
-                            class="space-x-3 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE space-x-3"
                           >
                             <div
                               class="flex items-center -space-x-1"
                               data-testid="TransactionRowMode"
                             >
                               <div
-                                class="Circle__CircleWrapper-uw7h4j-0 byFmWC ring-theme-background border-theme-success-200 text-theme-success-600 dark:group-hover:ring-black dark:group-hover:bg-black dark:border-theme-success-600 group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
+                                class="Circle__CircleWrapper-uw7h4j-0 byFmWC ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                               >
                                 <div
                                   class="sc-bdfBwQ fPrsah"
@@ -2047,11 +2047,11 @@ exports[`Notifications should open and close wallet update notification modal 1`
                                 </div>
                               </div>
                               <div
-                                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background dark:group-hover:ring-black dark:group-hover:bg-black group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
-                                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                                 >
                                   <img
                                     alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -2065,7 +2065,7 @@ exports[`Notifications should open and close wallet update notification modal 1`
                               class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                             >
                               <span
-                                class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
+                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
                                 data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -2075,10 +2075,10 @@ exports[`Notifications should open and close wallet update notification modal 1`
                         </td>
                         <td>
                           <div
-                            class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo justify-end"
                           >
                             <div
-                              class="whitespace-nowrap Label-sc-1tj9hzr-0 fMWESr"
+                              class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -2116,7 +2116,7 @@ exports[`Notifications should open and close wallet update notification modal 1`
             class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
           >
             <button
-              class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
               data-testid="modal__close-btn"
               type="button"
             >
@@ -2173,7 +2173,7 @@ exports[`Notifications should open and close wallet update notification modal 1`
                   class="flex flex-col justify-center space-x-0 sm:flex-row sm:space-x-3"
                 >
                   <button
-                    class="mt-2 sm:mt-0 OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP mt-2 sm:mt-0"
                     data-testid="WalletUpdate__cancel-button"
                     type="button"
                   >
@@ -2226,7 +2226,7 @@ exports[`Notifications should open and close wallet update notification modal 2`
               class="flex relative items-center space-x-2"
             >
               <div
-                class="p-1 sc-bdfBwQ liSwOQ"
+                class="sc-bdfBwQ liSwOQ p-1"
                 height="18"
                 width="15"
               >
@@ -2246,7 +2246,7 @@ exports[`Notifications should open and close wallet update notification modal 2`
         </div>
       </span>
       <div
-        class="absolute z-10 py-3 mt-3 mt-8 rounded-xl shadow-xl opacity-0 Dropdown__Wrapper-ocz1je-0 boXiNv bg-theme-background"
+        class="Dropdown__Wrapper-ocz1je-0 boXiNv opacity-0 mt-3 py-3 absolute z-10 bg-theme-background rounded-xl shadow-xl mt-8"
         data-testid="dropdown__content"
         style="opacity: 1; height: -30px; overflow-y: scroll;"
       >
@@ -2370,14 +2370,14 @@ exports[`Notifications should open and close wallet update notification modal 2`
                       >
                         <td>
                           <div
-                            class="space-x-3 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE space-x-3"
                           >
                             <div
                               class="flex items-center -space-x-1"
                               data-testid="TransactionRowMode"
                             >
                               <div
-                                class="Circle__CircleWrapper-uw7h4j-0 byFmWC ring-theme-background border-theme-success-200 text-theme-success-600 dark:group-hover:ring-black dark:group-hover:bg-black dark:border-theme-success-600 group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
+                                class="Circle__CircleWrapper-uw7h4j-0 byFmWC ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                               >
                                 <div
                                   class="sc-bdfBwQ fPrsah"
@@ -2391,11 +2391,11 @@ exports[`Notifications should open and close wallet update notification modal 2`
                                 </div>
                               </div>
                               <div
-                                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background dark:group-hover:ring-black dark:group-hover:bg-black group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
-                                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                                 >
                                   <img
                                     alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -2409,7 +2409,7 @@ exports[`Notifications should open and close wallet update notification modal 2`
                               class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                             >
                               <span
-                                class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
+                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
                                 data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -2419,10 +2419,10 @@ exports[`Notifications should open and close wallet update notification modal 2`
                         </td>
                         <td>
                           <div
-                            class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo justify-end"
                           >
                             <div
-                              class="whitespace-nowrap Label-sc-1tj9hzr-0 fMWESr"
+                              class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -2441,14 +2441,14 @@ exports[`Notifications should open and close wallet update notification modal 2`
                       >
                         <td>
                           <div
-                            class="space-x-3 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE space-x-3"
                           >
                             <div
                               class="flex items-center -space-x-1"
                               data-testid="TransactionRowMode"
                             >
                               <div
-                                class="Circle__CircleWrapper-uw7h4j-0 byFmWC ring-theme-background border-theme-success-200 text-theme-success-600 dark:group-hover:ring-black dark:group-hover:bg-black dark:border-theme-success-600 group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
+                                class="Circle__CircleWrapper-uw7h4j-0 byFmWC ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                               >
                                 <div
                                   class="sc-bdfBwQ fPrsah"
@@ -2462,11 +2462,11 @@ exports[`Notifications should open and close wallet update notification modal 2`
                                 </div>
                               </div>
                               <div
-                                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background dark:group-hover:ring-black dark:group-hover:bg-black group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
-                                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                                 >
                                   <img
                                     alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -2480,7 +2480,7 @@ exports[`Notifications should open and close wallet update notification modal 2`
                               class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                             >
                               <span
-                                class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
+                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
                                 data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -2490,10 +2490,10 @@ exports[`Notifications should open and close wallet update notification modal 2`
                         </td>
                         <td>
                           <div
-                            class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo justify-end"
                           >
                             <div
-                              class="whitespace-nowrap Label-sc-1tj9hzr-0 fMWESr"
+                              class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -2540,7 +2540,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
               class="flex relative items-center space-x-2"
             >
               <div
-                class="p-1 sc-bdfBwQ liSwOQ"
+                class="sc-bdfBwQ liSwOQ p-1"
                 height="18"
                 width="15"
               >
@@ -2560,7 +2560,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
         </div>
       </span>
       <div
-        class="absolute z-10 py-3 mt-3 mt-8 rounded-xl shadow-xl opacity-0 Dropdown__Wrapper-ocz1je-0 boXiNv bg-theme-background"
+        class="Dropdown__Wrapper-ocz1je-0 boXiNv opacity-0 mt-3 py-3 absolute z-10 bg-theme-background rounded-xl shadow-xl mt-8"
         data-testid="dropdown__content"
         style="opacity: 1; height: -30px; overflow-y: scroll;"
       >
@@ -2684,14 +2684,14 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                       >
                         <td>
                           <div
-                            class="space-x-3 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE space-x-3"
                           >
                             <div
                               class="flex items-center -space-x-1"
                               data-testid="TransactionRowMode"
                             >
                               <div
-                                class="Circle__CircleWrapper-uw7h4j-0 byFmWC ring-theme-background border-theme-success-200 text-theme-success-600 dark:group-hover:ring-black dark:group-hover:bg-black dark:border-theme-success-600 group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
+                                class="Circle__CircleWrapper-uw7h4j-0 byFmWC ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                               >
                                 <div
                                   class="sc-bdfBwQ fPrsah"
@@ -2705,11 +2705,11 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background dark:group-hover:ring-black dark:group-hover:bg-black group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
-                                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                                 >
                                   <img
                                     alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -2723,7 +2723,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                               class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                             >
                               <span
-                                class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
+                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
                                 data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -2733,10 +2733,10 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                         </td>
                         <td>
                           <div
-                            class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo justify-end"
                           >
                             <div
-                              class="whitespace-nowrap Label-sc-1tj9hzr-0 fMWESr"
+                              class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
@@ -2755,14 +2755,14 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                       >
                         <td>
                           <div
-                            class="space-x-3 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE space-x-3"
                           >
                             <div
                               class="flex items-center -space-x-1"
                               data-testid="TransactionRowMode"
                             >
                               <div
-                                class="Circle__CircleWrapper-uw7h4j-0 byFmWC ring-theme-background border-theme-success-200 text-theme-success-600 dark:group-hover:ring-black dark:group-hover:bg-black dark:border-theme-success-600 group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
+                                class="Circle__CircleWrapper-uw7h4j-0 byFmWC ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                               >
                                 <div
                                   class="sc-bdfBwQ fPrsah"
@@ -2776,11 +2776,11 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background dark:group-hover:ring-black dark:group-hover:bg-black group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
-                                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                                 >
                                   <img
                                     alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -2794,7 +2794,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                               class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                             >
                               <span
-                                class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
+                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
                                 data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -2804,10 +2804,10 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                         </td>
                         <td>
                           <div
-                            class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo"
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo justify-end"
                           >
                             <div
-                              class="whitespace-nowrap Label-sc-1tj9hzr-0 fMWESr"
+                              class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
                               color="success"
                               data-testid="TransactionRowAmount"
                             >
