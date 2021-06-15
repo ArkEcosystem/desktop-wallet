@@ -18,7 +18,7 @@ exports[`Plugin Updates Confirmation should render 1`] = `
           class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
-            class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
             data-testid="modal__close-btn"
             type="button"
           >
@@ -63,7 +63,7 @@ exports[`Plugin Updates Confirmation should render 1`] = `
               data-testid="PluginUpdatesConfirmation"
             >
               <div
-                class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
+                class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
                 role="table"
               >
                 <table
@@ -76,7 +76,7 @@ exports[`Plugin Updates Confirmation should render 1`] = `
                       role="row"
                     >
                       <th
-                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--0"
                         role="columnheader"
@@ -84,16 +84,16 @@ exports[`Plugin Updates Confirmation should render 1`] = `
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex align-top flex-inline"
+                          class="flex flex-inline align-top"
                         >
                           <div>
                             Name
                           </div>
                           <div
-                            class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                           >
                             <div
-                              class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
+                              class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                               height="5"
                               role="img"
                               width="8"
@@ -106,7 +106,7 @@ exports[`Plugin Updates Confirmation should render 1`] = `
                         </div>
                       </th>
                       <th
-                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--1"
                         role="columnheader"
@@ -114,16 +114,16 @@ exports[`Plugin Updates Confirmation should render 1`] = `
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex flex-row-reverse justify-end align-top flex-inline"
+                          class="flex flex-inline align-top justify-end flex-row-reverse"
                         >
                           <div>
                             Required Version
                           </div>
                           <div
-                            class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
                           >
                             <div
-                              class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
+                              class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                               height="5"
                               role="img"
                               width="8"
@@ -148,7 +148,7 @@ exports[`Plugin Updates Confirmation should render 1`] = `
                         style="width: 70%;"
                       >
                         <div
-                          class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                         >
                           <div
                             class="PluginImage__PluginImageWrapper-iwox49-0 fITdNR"
@@ -183,7 +183,7 @@ exports[`Plugin Updates Confirmation should render 1`] = `
                       </td>
                       <td>
                         <div
-                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
                         >
                           <span
                             data-testid="PluginUpdates__minimum-version"
@@ -201,7 +201,7 @@ exports[`Plugin Updates Confirmation should render 1`] = `
                         style="width: 70%;"
                       >
                         <div
-                          class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                         >
                           <div
                             class="PluginImage__PluginImageWrapper-iwox49-0 fITdNR"
@@ -234,7 +234,7 @@ exports[`Plugin Updates Confirmation should render 1`] = `
                       </td>
                       <td>
                         <div
-                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
                         >
                           <span
                             data-testid="PluginUpdates__minimum-version"

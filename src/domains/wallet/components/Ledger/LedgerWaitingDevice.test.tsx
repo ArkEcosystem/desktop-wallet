@@ -1,4 +1,4 @@
-import Transport from "@ledgerhq/hw-transport";
+import Transport, { Observer } from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { LedgerProvider } from "app/contexts/Ledger/Ledger";
 import React from "react";
@@ -28,8 +28,12 @@ describe("LedgerWaitingDevice", () => {
 	it("should emit true when devices is available", () => {
 		const onDeviceAvailable = jest.fn();
 		const unsubscribe = jest.fn();
+		let observer: Observer<any>;
 
-		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce(() => ({ unsubscribe }));
+		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
+			observer = obv;
+			return { unsubscribe };
+		});
 
 		render(
 			<LedgerProvider transport={transport}>
