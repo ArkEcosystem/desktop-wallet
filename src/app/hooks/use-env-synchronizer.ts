@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-import { useSynchronizer, useUpdater } from "./";
+import { useSynchronizer, useUpdater } from ".";
 
 enum Intervals {
 	Long = 7200000,

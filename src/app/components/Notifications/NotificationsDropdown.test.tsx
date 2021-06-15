@@ -4,9 +4,9 @@ import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
 import { act, env, fireEvent, getDefaultProfileId, render, renderWithRouter, waitFor } from "utils/testing-library";
-const NotificationTransactionsFixtures = require("tests/fixtures/coins/ark/devnet/notification-transactions.json");
 
-import { NotificationsDropdown } from "./";
+import { NotificationsDropdown } from ".";
+const NotificationTransactionsFixtures = require("tests/fixtures/coins/ark/devnet/notification-transactions.json");
 
 const history = createMemoryHistory();
 let profile: Contracts.IProfile;
@@ -29,7 +29,7 @@ describe("Notifications", () => {
 	});
 
 	it("should render with transactions and plugins", async () => {
-		const { container, getAllByRole, getAllByTestId, queryAllByTestId, getByTestId } = render(
+		const { container, getAllByRole, getAllByTestId, queryAllByTestId } = render(
 			<NotificationsDropdown profile={profile} />,
 		);
 

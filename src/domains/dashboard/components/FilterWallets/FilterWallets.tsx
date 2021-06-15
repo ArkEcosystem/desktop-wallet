@@ -4,7 +4,7 @@ import { Icon } from "app/components/Icon";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { FilterWalletsProps } from "./";
+import { FilterWalletsProps } from ".";
 
 export const FilterWallets = ({ networks, walletsDisplayType, useTestNetworks, onChange }: FilterWalletsProps) => {
 	const { t } = useTranslation();
@@ -17,7 +17,7 @@ export const FilterWallets = ({ networks, walletsDisplayType, useTestNetworks, o
 
 	return (
 		<div className="flex flex-col text-left" data-testid="FilterWallets">
-			<div className="mb-8">
+			<div className="mb-5">
 				<div className="font-semibold text-theme-secondary-text">
 					{t("DASHBOARD.FILTER_WALLETS.CRYPTOASSET.TITLE")}
 				</div>
@@ -37,7 +37,7 @@ export const FilterWallets = ({ networks, walletsDisplayType, useTestNetworks, o
 				}}
 			/>
 
-			<div className="my-8 border-t border-dotted border-theme-secondary-300 dark:border-theme-secondary-800" />
+			<div className="mt-6 mb-8 border-t border-dotted border-theme-secondary-300 dark:border-theme-secondary-800" />
 
 			<div className="flex flex-col">
 				<div className="flex justify-between items-center">

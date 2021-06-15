@@ -1,15 +1,14 @@
 import { Badge } from "app/components/Badge";
 import { LayoutControls } from "app/components/LayoutControls";
+import { Tab, TabList, Tabs } from "app/components/Tabs";
 import { Tooltip } from "app/components/Tooltip";
-import cn from "classnames";
-import { usePluginManagerContext } from "plugins";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
 
 import { defaultStyle } from "./styles";
 
-interface PluginManagerNavigationBar {
+interface Props {
 	hasUpdatesAvailable: boolean;
 	installedPluginsCount: number;
 	menu: any[];
@@ -18,6 +17,12 @@ interface PluginManagerNavigationBar {
 	onChange?: any;
 	onSelectGridView?: any;
 	onSelectListView?: any;
+}
+
+export interface PluginManagerNavigationBarItem {
+	name: string;
+	title: string;
+	count?: number;
 }
 
 const NavWrapper = styled.nav`
@@ -33,87 +38,53 @@ export const PluginManagerNavigationBar = ({
 	onChange,
 	onSelectGridView,
 	onSelectListView,
-}: PluginManagerNavigationBar) => {
+}: Props) => {
 	const { t } = useTranslation();
-	const { allPlugins } = usePluginManagerContext();
-	const countsByCategory = menu.reduce(
-		(acc, curr) => ({ ...acc, [curr.name]: allPlugins.filter((pkg) => pkg.hasCategory(curr.name)).length }),
-		{},
-	);
 
 	return (
 		<NavWrapper
 			data-testid="PluginManagerNavigationBar"
-			className="sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
+			className="sticky my-4 dark:bg-black top-21 bg-theme-secondary-100"
 		>
 			<div className="container flex justify-between items-center px-10 mx-auto">
-				<div>
-					<ul className="flex h-18">
-						{menu &&
-							menu.map((menuItem: any, index: number) => (
-								<li key={index} className="flex">
-									<button
-										data-testid={`PluginManagerNavigationBar__${menuItem.name}`}
-										onClick={() => onChange(menuItem.name)}
-										title={menuItem.title}
-										className={cn("PluginManagerNavigationBar__item group", {
-											active: selectedView === menuItem.name,
-										})}
-									>
-										<div className="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible" />
-										<span>{menuItem.title}</span>
+				<Tabs
+					activeId={selectedView}
+					className="-mx-6 w-full"
+					onChange={(activeTab) => {
+						if (activeTab === selectedView) {
+							return;
+						}
 
-										{!["latest", "all"].includes(menuItem.name) && (
-											<span className="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700">
-												{countsByCategory[menuItem.name]}
-											</span>
-										)}
-									</button>
+						onChange(activeTab);
+					}}
+				>
+					<TabList className="w-full h-18" noBackground>
+						{menu.map(({ title, name, count }: PluginManagerNavigationBarItem) => (
+							<Tab tabId={name} key={name} count={count}>
+								{title}
+							</Tab>
+						))}
 
-									{index < menu.length - 1 && (
-										<div className="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800" />
-									)}
-								</li>
-							))}
-					</ul>
-				</div>
+						<div className="flex flex-1" />
 
-				<div className="flex h-18">
-					<div className="relative">
-						<button
-							data-testid="PluginManagerNavigationBar__my-plugins"
-							onClick={() => onChange("my-plugins")}
-							title={t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.MY_PLUGINS")}
-							className={cn("PluginManagerNavigationBar__item group", {
-								active: selectedView === "my-plugins",
-							})}
-						>
-							<div className="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible" />
+						<Tab tabId="my-plugins" count={installedPluginsCount || undefined}>
 							<span>{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.MY_PLUGINS")}</span>
-
-							{installedPluginsCount > 0 && (
-								<span
-									data-testid="PluginManagerNavigationBar__my-plugins__count"
-									className="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-								>
-									{installedPluginsCount}
-								</span>
-							)}
-
 							{hasUpdatesAvailable && (
 								<Tooltip content={t("PLUGINS.NEW_UPDATES_AVAILABLE")}>
 									<Badge
 										data-testid="PluginManagerNavigationBar_update-badge"
 										size="sm"
-										className="-mt-3 bg-theme-danger-400"
+										className="-mt-6.5 bg-theme-danger-400"
 										position="right"
-										noShadow={true}
+										noShadow
 									/>
 								</Tooltip>
 							)}
-						</button>
-					</div>
+						</Tab>
+					</TabList>
+				</Tabs>
 
+				<div className="flex h-18">
 					<div className="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800" />
 
 					<LayoutControls

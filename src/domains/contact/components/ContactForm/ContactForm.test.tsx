@@ -5,7 +5,6 @@ import { env, fireEvent, getDefaultProfileId, renderWithRouter, screen, waitFor 
 
 import { ContactForm } from "./ContactForm";
 
-const onDelete = jest.fn();
 const onSave = jest.fn();
 const onCancel = jest.fn();
 

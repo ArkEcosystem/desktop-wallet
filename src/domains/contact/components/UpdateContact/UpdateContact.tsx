@@ -41,6 +41,7 @@ export const UpdateContact = ({
 	};
 
 	const handleChange = (fieldName: string) => {
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		const { [fieldName]: _, ...restErrors } = errors;
 		setErrors(restErrors);
 	};

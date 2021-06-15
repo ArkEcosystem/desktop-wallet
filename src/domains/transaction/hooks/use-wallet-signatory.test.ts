@@ -25,6 +25,26 @@ describe("useWalletSignatory", () => {
 		mockMnemonic.mockRestore();
 	});
 
+	it("should sign with WIF", async () => {
+		const mockWif = jest.spyOn(wallet.signatory(), "wif");
+		const { result } = renderHook(() => useWalletSignatory(wallet));
+		await expect(
+			result.current.sign({ wif: "SGq4xLgZKCGxs7bjmwnBrWcT4C1ADFEermj846KC97FSv1WFD1dA" }),
+		).resolves.toBeTruthy();
+		expect(mockWif).toHaveBeenCalled();
+		mockWif.mockRestore();
+	});
+
+	it("should sign with private key", async () => {
+		const mockPrivateKey = jest.spyOn(wallet.signatory(), "privateKey");
+		const { result } = renderHook(() => useWalletSignatory(wallet));
+		await expect(
+			result.current.sign({ privateKey: "d8839c2432bfd0a67ef10a804ba991eabba19f154a3d707917681d45822a5712" }),
+		).resolves.toBeTruthy();
+		expect(mockPrivateKey).toHaveBeenCalled();
+		mockPrivateKey.mockRestore();
+	});
+
 	it("should sign with secondMnemonic", async () => {
 		const mockSecondaryMnemonic = jest.spyOn(wallet.signatory(), "secondaryMnemonic");
 		const { result } = renderHook(() => useWalletSignatory(wallet));

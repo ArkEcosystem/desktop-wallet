@@ -276,7 +276,7 @@ describe("WalletHeader", () => {
 
 		const historySpy = jest.spyOn(history, "push");
 
-		const { getByTestId } = renderWithRouter(
+		renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId">
 				<WalletHeader profile={profile} wallet={wallet} />
 			</Route>,
@@ -300,7 +300,7 @@ describe("WalletHeader", () => {
 
 		const historySpy = jest.spyOn(history, "push");
 
-		const { getByTestId } = renderWithRouter(
+		renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId">
 				<WalletHeader profile={profile} wallet={wallet} />
 			</Route>,
@@ -324,7 +324,7 @@ describe("WalletHeader", () => {
 
 		const historySpy = jest.spyOn(history, "push");
 
-		const { getByTestId } = renderWithRouter(
+		renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId">
 				<WalletHeader profile={profile} wallet={wallet} />
 			</Route>,
@@ -349,7 +349,7 @@ describe("WalletHeader", () => {
 		const walletSpy = jest.spyOn(wallet, "isDelegate").mockReturnValue(true);
 		const historySpy = jest.spyOn(history, "push");
 
-		const { getByTestId } = renderWithRouter(
+		renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId">
 				<WalletHeader profile={profile} wallet={wallet} />
 			</Route>,
@@ -374,7 +374,7 @@ describe("WalletHeader", () => {
 
 		const historySpy = jest.spyOn(history, "push");
 
-		const { getByTestId } = renderWithRouter(
+		renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId">
 				<WalletHeader profile={profile} wallet={wallet} />
 			</Route>,

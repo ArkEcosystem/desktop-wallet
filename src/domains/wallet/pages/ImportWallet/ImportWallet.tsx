@@ -136,7 +136,7 @@ export const ImportWallet = () => {
 		<Page profile={activeProfile}>
 			<Section className="flex-1">
 				<Form
-					className="max-w-xl mx-auto"
+					className="mx-auto max-w-xl"
 					context={form}
 					onSubmit={handleFinish}
 					data-testid="ImportWallet__form"

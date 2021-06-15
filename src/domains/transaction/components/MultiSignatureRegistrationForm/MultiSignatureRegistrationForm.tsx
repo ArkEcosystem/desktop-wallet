@@ -12,7 +12,7 @@ import {
 import { handleBroadcastError } from "domains/transaction/utils";
 import React from "react";
 
-import { FormStep, ReviewStep } from "./";
+import { FormStep, ReviewStep } from ".";
 import { Participant } from "./components/AddParticipant/AddParticipant";
 
 const StepsComponent = ({ activeTab, fees, wallet, profile }: SendRegistrationComponent) => (

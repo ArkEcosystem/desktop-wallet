@@ -39,7 +39,7 @@ describe("RouterView", () => {
 		const history = createMemoryHistory();
 		history.push("/test");
 
-		const { getByTestId } = render(
+		render(
 			<Router history={history}>
 				<RouterView
 					routes={[
@@ -62,7 +62,7 @@ describe("RouterView", () => {
 		const history = createMemoryHistory();
 		history.push("/test");
 
-		const { getByTestId } = render(
+		render(
 			<Router history={history}>
 				<RouterView routes={[{ path: "/test", component: () => <h1>Test</h1> }]} />
 			</Router>,

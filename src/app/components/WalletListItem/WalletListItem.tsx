@@ -13,11 +13,10 @@ import { shouldUseDarkColors } from "utils/electron-utils";
 export interface WalletListItemProps {
 	wallet: Contracts.IReadWriteWallet;
 	activeWalletId?: string;
-	variant?: "condensed";
 	onClick?: (walletId: string) => void;
 }
 
-export const WalletListItem = ({ wallet, activeWalletId, variant, onClick }: WalletListItemProps) => {
+export const WalletListItem = ({ wallet, activeWalletId, onClick }: WalletListItemProps) => {
 	const isSelected = useMemo(() => activeWalletId === wallet.id(), [activeWalletId, wallet]);
 
 	const activeProfile = useActiveProfile();
@@ -45,7 +44,7 @@ export const WalletListItem = ({ wallet, activeWalletId, variant, onClick }: Wal
 	return (
 		<TableRow isSelected={isSelected} onClick={() => onClick?.(wallet.id())}>
 			<TableCell variant="start" innerClassName="space-x-4">
-				<div className="-space-x-2 flex-shrink-0">
+				<div className="flex-shrink-0 -space-x-2">
 					<NetworkIcon
 						size="lg"
 						coin={wallet.coinId()}

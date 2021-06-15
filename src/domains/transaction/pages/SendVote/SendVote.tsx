@@ -17,7 +17,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-import { FormStep, ReviewStep, SummaryStep } from "./";
+import { FormStep, ReviewStep, SummaryStep } from ".";
 import { VoteLedgerReview } from "./LedgerReview";
 
 export const SendVote = () => {
@@ -181,7 +181,7 @@ export const SendVote = () => {
 
 	const submitForm = async () => {
 		clearErrors("mnemonic");
-		const { fee, mnemonic, secondMnemonic, encryptionPassword } = getValues();
+		const { fee, mnemonic, secondMnemonic, encryptionPassword, wif, privateKey } = getValues();
 		const abortSignal = abortRef.current?.signal;
 
 		try {
@@ -189,6 +189,8 @@ export const SendVote = () => {
 				mnemonic,
 				secondMnemonic,
 				encryptionPassword,
+				wif,
+				privateKey,
 			});
 
 			const voteTransactionInput: Services.TransactionInput = {
@@ -315,7 +317,7 @@ export const SendVote = () => {
 	return (
 		<Page profile={activeProfile}>
 			<Section className="flex-1">
-				<Form className="max-w-xl mx-auto" context={form} onSubmit={submitForm}>
+				<Form className="mx-auto max-w-xl" context={form} onSubmit={submitForm}>
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={4} activeIndex={activeTab} />
 
@@ -329,12 +331,7 @@ export const SendVote = () => {
 								/>
 							</TabPanel>
 							<TabPanel tabId={2}>
-								<ReviewStep
-									profile={activeProfile}
-									unvotes={unvotes}
-									votes={votes}
-									wallet={activeWallet}
-								/>
+								<ReviewStep unvotes={unvotes} votes={votes} wallet={activeWallet} />
 							</TabPanel>
 							<TabPanel tabId={3}>
 								<AuthenticationStep
@@ -405,6 +402,9 @@ export const SendVote = () => {
 													disabled={!isValid || isSubmitting}
 													isLoading={isSubmitting}
 													icon="Send"
+													iconWidth={16}
+													iconHeight={16}
+													iconPosition="right"
 												>
 													<span>{t("COMMON.SEND")}</span>
 												</Button>

@@ -2,7 +2,7 @@ import { Checkbox } from "app/components/Checkbox";
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { FilterNetworkProps, Network, NetworkOptions, ToggleAllOption } from "./";
+import { FilterNetworkProps, Network, NetworkOptions, ToggleAllOption } from ".";
 
 export const FilterNetwork = ({
 	networks = [],
@@ -46,14 +46,14 @@ export const FilterNetwork = ({
 
 	return (
 		<div className={className} data-testid="FilterNetwork">
-			{title && <div className="mb-2 text-sm font-bold text-theme-secondary-400">{title}</div>}
+			{title && <div className="mb-3 text-sm font-bold text-theme-secondary-400">{title}</div>}
 
 			<ToggleAllOption isSelected={showAll} isHidden={hideViewAll} onClick={handleToggleAll} />
 
 			<NetworkOptions networks={networkList} onClick={handleClick} />
 
 			{showAll && networkList.length > 1 && (
-				<label className="mt-4 inline-flex items-center space-x-3 text-theme-secondary-text cursor-pointer">
+				<label className="inline-flex items-center mt-4 space-x-3 cursor-pointer text-theme-secondary-text">
 					<Checkbox
 						data-testid="FilterNetwork__select-all-checkbox"
 						checked={networkList.every((n) => n.isSelected)}
@@ -78,7 +78,7 @@ export const FilterNetworks = ({ networks = [], ...props }: FilterNetworkProps) 
 	);
 
 	return (
-		<div className="space-y-6">
+		<div className="space-y-4">
 			{liveNetworks.length > 0 && (
 				<FilterNetwork
 					{...props}
@@ -91,7 +91,6 @@ export const FilterNetworks = ({ networks = [], ...props }: FilterNetworkProps) 
 				<FilterNetwork
 					{...props}
 					title={t("COMMON.DEVELOPMENT_NETWORKS")}
-					className="mt-6"
 					networks={testNetworks}
 					onChange={(_, updated) => props.onChange?.(_, [...updated, ...liveNetworks])}
 				/>

@@ -6,14 +6,6 @@ import { TransactionFixture } from "tests/fixtures/transactions";
 import { translations } from "../../i18n";
 import { MultiPaymentDetail } from "./MultiPaymentDetail";
 
-const wallet = {
-	alias: () => "Test Wallet",
-	currency: () => "ARK",
-	exchangeCurrency: () => "BTC",
-	isDelegate: () => true,
-	isResignedDelegate: () => false,
-};
-
 describe("MultiPaymentDetail", () => {
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(

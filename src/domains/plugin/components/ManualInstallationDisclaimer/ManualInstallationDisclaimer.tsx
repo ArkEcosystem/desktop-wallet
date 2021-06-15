@@ -26,7 +26,7 @@ export const ManualInstallationDisclaimer = ({
 	return (
 		<Modal
 			title={t("PLUGINS.MANUAL_INSTALLATION_DISCLAIMER.TITLE")}
-			image={<Image name="GenericWarning" className="w-3/5 m-auto my-8" />}
+			image={<Image name="GenericWarning" className="m-auto my-8 w-3/5" />}
 			description={t("PLUGINS.MANUAL_INSTALLATION_DISCLAIMER.DISCLAIMER")}
 			size="xl"
 			isOpen={isOpen}

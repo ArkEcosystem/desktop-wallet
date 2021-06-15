@@ -143,7 +143,7 @@ describe("SelectAddress", () => {
 	it("should call onChange prop if provided", async () => {
 		const onChange = jest.fn();
 
-		const { getByTestId, getAllByTestId } = render(
+		const { getByTestId } = render(
 			<SelectAddress
 				wallets={wallets}
 				onChange={onChange}

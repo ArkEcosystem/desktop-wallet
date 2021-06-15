@@ -242,7 +242,7 @@ describe("PluginDetails", () => {
 			return <button onClick={fetchPluginPackages}>Fetch Packages</button>;
 		};
 
-		const { history } = renderWithRouter(
+		renderWithRouter(
 			<Route path="/profiles/:profileId/plugins/details">
 				<PluginManagerProvider manager={manager} services={[]}>
 					<FetchComponent />
@@ -281,7 +281,7 @@ describe("PluginDetails", () => {
 			return <button onClick={fetchPluginPackages}>Fetch Packages</button>;
 		};
 
-		const { history } = renderWithRouter(
+		renderWithRouter(
 			<Route path="/profiles/:profileId/plugins/details">
 				<PluginManagerProvider manager={manager} services={[]}>
 					<FetchComponent />
@@ -319,7 +319,7 @@ describe("PluginDetails", () => {
 			return <button onClick={fetchPluginPackages}>Fetch Packages</button>;
 		};
 
-		const { history } = renderWithRouter(
+		renderWithRouter(
 			<Route path="/profiles/:profileId/plugins/details">
 				<PluginManagerProvider manager={manager} services={[]}>
 					<FetchComponent />
@@ -396,7 +396,7 @@ describe("PluginDetails", () => {
 			return <button onClick={fetchPluginPackages}>Fetch Packages</button>;
 		};
 
-		const { history } = renderWithRouter(
+		renderWithRouter(
 			<Route path="/profiles/:profileId/plugins/details">
 				<PluginManagerProvider manager={manager} services={[]}>
 					<FetchComponent />
@@ -486,7 +486,7 @@ describe("PluginDetails", () => {
 	});
 
 	it("should install package with error", async () => {
-		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {
+		jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {
 			if (channel === "plugin:download") {
 				throw new Error("Plugin not found");
 			}

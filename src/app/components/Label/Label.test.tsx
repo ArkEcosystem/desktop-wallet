@@ -58,7 +58,7 @@ describe("Label", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should render as solid and success", () => {
+	it("should render as solid and primary", () => {
 		const { container } = render(<Label variant="solid" color="primary" />);
 
 		expect(container).toMatchSnapshot();

@@ -3,7 +3,7 @@
 exports[`SearchWallet uses fiat value = false should render 1`] = `
 <DocumentFragment>
   <div
-    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-opacity-60 dark:bg-opacity-80 bg-theme-secondary-900-rgba overflow-overlay dark:bg-black-rgba"
     data-testid="modal__overlay"
   >
     <div
@@ -11,11 +11,11 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
       tabindex="-1"
     >
       <div
-        class="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+        class="flex overflow-hidden relative flex-col p-10 shadow-2xl rounded-2.5xl bg-theme-background"
         data-testid="modal__inner"
       >
         <div
-          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
             class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
@@ -49,7 +49,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
             class="flex-1"
           >
             <div
-              class="text-theme-secondary-text whitespace-pre-line"
+              class="whitespace-pre-line text-theme-secondary-text"
             >
               Locate and select the address for receiving funds.
             </div>
@@ -150,10 +150,10 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                                   class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 jDlLhf group"
                                 >
                                   <div
-                                    class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                    class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                                   />
                                   <div
-                                    class="flex items-center h-5 space-x-3"
+                                    class="flex items-center space-x-3 h-5"
                                   >
                                     <span>
                                       Search
@@ -188,7 +188,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                           class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                         >
                           <div
-                            class="-space-x-2 flex-shrink-0"
+                            class="flex-shrink-0 -space-x-2"
                           >
                             <div
                               aria-label="ARK Devnet"
@@ -222,7 +222,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                             </div>
                           </div>
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                            class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
                               class="font-semibold text-base text-theme-text"
@@ -282,7 +282,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                           class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                         >
                           <div
-                            class="-space-x-2 flex-shrink-0"
+                            class="flex-shrink-0 -space-x-2"
                           >
                             <div
                               aria-label="ARK Devnet"
@@ -316,7 +316,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                             </div>
                           </div>
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                            class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
                               class="font-semibold text-base text-theme-text"
@@ -382,7 +382,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
 exports[`SearchWallet uses fiat value = false should render with the default exchange currency enabled from profile settings 1`] = `
 <DocumentFragment>
   <div
-    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-opacity-60 dark:bg-opacity-80 bg-theme-secondary-900-rgba overflow-overlay dark:bg-black-rgba"
     data-testid="modal__overlay"
   >
     <div
@@ -390,11 +390,11 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
       tabindex="-1"
     >
       <div
-        class="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+        class="flex overflow-hidden relative flex-col p-10 shadow-2xl rounded-2.5xl bg-theme-background"
         data-testid="modal__inner"
       >
         <div
-          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
             class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
@@ -428,7 +428,7 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
             class="flex-1"
           >
             <div
-              class="text-theme-secondary-text whitespace-pre-line"
+              class="whitespace-pre-line text-theme-secondary-text"
             >
               Locate and select the address for receiving funds.
             </div>
@@ -529,10 +529,10 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
                                   class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 jDlLhf group"
                                 >
                                   <div
-                                    class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                    class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                                   />
                                   <div
-                                    class="flex items-center h-5 space-x-3"
+                                    class="flex items-center space-x-3 h-5"
                                   >
                                     <span>
                                       Search
@@ -567,7 +567,7 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
                           class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                         >
                           <div
-                            class="-space-x-2 flex-shrink-0"
+                            class="flex-shrink-0 -space-x-2"
                           >
                             <div
                               aria-label="ARK Devnet"
@@ -601,7 +601,7 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
                             </div>
                           </div>
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                            class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
                               class="font-semibold text-base text-theme-text"
@@ -661,7 +661,7 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
                           class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                         >
                           <div
-                            class="-space-x-2 flex-shrink-0"
+                            class="flex-shrink-0 -space-x-2"
                           >
                             <div
                               aria-label="ARK Devnet"
@@ -695,7 +695,7 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
                             </div>
                           </div>
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                            class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
                               class="font-semibold text-base text-theme-text"
@@ -761,7 +761,7 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
 exports[`SearchWallet uses fiat value = true should render 1`] = `
 <DocumentFragment>
   <div
-    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-opacity-60 dark:bg-opacity-80 bg-theme-secondary-900-rgba overflow-overlay dark:bg-black-rgba"
     data-testid="modal__overlay"
   >
     <div
@@ -769,11 +769,11 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
       tabindex="-1"
     >
       <div
-        class="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+        class="flex overflow-hidden relative flex-col p-10 shadow-2xl rounded-2.5xl bg-theme-background"
         data-testid="modal__inner"
       >
         <div
-          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
             class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
@@ -807,7 +807,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
             class="flex-1"
           >
             <div
-              class="text-theme-secondary-text whitespace-pre-line"
+              class="whitespace-pre-line text-theme-secondary-text"
             >
               Locate and select the address for receiving funds.
             </div>
@@ -938,10 +938,10 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                                   class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 jDlLhf group"
                                 >
                                   <div
-                                    class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                    class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                                   />
                                   <div
-                                    class="flex items-center h-5 space-x-3"
+                                    class="flex items-center space-x-3 h-5"
                                   >
                                     <span>
                                       Search
@@ -976,7 +976,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                           class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                         >
                           <div
-                            class="-space-x-2 flex-shrink-0"
+                            class="flex-shrink-0 -space-x-2"
                           >
                             <div
                               aria-label="ARK Devnet"
@@ -1010,7 +1010,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                             </div>
                           </div>
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                            class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
                               class="font-semibold text-base text-theme-text"
@@ -1081,7 +1081,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                           class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                         >
                           <div
-                            class="-space-x-2 flex-shrink-0"
+                            class="flex-shrink-0 -space-x-2"
                           >
                             <div
                               aria-label="ARK Devnet"
@@ -1115,7 +1115,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                             </div>
                           </div>
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                            class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
                               class="font-semibold text-base text-theme-text"
@@ -1192,7 +1192,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
 exports[`SearchWallet uses fiat value = true should render with the default exchange currency enabled from profile settings 1`] = `
 <DocumentFragment>
   <div
-    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-opacity-60 dark:bg-opacity-80 bg-theme-secondary-900-rgba overflow-overlay dark:bg-black-rgba"
     data-testid="modal__overlay"
   >
     <div
@@ -1200,11 +1200,11 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
       tabindex="-1"
     >
       <div
-        class="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+        class="flex overflow-hidden relative flex-col p-10 shadow-2xl rounded-2.5xl bg-theme-background"
         data-testid="modal__inner"
       >
         <div
-          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
             class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
@@ -1238,7 +1238,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
             class="flex-1"
           >
             <div
-              class="text-theme-secondary-text whitespace-pre-line"
+              class="whitespace-pre-line text-theme-secondary-text"
             >
               Locate and select the address for receiving funds.
             </div>
@@ -1369,10 +1369,10 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                                   class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 jDlLhf group"
                                 >
                                   <div
-                                    class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                    class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                                   />
                                   <div
-                                    class="flex items-center h-5 space-x-3"
+                                    class="flex items-center space-x-3 h-5"
                                   >
                                     <span>
                                       Search
@@ -1407,7 +1407,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                           class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                         >
                           <div
-                            class="-space-x-2 flex-shrink-0"
+                            class="flex-shrink-0 -space-x-2"
                           >
                             <div
                               aria-label="ARK Devnet"
@@ -1441,7 +1441,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                             </div>
                           </div>
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                            class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
                               class="font-semibold text-base text-theme-text"
@@ -1512,7 +1512,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                           class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                         >
                           <div
-                            class="-space-x-2 flex-shrink-0"
+                            class="flex-shrink-0 -space-x-2"
                           >
                             <div
                               aria-label="ARK Devnet"
@@ -1546,7 +1546,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                             </div>
                           </div>
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                            class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
                               class="font-semibold text-base text-theme-text"

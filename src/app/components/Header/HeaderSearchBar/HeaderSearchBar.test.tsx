@@ -6,7 +6,7 @@ import { HeaderSearchBar } from "./HeaderSearchBar";
 
 describe("HeaderSearchBar", () => {
 	it("should render", () => {
-		const { asFragment, getByRole, getByTestId } = render(<HeaderSearchBar />);
+		const { asFragment, getByRole } = render(<HeaderSearchBar />);
 
 		expect(getByRole("button")).toHaveTextContent("Search");
 		expect(asFragment()).toMatchSnapshot();

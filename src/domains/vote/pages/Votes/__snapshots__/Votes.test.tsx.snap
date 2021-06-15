@@ -14,7 +14,7 @@ exports[`Votes should filter current delegates 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -46,18 +46,18 @@ exports[`Votes should filter current delegates 1`] = `
             </div>
           </div>
           <ul
-            class="flex ml-4 mr-auto space-x-8 h-21"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Portfolio
               </a>
@@ -66,12 +66,12 @@ exports[`Votes should filter current delegates 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Plugins
               </a>
@@ -80,12 +80,12 @@ exports[`Votes should filter current delegates 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Exchange
               </a>
@@ -94,12 +94,12 @@ exports[`Votes should filter current delegates 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 News
               </a>
@@ -136,7 +136,7 @@ exports[`Votes should filter current delegates 1`] = `
                           </svg>
                         </div>
                         <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
                         >
                           <div
                             class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -166,12 +166,12 @@ exports[`Votes should filter current delegates 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -213,7 +213,7 @@ exports[`Votes should filter current delegates 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -221,7 +221,7 @@ exports[`Votes should filter current delegates 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -235,56 +235,35 @@ exports[`Votes should filter current delegates 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative justify-center items-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -333,10 +312,10 @@ exports[`Votes should filter current delegates 1`] = `
                       class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                     >
                       <div
-                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                       />
                       <div
-                        class="flex items-center h-5 space-x-3"
+                        class="flex items-center space-x-3 h-5"
                       >
                         <span>
                           Search
@@ -373,17 +352,17 @@ exports[`Votes should filter current delegates 1`] = `
                           class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                         >
                           <div
-                            class="flex absolute right-0 justify-center items-center -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background mr-2"
+                            class="flex absolute right-0 justify-center items-center -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background mr-1"
                           >
                             <div
                               class="w-2 h-2 rounded-full bg-theme-primary-500"
                             />
                           </div>
                           <div
-                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
-                            class="flex items-center justify-center w-5 h-5"
+                            class="flex justify-center items-center w-5 h-5"
                           >
                             <div
                               class="sc-bdfBwQ eBdiJn"
@@ -405,10 +384,10 @@ exports[`Votes should filter current delegates 1`] = `
                     >
                       <div>
                         <div
-                          class="w-56 flex flex-col items-start space-y-5 px-10 py-7 text-theme-secondary-700 dark:text-theme-secondary-200"
+                          class="flex flex-col items-start py-7 px-10 space-y-5 w-56 text-theme-secondary-700 dark:text-theme-secondary-200"
                         >
                           <label
-                            class="h-5 flex items-center space-x-3 rounded-md cursor-pointer"
+                            class="flex items-center space-x-3 h-5 rounded-md cursor-pointer"
                             data-testid="VotesFilter__option--all"
                           >
                             <input
@@ -621,7 +600,7 @@ exports[`Votes should filter current delegates 1`] = `
               </table>
             </div>
             <div
-              class="flex justify-center w-full mt-8"
+              class="flex justify-center mt-8 w-full"
             />
             <div
               class="DelegateTable__Footer-sc-104vr2x-0 iwePhl"
@@ -631,7 +610,7 @@ exports[`Votes should filter current delegates 1`] = `
                 class="container px-10 mx-auto"
               >
                 <div
-                  class="flex font-semibold h-11"
+                  class="flex h-11 font-semibold"
                 >
                   <div
                     class="flex pr-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -659,7 +638,7 @@ exports[`Votes should filter current delegates 1`] = `
                         Address
                       </div>
                       <div
-                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                        class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                       >
                         <span
                           class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
@@ -801,7 +780,7 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -833,18 +812,18 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
             </div>
           </div>
           <ul
-            class="flex ml-4 mr-auto space-x-8 h-21"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Portfolio
               </a>
@@ -853,12 +832,12 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Plugins
               </a>
@@ -867,12 +846,12 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Exchange
               </a>
@@ -881,12 +860,12 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 News
               </a>
@@ -923,7 +902,7 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                           </svg>
                         </div>
                         <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
                         >
                           <div
                             class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -953,12 +932,12 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -1000,7 +979,7 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -1008,7 +987,7 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -1022,56 +1001,35 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative justify-center items-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -1120,10 +1078,10 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                       class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                     >
                       <div
-                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                       />
                       <div
-                        class="flex items-center h-5 space-x-3"
+                        class="flex items-center space-x-3 h-5"
                       >
                         <span>
                           Search
@@ -1160,10 +1118,10 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                           class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                         >
                           <div
-                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
-                            class="flex items-center justify-center w-5 h-5"
+                            class="flex justify-center items-center w-5 h-5"
                           >
                             <div
                               class="sc-bdfBwQ eBdiJn"
@@ -1510,7 +1468,7 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
               </table>
             </div>
             <div
-              class="flex justify-center w-full mt-8"
+              class="flex justify-center mt-8 w-full"
             />
             <div
               class="DelegateTable__Footer-sc-104vr2x-0 iwePhl"
@@ -1520,7 +1478,7 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                 class="container px-10 mx-auto"
               >
                 <div
-                  class="flex font-semibold h-11"
+                  class="flex h-11 font-semibold"
                 >
                   <div
                     class="flex pr-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -1548,7 +1506,7 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                         Address
                       </div>
                       <div
-                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                        class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                       >
                         <span
                           class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
@@ -1689,7 +1647,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -1721,18 +1679,18 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
             </div>
           </div>
           <ul
-            class="flex ml-4 mr-auto space-x-8 h-21"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Portfolio
               </a>
@@ -1741,12 +1699,12 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Plugins
               </a>
@@ -1755,12 +1713,12 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Exchange
               </a>
@@ -1769,12 +1727,12 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 News
               </a>
@@ -1811,7 +1769,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                           </svg>
                         </div>
                         <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
                         >
                           <div
                             class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -1841,12 +1799,12 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -1888,7 +1846,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -1896,7 +1854,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -1910,44 +1868,33 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
-                />
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
+                <div
+                  class="relative justify-center items-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
-                      >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"70\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        />
-                      </div>
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"70\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      />
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -1996,10 +1943,10 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                     >
                       <div
-                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                       />
                       <div
-                        class="flex items-center h-5 space-x-3"
+                        class="flex items-center space-x-3 h-5"
                       >
                         <span>
                           Search
@@ -2036,10 +1983,10 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                           class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                         >
                           <div
-                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
-                            class="flex items-center justify-center w-5 h-5"
+                            class="flex justify-center items-center w-5 h-5"
                           >
                             <div
                               class="sc-bdfBwQ eBdiJn"
@@ -2420,7 +2367,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
               </table>
             </div>
             <div
-              class="flex justify-center w-full mt-8"
+              class="flex justify-center mt-8 w-full"
             />
             <div
               class="DelegateTable__Footer-sc-104vr2x-0 iwePhl"
@@ -2430,7 +2377,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                 class="container px-10 mx-auto"
               >
                 <div
-                  class="flex font-semibold h-11"
+                  class="flex h-11 font-semibold"
                 >
                   <div
                     class="flex pr-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -2458,7 +2405,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         Address
                       </div>
                       <div
-                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                        class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                       >
                         <span
                           class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
@@ -2604,7 +2551,7 @@ exports[`Votes should render 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -2636,18 +2583,18 @@ exports[`Votes should render 1`] = `
             </div>
           </div>
           <ul
-            class="flex ml-4 mr-auto space-x-8 h-21"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Portfolio
               </a>
@@ -2656,12 +2603,12 @@ exports[`Votes should render 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Plugins
               </a>
@@ -2670,12 +2617,12 @@ exports[`Votes should render 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Exchange
               </a>
@@ -2684,12 +2631,12 @@ exports[`Votes should render 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 News
               </a>
@@ -2726,7 +2673,7 @@ exports[`Votes should render 1`] = `
                           </svg>
                         </div>
                         <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
                         >
                           <div
                             class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -2756,12 +2703,12 @@ exports[`Votes should render 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -2803,7 +2750,7 @@ exports[`Votes should render 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -2811,7 +2758,7 @@ exports[`Votes should render 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -2825,56 +2772,35 @@ exports[`Votes should render 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative justify-center items-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -2923,10 +2849,10 @@ exports[`Votes should render 1`] = `
                       class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                     >
                       <div
-                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                       />
                       <div
-                        class="flex items-center h-5 space-x-3"
+                        class="flex items-center space-x-3 h-5"
                       >
                         <span>
                           Search
@@ -2963,10 +2889,10 @@ exports[`Votes should render 1`] = `
                           class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                         >
                           <div
-                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
-                            class="flex items-center justify-center w-5 h-5"
+                            class="flex justify-center items-center w-5 h-5"
                           >
                             <div
                               class="sc-bdfBwQ eBdiJn"
@@ -3347,7 +3273,7 @@ exports[`Votes should render 1`] = `
               </table>
             </div>
             <div
-              class="flex justify-center w-full mt-8"
+              class="flex justify-center mt-8 w-full"
             />
             <div
               class="DelegateTable__Footer-sc-104vr2x-0 iwePhl"
@@ -3357,7 +3283,7 @@ exports[`Votes should render 1`] = `
                 class="container px-10 mx-auto"
               >
                 <div
-                  class="flex font-semibold h-11"
+                  class="flex h-11 font-semibold"
                 >
                   <div
                     class="flex pr-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -3385,7 +3311,7 @@ exports[`Votes should render 1`] = `
                         Address
                       </div>
                       <div
-                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                        class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                       >
                         <span
                           class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
@@ -3527,7 +3453,7 @@ exports[`Votes should render with no wallets 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -3559,18 +3485,18 @@ exports[`Votes should render with no wallets 1`] = `
             </div>
           </div>
           <ul
-            class="flex ml-4 mr-auto space-x-8 h-21"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Portfolio
               </a>
@@ -3579,12 +3505,12 @@ exports[`Votes should render with no wallets 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Plugins
               </a>
@@ -3593,12 +3519,12 @@ exports[`Votes should render with no wallets 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Exchange
               </a>
@@ -3607,12 +3533,12 @@ exports[`Votes should render with no wallets 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 News
               </a>
@@ -3673,12 +3599,12 @@ exports[`Votes should render with no wallets 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -3721,7 +3647,7 @@ exports[`Votes should render with no wallets 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -3729,7 +3655,7 @@ exports[`Votes should render with no wallets 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -3743,56 +3669,35 @@ exports[`Votes should render with no wallets 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative justify-center items-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JA
-                        </span>
-                      </div>
+                        JA
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -3841,7 +3746,7 @@ exports[`Votes should render with no wallets 1`] = `
           >
             <div>
               <div
-                class="flex items-center justify-between"
+                class="flex justify-between items-center"
               >
                 <span>
                   Your must first 
@@ -3928,7 +3833,7 @@ exports[`Votes should select a delegate 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -3960,18 +3865,18 @@ exports[`Votes should select a delegate 1`] = `
             </div>
           </div>
           <ul
-            class="flex ml-4 mr-auto space-x-8 h-21"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Portfolio
               </a>
@@ -3980,12 +3885,12 @@ exports[`Votes should select a delegate 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Plugins
               </a>
@@ -3994,12 +3899,12 @@ exports[`Votes should select a delegate 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Exchange
               </a>
@@ -4008,12 +3913,12 @@ exports[`Votes should select a delegate 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 News
               </a>
@@ -4050,7 +3955,7 @@ exports[`Votes should select a delegate 1`] = `
                           </svg>
                         </div>
                         <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
                         >
                           <div
                             class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -4080,12 +3985,12 @@ exports[`Votes should select a delegate 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -4127,7 +4032,7 @@ exports[`Votes should select a delegate 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -4135,7 +4040,7 @@ exports[`Votes should select a delegate 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -4149,56 +4054,35 @@ exports[`Votes should select a delegate 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative justify-center items-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -4247,10 +4131,10 @@ exports[`Votes should select a delegate 1`] = `
                       class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                     >
                       <div
-                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                       />
                       <div
-                        class="flex items-center h-5 space-x-3"
+                        class="flex items-center space-x-3 h-5"
                       >
                         <span>
                           Search
@@ -4287,10 +4171,10 @@ exports[`Votes should select a delegate 1`] = `
                           class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                         >
                           <div
-                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
-                            class="flex items-center justify-center w-5 h-5"
+                            class="flex justify-center items-center w-5 h-5"
                           >
                             <div
                               class="sc-bdfBwQ eBdiJn"
@@ -4637,7 +4521,7 @@ exports[`Votes should select a delegate 1`] = `
               </table>
             </div>
             <div
-              class="flex justify-center w-full mt-8"
+              class="flex justify-center mt-8 w-full"
             />
             <div
               class="DelegateTable__Footer-sc-104vr2x-0 iwePhl"
@@ -4647,7 +4531,7 @@ exports[`Votes should select a delegate 1`] = `
                 class="container px-10 mx-auto"
               >
                 <div
-                  class="flex font-semibold h-11"
+                  class="flex h-11 font-semibold"
                 >
                   <div
                     class="flex pr-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -4675,7 +4559,7 @@ exports[`Votes should select a delegate 1`] = `
                         Address
                       </div>
                       <div
-                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                        class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                       >
                         <span
                           class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
@@ -4818,7 +4702,7 @@ exports[`Votes should select an address without vote 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -4850,18 +4734,18 @@ exports[`Votes should select an address without vote 1`] = `
             </div>
           </div>
           <ul
-            class="flex ml-4 mr-auto space-x-8 h-21"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Portfolio
               </a>
@@ -4870,12 +4754,12 @@ exports[`Votes should select an address without vote 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Plugins
               </a>
@@ -4884,12 +4768,12 @@ exports[`Votes should select an address without vote 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Exchange
               </a>
@@ -4898,12 +4782,12 @@ exports[`Votes should select an address without vote 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 News
               </a>
@@ -4940,7 +4824,7 @@ exports[`Votes should select an address without vote 1`] = `
                           </svg>
                         </div>
                         <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
                         >
                           <div
                             class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -4970,12 +4854,12 @@ exports[`Votes should select an address without vote 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -5017,7 +4901,7 @@ exports[`Votes should select an address without vote 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -5025,7 +4909,7 @@ exports[`Votes should select an address without vote 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -5039,56 +4923,35 @@ exports[`Votes should select an address without vote 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative justify-center items-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -5137,10 +5000,10 @@ exports[`Votes should select an address without vote 1`] = `
                       class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                     >
                       <div
-                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                       />
                       <div
-                        class="flex items-center h-5 space-x-3"
+                        class="flex items-center space-x-3 h-5"
                       >
                         <span>
                           Search
@@ -5177,10 +5040,10 @@ exports[`Votes should select an address without vote 1`] = `
                           class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                         >
                           <div
-                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
-                            class="flex items-center justify-center w-5 h-5"
+                            class="flex justify-center items-center w-5 h-5"
                           >
                             <div
                               class="sc-bdfBwQ eBdiJn"
@@ -5527,7 +5390,7 @@ exports[`Votes should select an address without vote 1`] = `
               </table>
             </div>
             <div
-              class="flex justify-center w-full mt-8"
+              class="flex justify-center mt-8 w-full"
             />
             <div
               class="DelegateTable__Footer-sc-104vr2x-0 iwePhl"
@@ -5537,7 +5400,7 @@ exports[`Votes should select an address without vote 1`] = `
                 class="container px-10 mx-auto"
               >
                 <div
-                  class="flex font-semibold h-11"
+                  class="flex h-11 font-semibold"
                 >
                   <div
                     class="flex pr-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -5565,7 +5428,7 @@ exports[`Votes should select an address without vote 1`] = `
                         Address
                       </div>
                       <div
-                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                        class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                       >
                         <span
                           class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
@@ -5707,7 +5570,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -5739,18 +5602,18 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
             </div>
           </div>
           <ul
-            class="flex ml-4 mr-auto space-x-8 h-21"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Portfolio
               </a>
@@ -5759,12 +5622,12 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Plugins
               </a>
@@ -5773,12 +5636,12 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Exchange
               </a>
@@ -5787,12 +5650,12 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 News
               </a>
@@ -5829,7 +5692,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                           </svg>
                         </div>
                         <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
                         >
                           <div
                             class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -5859,12 +5722,12 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -5906,7 +5769,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -5914,7 +5777,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -5928,56 +5791,35 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative justify-center items-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -6026,10 +5868,10 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                       class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                     >
                       <div
-                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                       />
                       <div
-                        class="flex items-center h-5 space-x-3"
+                        class="flex items-center space-x-3 h-5"
                       >
                         <span>
                           Search
@@ -6066,17 +5908,17 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                           class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                         >
                           <div
-                            class="flex absolute right-0 justify-center items-center -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background mr-2"
+                            class="flex absolute right-0 justify-center items-center -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background mr-1"
                           >
                             <div
                               class="w-2 h-2 rounded-full bg-theme-primary-500"
                             />
                           </div>
                           <div
-                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
-                            class="flex items-center justify-center w-5 h-5"
+                            class="flex justify-center items-center w-5 h-5"
                           >
                             <div
                               class="sc-bdfBwQ eBdiJn"
@@ -6098,14 +5940,14 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                     >
                       <div>
                         <div
-                          class="px-10 py-7 w-128"
+                          class="py-7 px-10 w-128"
                         >
                           <div
                             class="flex flex-col text-left"
                             data-testid="FilterWallets"
                           >
                             <div
-                              class="mb-8"
+                              class="mb-5"
                             >
                               <div
                                 class="font-semibold text-theme-secondary-text"
@@ -6119,14 +5961,13 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                               </div>
                             </div>
                             <div
-                              class="space-y-6"
+                              class="space-y-4"
                             >
                               <div
-                                class="mt-6"
                                 data-testid="FilterNetwork"
                               >
                                 <div
-                                  class="mb-2 text-sm font-bold text-theme-secondary-400"
+                                  class="mb-3 text-sm font-bold text-theme-secondary-400"
                                 >
                                   Development Networks
                                 </div>
@@ -6170,7 +6011,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                               </div>
                             </div>
                             <div
-                              class="my-8 border-t border-dotted border-theme-secondary-300 dark:border-theme-secondary-800"
+                              class="mt-6 mb-8 border-t border-dotted border-theme-secondary-300 dark:border-theme-secondary-800"
                             />
                             <div
                               class="flex flex-col"
@@ -6243,7 +6084,7 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -6275,18 +6116,18 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
             </div>
           </div>
           <ul
-            class="flex ml-4 mr-auto space-x-8 h-21"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Portfolio
               </a>
@@ -6295,12 +6136,12 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Plugins
               </a>
@@ -6309,12 +6150,12 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Exchange
               </a>
@@ -6323,12 +6164,12 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 News
               </a>
@@ -6365,7 +6206,7 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
                           </svg>
                         </div>
                         <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
                         >
                           <div
                             class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -6395,12 +6236,12 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -6442,7 +6283,7 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -6450,7 +6291,7 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -6464,56 +6305,35 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative justify-center items-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -6562,10 +6382,10 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
                       class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                     >
                       <div
-                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                       />
                       <div
-                        class="flex items-center h-5 space-x-3"
+                        class="flex items-center space-x-3 h-5"
                       >
                         <span>
                           Search
@@ -6602,17 +6422,17 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
                           class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                         >
                           <div
-                            class="flex absolute right-0 justify-center items-center -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background mr-2"
+                            class="flex absolute right-0 justify-center items-center -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background mr-1"
                           >
                             <div
                               class="w-2 h-2 rounded-full bg-theme-primary-500"
                             />
                           </div>
                           <div
-                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
-                            class="flex items-center justify-center w-5 h-5"
+                            class="flex justify-center items-center w-5 h-5"
                           >
                             <div
                               class="sc-bdfBwQ eBdiJn"
@@ -6634,14 +6454,14 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
                     >
                       <div>
                         <div
-                          class="px-10 py-7 w-128"
+                          class="py-7 px-10 w-128"
                         >
                           <div
                             class="flex flex-col text-left"
                             data-testid="FilterWallets"
                           >
                             <div
-                              class="mb-8"
+                              class="mb-5"
                             >
                               <div
                                 class="font-semibold text-theme-secondary-text"
@@ -6655,14 +6475,13 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
                               </div>
                             </div>
                             <div
-                              class="space-y-6"
+                              class="space-y-4"
                             >
                               <div
-                                class="mt-6"
                                 data-testid="FilterNetwork"
                               >
                                 <div
-                                  class="mb-2 text-sm font-bold text-theme-secondary-400"
+                                  class="mb-3 text-sm font-bold text-theme-secondary-400"
                                 >
                                   Development Networks
                                 </div>
@@ -6706,7 +6525,7 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
                               </div>
                             </div>
                             <div
-                              class="my-8 border-t border-dotted border-theme-secondary-300 dark:border-theme-secondary-800"
+                              class="mt-6 mb-8 border-t border-dotted border-theme-secondary-300 dark:border-theme-secondary-800"
                             />
                             <div
                               class="flex flex-col"
@@ -6779,7 +6598,7 @@ exports[`Votes should show network warning 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -6811,18 +6630,18 @@ exports[`Votes should show network warning 1`] = `
             </div>
           </div>
           <ul
-            class="flex ml-4 mr-auto space-x-8 h-21"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Portfolio
               </a>
@@ -6831,12 +6650,12 @@ exports[`Votes should show network warning 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Plugins
               </a>
@@ -6845,12 +6664,12 @@ exports[`Votes should show network warning 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Exchange
               </a>
@@ -6859,12 +6678,12 @@ exports[`Votes should show network warning 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 News
               </a>
@@ -6901,7 +6720,7 @@ exports[`Votes should show network warning 1`] = `
                           </svg>
                         </div>
                         <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
                         >
                           <div
                             class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -6931,12 +6750,12 @@ exports[`Votes should show network warning 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -6978,7 +6797,7 @@ exports[`Votes should show network warning 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -6986,7 +6805,7 @@ exports[`Votes should show network warning 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -7000,56 +6819,35 @@ exports[`Votes should show network warning 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative justify-center items-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -7098,10 +6896,10 @@ exports[`Votes should show network warning 1`] = `
                       class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                     >
                       <div
-                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                       />
                       <div
-                        class="flex items-center h-5 space-x-3"
+                        class="flex items-center space-x-3 h-5"
                       >
                         <span>
                           Search
@@ -7138,10 +6936,10 @@ exports[`Votes should show network warning 1`] = `
                           class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                         >
                           <div
-                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
-                            class="flex items-center justify-center w-5 h-5"
+                            class="flex justify-center items-center w-5 h-5"
                           >
                             <div
                               class="sc-bdfBwQ eBdiJn"
@@ -7528,7 +7326,7 @@ exports[`Votes should show network warning 1`] = `
               </table>
             </div>
             <div
-              class="flex justify-center w-full mt-8"
+              class="flex justify-center mt-8 w-full"
             />
             <div
               class="DelegateTable__Footer-sc-104vr2x-0 iwePhl"
@@ -7538,7 +7336,7 @@ exports[`Votes should show network warning 1`] = `
                 class="container px-10 mx-auto"
               >
                 <div
-                  class="flex font-semibold h-11"
+                  class="flex h-11 font-semibold"
                 >
                   <div
                     class="flex pr-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -7566,7 +7364,7 @@ exports[`Votes should show network warning 1`] = `
                         Address
                       </div>
                       <div
-                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                        class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                       >
                         <span
                           class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
@@ -7707,7 +7505,7 @@ exports[`Votes should show resigned delegate notice 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -7739,18 +7537,18 @@ exports[`Votes should show resigned delegate notice 1`] = `
             </div>
           </div>
           <ul
-            class="flex ml-4 mr-auto space-x-8 h-21"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Portfolio
               </a>
@@ -7759,12 +7557,12 @@ exports[`Votes should show resigned delegate notice 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Plugins
               </a>
@@ -7773,12 +7571,12 @@ exports[`Votes should show resigned delegate notice 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Exchange
               </a>
@@ -7787,12 +7585,12 @@ exports[`Votes should show resigned delegate notice 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 News
               </a>
@@ -7829,7 +7627,7 @@ exports[`Votes should show resigned delegate notice 1`] = `
                           </svg>
                         </div>
                         <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
                         >
                           <div
                             class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -7859,12 +7657,12 @@ exports[`Votes should show resigned delegate notice 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -7906,7 +7704,7 @@ exports[`Votes should show resigned delegate notice 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -7914,7 +7712,7 @@ exports[`Votes should show resigned delegate notice 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -7928,56 +7726,35 @@ exports[`Votes should show resigned delegate notice 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative justify-center items-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -8026,10 +7803,10 @@ exports[`Votes should show resigned delegate notice 1`] = `
                       class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                     >
                       <div
-                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                       />
                       <div
-                        class="flex items-center h-5 space-x-3"
+                        class="flex items-center space-x-3 h-5"
                       >
                         <span>
                           Search
@@ -8066,10 +7843,10 @@ exports[`Votes should show resigned delegate notice 1`] = `
                           class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                         >
                           <div
-                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
-                            class="flex items-center justify-center w-5 h-5"
+                            class="flex justify-center items-center w-5 h-5"
                           >
                             <div
                               class="sc-bdfBwQ eBdiJn"
@@ -8450,7 +8227,7 @@ exports[`Votes should show resigned delegate notice 1`] = `
               </table>
             </div>
             <div
-              class="flex justify-center w-full mt-8"
+              class="flex justify-center mt-8 w-full"
             />
             <div
               class="DelegateTable__Footer-sc-104vr2x-0 iwePhl"
@@ -8460,7 +8237,7 @@ exports[`Votes should show resigned delegate notice 1`] = `
                 class="container px-10 mx-auto"
               >
                 <div
-                  class="flex font-semibold h-11"
+                  class="flex h-11 font-semibold"
                 >
                   <div
                     class="flex pr-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -8488,7 +8265,7 @@ exports[`Votes should show resigned delegate notice 1`] = `
                         Address
                       </div>
                       <div
-                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                        class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                       >
                         <span
                           class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
@@ -8632,7 +8409,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -8664,18 +8441,18 @@ exports[`Votes should toggle network selection from network filters 1`] = `
             </div>
           </div>
           <ul
-            class="flex ml-4 mr-auto space-x-8 h-21"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Portfolio
               </a>
@@ -8684,12 +8461,12 @@ exports[`Votes should toggle network selection from network filters 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Plugins
               </a>
@@ -8698,12 +8475,12 @@ exports[`Votes should toggle network selection from network filters 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Exchange
               </a>
@@ -8712,12 +8489,12 @@ exports[`Votes should toggle network selection from network filters 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 News
               </a>
@@ -8754,7 +8531,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                           </svg>
                         </div>
                         <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
                         >
                           <div
                             class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -8784,12 +8561,12 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -8831,7 +8608,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -8839,7 +8616,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -8853,56 +8630,35 @@ exports[`Votes should toggle network selection from network filters 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative justify-center items-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -8951,10 +8707,10 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                       class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                     >
                       <div
-                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                       />
                       <div
-                        class="flex items-center h-5 space-x-3"
+                        class="flex items-center space-x-3 h-5"
                       >
                         <span>
                           Search
@@ -8991,10 +8747,10 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                           class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                         >
                           <div
-                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
-                            class="flex items-center justify-center w-5 h-5"
+                            class="flex justify-center items-center w-5 h-5"
                           >
                             <div
                               class="sc-bdfBwQ eBdiJn"
@@ -9016,14 +8772,14 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     >
                       <div>
                         <div
-                          class="px-10 py-7 w-128"
+                          class="py-7 px-10 w-128"
                         >
                           <div
                             class="flex flex-col text-left"
                             data-testid="FilterWallets"
                           >
                             <div
-                              class="mb-8"
+                              class="mb-5"
                             >
                               <div
                                 class="font-semibold text-theme-secondary-text"
@@ -9037,14 +8793,13 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                               </div>
                             </div>
                             <div
-                              class="space-y-6"
+                              class="space-y-4"
                             >
                               <div
-                                class="mt-6"
                                 data-testid="FilterNetwork"
                               >
                                 <div
-                                  class="mb-2 text-sm font-bold text-theme-secondary-400"
+                                  class="mb-3 text-sm font-bold text-theme-secondary-400"
                                 >
                                   Development Networks
                                 </div>
@@ -9088,7 +8843,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                               </div>
                             </div>
                             <div
-                              class="my-8 border-t border-dotted border-theme-secondary-300 dark:border-theme-secondary-800"
+                              class="mt-6 mb-8 border-t border-dotted border-theme-secondary-300 dark:border-theme-secondary-800"
                             />
                             <div
                               class="flex flex-col"
@@ -9360,7 +9115,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                          class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                         >
                           <span
                             class="font-semibold text-base text-theme-text"
@@ -9491,7 +9246,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                          class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                         >
                           <span
                             class="font-semibold text-base text-theme-text"
@@ -9598,7 +9353,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                          class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                         >
                           <span
                             class="inline-flex overflow-hidden text-theme-text font-semibold text-base"

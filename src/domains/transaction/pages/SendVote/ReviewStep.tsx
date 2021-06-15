@@ -14,12 +14,10 @@ import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 export const ReviewStep = ({
-	profile,
 	unvotes,
 	votes,
 	wallet,
 }: {
-	profile: Contracts.IProfile;
 	unvotes: Contracts.IReadOnlyWallet[];
 	votes: Contracts.IReadOnlyWallet[];
 	wallet: Contracts.IReadWriteWallet;

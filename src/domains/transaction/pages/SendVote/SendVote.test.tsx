@@ -27,7 +27,7 @@ import {
 	waitFor,
 } from "utils/testing-library";
 
-import { SendVote } from "../SendVote";
+import { SendVote } from ".";
 
 const fixtureProfileId = getDefaultProfileId();
 
@@ -56,7 +56,6 @@ const createUnvoteTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 const passphrase = getDefaultWalletMnemonic();
 let profile: Contracts.IProfile;
 let wallet: Contracts.IReadWriteWallet;
-let votes: ReadOnlyWallet[];
 const transport = getDefaultLedgerTransport();
 
 describe("SendVote", () => {
@@ -74,7 +73,7 @@ describe("SendVote", () => {
 		await syncDelegates(profile);
 		await syncFees(profile);
 
-		votes = [0, 1].map((index) =>
+		[0, 1].map((index) =>
 			env.delegates().findByAddress(wallet.coinId(), wallet.networkId(), delegateData[index].address),
 		);
 
@@ -236,7 +235,7 @@ describe("SendVote", () => {
 			search: `?${params}`,
 		});
 
-		const { container, getByTestId } = renderWithRouter(
+		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
 				<LedgerProvider transport={transport}>
 					<SendVote />
@@ -909,11 +908,12 @@ describe("SendVote", () => {
 	});
 
 	it("should send a vote transaction using encryption password", async () => {
-		const walletUsesWIFMock = jest.spyOn(wallet.wif(), "exists").mockReturnValue(true);
-		const walletWifMock = jest.spyOn(wallet.wif(), "get").mockImplementation(() => {
-			const wif = "S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV";
-			return Promise.resolve(wif);
-		});
+		const actsWithMnemonicMock = jest.spyOn(wallet, "actsWithMnemonic").mockReturnValue(false);
+		const actsWithWifWithEncryptionMock = jest.spyOn(wallet, "actsWithWifWithEncryption").mockReturnValue(true);
+		const wifGetMock = jest
+			.spyOn(wallet.wif(), "get")
+			.mockResolvedValue("S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV");
+
 		const history = createMemoryHistory();
 		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
 
@@ -993,7 +993,8 @@ describe("SendVote", () => {
 		signMock.mockRestore();
 		broadcastMock.mockRestore();
 		transactionMock.mockRestore();
-		walletUsesWIFMock.mockRestore();
-		walletWifMock.mockRestore();
+		actsWithMnemonicMock.mockRestore();
+		actsWithWifWithEncryptionMock.mockRestore();
+		wifGetMock.mockRestore();
 	});
 });

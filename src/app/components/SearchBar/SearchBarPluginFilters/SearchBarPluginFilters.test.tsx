@@ -61,7 +61,7 @@ describe("SearchBarPluginFilters", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should emit onChange event ", () => {
+	it("should emit onChange event", () => {
 		const fn = jest.fn();
 		const categories = [
 			{

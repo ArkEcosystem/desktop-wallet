@@ -15,11 +15,10 @@ interface Props {
 	allAssets?: any[];
 	isOpen: boolean;
 	onClose?: any;
-	onCancel?: any;
 	onUpdate?: any;
 }
 
-export const AddAssets = ({ selectedAssets, allAssets, isOpen, onClose, onCancel, onUpdate }: Props) => {
+export const AddAssets = ({ selectedAssets, allAssets, isOpen, onClose, onUpdate }: Props) => {
 	const form = useForm({ mode: "onChange" });
 
 	const { t } = useTranslation();
@@ -61,7 +60,7 @@ export const AddAssets = ({ selectedAssets, allAssets, isOpen, onClose, onCancel
 								<Circle
 									key={index}
 									size="lg"
-									className="relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+									className="relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800"
 								>
 									<Icon name="ARK" width={20} height={20} />
 									<Badge className="border-theme-secondary-300 dark:border-theme-secondary-800" />
@@ -70,7 +69,7 @@ export const AddAssets = ({ selectedAssets, allAssets, isOpen, onClose, onCancel
 
 							<Circle
 								size="lg"
-								className="relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+								className="relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800"
 							>
 								<div className="text-xs text-theme-primary-500">+443</div>
 							</Circle>

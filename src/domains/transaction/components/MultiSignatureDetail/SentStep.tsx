@@ -23,7 +23,7 @@ export const SentStep = ({
 		<section>
 			<Header title={t("TRANSACTION.SUCCESS.TITLE")} />
 
-			<Image name="TransactionSuccessBanner" domain="transaction" className="w-full my-4" />
+			<Image name="TransactionSuccessBanner" domain="transaction" className="my-4 w-full" />
 
 			<p className="text-theme-secondary-700">
 				{t("TRANSACTION.MODAL_MULTISIGNATURE_DETAIL.STEP_3.DESCRIPTION")}

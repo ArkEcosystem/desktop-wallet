@@ -5,7 +5,7 @@ exports[`MultiPaymentDetail should not render if not open 1`] = `<DocumentFragme
 exports[`MultiPaymentDetail should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-opacity-60 dark:bg-opacity-80 bg-theme-secondary-900-rgba overflow-overlay dark:bg-black-rgba"
     data-testid="modal__overlay"
   >
     <div
@@ -13,11 +13,11 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
       tabindex="-1"
     >
       <div
-        class="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+        class="flex overflow-hidden relative flex-col p-10 shadow-2xl rounded-2.5xl bg-theme-background"
         data-testid="modal__inner"
       >
         <div
-          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
             class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
@@ -55,7 +55,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -66,7 +66,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                   >
                     <span
                       class="font-semibold text-base text-theme-text"
@@ -125,7 +125,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -172,7 +172,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -195,7 +195,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -231,7 +231,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -250,7 +250,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -284,7 +284,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -295,7 +295,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex items-center space-x-3 overflow-hidden"
+                    class="flex overflow-hidden items-center space-x-3"
                   >
                     <span
                       class="overflow-hidden"
@@ -341,7 +341,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
                         type="button"
                       >
                         <div
-                          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                         />
                         <div
                           class="sc-bdfBwQ fPrsah"
@@ -363,7 +363,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -374,7 +374,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex items-center space-x-3 overflow-hidden"
+                    class="flex overflow-hidden items-center space-x-3"
                   >
                     <span
                       class="overflow-hidden"
@@ -420,7 +420,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
                         type="button"
                       >
                         <div
-                          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                         />
                         <div
                           class="sc-bdfBwQ fPrsah"
@@ -448,7 +448,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
 exports[`MultiPaymentDetail should render with recipients 1`] = `
 <DocumentFragment>
   <div
-    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-opacity-60 dark:bg-opacity-80 bg-theme-secondary-900-rgba overflow-overlay dark:bg-black-rgba"
     data-testid="modal__overlay"
   >
     <div
@@ -456,11 +456,11 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
       tabindex="-1"
     >
       <div
-        class="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+        class="flex overflow-hidden relative flex-col p-10 shadow-2xl rounded-2.5xl bg-theme-background"
         data-testid="modal__inner"
       >
         <div
-          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
             class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
@@ -498,7 +498,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -509,7 +509,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                   >
                     <span
                       class="font-semibold text-base text-theme-text"
@@ -568,7 +568,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -673,7 +673,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                                   class="max-w-lg"
                                 >
                                   <div
-                                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                                    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                                   >
                                     <span
                                       class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -728,7 +728,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                                   class="max-w-lg"
                                 >
                                   <div
-                                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                                    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                                   >
                                     <span
                                       class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -783,7 +783,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                                   class="max-w-lg"
                                 >
                                   <div
-                                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                                    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                                   >
                                     <span
                                       class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -822,7 +822,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -869,7 +869,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -892,7 +892,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -928,7 +928,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -947,7 +947,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -983,7 +983,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -994,7 +994,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex items-center space-x-3 overflow-hidden"
+                    class="flex overflow-hidden items-center space-x-3"
                   >
                     <span
                       class="overflow-hidden"
@@ -1040,7 +1040,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                         type="button"
                       >
                         <div
-                          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                         />
                         <div
                           class="sc-bdfBwQ fPrsah"
@@ -1062,7 +1062,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1073,7 +1073,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex items-center space-x-3 overflow-hidden"
+                    class="flex overflow-hidden items-center space-x-3"
                   >
                     <span
                       class="overflow-hidden"
@@ -1119,7 +1119,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                         type="button"
                       >
                         <div
-                          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                         />
                         <div
                           class="sc-bdfBwQ fPrsah"

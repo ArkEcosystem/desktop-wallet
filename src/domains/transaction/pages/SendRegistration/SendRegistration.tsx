@@ -19,7 +19,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
 
-import { SummaryStep } from "./";
+import { SummaryStep } from ".";
 import { SendRegistrationForm } from "./SendRegistration.models";
 
 export const SendRegistration = () => {
@@ -41,7 +41,7 @@ export const SendRegistration = () => {
 
 	const form = useForm({ mode: "onChange" });
 
-	const { formState, register, setError, setValue, trigger, watch } = form;
+	const { formState, register, setError, setValue, trigger, watch, getValues } = form;
 	const { isSubmitting, isValid } = formState;
 
 	const { fee, fees } = watch();
@@ -114,10 +114,14 @@ export const SendRegistration = () => {
 
 	const handleSubmit = async () => {
 		try {
+			const { mnemonic, secondMnemonic, encryptionPassword, wif, privateKey } = getValues();
+
 			const signatory = await sign({
-				mnemonic: form.getValues("mnemonic"),
-				secondMnemonic: form.getValues("secondMnemonic"),
-				encryptionPassword: form.getValues("encryptionPassword"),
+				mnemonic,
+				secondMnemonic,
+				encryptionPassword,
+				wif,
+				privateKey,
 			});
 
 			const transaction = await registrationForm!.signTransaction({
@@ -162,7 +166,7 @@ export const SendRegistration = () => {
 			<Section className="flex-1">
 				<Form
 					data-testid="Registration__form"
-					className="max-w-xl mx-auto"
+					className="mx-auto max-w-xl"
 					context={form}
 					onSubmit={handleSubmit}
 				>
@@ -231,8 +235,11 @@ export const SendRegistration = () => {
 										data-testid="Registration__send-button"
 										disabled={!isValid}
 										className="space-x-2"
-										icon="Send"
 										isLoading={isSubmitting}
+										icon="Send"
+										iconWidth={16}
+										iconHeight={16}
+										iconPosition="right"
 									>
 										<span>{t("COMMON.SEND")}</span>
 									</Button>

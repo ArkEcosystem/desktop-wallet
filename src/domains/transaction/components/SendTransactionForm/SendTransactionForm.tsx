@@ -103,7 +103,7 @@ export const SendTransactionForm = ({
 	}, [profile, networks]);
 
 	return (
-		<div className="space-y-8 SendTransactionForm">
+		<div className="space-y-5 SendTransactionForm">
 			<FormField name="network">
 				<FormLabel label={t("COMMON.CRYPTOASSET")} />
 				<SelectNetwork

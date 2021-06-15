@@ -5,7 +5,7 @@ import React, { useRef } from "react";
 import tw, { styled } from "twin.macro";
 import { Size } from "types";
 
-import { useModal } from "./";
+import { useModal } from ".";
 
 interface ModalProps {
 	children: React.ReactNode;
@@ -56,10 +56,10 @@ const ModalContainer = styled.div<{ size?: Size }>`
 
 const ModalContent = (props: ModalContentProps) => (
 	<div
-		className="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+		className="flex overflow-hidden relative flex-col p-10 shadow-2xl rounded-2.5xl bg-theme-background"
 		data-testid="modal__inner"
 	>
-		<div className="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400">
+		<div className="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300">
 			<OriginalButton
 				data-testid="modal__close-btn"
 				variant="transparent"
@@ -96,7 +96,7 @@ const ModalContent = (props: ModalContentProps) => (
 				{props.image}
 
 				{props.description && (
-					<div className="text-theme-secondary-text whitespace-pre-line">{props.description}</div>
+					<div className="whitespace-pre-line text-theme-secondary-text">{props.description}</div>
 				)}
 
 				{props.children}
@@ -142,7 +142,7 @@ export const Modal = ({
 
 	return (
 		<div
-			className="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+			className="flex fixed inset-0 z-50 py-20 w-full h-full bg-opacity-60 dark:bg-opacity-80 bg-theme-secondary-900-rgba overflow-overlay dark:bg-black-rgba"
 			onClick={handleClickOverlay}
 			data-testid="modal__overlay"
 		>

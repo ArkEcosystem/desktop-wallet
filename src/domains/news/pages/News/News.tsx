@@ -136,7 +136,7 @@ export const News = ({ itemsPerPage }: Props) => {
 									<BlockfolioAd />
 								</div>
 
-								<div className="mt-10 flex justify-center w-full">
+								<div className="flex justify-center mt-10 w-full">
 									<Pagination
 										totalCount={totalCount}
 										itemsPerPage={itemsPerPage}

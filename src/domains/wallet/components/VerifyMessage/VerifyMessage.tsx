@@ -46,7 +46,7 @@ const JsonForm = () => {
 				<FormLabel label={t("WALLETS.MODAL_VERIFY_MESSAGE.JSON_STRING")} />
 				<TextArea
 					data-testid="VerifyMessage__json-jsonString"
-					className="h-32 py-4"
+					className="py-4 h-32"
 					placeholder={'{"signatory": "...", "signature": "...", "message": "..."}'}
 					onChange={(event: ChangeEvent<HTMLInputElement>) =>
 						setValue("jsonString", event.target.value, {
@@ -70,7 +70,7 @@ const ManualForm = () => {
 	}, [unregister]);
 
 	return (
-		<div data-testid="VerifyMessage__manual" className="mt-4 space-y-8">
+		<div data-testid="VerifyMessage__manual" className="mt-4 space-y-5">
 			<FormField name="signatory">
 				<FormLabel label={t("COMMON.PUBLIC_KEY")} />
 				<InputDefault
@@ -193,7 +193,7 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, isOpen,
 					}}
 				/>
 
-				<Form id="VerifyMessage__form" context={form} onSubmit={handleSubmit}>
+				<Form id="VerifyMessage__form" context={form} onSubmit={handleSubmit} className="space-y-6">
 					{isJson ? <JsonForm /> : <ManualForm />}
 
 					<div className="flex justify-end space-x-3">

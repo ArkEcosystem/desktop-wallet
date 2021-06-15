@@ -136,7 +136,7 @@ describe("CreateProfile", () => {
 		const name = "test profile";
 		const profile = env.profiles().create(name);
 
-		const { asFragment, getAllByTestId, getByTestId, getByText } = await renderComponent();
+		const { asFragment, getAllByTestId, getByTestId } = await renderComponent();
 
 		const selectDropdown = getByTestId("SelectDropdown__input");
 		fireEvent.change(selectDropdown, { target: { value: "BTC" } });
@@ -250,7 +250,7 @@ describe("CreateProfile", () => {
 	});
 
 	it("should update the avatar when removing focus from name input", async () => {
-		const { asFragment, getAllByTestId, getByTestId, getByText } = await renderComponent();
+		const { asFragment, getAllByTestId, getByTestId } = await renderComponent();
 
 		expect(() => getByTestId("SelectProfileImage__avatar")).toThrow(/^Unable to find an element by/);
 
