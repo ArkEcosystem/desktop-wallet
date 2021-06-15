@@ -32,7 +32,6 @@ interface MenuItem {
 
 interface NavigationBarProps {
 	title?: string;
-	backToUrl?: string;
 	isBackDisabled?: boolean;
 	profile?: Contracts.IProfile;
 	variant?: NavbarVariant;
@@ -114,7 +113,6 @@ const LogoContainer = styled.div`
 
 export const NavigationBar = ({
 	title,
-	backToUrl,
 	isBackDisabled,
 	profile,
 	variant,

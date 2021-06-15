@@ -15,11 +15,10 @@ interface Props {
 	allAssets?: any[];
 	isOpen: boolean;
 	onClose?: any;
-	onCancel?: any;
 	onUpdate?: any;
 }
 
-export const AddAssets = ({ selectedAssets, allAssets, isOpen, onClose, onCancel, onUpdate }: Props) => {
+export const AddAssets = ({ selectedAssets, allAssets, isOpen, onClose, onUpdate }: Props) => {
 	const form = useForm({ mode: "onChange" });
 
 	const { t } = useTranslation();
@@ -56,7 +55,7 @@ export const AddAssets = ({ selectedAssets, allAssets, isOpen, onClose, onCancel
 						<span className="mb-3 font-semibold text-theme-secondary-text">
 							{t("NEWS.ADD_ASSETS.ALL_ASSETS")}
 						</span>
-						<div className="flex flex-wrap -mx-3 mt-3">
+						<div className="flex flex-wrap mt-3 -mx-3">
 							{allAssets?.map((asset, index) => (
 								<Circle
 									key={index}

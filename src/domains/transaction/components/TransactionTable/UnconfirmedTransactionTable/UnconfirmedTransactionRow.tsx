@@ -2,7 +2,6 @@ import { DTO } from "@arkecosystem/platform-sdk-profiles";
 import { TableCell, TableRow } from "app/components/Table";
 import { TimeAgo } from "app/components/TimeAgo";
 import React from "react";
-import { Size } from "types";
 
 import { TransactionRowAmount } from "../TransactionRow/TransactionRowAmount";
 import { TransactionRowRecipientIcon } from "../TransactionRow/TransactionRowRecipientIcon";
@@ -11,10 +10,9 @@ import { TransactionRowRecipientLabel } from "../TransactionRow/TransactionRowRe
 type Props = {
 	transaction: DTO.ExtendedTransactionData;
 	walletName?: string;
-	iconSize?: Size;
 } & React.HTMLProps<any>;
 
-export const UnconfirmedTransactionRow = ({ transaction, walletName, iconSize, ...props }: Props) => (
+export const UnconfirmedTransactionRow = ({ transaction, walletName, ...props }: Props) => (
 	<TableRow {...props}>
 		<TableCell variant="start" innerClassName="space-x-3 text-theme-secondary-500" isCompact>
 			<TimeAgo date={transaction.timestamp()?.toString() as string} />

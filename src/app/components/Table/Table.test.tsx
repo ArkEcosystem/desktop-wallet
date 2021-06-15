@@ -52,7 +52,7 @@ describe("Table", () => {
 	});
 
 	it("should change sort order on th click", () => {
-		const { getAllByRole, getByRole } = render(<Table columns={columns} data={data} />);
+		const { getAllByRole } = render(<Table columns={columns} data={data} />);
 
 		const th = getAllByRole("columnheader")[0];
 

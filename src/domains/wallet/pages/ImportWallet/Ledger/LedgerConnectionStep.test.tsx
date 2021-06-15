@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import Transport, { Observer } from "@ledgerhq/hw-transport";
+import Transport from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { EnvironmentProvider } from "app/contexts";
 import { LedgerProvider } from "app/contexts/Ledger/Ledger";
@@ -14,7 +14,6 @@ const history = createMemoryHistory();
 import { LedgerConnectionStep } from "./LedgerConnectionStep";
 
 let transport: typeof Transport;
-let observer: Observer<any>;
 
 describe("LedgerConnectionStep", () => {
 	let profile: Contracts.IProfile;
@@ -29,7 +28,6 @@ describe("LedgerConnectionStep", () => {
 		transport = createTransportReplayer(RecordStore.fromString(""));
 
 		jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
-			observer = obv;
 			return { unsubscribe: jest.fn() };
 		});
 

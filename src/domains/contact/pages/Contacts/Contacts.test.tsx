@@ -8,7 +8,6 @@ import {
 	env,
 	fireEvent,
 	getDefaultProfileId,
-	RenderResult,
 	renderWithRouter,
 	screen,
 	waitFor,
@@ -20,7 +19,6 @@ import { Contacts } from "./Contacts";
 
 let profile: Contracts.IProfile;
 
-let rendered: RenderResult;
 const history = createMemoryHistory();
 
 const renderComponent = () => {

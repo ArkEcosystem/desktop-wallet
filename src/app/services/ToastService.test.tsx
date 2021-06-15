@@ -1,14 +1,12 @@
 import React from "react";
-import { toast, ToastContainer, ToastOptions } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import { act, render, screen } from "utils/testing-library";
 
 import { ToastService } from "./ToastService";
 let subject: ToastService;
-let options: ToastOptions;
 
 beforeAll(() => {
 	subject = new ToastService();
-	options = subject.options();
 });
 
 beforeEach(() => {
@@ -17,9 +15,9 @@ beforeEach(() => {
 
 describe("ToastService", () => {
 	it.each(["info", "success", "warning", "error"])("should call toast %s method", (method) => {
-		const mock = jest.spyOn(toast, method);
+		jest.spyOn(toast, method);
 
-		const { container } = render(<ToastContainer />);
+		render(<ToastContainer />);
 
 		act(() => {
 			subject[method](method);

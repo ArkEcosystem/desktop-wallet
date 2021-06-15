@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import Transport, { Observer } from "@ledgerhq/hw-transport";
+import Transport from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { LedgerProvider } from "app/contexts/Ledger/Ledger";
 import nock from "nock";
@@ -15,7 +15,6 @@ describe("LedgerScanStep", () => {
 	let profile: Contracts.IProfile;
 	let wallet: Contracts.IReadWriteWallet;
 	let transport: typeof Transport;
-	let observer: Observer<any>;
 	let publicKeyPaths = new Map();
 
 	beforeAll(() => {
@@ -75,7 +74,6 @@ describe("LedgerScanStep", () => {
 		]);
 
 		jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
-			observer = obv;
 			return { unsubscribe: jest.fn() };
 		});
 

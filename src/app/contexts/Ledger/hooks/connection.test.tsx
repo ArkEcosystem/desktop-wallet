@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import Transport, { Observer } from "@ledgerhq/hw-transport";
+import Transport from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
@@ -49,10 +49,8 @@ describe("Use Ledger Connection", () => {
 		};
 
 		const unsubscribe = jest.fn();
-		let observer: Observer<any>;
 
 		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
-			observer = obv;
 			return { unsubscribe };
 		});
 
@@ -111,10 +109,8 @@ describe("Use Ledger Connection", () => {
 		};
 
 		const unsubscribe = jest.fn();
-		let observer: Observer<any>;
 
 		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
-			observer = obv;
 			return { unsubscribe };
 		});
 

@@ -133,7 +133,7 @@ describe("WalletDetails", () => {
 			})
 			.get("/api/transactions")
 			.query((params) => !!params.address)
-			.reply(200, (url, params) => {
+			.reply(200, (url) => {
 				const { meta, data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
 				const filteredUrl =
 					"/api/transactions?page=1&limit=1&address=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD&type=0&typeGroup=1";
@@ -247,7 +247,7 @@ describe("WalletDetails", () => {
 	});
 
 	it("should update wallet name", async () => {
-		const { getByTestId, getAllByTestId, asFragment } = await renderPage();
+		const { getByTestId, getAllByTestId } = await renderPage();
 
 		act(() => {
 			fireEvent.click(getAllByTestId("dropdown__toggle")[2]);
@@ -273,7 +273,7 @@ describe("WalletDetails", () => {
 	});
 
 	it("should remove wallet name", async () => {
-		const { getByTestId, getAllByTestId, asFragment } = await renderPage();
+		const { getByTestId, getAllByTestId } = await renderPage();
 
 		act(() => {
 			fireEvent.click(getAllByTestId("dropdown__toggle")[2]);
@@ -289,7 +289,7 @@ describe("WalletDetails", () => {
 			fireEvent.change(getByTestId("UpdateWalletName__input"), { target: { value: "" } });
 		});
 
-		const submitBtn = getByTestId("UpdateWalletName__submit");
+		getByTestId("UpdateWalletName__submit");
 
 		act(() => {
 			fireEvent.click(getByTestId("UpdateWalletName__submit"));
@@ -299,7 +299,7 @@ describe("WalletDetails", () => {
 	});
 
 	it("should star and unstar a wallet", async () => {
-		const { getByTestId, getAllByTestId, asFragment } = await renderPage();
+		const { getByTestId } = await renderPage();
 
 		expect(wallet.isStarred()).toBe(false);
 
@@ -395,7 +395,7 @@ describe("WalletDetails", () => {
 	});
 
 	it("should manually sync wallet data", async () => {
-		const { getByTestId, getAllByTestId } = await renderPage();
+		const { getByTestId } = await renderPage();
 
 		act(() => {
 			fireEvent.click(getByTestId("WalletHeader__refresh"));

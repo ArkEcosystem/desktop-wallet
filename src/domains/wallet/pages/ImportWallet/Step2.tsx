@@ -10,14 +10,12 @@ import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 const MnemonicField = ({
-	network,
 	profile,
 	label,
 	findAddress,
 	...props
 }: {
 	profile: Contracts.IProfile;
-	network: Networks.Network;
 	label: string;
 	findAddress: (value: string) => Promise<string>;
 } & Omit<React.HTMLProps<any>, "ref">) => {

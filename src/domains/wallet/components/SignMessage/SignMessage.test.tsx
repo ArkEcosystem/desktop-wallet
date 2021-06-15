@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import Transport, { Observer } from "@ledgerhq/hw-transport";
+import Transport from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { LedgerProvider } from "app/contexts/Ledger/Ledger";
 import { toasts } from "app/services";
@@ -271,10 +271,8 @@ describe("SignMessage", () => {
 		const isLedgerMock = jest.spyOn(wallet, "isLedger").mockReturnValue(true);
 
 		const unsubscribe = jest.fn();
-		let observer: Observer<any>;
 
 		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
-			observer = obv;
 			return { unsubscribe };
 		});
 
@@ -334,10 +332,8 @@ describe("SignMessage", () => {
 		const isLedgerMock = jest.spyOn(wallet, "isLedger").mockReturnValue(true);
 
 		const unsubscribe = jest.fn();
-		let observer: Observer<any>;
 
 		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
-			observer = obv;
 			return { unsubscribe };
 		});
 
@@ -409,10 +405,8 @@ describe("SignMessage", () => {
 		const isLedgerMock = jest.spyOn(wallet, "isLedger").mockReturnValue(true);
 
 		const unsubscribe = jest.fn();
-		let observer: Observer<any>;
 
 		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
-			observer = obv;
 			return { unsubscribe };
 		});
 

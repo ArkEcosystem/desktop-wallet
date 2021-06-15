@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import Transport, { Observer } from "@ledgerhq/hw-transport";
+import Transport from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { LedgerProvider } from "app/contexts";
@@ -791,9 +791,7 @@ describe("ImportWallet", () => {
 
 	it("should render as ledger import", async () => {
 		const transport: typeof Transport = createTransportReplayer(RecordStore.fromString(""));
-		let observer: Observer<any>;
 		jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
-			observer = obv;
 			return { unsubscribe: jest.fn() };
 		});
 

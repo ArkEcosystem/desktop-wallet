@@ -14,19 +14,13 @@ import { useTranslation } from "react-i18next";
 
 interface TransferDetailProps {
 	isOpen: boolean;
-	ticker?: string;
 	transaction: any;
-	walletAlias?: string;
-	recipientWalletAlias?: string;
 	onClose?: any;
 }
 
 export const TransferDetail = ({
 	isOpen,
-	ticker,
 	transaction,
-	walletAlias,
-	recipientWalletAlias,
 	onClose,
 }: TransferDetailProps) => {
 	const { t } = useTranslation();
