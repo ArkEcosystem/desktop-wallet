@@ -40,7 +40,7 @@ exports[`Welcome should change route to create profile 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="flex flex-col flex-1 justify-center text-center Section__SectionWrapper-sc-8cjvre-0 kJTPww"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center text-center"
       >
         <div
           class="container px-10 mx-auto"
@@ -86,11 +86,11 @@ exports[`Welcome should change route to create profile 1`] = `
                         class="relative"
                       >
                         <div
-                          class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
-                            class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
                             <img
                               alt="Jane Doe"
@@ -106,7 +106,7 @@ exports[`Welcome should change route to create profile 1`] = `
                           </div>
                         </div>
                         <span
-                          class="flex justify-center items-center mr-2 mb-2 align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 gOwpmH bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
+                          class="Badge__Wrapper-sc-1d7juq8-0 gOwpmH flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent mr-2 mb-2 bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
                         >
                           <div
                             class="sc-bdfBwQ iwcOAK"
@@ -139,7 +139,7 @@ exports[`Welcome should change route to create profile 1`] = `
                             class="flex overflow-hidden justify-center w-4"
                           >
                             <div
-                              class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                              class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                               height="1em"
                               width="1em"
                             >
@@ -166,7 +166,7 @@ exports[`Welcome should change route to create profile 1`] = `
                     >
                       <div>
                         <div
-                          class="dark:text-white group-hover:text-white Circle__CircleWrapper-uw7h4j-0 lmmopM text-theme-primary-600 ring-theme-background dark:group-hover:border-theme-secondary-800 dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-700"
+                          class="Circle__CircleWrapper-uw7h4j-0 lmmopM dark:text-white group-hover:text-white text-theme-primary-600 dark:group-hover:border-theme-secondary-800 dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-700 ring-theme-background"
                         >
                           <div
                             class="sc-bdfBwQ fdfkzt"
@@ -259,7 +259,7 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="flex flex-col flex-1 justify-center text-center Section__SectionWrapper-sc-8cjvre-0 kJTPww"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center text-center"
       >
         <div
           class="container px-10 mx-auto"
@@ -305,11 +305,11 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
                         class="relative"
                       >
                         <div
-                          class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
-                            class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
                             <img
                               alt="John Doe"
@@ -344,7 +344,7 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
                             class="flex overflow-hidden justify-center w-4"
                           >
                             <div
-                              class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                              class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                               height="1em"
                               width="1em"
                             >
@@ -373,11 +373,11 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
                         class="relative"
                       >
                         <div
-                          class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
-                            class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
                             <img
                               alt="Jane Doe"
@@ -393,7 +393,7 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
                           </div>
                         </div>
                         <span
-                          class="flex justify-center items-center mr-2 mb-2 align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 gOwpmH bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
+                          class="Badge__Wrapper-sc-1d7juq8-0 gOwpmH flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent mr-2 mb-2 bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
                         >
                           <div
                             class="sc-bdfBwQ iwcOAK"
@@ -426,7 +426,7 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
                             class="flex overflow-hidden justify-center w-4"
                           >
                             <div
-                              class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                              class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                               height="1em"
                               width="1em"
                             >
@@ -453,7 +453,7 @@ exports[`Welcome should navigate to profile dashboard 1`] = `
                     >
                       <div>
                         <div
-                          class="dark:text-white group-hover:text-white Circle__CircleWrapper-uw7h4j-0 lmmopM text-theme-primary-600 ring-theme-background dark:group-hover:border-theme-secondary-800 dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-700"
+                          class="Circle__CircleWrapper-uw7h4j-0 lmmopM dark:text-white group-hover:text-white text-theme-primary-600 dark:group-hover:border-theme-secondary-800 dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-700 ring-theme-background"
                         >
                           <div
                             class="sc-bdfBwQ fdfkzt"
@@ -546,7 +546,7 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
       class="flex flex-col flex-1"
     >
       <div
-        class="flex flex-col flex-1 justify-center text-center Section__SectionWrapper-sc-8cjvre-0 kJTPww"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center text-center"
       >
         <div
           class="container px-10 mx-auto"
@@ -592,11 +592,11 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
                         class="relative"
                       >
                         <div
-                          class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
-                            class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
                             <img
                               alt="John Doe"
@@ -631,7 +631,7 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
                             class="flex overflow-hidden justify-center w-4"
                           >
                             <div
-                              class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                              class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                               height="1em"
                               width="1em"
                             >
@@ -660,11 +660,11 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
                         class="relative"
                       >
                         <div
-                          class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
-                            class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
                             <img
                               alt="Jane Doe"
@@ -680,7 +680,7 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
                           </div>
                         </div>
                         <span
-                          class="flex justify-center items-center mr-2 mb-2 align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 gOwpmH bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
+                          class="Badge__Wrapper-sc-1d7juq8-0 gOwpmH flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent mr-2 mb-2 bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
                         >
                           <div
                             class="sc-bdfBwQ iwcOAK"
@@ -713,7 +713,7 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
                             class="flex overflow-hidden justify-center w-4"
                           >
                             <div
-                              class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                              class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                               height="1em"
                               width="1em"
                             >
@@ -740,7 +740,7 @@ exports[`Welcome should navigate to profile dashboard with correct password 1`] 
                     >
                       <div>
                         <div
-                          class="dark:text-white group-hover:text-white Circle__CircleWrapper-uw7h4j-0 lmmopM text-theme-primary-600 ring-theme-background dark:group-hover:border-theme-secondary-800 dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-700"
+                          class="Circle__CircleWrapper-uw7h4j-0 lmmopM dark:text-white group-hover:text-white text-theme-primary-600 dark:group-hover:border-theme-secondary-800 dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-700 ring-theme-background"
                         >
                           <div
                             class="sc-bdfBwQ fdfkzt"
@@ -833,7 +833,7 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
       class="flex flex-col flex-1"
     >
       <div
-        class="flex flex-col flex-1 justify-center text-center Section__SectionWrapper-sc-8cjvre-0 kJTPww"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center text-center"
       >
         <div
           class="container px-10 mx-auto"
@@ -879,11 +879,11 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
                         class="relative"
                       >
                         <div
-                          class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
-                            class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
                             <img
                               alt="John Doe"
@@ -918,7 +918,7 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
                             class="flex overflow-hidden justify-center w-4"
                           >
                             <div
-                              class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                              class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                               height="1em"
                               width="1em"
                             >
@@ -947,11 +947,11 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
                         class="relative"
                       >
                         <div
-                          class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
-                            class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
                             <img
                               alt="Jane Doe"
@@ -967,7 +967,7 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
                           </div>
                         </div>
                         <span
-                          class="flex justify-center items-center mr-2 mb-2 align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 gOwpmH bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
+                          class="Badge__Wrapper-sc-1d7juq8-0 gOwpmH flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent mr-2 mb-2 bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
                         >
                           <div
                             class="sc-bdfBwQ iwcOAK"
@@ -1000,7 +1000,7 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
                             class="flex overflow-hidden justify-center w-4"
                           >
                             <div
-                              class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                              class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                               height="1em"
                               width="1em"
                             >
@@ -1027,7 +1027,7 @@ exports[`Welcome should navigate to profile settings from profile card menu 1`] 
                     >
                       <div>
                         <div
-                          class="dark:text-white group-hover:text-white Circle__CircleWrapper-uw7h4j-0 lmmopM text-theme-primary-600 ring-theme-background dark:group-hover:border-theme-secondary-800 dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-700"
+                          class="Circle__CircleWrapper-uw7h4j-0 lmmopM dark:text-white group-hover:text-white text-theme-primary-600 dark:group-hover:border-theme-secondary-800 dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-700 ring-theme-background"
                         >
                           <div
                             class="sc-bdfBwQ fdfkzt"
@@ -1120,7 +1120,7 @@ exports[`Welcome should navigate to profile settings with correct password 1`] =
       class="flex flex-col flex-1"
     >
       <div
-        class="flex flex-col flex-1 justify-center text-center Section__SectionWrapper-sc-8cjvre-0 kJTPww"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center text-center"
       >
         <div
           class="container px-10 mx-auto"
@@ -1166,11 +1166,11 @@ exports[`Welcome should navigate to profile settings with correct password 1`] =
                         class="relative"
                       >
                         <div
-                          class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
-                            class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
                             <img
                               alt="John Doe"
@@ -1205,7 +1205,7 @@ exports[`Welcome should navigate to profile settings with correct password 1`] =
                             class="flex overflow-hidden justify-center w-4"
                           >
                             <div
-                              class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                              class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                               height="1em"
                               width="1em"
                             >
@@ -1234,11 +1234,11 @@ exports[`Welcome should navigate to profile settings with correct password 1`] =
                         class="relative"
                       >
                         <div
-                          class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
-                            class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
                             <img
                               alt="Jane Doe"
@@ -1254,7 +1254,7 @@ exports[`Welcome should navigate to profile settings with correct password 1`] =
                           </div>
                         </div>
                         <span
-                          class="flex justify-center items-center mr-2 mb-2 align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 gOwpmH bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
+                          class="Badge__Wrapper-sc-1d7juq8-0 gOwpmH flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent mr-2 mb-2 bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
                         >
                           <div
                             class="sc-bdfBwQ iwcOAK"
@@ -1287,7 +1287,7 @@ exports[`Welcome should navigate to profile settings with correct password 1`] =
                             class="flex overflow-hidden justify-center w-4"
                           >
                             <div
-                              class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                              class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                               height="1em"
                               width="1em"
                             >
@@ -1314,7 +1314,7 @@ exports[`Welcome should navigate to profile settings with correct password 1`] =
                     >
                       <div>
                         <div
-                          class="dark:text-white group-hover:text-white Circle__CircleWrapper-uw7h4j-0 lmmopM text-theme-primary-600 ring-theme-background dark:group-hover:border-theme-secondary-800 dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-700"
+                          class="Circle__CircleWrapper-uw7h4j-0 lmmopM dark:text-white group-hover:text-white text-theme-primary-600 dark:group-hover:border-theme-secondary-800 dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-700 ring-theme-background"
                         >
                           <div
                             class="sc-bdfBwQ fdfkzt"
@@ -1407,7 +1407,7 @@ exports[`Welcome should render with profiles 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="flex flex-col flex-1 justify-center text-center Section__SectionWrapper-sc-8cjvre-0 kJTPww"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center text-center"
       >
         <div
           class="container px-10 mx-auto"
@@ -1453,11 +1453,11 @@ exports[`Welcome should render with profiles 1`] = `
                         class="relative"
                       >
                         <div
-                          class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
-                            class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
                             <img
                               alt="John Doe"
@@ -1492,7 +1492,7 @@ exports[`Welcome should render with profiles 1`] = `
                             class="flex overflow-hidden justify-center w-4"
                           >
                             <div
-                              class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                              class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                               height="1em"
                               width="1em"
                             >
@@ -1521,11 +1521,11 @@ exports[`Welcome should render with profiles 1`] = `
                         class="relative"
                       >
                         <div
-                          class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
-                            class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
                             <img
                               alt="Jane Doe"
@@ -1541,7 +1541,7 @@ exports[`Welcome should render with profiles 1`] = `
                           </div>
                         </div>
                         <span
-                          class="flex justify-center items-center mr-2 mb-2 align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 gOwpmH bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
+                          class="Badge__Wrapper-sc-1d7juq8-0 gOwpmH flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent mr-2 mb-2 bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
                         >
                           <div
                             class="sc-bdfBwQ iwcOAK"
@@ -1574,7 +1574,7 @@ exports[`Welcome should render with profiles 1`] = `
                             class="flex overflow-hidden justify-center w-4"
                           >
                             <div
-                              class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                              class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                               height="1em"
                               width="1em"
                             >
@@ -1601,7 +1601,7 @@ exports[`Welcome should render with profiles 1`] = `
                     >
                       <div>
                         <div
-                          class="dark:text-white group-hover:text-white Circle__CircleWrapper-uw7h4j-0 lmmopM text-theme-primary-600 ring-theme-background dark:group-hover:border-theme-secondary-800 dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-700"
+                          class="Circle__CircleWrapper-uw7h4j-0 lmmopM dark:text-white group-hover:text-white text-theme-primary-600 dark:group-hover:border-theme-secondary-800 dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-700 ring-theme-background"
                         >
                           <div
                             class="sc-bdfBwQ fdfkzt"
@@ -1694,7 +1694,7 @@ exports[`Welcome should render without profiles 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="flex flex-col flex-1 justify-center text-center Section__SectionWrapper-sc-8cjvre-0 kJTPww"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center text-center"
       >
         <div
           class="container px-10 mx-auto"
@@ -1738,7 +1738,7 @@ exports[`Welcome should render without profiles 1`] = `
                     >
                       <div>
                         <div
-                          class="dark:text-white group-hover:text-white Circle__CircleWrapper-uw7h4j-0 lmmopM text-theme-primary-600 ring-theme-background dark:group-hover:border-theme-secondary-800 dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-700"
+                          class="Circle__CircleWrapper-uw7h4j-0 lmmopM dark:text-white group-hover:text-white text-theme-primary-600 dark:group-hover:border-theme-secondary-800 dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-700 ring-theme-background"
                         >
                           <div
                             class="sc-bdfBwQ fdfkzt"
