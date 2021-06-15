@@ -5,7 +5,25 @@ import React from "react";
 import { UserInfoProps } from "../../NavigationBar.contract";
 
 export const UserInfo = ({ onUserAction, avatarImage, userActions, userInitials }: UserInfoProps) => {
-
+	let content;
+	if (avatarImage?.endsWith("</svg>")) {
+		content = (
+			<>
+				<img alt="Profile Avatar" src={`data:image/svg+xml;utf8,${avatarImage}`} />
+				<span className="absolute text-sm font-semibold text-theme-background dark:text-theme-text">
+					{userInitials}
+				</span>
+			</>
+		);
+	} else {
+		content = (
+			<img
+				alt="Profile Avatar"
+				className="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
+				src={avatarImage}
+			/>
+		);
+	}
 
 	return (<Dropdown
 		onSelect={onUserAction}
@@ -17,20 +35,7 @@ export const UserInfo = ({ onUserAction, avatarImage, userActions, userInitials 
 				data-testid="navbar__useractions"
 			>
 				<Avatar size="lg" highlight={isOpen}>
-					{avatarImage?.endsWith("</svg>") ? (
-						<>
-							<img alt="Profile Avatar" src={`data:image/svg+xml;utf8,${avatarImage}`} />
-							<span className="absolute text-sm font-semibold text-theme-background dark:text-theme-text">
-								{userInitials}
-							</span>
-						</>
-					) : (
-						<img
-							alt="Profile Avatar"
-							className="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
-							src={avatarImage}
-						/>
-					)}
+					{content}
 				</Avatar>
 			</div>
 		)}
