@@ -13,11 +13,11 @@ exports[`News should filter results based on category query and asset 1`] = `
         class="flex relative h-21"
       >
         <button
-          class="flex w-12 BackButton__StyledBackButton-sc-1pe22tv-0 eUphun"
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
           disabled=""
         >
           <div
-            class="mx-auto sc-bdfBwQ iMKUsi"
+            class="sc-bdfBwQ iMKUsi mx-auto"
             height="10"
             width="6"
           >
@@ -27,7 +27,7 @@ exports[`News should filter results based on category query and asset 1`] = `
           </div>
         </button>
         <div
-          class="flex flex-1 px-8"
+          class="flex flex-1 px-8 "
         >
           <div
             class="flex items-center my-auto"
@@ -125,7 +125,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="p-1 sc-bdfBwQ liSwOQ"
+                          class="sc-bdfBwQ liSwOQ p-1"
                           height="18"
                           width="15"
                         >
@@ -164,7 +164,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="p-1 sc-bdfBwQ iyevwF"
+                      class="sc-bdfBwQ iyevwF p-1"
                       height="20"
                       width="20"
                     >
@@ -194,7 +194,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="p-1 sc-bdfBwQ iSzUah"
+                      class="sc-bdfBwQ iSzUah p-1"
                       height="22"
                       width="22"
                     >
@@ -243,11 +243,11 @@ exports[`News should filter results based on category query and asset 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
-                      class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
                       <img
                         alt="Profile Avatar"
@@ -313,7 +313,7 @@ exports[`News should filter results based on category query and asset 1`] = `
         </div>
       </div>
       <div
-        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 dgHHTG"
+        class="Section__SectionWrapper-sc-8cjvre-0 dgHHTG flex-1"
       >
         <div
           class="container px-10 mx-auto"
@@ -425,7 +425,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                               class="align-middle"
                             >
                               <div
-                                class="inline-block flex-shrink-0 pb-px text-sm duration-200 sc-bdfBwQ fPrsah"
+                                class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
                                 data-testid="Link__external"
                                 height="1em"
                                 width="1em"
@@ -562,10 +562,10 @@ exports[`News should filter results based on category query and asset 1`] = `
                         class="Input__InputWrapperStyled-wu99qs-0 cRhsWS"
                       >
                         <div
-                          class="flex relative flex-1 h-full"
+                          class="relative flex flex-1 h-full"
                         >
                           <input
-                            class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
+                            class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                             data-testid="NewsOptions__search"
                             maxlength="32"
                             placeholder="Search"
@@ -574,7 +574,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                         </div>
                       </div>
                       <div
-                        class="mr-4 sc-bdfBwQ iNulIV text-theme-primary-300 dark:text-theme-secondary-600"
+                        class="sc-bdfBwQ iNulIV mr-4 text-theme-primary-300 dark:text-theme-secondary-600"
                         height="18"
                         width="18"
                       >
@@ -613,7 +613,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                         class="flex flex-wrap -mx-1"
                       >
                         <label
-                          class="p-1 SelectCategory___StyledLabel-k7qbth-2 bkqSTC"
+                          class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
                           data-testid="NewsOptions__category-Technical"
                         >
                           <input
@@ -630,7 +630,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                           </div>
                         </label>
                         <label
-                          class="p-1 SelectCategory___StyledLabel-k7qbth-2 bkqSTC"
+                          class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
                           data-testid="NewsOptions__category-Marketing"
                         >
                           <input
@@ -647,7 +647,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                           </div>
                         </label>
                         <label
-                          class="p-1 SelectCategory___StyledLabel-k7qbth-2 bkqSTC"
+                          class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
                           data-testid="NewsOptions__category-Community"
                         >
                           <input
@@ -664,7 +664,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                           </div>
                         </label>
                         <label
-                          class="p-1 SelectCategory___StyledLabel-k7qbth-2 bkqSTC"
+                          class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
                           data-testid="NewsOptions__category-Emergency"
                         >
                           <input
@@ -712,7 +712,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                             data-testid="NetworkOption__ARK"
                           >
                             <div
-                              class="relative Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-success-500 text-theme-success-500 ring-theme-background"
+                              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative border-theme-success-500 text-theme-success-500 ring-theme-background"
                             >
                               <div
                                 class="sc-bdfBwQ iyevwF"
@@ -724,7 +724,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                                 </svg>
                               </div>
                               <span
-                                class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 fMCGPT bg-theme-background bg-theme-success-500 text-theme-success-100"
+                                class="Badge__Wrapper-sc-1d7juq8-0 fMCGPT flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-100"
                               >
                                 <div
                                   class="sc-bdfBwQ fdfkzt"
@@ -744,7 +744,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                             data-testid="NetworkOption__LSK"
                           >
                             <div
-                              class="relative Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-secondary-300 text-theme-secondary-300 ring-theme-background dark:border-theme-secondary-800"
+                              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
                             >
                               <div
                                 class="sc-bdfBwQ iyevwF"
@@ -756,7 +756,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                                 </svg>
                               </div>
                               <span
-                                class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 fMCGPT bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+                                class="Badge__Wrapper-sc-1d7juq8-0 fMCGPT flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                               >
                                 <span />
                               </span>
@@ -790,11 +790,11 @@ exports[`News should filter results based on category query and asset 2`] = `
         class="flex relative h-21"
       >
         <button
-          class="flex w-12 BackButton__StyledBackButton-sc-1pe22tv-0 eUphun"
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
           disabled=""
         >
           <div
-            class="mx-auto sc-bdfBwQ iMKUsi"
+            class="sc-bdfBwQ iMKUsi mx-auto"
             height="10"
             width="6"
           >
@@ -804,7 +804,7 @@ exports[`News should filter results based on category query and asset 2`] = `
           </div>
         </button>
         <div
-          class="flex flex-1 px-8"
+          class="flex flex-1 px-8 "
         >
           <div
             class="flex items-center my-auto"
@@ -902,7 +902,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="p-1 sc-bdfBwQ liSwOQ"
+                          class="sc-bdfBwQ liSwOQ p-1"
                           height="18"
                           width="15"
                         >
@@ -941,7 +941,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="p-1 sc-bdfBwQ iyevwF"
+                      class="sc-bdfBwQ iyevwF p-1"
                       height="20"
                       width="20"
                     >
@@ -971,7 +971,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="p-1 sc-bdfBwQ iSzUah"
+                      class="sc-bdfBwQ iSzUah p-1"
                       height="22"
                       width="22"
                     >
@@ -1020,11 +1020,11 @@ exports[`News should filter results based on category query and asset 2`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
-                      class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
                       <img
                         alt="Profile Avatar"
@@ -1090,7 +1090,7 @@ exports[`News should filter results based on category query and asset 2`] = `
         </div>
       </div>
       <div
-        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 dgHHTG"
+        class="Section__SectionWrapper-sc-8cjvre-0 dgHHTG flex-1"
       >
         <div
           class="container px-10 mx-auto"
@@ -1215,7 +1215,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                               class="align-middle"
                             >
                               <div
-                                class="inline-block flex-shrink-0 pb-px text-sm duration-200 sc-bdfBwQ fPrsah"
+                                class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
                                 data-testid="Link__external"
                                 height="1em"
                                 width="1em"
@@ -1421,7 +1421,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                     >
                       Next
                       <div
-                        class="ml-2 sc-bdfBwQ fdfkzt"
+                        class="sc-bdfBwQ fdfkzt ml-2"
                         height="12"
                         width="12"
                       >
@@ -1478,10 +1478,10 @@ exports[`News should filter results based on category query and asset 2`] = `
                         class="Input__InputWrapperStyled-wu99qs-0 cRhsWS"
                       >
                         <div
-                          class="flex relative flex-1 h-full"
+                          class="relative flex flex-1 h-full"
                         >
                           <input
-                            class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
+                            class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                             data-testid="NewsOptions__search"
                             maxlength="32"
                             placeholder="Search"
@@ -1490,7 +1490,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                         </div>
                       </div>
                       <div
-                        class="mr-4 sc-bdfBwQ iNulIV text-theme-primary-300 dark:text-theme-secondary-600"
+                        class="sc-bdfBwQ iNulIV mr-4 text-theme-primary-300 dark:text-theme-secondary-600"
                         height="18"
                         width="18"
                       >
@@ -1524,7 +1524,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                         class="flex flex-wrap -mx-1"
                       >
                         <label
-                          class="p-1 SelectCategory___StyledLabel-k7qbth-2 bkqSTC"
+                          class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
                           data-testid="NewsOptions__category-Technical"
                         >
                           <input
@@ -1541,7 +1541,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                           </div>
                         </label>
                         <label
-                          class="p-1 SelectCategory___StyledLabel-k7qbth-2 bkqSTC"
+                          class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
                           data-testid="NewsOptions__category-Marketing"
                         >
                           <input
@@ -1558,7 +1558,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                           </div>
                         </label>
                         <label
-                          class="p-1 SelectCategory___StyledLabel-k7qbth-2 bkqSTC"
+                          class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
                           data-testid="NewsOptions__category-Community"
                         >
                           <input
@@ -1575,7 +1575,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                           </div>
                         </label>
                         <label
-                          class="p-1 SelectCategory___StyledLabel-k7qbth-2 bkqSTC"
+                          class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
                           data-testid="NewsOptions__category-Emergency"
                         >
                           <input
@@ -1623,7 +1623,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                             data-testid="NetworkOption__ARK"
                           >
                             <div
-                              class="relative Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-success-500 text-theme-success-500 ring-theme-background"
+                              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative border-theme-success-500 text-theme-success-500 ring-theme-background"
                             >
                               <div
                                 class="sc-bdfBwQ iyevwF"
@@ -1635,7 +1635,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                                 </svg>
                               </div>
                               <span
-                                class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 fMCGPT bg-theme-background bg-theme-success-500 text-theme-success-100"
+                                class="Badge__Wrapper-sc-1d7juq8-0 fMCGPT flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-100"
                               >
                                 <div
                                   class="sc-bdfBwQ fdfkzt"
@@ -1655,7 +1655,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                             data-testid="NetworkOption__LSK"
                           >
                             <div
-                              class="relative Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-secondary-300 text-theme-secondary-300 ring-theme-background dark:border-theme-secondary-800"
+                              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
                             >
                               <div
                                 class="sc-bdfBwQ iyevwF"
@@ -1667,7 +1667,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                                 </svg>
                               </div>
                               <span
-                                class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 fMCGPT bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+                                class="Badge__Wrapper-sc-1d7juq8-0 fMCGPT flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                               >
                                 <span />
                               </span>
