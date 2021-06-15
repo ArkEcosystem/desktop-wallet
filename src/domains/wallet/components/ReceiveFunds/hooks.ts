@@ -66,7 +66,7 @@ export const useQRCode = ({ network, amount, address, smartbridge, coin, method 
 		};
 
 		generateQrCode();
-	}, [amount, smartbridge, network, address, formatQR]);
+	}, [amount, smartbridge, network, address, formatQR, coin, method]);
 
 	return qrCodeData;
 };
