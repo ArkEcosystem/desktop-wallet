@@ -18,11 +18,11 @@ exports[`ProfileCard should hide the settings icon 1`] = `
           class="relative"
         >
           <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI flex-shrink-0"
+            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI"
             data-testid="Avatar"
           >
             <div
-              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
             >
               <img
                 alt="John Doe"
@@ -66,11 +66,11 @@ exports[`ProfileCard should render 1`] = `
           class="relative"
         >
           <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI flex-shrink-0"
+            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI"
             data-testid="Avatar"
           >
             <div
-              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
             >
               <img
                 alt="John Doe"
@@ -118,11 +118,11 @@ exports[`ProfileCard should render the profile with avatar image 1`] = `
           class="relative"
         >
           <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI flex-shrink-0"
+            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI"
             data-testid="Avatar"
           >
             <div
-              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
             >
               <img
                 alt="John Doe"
@@ -166,11 +166,11 @@ exports[`ProfileCard should render the settings icon 1`] = `
           class="relative"
         >
           <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI flex-shrink-0"
+            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI"
             data-testid="Avatar"
           >
             <div
-              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
             >
               <img
                 alt="John Doe"
@@ -201,7 +201,7 @@ exports[`ProfileCard should render the settings icon 1`] = `
               class="flex overflow-hidden justify-center w-4"
             >
               <div
-                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                 height="1em"
                 width="1em"
               >

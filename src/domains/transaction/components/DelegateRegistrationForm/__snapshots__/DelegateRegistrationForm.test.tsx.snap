@@ -31,10 +31,10 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
           </div>
         </div>
         <div
-          class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
+          class="flex overflow-hidden flex-col p-4 space-y-4 rounded-lg sm:flex-row sm:items-center sm:space-y-0 sm:space-x-4 bg-theme-warning-50 dark:bg-theme-secondary-800"
         >
           <div
-            class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
+            class="flex flex-shrink-0 justify-center items-center w-11 h-11 text-white rounded-lg bg-theme-warning-600"
           >
             <div
               class="sc-bdfBwQ hteSKx"
@@ -75,7 +75,7 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
                 class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
               >
                 <span
-                  class="font-semibold text-base text-theme-text"
+                  class="text-base font-semibold text-theme-text"
                   data-testid="Address__alias"
                 >
                   <span
@@ -86,7 +86,7 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
                   </span>
                 </span>
                 <span
-                  class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                  class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                   data-testid="Address__address"
                 >
                   D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -98,11 +98,11 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
             class="flex items-center -space-x-2"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+              class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
               data-testid="Avatar"
             >
               <div
-                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
               >
                 <img
                   alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -117,7 +117,7 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
           class="space-y-5"
         >
           <fieldset
-            class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
+            class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 qzrKg"
           >
             <label
               class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -135,18 +135,18 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
               class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
             >
               <div
-                class="relative flex flex-1 h-full"
+                class="flex relative flex-1 h-full"
               >
                 <input
                   aria-invalid="true"
-                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                  class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                   data-testid="Input__username"
                   name="username"
                   value=""
                 />
               </div>
               <div
-                class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+                class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-danger-500 dark:divide-theme-secondary-800"
               >
                 <span
                   data-errortext="Delegate Name should have at most 20 characters"
@@ -166,7 +166,7 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
             </div>
           </fieldset>
           <fieldset
-            class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+            class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
           >
             <label
               class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -194,10 +194,10 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
-                      class="relative flex flex-1 h-full"
+                      class="flex relative flex-1 h-full"
                     >
                       <input
-                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                         data-testid="InputCurrency"
                         name="fee"
                         type="text"
@@ -312,10 +312,10 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
           </div>
         </div>
         <div
-          class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
+          class="flex overflow-hidden flex-col p-4 space-y-4 rounded-lg sm:flex-row sm:items-center sm:space-y-0 sm:space-x-4 bg-theme-warning-50 dark:bg-theme-secondary-800"
         >
           <div
-            class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
+            class="flex flex-shrink-0 justify-center items-center w-11 h-11 text-white rounded-lg bg-theme-warning-600"
           >
             <div
               class="sc-bdfBwQ hteSKx"
@@ -356,7 +356,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
                 class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
               >
                 <span
-                  class="font-semibold text-base text-theme-text"
+                  class="text-base font-semibold text-theme-text"
                   data-testid="Address__alias"
                 >
                   <span
@@ -367,7 +367,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
                   </span>
                 </span>
                 <span
-                  class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                  class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                   data-testid="Address__address"
                 >
                   D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -379,11 +379,11 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
             class="flex items-center -space-x-2"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+              class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
               data-testid="Avatar"
             >
               <div
-                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
               >
                 <img
                   alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -398,7 +398,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
           class="space-y-5"
         >
           <fieldset
-            class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+            class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
           >
             <label
               class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -416,10 +416,10 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
             >
               <div
-                class="relative flex flex-1 h-full"
+                class="flex relative flex-1 h-full"
               >
                 <input
-                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                  class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                   data-testid="Input__username"
                   name="username"
                   value=""
@@ -428,7 +428,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
             </div>
           </fieldset>
           <fieldset
-            class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+            class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
           >
             <label
               class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -456,10 +456,10 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
-                      class="relative flex flex-1 h-full"
+                      class="flex relative flex-1 h-full"
                     >
                       <input
-                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                         data-testid="InputCurrency"
                         name="fee"
                         type="text"
@@ -573,7 +573,7 @@ exports[`DelegateRegistrationForm should render review step 1`] = `
           </div>
         </div>
         <div
-          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 UsFpT no-ligatures mt-8"
+          class="mt-8 TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 UsFpT no-ligatures"
           data-testid="TransactionDetail"
         >
           <div
@@ -626,7 +626,7 @@ exports[`DelegateRegistrationForm should render review step 1`] = `
                 class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
               >
                 <span
-                  class="font-semibold text-base text-theme-text"
+                  class="text-base font-semibold text-theme-text"
                   data-testid="Address__alias"
                 >
                   <span
@@ -637,7 +637,7 @@ exports[`DelegateRegistrationForm should render review step 1`] = `
                   </span>
                 </span>
                 <span
-                  class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                  class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                   data-testid="Address__address"
                 >
                   D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -649,11 +649,11 @@ exports[`DelegateRegistrationForm should render review step 1`] = `
             class="flex items-center -space-x-2"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+              class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
               data-testid="Avatar"
             >
               <div
-                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
               >
                 <img
                   alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -796,10 +796,10 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
           </div>
         </div>
         <div
-          class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
+          class="flex overflow-hidden flex-col p-4 space-y-4 rounded-lg sm:flex-row sm:items-center sm:space-y-0 sm:space-x-4 bg-theme-warning-50 dark:bg-theme-secondary-800"
         >
           <div
-            class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
+            class="flex flex-shrink-0 justify-center items-center w-11 h-11 text-white rounded-lg bg-theme-warning-600"
           >
             <div
               class="sc-bdfBwQ hteSKx"
@@ -840,7 +840,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                 class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
               >
                 <span
-                  class="font-semibold text-base text-theme-text"
+                  class="text-base font-semibold text-theme-text"
                   data-testid="Address__alias"
                 >
                   <span
@@ -851,7 +851,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                   </span>
                 </span>
                 <span
-                  class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                  class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                   data-testid="Address__address"
                 >
                   D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -863,11 +863,11 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
             class="flex items-center -space-x-2"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+              class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
               data-testid="Avatar"
             >
               <div
-                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
               >
                 <img
                   alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -882,7 +882,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
           class="space-y-5"
         >
           <fieldset
-            class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+            class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
           >
             <label
               class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -900,10 +900,10 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
             >
               <div
-                class="relative flex flex-1 h-full"
+                class="flex relative flex-1 h-full"
               >
                 <input
-                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                  class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                   data-testid="Input__username"
                   name="username"
                   value=""
@@ -912,7 +912,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
             </div>
           </fieldset>
           <fieldset
-            class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+            class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
           >
             <label
               class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -940,10 +940,10 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
-                      class="relative flex flex-1 h-full"
+                      class="flex relative flex-1 h-full"
                     >
                       <input
-                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                         data-testid="InputCurrency"
                         name="fee"
                         type="text"
@@ -1058,10 +1058,10 @@ exports[`DelegateRegistrationForm should set username 1`] = `
           </div>
         </div>
         <div
-          class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
+          class="flex overflow-hidden flex-col p-4 space-y-4 rounded-lg sm:flex-row sm:items-center sm:space-y-0 sm:space-x-4 bg-theme-warning-50 dark:bg-theme-secondary-800"
         >
           <div
-            class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
+            class="flex flex-shrink-0 justify-center items-center w-11 h-11 text-white rounded-lg bg-theme-warning-600"
           >
             <div
               class="sc-bdfBwQ hteSKx"
@@ -1102,7 +1102,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                 class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
               >
                 <span
-                  class="font-semibold text-base text-theme-text"
+                  class="text-base font-semibold text-theme-text"
                   data-testid="Address__alias"
                 >
                   <span
@@ -1113,7 +1113,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                   </span>
                 </span>
                 <span
-                  class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                  class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                   data-testid="Address__address"
                 >
                   D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -1125,11 +1125,11 @@ exports[`DelegateRegistrationForm should set username 1`] = `
             class="flex items-center -space-x-2"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+              class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
               data-testid="Avatar"
             >
               <div
-                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
               >
                 <img
                   alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -1144,7 +1144,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
           class="space-y-5"
         >
           <fieldset
-            class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+            class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
           >
             <label
               class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -1162,10 +1162,10 @@ exports[`DelegateRegistrationForm should set username 1`] = `
               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
             >
               <div
-                class="relative flex flex-1 h-full"
+                class="flex relative flex-1 h-full"
               >
                 <input
-                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                  class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                   data-testid="Input__username"
                   name="username"
                   value=""
@@ -1174,7 +1174,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
             </div>
           </fieldset>
           <fieldset
-            class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+            class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
           >
             <label
               class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -1202,10 +1202,10 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
-                      class="relative flex flex-1 h-full"
+                      class="flex relative flex-1 h-full"
                     >
                       <input
-                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                         data-testid="InputCurrency"
                         name="fee"
                         type="text"
@@ -1320,10 +1320,10 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
           </div>
         </div>
         <div
-          class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
+          class="flex overflow-hidden flex-col p-4 space-y-4 rounded-lg sm:flex-row sm:items-center sm:space-y-0 sm:space-x-4 bg-theme-warning-50 dark:bg-theme-secondary-800"
         >
           <div
-            class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
+            class="flex flex-shrink-0 justify-center items-center w-11 h-11 text-white rounded-lg bg-theme-warning-600"
           >
             <div
               class="sc-bdfBwQ hteSKx"
@@ -1364,7 +1364,7 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
                 class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
               >
                 <span
-                  class="font-semibold text-base text-theme-text"
+                  class="text-base font-semibold text-theme-text"
                   data-testid="Address__alias"
                 >
                   <span
@@ -1375,7 +1375,7 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
                   </span>
                 </span>
                 <span
-                  class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                  class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                   data-testid="Address__address"
                 >
                   D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -1387,11 +1387,11 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
             class="flex items-center -space-x-2"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+              class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
               data-testid="Avatar"
             >
               <div
-                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
               >
                 <img
                   alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -1406,7 +1406,7 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
           class="space-y-5"
         >
           <fieldset
-            class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
+            class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 qzrKg"
           >
             <label
               class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -1424,18 +1424,18 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
               class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
             >
               <div
-                class="relative flex flex-1 h-full"
+                class="flex relative flex-1 h-full"
               >
                 <input
                   aria-invalid="true"
-                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                  class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                   data-testid="Input__username"
                   name="username"
                   value=""
                 />
               </div>
               <div
-                class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+                class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-danger-500 dark:divide-theme-secondary-800"
               >
                 <span
                   data-errortext="Delegate Name already exists"
@@ -1455,7 +1455,7 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
             </div>
           </fieldset>
           <fieldset
-            class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+            class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
           >
             <label
               class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -1483,10 +1483,10 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
-                      class="relative flex flex-1 h-full"
+                      class="flex relative flex-1 h-full"
                     >
                       <input
-                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                         data-testid="InputCurrency"
                         name="fee"
                         type="text"
@@ -1601,10 +1601,10 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
           </div>
         </div>
         <div
-          class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
+          class="flex overflow-hidden flex-col p-4 space-y-4 rounded-lg sm:flex-row sm:items-center sm:space-y-0 sm:space-x-4 bg-theme-warning-50 dark:bg-theme-secondary-800"
         >
           <div
-            class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
+            class="flex flex-shrink-0 justify-center items-center w-11 h-11 text-white rounded-lg bg-theme-warning-600"
           >
             <div
               class="sc-bdfBwQ hteSKx"
@@ -1645,7 +1645,7 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
                 class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
               >
                 <span
-                  class="font-semibold text-base text-theme-text"
+                  class="text-base font-semibold text-theme-text"
                   data-testid="Address__alias"
                 >
                   <span
@@ -1656,7 +1656,7 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
                   </span>
                 </span>
                 <span
-                  class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                  class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                   data-testid="Address__address"
                 >
                   D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -1668,11 +1668,11 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
             class="flex items-center -space-x-2"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+              class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
               data-testid="Avatar"
             >
               <div
-                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
               >
                 <img
                   alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -1687,7 +1687,7 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
           class="space-y-5"
         >
           <fieldset
-            class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
+            class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 qzrKg"
           >
             <label
               class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -1705,18 +1705,18 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
               class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
             >
               <div
-                class="relative flex flex-1 h-full"
+                class="flex relative flex-1 h-full"
               >
                 <input
                   aria-invalid="true"
-                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                  class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                   data-testid="Input__username"
                   name="username"
                   value=""
                 />
               </div>
               <div
-                class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+                class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-danger-500 dark:divide-theme-secondary-800"
               >
                 <span
                   data-errortext="The following characters are not allowed: '<', '>'"
@@ -1736,7 +1736,7 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
             </div>
           </fieldset>
           <fieldset
-            class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+            class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
           >
             <label
               class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -1764,10 +1764,10 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
-                      class="relative flex flex-1 h-full"
+                      class="flex relative flex-1 h-full"
                     >
                       <input
-                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                         data-testid="InputCurrency"
                         name="fee"
                         type="text"

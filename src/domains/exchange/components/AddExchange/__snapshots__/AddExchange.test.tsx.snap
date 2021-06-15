@@ -20,7 +20,7 @@ exports[`AddExchange should render a modal 1`] = `
           class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+            class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
             data-testid="modal__close-btn"
             type="button"
           >
@@ -54,7 +54,7 @@ exports[`AddExchange should render a modal 1`] = `
               class="mt-8 -mb-6"
             >
               <div
-                class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+                class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
                 role="table"
               >
                 <table
@@ -67,7 +67,7 @@ exports[`AddExchange should render a modal 1`] = `
                       role="row"
                     >
                       <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                         colspan="1"
                         data-testid="table__th--0"
                         role="columnheader"
@@ -75,16 +75,16 @@ exports[`AddExchange should render a modal 1`] = `
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex flex-inline align-top"
+                          class="flex align-top flex-inline"
                         >
                           <div>
                             Name
                           </div>
                           <div
-                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity ml-2"
+                            class="flex items-center ml-2 transition-opacity text-theme-secondary-500 dark:text-theme-secondary-700"
                           >
                             <div
-                              class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                              class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                               height="5"
                               role="img"
                               width="8"
@@ -97,7 +97,7 @@ exports[`AddExchange should render a modal 1`] = `
                         </div>
                       </th>
                       <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                         colspan="1"
                         data-testid="table__th--1"
                         role="columnheader"
@@ -105,16 +105,16 @@ exports[`AddExchange should render a modal 1`] = `
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex flex-inline align-top"
+                          class="flex align-top flex-inline"
                         >
                           <div>
                             Author
                           </div>
                           <div
-                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                            class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                           >
                             <div
-                              class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                              class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                               height="5"
                               role="img"
                               width="8"
@@ -127,13 +127,13 @@ exports[`AddExchange should render a modal 1`] = `
                         </div>
                       </th>
                       <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
+                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                         colspan="1"
                         data-testid="table__th--2"
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top no-border"
+                          class="flex align-top flex-inline no-border"
                         >
                           <div>
                             Version
@@ -141,13 +141,13 @@ exports[`AddExchange should render a modal 1`] = `
                         </div>
                       </th>
                       <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                         colspan="1"
                         data-testid="table__th--3"
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top hidden"
+                          class="flex hidden align-top flex-inline"
                         >
                           <div>
                             Actions
@@ -165,7 +165,7 @@ exports[`AddExchange should render a modal 1`] = `
                     >
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                          class="space-x-5 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                         >
                           <div
                             class="w-11 h-11"
@@ -203,7 +203,7 @@ exports[`AddExchange should render a modal 1`] = `
                         class="w-16"
                       >
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
                         >
                           <button
                             class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -224,7 +224,7 @@ exports[`AddExchange should render a modal 1`] = `
                     >
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                          class="space-x-5 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                         >
                           <div
                             class="w-11 h-11"
@@ -262,7 +262,7 @@ exports[`AddExchange should render a modal 1`] = `
                         class="w-16"
                       >
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
                         >
                           <button
                             class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -283,7 +283,7 @@ exports[`AddExchange should render a modal 1`] = `
                     >
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                          class="space-x-5 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                         >
                           <div
                             class="w-11 h-11"
@@ -321,7 +321,7 @@ exports[`AddExchange should render a modal 1`] = `
                         class="w-16"
                       >
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
                         >
                           <button
                             class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -342,7 +342,7 @@ exports[`AddExchange should render a modal 1`] = `
                     >
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                          class="space-x-5 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                         >
                           <div
                             class="w-11 h-11"
@@ -380,7 +380,7 @@ exports[`AddExchange should render a modal 1`] = `
                         class="w-16"
                       >
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
                         >
                           <button
                             class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"

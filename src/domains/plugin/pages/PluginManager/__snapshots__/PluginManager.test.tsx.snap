@@ -14,11 +14,11 @@ exports[`PluginManager should cancel install plugin 1`] = `
           class="flex relative h-21"
         >
           <button
-            class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
+            class="flex w-12 BackButton__StyledBackButton-sc-1pe22tv-0 eUphun"
             disabled=""
           >
             <div
-              class="sc-bdfBwQ iMKUsi mx-auto"
+              class="mx-auto sc-bdfBwQ iMKUsi"
               height="10"
               width="6"
             >
@@ -28,7 +28,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
             </div>
           </button>
           <div
-            class="flex flex-1 px-8 "
+            class="flex flex-1 px-8"
           >
             <div
               class="flex items-center my-auto"
@@ -126,7 +126,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                           class="flex relative items-center space-x-2"
                         >
                           <div
-                            class="sc-bdfBwQ liSwOQ p-1"
+                            class="p-1 sc-bdfBwQ liSwOQ"
                             height="18"
                             width="15"
                           >
@@ -165,7 +165,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-bdfBwQ iyevwF p-1"
+                        class="p-1 sc-bdfBwQ iyevwF"
                         height="20"
                         width="20"
                       >
@@ -195,7 +195,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-bdfBwQ iSzUah p-1"
+                        class="p-1 sc-bdfBwQ iSzUah"
                         height="22"
                         width="22"
                       >
@@ -244,11 +244,11 @@ exports[`PluginManager should cancel install plugin 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                      class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                       data-testid="Avatar"
                     >
                       <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                        class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                       >
                         <img
                           alt="Profile Avatar"
@@ -367,7 +367,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY sticky my-4 dark:bg-black top-21 bg-theme-secondary-100"
+          class="sticky my-4 dark:bg-black PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY top-21 bg-theme-secondary-100"
           data-testid="PluginManagerNavigationBar"
         >
           <div
@@ -377,7 +377,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
               class="-mx-6 w-full"
             >
               <div
-                class="Tabs__TabList-sc-1lxyvu-1 eWhkiE w-full h-18"
+                class="w-full Tabs__TabList-sc-1lxyvu-1 eWhkiE h-18"
               >
                 <button
                   aria-selected="true"
@@ -597,7 +597,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 </h2>
               </div>
               <div
-                class="border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 rounded-lg text-theme-secondary-text text-center leading-5 p-6"
+                class="p-6 leading-5 text-center rounded-lg border border-solid border-theme-secondary-300 text-theme-secondary-text dark:border-theme-secondary-800"
                 data-testid="PluginList__empty-message"
               >
                 <div>
@@ -646,7 +646,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 data-testid="PluginList"
               >
                 <div
-                  class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+                  class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
                   role="table"
                 >
                   <table
@@ -659,7 +659,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                         role="row"
                       >
                         <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                          class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                           colspan="1"
                           data-testid="table__th--0"
                           role="columnheader"
@@ -667,16 +667,16 @@ exports[`PluginManager should cancel install plugin 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top"
+                            class="flex align-top flex-inline"
                           >
                             <div>
                               Name
                             </div>
                             <div
-                              class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity ml-2"
+                              class="flex items-center ml-2 transition-opacity text-theme-secondary-500 dark:text-theme-secondary-700"
                             >
                               <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                                class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                                 height="5"
                                 role="img"
                                 width="8"
@@ -689,7 +689,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                           </div>
                         </th>
                         <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                          class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                           colspan="1"
                           data-testid="table__th--1"
                           role="columnheader"
@@ -697,16 +697,16 @@ exports[`PluginManager should cancel install plugin 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top"
+                            class="flex align-top flex-inline"
                           >
                             <div>
                               Author
                             </div>
                             <div
-                              class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                              class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                             >
                               <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                                class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                                 height="5"
                                 role="img"
                                 width="8"
@@ -719,7 +719,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                           </div>
                         </th>
                         <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                          class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                           colspan="1"
                           data-testid="table__th--2"
                           role="columnheader"
@@ -727,16 +727,16 @@ exports[`PluginManager should cancel install plugin 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top"
+                            class="flex align-top flex-inline"
                           >
                             <div>
                               Version
                             </div>
                             <div
-                              class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                              class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                             >
                               <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                                class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                                 height="5"
                                 role="img"
                                 width="8"
@@ -749,7 +749,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                           </div>
                         </th>
                         <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                          class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                           colspan="1"
                           data-testid="table__th--3"
                           role="columnheader"
@@ -757,16 +757,16 @@ exports[`PluginManager should cancel install plugin 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top"
+                            class="flex align-top flex-inline"
                           >
                             <div>
                               Size
                             </div>
                             <div
-                              class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                              class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                             >
                               <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                                class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                                 height="5"
                                 role="img"
                                 width="8"
@@ -779,13 +779,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                           </div>
                         </th>
                         <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
+                          class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                           colspan="1"
                           data-testid="table__th--4"
                           role="columnheader"
                         >
                           <div
-                            class="flex flex-inline align-top justify-center no-border"
+                            class="flex justify-center align-top flex-inline no-border"
                           >
                             <div>
                               Status
@@ -793,13 +793,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                           </div>
                         </th>
                         <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                          class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                           colspan="1"
                           data-testid="table__th--5"
                           role="columnheader"
                         >
                           <div
-                            class="flex flex-inline align-top hidden"
+                            class="flex hidden align-top flex-inline"
                           >
                             <div>
                               Actions
@@ -817,7 +817,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       >
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                            class="space-x-5 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
                               class="PluginImage__PluginImageWrapper-iwox49-0 fITdNR"
@@ -892,10 +892,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                            class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
                           >
                             <button
-                              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP flex-1"
+                              class="flex-1 OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -914,7 +914,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       >
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                            class="space-x-5 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
                               class="PluginImage__PluginImageWrapper-iwox49-0 fITdNR"
@@ -998,10 +998,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                            class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
                           >
                             <button
-                              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP flex-1"
+                              class="flex-1 OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -1020,7 +1020,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       >
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                            class="space-x-5 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
                               class="PluginImage__PluginImageWrapper-iwox49-0 fITdNR"
@@ -1095,10 +1095,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                            class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
                           >
                             <button
-                              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP flex-1"
+                              class="flex-1 OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -1137,7 +1137,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 </h2>
               </div>
               <div
-                class="border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 rounded-lg text-theme-secondary-text text-center leading-5 p-6"
+                class="p-6 leading-5 text-center rounded-lg border border-solid border-theme-secondary-300 text-theme-secondary-text dark:border-theme-secondary-800"
                 data-testid="PluginList__empty-message"
               >
                 <div>
@@ -1166,7 +1166,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 </h2>
               </div>
               <div
-                class="border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 rounded-lg text-theme-secondary-text text-center leading-5 p-6"
+                class="p-6 leading-5 text-center rounded-lg border border-solid border-theme-secondary-300 text-theme-secondary-text dark:border-theme-secondary-800"
                 data-testid="PluginList__empty-message"
               >
                 <div>
@@ -1203,11 +1203,11 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
           class="flex relative h-21"
         >
           <button
-            class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
+            class="flex w-12 BackButton__StyledBackButton-sc-1pe22tv-0 eUphun"
             disabled=""
           >
             <div
-              class="sc-bdfBwQ iMKUsi mx-auto"
+              class="mx-auto sc-bdfBwQ iMKUsi"
               height="10"
               width="6"
             >
@@ -1217,7 +1217,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
             </div>
           </button>
           <div
-            class="flex flex-1 px-8 "
+            class="flex flex-1 px-8"
           >
             <div
               class="flex items-center my-auto"
@@ -1315,7 +1315,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                           class="flex relative items-center space-x-2"
                         >
                           <div
-                            class="sc-bdfBwQ liSwOQ p-1"
+                            class="p-1 sc-bdfBwQ liSwOQ"
                             height="18"
                             width="15"
                           >
@@ -1354,7 +1354,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                       class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-bdfBwQ iyevwF p-1"
+                        class="p-1 sc-bdfBwQ iyevwF"
                         height="20"
                         width="20"
                       >
@@ -1384,7 +1384,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                       class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-bdfBwQ iSzUah p-1"
+                        class="p-1 sc-bdfBwQ iSzUah"
                         height="22"
                         width="22"
                       >
@@ -1433,11 +1433,11 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                      class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                       data-testid="Avatar"
                     >
                       <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                        class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                       >
                         <img
                           alt="Profile Avatar"
@@ -1556,7 +1556,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY sticky my-4 dark:bg-black top-21 bg-theme-secondary-100"
+          class="sticky my-4 dark:bg-black PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY top-21 bg-theme-secondary-100"
           data-testid="PluginManagerNavigationBar"
         >
           <div
@@ -1566,7 +1566,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
               class="-mx-6 w-full"
             >
               <div
-                class="Tabs__TabList-sc-1lxyvu-1 eWhkiE w-full h-18"
+                class="w-full Tabs__TabList-sc-1lxyvu-1 eWhkiE h-18"
               >
                 <button
                   aria-selected="false"
@@ -1791,7 +1791,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                 data-testid="PluginList"
               >
                 <div
-                  class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+                  class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
                   role="table"
                 >
                   <table
@@ -1804,7 +1804,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                         role="row"
                       >
                         <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                          class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                           colspan="1"
                           data-testid="table__th--0"
                           role="columnheader"
@@ -1812,16 +1812,16 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top"
+                            class="flex align-top flex-inline"
                           >
                             <div>
                               Name
                             </div>
                             <div
-                              class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity ml-2"
+                              class="flex items-center ml-2 transition-opacity text-theme-secondary-500 dark:text-theme-secondary-700"
                             >
                               <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                                class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                                 height="5"
                                 role="img"
                                 width="8"
@@ -1834,7 +1834,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                           </div>
                         </th>
                         <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                          class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                           colspan="1"
                           data-testid="table__th--1"
                           role="columnheader"
@@ -1842,16 +1842,16 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top"
+                            class="flex align-top flex-inline"
                           >
                             <div>
                               Author
                             </div>
                             <div
-                              class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                              class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                             >
                               <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                                class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                                 height="5"
                                 role="img"
                                 width="8"
@@ -1864,7 +1864,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                           </div>
                         </th>
                         <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                          class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                           colspan="1"
                           data-testid="table__th--2"
                           role="columnheader"
@@ -1872,16 +1872,16 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top"
+                            class="flex align-top flex-inline"
                           >
                             <div>
                               Category
                             </div>
                             <div
-                              class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                              class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                             >
                               <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                                class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                                 height="5"
                                 role="img"
                                 width="8"
@@ -1894,7 +1894,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                           </div>
                         </th>
                         <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                          class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                           colspan="1"
                           data-testid="table__th--3"
                           role="columnheader"
@@ -1902,16 +1902,16 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top"
+                            class="flex align-top flex-inline"
                           >
                             <div>
                               Version
                             </div>
                             <div
-                              class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                              class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                             >
                               <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                                class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                                 height="5"
                                 role="img"
                                 width="8"
@@ -1924,7 +1924,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                           </div>
                         </th>
                         <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                          class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                           colspan="1"
                           data-testid="table__th--4"
                           role="columnheader"
@@ -1932,16 +1932,16 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top"
+                            class="flex align-top flex-inline"
                           >
                             <div>
                               Size
                             </div>
                             <div
-                              class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                              class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                             >
                               <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                                class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                                 height="5"
                                 role="img"
                                 width="8"
@@ -1954,13 +1954,13 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                           </div>
                         </th>
                         <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
+                          class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                           colspan="1"
                           data-testid="table__th--5"
                           role="columnheader"
                         >
                           <div
-                            class="flex flex-inline align-top justify-center no-border"
+                            class="flex justify-center align-top flex-inline no-border"
                           >
                             <div>
                               Status
@@ -1968,13 +1968,13 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                           </div>
                         </th>
                         <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                          class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                           colspan="1"
                           data-testid="table__th--6"
                           role="columnheader"
                         >
                           <div
-                            class="flex flex-inline align-top hidden"
+                            class="flex hidden align-top flex-inline"
                           >
                             <div>
                               Actions
@@ -1992,7 +1992,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                       >
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                            class="space-x-5 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
                               class="PluginImage__PluginImageWrapper-iwox49-0 fITdNR"
@@ -2074,7 +2074,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                            class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
                           >
                             <div
                               class="flex items-center space-x-2"
@@ -2089,7 +2089,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                                     class="relative"
                                   >
                                     <button
-                                      class="OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg text-left"
+                                      class="text-left OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg"
                                       type="button"
                                     >
                                       <div
@@ -2143,11 +2143,11 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
           class="flex relative h-21"
         >
           <button
-            class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
+            class="flex w-12 BackButton__StyledBackButton-sc-1pe22tv-0 eUphun"
             disabled=""
           >
             <div
-              class="sc-bdfBwQ iMKUsi mx-auto"
+              class="mx-auto sc-bdfBwQ iMKUsi"
               height="10"
               width="6"
             >
@@ -2157,7 +2157,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
             </div>
           </button>
           <div
-            class="flex flex-1 px-8 "
+            class="flex flex-1 px-8"
           >
             <div
               class="flex items-center my-auto"
@@ -2255,7 +2255,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                           class="flex relative items-center space-x-2"
                         >
                           <div
-                            class="sc-bdfBwQ liSwOQ p-1"
+                            class="p-1 sc-bdfBwQ liSwOQ"
                             height="18"
                             width="15"
                           >
@@ -2294,7 +2294,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                       class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-bdfBwQ iyevwF p-1"
+                        class="p-1 sc-bdfBwQ iyevwF"
                         height="20"
                         width="20"
                       >
@@ -2324,7 +2324,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                       class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-bdfBwQ iSzUah p-1"
+                        class="p-1 sc-bdfBwQ iSzUah"
                         height="22"
                         width="22"
                       >
@@ -2373,11 +2373,11 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                      class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                       data-testid="Avatar"
                     >
                       <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                        class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                       >
                         <img
                           alt="Profile Avatar"
@@ -2496,7 +2496,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY sticky my-4 dark:bg-black top-21 bg-theme-secondary-100"
+          class="sticky my-4 dark:bg-black PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY top-21 bg-theme-secondary-100"
           data-testid="PluginManagerNavigationBar"
         >
           <div
@@ -2506,7 +2506,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
               class="-mx-6 w-full"
             >
               <div
-                class="Tabs__TabList-sc-1lxyvu-1 eWhkiE w-full h-18"
+                class="w-full Tabs__TabList-sc-1lxyvu-1 eWhkiE h-18"
               >
                 <button
                   aria-selected="false"
@@ -2731,7 +2731,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                 data-testid="PluginList"
               >
                 <div
-                  class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+                  class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
                   role="table"
                 >
                   <table
@@ -2744,7 +2744,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                         role="row"
                       >
                         <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                          class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                           colspan="1"
                           data-testid="table__th--0"
                           role="columnheader"
@@ -2752,16 +2752,16 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top"
+                            class="flex align-top flex-inline"
                           >
                             <div>
                               Name
                             </div>
                             <div
-                              class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity ml-2"
+                              class="flex items-center ml-2 transition-opacity text-theme-secondary-500 dark:text-theme-secondary-700"
                             >
                               <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                                class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                                 height="5"
                                 role="img"
                                 width="8"
@@ -2774,7 +2774,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                           </div>
                         </th>
                         <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                          class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                           colspan="1"
                           data-testid="table__th--1"
                           role="columnheader"
@@ -2782,16 +2782,16 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top"
+                            class="flex align-top flex-inline"
                           >
                             <div>
                               Author
                             </div>
                             <div
-                              class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                              class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                             >
                               <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                                class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                                 height="5"
                                 role="img"
                                 width="8"
@@ -2804,7 +2804,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                           </div>
                         </th>
                         <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                          class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                           colspan="1"
                           data-testid="table__th--2"
                           role="columnheader"
@@ -2812,16 +2812,16 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top"
+                            class="flex align-top flex-inline"
                           >
                             <div>
                               Category
                             </div>
                             <div
-                              class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                              class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                             >
                               <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                                class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                                 height="5"
                                 role="img"
                                 width="8"
@@ -2834,7 +2834,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                           </div>
                         </th>
                         <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                          class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                           colspan="1"
                           data-testid="table__th--3"
                           role="columnheader"
@@ -2842,16 +2842,16 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top"
+                            class="flex align-top flex-inline"
                           >
                             <div>
                               Version
                             </div>
                             <div
-                              class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                              class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                             >
                               <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                                class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                                 height="5"
                                 role="img"
                                 width="8"
@@ -2864,7 +2864,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                           </div>
                         </th>
                         <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                          class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                           colspan="1"
                           data-testid="table__th--4"
                           role="columnheader"
@@ -2872,16 +2872,16 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top"
+                            class="flex align-top flex-inline"
                           >
                             <div>
                               Size
                             </div>
                             <div
-                              class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                              class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                             >
                               <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                                class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                                 height="5"
                                 role="img"
                                 width="8"
@@ -2894,13 +2894,13 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                           </div>
                         </th>
                         <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
+                          class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                           colspan="1"
                           data-testid="table__th--5"
                           role="columnheader"
                         >
                           <div
-                            class="flex flex-inline align-top justify-center no-border"
+                            class="flex justify-center align-top flex-inline no-border"
                           >
                             <div>
                               Status
@@ -2908,13 +2908,13 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                           </div>
                         </th>
                         <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                          class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                           colspan="1"
                           data-testid="table__th--6"
                           role="columnheader"
                         >
                           <div
-                            class="flex flex-inline align-top hidden"
+                            class="flex hidden align-top flex-inline"
                           >
                             <div>
                               Actions
@@ -2932,7 +2932,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                       >
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                            class="space-x-5 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
                               class="PluginImage__PluginImageWrapper-iwox49-0 fITdNR"
@@ -3014,7 +3014,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                            class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
                           >
                             <div
                               class="flex items-center space-x-2"
@@ -3029,7 +3029,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                                     class="relative"
                                   >
                                     <button
-                                      class="OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg text-left"
+                                      class="text-left OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg"
                                       type="button"
                                     >
                                       <div
@@ -3083,11 +3083,11 @@ exports[`PluginManager should render 1`] = `
           class="flex relative h-21"
         >
           <button
-            class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
+            class="flex w-12 BackButton__StyledBackButton-sc-1pe22tv-0 eUphun"
             disabled=""
           >
             <div
-              class="sc-bdfBwQ iMKUsi mx-auto"
+              class="mx-auto sc-bdfBwQ iMKUsi"
               height="10"
               width="6"
             >
@@ -3097,7 +3097,7 @@ exports[`PluginManager should render 1`] = `
             </div>
           </button>
           <div
-            class="flex flex-1 px-8 "
+            class="flex flex-1 px-8"
           >
             <div
               class="flex items-center my-auto"
@@ -3195,7 +3195,7 @@ exports[`PluginManager should render 1`] = `
                           class="flex relative items-center space-x-2"
                         >
                           <div
-                            class="sc-bdfBwQ liSwOQ p-1"
+                            class="p-1 sc-bdfBwQ liSwOQ"
                             height="18"
                             width="15"
                           >
@@ -3234,7 +3234,7 @@ exports[`PluginManager should render 1`] = `
                       class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-bdfBwQ iyevwF p-1"
+                        class="p-1 sc-bdfBwQ iyevwF"
                         height="20"
                         width="20"
                       >
@@ -3264,7 +3264,7 @@ exports[`PluginManager should render 1`] = `
                       class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-bdfBwQ iSzUah p-1"
+                        class="p-1 sc-bdfBwQ iSzUah"
                         height="22"
                         width="22"
                       >
@@ -3313,11 +3313,11 @@ exports[`PluginManager should render 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                      class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                       data-testid="Avatar"
                     >
                       <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                        class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                       >
                         <img
                           alt="Profile Avatar"
@@ -3436,7 +3436,7 @@ exports[`PluginManager should render 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY sticky my-4 dark:bg-black top-21 bg-theme-secondary-100"
+          class="sticky my-4 dark:bg-black PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY top-21 bg-theme-secondary-100"
           data-testid="PluginManagerNavigationBar"
         >
           <div
@@ -3446,7 +3446,7 @@ exports[`PluginManager should render 1`] = `
               class="-mx-6 w-full"
             >
               <div
-                class="Tabs__TabList-sc-1lxyvu-1 eWhkiE w-full h-18"
+                class="w-full Tabs__TabList-sc-1lxyvu-1 eWhkiE h-18"
               >
                 <button
                   aria-selected="true"
@@ -3950,7 +3950,7 @@ exports[`PluginManager should render 1`] = `
                                 class="flex overflow-hidden justify-center w-4"
                               >
                                 <div
-                                  class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                  class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                   height="1em"
                                   width="1em"
                                 >
@@ -4045,7 +4045,7 @@ exports[`PluginManager should render 1`] = `
                                 class="flex overflow-hidden justify-center w-4"
                               >
                                 <div
-                                  class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                  class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                   height="1em"
                                   width="1em"
                                 >
@@ -4150,7 +4150,7 @@ exports[`PluginManager should render 1`] = `
                                 class="flex overflow-hidden justify-center w-4"
                               >
                                 <div
-                                  class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                  class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                   height="1em"
                                   width="1em"
                                 >
@@ -4561,11 +4561,11 @@ exports[`PluginManager should search for plugin 1`] = `
           class="flex relative h-21"
         >
           <button
-            class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
+            class="flex w-12 BackButton__StyledBackButton-sc-1pe22tv-0 eUphun"
             disabled=""
           >
             <div
-              class="sc-bdfBwQ iMKUsi mx-auto"
+              class="mx-auto sc-bdfBwQ iMKUsi"
               height="10"
               width="6"
             >
@@ -4575,7 +4575,7 @@ exports[`PluginManager should search for plugin 1`] = `
             </div>
           </button>
           <div
-            class="flex flex-1 px-8 "
+            class="flex flex-1 px-8"
           >
             <div
               class="flex items-center my-auto"
@@ -4673,7 +4673,7 @@ exports[`PluginManager should search for plugin 1`] = `
                           class="flex relative items-center space-x-2"
                         >
                           <div
-                            class="sc-bdfBwQ liSwOQ p-1"
+                            class="p-1 sc-bdfBwQ liSwOQ"
                             height="18"
                             width="15"
                           >
@@ -4712,7 +4712,7 @@ exports[`PluginManager should search for plugin 1`] = `
                       class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-bdfBwQ iyevwF p-1"
+                        class="p-1 sc-bdfBwQ iyevwF"
                         height="20"
                         width="20"
                       >
@@ -4742,7 +4742,7 @@ exports[`PluginManager should search for plugin 1`] = `
                       class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-bdfBwQ iSzUah p-1"
+                        class="p-1 sc-bdfBwQ iSzUah"
                         height="22"
                         width="22"
                       >
@@ -4791,11 +4791,11 @@ exports[`PluginManager should search for plugin 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                      class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                       data-testid="Avatar"
                     >
                       <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                        class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                       >
                         <img
                           alt="Profile Avatar"
@@ -4858,7 +4858,7 @@ exports[`PluginManager should search for plugin 1`] = `
                         class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       >
                         <div
-                          class="flex absolute right-0 justify-center items-center -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background mr-1"
+                          class="flex absolute right-0 justify-center items-center mr-1 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background"
                         >
                           <div
                             class="w-2 h-2 rounded-full bg-theme-primary-500"
@@ -4886,7 +4886,7 @@ exports[`PluginManager should search for plugin 1`] = `
                       </button>
                     </div>
                     <div
-                      class="HeaderSearchBar__SearchBarInputWrapper-sc-124mt80-0 foBMUQ absolute z-20 flex items-center text-base px-10 -mx-10 py-4 rounded-md shadow-xl bg-theme-background transform top-1/2 -translate-y-1/2 right-3"
+                      class="flex absolute right-3 top-1/2 z-20 items-center py-4 px-10 -mx-10 text-base rounded-md shadow-xl transform -translate-y-1/2 HeaderSearchBar__SearchBarInputWrapper-sc-124mt80-0 foBMUQ bg-theme-background"
                       data-testid="HeaderSearchBar__input"
                     >
                       <button
@@ -4895,7 +4895,7 @@ exports[`PluginManager should search for plugin 1`] = `
                         type="button"
                       >
                         <div
-                          class="sc-bdfBwQ fdfkzt p-1 -ml-1 text-theme-secondary dark:text-theme-secondary-600 hover:text-theme-primary-600"
+                          class="p-1 -ml-1 sc-bdfBwQ fdfkzt text-theme-secondary dark:text-theme-secondary-600 hover:text-theme-primary-600"
                           height="12"
                           width="12"
                         >
@@ -4913,13 +4913,13 @@ exports[`PluginManager should search for plugin 1`] = `
                           unknown search query…
                         </div>
                         <div
-                          class="Input__InputWrapperStyled-wu99qs-0 cRhsWS pl-3"
+                          class="pl-3 Input__InputWrapperStyled-wu99qs-0 cRhsWS"
                         >
                           <div
-                            class="relative flex flex-1 h-full"
+                            class="flex relative flex-1 h-full"
                           >
                             <input
-                              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                              class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                               data-testid="Input"
                               placeholder="Search..."
                               value="unknown search query"
@@ -4973,7 +4973,7 @@ exports[`PluginManager should search for plugin 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY sticky my-4 dark:bg-black top-21 bg-theme-secondary-100"
+          class="sticky my-4 dark:bg-black PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY top-21 bg-theme-secondary-100"
           data-testid="PluginManagerNavigationBar"
         >
           <div
@@ -4983,7 +4983,7 @@ exports[`PluginManager should search for plugin 1`] = `
               class="-mx-6 w-full"
             >
               <div
-                class="Tabs__TabList-sc-1lxyvu-1 eWhkiE w-full h-18"
+                class="w-full Tabs__TabList-sc-1lxyvu-1 eWhkiE h-18"
               >
                 <button
                   aria-selected="false"
@@ -5199,7 +5199,7 @@ exports[`PluginManager should search for plugin 1`] = `
               data-testid="PluginManager__container--search"
             >
               <div
-                class="border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 rounded-lg text-theme-secondary-text text-center leading-5 p-6"
+                class="p-6 leading-5 text-center rounded-lg border border-solid border-theme-secondary-300 text-theme-secondary-text dark:border-theme-secondary-800"
                 data-testid="PluginList__empty-message"
               >
                 <div>
@@ -5233,11 +5233,11 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
           class="flex relative h-21"
         >
           <button
-            class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
+            class="flex w-12 BackButton__StyledBackButton-sc-1pe22tv-0 eUphun"
             disabled=""
           >
             <div
-              class="sc-bdfBwQ iMKUsi mx-auto"
+              class="mx-auto sc-bdfBwQ iMKUsi"
               height="10"
               width="6"
             >
@@ -5247,7 +5247,7 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
             </div>
           </button>
           <div
-            class="flex flex-1 px-8 "
+            class="flex flex-1 px-8"
           >
             <div
               class="flex items-center my-auto"
@@ -5345,7 +5345,7 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                           class="flex relative items-center space-x-2"
                         >
                           <div
-                            class="sc-bdfBwQ liSwOQ p-1"
+                            class="p-1 sc-bdfBwQ liSwOQ"
                             height="18"
                             width="15"
                           >
@@ -5384,7 +5384,7 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                       class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-bdfBwQ iyevwF p-1"
+                        class="p-1 sc-bdfBwQ iyevwF"
                         height="20"
                         width="20"
                       >
@@ -5414,7 +5414,7 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                       class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-bdfBwQ iSzUah p-1"
+                        class="p-1 sc-bdfBwQ iSzUah"
                         height="22"
                         width="22"
                       >
@@ -5463,11 +5463,11 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                      class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                       data-testid="Avatar"
                     >
                       <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                        class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                       >
                         <img
                           alt="Profile Avatar"
@@ -5586,7 +5586,7 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY sticky my-4 dark:bg-black top-21 bg-theme-secondary-100"
+          class="sticky my-4 dark:bg-black PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY top-21 bg-theme-secondary-100"
           data-testid="PluginManagerNavigationBar"
         >
           <div
@@ -5596,7 +5596,7 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
               class="-mx-6 w-full"
             >
               <div
-                class="Tabs__TabList-sc-1lxyvu-1 eWhkiE w-full h-18"
+                class="w-full Tabs__TabList-sc-1lxyvu-1 eWhkiE h-18"
               >
                 <button
                   aria-selected="false"
@@ -5897,7 +5897,7 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                                 class="flex overflow-hidden justify-center w-4"
                               >
                                 <div
-                                  class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                  class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                   height="1em"
                                   width="1em"
                                 >
@@ -5992,7 +5992,7 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                                 class="flex overflow-hidden justify-center w-4"
                               >
                                 <div
-                                  class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                  class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                   height="1em"
                                   width="1em"
                                 >
@@ -6097,7 +6097,7 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                                 class="flex overflow-hidden justify-center w-4"
                               >
                                 <div
-                                  class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                  class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                   height="1em"
                                   width="1em"
                                 >
@@ -6202,7 +6202,7 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                                 class="flex overflow-hidden justify-center w-4"
                               >
                                 <div
-                                  class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                  class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                   height="1em"
                                   width="1em"
                                 >
@@ -6245,11 +6245,11 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
           class="flex relative h-21"
         >
           <button
-            class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
+            class="flex w-12 BackButton__StyledBackButton-sc-1pe22tv-0 eUphun"
             disabled=""
           >
             <div
-              class="sc-bdfBwQ iMKUsi mx-auto"
+              class="mx-auto sc-bdfBwQ iMKUsi"
               height="10"
               width="6"
             >
@@ -6259,7 +6259,7 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
             </div>
           </button>
           <div
-            class="flex flex-1 px-8 "
+            class="flex flex-1 px-8"
           >
             <div
               class="flex items-center my-auto"
@@ -6357,7 +6357,7 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                           class="flex relative items-center space-x-2"
                         >
                           <div
-                            class="sc-bdfBwQ liSwOQ p-1"
+                            class="p-1 sc-bdfBwQ liSwOQ"
                             height="18"
                             width="15"
                           >
@@ -6396,7 +6396,7 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                       class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-bdfBwQ iyevwF p-1"
+                        class="p-1 sc-bdfBwQ iyevwF"
                         height="20"
                         width="20"
                       >
@@ -6426,7 +6426,7 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                       class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-bdfBwQ iSzUah p-1"
+                        class="p-1 sc-bdfBwQ iSzUah"
                         height="22"
                         width="22"
                       >
@@ -6475,11 +6475,11 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                      class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                       data-testid="Avatar"
                     >
                       <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                        class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                       >
                         <img
                           alt="Profile Avatar"
@@ -6598,7 +6598,7 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY sticky my-4 dark:bg-black top-21 bg-theme-secondary-100"
+          class="sticky my-4 dark:bg-black PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY top-21 bg-theme-secondary-100"
           data-testid="PluginManagerNavigationBar"
         >
           <div
@@ -6608,7 +6608,7 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
               class="-mx-6 w-full"
             >
               <div
-                class="Tabs__TabList-sc-1lxyvu-1 eWhkiE w-full h-18"
+                class="w-full Tabs__TabList-sc-1lxyvu-1 eWhkiE h-18"
               >
                 <button
                   aria-selected="false"
@@ -6909,7 +6909,7 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                                 class="flex overflow-hidden justify-center w-4"
                               >
                                 <div
-                                  class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                  class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                   height="1em"
                                   width="1em"
                                 >
@@ -7004,7 +7004,7 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                                 class="flex overflow-hidden justify-center w-4"
                               >
                                 <div
-                                  class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                  class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                   height="1em"
                                   width="1em"
                                 >
@@ -7109,7 +7109,7 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                                 class="flex overflow-hidden justify-center w-4"
                               >
                                 <div
-                                  class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                  class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                   height="1em"
                                   width="1em"
                                 >
@@ -7214,7 +7214,7 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                                 class="flex overflow-hidden justify-center w-4"
                               >
                                 <div
-                                  class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                  class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                   height="1em"
                                   width="1em"
                                 >
@@ -7257,11 +7257,11 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
           class="flex relative h-21"
         >
           <button
-            class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
+            class="flex w-12 BackButton__StyledBackButton-sc-1pe22tv-0 eUphun"
             disabled=""
           >
             <div
-              class="sc-bdfBwQ iMKUsi mx-auto"
+              class="mx-auto sc-bdfBwQ iMKUsi"
               height="10"
               width="6"
             >
@@ -7271,7 +7271,7 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
             </div>
           </button>
           <div
-            class="flex flex-1 px-8 "
+            class="flex flex-1 px-8"
           >
             <div
               class="flex items-center my-auto"
@@ -7369,7 +7369,7 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                           class="flex relative items-center space-x-2"
                         >
                           <div
-                            class="sc-bdfBwQ liSwOQ p-1"
+                            class="p-1 sc-bdfBwQ liSwOQ"
                             height="18"
                             width="15"
                           >
@@ -7408,7 +7408,7 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                       class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-bdfBwQ iyevwF p-1"
+                        class="p-1 sc-bdfBwQ iyevwF"
                         height="20"
                         width="20"
                       >
@@ -7438,7 +7438,7 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                       class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-bdfBwQ iSzUah p-1"
+                        class="p-1 sc-bdfBwQ iSzUah"
                         height="22"
                         width="22"
                       >
@@ -7487,11 +7487,11 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                      class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                       data-testid="Avatar"
                     >
                       <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                        class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                       >
                         <img
                           alt="Profile Avatar"
@@ -7610,7 +7610,7 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY sticky my-4 dark:bg-black top-21 bg-theme-secondary-100"
+          class="sticky my-4 dark:bg-black PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY top-21 bg-theme-secondary-100"
           data-testid="PluginManagerNavigationBar"
         >
           <div
@@ -7620,7 +7620,7 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
               class="-mx-6 w-full"
             >
               <div
-                class="Tabs__TabList-sc-1lxyvu-1 eWhkiE w-full h-18"
+                class="w-full Tabs__TabList-sc-1lxyvu-1 eWhkiE h-18"
               >
                 <button
                   aria-selected="true"
@@ -8124,7 +8124,7 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                                 class="flex overflow-hidden justify-center w-4"
                               >
                                 <div
-                                  class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                  class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                   height="1em"
                                   width="1em"
                                 >
@@ -8219,7 +8219,7 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                                 class="flex overflow-hidden justify-center w-4"
                               >
                                 <div
-                                  class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                  class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                   height="1em"
                                   width="1em"
                                 >
@@ -8324,7 +8324,7 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                                 class="flex overflow-hidden justify-center w-4"
                               >
                                 <div
-                                  class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                  class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                   height="1em"
                                   width="1em"
                                 >
@@ -8735,11 +8735,11 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
           class="flex relative h-21"
         >
           <button
-            class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
+            class="flex w-12 BackButton__StyledBackButton-sc-1pe22tv-0 eUphun"
             disabled=""
           >
             <div
-              class="sc-bdfBwQ iMKUsi mx-auto"
+              class="mx-auto sc-bdfBwQ iMKUsi"
               height="10"
               width="6"
             >
@@ -8749,7 +8749,7 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
             </div>
           </button>
           <div
-            class="flex flex-1 px-8 "
+            class="flex flex-1 px-8"
           >
             <div
               class="flex items-center my-auto"
@@ -8847,7 +8847,7 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                           class="flex relative items-center space-x-2"
                         >
                           <div
-                            class="sc-bdfBwQ liSwOQ p-1"
+                            class="p-1 sc-bdfBwQ liSwOQ"
                             height="18"
                             width="15"
                           >
@@ -8886,7 +8886,7 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                       class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-bdfBwQ iyevwF p-1"
+                        class="p-1 sc-bdfBwQ iyevwF"
                         height="20"
                         width="20"
                       >
@@ -8916,7 +8916,7 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                       class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-bdfBwQ iSzUah p-1"
+                        class="p-1 sc-bdfBwQ iSzUah"
                         height="22"
                         width="22"
                       >
@@ -8965,11 +8965,11 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                      class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                       data-testid="Avatar"
                     >
                       <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                        class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                       >
                         <img
                           alt="Profile Avatar"
@@ -9088,7 +9088,7 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY sticky my-4 dark:bg-black top-21 bg-theme-secondary-100"
+          class="sticky my-4 dark:bg-black PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY top-21 bg-theme-secondary-100"
           data-testid="PluginManagerNavigationBar"
         >
           <div
@@ -9098,7 +9098,7 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
               class="-mx-6 w-full"
             >
               <div
-                class="Tabs__TabList-sc-1lxyvu-1 eWhkiE w-full h-18"
+                class="w-full Tabs__TabList-sc-1lxyvu-1 eWhkiE h-18"
               >
                 <button
                   aria-selected="false"
@@ -9399,7 +9399,7 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                                 class="flex overflow-hidden justify-center w-4"
                               >
                                 <div
-                                  class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                  class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                   height="1em"
                                   width="1em"
                                 >
@@ -9494,7 +9494,7 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                                 class="flex overflow-hidden justify-center w-4"
                               >
                                 <div
-                                  class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                  class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                   height="1em"
                                   width="1em"
                                 >
@@ -9599,7 +9599,7 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                                 class="flex overflow-hidden justify-center w-4"
                               >
                                 <div
-                                  class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                  class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                   height="1em"
                                   width="1em"
                                 >
@@ -9704,7 +9704,7 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                                 class="flex overflow-hidden justify-center w-4"
                               >
                                 <div
-                                  class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                  class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                   height="1em"
                                   width="1em"
                                 >
@@ -9747,11 +9747,11 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
           class="flex relative h-21"
         >
           <button
-            class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
+            class="flex w-12 BackButton__StyledBackButton-sc-1pe22tv-0 eUphun"
             disabled=""
           >
             <div
-              class="sc-bdfBwQ iMKUsi mx-auto"
+              class="mx-auto sc-bdfBwQ iMKUsi"
               height="10"
               width="6"
             >
@@ -9761,7 +9761,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
             </div>
           </button>
           <div
-            class="flex flex-1 px-8 "
+            class="flex flex-1 px-8"
           >
             <div
               class="flex items-center my-auto"
@@ -9859,7 +9859,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                           class="flex relative items-center space-x-2"
                         >
                           <div
-                            class="sc-bdfBwQ liSwOQ p-1"
+                            class="p-1 sc-bdfBwQ liSwOQ"
                             height="18"
                             width="15"
                           >
@@ -9898,7 +9898,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                       class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-bdfBwQ iyevwF p-1"
+                        class="p-1 sc-bdfBwQ iyevwF"
                         height="20"
                         width="20"
                       >
@@ -9928,7 +9928,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                       class="flex relative items-center space-x-2"
                     >
                       <div
-                        class="sc-bdfBwQ iSzUah p-1"
+                        class="p-1 sc-bdfBwQ iSzUah"
                         height="22"
                         width="22"
                       >
@@ -9977,11 +9977,11 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                      class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                       data-testid="Avatar"
                     >
                       <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                        class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                       >
                         <img
                           alt="Profile Avatar"
@@ -10100,7 +10100,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY sticky my-4 dark:bg-black top-21 bg-theme-secondary-100"
+          class="sticky my-4 dark:bg-black PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY top-21 bg-theme-secondary-100"
           data-testid="PluginManagerNavigationBar"
         >
           <div
@@ -10110,7 +10110,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
               class="-mx-6 w-full"
             >
               <div
-                class="Tabs__TabList-sc-1lxyvu-1 eWhkiE w-full h-18"
+                class="w-full Tabs__TabList-sc-1lxyvu-1 eWhkiE h-18"
               >
                 <button
                   aria-selected="false"
@@ -10245,7 +10245,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                       My Plugins
                     </span>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 eOOHKX flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent -mt-6.5 bg-theme-danger-400"
+                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 eOOHKX bg-theme-background -mt-6.5 bg-theme-danger-400"
                       data-testid="PluginManagerNavigationBar_update-badge"
                     >
                       <span />
@@ -10335,7 +10335,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
               My Plugins
             </h2>
             <div
-              class="border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 rounded-lg text-theme-secondary-text text-center leading-5 py-3 px-4 mb-6"
+              class="py-3 px-4 mb-6 leading-5 text-center rounded-lg border border-solid border-theme-secondary-300 text-theme-secondary-text dark:border-theme-secondary-800"
               data-testid="EmptyBlock"
             >
               <div>
@@ -10346,7 +10346,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                     There is 1 update available for your plugins. Would you like to update it?
                   </span>
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS -mr-1"
+                    class="-mr-1 OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
                     data-testid="PluginManager__update-all"
                     type="button"
                   >
@@ -10366,7 +10366,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                 data-testid="PluginList"
               >
                 <div
-                  class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+                  class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
                   role="table"
                 >
                   <table
@@ -10379,7 +10379,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                         role="row"
                       >
                         <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                          class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                           colspan="1"
                           data-testid="table__th--0"
                           role="columnheader"
@@ -10387,16 +10387,16 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top"
+                            class="flex align-top flex-inline"
                           >
                             <div>
                               Name
                             </div>
                             <div
-                              class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity ml-2"
+                              class="flex items-center ml-2 transition-opacity text-theme-secondary-500 dark:text-theme-secondary-700"
                             >
                               <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                                class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                                 height="5"
                                 role="img"
                                 width="8"
@@ -10409,7 +10409,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                           </div>
                         </th>
                         <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                          class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                           colspan="1"
                           data-testid="table__th--1"
                           role="columnheader"
@@ -10417,16 +10417,16 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top"
+                            class="flex align-top flex-inline"
                           >
                             <div>
                               Author
                             </div>
                             <div
-                              class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                              class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                             >
                               <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                                class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                                 height="5"
                                 role="img"
                                 width="8"
@@ -10439,7 +10439,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                           </div>
                         </th>
                         <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                          class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                           colspan="1"
                           data-testid="table__th--2"
                           role="columnheader"
@@ -10447,16 +10447,16 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top"
+                            class="flex align-top flex-inline"
                           >
                             <div>
                               Category
                             </div>
                             <div
-                              class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                              class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                             >
                               <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                                class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                                 height="5"
                                 role="img"
                                 width="8"
@@ -10469,7 +10469,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                           </div>
                         </th>
                         <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                          class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                           colspan="1"
                           data-testid="table__th--3"
                           role="columnheader"
@@ -10477,16 +10477,16 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top"
+                            class="flex align-top flex-inline"
                           >
                             <div>
                               Version
                             </div>
                             <div
-                              class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                              class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                             >
                               <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                                class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                                 height="5"
                                 role="img"
                                 width="8"
@@ -10499,7 +10499,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                           </div>
                         </th>
                         <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                          class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                           colspan="1"
                           data-testid="table__th--4"
                           role="columnheader"
@@ -10507,16 +10507,16 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                           title="Toggle SortBy"
                         >
                           <div
-                            class="flex flex-inline align-top"
+                            class="flex align-top flex-inline"
                           >
                             <div>
                               Size
                             </div>
                             <div
-                              class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                              class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                             >
                               <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                                class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                                 height="5"
                                 role="img"
                                 width="8"
@@ -10529,13 +10529,13 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                           </div>
                         </th>
                         <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
+                          class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                           colspan="1"
                           data-testid="table__th--5"
                           role="columnheader"
                         >
                           <div
-                            class="flex flex-inline align-top justify-center no-border"
+                            class="flex justify-center align-top flex-inline no-border"
                           >
                             <div>
                               Status
@@ -10543,13 +10543,13 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                           </div>
                         </th>
                         <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                          class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                           colspan="1"
                           data-testid="table__th--6"
                           role="columnheader"
                         >
                           <div
-                            class="flex flex-inline align-top hidden"
+                            class="flex hidden align-top flex-inline"
                           >
                             <div>
                               Actions
@@ -10567,7 +10567,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                       >
                         <td>
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                            class="space-x-5 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                           >
                             <div
                               class="PluginImage__PluginImageWrapper-iwox49-0 fITdNR"
@@ -10649,7 +10649,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                           class="w-16"
                         >
                           <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                            class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
                           >
                             <div
                               class="flex items-center space-x-2"
@@ -10664,13 +10664,13 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                                     class="relative"
                                   >
                                     <span
-                                      class="Badge__Wrapper-sc-1d7juq8-0 hcYxPk flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-danger-500"
+                                      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 hcYxPk bg-theme-background bg-theme-danger-500"
                                       data-testid="PluginListItem__update-badge"
                                     >
                                       <span />
                                     </span>
                                     <button
-                                      class="OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg text-left"
+                                      class="text-left OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg"
                                       type="button"
                                     >
                                       <div

@@ -18,7 +18,7 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
           class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+            class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
             data-testid="modal__close-btn"
             type="button"
           >
@@ -117,11 +117,11 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                     data-testid="Avatar"
                   >
                     <div
-                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                     />
                   </div>
                 </div>
@@ -129,7 +129,7 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
             </div>
             <div>
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP mt-8 w-full"
+                class="mt-8 w-full OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                 data-testid="ReceiveFunds__toggle"
                 type="button"
               >
@@ -169,7 +169,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
           class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+            class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
             data-testid="modal__close-btn"
             type="button"
           >
@@ -263,7 +263,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
                         class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                       >
                         <span
-                          class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                          class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
                           data-testid="Address__address"
                         >
                           abc
@@ -298,11 +298,11 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
                   class="-space-x-2 whitespace-nowrap"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                     data-testid="Avatar"
                   >
                     <div
-                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                     >
                       <img
                         alt="abc"
@@ -316,7 +316,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
             </div>
             <div>
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP mt-8 w-full"
+                class="mt-8 w-full OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                 data-testid="ReceiveFunds__toggle"
                 type="button"
               >
@@ -363,7 +363,7 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
           class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+            class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
             data-testid="modal__close-btn"
             type="button"
           >
@@ -418,7 +418,7 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
                         class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                       >
                         <span
-                          class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                          class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
                           data-testid="Address__address"
                         >
                           abc
@@ -469,11 +469,11 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                     data-testid="Avatar"
                   >
                     <div
-                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                     >
                       <img
                         alt="abc"
@@ -487,7 +487,7 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
             </div>
             <div>
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP mt-8 w-full"
+                class="mt-8 w-full OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                 data-testid="ReceiveFunds__toggle"
                 type="button"
               >

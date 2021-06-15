@@ -20,7 +20,7 @@ exports[`SearchRecipient should not render recipient if not in same network 1`] 
           class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+            class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
             data-testid="modal__close-btn"
             type="button"
           >
@@ -59,7 +59,7 @@ exports[`SearchRecipient should not render recipient if not in same network 1`] 
               class="mt-8"
             >
               <div
-                class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+                class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
                 role="table"
               >
                 <table
@@ -72,7 +72,7 @@ exports[`SearchRecipient should not render recipient if not in same network 1`] 
                       role="row"
                     >
                       <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                         colspan="1"
                         data-testid="table__th--0"
                         role="columnheader"
@@ -80,16 +80,16 @@ exports[`SearchRecipient should not render recipient if not in same network 1`] 
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex flex-inline align-top"
+                          class="flex align-top flex-inline"
                         >
                           <div>
                             Wallet Address
                           </div>
                           <div
-                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                            class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                           >
                             <div
-                              class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                              class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                               height="5"
                               role="img"
                               width="8"
@@ -102,7 +102,7 @@ exports[`SearchRecipient should not render recipient if not in same network 1`] 
                         </div>
                       </th>
                       <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                         colspan="1"
                         data-testid="table__th--1"
                         role="columnheader"
@@ -110,16 +110,16 @@ exports[`SearchRecipient should not render recipient if not in same network 1`] 
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex flex-inline align-top"
+                          class="flex align-top flex-inline"
                         >
                           <div>
                             Type
                           </div>
                           <div
-                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                            class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                           >
                             <div
-                              class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                              class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                               height="5"
                               role="img"
                               width="8"
@@ -132,13 +132,13 @@ exports[`SearchRecipient should not render recipient if not in same network 1`] 
                         </div>
                       </th>
                       <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
+                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                         colspan="1"
                         data-testid="table__th--2"
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top justify-end no-border"
+                          class="flex justify-end align-top flex-inline no-border"
                         >
                           <div>
                             <div
@@ -210,7 +210,7 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
           class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+            class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
             data-testid="modal__close-btn"
             type="button"
           >
@@ -249,7 +249,7 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
               class="mt-8"
             >
               <div
-                class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+                class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
                 role="table"
               >
                 <table
@@ -262,7 +262,7 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                       role="row"
                     >
                       <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                         colspan="1"
                         data-testid="table__th--0"
                         role="columnheader"
@@ -270,16 +270,16 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex flex-inline align-top"
+                          class="flex align-top flex-inline"
                         >
                           <div>
                             Wallet Address
                           </div>
                           <div
-                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                            class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                           >
                             <div
-                              class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                              class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                               height="5"
                               role="img"
                               width="8"
@@ -292,7 +292,7 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                         </div>
                       </th>
                       <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                         colspan="1"
                         data-testid="table__th--1"
                         role="columnheader"
@@ -300,16 +300,16 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex flex-inline align-top"
+                          class="flex align-top flex-inline"
                         >
                           <div>
                             Type
                           </div>
                           <div
-                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                            class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                           >
                             <div
-                              class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                              class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                               height="5"
                               role="img"
                               width="8"
@@ -322,13 +322,13 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                         </div>
                       </th>
                       <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
+                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                         colspan="1"
                         data-testid="table__th--2"
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top justify-end no-border"
+                          class="flex justify-end align-top flex-inline no-border"
                         >
                           <div>
                             <div
@@ -377,14 +377,14 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                     >
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
+                          class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -397,7 +397,7 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="font-semibold text-base text-theme-text"
+                              class="text-base font-semibold text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -408,7 +408,7 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="Address__address"
                             >
                               D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -429,7 +429,7 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                       </td>
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
                         >
                           <button
                             class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -451,14 +451,14 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                     >
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
+                          class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
@@ -471,7 +471,7 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="font-semibold text-base text-theme-text"
+                              class="text-base font-semibold text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -482,7 +482,7 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="Address__address"
                             >
                               D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
@@ -503,7 +503,7 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                       </td>
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
                         >
                           <button
                             class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -525,14 +525,14 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                     >
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
+                          class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T"
@@ -545,7 +545,7 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="font-semibold text-base text-theme-text"
+                              class="text-base font-semibold text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -556,7 +556,7 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="Address__address"
                             >
                               DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T
@@ -577,7 +577,7 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                       </td>
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
                         >
                           <button
                             class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -599,14 +599,14 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                     >
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
+                          class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f"
@@ -619,7 +619,7 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="font-semibold text-base text-theme-text"
+                              class="text-base font-semibold text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -630,7 +630,7 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="Address__address"
                             >
                               D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f
@@ -651,7 +651,7 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                       </td>
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
                         >
                           <button
                             class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -697,7 +697,7 @@ exports[`SearchRecipient should render a modal 1`] = `
           class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+            class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
             data-testid="modal__close-btn"
             type="button"
           >
@@ -736,7 +736,7 @@ exports[`SearchRecipient should render a modal 1`] = `
               class="mt-8"
             >
               <div
-                class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+                class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
                 role="table"
               >
                 <table
@@ -749,7 +749,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                       role="row"
                     >
                       <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                         colspan="1"
                         data-testid="table__th--0"
                         role="columnheader"
@@ -757,16 +757,16 @@ exports[`SearchRecipient should render a modal 1`] = `
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex flex-inline align-top"
+                          class="flex align-top flex-inline"
                         >
                           <div>
                             Wallet Address
                           </div>
                           <div
-                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                            class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                           >
                             <div
-                              class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                              class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                               height="5"
                               role="img"
                               width="8"
@@ -779,7 +779,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                         </div>
                       </th>
                       <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                         colspan="1"
                         data-testid="table__th--1"
                         role="columnheader"
@@ -787,16 +787,16 @@ exports[`SearchRecipient should render a modal 1`] = `
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex flex-inline align-top"
+                          class="flex align-top flex-inline"
                         >
                           <div>
                             Type
                           </div>
                           <div
-                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                            class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                           >
                             <div
-                              class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                              class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                               height="5"
                               role="img"
                               width="8"
@@ -809,13 +809,13 @@ exports[`SearchRecipient should render a modal 1`] = `
                         </div>
                       </th>
                       <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
+                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                         colspan="1"
                         data-testid="table__th--2"
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top justify-end no-border"
+                          class="flex justify-end align-top flex-inline no-border"
                         >
                           <div>
                             <div
@@ -864,14 +864,14 @@ exports[`SearchRecipient should render a modal 1`] = `
                     >
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
+                          class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -884,7 +884,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="font-semibold text-base text-theme-text"
+                              class="text-base font-semibold text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -895,7 +895,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="Address__address"
                             >
                               D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -916,7 +916,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                       </td>
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
                         >
                           <button
                             class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -938,14 +938,14 @@ exports[`SearchRecipient should render a modal 1`] = `
                     >
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
+                          class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
@@ -958,7 +958,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="font-semibold text-base text-theme-text"
+                              class="text-base font-semibold text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -969,7 +969,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="Address__address"
                             >
                               D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
@@ -990,7 +990,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                       </td>
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
                         >
                           <button
                             class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -1012,14 +1012,14 @@ exports[`SearchRecipient should render a modal 1`] = `
                     >
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
+                          class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T"
@@ -1032,7 +1032,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="font-semibold text-base text-theme-text"
+                              class="text-base font-semibold text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -1043,7 +1043,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="Address__address"
                             >
                               DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T
@@ -1064,7 +1064,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                       </td>
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
                         >
                           <button
                             class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -1086,14 +1086,14 @@ exports[`SearchRecipient should render a modal 1`] = `
                     >
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
+                          class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f"
@@ -1106,7 +1106,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="font-semibold text-base text-theme-text"
+                              class="text-base font-semibold text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -1117,7 +1117,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="Address__address"
                             >
                               D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f
@@ -1138,7 +1138,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                       </td>
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
                         >
                           <button
                             class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -1160,14 +1160,14 @@ exports[`SearchRecipient should render a modal 1`] = `
                     >
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
+                          class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu"
@@ -1180,7 +1180,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="font-semibold text-base text-theme-text"
+                              class="text-base font-semibold text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -1191,7 +1191,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="Address__address"
                             >
                               DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu
@@ -1212,7 +1212,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                       </td>
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
                         >
                           <button
                             class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -1258,7 +1258,7 @@ exports[`SearchRecipient should render a modal with custom title and description
           class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+            class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
             data-testid="modal__close-btn"
             type="button"
           >
@@ -1297,7 +1297,7 @@ exports[`SearchRecipient should render a modal with custom title and description
               class="mt-8"
             >
               <div
-                class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+                class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
                 role="table"
               >
                 <table
@@ -1310,7 +1310,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                       role="row"
                     >
                       <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                         colspan="1"
                         data-testid="table__th--0"
                         role="columnheader"
@@ -1318,16 +1318,16 @@ exports[`SearchRecipient should render a modal with custom title and description
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex flex-inline align-top"
+                          class="flex align-top flex-inline"
                         >
                           <div>
                             Wallet Address
                           </div>
                           <div
-                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                            class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                           >
                             <div
-                              class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                              class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                               height="5"
                               role="img"
                               width="8"
@@ -1340,7 +1340,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                         </div>
                       </th>
                       <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                         colspan="1"
                         data-testid="table__th--1"
                         role="columnheader"
@@ -1348,16 +1348,16 @@ exports[`SearchRecipient should render a modal with custom title and description
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex flex-inline align-top"
+                          class="flex align-top flex-inline"
                         >
                           <div>
                             Type
                           </div>
                           <div
-                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                            class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                           >
                             <div
-                              class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                              class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                               height="5"
                               role="img"
                               width="8"
@@ -1370,13 +1370,13 @@ exports[`SearchRecipient should render a modal with custom title and description
                         </div>
                       </th>
                       <th
-                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
+                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                         colspan="1"
                         data-testid="table__th--2"
                         role="columnheader"
                       >
                         <div
-                          class="flex flex-inline align-top justify-end no-border"
+                          class="flex justify-end align-top flex-inline no-border"
                         >
                           <div>
                             <div
@@ -1425,14 +1425,14 @@ exports[`SearchRecipient should render a modal with custom title and description
                     >
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
+                          class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -1445,7 +1445,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="font-semibold text-base text-theme-text"
+                              class="text-base font-semibold text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -1456,7 +1456,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="Address__address"
                             >
                               D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -1477,7 +1477,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                       </td>
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
                         >
                           <button
                             class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -1499,14 +1499,14 @@ exports[`SearchRecipient should render a modal with custom title and description
                     >
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
+                          class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
@@ -1519,7 +1519,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="font-semibold text-base text-theme-text"
+                              class="text-base font-semibold text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -1530,7 +1530,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="Address__address"
                             >
                               D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
@@ -1551,7 +1551,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                       </td>
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
                         >
                           <button
                             class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -1573,14 +1573,14 @@ exports[`SearchRecipient should render a modal with custom title and description
                     >
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
+                          class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T"
@@ -1593,7 +1593,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="font-semibold text-base text-theme-text"
+                              class="text-base font-semibold text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -1604,7 +1604,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="Address__address"
                             >
                               DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T
@@ -1625,7 +1625,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                       </td>
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
                         >
                           <button
                             class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -1647,14 +1647,14 @@ exports[`SearchRecipient should render a modal with custom title and description
                     >
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
+                          class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f"
@@ -1667,7 +1667,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="font-semibold text-base text-theme-text"
+                              class="text-base font-semibold text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -1678,7 +1678,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="Address__address"
                             >
                               D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f
@@ -1699,7 +1699,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                       </td>
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
                         >
                           <button
                             class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -1721,14 +1721,14 @@ exports[`SearchRecipient should render a modal with custom title and description
                     >
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
+                          class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu"
@@ -1741,7 +1741,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="font-semibold text-base text-theme-text"
+                              class="text-base font-semibold text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -1752,7 +1752,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="Address__address"
                             >
                               DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu
@@ -1773,7 +1773,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                       </td>
                       <td>
                         <div
-                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
                         >
                           <button
                             class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"

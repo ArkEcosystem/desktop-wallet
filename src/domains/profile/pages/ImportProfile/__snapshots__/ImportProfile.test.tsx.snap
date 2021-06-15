@@ -40,7 +40,7 @@ exports[`ImportProfile should render first step 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col"
+        class="flex flex-col Section__SectionWrapper-sc-8cjvre-0 kJTPww"
       >
         <div
           class="container px-10 mx-auto"
@@ -95,7 +95,7 @@ exports[`ImportProfile should render first step 1`] = `
                     data-testid="SelectFile"
                   >
                     <div
-                      class="h-full flex flex-col items-center justify-center rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
+                      class="flex flex-col justify-center items-center h-full rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
                       data-testid="SelectFile__drop-zone"
                     >
                       <div
