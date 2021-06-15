@@ -47,7 +47,7 @@ const VoteCombinationLabel = ({ votes, unvotes }: { votes: string[]; unvotes: st
 const VoteLabel = ({ delegates, isUnvote }: { delegates: Contracts.IReadOnlyWallet[]; isUnvote?: boolean }) => (
 	<span data-testid="TransactionRowVoteLabel">
 		<RecipientLabel type={isUnvote ? "unvote" : "vote"} />
-		<span className="pl-2 ml-2 font-semibold truncate border-l text-theme-primary-600 border-theme-secondary-300 dark:border-theme-secondary-800">
+		<span className="pl-2 ml-2 font-semibold border-l truncate text-theme-primary-600 border-theme-secondary-300 dark:border-theme-secondary-800">
 			{delegates[0]?.username()}
 		</span>
 		{delegates.length > 1 && (

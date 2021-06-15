@@ -273,11 +273,6 @@ describe("Settings", () => {
 			},
 		);
 
-		const otherProfile = env
-			.profiles()
-			.values()
-			.filter((el: Profile) => el.id() !== profile.id())[0];
-
 		fireEvent.input(getByTestId("General-settings__input--name"), {
 			target: { value: "     " },
 		});
@@ -571,7 +566,7 @@ describe("Settings", () => {
 	});
 
 	it("should change a password", async () => {
-		const { container, asFragment, findByTestId, getByTestId } = renderWithRouter(
+		const { container, findByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
 				<Settings />
 			</Route>,

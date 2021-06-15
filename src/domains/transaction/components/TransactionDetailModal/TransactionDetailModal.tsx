@@ -1,5 +1,4 @@
-import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
-import { useActiveProfile } from "app/hooks";
+import { DTO } from "@arkecosystem/platform-sdk-profiles";
 import { DelegateRegistrationDetail } from "domains/transaction/components/DelegateRegistrationDetail";
 import { DelegateResignationDetail } from "domains/transaction/components/DelegateResignationDetail";
 import { IpfsDetail } from "domains/transaction/components/IpfsDetail";
@@ -18,12 +17,6 @@ interface TransactionDetailModalProps {
 }
 
 export const TransactionDetailModal = ({ isOpen, transactionItem, onClose }: TransactionDetailModalProps) => {
-	const activeProfile = useActiveProfile();
-
-	const ticker = activeProfile.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency, "")!;
-	const walletAlias = activeProfile.wallets().findByAddress(transactionItem.sender())?.alias();
-	const recipientWalletAlias = activeProfile.wallets().findByAddress(transactionItem.recipient())?.alias();
-
 	const transactionType = transactionItem.type();
 	let TransactionModal;
 
@@ -66,16 +59,7 @@ export const TransactionDetailModal = ({ isOpen, transactionItem, onClose }: Tra
 		throw new Error(`Transaction type [${transactionType}] is not supported.`);
 	}
 
-	return (
-		<TransactionModal
-			isOpen={isOpen}
-			transaction={transactionItem}
-			ticker={ticker}
-			walletAlias={walletAlias}
-			recipientWalletAlias={recipientWalletAlias}
-			onClose={onClose}
-		/>
-	);
+	return <TransactionModal isOpen={isOpen} transaction={transactionItem} onClose={onClose} />;
 };
 
 TransactionDetailModal.defaultProps = {

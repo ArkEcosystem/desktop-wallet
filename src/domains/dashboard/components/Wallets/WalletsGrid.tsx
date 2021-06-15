@@ -2,7 +2,7 @@ import { Slider } from "app/components/Slider";
 import { WalletCard } from "app/components/WalletCard";
 import React, { memo } from "react";
 
-import { WalletGridProps } from "./";
+import { WalletGridProps } from ".";
 
 export const WalletsGrid = memo(({ isVisible, isLoading, wallets, sliderOptions, onWalletAction }: WalletGridProps) => {
 	if (!isVisible) {

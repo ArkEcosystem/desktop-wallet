@@ -82,7 +82,7 @@ exports[`ContactListItem should render 1`] = `
               </div>
             </div>
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+              class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
             >
               <span
                 class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -105,7 +105,7 @@ exports[`ContactListItem should render 1`] = `
               type="button"
             >
               <div
-                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
               />
               <div
                 class="text-theme-primary-300 dark:text-theme-secondary-700"
@@ -271,7 +271,7 @@ exports[`ContactListItem should render as delegate 1`] = `
               </div>
             </div>
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+              class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
             >
               <span
                 class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -294,7 +294,7 @@ exports[`ContactListItem should render as delegate 1`] = `
               type="button"
             >
               <div
-                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
               />
               <div
                 class="text-theme-primary-300 dark:text-theme-secondary-700"
@@ -474,7 +474,7 @@ exports[`ContactListItem should render using variant 1`] = `
               </div>
             </div>
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+              class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
             >
               <span
                 class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -497,7 +497,7 @@ exports[`ContactListItem should render using variant 1`] = `
               type="button"
             >
               <div
-                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
               />
               <div
                 class="text-theme-primary-300 dark:text-theme-secondary-700"
@@ -656,7 +656,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
               </div>
             </div>
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+              class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
             >
               <span
                 class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -679,7 +679,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
               type="button"
             >
               <div
-                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
               />
               <div
                 class="text-theme-primary-300 dark:text-theme-secondary-700"
@@ -810,7 +810,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
               </div>
             </div>
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+              class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
             >
               <span
                 class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -833,7 +833,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
               type="button"
             >
               <div
-                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
               />
               <div
                 class="text-theme-primary-300 dark:text-theme-secondary-700"
@@ -964,7 +964,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
               </div>
             </div>
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+              class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
             >
               <span
                 class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -987,7 +987,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
               type="button"
             >
               <div
-                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
               />
               <div
                 class="text-theme-primary-300 dark:text-theme-secondary-700"
@@ -1167,7 +1167,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
               </div>
             </div>
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+              class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
             >
               <span
                 class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -1190,7 +1190,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
               type="button"
             >
               <div
-                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
               />
               <div
                 class="text-theme-primary-300 dark:text-theme-secondary-700"
@@ -1321,7 +1321,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
               </div>
             </div>
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+              class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
             >
               <span
                 class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -1344,7 +1344,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
               type="button"
             >
               <div
-                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
               />
               <div
                 class="text-theme-primary-300 dark:text-theme-secondary-700"
@@ -1475,7 +1475,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
               </div>
             </div>
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+              class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
             >
               <span
                 class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -1498,7 +1498,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
               type="button"
             >
               <div
-                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
               />
               <div
                 class="text-theme-primary-300 dark:text-theme-secondary-700"
@@ -1678,7 +1678,7 @@ exports[`ContactListItem should render with one option 1`] = `
               </div>
             </div>
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+              class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
             >
               <span
                 class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -1701,7 +1701,7 @@ exports[`ContactListItem should render with one option 1`] = `
               type="button"
             >
               <div
-                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
               />
               <div
                 class="text-theme-primary-300 dark:text-theme-secondary-700"
@@ -1817,7 +1817,7 @@ exports[`ContactListItem should render with one option 1`] = `
               </div>
             </div>
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+              class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
             >
               <span
                 class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -1840,7 +1840,7 @@ exports[`ContactListItem should render with one option 1`] = `
               type="button"
             >
               <div
-                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
               />
               <div
                 class="text-theme-primary-300 dark:text-theme-secondary-700"
@@ -1956,7 +1956,7 @@ exports[`ContactListItem should render with one option 1`] = `
               </div>
             </div>
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+              class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
             >
               <span
                 class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -1979,7 +1979,7 @@ exports[`ContactListItem should render with one option 1`] = `
               type="button"
             >
               <div
-                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
               />
               <div
                 class="text-theme-primary-300 dark:text-theme-secondary-700"

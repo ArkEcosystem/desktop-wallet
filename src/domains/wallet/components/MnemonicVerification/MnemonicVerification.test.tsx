@@ -12,7 +12,7 @@ describe("MnemonicVerification", () => {
 	it("should render", () => {
 		const wordPositions = [1, 2, 3];
 
-		const { asFragment } = render(
+		render(
 			<MnemonicVerification
 				mnemonic={mnemonic}
 				optionsLimit={limit}
@@ -29,7 +29,7 @@ describe("MnemonicVerification", () => {
 
 		const wordPositions = [1, 2, 3];
 
-		const { asFragment } = render(
+		render(
 			<MnemonicVerification
 				mnemonic={mnemonic}
 				optionsLimit={limit}

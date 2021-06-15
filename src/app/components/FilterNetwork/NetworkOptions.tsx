@@ -5,7 +5,7 @@ import { Tooltip } from "app/components/Tooltip";
 import { getNetworkExtendedData } from "domains/network/helpers";
 import React from "react";
 
-import { Network } from "./";
+import { Network } from ".";
 
 export const NetworkOption = ({ coin, id, name, isSelected, onClick }: Network) => {
 	const networkExtendedData = coin && id ? getNetworkExtendedData(id) : undefined;
@@ -26,7 +26,7 @@ export const NetworkOption = ({ coin, id, name, isSelected, onClick }: Network) 
 				) : (
 					<Circle
 						size="lg"
-						className="relative border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+						className="relative border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800"
 					>
 						<Icon name={iconName} width={20} height={20} />
 						<Badge className="border-theme-secondary-300 dark:border-theme-secondary-800" />

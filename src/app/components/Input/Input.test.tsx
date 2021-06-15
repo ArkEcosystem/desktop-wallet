@@ -19,8 +19,7 @@ describe("Input", () => {
 	});
 
 	it("should render with focus", () => {
-		const { asFragment, getByTestId } = render(<Input isFocused />);
-		const input = getByTestId("Input");
+		const { asFragment } = render(<Input isFocused />);
 
 		expect(asFragment()).toMatchSnapshot();
 	});

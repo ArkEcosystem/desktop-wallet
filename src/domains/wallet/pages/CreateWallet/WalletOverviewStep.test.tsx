@@ -78,7 +78,7 @@ describe("WalletOverviewStep", () => {
 
 			const toastSpy = jest.spyOn(toasts, "success");
 
-			const { getByTestId, asFragment } = render(
+			const { getByTestId } = render(
 				<FormProvider {...form.current}>
 					<WalletOverviewStep />
 				</FormProvider>,
@@ -110,7 +110,7 @@ describe("WalletOverviewStep", () => {
 
 			const toastSpy = jest.spyOn(toasts, "success");
 
-			const { getByTestId, asFragment } = render(
+			const { getByTestId } = render(
 				<FormProvider {...form.current}>
 					<WalletOverviewStep />
 				</FormProvider>,
@@ -142,7 +142,7 @@ describe("WalletOverviewStep", () => {
 
 			const toastSpy = jest.spyOn(toasts, "error");
 
-			const { getByTestId, asFragment } = render(
+			const { getByTestId } = render(
 				<FormProvider {...form.current}>
 					<WalletOverviewStep />
 				</FormProvider>,

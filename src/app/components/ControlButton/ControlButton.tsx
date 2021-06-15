@@ -54,13 +54,13 @@ export const ControlButton = ({ isChanged, children, className, ...props }: Cont
 				<div
 					className={cn(
 						"flex absolute right-0 justify-center items-center -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background",
-						props.noBorder ? "-mr-1" : "mr-2",
+						props.noBorder ? "-mr-1.5" : "mr-1",
 					)}
 				>
 					<div className="w-2 h-2 rounded-full bg-theme-primary-500" />
 				</div>
 			)}
-			<div className="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible" />
+			<div className="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400" />
 			{children}
 		</ControlButtonStyled>
 	</div>

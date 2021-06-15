@@ -333,7 +333,7 @@ describe("Dropdown", () => {
 	});
 
 	it("should render with a disabled option", () => {
-		const { getByTestId, container, debug } = render(
+		const { getByTestId, container } = render(
 			<Dropdown options={[{ label: "Disabled Option", value: "disabled", disabled: true }]} />,
 		);
 

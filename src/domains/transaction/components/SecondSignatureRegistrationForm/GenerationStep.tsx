@@ -58,22 +58,20 @@ export const GenerationStep = ({
 				paddingPosition="bottom"
 			/>
 
-			<div className="space-y-8">
-				<FormField name="fee">
-					<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
-					<InputFee
-						min={fees.min}
-						avg={fees.avg}
-						max={fees.max}
-						value={fee || 0}
-						step={step}
-						showFeeOptions={wallet.network().feeType() === "dynamic"}
-						onChange={(value) => {
-							setValue("fee", value, { shouldValidate: true, shouldDirty: true });
-						}}
-					/>
-				</FormField>
-			</div>
+			<FormField name="fee">
+				<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
+				<InputFee
+					min={fees.min}
+					avg={fees.avg}
+					max={fees.max}
+					value={fee || 0}
+					step={step}
+					showFeeOptions={wallet.network().feeType() === "dynamic"}
+					onChange={(value) => {
+						setValue("fee", value, { shouldValidate: true, shouldDirty: true });
+					}}
+				/>
+			</FormField>
 		</section>
 	);
 };

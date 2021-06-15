@@ -87,22 +87,22 @@ export const CreateProfile = () => {
 
 	return (
 		<Page navbarVariant="logo-only" title={t("COMMON.DESKTOP_WALLET")}>
-			<Section className="flex flex-col justify-center flex-1">
-				<div className="max-w-lg mx-auto">
+			<Section className="flex flex-col flex-1 justify-center">
+				<div className="mx-auto max-w-lg">
 					<Header
 						title={t("PROFILE.PAGE_CREATE_PROFILE.TITLE")}
 						subtitle={t("PROFILE.PAGE_CREATE_PROFILE.DESCRIPTION")}
 					/>
 
 					<Form
-						className="p-10 mt-10 border rounded-lg bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+						className="p-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
 						context={form}
 						onSubmit={handleSubmit}
 						data-testid="CreateProfile__form"
 					>
-						<div className="relative space-y-8">
-							<div className="flex items-end justify-between">
-								<div className="w-full mr-6">
+						<div className="relative space-y-5">
+							<div className="flex justify-between items-end">
+								<div className="mr-6 w-full">
 									<FormField name="name">
 										<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.NAME")} />
 										<InputDefault

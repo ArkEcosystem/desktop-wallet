@@ -9,7 +9,7 @@ import { handleBroadcastError } from "domains/transaction/utils";
 import React from "react";
 import { TransactionFees } from "types";
 
-import { BackupStep, GenerationStep, ReviewStep, VerificationStep } from "./";
+import { BackupStep, GenerationStep, ReviewStep, VerificationStep } from ".";
 
 const component = ({
 	activeTab,

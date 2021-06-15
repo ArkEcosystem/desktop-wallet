@@ -61,7 +61,7 @@ const AddressList = ({ addresses, onRemove }: AddressListProps) => {
 
 	return (
 		<div className="group">
-			<span className="inline-block text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary-600 text-theme-secondary-text">
+			<span className="inline-block text-sm font-semibold transition-colors duration-100 text-theme-secondary-text group-hover:text-theme-primary-600">
 				{t("CONTACTS.CONTACT_FORM.ADDRESSES")}
 			</span>
 

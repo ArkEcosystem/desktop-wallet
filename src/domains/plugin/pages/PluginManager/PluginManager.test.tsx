@@ -133,7 +133,7 @@ describe("PluginManager", () => {
 			},
 		);
 
-		fireEvent.click(screen.getByTestId("PluginManagerNavigationBar__all"));
+		fireEvent.click(screen.getByTestId("tabs__tab-button-all"));
 
 		await waitFor(() =>
 			expect(
@@ -171,7 +171,7 @@ describe("PluginManager", () => {
 			).toBeTruthy(),
 		);
 
-		fireEvent.click(screen.getByTestId(`PluginManagerNavigationBar__${category}`));
+		fireEvent.click(screen.getByTestId(`tabs__tab-button-${category}`));
 		expect(
 			within(screen.getByTestId(`PluginManager__container--${category}`)).getByTestId("PluginGrid"),
 		).toBeTruthy();
@@ -604,7 +604,7 @@ describe("PluginManager", () => {
 		await waitFor(() => expect(screen.getAllByText("Transaction Export").length).toBeGreaterThan(0));
 		await waitFor(() => expect(screen.getAllByTestId("Card")).toHaveLength(12));
 
-		fireEvent.click(screen.getByTestId("PluginManagerNavigationBar__my-plugins"));
+		fireEvent.click(screen.getByTestId("tabs__tab-button-my-plugins"));
 		fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
 
 		expect(screen.getByTestId("PluginListItem__disabled")).toBeInTheDocument();
@@ -644,7 +644,7 @@ describe("PluginManager", () => {
 		await waitFor(() => expect(screen.getAllByText("Transaction Export").length).toBeGreaterThan(0));
 		await waitFor(() => expect(screen.getAllByTestId("Card")).toHaveLength(12));
 
-		fireEvent.click(screen.getByTestId("PluginManagerNavigationBar__my-plugins"));
+		fireEvent.click(screen.getByTestId("tabs__tab-button-my-plugins"));
 		fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
 
 		expect(screen.getByTestId("PluginListItem__disabled")).toBeInTheDocument();
@@ -678,7 +678,7 @@ describe("PluginManager", () => {
 			},
 		);
 
-		fireEvent.click(screen.getByTestId("PluginManagerNavigationBar__my-plugins"));
+		fireEvent.click(screen.getByTestId("tabs__tab-button-my-plugins"));
 		fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
 
 		expect(screen.getByTestId("PluginListItem__enabled")).toBeInTheDocument();
@@ -714,7 +714,7 @@ describe("PluginManager", () => {
 			},
 		);
 
-		fireEvent.click(screen.getByTestId("PluginManagerNavigationBar__my-plugins"));
+		fireEvent.click(screen.getByTestId("tabs__tab-button-my-plugins"));
 		fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
 
 		await waitFor(() => expect(screen.getByTestId("PluginListItem__update-badge")).toBeInTheDocument());
@@ -754,7 +754,7 @@ describe("PluginManager", () => {
 			},
 		);
 
-		fireEvent.click(screen.getByTestId("PluginManagerNavigationBar__my-plugins"));
+		fireEvent.click(screen.getByTestId("tabs__tab-button-my-plugins"));
 		fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
 
 		fireEvent.click(
@@ -793,7 +793,7 @@ describe("PluginManager", () => {
 			},
 		);
 
-		fireEvent.click(screen.getByTestId("PluginManagerNavigationBar__my-plugins"));
+		fireEvent.click(screen.getByTestId("tabs__tab-button-my-plugins"));
 		fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
 
 		fireEvent.click(
@@ -838,7 +838,7 @@ describe("PluginManager", () => {
 		);
 
 		act(() => {
-			fireEvent.click(screen.getByTestId("PluginManagerNavigationBar__my-plugins"));
+			fireEvent.click(screen.getByTestId("tabs__tab-button-my-plugins"));
 		});
 		act(() => {
 			fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
@@ -873,7 +873,7 @@ describe("PluginManager", () => {
 			},
 		);
 
-		fireEvent.click(screen.getByTestId("PluginManagerNavigationBar__my-plugins"));
+		fireEvent.click(screen.getByTestId("tabs__tab-button-my-plugins"));
 		fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
 
 		await waitFor(() => expect(screen.getByTestId("PluginManager__update-all")).toBeInTheDocument());
@@ -901,7 +901,7 @@ describe("PluginManager", () => {
 			},
 		);
 
-		fireEvent.click(screen.getByTestId("PluginManagerNavigationBar__my-plugins"));
+		fireEvent.click(screen.getByTestId("tabs__tab-button-my-plugins"));
 		fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
 
 		await waitFor(() => expect(screen.getByTestId("PluginManager__update-all")).toBeInTheDocument());
@@ -926,7 +926,7 @@ describe("PluginManager", () => {
 		let downloadsCount = 0;
 		let installCount = 0;
 
-		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {
+		jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {
 			if (channel === "plugin:download") {
 				downloadsCount++;
 				return "/plugins/new-plugin";
@@ -961,7 +961,7 @@ describe("PluginManager", () => {
 			},
 		);
 
-		fireEvent.click(screen.getByTestId("PluginManagerNavigationBar__my-plugins"));
+		fireEvent.click(screen.getByTestId("tabs__tab-button-my-plugins"));
 		fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
 
 		await waitFor(() => expect(screen.getByTestId("PluginManager__update-all")).toBeInTheDocument());

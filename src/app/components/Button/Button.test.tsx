@@ -71,8 +71,21 @@ describe("Button", () => {
 		expect(onClick).toHaveBeenCalled();
 	});
 
-	it("should render with icon", () => {
-		const { container } = render(<Button icon="Plus">Click Me</Button>);
+	it("should render with icon on the left side", () => {
+		const { container } = render(
+			<Button icon="Plus" iconPosition="left">
+				Click Me
+			</Button>,
+		);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render with icon on the right side", () => {
+		const { container } = render(
+			<Button icon="Plus" iconPosition="right">
+				Click Me
+			</Button>,
+		);
 		expect(container).toMatchSnapshot();
 	});
 

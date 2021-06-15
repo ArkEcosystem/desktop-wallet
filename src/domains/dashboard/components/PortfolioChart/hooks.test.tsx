@@ -5,7 +5,7 @@ import { EnvironmentProvider } from "app/contexts";
 import React from "react";
 import { env, getDefaultProfileId } from "utils/testing-library";
 
-import { usePortfolioData } from "./";
+import { usePortfolioData } from ".";
 
 let profile: Contracts.IProfile;
 describe("usePortfolioData hook", () => {
