@@ -72,6 +72,7 @@ export const ImportWallet = () => {
 				await importWallet();
 				setActiveTab(activeTab + (getValues("type").startsWith("bip") ? 1 : 2));
 			} catch (e) {
+				/* istanbul ignore next */
 				toasts.error(e.message);
 			} finally {
 				setIsImporting(false);

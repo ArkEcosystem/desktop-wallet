@@ -104,6 +104,7 @@ export const useWalletImport = ({ profile }: { profile: Contracts.IProfile }) =>
 								return resolve(wallet);
 							})
 							.catch((error) => {
+								/* istanbul ignore next */
 								if (error.code === "ERR_ASSERTION") {
 									return reject(
 										new Error(t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.DECRYPT_WIF_ASSERTION")),

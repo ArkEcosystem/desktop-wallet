@@ -42,6 +42,7 @@ const MnemonicField = ({
 								}).toString()
 							);
 						} catch (e) {
+							/* istanbul ignore next */
 							return e.message;
 						}
 					},
@@ -113,6 +114,7 @@ const ImportInputField = ({
 		return <AddressField network={network} profile={profile} />;
 	}
 
+	/* istanbul ignore next */
 	if (type === OptionsValue.PRIVATE_KEY) {
 		return (
 			<MnemonicField
@@ -132,6 +134,7 @@ const ImportInputField = ({
 		);
 	}
 
+	/* istanbul ignore next */
 	if (type === OptionsValue.WIF) {
 		return (
 			<MnemonicField
@@ -151,6 +154,7 @@ const ImportInputField = ({
 		);
 	}
 
+	/* istanbul ignore next */
 	if (type === OptionsValue.ENCRYPTED_WIF) {
 		return (
 			<>
@@ -178,6 +182,7 @@ const ImportInputField = ({
 		);
 	}
 
+	/* istanbul ignore next */
 	return null;
 };
 
