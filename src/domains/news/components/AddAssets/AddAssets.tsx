@@ -55,12 +55,12 @@ export const AddAssets = ({ selectedAssets, allAssets, isOpen, onClose, onUpdate
 						<span className="mb-3 font-semibold text-theme-secondary-text">
 							{t("NEWS.ADD_ASSETS.ALL_ASSETS")}
 						</span>
-						<div className="flex flex-wrap mt-3 -mx-3">
+						<div className="flex flex-wrap -mx-3 mt-3">
 							{allAssets?.map((asset, index) => (
 								<Circle
 									key={index}
 									size="lg"
-									className="relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+									className="relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800"
 								>
 									<Icon name="ARK" width={20} height={20} />
 									<Badge className="border-theme-secondary-300 dark:border-theme-secondary-800" />
@@ -69,7 +69,7 @@ export const AddAssets = ({ selectedAssets, allAssets, isOpen, onClose, onUpdate
 
 							<Circle
 								size="lg"
-								className="relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+								className="relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800"
 							>
 								<div className="text-xs text-theme-primary-500">+443</div>
 							</Circle>

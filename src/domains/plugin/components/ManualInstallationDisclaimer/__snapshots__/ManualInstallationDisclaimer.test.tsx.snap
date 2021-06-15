@@ -5,7 +5,7 @@ exports[`ManualInstallationDisclaimer should not render if not open 1`] = `<Docu
 exports[`ManualInstallationDisclaimer should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-opacity-60 dark:bg-opacity-80 bg-theme-secondary-900-rgba overflow-overlay dark:bg-black-rgba"
     data-testid="modal__overlay"
   >
     <div
@@ -13,14 +13,14 @@ exports[`ManualInstallationDisclaimer should render a modal 1`] = `
       tabindex="-1"
     >
       <div
-        class="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+        class="flex overflow-hidden relative flex-col p-10 shadow-2xl rounded-2.5xl bg-theme-background"
         data-testid="modal__inner"
       >
         <div
-          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+            class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
             data-testid="modal__close-btn"
             type="button"
           >
@@ -51,12 +51,12 @@ exports[`ManualInstallationDisclaimer should render a modal 1`] = `
             class="flex-1"
           >
             <svg
-              class="w-3/5 m-auto my-8"
+              class="m-auto my-8 w-3/5"
             >
               generic-warning.svg
             </svg>
             <div
-              class="text-theme-secondary-text whitespace-pre-line"
+              class="whitespace-pre-line text-theme-secondary-text"
             >
               By accepting the following terms, you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC.
 
@@ -65,7 +65,7 @@ We make no warranties, expressed or implied, as to the sustainability, availabil
 You acknowledge that clicking unverified URLs may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.
             </div>
             <fieldset
-              class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex mt-6"
+              class="flex mt-6 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
             >
               <label
                 class="flex items-center space-x-3 w-max cursor-pointer"

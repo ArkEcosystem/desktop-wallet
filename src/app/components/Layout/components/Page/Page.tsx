@@ -66,7 +66,7 @@ export const Page = ({ navbarVariant, title, isBackDisabled, profile, sidebar, c
 	];
 
 	return (
-		<div className="relative flex flex-col min-h-screen">
+		<div className="flex relative flex-col min-h-screen">
 			<NavigationBar
 				variant={navbarVariant}
 				menu={menu}

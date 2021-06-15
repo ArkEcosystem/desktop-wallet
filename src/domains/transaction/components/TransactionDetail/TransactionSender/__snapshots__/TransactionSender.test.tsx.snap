@@ -7,7 +7,7 @@ exports[`TransactionSender should not render delegate icon 1`] = `
     data-testid="TransactionDetail"
   >
     <div
-      class="w-40 flex-1 space-y-2 whitespace-nowrap"
+      class="flex-1 space-y-2 w-40 whitespace-nowrap"
     >
       <div
         class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -18,10 +18,10 @@ exports[`TransactionSender should not render delegate icon 1`] = `
         class="font-semibold"
       >
         <div
-          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+          class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
         >
           <span
-            class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+            class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
             data-testid="Address__address"
           >
             test-address
@@ -33,7 +33,7 @@ exports[`TransactionSender should not render delegate icon 1`] = `
       class="flex items-center -space-x-2"
     >
       <div
-        class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600 ring-theme-background"
+        class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text ring-theme-background dark:border-theme-secondary-600 dark:text-theme-secondary-600"
       >
         <div
           class="sc-bdfBwQ catSEV"
@@ -46,11 +46,11 @@ exports[`TransactionSender should not render delegate icon 1`] = `
         </div>
       </div>
       <div
-        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+        class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
         data-testid="Avatar"
       >
         <div
-          class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+          class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
         >
           <img
             alt="test-address"
@@ -71,7 +71,7 @@ exports[`TransactionSender should not render with alias 1`] = `
     data-testid="TransactionDetail"
   >
     <div
-      class="w-40 flex-1 space-y-2 whitespace-nowrap"
+      class="flex-1 space-y-2 w-40 whitespace-nowrap"
     >
       <div
         class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -82,10 +82,10 @@ exports[`TransactionSender should not render with alias 1`] = `
         class="font-semibold"
       >
         <div
-          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+          class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
         >
           <span
-            class="font-semibold text-base text-theme-text"
+            class="text-base font-semibold text-theme-text"
             data-testid="Address__alias"
           >
             <span
@@ -96,7 +96,7 @@ exports[`TransactionSender should not render with alias 1`] = `
             </span>
           </span>
           <span
-            class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+            class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
             data-testid="Address__address"
           >
             test-address
@@ -108,11 +108,11 @@ exports[`TransactionSender should not render with alias 1`] = `
       class="flex items-center -space-x-2"
     >
       <div
-        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+        class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
         data-testid="Avatar"
       >
         <div
-          class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+          class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
         >
           <img
             alt="test-address"
@@ -133,7 +133,7 @@ exports[`TransactionSender should render 1`] = `
     data-testid="TransactionDetail"
   >
     <div
-      class="w-40 flex-1 space-y-2 whitespace-nowrap"
+      class="flex-1 space-y-2 w-40 whitespace-nowrap"
     >
       <div
         class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -144,10 +144,10 @@ exports[`TransactionSender should render 1`] = `
         class="font-semibold"
       >
         <div
-          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+          class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
         >
           <span
-            class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+            class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
             data-testid="Address__address"
           >
             test-address
@@ -159,11 +159,11 @@ exports[`TransactionSender should render 1`] = `
       class="flex items-center -space-x-2"
     >
       <div
-        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+        class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
         data-testid="Avatar"
       >
         <div
-          class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+          class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
         >
           <img
             alt="test-address"

@@ -3,7 +3,7 @@
 exports[`Table should render 1`] = `
 <div>
   <div
-    class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+    class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
     role="table"
   >
     <table
@@ -16,7 +16,7 @@ exports[`Table should render 1`] = `
           role="row"
         >
           <th
-            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+            class="relative p-3 m-0 w-1 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
             colspan="1"
             data-testid="table__th--0"
             role="columnheader"
@@ -24,16 +24,16 @@ exports[`Table should render 1`] = `
             title="Toggle SortBy"
           >
             <div
-              class="flex flex-inline align-top flex-row-reverse"
+              class="flex flex-row-reverse align-top flex-inline"
             >
               <div>
                 Header 1
               </div>
               <div
-                class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
               >
                 <div
-                  class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                  class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                   height="5"
                   role="img"
                   width="8"
@@ -46,7 +46,7 @@ exports[`Table should render 1`] = `
             </div>
           </th>
           <th
-            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
+            class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800"
             colspan="1"
             data-testid="table__th--1"
             role="columnheader"
@@ -54,16 +54,16 @@ exports[`Table should render 1`] = `
             title="Toggle SortBy"
           >
             <div
-              class="flex flex-inline align-top no-border"
+              class="flex align-top flex-inline no-border"
             >
               <div>
                 Header 2
               </div>
               <div
-                class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
               >
                 <div
-                  class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                  class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                   height="5"
                   role="img"
                   width="8"
@@ -76,7 +76,7 @@ exports[`Table should render 1`] = `
             </div>
           </th>
           <th
-            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
             colspan="1"
             data-testid="table__th--2"
             role="columnheader"
@@ -84,16 +84,16 @@ exports[`Table should render 1`] = `
             title="Toggle SortBy"
           >
             <div
-              class="flex flex-inline align-top justify-end flex-row-reverse"
+              class="flex flex-row-reverse justify-end align-top flex-inline"
             >
               <div>
                 Header 3
               </div>
               <div
-                class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
+                class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
               >
                 <div
-                  class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                  class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                   height="5"
                   role="img"
                   width="8"
@@ -127,7 +127,7 @@ exports[`Table should render 1`] = `
 exports[`Table should render empty rows if template not provided 1`] = `
 <div>
   <div
-    class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+    class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
     role="table"
   >
     <table
@@ -140,7 +140,7 @@ exports[`Table should render empty rows if template not provided 1`] = `
           role="row"
         >
           <th
-            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+            class="relative p-3 m-0 w-1 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
             colspan="1"
             data-testid="table__th--0"
             role="columnheader"
@@ -148,16 +148,16 @@ exports[`Table should render empty rows if template not provided 1`] = `
             title="Toggle SortBy"
           >
             <div
-              class="flex flex-inline align-top flex-row-reverse"
+              class="flex flex-row-reverse align-top flex-inline"
             >
               <div>
                 Header 1
               </div>
               <div
-                class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
               >
                 <div
-                  class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                  class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                   height="5"
                   role="img"
                   width="8"
@@ -170,7 +170,7 @@ exports[`Table should render empty rows if template not provided 1`] = `
             </div>
           </th>
           <th
-            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
+            class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800"
             colspan="1"
             data-testid="table__th--1"
             role="columnheader"
@@ -178,16 +178,16 @@ exports[`Table should render empty rows if template not provided 1`] = `
             title="Toggle SortBy"
           >
             <div
-              class="flex flex-inline align-top no-border"
+              class="flex align-top flex-inline no-border"
             >
               <div>
                 Header 2
               </div>
               <div
-                class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
               >
                 <div
-                  class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                  class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                   height="5"
                   role="img"
                   width="8"
@@ -200,7 +200,7 @@ exports[`Table should render empty rows if template not provided 1`] = `
             </div>
           </th>
           <th
-            class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+            class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
             colspan="1"
             data-testid="table__th--2"
             role="columnheader"
@@ -208,16 +208,16 @@ exports[`Table should render empty rows if template not provided 1`] = `
             title="Toggle SortBy"
           >
             <div
-              class="flex flex-inline align-top justify-end flex-row-reverse"
+              class="flex flex-row-reverse justify-end align-top flex-inline"
             >
               <div>
                 Header 3
               </div>
               <div
-                class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
+                class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
               >
                 <div
-                  class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                  class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                   height="5"
                   role="img"
                   width="8"

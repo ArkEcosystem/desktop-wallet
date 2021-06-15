@@ -5,7 +5,7 @@ exports[`IpfsDetail should not render if not open 1`] = `<DocumentFragment />`;
 exports[`IpfsDetail should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-opacity-60 dark:bg-opacity-80 bg-theme-secondary-900-rgba overflow-overlay dark:bg-black-rgba"
     data-testid="modal__overlay"
   >
     <div
@@ -13,14 +13,14 @@ exports[`IpfsDetail should render a modal 1`] = `
       tabindex="-1"
     >
       <div
-        class="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+        class="flex overflow-hidden relative flex-col p-10 shadow-2xl rounded-2.5xl bg-theme-background"
         data-testid="modal__inner"
       >
         <div
-          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+            class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
             data-testid="modal__close-btn"
             type="button"
           >
@@ -55,7 +55,7 @@ exports[`IpfsDetail should render a modal 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -66,10 +66,10 @@ exports[`IpfsDetail should render a modal 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                   >
                     <span
-                      class="font-semibold text-base text-theme-text"
+                      class="text-base font-semibold text-theme-text"
                       data-testid="Address__alias"
                     >
                       <span
@@ -80,7 +80,7 @@ exports[`IpfsDetail should render a modal 1`] = `
                       </span>
                     </span>
                     <span
-                      class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                      class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                       data-testid="Address__address"
                     >
                       D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -92,7 +92,7 @@ exports[`IpfsDetail should render a modal 1`] = `
                 class="flex items-center -space-x-2"
               >
                 <div
-                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600 ring-theme-background"
+                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text ring-theme-background dark:border-theme-secondary-600 dark:text-theme-secondary-600"
                 >
                   <div
                     class="sc-bdfBwQ catSEV"
@@ -105,11 +105,11 @@ exports[`IpfsDetail should render a modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                  class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                   data-testid="Avatar"
                 >
                   <div
-                    class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                    class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                   >
                     <img
                       alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -125,7 +125,7 @@ exports[`IpfsDetail should render a modal 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -148,7 +148,7 @@ exports[`IpfsDetail should render a modal 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -162,7 +162,7 @@ exports[`IpfsDetail should render a modal 1`] = `
                 </div>
               </div>
               <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-900 border-theme-secondary-900 dark:text-theme-secondary-600 dark:border-theme-secondary-600 ring-theme-background"
+                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-900 border-theme-secondary-900 ring-theme-background dark:text-theme-secondary-600 dark:border-theme-secondary-600"
               >
                 <div
                   class="sc-bdfBwQ ceUzTr text-theme-secondary-900 dark:text-theme-secondary-600"
@@ -180,7 +180,7 @@ exports[`IpfsDetail should render a modal 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -199,7 +199,7 @@ exports[`IpfsDetail should render a modal 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -233,7 +233,7 @@ exports[`IpfsDetail should render a modal 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -244,7 +244,7 @@ exports[`IpfsDetail should render a modal 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex items-center space-x-3 overflow-hidden"
+                    class="flex overflow-hidden items-center space-x-3"
                   >
                     <span
                       class="overflow-hidden"
@@ -269,7 +269,7 @@ exports[`IpfsDetail should render a modal 1`] = `
                           class="align-middle"
                         >
                           <div
-                            class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
+                            class="inline-block flex-shrink-0 pb-px text-sm duration-200 sc-bdfBwQ fPrsah"
                             data-testid="Link__external"
                             height="1em"
                             width="1em"
@@ -290,7 +290,7 @@ exports[`IpfsDetail should render a modal 1`] = `
                         type="button"
                       >
                         <div
-                          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                         />
                         <div
                           class="sc-bdfBwQ fPrsah"
@@ -312,7 +312,7 @@ exports[`IpfsDetail should render a modal 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -323,7 +323,7 @@ exports[`IpfsDetail should render a modal 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex items-center space-x-3 overflow-hidden"
+                    class="flex overflow-hidden items-center space-x-3"
                   >
                     <span
                       class="overflow-hidden"
@@ -348,7 +348,7 @@ exports[`IpfsDetail should render a modal 1`] = `
                           class="align-middle"
                         >
                           <div
-                            class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
+                            class="inline-block flex-shrink-0 pb-px text-sm duration-200 sc-bdfBwQ fPrsah"
                             data-testid="Link__external"
                             height="1em"
                             width="1em"
@@ -369,7 +369,7 @@ exports[`IpfsDetail should render a modal 1`] = `
                         type="button"
                       >
                         <div
-                          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                         />
                         <div
                           class="sc-bdfBwQ fPrsah"
@@ -397,7 +397,7 @@ exports[`IpfsDetail should render a modal 1`] = `
 exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
 <DocumentFragment>
   <div
-    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-opacity-60 dark:bg-opacity-80 bg-theme-secondary-900-rgba overflow-overlay dark:bg-black-rgba"
     data-testid="modal__overlay"
   >
     <div
@@ -405,14 +405,14 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
       tabindex="-1"
     >
       <div
-        class="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+        class="flex overflow-hidden relative flex-col p-10 shadow-2xl rounded-2.5xl bg-theme-background"
         data-testid="modal__inner"
       >
         <div
-          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+            class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
             data-testid="modal__close-btn"
             type="button"
           >
@@ -447,7 +447,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -458,10 +458,10 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                   >
                     <span
-                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
                       data-testid="Address__address"
                     >
                       D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -473,7 +473,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
                 class="flex items-center -space-x-2"
               >
                 <div
-                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600 ring-theme-background"
+                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text ring-theme-background dark:border-theme-secondary-600 dark:text-theme-secondary-600"
                 >
                   <div
                     class="sc-bdfBwQ catSEV"
@@ -486,11 +486,11 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                  class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                   data-testid="Avatar"
                 >
                   <div
-                    class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                    class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                   >
                     <img
                       alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -506,7 +506,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -529,7 +529,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -543,7 +543,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
                 </div>
               </div>
               <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-900 border-theme-secondary-900 dark:text-theme-secondary-600 dark:border-theme-secondary-600 ring-theme-background"
+                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-900 border-theme-secondary-900 ring-theme-background dark:text-theme-secondary-600 dark:border-theme-secondary-600"
               >
                 <div
                   class="sc-bdfBwQ ceUzTr text-theme-secondary-900 dark:text-theme-secondary-600"
@@ -561,7 +561,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -580,7 +580,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -614,7 +614,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -625,7 +625,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex items-center space-x-3 overflow-hidden"
+                    class="flex overflow-hidden items-center space-x-3"
                   >
                     <span
                       class="overflow-hidden"
@@ -650,7 +650,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
                           class="align-middle"
                         >
                           <div
-                            class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
+                            class="inline-block flex-shrink-0 pb-px text-sm duration-200 sc-bdfBwQ fPrsah"
                             data-testid="Link__external"
                             height="1em"
                             width="1em"
@@ -671,7 +671,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
                         type="button"
                       >
                         <div
-                          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                         />
                         <div
                           class="sc-bdfBwQ fPrsah"
@@ -693,7 +693,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -704,7 +704,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex items-center space-x-3 overflow-hidden"
+                    class="flex overflow-hidden items-center space-x-3"
                   >
                     <span
                       class="overflow-hidden"
@@ -729,7 +729,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
                           class="align-middle"
                         >
                           <div
-                            class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
+                            class="inline-block flex-shrink-0 pb-px text-sm duration-200 sc-bdfBwQ fPrsah"
                             data-testid="Link__external"
                             height="1em"
                             width="1em"
@@ -750,7 +750,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
                         type="button"
                       >
                         <div
-                          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                         />
                         <div
                           class="sc-bdfBwQ fPrsah"
@@ -778,7 +778,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
 exports[`IpfsDetail should render as confirmed 1`] = `
 <DocumentFragment>
   <div
-    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-opacity-60 dark:bg-opacity-80 bg-theme-secondary-900-rgba overflow-overlay dark:bg-black-rgba"
     data-testid="modal__overlay"
   >
     <div
@@ -786,14 +786,14 @@ exports[`IpfsDetail should render as confirmed 1`] = `
       tabindex="-1"
     >
       <div
-        class="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+        class="flex overflow-hidden relative flex-col p-10 shadow-2xl rounded-2.5xl bg-theme-background"
         data-testid="modal__inner"
       >
         <div
-          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+            class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
             data-testid="modal__close-btn"
             type="button"
           >
@@ -828,7 +828,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -839,10 +839,10 @@ exports[`IpfsDetail should render as confirmed 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                   >
                     <span
-                      class="font-semibold text-base text-theme-text"
+                      class="text-base font-semibold text-theme-text"
                       data-testid="Address__alias"
                     >
                       <span
@@ -853,7 +853,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
                       </span>
                     </span>
                     <span
-                      class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                      class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                       data-testid="Address__address"
                     >
                       D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -865,7 +865,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
                 class="flex items-center -space-x-2"
               >
                 <div
-                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600 ring-theme-background"
+                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text ring-theme-background dark:border-theme-secondary-600 dark:text-theme-secondary-600"
                 >
                   <div
                     class="sc-bdfBwQ catSEV"
@@ -878,11 +878,11 @@ exports[`IpfsDetail should render as confirmed 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                  class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                   data-testid="Avatar"
                 >
                   <div
-                    class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                    class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                   >
                     <img
                       alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -898,7 +898,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -921,7 +921,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -935,7 +935,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
                 </div>
               </div>
               <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-900 border-theme-secondary-900 dark:text-theme-secondary-600 dark:border-theme-secondary-600 ring-theme-background"
+                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-900 border-theme-secondary-900 ring-theme-background dark:text-theme-secondary-600 dark:border-theme-secondary-600"
               >
                 <div
                   class="sc-bdfBwQ ceUzTr text-theme-secondary-900 dark:text-theme-secondary-600"
@@ -953,7 +953,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -972,7 +972,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1008,7 +1008,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1019,7 +1019,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex items-center space-x-3 overflow-hidden"
+                    class="flex overflow-hidden items-center space-x-3"
                   >
                     <span
                       class="overflow-hidden"
@@ -1044,7 +1044,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
                           class="align-middle"
                         >
                           <div
-                            class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
+                            class="inline-block flex-shrink-0 pb-px text-sm duration-200 sc-bdfBwQ fPrsah"
                             data-testid="Link__external"
                             height="1em"
                             width="1em"
@@ -1065,7 +1065,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
                         type="button"
                       >
                         <div
-                          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                         />
                         <div
                           class="sc-bdfBwQ fPrsah"
@@ -1087,7 +1087,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex-1 space-y-2 w-40 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1098,7 +1098,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex items-center space-x-3 overflow-hidden"
+                    class="flex overflow-hidden items-center space-x-3"
                   >
                     <span
                       class="overflow-hidden"
@@ -1123,7 +1123,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
                           class="align-middle"
                         >
                           <div
-                            class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
+                            class="inline-block flex-shrink-0 pb-px text-sm duration-200 sc-bdfBwQ fPrsah"
                             data-testid="Link__external"
                             height="1em"
                             width="1em"
@@ -1144,7 +1144,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
                         type="button"
                       >
                         <div
-                          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                         />
                         <div
                           class="sc-bdfBwQ fPrsah"

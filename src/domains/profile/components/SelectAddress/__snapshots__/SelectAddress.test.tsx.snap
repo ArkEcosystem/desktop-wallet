@@ -3,16 +3,16 @@
 exports[`SelectAddress should render disabled 1`] = `
 <div>
   <button
-    class="relative w-full rounded focus:outline-none focus:ring-2 focus:ring-theme-primary-400"
+    class="relative w-full rounded focus:ring-2 focus:outline-none focus:ring-theme-primary-400"
     data-testid="SelectAddress__wrapper"
     disabled=""
     type="button"
   >
     <span
-      class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
+      class="flex absolute inset-0 items-center px-14 w-full border border-transparent"
     >
       <div
-        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+        class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
       />
     </span>
     <div
@@ -25,20 +25,20 @@ exports[`SelectAddress should render disabled 1`] = `
       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
     >
       <div
-        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
+        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 border-theme-secondary-200 ring-theme-background dark:bg-theme-secondary-700 dark:border-theme-secondary-700"
       />
       <div
-        class="relative flex flex-1 h-full invisible"
+        class="flex relative invisible flex-1 h-full"
       >
         <input
-          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+          class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
           data-testid="SelectAddress__input"
           readonly=""
           value=""
         />
       </div>
       <div
-        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-primary-300 dark:divide-theme-secondary-800 dark:text-theme-secondary-600"
       >
         <div
           class=""
@@ -66,15 +66,15 @@ exports[`SelectAddress should render disabled 1`] = `
 exports[`SelectAddress should render empty 1`] = `
 <div>
   <button
-    class="relative w-full rounded focus:outline-none focus:ring-2 focus:ring-theme-primary-400"
+    class="relative w-full rounded focus:ring-2 focus:outline-none focus:ring-theme-primary-400"
     data-testid="SelectAddress__wrapper"
     type="button"
   >
     <span
-      class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
+      class="flex absolute inset-0 items-center px-14 w-full border border-transparent"
     >
       <div
-        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+        class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
       />
     </span>
     <div
@@ -87,20 +87,20 @@ exports[`SelectAddress should render empty 1`] = `
       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
     >
       <div
-        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
+        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 border-theme-secondary-200 ring-theme-background dark:bg-theme-secondary-700 dark:border-theme-secondary-700"
       />
       <div
-        class="relative flex flex-1 h-full invisible"
+        class="flex relative invisible flex-1 h-full"
       >
         <input
-          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+          class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
           data-testid="SelectAddress__input"
           readonly=""
           value=""
         />
       </div>
       <div
-        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-primary-300 dark:divide-theme-secondary-800 dark:text-theme-secondary-600"
       >
         <div
           class=""
@@ -128,15 +128,15 @@ exports[`SelectAddress should render empty 1`] = `
 exports[`SelectAddress should render invalid 1`] = `
 <div>
   <button
-    class="relative w-full rounded focus:outline-none focus:ring-2 focus:ring-theme-primary-400"
+    class="relative w-full rounded focus:ring-2 focus:outline-none focus:ring-theme-primary-400"
     data-testid="SelectAddress__wrapper"
     type="button"
   >
     <span
-      class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
+      class="flex absolute inset-0 items-center px-14 w-full border border-transparent"
     >
       <div
-        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+        class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
       />
     </span>
     <div
@@ -149,21 +149,21 @@ exports[`SelectAddress should render invalid 1`] = `
       class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
     >
       <div
-        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
+        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 border-theme-secondary-200 ring-theme-background dark:bg-theme-secondary-700 dark:border-theme-secondary-700"
       />
       <div
-        class="relative flex flex-1 h-full invisible"
+        class="flex relative invisible flex-1 h-full"
       >
         <input
           aria-invalid="true"
-          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+          class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
           data-testid="SelectAddress__input"
           readonly=""
           value=""
         />
       </div>
       <div
-        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-danger-500 dark:divide-theme-secondary-800"
       >
         <span
           data-testid="Input__error"
@@ -204,18 +204,18 @@ exports[`SelectAddress should render invalid 1`] = `
 exports[`SelectAddress should render with preselected address 1`] = `
 <div>
   <button
-    class="relative w-full rounded focus:outline-none focus:ring-2 focus:ring-theme-primary-400"
+    class="relative w-full rounded focus:ring-2 focus:outline-none focus:ring-theme-primary-400"
     data-testid="SelectAddress__wrapper"
     type="button"
   >
     <span
-      class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
+      class="flex absolute inset-0 items-center px-14 w-full border border-transparent"
     >
       <div
-        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+        class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
       >
         <span
-          class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+          class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
           data-testid="Address__address"
         >
           bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT
@@ -232,11 +232,11 @@ exports[`SelectAddress should render with preselected address 1`] = `
       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
     >
       <div
-        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE flex-shrink-0"
+        class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE"
         data-testid="Avatar"
       >
         <div
-          class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+          class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
         >
           <img
             alt="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT"
@@ -246,17 +246,17 @@ exports[`SelectAddress should render with preselected address 1`] = `
         </div>
       </div>
       <div
-        class="relative flex flex-1 h-full invisible"
+        class="flex relative invisible flex-1 h-full"
       >
         <input
-          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+          class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
           data-testid="SelectAddress__input"
           readonly=""
           value="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT"
         />
       </div>
       <div
-        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-primary-300 dark:divide-theme-secondary-800 dark:text-theme-secondary-600"
       >
         <div
           class=""
@@ -284,15 +284,15 @@ exports[`SelectAddress should render with preselected address 1`] = `
 exports[`SelectAddress should render with preselected verified address 1`] = `
 <div>
   <button
-    class="relative w-full rounded focus:outline-none focus:ring-2 focus:ring-theme-primary-400"
+    class="relative w-full rounded focus:ring-2 focus:outline-none focus:ring-theme-primary-400"
     data-testid="SelectAddress__wrapper"
     type="button"
   >
     <span
-      class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
+      class="flex absolute inset-0 items-center px-14 w-full border border-transparent"
     >
       <div
-        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+        class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
       />
     </span>
     <div
@@ -305,20 +305,20 @@ exports[`SelectAddress should render with preselected verified address 1`] = `
       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
     >
       <div
-        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
+        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 border-theme-secondary-200 ring-theme-background dark:bg-theme-secondary-700 dark:border-theme-secondary-700"
       />
       <div
-        class="relative flex flex-1 h-full invisible"
+        class="flex relative invisible flex-1 h-full"
       >
         <input
-          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+          class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
           data-testid="SelectAddress__input"
           readonly=""
           value=""
         />
       </div>
       <div
-        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-primary-300 dark:divide-theme-secondary-800 dark:text-theme-secondary-600"
       >
         <div
           class=""

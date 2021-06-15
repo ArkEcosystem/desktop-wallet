@@ -7,7 +7,7 @@ exports[`Unconfirmed transaction table should render 1`] = `
     data-testid="TransactionTable"
   >
     <div
-      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+      class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
       role="table"
     >
       <table
@@ -20,7 +20,7 @@ exports[`Unconfirmed transaction table should render 1`] = `
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -28,16 +28,16 @@ exports[`Unconfirmed transaction table should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex align-top flex-inline"
               >
                 <div>
                   Date
                 </div>
                 <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                  class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform"
+                    class="transition-transform sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -50,13 +50,13 @@ exports[`Unconfirmed transaction table should render 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex align-top flex-inline"
               >
                 <div>
                   Recipient
@@ -64,7 +64,7 @@ exports[`Unconfirmed transaction table should render 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -72,16 +72,16 @@ exports[`Unconfirmed transaction table should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-end flex-row-reverse"
+                class="flex flex-row-reverse justify-end align-top flex-inline"
               >
                 <div>
                   Amount
                 </div>
                 <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
+                  class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -104,7 +104,7 @@ exports[`Unconfirmed transaction table should render 1`] = `
           >
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE space-x-3 text-theme-secondary-500"
+                class="space-x-3 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE text-theme-secondary-500"
               >
                 <span
                   data-testid="timeago"
@@ -115,14 +115,14 @@ exports[`Unconfirmed transaction table should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 hAleYq space-x-3 w-50"
+                class="space-x-3 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 hAleYq w-50"
               >
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
+                  class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background dark:group-hover:ring-black dark:group-hover:bg-black group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
                   data-testid="Avatar"
                 >
                   <div
-                    class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                    class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                   >
                     <img
                       alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
@@ -132,10 +132,10 @@ exports[`Unconfirmed transaction table should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                  class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                 >
                   <span
-                    class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                    class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
                     data-testid="Address__address"
                   >
                     D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
@@ -145,10 +145,10 @@ exports[`Unconfirmed transaction table should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo"
               >
                 <div
-                  class="Label-sc-1tj9hzr-0 ganlOQ whitespace-nowrap"
+                  class="whitespace-nowrap Label-sc-1tj9hzr-0 ganlOQ"
                   color="danger"
                   data-testid="TransactionRowAmount"
                 >
@@ -167,7 +167,7 @@ exports[`Unconfirmed transaction table should render 1`] = `
           >
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE space-x-3 text-theme-secondary-500"
+                class="space-x-3 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE text-theme-secondary-500"
               >
                 <span
                   data-testid="timeago"
@@ -178,10 +178,10 @@ exports[`Unconfirmed transaction table should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 hAleYq space-x-3 w-50"
+                class="space-x-3 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 hAleYq w-50"
               >
                 <div
-                  class="Circle__CircleWrapper-uw7h4j-0 byFmWC border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600 ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-background"
+                  class="Circle__CircleWrapper-uw7h4j-0 byFmWC border-theme-text text-theme-text ring-theme-background bg-theme-background dark:border-theme-secondary-600 dark:text-theme-secondary-600 dark:group-hover:ring-black dark:group-hover:bg-black group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
                   data-testid="TransactionRowRecipientIcon"
                 >
                   <div
@@ -211,10 +211,10 @@ exports[`Unconfirmed transaction table should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo"
               >
                 <div
-                  class="Label-sc-1tj9hzr-0 ganlOQ whitespace-nowrap"
+                  class="whitespace-nowrap Label-sc-1tj9hzr-0 ganlOQ"
                   color="danger"
                   data-testid="TransactionRowAmount"
                 >

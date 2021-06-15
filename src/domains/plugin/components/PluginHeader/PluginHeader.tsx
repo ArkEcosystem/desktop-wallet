@@ -153,9 +153,9 @@ export const PluginHeader = ({
 					showUpdatingLabel
 				/>
 
-				<div className="flex flex-col justify-between pl-8 min-w-0 w-full">
+				<div className="flex flex-col justify-between pl-8 w-full min-w-0">
 					<div className="flex justify-between items-end">
-						<div className="flex flex-col space-y-2 mr-8 leading-tight overflow-hidden">
+						<div className="flex overflow-hidden flex-col mr-8 space-y-2 leading-tight">
 							<span className="text-2xl font-bold">{props.title}</span>
 							<span className="text-medium text-theme-secondary-500 truncate">{props.description}</span>
 						</div>

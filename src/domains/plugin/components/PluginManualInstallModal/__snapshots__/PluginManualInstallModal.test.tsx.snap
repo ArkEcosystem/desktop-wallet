@@ -3,7 +3,7 @@
 exports[`PluginManualInstallModal should render properly 1`] = `
 <div>
   <div
-    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-opacity-60 dark:bg-opacity-80 bg-theme-secondary-900-rgba overflow-overlay dark:bg-black-rgba"
     data-testid="modal__overlay"
   >
     <div
@@ -11,14 +11,14 @@ exports[`PluginManualInstallModal should render properly 1`] = `
       tabindex="-1"
     >
       <div
-        class="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+        class="flex overflow-hidden relative flex-col p-10 shadow-2xl rounded-2.5xl bg-theme-background"
         data-testid="modal__inner"
       >
         <div
-          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+            class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
             data-testid="modal__close-btn"
             type="button"
           >
@@ -49,7 +49,7 @@ exports[`PluginManualInstallModal should render properly 1`] = `
             class="flex-1"
           >
             <div
-              class="text-theme-secondary-text whitespace-pre-line"
+              class="whitespace-pre-line text-theme-secondary-text"
             >
               Fetch the Plugin directly from GitHub by providing the repository URL below.
             </div>
@@ -60,10 +60,10 @@ exports[`PluginManualInstallModal should render properly 1`] = `
                 class="flex mt-8"
               >
                 <div
-                  class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
+                  class="flex overflow-hidden flex-col p-4 space-y-4 rounded-lg sm:flex-row sm:items-center sm:space-y-0 sm:space-x-4 bg-theme-warning-50 dark:bg-theme-secondary-800"
                 >
                   <div
-                    class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
+                    class="flex flex-shrink-0 justify-center items-center w-11 h-11 text-white rounded-lg bg-theme-warning-600"
                   >
                     <div
                       class="sc-bdfBwQ hteSKx"
@@ -95,7 +95,7 @@ exports[`PluginManualInstallModal should render properly 1`] = `
                 data-testid="Form"
               >
                 <fieldset
-                  class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2 mt-6"
+                  class="flex flex-col mt-6 space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
                 >
                   <label
                     class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -113,10 +113,10 @@ exports[`PluginManualInstallModal should render properly 1`] = `
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
-                      class="relative flex flex-1 h-full"
+                      class="flex relative flex-1 h-full"
                     >
                       <input
-                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                         data-testid="PluginManualInstallModal__input"
                         name="url"
                         value=""
@@ -125,7 +125,7 @@ exports[`PluginManualInstallModal should render properly 1`] = `
                   </div>
                 </fieldset>
                 <div
-                  class="flex space-x-3 justify-end mt-8"
+                  class="flex justify-end mt-8 space-x-3"
                 >
                   <button
                     class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"

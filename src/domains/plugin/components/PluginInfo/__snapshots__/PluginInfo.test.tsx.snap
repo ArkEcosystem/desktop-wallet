@@ -11,7 +11,7 @@ exports[`PluginInfo should not show the view permissions button with text less t
       Permissions
     </p>
     <div
-      class="mt-3 inline-flex items-baseline space-x-2"
+      class="inline-flex items-baseline mt-3 space-x-2"
     >
       <p
         class="mt-3 text-theme-secondary-600"
@@ -30,10 +30,10 @@ exports[`PluginInfo should not show the view permissions button with text less t
     class="mt-8"
   >
     <div
-      class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
+      class="flex overflow-hidden flex-col p-4 space-y-4 rounded-lg sm:flex-row sm:items-center sm:space-y-0 sm:space-x-4 bg-theme-warning-50 dark:bg-theme-secondary-800"
     >
       <div
-        class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
+        class="flex flex-shrink-0 justify-center items-center w-11 h-11 text-white rounded-lg bg-theme-warning-600"
       >
         <div
           class="sc-bdfBwQ hteSKx"
@@ -76,7 +76,7 @@ exports[`PluginInfo should open and close the plugin permissions modal 1`] = `
       Permissions
     </p>
     <div
-      class="mt-3 inline-flex items-baseline space-x-2"
+      class="inline-flex items-baseline mt-3 space-x-2"
     >
       <p
         class="mt-3 text-theme-secondary-600"
@@ -101,10 +101,10 @@ exports[`PluginInfo should open and close the plugin permissions modal 1`] = `
     class="mt-8"
   >
     <div
-      class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
+      class="flex overflow-hidden flex-col p-4 space-y-4 rounded-lg sm:flex-row sm:items-center sm:space-y-0 sm:space-x-4 bg-theme-warning-50 dark:bg-theme-secondary-800"
     >
       <div
-        class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
+        class="flex flex-shrink-0 justify-center items-center w-11 h-11 text-white rounded-lg bg-theme-warning-600"
       >
         <div
           class="sc-bdfBwQ hteSKx"
@@ -160,7 +160,7 @@ exports[`PluginInfo should render properly 1`] = `
       Permissions
     </p>
     <div
-      class="mt-3 inline-flex items-baseline space-x-2"
+      class="inline-flex items-baseline mt-3 space-x-2"
     >
       <p
         class="mt-3 text-theme-secondary-600"
@@ -200,11 +200,11 @@ exports[`PluginInfo should render properly 1`] = `
         class="relative"
       >
         <div
-          class="overflow-hidden px-4.5 -mx-4.5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
+          class="overflow-hidden -mb-8 list-none px-4.5 -mx-4.5 slide-container swiper-container-initialized swiper-container-horizontal"
           style="height: 232px;"
         >
           <div
-            class="h-full swiper-wrapper important:z-0 "
+            class="h-full swiper-wrapper important:z-0"
             style="width: auto; transform: translate3d(NaNpx, 0px, 0px); transition-duration: 0ms;"
           >
             <div
@@ -227,10 +227,10 @@ exports[`PluginInfo should render properly 1`] = `
     class="mt-8"
   >
     <div
-      class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
+      class="flex overflow-hidden flex-col p-4 space-y-4 rounded-lg sm:flex-row sm:items-center sm:space-y-0 sm:space-x-4 bg-theme-warning-50 dark:bg-theme-secondary-800"
     >
       <div
-        class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
+        class="flex flex-shrink-0 justify-center items-center w-11 h-11 text-white rounded-lg bg-theme-warning-600"
       >
         <div
           class="sc-bdfBwQ hteSKx"
@@ -288,10 +288,10 @@ exports[`PluginInfo should render with minimum version 1`] = `
     class="mt-8"
   >
     <div
-      class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
+      class="flex overflow-hidden flex-col p-4 space-y-4 rounded-lg sm:flex-row sm:items-center sm:space-y-0 sm:space-x-4 bg-theme-warning-50 dark:bg-theme-secondary-800"
     >
       <div
-        class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
+        class="flex flex-shrink-0 justify-center items-center w-11 h-11 text-white rounded-lg bg-theme-warning-600"
       >
         <div
           class="sc-bdfBwQ hteSKx"
@@ -342,10 +342,10 @@ exports[`PluginInfo should render without permissions 1`] = `
     class="mt-8"
   >
     <div
-      class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
+      class="flex overflow-hidden flex-col p-4 space-y-4 rounded-lg sm:flex-row sm:items-center sm:space-y-0 sm:space-x-4 bg-theme-warning-50 dark:bg-theme-secondary-800"
     >
       <div
-        class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
+        class="flex flex-shrink-0 justify-center items-center w-11 h-11 text-white rounded-lg bg-theme-warning-600"
       >
         <div
           class="sc-bdfBwQ hteSKx"

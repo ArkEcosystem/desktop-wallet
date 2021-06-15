@@ -60,7 +60,7 @@ export const ControlButton = ({ isChanged, children, className, ...props }: Cont
 					<div className="w-2 h-2 rounded-full bg-theme-primary-500" />
 				</div>
 			)}
-			<div className="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible" />
+			<div className="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400" />
 			{children}
 		</ControlButtonStyled>
 	</div>

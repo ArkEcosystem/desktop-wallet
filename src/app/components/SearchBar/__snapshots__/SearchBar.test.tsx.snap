@@ -3,14 +3,14 @@
 exports[`SearchBar should render 1`] = `
 <DocumentFragment>
   <div
-    class="bg-theme-secondary-100 px-10 pt-8 pb-8 undefined"
+    class="px-10 pt-8 pb-8 bg-theme-secondary-100 undefined"
     data-testid="SearchBar"
   >
     <div
       class="flex items-center py-6 px-10 rounded shadow-xl bg-theme-background"
     >
       <div
-        class="sc-bdfBwQ fPrsah mr-8 w-4 text-theme-secondary-300"
+        class="mr-8 w-4 sc-bdfBwQ fPrsah text-theme-secondary-300"
         height="1em"
         width="1em"
       >
@@ -30,10 +30,10 @@ exports[`SearchBar should render 1`] = `
           class="Input__InputWrapperStyled-wu99qs-0 cRhsWS"
         >
           <div
-            class="relative flex flex-1 h-full"
+            class="flex relative flex-1 h-full"
           >
             <input
-              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+              class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
               data-testid="Input"
               placeholder="What would you like to search for?"
               value=""
@@ -42,7 +42,7 @@ exports[`SearchBar should render 1`] = `
         </div>
       </div>
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS my-1"
+        class="my-1 OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
         data-testid="SearchBar__button"
         type="button"
       >

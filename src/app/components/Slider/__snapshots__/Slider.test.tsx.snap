@@ -6,11 +6,11 @@ exports[`Slider should render 1`] = `
     class="relative"
   >
     <div
-      class="overflow-hidden px-4.5 -mx-4.5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
+      class="overflow-hidden -mb-8 list-none px-4.5 -mx-4.5 slide-container swiper-container-initialized swiper-container-horizontal"
       style="height: 224px;"
     >
       <div
-        class="h-full swiper-wrapper important:z-0 "
+        class="h-full swiper-wrapper important:z-0"
         style="width: auto; transform: translate3d(NaNpx, 0px, 0px); transition-duration: 0ms;"
       >
         <div
@@ -33,11 +33,11 @@ exports[`Slider should render empty rows if template not provided 1`] = `
     class="relative"
   >
     <div
-      class="overflow-hidden px-4.5 -mx-4.5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
+      class="overflow-hidden -mb-8 list-none px-4.5 -mx-4.5 slide-container swiper-container-initialized swiper-container-horizontal"
       style="height: 224px;"
     >
       <div
-        class="h-full swiper-wrapper important:z-0 "
+        class="h-full swiper-wrapper important:z-0"
         style="width: auto; transform: translate3d(NaNpx, 0px, 0px); transition-duration: 0ms;"
       >
         <div
@@ -58,11 +58,11 @@ exports[`Slider should render pagination 1`] = `
     class="relative"
   >
     <div
-      class="overflow-hidden px-4.5 -mx-4.5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
+      class="overflow-hidden -mb-8 list-none px-4.5 -mx-4.5 slide-container swiper-container-initialized swiper-container-horizontal"
       style="height: 288px;"
     >
       <div
-        class="h-full swiper-wrapper important:z-0 "
+        class="h-full swiper-wrapper important:z-0"
         style="width: auto; transform: translate3d(NaNpx, 0px, 0px); transition-duration: 0ms;"
       >
         <div
@@ -149,11 +149,11 @@ exports[`Slider should render pagination on top right 1`] = `
       class="flex absolute right-0 -top-12 items-center space-x-2 w-auto h-6 swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"
     />
     <div
-      class="overflow-hidden px-4.5 -mx-4.5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
+      class="overflow-hidden -mb-8 list-none px-4.5 -mx-4.5 slide-container swiper-container-initialized swiper-container-horizontal"
       style="height: 244px;"
     >
       <div
-        class="h-full swiper-wrapper important:z-0 "
+        class="h-full swiper-wrapper important:z-0"
         style="width: auto; transform: translate3d(NaNpx, 0px, 0px); transition-duration: 0ms;"
       >
         <div

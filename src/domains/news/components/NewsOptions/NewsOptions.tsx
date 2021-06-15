@@ -117,7 +117,7 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 			className="sticky top-26"
 			style={{ height: `calc(100vh - (${HEADER_HEIGHT}px + ${VERTICAL_PADDING}px))` }}
 		>
-			<div className="p-10 pb-4 rounded-lg border-2 bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800 overflow-y-auto max-h-full">
+			<div className="overflow-y-auto p-10 pb-4 max-h-full rounded-lg border-2 bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800">
 				<div className="flex flex-col space-y-8">
 					<div className="flex justify-between items-center py-4 px-2 rounded-md shadow-xl">
 						<Input

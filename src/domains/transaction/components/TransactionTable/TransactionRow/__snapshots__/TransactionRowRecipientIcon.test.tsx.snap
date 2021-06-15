@@ -3,11 +3,11 @@
 exports[`TransactionRowRecipientIcon should render avatar 1`] = `
 <DocumentFragment>
   <div
-    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
+    class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background dark:group-hover:ring-black dark:group-hover:bg-black group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
     data-testid="Avatar"
   >
     <div
-      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+      class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
     >
       <img
         alt="test"
@@ -22,7 +22,7 @@ exports[`TransactionRowRecipientIcon should render avatar 1`] = `
 exports[`TransactionRowRecipientIcon should render icon 1`] = `
 <DocumentFragment>
   <div
-    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600 ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-background"
+    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text ring-theme-background bg-theme-background dark:border-theme-secondary-600 dark:text-theme-secondary-600 dark:group-hover:ring-black dark:group-hover:bg-black group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
     data-testid="TransactionRowRecipientIcon"
   >
     <div

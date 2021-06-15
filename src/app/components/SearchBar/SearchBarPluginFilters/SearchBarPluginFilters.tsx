@@ -116,7 +116,7 @@ export const SearchBarPluginFilters = ({ categories, initialValues, onReset, onC
 					<div
 						data-testid="SearchBarPluginFilters-reset"
 						onClick={onResetFilters}
-						className="flex items-center pl-2 cursor-pointer text-theme-primary-500 hover:text-theme-primary-600 hover:underline"
+						className="flex items-center pl-2 cursor-pointer hover:underline text-theme-primary-500 hover:text-theme-primary-600"
 					>
 						<Icon name="Reset" />
 						<span className="pl-2">{t("COMMON.RESET_FILTERS")}</span>

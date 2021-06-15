@@ -27,7 +27,7 @@ exports[`LedgerScanStep should render 1`] = `
       </div>
     </div>
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+      class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
     >
       <label
         class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -60,7 +60,7 @@ exports[`LedgerScanStep should render 1`] = `
           >
             <div
               aria-label="ARK Devnet"
-              class="Circle__CircleWrapper-uw7h4j-0 grnDUY border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500 ring-theme-background"
+              class="Circle__CircleWrapper-uw7h4j-0 grnDUY border-theme-secondary-200 text-theme-secondary-500 ring-theme-background dark:border-theme-secondary-700"
               data-testid="SelectNetworkInput__network"
             >
               <div
@@ -75,14 +75,14 @@ exports[`LedgerScanStep should render 1`] = `
               </div>
             </div>
             <div
-              class="relative flex flex-1 h-full"
+              class="flex relative flex-1 h-full"
             >
               <input
                 aria-autocomplete="list"
                 aria-controls="ImportWallet__network-menu"
                 aria-labelledby="ImportWallet__network-label"
                 autocomplete="off"
-                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full text-theme-secondary-text"
+                class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures text-theme-secondary-text"
                 data-testid="SelectNetworkInput__input"
                 disabled=""
                 id="ImportWallet__network-input"
@@ -111,7 +111,7 @@ exports[`LedgerScanStep should render 1`] = `
       </div>
     </fieldset>
     <div
-      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+      class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
       role="table"
     >
       <table
@@ -124,7 +124,7 @@ exports[`LedgerScanStep should render 1`] = `
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -132,16 +132,16 @@ exports[`LedgerScanStep should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex align-top flex-inline"
               >
                 <div>
                   Address
                 </div>
                 <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                  class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -154,7 +154,7 @@ exports[`LedgerScanStep should render 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -162,16 +162,16 @@ exports[`LedgerScanStep should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top no-border justify-end flex-row-reverse"
+                class="flex flex-row-reverse justify-end align-top flex-inline no-border"
               >
                 <div>
                   Balance
                 </div>
                 <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
+                  class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -184,13 +184,13 @@ exports[`LedgerScanStep should render 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+              class="relative p-3 m-0 w-1 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex justify-center align-top flex-inline"
               >
                 <div>
                   <input
@@ -215,14 +215,14 @@ exports[`LedgerScanStep should render 1`] = `
               class="w-2/5"
             >
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
+                class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
               >
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
+                  class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
                   data-testid="Avatar"
                 >
                   <div
-                    class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                    class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                   >
                     <img
                       alt="DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq"
@@ -235,10 +235,10 @@ exports[`LedgerScanStep should render 1`] = `
                   class="flex flex-1 w-32"
                 >
                   <div
-                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                   >
                     <span
-                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
                       data-testid="Address__address"
                     >
                       DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq
@@ -254,7 +254,7 @@ exports[`LedgerScanStep should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-end font-semibold"
+                class="justify-end font-semibold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
               >
                 <div>
                   <span
@@ -267,7 +267,7 @@ exports[`LedgerScanStep should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-center"
+                class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
               >
                 <input
                   checked=""
@@ -286,14 +286,14 @@ exports[`LedgerScanStep should render 1`] = `
               class="w-2/5"
             >
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
+                class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
               >
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
+                  class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
                   data-testid="Avatar"
                 >
                   <div
-                    class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                    class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                   >
                     <img
                       alt="DQseW3VJ1db5xN5xZi4Qhn6AFWtcwSwzpG"
@@ -306,10 +306,10 @@ exports[`LedgerScanStep should render 1`] = `
                   class="flex flex-1 w-32"
                 >
                   <div
-                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                   >
                     <span
-                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
                       data-testid="Address__address"
                     >
                       DQseW3VJ1db5xN5xZi4Qhn6AFWtcwSwzpG
@@ -325,7 +325,7 @@ exports[`LedgerScanStep should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-end font-semibold"
+                class="justify-end font-semibold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
               >
                 <div>
                   <span
@@ -338,7 +338,7 @@ exports[`LedgerScanStep should render 1`] = `
             </td>
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-center"
+                class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
               >
                 <input
                   checked=""

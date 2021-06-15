@@ -26,11 +26,11 @@ exports[`Import Profile Select File Step should change back from json to dwe 1`]
       </div>
     </div>
     <div
-      class="h-52 border-2 border-dashed rounded-lg mt-8 border-theme-secondary-300 dark:border-theme-secondary-800 p-2"
+      class="p-2 mt-8 h-52 rounded-lg border-2 border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
       data-testid="SelectFile"
     >
       <div
-        class="h-full flex flex-col items-center justify-center rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
+        class="flex flex-col justify-center items-center h-full rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
         data-testid="SelectFile__drop-zone"
       >
         <div
@@ -52,19 +52,19 @@ exports[`Import Profile Select File Step should change back from json to dwe 1`]
              
           </span>
           <button
-            class="relative font-semibold cursor-pointer link focus:outline-none group"
+            class="relative font-semibold cursor-pointer focus:outline-none link group"
             data-testid="SelectFile__browse-files"
             title="Click here to upload"
             type="button"
           >
             <div
-              class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+              class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
             />
             Browse Files
           </button>
         </div>
         <div
-          class="font-semibold text-theme-secondary-500 text-sm mt-2"
+          class="mt-2 text-sm font-semibold text-theme-secondary-500"
         >
           Supported format is .json
         </div>
@@ -74,10 +74,10 @@ exports[`Import Profile Select File Step should change back from json to dwe 1`]
       class="mt-6"
     >
       <div
-        class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
+        class="flex overflow-hidden flex-col p-4 space-y-4 rounded-lg sm:flex-row sm:items-center sm:space-y-0 sm:space-x-4 bg-theme-warning-50 dark:bg-theme-secondary-800"
       >
         <div
-          class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
+          class="flex flex-shrink-0 justify-center items-center w-11 h-11 text-white rounded-lg bg-theme-warning-600"
         >
           <div
             class="sc-bdfBwQ hteSKx"
@@ -145,11 +145,11 @@ exports[`Import Profile Select File Step should handle back event 1`] = `
       </div>
     </div>
     <div
-      class="h-52 border-2 border-dashed rounded-lg mt-8 border-theme-secondary-300 dark:border-theme-secondary-800 p-2"
+      class="p-2 mt-8 h-52 rounded-lg border-2 border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
       data-testid="SelectFile"
     >
       <div
-        class="h-full flex flex-col items-center justify-center rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
+        class="flex flex-col justify-center items-center h-full rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
         data-testid="SelectFile__drop-zone"
       >
         <div
@@ -171,39 +171,39 @@ exports[`Import Profile Select File Step should handle back event 1`] = `
              
           </span>
           <button
-            class="relative font-semibold cursor-pointer link focus:outline-none group"
+            class="relative font-semibold cursor-pointer focus:outline-none link group"
             data-testid="SelectFile__browse-files"
             title="Click here to upload"
             type="button"
           >
             <div
-              class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+              class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
             />
             Browse Files
           </button>
         </div>
         <div
-          class="font-semibold text-theme-secondary-500 text-sm mt-2"
+          class="mt-2 text-sm font-semibold text-theme-secondary-500"
         >
           Supported format is .dwe
         </div>
       </div>
     </div>
     <p
-      class="mt-6 text-base text-theme-secondary-text text-center"
+      class="mt-6 text-base text-center text-theme-secondary-text"
     >
       <span>
         Importing from Desktop Wallet v2?
          
       </span>
       <button
-        class="relative font-semibold cursor-pointer link focus:outline-none group"
+        class="relative font-semibold cursor-pointer focus:outline-none link group"
         data-testid="SelectFileStep__change-file"
         title="Click here."
         type="button"
       >
         <div
-          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+          class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
         />
         Click here.
       </button>
@@ -253,11 +253,11 @@ exports[`Import Profile Select File Step should render file selection for dwe an
       </div>
     </div>
     <div
-      class="h-52 border-2 border-dashed rounded-lg mt-8 border-theme-secondary-300 dark:border-theme-secondary-800 p-2"
+      class="p-2 mt-8 h-52 rounded-lg border-2 border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
       data-testid="SelectFile"
     >
       <div
-        class="h-full flex flex-col items-center justify-center rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
+        class="flex flex-col justify-center items-center h-full rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
         data-testid="SelectFile__drop-zone"
       >
         <div
@@ -279,39 +279,39 @@ exports[`Import Profile Select File Step should render file selection for dwe an
              
           </span>
           <button
-            class="relative font-semibold cursor-pointer link focus:outline-none group"
+            class="relative font-semibold cursor-pointer focus:outline-none link group"
             data-testid="SelectFile__browse-files"
             title="Click here to upload"
             type="button"
           >
             <div
-              class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+              class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
             />
             Browse Files
           </button>
         </div>
         <div
-          class="font-semibold text-theme-secondary-500 text-sm mt-2"
+          class="mt-2 text-sm font-semibold text-theme-secondary-500"
         >
           Supported format is .dwe
         </div>
       </div>
     </div>
     <p
-      class="mt-6 text-base text-theme-secondary-text text-center"
+      class="mt-6 text-base text-center text-theme-secondary-text"
     >
       <span>
         Importing from Desktop Wallet v2?
          
       </span>
       <button
-        class="relative font-semibold cursor-pointer link focus:outline-none group"
+        class="relative font-semibold cursor-pointer focus:outline-none link group"
         data-testid="SelectFileStep__change-file"
         title="Click here."
         type="button"
       >
         <div
-          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+          class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
         />
         Click here.
       </button>
@@ -361,11 +361,11 @@ exports[`Import Profile Select File Step should render with dwe fileFormat selec
       </div>
     </div>
     <div
-      class="h-52 border-2 border-dashed rounded-lg mt-8 border-theme-secondary-300 dark:border-theme-secondary-800 p-2"
+      class="p-2 mt-8 h-52 rounded-lg border-2 border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
       data-testid="SelectFile"
     >
       <div
-        class="h-full flex flex-col items-center justify-center rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
+        class="flex flex-col justify-center items-center h-full rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
         data-testid="SelectFile__drop-zone"
       >
         <div
@@ -387,39 +387,39 @@ exports[`Import Profile Select File Step should render with dwe fileFormat selec
              
           </span>
           <button
-            class="relative font-semibold cursor-pointer link focus:outline-none group"
+            class="relative font-semibold cursor-pointer focus:outline-none link group"
             data-testid="SelectFile__browse-files"
             title="Click here to upload"
             type="button"
           >
             <div
-              class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+              class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
             />
             Browse Files
           </button>
         </div>
         <div
-          class="font-semibold text-theme-secondary-500 text-sm mt-2"
+          class="mt-2 text-sm font-semibold text-theme-secondary-500"
         >
           Supported format is .dwe
         </div>
       </div>
     </div>
     <p
-      class="mt-6 text-base text-theme-secondary-text text-center"
+      class="mt-6 text-base text-center text-theme-secondary-text"
     >
       <span>
         Importing from Desktop Wallet v2?
          
       </span>
       <button
-        class="relative font-semibold cursor-pointer link focus:outline-none group"
+        class="relative font-semibold cursor-pointer focus:outline-none link group"
         data-testid="SelectFileStep__change-file"
         title="Click here."
         type="button"
       >
         <div
-          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+          class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
         />
         Click here.
       </button>
@@ -469,11 +469,11 @@ exports[`Import Profile Select File Step should render with json fileFormat sele
       </div>
     </div>
     <div
-      class="h-52 border-2 border-dashed rounded-lg mt-8 border-theme-secondary-300 dark:border-theme-secondary-800 p-2"
+      class="p-2 mt-8 h-52 rounded-lg border-2 border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
       data-testid="SelectFile"
     >
       <div
-        class="h-full flex flex-col items-center justify-center rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
+        class="flex flex-col justify-center items-center h-full rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
         data-testid="SelectFile__drop-zone"
       >
         <div
@@ -495,19 +495,19 @@ exports[`Import Profile Select File Step should render with json fileFormat sele
              
           </span>
           <button
-            class="relative font-semibold cursor-pointer link focus:outline-none group"
+            class="relative font-semibold cursor-pointer focus:outline-none link group"
             data-testid="SelectFile__browse-files"
             title="Click here to upload"
             type="button"
           >
             <div
-              class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+              class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
             />
             Browse Files
           </button>
         </div>
         <div
-          class="font-semibold text-theme-secondary-500 text-sm mt-2"
+          class="mt-2 text-sm font-semibold text-theme-secondary-500"
         >
           Supported format is .json
         </div>
@@ -517,10 +517,10 @@ exports[`Import Profile Select File Step should render with json fileFormat sele
       class="mt-6"
     >
       <div
-        class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
+        class="flex overflow-hidden flex-col p-4 space-y-4 rounded-lg sm:flex-row sm:items-center sm:space-y-0 sm:space-x-4 bg-theme-warning-50 dark:bg-theme-secondary-800"
       >
         <div
-          class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
+          class="flex flex-shrink-0 justify-center items-center w-11 h-11 text-white rounded-lg bg-theme-warning-600"
         >
           <div
             class="sc-bdfBwQ hteSKx"

@@ -10,13 +10,13 @@ exports[`Page should render 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <button
-          class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
+          class="flex w-12 BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD"
         >
           <div
-            class="sc-bdfBwQ iMKUsi mx-auto"
+            class="mx-auto sc-bdfBwQ iMKUsi"
             height="10"
             width="6"
           >
@@ -26,7 +26,7 @@ exports[`Page should render 1`] = `
           </div>
         </button>
         <div
-          class="flex flex-1 px-8 "
+          class="flex flex-1 px-8"
         >
           <div
             class="flex items-center my-auto"
@@ -47,7 +47,7 @@ exports[`Page should render 1`] = `
             </span>
           </div>
           <ul
-            class="flex ml-4 mr-auto space-x-8 h-21"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           />
           <div
             class="flex items-center my-auto space-x-4"
@@ -71,7 +71,7 @@ exports[`Page should render 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iyevwF p-1"
+                      class="p-1 sc-bdfBwQ iyevwF"
                       height="20"
                       width="20"
                     >
@@ -102,7 +102,7 @@ exports[`Page should render 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -147,19 +147,19 @@ exports[`Page should render 1`] = `
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="relative items-center justify-center align-middle rounded-full cursor-pointer"
+                  class="relative justify-center items-center align-middle rounded-full cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                     data-testid="Avatar"
                   >
                     <div
-                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                     >
                       <img
                         alt="Profile Avatar"
-                        class="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
+                        class="object-cover w-11 h-11 bg-center bg-no-repeat bg-cover rounded-full"
                       />
                     </div>
                   </div>
@@ -202,13 +202,13 @@ exports[`Page should render without sidebar 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <button
-          class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
+          class="flex w-12 BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD"
         >
           <div
-            class="sc-bdfBwQ iMKUsi mx-auto"
+            class="mx-auto sc-bdfBwQ iMKUsi"
             height="10"
             width="6"
           >
@@ -218,7 +218,7 @@ exports[`Page should render without sidebar 1`] = `
           </div>
         </button>
         <div
-          class="flex flex-1 px-8 "
+          class="flex flex-1 px-8"
         >
           <div
             class="flex items-center my-auto"
@@ -239,7 +239,7 @@ exports[`Page should render without sidebar 1`] = `
             </span>
           </div>
           <ul
-            class="flex ml-4 mr-auto space-x-8 h-21"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           />
           <div
             class="flex items-center my-auto space-x-4"
@@ -263,7 +263,7 @@ exports[`Page should render without sidebar 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iyevwF p-1"
+                      class="p-1 sc-bdfBwQ iyevwF"
                       height="20"
                       width="20"
                     >
@@ -294,7 +294,7 @@ exports[`Page should render without sidebar 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -339,19 +339,19 @@ exports[`Page should render without sidebar 1`] = `
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="relative items-center justify-center align-middle rounded-full cursor-pointer"
+                  class="relative justify-center items-center align-middle rounded-full cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                     data-testid="Avatar"
                   >
                     <div
-                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                     >
                       <img
                         alt="Profile Avatar"
-                        class="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
+                        class="object-cover w-11 h-11 bg-center bg-no-repeat bg-cover rounded-full"
                       />
                     </div>
                   </div>

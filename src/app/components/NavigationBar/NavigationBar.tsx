@@ -75,7 +75,7 @@ const UserInfo = ({ onUserAction, avatarImage, userActions, userInitials }: User
 		dropdownClass="mt-8"
 		toggleContent={(isOpen: boolean) => (
 			<div
-				className="relative items-center justify-center align-middle rounded-full cursor-pointer"
+				className="relative justify-center items-center align-middle rounded-full cursor-pointer"
 				data-testid="navbar__useractions"
 			>
 				<Avatar size="lg" highlight={isOpen}>
@@ -89,7 +89,7 @@ const UserInfo = ({ onUserAction, avatarImage, userActions, userInitials }: User
 					) : (
 						<img
 							alt="Profile Avatar"
-							className="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
+							className="object-cover w-11 h-11 bg-center bg-no-repeat bg-cover rounded-full"
 							src={avatarImage}
 						/>
 					)}
@@ -145,9 +145,9 @@ export const NavigationBar = ({
 				<NavLink
 					to={menuItem.mountPath(profile.id())}
 					title={menuItem.title}
-					className="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+					className="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
 				>
-					<div className="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible" />
+					<div className="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400" />
 					{menuItem.title}
 				</NavLink>
 			</li>
@@ -184,7 +184,7 @@ export const NavigationBar = ({
 			noShadow={noShadow}
 			scroll={scroll}
 		>
-			<div className="relative flex h-21">
+			<div className="flex relative h-21">
 				{variant === "full" && <BackButton className="flex w-12" disabled={isBackDisabled} />}
 
 				<div className={`flex flex-1 px-8 ${variant !== "full" ? "ml-12" : ""}`}>
@@ -198,7 +198,7 @@ export const NavigationBar = ({
 
 					{variant === "full" && (
 						<>
-							<ul className="flex ml-4 mr-auto space-x-8 h-21">{renderMenu()}</ul>
+							<ul className="flex mr-auto ml-4 space-x-8 h-21">{renderMenu()}</ul>
 
 							<div className="flex items-center my-auto space-x-4">
 								{profile && <NotificationsDropdown profile={profile} />}

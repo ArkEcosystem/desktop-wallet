@@ -32,7 +32,7 @@ exports[`SuccessStep should render 4th step 1`] = `
         data-testid="TransactionDetail"
       >
         <div
-          class="w-40 flex-1 space-y-2 whitespace-nowrap"
+          class="flex-1 space-y-2 w-40 whitespace-nowrap"
         >
           <div
             class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -67,7 +67,7 @@ exports[`SuccessStep should render 4th step 1`] = `
         data-testid="TransactionDetail"
       >
         <div
-          class="w-40 flex-1 space-y-2 whitespace-nowrap"
+          class="flex-1 space-y-2 w-40 whitespace-nowrap"
         >
           <div
             class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -78,10 +78,10 @@ exports[`SuccessStep should render 4th step 1`] = `
             class="font-semibold"
           >
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+              class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
             >
               <span
-                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
                 data-testid="Address__address"
               >
                 TEST-WALLET-ADDRESS
@@ -90,11 +90,11 @@ exports[`SuccessStep should render 4th step 1`] = `
           </div>
         </div>
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+          class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
           data-testid="Avatar"
         >
           <div
-            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+            class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
           >
             <img
               alt="TEST-WALLET-ADDRESS"
@@ -106,7 +106,7 @@ exports[`SuccessStep should render 4th step 1`] = `
       </div>
     </div>
     <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+      class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
     >
       <label
         class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -130,10 +130,10 @@ exports[`SuccessStep should render 4th step 1`] = `
         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
       >
         <div
-          class="relative flex flex-1 h-full"
+          class="flex relative flex-1 h-full"
         >
           <input
-            class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+            class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
             data-testid="CreateWallet__wallet-name"
             name="name"
             value=""

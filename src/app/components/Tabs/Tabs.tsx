@@ -83,14 +83,14 @@ export const Tab = React.forwardRef<HTMLButtonElement, TabProps>((props: TabProp
 			}}
 			onClick={() => context?.setCurrentId(props.tabId)}
 		>
-			<div className="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible" />
+			<div className="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400" />
 
 			<span>{props.children}</span>
 
 			{props.count !== undefined && (
 				<span
 					data-testid={`tabs__tab-button-${props.tabId}-count`}
-					className="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+					className="py-0.5 px-1.5 ml-2 text-sm font-semibold rounded bg-theme-primary-100 dark:bg-theme-secondary-900"
 				>
 					{props.count}
 				</span>

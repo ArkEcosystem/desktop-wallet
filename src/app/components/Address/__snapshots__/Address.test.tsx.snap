@@ -3,7 +3,7 @@
 exports[`Formatted Address should not render without address 1`] = `
 <div>
   <div
-    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
   />
 </div>
 `;
@@ -11,10 +11,10 @@ exports[`Formatted Address should not render without address 1`] = `
 exports[`Formatted Address should render address only 1`] = `
 <div>
   <div
-    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
   >
     <span
-      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+      class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
       data-testid="Address__address"
     >
       ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT
@@ -26,10 +26,10 @@ exports[`Formatted Address should render address only 1`] = `
 exports[`Formatted Address should render with normal font 1`] = `
 <div>
   <div
-    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
   >
     <span
-      class="font-normal text-base text-theme-text"
+      class="text-base font-normal text-theme-text"
       data-testid="Address__alias"
     >
       <span
@@ -40,7 +40,7 @@ exports[`Formatted Address should render with normal font 1`] = `
       </span>
     </span>
     <span
-      class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-normal text-base"
+      class="inline-flex overflow-hidden text-base font-normal text-theme-secondary-500 dark:text-theme-secondary-700"
       data-testid="Address__address"
     >
       ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT
@@ -52,10 +52,10 @@ exports[`Formatted Address should render with normal font 1`] = `
 exports[`Formatted Address should render with wallet name 1`] = `
 <div>
   <div
-    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
   >
     <span
-      class="font-semibold text-base text-theme-text"
+      class="text-base font-semibold text-theme-text"
       data-testid="Address__alias"
     >
       <span
@@ -66,7 +66,7 @@ exports[`Formatted Address should render with wallet name 1`] = `
       </span>
     </span>
     <span
-      class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+      class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
       data-testid="Address__address"
     >
       ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT

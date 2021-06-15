@@ -3,7 +3,7 @@
 exports[`InputRange should render invalid 1`] = `
 <DocumentFragment>
   <fieldset
-    class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
+    class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 qzrKg"
   >
     <div
       class="relative"
@@ -17,11 +17,11 @@ exports[`InputRange should render invalid 1`] = `
         class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
       >
         <div
-          class="relative flex flex-1 h-full"
+          class="flex relative flex-1 h-full"
         >
           <input
             aria-invalid="true"
-            class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+            class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
             data-testid="InputCurrency"
             name="test"
             type="text"
@@ -29,7 +29,7 @@ exports[`InputRange should render invalid 1`] = `
           />
         </div>
         <div
-          class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+          class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-danger-500 dark:divide-theme-secondary-800"
         >
           <span
             data-errortext="test"
@@ -98,10 +98,10 @@ exports[`InputRange should render when disabled 1`] = `
       disabled=""
     >
       <div
-        class="relative flex flex-1 h-full"
+        class="flex relative flex-1 h-full"
       >
         <input
-          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full text-theme-secondary-text"
+          class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures text-theme-secondary-text"
           data-testid="InputCurrency"
           disabled=""
           type="text"
@@ -127,10 +127,10 @@ exports[`InputRange should render with default value 1`] = `
       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
     >
       <div
-        class="relative flex flex-1 h-full"
+        class="flex relative flex-1 h-full"
       >
         <input
-          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+          class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
           data-testid="InputCurrency"
           type="text"
           value="5"
@@ -186,10 +186,10 @@ exports[`InputRange should track background min value 1`] = `
       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
     >
       <div
-        class="relative flex flex-1 h-full"
+        class="flex relative flex-1 h-full"
       >
         <input
-          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+          class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
           data-testid="InputCurrency"
           type="text"
           value="2"

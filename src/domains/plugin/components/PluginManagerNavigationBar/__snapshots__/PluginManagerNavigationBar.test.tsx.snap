@@ -4,7 +4,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
 <DocumentFragment>
   <div>
     <nav
-      class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
+      class="sticky my-4 dark:bg-black PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY top-21 bg-theme-secondary-100"
       data-testid="PluginManagerNavigationBar"
     >
       <div
@@ -14,7 +14,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
           class="-mx-6 w-full"
         >
           <div
-            class="Tabs__TabList-sc-1lxyvu-1 eWhkiE w-full h-18"
+            class="w-full Tabs__TabList-sc-1lxyvu-1 eWhkiE h-18"
           >
             <button
               aria-selected="true"
@@ -25,7 +25,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
               type="button"
             >
               <div
-                class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
               />
               <span>
                 Latest
@@ -40,7 +40,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
               type="button"
             >
               <div
-                class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
               />
               <span>
                 Gaming
@@ -55,7 +55,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
               type="button"
             >
               <div
-                class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
               />
               <span>
                 Utility
@@ -70,7 +70,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
               type="button"
             >
               <div
-                class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
               />
               <span>
                 Exchange
@@ -85,7 +85,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
               type="button"
             >
               <div
-                class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
               />
               <span>
                 Other
@@ -103,7 +103,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
               type="button"
             >
               <div
-                class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
               />
               <span>
                 <span>
@@ -133,7 +133,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
                   data-testid="LayoutControls__list--icon"
                 >
                   <div
-                    class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                   />
                   <div
                     class="sc-bdfBwQ iyevwF"
@@ -158,7 +158,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
                   data-testid="LayoutControls__grid--icon"
                 >
                   <div
-                    class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                   />
                   <div
                     class="sc-bdfBwQ iyevwF"
@@ -184,7 +184,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
 <DocumentFragment>
   <div>
     <nav
-      class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
+      class="sticky my-4 dark:bg-black PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY top-21 bg-theme-secondary-100"
       data-testid="PluginManagerNavigationBar"
     >
       <div
@@ -194,7 +194,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
           class="-mx-6 w-full"
         >
           <div
-            class="Tabs__TabList-sc-1lxyvu-1 eWhkiE w-full h-18"
+            class="w-full Tabs__TabList-sc-1lxyvu-1 eWhkiE h-18"
           >
             <button
               aria-selected="true"
@@ -205,7 +205,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
               type="button"
             >
               <div
-                class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
               />
               <span>
                 Latest
@@ -220,7 +220,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
               type="button"
             >
               <div
-                class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
               />
               <span>
                 Gaming
@@ -235,7 +235,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
               type="button"
             >
               <div
-                class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
               />
               <span>
                 Utility
@@ -250,7 +250,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
               type="button"
             >
               <div
-                class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
               />
               <span>
                 Exchange
@@ -265,7 +265,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
               type="button"
             >
               <div
-                class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
               />
               <span>
                 Other
@@ -283,7 +283,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
               type="button"
             >
               <div
-                class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
               />
               <span>
                 <span>
@@ -313,7 +313,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
                   data-testid="LayoutControls__list--icon"
                 >
                   <div
-                    class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                   />
                   <div
                     class="sc-bdfBwQ iyevwF"
@@ -338,7 +338,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
                   data-testid="LayoutControls__grid--icon"
                 >
                   <div
-                    class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                   />
                   <div
                     class="sc-bdfBwQ iyevwF"

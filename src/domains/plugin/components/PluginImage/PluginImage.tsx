@@ -64,7 +64,7 @@ export const PluginImage = ({
 				{showUpdatingLabel && (
 					<p
 						data-testid="PluginImage__updating__label"
-						className="text-theme-success-600 text-sm font-semibold"
+						className="text-sm font-semibold text-theme-success-600"
 					>
 						{t("COMMON.UPDATING")}
 					</p>

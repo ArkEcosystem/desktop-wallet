@@ -17,7 +17,7 @@ exports[`App should close splash screen if not e2e 1`] = `
           class="NavigationBar__NavWrapper-sc-1qsoskw-0 jBDhtO"
         >
           <div
-            class="relative flex h-21"
+            class="flex relative h-21"
           >
             <div
               class="flex flex-1 px-8 ml-12"
@@ -47,7 +47,7 @@ exports[`App should close splash screen if not e2e 1`] = `
           class="flex flex-col flex-1"
         >
           <div
-            class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center text-center"
+            class="flex flex-col flex-1 justify-center text-center Section__SectionWrapper-sc-8cjvre-0 kJTPww"
           >
             <div
               class="container px-10 mx-auto"
@@ -68,7 +68,7 @@ exports[`App should close splash screen if not e2e 1`] = `
                   Select Profile
                 </h2>
                 <p
-                  class="text-sm text-theme-secondary-text md:text-base"
+                  class="text-sm md:text-base text-theme-secondary-text"
                 >
                   Choose from an existing Profile below or create a new Profile to get started.
                 </p>
@@ -76,7 +76,7 @@ exports[`App should close splash screen if not e2e 1`] = `
                   class="mt-8"
                 >
                   <div
-                    class="ml-4.5 -mb-4.5 flex flex-wrap justify-center"
+                    class="flex flex-wrap justify-center ml-4.5 -mb-4.5"
                   >
                     <div
                       class="w-40 h-40 leading-tight mr-4.5 mb-4.5"
@@ -93,11 +93,11 @@ exports[`App should close splash screen if not e2e 1`] = `
                             class="relative"
                           >
                             <div
-                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI flex-shrink-0"
+                              class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI"
                               data-testid="Avatar"
                             >
                               <div
-                                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                                class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                               >
                                 <img
                                   alt="John Doe"
@@ -132,7 +132,7 @@ exports[`App should close splash screen if not e2e 1`] = `
                                 class="flex overflow-hidden justify-center w-4"
                               >
                                 <div
-                                  class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                  class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                   height="1em"
                                   width="1em"
                                 >
@@ -161,11 +161,11 @@ exports[`App should close splash screen if not e2e 1`] = `
                             class="relative"
                           >
                             <div
-                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI flex-shrink-0"
+                              class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI"
                               data-testid="Avatar"
                             >
                               <div
-                                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                                class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                               >
                                 <img
                                   alt="Jane Doe"
@@ -181,7 +181,7 @@ exports[`App should close splash screen if not e2e 1`] = `
                               </div>
                             </div>
                             <span
-                              class="Badge__Wrapper-sc-1d7juq8-0 gOwpmH flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent mr-2 mb-2 bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
+                              class="flex justify-center items-center mr-2 mb-2 align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 gOwpmH bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
                             >
                               <div
                                 class="sc-bdfBwQ iwcOAK"
@@ -214,7 +214,7 @@ exports[`App should close splash screen if not e2e 1`] = `
                                 class="flex overflow-hidden justify-center w-4"
                               >
                                 <div
-                                  class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                  class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                   height="1em"
                                   width="1em"
                                 >
@@ -241,7 +241,7 @@ exports[`App should close splash screen if not e2e 1`] = `
                         >
                           <div>
                             <div
-                              class="Circle__CircleWrapper-uw7h4j-0 lmmopM text-theme-primary-600 dark:text-white dark:group-hover:border-theme-secondary-800 dark:group-hover:bg-theme-secondary-800 group-hover:text-white group-hover:bg-theme-primary-700 ring-theme-background"
+                              class="dark:text-white group-hover:text-white Circle__CircleWrapper-uw7h4j-0 lmmopM text-theme-primary-600 ring-theme-background dark:group-hover:border-theme-secondary-800 dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-700"
                             >
                               <div
                                 class="sc-bdfBwQ fdfkzt"
@@ -255,7 +255,7 @@ exports[`App should close splash screen if not e2e 1`] = `
                             </div>
                           </div>
                           <span
-                            class="mt-3 font-semibold text-theme-primary-600 dark:text-white max-w-32 truncate dark:group-hover:text-white group-hover:text-theme-primary-700"
+                            class="mt-3 font-semibold dark:text-white text-theme-primary-600 max-w-32 truncate dark:group-hover:text-white group-hover:text-theme-primary-700"
                           >
                             Create Profile
                           </span>
@@ -268,7 +268,7 @@ exports[`App should close splash screen if not e2e 1`] = `
                   </div>
                 </div>
                 <p
-                  class="text-sm text-theme-secondary-text md:text-base mt-16"
+                  class="mt-16 text-sm md:text-base text-theme-secondary-text"
                 >
                   <span>
                     Exported a Profile before? 
@@ -313,7 +313,7 @@ exports[`App should not migrate profiles 1`] = `
           class="NavigationBar__NavWrapper-sc-1qsoskw-0 jBDhtO"
         >
           <div
-            class="relative flex h-21"
+            class="flex relative h-21"
           >
             <div
               class="flex flex-1 px-8 ml-12"
@@ -343,7 +343,7 @@ exports[`App should not migrate profiles 1`] = `
           class="flex flex-col flex-1"
         >
           <div
-            class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center text-center"
+            class="flex flex-col flex-1 justify-center text-center Section__SectionWrapper-sc-8cjvre-0 kJTPww"
           >
             <div
               class="container px-10 mx-auto"
@@ -364,7 +364,7 @@ exports[`App should not migrate profiles 1`] = `
                   Select Profile
                 </h2>
                 <p
-                  class="text-sm text-theme-secondary-text md:text-base"
+                  class="text-sm md:text-base text-theme-secondary-text"
                 >
                   Choose from an existing Profile below or create a new Profile to get started.
                 </p>
@@ -372,7 +372,7 @@ exports[`App should not migrate profiles 1`] = `
                   class="mt-8"
                 >
                   <div
-                    class="ml-4.5 -mb-4.5 flex flex-wrap justify-center"
+                    class="flex flex-wrap justify-center ml-4.5 -mb-4.5"
                   >
                     <div
                       class="w-40 h-40 leading-tight mr-4.5 mb-4.5"
@@ -389,11 +389,11 @@ exports[`App should not migrate profiles 1`] = `
                             class="relative"
                           >
                             <div
-                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI flex-shrink-0"
+                              class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI"
                               data-testid="Avatar"
                             >
                               <div
-                                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                                class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                               >
                                 <img
                                   alt="John Doe"
@@ -428,7 +428,7 @@ exports[`App should not migrate profiles 1`] = `
                                 class="flex overflow-hidden justify-center w-4"
                               >
                                 <div
-                                  class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                  class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                   height="1em"
                                   width="1em"
                                 >
@@ -457,11 +457,11 @@ exports[`App should not migrate profiles 1`] = `
                             class="relative"
                           >
                             <div
-                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI flex-shrink-0"
+                              class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI"
                               data-testid="Avatar"
                             >
                               <div
-                                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                                class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                               >
                                 <img
                                   alt="Jane Doe"
@@ -477,7 +477,7 @@ exports[`App should not migrate profiles 1`] = `
                               </div>
                             </div>
                             <span
-                              class="Badge__Wrapper-sc-1d7juq8-0 gOwpmH flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent mr-2 mb-2 bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
+                              class="flex justify-center items-center mr-2 mb-2 align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 gOwpmH bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
                             >
                               <div
                                 class="sc-bdfBwQ iwcOAK"
@@ -510,7 +510,7 @@ exports[`App should not migrate profiles 1`] = `
                                 class="flex overflow-hidden justify-center w-4"
                               >
                                 <div
-                                  class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                  class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                   height="1em"
                                   width="1em"
                                 >
@@ -537,7 +537,7 @@ exports[`App should not migrate profiles 1`] = `
                         >
                           <div>
                             <div
-                              class="Circle__CircleWrapper-uw7h4j-0 lmmopM text-theme-primary-600 dark:text-white dark:group-hover:border-theme-secondary-800 dark:group-hover:bg-theme-secondary-800 group-hover:text-white group-hover:bg-theme-primary-700 ring-theme-background"
+                              class="dark:text-white group-hover:text-white Circle__CircleWrapper-uw7h4j-0 lmmopM text-theme-primary-600 ring-theme-background dark:group-hover:border-theme-secondary-800 dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-700"
                             >
                               <div
                                 class="sc-bdfBwQ fdfkzt"
@@ -551,7 +551,7 @@ exports[`App should not migrate profiles 1`] = `
                             </div>
                           </div>
                           <span
-                            class="mt-3 font-semibold text-theme-primary-600 dark:text-white max-w-32 truncate dark:group-hover:text-white group-hover:text-theme-primary-700"
+                            class="mt-3 font-semibold dark:text-white text-theme-primary-600 max-w-32 truncate dark:group-hover:text-white group-hover:text-theme-primary-700"
                           >
                             Create Profile
                           </span>
@@ -564,7 +564,7 @@ exports[`App should not migrate profiles 1`] = `
                   </div>
                 </div>
                 <p
-                  class="text-sm text-theme-secondary-text md:text-base mt-16"
+                  class="mt-16 text-sm md:text-base text-theme-secondary-text"
                 >
                   <span>
                     Exported a Profile before? 
@@ -606,7 +606,7 @@ exports[`App should render application error if the app fails to boot 1`] = `
         class="NavigationBar__NavWrapper-sc-1qsoskw-0 jBDhtO"
       >
         <div
-          class="relative flex h-21"
+          class="flex relative h-21"
         >
           <div
             class="flex flex-1 px-8 ml-12"
@@ -631,7 +631,7 @@ exports[`App should render application error if the app fails to boot 1`] = `
         class="flex flex-col flex-1"
       >
         <div
-          class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center text-center"
+          class="flex flex-col flex-1 justify-center text-center Section__SectionWrapper-sc-8cjvre-0 kJTPww"
         >
           <div
             class="container px-10 mx-auto"
@@ -659,7 +659,7 @@ exports[`App should render application error if the app fails to boot 1`] = `
               </p>
             </div>
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS mt-8"
+              class="mt-8 OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
               data-testid="ApplicationError__button--reload"
               type="button"
             >
@@ -694,7 +694,7 @@ exports[`App should render mock 1`] = `
           class="NavigationBar__NavWrapper-sc-1qsoskw-0 jBDhtO"
         >
           <div
-            class="relative flex h-21"
+            class="flex relative h-21"
           >
             <div
               class="flex flex-1 px-8 ml-12"
@@ -724,7 +724,7 @@ exports[`App should render mock 1`] = `
           class="flex flex-col flex-1"
         >
           <div
-            class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center text-center"
+            class="flex flex-col flex-1 justify-center text-center Section__SectionWrapper-sc-8cjvre-0 kJTPww"
           >
             <div
               class="container px-10 mx-auto"
@@ -745,7 +745,7 @@ exports[`App should render mock 1`] = `
                   Select Profile
                 </h2>
                 <p
-                  class="text-sm text-theme-secondary-text md:text-base"
+                  class="text-sm md:text-base text-theme-secondary-text"
                 >
                   Choose from an existing Profile below or create a new Profile to get started.
                 </p>
@@ -753,7 +753,7 @@ exports[`App should render mock 1`] = `
                   class="mt-8"
                 >
                   <div
-                    class="ml-4.5 -mb-4.5 flex flex-wrap justify-center"
+                    class="flex flex-wrap justify-center ml-4.5 -mb-4.5"
                   >
                     <div
                       class="w-40 h-40 leading-tight mr-4.5 mb-4.5"
@@ -770,11 +770,11 @@ exports[`App should render mock 1`] = `
                             class="relative"
                           >
                             <div
-                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI flex-shrink-0"
+                              class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI"
                               data-testid="Avatar"
                             >
                               <div
-                                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                                class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                               >
                                 <img
                                   alt="John Doe"
@@ -809,7 +809,7 @@ exports[`App should render mock 1`] = `
                                 class="flex overflow-hidden justify-center w-4"
                               >
                                 <div
-                                  class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                  class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                   height="1em"
                                   width="1em"
                                 >
@@ -838,11 +838,11 @@ exports[`App should render mock 1`] = `
                             class="relative"
                           >
                             <div
-                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI flex-shrink-0"
+                              class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI"
                               data-testid="Avatar"
                             >
                               <div
-                                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                                class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                               >
                                 <img
                                   alt="Jane Doe"
@@ -858,7 +858,7 @@ exports[`App should render mock 1`] = `
                               </div>
                             </div>
                             <span
-                              class="Badge__Wrapper-sc-1d7juq8-0 gOwpmH flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent mr-2 mb-2 bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
+                              class="flex justify-center items-center mr-2 mb-2 align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 gOwpmH bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
                             >
                               <div
                                 class="sc-bdfBwQ iwcOAK"
@@ -891,7 +891,7 @@ exports[`App should render mock 1`] = `
                                 class="flex overflow-hidden justify-center w-4"
                               >
                                 <div
-                                  class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                  class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                   height="1em"
                                   width="1em"
                                 >
@@ -918,7 +918,7 @@ exports[`App should render mock 1`] = `
                         >
                           <div>
                             <div
-                              class="Circle__CircleWrapper-uw7h4j-0 lmmopM text-theme-primary-600 dark:text-white dark:group-hover:border-theme-secondary-800 dark:group-hover:bg-theme-secondary-800 group-hover:text-white group-hover:bg-theme-primary-700 ring-theme-background"
+                              class="dark:text-white group-hover:text-white Circle__CircleWrapper-uw7h4j-0 lmmopM text-theme-primary-600 ring-theme-background dark:group-hover:border-theme-secondary-800 dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-700"
                             >
                               <div
                                 class="sc-bdfBwQ fdfkzt"
@@ -932,7 +932,7 @@ exports[`App should render mock 1`] = `
                             </div>
                           </div>
                           <span
-                            class="mt-3 font-semibold text-theme-primary-600 dark:text-white max-w-32 truncate dark:group-hover:text-white group-hover:text-theme-primary-700"
+                            class="mt-3 font-semibold dark:text-white text-theme-primary-600 max-w-32 truncate dark:group-hover:text-white group-hover:text-theme-primary-700"
                           >
                             Create Profile
                           </span>
@@ -945,7 +945,7 @@ exports[`App should render mock 1`] = `
                   </div>
                 </div>
                 <p
-                  class="text-sm text-theme-secondary-text md:text-base mt-16"
+                  class="mt-16 text-sm md:text-base text-theme-secondary-text"
                 >
                   <span>
                     Exported a Profile before? 
@@ -990,7 +990,7 @@ exports[`App should render splash screen 1`] = `
           class="NavigationBar__NavWrapper-sc-1qsoskw-0 jBDhtO"
         >
           <div
-            class="relative flex h-21"
+            class="flex relative h-21"
           >
             <div
               class="flex flex-1 px-8 ml-12"
@@ -1020,7 +1020,7 @@ exports[`App should render splash screen 1`] = `
           class="flex flex-col flex-1"
         >
           <div
-            class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center text-center"
+            class="flex flex-col flex-1 justify-center text-center Section__SectionWrapper-sc-8cjvre-0 kJTPww"
           >
             <div
               class="container px-10 mx-auto"
@@ -1041,7 +1041,7 @@ exports[`App should render splash screen 1`] = `
                   Select Profile
                 </h2>
                 <p
-                  class="text-sm text-theme-secondary-text md:text-base"
+                  class="text-sm md:text-base text-theme-secondary-text"
                 >
                   Choose from an existing Profile below or create a new Profile to get started.
                 </p>
@@ -1049,7 +1049,7 @@ exports[`App should render splash screen 1`] = `
                   class="mt-8"
                 >
                   <div
-                    class="ml-4.5 -mb-4.5 flex flex-wrap justify-center"
+                    class="flex flex-wrap justify-center ml-4.5 -mb-4.5"
                   >
                     <div
                       class="w-40 h-40 leading-tight mr-4.5 mb-4.5"
@@ -1066,11 +1066,11 @@ exports[`App should render splash screen 1`] = `
                             class="relative"
                           >
                             <div
-                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI flex-shrink-0"
+                              class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI"
                               data-testid="Avatar"
                             >
                               <div
-                                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                                class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                               >
                                 <img
                                   alt="John Doe"
@@ -1105,7 +1105,7 @@ exports[`App should render splash screen 1`] = `
                                 class="flex overflow-hidden justify-center w-4"
                               >
                                 <div
-                                  class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                  class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                   height="1em"
                                   width="1em"
                                 >
@@ -1134,11 +1134,11 @@ exports[`App should render splash screen 1`] = `
                             class="relative"
                           >
                             <div
-                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI flex-shrink-0"
+                              class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI"
                               data-testid="Avatar"
                             >
                               <div
-                                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                                class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                               >
                                 <img
                                   alt="Jane Doe"
@@ -1154,7 +1154,7 @@ exports[`App should render splash screen 1`] = `
                               </div>
                             </div>
                             <span
-                              class="Badge__Wrapper-sc-1d7juq8-0 gOwpmH flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent mr-2 mb-2 bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
+                              class="flex justify-center items-center mr-2 mb-2 align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 gOwpmH bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
                             >
                               <div
                                 class="sc-bdfBwQ iwcOAK"
@@ -1187,7 +1187,7 @@ exports[`App should render splash screen 1`] = `
                                 class="flex overflow-hidden justify-center w-4"
                               >
                                 <div
-                                  class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                  class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                   height="1em"
                                   width="1em"
                                 >
@@ -1214,7 +1214,7 @@ exports[`App should render splash screen 1`] = `
                         >
                           <div>
                             <div
-                              class="Circle__CircleWrapper-uw7h4j-0 lmmopM text-theme-primary-600 dark:text-white dark:group-hover:border-theme-secondary-800 dark:group-hover:bg-theme-secondary-800 group-hover:text-white group-hover:bg-theme-primary-700 ring-theme-background"
+                              class="dark:text-white group-hover:text-white Circle__CircleWrapper-uw7h4j-0 lmmopM text-theme-primary-600 ring-theme-background dark:group-hover:border-theme-secondary-800 dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-700"
                             >
                               <div
                                 class="sc-bdfBwQ fdfkzt"
@@ -1228,7 +1228,7 @@ exports[`App should render splash screen 1`] = `
                             </div>
                           </div>
                           <span
-                            class="mt-3 font-semibold text-theme-primary-600 dark:text-white max-w-32 truncate dark:group-hover:text-white group-hover:text-theme-primary-700"
+                            class="mt-3 font-semibold dark:text-white text-theme-primary-600 max-w-32 truncate dark:group-hover:text-white group-hover:text-theme-primary-700"
                           >
                             Create Profile
                           </span>
@@ -1241,7 +1241,7 @@ exports[`App should render splash screen 1`] = `
                   </div>
                 </div>
                 <p
-                  class="text-sm text-theme-secondary-text md:text-base mt-16"
+                  class="mt-16 text-sm md:text-base text-theme-secondary-text"
                 >
                   <span>
                     Exported a Profile before? 
@@ -1286,7 +1286,7 @@ exports[`App should render the offline screen if there is no internet connection
           class="NavigationBar__NavWrapper-sc-1qsoskw-0 jBDhtO"
         >
           <div
-            class="relative flex h-21"
+            class="flex relative h-21"
           >
             <div
               class="flex flex-1 px-8 ml-12"
@@ -1311,7 +1311,7 @@ exports[`App should render the offline screen if there is no internet connection
           class="flex flex-col flex-1"
         >
           <div
-            class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center text-center"
+            class="flex flex-col flex-1 justify-center text-center Section__SectionWrapper-sc-8cjvre-0 kJTPww"
           >
             <div
               class="container px-10 mx-auto"
@@ -1364,7 +1364,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
           class="NavigationBar__NavWrapper-sc-1qsoskw-0 jBDhtO"
         >
           <div
-            class="relative flex h-21"
+            class="flex relative h-21"
           >
             <div
               class="flex flex-1 px-8 ml-12"
@@ -1394,7 +1394,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
           class="flex flex-col flex-1"
         >
           <div
-            class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center text-center"
+            class="flex flex-col flex-1 justify-center text-center Section__SectionWrapper-sc-8cjvre-0 kJTPww"
           >
             <div
               class="container px-10 mx-auto"
@@ -1415,7 +1415,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
                   Select Profile
                 </h2>
                 <p
-                  class="text-sm text-theme-secondary-text md:text-base"
+                  class="text-sm md:text-base text-theme-secondary-text"
                 >
                   Choose from an existing Profile below or create a new Profile to get started.
                 </p>
@@ -1423,7 +1423,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
                   class="mt-8"
                 >
                   <div
-                    class="ml-4.5 -mb-4.5 flex flex-wrap justify-center"
+                    class="flex flex-wrap justify-center ml-4.5 -mb-4.5"
                   >
                     <div
                       class="w-40 h-40 leading-tight mr-4.5 mb-4.5"
@@ -1440,11 +1440,11 @@ exports[`App should render welcome screen after splash screen 1`] = `
                             class="relative"
                           >
                             <div
-                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI flex-shrink-0"
+                              class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI"
                               data-testid="Avatar"
                             >
                               <div
-                                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                                class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                               >
                                 <img
                                   alt="John Doe"
@@ -1479,7 +1479,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
                                 class="flex overflow-hidden justify-center w-4"
                               >
                                 <div
-                                  class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                  class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                   height="1em"
                                   width="1em"
                                 >
@@ -1508,11 +1508,11 @@ exports[`App should render welcome screen after splash screen 1`] = `
                             class="relative"
                           >
                             <div
-                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI flex-shrink-0"
+                              class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI"
                               data-testid="Avatar"
                             >
                               <div
-                                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                                class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                               >
                                 <img
                                   alt="Jane Doe"
@@ -1528,7 +1528,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
                               </div>
                             </div>
                             <span
-                              class="Badge__Wrapper-sc-1d7juq8-0 gOwpmH flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent mr-2 mb-2 bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
+                              class="flex justify-center items-center mr-2 mb-2 align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 gOwpmH bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
                             >
                               <div
                                 class="sc-bdfBwQ iwcOAK"
@@ -1561,7 +1561,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
                                 class="flex overflow-hidden justify-center w-4"
                               >
                                 <div
-                                  class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                  class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                                   height="1em"
                                   width="1em"
                                 >
@@ -1588,7 +1588,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
                         >
                           <div>
                             <div
-                              class="Circle__CircleWrapper-uw7h4j-0 lmmopM text-theme-primary-600 dark:text-white dark:group-hover:border-theme-secondary-800 dark:group-hover:bg-theme-secondary-800 group-hover:text-white group-hover:bg-theme-primary-700 ring-theme-background"
+                              class="dark:text-white group-hover:text-white Circle__CircleWrapper-uw7h4j-0 lmmopM text-theme-primary-600 ring-theme-background dark:group-hover:border-theme-secondary-800 dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-700"
                             >
                               <div
                                 class="sc-bdfBwQ fdfkzt"
@@ -1602,7 +1602,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
                             </div>
                           </div>
                           <span
-                            class="mt-3 font-semibold text-theme-primary-600 dark:text-white max-w-32 truncate dark:group-hover:text-white group-hover:text-theme-primary-700"
+                            class="mt-3 font-semibold dark:text-white text-theme-primary-600 max-w-32 truncate dark:group-hover:text-white group-hover:text-theme-primary-700"
                           >
                             Create Profile
                           </span>
@@ -1615,7 +1615,7 @@ exports[`App should render welcome screen after splash screen 1`] = `
                   </div>
                 </div>
                 <p
-                  class="text-sm text-theme-secondary-text md:text-base mt-16"
+                  class="mt-16 text-sm md:text-base text-theme-secondary-text"
                 >
                   <span>
                     Exported a Profile before? 

@@ -15,7 +15,7 @@ exports[`Tabs should react to use effect call 1`] = `
         type="button"
       >
         <div
-          class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+          class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
         />
         <span>
           First
@@ -30,7 +30,7 @@ exports[`Tabs should react to use effect call 1`] = `
         type="button"
       >
         <div
-          class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+          class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
         />
         <span>
           Second
@@ -61,7 +61,7 @@ exports[`Tabs should render 1`] = `
         type="button"
       >
         <div
-          class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+          class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
         />
         <span>
           First
@@ -76,7 +76,7 @@ exports[`Tabs should render 1`] = `
         type="button"
       >
         <div
-          class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+          class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
         />
         <span>
           Second
@@ -91,7 +91,7 @@ exports[`Tabs should render 1`] = `
         type="button"
       >
         <div
-          class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+          class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
         />
         <span>
           Third
@@ -120,13 +120,13 @@ exports[`Tabs should render wit counts 1`] = `
         type="button"
       >
         <div
-          class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+          class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
         />
         <span>
           First
         </span>
         <span
-          class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+          class="py-0.5 px-1.5 ml-2 text-sm font-semibold rounded bg-theme-primary-100 dark:bg-theme-secondary-900"
           data-testid="tabs__tab-button-1-count"
         >
           1
@@ -141,13 +141,13 @@ exports[`Tabs should render wit counts 1`] = `
         type="button"
       >
         <div
-          class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+          class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
         />
         <span>
           Second
         </span>
         <span
-          class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+          class="py-0.5 px-1.5 ml-2 text-sm font-semibold rounded bg-theme-primary-100 dark:bg-theme-secondary-900"
           data-testid="tabs__tab-button-2-count"
         >
           2
@@ -162,13 +162,13 @@ exports[`Tabs should render wit counts 1`] = `
         type="button"
       >
         <div
-          class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+          class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
         />
         <span>
           Third
         </span>
         <span
-          class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+          class="py-0.5 px-1.5 ml-2 text-sm font-semibold rounded bg-theme-primary-100 dark:bg-theme-secondary-900"
           data-testid="tabs__tab-button-3-count"
         >
           3
@@ -197,7 +197,7 @@ exports[`Tabs should render without background 1`] = `
         type="button"
       >
         <div
-          class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+          class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
         />
         <span>
           First
@@ -212,7 +212,7 @@ exports[`Tabs should render without background 1`] = `
         type="button"
       >
         <div
-          class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+          class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
         />
         <span>
           Second
@@ -227,7 +227,7 @@ exports[`Tabs should render without background 1`] = `
         type="button"
       >
         <div
-          class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+          class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
         />
         <span>
           Third

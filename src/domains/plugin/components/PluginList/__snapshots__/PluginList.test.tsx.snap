@@ -6,7 +6,7 @@ exports[`PluginList should not render pagination 1`] = `
     data-testid="PluginList"
   >
     <div
-      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+      class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
       role="table"
     >
       <table
@@ -19,7 +19,7 @@ exports[`PluginList should not render pagination 1`] = `
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -27,16 +27,16 @@ exports[`PluginList should not render pagination 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex align-top flex-inline"
               >
                 <div>
                   Name
                 </div>
                 <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity ml-2"
+                  class="flex items-center ml-2 transition-opacity text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -49,7 +49,7 @@ exports[`PluginList should not render pagination 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -57,16 +57,16 @@ exports[`PluginList should not render pagination 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex align-top flex-inline"
               >
                 <div>
                   Author
                 </div>
                 <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                  class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -79,7 +79,7 @@ exports[`PluginList should not render pagination 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -87,16 +87,16 @@ exports[`PluginList should not render pagination 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex align-top flex-inline"
               >
                 <div>
                   Version
                 </div>
                 <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                  class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -109,7 +109,7 @@ exports[`PluginList should not render pagination 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -117,16 +117,16 @@ exports[`PluginList should not render pagination 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex align-top flex-inline"
               >
                 <div>
                   Size
                 </div>
                 <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                  class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -139,13 +139,13 @@ exports[`PluginList should not render pagination 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center no-border"
+                class="flex justify-center align-top flex-inline no-border"
               >
                 <div>
                   Status
@@ -153,13 +153,13 @@ exports[`PluginList should not render pagination 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden"
+                class="flex hidden align-top flex-inline"
               >
                 <div>
                   Actions
@@ -177,7 +177,7 @@ exports[`PluginList should not render pagination 1`] = `
           >
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                class="space-x-5 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
               >
                 <div
                   class="PluginImage__PluginImageWrapper-iwox49-0 fITdNR"
@@ -191,7 +191,7 @@ exports[`PluginList should not render pagination 1`] = `
                   class="flex items-center space-x-2 text-left"
                 >
                   <span
-                    class="font-semibold link flex items-center space-x-2"
+                    class="flex items-center space-x-2 font-semibold link"
                     data-testid="PluginListItem__link"
                   >
                     ARK Avatars
@@ -259,7 +259,7 @@ exports[`PluginList should not render pagination 1`] = `
               class="w-16"
             >
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
               >
                 <div
                   class="flex items-center space-x-2"
@@ -274,7 +274,7 @@ exports[`PluginList should not render pagination 1`] = `
                         class="relative"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg text-left"
+                          class="text-left OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg"
                           type="button"
                         >
                           <div
@@ -304,7 +304,7 @@ exports[`PluginList should not render pagination 1`] = `
           >
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                class="space-x-5 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
               >
                 <div
                   class="PluginImage__PluginImageWrapper-iwox49-0 fITdNR"
@@ -318,7 +318,7 @@ exports[`PluginList should not render pagination 1`] = `
                   class="flex items-center space-x-2 text-left"
                 >
                   <span
-                    class="font-semibold link flex items-center space-x-2"
+                    class="flex items-center space-x-2 font-semibold link"
                     data-testid="PluginListItem__link"
                   >
                     ARK Explorer
@@ -386,10 +386,10 @@ exports[`PluginList should not render pagination 1`] = `
               class="w-16"
             >
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP flex-1"
+                  class="flex-1 OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                   data-testid="PluginListItem__install"
                   type="button"
                 >
@@ -406,7 +406,7 @@ exports[`PluginList should not render pagination 1`] = `
       </table>
     </div>
     <div
-      class="flex justify-center w-full mt-10"
+      class="flex justify-center mt-10 w-full"
     />
   </div>
 </DocumentFragment>
@@ -418,7 +418,7 @@ exports[`PluginList should render pagination 1`] = `
     data-testid="PluginList"
   >
     <div
-      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+      class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
       role="table"
     >
       <table
@@ -431,7 +431,7 @@ exports[`PluginList should render pagination 1`] = `
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -439,16 +439,16 @@ exports[`PluginList should render pagination 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex align-top flex-inline"
               >
                 <div>
                   Name
                 </div>
                 <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity ml-2"
+                  class="flex items-center ml-2 transition-opacity text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -461,7 +461,7 @@ exports[`PluginList should render pagination 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -469,16 +469,16 @@ exports[`PluginList should render pagination 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex align-top flex-inline"
               >
                 <div>
                   Author
                 </div>
                 <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                  class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -491,7 +491,7 @@ exports[`PluginList should render pagination 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -499,16 +499,16 @@ exports[`PluginList should render pagination 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex align-top flex-inline"
               >
                 <div>
                   Version
                 </div>
                 <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                  class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -521,7 +521,7 @@ exports[`PluginList should render pagination 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -529,16 +529,16 @@ exports[`PluginList should render pagination 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex align-top flex-inline"
               >
                 <div>
                   Size
                 </div>
                 <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                  class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -551,13 +551,13 @@ exports[`PluginList should render pagination 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center no-border"
+                class="flex justify-center align-top flex-inline no-border"
               >
                 <div>
                   Status
@@ -565,13 +565,13 @@ exports[`PluginList should render pagination 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden"
+                class="flex hidden align-top flex-inline"
               >
                 <div>
                   Actions
@@ -589,7 +589,7 @@ exports[`PluginList should render pagination 1`] = `
           >
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                class="space-x-5 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
               >
                 <div
                   class="PluginImage__PluginImageWrapper-iwox49-0 fITdNR"
@@ -603,7 +603,7 @@ exports[`PluginList should render pagination 1`] = `
                   class="flex items-center space-x-2 text-left"
                 >
                   <span
-                    class="font-semibold link flex items-center space-x-2"
+                    class="flex items-center space-x-2 font-semibold link"
                     data-testid="PluginListItem__link"
                   >
                     ARK Avatars
@@ -671,7 +671,7 @@ exports[`PluginList should render pagination 1`] = `
               class="w-16"
             >
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
               >
                 <div
                   class="flex items-center space-x-2"
@@ -686,7 +686,7 @@ exports[`PluginList should render pagination 1`] = `
                         class="relative"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg text-left"
+                          class="text-left OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg"
                           type="button"
                         >
                           <div
@@ -716,7 +716,7 @@ exports[`PluginList should render pagination 1`] = `
           >
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                class="space-x-5 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
               >
                 <div
                   class="PluginImage__PluginImageWrapper-iwox49-0 fITdNR"
@@ -730,7 +730,7 @@ exports[`PluginList should render pagination 1`] = `
                   class="flex items-center space-x-2 text-left"
                 >
                   <span
-                    class="font-semibold link flex items-center space-x-2"
+                    class="flex items-center space-x-2 font-semibold link"
                     data-testid="PluginListItem__link"
                   >
                     ARK Explorer
@@ -798,10 +798,10 @@ exports[`PluginList should render pagination 1`] = `
               class="w-16"
             >
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP flex-1"
+                  class="flex-1 OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                   data-testid="PluginListItem__install"
                   type="button"
                 >
@@ -820,7 +820,7 @@ exports[`PluginList should render pagination 1`] = `
           >
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                class="space-x-5 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
               >
                 <div
                   class="PluginImage__PluginImageWrapper-iwox49-0 fITdNR"
@@ -834,7 +834,7 @@ exports[`PluginList should render pagination 1`] = `
                   class="flex items-center space-x-2 text-left"
                 >
                   <span
-                    class="font-semibold link flex items-center space-x-2"
+                    class="flex items-center space-x-2 font-semibold link"
                     data-testid="PluginListItem__link"
                   >
                     Avfc Theme
@@ -902,7 +902,7 @@ exports[`PluginList should render pagination 1`] = `
               class="w-16"
             >
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
               >
                 <div
                   class="flex items-center space-x-2"
@@ -917,7 +917,7 @@ exports[`PluginList should render pagination 1`] = `
                         class="relative"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg text-left"
+                          class="text-left OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg"
                           type="button"
                         >
                           <div
@@ -947,7 +947,7 @@ exports[`PluginList should render pagination 1`] = `
           >
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                class="space-x-5 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
               >
                 <div
                   class="PluginImage__PluginImageWrapper-iwox49-0 fITdNR"
@@ -961,7 +961,7 @@ exports[`PluginList should render pagination 1`] = `
                   class="flex items-center space-x-2 text-left"
                 >
                   <span
-                    class="font-semibold link flex items-center space-x-2"
+                    class="flex items-center space-x-2 font-semibold link"
                     data-testid="PluginListItem__link"
                   >
                     Drakula Theme
@@ -1029,7 +1029,7 @@ exports[`PluginList should render pagination 1`] = `
               class="w-16"
             >
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
               >
                 <div
                   class="flex items-center space-x-2"
@@ -1044,7 +1044,7 @@ exports[`PluginList should render pagination 1`] = `
                         class="relative"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg text-left"
+                          class="text-left OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg"
                           type="button"
                         >
                           <div
@@ -1072,7 +1072,7 @@ exports[`PluginList should render pagination 1`] = `
       </table>
     </div>
     <div
-      class="flex justify-center w-full mt-10"
+      class="flex justify-center mt-10 w-full"
     >
       <nav
         class="Pagination__Wrapper-x7juhx-0 hbWMHF"
@@ -1107,7 +1107,7 @@ exports[`PluginList should render pagination 1`] = `
           >
             Next
             <div
-              class="sc-bdfBwQ fdfkzt ml-2"
+              class="ml-2 sc-bdfBwQ fdfkzt"
               height="12"
               width="12"
             >
@@ -1129,7 +1129,7 @@ exports[`PluginList should render without pagination 1`] = `
     data-testid="PluginList"
   >
     <div
-      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+      class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
       role="table"
     >
       <table
@@ -1142,7 +1142,7 @@ exports[`PluginList should render without pagination 1`] = `
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -1150,16 +1150,16 @@ exports[`PluginList should render without pagination 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex align-top flex-inline"
               >
                 <div>
                   Name
                 </div>
                 <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity ml-2"
+                  class="flex items-center ml-2 transition-opacity text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -1172,7 +1172,7 @@ exports[`PluginList should render without pagination 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -1180,16 +1180,16 @@ exports[`PluginList should render without pagination 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex align-top flex-inline"
               >
                 <div>
                   Author
                 </div>
                 <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                  class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -1202,7 +1202,7 @@ exports[`PluginList should render without pagination 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -1210,16 +1210,16 @@ exports[`PluginList should render without pagination 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex align-top flex-inline"
               >
                 <div>
                   Version
                 </div>
                 <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                  class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -1232,7 +1232,7 @@ exports[`PluginList should render without pagination 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -1240,16 +1240,16 @@ exports[`PluginList should render without pagination 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex align-top flex-inline"
               >
                 <div>
                   Size
                 </div>
                 <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                  class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -1262,13 +1262,13 @@ exports[`PluginList should render without pagination 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center no-border"
+                class="flex justify-center align-top flex-inline no-border"
               >
                 <div>
                   Status
@@ -1276,13 +1276,13 @@ exports[`PluginList should render without pagination 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden"
+                class="flex hidden align-top flex-inline"
               >
                 <div>
                   Actions
@@ -1300,7 +1300,7 @@ exports[`PluginList should render without pagination 1`] = `
           >
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                class="space-x-5 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
               >
                 <div
                   class="PluginImage__PluginImageWrapper-iwox49-0 fITdNR"
@@ -1314,7 +1314,7 @@ exports[`PluginList should render without pagination 1`] = `
                   class="flex items-center space-x-2 text-left"
                 >
                   <span
-                    class="font-semibold link flex items-center space-x-2"
+                    class="flex items-center space-x-2 font-semibold link"
                     data-testid="PluginListItem__link"
                   >
                     ARK Avatars
@@ -1382,7 +1382,7 @@ exports[`PluginList should render without pagination 1`] = `
               class="w-16"
             >
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
               >
                 <div
                   class="flex items-center space-x-2"
@@ -1397,7 +1397,7 @@ exports[`PluginList should render without pagination 1`] = `
                         class="relative"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg text-left"
+                          class="text-left OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg"
                           type="button"
                         >
                           <div
@@ -1427,7 +1427,7 @@ exports[`PluginList should render without pagination 1`] = `
           >
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                class="space-x-5 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
               >
                 <div
                   class="PluginImage__PluginImageWrapper-iwox49-0 fITdNR"
@@ -1441,7 +1441,7 @@ exports[`PluginList should render without pagination 1`] = `
                   class="flex items-center space-x-2 text-left"
                 >
                   <span
-                    class="font-semibold link flex items-center space-x-2"
+                    class="flex items-center space-x-2 font-semibold link"
                     data-testid="PluginListItem__link"
                   >
                     ARK Explorer
@@ -1509,10 +1509,10 @@ exports[`PluginList should render without pagination 1`] = `
               class="w-16"
             >
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP flex-1"
+                  class="flex-1 OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                   data-testid="PluginListItem__install"
                   type="button"
                 >
@@ -1538,7 +1538,7 @@ exports[`PluginList should split by page 1`] = `
     data-testid="PluginList"
   >
     <div
-      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+      class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
       role="table"
     >
       <table
@@ -1551,7 +1551,7 @@ exports[`PluginList should split by page 1`] = `
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -1559,16 +1559,16 @@ exports[`PluginList should split by page 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex align-top flex-inline"
               >
                 <div>
                   Name
                 </div>
                 <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity ml-2"
+                  class="flex items-center ml-2 transition-opacity text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -1581,7 +1581,7 @@ exports[`PluginList should split by page 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -1589,16 +1589,16 @@ exports[`PluginList should split by page 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex align-top flex-inline"
               >
                 <div>
                   Author
                 </div>
                 <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                  class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -1611,7 +1611,7 @@ exports[`PluginList should split by page 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -1619,16 +1619,16 @@ exports[`PluginList should split by page 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex align-top flex-inline"
               >
                 <div>
                   Version
                 </div>
                 <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                  class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -1641,7 +1641,7 @@ exports[`PluginList should split by page 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -1649,16 +1649,16 @@ exports[`PluginList should split by page 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex align-top flex-inline"
               >
                 <div>
                   Size
                 </div>
                 <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                  class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -1671,13 +1671,13 @@ exports[`PluginList should split by page 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center no-border"
+                class="flex justify-center align-top flex-inline no-border"
               >
                 <div>
                   Status
@@ -1685,13 +1685,13 @@ exports[`PluginList should split by page 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden"
+                class="flex hidden align-top flex-inline"
               >
                 <div>
                   Actions
@@ -1709,7 +1709,7 @@ exports[`PluginList should split by page 1`] = `
           >
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                class="space-x-5 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
               >
                 <div
                   class="PluginImage__PluginImageWrapper-iwox49-0 fITdNR"
@@ -1723,7 +1723,7 @@ exports[`PluginList should split by page 1`] = `
                   class="flex items-center space-x-2 text-left"
                 >
                   <span
-                    class="font-semibold link flex items-center space-x-2"
+                    class="flex items-center space-x-2 font-semibold link"
                     data-testid="PluginListItem__link"
                   >
                     ARK Avatars
@@ -1791,7 +1791,7 @@ exports[`PluginList should split by page 1`] = `
               class="w-16"
             >
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
               >
                 <div
                   class="flex items-center space-x-2"
@@ -1806,7 +1806,7 @@ exports[`PluginList should split by page 1`] = `
                         class="relative"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg text-left"
+                          class="text-left OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg"
                           type="button"
                         >
                           <div
@@ -1834,7 +1834,7 @@ exports[`PluginList should split by page 1`] = `
       </table>
     </div>
     <div
-      class="flex justify-center w-full mt-10"
+      class="flex justify-center mt-10 w-full"
     >
       <nav
         class="Pagination__Wrapper-x7juhx-0 hbWMHF"
@@ -1849,7 +1849,7 @@ exports[`PluginList should split by page 1`] = `
             class="flex relative items-center space-x-2"
           >
             <div
-              class="sc-bdfBwQ TENjd mr-2"
+              class="mr-2 sc-bdfBwQ TENjd"
               height="10"
               width="10"
             >
@@ -1891,7 +1891,7 @@ exports[`PluginList should trigger delete 1`] = `
     data-testid="PluginList"
   >
     <div
-      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+      class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
       role="table"
     >
       <table
@@ -1904,7 +1904,7 @@ exports[`PluginList should trigger delete 1`] = `
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -1912,16 +1912,16 @@ exports[`PluginList should trigger delete 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex align-top flex-inline"
               >
                 <div>
                   Name
                 </div>
                 <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity ml-2"
+                  class="flex items-center ml-2 transition-opacity text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -1934,7 +1934,7 @@ exports[`PluginList should trigger delete 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -1942,16 +1942,16 @@ exports[`PluginList should trigger delete 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex align-top flex-inline"
               >
                 <div>
                   Author
                 </div>
                 <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                  class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -1964,7 +1964,7 @@ exports[`PluginList should trigger delete 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -1972,16 +1972,16 @@ exports[`PluginList should trigger delete 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex align-top flex-inline"
               >
                 <div>
                   Version
                 </div>
                 <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                  class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -1994,7 +1994,7 @@ exports[`PluginList should trigger delete 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -2002,16 +2002,16 @@ exports[`PluginList should trigger delete 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex align-top flex-inline"
               >
                 <div>
                   Size
                 </div>
                 <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                  class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -2024,13 +2024,13 @@ exports[`PluginList should trigger delete 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center no-border"
+                class="flex justify-center align-top flex-inline no-border"
               >
                 <div>
                   Status
@@ -2038,13 +2038,13 @@ exports[`PluginList should trigger delete 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden"
+                class="flex hidden align-top flex-inline"
               >
                 <div>
                   Actions
@@ -2062,7 +2062,7 @@ exports[`PluginList should trigger delete 1`] = `
           >
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                class="space-x-5 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
               >
                 <div
                   class="PluginImage__PluginImageWrapper-iwox49-0 fITdNR"
@@ -2076,7 +2076,7 @@ exports[`PluginList should trigger delete 1`] = `
                   class="flex items-center space-x-2 text-left"
                 >
                   <span
-                    class="font-semibold link flex items-center space-x-2"
+                    class="flex items-center space-x-2 font-semibold link"
                     data-testid="PluginListItem__link"
                   >
                     ARK Avatars
@@ -2144,7 +2144,7 @@ exports[`PluginList should trigger delete 1`] = `
               class="w-16"
             >
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
               >
                 <div
                   class="flex items-center space-x-2"
@@ -2159,7 +2159,7 @@ exports[`PluginList should trigger delete 1`] = `
                         class="relative"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg text-left"
+                          class="text-left OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg"
                           type="button"
                         >
                           <div
@@ -2189,7 +2189,7 @@ exports[`PluginList should trigger delete 1`] = `
           >
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                class="space-x-5 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
               >
                 <div
                   class="PluginImage__PluginImageWrapper-iwox49-0 fITdNR"
@@ -2203,7 +2203,7 @@ exports[`PluginList should trigger delete 1`] = `
                   class="flex items-center space-x-2 text-left"
                 >
                   <span
-                    class="font-semibold link flex items-center space-x-2"
+                    class="flex items-center space-x-2 font-semibold link"
                     data-testid="PluginListItem__link"
                   >
                     ARK Explorer
@@ -2271,10 +2271,10 @@ exports[`PluginList should trigger delete 1`] = `
               class="w-16"
             >
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP flex-1"
+                  class="flex-1 OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                   data-testid="PluginListItem__install"
                   type="button"
                 >
@@ -2291,7 +2291,7 @@ exports[`PluginList should trigger delete 1`] = `
       </table>
     </div>
     <div
-      class="flex justify-center w-full mt-10"
+      class="flex justify-center mt-10 w-full"
     />
   </div>
 </DocumentFragment>
@@ -2303,7 +2303,7 @@ exports[`PluginList should trigger install 1`] = `
     data-testid="PluginList"
   >
     <div
-      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+      class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
       role="table"
     >
       <table
@@ -2316,7 +2316,7 @@ exports[`PluginList should trigger install 1`] = `
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -2324,16 +2324,16 @@ exports[`PluginList should trigger install 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex align-top flex-inline"
               >
                 <div>
                   Name
                 </div>
                 <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity ml-2"
+                  class="flex items-center ml-2 transition-opacity text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -2346,7 +2346,7 @@ exports[`PluginList should trigger install 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -2354,16 +2354,16 @@ exports[`PluginList should trigger install 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex align-top flex-inline"
               >
                 <div>
                   Author
                 </div>
                 <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                  class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -2376,7 +2376,7 @@ exports[`PluginList should trigger install 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -2384,16 +2384,16 @@ exports[`PluginList should trigger install 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex align-top flex-inline"
               >
                 <div>
                   Version
                 </div>
                 <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                  class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -2406,7 +2406,7 @@ exports[`PluginList should trigger install 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
@@ -2414,16 +2414,16 @@ exports[`PluginList should trigger install 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex align-top flex-inline"
               >
                 <div>
                   Size
                 </div>
                 <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                  class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                     height="5"
                     role="img"
                     width="8"
@@ -2436,13 +2436,13 @@ exports[`PluginList should trigger install 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center no-border"
+                class="flex justify-center align-top flex-inline no-border"
               >
                 <div>
                   Status
@@ -2450,13 +2450,13 @@ exports[`PluginList should trigger install 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top hidden"
+                class="flex hidden align-top flex-inline"
               >
                 <div>
                   Actions
@@ -2474,7 +2474,7 @@ exports[`PluginList should trigger install 1`] = `
           >
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                class="space-x-5 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
               >
                 <div
                   class="PluginImage__PluginImageWrapper-iwox49-0 fITdNR"
@@ -2488,7 +2488,7 @@ exports[`PluginList should trigger install 1`] = `
                   class="flex items-center space-x-2 text-left"
                 >
                   <span
-                    class="font-semibold link flex items-center space-x-2"
+                    class="flex items-center space-x-2 font-semibold link"
                     data-testid="PluginListItem__link"
                   >
                     ARK Avatars
@@ -2556,7 +2556,7 @@ exports[`PluginList should trigger install 1`] = `
               class="w-16"
             >
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
               >
                 <div
                   class="flex items-center space-x-2"
@@ -2571,7 +2571,7 @@ exports[`PluginList should trigger install 1`] = `
                         class="relative"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg text-left"
+                          class="text-left OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg"
                           type="button"
                         >
                           <div
@@ -2601,7 +2601,7 @@ exports[`PluginList should trigger install 1`] = `
           >
             <td>
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                class="space-x-5 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
               >
                 <div
                   class="PluginImage__PluginImageWrapper-iwox49-0 fITdNR"
@@ -2615,7 +2615,7 @@ exports[`PluginList should trigger install 1`] = `
                   class="flex items-center space-x-2 text-left"
                 >
                   <span
-                    class="font-semibold link flex items-center space-x-2"
+                    class="flex items-center space-x-2 font-semibold link"
                     data-testid="PluginListItem__link"
                   >
                     ARK Explorer
@@ -2683,10 +2683,10 @@ exports[`PluginList should trigger install 1`] = `
               class="w-16"
             >
               <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP flex-1"
+                  class="flex-1 OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                   data-testid="PluginListItem__install"
                   type="button"
                 >
@@ -2703,7 +2703,7 @@ exports[`PluginList should trigger install 1`] = `
       </table>
     </div>
     <div
-      class="flex justify-center w-full mt-10"
+      class="flex justify-center mt-10 w-full"
     />
   </div>
 </DocumentFragment>

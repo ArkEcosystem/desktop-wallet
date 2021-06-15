@@ -11,23 +11,23 @@ exports[`InputCounter should render 1`] = `
     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
   >
     <div
-      class="relative flex flex-1 h-full"
+      class="flex relative flex-1 h-full"
     >
       <input
-        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+        class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
         data-testid="InputCounter__input"
         maxlength="10"
         value=""
       />
     </div>
     <div
-      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-primary-300 dark:divide-theme-secondary-800 dark:text-theme-secondary-600"
     >
       <div
         class=""
       >
         <span
-          class="font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+          class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
           data-testid="InputCounter__counter"
         >
           0/10
@@ -49,11 +49,11 @@ exports[`InputCounter should render with invalid state 1`] = `
     class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
   >
     <div
-      class="relative flex flex-1 h-full"
+      class="flex relative flex-1 h-full"
     >
       <input
         aria-invalid="true"
-        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+        class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
         data-testid="InputCounter__input"
         maxlength="10"
         name="vendorField"
@@ -61,7 +61,7 @@ exports[`InputCounter should render with invalid state 1`] = `
       />
     </div>
     <div
-      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-danger-500 dark:divide-theme-secondary-800"
     >
       <span
         data-testid="Input__error"
@@ -80,7 +80,7 @@ exports[`InputCounter should render with invalid state 1`] = `
         class="pl-3"
       >
         <span
-          class="font-semibold text-sm"
+          class="text-sm font-semibold"
           data-testid="InputCounter__counter"
         >
           0

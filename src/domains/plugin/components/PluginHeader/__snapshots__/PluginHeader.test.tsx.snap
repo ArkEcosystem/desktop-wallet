@@ -18,13 +18,13 @@ exports[`PluginHeader should render properly 1`] = `
         </svg>
       </div>
       <div
-        class="flex flex-col justify-between pl-8 min-w-0 w-full"
+        class="flex flex-col justify-between pl-8 w-full min-w-0"
       >
         <div
           class="flex justify-between items-end"
         >
           <div
-            class="flex flex-col space-y-2 mr-8 leading-tight overflow-hidden"
+            class="flex overflow-hidden flex-col mr-8 space-y-2 leading-tight"
           >
             <span
               class="text-2xl font-bold"
@@ -50,7 +50,7 @@ exports[`PluginHeader should render properly 1`] = `
               </div>
             </button>
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP ml-3"
+              class="ml-3 OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
               data-testid="PluginHeader__button--report"
               type="button"
             >
@@ -154,7 +154,7 @@ exports[`PluginHeader should render properly 1`] = `
                       class="align-middle"
                     >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
+                        class="inline-block flex-shrink-0 pb-px text-sm duration-200 sc-bdfBwQ fPrsah"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"
@@ -282,20 +282,20 @@ exports[`PluginHeader should render updating plugin 1`] = `
           </text>
         </svg>
         <p
-          class="text-theme-success-600 text-sm font-semibold"
+          class="text-sm font-semibold text-theme-success-600"
           data-testid="PluginImage__updating__label"
         >
           Updating...
         </p>
       </div>
       <div
-        class="flex flex-col justify-between pl-8 min-w-0 w-full"
+        class="flex flex-col justify-between pl-8 w-full min-w-0"
       >
         <div
           class="flex justify-between items-end"
         >
           <div
-            class="flex flex-col space-y-2 mr-8 leading-tight overflow-hidden"
+            class="flex overflow-hidden flex-col mr-8 space-y-2 leading-tight"
           >
             <span
               class="text-2xl font-bold"
@@ -321,7 +321,7 @@ exports[`PluginHeader should render updating plugin 1`] = `
               </div>
             </button>
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP ml-3"
+              class="ml-3 OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
               data-testid="PluginHeader__button--report"
               type="button"
             >
@@ -425,7 +425,7 @@ exports[`PluginHeader should render updating plugin 1`] = `
                       class="align-middle"
                     >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
+                        class="inline-block flex-shrink-0 pb-px text-sm duration-200 sc-bdfBwQ fPrsah"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"

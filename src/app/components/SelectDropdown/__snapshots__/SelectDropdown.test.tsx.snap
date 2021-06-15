@@ -12,13 +12,13 @@ exports[`SelectDropdown should render 1`] = `
       …
     </div>
     <div
-      class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
+      class="sr-only Input__InputWrapperStyled-wu99qs-0 jYUFQr"
     >
       <div
-        class="relative flex flex-1 h-full"
+        class="flex relative flex-1 h-full"
       >
         <input
-          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+          class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
           data-testid="select-list__input"
           readonly=""
           tabindex="-1"
@@ -49,14 +49,14 @@ exports[`SelectDropdown should render 1`] = `
           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
         >
           <div
-            class="relative flex flex-1 h-full"
+            class="flex relative flex-1 h-full"
           >
             <input
               aria-autocomplete="list"
               aria-controls="downshift-0-menu"
               aria-labelledby="downshift-0-label"
               autocomplete="off"
-              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
+              class="p-0 w-full bg-transparent border-none cursor-default focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
               data-testid="SelectDropdown__input"
               id="downshift-0-input"
               placeholder="Select option"
@@ -64,17 +64,17 @@ exports[`SelectDropdown should render 1`] = `
             />
           </div>
           <div
-            class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+            class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-primary-300 dark:divide-theme-secondary-800 dark:text-theme-secondary-600"
           >
             <div
               class=""
             >
               <div
-                class="py-2 px-1 flex items-center justify-center"
+                class="flex justify-center items-center py-2 px-1"
                 data-testid="SelectDropdown__caret"
               >
                 <div
-                  class="sc-bdfBwQ gLRWTb transition-transform text-theme-secondary-500"
+                  class="transition-transform sc-bdfBwQ gLRWTb text-theme-secondary-500"
                   height="5"
                   width="7"
                 >
@@ -110,13 +110,13 @@ exports[`SelectDropdown should render disabled 1`] = `
       …
     </div>
     <div
-      class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
+      class="sr-only Input__InputWrapperStyled-wu99qs-0 jYUFQr"
     >
       <div
-        class="relative flex flex-1 h-full"
+        class="flex relative flex-1 h-full"
       >
         <input
-          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+          class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
           data-testid="select-list__input"
           readonly=""
           tabindex="-1"
@@ -148,14 +148,14 @@ exports[`SelectDropdown should render disabled 1`] = `
           disabled=""
         >
           <div
-            class="relative flex flex-1 h-full"
+            class="flex relative flex-1 h-full"
           >
             <input
               aria-autocomplete="list"
               aria-controls="downshift-7-menu"
               aria-labelledby="downshift-7-label"
               autocomplete="off"
-              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default text-theme-secondary-text"
+              class="p-0 w-full bg-transparent border-none cursor-default focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures text-theme-secondary-text"
               data-testid="SelectDropdown__input"
               disabled=""
               id="downshift-7-input"
@@ -164,17 +164,17 @@ exports[`SelectDropdown should render disabled 1`] = `
             />
           </div>
           <div
-            class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+            class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-primary-300 dark:divide-theme-secondary-800 dark:text-theme-secondary-600"
           >
             <div
               class=""
             >
               <div
-                class="py-2 px-1 flex items-center justify-center"
+                class="flex justify-center items-center py-2 px-1"
                 data-testid="SelectDropdown__caret"
               >
                 <div
-                  class="sc-bdfBwQ gLRWTb transition-transform text-theme-secondary-500"
+                  class="transition-transform sc-bdfBwQ gLRWTb text-theme-secondary-500"
                   height="5"
                   width="7"
                 >
@@ -210,14 +210,14 @@ exports[`SelectDropdown should render invalid 1`] = `
       …
     </div>
     <div
-      class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ sr-only"
+      class="sr-only Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
     >
       <div
-        class="relative flex flex-1 h-full"
+        class="flex relative flex-1 h-full"
       >
         <input
           aria-invalid="true"
-          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+          class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
           data-testid="select-list__input"
           readonly=""
           tabindex="-1"
@@ -225,7 +225,7 @@ exports[`SelectDropdown should render invalid 1`] = `
         />
       </div>
       <div
-        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-danger-500 dark:divide-theme-secondary-800"
       >
         <span
           data-testid="Input__error"
@@ -265,7 +265,7 @@ exports[`SelectDropdown should render invalid 1`] = `
           class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
         >
           <div
-            class="relative flex flex-1 h-full"
+            class="flex relative flex-1 h-full"
           >
             <input
               aria-autocomplete="list"
@@ -273,7 +273,7 @@ exports[`SelectDropdown should render invalid 1`] = `
               aria-invalid="true"
               aria-labelledby="downshift-5-label"
               autocomplete="off"
-              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
+              class="p-0 w-full bg-transparent border-none cursor-default focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
               data-testid="SelectDropdown__input"
               id="downshift-5-input"
               placeholder="Select option"
@@ -281,7 +281,7 @@ exports[`SelectDropdown should render invalid 1`] = `
             />
           </div>
           <div
-            class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+            class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-danger-500 dark:divide-theme-secondary-800"
           >
             <span
               data-testid="Input__error"
@@ -300,11 +300,11 @@ exports[`SelectDropdown should render invalid 1`] = `
               class="pl-3"
             >
               <div
-                class="py-2 px-1 flex items-center justify-center"
+                class="flex justify-center items-center py-2 px-1"
                 data-testid="SelectDropdown__caret"
               >
                 <div
-                  class="sc-bdfBwQ gLRWTb transition-transform text-theme-danger-500"
+                  class="transition-transform sc-bdfBwQ gLRWTb text-theme-danger-500"
                   height="5"
                   width="7"
                 >
@@ -340,13 +340,13 @@ exports[`SelectDropdown should render with custom label 1`] = `
       …
     </div>
     <div
-      class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
+      class="sr-only Input__InputWrapperStyled-wu99qs-0 jYUFQr"
     >
       <div
-        class="relative flex flex-1 h-full"
+        class="flex relative flex-1 h-full"
       >
         <input
-          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+          class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
           data-testid="select-list__input"
           readonly=""
           tabindex="-1"
@@ -377,14 +377,14 @@ exports[`SelectDropdown should render with custom label 1`] = `
           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
         >
           <div
-            class="relative flex flex-1 h-full"
+            class="flex relative flex-1 h-full"
           >
             <input
               aria-autocomplete="list"
               aria-controls="downshift-2-menu"
               aria-labelledby="downshift-2-label"
               autocomplete="off"
-              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
+              class="p-0 w-full bg-transparent border-none cursor-default focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
               data-testid="SelectDropdown__input"
               id="downshift-2-input"
               placeholder="Select option"
@@ -392,17 +392,17 @@ exports[`SelectDropdown should render with custom label 1`] = `
             />
           </div>
           <div
-            class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+            class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-primary-300 dark:divide-theme-secondary-800 dark:text-theme-secondary-600"
           >
             <div
               class=""
             >
               <div
-                class="py-2 px-1 flex items-center justify-center"
+                class="flex justify-center items-center py-2 px-1"
                 data-testid="SelectDropdown__caret"
               >
                 <div
-                  class="sc-bdfBwQ gLRWTb transition-transform text-theme-secondary-500 transform rotate-180"
+                  class="transition-transform transform rotate-180 sc-bdfBwQ gLRWTb text-theme-secondary-500"
                   height="5"
                   width="7"
                 >
@@ -484,13 +484,13 @@ exports[`SelectDropdown should render with default value when free text is allow
       …
     </div>
     <div
-      class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
+      class="sr-only Input__InputWrapperStyled-wu99qs-0 jYUFQr"
     >
       <div
-        class="relative flex flex-1 h-full"
+        class="flex relative flex-1 h-full"
       >
         <input
-          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+          class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
           data-testid="select-list__input"
           readonly=""
           tabindex="-1"
@@ -521,14 +521,14 @@ exports[`SelectDropdown should render with default value when free text is allow
           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
         >
           <div
-            class="relative flex flex-1 h-full"
+            class="flex relative flex-1 h-full"
           >
             <input
               aria-autocomplete="list"
               aria-controls="downshift-130-menu"
               aria-labelledby="downshift-130-label"
               autocomplete="off"
-              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+              class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
               data-testid="SelectDropdown__input"
               id="downshift-130-input"
               placeholder="Select option"
@@ -536,17 +536,17 @@ exports[`SelectDropdown should render with default value when free text is allow
             />
           </div>
           <div
-            class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+            class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-primary-300 dark:divide-theme-secondary-800 dark:text-theme-secondary-600"
           >
             <div
               class=""
             >
               <div
-                class="py-2 px-1 flex items-center justify-center"
+                class="flex justify-center items-center py-2 px-1"
                 data-testid="SelectDropdown__caret"
               >
                 <div
-                  class="sc-bdfBwQ gLRWTb transition-transform text-theme-secondary-500"
+                  class="transition-transform sc-bdfBwQ gLRWTb text-theme-secondary-500"
                   height="5"
                   width="7"
                 >
@@ -582,13 +582,13 @@ exports[`SelectDropdown should render with empty options 1`] = `
       …
     </div>
     <div
-      class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
+      class="sr-only Input__InputWrapperStyled-wu99qs-0 jYUFQr"
     >
       <div
-        class="relative flex flex-1 h-full"
+        class="flex relative flex-1 h-full"
       >
         <input
-          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+          class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
           data-testid="select-list__input"
           readonly=""
           tabindex="-1"
@@ -619,14 +619,14 @@ exports[`SelectDropdown should render with empty options 1`] = `
           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
         >
           <div
-            class="relative flex flex-1 h-full"
+            class="flex relative flex-1 h-full"
           >
             <input
               aria-autocomplete="list"
               aria-controls="downshift-20-menu"
               aria-labelledby="downshift-20-label"
               autocomplete="off"
-              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
+              class="p-0 w-full bg-transparent border-none cursor-default focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
               data-testid="SelectDropdown__input"
               id="downshift-20-input"
               placeholder="Select option"
@@ -634,17 +634,17 @@ exports[`SelectDropdown should render with empty options 1`] = `
             />
           </div>
           <div
-            class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+            class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-primary-300 dark:divide-theme-secondary-800 dark:text-theme-secondary-600"
           >
             <div
               class=""
             >
               <div
-                class="py-2 px-1 flex items-center justify-center"
+                class="flex justify-center items-center py-2 px-1"
                 data-testid="SelectDropdown__caret"
               >
                 <div
-                  class="sc-bdfBwQ gLRWTb transition-transform text-theme-secondary-500"
+                  class="transition-transform sc-bdfBwQ gLRWTb text-theme-secondary-500"
                   height="5"
                   width="7"
                 >
@@ -680,13 +680,13 @@ exports[`SelectDropdown should render with initial default value 1`] = `
       …
     </div>
     <div
-      class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
+      class="sr-only Input__InputWrapperStyled-wu99qs-0 jYUFQr"
     >
       <div
-        class="relative flex flex-1 h-full"
+        class="flex relative flex-1 h-full"
       >
         <input
-          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+          class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
           data-testid="select-list__input"
           readonly=""
           tabindex="-1"
@@ -717,21 +717,21 @@ exports[`SelectDropdown should render with initial default value 1`] = `
           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
         >
           <div
-            class="relative flex flex-1 h-full"
+            class="flex relative flex-1 h-full"
           >
             <input
               aria-autocomplete="list"
               aria-controls="downshift-15-menu"
               aria-labelledby="downshift-15-label"
               autocomplete="off"
-              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+              class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
               data-testid="SelectDropdown__input"
               id="downshift-15-input"
               placeholder="Select option"
               value="Option 3"
             />
             <span
-              class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
+              class="flex absolute inset-y-0 items-center w-full font-normal opacity-50 pointer-events-none"
               data-testid="Input__suggestion"
             >
               <span
@@ -742,17 +742,17 @@ exports[`SelectDropdown should render with initial default value 1`] = `
             </span>
           </div>
           <div
-            class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+            class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-primary-300 dark:divide-theme-secondary-800 dark:text-theme-secondary-600"
           >
             <div
               class=""
             >
               <div
-                class="py-2 px-1 flex items-center justify-center"
+                class="flex justify-center items-center py-2 px-1"
                 data-testid="SelectDropdown__caret"
               >
                 <div
-                  class="sc-bdfBwQ gLRWTb transition-transform text-theme-secondary-500"
+                  class="transition-transform sc-bdfBwQ gLRWTb text-theme-secondary-500"
                   height="5"
                   width="7"
                 >
@@ -788,13 +788,13 @@ exports[`SelectDropdown should render with options values as numbers 1`] = `
       …
     </div>
     <div
-      class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
+      class="sr-only Input__InputWrapperStyled-wu99qs-0 jYUFQr"
     >
       <div
-        class="relative flex flex-1 h-full"
+        class="flex relative flex-1 h-full"
       >
         <input
-          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+          class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
           data-testid="select-list__input"
           readonly=""
           tabindex="-1"
@@ -825,14 +825,14 @@ exports[`SelectDropdown should render with options values as numbers 1`] = `
           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
         >
           <div
-            class="relative flex flex-1 h-full"
+            class="flex relative flex-1 h-full"
           >
             <input
               aria-autocomplete="list"
               aria-controls="downshift-22-menu"
               aria-labelledby="downshift-22-label"
               autocomplete="off"
-              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
+              class="p-0 w-full bg-transparent border-none cursor-default focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
               data-testid="SelectDropdown__input"
               id="downshift-22-input"
               placeholder="Select option"
@@ -840,17 +840,17 @@ exports[`SelectDropdown should render with options values as numbers 1`] = `
             />
           </div>
           <div
-            class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+            class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-primary-300 dark:divide-theme-secondary-800 dark:text-theme-secondary-600"
           >
             <div
               class=""
             >
               <div
-                class="py-2 px-1 flex items-center justify-center"
+                class="flex justify-center items-center py-2 px-1"
                 data-testid="SelectDropdown__caret"
               >
                 <div
-                  class="sc-bdfBwQ gLRWTb transition-transform text-theme-secondary-500"
+                  class="transition-transform sc-bdfBwQ gLRWTb text-theme-secondary-500"
                   height="5"
                   width="7"
                 >
@@ -886,13 +886,13 @@ exports[`SelectDropdown should render with wrong default value 1`] = `
       …
     </div>
     <div
-      class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
+      class="sr-only Input__InputWrapperStyled-wu99qs-0 jYUFQr"
     >
       <div
-        class="relative flex flex-1 h-full"
+        class="flex relative flex-1 h-full"
       >
         <input
-          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+          class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
           data-testid="select-list__input"
           readonly=""
           tabindex="-1"
@@ -923,14 +923,14 @@ exports[`SelectDropdown should render with wrong default value 1`] = `
           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
         >
           <div
-            class="relative flex flex-1 h-full"
+            class="flex relative flex-1 h-full"
           >
             <input
               aria-autocomplete="list"
               aria-controls="downshift-18-menu"
               aria-labelledby="downshift-18-label"
               autocomplete="off"
-              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
+              class="p-0 w-full bg-transparent border-none cursor-default focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
               data-testid="SelectDropdown__input"
               id="downshift-18-input"
               placeholder="Select option"
@@ -938,17 +938,17 @@ exports[`SelectDropdown should render with wrong default value 1`] = `
             />
           </div>
           <div
-            class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+            class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-primary-300 dark:divide-theme-secondary-800 dark:text-theme-secondary-600"
           >
             <div
               class=""
             >
               <div
-                class="py-2 px-1 flex items-center justify-center"
+                class="flex justify-center items-center py-2 px-1"
                 data-testid="SelectDropdown__caret"
               >
                 <div
-                  class="sc-bdfBwQ gLRWTb transition-transform text-theme-secondary-500"
+                  class="transition-transform sc-bdfBwQ gLRWTb text-theme-secondary-500"
                   height="5"
                   width="7"
                 >
@@ -984,13 +984,13 @@ exports[`SelectDropdown should render without caret 1`] = `
       …
     </div>
     <div
-      class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
+      class="sr-only Input__InputWrapperStyled-wu99qs-0 jYUFQr"
     >
       <div
-        class="relative flex flex-1 h-full"
+        class="flex relative flex-1 h-full"
       >
         <input
-          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+          class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
           data-testid="select-list__input"
           readonly=""
           tabindex="-1"
@@ -1021,14 +1021,14 @@ exports[`SelectDropdown should render without caret 1`] = `
           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
         >
           <div
-            class="relative flex flex-1 h-full"
+            class="flex relative flex-1 h-full"
           >
             <input
               aria-autocomplete="list"
               aria-controls="downshift-9-menu"
               aria-labelledby="downshift-9-label"
               autocomplete="off"
-              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
+              class="p-0 w-full bg-transparent border-none cursor-default focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
               data-testid="SelectDropdown__input"
               id="downshift-9-input"
               placeholder="Select option"

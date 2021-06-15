@@ -5,7 +5,7 @@ exports[`UpdateWalletName should not render if not open 1`] = `<DocumentFragment
 exports[`UpdateWalletName should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-opacity-60 dark:bg-opacity-80 bg-theme-secondary-900-rgba overflow-overlay dark:bg-black-rgba"
     data-testid="modal__overlay"
   >
     <div
@@ -13,14 +13,14 @@ exports[`UpdateWalletName should render a modal 1`] = `
       tabindex="-1"
     >
       <div
-        class="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+        class="flex overflow-hidden relative flex-col p-10 shadow-2xl rounded-2.5xl bg-theme-background"
         data-testid="modal__inner"
       >
         <div
-          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+            class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
             data-testid="modal__close-btn"
             type="button"
           >
@@ -51,7 +51,7 @@ exports[`UpdateWalletName should render a modal 1`] = `
             class="flex-1"
           >
             <div
-              class="text-theme-secondary-text whitespace-pre-line"
+              class="whitespace-pre-line text-theme-secondary-text"
             >
               Enter a name for this wallet address (only visible to you).
             </div>
@@ -59,7 +59,7 @@ exports[`UpdateWalletName should render a modal 1`] = `
               class="mt-8"
             >
               <fieldset
-                class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
               >
                 <label
                   class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -86,11 +86,11 @@ exports[`UpdateWalletName should render a modal 1`] = `
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
-                      class="relative flex flex-1 h-full"
+                      class="flex relative flex-1 h-full"
                     >
                       <input
                         aria-invalid="false"
-                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                         data-testid="UpdateWalletName__input"
                         name="name"
                         value=""
@@ -137,7 +137,7 @@ exports[`UpdateWalletName should render a modal 1`] = `
 exports[`UpdateWalletName should show an error message for duplicate name 1`] = `
 <DocumentFragment>
   <div
-    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-opacity-60 dark:bg-opacity-80 bg-theme-secondary-900-rgba overflow-overlay dark:bg-black-rgba"
     data-testid="modal__overlay"
   >
     <div
@@ -145,14 +145,14 @@ exports[`UpdateWalletName should show an error message for duplicate name 1`] = 
       tabindex="-1"
     >
       <div
-        class="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+        class="flex overflow-hidden relative flex-col p-10 shadow-2xl rounded-2.5xl bg-theme-background"
         data-testid="modal__inner"
       >
         <div
-          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+            class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
             data-testid="modal__close-btn"
             type="button"
           >
@@ -183,7 +183,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 1`] = 
             class="flex-1"
           >
             <div
-              class="text-theme-secondary-text whitespace-pre-line"
+              class="whitespace-pre-line text-theme-secondary-text"
             >
               Enter a name for this wallet address (only visible to you).
             </div>
@@ -191,7 +191,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 1`] = 
               class="mt-8"
             >
               <fieldset
-                class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
               >
                 <label
                   class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -218,18 +218,18 @@ exports[`UpdateWalletName should show an error message for duplicate name 1`] = 
                     class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
                   >
                     <div
-                      class="relative flex flex-1 h-full"
+                      class="flex relative flex-1 h-full"
                     >
                       <input
                         aria-invalid="true"
-                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                         data-testid="UpdateWalletName__input"
                         name="name"
                         value=""
                       />
                     </div>
                     <div
-                      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+                      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-danger-500 dark:divide-theme-secondary-800"
                     >
                       <span
                         data-errortext="A Wallet named 'ARK Wallet 2' already exists on this profile"
@@ -288,7 +288,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 1`] = 
 exports[`UpdateWalletName should show an error message for duplicate name 2`] = `
 <DocumentFragment>
   <div
-    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-opacity-60 dark:bg-opacity-80 bg-theme-secondary-900-rgba overflow-overlay dark:bg-black-rgba"
     data-testid="modal__overlay"
   >
     <div
@@ -296,14 +296,14 @@ exports[`UpdateWalletName should show an error message for duplicate name 2`] = 
       tabindex="-1"
     >
       <div
-        class="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+        class="flex overflow-hidden relative flex-col p-10 shadow-2xl rounded-2.5xl bg-theme-background"
         data-testid="modal__inner"
       >
         <div
-          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+            class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
             data-testid="modal__close-btn"
             type="button"
           >
@@ -334,7 +334,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 2`] = 
             class="flex-1"
           >
             <div
-              class="text-theme-secondary-text whitespace-pre-line"
+              class="whitespace-pre-line text-theme-secondary-text"
             >
               Enter a name for this wallet address (only visible to you).
             </div>
@@ -342,7 +342,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 2`] = 
               class="mt-8"
             >
               <fieldset
-                class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
               >
                 <label
                   class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -369,18 +369,18 @@ exports[`UpdateWalletName should show an error message for duplicate name 2`] = 
                     class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
                   >
                     <div
-                      class="relative flex flex-1 h-full"
+                      class="flex relative flex-1 h-full"
                     >
                       <input
                         aria-invalid="true"
-                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                         data-testid="UpdateWalletName__input"
                         name="name"
                         value=""
                       />
                     </div>
                     <div
-                      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+                      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-danger-500 dark:divide-theme-secondary-800"
                     >
                       <span
                         data-errortext="A Wallet named 'ark wallet 2' already exists on this profile"
@@ -439,7 +439,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 2`] = 
 exports[`UpdateWalletName should show an error message for duplicate name 3`] = `
 <DocumentFragment>
   <div
-    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-opacity-60 dark:bg-opacity-80 bg-theme-secondary-900-rgba overflow-overlay dark:bg-black-rgba"
     data-testid="modal__overlay"
   >
     <div
@@ -447,14 +447,14 @@ exports[`UpdateWalletName should show an error message for duplicate name 3`] = 
       tabindex="-1"
     >
       <div
-        class="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+        class="flex overflow-hidden relative flex-col p-10 shadow-2xl rounded-2.5xl bg-theme-background"
         data-testid="modal__inner"
       >
         <div
-          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+            class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
             data-testid="modal__close-btn"
             type="button"
           >
@@ -485,7 +485,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 3`] = 
             class="flex-1"
           >
             <div
-              class="text-theme-secondary-text whitespace-pre-line"
+              class="whitespace-pre-line text-theme-secondary-text"
             >
               Enter a name for this wallet address (only visible to you).
             </div>
@@ -493,7 +493,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 3`] = 
               class="mt-8"
             >
               <fieldset
-                class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
               >
                 <label
                   class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -520,18 +520,18 @@ exports[`UpdateWalletName should show an error message for duplicate name 3`] = 
                     class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
                   >
                     <div
-                      class="relative flex flex-1 h-full"
+                      class="flex relative flex-1 h-full"
                     >
                       <input
                         aria-invalid="true"
-                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                         data-testid="UpdateWalletName__input"
                         name="name"
                         value=""
                       />
                     </div>
                     <div
-                      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+                      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-danger-500 dark:divide-theme-secondary-800"
                     >
                       <span
                         data-errortext="A Wallet named 'ARK Wallet 2' already exists on this profile"
@@ -590,7 +590,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 3`] = 
 exports[`UpdateWalletName should show an error message for duplicate name 4`] = `
 <DocumentFragment>
   <div
-    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-opacity-60 dark:bg-opacity-80 bg-theme-secondary-900-rgba overflow-overlay dark:bg-black-rgba"
     data-testid="modal__overlay"
   >
     <div
@@ -598,14 +598,14 @@ exports[`UpdateWalletName should show an error message for duplicate name 4`] = 
       tabindex="-1"
     >
       <div
-        class="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+        class="flex overflow-hidden relative flex-col p-10 shadow-2xl rounded-2.5xl bg-theme-background"
         data-testid="modal__inner"
       >
         <div
-          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+            class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
             data-testid="modal__close-btn"
             type="button"
           >
@@ -636,7 +636,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 4`] = 
             class="flex-1"
           >
             <div
-              class="text-theme-secondary-text whitespace-pre-line"
+              class="whitespace-pre-line text-theme-secondary-text"
             >
               Enter a name for this wallet address (only visible to you).
             </div>
@@ -644,7 +644,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 4`] = 
               class="mt-8"
             >
               <fieldset
-                class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
               >
                 <label
                   class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -671,18 +671,18 @@ exports[`UpdateWalletName should show an error message for duplicate name 4`] = 
                     class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
                   >
                     <div
-                      class="relative flex flex-1 h-full"
+                      class="flex relative flex-1 h-full"
                     >
                       <input
                         aria-invalid="true"
-                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                         data-testid="UpdateWalletName__input"
                         name="name"
                         value=""
                       />
                     </div>
                     <div
-                      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+                      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-danger-500 dark:divide-theme-secondary-800"
                     >
                       <span
                         data-errortext="A Wallet named 'ARK Wallet 2' already exists on this profile"
@@ -741,7 +741,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 4`] = 
 exports[`UpdateWalletName should show error message when name consists only of whitespace 1`] = `
 <DocumentFragment>
   <div
-    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-opacity-60 dark:bg-opacity-80 bg-theme-secondary-900-rgba overflow-overlay dark:bg-black-rgba"
     data-testid="modal__overlay"
   >
     <div
@@ -749,14 +749,14 @@ exports[`UpdateWalletName should show error message when name consists only of w
       tabindex="-1"
     >
       <div
-        class="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+        class="flex overflow-hidden relative flex-col p-10 shadow-2xl rounded-2.5xl bg-theme-background"
         data-testid="modal__inner"
       >
         <div
-          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+            class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
             data-testid="modal__close-btn"
             type="button"
           >
@@ -787,7 +787,7 @@ exports[`UpdateWalletName should show error message when name consists only of w
             class="flex-1"
           >
             <div
-              class="text-theme-secondary-text whitespace-pre-line"
+              class="whitespace-pre-line text-theme-secondary-text"
             >
               Enter a name for this wallet address (only visible to you).
             </div>
@@ -795,7 +795,7 @@ exports[`UpdateWalletName should show error message when name consists only of w
               class="mt-8"
             >
               <fieldset
-                class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
               >
                 <label
                   class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -822,18 +822,18 @@ exports[`UpdateWalletName should show error message when name consists only of w
                     class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
                   >
                     <div
-                      class="relative flex flex-1 h-full"
+                      class="flex relative flex-1 h-full"
                     >
                       <input
                         aria-invalid="true"
-                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                         data-testid="UpdateWalletName__input"
                         name="name"
                         value=""
                       />
                     </div>
                     <div
-                      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+                      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-danger-500 dark:divide-theme-secondary-800"
                     >
                       <span
                         data-errortext="Wallet Name invalid"
@@ -892,7 +892,7 @@ exports[`UpdateWalletName should show error message when name consists only of w
 exports[`UpdateWalletName should show error message when name exceeds 42 characters 1`] = `
 <DocumentFragment>
   <div
-    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-opacity-60 dark:bg-opacity-80 bg-theme-secondary-900-rgba overflow-overlay dark:bg-black-rgba"
     data-testid="modal__overlay"
   >
     <div
@@ -900,14 +900,14 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
       tabindex="-1"
     >
       <div
-        class="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+        class="flex overflow-hidden relative flex-col p-10 shadow-2xl rounded-2.5xl bg-theme-background"
         data-testid="modal__inner"
       >
         <div
-          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+            class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
             data-testid="modal__close-btn"
             type="button"
           >
@@ -938,7 +938,7 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
             class="flex-1"
           >
             <div
-              class="text-theme-secondary-text whitespace-pre-line"
+              class="whitespace-pre-line text-theme-secondary-text"
             >
               Enter a name for this wallet address (only visible to you).
             </div>
@@ -946,7 +946,7 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
               class="mt-8"
             >
               <fieldset
-                class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
               >
                 <label
                   class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -973,18 +973,18 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
                     class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
                   >
                     <div
-                      class="relative flex flex-1 h-full"
+                      class="flex relative flex-1 h-full"
                     >
                       <input
                         aria-invalid="true"
-                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                         data-testid="UpdateWalletName__input"
                         name="name"
                         value=""
                       />
                     </div>
                     <div
-                      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+                      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-danger-500 dark:divide-theme-secondary-800"
                     >
                       <span
                         data-errortext="Name should have at most 42 characters"

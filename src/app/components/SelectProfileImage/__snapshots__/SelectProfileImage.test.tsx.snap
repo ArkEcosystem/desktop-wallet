@@ -3,10 +3,10 @@
 exports[`SelectProfileImage should handle upload file 1`] = `
 <div>
   <div
-    class="group space-y-2 undefined"
+    class="space-y-2 group undefined"
   >
     <span
-      class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary-600 text-theme-secondary-text"
+      class="text-sm font-semibold transition-colors duration-100 cursor-default text-theme-secondary-text group-hover:text-theme-primary-600"
     >
       Select Profile Image
     </span>
@@ -26,15 +26,15 @@ exports[`SelectProfileImage should handle upload file 1`] = `
             src="test"
           />
           <button
-            class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
+            class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
             data-testid="SelectProfileImage__upload-button"
             type="button"
           >
             <div
-              class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
+              class="flex justify-center items-center h-full rounded-full dark:bg-black bg-theme-secondary-900 opacity-85"
             >
               <div
-                class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
+                class="text-white sc-bdfBwQ cdgnVS dark:text-theme-secondary-200"
                 height="18"
                 width="24"
               >
@@ -46,7 +46,7 @@ exports[`SelectProfileImage should handle upload file 1`] = `
           </button>
         </div>
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
+          class="flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6 OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz"
           data-testid="SelectProfileImage__remove-button"
           type="button"
         >
@@ -73,10 +73,10 @@ exports[`SelectProfileImage should handle upload file 1`] = `
 exports[`SelectProfileImage should not handle upload file 1`] = `
 <div>
   <div
-    class="group space-y-2 undefined"
+    class="space-y-2 group undefined"
   >
     <span
-      class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary-600 text-theme-secondary-text"
+      class="text-sm font-semibold transition-colors duration-100 cursor-default text-theme-secondary-text group-hover:text-theme-primary-600"
     >
       Select Profile Image
     </span>
@@ -96,15 +96,15 @@ exports[`SelectProfileImage should not handle upload file 1`] = `
             src="test"
           />
           <button
-            class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
+            class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
             data-testid="SelectProfileImage__upload-button"
             type="button"
           >
             <div
-              class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
+              class="flex justify-center items-center h-full rounded-full dark:bg-black bg-theme-secondary-900 opacity-85"
             >
               <div
-                class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
+                class="text-white sc-bdfBwQ cdgnVS dark:text-theme-secondary-200"
                 height="18"
                 width="24"
               >
@@ -116,7 +116,7 @@ exports[`SelectProfileImage should not handle upload file 1`] = `
           </button>
         </div>
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
+          class="flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6 OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz"
           data-testid="SelectProfileImage__remove-button"
           type="button"
         >
@@ -143,10 +143,10 @@ exports[`SelectProfileImage should not handle upload file 1`] = `
 exports[`SelectProfileImage should render 1`] = `
 <div>
   <div
-    class="group space-y-2 undefined"
+    class="space-y-2 group undefined"
   >
     <span
-      class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary-600 text-theme-secondary-text"
+      class="text-sm font-semibold transition-colors duration-100 cursor-default text-theme-secondary-text group-hover:text-theme-primary-600"
     >
       Select Profile Image
     </span>
@@ -154,7 +154,7 @@ exports[`SelectProfileImage should render 1`] = `
       class="flex flex-row"
     >
       <div
-        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-solid focus-within:border-theme-primary-400"
+        class="p-1 w-20 h-20 rounded-md border-2 border-dashed focus-within:border-solid border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-theme-primary-400"
       >
         <div
           class="overflow-hidden h-full rounded-full"
@@ -192,10 +192,10 @@ exports[`SelectProfileImage should render 1`] = `
 exports[`SelectProfileImage should render with value svg 1`] = `
 <div>
   <div
-    class="group space-y-2 undefined"
+    class="space-y-2 group undefined"
   >
     <span
-      class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary-600 text-theme-secondary-text"
+      class="text-sm font-semibold transition-colors duration-100 cursor-default text-theme-secondary-text group-hover:text-theme-primary-600"
     >
       Select Profile Image
     </span>
@@ -218,15 +218,15 @@ exports[`SelectProfileImage should render with value svg 1`] = `
             class="absolute text-2xl font-semibold text-theme-background"
           />
           <button
-            class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
+            class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
             data-testid="SelectProfileImage__upload-button"
             type="button"
           >
             <div
-              class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
+              class="flex justify-center items-center h-full rounded-full dark:bg-black bg-theme-secondary-900 opacity-85"
             >
               <div
-                class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
+                class="text-white sc-bdfBwQ cdgnVS dark:text-theme-secondary-200"
                 height="18"
                 width="24"
               >
@@ -246,10 +246,10 @@ exports[`SelectProfileImage should render with value svg 1`] = `
 exports[`SelectProfileImage should render without value svg 1`] = `
 <div>
   <div
-    class="group space-y-2 undefined"
+    class="space-y-2 group undefined"
   >
     <span
-      class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary-600 text-theme-secondary-text"
+      class="text-sm font-semibold transition-colors duration-100 cursor-default text-theme-secondary-text group-hover:text-theme-primary-600"
     >
       Select Profile Image
     </span>
@@ -269,15 +269,15 @@ exports[`SelectProfileImage should render without value svg 1`] = `
             src="test"
           />
           <button
-            class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
+            class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
             data-testid="SelectProfileImage__upload-button"
             type="button"
           >
             <div
-              class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
+              class="flex justify-center items-center h-full rounded-full dark:bg-black bg-theme-secondary-900 opacity-85"
             >
               <div
-                class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
+                class="text-white sc-bdfBwQ cdgnVS dark:text-theme-secondary-200"
                 height="18"
                 width="24"
               >
@@ -289,7 +289,7 @@ exports[`SelectProfileImage should render without value svg 1`] = `
           </button>
         </div>
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
+          class="flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6 OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz"
           data-testid="SelectProfileImage__remove-button"
           type="button"
         >

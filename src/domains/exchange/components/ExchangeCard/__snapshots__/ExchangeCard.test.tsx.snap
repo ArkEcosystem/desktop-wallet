@@ -16,7 +16,7 @@ exports[`ExchangeCard should render 1`] = `
           class="flex items-center space-x-4"
         >
           <div
-            class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+            class="overflow-hidden flex-shrink-0 rounded-lg w-25 h-25"
           >
             <div
               class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
@@ -34,7 +34,7 @@ exports[`ExchangeCard should render 1`] = `
               class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
             />
             <div
-              class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+              class="flex items-center mt-1 space-x-2 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
             >
               <div
                 class="truncate"
@@ -71,18 +71,18 @@ exports[`ExchangeCard should render a blank card 1`] = `
         class="flex items-center space-x-4"
       >
         <div
-          class="h-25 w-25 rounded-xl border-2 border-theme-primary-100 dark:border-theme-secondary-800"
+          class="rounded-xl border-2 h-25 w-25 border-theme-primary-100 dark:border-theme-secondary-800"
         />
         <div
           class="flex flex-col truncate"
         >
           <span
-            class="text-sm font-semibold text-theme-primary-100 dark:text-theme-secondary-800 truncate"
+            class="text-sm font-semibold text-theme-primary-100 truncate dark:text-theme-secondary-800"
           >
             Author
           </span>
           <div
-            class="mt-1 text-lg font-bold text-theme-primary-100 dark:text-theme-secondary-800 truncate"
+            class="mt-1 text-lg font-bold text-theme-primary-100 truncate dark:text-theme-secondary-800"
           >
             Exchange
           </div>

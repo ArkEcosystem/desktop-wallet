@@ -43,7 +43,7 @@ export const ClipboardButton = ({ data, variant, options, children, ...props }: 
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1, transition: { duration: 0.3 } }}
 						exit={{ opacity: 0, transition: { duration: 0.3 } }}
-						className="absolute inset-0 flex items-center justify-center rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
+						className="flex absolute inset-0 justify-center items-center rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
 						data-testid="clipboard-button__checkmark"
 					>
 						<Icon
