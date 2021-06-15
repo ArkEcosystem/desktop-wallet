@@ -78,7 +78,7 @@ module.exports = {
 		"import/no-namespace": "warn",
 		"import/no-restricted-paths": "error",
 		"import/no-self-import": "error",
-		"import/no-unresolved": "warn",
+		"import/no-unresolved": "off",
 		"import/no-unused-modules": "error",
 		"import/no-useless-path-segments": "error",
 		"import/no-webpack-loader-syntax": "error",

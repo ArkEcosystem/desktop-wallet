@@ -52,7 +52,11 @@ const useDeepLinkHandler = () => {
 
 					/* istanbul ignore next */
 					if (deeplinkSchema.coin) {
-						if (!allAvailableNetworks.some((item) => item.coin().toLowerCase() === deeplinkSchema.coin)) {
+						if (
+							!allAvailableNetworks.some(
+								(item) => item.coin().toLowerCase() === deeplinkSchema.coin.toLowerCase(),
+							)
+						) {
 							throw new Error(`Coin "${deeplinkSchema.coin}" not supported.`);
 						}
 					}
