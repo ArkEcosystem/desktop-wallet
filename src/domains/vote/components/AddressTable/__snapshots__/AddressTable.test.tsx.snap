@@ -40,7 +40,7 @@ exports[`AddressTable should render 1`] = `
       </div>
     </div>
     <div
-      class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
+      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
       role="table"
     >
       <table
@@ -53,7 +53,7 @@ exports[`AddressTable should render 1`] = `
             role="row"
           >
             <th
-              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -61,16 +61,16 @@ exports[`AddressTable should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex align-top flex-inline"
+                class="flex flex-inline align-top"
               >
                 <div>
                   My Address
                 </div>
                 <div
-                  class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
+                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                 >
                   <div
-                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
                     role="img"
                     width="8"
@@ -83,13 +83,13 @@ exports[`AddressTable should render 1`] = `
               </div>
             </th>
             <th
-              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex justify-center align-top flex-inline"
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Wallet Type
@@ -97,7 +97,7 @@ exports[`AddressTable should render 1`] = `
               </div>
             </th>
             <th
-              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -105,16 +105,16 @@ exports[`AddressTable should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-row-reverse justify-end align-top flex-inline"
+                class="flex flex-inline align-top justify-end flex-row-reverse"
               >
                 <div>
                   Balance
                 </div>
                 <div
-                  class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
+                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
                 >
                   <div
-                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
                     role="img"
                     width="8"
@@ -127,13 +127,13 @@ exports[`AddressTable should render 1`] = `
               </div>
             </th>
             <th
-              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex align-top flex-inline ml-15"
+                class="flex flex-inline align-top ml-15"
               >
                 <div>
                   Delegate
@@ -141,13 +141,13 @@ exports[`AddressTable should render 1`] = `
               </div>
             </th>
             <th
-              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex justify-center align-top flex-inline"
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Rank
@@ -155,13 +155,13 @@ exports[`AddressTable should render 1`] = `
               </div>
             </th>
             <th
-              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
             >
               <div
-                class="flex justify-center align-top flex-inline no-border"
+                class="flex flex-inline align-top justify-center no-border"
               >
                 <div>
                   Status
@@ -169,13 +169,13 @@ exports[`AddressTable should render 1`] = `
               </div>
             </th>
             <th
-              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--6"
               role="columnheader"
             >
               <div
-                class="flex align-top flex-inline"
+                class="flex flex-inline align-top"
               >
                 <div>
                    
@@ -193,14 +193,14 @@ exports[`AddressTable should render 1`] = `
           >
             <td>
               <div
-                class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
               >
                 <div
-                  class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0 flex-shrink-0"
                   data-testid="Avatar"
                 >
                   <div
-                    class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                    class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                   >
                     <img
                       alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -213,7 +213,7 @@ exports[`AddressTable should render 1`] = `
                   class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                 >
                   <span
-                    class="text-base font-semibold text-theme-text"
+                    class="font-semibold text-base text-theme-text"
                     data-testid="Address__alias"
                   >
                     <span
@@ -224,7 +224,7 @@ exports[`AddressTable should render 1`] = `
                     </span>
                   </span>
                   <span
-                    class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                    class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="Address__address"
                   >
                     D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -234,7 +234,7 @@ exports[`AddressTable should render 1`] = `
             </td>
             <td>
               <div
-                class="justify-center text-sm font-bold text-center align-middle TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center text-sm font-bold text-center align-middle"
               >
                 <div
                   class="inline-flex items-center space-x-2"
@@ -243,7 +243,7 @@ exports[`AddressTable should render 1`] = `
             </td>
             <td>
               <div
-                class="justify-end font-bold whitespace-nowrap TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT text-theme-secondary-text"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-end font-bold text-theme-secondary-text whitespace-nowrap"
               >
                 <span
                   data-testid="Amount"
@@ -254,14 +254,14 @@ exports[`AddressTable should render 1`] = `
             </td>
             <td>
               <div
-                class="space-x-4 font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold"
               >
                 <div
-                  class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
                   data-testid="Avatar"
                 >
                   <div
-                    class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                    class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                   >
                     <img
                       alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
@@ -277,7 +277,7 @@ exports[`AddressTable should render 1`] = `
             </td>
             <td>
               <div
-                class="justify-center font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT text-theme-secondary-text"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text"
               >
                 <span>
                   #
@@ -286,7 +286,7 @@ exports[`AddressTable should render 1`] = `
             </td>
             <td>
               <div
-                class="justify-center TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center"
               >
                 <div
                   class="sc-bdfBwQ iSzUah text-theme-success-600"
@@ -302,7 +302,7 @@ exports[`AddressTable should render 1`] = `
             </td>
             <td>
               <div
-                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
               >
                 <button
                   class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -365,7 +365,7 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
       </div>
     </div>
     <div
-      class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
+      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
       role="table"
     >
       <table
@@ -378,7 +378,7 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
             role="row"
           >
             <th
-              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -386,16 +386,16 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
               title="Toggle SortBy"
             >
               <div
-                class="flex align-top flex-inline"
+                class="flex flex-inline align-top"
               >
                 <div>
                   My Address
                 </div>
                 <div
-                  class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
+                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                 >
                   <div
-                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
                     role="img"
                     width="8"
@@ -408,13 +408,13 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
               </div>
             </th>
             <th
-              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex justify-center align-top flex-inline"
+                class="flex flex-inline align-top justify-center"
               >
                 <div>
                   Wallet Type
@@ -422,7 +422,7 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
               </div>
             </th>
             <th
-              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -430,16 +430,16 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-row-reverse justify-end align-top flex-inline"
+                class="flex flex-inline align-top justify-end flex-row-reverse"
               >
                 <div>
                   Balance
                 </div>
                 <div
-                  class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
+                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
                 >
                   <div
-                    class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                     height="5"
                     role="img"
                     width="8"
@@ -452,13 +452,13 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
               </div>
             </th>
             <th
-              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex align-top flex-inline"
+                class="flex flex-inline align-top"
               >
                 <div>
                   Delegates
@@ -466,13 +466,13 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
               </div>
             </th>
             <th
-              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
               colspan="1"
               data-testid="table__th--4"
               role="columnheader"
             >
               <div
-                class="flex align-top flex-inline no-border"
+                class="flex flex-inline align-top no-border"
               >
                 <div>
                   Votes
@@ -480,13 +480,13 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
               </div>
             </th>
             <th
-              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--5"
               role="columnheader"
             >
               <div
-                class="flex align-top flex-inline"
+                class="flex flex-inline align-top"
               >
                 <div>
                    
@@ -504,14 +504,14 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
           >
             <td>
               <div
-                class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
               >
                 <div
-                  class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0 flex-shrink-0"
                   data-testid="Avatar"
                 >
                   <div
-                    class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                    class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                   >
                     <img
                       alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -524,7 +524,7 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
                   class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                 >
                   <span
-                    class="text-base font-semibold text-theme-text"
+                    class="font-semibold text-base text-theme-text"
                     data-testid="Address__alias"
                   >
                     <span
@@ -535,7 +535,7 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
                     </span>
                   </span>
                   <span
-                    class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                    class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="Address__address"
                   >
                     D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -545,7 +545,7 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
             </td>
             <td>
               <div
-                class="justify-center text-sm font-bold text-center align-middle TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center text-sm font-bold text-center align-middle"
               >
                 <div
                   class="inline-flex items-center space-x-2"
@@ -554,7 +554,7 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
             </td>
             <td>
               <div
-                class="justify-end font-bold whitespace-nowrap TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT text-theme-secondary-text"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-end font-bold text-theme-secondary-text whitespace-nowrap"
               >
                 <span
                   data-testid="Amount"
@@ -565,7 +565,7 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
             </td>
             <td>
               <div
-                class="space-x-4 font-bold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold"
               >
                 <div
                   class="flex items-center h-11"
@@ -577,11 +577,11 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
                       class="inline-block"
                     >
                       <div
-                        class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                         data-testid="Avatar"
                       >
                         <div
-                          class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                          class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                         >
                           <img
                             alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
@@ -615,7 +615,7 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
             </td>
             <td>
               <div
-                class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
               >
                 <button
                   class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"

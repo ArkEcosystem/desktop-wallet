@@ -11,10 +11,10 @@ exports[`Input should render a default input 1`] = `
     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
   >
     <div
-      class="flex relative flex-1 h-full"
+      class="relative flex flex-1 h-full"
     >
       <input
-        class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
+        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
         data-testid="Input"
         value=""
       />
@@ -34,10 +34,10 @@ exports[`Input should render as custom element 1`] = `
     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
   >
     <div
-      class="flex relative flex-1 h-full"
+      class="relative flex flex-1 h-full"
     >
       <select
-        class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
+        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
         data-testid="Input"
       />
     </div>
@@ -59,16 +59,16 @@ exports[`Input should render with addons 1`] = `
       start
     </span>
     <div
-      class="flex relative flex-1 h-full"
+      class="relative flex flex-1 h-full"
     >
       <input
-        class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
+        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
         data-testid="Input"
         value=""
       />
     </div>
     <div
-      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-primary-300 dark:divide-theme-secondary-800 dark:text-theme-secondary-600"
+      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
     >
       <div
         class=""
@@ -93,10 +93,10 @@ exports[`Input should render with focus 1`] = `
     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
   >
     <div
-      class="flex relative flex-1 h-full"
+      class="relative flex flex-1 h-full"
     >
       <input
-        class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
+        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
         data-testid="Input"
         value=""
       />
@@ -116,17 +116,17 @@ exports[`Input should render with invalid 1`] = `
     class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
   >
     <div
-      class="flex relative flex-1 h-full"
+      class="relative flex flex-1 h-full"
     >
       <input
         aria-invalid="true"
-        class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
+        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
         data-testid="Input"
         value=""
       />
     </div>
     <div
-      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-danger-500 dark:divide-theme-secondary-800"
+      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
     >
       <span
         data-errortext="Field invalid"
@@ -158,15 +158,15 @@ exports[`Input should render with suggestion 1`] = `
     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
   >
     <div
-      class="flex relative flex-1 h-full"
+      class="relative flex flex-1 h-full"
     >
       <input
-        class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
+        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
         data-testid="Input"
         value=""
       />
       <span
-        class="flex absolute inset-y-0 items-center w-full font-normal opacity-50 pointer-events-none"
+        class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
         data-testid="Input__suggestion"
       >
         <span

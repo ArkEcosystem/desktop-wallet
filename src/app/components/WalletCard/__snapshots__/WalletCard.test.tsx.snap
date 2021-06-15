@@ -3,7 +3,7 @@
 exports[`Wallet Card should render 1`] = `
 <div>
   <div
-    class="inline-block w-64 undefined"
+    class="w-64 inline-block undefined"
     data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
   >
     <div
@@ -40,11 +40,11 @@ exports[`Wallet Card should render 1`] = `
                 </div>
               </div>
               <div
-                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
-                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                 >
                   <img
                     alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -127,7 +127,7 @@ exports[`Wallet Card should render 1`] = `
 exports[`Wallet Card should render blank 1`] = `
 <div>
   <div
-    class="inline-block w-64 undefined"
+    class="w-64 inline-block undefined"
     data-testid="WalletCard__blank"
   >
     <div
@@ -146,10 +146,10 @@ exports[`Wallet Card should render blank 1`] = `
             class="flex -space-x-2"
           >
             <div
-              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV bg-theme-background border-theme-primary-100 ring-theme-background dark:border-theme-secondary-800"
+              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
             />
             <div
-              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV bg-theme-background border-theme-primary-100 ring-theme-background dark:border-theme-secondary-800"
+              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
             />
           </div>
           <div
@@ -175,7 +175,7 @@ exports[`Wallet Card should render blank 1`] = `
 exports[`Wallet Card should render blank with ledger display type 1`] = `
 <div>
   <div
-    class="inline-block w-64 undefined"
+    class="w-64 inline-block undefined"
     data-testid="WalletCard__blank"
   >
     <div
@@ -194,10 +194,10 @@ exports[`Wallet Card should render blank with ledger display type 1`] = `
             class="flex -space-x-2"
           >
             <div
-              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV bg-theme-background border-theme-primary-100 ring-theme-background dark:border-theme-secondary-800"
+              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
             />
             <div
-              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV bg-theme-background border-theme-primary-100 ring-theme-background dark:border-theme-secondary-800"
+              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
             />
           </div>
           <div
@@ -233,7 +233,7 @@ exports[`Wallet Card should render blank with ledger display type 1`] = `
 exports[`Wallet Card should render blank with starred display type 1`] = `
 <div>
   <div
-    class="inline-block w-64 undefined"
+    class="w-64 inline-block undefined"
     data-testid="WalletCard__blank"
   >
     <div
@@ -252,10 +252,10 @@ exports[`Wallet Card should render blank with starred display type 1`] = `
             class="flex -space-x-2"
           >
             <div
-              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV bg-theme-background border-theme-primary-100 ring-theme-background dark:border-theme-secondary-800"
+              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
             />
             <div
-              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV bg-theme-background border-theme-primary-100 ring-theme-background dark:border-theme-secondary-800"
+              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
             />
           </div>
           <div
@@ -310,7 +310,7 @@ exports[`Wallet Card should render loading state 1`] = `
             class="flex items-center mr-4 -space-x-1"
           >
             <div
-              class="border-transparent Circle__CircleWrapper-uw7h4j-0 bNDQMV ring-theme-background"
+              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-transparent ring-theme-background"
             >
               <span>
                 <span
@@ -327,7 +327,7 @@ exports[`Wallet Card should render loading state 1`] = `
               </span>
             </div>
             <div
-              class="border-transparent Circle__CircleWrapper-uw7h4j-0 bNDQMV ring-theme-background"
+              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-transparent ring-theme-background"
             >
               <span>
                 <span
@@ -417,7 +417,7 @@ exports[`Wallet Card should render loading state 1`] = `
 exports[`Wallet Card should render with actions 1`] = `
 <div>
   <div
-    class="inline-block w-64 undefined"
+    class="w-64 inline-block undefined"
     data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
   >
     <div
@@ -454,11 +454,11 @@ exports[`Wallet Card should render with actions 1`] = `
                 </div>
               </div>
               <div
-                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
-                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                 >
                   <img
                     alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -541,7 +541,7 @@ exports[`Wallet Card should render with actions 1`] = `
                 class="flex overflow-hidden justify-center w-4"
               >
                 <div
-                  class="p-1 transition-colors duration-200 cursor-pointer sc-bdfBwQ fPrsah text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                  class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
                   height="1em"
                   width="1em"
                 >
@@ -562,7 +562,7 @@ exports[`Wallet Card should render with actions 1`] = `
 exports[`Wallet Card should render with wallet data 1`] = `
 <div>
   <div
-    class="inline-block w-64 undefined"
+    class="w-64 inline-block undefined"
     data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
   >
     <div
@@ -599,11 +599,11 @@ exports[`Wallet Card should render with wallet data 1`] = `
                 </div>
               </div>
               <div
-                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
-                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                 >
                   <img
                     alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -687,7 +687,7 @@ exports[`Wallet Card should render with wallet data 1`] = `
 exports[`Wallet Card should render with wallet data and optional icon 1`] = `
 <div>
   <div
-    class="inline-block w-64 undefined"
+    class="w-64 inline-block undefined"
     data-testid="WalletCard__D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
   >
     <div
@@ -724,11 +724,11 @@ exports[`Wallet Card should render with wallet data and optional icon 1`] = `
                 </div>
               </div>
               <div
-                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
-                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                 >
                   <img
                     alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
