@@ -28,7 +28,7 @@ exports[`TransactionVotes should render loading state 1`] = `
     </div>
     <span>
       <span
-        class="mb-1 react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+        class="react-loading-skeleton mb-1 css-1eg0sfo-skeletonStyles-Skeleton"
         style="width: 44px; height: 44px; border-radius: 50%;"
       >
         ‌
@@ -59,7 +59,7 @@ exports[`TransactionVotes should render with unvotes 1`] = `
       </div>
     </div>
     <div
-      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-900 border-theme-secondary-900 ring-theme-background dark:text-theme-secondary-600 dark:border-theme-secondary-600"
+      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-900 border-theme-secondary-900 dark:text-theme-secondary-600 dark:border-theme-secondary-600 ring-theme-background"
     >
       <div
         class="sc-bdfBwQ bOxyah"
@@ -97,11 +97,11 @@ exports[`TransactionVotes should render with unvotes 1`] = `
               class="flex items-center py-4 space-x-4"
             >
               <div
-                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
-                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                 >
                   <img
                     alt="test-address"
@@ -114,7 +114,7 @@ exports[`TransactionVotes should render with unvotes 1`] = `
                 class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
               >
                 <span
-                  class="text-base font-semibold text-theme-text"
+                  class="font-semibold text-base text-theme-text"
                   data-testid="Address__alias"
                 >
                   <span
@@ -125,7 +125,7 @@ exports[`TransactionVotes should render with unvotes 1`] = `
                   </span>
                 </span>
                 <span
-                  class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                  class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                   data-testid="Address__address"
                 >
                   test-address
@@ -161,7 +161,7 @@ exports[`TransactionVotes should render with votes 1`] = `
       </div>
     </div>
     <div
-      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-900 border-theme-secondary-900 ring-theme-background dark:text-theme-secondary-600 dark:border-theme-secondary-600"
+      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-900 border-theme-secondary-900 dark:text-theme-secondary-600 dark:border-theme-secondary-600 ring-theme-background"
     >
       <div
         class="sc-bdfBwQ bOxyah"
@@ -199,11 +199,11 @@ exports[`TransactionVotes should render with votes 1`] = `
               class="flex items-center py-4 space-x-4"
             >
               <div
-                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
-                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                 >
                   <img
                     alt="test-address"
@@ -216,7 +216,7 @@ exports[`TransactionVotes should render with votes 1`] = `
                 class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
               >
                 <span
-                  class="text-base font-semibold text-theme-text"
+                  class="font-semibold text-base text-theme-text"
                   data-testid="Address__alias"
                 >
                   <span
@@ -227,7 +227,7 @@ exports[`TransactionVotes should render with votes 1`] = `
                   </span>
                 </span>
                 <span
-                  class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                  class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                   data-testid="Address__address"
                 >
                   test-address
@@ -263,7 +263,7 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
       </div>
     </div>
     <div
-      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-900 border-theme-secondary-900 ring-theme-background dark:text-theme-secondary-600 dark:border-theme-secondary-600"
+      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-900 border-theme-secondary-900 dark:text-theme-secondary-600 dark:border-theme-secondary-600 ring-theme-background"
     >
       <div
         class="sc-bdfBwQ bOxyah"
@@ -301,11 +301,11 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
               class="flex items-center py-4 space-x-4"
             >
               <div
-                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
-                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                 >
                   <img
                     alt="test-address"
@@ -318,7 +318,7 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
                 class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
               >
                 <span
-                  class="text-base font-semibold text-theme-text"
+                  class="font-semibold text-base text-theme-text"
                   data-testid="Address__alias"
                 >
                   <span
@@ -329,7 +329,7 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
                   </span>
                 </span>
                 <span
-                  class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                  class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                   data-testid="Address__address"
                 >
                   test-address
@@ -366,11 +366,11 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
               class="flex items-center py-4 space-x-4"
             >
               <div
-                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
-                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                 >
                   <img
                     alt="test-address"
@@ -383,7 +383,7 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
                 class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
               >
                 <span
-                  class="text-base font-semibold text-theme-text"
+                  class="font-semibold text-base text-theme-text"
                   data-testid="Address__alias"
                 >
                   <span
@@ -394,7 +394,7 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
                   </span>
                 </span>
                 <span
-                  class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                  class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                   data-testid="Address__address"
                 >
                   test-address

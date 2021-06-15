@@ -30,10 +30,10 @@ exports[`PluginInfo should not show the view permissions button with text less t
     class="mt-8"
   >
     <div
-      class="flex overflow-hidden flex-col p-4 space-y-4 rounded-lg sm:flex-row sm:items-center sm:space-y-0 sm:space-x-4 bg-theme-warning-50 dark:bg-theme-secondary-800"
+      class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
     >
       <div
-        class="flex flex-shrink-0 justify-center items-center w-11 h-11 text-white rounded-lg bg-theme-warning-600"
+        class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
       >
         <div
           class="sc-bdfBwQ hteSKx"
@@ -101,10 +101,10 @@ exports[`PluginInfo should open and close the plugin permissions modal 1`] = `
     class="mt-8"
   >
     <div
-      class="flex overflow-hidden flex-col p-4 space-y-4 rounded-lg sm:flex-row sm:items-center sm:space-y-0 sm:space-x-4 bg-theme-warning-50 dark:bg-theme-secondary-800"
+      class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
     >
       <div
-        class="flex flex-shrink-0 justify-center items-center w-11 h-11 text-white rounded-lg bg-theme-warning-600"
+        class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
       >
         <div
           class="sc-bdfBwQ hteSKx"
@@ -204,7 +204,7 @@ exports[`PluginInfo should render properly 1`] = `
           style="height: 232px;"
         >
           <div
-            class="h-full swiper-wrapper important:z-0"
+            class="h-full swiper-wrapper important:z-0 "
             style="width: auto; transform: translate3d(NaNpx, 0px, 0px); transition-duration: 0ms;"
           >
             <div
@@ -227,10 +227,10 @@ exports[`PluginInfo should render properly 1`] = `
     class="mt-8"
   >
     <div
-      class="flex overflow-hidden flex-col p-4 space-y-4 rounded-lg sm:flex-row sm:items-center sm:space-y-0 sm:space-x-4 bg-theme-warning-50 dark:bg-theme-secondary-800"
+      class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
     >
       <div
-        class="flex flex-shrink-0 justify-center items-center w-11 h-11 text-white rounded-lg bg-theme-warning-600"
+        class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
       >
         <div
           class="sc-bdfBwQ hteSKx"
@@ -288,10 +288,10 @@ exports[`PluginInfo should render with minimum version 1`] = `
     class="mt-8"
   >
     <div
-      class="flex overflow-hidden flex-col p-4 space-y-4 rounded-lg sm:flex-row sm:items-center sm:space-y-0 sm:space-x-4 bg-theme-warning-50 dark:bg-theme-secondary-800"
+      class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
     >
       <div
-        class="flex flex-shrink-0 justify-center items-center w-11 h-11 text-white rounded-lg bg-theme-warning-600"
+        class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
       >
         <div
           class="sc-bdfBwQ hteSKx"
@@ -342,10 +342,10 @@ exports[`PluginInfo should render without permissions 1`] = `
     class="mt-8"
   >
     <div
-      class="flex overflow-hidden flex-col p-4 space-y-4 rounded-lg sm:flex-row sm:items-center sm:space-y-0 sm:space-x-4 bg-theme-warning-50 dark:bg-theme-secondary-800"
+      class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
     >
       <div
-        class="flex flex-shrink-0 justify-center items-center w-11 h-11 text-white rounded-lg bg-theme-warning-600"
+        class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
       >
         <div
           class="sc-bdfBwQ hteSKx"

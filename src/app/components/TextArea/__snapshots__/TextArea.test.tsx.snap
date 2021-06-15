@@ -11,10 +11,10 @@ exports[`TextArea should render 1`] = `
     class="Input__InputWrapperStyled-wu99qs-0 bKjoCo"
   >
     <div
-      class="flex relative flex-1 h-full"
+      class="relative flex flex-1 h-full"
     >
       <textarea
-        class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
+        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
         data-testid="TextArea"
         style="height: 4px;"
       />
@@ -35,10 +35,10 @@ exports[`TextArea should render as disabled 1`] = `
     disabled=""
   >
     <div
-      class="flex relative flex-1 h-full"
+      class="relative flex flex-1 h-full"
     >
       <textarea
-        class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures text-theme-secondary-text"
+        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full text-theme-secondary-text"
         data-testid="TextArea"
         disabled=""
       />
@@ -58,16 +58,16 @@ exports[`TextArea should render as invalid 1`] = `
     class="Input__InputWrapperStyled-wu99qs-0 fmGxXX"
   >
     <div
-      class="flex relative flex-1 h-full"
+      class="relative flex flex-1 h-full"
     >
       <textarea
         aria-invalid="true"
-        class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
+        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
         data-testid="TextArea"
       />
     </div>
     <div
-      class="flex absolute right-0 bottom-full items-center mb-2 space-x-3 divide-x divide-theme-secondary-300 text-theme-danger-500 dark:divide-theme-secondary-800"
+      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500 absolute bottom-full right-0 mb-2"
     >
       <span
         data-testid="Input__error"
