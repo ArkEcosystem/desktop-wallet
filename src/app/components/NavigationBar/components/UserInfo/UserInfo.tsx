@@ -4,8 +4,10 @@ import React from "react";
 
 import { UserInfoProps } from "../../NavigationBar.contract";
 
-export const UserInfo = ({ onUserAction, avatarImage, userActions, userInitials }: UserInfoProps) => (
-	<Dropdown
+export const UserInfo = ({ onUserAction, avatarImage, userActions, userInitials }: UserInfoProps) => {
+
+
+	return (<Dropdown
 		onSelect={onUserAction}
 		options={userActions}
 		dropdownClass="mt-8"
@@ -32,5 +34,5 @@ export const UserInfo = ({ onUserAction, avatarImage, userActions, userInitials 
 				</Avatar>
 			</div>
 		)}
-	/>
-);
+	/>);
+}
