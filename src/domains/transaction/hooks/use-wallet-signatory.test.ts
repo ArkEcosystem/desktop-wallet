@@ -38,7 +38,7 @@ describe("useWalletSignatory", () => {
 	it("should sign with private key", () => {
 		const mockPrivateKey = jest.spyOn(wallet.signatory(), "privateKey");
 		const { result } = renderHook(() => useWalletSignatory(wallet));
-		expect(
+		await expect(
 			result.current.sign({ privateKey: "d8839c2432bfd0a67ef10a804ba991eabba19f154a3d707917681d45822a5712" }),
 		).resolves.toBeTruthy();
 		expect(mockPrivateKey).toHaveBeenCalled();

@@ -85,6 +85,9 @@ module.exports = {
 		"import/order": "warn",
 		"jest/no-conditional-expect": "off",
 		"jest/no-done-callback": "off",
+		"jest/no-identical-title": "off",
+		"jest/valid-expect": "off",
+		"jest/valid-expect-in-promise": "off",
 		"no-unused-expressions": "off",
 		"no-unused-vars": "off",
 		"prefer-const": [

@@ -43,7 +43,8 @@ describe("useAutomaticSignout", () => {
 
 		const { result } = renderHook(() => useAutomaticSignout());
 		const onTimeout = jest.fn();
-		expect(result.current.monitorIdleTime({ profile, onTimeout }));
+		// @TODO: proper expectation
+		// expect(result.current.monitorIdleTime({ profile, onTimeout }));
 		result.current.monitorIdleTime({ profile });
 
 		jest.runAllTimers();
