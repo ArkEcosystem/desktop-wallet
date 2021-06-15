@@ -64,7 +64,10 @@
 		]
 	},
 	"eslintConfig": {
-		"extends": "react-app"
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
 	},
 	"jest": {
 		"automock": false,
