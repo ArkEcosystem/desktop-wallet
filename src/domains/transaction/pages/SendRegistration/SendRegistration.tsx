@@ -69,6 +69,7 @@ export const SendRegistration = () => {
 	useEffect(() => {
 		register("fee");
 		register("fees");
+		register("inputFeeSettings");
 
 		register("network", { required: true });
 		register("senderAddress", { required: true });

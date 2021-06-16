@@ -92,6 +92,11 @@ export const translations: { [key: string]: any } = {
 		},
 	},
 
+	INPUT_FEE_VIEW_TYPE: {
+		SIMPLE: "Simple",
+		ADVANCED: "Advanced",
+	},
+
 	FEES: {
 		SLOW: "Slow",
 		AVERAGE: "Average",

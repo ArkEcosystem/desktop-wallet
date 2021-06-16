@@ -2,12 +2,13 @@ import { Services } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { useEnvironmentContext } from "app/contexts";
 import { useCallback } from "react";
+import { TransactionFees } from "types";
 
 export const useFees = (profile: ProfileContracts.IProfile) => {
 	const { env } = useEnvironmentContext();
 
 	const findByType = useCallback(
-		async (coin: string, network: string, type: string) => {
+		async (coin: string, network: string, type: string): Promise<TransactionFees> => {
 			let transactionFees: Services.TransactionFee;
 
 			try {

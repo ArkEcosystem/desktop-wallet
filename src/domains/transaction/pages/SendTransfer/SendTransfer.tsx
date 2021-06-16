@@ -26,9 +26,11 @@ import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
 import { lowerCaseEquals } from "utils/equals";
 
-import { FormStep, ReviewStep, SummaryStep } from ".";
+import { FormStep } from "./FormStep";
 import { TransferLedgerReview } from "./LedgerReview";
 import { NetworkStep } from "./NetworkStep";
+import { ReviewStep } from "./ReviewStep";
+import { SummaryStep } from "./SummaryStep";
 
 export const SendTransfer = () => {
 	const { t } = useTranslation();
@@ -75,7 +77,6 @@ export const SendTransfer = () => {
 	const form = useForm<any>({
 		mode: "onChange",
 		defaultValues: {
-			fee: 0,
 			amount: 0,
 			remainingBalance: wallet?.balance?.(),
 			recipients: [],
@@ -107,6 +108,7 @@ export const SendTransfer = () => {
 
 		register("remainingBalance");
 		register("isSendAllSelected");
+		register("inputFeeSettings");
 
 		register("suppressWarning");
 	}, [register, sendTransfer, common, fees, wallet, remainingBalance, amount, senderAddress]);
@@ -175,7 +177,9 @@ export const SendTransfer = () => {
 			return;
 		}
 
+		/* istanbul ignore next */
 		if (BigNumber.make(amount).isLessThanOrEqualTo(fee)) {
+			// @TODO remove ignore coverage after BigNumber refactor
 			return;
 		}
 
