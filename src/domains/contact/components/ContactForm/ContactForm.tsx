@@ -12,6 +12,7 @@ import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { lowerCaseEquals } from "utils/equals";
 
 interface AddressListItemProps {
 	address: any;
@@ -194,7 +195,7 @@ export const ContactForm = ({ profile, contact, onChange, onCancel, onDelete, on
 									.filter(
 										(item: Contracts.IContact) =>
 											item.id() !== contact?.id() &&
-											item.name().trim().toLowerCase() === name.trim().toLowerCase(),
+											lowerCaseEquals(item.name().trim(), name.trim()),
 									).length ||
 								t("CONTACTS.VALIDATION.NAME_EXISTS", {
 									name: name.trim(),

@@ -15,6 +15,7 @@ import { UpdateWalletName } from "domains/wallet/components/UpdateWalletName";
 import React, { useCallback, useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { lowerCaseEquals } from "utils/equals";
 
 const MultipleImport = ({
 	wallets,
@@ -51,7 +52,7 @@ const MultipleImport = ({
 		(alias: string) => {
 			const values = Object.values(names);
 			const hasSameValue = values.some(
-				(name: any) => !!name && alias.trim().toLowerCase() === name.trim().toLowerCase(),
+				(name: any) => !!name && lowerCaseEquals(alias.trim(), name.trim()),
 			);
 
 			if (alias && hasSameValue) {

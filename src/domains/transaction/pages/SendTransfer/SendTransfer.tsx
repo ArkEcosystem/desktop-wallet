@@ -23,6 +23,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
+import { lowerCaseEquals } from "utils/equals";
 
 import { FormStep, ReviewStep, SummaryStep } from ".";
 import { TransferLedgerReview } from "./LedgerReview";
@@ -130,8 +131,8 @@ export const SendTransfer = () => {
 			"network",
 			networks.find(
 				(item) =>
-					item.coin().toLowerCase() === deepLinkParams.coin?.toLowerCase() &&
-					item.id().toLowerCase() === deepLinkParams.network?.toLowerCase(),
+					lowerCaseEquals(item.coin(), deepLinkParams.coin) &&
+					lowerCaseEquals(item.id(), deepLinkParams.network),
 			),
 		);
 
