@@ -22,7 +22,7 @@ export const TransferLedgerReview = ({
 	const { t } = useTranslation();
 	const { getValues } = useFormContext();
 
-	const { fee, recipients, smartbridge } = getValues();
+	const { fee, recipients, memo } = getValues();
 
 	let amount = BigNumber.ZERO;
 	for (const recipient of recipients) {
@@ -40,7 +40,7 @@ export const TransferLedgerReview = ({
 		<>
 			<TransactionRecipients currency={wallet.currency()} recipients={recipients} border={false} />
 
-			{smartbridge && <TransactionMemo memo={smartbridge} />}
+			{memo && <TransactionMemo memo={memo} />}
 
 			{estimatedExpiration && (
 				<TransactionDetail

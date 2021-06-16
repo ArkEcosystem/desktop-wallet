@@ -12,14 +12,14 @@ export const ReceiveFundsForm = ({ network }: { network?: Networks.Network }) =>
 	const form = useFormContext();
 	const { getValues, setValue, register } = form;
 	const { receiveFunds } = useValidation();
-	const { smartbridge } = form.watch();
-	const maxLength = receiveFunds.smartbridge().maxLength?.value;
+	const { memo } = form.watch();
+	const maxLength = receiveFunds.memo().maxLength?.value;
 
 	useEffect(() => {
 		register("amount");
 	}, [register]);
 
-	const isSmartbridgeUsedInNetwork = useMemo(() => network?.usesMemo(), [network]);
+	const isMemoUsedInNetwork = useMemo(() => network?.usesMemo(), [network]);
 
 	return (
 		<div data-testid="ReceiveFundsForm">
@@ -36,13 +36,13 @@ export const ReceiveFundsForm = ({ network }: { network?: Networks.Network }) =>
 					<FormHelperText />
 				</FormField>
 
-				{isSmartbridgeUsedInNetwork && (
-					<FormField name="smartbridge">
+				{isMemoUsedInNetwork && (
+					<FormField name="memo">
 						<FormLabel label={t("COMMON.SMARTBRIDGE")} optional />
 						<InputCounter
-							ref={register(receiveFunds.smartbridge())}
-							data-testid="ReceiveFundsForm__smartbridge"
-							defaultValue={smartbridge}
+							ref={register(receiveFunds.memo())}
+							data-testid="ReceiveFundsForm__memo"
+							defaultValue={memo}
 							maxLengthLabel={maxLength.toString()}
 						/>
 					</FormField>

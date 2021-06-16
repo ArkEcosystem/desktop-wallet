@@ -34,7 +34,7 @@ export const BaseTransactionRowInfo = ({ memo, isMultiSignatureRegistration, isL
 			{memo && (
 				<Tooltip className="break-all" content={memo}>
 					<span className="p-1">
-						<Icon data-testid="TransactionRowInfo__vendorField" name="Smartbridge" width={17} height={16} />
+						<Icon data-testid="TransactionRowInfo__vendorField" name="Memo" width={17} height={16} />
 					</span>
 				</Tooltip>
 			)}

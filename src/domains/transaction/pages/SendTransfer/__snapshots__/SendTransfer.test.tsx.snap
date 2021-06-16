@@ -318,7 +318,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                           class="mb-0 text-3xl"
                           data-testid="header__title"
                         >
-                          Send 
+                          Send
                         </h1>
                         <div
                           class="text-theme-secondary-text"
@@ -777,9 +777,9 @@ exports[`SendTransfer should display disabled address selection input if selecte
                         <label
                           class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
-                          for="smartbridge"
+                          for="memo"
                         >
-                          Smartbridge
+                          Memo
                           <span
                             class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                             data-testid="FormLabel__optional"
@@ -800,8 +800,8 @@ exports[`SendTransfer should display disabled address selection input if selecte
                           >
                             <input
                               class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                              data-testid="Input__smartbridge"
-                              name="smartbridge"
+                              data-testid="Input__memo"
+                              name="memo"
                               placeholder=" "
                               type="text"
                               value=""
@@ -2314,7 +2314,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
           class="mb-0 text-3xl"
           data-testid="header__title"
         >
-          Send 
+          Send
         </h1>
         <div
           class="text-theme-secondary-text"
@@ -2727,9 +2727,9 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
         <label
           class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
-          for="smartbridge"
+          for="memo"
         >
-          Smartbridge
+          Memo
           <span
             class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
             data-testid="FormLabel__optional"
@@ -2750,8 +2750,8 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
           >
             <input
               class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-              data-testid="Input__smartbridge"
-              name="smartbridge"
+              data-testid="Input__memo"
+              name="memo"
               placeholder=" "
               type="text"
               value=""
@@ -3646,9 +3646,9 @@ exports[`SendTransfer should render form and use location state 1`] = `
                         <label
                           class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
-                          for="smartbridge"
+                          for="memo"
                         >
-                          Smartbridge
+                          Memo
                           <span
                             class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                             data-testid="FormLabel__optional"
@@ -3669,8 +3669,8 @@ exports[`SendTransfer should render form and use location state 1`] = `
                           >
                             <input
                               class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                              data-testid="Input__smartbridge"
-                              name="smartbridge"
+                              data-testid="Input__memo"
+                              name="memo"
                               placeholder=" "
                               type="text"
                               value=""
@@ -4651,9 +4651,9 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                         <label
                           class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
-                          for="smartbridge"
+                          for="memo"
                         >
-                          Smartbridge
+                          Memo
                           <span
                             class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                             data-testid="FormLabel__optional"
@@ -4674,8 +4674,8 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                           >
                             <input
                               class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                              data-testid="Input__smartbridge"
-                              name="smartbridge"
+                              data-testid="Input__memo"
+                              name="memo"
                               placeholder=" "
                               type="text"
                               value=""
@@ -4861,7 +4861,7 @@ exports[`SendTransfer should render form step 1`] = `
           class="mb-0 text-3xl"
           data-testid="header__title"
         >
-          Send 
+          Send
         </h1>
         <div
           class="text-theme-secondary-text"
@@ -5274,9 +5274,9 @@ exports[`SendTransfer should render form step 1`] = `
         <label
           class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
-          for="smartbridge"
+          for="memo"
         >
-          Smartbridge
+          Memo
           <span
             class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
             data-testid="FormLabel__optional"
@@ -5297,8 +5297,8 @@ exports[`SendTransfer should render form step 1`] = `
           >
             <input
               class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-              data-testid="Input__smartbridge"
-              name="smartbridge"
+              data-testid="Input__memo"
+              name="memo"
               placeholder=" "
               type="text"
               value=""
@@ -5387,7 +5387,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
           class="mb-0 text-3xl"
           data-testid="header__title"
         >
-          Send 
+          Send
         </h1>
         <div
           class="text-theme-secondary-text"
@@ -5800,9 +5800,9 @@ exports[`SendTransfer should render form step with deeplink values and use them 
         <label
           class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
-          for="smartbridge"
+          for="memo"
         >
-          Smartbridge
+          Memo
           <span
             class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
             data-testid="FormLabel__optional"
@@ -5823,8 +5823,8 @@ exports[`SendTransfer should render form step with deeplink values and use them 
           >
             <input
               class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-              data-testid="Input__smartbridge"
-              name="smartbridge"
+              data-testid="Input__memo"
+              name="memo"
               placeholder=" "
               type="text"
               value=""
@@ -5913,7 +5913,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
           class="mb-0 text-3xl"
           data-testid="header__title"
         >
-          Send 
+          Send
         </h1>
         <div
           class="text-theme-secondary-text"
@@ -6326,9 +6326,9 @@ exports[`SendTransfer should render form step without test networks 1`] = `
         <label
           class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
-          for="smartbridge"
+          for="memo"
         >
-          Smartbridge
+          Memo
           <span
             class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
             data-testid="FormLabel__optional"
@@ -6349,8 +6349,8 @@ exports[`SendTransfer should render form step without test networks 1`] = `
           >
             <input
               class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-              data-testid="Input__smartbridge"
-              name="smartbridge"
+              data-testid="Input__memo"
+              name="memo"
               placeholder=" "
               type="text"
               value=""
@@ -7200,7 +7200,7 @@ exports[`SendTransfer should render review step 1`] = `
         <div
           class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
         >
-          Smartbridge
+          Memo
         </div>
         <div
           class="font-semibold"
@@ -7208,7 +7208,7 @@ exports[`SendTransfer should render review step 1`] = `
           <p
             class="break-all"
           >
-            test smartbridge
+            test memo
           </p>
         </div>
       </div>
@@ -7221,7 +7221,7 @@ exports[`SendTransfer should render review step 1`] = `
           width="18"
         >
           <svg>
-            smartbridge.svg
+            memo.svg
           </svg>
         </div>
       </div>
@@ -8000,7 +8000,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                   placeholder="Enter a cryptoasset name"
                                   value="ARK Devnet"
                                 />
-                                
+
                               </div>
                             </div>
                           </div>
@@ -8250,7 +8250,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                       <div
                                         class="fixed invisible w-auto whitespace-nowrap"
                                       >
-                                        
+
                                         …
                                       </div>
                                       <div
@@ -8286,7 +8286,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                           <div
                                             class="fixed invisible w-auto whitespace-nowrap"
                                           >
-                                            
+
                                             …
                                           </div>
                                           <div
@@ -8369,7 +8369,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                       <div
                                         class="fixed invisible w-auto whitespace-nowrap"
                                       >
-                                        
+
                                         …
                                       </div>
                                       <div
@@ -8397,7 +8397,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                               class="text-sm font-semibold whitespace-no-break text-theme-secondary-500 dark:text-theme-secondary-700"
                                             >
                                               Max
-                                               
+
                                               57.60679402
                                             </span>
                                           </div>
@@ -8428,9 +8428,9 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                         <label
                           class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
-                          for="smartbridge"
+                          for="memo"
                         >
-                          Smartbridge
+                          Memo
                           <span
                             class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                             data-testid="FormLabel__optional"
@@ -8451,8 +8451,8 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                           >
                             <input
                               class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                              data-testid="Input__smartbridge"
-                              name="smartbridge"
+                              data-testid="Input__memo"
+                              name="memo"
                               placeholder=" "
                               type="text"
                               value=""

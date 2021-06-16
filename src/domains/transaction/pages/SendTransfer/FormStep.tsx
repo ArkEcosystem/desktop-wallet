@@ -26,7 +26,7 @@ export const FormStep = ({
 }) => {
 	const { t } = useTranslation();
 	const { getValues, setValue, watch } = useFormContext();
-	const { recipients, smartbridge } = getValues();
+	const { recipients, memo } = getValues();
 	const { network, senderAddress } = watch();
 
 	const senderWallet = profile.wallets().findByAddress(senderAddress);
@@ -77,16 +77,16 @@ export const FormStep = ({
 						/>
 					</div>
 
-					<FormField name="smartbridge" className="relative">
-						<FormLabel label="Smartbridge" optional />
+					<FormField name="memo" className="relative">
+						<FormLabel label="Memo" optional />
 						<InputCounter
-							data-testid="Input__smartbridge"
+							data-testid="Input__memo"
 							type="text"
 							placeholder=" "
 							maxLengthLabel="255"
-							defaultValue={smartbridge}
+							defaultValue={memo}
 							onChange={(event: ChangeEvent<HTMLInputElement>) =>
-								setValue("smartbridge", event.target.value, { shouldDirty: true, shouldValidate: true })
+								setValue("memo", event.target.value, { shouldDirty: true, shouldValidate: true })
 							}
 						/>
 					</FormField>

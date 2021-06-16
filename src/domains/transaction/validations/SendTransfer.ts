@@ -10,7 +10,7 @@ export const sendTransfer = (t: any) => ({
 			field: t("COMMON.SENDER_ADDRESS"),
 		}),
 	}),
-	smartbridge: () => ({
+	memo: () => ({
 		maxLength: {
 			value: 255,
 			message: t("COMMON.VALIDATION.MAX_LENGTH", {

@@ -52,8 +52,8 @@ test("should send transfer successfully", async (t) => {
 	// Amount
 	await t.click(Selector("[data-testid=AddRecipient__send-all]"));
 
-	// Type smartbridge & go to step 2
-	await t.typeText(Selector("[data-testid=Input__smartbridge]"), "test smartbridge");
+	// Type memo & go to step 2
+	await t.typeText(Selector("[data-testid=Input__memo]"), "test memo");
 	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
 	await t.expect(Selector("h1").withText(translations.TRANSACTION.REVIEW_STEP.TITLE).exists).ok();
 
@@ -87,8 +87,8 @@ test("should show an error if wrong mnemonic", async (t) => {
 	// Amount
 	await t.click(Selector("[data-testid=AddRecipient__send-all]"));
 
-	// Type smartbridge & go to step 2
-	await t.typeText(Selector("[data-testid=Input__smartbridge]"), "test smartbridge");
+	// Type memo & go to step 2
+	await t.typeText(Selector("[data-testid=Input__memo]"), "test memo");
 	await t.expect(Selector("button").withText(translations.COMMON.CONTINUE).hasAttribute("disabled")).notOk();
 	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
 	await t.expect(Selector("h1").withText(translations.TRANSACTION.REVIEW_STEP.TITLE).exists).ok();

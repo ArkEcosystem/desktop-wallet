@@ -93,7 +93,7 @@ import { ReactComponent as Settings } from "./settings.svg";
 import { ReactComponent as SettingsHorizontal } from "./settings-horizontal.svg";
 import { ReactComponent as SignatureStatusOk } from "./signature-status-ok.svg";
 import { ReactComponent as SignatureStatusPending } from "./signature-status-pending.svg";
-import { ReactComponent as Smartbridge } from "./smartbridge.svg";
+import { ReactComponent as Memo } from "./memo.svg";
 import { ReactComponent as Sort } from "./sort.svg";
 import { ReactComponent as Star } from "./star.svg";
 import { ReactComponent as StarOutline } from "./star-outline.svg";
@@ -207,7 +207,7 @@ export const SvgCollection: any = {
 	SettingsHorizontal,
 	SignatureStatusOk,
 	SignatureStatusPending,
-	Smartbridge,
+	Memo,
 	Sort,
 	Star,
 	StarOutline,

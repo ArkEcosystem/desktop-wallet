@@ -206,7 +206,7 @@ describe("SendTransfer", () => {
 						},
 					],
 					senderAddress: wallet.address(),
-					smartbridge: "test smartbridge",
+					memo: "test memo",
 				},
 			}),
 		);
@@ -220,7 +220,7 @@ describe("SendTransfer", () => {
 		expect(getByTestId("SendTransfer__review-step")).toBeTruthy();
 		expect(container).toHaveTextContent(wallet.network().name());
 		expect(container).toHaveTextContent("D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD");
-		expect(container).toHaveTextContent("test smartbridge");
+		expect(container).toHaveTextContent("test memo");
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -650,11 +650,11 @@ describe("SendTransfer", () => {
 		});
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
 
-		// Smartbridge
+		// Memo
 		act(() => {
-			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
+			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		});
-		await waitFor(() => expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge"));
+		await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 		// Fee
 		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
@@ -791,11 +791,11 @@ describe("SendTransfer", () => {
 		});
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
 
-		// Smartbridge
+		// Memo
 		act(() => {
-			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
+			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		});
-		await waitFor(() => expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge"));
+		await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 		// Fee
 		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
@@ -914,11 +914,11 @@ describe("SendTransfer", () => {
 		});
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
 
-		// Smartbridge
+		// Memo
 		act(() => {
-			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
+			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		});
-		await waitFor(() => expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge"));
+		await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 		// Fee
 		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
@@ -1167,11 +1167,11 @@ describe("SendTransfer", () => {
 		});
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).not.toHaveValue("0"), { timeout: 4000 });
 
-		// Smartbridge
+		// Memo
 		act(() => {
-			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
+			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		});
-		expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge");
+		expect(getByTestId("Input__memo")).toHaveValue("test memo");
 
 		// Fee
 		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
@@ -1245,11 +1245,11 @@ describe("SendTransfer", () => {
 		});
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
 
-		// Smartbridge
+		// Memo
 		act(() => {
-			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
+			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		});
-		await waitFor(() => expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge"));
+		await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 		// Fee
 		act(() => {
@@ -1335,11 +1335,11 @@ describe("SendTransfer", () => {
 			});
 			await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
 
-			// Smartbridge
+			// Memo
 			act(() => {
-				fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
+				fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 			});
-			await waitFor(() => expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge"));
+			await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 			// Fee
 			act(() => {
@@ -1428,11 +1428,11 @@ describe("SendTransfer", () => {
 		});
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
 
-		// Smartbridge
+		// Memo
 		act(() => {
-			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
+			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		});
-		await waitFor(() => expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge"));
+		await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 		// Fee
 		act(() => {
@@ -1548,11 +1548,11 @@ describe("SendTransfer", () => {
 		});
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).not.toHaveValue("0"), { timeout: 4000 });
 
-		// Smartbridge
+		// Memo
 		act(() => {
-			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
+			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		});
-		expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge");
+		expect(getByTestId("Input__memo")).toHaveValue("test memo");
 
 		// Fee
 		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
@@ -1644,11 +1644,11 @@ describe("SendTransfer", () => {
 		});
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).not.toHaveValue("0"), { timeout: 4000 });
 
-		// Smartbridge
+		// Memo
 		act(() => {
-			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
+			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		});
-		expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge");
+		expect(getByTestId("Input__memo")).toHaveValue("test memo");
 
 		// Fee
 		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
@@ -1782,11 +1782,11 @@ describe("SendTransfer", () => {
 		});
 		await waitFor(() => expect(getAllByTestId("recipient-list__recipient-list-item").length).toEqual(2));
 
-		// Smartbridge
+		// Memo
 		act(() => {
-			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
+			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		});
-		expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge");
+		expect(getByTestId("Input__memo")).toHaveValue("test memo");
 
 		// Fee
 		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
@@ -1981,11 +1981,11 @@ describe("SendTransfer", () => {
 		});
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
 
-		// Smartbridge
+		// Memo
 		act(() => {
-			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
+			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		});
-		await waitFor(() => expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge"));
+		await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 		// Fee
 		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
@@ -2272,11 +2272,11 @@ describe("SendTransfer", () => {
 		});
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
 
-		// Smartbridge
+		// Memo
 		act(() => {
-			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
+			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		});
-		await waitFor(() => expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge"));
+		await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 		// Fee
 		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));

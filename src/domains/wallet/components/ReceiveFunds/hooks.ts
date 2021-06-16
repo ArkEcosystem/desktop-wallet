@@ -6,12 +6,12 @@ interface QRCodeProps {
 	network: string;
 	coin: string;
 	amount: string;
-	smartbridge: string;
+	memo: string;
 	address: string;
 	method?: string;
 }
 
-export const useQRCode = ({ network, amount, address, smartbridge, coin, method }: QRCodeProps) => {
+export const useQRCode = ({ network, amount, address, memo, coin, method }: QRCodeProps) => {
 	const [qrCodeData, setQrCodeData] = useState<{ uri?: string; image?: string }>({
 		uri: undefined,
 		image: undefined,
@@ -20,7 +20,7 @@ export const useQRCode = ({ network, amount, address, smartbridge, coin, method 
 	const maxLength = 255;
 
 	const formatQR = useCallback(
-		({ amount, address, smartbridge, coin, network, method = "transfer" }: QRCodeProps) => {
+		({ amount, address, memo, coin, network, method = "transfer" }: QRCodeProps) => {
 			const uri = new URI();
 
 			return uri.serialize({
@@ -29,7 +29,7 @@ export const useQRCode = ({ network, amount, address, smartbridge, coin, method 
 				network,
 				recipient: address,
 				...(amount && { amount }),
-				...(smartbridge && { memo: smartbridge?.slice(0, maxLength) }),
+				...(memo && { memo: memo?.slice(0, maxLength) }),
 			});
 		},
 		[],
@@ -48,7 +48,7 @@ export const useQRCode = ({ network, amount, address, smartbridge, coin, method 
 
 		const generateQrCode = async () => {
 			const qrCodeDataUri = address
-				? formatQR({ network, amount, address, smartbridge, coin, method })
+				? formatQR({ network, amount, address, memo, coin, method })
 				: undefined;
 
 			let qrCodeDataImage: string | undefined;
@@ -66,7 +66,7 @@ export const useQRCode = ({ network, amount, address, smartbridge, coin, method 
 		};
 
 		generateQrCode();
-	}, [amount, smartbridge, network, address, formatQR, coin, method]);
+	}, [amount, memo, network, address, formatQR, coin, method]);
 
 	return qrCodeData;
 };

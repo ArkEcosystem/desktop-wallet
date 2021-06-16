@@ -27,11 +27,11 @@ const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: Receive
 
 	const { t } = useTranslation();
 	const form = useForm({ mode: "onChange" });
-	const { amount, smartbridge } = form.watch();
+	const { amount, memo } = form.watch();
 
 	const { uri, image } = useQRCode({
 		amount,
-		smartbridge,
+		memo,
 		network: network.id(),
 		coin: network.coin(),
 		address,
