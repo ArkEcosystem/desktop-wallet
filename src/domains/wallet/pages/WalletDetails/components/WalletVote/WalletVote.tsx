@@ -116,7 +116,7 @@ export const WalletVote = ({ wallet, onButtonClick, env, profile }: WalletVotePr
 				<Circle
 					size="lg"
 					className="border-theme-secondary-900 text-theme-secondary-900 dark:border-theme-secondary-700 dark:text-theme-secondary-700"
-					shadowClassName="ring-theme-secondary-background"
+					shadowClassName="ring-theme-background dark:ring-theme-secondary-background"
 				>
 					<Icon name="Vote" width={17} height={17} />
 				</Circle>
@@ -179,7 +179,7 @@ export const WalletVote = ({ wallet, onButtonClick, env, profile }: WalletVotePr
 					<Circle
 						size="lg"
 						className="border-theme-secondary-500 text-theme-secondary-500 dark:border-theme-secondary-700 dark:text-theme-secondary-700"
-						shadowClassName="ring-theme-secondary-background"
+						shadowClassName="ring-theme-background dark:ring-theme-secondary-background"
 					>
 						<Icon name="Vote" width={17} height={17} />
 					</Circle>

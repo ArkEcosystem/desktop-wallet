@@ -93,7 +93,7 @@ export const News = ({ itemsPerPage }: Props) => {
 
 	return (
 		<Page profile={activeProfile} isBackDisabled={true}>
-			<Section backgroundColor="--theme-background-color">
+			<Section backgroundClassName="bg-theme-background">
 				<Header
 					title={t("NEWS.PAGE_NEWS.TITLE")}
 					subtitle={
@@ -107,7 +107,7 @@ export const News = ({ itemsPerPage }: Props) => {
 				/>
 			</Section>
 
-			<Section className="flex-1" backgroundColor="--theme-secondary-background-color">
+			<Section className="flex-1" backgroundClassName="bg-theme-secondary-background">
 				<div className="container flex space-x-5 xl:space-x-8">
 					<div className="flex-none w-2/3">
 						{isLoading && (

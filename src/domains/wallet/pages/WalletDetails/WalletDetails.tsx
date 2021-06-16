@@ -70,7 +70,7 @@ export const WalletDetails = () => {
 					className={cn({
 						"border-b border-transparent dark:border-theme-secondary-800": !networkAllowsVoting,
 					})}
-					backgroundColor="--theme-color-secondary-900"
+					backgroundClassName="bg-theme-secondary-900"
 				>
 					<WalletHeader
 						profile={activeProfile}
@@ -84,7 +84,12 @@ export const WalletDetails = () => {
 				</Section>
 
 				{networkAllowsVoting && (
-					<Section backgroundColor="--theme-secondary-background-color" innerClassName="-my-2">
+					<Section
+						borderClassName="border-theme-secondary-300 dark:border-transparent"
+						backgroundClassName="bg-theme-background dark:bg-theme-secondary-background"
+						innerClassName="-my-2"
+						border
+					>
 						<WalletVote
 							env={env}
 							wallet={activeWallet}

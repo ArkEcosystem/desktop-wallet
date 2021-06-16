@@ -10,8 +10,8 @@ describe("Section", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render with custom background color", () => {
-		const { container, asFragment } = render(<Section backgroundColor="--theme-secondary-background-color" />);
+	it("should render with custom background class name", () => {
+		const { container, asFragment } = render(<Section backgroundClassName="bg-theme-secondary-background" />);
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
