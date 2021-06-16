@@ -41,10 +41,10 @@ const transactionNotificationExists = (
 		.some((n) => n.type === "transaction" && n?.meta?.transactionId === transaction.id());
 
 const formatTransactionNotification = (transaction: Contracts.TransactionDataType) => ({
-	icon: "",
-	body: "",
-	name: "",
-	action: "",
+	icon: undefined,
+	body: undefined,
+	name: undefined,
+	action: undefined,
 	type: "transaction",
 	meta: {
 		timestamp: transaction.timestamp()?.toUNIX(),
@@ -56,9 +56,9 @@ const formatTransactionNotification = (transaction: Contracts.TransactionDataTyp
 const formatNotification = (input: any) =>
 	Object.assign(
 		{
-			icon: "",
-			body: "",
-			name: "",
+			icon: undefined,
+			body: undefined,
+			name: undefined,
 			action: "update",
 			type: "wallet",
 			meta: {},
@@ -161,7 +161,6 @@ export const useNotifications = () => {
 			notifications: {
 				notifyReceivedTransactions,
 				syncReceivedTransactions,
-				formatNotification,
 				sortTransactionNotificationsDesc,
 				notifyWalletUpdate: notifyWalletUpdate(env, t),
 				deleteNotificationsByVersion: deleteNotificationsByVersion(env),
