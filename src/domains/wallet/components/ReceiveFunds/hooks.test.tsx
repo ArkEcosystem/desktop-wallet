@@ -34,7 +34,7 @@ describe("useQRCode hook", () => {
 		await act(async () => {
 			await waitFor(() =>
 				expect(hook.result.current.uri).toBe(
-					"ark:transfer?coin=ARK&network=ark&recipient=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD&amount=10&vendorField=test",
+					"ark:transfer?coin=ARK&network=ark&recipient=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD&amount=10&memo=test",
 				),
 			);
 
@@ -63,7 +63,7 @@ describe("useQRCode hook", () => {
 		await act(async () => {
 			await waitFor(() =>
 				expect(hook.result.current.uri).toBe(
-					"ark:transfer?coin=ARK&network=ark&recipient=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD&amount=10&vendorField=test",
+					"ark:transfer?coin=ARK&network=ark&recipient=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD&amount=10&memo=test",
 				),
 			);
 
