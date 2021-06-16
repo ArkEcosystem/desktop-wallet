@@ -1,19 +1,14 @@
 import { Amount } from "app/components/Amount";
 import { ButtonGroup, ButtonGroupOption } from "app/components/ButtonGroup";
+import { InputRange } from "app/components/Input";
 import { Skeleton } from "app/components/Skeleton";
 import React from "react";
 
-import { InputFeeSimpleOptions, InputFeeSimpleValue } from "./InputFee.utils";
+import { InputFeeAdvancedProps, InputFeeSimpleProps, InputFeeSimpleValue } from "./InputFee.contracts";
 
-interface Props {
-	options: InputFeeSimpleOptions;
-	onChange: (value: InputFeeSimpleValue) => void;
-	value: InputFeeSimpleValue;
-	ticker: string;
-	exchangeTicker: string;
-	showConvertedValues: boolean;
-	loading?: boolean;
-}
+export const InputFeeAdvanced = ({ onChange, value, min, max, step, disabled }: InputFeeAdvancedProps) => (
+	<InputRange disabled={disabled} value={value} min={+min} max={+max} step={step} onChange={onChange} />
+);
 
 export const InputFeeSimple = ({
 	options,
@@ -23,7 +18,7 @@ export const InputFeeSimple = ({
 	exchangeTicker,
 	showConvertedValues,
 	loading,
-}: Props) => (
+}: InputFeeSimpleProps) => (
 	<ButtonGroup>
 		{Object.entries(options).map(([optionValue, { label, displayValue, displayValueConverted }]) => (
 			<ButtonGroupOption

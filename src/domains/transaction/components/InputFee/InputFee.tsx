@@ -1,33 +1,19 @@
-import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import { isNil } from "@arkecosystem/utils";
 import { Switch } from "app/components/Switch";
 import { useExchangeRate } from "app/hooks/use-exchange-rate";
-import React, { memo, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { InputFeeSimpleOptions, InputFeeSimpleValue, InputFeeViewType } from "./InputFee.utils";
-import { InputFeeAdvanced } from "./InputFeeAdvanced";
-import { InputFeeSimple } from "./InputFeeSimple";
-
-interface InputFeeProps {
-	min: string;
-	avg: string;
-	max: string;
-	step: number;
-	disabled?: boolean;
-	network?: Networks.Network;
-	profile?: Contracts.IProfile;
-	loading?: boolean;
-	viewType?: InputFeeViewType;
-	simpleValue?: InputFeeSimpleValue;
-	value: string;
-	onChange: (value: string) => void;
-	onChangeViewType: (value: InputFeeViewType) => void;
-	onChangeSimpleValue: (value: InputFeeSimpleValue) => void;
-}
-
-const DEFAULT_VIEW_TYPE = InputFeeViewType.Simple;
-const DEFAULT_SIMPLE_VALUE = InputFeeSimpleValue.Average;
+import { InputFeeAdvanced, InputFeeSimple } from "./InputFee.blocks";
+import {
+	DEFAULT_SIMPLE_VALUE,
+	DEFAULT_VIEW_TYPE,
+	InputFeeProps,
+	InputFeeSimpleOptions,
+	InputFeeSimpleValue,
+	InputFeeViewType,
+} from "./InputFee.contracts";
 
 export const InputFee = memo(
 	({ min, avg, max, step, disabled, network, profile, loading, onChange, value, ...props }: InputFeeProps) => {
@@ -35,7 +21,17 @@ export const InputFee = memo(
 
 		const viewType = props.viewType ?? DEFAULT_VIEW_TYPE;
 		const simpleValue = props.simpleValue ?? DEFAULT_SIMPLE_VALUE;
-		const [advancedValue, setAdvancedValue] = useState<string>(value || avg);
+		const [advancedValue, setAdvancedValue] = useState<string>(value);
+
+		useEffect(() => {
+			const setDefaultAdvancedValue = () => {
+				if (avg && isNil(advancedValue)) {
+					setAdvancedValue(avg);
+				}
+			};
+
+			setDefaultAdvancedValue();
+		}, [avg, advancedValue]);
 
 		const ticker = network?.ticker();
 		const exchangeTicker = profile?.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency);

@@ -1,15 +1,15 @@
 import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { screen } from "@testing-library/react";
+import { translations } from "domains/transaction/i18n";
 import { describe } from "jest-circus";
 import React, { useState } from "react";
 import { act, env, fireEvent, render } from "utils/testing-library";
 
-import { translations as transactionTranslations } from "../../i18n";
 import { InputFee } from "./InputFee";
-import { InputFeeSimpleValue, InputFeeViewType } from "./InputFee.utils";
+import { InputFeeProps, InputFeeSimpleValue, InputFeeViewType } from "./InputFee.contracts";
 
-let defaultProps: any = {
+const getDefaultProps = () => ({
 	min: "0.006",
 	max: "0.5",
 	avg: "0.456",
@@ -21,8 +21,9 @@ let defaultProps: any = {
 	onChange: jest.fn(),
 	onChangeViewType: jest.fn(),
 	onChangeSimpleValue: jest.fn(),
-};
+});
 
+let defaultProps: InputFeeProps;
 let network: Networks.Network;
 let profile: Contracts.IProfile;
 let Wrapper: React.FC;
@@ -33,7 +34,7 @@ describe("InputFee", () => {
 		network = profile.wallets().first().network();
 
 		defaultProps = {
-			...defaultProps,
+			...getDefaultProps(),
 			network,
 			profile,
 		};
@@ -86,7 +87,7 @@ describe("InputFee", () => {
 
 		// go to advanced mode and check value changes
 		act(() => {
-			fireEvent.click(screen.getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
+			fireEvent.click(screen.getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
 		});
 
 		expect(defaultProps.onChangeViewType).toBeCalledWith(InputFeeViewType.Advanced);
@@ -98,7 +99,7 @@ describe("InputFee", () => {
 
 		// go to simple mode
 		act(() => {
-			fireEvent.click(screen.getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.SIMPLE));
+			fireEvent.click(screen.getByText(translations.INPUT_FEE_VIEW_TYPE.SIMPLE));
 		});
 
 		expect(defaultProps.onChangeViewType).toBeCalledWith(InputFeeViewType.Simple);
@@ -110,7 +111,7 @@ describe("InputFee", () => {
 
 		// go back to advanced mode and repeat checks
 		act(() => {
-			fireEvent.click(screen.getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
+			fireEvent.click(screen.getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
 		});
 
 		expect(defaultProps.onChangeViewType).toBeCalledWith(InputFeeViewType.Advanced);
@@ -119,14 +120,14 @@ describe("InputFee", () => {
 
 	describe("simple view type", () => {
 		it.each([
-			[transactionTranslations.FEES.SLOW, defaultProps.min],
-			[transactionTranslations.FEES.AVERAGE, defaultProps.avg],
-			[transactionTranslations.FEES.FAST, defaultProps.max],
+			[translations.FEES.SLOW, getDefaultProps().min],
+			[translations.FEES.AVERAGE, getDefaultProps().avg],
+			[translations.FEES.FAST, getDefaultProps().max],
 		])("should update value when clicking button %s", (optionText, optionValue) => {
-			const { asFragment, getByText } = render(<Wrapper />);
+			const { asFragment } = render(<Wrapper />);
 
 			act(() => {
-				fireEvent.click(getByText(optionText));
+				fireEvent.click(screen.getByText(optionText));
 			});
 
 			expect(defaultProps.onChange).toHaveBeenCalledWith(optionValue);
@@ -146,9 +147,9 @@ describe("InputFee", () => {
 	describe("advanced view type", () => {
 		it("should allow to input a value", () => {
 			defaultProps.viewType = InputFeeViewType.Advanced;
-			const { asFragment, getByTestId } = render(<Wrapper />);
+			const { asFragment } = render(<Wrapper />);
 
-			const inputEl = getByTestId("InputCurrency");
+			const inputEl = screen.getByTestId("InputCurrency");
 
 			act(() => {
 				fireEvent.input(inputEl, { target: { value: "0.447" } });
@@ -157,6 +158,18 @@ describe("InputFee", () => {
 			expect(defaultProps.onChange).toHaveBeenCalledWith("0.447");
 			expect(inputEl).toHaveValue("0.447");
 			expect(asFragment()).toMatchSnapshot();
+		});
+
+		it("should use avg as the default value", () => {
+			defaultProps.viewType = InputFeeViewType.Advanced;
+			defaultProps.avg = "0.1234";
+
+			// @ts-ignore
+			defaultProps.value = undefined;
+
+			render(<InputFee {...defaultProps} />);
+
+			expect(screen.getByTestId("InputCurrency")).toHaveValue("0.1234");
 		});
 	});
 });

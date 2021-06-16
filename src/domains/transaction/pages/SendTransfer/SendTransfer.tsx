@@ -76,7 +76,6 @@ export const SendTransfer = () => {
 	const form = useForm<any>({
 		mode: "onChange",
 		defaultValues: {
-			fee: 0,
 			amount: 0,
 			remainingBalance: wallet?.balance?.(),
 			recipients: [],
