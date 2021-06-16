@@ -38,7 +38,7 @@ export const ReceiveFundsForm = ({ network }: { network?: Networks.Network }) =>
 
 				{isMemoUsedInNetwork && (
 					<FormField name="memo">
-						<FormLabel label={t("COMMON.SMARTBRIDGE")} optional />
+						<FormLabel label={t("COMMON.MEMO")} optional />
 						<InputCounter
 							ref={register(receiveFunds.memo())}
 							data-testid="ReceiveFundsForm__memo"

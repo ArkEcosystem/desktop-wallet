@@ -14,7 +14,7 @@ export const sendTransfer = (t: any) => ({
 		maxLength: {
 			value: 255,
 			message: t("COMMON.VALIDATION.MAX_LENGTH", {
-				field: t("COMMON.SMARTBRIDGE"),
+				field: t("COMMON.MEMO"),
 				maxLength: 255,
 			}),
 		},

@@ -13,7 +13,7 @@ export const TransactionMemo = ({ memo }: TransactionMemoProps) => {
 
 	return (
 		<TransactionDetail
-			label={t("TRANSACTION.SMARTBRIDGE")}
+			label={t("TRANSACTION.MEMO")}
 			extra={
 				<div className="flex justify-center w-11 text-theme-secondary-900 dark:text-theme-secondary-600">
 					<Icon name="Memo" width={18} height={22} />
