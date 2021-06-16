@@ -161,7 +161,6 @@ export const useNotifications = () => {
 			notifications: {
 				notifyReceivedTransactions,
 				syncReceivedTransactions,
-				formatNotification,
 				sortTransactionNotificationsDesc,
 				notifyWalletUpdate: notifyWalletUpdate(env, t),
 				deleteNotificationsByVersion: deleteNotificationsByVersion(env),
