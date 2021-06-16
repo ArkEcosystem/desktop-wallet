@@ -34,6 +34,7 @@ export const FormStep = ({
 
 	const [defaultFee] = useState(() => watch("fee"));
 	const fee = getValues("fee") || defaultFee;
+	const inputFeeSettings = watch("inputFeeSettings") ?? {};
 
 	const { findByType } = useFees(profile);
 
@@ -79,13 +80,32 @@ export const FormStep = ({
 			<FormField name="fee">
 				<FormLabel>{t("TRANSACTION.TRANSACTION_FEE")}</FormLabel>
 				<InputFee
-					min={fees.min}
-					avg={fees.avg}
-					max={fees.max}
+					min={fees?.min}
+					avg={fees?.avg}
+					max={fees?.max}
+					loading={!fees}
 					value={fee}
 					step={0.01}
-					showFeeOptions={senderWallet.network().feeType() === "dynamic"}
+					disabled={senderWallet.network().feeType() !== "dynamic"}
 					onChange={(value) => setValue("fee", value, { shouldValidate: true, shouldDirty: true })}
+					network={senderWallet.network()}
+					profile={profile}
+					viewType={inputFeeSettings.viewType}
+					onChangeViewType={(viewType) => {
+						setValue(
+							"inputFeeSettings",
+							{ ...inputFeeSettings, viewType },
+							{ shouldValidate: true, shouldDirty: true },
+						);
+					}}
+					simpleValue={inputFeeSettings.simpleValue}
+					onChangeSimpleValue={(simpleValue) => {
+						setValue(
+							"inputFeeSettings",
+							{ ...inputFeeSettings, simpleValue },
+							{ shouldValidate: true, shouldDirty: true },
+						);
+					}}
 				/>
 			</FormField>
 		</section>

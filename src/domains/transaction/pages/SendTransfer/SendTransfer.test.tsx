@@ -2,6 +2,7 @@
 import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { screen } from "@testing-library/react";
 import { act as hookAct, renderHook } from "@testing-library/react-hooks";
 import { LedgerProvider } from "app/contexts";
 import { translations as transactionTranslations } from "domains/transaction/i18n";
@@ -28,8 +29,11 @@ import {
 	within,
 } from "utils/testing-library";
 
-import { FormStep, ReviewStep, SendTransfer, SummaryStep } from ".";
+import { FormStep } from "./FormStep";
 import { NetworkStep } from "./NetworkStep";
+import { ReviewStep } from "./ReviewStep";
+import { SendTransfer } from "./SendTransfer";
+import { SummaryStep } from "./SummaryStep";
 
 const passphrase = getDefaultWalletMnemonic();
 const fixtureProfileId = getDefaultProfileId();
@@ -518,27 +522,30 @@ describe("SendTransfer", () => {
 			fireEvent.click(sendAll);
 		});
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).not.toHaveValue("0"));
+		expect(screen.getByTestId("AddRecipient__send-all")).toHaveClass("active");
 		act(() => {
 			fireEvent.click(sendAll);
 		});
+		expect(screen.getByTestId("AddRecipient__send-all")).not.toHaveClass("active");
 
 		// Fee
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
 		});
-		expect(getByTestId("InputCurrency")).toHaveValue("0.00357");
+		expect(screen.getAllByRole("radio")[0]).toBeChecked();
+		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.AVERAGE));
 		});
-		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.07320598"));
+		expect(screen.getAllByRole("radio")[1]).toBeChecked();
+		expect(screen.getAllByRole("radio")[1]).toHaveTextContent("0.07320598");
 
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.FAST));
 		});
-		expect(getByTestId("InputCurrency")).toHaveValue("0.1");
+		expect(screen.getAllByRole("radio")[2]).toBeChecked();
+		expect(screen.getAllByRole("radio")[2]).toHaveTextContent("0.1");
 	});
 
 	it("should handle fee change", async () => {
@@ -575,22 +582,30 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).not.toHaveValue("0"));
 
 		// Fee
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
 		});
-		expect(getByTestId("InputCurrency")).toHaveValue("0.00357");
+		expect(screen.getAllByRole("radio")[0]).toBeChecked();
+		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.AVERAGE));
 		});
-		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.07320598"));
+		expect(screen.getAllByRole("radio")[1]).toBeChecked();
+		expect(screen.getAllByRole("radio")[1]).toHaveTextContent("0.07320598");
 
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.FAST));
 		});
-		// Fee
+		expect(screen.getAllByRole("radio")[2]).toBeChecked();
+		expect(screen.getAllByRole("radio")[2]).toHaveTextContent("0.1");
+
+		act(() => {
+			fireEvent.click(
+				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+			);
+		});
+
 		await act(async () => {
 			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "1000000000" } });
 		});
@@ -657,11 +672,11 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 		// Fee
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
 		});
-		expect(getByTestId("InputCurrency")).toHaveValue("0.00357");
+		expect(screen.getAllByRole("radio")[0]).toBeChecked();
+		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
 		// Step 2
 		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
@@ -676,6 +691,7 @@ describe("SendTransfer", () => {
 		});
 
 		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
+		expect(screen.getAllByRole("radio")[0]).toBeChecked();
 
 		// Step 2
 		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
@@ -798,11 +814,11 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 		// Fee
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
 		});
-		expect(getByTestId("InputCurrency")).toHaveValue("0.00357");
+		expect(screen.getAllByRole("radio")[0]).toBeChecked();
+		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
 		// Step 2
 		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
@@ -921,11 +937,11 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 		// Fee
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
 		});
-		expect(getByTestId("InputCurrency")).toHaveValue("0.00357");
+		expect(screen.getAllByRole("radio")[0]).toBeChecked();
+		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
 		// Step 2
 		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
@@ -1056,11 +1072,11 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).not.toHaveValue("0"), { timeout: 4000 });
 
 		// Fee
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
 		});
-		expect(getByTestId("InputCurrency")).toHaveValue("0.00357");
+		expect(screen.getAllByRole("radio")[0]).toBeChecked();
+		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
 		// Step 2
 		act(() => {
@@ -1174,11 +1190,11 @@ describe("SendTransfer", () => {
 		expect(getByTestId("Input__memo")).toHaveValue("test memo");
 
 		// Fee
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
 		});
-		expect(getByTestId("InputCurrency")).toHaveValue("0.00357");
+		expect(screen.getAllByRole("radio")[0]).toBeChecked();
+		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
 		// Step 2
 		act(() => {
@@ -1252,6 +1268,11 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 		// Fee
+		act(() => {
+			fireEvent.click(
+				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+			);
+		});
 		act(() => {
 			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "" } });
 		});
@@ -1342,6 +1363,11 @@ describe("SendTransfer", () => {
 			await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 			// Fee
+			act(() => {
+				fireEvent.click(
+					within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+				);
+			});
 			act(() => {
 				fireEvent.change(getByTestId("InputCurrency"), { target: { value: "1" } });
 			});
@@ -1435,6 +1461,11 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 		// Fee
+		act(() => {
+			fireEvent.click(
+				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+			);
+		});
 		act(() => {
 			fireEvent.change(getByTestId("InputCurrency"), { target: { value: fee } });
 		});
@@ -1555,11 +1586,11 @@ describe("SendTransfer", () => {
 		expect(getByTestId("Input__memo")).toHaveValue("test memo");
 
 		// Fee
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
 		});
-		expect(getByTestId("InputCurrency")).toHaveValue("0.00357");
+		expect(screen.getAllByRole("radio")[0]).toBeChecked();
+		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
 		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
 		act(() => {
@@ -1651,11 +1682,11 @@ describe("SendTransfer", () => {
 		expect(getByTestId("Input__memo")).toHaveValue("test memo");
 
 		// Fee
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
 		});
-		expect(getByTestId("InputCurrency")).toHaveValue("0.00357");
+		expect(screen.getAllByRole("radio")[0]).toBeChecked();
+		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
 		// Step 2
 		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
@@ -1789,11 +1820,11 @@ describe("SendTransfer", () => {
 		expect(getByTestId("Input__memo")).toHaveValue("test memo");
 
 		// Fee
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
 		});
-		expect(getByTestId("InputCurrency")).toHaveValue("0.00357");
+		expect(screen.getAllByRole("radio")[0]).toBeChecked();
+		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
 		// Step 2
 		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
@@ -1988,11 +2019,11 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 		// Fee
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
 		});
-		expect(getByTestId("InputCurrency")).toHaveValue("0.00357");
+		expect(screen.getAllByRole("radio")[0]).toBeChecked();
+		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
 		// Step 2
 		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
@@ -2159,12 +2190,13 @@ describe("SendTransfer", () => {
 		});
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
 
-		// enter fee
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+		// Fee
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
 		});
-		expect(getByTestId("InputCurrency")).toHaveValue("0.00357");
+		expect(screen.getAllByRole("radio")[0]).toBeChecked();
+		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
+
 		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
 
 		// proceed to step 2
@@ -2279,11 +2311,11 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 		// Fee
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
 		});
-		expect(getByTestId("InputCurrency")).toHaveValue("0.00357");
+		expect(screen.getAllByRole("radio")[0]).toBeChecked();
+		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
 		// Step 2
 		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
