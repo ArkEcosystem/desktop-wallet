@@ -46,7 +46,7 @@ test("should show red dot for unread notifications", async (t) => {
 	await t.expect(Selector("[data-testid=navbar__buttons--notifications] .rounded-full").exists).ok();
 });
 
-test("should mark notifications as read and hide red dot", async (t) => {
+test.skip("should mark notifications as read and hide red dot", async (t) => {
 	await t.expect(Selector("[data-testid=navbar__buttons--notifications] .rounded-full").exists).ok();
 	await t.click(Selector("[data-testid=navbar__buttons--notifications"));
 
