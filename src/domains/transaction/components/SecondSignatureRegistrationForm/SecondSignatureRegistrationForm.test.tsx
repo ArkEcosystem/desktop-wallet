@@ -3,6 +3,7 @@ import { Contracts } from "@arkecosystem/platform-sdk";
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { within } from "@testing-library/react";
 import { renderHook } from "@testing-library/react-hooks";
 import { Form } from "app/components/Form";
 import { toasts } from "app/services";
@@ -69,12 +70,14 @@ describe("SecondSignatureRegistrationForm", () => {
 		const passphrase = "mock bip39 passphrase";
 		const bip39GenerateMock = jest.spyOn(BIP39, "generate").mockReturnValue(passphrase);
 
-		const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} activeTab={1} />);
+		act(() => {
+			const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} activeTab={1} />);
+			expect(asFragment()).toMatchSnapshot();
+		});
 
 		await waitFor(() => expect(result.current.getValues("secondMnemonic")).toEqual(passphrase));
 		await waitFor(() => expect(screen.getByTestId("SecondSignatureRegistrationForm__generation-step")));
 
-		expect(asFragment()).toMatchSnapshot();
 		bip39GenerateMock.mockRestore();
 	});
 
@@ -82,14 +85,41 @@ describe("SecondSignatureRegistrationForm", () => {
 		const { result } = renderHook(() => useForm());
 
 		result.current.register("fee");
+		result.current.register("inputFeeSettings");
 
-		render(<Component form={result.current} onSubmit={() => void 0} />);
+		const { rerender } = render(<Component form={result.current} onSubmit={() => void 0} />);
+
+		// simple
+
+		expect(screen.getAllByRole("radio")[1]).toBeChecked();
 
 		act(() => {
-			fireEvent.click(screen.getByText(transactionTranslations.FEES.AVERAGE));
+			fireEvent.click(within(screen.getByTestId("InputFee")).getAllByRole("radio")[2]);
 		});
 
-		await waitFor(() => expect(result.current.getValues("fee")).toEqual("1.354"));
+		rerender(<Component form={result.current} onSubmit={() => void 0} />);
+
+		expect(screen.getAllByRole("radio")[2]).toBeChecked();
+
+		// advanced
+
+		act(() => {
+			fireEvent.click(screen.getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
+		});
+
+		rerender(<Component form={result.current} onSubmit={() => void 0} />);
+
+		expect(screen.getByTestId("InputCurrency")).toBeVisible();
+
+		act(() => {
+			fireEvent.change(screen.getByTestId("InputCurrency"), {
+				target: {
+					value: "9",
+				},
+			});
+		});
+
+		expect(screen.getByTestId("InputCurrency")).toHaveValue("9");
 	});
 
 	describe("backup step", () => {

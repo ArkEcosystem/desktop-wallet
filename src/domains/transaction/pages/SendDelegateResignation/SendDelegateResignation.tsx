@@ -18,15 +18,11 @@ import { useHistory } from "react-router-dom";
 
 import { FormStep, ReviewStep, SummaryStep } from ".";
 
-interface SendResignationProps {
-	formDefaultData?: any;
-}
-
-export const SendDelegateResignation = ({ formDefaultData }: SendResignationProps) => {
+export const SendDelegateResignation = () => {
 	const { t } = useTranslation();
 	const history = useHistory();
 
-	const form = useForm({ mode: "onChange", defaultValues: formDefaultData });
+	const form = useForm({ mode: "onChange" });
 
 	const { formState, getValues, register, setError, setValue, watch } = form;
 	const { isValid, isSubmitting } = formState;
@@ -47,6 +43,7 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 	useEffect(() => {
 		register("fees");
 		register("fee", common.fee(activeWallet?.balance?.(), activeWallet?.network?.()));
+		register("inputFeeSettings");
 
 		register("suppressWarning");
 	}, [activeWallet, common, register]);
