@@ -51,9 +51,7 @@ const MultipleImport = ({
 	const validation = useCallback(
 		(alias: string) => {
 			const values = Object.values(names);
-			const hasSameValue = values.some(
-				(name: any) => !!name && lowerCaseEquals(alias.trim(), name.trim()),
-			);
+			const hasSameValue = values.some((name: any) => !!name && lowerCaseEquals(alias.trim(), name.trim()));
 
 			if (alias && hasSameValue) {
 				return t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.ALIAS_ASSIGNED", {

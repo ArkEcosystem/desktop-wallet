@@ -7,5 +7,5 @@ export const lowerCaseEquals = (a?: string, b?: string): boolean => {
 		return false;
 	}
 
-	return a.toLowerCase() === b.toLowerCase()
+	return a.toLowerCase() === b.toLowerCase();
 };

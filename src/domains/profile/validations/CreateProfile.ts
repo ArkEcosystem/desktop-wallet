@@ -21,9 +21,7 @@ export const createProfile = (t: any, env: Environment) => ({
 					env
 						.profiles()
 						.values()
-						.some(
-							(profile: Contracts.IProfile) => lowerCaseEquals(profile.name(), name.trim()),
-						)
+						.some((profile: Contracts.IProfile) => lowerCaseEquals(profile.name(), name.trim()))
 				) {
 					return t("PROFILE.PAGE_CREATE_PROFILE.VALIDATION.NAME_EXISTS");
 				}
