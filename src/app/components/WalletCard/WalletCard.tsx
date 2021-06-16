@@ -6,8 +6,7 @@ import { DropdownOption } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { TruncateMiddleDynamic } from "app/components/TruncateMiddleDynamic";
 import { WalletIcons } from "app/components/WalletIcons";
-import { useWalletAlias } from "app/hooks";
-import { useActiveProfile } from "app/hooks";
+import { useActiveProfile, useWalletAlias } from "app/hooks";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -119,7 +118,7 @@ export const WalletCard = ({
 
 					<TruncateMiddleDynamic
 						value={wallet?.address()}
-						className="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
+						className="mt-1 text-xs font-semibold whitespace-nowrap text-theme-secondary-text no-ligatures"
 					/>
 				</div>
 			</Card>

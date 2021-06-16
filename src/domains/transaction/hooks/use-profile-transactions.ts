@@ -1,5 +1,4 @@
-import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
-import { IReadWriteWallet } from "@arkecosystem/platform-sdk-profiles/dist/contracts";
+import { Contracts, Contracts as ProfileContracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { useSynchronizer } from "app/hooks";
 import { useCallback, useEffect, useRef, useState } from "react";
 
@@ -23,7 +22,7 @@ interface FetchTransactionProps {
 	flush?: boolean;
 	mode?: string;
 	transactionType?: any;
-	wallets: IReadWriteWallet[];
+	wallets: ProfileContracts.IReadWriteWallet[];
 	cursor?: number;
 }
 
@@ -41,6 +40,7 @@ export const useProfileTransactions = ({
 	const [
 		{ transactions, activeMode, activeTransactionType, isLoadingTransactions, isLoadingMore, hasMore, timestamp },
 		setState,
+		// @ts-ignore
 	] = useState<TransactionsState>({
 		hasMore: true,
 		isLoadingMore: false,
@@ -108,6 +108,7 @@ export const useProfileTransactions = ({
 				return;
 			}
 
+			// @ts-ignore
 			setState({
 				transactions: [],
 				isLoadingTransactions: hasWallets, // Don't set isLoading when there are no wallets

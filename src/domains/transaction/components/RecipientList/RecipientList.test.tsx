@@ -4,7 +4,7 @@ import React from "react";
 import { act } from "react-dom/test-utils";
 import { fireEvent, render, screen } from "utils/testing-library";
 
-import { RecipientList } from "./";
+import { RecipientList } from ".";
 
 const recipients = [
 	{
@@ -41,7 +41,13 @@ describe("RecipientList", () => {
 
 	it("should render condensed variant", () => {
 		const { container } = render(
-			<RecipientList recipients={recipients} isEditable={true} assetSymbol="ARK" variant="condensed" />,
+			<RecipientList
+				recipients={recipients}
+				isEditable={true}
+				assetSymbol="ARK"
+				variant="condensed"
+				normalizeAmount={false}
+			/>,
 		);
 		expect(container).toMatchSnapshot();
 	});

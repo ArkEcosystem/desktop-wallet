@@ -32,7 +32,7 @@ export const SendTransactionForm = ({
 	const [availableNetworks, setAvailableNetworks] = useState<Networks.Network[]>([]);
 	const [dynamicFees, setDynamicFees] = useState(false);
 
-	const { findByType } = useFees({ profile });
+	const { findByType } = useFees(profile);
 
 	const form = useFormContext();
 	const { getValues, setValue, watch } = form;
@@ -103,7 +103,7 @@ export const SendTransactionForm = ({
 	}, [profile, networks]);
 
 	return (
-		<div className="space-y-8 SendTransactionForm">
+		<div className="space-y-5 SendTransactionForm">
 			<FormField name="network">
 				<FormLabel label={t("COMMON.CRYPTOASSET")} />
 				<SelectNetwork

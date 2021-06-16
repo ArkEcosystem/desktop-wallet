@@ -8,33 +8,32 @@ import { Icon } from "app/components/Icon";
 import { Modal } from "app/components/Modal";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
+import { ReceiveFundsForm, useQRCode } from "domains/wallet/components/ReceiveFunds";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-
-import { ReceiveFundsForm, useQRCode } from "./";
 
 interface ReceiveFundsProps {
 	address: string;
 	icon: string;
 	name?: string;
-	network?: Networks.Network;
+	network: Networks.Network;
 	isOpen: boolean;
 	onClose?: () => void;
 }
 
-export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: ReceiveFundsProps) => {
+const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: ReceiveFundsProps) => {
 	const [isFormOpen, setIsFormOpen] = useState<boolean>(false);
 
 	const { t } = useTranslation();
 	const form = useForm({ mode: "onChange" });
-	const { amount, smartbridge } = form.watch();
-	const networkId = network?.id?.();
+	const { amount, memo } = form.watch();
 
 	const { uri, image } = useQRCode({
 		amount,
-		smartbridge,
-		network: networkId,
+		memo,
+		network: network.id(),
+		coin: network.coin(),
 		address,
 	});
 
@@ -51,7 +50,7 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 					<TransactionDetail
 						borderPosition="bottom"
 						label={t("COMMON.NAME")}
-						extra={<NetworkIcon size="lg" coin={icon} network={networkId} />}
+						extra={<NetworkIcon size="lg" coin={icon} network={network.id()} />}
 					>
 						{name}
 					</TransactionDetail>
@@ -64,7 +63,7 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 					borderPosition="bottom"
 					extra={
 						<div className="-space-x-2 whitespace-nowrap">
-							{!name && <NetworkIcon size="lg" coin={icon} network={networkId} />}
+							{!name && <NetworkIcon size="lg" coin={icon} network={network.id()} />}
 							<Avatar address={address} size="lg" />
 						</div>
 					}
@@ -84,7 +83,7 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 				{!isFormOpen && (
 					<Button
 						variant="secondary"
-						className="w-full mt-8"
+						className="mt-8 w-full"
 						onClick={() => setIsFormOpen(true)}
 						data-testid="ReceiveFunds__toggle"
 					>
@@ -104,11 +103,11 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 				)}
 			</div>
 
-			<div className="w-64 h-64 mx-auto mt-8">
+			<div className="mx-auto mt-8 w-64 h-64">
 				{image && (
 					<img
 						src={image}
-						className="w-64 h-64 p-3 border rounded-lg border-theme-secondary-300 dark:border-theme-secondary-800"
+						className="p-3 w-64 h-64 rounded-lg border border-theme-secondary-300 dark:border-theme-secondary-800"
 						alt={t("COMMON.QR_CODE")}
 						data-testid="ReceiveFunds__qrcode"
 					/>
@@ -117,19 +116,19 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 
 			{isFormOpen && (
 				<>
-					<div className="max-w-sm mx-auto mt-6 text-center text-theme-secondary-600">
+					<div className="mx-auto mt-6 max-w-sm text-center text-theme-secondary-600">
 						{t("COMMON.QR_CODE_HELP_TEXT")}
 					</div>
 
 					<div
-						className="flex mt-8 overflow-hidden font-medium border rounded-lg border-theme-secondary-300 dark:border-theme-secondary-800"
+						className="flex overflow-hidden mt-8 font-medium rounded-lg border border-theme-secondary-300 dark:border-theme-secondary-800"
 						data-testid="ReceiveFundsForm__uri"
 					>
 						<div className="p-6 bg-theme-secondary-200 dark:bg-theme-secondary-800">
 							<span className="text-theme-secondary-text">{t("COMMON.QR_SHORT")}</span>
 						</div>
 
-						<div className="flex items-center justify-between w-full pl-6 pr-5 space-x-4 overflow-hidden bg-theme-secondary-100 dark:bg-theme-background">
+						<div className="flex overflow-hidden justify-between items-center pr-5 pl-6 space-x-4 w-full bg-theme-secondary-100 dark:bg-theme-background">
 							<span className="truncate">{uri}</span>
 							<span className="flex text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700">
 								<Clipboard variant="icon" data={uri || ""}>
@@ -147,3 +146,5 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 ReceiveFunds.defaultProps = {
 	isOpen: false,
 };
+
+export { ReceiveFunds };

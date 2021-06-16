@@ -15,7 +15,6 @@ type NotifyReceivedTransactionsParams = SyncReceivedTransactionsParams & { profi
 const fetchRecentProfileTransactions = async (profile: ProfileContracts.IProfile, limit: number) => {
 	const query = {
 		cursor: 1,
-		orderBy: "timestamp",
 		limit,
 		addresses: profile
 			.wallets()
@@ -92,6 +91,7 @@ const notifyReceivedTransactions: any = async ({
 	allowedTransactionTypes = ["transfer", "multiPayment"],
 }: NotifyReceivedTransactionsParams) => {
 	const allRecentTransactions = await fetchRecentProfileTransactions(profile, lookupLimit);
+	// @ts-ignore
 	const newUnseenTransactions = filterUnseenTransactions(profile, allRecentTransactions, allowedTransactionTypes);
 
 	return newUnseenTransactions.map((transaction: Contracts.TransactionDataType) =>

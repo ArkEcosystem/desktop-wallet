@@ -46,7 +46,7 @@ export const ImportWallet = () => {
 	const { importWalletByType } = useWalletImport({ profile: activeProfile });
 	const { syncAll } = useWalletSync({ profile: activeProfile, env });
 
-	const form = useForm<any>({ mode: "onChange", defaultValues: { type: "mnemonic" } });
+	const form = useForm<any>({ mode: "onChange" });
 	const { getValues, formState, register, watch } = form;
 	const { isSubmitting, isValid } = formState;
 	const { value, encryptionPassword, confirmEncryptionPassword } = watch();
@@ -70,8 +70,9 @@ export const ImportWallet = () => {
 
 			try {
 				await importWallet();
-				setActiveTab(activeTab + (getValues("type") === "mnemonic" ? 1 : 2));
+				setActiveTab(activeTab + (getValues("type").startsWith("bip") ? 1 : 2));
 			} catch (e) {
+				/* istanbul ignore next */
 				toasts.error(e.message);
 			} finally {
 				setIsImporting(false);
@@ -136,7 +137,7 @@ export const ImportWallet = () => {
 		<Page profile={activeProfile}>
 			<Section className="flex-1">
 				<Form
-					className="max-w-xl mx-auto"
+					className="mx-auto max-w-xl"
 					context={form}
 					onSubmit={handleFinish}
 					data-testid="ImportWallet__form"

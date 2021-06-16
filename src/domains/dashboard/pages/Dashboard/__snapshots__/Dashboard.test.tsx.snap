@@ -16,7 +16,7 @@ exports[`Dashboard should render 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
@@ -39,7 +39,7 @@ exports[`Dashboard should render 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-1 GOEfv"
             >
               <svg
                 width="44"
@@ -49,19 +49,19 @@ exports[`Dashboard should render 1`] = `
             </div>
           </div>
           <ul
-            class="flex ml-4 mr-auto space-x-8 h-21"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
                 aria-current="page"
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Portfolio
               </a>
@@ -70,12 +70,12 @@ exports[`Dashboard should render 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Plugins
               </a>
@@ -84,12 +84,12 @@ exports[`Dashboard should render 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Exchange
               </a>
@@ -98,12 +98,12 @@ exports[`Dashboard should render 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 News
               </a>
@@ -120,7 +120,7 @@ exports[`Dashboard should render 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL group"
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-2 gEXBfE group"
                   >
                     <button
                       class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -140,7 +140,7 @@ exports[`Dashboard should render 1`] = `
                           </svg>
                         </div>
                         <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
                         >
                           <div
                             class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -159,7 +159,7 @@ exports[`Dashboard should render 1`] = `
               class="flex items-center"
             >
               <div
-                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-2 gEXBfE"
               >
                 <button
                   class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -170,12 +170,12 @@ exports[`Dashboard should render 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -189,7 +189,7 @@ exports[`Dashboard should render 1`] = `
               class="flex items-center"
             >
               <div
-                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-2 gEXBfE"
               >
                 <button
                   class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -217,7 +217,7 @@ exports[`Dashboard should render 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -225,7 +225,7 @@ exports[`Dashboard should render 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="flex justify-end mt-1"
@@ -246,56 +246,35 @@ exports[`Dashboard should render 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative justify-center items-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -305,7 +284,7 @@ exports[`Dashboard should render 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
+        class="Section__SectionWrapper-sc-8cjvre-0 Qqquu"
       >
         <div
           class="container px-10 mx-auto"
@@ -342,7 +321,7 @@ exports[`Dashboard should render 1`] = `
                           data-testid="LayoutControls__list--icon"
                         >
                           <div
-                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
                             class="sc-bdfBwQ iyevwF"
@@ -367,7 +346,7 @@ exports[`Dashboard should render 1`] = `
                           data-testid="LayoutControls__grid--icon"
                         >
                           <div
-                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
                             class="sc-bdfBwQ iyevwF"
@@ -400,10 +379,10 @@ exports[`Dashboard should render 1`] = `
                             class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                           >
                             <div
-                              class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                              class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                             />
                             <div
-                              class="flex items-center justify-center w-5 h-5"
+                              class="flex justify-center items-center w-5 h-5"
                             >
                               <div
                                 class="sc-bdfBwQ eBdiJn"
@@ -514,7 +493,7 @@ exports[`Dashboard should render 1`] = `
               class="relative"
             >
               <div
-                class="overflow-hidden px-4.5 -mx-4.5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
+                class="overflow-hidden -mb-8 list-none px-4.5 -mx-4.5 slide-container swiper-container-initialized swiper-container-horizontal"
                 style="height: 224px;"
               >
                 <div
@@ -590,7 +569,7 @@ exports[`Dashboard should render 1`] = `
                               33.75089801 DARK
                             </span>
                             <span
-                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
+                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold whitespace-nowrap text-theme-secondary-text no-ligatures"
                             >
                               D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                             </span>
@@ -671,7 +650,7 @@ exports[`Dashboard should render 1`] = `
                               57.68 DARK
                             </span>
                             <span
-                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
+                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold whitespace-nowrap text-theme-secondary-text no-ligatures"
                             >
                               D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                             </span>
@@ -767,7 +746,7 @@ exports[`Dashboard should render 1`] = `
                               50,114.21127898 ARK
                             </span>
                             <span
-                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
+                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold whitespace-nowrap text-theme-secondary-text no-ligatures"
                             >
                               AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
                             </span>
@@ -801,7 +780,7 @@ exports[`Dashboard should render 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
+        class="Section__SectionWrapper-sc-8cjvre-0 Qqquu"
       >
         <div
           class="container px-10 mx-auto"
@@ -862,7 +841,7 @@ exports[`Dashboard should render 1`] = `
             class="mb-8"
           >
             <div
-              class="Tabs__TabList-sc-1lxyvu-1 edtiGn w-full"
+              class="Tabs__TabList-sc-1lxyvu-1 jTHOGm w-full h-15"
             >
               <button
                 aria-selected="true"
@@ -873,7 +852,7 @@ exports[`Dashboard should render 1`] = `
                 type="button"
               >
                 <div
-                  class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 <span>
                   All
@@ -888,7 +867,7 @@ exports[`Dashboard should render 1`] = `
                 type="button"
               >
                 <div
-                  class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 <span>
                   Incoming
@@ -903,7 +882,7 @@ exports[`Dashboard should render 1`] = `
                 type="button"
               >
                 <div
-                  class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 <span>
                   Outgoing
@@ -1118,10 +1097,10 @@ exports[`Dashboard should render 1`] = `
                             class="Circle__CircleWrapper-uw7h4j-0 bNDQMV ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                           >
                             <div
-                              class="sc-bdfBwQ fPrsah"
+                              class="sc-bdfBwQ iyevwF"
                               data-testid="TransactionRowMode__Received"
-                              height="1em"
-                              width="1em"
+                              height="20"
+                              width="20"
                             >
                               <svg>
                                 received.svg
@@ -1147,7 +1126,7 @@ exports[`Dashboard should render 1`] = `
                           class="w-40 xl:w-full"
                         >
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                            class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
                               class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -1282,10 +1261,10 @@ exports[`Dashboard should render 1`] = `
                             class="Circle__CircleWrapper-uw7h4j-0 bNDQMV ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                           >
                             <div
-                              class="sc-bdfBwQ fPrsah"
+                              class="sc-bdfBwQ iyevwF"
                               data-testid="TransactionRowMode__Received"
-                              height="1em"
-                              width="1em"
+                              height="20"
+                              width="20"
                             >
                               <svg>
                                 received.svg
@@ -1311,7 +1290,7 @@ exports[`Dashboard should render 1`] = `
                           class="w-40 xl:w-full"
                         >
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                            class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
                               class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -1446,10 +1425,10 @@ exports[`Dashboard should render 1`] = `
                             class="Circle__CircleWrapper-uw7h4j-0 bNDQMV ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                           >
                             <div
-                              class="sc-bdfBwQ fPrsah"
+                              class="sc-bdfBwQ iyevwF"
                               data-testid="TransactionRowMode__Received"
-                              height="1em"
-                              width="1em"
+                              height="20"
+                              width="20"
                             >
                               <svg>
                                 received.svg
@@ -1475,7 +1454,7 @@ exports[`Dashboard should render 1`] = `
                           class="w-40 xl:w-full"
                         >
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                            class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
                               class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -1610,10 +1589,10 @@ exports[`Dashboard should render 1`] = `
                             class="Circle__CircleWrapper-uw7h4j-0 bNDQMV ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                           >
                             <div
-                              class="sc-bdfBwQ fPrsah"
+                              class="sc-bdfBwQ iyevwF"
                               data-testid="TransactionRowMode__Received"
-                              height="1em"
-                              width="1em"
+                              height="20"
+                              width="20"
                             >
                               <svg>
                                 received.svg
@@ -1639,7 +1618,7 @@ exports[`Dashboard should render 1`] = `
                           class="w-40 xl:w-full"
                         >
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                            class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
                               class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -1751,7 +1730,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
@@ -1774,7 +1753,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-1 GOEfv"
             >
               <svg
                 width="44"
@@ -1784,19 +1763,19 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
             </div>
           </div>
           <ul
-            class="flex ml-4 mr-auto space-x-8 h-21"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
                 aria-current="page"
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Portfolio
               </a>
@@ -1805,12 +1784,12 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Plugins
               </a>
@@ -1819,12 +1798,12 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Exchange
               </a>
@@ -1833,12 +1812,12 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 News
               </a>
@@ -1855,7 +1834,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL group"
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-2 gEXBfE group"
                   >
                     <button
                       class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -1875,7 +1854,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                           </svg>
                         </div>
                         <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
                         >
                           <div
                             class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -1894,7 +1873,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
               class="flex items-center"
             >
               <div
-                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-2 gEXBfE"
               >
                 <button
                   class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -1905,12 +1884,12 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -1924,7 +1903,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
               class="flex items-center"
             >
               <div
-                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-2 gEXBfE"
               >
                 <button
                   class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -1952,7 +1931,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -1960,7 +1939,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -1974,56 +1953,35 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative justify-center items-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -2033,7 +1991,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
+        class="Section__SectionWrapper-sc-8cjvre-0 Qqquu"
       >
         <div
           class="container px-10 mx-auto"
@@ -2070,7 +2028,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                           data-testid="LayoutControls__list--icon"
                         >
                           <div
-                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
                             class="sc-bdfBwQ iyevwF"
@@ -2095,7 +2053,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                           data-testid="LayoutControls__grid--icon"
                         >
                           <div
-                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
                             class="sc-bdfBwQ iyevwF"
@@ -2128,10 +2086,10 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                             class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                           >
                             <div
-                              class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                              class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                             />
                             <div
-                              class="flex items-center justify-center w-5 h-5"
+                              class="flex justify-center items-center w-5 h-5"
                             >
                               <div
                                 class="sc-bdfBwQ eBdiJn"
@@ -2242,7 +2200,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
               class="relative"
             >
               <div
-                class="overflow-hidden px-4.5 -mx-4.5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
+                class="overflow-hidden -mb-8 list-none px-4.5 -mx-4.5 slide-container swiper-container-initialized swiper-container-horizontal"
                 style="height: 224px;"
               >
                 <div
@@ -2318,7 +2276,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                               33.75089801 DARK
                             </span>
                             <span
-                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
+                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold whitespace-nowrap text-theme-secondary-text no-ligatures"
                             >
                               D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                             </span>
@@ -2399,7 +2357,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                               57.68 DARK
                             </span>
                             <span
-                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
+                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold whitespace-nowrap text-theme-secondary-text no-ligatures"
                             >
                               D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                             </span>
@@ -2495,7 +2453,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                               50,114.21127898 ARK
                             </span>
                             <span
-                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
+                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold whitespace-nowrap text-theme-secondary-text no-ligatures"
                             >
                               AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
                             </span>
@@ -2529,7 +2487,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
+        class="Section__SectionWrapper-sc-8cjvre-0 Qqquu"
       >
         <div
           class="container px-10 mx-auto"
@@ -2590,7 +2548,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
             class="mb-8"
           >
             <div
-              class="Tabs__TabList-sc-1lxyvu-1 edtiGn w-full"
+              class="Tabs__TabList-sc-1lxyvu-1 jTHOGm w-full h-15"
             >
               <button
                 aria-selected="false"
@@ -2601,7 +2559,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                 type="button"
               >
                 <div
-                  class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 <span>
                   All
@@ -2616,7 +2574,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                 type="button"
               >
                 <div
-                  class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 <span>
                   Incoming
@@ -2631,7 +2589,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                 type="button"
               >
                 <div
-                  class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 <span>
                   Outgoing
@@ -4524,7 +4482,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
@@ -4547,7 +4505,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-1 GOEfv"
             >
               <svg
                 width="44"
@@ -4557,19 +4515,19 @@ exports[`Dashboard should show warning for errored networks 1`] = `
             </div>
           </div>
           <ul
-            class="flex ml-4 mr-auto space-x-8 h-21"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
                 aria-current="page"
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Portfolio
               </a>
@@ -4578,12 +4536,12 @@ exports[`Dashboard should show warning for errored networks 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Plugins
               </a>
@@ -4592,12 +4550,12 @@ exports[`Dashboard should show warning for errored networks 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Exchange
               </a>
@@ -4606,12 +4564,12 @@ exports[`Dashboard should show warning for errored networks 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 News
               </a>
@@ -4628,7 +4586,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL group"
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-2 gEXBfE group"
                   >
                     <button
                       class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -4648,7 +4606,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                           </svg>
                         </div>
                         <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
                         >
                           <div
                             class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -4667,7 +4625,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
               class="flex items-center"
             >
               <div
-                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-2 gEXBfE"
               >
                 <button
                   class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -4678,12 +4636,12 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -4697,7 +4655,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
               class="flex items-center"
             >
               <div
-                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-2 gEXBfE"
               >
                 <button
                   class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -4725,7 +4683,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -4733,7 +4691,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -4747,56 +4705,35 @@ exports[`Dashboard should show warning for errored networks 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative justify-center items-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -4806,7 +4743,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
+        class="Section__SectionWrapper-sc-8cjvre-0 Qqquu"
       >
         <div
           class="container px-10 mx-auto"
@@ -4843,7 +4780,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                           data-testid="LayoutControls__list--icon"
                         >
                           <div
-                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
                             class="sc-bdfBwQ iyevwF"
@@ -4868,7 +4805,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                           data-testid="LayoutControls__grid--icon"
                         >
                           <div
-                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
                             class="sc-bdfBwQ iyevwF"
@@ -4901,10 +4838,10 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                             class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                           >
                             <div
-                              class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                              class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                             />
                             <div
-                              class="flex items-center justify-center w-5 h-5"
+                              class="flex justify-center items-center w-5 h-5"
                             >
                               <div
                                 class="sc-bdfBwQ eBdiJn"
@@ -5015,7 +4952,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
               class="relative"
             >
               <div
-                class="overflow-hidden px-4.5 -mx-4.5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
+                class="overflow-hidden -mb-8 list-none px-4.5 -mx-4.5 slide-container swiper-container-initialized swiper-container-horizontal"
                 style="height: 224px;"
               >
                 <div
@@ -5091,7 +5028,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                               33.75089801 DARK
                             </span>
                             <span
-                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
+                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold whitespace-nowrap text-theme-secondary-text no-ligatures"
                             >
                               D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                             </span>
@@ -5172,7 +5109,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                               57.68 DARK
                             </span>
                             <span
-                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
+                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold whitespace-nowrap text-theme-secondary-text no-ligatures"
                             >
                               D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                             </span>
@@ -5268,7 +5205,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                               50,114.21127898 ARK
                             </span>
                             <span
-                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
+                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold whitespace-nowrap text-theme-secondary-text no-ligatures"
                             >
                               AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
                             </span>
@@ -5302,7 +5239,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
         </div>
       </div>
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww"
+        class="Section__SectionWrapper-sc-8cjvre-0 Qqquu"
       >
         <div
           class="container px-10 mx-auto"
@@ -5363,7 +5300,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
             class="mb-8"
           >
             <div
-              class="Tabs__TabList-sc-1lxyvu-1 edtiGn w-full"
+              class="Tabs__TabList-sc-1lxyvu-1 jTHOGm w-full h-15"
             >
               <button
                 aria-selected="true"
@@ -5374,7 +5311,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                 type="button"
               >
                 <div
-                  class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 <span>
                   All
@@ -5389,7 +5326,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                 type="button"
               >
                 <div
-                  class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 <span>
                   Incoming
@@ -5404,7 +5341,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                 type="button"
               >
                 <div
-                  class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 <span>
                   Outgoing
@@ -5619,10 +5556,10 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                             class="Circle__CircleWrapper-uw7h4j-0 bNDQMV ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                           >
                             <div
-                              class="sc-bdfBwQ fPrsah"
+                              class="sc-bdfBwQ iyevwF"
                               data-testid="TransactionRowMode__Received"
-                              height="1em"
-                              width="1em"
+                              height="20"
+                              width="20"
                             >
                               <svg>
                                 received.svg
@@ -5648,7 +5585,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                           class="w-40 xl:w-full"
                         >
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                            class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
                               class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -5783,10 +5720,10 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                             class="Circle__CircleWrapper-uw7h4j-0 bNDQMV ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                           >
                             <div
-                              class="sc-bdfBwQ fPrsah"
+                              class="sc-bdfBwQ iyevwF"
                               data-testid="TransactionRowMode__Received"
-                              height="1em"
-                              width="1em"
+                              height="20"
+                              width="20"
                             >
                               <svg>
                                 received.svg
@@ -5812,7 +5749,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                           class="w-40 xl:w-full"
                         >
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                            class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
                               class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -5947,10 +5884,10 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                             class="Circle__CircleWrapper-uw7h4j-0 bNDQMV ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                           >
                             <div
-                              class="sc-bdfBwQ fPrsah"
+                              class="sc-bdfBwQ iyevwF"
                               data-testid="TransactionRowMode__Received"
-                              height="1em"
-                              width="1em"
+                              height="20"
+                              width="20"
                             >
                               <svg>
                                 received.svg
@@ -5976,7 +5913,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                           class="w-40 xl:w-full"
                         >
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                            class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
                               class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -6111,10 +6048,10 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                             class="Circle__CircleWrapper-uw7h4j-0 bNDQMV ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                           >
                             <div
-                              class="sc-bdfBwQ fPrsah"
+                              class="sc-bdfBwQ iyevwF"
                               data-testid="TransactionRowMode__Received"
-                              height="1em"
-                              width="1em"
+                              height="20"
+                              width="20"
                             >
                               <svg>
                                 received.svg
@@ -6140,7 +6077,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                           class="w-40 xl:w-full"
                         >
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                            class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
                               class="inline-flex overflow-hidden text-theme-text font-semibold text-base"

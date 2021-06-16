@@ -12,7 +12,7 @@ export const Form = React.forwardRef<HTMLFormElement, FormProps>(
 			<form
 				data-testid="Form"
 				ref={ref}
-				className="space-y-8"
+				className="space-y-5"
 				onSubmit={context.handleSubmit(onSubmit)}
 				{...props}
 			>

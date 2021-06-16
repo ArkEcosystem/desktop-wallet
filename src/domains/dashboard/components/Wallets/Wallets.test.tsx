@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import Transport, { Observer } from "@ledgerhq/hw-transport";
+import Transport from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { LedgerProvider } from "app/contexts/Ledger/Ledger";
 import * as useRandomNumberHook from "app/hooks/use-random-number";
@@ -219,7 +219,7 @@ describe("Wallets", () => {
 	});
 
 	it("should handle filter change", async () => {
-		const { getByTestId, findByTestId } = renderWithRouter(
+		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Wallets />
 			</Route>,
@@ -258,11 +258,7 @@ describe("Wallets", () => {
 
 	it("should open and close ledger import modal", async () => {
 		const unsubscribe = jest.fn();
-		let observer: Observer<any>;
-		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
-			observer = obv;
-			return { unsubscribe };
-		});
+		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce(() => ({ unsubscribe }));
 
 		const { asFragment, getByTestId, getByText, queryByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">

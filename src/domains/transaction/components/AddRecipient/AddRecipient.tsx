@@ -304,7 +304,7 @@ export const AddRecipient = ({
 			</div>
 
 			<SubForm data-testid="AddRecipient__form-wrapper" noBackground={isSingle} noPadding={isSingle}>
-				<div className="space-y-8">
+				<div className="space-y-5">
 					<FormField name="recipientAddress">
 						{!isSingle && (
 							<FormLabel label={t("COMMON.RECIPIENT_#", { count: addedRecipients.length + 1 })} />
@@ -364,7 +364,7 @@ export const AddRecipient = ({
 													? remainingNetBalance
 													: remainingBalance;
 
-												setValue("displayAmount", remaining.toHuman());
+												setValue("displayAmount", remaining.toString());
 
 												setValue("amount", remaining.toString(), {
 													shouldValidate: true,
@@ -394,7 +394,7 @@ export const AddRecipient = ({
 						}
 						data-testid="AddRecipient__add-button"
 						variant="secondary"
-						className="w-full mt-4"
+						className="mt-4 w-full"
 						onClick={() =>
 							handleAddRecipient(
 								recipientAddress as string,
@@ -411,6 +411,7 @@ export const AddRecipient = ({
 			{!isSingle && addedRecipients.length > 0 && (
 				<div className="mt-3 border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800">
 					<RecipientList
+						normalizeAmount={false}
 						network={network}
 						recipients={addedRecipients}
 						onRemove={handleRemoveRecipient}

@@ -333,7 +333,7 @@ describe("Dropdown", () => {
 	});
 
 	it("should render with a disabled option", () => {
-		const { getByTestId, container, debug } = render(
+		const { getByTestId, container } = render(
 			<Dropdown options={[{ label: "Disabled Option", value: "disabled", disabled: true }]} />,
 		);
 
@@ -390,7 +390,7 @@ describe("ClickOutside Hook", () => {
 	});
 
 	describe("positioning", () => {
-		it("it should render content below toggle", () => {
+		it("should render content below toggle", () => {
 			const documentClientHeightSpy = jest.spyOn(document.body, "clientHeight", "get").mockReturnValue(50);
 			const getComputedStyleSpy = jest
 				.spyOn(window, "getComputedStyle")

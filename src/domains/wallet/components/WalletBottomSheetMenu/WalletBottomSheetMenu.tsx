@@ -111,7 +111,7 @@ export const WalletBottomSheetMenu = ({ wallets, defaultIsOpen }: WalletBottomSh
 					data-testid="WalletBottomSheetMenu__header"
 					className="flex items-center bg-theme-secondary-900 dark:bg-theme-secondary-800"
 				>
-					<div className="container flex items-center justify-between mx-auto py-7 px-14">
+					<div className="container flex justify-between items-center py-7 px-14 mx-auto">
 						<div>
 							<span className="text-lg font-bold text-theme-secondary-400 dark:text-theme-secondary-200">
 								{t("WALLETS.PAGE_WALLET_DETAILS.YOUR_WALLETS")}
@@ -127,7 +127,7 @@ export const WalletBottomSheetMenu = ({ wallets, defaultIsOpen }: WalletBottomSh
 							{isOpen && (
 								<button
 									data-testid="WalletBottomSheetMenu__filters"
-									className="flex items-center px-5 py-1 font-medium border-r text-theme-secondary-400 dark:text-theme-secondary-200 border-theme-secondary-800 dark:border-theme-secondary-600 focus:outline-none"
+									className="flex items-center py-1 px-5 font-medium border-r focus:outline-none text-theme-secondary-400 border-theme-secondary-800 dark:text-theme-secondary-200 dark:border-theme-secondary-600"
 								>
 									<Icon name="Filters" width={16} height={20} />
 								</button>
@@ -144,7 +144,7 @@ export const WalletBottomSheetMenu = ({ wallets, defaultIsOpen }: WalletBottomSh
 
 				<Collapse isOpen={isOpen} maxHeight="20rem" className="custom-scroll">
 					<div className="py-8 bg-theme-background">
-						<div data-testid="WalletTable" className="container mx-auto px-14">
+						<div data-testid="WalletTable" className="container px-14 mx-auto">
 							<WalletTable
 								wallets={wallets}
 								activeWalletId={activeWallet.id()}

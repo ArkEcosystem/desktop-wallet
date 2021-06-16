@@ -8,22 +8,23 @@ import nock from "nock";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
+import ipfsFixture from "tests/fixtures/coins/ark/devnet/transactions/ipfs.json";
 import {
 	act,
 	env,
 	fireEvent,
+	getDefaultLedgerTransport,
 	getDefaultProfileId,
+	getDefaultWalletId,
+	getDefaultWalletMnemonic,
 	render,
-	RenderResult,
 	renderWithRouter,
 	syncFees,
 	waitFor,
 	within,
-} from "testing-library";
-import ipfsFixture from "tests/fixtures/coins/ark/devnet/transactions/ipfs.json";
-import { getDefaultLedgerTransport, getDefaultWalletId, getDefaultWalletMnemonic } from "utils/testing-library";
+} from "utils/testing-library";
 
-import { FormStep, ReviewStep, SendIpfs, SummaryStep } from "./";
+import { FormStep, ReviewStep, SendIpfs, SummaryStep } from ".";
 
 const passphrase = getDefaultWalletMnemonic();
 const fixtureProfileId = getDefaultProfileId();
@@ -301,7 +302,7 @@ describe("SendIpfs", () => {
 
 		history.push(ipfsURL);
 
-		const { getByTestId, container } = renderWithRouter(
+		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
 				<LedgerProvider transport={transport}>
 					<SendIpfs />
@@ -349,7 +350,7 @@ describe("SendIpfs", () => {
 
 		history.push(ipfsURL);
 
-		const { getByTestId, container } = renderWithRouter(
+		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
 				<LedgerProvider transport={transport}>
 					<SendIpfs />
@@ -481,7 +482,7 @@ describe("SendIpfs", () => {
 
 		history.push(ipfsURL);
 
-		const { getByTestId, container } = renderWithRouter(
+		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
 				<LedgerProvider transport={transport}>
 					<SendIpfs />
@@ -705,15 +706,7 @@ describe("SendIpfs", () => {
 				data: expect.anything(),
 				fee: expect.any(String),
 				nonce: expect.any(String),
-				sign: {
-					multiSignature: {
-						min: 2,
-						publicKeys: [
-							"03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
-							"03af2feb4fc97301e16d6a877d5b135417e8f284d40fac0f84c09ca37f82886c51",
-						],
-					},
-				},
+				signatory: expect.any(Object),
 			}),
 		);
 
@@ -727,36 +720,29 @@ describe("SendIpfs", () => {
 
 	it("should send a ipfs transfer with a ledger wallet", async () => {
 		jest.spyOn(wallet.coin(), "__construct").mockImplementation();
+
 		const isLedgerSpy = jest.spyOn(wallet, "isLedger").mockImplementation(() => true);
+
 		const getPublicKeySpy = jest
 			.spyOn(wallet.coin().ledger(), "getPublicKey")
 			.mockResolvedValue("0335a27397927bfa1704116814474d39c2b933aabb990e7226389f022886e48deb");
+
 		const signTransactionSpy = jest
-			.spyOn(wallet.coin().ledger(), "signTransaction")
-			.mockImplementation(
-				() =>
-					new Promise((resolve) =>
-						setTimeout(
-							() =>
-								resolve(
-									"dd3f96466bc50077b01e441cd35eb3c5aabd83670d371c2be8cc772ed189a7315dd66e88bde275d89a3beb7ef85ef84a52ec4213f540481cd09ecf6d21e452bf",
-								),
-							300,
-						),
-					),
-			);
+			.spyOn(wallet.transaction(), "signIpfs")
+			.mockReturnValue(Promise.resolve(ipfsFixture.data.id));
+
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [ipfsFixture.data.id],
 			rejected: [],
 			errors: {},
 		});
 
+		const transactionMock = createTransactionMock(wallet);
+
 		const history = createMemoryHistory();
 		const ipfsURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/ipfs`;
 
 		history.push(ipfsURL);
-
-		let rendered: RenderResult;
 
 		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/transactions/:walletId/ipfs">
@@ -804,22 +790,24 @@ describe("SendIpfs", () => {
 		});
 
 		// Auto broadcast
-		await waitFor(() => expect(getByTestId("LedgerConfirmation-description")).toBeInTheDocument());
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 
 		getPublicKeySpy.mockRestore();
 		broadcastMock.mockRestore();
 		isLedgerSpy.mockRestore();
 		signTransactionSpy.mockRestore();
+		transactionMock.mockRestore();
 	});
 
 	it("should send an IPFS transaction using encryption password", async () => {
 		const encryptedWallet = profile.wallets().first();
-		const walletUsesWIFMock = jest.spyOn(encryptedWallet.wif(), "exists").mockReturnValue(true);
-		const walletWifMock = jest.spyOn(encryptedWallet.wif(), "get").mockImplementation(() => {
-			const wif = "S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV";
-			return Promise.resolve(wif);
-		});
+		const actsWithMnemonicMock = jest.spyOn(encryptedWallet, "actsWithMnemonic").mockReturnValue(false);
+		const actsWithWifWithEncryptionMock = jest
+			.spyOn(encryptedWallet, "actsWithWifWithEncryption")
+			.mockReturnValue(true);
+		const wifGetMock = jest
+			.spyOn(encryptedWallet.wif(), "get")
+			.mockResolvedValue("S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV");
 
 		const history = createMemoryHistory();
 		const ipfsURL = `/profiles/${fixtureProfileId}/wallets/${encryptedWallet.id()}/send-ipfs`;
@@ -901,9 +889,9 @@ describe("SendIpfs", () => {
 		signMock.mockRestore();
 		broadcastMock.mockRestore();
 		transactionMock.mockRestore();
-
-		walletUsesWIFMock.mockRestore();
-		walletWifMock.mockRestore();
+		actsWithMnemonicMock.mockRestore();
+		actsWithWifWithEncryptionMock.mockRestore();
+		wifGetMock.mockRestore();
 
 		await waitFor(() => expect(container).toMatchSnapshot());
 	});

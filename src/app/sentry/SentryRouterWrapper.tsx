@@ -1,7 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { useEnvironmentContext, useLedgerContext } from "app/contexts";
-import { useEffect, useMemo } from "react";
-import React from "react";
+import React, { useEffect, useMemo } from "react";
 import { useParams } from "react-router-dom";
 
 import { useSentryContext } from "./SentryProvider";

@@ -1,5 +1,7 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import { uniq } from "@arkecosystem/utils";
 import { useConfiguration, useEnvironmentContext } from "app/contexts";
+import { DashboardConfiguration } from "domains/dashboard/pages/Dashboard";
 import { useEffect, useMemo, useRef } from "react";
 import { matchPath, useHistory, useLocation } from "react-router-dom";
 
@@ -41,6 +43,11 @@ export const useProfileJobs = (profile?: Contracts.IProfile): Record<string, any
 			return [];
 		}
 
+		const syncWallets = {
+			callback: () => env.wallets().syncByProfile(profile),
+			interval: Intervals.Long,
+		};
+
 		// Syncing delegates is necessary for every domain not only votes,
 		// Because it's used in wallet and transaction lists
 		const syncDelegates = {
@@ -75,7 +82,7 @@ export const useProfileJobs = (profile?: Contracts.IProfile): Record<string, any
 		};
 
 		return {
-			allJobs: [syncExchangeRates, syncNotifications, syncKnownWallets, syncDelegates],
+			allJobs: [syncWallets, syncExchangeRates, syncNotifications, syncKnownWallets, syncDelegates],
 			syncExchangeRates: syncExchangeRates.callback,
 		};
 	}, [env, profile, walletsCount, notifications, setConfiguration]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -151,7 +158,27 @@ export const useProfileRestore = () => {
 	const { shouldRestore, markAsRestored, setStatus } = useProfileSyncStatus();
 	const { persist, env } = useEnvironmentContext();
 	const { getProfileFromUrl, getProfileStoredPassword } = useProfileUtils(env);
+	const { setConfiguration } = useConfiguration();
 	const history = useHistory();
+
+	const restoreProfileConfig = (profile: Contracts.IProfile) => {
+		const defaultConfiguration: DashboardConfiguration = {
+			walletsDisplayType: "all",
+			viewType: "grid",
+			selectedNetworkIds: uniq(
+				profile
+					.wallets()
+					.values()
+					.map((wallet) => wallet.network().id()),
+			),
+		};
+
+		const config = profile
+			.settings()
+			.get(Contracts.ProfileSetting.DashboardConfiguration, defaultConfiguration) as DashboardConfiguration;
+
+		setConfiguration({ dashboard: config });
+	};
 
 	const restoreProfile = async (profile: Contracts.IProfile, passwordInput?: string) => {
 		if (!shouldRestore(profile)) {
@@ -165,6 +192,9 @@ export const useProfileRestore = () => {
 		// Reset profile normally (passwordless or not)
 		await env.profiles().restore(profile, password);
 		markAsRestored(profile.id());
+
+		// Restore profile's config
+		restoreProfileConfig(profile);
 
 		// Profile restore finished but url changed in the meanwhile.
 		// Prevent from unecessary save of old profile.
@@ -254,6 +284,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 				await profile.sync();
 				await persist();
 
+				// for better performance no need to await
 				runAll();
 
 				setStatus("synced");

@@ -24,8 +24,9 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
+import { lowerCaseEquals } from "utils/equals";
 
-import { FormStep, ReviewStep, SummaryStep } from "./";
+import { FormStep, ReviewStep, SummaryStep } from ".";
 import { TransferLedgerReview } from "./LedgerReview";
 import { NetworkStep } from "./NetworkStep";
 
@@ -87,11 +88,11 @@ export const SendTransfer = () => {
 	const { senderAddress, fees, fee, remainingBalance, amount, isSendAllSelected, network } = watch();
 	const { sendTransfer, common } = useValidation();
 
-	const { hasDeviceAvailable, isConnected } = useLedgerContext();
+	const { hasDeviceAvailable, isConnected, transport, connect } = useLedgerContext();
 
 	const [lastEstimatedExpiration, setLastEstimatedExpiration] = useState<number | undefined>();
 	const abortRef = useRef(new AbortController());
-	const transactionBuilder = useTransactionBuilder(activeProfile);
+	const transactionBuilder = useTransactionBuilder();
 	const { sign } = useWalletSignatory(wallet!);
 	const { fetchWalletUnconfirmedTransactions } = useTransaction();
 
@@ -102,7 +103,7 @@ export const SendTransfer = () => {
 		register("senderAddress", sendTransfer.senderAddress());
 		register("fees");
 		register("fee", common.fee(remainingBalance, wallet?.network?.()));
-		register("smartbridge", sendTransfer.smartbridge());
+		register("memo", sendTransfer.memo());
 
 		register("remainingBalance");
 		register("isSendAllSelected");
@@ -131,13 +132,13 @@ export const SendTransfer = () => {
 			"network",
 			networks.find(
 				(item) =>
-					item.coin().toLowerCase() === deepLinkParams.coin?.toLowerCase() &&
-					item.id().toLowerCase() === deepLinkParams.network?.toLowerCase(),
+					lowerCaseEquals(item.coin(), deepLinkParams.coin) &&
+					lowerCaseEquals(item.id(), deepLinkParams.network),
 			),
 		);
 
 		if (deepLinkParams.memo) {
-			setValue("smartbridge", deepLinkParams.memo);
+			setValue("memo", deepLinkParams.memo);
 		}
 
 		if (deepLinkParams.recipient) {
@@ -199,7 +200,7 @@ export const SendTransfer = () => {
 
 		clearErrors("mnemonic");
 
-		const { fee, mnemonic, secondMnemonic, recipients, smartbridge, encryptionPassword } = getValues();
+		const { fee, mnemonic, secondMnemonic, recipients, memo, encryptionPassword, wif, privateKey } = getValues();
 		const isMultiPayment = recipients.length > 1;
 		const transactionType = isMultiPayment ? "multiPayment" : "transfer";
 
@@ -208,6 +209,8 @@ export const SendTransfer = () => {
 				mnemonic,
 				secondMnemonic,
 				encryptionPassword,
+				wif,
+				privateKey,
 			});
 
 			const transactionInput: Services.TransactionInputs = {
@@ -227,7 +230,7 @@ export const SendTransfer = () => {
 				transactionInput.data = {
 					to: recipients[0].address,
 					amount: recipients[0].amount.toHuman(),
-					memo: smartbridge,
+					memo: memo,
 				};
 			}
 
@@ -235,6 +238,11 @@ export const SendTransfer = () => {
 			if (expiration) {
 				transactionInput.data.expiration = parseInt(expiration);
 				setLastEstimatedExpiration(transactionInput.data.expiration);
+			}
+
+			if (activeWallet.isLedger()) {
+				await connect(profile, activeWallet.coinId(), activeWallet.networkId());
+				await activeWallet.ledger().connect(transport);
 			}
 
 			const abortSignal = abortRef.current?.signal;
@@ -303,7 +311,7 @@ export const SendTransfer = () => {
 	return (
 		<Page profile={activeProfile}>
 			<Section className="flex-1">
-				<Form className="max-w-xl mx-auto" context={form} onSubmit={() => submitForm()}>
+				<Form className="mx-auto max-w-xl" context={form} onSubmit={() => submitForm()}>
 					<Tabs activeId={activeTab}>
 						<StepIndicator
 							size={showNetworkStep ? 5 : 4}
@@ -403,8 +411,11 @@ export const SendTransfer = () => {
 													type="submit"
 													data-testid="SendTransfer__button--submit"
 													disabled={!isValid || isSubmitting}
-													icon="Send"
 													isLoading={isSubmitting}
+													icon="Send"
+													iconWidth={16}
+													iconHeight={16}
+													iconPosition="right"
 												>
 													<span>{t("COMMON.SEND")}</span>
 												</Button>

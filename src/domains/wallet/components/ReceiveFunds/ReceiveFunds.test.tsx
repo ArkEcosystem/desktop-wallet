@@ -87,7 +87,6 @@ describe("ReceiveFunds", () => {
 		});
 
 		await waitFor(() => expect(getByTestId("ReceiveFundsForm__amount")).toHaveValue(""));
-		await waitFor(() => expect(getByTestId("ReceiveFundsForm__smartbridge")).toHaveValue(""));
-		await waitFor(() => expect(getByTestId("ReceiveFundsForm__uri")).toHaveTextContent("ark:abc"));
+		await waitFor(() => expect(getByTestId("ReceiveFundsForm__memo")).toHaveValue(""));
 	});
 });

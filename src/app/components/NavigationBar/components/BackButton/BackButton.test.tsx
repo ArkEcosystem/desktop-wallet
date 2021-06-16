@@ -14,7 +14,7 @@ describe("BackButton", () => {
 	});
 
 	it("should render when disabled", () => {
-		const { container, getByRole } = renderWithRouter(<BackButton disabled />, { history });
+		const { container } = renderWithRouter(<BackButton disabled />, { history });
 
 		expect(container).toHaveTextContent("arrow-left.svg");
 		expect(container).toMatchSnapshot();

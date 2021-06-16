@@ -7,12 +7,12 @@ exports[`TransactionMemo should render 1`] = `
     data-testid="TransactionDetail"
   >
     <div
-      class="w-40 flex-1 space-y-2 whitespace-nowrap"
+      class="flex-1 space-y-2 w-40 whitespace-nowrap"
     >
       <div
         class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
       >
-        Smartbridge
+        Memo
       </div>
       <div
         class="font-semibold"
@@ -33,7 +33,7 @@ exports[`TransactionMemo should render 1`] = `
         width="18"
       >
         <svg>
-          smartbridge.svg
+          memo.svg
         </svg>
       </div>
     </div>

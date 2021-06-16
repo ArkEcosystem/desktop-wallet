@@ -13,18 +13,18 @@ exports[`BlankPluginCard should render 1`] = `
         class="flex items-center space-x-4"
       >
         <div
-          class="h-25 w-25 rounded-xl border-2 border-theme-primary-100 dark:border-theme-secondary-800"
+          class="rounded-xl border-2 h-25 w-25 border-theme-primary-100 dark:border-theme-secondary-800"
         />
         <div
           class="flex flex-col truncate"
         >
           <span
-            class="text-sm font-semibold text-theme-primary-100 dark:text-theme-secondary-800 truncate"
+            class="text-sm font-semibold text-theme-primary-100 truncate dark:text-theme-secondary-800"
           >
             Author
           </span>
           <div
-            class="mt-1 text-lg font-bold text-theme-primary-100 dark:text-theme-secondary-800 truncate"
+            class="mt-1 text-lg font-bold text-theme-primary-100 truncate dark:text-theme-secondary-800"
           >
             Name
           </div>
@@ -51,23 +51,23 @@ exports[`BlankPluginCard should render with category 1`] = `
         class="flex items-center space-x-4"
       >
         <div
-          class="h-25 w-25 rounded-xl border-2 border-theme-primary-100 dark:border-theme-secondary-800"
+          class="rounded-xl border-2 h-25 w-25 border-theme-primary-100 dark:border-theme-secondary-800"
         />
         <div
           class="flex flex-col truncate"
         >
           <span
-            class="text-sm font-semibold text-theme-primary-100 dark:text-theme-secondary-800 truncate"
+            class="text-sm font-semibold text-theme-primary-100 truncate dark:text-theme-secondary-800"
           >
             Author
           </span>
           <div
-            class="mt-1 text-lg font-bold text-theme-primary-100 dark:text-theme-secondary-800 truncate"
+            class="mt-1 text-lg font-bold text-theme-primary-100 truncate dark:text-theme-secondary-800"
           >
             Name
           </div>
           <div
-            class="flex items-center space-x-2 mt-4 text-theme-primary-100 dark:text-theme-secondary-800"
+            class="flex items-center mt-4 space-x-2 text-theme-primary-100 dark:text-theme-secondary-800"
           >
             <div
               class="sc-bdfBwQ iyevwF"
@@ -107,18 +107,18 @@ exports[`BlankPluginCard should render with name 1`] = `
         class="flex items-center space-x-4"
       >
         <div
-          class="h-25 w-25 rounded-xl border-2 border-theme-primary-100 dark:border-theme-secondary-800"
+          class="rounded-xl border-2 h-25 w-25 border-theme-primary-100 dark:border-theme-secondary-800"
         />
         <div
           class="flex flex-col truncate"
         >
           <span
-            class="text-sm font-semibold text-theme-primary-100 dark:text-theme-secondary-800 truncate"
+            class="text-sm font-semibold text-theme-primary-100 truncate dark:text-theme-secondary-800"
           >
             Author
           </span>
           <div
-            class="mt-1 text-lg font-bold text-theme-primary-100 dark:text-theme-secondary-800 truncate"
+            class="mt-1 text-lg font-bold text-theme-primary-100 truncate dark:text-theme-secondary-800"
           >
             test-name
           </div>
@@ -148,7 +148,7 @@ exports[`PluginCard should render 1`] = `
           class="flex items-center space-x-4"
         >
           <div
-            class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+            class="overflow-hidden flex-shrink-0 rounded-lg w-25 h-25"
           >
             <div
               class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
@@ -168,7 +168,7 @@ exports[`PluginCard should render 1`] = `
               ARK.io
             </span>
             <div
-              class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+              class="flex items-center mt-1 space-x-2 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
             >
               <div
                 class="truncate"
@@ -178,7 +178,7 @@ exports[`PluginCard should render 1`] = `
               <span />
             </div>
             <div
-              class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
+              class="flex items-center mt-4 space-x-2 dark:text-theme-secondary-600"
             >
               <div
                 class="sc-bdfBwQ iyevwF"
@@ -226,7 +226,7 @@ exports[`PluginCard should render alert icon 1`] = `
           class="flex items-center space-x-4"
         >
           <div
-            class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+            class="overflow-hidden flex-shrink-0 rounded-lg w-25 h-25"
           >
             <div
               class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
@@ -246,7 +246,7 @@ exports[`PluginCard should render alert icon 1`] = `
               ARK.io
             </span>
             <div
-              class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+              class="flex items-center mt-1 space-x-2 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
             >
               <div
                 class="truncate"
@@ -256,7 +256,7 @@ exports[`PluginCard should render alert icon 1`] = `
               <span />
             </div>
             <div
-              class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
+              class="flex items-center mt-4 space-x-2 dark:text-theme-secondary-600"
             >
               <div
                 class="sc-bdfBwQ iyevwF"
@@ -319,7 +319,7 @@ exports[`PluginCard should render grant icon 1`] = `
           class="flex items-center space-x-4"
         >
           <div
-            class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+            class="overflow-hidden flex-shrink-0 rounded-lg w-25 h-25"
           >
             <div
               class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
@@ -339,7 +339,7 @@ exports[`PluginCard should render grant icon 1`] = `
               ARK.io
             </span>
             <div
-              class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+              class="flex items-center mt-1 space-x-2 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
             >
               <div
                 class="truncate"
@@ -359,7 +359,7 @@ exports[`PluginCard should render grant icon 1`] = `
               </span>
             </div>
             <div
-              class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
+              class="flex items-center mt-4 space-x-2 dark:text-theme-secondary-600"
             >
               <div
                 class="sc-bdfBwQ iyevwF"
@@ -407,7 +407,7 @@ exports[`PluginCard should render official icon 1`] = `
           class="flex items-center space-x-4"
         >
           <div
-            class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+            class="overflow-hidden flex-shrink-0 rounded-lg w-25 h-25"
           >
             <div
               class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
@@ -427,7 +427,7 @@ exports[`PluginCard should render official icon 1`] = `
               ARK.io
             </span>
             <div
-              class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+              class="flex items-center mt-1 space-x-2 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
             >
               <div
                 class="truncate"
@@ -447,7 +447,7 @@ exports[`PluginCard should render official icon 1`] = `
               </span>
             </div>
             <div
-              class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
+              class="flex items-center mt-4 space-x-2 dark:text-theme-secondary-600"
             >
               <div
                 class="sc-bdfBwQ iyevwF"
@@ -495,7 +495,7 @@ exports[`PluginCard should render update icon 1`] = `
           class="flex items-center space-x-4"
         >
           <div
-            class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+            class="overflow-hidden flex-shrink-0 rounded-lg w-25 h-25"
           >
             <div
               class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
@@ -515,7 +515,7 @@ exports[`PluginCard should render update icon 1`] = `
               ARK.io
             </span>
             <div
-              class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+              class="flex items-center mt-1 space-x-2 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
             >
               <div
                 class="truncate"
@@ -525,7 +525,7 @@ exports[`PluginCard should render update icon 1`] = `
               <span />
             </div>
             <div
-              class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
+              class="flex items-center mt-4 space-x-2 dark:text-theme-secondary-600"
             >
               <div
                 class="sc-bdfBwQ iyevwF"
@@ -590,7 +590,7 @@ exports[`PluginCard should render without category 1`] = `
           class="flex items-center space-x-4"
         >
           <div
-            class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+            class="overflow-hidden flex-shrink-0 rounded-lg w-25 h-25"
           >
             <div
               class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
@@ -610,7 +610,7 @@ exports[`PluginCard should render without category 1`] = `
               ARK.io
             </span>
             <div
-              class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+              class="flex items-center mt-1 space-x-2 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
             >
               <div
                 class="truncate"
@@ -649,7 +649,7 @@ exports[`PluginCard should trigger view 1`] = `
           class="flex items-center space-x-4"
         >
           <div
-            class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+            class="overflow-hidden flex-shrink-0 rounded-lg w-25 h-25"
           >
             <div
               class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
@@ -669,7 +669,7 @@ exports[`PluginCard should trigger view 1`] = `
               ARK.io
             </span>
             <div
-              class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+              class="flex items-center mt-1 space-x-2 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
             >
               <div
                 class="truncate"
@@ -679,7 +679,7 @@ exports[`PluginCard should trigger view 1`] = `
               <span />
             </div>
             <div
-              class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
+              class="flex items-center mt-4 space-x-2 dark:text-theme-secondary-600"
             >
               <div
                 class="sc-bdfBwQ iyevwF"

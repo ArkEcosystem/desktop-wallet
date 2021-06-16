@@ -56,7 +56,7 @@ export const SelectFile = ({ onSelect, fileFormat }: SelectFileStepProps) => {
 	return (
 		<div
 			data-testid="SelectFile"
-			className="h-52 border-2 border-dashed rounded-lg mt-8 border-theme-secondary-300 dark:border-theme-secondary-800 p-2"
+			className="p-2 mt-8 h-52 rounded-lg border-2 border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
 		>
 			<div
 				data-testid="SelectFile__drop-zone"
@@ -99,15 +99,15 @@ export const SelectFile = ({ onSelect, fileFormat }: SelectFileStepProps) => {
 						onClick={handleBrowseFiles}
 						title={t("PROFILE.IMPORT.SELECT_FILE_STEP.UPLOAD_TITLE")}
 						data-testid="SelectFile__browse-files"
-						className="relative font-semibold cursor-pointer link focus:outline-none group"
+						className="relative font-semibold cursor-pointer focus:outline-none link group"
 					>
 						{/* border on focus */}
-						<div className="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible" />
+						<div className="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400" />
 
 						{t("PROFILE.IMPORT.SELECT_FILE_STEP.BROWSE_FILES")}
 					</button>
 				</div>
-				<div className="font-semibold text-theme-secondary-500 text-sm mt-2">
+				<div className="mt-2 text-sm font-semibold text-theme-secondary-500">
 					{t("PROFILE.IMPORT.SELECT_FILE_STEP.SUPPORTED_FORMAT", { fileFormat })}
 				</div>
 			</div>

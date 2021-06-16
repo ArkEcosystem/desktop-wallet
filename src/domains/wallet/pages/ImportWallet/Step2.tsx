@@ -5,19 +5,18 @@ import { Header } from "app/components/Header";
 import { Input, InputAddress, InputPassword } from "app/components/Input";
 import { Select } from "app/components/SelectDropdown";
 import { useActiveProfile } from "app/hooks";
-import React, { useMemo, useState } from "react";
+import { OptionsValue, useImportOptions } from "domains/wallet/hooks/use-import-options";
+import React, { useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 const MnemonicField = ({
-	network,
 	profile,
 	label,
 	findAddress,
 	...props
 }: {
 	profile: Contracts.IProfile;
-	network: Networks.Network;
 	label: string;
 	findAddress: (value: string) => Promise<string>;
 } & Omit<React.HTMLProps<any>, "ref">) => {
@@ -43,6 +42,7 @@ const MnemonicField = ({
 								}).toString()
 							);
 						} catch (e) {
+							/* istanbul ignore next */
 							return e.message;
 						}
 					},
@@ -95,12 +95,11 @@ const ImportInputField = ({
 	const [coin] = useState(() => activeProfile.coins().set(network.coin(), network.id()));
 	const { register } = useFormContext();
 
-	if (type === "mnemonic") {
+	if (type.startsWith("bip")) {
 		return (
 			<MnemonicField
-				network={network}
 				profile={profile}
-				label={t("COMMON.MNEMONIC")}
+				label={t(`COMMON.MNEMONIC_TYPE.${type.toUpperCase()}`)}
 				data-testid="ImportWallet__mnemonic-input"
 				findAddress={async (value) => {
 					await coin.__construct();
@@ -111,14 +110,14 @@ const ImportInputField = ({
 		);
 	}
 
-	if (type === "address") {
+	if (type === OptionsValue.ADDRESS) {
 		return <AddressField network={network} profile={profile} />;
 	}
 
-	if (type === "privateKey") {
+	/* istanbul ignore next */
+	if (type === OptionsValue.PRIVATE_KEY) {
 		return (
 			<MnemonicField
-				network={network}
 				profile={profile}
 				label={t("COMMON.PRIVATE_KEY")}
 				data-testid="ImportWallet__privatekey-input"
@@ -135,10 +134,10 @@ const ImportInputField = ({
 		);
 	}
 
-	if (type === "wif") {
+	/* istanbul ignore next */
+	if (type === OptionsValue.WIF) {
 		return (
 			<MnemonicField
-				network={network}
 				profile={profile}
 				label={t("COMMON.WIF")}
 				data-testid="ImportWallet__wif-input"
@@ -155,7 +154,8 @@ const ImportInputField = ({
 		);
 	}
 
-	if (type === "encryptedWif") {
+	/* istanbul ignore next */
+	if (type === OptionsValue.ENCRYPTED_WIF) {
 		return (
 			<>
 				<FormField name="encryptedWif">
@@ -173,7 +173,6 @@ const ImportInputField = ({
 				</FormField>
 
 				<MnemonicField
-					network={network}
 					profile={profile}
 					label={t("COMMON.PASSWORD")}
 					data-testid="ImportWallet__encryptedWif__password-input"
@@ -183,6 +182,7 @@ const ImportInputField = ({
 		);
 	}
 
+	/* istanbul ignore next */
 	return null;
 };
 
@@ -194,18 +194,9 @@ export const SecondStep = ({ profile }: { profile: Contracts.IProfile }) => {
 	const [defaultNetwork] = useState(() => watch("network"));
 	const network: Networks.Network = getValues("network") || defaultNetwork;
 
-	const options = useMemo(
-		() => [
-			{ label: t("COMMON.MNEMONIC"), value: "mnemonic" },
-			{ label: t("COMMON.ADDRESS"), value: "address" },
-			{ label: t("COMMON.PRIVATE_KEY"), value: "privateKey" },
-			{ label: t("COMMON.WIF"), value: "wif" },
-			{ label: t("COMMON.ENCRYPTED_WIF"), value: "encryptedWif" },
-		],
-		[t],
-	);
+	const { options, defaultOption } = useImportOptions(network.importMethods());
 
-	const type = watch("type", "mnemonic");
+	const type = watch("type", defaultOption);
 
 	return (
 		<section data-testid="ImportWallet__second-step" className="space-y-8">

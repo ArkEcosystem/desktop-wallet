@@ -1,16 +1,17 @@
-import { QRCode } from "@arkecosystem/platform-sdk-support";
-import { stringify } from "querystring";
+import { QRCode, URI } from "@arkecosystem/platform-sdk-support";
 import { useCallback, useEffect, useState } from "react";
 import { shouldUseDarkColors } from "utils/electron-utils";
 
 interface QRCodeProps {
-	network?: string;
-	amount?: string;
-	smartbridge?: string;
-	address?: string;
+	network: string;
+	coin: string;
+	amount: string;
+	memo: string;
+	address: string;
+	method?: string;
 }
 
-export const useQRCode = ({ network, amount, address, smartbridge }: QRCodeProps) => {
+export const useQRCode = ({ network, amount, address, memo, coin, method }: QRCodeProps) => {
 	const [qrCodeData, setQrCodeData] = useState<{ uri?: string; image?: string }>({
 		uri: undefined,
 		image: undefined,
@@ -18,15 +19,17 @@ export const useQRCode = ({ network, amount, address, smartbridge }: QRCodeProps
 
 	const maxLength = 255;
 
-	const formatQR = useCallback(({ network, amount, address, smartbridge }: QRCodeProps) => {
-		const uriParams = {
-			...(amount && { amount }),
-			...(smartbridge && { vendorField: smartbridge?.slice(0, maxLength) }),
-		};
+	const formatQR = useCallback(({ amount, address, memo, coin, network, method = "transfer" }: QRCodeProps) => {
+		const uri = new URI();
 
-		const networkPrefix = network?.split(".")[0];
-		const qrParameters = stringify(uriParams);
-		return `${networkPrefix}:${address}${qrParameters && `?${qrParameters}`}`;
+		return uri.serialize({
+			method,
+			coin,
+			network,
+			recipient: address,
+			...(amount && { amount }),
+			...(memo && { memo: memo?.slice(0, maxLength) }),
+		});
 	}, []);
 
 	useEffect(() => {
@@ -41,7 +44,7 @@ export const useQRCode = ({ network, amount, address, smartbridge }: QRCodeProps
 			  };
 
 		const generateQrCode = async () => {
-			const qrCodeDataUri = address ? formatQR({ network, amount, address, smartbridge }) : undefined;
+			const qrCodeDataUri = address ? formatQR({ network, amount, address, memo, coin, method }) : undefined;
 
 			let qrCodeDataImage: string | undefined;
 
@@ -58,7 +61,7 @@ export const useQRCode = ({ network, amount, address, smartbridge }: QRCodeProps
 		};
 
 		generateQrCode();
-	}, [amount, smartbridge, network, address, formatQR]);
+	}, [amount, memo, network, address, formatQR, coin, method]);
 
 	return qrCodeData;
 };

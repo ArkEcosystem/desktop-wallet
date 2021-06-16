@@ -5,7 +5,7 @@ import { Route } from "react-router-dom";
 import { env, getDefaultProfileId, render, renderWithRouter } from "utils/testing-library";
 
 import { translations } from "../../i18n";
-import { GridWallet, WalletsList } from "./";
+import { GridWallet, WalletsList } from ".";
 
 const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 const history = createMemoryHistory();

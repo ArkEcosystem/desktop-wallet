@@ -7,14 +7,13 @@ import { NavbarVariant } from "types";
 interface PageProps {
 	navbarVariant?: NavbarVariant;
 	title?: string;
-	backToUrl?: string;
 	isBackDisabled?: boolean;
 	profile?: Contracts.IProfile;
 	sidebar?: React.ReactNode;
 	children: React.ReactNode;
 }
 
-export const Page = ({ navbarVariant, title, backToUrl, isBackDisabled, profile, sidebar, children }: PageProps) => {
+export const Page = ({ navbarVariant, title, isBackDisabled, profile, sidebar, children }: PageProps) => {
 	const { t } = useTranslation();
 
 	const menu = [
@@ -73,7 +72,6 @@ export const Page = ({ navbarVariant, title, backToUrl, isBackDisabled, profile,
 				menu={menu}
 				userActions={userActions}
 				title={title}
-				backToUrl={backToUrl}
 				profile={profile}
 				isBackDisabled={isBackDisabled}
 			/>

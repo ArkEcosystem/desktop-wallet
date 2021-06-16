@@ -28,7 +28,7 @@ import {
 	within,
 } from "utils/testing-library";
 
-import { FormStep, ReviewStep, SendTransfer, SummaryStep } from "./";
+import { FormStep, ReviewStep, SendTransfer, SummaryStep } from ".";
 import { NetworkStep } from "./NetworkStep";
 
 const passphrase = getDefaultWalletMnemonic();
@@ -206,7 +206,7 @@ describe("SendTransfer", () => {
 						},
 					],
 					senderAddress: wallet.address(),
-					smartbridge: "test smartbridge",
+					memo: "test memo",
 				},
 			}),
 		);
@@ -220,7 +220,7 @@ describe("SendTransfer", () => {
 		expect(getByTestId("SendTransfer__review-step")).toBeTruthy();
 		expect(container).toHaveTextContent(wallet.network().name());
 		expect(container).toHaveTextContent("D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD");
-		expect(container).toHaveTextContent("test smartbridge");
+		expect(container).toHaveTextContent("test memo");
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -650,11 +650,11 @@ describe("SendTransfer", () => {
 		});
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
 
-		// Smartbridge
+		// Memo
 		act(() => {
-			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
+			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		});
-		await waitFor(() => expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge"));
+		await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 		// Fee
 		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
@@ -791,11 +791,11 @@ describe("SendTransfer", () => {
 		});
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
 
-		// Smartbridge
+		// Memo
 		act(() => {
-			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
+			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		});
-		await waitFor(() => expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge"));
+		await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 		// Fee
 		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
@@ -914,11 +914,11 @@ describe("SendTransfer", () => {
 		});
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
 
-		// Smartbridge
+		// Memo
 		act(() => {
-			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
+			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		});
-		await waitFor(() => expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge"));
+		await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 		// Fee
 		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
@@ -1093,15 +1093,7 @@ describe("SendTransfer", () => {
 				data: expect.anything(),
 				fee: "0.00357",
 				nonce: expect.any(String),
-				sign: {
-					multiSignature: {
-						min: 2,
-						publicKeys: [
-							"03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
-							"03af2feb4fc97301e16d6a877d5b135417e8f284d40fac0f84c09ca37f82886c51",
-						],
-					},
-				},
+				signatory: expect.any(Object),
 			}),
 		);
 
@@ -1113,25 +1105,20 @@ describe("SendTransfer", () => {
 	});
 
 	it("should send a single transfer with a ledger wallet", async () => {
+		jest.useFakeTimers();
 		const isLedgerSpy = jest.spyOn(wallet, "isLedger").mockImplementation(() => true);
 		jest.spyOn(wallet.coin(), "__construct").mockImplementation();
+
 		const getPublicKeySpy = jest
 			.spyOn(wallet.coin().ledger(), "getPublicKey")
 			.mockResolvedValue("0335a27397927bfa1704116814474d39c2b933aabb990e7226389f022886e48deb");
+
 		const signTransactionSpy = jest
-			.spyOn(wallet.coin().ledger(), "signTransaction")
-			.mockImplementation(
-				() =>
-					new Promise((resolve) =>
-						setTimeout(
-							() =>
-								resolve(
-									"dd3f96466bc50077b01e441cd35eb3c5aabd83670d371c2be8cc772ed189a7315dd66e88bde275d89a3beb7ef85ef84a52ec4213f540481cd09ecf6d21e452bf",
-								),
-							300,
-						),
-					),
-			);
+			.spyOn(wallet.transaction(), "signTransfer")
+			.mockReturnValue(Promise.resolve(transactionFixture.data.id));
+
+		const transactionMock = createTransactionMock(wallet);
+
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [transactionFixture.data.id],
 			rejected: [],
@@ -1180,11 +1167,11 @@ describe("SendTransfer", () => {
 		});
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).not.toHaveValue("0"), { timeout: 4000 });
 
-		// Smartbridge
+		// Memo
 		act(() => {
-			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
+			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		});
-		expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge");
+		expect(getByTestId("Input__memo")).toHaveValue("test memo");
 
 		// Fee
 		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
@@ -1206,13 +1193,13 @@ describe("SendTransfer", () => {
 		});
 
 		// Auto broadcast
-		await waitFor(() => expect(getByTestId("LedgerConfirmation-description")).toBeInTheDocument());
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 
 		getPublicKeySpy.mockRestore();
 		broadcastMock.mockRestore();
 		isLedgerSpy.mockRestore();
 		signTransactionSpy.mockRestore();
+		transactionMock.mockRestore();
 	});
 
 	it("should return to form step by cancelling fee warning", async () => {
@@ -1221,7 +1208,7 @@ describe("SendTransfer", () => {
 		const history = createMemoryHistory();
 		history.push(transferURL);
 
-		const { getAllByTestId, getByTestId, container } = renderWithRouter(
+		const { getAllByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
 				<LedgerProvider transport={getDefaultLedgerTransport()}>
 					<SendTransfer />
@@ -1258,11 +1245,11 @@ describe("SendTransfer", () => {
 		});
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
 
-		// Smartbridge
+		// Memo
 		act(() => {
-			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
+			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		});
-		await waitFor(() => expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge"));
+		await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 		// Fee
 		act(() => {
@@ -1309,7 +1296,7 @@ describe("SendTransfer", () => {
 			const history = createMemoryHistory();
 			history.push(transferURL);
 
-			const { getAllByTestId, getByTestId, container } = renderWithRouter(
+			const { getAllByTestId, getByTestId } = renderWithRouter(
 				<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
 					<LedgerProvider transport={getDefaultLedgerTransport()}>
 						<SendTransfer />
@@ -1348,11 +1335,11 @@ describe("SendTransfer", () => {
 			});
 			await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
 
-			// Smartbridge
+			// Memo
 			act(() => {
-				fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
+				fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 			});
-			await waitFor(() => expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge"));
+			await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 			// Fee
 			act(() => {
@@ -1394,6 +1381,7 @@ describe("SendTransfer", () => {
 			profileSpy.mockRestore();
 		},
 	);
+
 	it.each([
 		["high", "1"],
 		["low", "0.000001"],
@@ -1440,11 +1428,11 @@ describe("SendTransfer", () => {
 		});
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
 
-		// Smartbridge
+		// Memo
 		act(() => {
-			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
+			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		});
-		await waitFor(() => expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge"));
+		await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 		// Fee
 		act(() => {
@@ -1560,11 +1548,11 @@ describe("SendTransfer", () => {
 		});
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).not.toHaveValue("0"), { timeout: 4000 });
 
-		// Smartbridge
+		// Memo
 		act(() => {
-			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
+			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		});
-		expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge");
+		expect(getByTestId("Input__memo")).toHaveValue("test memo");
 
 		// Fee
 		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
@@ -1656,11 +1644,11 @@ describe("SendTransfer", () => {
 		});
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).not.toHaveValue("0"), { timeout: 4000 });
 
-		// Smartbridge
+		// Memo
 		act(() => {
-			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
+			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		});
-		expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge");
+		expect(getByTestId("Input__memo")).toHaveValue("test memo");
 
 		// Fee
 		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
@@ -1794,11 +1782,11 @@ describe("SendTransfer", () => {
 		});
 		await waitFor(() => expect(getAllByTestId("recipient-list__recipient-list-item").length).toEqual(2));
 
-		// Smartbridge
+		// Memo
 		act(() => {
-			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
+			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		});
-		expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge");
+		expect(getByTestId("Input__memo")).toHaveValue("test memo");
 
 		// Fee
 		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
@@ -1993,11 +1981,11 @@ describe("SendTransfer", () => {
 		});
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
 
-		// Smartbridge
+		// Memo
 		act(() => {
-			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
+			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		});
-		await waitFor(() => expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge"));
+		await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 		// Fee
 		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
@@ -2228,12 +2216,11 @@ describe("SendTransfer", () => {
 
 	it("should send a single transfer using wallet with encryption password", async () => {
 		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-transfer`;
-		const walletUsesWIFMock = jest.spyOn(wallet.wif(), "exists").mockReturnValue(true);
-
-		const walletWifMock = jest.spyOn(wallet.wif(), "get").mockImplementation(() => {
-			const wif = "S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV";
-			return Promise.resolve(wif);
-		});
+		const actsWithMnemonicMock = jest.spyOn(wallet, "actsWithMnemonic").mockReturnValue(false);
+		const actsWithWifWithEncryptionMock = jest.spyOn(wallet, "actsWithWifWithEncryption").mockReturnValue(true);
+		const wifGetMock = jest
+			.spyOn(wallet.wif(), "get")
+			.mockResolvedValue("S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV");
 
 		const history = createMemoryHistory();
 		history.push(transferURL);
@@ -2285,11 +2272,11 @@ describe("SendTransfer", () => {
 		});
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
 
-		// Smartbridge
+		// Memo
 		act(() => {
-			fireEvent.input(getByTestId("Input__smartbridge"), { target: { value: "test smartbridge" } });
+			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		});
-		await waitFor(() => expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge"));
+		await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 		// Fee
 		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
@@ -2343,6 +2330,9 @@ describe("SendTransfer", () => {
 		signMock.mockRestore();
 		broadcastMock.mockRestore();
 		transactionMock.mockRestore();
+		actsWithMnemonicMock.mockRestore();
+		actsWithWifWithEncryptionMock.mockRestore();
+		wifGetMock.mockRestore();
 
 		await waitFor(() => expect(container).toMatchSnapshot());
 
@@ -2355,8 +2345,6 @@ describe("SendTransfer", () => {
 
 		goSpy.mockRestore();
 		pushSpy.mockRestore();
-		walletUsesWIFMock.mockRestore();
-		walletWifMock.mockRestore();
 
 		await waitFor(() => expect(container).toMatchSnapshot());
 	});

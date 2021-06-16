@@ -17,13 +17,12 @@ import {
 	waitFor,
 } from "utils/testing-library";
 
-import { SendDelegateResignation } from "../SendDelegateResignation";
+import { SendDelegateResignation } from ".";
 
 let wallet: Contracts.IReadWriteWallet;
 let profile: Contracts.IProfile;
 
 let resignationUrl: string;
-const dashboardUrl = `/profiles/${getDefaultProfileId()}/dashboard`;
 
 const passphrase = "v3wallet2";
 const history = createMemoryHistory();
@@ -162,7 +161,7 @@ describe("SendDelegateResignation", () => {
 		});
 
 		it("should return to form step by cancelling fee warning", async () => {
-			const { asFragment, getByTestId } = renderPage();
+			const { getByTestId } = renderPage();
 
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
 
@@ -185,7 +184,7 @@ describe("SendDelegateResignation", () => {
 		});
 
 		it("should proceed to authentication step by confirming fee warning", async () => {
-			const { asFragment, getByTestId } = renderPage();
+			const { getByTestId } = renderPage();
 
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
 
@@ -508,11 +507,13 @@ describe("SendDelegateResignation", () => {
 			const encryptedWallet = profile.wallets().first();
 			await encryptedWallet.synchroniser().identity();
 
-			const walletUsesWIFMock = jest.spyOn(encryptedWallet.wif(), "exists").mockReturnValue(true);
-			const walletWifMock = jest.spyOn(encryptedWallet.wif(), "get").mockImplementation(() => {
-				const wif = "S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV";
-				return Promise.resolve(wif);
-			});
+			const actsWithMnemonicMock = jest.spyOn(encryptedWallet, "actsWithMnemonic").mockReturnValue(false);
+			const actsWithWifWithEncryptionMock = jest
+				.spyOn(encryptedWallet, "actsWithWifWithEncryption")
+				.mockReturnValue(true);
+			const wifGetMock = jest
+				.spyOn(encryptedWallet.wif(), "get")
+				.mockResolvedValue("S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV");
 
 			const secondPublicKeyMock = jest
 				.spyOn(encryptedWallet, "secondPublicKey")
@@ -573,9 +574,9 @@ describe("SendDelegateResignation", () => {
 			signMock.mockRestore();
 			broadcastMock.mockRestore();
 			transactionMock.mockRestore();
-
-			walletUsesWIFMock.mockRestore();
-			walletWifMock.mockRestore();
+			actsWithMnemonicMock.mockRestore();
+			actsWithWifWithEncryptionMock.mockRestore();
+			wifGetMock.mockRestore();
 		});
 	});
 });

@@ -28,7 +28,6 @@ describe("PluginHeader", () => {
 	});
 
 	it("should render updating plugin", () => {
-		const onInstall = jest.fn();
 		const { container } = render(<PluginHeader {...pluginDataFixture} updatingStats={{ percent: 0.2 }} />);
 
 		expect(screen.getByTestId("PluginImage__updating")).toBeInTheDocument();
@@ -38,9 +37,7 @@ describe("PluginHeader", () => {
 	it("should trigger update", () => {
 		const onUpdate = jest.fn();
 
-		const { container } = render(
-			<PluginHeader {...pluginDataFixture} isInstalled hasUpdateAvailable onUpdate={onUpdate} />,
-		);
+		render(<PluginHeader {...pluginDataFixture} isInstalled hasUpdateAvailable onUpdate={onUpdate} />);
 
 		fireEvent.click(screen.getByTestId("PluginHeader__dropdown-toggle"));
 		fireEvent.click(screen.getByText(commonTranslations.UPDATE));
@@ -51,7 +48,7 @@ describe("PluginHeader", () => {
 	it("should trigger delete", () => {
 		const onDelete = jest.fn();
 
-		const { container } = render(<PluginHeader {...pluginDataFixture} isInstalled onDelete={onDelete} />);
+		render(<PluginHeader {...pluginDataFixture} isInstalled onDelete={onDelete} />);
 
 		fireEvent.click(screen.getByTestId("PluginHeader__dropdown-toggle"));
 		fireEvent.click(screen.getByText(commonTranslations.DELETE));
@@ -62,7 +59,7 @@ describe("PluginHeader", () => {
 	it("should trigger enable", () => {
 		const onEnable = jest.fn();
 
-		const { container } = render(<PluginHeader {...pluginDataFixture} isInstalled onEnable={onEnable} />);
+		render(<PluginHeader {...pluginDataFixture} isInstalled onEnable={onEnable} />);
 
 		fireEvent.click(screen.getByTestId("PluginHeader__dropdown-toggle"));
 		fireEvent.click(screen.getByText(commonTranslations.ENABLE));
@@ -73,9 +70,7 @@ describe("PluginHeader", () => {
 	it("should trigger disable", () => {
 		const onDisable = jest.fn();
 
-		const { container } = render(
-			<PluginHeader {...pluginDataFixture} isInstalled isEnabled onDisable={onDisable} />,
-		);
+		render(<PluginHeader {...pluginDataFixture} isInstalled isEnabled onDisable={onDisable} />);
 
 		fireEvent.click(screen.getByTestId("PluginHeader__dropdown-toggle"));
 		fireEvent.click(screen.getByText(commonTranslations.DISABLE));

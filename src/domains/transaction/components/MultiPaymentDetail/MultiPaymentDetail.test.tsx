@@ -6,14 +6,6 @@ import { TransactionFixture } from "tests/fixtures/transactions";
 import { translations } from "../../i18n";
 import { MultiPaymentDetail } from "./MultiPaymentDetail";
 
-const wallet = {
-	alias: () => "Test Wallet",
-	currency: () => "ARK",
-	exchangeCurrency: () => "BTC",
-	isDelegate: () => true,
-	isResignedDelegate: () => false,
-};
-
 describe("MultiPaymentDetail", () => {
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(
@@ -55,15 +47,15 @@ describe("MultiPaymentDetail", () => {
 					recipients: () => [
 						{
 							address: "adsad12312xsd1w312e1s13203e12",
-							amount: BigNumber.make(200),
+							amount: BigNumber.make(20000000000),
 						},
 						{
 							address: "adsad12312xsd1w312e1s13203e13",
-							amount: BigNumber.make(1990),
+							amount: BigNumber.make(199000000000),
 						},
 						{
 							address: "adsad12312xsd1w312e1s13203e14",
-							amount: BigNumber.make(1990),
+							amount: BigNumber.make(199000000000),
 						},
 					],
 					blockId: () => "adsad12312xsd1w312e1s13203e12",

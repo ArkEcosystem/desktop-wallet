@@ -1,7 +1,7 @@
-import * as path from "path";
+import { resolve } from "path";
 import { ClientFunction, RequestMock } from "testcafe";
 
-export const getPageURL = () => path.resolve("build/index.html");
+export const getPageURL = () => resolve("build/index.html");
 
 export const getLocation = ClientFunction(() => document.location.href);
 
@@ -20,8 +20,6 @@ const pluginNames: string[] = [
 	"@arkecosystem/desktop-wallet-sound-notifications",
 	"@arkecosystem/desktop-wallet-explorer",
 ];
-
-const repositoryNames: string[] = [""];
 
 const knownWallets: any[] = [];
 

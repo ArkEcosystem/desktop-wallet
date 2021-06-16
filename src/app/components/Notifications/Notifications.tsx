@@ -13,7 +13,7 @@ import {
 	NotificationsProps,
 	NotificationsWrapper,
 	NotificationTransactionItem,
-} from "./";
+} from ".";
 
 export const Notifications = ({ profile, onNotificationAction, onTransactionClick }: NotificationsProps) => {
 	const { t } = useTranslation();
@@ -41,7 +41,7 @@ export const Notifications = ({ profile, onNotificationAction, onTransactionClic
 				<EmptyBlock>
 					<span className="whitespace-nowrap">{t("COMMON.NOTIFICATIONS.EMPTY")}</span>
 				</EmptyBlock>
-				<Image name="EmptyNotifications" className="mt-8 mb-2 mx-auto w-64" />
+				<Image name="EmptyNotifications" className="mx-auto mt-8 mb-2 w-64" />
 			</NotificationsWrapper>
 		);
 	}

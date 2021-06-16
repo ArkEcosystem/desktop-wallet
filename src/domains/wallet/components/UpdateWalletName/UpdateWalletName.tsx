@@ -6,6 +6,7 @@ import { Modal } from "app/components/Modal";
 import React, { useEffect } from "react";
 import { useForm, Validate } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { lowerCaseEquals } from "utils/equals";
 
 interface UpdateWalletNameProps {
 	currentAlias?: string;
@@ -84,7 +85,7 @@ export const UpdateWalletName = ({
 												(item: Contracts.IReadWriteWallet) =>
 													item.id() !== walletId &&
 													item.alias() &&
-													item.alias()!.trim().toLowerCase() === alias.trim().toLowerCase(),
+													lowerCaseEquals(item.alias()!.trim(), alias.trim()),
 											).length ||
 										t("WALLETS.PAGE_CREATE_WALLET.VALIDATION.ALIAS_EXISTS", {
 											alias: alias.trim(),

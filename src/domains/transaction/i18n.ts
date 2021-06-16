@@ -41,7 +41,7 @@ export const translations: { [key: string]: any } = {
 	SIGN_CONTINUE: "Sign & Continue",
 	SIGNATURES: "Signatures",
 	SINGLE: "Single",
-	SMARTBRIDGE: "Smartbridge",
+	MEMO: "Memo",
 	TIMESTAMP: "Timestamp",
 	TOTAL_AMOUNT: "Total Amount",
 	TRANSACTION_AMOUNT: "Transaction Amount",
@@ -290,8 +290,10 @@ export const translations: { [key: string]: any } = {
 
 	AUTHENTICATION_STEP: {
 		TITLE: "Authenticate",
-		DESCRIPTION: "Enter your mnemonic passphrase to authenticate the transaction.",
+		DESCRIPTION_MNEMONIC: "Enter your mnemonic passphrase to authenticate the transaction.",
 		DESCRIPTION_ENCRYPTION_PASSWORD: "Enter your encryption password to authenticate the transaction.",
+		DESCRIPTION_WIF: "Enter your WIF to authenticate the transaction.",
+		DESCRIPTION_PRIVATE_KEY: "Enter your private key to authenticate the transaction.",
 	},
 
 	REPOSITORIES: {

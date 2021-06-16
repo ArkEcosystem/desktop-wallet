@@ -28,7 +28,6 @@ const baseSettings = {
 	AUTOMATIC_SIGN_OUT_PERIOD: 15,
 	BIP39_LOCALE: "english",
 	EXCHANGE_CURRENCY: "BTC",
-	LEDGER_UPDATE_METHOD: false,
 	LOCALE: "en-US",
 	MARKET_PROVIDER: "cryptocompare",
 	NAME: "test profile",
@@ -36,6 +35,9 @@ const baseSettings = {
 	THEME: "dark",
 	TIME_FORMAT: "h:mm A",
 	USE_TEST_NETWORKS: false,
+	DASHBOARD_TRANSACTION_HISTORY: true,
+	DO_NOT_SHOW_FEE_WARNING: false,
+	ERROR_REPORTING: false,
 };
 
 const renderComponent = async () => {
@@ -134,7 +136,7 @@ describe("CreateProfile", () => {
 		const name = "test profile";
 		const profile = env.profiles().create(name);
 
-		const { asFragment, getAllByTestId, getByTestId, getByText } = await renderComponent();
+		const { asFragment, getAllByTestId, getByTestId } = await renderComponent();
 
 		const selectDropdown = getByTestId("SelectDropdown__input");
 		fireEvent.change(selectDropdown, { target: { value: "BTC" } });
@@ -248,7 +250,7 @@ describe("CreateProfile", () => {
 	});
 
 	it("should update the avatar when removing focus from name input", async () => {
-		const { asFragment, getAllByTestId, getByTestId, getByText } = await renderComponent();
+		const { asFragment, getAllByTestId, getByTestId } = await renderComponent();
 
 		expect(() => getByTestId("SelectProfileImage__avatar")).toThrow(/^Unable to find an element by/);
 

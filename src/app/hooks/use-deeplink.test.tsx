@@ -1,14 +1,12 @@
 import { translations } from "app/i18n/common/i18n";
 import { toasts } from "app/services";
 import { ipcRenderer } from "electron";
-import { createHashHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
 import { getDefaultProfileId, getDefaultWalletId, renderWithRouter } from "testing-library";
 
 import { useDeeplink } from "./use-deeplink";
 
-const history = createHashHistory();
 const walletURL = `/profiles/${getDefaultProfileId()}/wallets/${getDefaultWalletId()}`;
 
 describe("useDeeplink hook", () => {
@@ -33,7 +31,7 @@ describe("useDeeplink hook", () => {
 			),
 		);
 
-		const { getByText, history } = renderWithRouter(
+		const { getByText } = renderWithRouter(
 			<Route pathname="/">
 				<TestComponent />
 			</Route>,
@@ -51,7 +49,7 @@ describe("useDeeplink hook", () => {
 			),
 		);
 
-		const { getByText, history } = renderWithRouter(
+		const { getByText } = renderWithRouter(
 			<Route pathname="/">
 				<TestComponent />
 			</Route>,
@@ -75,7 +73,7 @@ describe("useDeeplink hook", () => {
 
 		window.history.pushState({}, "Deeplink Test", `/profiles/${getDefaultProfileId()}/dashboard`);
 
-		const { getByText, history } = renderWithRouter(
+		const { getByText } = renderWithRouter(
 			<Route pathname="/profiles/:profileId">
 				<TestComponent />
 			</Route>,
@@ -99,7 +97,7 @@ describe("useDeeplink hook", () => {
 
 		window.history.pushState({}, "Deeplink Test", `/profiles/${getDefaultProfileId()}/dashboard`);
 
-		const { getByText, history } = renderWithRouter(
+		const { getByText } = renderWithRouter(
 			<Route pathname="/profiles/:profileId">
 				<TestComponent />
 			</Route>,
@@ -123,7 +121,7 @@ describe("useDeeplink hook", () => {
 
 		window.history.pushState({}, "Deeplink Test", `/profiles/${getDefaultProfileId()}/dashboard`);
 
-		const { getByText, history } = renderWithRouter(
+		const { getByText } = renderWithRouter(
 			<Route pathname="/profiles/:profileId">
 				<TestComponent />
 			</Route>,
@@ -197,7 +195,7 @@ describe("useDeeplink hook", () => {
 			callback(event, "ark:vote?coin=ark&network=ark.devnet&delegate=alessio"),
 		);
 
-		const { getByText, history } = renderWithRouter(
+		const { getByText } = renderWithRouter(
 			<Route pathname="/profiles/create">
 				<TestComponent />
 			</Route>,

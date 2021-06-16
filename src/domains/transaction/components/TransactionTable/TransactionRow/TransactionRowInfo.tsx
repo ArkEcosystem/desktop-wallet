@@ -6,11 +6,11 @@ import { useTranslation } from "react-i18next";
 
 interface Props {
 	memo?: string;
-	isMultiSignature: boolean;
+	isMultiSignatureRegistration: boolean;
 	isLedger?: boolean;
 }
 
-export const BaseTransactionRowInfo = ({ memo, isMultiSignature, isLedger }: Props) => {
+export const BaseTransactionRowInfo = ({ memo, isMultiSignatureRegistration, isLedger }: Props) => {
 	const { t } = useTranslation();
 
 	return (
@@ -23,7 +23,7 @@ export const BaseTransactionRowInfo = ({ memo, isMultiSignature, isLedger }: Pro
 				</Tooltip>
 			)}
 
-			{isMultiSignature && (
+			{isMultiSignatureRegistration && (
 				<Tooltip content={t("COMMON.MULTISIGNATURE")}>
 					<span className="p-1">
 						<Icon data-testid="TransactionRowInfo__multiSignature" name="Multisig" width={22} height={14} />
@@ -34,7 +34,7 @@ export const BaseTransactionRowInfo = ({ memo, isMultiSignature, isLedger }: Pro
 			{memo && (
 				<Tooltip className="break-all" content={memo}>
 					<span className="p-1">
-						<Icon data-testid="TransactionRowInfo__vendorField" name="Smartbridge" width={17} height={16} />
+						<Icon data-testid="TransactionRowInfo__vendorField" name="Memo" width={17} height={16} />
 					</span>
 				</Tooltip>
 			)}
@@ -45,7 +45,7 @@ export const BaseTransactionRowInfo = ({ memo, isMultiSignature, isLedger }: Pro
 export const TransactionRowInfo = ({ transaction }: { transaction: DTO.ExtendedTransactionData }) => (
 	<BaseTransactionRowInfo
 		memo={transaction.memo()}
-		isMultiSignature={transaction.isMultiSignature()}
+		isMultiSignatureRegistration={transaction.isMultiSignatureRegistration()}
 		isLedger={transaction.wallet()?.isLedger()}
 	/>
 );

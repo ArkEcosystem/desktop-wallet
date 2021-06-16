@@ -78,7 +78,7 @@ export const PluginListItem = ({
 					<span
 						data-testid="PluginListItem__link"
 						onClick={() => onClick?.(plugin)}
-						className="font-semibold link flex items-center space-x-2"
+						className="flex items-center space-x-2 font-semibold link"
 					>
 						{plugin.title}
 					</span>

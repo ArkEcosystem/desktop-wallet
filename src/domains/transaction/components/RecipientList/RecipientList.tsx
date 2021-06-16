@@ -34,6 +34,7 @@ const RecipientListItem = ({
 	tooltipDisabled,
 	disableButton,
 	showAmount,
+	normalizeAmount = true,
 }: RecipientListItemProps) => {
 	const { t } = useTranslation();
 
@@ -56,7 +57,7 @@ const RecipientListItem = ({
 				{showAmount && (
 					<td className="py-4 text-right">
 						<Label color="danger">
-							<Amount ticker={assetSymbol!} value={amount!} showSign />
+							<Amount ticker={assetSymbol!} value={amount!} showSign normalize={normalizeAmount} />
 						</Label>
 					</td>
 				)}
@@ -90,7 +91,7 @@ const RecipientListItem = ({
 						{!exchangeAmount && <span>{t("COMMON.AMOUNT")}</span>}
 					</div>
 					<div className="font-semibold text-right">
-						<Amount ticker={assetSymbol!} value={amount!} />
+						<Amount ticker={assetSymbol!} value={amount!} normalize={false} />
 					</div>
 				</td>
 			)}
@@ -124,6 +125,7 @@ export const RecipientList = ({
 	variant,
 	label,
 	showAmount,
+	normalizeAmount,
 	tooltipDisabled,
 	disableButton,
 	onRemove,
@@ -159,6 +161,7 @@ export const RecipientList = ({
 						tooltipDisabled={tooltipDisabled}
 						disableButton={disableButton}
 						onRemove={onRemove}
+						normalizeAmount={normalizeAmount}
 					/>
 				)}
 			</Table>
