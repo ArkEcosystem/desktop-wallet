@@ -13,7 +13,7 @@ import { TransactionRowRecipientIcon } from "./TransactionRowRecipientIcon";
 interface Props {
 	type: string;
 	isSent: boolean;
-	isReturn: boolean;
+	isReturn?: boolean;
 	recipient: string;
 	iconSize?: Size;
 }
@@ -43,7 +43,7 @@ export const BaseTransactionRowMode = ({ type, isSent, isReturn, recipient, icon
 			tooltipContent: t("TRANSACTION.RECEIVED"),
 			modeCircleStyle: "border-theme-success-200 text-theme-success-600 dark:border-theme-success-600",
 		};
-	}, [isSent, isReturn]);
+	}, [isSent, isReturn, t]);
 
 	const shadowClasses =
 		"ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black";
