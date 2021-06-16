@@ -26,9 +26,11 @@ export const BaseTransactionRowMode = ({ type, isSent, isReturn, recipient, icon
 			return { modeIconName: "Return", tooltipContent: t("TRANSACTION.RETURN") };
 		}
 
-		return isSent
-			? { modeIconName: "Sent", tooltipContent: t("TRANSACTION.SENT") }
-			: { modeIconName: "Received", tooltipContent: t("TRANSACTION.RECEIVED") };
+		if (isSent) {
+			return { modeIconName: "Sent", tooltipContent: t("TRANSACTION.SENT") };
+		}
+
+		return { modeIconName: "Received", tooltipContent: t("TRANSACTION.RECEIVED") };
 	}, [isSent, isReturn]);
 
 	const modeCircleStyle = isSent
