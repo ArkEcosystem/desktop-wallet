@@ -34,7 +34,12 @@ export const BaseTransactionRowMode = ({ type, isSent, recipient, iconSize = "lg
 		<div data-testid="TransactionRowMode" className="flex items-center -space-x-1">
 			<Tooltip content={tooltipContent}>
 				<Circle size={iconSize} className={cn(shadowClasses, modeCircleStyle)}>
-					<Icon data-testid={`TransactionRowMode__${modeIconName}`} name={modeIconName} />
+					<Icon
+						data-testid={`TransactionRowMode__${modeIconName}`}
+						name={modeIconName}
+						width={iconSize === "sm" ? 16 : 20}
+						height={iconSize === "sm" ? 16 : 20}
+					/>
 				</Circle>
 			</Tooltip>
 
