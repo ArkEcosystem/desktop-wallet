@@ -19,21 +19,18 @@ export const useQRCode = ({ network, amount, address, memo, coin, method }: QRCo
 
 	const maxLength = 255;
 
-	const formatQR = useCallback(
-		({ amount, address, memo, coin, network, method = "transfer" }: QRCodeProps) => {
-			const uri = new URI();
+	const formatQR = useCallback(({ amount, address, memo, coin, network, method = "transfer" }: QRCodeProps) => {
+		const uri = new URI();
 
-			return uri.serialize({
-				method,
-				coin,
-				network,
-				recipient: address,
-				...(amount && { amount }),
-				...(memo && { memo: memo?.slice(0, maxLength) }),
-			});
-		},
-		[],
-	);
+		return uri.serialize({
+			method,
+			coin,
+			network,
+			recipient: address,
+			...(amount && { amount }),
+			...(memo && { memo: memo?.slice(0, maxLength) }),
+		});
+	}, []);
 
 	useEffect(() => {
 		const color = shouldUseDarkColors()
@@ -47,9 +44,7 @@ export const useQRCode = ({ network, amount, address, memo, coin, method }: QRCo
 			  };
 
 		const generateQrCode = async () => {
-			const qrCodeDataUri = address
-				? formatQR({ network, amount, address, memo, coin, method })
-				: undefined;
+			const qrCodeDataUri = address ? formatQR({ network, amount, address, memo, coin, method }) : undefined;
 
 			let qrCodeDataImage: string | undefined;
 
