@@ -16,10 +16,12 @@ export const GenerationStep = ({
 	fees,
 	wallet,
 	step = 0.001,
+	profile,
 }: {
 	fees: TransactionFees;
 	wallet: ProfileContracts.IReadWriteWallet;
 	step?: number;
+	profile: ProfileContracts.IProfile;
 }) => {
 	const { t } = useTranslation();
 
@@ -29,6 +31,8 @@ export const GenerationStep = ({
 	// getValues does not get the value of `defaultValues` on first render
 	const [defaultFee] = useState(() => watch("fee"));
 	const fee = getValues("fee") || defaultFee;
+
+	const inputFeeSettings = getValues("inputFeeSettings") ?? {};
 
 	useEffect(() => {
 		register("fee", common.fee(wallet.balance(), wallet.network()));
@@ -61,14 +65,33 @@ export const GenerationStep = ({
 			<FormField name="fee">
 				<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
 				<InputFee
-					min={fees.min}
-					avg={fees.avg}
-					max={fees.max}
-					value={fee || 0}
+					min={fees?.min}
+					avg={fees?.avg}
+					max={fees?.max}
+					loading={!fees}
+					value={fee}
 					step={step}
-					showFeeOptions={wallet.network().feeType() === "dynamic"}
+					disabled={wallet.network().feeType() !== "dynamic"}
+					network={wallet.network()}
+					profile={profile}
 					onChange={(value) => {
 						setValue("fee", value, { shouldValidate: true, shouldDirty: true });
+					}}
+					viewType={inputFeeSettings.viewType}
+					onChangeViewType={(viewType) => {
+						setValue(
+							"inputFeeSettings",
+							{ ...inputFeeSettings, viewType },
+							{ shouldValidate: true, shouldDirty: true },
+						);
+					}}
+					simpleValue={inputFeeSettings.simpleValue}
+					onChangeSimpleValue={(simpleValue) => {
+						setValue(
+							"inputFeeSettings",
+							{ ...inputFeeSettings, simpleValue },
+							{ shouldValidate: true, shouldDirty: true },
+						);
 					}}
 				/>
 			</FormField>
