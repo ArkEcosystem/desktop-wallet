@@ -4,7 +4,7 @@ import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Tooltip } from "app/components/Tooltip";
 import cn from "classnames";
-import React from "react";
+import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { Size } from "types";
 
@@ -13,15 +13,23 @@ import { TransactionRowRecipientIcon } from "./TransactionRowRecipientIcon";
 interface Props {
 	type: string;
 	isSent: boolean;
+	isReturn: boolean;
 	recipient: string;
 	iconSize?: Size;
 }
 
-export const BaseTransactionRowMode = ({ type, isSent, recipient, iconSize = "lg" }: Props) => {
+export const BaseTransactionRowMode = ({ type, isSent, isReturn, recipient, iconSize = "lg" }: Props) => {
 	const { t } = useTranslation();
 
-	const tooltipContent = isSent ? t("TRANSACTION.SENT") : t("TRANSACTION.RECEIVED");
-	const modeIconName = isSent ? "Sent" : "Received";
+	const { modeIconName, tooltipContent } = useMemo(() => {
+		if (isReturn) {
+			return { modeIconName: "Return", tooltipContent: t("TRANSACTION.RETURN") };
+		}
+
+		return isSent
+			? { modeIconName: "Sent", tooltipContent: t("TRANSACTION.SENT") }
+			: { modeIconName: "Received", tooltipContent: t("TRANSACTION.RECEIVED") };
+	}, [isSent, isReturn]);
 
 	const modeCircleStyle = isSent
 		? "border-theme-danger-100 text-theme-danger-400 dark:border-theme-danger-400"
@@ -58,6 +66,7 @@ export const TransactionRowMode = ({
 	<BaseTransactionRowMode
 		iconSize={iconSize}
 		isSent={transaction.isSent()}
+		isReturn={transaction.isReturn()}
 		type={transaction.type()}
 		recipient={transaction.recipient()}
 	/>
