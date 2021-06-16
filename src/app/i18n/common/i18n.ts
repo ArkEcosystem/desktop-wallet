@@ -109,7 +109,7 @@ export const translations: { [key: string]: any } = {
 	NEWS: "News",
 	NO_OPTIONS: "No options",
 	SENDER_ADDRESS: "Sender address",
-	SMARTBRIDGE: "Smartbridge",
+	MEMO: "Memo",
 	FEE: "Fee",
 	MNEMONIC: "Mnemonic",
 	MNEMONIC_TYPE: {
