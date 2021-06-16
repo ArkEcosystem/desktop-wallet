@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "testing-library";
 import { TransactionFixture } from "tests/fixtures/transactions";
 
-import { BaseTransactionRowMode,TransactionRowMode } from "./TransactionRowMode";
+import { BaseTransactionRowMode, TransactionRowMode } from "./TransactionRowMode";
 
 describe("TransactionRowMode", () => {
 	it("should show sent icon", () => {
