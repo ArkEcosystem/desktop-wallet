@@ -15,7 +15,6 @@ type NotifyReceivedTransactionsParams = SyncReceivedTransactionsParams & { profi
 const fetchRecentProfileTransactions = async (profile: ProfileContracts.IProfile, limit: number) => {
 	const query = {
 		cursor: 1,
-		orderBy: "timestamp",
 		limit,
 		addresses: profile
 			.wallets()
