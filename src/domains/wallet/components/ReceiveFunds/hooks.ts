@@ -29,7 +29,7 @@ export const useQRCode = ({ network, amount, address, smartbridge, coin, method 
 				network,
 				recipient: address,
 				...(amount && { amount }),
-				...(smartbridge && { vendorField: smartbridge?.slice(0, maxLength) }),
+				...(smartbridge && { memo: smartbridge?.slice(0, maxLength) }),
 			});
 		},
 		[],
