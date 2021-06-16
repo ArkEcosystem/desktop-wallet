@@ -21,21 +21,29 @@ interface Props {
 export const BaseTransactionRowMode = ({ type, isSent, isReturn, recipient, iconSize = "lg" }: Props) => {
 	const { t } = useTranslation();
 
-	const { modeIconName, tooltipContent } = useMemo(() => {
+	const { modeIconName, tooltipContent, modeCircleStyle } = useMemo(() => {
 		if (isReturn) {
-			return { modeIconName: "Return", tooltipContent: t("TRANSACTION.RETURN") };
+			return {
+				modeIconName: "Return",
+				tooltipContent: t("TRANSACTION.RETURN"),
+				modeCircleStyle: "border-theme-success-200 text-theme-success-600 dark:border-theme-success-600",
+			};
 		}
 
 		if (isSent) {
-			return { modeIconName: "Sent", tooltipContent: t("TRANSACTION.SENT") };
+			return {
+				modeIconName: "Sent",
+				tooltipContent: t("TRANSACTION.SENT"),
+				modeCircleStyle: "border-theme-danger-100 text-theme-danger-400 dark:border-theme-danger-400",
+			};
 		}
 
-		return { modeIconName: "Received", tooltipContent: t("TRANSACTION.RECEIVED") };
+		return {
+			modeIconName: "Received",
+			tooltipContent: t("TRANSACTION.RECEIVED"),
+			modeCircleStyle: "border-theme-success-200 text-theme-success-600 dark:border-theme-success-600",
+		};
 	}, [isSent, isReturn]);
-
-	const modeCircleStyle = isSent
-		? "border-theme-danger-100 text-theme-danger-400 dark:border-theme-danger-400"
-		: "border-theme-success-200 text-theme-success-600 dark:border-theme-success-600";
 
 	const shadowClasses =
 		"ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black";
