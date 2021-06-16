@@ -10,7 +10,7 @@ describe("TransactionMemo", () => {
 
 		const { container } = render(<TransactionMemo memo={memo} />);
 
-		expect(container).toHaveTextContent(transactionTranslations.SMARTBRIDGE);
+		expect(container).toHaveTextContent(transactionTranslations.MEMO);
 		expect(container).toHaveTextContent(memo);
 
 		expect(container).toMatchSnapshot();

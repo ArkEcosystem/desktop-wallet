@@ -42,7 +42,7 @@ export const translations: { [key: string]: any } = {
 	SIGNATURES: "Signatures",
 	SINGLE: "Single",
 	SINGLE_OR_MULTI: "Select a Single or Multiple Recipient Transaction",
-	SMARTBRIDGE: "Smartbridge",
+	MEMO: "Memo",
 	TIMESTAMP: "Timestamp",
 	TOTAL_AMOUNT: "Total Amount",
 	TRANSACTION_AMOUNT: "Transaction Amount",

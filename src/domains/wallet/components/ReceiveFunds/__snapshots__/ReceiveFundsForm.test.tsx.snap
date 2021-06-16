@@ -60,9 +60,9 @@ exports[`ReceiveFundsForm should emit amount onChange event 1`] = `
           <label
             class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
             data-testid="FormLabel"
-            for="smartbridge"
+            for="memo"
           >
-            Smartbridge
+            Memo
             <span
               class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
               data-testid="FormLabel__optional"
@@ -83,8 +83,8 @@ exports[`ReceiveFundsForm should emit amount onChange event 1`] = `
             >
               <input
                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                data-testid="ReceiveFundsForm__smartbridge"
-                name="smartbridge"
+                data-testid="ReceiveFundsForm__memo"
+                name="memo"
                 value=""
               />
             </div>
@@ -110,7 +110,7 @@ exports[`ReceiveFundsForm should emit amount onChange event 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ReceiveFundsForm should emit smartbridge onChange event 1`] = `
+exports[`ReceiveFundsForm should emit memo onChange event 1`] = `
 <DocumentFragment>
   <form
     class="space-y-5"
@@ -170,9 +170,9 @@ exports[`ReceiveFundsForm should emit smartbridge onChange event 1`] = `
           <label
             class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
             data-testid="FormLabel"
-            for="smartbridge"
+            for="memo"
           >
-            Smartbridge
+            Memo
             <span
               class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
               data-testid="FormLabel__optional"
@@ -193,8 +193,8 @@ exports[`ReceiveFundsForm should emit smartbridge onChange event 1`] = `
             >
               <input
                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                data-testid="ReceiveFundsForm__smartbridge"
-                name="smartbridge"
+                data-testid="ReceiveFundsForm__memo"
+                name="memo"
                 value=""
               />
             </div>
@@ -220,7 +220,7 @@ exports[`ReceiveFundsForm should emit smartbridge onChange event 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ReceiveFundsForm should not show smartbridge if is not supported by network 1`] = `
+exports[`ReceiveFundsForm should not show memo if is not supported by network 1`] = `
 <DocumentFragment>
   <form
     class="space-y-5"
@@ -340,9 +340,9 @@ exports[`ReceiveFundsForm should render 1`] = `
           <label
             class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
             data-testid="FormLabel"
-            for="smartbridge"
+            for="memo"
           >
-            Smartbridge
+            Memo
             <span
               class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
               data-testid="FormLabel__optional"
@@ -363,8 +363,8 @@ exports[`ReceiveFundsForm should render 1`] = `
             >
               <input
                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                data-testid="ReceiveFundsForm__smartbridge"
-                name="smartbridge"
+                data-testid="ReceiveFundsForm__memo"
+                name="memo"
                 value=""
               />
             </div>

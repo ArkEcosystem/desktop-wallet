@@ -102,7 +102,7 @@ export const SendTransfer = () => {
 		register("senderAddress", sendTransfer.senderAddress());
 		register("fees");
 		register("fee", common.fee(remainingBalance, wallet?.network?.()));
-		register("smartbridge", sendTransfer.smartbridge());
+		register("memo", sendTransfer.memo());
 
 		register("remainingBalance");
 		register("isSendAllSelected");
@@ -137,7 +137,7 @@ export const SendTransfer = () => {
 		);
 
 		if (deepLinkParams.memo) {
-			setValue("smartbridge", deepLinkParams.memo);
+			setValue("memo", deepLinkParams.memo);
 		}
 
 		if (deepLinkParams.recipient) {
@@ -199,16 +199,7 @@ export const SendTransfer = () => {
 
 		clearErrors("mnemonic");
 
-		const {
-			fee,
-			mnemonic,
-			secondMnemonic,
-			recipients,
-			smartbridge,
-			encryptionPassword,
-			wif,
-			privateKey,
-		} = getValues();
+		const { fee, mnemonic, secondMnemonic, recipients, memo, encryptionPassword, wif, privateKey } = getValues();
 		const isMultiPayment = recipients.length > 1;
 		const transactionType = isMultiPayment ? "multiPayment" : "transfer";
 
@@ -238,7 +229,7 @@ export const SendTransfer = () => {
 				transactionInput.data = {
 					to: recipients[0].address,
 					amount: recipients[0].amount.toHuman(),
-					memo: smartbridge,
+					memo: memo,
 				};
 			}
 

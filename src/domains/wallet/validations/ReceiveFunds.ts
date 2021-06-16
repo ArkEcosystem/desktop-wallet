@@ -1,9 +1,9 @@
 export const receiveFunds = (t: any) => ({
-	smartbridge: () => ({
+	memo: () => ({
 		maxLength: {
 			value: 255,
 			message: t("COMMON.VALIDATION.MAX_LENGTH", {
-				field: t("COMMON.SMARTBRIDGE"),
+				field: t("COMMON.MEMO"),
 				maxLength: 255,
 			}),
 		},

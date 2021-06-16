@@ -28,7 +28,7 @@ describe("ReceiveFundsForm", () => {
 			);
 
 			await waitFor(() => expect(getByTestId("ReceiveFundsForm__amount")).toHaveValue(""));
-			await waitFor(() => expect(getByTestId("ReceiveFundsForm__smartbridge")).toHaveValue(""));
+			await waitFor(() => expect(getByTestId("ReceiveFundsForm__memo")).toHaveValue(""));
 			expect(asFragment()).toMatchSnapshot();
 		});
 	});
@@ -53,7 +53,7 @@ describe("ReceiveFundsForm", () => {
 		});
 	});
 
-	it("should emit smartbridge onChange event", async () => {
+	it("should emit memo onChange event", async () => {
 		const { result: form } = renderHook(() => useForm({ mode: "onChange" }));
 
 		await act(async () => {
@@ -62,19 +62,19 @@ describe("ReceiveFundsForm", () => {
 					<ReceiveFundsForm network={network} />
 				</Form>,
 			);
-			await waitFor(() => expect(getByTestId("ReceiveFundsForm__smartbridge")).toHaveValue(""));
+			await waitFor(() => expect(getByTestId("ReceiveFundsForm__memo")).toHaveValue(""));
 
-			fireEvent.input(getByTestId("ReceiveFundsForm__smartbridge"), { target: { value: "test" } });
-			await waitFor(() => expect(form.current.getValues("smartbridge")).toBe("test"));
-			await waitFor(() => expect(getByTestId("ReceiveFundsForm__smartbridge")).toHaveValue("test"));
+			fireEvent.input(getByTestId("ReceiveFundsForm__memo"), { target: { value: "test" } });
+			await waitFor(() => expect(form.current.getValues("memo")).toBe("test"));
+			await waitFor(() => expect(getByTestId("ReceiveFundsForm__memo")).toHaveValue("test"));
 
 			expect(asFragment()).toMatchSnapshot();
 		});
 	});
 
-	it("should not show smartbridge if is not supported by network", async () => {
-		const smartbridge = Array(256).fill("x").join("");
-		const { result: form } = renderHook(() => useForm({ mode: "onChange", defaultValues: { smartbridge } }));
+	it("should not show memo if is not supported by network", async () => {
+		const memo = Array(256).fill("x").join("");
+		const { result: form } = renderHook(() => useForm({ mode: "onChange", defaultValues: { memo } }));
 
 		const memoMock = jest.spyOn(network, "usesMemo").mockReturnValue(false);
 
@@ -85,7 +85,7 @@ describe("ReceiveFundsForm", () => {
 				</Form>,
 			);
 
-			expect(() => getByTestId("ReceiveFundsForm__smartbridge")).toThrow();
+			expect(() => getByTestId("ReceiveFundsForm__memo")).toThrow();
 
 			expect(asFragment()).toMatchSnapshot();
 		});
