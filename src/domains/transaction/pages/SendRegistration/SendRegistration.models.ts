@@ -37,5 +37,5 @@ export interface SendRegistrationForm {
 
 	formFields: string[];
 
-	component: ({ activeTab, fees, wallet }: SendRegistrationComponent) => JSX.Element;
+	component: (props: SendRegistrationComponent) => JSX.Element;
 }

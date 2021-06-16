@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { screen } from "@testing-library/react";
 import { act as hookAct, renderHook } from "@testing-library/react-hooks";
 import { LedgerProvider } from "app/contexts";
+import { translations } from "domains/transaction/i18n";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -21,7 +23,6 @@ import {
 	renderWithRouter,
 	syncFees,
 	waitFor,
-	within,
 } from "utils/testing-library";
 
 import { FormStep, ReviewStep, SendIpfs, SummaryStep } from ".";
@@ -165,11 +166,7 @@ describe("SendIpfs", () => {
 		expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
 
 		// Fee
-		const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
-		act(() => {
-			fireEvent.click(fees[1]);
-		});
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+		await waitFor(() => expect(screen.getAllByRole("radio")[1]).toBeChecked());
 
 		// Step 2
 		act(() => {
@@ -234,11 +231,7 @@ describe("SendIpfs", () => {
 		expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
 
 		// Fee
-		const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
-		act(() => {
-			fireEvent.click(fees[1]);
-		});
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+		await waitFor(() => expect(screen.getAllByRole("radio")[1]).toBeChecked());
 
 		// Step 2
 		act(() => {
@@ -302,7 +295,7 @@ describe("SendIpfs", () => {
 
 		history.push(ipfsURL);
 
-		const { getByTestId } = renderWithRouter(
+		const { getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
 				<LedgerProvider transport={transport}>
 					<SendIpfs />
@@ -327,8 +320,12 @@ describe("SendIpfs", () => {
 		expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
 
 		// Fee
+		await waitFor(() => expect(getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED)).toBeTruthy());
+		act(() => {
+			fireEvent.click(getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
+		});
 		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
-		expect(getByTestId("InputCurrency")).toHaveValue("10");
+		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
 
 		await waitFor(() => expect(getByTestId("SendIpfs__button--continue")).not.toBeDisabled());
 		fireEvent.click(getByTestId("SendIpfs__button--continue"));
@@ -350,7 +347,7 @@ describe("SendIpfs", () => {
 
 		history.push(ipfsURL);
 
-		const { getByTestId } = renderWithRouter(
+		const { getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
 				<LedgerProvider transport={transport}>
 					<SendIpfs />
@@ -375,8 +372,10 @@ describe("SendIpfs", () => {
 		expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
 
 		// Fee
+		await waitFor(() => expect(getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED)).toBeVisible());
+		fireEvent.click(getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
 		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
-		expect(getByTestId("InputCurrency")).toHaveValue("10");
+		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
 
 		await waitFor(() => expect(getByTestId("SendIpfs__button--continue")).not.toBeDisabled());
 		fireEvent.click(getByTestId("SendIpfs__button--continue"));
@@ -421,12 +420,7 @@ describe("SendIpfs", () => {
 		expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
 
 		// Fee
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-		const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
-		act(() => {
-			fireEvent.click(fees[1]);
-		});
-		expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+		await waitFor(() => expect(screen.getAllByRole("radio")[1]).toBeChecked());
 
 		// Step 2
 		act(() => {
@@ -538,12 +532,7 @@ describe("SendIpfs", () => {
 		expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
 
 		// Fee
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-		const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
-		act(() => {
-			fireEvent.click(fees[1]);
-		});
-		expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+		await waitFor(() => expect(screen.getAllByRole("radio")[1]).toBeChecked());
 
 		// Step 2
 		act(() => {
@@ -669,11 +658,7 @@ describe("SendIpfs", () => {
 		expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
 
 		// Fee
-		const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
-		act(() => {
-			fireEvent.click(fees[1]);
-		});
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+		await waitFor(() => expect(screen.getAllByRole("radio")[1]).toBeChecked());
 
 		// Step 2
 		act(() => {
@@ -771,11 +756,7 @@ describe("SendIpfs", () => {
 		expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
 
 		// Fee
-		const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
-		act(() => {
-			fireEvent.click(fees[1]);
-		});
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+		await waitFor(() => expect(screen.getAllByRole("radio")[1]).toBeChecked());
 
 		// Step 2
 		act(() => {
@@ -841,11 +822,7 @@ describe("SendIpfs", () => {
 		expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
 
 		// Fee
-		const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
-		act(() => {
-			fireEvent.click(fees[1]);
-		});
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+		await waitFor(() => expect(screen.getAllByRole("radio")[1]).toBeChecked());
 
 		// Step 2
 		act(() => {
