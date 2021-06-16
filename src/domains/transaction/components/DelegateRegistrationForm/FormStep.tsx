@@ -11,7 +11,7 @@ import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const FormStep = ({ fees, wallet, step = 0.001 }: any) => {
+export const FormStep = ({ fees, wallet, step = 0.001, profile }: any) => {
 	const { t } = useTranslation();
 	const { env } = useEnvironmentContext();
 
@@ -20,6 +20,8 @@ export const FormStep = ({ fees, wallet, step = 0.001 }: any) => {
 	const { getValues, register, unregister, setValue, watch } = useFormContext();
 	const username = getValues("username");
 	const [usernames, setUsernames] = useState<string[]>([]);
+
+	const inputFeeSettings = getValues("inputFeeSettings") ?? {};
 
 	// getValues does not get the value of `defaultValues` on first render
 	const [defaultFee] = useState(() => watch("fee"));
@@ -75,14 +77,33 @@ export const FormStep = ({ fees, wallet, step = 0.001 }: any) => {
 				<FormField name="fee">
 					<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
 					<InputFee
-						min={fees.min}
-						avg={fees.avg}
-						max={fees.max}
+						min={fees?.min}
+						avg={fees?.avg}
+						max={fees?.max}
+						loading={!fees}
 						value={fee}
 						step={step}
-						showFeeOptions={wallet.network().feeType() === "dynamic"}
+						disabled={wallet.network().feeType() !== "dynamic"}
+						network={wallet.network()}
+						profile={profile}
 						onChange={(value) => {
 							setValue("fee", value, { shouldValidate: true, shouldDirty: true });
+						}}
+						viewType={inputFeeSettings.viewType}
+						onChangeViewType={(viewType) => {
+							setValue(
+								"inputFeeSettings",
+								{ ...inputFeeSettings, viewType },
+								{ shouldValidate: true, shouldDirty: true },
+							);
+						}}
+						simpleValue={inputFeeSettings.simpleValue}
+						onChangeSimpleValue={(simpleValue) => {
+							setValue(
+								"inputFeeSettings",
+								{ ...inputFeeSettings, simpleValue },
+								{ shouldValidate: true, shouldDirty: true },
+							);
 						}}
 					/>
 				</FormField>

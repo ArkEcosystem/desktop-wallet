@@ -3,7 +3,7 @@
 exports[`ButtonGroup should render 1`] = `
 <DocumentFragment>
   <div
-    class="inline-flex items-center space-x-2"
+    class="w-full inline-flex items-center space-x-2"
     data-testid="ButtonGroup"
     role="radiogroup"
   />
@@ -14,7 +14,7 @@ exports[`ButtonGroupOption should render 1`] = `
 <DocumentFragment>
   <button
     aria-checked="true"
-    class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cqjOKw"
+    class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
     data-testid="ButtonGroupOption"
     role="radio"
     type="button"
@@ -23,7 +23,7 @@ exports[`ButtonGroupOption should render 1`] = `
   </button>
   <button
     aria-checked="false"
-    class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cqjOKw"
+    class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
     data-testid="ButtonGroupOption"
     role="radio"
     type="button"
