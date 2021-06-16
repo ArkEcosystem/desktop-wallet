@@ -37,7 +37,7 @@ describe("MultiPaymentDetail", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render with recipients", () => {
+	it("should render with recipients", async () => {
 		const { asFragment, getByText, getByTestId } = render(
 			<MultiPaymentDetail
 				isOpen={true}
@@ -64,7 +64,7 @@ describe("MultiPaymentDetail", () => {
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_TRANSFER_DETAIL.TITLE);
-		waitFor(() => expect(getByText("Well Confirmed")).toBeTruthy());
+		await waitFor(() => expect(getByText(translations.WELL_CONFIRMED)).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
