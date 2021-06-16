@@ -84,7 +84,7 @@ export const FormStep = ({
 							type="text"
 							placeholder=" "
 							maxLengthLabel="255"
-							defaultValue={memo}
+							value={memo || ""}
 							onChange={(event: ChangeEvent<HTMLInputElement>) =>
 								setValue("memo", event.target.value, { shouldDirty: true, shouldValidate: true })
 							}
