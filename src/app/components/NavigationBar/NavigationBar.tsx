@@ -106,7 +106,7 @@ const LogoContainer = styled.div`
 const NavigationButtonWrapper = styled.div`
 	${css`
 		button {
-			${tw`w-11 h-11 overflow-hidden rounded text-theme-primary-300 dark:text-theme-secondary-600 not-disabled:(hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200)`};
+			${tw`w-11 h-11 overflow-hidden rounded text-theme-secondary-700 dark:text-theme-secondary-600 not-disabled:(hover:text-theme-primary-600 hover:bg-theme-primary-100 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-100)`};
 		}
 	`};
 `;
