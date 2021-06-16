@@ -2,7 +2,6 @@ import { Contracts, Networks, Services } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfileContracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Button } from "app/components/Button";
-import { Divider } from "app/components/Divider";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
@@ -368,12 +367,6 @@ export const SendTransfer = () => {
 									onRepeat={handleSubmit(submitForm as any)}
 								/>
 							</TabPanel>
-
-							{activeTab === 1 && (
-								<div className="pt-2">
-									<Divider dashed />
-								</div>
-							)}
 
 							<div className="flex justify-end mt-8 space-x-3">
 								{activeTab < 4 && (
