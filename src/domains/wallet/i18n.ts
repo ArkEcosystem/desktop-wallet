@@ -21,7 +21,7 @@ export const translations: { [key: string]: any } = {
 		TITLE: "Receive Funds",
 		DESCRIPTION: "Specify the amount to request.",
 		WARNING:
-			"Please note that you have exceeded the number of characters allowed, anything over {{maxLength}} characters will not appear in smartbridges.",
+			"Please note that you have exceeded the number of characters allowed, anything over {{maxLength}} characters will not appear in memos.",
 		SPECIFY_AMOUNT: "Specify Amount",
 	},
 

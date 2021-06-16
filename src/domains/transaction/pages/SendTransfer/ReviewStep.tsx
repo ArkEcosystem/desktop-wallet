@@ -17,7 +17,7 @@ export const ReviewStep = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) =
 	const { t } = useTranslation();
 	const { unregister, watch } = useFormContext();
 
-	const { fee, recipients, smartbridge } = watch();
+	const { fee, recipients, memo } = watch();
 
 	let amount = BigNumber.ZERO;
 
@@ -39,7 +39,7 @@ export const ReviewStep = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) =
 
 			<TransactionRecipients currency={wallet.currency()} recipients={recipients} />
 
-			{smartbridge && <TransactionMemo memo={smartbridge} />}
+			{memo && <TransactionMemo memo={memo} />}
 
 			<div className="mt-2">
 				<TotalAmountBox

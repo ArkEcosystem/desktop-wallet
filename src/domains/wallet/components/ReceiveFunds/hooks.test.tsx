@@ -24,7 +24,7 @@ describe("useQRCode hook", () => {
 				useQRCode({
 					coin: "ARK",
 					amount: "10",
-					smartbridge: "test",
+					memo: "test",
 					network: "ark",
 					address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 				}),
@@ -54,7 +54,7 @@ describe("useQRCode hook", () => {
 				useQRCode({
 					coin: "ARK",
 					amount: "10",
-					smartbridge: "test",
+					memo: "test",
 					network: "ark",
 					address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 				}),
@@ -78,7 +78,7 @@ describe("useQRCode hook", () => {
 		darkColorsMock.mockRestore();
 	});
 
-	it("should generate without amount and smartbridge", async () => {
+	it("should generate without amount and memo", async () => {
 		let hook: any;
 		await act(async () => {
 			hook = renderHook(() =>

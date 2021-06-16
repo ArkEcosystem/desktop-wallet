@@ -64,6 +64,7 @@ import { ReactComponent as ListView } from "./list-view.svg";
 import { ReactComponent as LoaderLogo } from "./loader-logo.svg";
 import { ReactComponent as Lock } from "./lock.svg";
 import { ReactComponent as Magistrate } from "./magistrate.svg";
+import { ReactComponent as Memo } from "./memo.svg";
 import { ReactComponent as Msq } from "./msq.svg";
 import { ReactComponent as Multipayment } from "./multipayment.svg";
 import { ReactComponent as Multisig } from "./multisig.svg";
@@ -93,7 +94,6 @@ import { ReactComponent as Settings } from "./settings.svg";
 import { ReactComponent as SettingsHorizontal } from "./settings-horizontal.svg";
 import { ReactComponent as SignatureStatusOk } from "./signature-status-ok.svg";
 import { ReactComponent as SignatureStatusPending } from "./signature-status-pending.svg";
-import { ReactComponent as Smartbridge } from "./smartbridge.svg";
 import { ReactComponent as Sort } from "./sort.svg";
 import { ReactComponent as Star } from "./star.svg";
 import { ReactComponent as StarOutline } from "./star-outline.svg";
@@ -207,7 +207,7 @@ export const SvgCollection: any = {
 	SettingsHorizontal,
 	SignatureStatusOk,
 	SignatureStatusPending,
-	Smartbridge,
+	Memo,
 	Sort,
 	Star,
 	StarOutline,
