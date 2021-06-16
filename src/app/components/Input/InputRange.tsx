@@ -14,7 +14,6 @@ interface Props {
 	min: number;
 	max: number;
 	step: number;
-	name?: string;
 	onChange: (value: string) => void;
 }
 

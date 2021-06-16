@@ -3,6 +3,7 @@ import { Contracts } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act, renderHook } from "@testing-library/react-hooks";
+import { translations } from "domains/transaction/i18n";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import delegateRegistrationFixture from "tests/fixtures/coins/ark/devnet/transactions/delegate-registration.json";
@@ -14,7 +15,6 @@ import {
 	RenderResult,
 	syncDelegates,
 	waitFor,
-	within,
 } from "utils/testing-library";
 
 import { DelegateRegistrationForm } from "./DelegateRegistrationForm";
@@ -25,11 +25,7 @@ let fees: Record<string, string>;
 
 const renderComponent = async (defaultValues = { fee: "2" }) => {
 	let renderer: RenderResult;
-	const { result: form } = renderHook(() =>
-		useForm({
-			defaultValues,
-		}),
-	);
+	const { result: form } = renderHook(() => useForm({ defaultValues }));
 
 	await act(async () => {
 		renderer = render(
@@ -119,16 +115,34 @@ describe("DelegateRegistrationForm", () => {
 	});
 
 	it("should set fee", async () => {
-		const { asFragment, getByTestId } = await renderComponent({ fee: "10" });
+		const { asFragment, form, getByTestId, getByText, rerender } = await renderComponent({ fee: "10" });
+		form.register("inputFeeSettings" as any);
+
+		await act(async () => {
+			fireEvent.click(getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
+		});
+
+		await act(async () => {
+			rerender(
+				<FormProvider {...form}>
+					<DelegateRegistrationForm.component activeTab={1} fees={fees} wallet={wallet} />
+				</FormProvider>,
+			);
+
+			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")));
+		});
 
 		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
 
 		await act(async () => {
-			const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
-			fireEvent.click(fees[2]);
+			fireEvent.change(getByTestId("InputCurrency"), {
+				target: {
+					value: "11",
+				},
+			});
 		});
 
-		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
+		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("11"));
 		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
