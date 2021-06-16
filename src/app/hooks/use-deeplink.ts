@@ -6,6 +6,7 @@ import querystring from "querystring";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { matchPath, useHistory } from "react-router-dom";
+import { lowerCaseEquals } from "utils/equals";
 
 const useDeepLinkHandler = () => {
 	const { env } = useEnvironmentContext();
@@ -52,25 +53,21 @@ const useDeepLinkHandler = () => {
 
 					/* istanbul ignore next */
 					if (deeplinkSchema.coin) {
-						if (
-							!allAvailableNetworks.some(
-								(item) => item.coin().toLowerCase() === deeplinkSchema.coin.toLowerCase(),
-							)
-						) {
+						if (!allAvailableNetworks.some((item) => lowerCaseEquals(item.coin(), deeplinkSchema.coin))) {
 							throw new Error(`Coin "${deeplinkSchema.coin}" not supported.`);
 						}
 					}
 
 					/* istanbul ignore next */
 					if (deeplinkSchema.network) {
-						if (!allAvailableNetworks.some((item) => item.id().toLowerCase() === deeplinkSchema.network)) {
+						if (!allAvailableNetworks.some((item) => lowerCaseEquals(item.id(), deeplinkSchema.network))) {
 							throw new Error(`Network "${deeplinkSchema.network}" not supported.`);
 						}
 					}
 
 					const availableWallets = profile
 						.wallets()
-						.findByCoinWithNetwork(deeplinkSchema.coin.toUpperCase(), deeplinkSchema.network);
+						.findByCoinWithNetwork(deeplinkSchema.coin.toUpperCase(), deeplinkSchema.network.toLowerCase());
 
 					if (availableWallets.length === 0) {
 						throw new Error(

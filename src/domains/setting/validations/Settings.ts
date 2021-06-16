@@ -1,4 +1,5 @@
 import { Contracts, Environment } from "@arkecosystem/platform-sdk-profiles";
+import { lowerCaseEquals } from "utils/equals";
 
 export const settings = (t: any, env: Environment) => ({
 	name: (id: string) => ({
@@ -22,7 +23,7 @@ export const settings = (t: any, env: Environment) => ({
 						.values()
 						.some(
 							(profile: Contracts.IProfile) =>
-								profile.id() !== id && profile.name().toLowerCase() === name.trim().toLowerCase(),
+								profile.id() !== id && lowerCaseEquals(profile.name(), name.trim()),
 						)
 				) {
 					return t("PROFILE.PAGE_CREATE_PROFILE.VALIDATION.NAME_EXISTS");
