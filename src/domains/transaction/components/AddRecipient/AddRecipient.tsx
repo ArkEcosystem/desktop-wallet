@@ -256,6 +256,7 @@ export const AddRecipient = ({
 			address,
 		};
 
+		/* istanbul ignore next */
 		if (!senderWallet?.network().isTest()) {
 			newRecipient = {
 				...newRecipient,
