@@ -58,7 +58,9 @@ export const Notifications = ({ profile, onNotificationAction, onTransactionClic
 							<NotificationItem
 								{...notification}
 								onAction={onNotificationAction}
-								onVisibilityChange={(isVisible) => markAsRead(isVisible, notification.id, profile, environment)}
+								onVisibilityChange={(isVisible) =>
+									markAsRead(isVisible, notification.id, profile, environment)
+								}
 								containmentRef={wrapperReference}
 							/>
 						)}
@@ -77,7 +79,9 @@ export const Notifications = ({ profile, onNotificationAction, onTransactionClic
 								notification={notification}
 								profile={profile}
 								containmentRef={wrapperReference}
-								onVisibilityChange={(isVisible) => markAsRead(isVisible, notification.id, profile, environment)}
+								onVisibilityChange={(isVisible) =>
+									markAsRead(isVisible, notification.id, profile, environment)
+								}
 								onTransactionClick={onTransactionClick}
 							/>
 						)}

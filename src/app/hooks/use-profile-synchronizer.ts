@@ -149,7 +149,9 @@ export const useProfileSyncStatus = () => {
 			current.status = "idle";
 			current.restored = [];
 			setConfiguration({ profileIsRestoring: false, profileIsSyncing: true });
-			for (const profile of profiles)  {profile.status().reset();}
+			for (const profile of profiles) {
+				profile.status().reset();
+			}
 		},
 	};
 };

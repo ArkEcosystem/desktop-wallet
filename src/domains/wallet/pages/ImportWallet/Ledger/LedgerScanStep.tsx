@@ -78,7 +78,7 @@ export const LedgerTable = ({
 
 	const showSkeleton = isScanning || (isBusy && wallets.length === 0);
 
-	const skeletonRows = Array.from({length: 5}).fill({});
+	const skeletonRows = Array.from({ length: 5 }).fill({});
 	const data = showSkeleton ? skeletonRows : wallets;
 
 	return (

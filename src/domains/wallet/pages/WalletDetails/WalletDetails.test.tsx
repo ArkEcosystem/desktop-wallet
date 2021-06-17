@@ -65,11 +65,13 @@ const renderPage = async ({
 	}
 
 	if (waitForTransactions) {
-		await (withProfileSynchronizer ? waitFor(() =>
-				expect(within(getByTestId("TransactionTable")).queryAllByTestId("TableRow")).toHaveLength(1),
-			) : waitFor(() =>
-				expect(within(getByTestId("TransactionTable")).queryAllByTestId("TableRow")).not.toHaveLength(0),
-			));
+		await (withProfileSynchronizer
+			? waitFor(() =>
+					expect(within(getByTestId("TransactionTable")).queryAllByTestId("TableRow")).toHaveLength(1),
+			  )
+			: waitFor(() =>
+					expect(within(getByTestId("TransactionTable")).queryAllByTestId("TableRow")).not.toHaveLength(0),
+			  ));
 	}
 
 	return rendered;

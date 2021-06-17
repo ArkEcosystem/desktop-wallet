@@ -34,7 +34,12 @@ import { bootEnvWithProfileFixtures, isE2E, isUnit } from "utils/test-helpers";
 
 import { middlewares, RouterView, routes } from "../router";
 import { ConfigurationProvider, EnvironmentProvider, LedgerProvider, useEnvironmentContext } from "./contexts";
-import { useDeeplink, useEnvSynchronizer as useEnvironmentSynchronizer, useNetworkStatus, useProfileSynchronizer } from "./hooks";
+import {
+	useDeeplink,
+	useEnvSynchronizer as useEnvironmentSynchronizer,
+	useNetworkStatus,
+	useProfileSynchronizer,
+} from "./hooks";
 import { i18n as index18n } from "./i18n";
 import { PluginProviders } from "./PluginProviders";
 import { SentryProvider } from "./sentry/SentryProvider";

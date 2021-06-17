@@ -222,16 +222,18 @@ export const SendTransfer = () => {
 				data: {},
 			};
 
-			transactionInput.data = isMultiPayment ? {
-					payments: recipients.map(({ address, amount }: { address: string; amount: BigNumber }) => ({
-						to: address,
-						amount: amount.toHuman(),
-					})),
-				} : {
-					to: recipients[0].address,
-					amount: recipients[0].amount.toHuman(),
-					memo: memo,
-				};
+			transactionInput.data = isMultiPayment
+				? {
+						payments: recipients.map(({ address, amount }: { address: string; amount: BigNumber }) => ({
+							to: address,
+							amount: amount.toHuman(),
+						})),
+				  }
+				: {
+						to: recipients[0].address,
+						amount: recipients[0].amount.toHuman(),
+						memo: memo,
+				  };
 
 			const expiration = await wallet?.coin()?.transaction()?.estimateExpiration();
 			if (expiration) {

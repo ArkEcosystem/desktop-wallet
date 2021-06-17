@@ -15,7 +15,13 @@ const PaginationButtonStyled = styled.button`
 	${PaginationButton}
 `;
 
-export const Pagination = ({ totalCount, itemsPerPage, onSelectPage, currentPage, className }: PaginationProperties) => {
+export const Pagination = ({
+	totalCount,
+	itemsPerPage,
+	onSelectPage,
+	currentPage,
+	className,
+}: PaginationProperties) => {
 	const [buttonsDisabled, setButtonsDisabled] = useState(false);
 
 	const { t } = useTranslation();

@@ -96,7 +96,8 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 		);
 
 		const coinNames = coins.reduce(
-			(accumulator: string[], coin: CoinOption) => (coin.isSelected ? accumulator.concat(coin.coin) : accumulator),
+			(accumulator: string[], coin: CoinOption) =>
+				coin.isSelected ? accumulator.concat(coin.coin) : accumulator,
 			[],
 		);
 

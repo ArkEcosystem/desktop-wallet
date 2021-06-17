@@ -15,7 +15,14 @@ interface ProfileCardProperties {
 	onSelect?: any;
 }
 
-export const ProfileCard = ({ actions, className, profile, showSettings, onClick, onSelect }: ProfileCardProperties) => (
+export const ProfileCard = ({
+	actions,
+	className,
+	profile,
+	showSettings,
+	onClick,
+	onSelect,
+}: ProfileCardProperties) => (
 	<Card
 		className={cn("w-40 h-40 leading-tight", className)}
 		onClick={onClick}

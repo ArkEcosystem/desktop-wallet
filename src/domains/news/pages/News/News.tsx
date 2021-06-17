@@ -42,7 +42,7 @@ export const News = ({ itemsPerPage }: Properties) => {
 
 	const [news, setNews] = useState<BlockfolioSignal[]>([]);
 
-	const skeletonCards = Array.from({length: 8}).fill({});
+	const skeletonCards = Array.from({ length: 8 }).fill({});
 
 	const { t } = useTranslation();
 

@@ -19,7 +19,10 @@ type ButtonProperties = {
 const StyledButton = styled.button<ButtonProperties>(getStyles);
 
 export const OriginalButton = React.forwardRef<HTMLButtonElement, ButtonProperties>(
-	({ children, icon, isLoading, iconWidth, iconHeight, iconPosition, ...properties }: ButtonProperties, reference) => {
+	(
+		{ children, icon, isLoading, iconWidth, iconHeight, iconPosition, ...properties }: ButtonProperties,
+		reference,
+	) => {
 		const renderContent = () => {
 			if (isLoading) {
 				return (

@@ -24,7 +24,7 @@ const prepareLedger = async (input: Services.TransactionInputs, wallet: ProfileC
 const withAbortPromise = (signal?: AbortSignal, callback?: () => void) => <T>(promise: Promise<T>) =>
 	new Promise<T>((resolve, reject) => {
 		if (signal) {
-			signal.addEventListener('abort', () => {
+			signal.addEventListener("abort", () => {
 				callback?.();
 				reject("ERR_ABORT");
 			});

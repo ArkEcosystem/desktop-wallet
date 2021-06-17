@@ -107,11 +107,11 @@ export const SendVote = () => {
 			const parameters = new URLSearchParams();
 
 			if (unvoteAddresses) {
-				parameters.append("unvotes", unvoteAddresses.join(','));
+				parameters.append("unvotes", unvoteAddresses.join(","));
 			}
 
 			if (voteAddresses) {
-				parameters.append("votes", voteAddresses.join(','));
+				parameters.append("votes", voteAddresses.join(","));
 			}
 
 			return history.push({

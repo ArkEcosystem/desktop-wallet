@@ -23,7 +23,11 @@ export const SearchInputStyled = styled.input`
 	${SearchInput}
 `;
 
-export const PaginationSearchForm = ({ onClose, totalPages = Number.POSITIVE_INFINITY, onSelectPage }: PaginationSearchFormProperties) => {
+export const PaginationSearchForm = ({
+	onClose,
+	totalPages = Number.POSITIVE_INFINITY,
+	onSelectPage,
+}: PaginationSearchFormProperties) => {
 	const { t } = useTranslation();
 
 	const form = useForm({ mode: "onChange" });

@@ -85,7 +85,15 @@ interface ContactFormProperties {
 	errors?: any;
 }
 
-export const ContactForm = ({ profile, contact, onChange, onCancel, onDelete, onSave, errors }: ContactFormProperties) => {
+export const ContactForm = ({
+	profile,
+	contact,
+	onChange,
+	onCancel,
+	onDelete,
+	onSave,
+	errors,
+}: ContactFormProperties) => {
 	const nameMaxLength = 42;
 
 	const [addresses, setAddresses] = useState(() =>

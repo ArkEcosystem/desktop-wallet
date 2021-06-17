@@ -228,12 +228,12 @@ export const Votes = () => {
 		const parameters = new URLSearchParams();
 
 		if (unvotes?.length > 0) {
-			parameters.append("unvotes", unvotes.join(','));
+			parameters.append("unvotes", unvotes.join(","));
 		}
 
 		/* istanbul ignore else */
 		if (votes?.length > 0) {
-			parameters.append("votes", votes.join(','));
+			parameters.append("votes", votes.join(","));
 		}
 
 		history.push({

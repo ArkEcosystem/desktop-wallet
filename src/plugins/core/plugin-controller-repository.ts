@@ -143,6 +143,9 @@ export class PluginControllerRepository {
 			return content;
 		}
 
-		return plugins.reduce((accumulator, plugin) => plugin.hooks().applyFilter(namespace, hookName, accumulator, properties)!, content);
+		return plugins.reduce(
+			(accumulator, plugin) => plugin.hooks().applyFilter(namespace, hookName, accumulator, properties)!,
+			content,
+		);
 	}
 }

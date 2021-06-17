@@ -55,7 +55,10 @@ const OptionLabel = ({ option, profile }: { option: any; profile: Contracts.IPro
 };
 
 export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipientProperties>(
-	({ address, profile, disabled, isInvalid, network, placeholder, onChange }: SelectRecipientProperties, reference) => {
+	(
+		{ address, profile, disabled, isInvalid, network, placeholder, onChange }: SelectRecipientProperties,
+		reference,
+	) => {
 		const [isRecipientSearchOpen, setIsRecipientSearchOpen] = useState(false);
 		const [selectedAddress, setSelectedAddress] = useState(address);
 		const fieldContext = useFormField();

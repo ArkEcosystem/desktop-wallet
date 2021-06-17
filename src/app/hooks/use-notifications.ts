@@ -106,7 +106,8 @@ const findNotificationByVersion = (profile: ProfileContracts.IProfile, version?:
 		.find((n) => n.type === "wallet" && n.action === "update" && n?.meta?.version === version);
 
 const notifyWalletUpdate = (environment: Environment, t: any) => ({ version }: { version: string }) => {
-	environment.profiles()
+	environment
+		.profiles()
 		.values()
 		.forEach((profile: ProfileContracts.IProfile) => {
 			if (findNotificationByVersion(profile, version)) {
@@ -126,7 +127,8 @@ const notifyWalletUpdate = (environment: Environment, t: any) => ({ version }: {
 };
 
 const deleteNotificationsByVersion = (environment: Environment) => ({ version }: { version?: string }) => {
-	environment.profiles()
+	environment
+		.profiles()
 		.values()
 		.forEach((profile: ProfileContracts.IProfile) => {
 			const notification = findNotificationByVersion(profile, version);
@@ -150,7 +152,9 @@ export const useNotifications = () => {
 			const savedNotifications = await Promise.all(
 				profiles
 					.values()
-					.map((profile: ProfileContracts.IProfile) => notifyReceivedTransactions({ ...parameters, profile })),
+					.map((profile: ProfileContracts.IProfile) =>
+						notifyReceivedTransactions({ ...parameters, profile }),
+					),
 			);
 
 			await persist();

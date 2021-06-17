@@ -126,22 +126,20 @@ export const SearchRecipient = ({
 		}
 
 		for (const contact of contacts) {
-			for (const contactAddress of contact
-				.addresses()
-				.values()) {
-					if (!isNetworkSelected(contactAddress.network())) {
-						continue;
-					}
-
-					recipientsList.push({
-						id: contactAddress.id(),
-						address: contactAddress.address(),
-						alias: contact.name(),
-						avatar: contactAddress.avatar(),
-						network: contactAddress.network(),
-						type: "contact",
-					});
+			for (const contactAddress of contact.addresses().values()) {
+				if (!isNetworkSelected(contactAddress.network())) {
+					continue;
 				}
+
+				recipientsList.push({
+					id: contactAddress.id(),
+					address: contactAddress.address(),
+					alias: contact.name(),
+					avatar: contactAddress.avatar(),
+					network: contactAddress.network(),
+					type: "contact",
+				});
+			}
 		}
 
 		return recipientsList;

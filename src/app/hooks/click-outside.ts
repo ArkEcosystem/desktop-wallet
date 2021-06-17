@@ -8,8 +8,8 @@ export const clickOutsideHandler = (reference: any, callback: any) => {
 	// Check if clicked outside of the ref element
 	const handleClickOutside = (event: MouseEvent) => {
 		if (reference.current && !reference.current.contains(event.target) && typeof callback === "function") {
-				callback();
-			}
+			callback();
+		}
 	};
 
 	// Listen to click events

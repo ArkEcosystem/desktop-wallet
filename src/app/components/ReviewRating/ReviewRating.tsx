@@ -16,7 +16,9 @@ export const ReviewRating = (properties: ReviewRatingProperties) => (
 				</div>
 			)}
 
-			<SvgCollection.Star className={`text-theme-secondary-500 dark:bg-theme-secondary-700 w-${properties.width}`} />
+			<SvgCollection.Star
+				className={`text-theme-secondary-500 dark:bg-theme-secondary-700 w-${properties.width}`}
+			/>
 		</div>
 
 		<span className="ml-1">{properties.rating > 0 ? properties.rating : "-"}</span>

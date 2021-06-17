@@ -13,7 +13,14 @@ type TableCellProperties = {
 
 const TableCellInnerWrapper = styled.div<TableCellProperties>(getStyles);
 
-export const TableCell = ({ variant, className, innerClassName, isCompact, children, ...properties }: TableCellProperties) => (
+export const TableCell = ({
+	variant,
+	className,
+	innerClassName,
+	isCompact,
+	children,
+	...properties
+}: TableCellProperties) => (
 	<td className={className} {...properties}>
 		<TableCellInnerWrapper variant={variant} className={innerClassName} isCompact={isCompact}>
 			{children}

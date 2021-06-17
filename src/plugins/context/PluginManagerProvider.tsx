@@ -127,7 +127,8 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 	}, [env]);
 
 	const filterPackages = useCallback(
-		(allPackages: PluginConfigurationData[]) => allPackages.filter((pluginPackage) => {
+		(allPackages: PluginConfigurationData[]) =>
+			allPackages.filter((pluginPackage) => {
 				let matchesQuery = true;
 
 				if (hasFilters) {

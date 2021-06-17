@@ -16,7 +16,19 @@ import {
 } from "./InputFee.contracts";
 
 export const InputFee = memo(
-	({ min, avg, max, step, disabled, network, profile, loading, onChange, value, ...properties }: InputFeeProperties) => {
+	({
+		min,
+		avg,
+		max,
+		step,
+		disabled,
+		network,
+		profile,
+		loading,
+		onChange,
+		value,
+		...properties
+	}: InputFeeProperties) => {
 		const { t } = useTranslation();
 
 		const viewType = properties.viewType ?? DEFAULT_VIEW_TYPE;

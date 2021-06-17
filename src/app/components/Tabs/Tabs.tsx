@@ -54,43 +54,43 @@ export const Tab = React.forwardRef<HTMLButtonElement, TabProperties>((propertie
 			tabIndex={isActive ? 0 : -1}
 			onKeyDown={(event: any) => {
 				switch (event.key) {
-				case "ArrowLeft": {
-					let previousTab = event.target.previousElementSibling;
+					case "ArrowLeft": {
+						let previousTab = event.target.previousElementSibling;
 
-					while (previousTab && previousTab.getAttribute("role") !== "tab") {
-						previousTab = previousTab.previousElementSibling;
+						while (previousTab && previousTab.getAttribute("role") !== "tab") {
+							previousTab = previousTab.previousElementSibling;
+						}
+
+						if (!previousTab) {
+							previousTab = event.target.parentElement.querySelector("[role=tab]:last-child");
+						}
+
+						previousTab.focus();
+
+						break;
 					}
+					case "ArrowRight": {
+						let nextTab = event.target.nextElementSibling;
 
-					if (!previousTab) {
-						previousTab = event.target.parentElement.querySelector("[role=tab]:last-child");
+						while (nextTab && nextTab.getAttribute("role") !== "tab") {
+							nextTab = nextTab.nextElementSibling;
+						}
+
+						if (!nextTab) {
+							nextTab = event.target.parentElement.querySelector("[role=tab]");
+						}
+
+						nextTab.focus();
+
+						break;
 					}
+					case "Enter":
+					case " ": {
+						context?.setCurrentId(properties.tabId);
 
-					previousTab.focus();
-				
-				break;
-				}
-				case "ArrowRight": {
-					let nextTab = event.target.nextElementSibling;
-
-					while (nextTab && nextTab.getAttribute("role") !== "tab") {
-						nextTab = nextTab.nextElementSibling;
+						break;
 					}
-
-					if (!nextTab) {
-						nextTab = event.target.parentElement.querySelector("[role=tab]");
-					}
-
-					nextTab.focus();
-				
-				break;
-				}
-				case "Enter": 
-				case " ": {
-					context?.setCurrentId(properties.tabId);
-				
-				break;
-				}
-				// No default
+					// No default
 				}
 			}}
 			onClick={() => context?.setCurrentId(properties.tabId)}

@@ -47,7 +47,7 @@ export const WalletsList = memo(
 			return <></>;
 		}
 
-		const skeletonRows = Array.from({length: 3}).fill({});
+		const skeletonRows = Array.from({ length: 3 }).fill({});
 
 		const tableRows = isLoading ? skeletonRows : wallets;
 

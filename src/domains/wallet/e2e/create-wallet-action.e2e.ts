@@ -16,9 +16,7 @@ createFixture(
 		),
 		mockRequest(
 			(request: any) =>
-				!!new RegExp(BASEURL + "transactions\\?page=1&limit=15&address=([-0-9a-zA-Z]{1,34})").test(
-					request.url,
-				),
+				!!new RegExp(BASEURL + "transactions\\?page=1&limit=15&address=([-0-9a-zA-Z]{1,34})").test(request.url),
 			{
 				meta: {
 					totalCountIsEstimate: true,
@@ -37,10 +35,8 @@ createFixture(
 		mockRequest(
 			(request: any) =>
 				!!new RegExp(
-						"https://dmusig1.ark.io/transactions\\?publicKey=([-0-9a-zA-Z]{1,66})&state=(ready|pending)",
-					).test(
-					request.url,
-				),
+					"https://dmusig1.ark.io/transactions\\?publicKey=([-0-9a-zA-Z]{1,66})&state=(ready|pending)",
+				).test(request.url),
 			[],
 		),
 	],

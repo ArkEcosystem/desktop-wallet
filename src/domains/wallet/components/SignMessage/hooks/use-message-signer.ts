@@ -29,7 +29,7 @@ const signWithLedger = async (
 const withAbortPromise = (signal?: AbortSignal) => <T>(promise: Promise<T>) =>
 	new Promise<T>((resolve, reject) => {
 		if (signal) {
-			signal.addEventListener('abort', () => reject("ERR_ABORT"));
+			signal.addEventListener("abort", () => reject("ERR_ABORT"));
 		}
 
 		return promise.then(resolve).catch(reject);

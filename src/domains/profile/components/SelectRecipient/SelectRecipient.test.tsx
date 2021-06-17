@@ -130,7 +130,11 @@ describe("SelectRecipient", () => {
 		const function_ = jest.fn();
 
 		const { getByTestId, getAllByTestId } = render(
-			<SelectRecipient profile={profile} onChange={function_} address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" />,
+			<SelectRecipient
+				profile={profile}
+				onChange={function_}
+				address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT"
+			/>,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);

@@ -23,7 +23,10 @@ const CustomButton = styled.div`
 `;
 
 export const SelectCategory = React.forwardRef<HTMLInputElement, Properties>(
-	({ children, type, name, value, checked, defaultChecked, disabled, onChange, ...properties }: Properties, reference) => (
+	(
+		{ children, type, name, value, checked, defaultChecked, disabled, onChange, ...properties }: Properties,
+		reference,
+	) => (
 		<label htmlFor={name} tw="cursor-pointer" {...properties}>
 			<Input
 				data-testid={`SelectCategory__${name}`}

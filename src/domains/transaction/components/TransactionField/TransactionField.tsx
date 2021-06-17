@@ -9,7 +9,14 @@ interface TransactionFieldProperties {
 	padding?: boolean;
 }
 
-export const TransactionField = ({ border, children, className, extra, label, padding }: TransactionFieldProperties) => (
+export const TransactionField = ({
+	border,
+	children,
+	className,
+	extra,
+	label,
+	padding,
+}: TransactionFieldProperties) => (
 	<div
 		className={`flex items-center ${padding || "py-4"} ${
 			!border || "border-t border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"

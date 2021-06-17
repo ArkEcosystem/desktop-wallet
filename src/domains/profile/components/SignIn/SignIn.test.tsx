@@ -127,7 +127,9 @@ describe("SignIn", () => {
 
 		for (const index of [1, 2, 3]) {
 			await act(async () => {
-				fireEvent.input(getByTestId("SignIn__input--password"), { target: { value: `wrong password ${index}` } });
+				fireEvent.input(getByTestId("SignIn__input--password"), {
+					target: { value: `wrong password ${index}` },
+				});
 			});
 
 			// wait for form to be updated

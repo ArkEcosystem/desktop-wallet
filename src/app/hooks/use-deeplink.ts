@@ -52,14 +52,20 @@ const useDeepLinkHandler = () => {
 					const profile = env.profiles().findById(profileId);
 
 					/* istanbul ignore next */
-					if (deeplinkSchema.coin && !allAvailableNetworks.some((item) => lowerCaseEquals(item.coin(), deeplinkSchema.coin))) {
-							throw new Error(`Coin "${deeplinkSchema.coin}" not supported.`);
-						}
+					if (
+						deeplinkSchema.coin &&
+						!allAvailableNetworks.some((item) => lowerCaseEquals(item.coin(), deeplinkSchema.coin))
+					) {
+						throw new Error(`Coin "${deeplinkSchema.coin}" not supported.`);
+					}
 
 					/* istanbul ignore next */
-					if (deeplinkSchema.network && !allAvailableNetworks.some((item) => lowerCaseEquals(item.id(), deeplinkSchema.network))) {
-							throw new Error(`Network "${deeplinkSchema.network}" not supported.`);
-						}
+					if (
+						deeplinkSchema.network &&
+						!allAvailableNetworks.some((item) => lowerCaseEquals(item.id(), deeplinkSchema.network))
+					) {
+						throw new Error(`Network "${deeplinkSchema.network}" not supported.`);
+					}
 
 					const availableWallets = profile
 						.wallets()

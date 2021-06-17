@@ -47,7 +47,9 @@ export const DelegateRow = ({
 
 	const getColorSelected = (): string => {
 		if (isVoted) {
-			return !isSelectedUnvote ? "bg-theme-primary-50 dark:bg-theme-primary-900" : "bg-theme-danger-50 dark:bg-theme-danger-900";
+			return !isSelectedUnvote
+				? "bg-theme-primary-50 dark:bg-theme-primary-900"
+				: "bg-theme-danger-50 dark:bg-theme-danger-900";
 		} else {
 			return isSelectedVote ? "bg-theme-success-50 dark:bg-theme-success-900" : "";
 		}

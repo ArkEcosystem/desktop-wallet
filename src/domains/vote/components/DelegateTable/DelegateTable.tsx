@@ -148,7 +148,7 @@ export const DelegateTable = ({
 	};
 
 	const showSkeleton = useMemo(() => totalDelegates === 0 && isLoading, [totalDelegates, isLoading]);
-	const skeletonList = Array.from({length: 8}).fill({});
+	const skeletonList = Array.from({ length: 8 }).fill({});
 	const data = showSkeleton ? skeletonList : paginator(delegates, currentPage, itemsPerPage!);
 
 	if (!isLoading && totalDelegates === 0) {

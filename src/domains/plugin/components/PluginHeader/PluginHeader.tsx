@@ -157,7 +157,9 @@ export const PluginHeader = ({
 					<div className="flex justify-between items-end">
 						<div className="flex overflow-hidden flex-col mr-8 space-y-2 leading-tight">
 							<span className="text-2xl font-bold">{properties.title}</span>
-							<span className="text-medium text-theme-secondary-500 truncate">{properties.description}</span>
+							<span className="text-medium text-theme-secondary-500 truncate">
+								{properties.description}
+							</span>
 						</div>
 						<div className="flex">{getPluginButtons()}</div>
 					</div>

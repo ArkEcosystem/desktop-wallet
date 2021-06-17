@@ -53,25 +53,23 @@ export const useProfileAddresses = ({
 		}
 
 		for (const contact of contacts) {
-			for (const contactAddress of contact
-				.addresses()
-				.values()) {
-					if (!isNetworkSelected(contactAddress.network())) {
-						continue;
-					}
-
-					const address = {
-						id: contactAddress.id(),
-						address: contactAddress.address(),
-						alias: contact.name(),
-						avatar: contactAddress.avatar(),
-						network: contactAddress.network(),
-						type: "contact",
-					};
-
-					allAddresses.push(address);
-					contactAddresses.push(address);
+			for (const contactAddress of contact.addresses().values()) {
+				if (!isNetworkSelected(contactAddress.network())) {
+					continue;
 				}
+
+				const address = {
+					id: contactAddress.id(),
+					address: contactAddress.address(),
+					alias: contact.name(),
+					avatar: contactAddress.avatar(),
+					network: contactAddress.network(),
+					type: "contact",
+				};
+
+				allAddresses.push(address);
+				contactAddresses.push(address);
+			}
 		}
 
 		return {

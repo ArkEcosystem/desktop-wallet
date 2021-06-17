@@ -180,7 +180,9 @@ describe("LedgerScanStep", () => {
 		});
 
 		await waitFor(() =>
-			expect(formReference.getValues("wallets")).toMatchObject([{ address: "DQseW3VJ1db5xN5xZi4Qhn6AFWtcwSwzpG" }]),
+			expect(formReference.getValues("wallets")).toMatchObject([
+				{ address: "DQseW3VJ1db5xN5xZi4Qhn6AFWtcwSwzpG" },
+			]),
 		);
 
 		expect(container).toMatchSnapshot();

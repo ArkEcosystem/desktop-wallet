@@ -21,7 +21,10 @@ export const TransactionExplorerLink = ({ id, link, variant, ...properties }: Tr
 	const isTransactionLink = () => variant === "transaction";
 
 	return (
-		<TransactionDetail label={isTransactionLink() ? t("TRANSACTION.ID") : t("TRANSACTION.BLOCK_ID")} {...properties}>
+		<TransactionDetail
+			label={isTransactionLink() ? t("TRANSACTION.ID") : t("TRANSACTION.BLOCK_ID")}
+			{...properties}
+		>
 			<div className="flex overflow-hidden items-center space-x-3">
 				<span ref={reference} className="overflow-hidden">
 					<Link to={link} isExternal>

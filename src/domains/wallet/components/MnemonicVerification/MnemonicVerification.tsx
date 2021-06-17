@@ -24,7 +24,13 @@ const randomWordPositions = () => {
 	return positions;
 };
 
-export function MnemonicVerification({ mnemonic, wordPositions, optionsLimit, handleComplete, isCompleted }: Properties) {
+export function MnemonicVerification({
+	mnemonic,
+	wordPositions,
+	optionsLimit,
+	handleComplete,
+	isCompleted,
+}: Properties) {
 	const [activeTab, setActiveTab] = useState(0);
 	const [positions, setPositions] = useState([] as number[]);
 

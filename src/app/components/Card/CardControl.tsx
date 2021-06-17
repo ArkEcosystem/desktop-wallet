@@ -42,7 +42,20 @@ export const CardControlState = () => (
 );
 
 export const CardControl = React.forwardRef<HTMLInputElement, CardControlProperties>(
-	({ children, type, checked, defaultChecked, onChange, disabled, value, name, ...properties }: CardControlProperties, reference) => (
+	(
+		{
+			children,
+			type,
+			checked,
+			defaultChecked,
+			onChange,
+			disabled,
+			value,
+			name,
+			...properties
+		}: CardControlProperties,
+		reference,
+	) => (
 		<label tw="cursor-pointer" {...properties}>
 			<Input
 				data-testid={`card-control__${name}`}

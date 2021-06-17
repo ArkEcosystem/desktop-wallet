@@ -1,6 +1,6 @@
 const { autoUpdater } = require("electron-updater");
-const { version } = require("../../package.json");
 const logger = require("electron-log");
+const { version } = require("../../package.json");
 
 const setupDevelopment = (testVersion) => {
 	if (testVersion) {
@@ -61,11 +61,11 @@ const setupUpdater = ({ ipcMain, mainWindow, isDev }) => {
 
 	const { QUIT_INSTALL, CANCEL, CHECK_UPDATES, DOWNLOAD_UPDATE } = ipcEvents();
 
-	for (const event_ of updaterEvents) 
-		{autoUpdater.on(event_, (data) => {
+	for (const event_ of updaterEvents) {
+		autoUpdater.on(event_, (data) => {
 			sendToWindow(`updater:${event_}`, data, mainWindow);
-		})
-	;}
+		});
+	}
 
 	ipcMain.handle(QUIT_INSTALL, () => {
 		setImmediate(() => autoUpdater.quitAndInstall());
