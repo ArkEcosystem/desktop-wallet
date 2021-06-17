@@ -233,11 +233,11 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                       role="rowgroup"
                     >
                       <tr
-                        class="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
+                        class="flex border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
                         data-testid="recipient-list__recipient-list-item"
                       >
                         <td
-                          class="py-6 w-14"
+                          class="flex-none py-6"
                         >
                           <div
                             class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
@@ -255,7 +255,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                           </div>
                         </td>
                         <td
-                          class="py-6"
+                          class="ml-5 w-28 flex-1 py-6"
                         >
                           <div
                             class="mb-1 text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
@@ -265,22 +265,18 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                             </span>
                           </div>
                           <div
-                            class="max-w-sm"
+                            class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
-                            <div
-                              class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
+                            <span
+                              class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                              data-testid="Address__address"
                             >
-                              <span
-                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
-                                data-testid="Address__address"
-                              >
-                                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                              </span>
-                            </div>
+                              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                            </span>
                           </div>
                         </td>
                         <td
-                          class="py-6 w-20 text-right"
+                          class="ml-3 flex-none py-6"
                         >
                           <span
                             class="inline-block"
