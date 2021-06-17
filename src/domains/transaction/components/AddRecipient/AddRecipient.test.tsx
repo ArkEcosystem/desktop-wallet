@@ -285,6 +285,56 @@ describe("AddRecipient", () => {
 		await waitFor(() => expect(screen.getAllByTestId("recipient-list__recipient-list-item")).toHaveLength(3));
 	});
 
+	it("should render checkmark for valid recipient address", async () => {
+		let form: ReturnType<typeof useForm>;
+
+		const Component = () => {
+			form = useForm({
+				mode: "onChange",
+				defaultValues: { senderAddress: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD", network, fee: 0 },
+				shouldUnregister: false,
+			});
+
+			useEffect(() => {
+				form.register("network");
+				form.register("senderAddress");
+			}, []);
+
+			return (
+				<FormProvider {...form}>
+					<AddRecipient profile={profile} assetSymbol="ARK" />
+				</FormProvider>
+			);
+		};
+		render(<Component />);
+
+		await waitFor(() => {
+			expect(screen.queryByTestId("AddRecipient__recipient-address-checkmark")).not.toBeInTheDocument();
+		});
+
+		// Invalid address
+		fireEvent.input(screen.getByTestId("SelectDropdown__input"), {
+			target: {
+				value: "bP6T9GQ3kqP6",
+			},
+		});
+
+		await waitFor(() => {
+			expect(screen.queryByTestId("AddRecipient__recipient-address-checkmark")).not.toBeInTheDocument();
+		});
+
+		// Valid address
+		fireEvent.input(screen.getByTestId("SelectDropdown__input"), {
+			target: {
+				value: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+			},
+		});
+
+		await waitFor(() => {
+			expect(screen.getByTestId("AddRecipient__recipient-address-checkmark")).toBeInTheDocument();
+		});
+	});
+
 	it("should disable recipient fields if network is not filled", async () => {
 		const values = {
 			displayAmount: "1",

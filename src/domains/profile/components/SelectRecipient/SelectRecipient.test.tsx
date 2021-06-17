@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
-import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
 
 import { SelectRecipient } from "./SelectRecipient";
 
@@ -37,6 +37,24 @@ describe("SelectRecipient", () => {
 
 		rerender(<SelectRecipient profile={profile} address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" />);
 		expect(container).toMatchSnapshot();
+	});
+
+	it("should render addons", async () => {
+		render(
+			<SelectRecipient
+				profile={profile}
+				address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT"
+				addons={<span>addonsTest</span>}
+			/>,
+		);
+
+		screen.debug(undefined, 3_000_000);
+
+		await waitFor(() => {
+			expect(screen.getByText("addonsTest")).toBeInTheDocument();
+		});
+
+		expect(screen.container).toMatchSnapshot();
 	});
 
 	it("should open and close contacts modal", async () => {
