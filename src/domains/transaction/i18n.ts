@@ -28,6 +28,7 @@ export const translations: { [key: string]: any } = {
 	NOT_CONFIRMED: "Not confirmed",
 	OUTGOING: "Outgoing",
 	RECEIVED: "Received",
+	RETURN: "Return",
 	RECIPIENT: "Recipient",
 	RECIPIENTS: "Recipients",
 	RECIPIENTS_COUNT: "Recipients ({{count}})",
