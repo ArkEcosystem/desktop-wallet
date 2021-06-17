@@ -22,22 +22,20 @@ export const common = (t: any) => ({
 					});
 				}
 
-				const feeSatoshi = BigNumber.make(fee);
-
-				if (feeSatoshi.isGreaterThan(balance)) {
+				if (fee > balance) {
 					return t("TRANSACTION.VALIDATION.LOW_BALANCE", {
 						balance,
 						coinId: network.coin(),
 					});
 				}
 
-				if (feeSatoshi.isZero() && network && !network.chargesZeroFees()) {
+				if (fee === 0 && network && !network.chargesZeroFees()) {
 					return t("COMMON.VALIDATION.FIELD_REQUIRED", {
 						field: t("COMMON.FEE"),
 					});
 				}
 
-				if (feeSatoshi.isNegative()) {
+				if (Math.sign(fee) === -1) {
 					return t("TRANSACTION.VALIDATION.FEE_NEGATIVE");
 				}
 

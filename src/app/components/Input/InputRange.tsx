@@ -22,14 +22,14 @@ export const InputRange = React.forwardRef<HTMLInputElement, Properties>(
 		const fieldContext = useFormField();
 
 		const rangeValues = useMemo<number[]>(() => {
-			const sanitized = BigNumber.make(value);
+			const sanitized = +value;
 
 			/* istanbul ignore next */
-			if (isNaN(sanitized.toNumber()) || sanitized.isZero()) {
+			if (isNaN(sanitized) || sanitized === 0) {
 				return [];
 			}
 
-			return [Math.min(sanitized.toNumber(), max)];
+			return [Math.min(sanitized, max)];
 		}, [value, max]);
 
 		const min = Math.min(properties.min, +value);

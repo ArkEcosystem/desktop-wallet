@@ -22,8 +22,8 @@ export const SummaryStep = ({
 	})) || [{ address: transaction.recipient(), amount: transaction.amount().toHuman() }];
 
 	const transactionAmount = recipients.reduce(
-		(sum: BigNumber, recipient: Contracts.MultiPaymentRecipient) => sum.plus(recipient.amount),
-		BigNumber.ZERO,
+		(sum: number, recipient: Contracts.MultiPaymentRecipient) => sum + recipient.amount.toHuman(),
+		0,
 	);
 
 	const currency = senderWallet.currency();

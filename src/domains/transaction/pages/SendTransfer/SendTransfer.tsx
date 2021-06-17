@@ -177,15 +177,15 @@ export const SendTransfer = () => {
 		}
 
 		/* istanbul ignore next */
-		if (BigNumber.make(amount).isLessThanOrEqualTo(fee)) {
+		if (amount <= fee) {
 			// @TODO remove ignore coverage after BigNumber refactor
 			return;
 		}
 
-		const remaining = remainingBalance.minus(fee);
+		const remaining = remainingBalance - fee;
 
-		setValue("displayAmount", remaining.toHuman());
-		setValue("amount", remaining.toString());
+		setValue("displayAmount", remaining);
+		setValue("amount", remaining);
 
 		form.trigger(["fee", "amount"]);
 	}, [fee]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -312,7 +312,7 @@ export const SendTransfer = () => {
 	return (
 		<Page profile={activeProfile}>
 			<Section className="flex-1">
-				<Form className="mx-auto max-w-xl" context={form} onSubmit={() => submitForm()}>
+				<Form className="max-w-xl mx-auto" context={form} onSubmit={() => submitForm()}>
 					<Tabs activeId={activeTab}>
 						<StepIndicator
 							size={showNetworkStep ? 5 : 4}
