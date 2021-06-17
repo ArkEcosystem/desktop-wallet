@@ -14,7 +14,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-build-and-upload
@@ -67,7 +67,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-votes
@@ -127,7 +127,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-ipfs-transaction
@@ -187,7 +187,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-ipfs-transaction-multisig
@@ -247,7 +247,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-single-transfer
@@ -307,7 +307,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-single-transfer-multisig
@@ -367,7 +367,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-multiple-transfer
@@ -427,7 +427,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-transactions-routing
@@ -487,7 +487,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-delegate-resignation
@@ -547,7 +547,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-vote-transaction
@@ -607,7 +607,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-vote-transaction-multisig
@@ -667,7 +667,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-delegate-registration
@@ -727,7 +727,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-splash-screen
@@ -787,7 +787,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-contacts-routing
@@ -847,7 +847,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-update-contact
@@ -907,7 +907,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-delete-contact
@@ -967,7 +967,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-create-contact
@@ -1027,7 +1027,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-plugins-routing
@@ -1087,7 +1087,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-dashboard-routing
@@ -1147,7 +1147,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-navbar-routing
@@ -1207,7 +1207,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-welcome-screen
@@ -1267,7 +1267,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-create-profile-action
@@ -1327,7 +1327,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-navigate-profile-settings
@@ -1387,7 +1387,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-create-profile-routing
@@ -1447,7 +1447,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-notifications
@@ -1507,7 +1507,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-delete-profile-action
@@ -1567,7 +1567,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-news-routing
@@ -1627,7 +1627,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-filtering
@@ -1687,7 +1687,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-create-wallet-action
@@ -1747,7 +1747,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-delete-wallet-action
@@ -1807,7 +1807,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-wallet-details
@@ -1867,7 +1867,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-sign-message-action
@@ -1927,7 +1927,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-import-wallet-action
@@ -1987,7 +1987,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-verify-message-action
@@ -2047,7 +2047,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-wallets-routing
@@ -2107,7 +2107,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-update-wallet-name-action
@@ -2167,7 +2167,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-save-settings
@@ -2227,7 +2227,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-reset-profile
@@ -2287,7 +2287,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [12.x]
+                node-version: [14.x]
 
         concurrency:
             group: ${{ github.head_ref }}-e2e-settings-routing
