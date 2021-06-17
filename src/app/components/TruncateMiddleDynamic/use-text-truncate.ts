@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 
-export const useTextTruncate = (referenceElement: any, value: string, offset = 0) => {
-	const truncated = useMemo(() => {
+export const useTextTruncate = (referenceElement: any, value: string, offset = 0) =>
+	useMemo(() => {
 		const hasOverflow = (element: HTMLElement, referenceElement: HTMLElement) => {
 			if (!element.offsetWidth && !referenceElement.offsetWidth) {
 				return false;
@@ -45,6 +45,3 @@ export const useTextTruncate = (referenceElement: any, value: string, offset = 0
 
 		return temp;
 	}, [value, offset, referenceElement]);
-
-	return truncated;
-};

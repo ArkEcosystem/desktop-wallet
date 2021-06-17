@@ -127,9 +127,7 @@ export class PluginConfigurationData {
 	}
 
 	minimumVersion(): string | undefined {
-		const minimumVersion =
-			process.env.REACT_APP_PLUGIN_MINIMUM_VERSION ?? this.manifest().get<string>("minimumVersion");
-		return minimumVersion;
+		return process.env.REACT_APP_PLUGIN_MINIMUM_VERSION ?? this.manifest().get<string>("minimumVersion");
 	}
 
 	version() {

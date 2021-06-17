@@ -127,8 +127,8 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 	}, [env]);
 
 	const filterPackages = useCallback(
-		(allPackages: PluginConfigurationData[]) => {
-			const filteredPackages = allPackages.filter((pluginPackage) => {
+		(allPackages: PluginConfigurationData[]) =>
+			allPackages.filter((pluginPackage) => {
 				let matchesQuery = true;
 
 				if (hasFilters) {
@@ -136,10 +136,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 				}
 
 				return matchesQuery;
-			});
-
-			return filteredPackages;
-		},
+			}),
 		[filters, hasFilters],
 	);
 
@@ -201,9 +198,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 
 			const archiveUrl = `${realRepositoryURL}/archive/master.zip`;
 
-			const savedDir = await ipcRenderer.invoke("plugin:download", { url: archiveUrl, name });
-
-			return savedDir;
+			return await ipcRenderer.invoke("plugin:download", { url: archiveUrl, name });
 		},
 		[pluginPackages],
 	);
