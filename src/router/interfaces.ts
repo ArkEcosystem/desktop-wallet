@@ -1,7 +1,7 @@
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { History, Location } from "history";
 
-export interface MiddlewareParams {
+export interface MiddlewareParameters {
 	location: Location;
 	env: Environment;
 	redirect: (url: string) => void;
@@ -9,5 +9,5 @@ export interface MiddlewareParams {
 }
 
 export interface Middleware {
-	handler(params: MiddlewareParams): boolean;
+	handler(parameters: MiddlewareParameters): boolean;
 }

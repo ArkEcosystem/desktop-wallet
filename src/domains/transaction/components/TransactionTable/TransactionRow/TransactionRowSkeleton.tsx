@@ -4,12 +4,12 @@ import { TableCell, TableRow } from "app/components/Table";
 import { useRandomNumber } from "app/hooks";
 import React, { useMemo } from "react";
 
-type Props = {
+type Properties = {
 	showSignColumn?: boolean;
 	showCurrencyColumn?: boolean | "";
 } & React.HTMLProps<any>;
 
-export const TransactionRowSkeleton = ({ showSignColumn, showCurrencyColumn }: Props) => {
+export const TransactionRowSkeleton = ({ showSignColumn, showCurrencyColumn }: Properties) => {
 	const recipientWidth = useRandomNumber(120, 150);
 	const infoIconCount = useRandomNumber(0, 3);
 	const amountWidth = useRandomNumber(100, 130);

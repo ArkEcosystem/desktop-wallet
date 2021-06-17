@@ -5,7 +5,7 @@ import { getNetworkExtendedData } from "domains/network/helpers";
 import React from "react";
 import { Size } from "types";
 
-interface Props {
+interface Properties {
 	coin?: string;
 	network?: string;
 	as?: React.ElementType;
@@ -17,19 +17,19 @@ interface Props {
 	noShadow?: boolean;
 }
 
-const Placeholder = (props: CircleProps) => (
+const Placeholder = (properties: CircleProps) => (
 	<Circle
 		data-testid="NetworkIcon__placeholder"
 		className="border-theme-secondary-200 text-theme-secondary-500 dark:border-theme-secondary-700"
-		{...props}
+		{...properties}
 	/>
 );
 
-export const NetworkIcon = ({ coin, network, iconSize, className, showTooltip, ...props }: Props) => {
+export const NetworkIcon = ({ coin, network, iconSize, className, showTooltip, ...properties }: Properties) => {
 	const networkExtendedData = coin && network ? getNetworkExtendedData(network) : undefined;
 
 	if (!networkExtendedData) {
-		return <Placeholder className={className} {...props} />;
+		return <Placeholder className={className} {...properties} />;
 	}
 
 	const { iconName, borderClass, textClass } = networkExtendedData;
@@ -41,7 +41,7 @@ export const NetworkIcon = ({ coin, network, iconSize, className, showTooltip, .
 				aria-label={displayName}
 				data-testid={`NetworkIcon-${coin}-${network}`}
 				className={className ? className : `${borderClass} ${textClass}`}
-				{...props}
+				{...properties}
 			>
 				<Icon data-testid="NetworkIcon__icon" name={iconName} width={iconSize} height={iconSize} />
 			</Circle>

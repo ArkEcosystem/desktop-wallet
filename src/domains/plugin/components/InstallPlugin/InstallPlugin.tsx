@@ -11,7 +11,7 @@ import { FirstStep } from "./Step1";
 import { SecondStep } from "./Step2";
 import { ThirdStep } from "./Step3";
 
-interface InstallPluginProps {
+interface InstallPluginProperties {
 	isOpen: boolean;
 	onClose?: any;
 	onCancel?: any;
@@ -19,7 +19,7 @@ interface InstallPluginProps {
 	repositoryURL?: string;
 }
 
-export const InstallPlugin = ({ isOpen, onClose, onCancel, plugin, repositoryURL }: InstallPluginProps) => {
+export const InstallPlugin = ({ isOpen, onClose, onCancel, plugin, repositoryURL }: InstallPluginProperties) => {
 	const { t } = useTranslation();
 	const { downloadPlugin, installPlugin } = usePluginManagerContext();
 	const [activeStep, setActiveStep] = useState(1);
@@ -32,7 +32,7 @@ export const InstallPlugin = ({ isOpen, onClose, onCancel, plugin, repositoryURL
 			const savedPath = await downloadPlugin(plugin.id, repositoryURL);
 			setSavedPath(savedPath);
 			setTimeout(() => setActiveStep(3), 500); // Animation delay
-		} catch (e) {
+		} catch {
 			toasts.error(t("PLUGINS.MODAL_INSTALL_PLUGIN.DOWNLOAD_FAILURE", { name: plugin.title }));
 			onClose?.();
 		}
@@ -42,9 +42,9 @@ export const InstallPlugin = ({ isOpen, onClose, onCancel, plugin, repositoryURL
 		try {
 			await installPlugin(savedPath, plugin.id);
 			toasts.success(t("PLUGINS.MODAL_INSTALL_PLUGIN.SUCCESS", { name: plugin.title }));
-		} catch (e) {
+		} catch (error) {
 			/* istanbul ignore next */
-			toasts.error(t("PLUGINS.MODAL_INSTALL_PLUGIN.INSTALL_FAILURE", { name: plugin.title, msg: e.message }));
+			toasts.error(t("PLUGINS.MODAL_INSTALL_PLUGIN.INSTALL_FAILURE", { name: plugin.title, msg: error.message }));
 		} finally {
 			onClose?.();
 		}

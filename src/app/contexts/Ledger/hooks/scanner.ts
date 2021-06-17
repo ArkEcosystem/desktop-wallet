@@ -16,19 +16,19 @@ export const useLedgerScanner = (coin: string, network: string) => {
 
 	const { selected, wallets, error } = state;
 
-	const isSelected = useCallback((path: string) => selected.some((item) => path === item), [selected]);
+	const isSelected = useCallback((path: string) => selected.includes(path), [selected]);
 
 	const selectedWallets = useMemo(() => wallets.filter((item) => selected.includes(item.path)), [selected, wallets]);
 	const canRetry = !!error;
 
 	const [isScanning, setIsScanning] = useState(false);
-	const abortRetryRef = useRef<boolean>(false);
+	const abortRetryReference = useRef<boolean>(false);
 
 	const scan = useCallback(
 		async (profile: Contracts.IProfile) => {
 			setIsScanning(true);
 			setBusy();
-			abortRetryRef.current = false;
+			abortRetryReference.current = false;
 
 			try {
 				const instance = profile.coins().set(coin, network);
@@ -64,7 +64,7 @@ export const useLedgerScanner = (coin: string, network: string) => {
 
 				ledgerData = uniqBy(ledgerData, (wallet) => wallet.address);
 
-				if (abortRetryRef.current) {
+				if (abortRetryReference.current) {
 					return;
 				}
 
@@ -80,7 +80,7 @@ export const useLedgerScanner = (coin: string, network: string) => {
 	);
 
 	const abortScanner = useCallback(() => {
-		abortRetryRef.current = true;
+		abortRetryReference.current = true;
 		setIdle();
 	}, [setIdle]);
 

@@ -38,7 +38,7 @@ const ControlButtonStyled = styled.button<{ noBorder?: boolean; disabled?: boole
 	}}
 `;
 
-interface ControlButtonProps {
+interface ControlButtonProperties {
 	className?: string;
 	isChanged?: boolean;
 	noBorder?: boolean;
@@ -47,14 +47,14 @@ interface ControlButtonProps {
 	onClick?: any;
 }
 
-export const ControlButton = ({ isChanged, children, className, ...props }: ControlButtonProps) => (
+export const ControlButton = ({ isChanged, children, className, ...properties }: ControlButtonProperties) => (
 	<div className="group">
-		<ControlButtonStyled className={cn("group", className)} {...props}>
+		<ControlButtonStyled className={cn("group", className)} {...properties}>
 			{isChanged && (
 				<div
 					className={cn(
 						"flex absolute right-0 justify-center items-center -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background",
-						props.noBorder ? "-mr-1.5" : "mr-1",
+						properties.noBorder ? "-mr-1.5" : "mr-1",
 					)}
 				>
 					<div className="w-2 h-2 rounded-full bg-theme-primary-500" />

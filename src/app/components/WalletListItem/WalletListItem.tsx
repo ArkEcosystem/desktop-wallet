@@ -10,13 +10,13 @@ import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import React, { useMemo } from "react";
 import { shouldUseDarkColors } from "utils/electron-utils";
 
-export interface WalletListItemProps {
+export interface WalletListItemProperties {
 	wallet: Contracts.IReadWriteWallet;
 	activeWalletId?: string;
 	onClick?: (walletId: string) => void;
 }
 
-export const WalletListItem = ({ wallet, activeWalletId, onClick }: WalletListItemProps) => {
+export const WalletListItem = ({ wallet, activeWalletId, onClick }: WalletListItemProperties) => {
 	const isSelected = useMemo(() => activeWalletId === wallet.id(), [activeWalletId, wallet]);
 
 	const activeProfile = useActiveProfile();

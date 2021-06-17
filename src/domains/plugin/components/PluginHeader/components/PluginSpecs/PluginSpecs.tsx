@@ -6,7 +6,7 @@ import extractDomain from "extract-domain";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-interface Props {
+interface Properties {
 	author?: string;
 	category?: string;
 	url?: string;
@@ -17,25 +17,25 @@ interface Props {
 	isLoadingSize?: boolean;
 }
 
-interface GridColProps {
+interface GridColProperties {
 	children: React.ReactNode;
 	padding?: string;
 }
 
-interface GridItemProps {
+interface GridItemProperties {
 	label: string;
 	children: React.ReactNode;
 	textDirection?: string;
 }
 
-const GridItem = ({ label, children, textDirection }: GridItemProps) => (
+const GridItem = ({ label, children, textDirection }: GridItemProperties) => (
 	<div className={`flex flex-col ${textDirection && `text-${textDirection}`}`}>
 		<span className="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700">{label}</span>
 		<span className="font-semibold text-theme-secondary-text">{children}</span>
 	</div>
 );
 
-const GridCol = ({ children, padding }: GridColProps) => {
+const GridCol = ({ children, padding }: GridColProperties) => {
 	const mountClassName = () => {
 		let styles = "flex";
 
@@ -49,7 +49,7 @@ const GridCol = ({ children, padding }: GridColProps) => {
 	return <div className={mountClassName()}>{children}</div>;
 };
 
-export const PluginSpecs = ({ author, category, url, version, isOfficial, size, isLoadingSize }: Props) => {
+export const PluginSpecs = ({ author, category, url, version, isOfficial, size, isLoadingSize }: Properties) => {
 	const domain = url && extractDomain(url);
 	const { t } = useTranslation();
 

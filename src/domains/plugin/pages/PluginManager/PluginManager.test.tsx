@@ -35,11 +35,11 @@ describe("PluginManager", () => {
 	beforeEach(async () => {
 		nock("https://registry.npmjs.com")
 			.get("/-/v1/search")
-			.query((params) => params.from === "0")
+			.query((parameters) => parameters.from === "0")
 			.once()
 			.reply(200, require("tests/fixtures/plugins/registry-response.json"))
 			.get("/-/v1/search")
-			.query((params) => params.from === "250")
+			.query((parameters) => parameters.from === "250")
 			.once()
 			.reply(200, {});
 

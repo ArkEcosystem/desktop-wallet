@@ -82,8 +82,8 @@ export const SummaryStep = ({
 		const findVoteDelegates = () => {
 			if (["vote", "unvote"].includes(type)) {
 				const asset = transaction.get<{ votes: string[] }>("asset");
-				const votes = asset.votes.filter((vote) => vote.startsWith("+")).map((s) => s.substring(1));
-				const unvotes = asset.votes.filter((vote) => vote.startsWith("-")).map((s) => s.substring(1));
+				const votes = asset.votes.filter((vote) => vote.startsWith("+")).map((s) => s.slice(1));
+				const unvotes = asset.votes.filter((vote) => vote.startsWith("-")).map((s) => s.slice(1));
 
 				setDelegates({
 					votes: env.delegates().map(wallet, votes),

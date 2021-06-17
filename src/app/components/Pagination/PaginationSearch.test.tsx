@@ -219,13 +219,13 @@ describe("PaginationSearch", () => {
 			fireEvent.click(getByTestId("PaginationSearch__submit"));
 		});
 
-		await waitFor(() => expect(getByTestId("PaginationSearch__input")).toHaveValue(100000000));
+		await waitFor(() => expect(getByTestId("PaginationSearch__input")).toHaveValue(100_000_000));
 
 		act(() => {
 			fireEvent.click(getByTestId("PaginationSearch__submit"));
 		});
 
-		await waitFor(() => expect(onSelect).toHaveBeenCalledWith(100000000));
+		await waitFor(() => expect(onSelect).toHaveBeenCalledWith(100_000_000));
 	});
 
 	it("should close search input if clicked outside", async () => {

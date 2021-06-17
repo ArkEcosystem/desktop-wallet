@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useRef } from "react";
 import Swiper, { Pagination } from "swiper";
 Swiper.use([Pagination]);
 
-interface Props {
+interface Properties {
 	container: string;
 	options?: any;
 	data?: any;
@@ -26,9 +26,9 @@ const defaultOptions = {
 	},
 };
 
-export const useSlider = ({ container, options, data, paginationPosition }: Props) => {
+export const useSlider = ({ container, options, data, paginationPosition }: Properties) => {
 	const swiper: any = useRef(null);
-	const wrapperRef: any = useRef(null);
+	const wrapperReference: any = useRef(null);
 
 	const swiperOptions: any = useMemo(() => {
 		const allOptions = { ...defaultOptions, ...options };
@@ -69,9 +69,9 @@ export const useSlider = ({ container, options, data, paginationPosition }: Prop
 	}, [swiperOptions]);
 
 	const resetWrapperStyles = useCallback(() => {
-		if (wrapperRef?.current?.style) {
-			wrapperRef.current.style.width = "auto";
-			wrapperRef.current.style.transform = "translate3d(0, 0, 0)";
+		if (wrapperReference?.current?.style) {
+			wrapperReference.current.style.width = "auto";
+			wrapperReference.current.style.transform = "translate3d(0, 0, 0)";
 		}
 	}, []);
 
@@ -85,5 +85,5 @@ export const useSlider = ({ container, options, data, paginationPosition }: Prop
 		};
 	}, [container, swiperOptions, data.length, resetWrapperStyles]);
 
-	return { swiperOptions, showPagination, containerHeight, slideStyles, wrapperRef };
+	return { swiperOptions, showPagination, containerHeight, slideStyles, wrapperRef: wrapperReference };
 };

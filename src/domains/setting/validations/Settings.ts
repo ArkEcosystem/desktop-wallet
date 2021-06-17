@@ -1,7 +1,7 @@
 import { Contracts, Environment } from "@arkecosystem/platform-sdk-profiles";
 import { lowerCaseEquals } from "utils/equals";
 
-export const settings = (t: any, env: Environment) => ({
+export const settings = (t: any, environment: Environment) => ({
 	name: (id: string) => ({
 		validate: {
 			required: (name: string) =>
@@ -18,7 +18,7 @@ export const settings = (t: any, env: Environment) => ({
 					: true,
 			unique: (name: string) => {
 				if (
-					env
+					environment
 						.profiles()
 						.values()
 						.some(

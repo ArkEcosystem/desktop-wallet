@@ -41,6 +41,7 @@ describe("Plugin Controller subject", () => {
 			() => void 0,
 		);
 		subject.push(plugin1);
+		/* eslint-disable unicorn/no-array-push-push */
 		subject.push(plugin2);
 
 		expect(subject.filterByCategory("exchange").length).toBe(1);

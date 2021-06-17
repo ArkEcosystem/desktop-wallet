@@ -12,13 +12,13 @@ import {
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-interface VoteDetailProps {
+interface VoteDetailProperties {
 	isOpen: boolean;
 	transaction: any;
 	onClose?: () => void;
 }
 
-export const VoteDetail = ({ transaction, isOpen, onClose }: VoteDetailProps) => {
+export const VoteDetail = ({ transaction, isOpen, onClose }: VoteDetailProperties) => {
 	const { t } = useTranslation();
 	const { env } = useEnvironmentContext();
 

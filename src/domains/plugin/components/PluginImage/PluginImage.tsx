@@ -9,7 +9,7 @@ import { Size } from "types";
 
 import { getStyles } from "./PluginImage.styles";
 
-interface Props {
+interface Properties {
 	size?: Size;
 	logoURL?: string;
 	isEnabled?: boolean;
@@ -31,7 +31,7 @@ export const PluginImage = ({
 	progressSize,
 	className,
 	showUpdatingLabel,
-}: Props) => {
+}: Properties) => {
 	const { isDarkMode } = useTheme();
 
 	const { t } = useTranslation();

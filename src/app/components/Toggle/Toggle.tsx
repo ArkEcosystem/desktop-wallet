@@ -41,12 +41,12 @@ const HandleInner = styled.span<{ alwaysOn?: boolean; disabled?: boolean }>`
 			  `}
 `;
 
-type ToggleProps = { alwaysOn?: boolean; disabled?: boolean } & React.InputHTMLAttributes<any>;
+type ToggleProperties = { alwaysOn?: boolean; disabled?: boolean } & React.InputHTMLAttributes<any>;
 
-export const Toggle = React.forwardRef<HTMLInputElement, ToggleProps>(
-	({ alwaysOn, disabled, ...props }: ToggleProps, ref) => (
+export const Toggle = React.forwardRef<HTMLInputElement, ToggleProperties>(
+	({ alwaysOn, disabled, ...properties }: ToggleProperties, reference) => (
 		<label className="flex">
-			<Input type="checkbox" disabled={disabled} ref={ref} {...props} />
+			<Input type="checkbox" disabled={disabled} ref={reference} {...properties} />
 			<Handle disabled={disabled}>
 				<HandleInner alwaysOn={alwaysOn} disabled={disabled} />
 			</Handle>

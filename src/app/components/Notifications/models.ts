@@ -5,7 +5,7 @@ export interface Action {
 	value: string;
 }
 
-export interface NotificationItemProps {
+export interface NotificationItemProperties {
 	id: string;
 	body: string;
 	name: string;
@@ -18,15 +18,15 @@ export interface NotificationItemProps {
 	meta?: Record<string, any>;
 }
 
-export interface NotificationTransactionItemProps {
-	notification: NotificationItemProps;
+export interface NotificationTransactionItemProperties {
+	notification: NotificationItemProperties;
 	profile: Contracts.IProfile;
 	containmentRef?: any;
 	onVisibilityChange?: (isVisible: boolean) => void;
 	onTransactionClick?: (item?: DTO.ExtendedTransactionData) => void;
 }
 
-export interface NotificationsProps {
+export interface NotificationsProperties {
 	profile: Contracts.IProfile;
 	onNotificationAction?: (id: string) => void;
 	onTransactionClick?: (item?: DTO.ExtendedTransactionData) => void;

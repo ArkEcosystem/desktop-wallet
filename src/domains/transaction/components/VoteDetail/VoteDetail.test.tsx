@@ -15,7 +15,7 @@ const history = createMemoryHistory();
 const fixtureProfileId = getDefaultProfileId();
 let dashboardURL: string;
 
-jest.setTimeout(10000);
+jest.setTimeout(10_000);
 
 describe("VoteDetail", () => {
 	beforeAll(async () => {

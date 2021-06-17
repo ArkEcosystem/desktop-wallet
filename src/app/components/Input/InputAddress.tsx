@@ -9,7 +9,7 @@ export type InputAddressProps = {
 	profile: Contracts.IProfile;
 	coin?: string;
 	network?: string;
-	registerRef?: (options: RegisterOptions) => (ref: HTMLInputElement | null) => void;
+	registerRef?: (options: RegisterOptions) => (reference: HTMLInputElement | null) => void;
 	additionalRules?: RegisterOptions;
 	onValidAddress?: (address: string) => void;
 	onChange?: (address: string) => void;
@@ -24,7 +24,7 @@ export const InputAddress = ({
 	additionalRules,
 	onValidAddress,
 	useDefaultRules,
-	...props
+	...properties
 }: InputAddressProps) => {
 	const { t } = useTranslation();
 
@@ -50,7 +50,7 @@ export const InputAddress = ({
 	};
 	const rules = useDefaultRules ? defaultRules : {};
 
-	return <Input ref={registerRef?.(rules)} type="text" data-testid="InputAddress__input" {...props} />;
+	return <Input ref={registerRef?.(rules)} type="text" data-testid="InputAddress__input" {...properties} />;
 };
 
 InputAddress.defaultProps = {

@@ -2,14 +2,14 @@ import { styled } from "twin.macro";
 
 import { getStyles } from "./Divider.styles";
 
-interface DividerProps {
+interface DividerProperties {
 	type?: "horizontal" | "vertical";
 	size?: "sm" | "lg";
 	dashed?: boolean;
 	className?: string;
 }
 
-export const Divider = styled.div<DividerProps>(getStyles);
+export const Divider = styled.div<DividerProperties>(getStyles);
 
 Divider.defaultProps = {
 	type: "horizontal",

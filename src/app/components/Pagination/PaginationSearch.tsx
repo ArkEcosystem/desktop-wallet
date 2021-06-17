@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
 
-import { PaginationSearchFormProps, PaginationSearchProps } from ".";
+import { PaginationSearchFormProperties, PaginationSearchProperties } from ".";
 import { PaginationSearchToggleButton, PaginationSearchWrapper, SearchInput } from "./Pagination.styles";
 
 const PaginationSearchWrapperStyled = styled.span`
@@ -23,7 +23,11 @@ export const SearchInputStyled = styled.input`
 	${SearchInput}
 `;
 
-export const PaginationSearchForm = ({ onClose, totalPages = Infinity, onSelectPage }: PaginationSearchFormProps) => {
+export const PaginationSearchForm = ({
+	onClose,
+	totalPages = Number.POSITIVE_INFINITY,
+	onSelectPage,
+}: PaginationSearchFormProperties) => {
 	const { t } = useTranslation();
 
 	const form = useForm({ mode: "onChange" });
@@ -49,8 +53,8 @@ export const PaginationSearchForm = ({ onClose, totalPages = Infinity, onSelectP
 		}
 	};
 
-	const ref = useRef(null);
-	useEffect(() => clickOutsideHandler(ref, onClose), [ref, onClose]);
+	const reference = useRef(null);
+	useEffect(() => clickOutsideHandler(reference, onClose), [reference, onClose]);
 
 	return (
 		<PaginationSearchWrapperStyled>
@@ -60,7 +64,7 @@ export const PaginationSearchForm = ({ onClose, totalPages = Infinity, onSelectP
 				onSubmit={handleSelectPage}
 				name="searchForm"
 				className="search-form"
-				ref={ref}
+				ref={reference}
 			>
 				<SearchInputStyled
 					ref={register}
@@ -103,7 +107,7 @@ export const PaginationSearch = ({
 	onSelectPage,
 	totalPages,
 	isDisabled,
-}: PaginationSearchProps) => {
+}: PaginationSearchProperties) => {
 	const [isFormVisible, setIsFormVisible] = useState(false);
 
 	return (

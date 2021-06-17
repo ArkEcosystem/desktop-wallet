@@ -8,7 +8,7 @@ import { TransactionRow } from "./TransactionRow/TransactionRow";
 
 type Skeleton = object;
 
-interface Props {
+interface Properties {
 	transactions: DTO.ExtendedTransactionData[];
 	exchangeCurrency?: string;
 	showSignColumn?: boolean;
@@ -31,7 +31,7 @@ export const TransactionTable = memo(
 		isLoading = false,
 		skeletonRowsLimit = 8,
 		onRowClick,
-	}: Props) => {
+	}: Properties) => {
 		const { t } = useTranslation();
 
 		const initialState = {

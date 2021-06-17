@@ -151,7 +151,7 @@ describe("SendTransfer", () => {
 
 	it("should render form step with deeplink values and use them", async () => {
 		const { result: form } = renderHook(() => useForm());
-		const deeplinkProps: any = {
+		const deeplinkProperties: any = {
 			amount: "1.2",
 			coin: "ark",
 			memo: "ARK",
@@ -163,7 +163,7 @@ describe("SendTransfer", () => {
 		await hookAct(async () => {
 			const { getByTestId, asFragment } = render(
 				<FormProvider {...form.current}>
-					<FormStep networks={[]} profile={profile} deeplinkProps={deeplinkProps} />
+					<FormStep networks={[]} profile={profile} deeplinkProps={deeplinkProperties} />
 				</FormProvider>,
 			);
 
@@ -174,7 +174,7 @@ describe("SendTransfer", () => {
 
 	it("should render 1st step with custom deeplink values and use them", async () => {
 		const { result: form } = renderHook(() => useForm());
-		const deeplinkProps: any = {
+		const deeplinkProperties: any = {
 			amount: "1.2",
 			coin: "ark",
 			method: "transfer",
@@ -187,7 +187,7 @@ describe("SendTransfer", () => {
 		await hookAct(async () => {
 			rendered = render(
 				<FormProvider {...form.current}>
-					<FormStep networks={[]} profile={profile} deeplinkProps={deeplinkProps} />
+					<FormStep networks={[]} profile={profile} deeplinkProps={deeplinkProperties} />
 				</FormProvider>,
 			);
 		});

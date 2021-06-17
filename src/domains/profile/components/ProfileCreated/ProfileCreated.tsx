@@ -4,14 +4,14 @@ import { Modal } from "app/components/Modal";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-interface ProfileCreatedProps {
+interface ProfileCreatedProperties {
 	isOpen: boolean;
 	onClose?: any;
 	onSkip?: any;
 	onStart: any;
 }
 
-export const ProfileCreated = ({ isOpen, onClose, onSkip, onStart }: ProfileCreatedProps) => {
+export const ProfileCreated = ({ isOpen, onClose, onSkip, onStart }: ProfileCreatedProperties) => {
 	const { t } = useTranslation();
 
 	return (

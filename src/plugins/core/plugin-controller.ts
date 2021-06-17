@@ -63,12 +63,12 @@ export class PluginController {
 
 		try {
 			// @ts-ignore
-			const fn = this.#callback?.default || this.#callback;
-			guard(fn?.(pluginAPI));
+			const function_ = this.#callback?.default || this.#callback;
+			guard(function_?.(pluginAPI));
 			this.#hooks.emit("activated");
-		} catch (e) {
-			console.error(`Failed to run the plugin "${this.config().name()}": ${e.message}`);
-			throw e;
+		} catch (error) {
+			console.error(`Failed to run the plugin "${this.config().name()}": ${error.message}`);
+			throw error;
 		}
 	}
 

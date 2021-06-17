@@ -17,7 +17,7 @@ const newsURL = `/profiles/${getDefaultProfileId()}/news`;
 
 let subject: Blockfolio;
 
-jest.setTimeout(10000);
+jest.setTimeout(10_000);
 
 describe("News", () => {
 	beforeAll(async () => {
@@ -53,7 +53,7 @@ describe("News", () => {
 			.get("/coins/signals?coins=ARK&query=NoResult&page=1")
 			.reply(200, require("tests/fixtures/news/empty-response.json"))
 			.get("/coins/signals")
-			.query((params) => !!params.categories)
+			.query((parameters) => !!parameters.categories)
 			.reply(200, require("tests/fixtures/news/filtered.json"))
 			.persist();
 
@@ -77,7 +77,7 @@ describe("News", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10000 });
+		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10_000 });
 	});
 
 	it("should retrieve blockfolio data using findByCoin", async () => {
@@ -98,19 +98,19 @@ describe("News", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10000 });
+		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10_000 });
 
 		act(() => {
 			fireEvent.click(getByTestId("Pagination__next"));
 		});
 
-		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10000 });
+		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10_000 });
 
 		act(() => {
 			fireEvent.click(getByTestId("Pagination__previous"));
 		});
 
-		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10000 });
+		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10_000 });
 	});
 
 	it("should show no results screen", async () => {
@@ -126,7 +126,7 @@ describe("News", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10000 });
+		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10_000 });
 
 		act(() => {
 			fireEvent.change(getByTestId("NewsOptions__search"), {
@@ -153,7 +153,7 @@ describe("News", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10000 });
+		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10_000 });
 
 		act(() => {
 			fireEvent.change(getByTestId("NewsOptions__search"), {
@@ -169,7 +169,7 @@ describe("News", () => {
 			});
 		}
 
-		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10000 });
+		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10_000 });
 
 		expect(asFragment()).toMatchSnapshot();
 
@@ -183,7 +183,7 @@ describe("News", () => {
 			fireEvent.click(getByText(commonTranslations.SELECT_ALL));
 		});
 
-		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10000 });
+		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10_000 });
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -199,7 +199,7 @@ describe("News", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10000 });
+		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10_000 });
 
 		act(() => {
 			fireEvent.click(getByTestId("NetworkOption__ARK"));

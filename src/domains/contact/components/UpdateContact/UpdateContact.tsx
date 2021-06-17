@@ -5,7 +5,7 @@ import { ContactForm } from "domains/contact/components/ContactForm";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-interface UpdateContactProps {
+interface UpdateContactProperties {
 	isOpen: boolean;
 	contact: Contracts.IContact;
 	profile: Contracts.IProfile;
@@ -23,7 +23,7 @@ export const UpdateContact = ({
 	onDelete,
 	onSave,
 	profile,
-}: UpdateContactProps) => {
+}: UpdateContactProperties) => {
 	const [errors, setErrors] = useState<any>({});
 
 	const { t } = useTranslation();

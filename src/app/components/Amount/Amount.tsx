@@ -2,7 +2,7 @@ import { CURRENCIES, Money, Numeral } from "@arkecosystem/platform-sdk-intl";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import React from "react";
 
-interface AmountProps {
+interface AmountProperties {
 	ticker: string;
 	value: BigNumber;
 	locale?: string;
@@ -10,8 +10,8 @@ interface AmountProps {
 	normalize?: boolean;
 	isNegative?: boolean;
 }
-type FormatProps = AmountProps & { decimals: number };
-type Props = AmountProps & Omit<React.HTMLProps<any>, "value">;
+type FormatProperties = AmountProperties & { decimals: number };
+type Properties = AmountProperties & Omit<React.HTMLProps<any>, "value">;
 
 interface CurrencyConfig {
 	symbol: string;
@@ -22,13 +22,13 @@ type ExchangeCurrencyList = keyof typeof CURRENCIES;
 
 const formatSign = (amount: string, isNegative: boolean) => `${isNegative ? "-" : "+"} ${amount}`;
 
-const formatFiat = ({ ticker, value, decimals }: FormatProps): string => {
+const formatFiat = ({ ticker, value, decimals }: FormatProperties): string => {
 	const cents = value.times(Math.pow(10, decimals)).decimalPlaces(0).toNumber();
 	const money = Money.make(cents, ticker);
 	return money.format();
 };
 
-const formatCrypto = ({ ticker, value, decimals, locale, normalize }: FormatProps): string => {
+const formatCrypto = ({ ticker, value, decimals, locale, normalize }: FormatProperties): string => {
 	const numeral = Numeral.make(locale!, {
 		minimumFractionDigits: 0,
 		maximumFractionDigits: decimals,
@@ -38,18 +38,17 @@ const formatCrypto = ({ ticker, value, decimals, locale, normalize }: FormatProp
 	/**
 	 * Intl.NumberFormat throws error for some tickers like DARK (?)
 	 */
-	const money = numeral.replace("BTC", ticker.toUpperCase());
-	return money;
+	return numeral.replace("BTC", ticker.toUpperCase());
 };
 
-export const Amount = ({ ticker, value, locale, showSign, normalize, isNegative, ...props }: Props) => {
+export const Amount = ({ ticker, value, locale, showSign, normalize, isNegative, ...properties }: Properties) => {
 	const tickerConfig: CurrencyConfig | undefined = CURRENCIES[ticker as ExchangeCurrencyList];
 	const decimals = tickerConfig?.decimals || 8;
 	const isFiat = decimals <= 2;
 	const amount = (isFiat ? formatFiat : formatCrypto)({ ticker, value, locale, decimals, normalize });
 
 	return (
-		<span data-testid="Amount" {...props}>
+		<span data-testid="Amount" {...properties}>
 			{showSign ? formatSign(amount, !!isNegative) : amount}
 		</span>
 	);

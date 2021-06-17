@@ -14,7 +14,7 @@ export const bootEnvWithProfileFixtures = async ({
 	const fixtureProfiles: any = fixtureData.profiles;
 	const storageData: StorageData = { profiles: {}, data: {} };
 
-	ids.forEach((id) => {
+	for (const id of ids) {
 		//@ts-ignore
 		const password: string = TestingPasswords?.profiles[id]?.password;
 
@@ -42,7 +42,7 @@ export const bootEnvWithProfileFixtures = async ({
 			name: fixtureProfiles[id].settings.NAME,
 			data,
 		};
-	});
+	}
 
 	await env.verify(storageData);
 	await env.boot();

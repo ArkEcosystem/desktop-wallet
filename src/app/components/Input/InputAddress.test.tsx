@@ -7,7 +7,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { env, fireEvent, getDefaultProfileId, render } from "utils/testing-library";
 
-import { InputAddress, InputAddressProps } from "./InputAddress";
+import { InputAddress, InputAddressProperties } from "./InputAddress";
 
 let profile: Contracts.IProfile;
 
@@ -16,9 +16,9 @@ describe("InputAddress", () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 	});
 
-	const TestInputAddress = (props: InputAddressProps) => (
+	const TestInputAddress = (properties: InputAddressProperties) => (
 		<EnvironmentProvider env={env}>
-			<InputAddress name="address" {...props} />
+			<InputAddress name="address" {...properties} />
 		</EnvironmentProvider>
 	);
 

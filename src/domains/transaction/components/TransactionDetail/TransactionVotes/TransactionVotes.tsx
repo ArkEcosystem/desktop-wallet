@@ -7,13 +7,13 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import Skeleton from "react-loading-skeleton";
 
-interface TransactionVotesProps {
+interface TransactionVotesProperties {
 	isLoading: boolean;
 	votes: Contracts.IReadOnlyWallet[];
 	unvotes: Contracts.IReadOnlyWallet[];
 }
 
-export const TransactionVotes = ({ isLoading, votes, unvotes }: TransactionVotesProps) => {
+export const TransactionVotes = ({ isLoading, votes, unvotes }: TransactionVotesProperties) => {
 	const { t } = useTranslation();
 
 	if (isLoading) {
@@ -33,19 +33,19 @@ export const TransactionVotes = ({ isLoading, votes, unvotes }: TransactionVotes
 	}
 
 	const getTransactionIcon = () => {
-		if (votes.length && unvotes.length) {
+		if (votes.length > 0 && unvotes.length > 0) {
 			return "VoteCombination";
 		}
 
-		return votes.length ? "Vote" : "Unvote";
+		return votes.length > 0 ? "Vote" : "Unvote";
 	};
 
 	const getTransactionType = () => {
-		if (votes.length && unvotes.length) {
+		if (votes.length > 0 && unvotes.length > 0) {
 			return t("TRANSACTION.TRANSACTION_TYPES.VOTE_COMBINATION");
 		}
 
-		return votes.length ? t("TRANSACTION.TRANSACTION_TYPES.VOTE") : t("TRANSACTION.TRANSACTION_TYPES.UNVOTE");
+		return votes.length > 0 ? t("TRANSACTION.TRANSACTION_TYPES.VOTE") : t("TRANSACTION.TRANSACTION_TYPES.UNVOTE");
 	};
 
 	return (

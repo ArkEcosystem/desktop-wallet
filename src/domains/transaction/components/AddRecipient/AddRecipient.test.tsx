@@ -469,12 +469,12 @@ describe("AddRecipient", () => {
 
 		await waitFor(() => expect(screen.getAllByTestId("recipient-list__recipient-list-item")).toHaveLength(2));
 
-		const removeBtn = within(screen.getAllByTestId("recipient-list__recipient-list-item")[0]).getAllByTestId(
+		const removeButton = within(screen.getAllByTestId("recipient-list__recipient-list-item")[0]).getAllByTestId(
 			"recipient-list__remove-recipient",
 		);
-		expect(removeBtn[0]).toBeTruthy();
+		expect(removeButton[0]).toBeTruthy();
 
-		fireEvent.click(removeBtn[0]);
+		fireEvent.click(removeButton[0]);
 
 		await waitFor(() => expect(screen.getAllByTestId("recipient-list__recipient-list-item")).toHaveLength(1));
 	});

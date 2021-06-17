@@ -1,13 +1,13 @@
 import React from "react";
 
-interface Props {
+interface Properties {
 	title: string;
 	titleSuffix?: string | React.ReactNode;
 	subtitle?: string | React.ReactNode;
 	extra?: React.ReactNode;
 }
 
-export const Header = ({ title, titleSuffix, subtitle, extra }: Props) => (
+export const Header = ({ title, titleSuffix, subtitle, extra }: Properties) => (
 	<div className="flex justify-between items-end bg-theme-background">
 		<div className="space-y-4">
 			<h1 className="mb-0 text-3xl" data-testid="header__title">

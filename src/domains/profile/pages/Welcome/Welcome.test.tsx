@@ -229,9 +229,11 @@ describe("Welcome", () => {
 			fireEvent.click(getByText(profile.settings().get(Contracts.ProfileSetting.Name)));
 		});
 
-		for (const i of [1, 2, 3]) {
+		for (const index of [1, 2, 3]) {
 			await act(async () => {
-				fireEvent.input(getByTestId("SignIn__input--password"), { target: { value: `wrong password ${i}` } });
+				fireEvent.input(getByTestId("SignIn__input--password"), {
+					target: { value: `wrong password ${index}` },
+				});
 			});
 
 			// wait for form to be updated
@@ -249,7 +251,7 @@ describe("Welcome", () => {
 		expect(getByTestId("SignIn__input--password")).toBeDisabled();
 
 		act(() => {
-			jest.advanceTimersByTime(15000);
+			jest.advanceTimersByTime(15_000);
 		});
 
 		// Close
@@ -266,7 +268,7 @@ describe("Welcome", () => {
 		expect(getByTestId("SignIn__submit-button")).toBeDisabled();
 
 		act(() => {
-			jest.advanceTimersByTime(50000);
+			jest.advanceTimersByTime(50_000);
 			jest.clearAllTimers();
 		});
 
@@ -274,7 +276,7 @@ describe("Welcome", () => {
 		await findByTestId("SignIn__submit-button");
 
 		await waitFor(() => expect(getByTestId("Input__error")).toHaveAttribute("data-errortext", "Password invalid"), {
-			timeout: 10000,
+			timeout: 10_000,
 		});
 
 		jest.useRealTimers();

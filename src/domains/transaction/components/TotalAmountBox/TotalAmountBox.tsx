@@ -5,7 +5,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import tw from "twin.macro";
 
-interface Props {
+interface Properties {
 	amount: BigNumber;
 	fee: string;
 	ticker: string;
@@ -13,7 +13,7 @@ interface Props {
 
 const AmountLabel = tw.span`text-sm font-semibold text-theme-secondary-700`;
 
-export const TotalAmountBox = ({ amount, fee, ticker }: Props) => {
+export const TotalAmountBox = ({ amount, fee, ticker }: Properties) => {
 	const { t } = useTranslation();
 
 	return (

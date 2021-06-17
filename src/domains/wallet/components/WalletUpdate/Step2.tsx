@@ -26,7 +26,7 @@ export const SecondStep = ({ transferred, total, percent }: DownloadProgress) =>
 						<div className={percent ? "" : "animate-spin"}>
 							<CircularProgressBar
 								showValue={!!percent}
-								value={percent ? parseInt(percent.toFixed(0)) : 20}
+								value={percent ? Number.parseInt(percent.toFixed(0)) : 20}
 								size={50}
 								strokeWidth={5}
 								fontSize={0.8}

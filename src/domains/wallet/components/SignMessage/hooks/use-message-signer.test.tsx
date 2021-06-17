@@ -100,7 +100,7 @@ describe("Use Message Signer Hook", () => {
 
 		jest.spyOn(wallet, "isLedger").mockReturnValue(true);
 		jest.spyOn(wallet.coin().ledger(), "signMessage").mockImplementation(
-			() => new Promise((resolve) => setTimeout(() => resolve("signature"), 20000)),
+			() => new Promise((resolve) => setTimeout(() => resolve("signature"), 20_000)),
 		);
 
 		setTimeout(() => abortCtrl.abort(), 100);

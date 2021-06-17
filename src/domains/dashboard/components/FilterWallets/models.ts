@@ -1,4 +1,4 @@
-interface BaseProps {
+interface BaseProperties {
 	networks?: any;
 	viewType?: "list" | "grid";
 	useTestNetworks?: boolean;
@@ -7,11 +7,11 @@ interface BaseProps {
 	isFilterChanged?: boolean;
 }
 
-export type FilterWalletsHookProps = {
+export type FilterWalletsHookProperties = {
 	update: (key: string, value: any) => void;
 	disabled: boolean;
-} & BaseProps;
+} & BaseProperties;
 
-export type FilterWalletsProps = {
+export type FilterWalletsProperties = {
 	onChange?: (key: string, value: any) => void;
-} & BaseProps;
+} & BaseProperties;

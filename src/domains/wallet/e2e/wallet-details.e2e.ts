@@ -40,7 +40,7 @@ test("should star a wallet", async (t) => {
 	await goToWallet(t);
 
 	const starButton = <CustomSelector>Selector("[data-testid=WalletHeader__star-button]").addCustomDOMProperties({
-		innerHTML: (el) => el.innerHTML,
+		innerHTML: (element) => element.innerHTML,
 	});
 
 	const starButtonContent = (<CustomSnapshot>await starButton()).innerHTML;

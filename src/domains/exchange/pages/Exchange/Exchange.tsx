@@ -42,7 +42,7 @@ export const Exchange = () => {
 
 	const exchanges = installedPlugins.filter((plugin) => plugin.category === "exchange" && plugin.isEnabled);
 
-	if (!exchanges.length || exchanges.length < 3) {
+	if (exchanges.length === 0 || exchanges.length < 3) {
 		exchanges.push(...new Array(3 - exchanges.length).fill(undefined));
 	}
 

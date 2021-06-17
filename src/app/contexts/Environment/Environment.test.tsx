@@ -9,10 +9,10 @@ import { act, env, fireEvent, render, renderWithRouter, waitFor } from "utils/te
 import { EnvironmentProvider, useEnvironmentContext } from "./Environment";
 
 describe("Environment Context", () => {
-	let db: Storage;
+	let database: Storage;
 
 	beforeEach(() => {
-		db = new StubStorage();
+		database = new StubStorage();
 	});
 
 	it("should throw without provider", () => {
@@ -60,7 +60,7 @@ describe("Environment Context", () => {
 		};
 
 		const App = () => {
-			env.reset({ coins: { ARK }, httpClient, storage: db });
+			env.reset({ coins: { ARK }, httpClient, storage: database });
 
 			return (
 				<EnvironmentProvider env={env}>
@@ -78,7 +78,7 @@ describe("Environment Context", () => {
 
 		await waitFor(() => expect(getByRole("heading")).toHaveTextContent("Counter 1"));
 
-		const profiles = await db.get<any>("profiles");
+		const profiles = await database.get<any>("profiles");
 		expect(Object.keys(profiles)).toHaveLength(1);
 	});
 
@@ -133,7 +133,7 @@ describe("Environment Context", () => {
 		};
 
 		const App = () => {
-			env.reset({ coins: { ARK }, httpClient, storage: db });
+			env.reset({ coins: { ARK }, httpClient, storage: database });
 
 			return (
 				<EnvironmentProvider env={env}>
@@ -151,7 +151,7 @@ describe("Environment Context", () => {
 
 		await waitFor(() => expect(getByRole("heading")).toHaveTextContent("Counter 1"));
 
-		const profiles = await db.get<any>("profiles");
+		const profiles = await database.get<any>("profiles");
 		expect(profiles).toBeUndefined();
 	});
 });

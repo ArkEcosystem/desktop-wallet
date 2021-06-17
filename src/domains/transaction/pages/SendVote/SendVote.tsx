@@ -29,9 +29,9 @@ export const SendVote = () => {
 
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 
-	const queryParams = useQueryParams();
-	const unvoteAddresses = queryParams.get("unvotes")?.split(",");
-	const voteAddresses = queryParams.get("votes")?.split(",");
+	const queryParameters = useQueryParams();
+	const unvoteAddresses = queryParameters.get("unvotes")?.split(",");
+	const voteAddresses = queryParameters.get("votes")?.split(",");
 
 	const [activeTab, setActiveTab] = useState(1);
 	const [unvotes, setUnvotes] = useState<ProfileContracts.IReadOnlyWallet[]>([]);
@@ -47,7 +47,7 @@ export const SendVote = () => {
 	const { fee, fees } = watch();
 	const { sendVote, common } = useValidation();
 
-	const abortRef = useRef(new AbortController());
+	const abortReference = useRef(new AbortController());
 	const transactionBuilder = useTransactionBuilder();
 	const { sign } = useWalletSignatory(activeWallet);
 
@@ -101,22 +101,22 @@ export const SendVote = () => {
 
 	const handleBack = () => {
 		// Abort any existing listener
-		abortRef.current.abort();
+		abortReference.current.abort();
 
 		if (activeTab === 1) {
-			const params = new URLSearchParams();
+			const parameters = new URLSearchParams();
 
 			if (unvoteAddresses) {
-				params.append("unvotes", unvoteAddresses.join());
+				parameters.append("unvotes", unvoteAddresses.join(","));
 			}
 
 			if (voteAddresses) {
-				params.append("votes", voteAddresses.join());
+				parameters.append("votes", voteAddresses.join(","));
 			}
 
 			return history.push({
 				pathname: `/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/votes`,
-				search: `?${params}`,
+				search: `?${parameters}`,
 			});
 		}
 
@@ -124,7 +124,7 @@ export const SendVote = () => {
 	};
 
 	const handleNext = async (suppressWarning?: boolean) => {
-		abortRef.current = new AbortController();
+		abortReference.current = new AbortController();
 
 		const newIndex = activeTab + 1;
 
@@ -183,7 +183,7 @@ export const SendVote = () => {
 	const submitForm = async () => {
 		clearErrors("mnemonic");
 		const { fee, mnemonic, secondMnemonic, encryptionPassword, wif, privateKey } = getValues();
-		const abortSignal = abortRef.current?.signal;
+		const abortSignal = abortReference.current?.signal;
 
 		try {
 			const signatory = await sign({
@@ -310,7 +310,7 @@ export const SendVote = () => {
 
 				await confirmSendVote(isUnvote ? "unvote" : "vote");
 			}
-		} catch (error) {
+		} catch {
 			setActiveTab(5);
 		}
 	};

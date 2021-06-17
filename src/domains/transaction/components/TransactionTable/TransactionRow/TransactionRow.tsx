@@ -14,7 +14,7 @@ import { TransactionRowMode } from "./TransactionRowMode";
 import { TransactionRowRecipientLabel } from "./TransactionRowRecipientLabel";
 import { TransactionRowSkeleton } from "./TransactionRowSkeleton";
 
-type Props = {
+type Properties = {
 	transaction: DTO.ExtendedTransactionData;
 	exchangeCurrency?: string;
 	onSign?: () => void;
@@ -36,8 +36,8 @@ export const TransactionRow = memo(
 		isLoading = false,
 		showExplorerLink = true,
 		showSignColumn = false,
-		...props
-	}: Props) => {
+		...properties
+	}: Properties) => {
 		const timeFormat = useTimeFormat();
 
 		if (isLoading) {
@@ -53,7 +53,7 @@ export const TransactionRow = memo(
 		const isSignaturePending = showSignColumn && transaction.isMultiSignatureRegistration();
 
 		return (
-			<TableRow onClick={onClick} className={cn("group", className)} {...props}>
+			<TableRow onClick={onClick} className={cn("group", className)} {...properties}>
 				{showExplorerLink && (
 					<TableCell variant="start">
 						<Link

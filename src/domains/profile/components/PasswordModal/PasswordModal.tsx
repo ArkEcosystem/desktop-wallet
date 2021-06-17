@@ -6,7 +6,7 @@ import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-interface PasswordModalProps {
+interface PasswordModalProperties {
 	title: string;
 	description: string;
 	error?: string;
@@ -15,7 +15,7 @@ interface PasswordModalProps {
 	onSubmit?: (password: string) => void;
 }
 
-export const PasswordModal = ({ isOpen, title, description, onClose, onSubmit, error }: PasswordModalProps) => {
+export const PasswordModal = ({ isOpen, title, description, onClose, onSubmit, error }: PasswordModalProperties) => {
 	const { t } = useTranslation();
 	const form = useForm({ mode: "onChange" });
 	const { password } = form.watch();

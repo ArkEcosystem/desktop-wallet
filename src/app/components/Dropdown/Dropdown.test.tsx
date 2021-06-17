@@ -354,35 +354,35 @@ describe("Dropdown", () => {
 
 describe("ClickOutside Hook", () => {
 	it("should not call callback if clicked on target element", () => {
-		const el = document;
-		const ref = { current: el };
-		const cb = jest.fn();
-		clickOutsideHandler(ref, cb);
+		const element = document;
+		const reference = { current: element };
+		const callback = jest.fn();
+		clickOutsideHandler(reference, callback);
 
 		act(() => {
-			fireEvent.mouseDown(el);
+			fireEvent.mouseDown(element);
 		});
-		expect(cb).not.toBeCalled();
+		expect(callback).not.toBeCalled();
 	});
 
 	it("should call callback if clicked outside target element", () => {
 		const div = document.createElement("div");
-		const ref = { current: div };
+		const reference = { current: div };
 
-		const cb = jest.fn();
-		clickOutsideHandler(ref, cb);
+		const callback = jest.fn();
+		clickOutsideHandler(reference, callback);
 
 		act(() => {
 			fireEvent.mouseDown(document);
 		});
-		expect(cb).toBeCalled();
+		expect(callback).toBeCalled();
 	});
 
 	it("should do nothing if callback is not provided", () => {
 		const div = document.createElement("div");
-		const ref = { current: div };
+		const reference = { current: div };
 
-		clickOutsideHandler(ref, null);
+		clickOutsideHandler(reference, null);
 
 		act(() => {
 			fireEvent.mouseDown(document);

@@ -32,8 +32,8 @@ export const ImportWallet = () => {
 	const [isImporting, setIsImporting] = useState(false);
 	const [isEncrypting, setIsEncrypting] = useState(false);
 
-	const queryParams = useQueryParams();
-	const isLedgerImport = !!queryParams.get("ledger");
+	const queryParameters = useQueryParams();
+	const isLedgerImport = !!queryParameters.get("ledger");
 
 	const history = useHistory();
 	const { env, persist } = useEnvironmentContext();
@@ -71,9 +71,9 @@ export const ImportWallet = () => {
 			try {
 				await importWallet();
 				setActiveTab(activeTab + (getValues("type").startsWith("bip") ? 1 : 2));
-			} catch (e) {
+			} catch (error) {
 				/* istanbul ignore next */
-				toasts.error(e.message);
+				toasts.error(error.message);
 			} finally {
 				setIsImporting(false);
 			}
@@ -125,7 +125,7 @@ export const ImportWallet = () => {
 		const name = getValues("name");
 
 		if (name) {
-			const formattedName = name.trim().substring(0, nameMaxLength);
+			const formattedName = name.trim().slice(0, Math.max(0, nameMaxLength));
 			walletData?.mutator().alias(formattedName);
 			await persist();
 		}

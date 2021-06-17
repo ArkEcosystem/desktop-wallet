@@ -11,9 +11,9 @@ import fs from "fs";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { SettingsProps } from "../Settings.models";
+import { SettingsProperties } from "../Settings.models";
 
-export const Export = ({ formConfig, onSuccess }: SettingsProps) => {
+export const Export = ({ formConfig, onSuccess }: SettingsProperties) => {
 	const { t } = useTranslation();
 
 	const { register, context } = formConfig;

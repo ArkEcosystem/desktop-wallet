@@ -3,19 +3,19 @@ import { BlankPluginCard, PluginCard } from "domains/plugin/components/PluginCar
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-interface ExchangeCardProps {
+interface ExchangeCardProperties {
 	actions?: DropdownOption[];
 	exchange: any;
 	onClick: any;
 	onSelect: any;
 }
 
-export const ExchangeCard = ({ exchange, ...props }: ExchangeCardProps) => {
+export const ExchangeCard = ({ exchange, ...properties }: ExchangeCardProperties) => {
 	const { t } = useTranslation();
 
 	if (exchange === undefined) {
 		return <BlankPluginCard name={t("PLUGINS.CATEGORIES.EXCHANGE")} />;
 	}
 
-	return <PluginCard plugin={exchange} showCategory={false} {...props} />;
+	return <PluginCard plugin={exchange} showCategory={false} {...properties} />;
 };

@@ -5,7 +5,7 @@ export interface Option {
 	value: string | number;
 }
 
-export interface ContactListItemProps {
+export interface ContactListItemProperties {
 	item: any;
 	options: Option[];
 	variant?: "condensed";

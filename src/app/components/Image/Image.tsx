@@ -2,12 +2,12 @@ import { images } from "app/assets/images";
 import React from "react";
 import { shouldUseDarkColors } from "utils/electron-utils";
 
-type Props = {
+type Properties = {
 	name: string;
 	domain: string;
 } & React.HTMLProps<any>;
 
-export const Image = ({ name, domain, ...props }: Props) => {
+export const Image = ({ name, domain, ...properties }: Properties) => {
 	const [imageName, setImageName] = React.useState("");
 
 	React.useLayoutEffect(() => {
@@ -17,7 +17,7 @@ export const Image = ({ name, domain, ...props }: Props) => {
 	// @ts-ignore
 	const Image = images[domain][imageName] || images[domain][name];
 
-	return Image ? <Image {...props} /> : null;
+	return Image ? <Image {...properties} /> : null;
 };
 
 Image.defaultProps = {

@@ -4,11 +4,11 @@ import React from "react";
 
 import { LoaderWrapper, LogoSpinner } from "./Loader.styles";
 
-interface LoaderProps {
+interface LoaderProperties {
 	show?: boolean;
 }
 
-export const Loader = ({ show }: LoaderProps) => {
+export const Loader = ({ show }: LoaderProperties) => {
 	if (!show) {
 		return <></>;
 	}

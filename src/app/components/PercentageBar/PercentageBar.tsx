@@ -7,12 +7,12 @@ export interface BarItem {
 	percentage: number | string;
 }
 
-interface PercentageBarProps {
+interface PercentageBarProperties {
 	data?: BarItem[];
 	title?: string;
 }
 
-export const PercentageBar = ({ data, title }: PercentageBarProps) => {
+export const PercentageBar = ({ data, title }: PercentageBarProperties) => {
 	const { t } = useTranslation();
 
 	const percentageData = useMemo(() => {
@@ -21,9 +21,9 @@ export const PercentageBar = ({ data, title }: PercentageBarProps) => {
 		if (data && data.length > maxCoins) {
 			const lastData = data.splice(maxCoins, data.length);
 			const otherData = lastData?.reduce(
-				(acc, cur) => ({
-					...acc,
-					percentage: Number(acc.percentage) + Number(cur.percentage),
+				(accumulator, current) => ({
+					...accumulator,
+					percentage: Number(accumulator.percentage) + Number(current.percentage),
 				}),
 				{
 					color: "neutral-400",

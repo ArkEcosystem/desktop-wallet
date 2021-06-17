@@ -7,13 +7,13 @@ export const withThemeDecorator = <T extends {}>(
 	Component: React.ComponentType<T>,
 	manager: PluginManager,
 ) => {
-	const Wrapper = React.forwardRef((props: T, ref) => {
-		const Result = manager.plugins().applyFilters<any>("service.theme", hookName, Component, props);
-		const fallback = React.createElement(Component, { ...props, ref });
+	const Wrapper = React.forwardRef((properties: T, reference) => {
+		const Result = manager.plugins().applyFilters<any>("service.theme", hookName, Component, properties);
+		const fallback = React.createElement(Component, { ...properties, ref: reference });
 
 		return (
 			<ErrorBoundary fallback={fallback}>
-				<Result ref={ref} {...props} />
+				<Result ref={reference} {...properties} />
 			</ErrorBoundary>
 		);
 	});

@@ -5,7 +5,7 @@ import { useTransactionTypes } from "domains/transaction/hooks/use-transaction-t
 import React, { memo, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-interface FilterTransactionsProps {
+interface FilterTransactionsProperties {
 	className?: string;
 	defaultSelected?: DropdownOption;
 	wallets?: Contracts.IReadWriteWallet[];
@@ -14,7 +14,7 @@ interface FilterTransactionsProps {
 }
 
 export const FilterTransactions = memo(
-	({ className, onSelect, defaultSelected, wallets, isDisabled }: FilterTransactionsProps) => {
+	({ className, onSelect, defaultSelected, wallets, isDisabled }: FilterTransactionsProperties) => {
 		const { t } = useTranslation();
 		const { types, getLabel, getQueryParamsByType, hasMagistrationTypesEnabled } = useTransactionTypes({ wallets });
 

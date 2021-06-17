@@ -6,14 +6,14 @@ import { useTranslation } from "react-i18next";
 
 import { PluginPermissionsModal } from "../PluginPermissionsModal/PluginPermissionsModal";
 
-interface Props {
+interface Properties {
 	description?: string;
 	permissions?: any;
 	images?: any;
 	minimumVersion?: string;
 }
 
-export const PluginInfo = ({ description, permissions, images, minimumVersion }: Props) => {
+export const PluginInfo = ({ description, permissions, images, minimumVersion }: Properties) => {
 	const { t, i18n } = useTranslation();
 	const hasRequirements = !!minimumVersion;
 	const [showPermissionsModal, setShowPermissionsModal] = useState(false);
@@ -34,7 +34,7 @@ export const PluginInfo = ({ description, permissions, images, minimumVersion }:
 				</div>
 			) : null}
 
-			{permissions.length ? (
+			{permissions.length > 0 ? (
 				<div className="mt-8">
 					<p className="font-bold">{t("PLUGINS.PLUGIN_INFO.PERMISSIONS")}</p>
 					<div className="inline-flex items-baseline mt-3 space-x-2">
@@ -67,7 +67,7 @@ export const PluginInfo = ({ description, permissions, images, minimumVersion }:
 				</div>
 			) : null}
 
-			{images.length ? (
+			{images.length > 0 ? (
 				<div className="relative mt-8">
 					<p className="font-bold">{t("PLUGINS.PLUGIN_INFO.SCREENSHOTS")}</p>
 					<div

@@ -17,7 +17,7 @@ describe("Use Ledger Scanner", () => {
 	beforeAll(() => {
 		nock("https://dwallets.ark.io/api")
 			.get("/wallets")
-			.query((params) => !!params.address)
+			.query((parameters) => !!parameters.address)
 			.reply(200, {
 				meta: {},
 				data: [
@@ -36,13 +36,13 @@ describe("Use Ledger Scanner", () => {
 				],
 			})
 			.get("/wallets")
-			.query((params) => !!params.address)
+			.query((parameters) => !!parameters.address)
 			.reply(200, {
 				meta: {},
 				data: [],
 			})
 			.get("/wallets")
-			.query((params) => !!params.address)
+			.query((parameters) => !!parameters.address)
 			.reply(200, {
 				meta: {},
 				data: [],
@@ -132,14 +132,14 @@ describe("Use Ledger Scanner", () => {
 			return (
 				<div>
 					<ul>
-						{wallets.map((x, i) => (
+						{wallets.map((x, index) => (
 							<li key={x.path}>
 								<p>{`Path: ${x.path}`}</p>
 								<p>{`Address: ${x.address}`}</p>
 								<p>{`Selected: ${isSelected(x.path)}`}</p>
 								<input
 									type="checkbox"
-									data-testid={`input--${i}`}
+									data-testid={`input--${index}`}
 									onChange={toggleSelect.bind(null, x.path)}
 								/>
 							</li>

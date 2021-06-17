@@ -5,15 +5,15 @@ import { styled } from "twin.macro";
 
 import { getStyles } from "./BackButton.styles";
 
-interface BackButtonProps {
+interface BackButtonProperties {
 	backToUrl?: string;
 	className?: string;
 	disabled?: boolean;
 }
 
-const StyledBackButton = styled.button<BackButtonProps>(getStyles);
+const StyledBackButton = styled.button<BackButtonProperties>(getStyles);
 
-export const BackButton = ({ backToUrl, className, disabled }: BackButtonProps) => {
+export const BackButton = ({ backToUrl, className, disabled }: BackButtonProperties) => {
 	const history = useHistory();
 
 	const handleOnClick = () => {

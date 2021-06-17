@@ -7,7 +7,7 @@ import React, { ChangeEvent, useCallback, useEffect, useRef, useState } from "re
 import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
 
-interface HeaderSearchBarProps {
+interface HeaderSearchBarProperties {
 	offsetClassName?: string;
 	placeholder?: string;
 	label?: string;
@@ -35,14 +35,14 @@ export const HeaderSearchBar = ({
 	defaultQuery = "",
 	debounceTimeout = 500,
 	resetFields = false,
-}: HeaderSearchBarProps) => {
+}: HeaderSearchBarProperties) => {
 	const { t } = useTranslation();
 
 	const [searchbarVisible, setSearchbarVisible] = useState(false);
 	const [query, setQuery] = useState(defaultQuery);
 
-	const ref = useRef(null);
-	useEffect(() => clickOutsideHandler(ref, () => setSearchbarVisible(false)), [ref]);
+	const reference = useRef(null);
+	useEffect(() => clickOutsideHandler(reference, () => setSearchbarVisible(false)), [reference]);
 
 	const debouncedQuery = useDebounce(query, debounceTimeout);
 	useEffect(() => onSearch?.(debouncedQuery), [debouncedQuery]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -70,7 +70,7 @@ export const HeaderSearchBar = ({
 			{searchbarVisible && (
 				<SearchBarInputWrapper
 					data-testid="HeaderSearchBar__input"
-					ref={ref}
+					ref={reference}
 					className={cn(
 						"absolute z-20 flex items-center text-base px-10 -mx-10 py-4 rounded-md shadow-xl bg-theme-background transform",
 						offsetClassName || "top-1/2 -translate-y-1/2",

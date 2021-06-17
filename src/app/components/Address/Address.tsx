@@ -3,7 +3,7 @@ import { TruncateMiddleDynamic } from "app/components/TruncateMiddleDynamic";
 import React from "react";
 import { Size } from "types";
 
-interface Props {
+interface Properties {
 	walletName?: string;
 	addressClass?: string;
 	address?: string;
@@ -21,7 +21,7 @@ export const Address = ({
 	walletName,
 	maxNameChars,
 	size,
-}: Props) => {
+}: Properties) => {
 	const getFontSize = (size?: Size) => {
 		switch (size) {
 			case "sm":

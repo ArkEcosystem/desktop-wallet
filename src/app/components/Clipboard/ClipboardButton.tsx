@@ -6,20 +6,20 @@ import React from "react";
 import { styled } from "twin.macro";
 import { ButtonVariant, Size } from "types";
 
-import { ClipboardCommonProps } from "./Clipboard";
+import { ClipboardCommonProperties } from "./Clipboard";
 
-export type ClipboardButtonProps = ClipboardCommonProps & {
+export type ClipboardButtonProperties = ClipboardCommonProperties & {
 	variant: "button";
 } & React.ButtonHTMLAttributes<any>;
 
-type ButtonProps = {
+type ButtonProperties = {
 	variant?: ButtonVariant;
 	size?: Size;
 } & React.ButtonHTMLAttributes<any>;
-const StyledButton = styled.button<ButtonProps>(getStyles);
+const StyledButton = styled.button<ButtonProperties>(getStyles);
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const ClipboardButton = ({ data, variant, options, children, ...props }: ClipboardButtonProps) => {
+export const ClipboardButton = ({ data, variant, options, children, ...properties }: ClipboardButtonProperties) => {
 	const [hasCopied, copy] = useClipboard({
 		resetAfter: 1000,
 		...options,
@@ -32,7 +32,7 @@ export const ClipboardButton = ({ data, variant, options, children, ...props }: 
 				variant="secondary"
 				onClick={() => copy(data)}
 				data-testid="clipboard-button__wrapper"
-				{...props}
+				{...properties}
 			>
 				<div className="flex items-center space-x-2">{children}</div>
 			</StyledButton>

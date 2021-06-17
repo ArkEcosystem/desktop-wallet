@@ -1,7 +1,7 @@
 import { Contracts, Environment } from "@arkecosystem/platform-sdk-profiles";
 import { ReadableFile } from "app/hooks/use-files";
 
-interface ImportFileProps {
+interface ImportFileProperties {
 	file?: ReadableFile;
 	password?: string;
 }
@@ -32,7 +32,7 @@ export const useProfileImport = ({ env }: { env: Environment }) => {
 
 		try {
 			data = JSON.parse(profileData);
-		} catch (error) {
+		} catch {
 			throw new Error("CorruptedData");
 		}
 
@@ -74,7 +74,7 @@ export const useProfileImport = ({ env }: { env: Environment }) => {
 		return profile;
 	};
 
-	const importProfile = async ({ password, file }: ImportFileProps) => {
+	const importProfile = async ({ password, file }: ImportFileProperties) => {
 		if (!file) {
 			return;
 		}

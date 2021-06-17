@@ -50,8 +50,8 @@ export const FormStep = ({
 		[setValue],
 	);
 
-	const handleInput = (evt: ChangeEvent<HTMLInputElement>) => {
-		setValue(evt.target.name, evt.target.value, { shouldValidate: true, shouldDirty: true });
+	const handleInput = (event_: ChangeEvent<HTMLInputElement>) => {
+		setValue(event_.target.name, event_.target.value, { shouldValidate: true, shouldDirty: true });
 	};
 
 	const minParticipantsLimit = Math.max(2, participants?.length || 0);

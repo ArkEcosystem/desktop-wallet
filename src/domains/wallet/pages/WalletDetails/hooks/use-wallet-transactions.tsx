@@ -24,7 +24,7 @@ export const useWalletTransactions = (wallet: ProfileContracts.IReadWriteWallet)
 		() => [
 			{
 				callback: syncMultiSignatures,
-				interval: 30000,
+				interval: 30_000,
 			},
 		],
 		[syncMultiSignatures],

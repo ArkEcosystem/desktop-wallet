@@ -9,7 +9,7 @@ import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } fro
 
 import { LedgerScanStep } from "./LedgerScanStep";
 
-jest.setTimeout(10000);
+jest.setTimeout(10_000);
 
 describe("LedgerScanStep", () => {
 	let profile: Contracts.IProfile;
@@ -20,7 +20,7 @@ describe("LedgerScanStep", () => {
 	beforeAll(() => {
 		nock("https://dwallets.ark.io/api")
 			.get("/wallets")
-			.query((params) => !!params.address)
+			.query((parameters) => !!parameters.address)
 			.reply(200, {
 				meta: {},
 				data: [
@@ -35,13 +35,13 @@ describe("LedgerScanStep", () => {
 				],
 			})
 			.get("/wallets")
-			.query((params) => !!params.address)
+			.query((parameters) => !!parameters.address)
 			.reply(200, {
 				meta: {},
 				data: [],
 			})
 			.get("/wallets")
-			.query((params) => !!params.address)
+			.query((parameters) => !!parameters.address)
 			.reply(200, {
 				meta: {},
 				data: [],
@@ -90,7 +90,7 @@ describe("LedgerScanStep", () => {
 	});
 
 	it("should handle select", async () => {
-		let formRef: ReturnType<typeof useForm>;
+		let formReference: ReturnType<typeof useForm>;
 
 		const Component = () => {
 			const form = useForm({
@@ -98,7 +98,7 @@ describe("LedgerScanStep", () => {
 					network: wallet.network(),
 				},
 			});
-			formRef = form;
+			formReference = form;
 
 			return (
 				<FormProvider {...form}>
@@ -133,24 +133,24 @@ describe("LedgerScanStep", () => {
 			fireEvent.click(screen.getAllByRole("checkbox")[1]);
 		});
 
-		await waitFor(() => expect(formRef.getValues("wallets").length).toBe(1));
+		await waitFor(() => expect(formReference.getValues("wallets").length).toBe(1));
 
 		act(() => {
 			fireEvent.click(screen.getAllByRole("checkbox")[1]);
 		});
 
-		await waitFor(() => expect(formRef.getValues("wallets").length).toBe(0));
+		await waitFor(() => expect(formReference.getValues("wallets").length).toBe(0));
 	});
 
 	it("should render", async () => {
-		let formRef: ReturnType<typeof useForm>;
+		let formReference: ReturnType<typeof useForm>;
 		const Component = () => {
 			const form = useForm({
 				defaultValues: {
 					network: wallet.network(),
 				},
 			});
-			formRef = form;
+			formReference = form;
 
 			return (
 				<FormProvider {...form}>
@@ -169,7 +169,7 @@ describe("LedgerScanStep", () => {
 		await waitFor(() => expect(screen.getAllByRole("checkbox")).toHaveLength(3));
 
 		await waitFor(() =>
-			expect(formRef.getValues("wallets")).toMatchObject([
+			expect(formReference.getValues("wallets")).toMatchObject([
 				{ address: "DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq" },
 				{ address: "DQseW3VJ1db5xN5xZi4Qhn6AFWtcwSwzpG" },
 			]),
@@ -180,7 +180,9 @@ describe("LedgerScanStep", () => {
 		});
 
 		await waitFor(() =>
-			expect(formRef.getValues("wallets")).toMatchObject([{ address: "DQseW3VJ1db5xN5xZi4Qhn6AFWtcwSwzpG" }]),
+			expect(formReference.getValues("wallets")).toMatchObject([
+				{ address: "DQseW3VJ1db5xN5xZi4Qhn6AFWtcwSwzpG" },
+			]),
 		);
 
 		expect(container).toMatchSnapshot();

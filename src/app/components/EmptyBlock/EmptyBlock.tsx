@@ -2,13 +2,13 @@ import cn from "classnames";
 import React from "react";
 import { Size } from "types";
 
-type EmptyBlockProps = {
+type EmptyBlockProperties = {
 	className?: string;
 	children?: React.ReactNode;
 	size?: Size;
 } & Omit<React.HTMLProps<any>, "size">;
 
-export const EmptyBlock = ({ className, children, size, ...props }: EmptyBlockProps) => {
+export const EmptyBlock = ({ className, children, size, ...properties }: EmptyBlockProperties) => {
 	const padding = size === "sm" ? "py-3 px-4" : "p-6";
 
 	return (
@@ -19,7 +19,7 @@ export const EmptyBlock = ({ className, children, size, ...props }: EmptyBlockPr
 				padding,
 				className,
 			)}
-			{...props}
+			{...properties}
 		>
 			{children && <div>{children}</div>}
 		</div>

@@ -22,11 +22,11 @@ interface NewsFilters {
 	searchQuery?: string;
 }
 
-interface Props {
+interface Properties {
 	itemsPerPage?: number;
 }
 
-export const News = ({ itemsPerPage }: Props) => {
+export const News = ({ itemsPerPage }: Properties) => {
 	const activeProfile = useActiveProfile();
 	const { persist } = useEnvironmentContext();
 
@@ -42,7 +42,7 @@ export const News = ({ itemsPerPage }: Props) => {
 
 	const [news, setNews] = useState<BlockfolioSignal[]>([]);
 
-	const skeletonCards = new Array(8).fill({});
+	const skeletonCards = Array.from({ length: 8 }).fill({});
 
 	const { t } = useTranslation();
 
@@ -53,7 +53,7 @@ export const News = ({ itemsPerPage }: Props) => {
 			setIsLoading(true);
 			setNews([]);
 
-			if (coins.length) {
+			if (coins.length > 0) {
 				const query = {
 					coins,
 					page: currentPage,

@@ -5,14 +5,14 @@ interface ConfigurationContextType {
 	setConfiguration: (configuration: Record<string, any>) => void;
 }
 
-interface Props {
+interface Properties {
 	children: React.ReactNode;
 	defaultConfiguration?: any;
 }
 
 const ConfigurationContext = React.createContext<any>(undefined);
 
-export const ConfigurationProvider = ({ children, defaultConfiguration }: Props) => {
+export const ConfigurationProvider = ({ children, defaultConfiguration }: Properties) => {
 	const [configuration, setConfig] = React.useState<any>({
 		// Domain specific configuration defaults
 		dashboard: null,

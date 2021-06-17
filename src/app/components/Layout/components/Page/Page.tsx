@@ -4,7 +4,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { NavbarVariant } from "types";
 
-interface PageProps {
+interface PageProperties {
 	navbarVariant?: NavbarVariant;
 	title?: string;
 	isBackDisabled?: boolean;
@@ -13,7 +13,7 @@ interface PageProps {
 	children: React.ReactNode;
 }
 
-export const Page = ({ navbarVariant, title, isBackDisabled, profile, sidebar, children }: PageProps) => {
+export const Page = ({ navbarVariant, title, isBackDisabled, profile, sidebar, children }: PageProperties) => {
 	const { t } = useTranslation();
 
 	const menu = [

@@ -6,13 +6,13 @@ import { useTranslation } from "react-i18next";
 
 import { ImportFile } from "./models";
 
-interface ImportErrorProps {
+interface ImportErrorProperties {
 	file: ImportFile;
 	onRetry?: () => void;
 	onBack?: () => void;
 }
 
-export const ImportError = ({ file, onBack, onRetry }: ImportErrorProps) => {
+export const ImportError = ({ file, onBack, onRetry }: ImportErrorProperties) => {
 	const { t } = useTranslation();
 
 	return (

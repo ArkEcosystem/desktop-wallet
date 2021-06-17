@@ -9,12 +9,12 @@ export type TooltipProps = {
 	variant: Size;
 } & TippyProps;
 
-export const Tooltip = ({ variant, ...props }: TooltipProps) => {
+export const Tooltip = ({ variant, ...properties }: TooltipProps) => {
 	const { theme } = useTheme();
-	if (!props.content) {
-		return <>{props.children}</>;
+	if (!properties.content) {
+		return <>{properties.children}</>;
 	}
-	return <Tippy maxWidth={600} theme={theme} {...props} className={getVariantClassNames(variant)} />;
+	return <Tippy maxWidth={600} theme={theme} {...properties} className={getVariantClassNames(variant)} />;
 };
 
 Tooltip.defaultProps = {

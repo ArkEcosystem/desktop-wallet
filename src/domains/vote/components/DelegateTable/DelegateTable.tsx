@@ -19,7 +19,7 @@ const Footer = styled.div`
 	${tw`fixed bottom-0 inset-x-0 py-8 shadow-footer-smooth dark:shadow-footer-smooth-dark bg-theme-background`}
 `;
 
-interface DelegateTableProps {
+interface DelegateTableProperties {
 	delegates: Contracts.IReadOnlyWallet[];
 	emptyText?: string;
 	isLoading?: boolean;
@@ -46,7 +46,7 @@ export const DelegateTable = ({
 	onContinue,
 	isPaginationDisabled,
 	subtitle,
-}: DelegateTableProps) => {
+}: DelegateTableProperties) => {
 	const { t } = useTranslation();
 	const [currentPage, setCurrentPage] = useState(1);
 	const [selectedUnvotes, setSelectedUnvotes] = useState<string[]>(selectedUnvoteAddresses || []);
@@ -144,13 +144,11 @@ export const DelegateTable = ({
 		}
 
 		const offset = (currentPage - 1) * itemsPerPage;
-		const paginatedItems = items.slice(offset).slice(0, itemsPerPage);
-
-		return paginatedItems;
+		return items.slice(offset).slice(0, itemsPerPage);
 	};
 
 	const showSkeleton = useMemo(() => totalDelegates === 0 && isLoading, [totalDelegates, isLoading]);
-	const skeletonList = new Array(8).fill({});
+	const skeletonList = Array.from({ length: 8 }).fill({});
 	const data = showSkeleton ? skeletonList : paginator(delegates, currentPage, itemsPerPage!);
 
 	if (!isLoading && totalDelegates === 0) {
@@ -236,7 +234,7 @@ export const DelegateTable = ({
 								<div
 									className={cn(
 										"text-lg leading-tight",
-										selectedVotes.length ? "text-theme-text" : "text-theme-secondary-500",
+										selectedVotes.length > 0 ? "text-theme-text" : "text-theme-secondary-500",
 									)}
 									data-testid="DelegateTable__footer--votes"
 								>
@@ -264,7 +262,7 @@ export const DelegateTable = ({
 								<div
 									className={cn(
 										"text-lg leading-tight",
-										selectedUnvotes.length ? "text-theme-text" : "text-theme-secondary-500",
+										selectedUnvotes.length > 0 ? "text-theme-text" : "text-theme-secondary-500",
 									)}
 									data-testid="DelegateTable__footer--unvotes"
 								>

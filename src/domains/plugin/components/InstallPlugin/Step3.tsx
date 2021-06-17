@@ -4,11 +4,11 @@ import { Image } from "app/components/Image";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-interface Props {
+interface Properties {
 	plugin: any;
 }
 
-export const ThirdStep = ({ plugin }: Props) => {
+export const ThirdStep = ({ plugin }: Properties) => {
 	const { t } = useTranslation();
 
 	return (

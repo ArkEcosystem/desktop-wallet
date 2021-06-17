@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 
-interface Props {
+interface Properties {
 	children: React.ReactNode;
 	isOpen?: boolean;
 	minHeight?: number | string;
@@ -10,13 +10,13 @@ interface Props {
 	className?: string;
 }
 
-export const Collapse = ({ isOpen, children, minHeight, maxHeight, duration, ...props }: Props) => {
+export const Collapse = ({ isOpen, children, minHeight, maxHeight, duration, ...properties }: Properties) => {
 	const variants = {
 		visible: {
 			maxHeight: maxHeight,
 			height: "auto",
 			opacity: 1,
-			overflow: props.className?.includes("custom-scroll") ? "overlay" : "auto",
+			overflow: properties.className?.includes("custom-scroll") ? "overlay" : "auto",
 			transition: {
 				duration,
 			},
@@ -38,7 +38,7 @@ export const Collapse = ({ isOpen, children, minHeight, maxHeight, duration, ...
 			variants={variants}
 			animate={isOpen ? "visible" : "hidden"}
 			initial={isOpen ? "visible" : "hidden"}
-			{...props}
+			{...properties}
 		>
 			{children}
 		</motion.div>

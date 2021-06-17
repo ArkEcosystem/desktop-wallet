@@ -4,7 +4,7 @@ import { PluginManager, PluginManagerProvider } from "plugins";
 import React from "react";
 import { env, waitFor } from "utils/testing-library";
 
-import { useEnvSynchronizer } from "./use-env-synchronizer";
+import { useEnvSynchronizer as useEnvironmentSynchronizer } from "./use-env-synchronizer";
 
 describe("useEnvSynchronizer", () => {
 	it("should sync env scope jobs", async () => {
@@ -15,7 +15,7 @@ describe("useEnvSynchronizer", () => {
 				</PluginManagerProvider>
 			</EnvironmentProvider>
 		);
-		const { result } = renderHook(() => useEnvSynchronizer(), { wrapper });
+		const { result } = renderHook(() => useEnvironmentSynchronizer(), { wrapper });
 
 		await waitFor(() => expect(result.current.start).toBeDefined());
 		await waitFor(() => expect(result.current.stop).toBeDefined());

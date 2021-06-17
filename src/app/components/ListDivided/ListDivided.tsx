@@ -4,7 +4,7 @@ import tw from "twin.macro";
 
 import { ListDividedItem } from "./ListDividedItem";
 
-interface Props {
+interface Properties {
 	items: any;
 }
 
@@ -21,10 +21,10 @@ const renderItems = (items: any) => (
 	</StyledList>
 );
 
-const ListDivided = ({ items }: Props) => {
+const ListDivided = ({ items }: Properties) => {
 	const emptyList = <span data-testid="list-divided__empty">empty</span>;
 
-	return items.length ? renderItems(items) : emptyList;
+	return items.length > 0 ? renderItems(items) : emptyList;
 };
 
 ListDivided.defaultProps = {

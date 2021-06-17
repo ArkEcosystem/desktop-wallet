@@ -12,14 +12,14 @@ export enum FeeWarningVariant {
 	High = "HIGH",
 }
 
-interface FeeWarningProps {
+interface FeeWarningProperties {
 	isOpen: boolean;
 	variant?: FeeWarningVariant;
 	onCancel: (suppressWarning: boolean) => Promise<void>;
 	onConfirm: (suppressWarning: boolean) => Promise<void>;
 }
 
-export const FeeWarning = ({ isOpen, variant, onCancel, onConfirm }: FeeWarningProps) => {
+export const FeeWarning = ({ isOpen, variant, onCancel, onConfirm }: FeeWarningProperties) => {
 	const { t } = useTranslation();
 
 	const { setValue, getValues, watch } = useFormContext();

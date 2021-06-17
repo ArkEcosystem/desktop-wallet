@@ -12,9 +12,9 @@ import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { ContactListItemProps, Option } from "./ContactListItem.models";
+import { ContactListItemProperties, Option } from "./ContactListItem.models";
 
-export const ContactListItem = ({ item, variant, onAction, onSend, options }: ContactListItemProps) => {
+export const ContactListItem = ({ item, variant, onAction, onSend, options }: ContactListItemProperties) => {
 	const { t } = useTranslation();
 	const contactTypes: string[] = ["Delegate"];
 

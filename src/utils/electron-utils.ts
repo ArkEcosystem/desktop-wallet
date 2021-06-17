@@ -20,7 +20,7 @@ const defaultEncode = "utf8";
 
 const setScreenshotProtection = (enabled: boolean) => {
 	// Ignore the setting in dev mode
-	if (isDev()) {
+	if (isDevelopment()) {
 		electron.remote.getCurrentWindow().setContentProtection(false);
 		return;
 	}
@@ -34,12 +34,12 @@ const setThemeSource = (themeSource: Theme) => {
 
 const shouldUseDarkColors = () => electron.remote.nativeTheme.shouldUseDarkColors;
 
-const isDev = () => {
+const isDevelopment = () => {
 	// Based on https://github.com/sindresorhus/electron-is-dev/blob/master/index.js
 	const app = electron.app || electron.remote.app;
-	const isEnvSet = "ELECTRON_IS_DEV" in process.env;
+	const isEnvironmentSet = "ELECTRON_IS_DEV" in process.env;
 
-	return isEnvSet ? parseInt(process.env.ELECTRON_IS_DEV!, 10) === 1 : !app.isPackaged;
+	return isEnvironmentSet ? Number.parseInt(process.env.ELECTRON_IS_DEV!, 10) === 1 : !app.isPackaged;
 };
 
 const validatePath = (parentPath: string, filePath: string) => {
@@ -81,7 +81,7 @@ const openFile = async (defaultPath?: string | null, options?: DialogOptions) =>
 		filters,
 	});
 
-	if (!filePaths || !filePaths.length) {
+	if (!filePaths || filePaths.length === 0) {
 		return;
 	}
 
@@ -104,7 +104,7 @@ const openExternal = (value: string) => {
 const isIdle = (idleTreshold: number) => electron.remote.powerMonitor.getSystemIdleTime() >= idleTreshold;
 
 export {
-	isDev,
+	isDevelopment as isDev,
 	isIdle,
 	openExternal,
 	openFile,

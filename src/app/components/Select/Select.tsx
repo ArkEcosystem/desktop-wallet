@@ -2,14 +2,14 @@ import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import React from "react";
 
-type SelectProps = { isInvalid?: boolean } & React.SelectHTMLAttributes<any>;
+type SelectProperties = { isInvalid?: boolean } & React.SelectHTMLAttributes<any>;
 
-export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
-	({ placeholder, children, ...props }: SelectProps, ref) => (
+export const Select = React.forwardRef<HTMLSelectElement, SelectProperties>(
+	({ placeholder, children, ...properties }: SelectProperties, reference) => (
 		<Input
 			data-testid="Select"
 			as="select"
-			ref={ref}
+			ref={reference}
 			addons={{
 				end: (
 					<span className="w-12 text-lg pointer-events-none text-theme-secondary-text">
@@ -17,7 +17,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
 					</span>
 				),
 			}}
-			{...props}
+			{...properties}
 		>
 			{placeholder && (
 				<option value="" disabled>

@@ -3,12 +3,12 @@ import { Avatar } from "app/components/Avatar";
 import React from "react";
 import { Size } from "types";
 
-interface ProfileAvatarProps {
+interface ProfileAvatarProperties {
 	profile: Contracts.IProfile;
 	size: Size;
 }
 
-export const ProfileAvatar = ({ profile, size }: ProfileAvatarProps) =>
+export const ProfileAvatar = ({ profile, size }: ProfileAvatarProperties) =>
 	profile.avatar().endsWith("</svg>") ? (
 		<Avatar size={size}>
 			<img

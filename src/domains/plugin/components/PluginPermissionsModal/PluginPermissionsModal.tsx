@@ -2,13 +2,13 @@ import { Modal } from "app/components/Modal";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-interface Props {
+interface Properties {
 	permissions: string[];
 	isOpen: boolean;
 	onClose?: () => void;
 }
 
-export const PluginPermissionsModal = ({ permissions, isOpen, onClose }: Props) => {
+export const PluginPermissionsModal = ({ permissions, isOpen, onClose }: Properties) => {
 	const { t } = useTranslation();
 
 	return (

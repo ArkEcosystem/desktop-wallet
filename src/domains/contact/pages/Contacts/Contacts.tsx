@@ -14,13 +14,13 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-interface ContactsHeaderExtraProps {
+interface ContactsHeaderExtraProperties {
 	showSearchBar: boolean;
 	onSearch?: any;
 	onAddContact?: any;
 }
 
-const ContactsHeaderExtra = ({ showSearchBar, onSearch, onAddContact }: ContactsHeaderExtraProps) => {
+const ContactsHeaderExtra = ({ showSearchBar, onSearch, onAddContact }: ContactsHeaderExtraProperties) => {
 	const { t } = useTranslation();
 
 	return (
@@ -50,7 +50,7 @@ export const Contacts = () => {
 	const [query, setQuery] = useState<string>("");
 
 	const filteredContacts = useMemo(() => {
-		if (!query.length) {
+		if (query.length === 0) {
 			return contacts;
 		}
 
@@ -114,8 +114,8 @@ export const Contacts = () => {
 
 	const handleSend = (address: Contracts.IContactAddress) => {
 		const schema = { coin: address.coin(), network: address.network(), recipient: address.address() };
-		const queryParams = querystring.encode(schema);
-		const url = `/profiles/${activeProfile.id()}/send-transfer?${queryParams}`;
+		const queryParameters = querystring.encode(schema);
+		const url = `/profiles/${activeProfile.id()}/send-transfer?${queryParameters}`;
 
 		history.push(url);
 	};
@@ -133,7 +133,7 @@ export const Contacts = () => {
 						subtitle={t("CONTACTS.CONTACTS_PAGE.SUBTITLE")}
 						extra={
 							<ContactsHeaderExtra
-								showSearchBar={!!contacts.length}
+								showSearchBar={contacts.length > 0}
 								onSearch={setQuery}
 								onAddContact={() => setCreateIsOpen(true)}
 							/>
@@ -142,11 +142,11 @@ export const Contacts = () => {
 				</Section>
 
 				<Section>
-					{!contacts.length ? (
+					{contacts.length === 0 ? (
 						<EmptyBlock>{t("CONTACTS.CONTACTS_PAGE.EMPTY_MESSAGE")}</EmptyBlock>
 					) : (
 						<>
-							{filteredContacts.length ? (
+							{filteredContacts.length > 0 ? (
 								<div className="w-full" data-testid="ContactList">
 									<Table columns={listColumns} data={filteredContacts}>
 										{(contact: Contracts.IContact) => (

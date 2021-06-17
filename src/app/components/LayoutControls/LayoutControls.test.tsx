@@ -16,30 +16,30 @@ describe("LayoutControls", () => {
 	it.each([
 		["onSelectGridView", "LayoutControls__grid--icon"],
 		["onSelectListView", "LayoutControls__list--icon"],
-	])("should call %s callback if provided", (callback, el) => {
-		const fn = jest.fn();
+	])("should call %s callback if provided", (callback, element) => {
+		const function_ = jest.fn();
 
-		const { getByTestId } = render(<LayoutControls {...{ [callback]: fn }} />);
+		const { getByTestId } = render(<LayoutControls {...{ [callback]: function_ }} />);
 
 		act(() => {
-			fireEvent.click(getByTestId(el));
+			fireEvent.click(getByTestId(element));
 		});
 
-		expect(fn).toBeCalled();
+		expect(function_).toBeCalled();
 	});
 
 	it.each([
 		["onSelectGridView", "LayoutControls__grid--icon"],
 		["onSelectListView", "LayoutControls__list--icon"],
-	])("should not call %s callback if not provided", (callback, el) => {
-		const fn = jest.fn();
+	])("should not call %s callback if not provided", (callback, element) => {
+		const function_ = jest.fn();
 
 		const { getByTestId } = render(<LayoutControls />);
 
 		act(() => {
-			fireEvent.click(getByTestId(el));
+			fireEvent.click(getByTestId(element));
 		});
 
-		expect(fn).not.toBeCalled();
+		expect(function_).not.toBeCalled();
 	});
 });

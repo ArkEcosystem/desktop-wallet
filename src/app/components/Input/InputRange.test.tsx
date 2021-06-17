@@ -42,9 +42,9 @@ describe("InputRange", () => {
 		const Wrapper = () => {
 			const [value, setValue] = useState(properties.value);
 
-			const handleChange = (val: string) => {
-				setValue(val);
-				onChange(val);
+			const handleChange = (value_: string) => {
+				setValue(value_);
+				onChange(value_);
 			};
 
 			return <InputRange {...properties} value={value} onChange={handleChange} />;
@@ -85,8 +85,8 @@ describe("InputRange", () => {
 	});
 
 	it("should track background min value", async () => {
-		const props = { ...properties, min: 4, value: "2", step: 3 };
-		const { getByTestId, asFragment } = render(<InputRange {...props} />);
+		const properties_ = { ...properties, min: 4, value: "2", step: 3 };
+		const { getByTestId, asFragment } = render(<InputRange {...properties_} />);
 		await waitFor(() => {
 			expect(getByTestId("InputCurrency")).toHaveValue("2");
 			expect(getByTestId("Range__thumb")).toHaveAttribute("aria-valuenow", "2");
@@ -97,7 +97,7 @@ describe("InputRange", () => {
 
 	it("should render invalid", async () => {
 		const { result: form } = renderHook(() => useForm());
-		const props = { ...properties, min: 4, value: "2", step: 3 };
+		const properties_ = { ...properties, min: 4, value: "2", step: 3 };
 		hookAct(() => {
 			form.current.setError("test", { type: "fail", message: "test" });
 		});
@@ -105,7 +105,7 @@ describe("InputRange", () => {
 		const { getByTestId, asFragment } = render(
 			<FormProvider {...form.current}>
 				<FormField name="test">
-					<InputRange {...props} />
+					<InputRange {...properties_} />
 				</FormField>
 			</FormProvider>,
 		);

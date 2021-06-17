@@ -2,7 +2,7 @@ import { Tooltip } from "app/components/Tooltip";
 import React from "react";
 import { styled } from "twin.macro";
 
-type Props = {
+type Properties = {
 	text: string;
 	maxChars?: number;
 	as?: React.ElementType;
@@ -11,20 +11,20 @@ type Props = {
 
 const Wrapper = styled.span``;
 
-export const TruncateEnd = ({ text, maxChars, showTooltip, ...props }: Props) => {
+export const TruncateEnd = ({ text, maxChars, showTooltip, ...properties }: Properties) => {
 	const result = React.useMemo(() => {
 		if (!maxChars || text.length <= maxChars) {
 			return text;
 		}
 
-		const start = text.substr(0, maxChars);
+		const start = text.slice(0, Math.max(0, maxChars));
 
 		return `${start}…`;
 	}, [maxChars, text]);
 
 	return (
 		<Tooltip content={text} disabled={!showTooltip}>
-			<Wrapper data-testid="TruncateEnd" {...props}>
+			<Wrapper data-testid="TruncateEnd" {...properties}>
 				{result}
 			</Wrapper>
 		</Tooltip>

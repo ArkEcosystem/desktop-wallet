@@ -4,12 +4,12 @@ import { ControlButton } from "app/components/ControlButton";
 import { Dropdown } from "app/components/Dropdown";
 import { LayoutControls } from "app/components/LayoutControls";
 import { Tooltip } from "app/components/Tooltip";
-import { FilterWallets, FilterWalletsHookProps } from "domains/dashboard/components/FilterWallets";
+import { FilterWallets, FilterWalletsHookProperties } from "domains/dashboard/components/FilterWallets";
 import React, { memo, useLayoutEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-interface WalletsControlsProps {
-	filterProperties: FilterWalletsHookProps;
+interface WalletsControlsProperties {
+	filterProperties: FilterWalletsHookProperties;
 	onCreateWallet?: any;
 	onImportWallet?: any;
 	onImportLedgerWallet?: () => void;
@@ -27,7 +27,7 @@ export const WalletsControls = memo(
 		onSelectGridView,
 		onSelectListView,
 		onFilterChange,
-	}: WalletsControlsProps) => {
+	}: WalletsControlsProperties) => {
 		const [walletsViewType, setWalletsViewType] = useState(filterProperties.viewType);
 
 		useLayoutEffect(() => setWalletsViewType(filterProperties.viewType), [filterProperties.viewType]);

@@ -15,7 +15,7 @@ import { useHistory } from "react-router-dom";
 import { Amount } from "../Amount";
 import { WalletCardSkeleton } from "./WalletCardSkeleton";
 
-interface WalletCardProps {
+interface WalletCardProperties {
 	isLoading: boolean;
 	className?: string;
 	wallet?: Contracts.IReadWriteWallet;
@@ -31,7 +31,7 @@ export const WalletCard = ({
 	actions,
 	displayType = "all",
 	onSelect,
-}: WalletCardProps) => {
+}: WalletCardProperties) => {
 	const activeProfile = useActiveProfile();
 
 	const history = useHistory();

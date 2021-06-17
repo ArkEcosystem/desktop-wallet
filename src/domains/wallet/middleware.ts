@@ -1,8 +1,8 @@
 import { matchPath } from "react-router-dom";
-import { Middleware, MiddlewareParams } from "router/interfaces";
+import { Middleware, MiddlewareParameters } from "router/interfaces";
 
 export class WalletMiddleware implements Middleware {
-	handler({ location, redirect, env }: MiddlewareParams) {
+	handler({ location, redirect, env }: MiddlewareParameters) {
 		const match = matchPath<{ profileId: string; walletId: string }>(location.pathname, {
 			path: "/profiles/:profileId/wallets/:walletId",
 		});
