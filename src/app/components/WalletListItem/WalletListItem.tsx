@@ -67,10 +67,7 @@ export const WalletListItem = ({ wallet, activeWalletId, onClick }: WalletListIt
 			</TableCell>
 
 			<TableCell variant="end" innerClassName="justify-end text-theme-secondary-400">
-				<Amount
-					value={wallet.convertedBalance()}
-					ticker={wallet.exchangeCurrency() || "BTC"}
-				/>
+				<Amount value={wallet.convertedBalance()} ticker={wallet.exchangeCurrency() || "BTC"} />
 			</TableCell>
 		</TableRow>
 	);

@@ -11,11 +11,7 @@ type TransactionRecipientsProperties = {
 	recipients: { address: string; alias?: string; amount?: number }[];
 } & TransactionDetailProperties;
 
-export const TransactionRecipients = ({
-	currency,
-	recipients,
-	...properties
-}: TransactionRecipientsProperties) => {
+export const TransactionRecipients = ({ currency, recipients, ...properties }: TransactionRecipientsProperties) => {
 	const { t } = useTranslation();
 
 	if (recipients.length === 0) {
@@ -25,11 +21,7 @@ export const TransactionRecipients = ({
 	return recipients.length > 1 ? (
 		<TransactionDetail label={t("TRANSACTION.RECIPIENTS_COUNT", { count: recipients.length })} {...properties}>
 			<div className="-my-2">
-				<RecipientList
-					recipients={recipients}
-					assetSymbol={currency}
-					variant="condensed"
-				/>
+				<RecipientList recipients={recipients} assetSymbol={currency} variant="condensed" />
 			</div>
 		</TransactionDetail>
 	) : (
