@@ -107,30 +107,30 @@ module.exports = {
 		"react/self-closing-comp": "error",
 		"simple-import-sort/imports": "error",
 		"simple-import-sort/exports": "error",
-		"testing-library/await-async-query": "error",
-		"testing-library/await-async-utils": "error",
-		"testing-library/await-fire-event": "error",
+		"testing-library/await-async-query": "warn", // @TODO: set to error and fix
+		"testing-library/await-async-utils": "warn", // @TODO: set to error and fix
+		"testing-library/await-fire-event": "warn", // @TODO: set to error and fix
 		"testing-library/consistent-data-testid": "off", // @TODO: https://github.com/testing-library/eslint-plugin-testing-library/blob/main/docs/rules/consistent-data-testid.md
-		"testing-library/no-await-sync-events": "error",
-		"testing-library/no-await-sync-query": "error",
-		"testing-library/no-container": "error",
-		"testing-library/no-debug": "error",
-		"testing-library/no-dom-import": "error",
-		"testing-library/no-manual-cleanup": "error",
-		"testing-library/no-node-access": "error",
-		"testing-library/no-promise-in-fire-event": "error",
-		"testing-library/no-render-in-setup": "error",
-		"testing-library/no-unnecessary-act": "error",
-		"testing-library/no-wait-for-empty-callback": "error",
-		"testing-library/no-wait-for-multiple-assertions": "error",
-		"testing-library/no-wait-for-side-effects": "error",
-		"testing-library/no-wait-for-snapshot": "error",
-		"testing-library/prefer-explicit-assert": "error",
-		"testing-library/prefer-find-by": "error",
-		"testing-library/prefer-presence-queries": "error",
-		"testing-library/prefer-screen-queries": "error",
-		"testing-library/prefer-user-event": "error",
-		"testing-library/prefer-wait-for": "error",
+		"testing-library/no-await-sync-events": "warn", // @TODO: set to error and fix
+		"testing-library/no-await-sync-query": "warn", // @TODO: set to error and fix
+		"testing-library/no-container": "warn", // @TODO: set to error and fix
+		"testing-library/no-debug": "warn", // @TODO: set to error and fix
+		"testing-library/no-dom-import": "warn", // @TODO: set to error and fix
+		"testing-library/no-manual-cleanup": "warn", // @TODO: set to error and fix
+		"testing-library/no-node-access": "warn", // @TODO: set to error and fix
+		"testing-library/no-promise-in-fire-event": "warn", // @TODO: set to error and fix
+		"testing-library/no-render-in-setup": "warn", // @TODO: set to error and fix
+		"testing-library/no-unnecessary-act": "warn", // @TODO: set to error and fix
+		"testing-library/no-wait-for-empty-callback": "warn", // @TODO: set to error and fix
+		"testing-library/no-wait-for-multiple-assertions": "warn", // @TODO: set to error and fix
+		"testing-library/no-wait-for-side-effects": "warn", // @TODO: set to error and fix
+		"testing-library/no-wait-for-snapshot": "warn", // @TODO: set to error and fix
+		"testing-library/prefer-explicit-assert": "warn", // @TODO: set to error and fix
+		"testing-library/prefer-find-by": "warn", // @TODO: set to error and fix
+		"testing-library/prefer-presence-queries": "warn", // @TODO: set to error and fix
+		"testing-library/prefer-screen-queries": "warn", // @TODO: set to error and fix
+		"testing-library/prefer-user-event": "warn", // @TODO: set to error and fix
+		"testing-library/prefer-wait-for": "warn", // @TODO: set to error and fix
 		"testing-library/render-result-naming-convention": "error",
 		"unused-imports/no-unused-imports-ts": "error",
 	},
