@@ -105,7 +105,7 @@ export const AddRecipient = ({
 	const senderWallet = useMemo(() => profile.wallets().findByAddress(senderAddress), [profile, senderAddress]);
 
 	const ticker = network?.ticker();
-	const exchangeTicker = profile.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency);
+	const exchangeTicker = profile.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency) as string;
 	const { convert } = useExchangeRate({ ticker, exchangeTicker });
 
 	const remainingBalance = useMemo(() => {
@@ -177,6 +177,10 @@ export const AddRecipient = ({
 		//region added Timeout to prevent show error for recipientAddress when switch between transfer type
 		setTimeout(() => clearErrors(), 0);
 		//endregion
+
+		if (!isMountedReference.current) {
+			return;
+		}
 
 		if (isSingle && addedRecipients.length === 1) {
 			setValue("amount", addedRecipients[0].amount);
@@ -252,7 +256,7 @@ export const AddRecipient = ({
 			address,
 		};
 
-		if (!senderWallet!.network().isTest()) {
+		if (!senderWallet?.network().isTest()) {
 			newRecipient = {
 				...newRecipient,
 				exchangeAmount: convert(amount),
@@ -281,7 +285,7 @@ export const AddRecipient = ({
 					end: (
 						<Amount
 							value={convert(amount || 0)}
-							ticker={exchangeTicker!}
+							ticker={exchangeTicker}
 							data-testid="AddRecipient__currency-balance"
 							className="text-sm font-semibold whitespace-no-break text-theme-secondary-500 dark:text-theme-secondary-700"
 							normalize={false}
