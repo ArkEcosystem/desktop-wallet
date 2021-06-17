@@ -317,7 +317,6 @@ export const WalletHeader = ({
 									ticker={profile.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency)!}
 									data-testid="WalletHeader__currency-balance"
 									className="ml-1"
-									normalize={false}
 								/>
 							)}
 

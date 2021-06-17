@@ -32,7 +32,6 @@ const RecipientListItem = ({
 	tooltipDisabled,
 	disableButton,
 	showAmount,
-	normalizeAmount = true,
 }: RecipientListItemProperties) => {
 	const { t } = useTranslation();
 
@@ -42,7 +41,7 @@ const RecipientListItem = ({
 				className="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
 				data-testid="recipient-list__recipient-list-item"
 			>
-				<td className="py-4 w-12">
+				<td className="w-12 py-4">
 					<Avatar size="sm" address={address} />
 				</td>
 
@@ -55,7 +54,7 @@ const RecipientListItem = ({
 				{showAmount && (
 					<td className="py-4 text-right">
 						<Label color="danger">
-							<Amount ticker={assetSymbol!} value={amount!} showSign normalize={normalizeAmount} />
+							<Amount ticker={assetSymbol!} value={amount!} showSign />
 						</Label>
 					</td>
 				)}
@@ -89,13 +88,13 @@ const RecipientListItem = ({
 						<span>{t("COMMON.AMOUNT")}</span>
 					</div>
 					<div className="font-semibold text-right">
-						<Amount ticker={assetSymbol!} value={amount!} normalize={false} />
+						<Amount ticker={assetSymbol!} value={amount!} />
 					</div>
 				</td>
 			)}
 
 			{isEditable && (
-				<td className="py-6 w-20 text-right">
+				<td className="w-20 py-6 text-right">
 					<Tooltip content={tooltipDisabled} disabled={!isButtonDisabled}>
 						<span className="inline-block">
 							<Button
@@ -123,7 +122,6 @@ export const RecipientList = ({
 	variant,
 	label,
 	showAmount,
-	normalizeAmount,
 	tooltipDisabled,
 	disableButton,
 	onRemove,
@@ -157,7 +155,6 @@ export const RecipientList = ({
 						tooltipDisabled={tooltipDisabled}
 						disableButton={disableButton}
 						onRemove={onRemove}
-						normalizeAmount={normalizeAmount}
 					/>
 				)}
 			</Table>

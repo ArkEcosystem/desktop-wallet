@@ -33,12 +33,12 @@ export const InputFeeSimple = ({
 						<Skeleton width={100} className="h-3 my-1" />
 					) : (
 						<>
-							<div className="font-normal text-sm">
+							<div className="text-sm font-normal">
 								{displayValue} {ticker}
 							</div>
 							{showConvertedValues && (
-								<div className="font-normal text-sm text-theme-secondary-500 mt-3">
-									<Amount normalize={false} ticker={exchangeTicker} value={displayValueConverted} />
+								<div className="mt-3 text-sm font-normal text-theme-secondary-500">
+									<Amount ticker={exchangeTicker} value={displayValueConverted} />
 								</div>
 							)}
 						</>

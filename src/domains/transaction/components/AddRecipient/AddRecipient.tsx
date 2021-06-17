@@ -382,7 +382,6 @@ export const AddRecipient = ({
 			{!isSingle && addedRecipients.length > 0 && (
 				<div className="mt-3 border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800">
 					<RecipientList
-						normalizeAmount={false}
 						network={network}
 						recipients={addedRecipients}
 						onRemove={handleRemoveRecipient}

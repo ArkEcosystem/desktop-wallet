@@ -36,7 +36,6 @@ export const Balance = ({ profile, isLoading }: BalanceProperties) => {
 				<Amount
 					value={convertedBalance}
 					ticker={profile?.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency) || ""}
-					normalize={false}
 				/>
 			</div>
 		</div>

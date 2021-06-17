@@ -9,13 +9,11 @@ import { TransactionDetail, TransactionDetailProperties } from "../TransactionDe
 type TransactionRecipientsProperties = {
 	currency: string;
 	recipients: { address: string; alias?: string; amount?: number }[];
-	normalizeAmount?: boolean;
 } & TransactionDetailProperties;
 
 export const TransactionRecipients = ({
 	currency,
 	recipients,
-	normalizeAmount,
 	...properties
 }: TransactionRecipientsProperties) => {
 	const { t } = useTranslation();
@@ -31,7 +29,6 @@ export const TransactionRecipients = ({
 					recipients={recipients}
 					assetSymbol={currency}
 					variant="condensed"
-					normalizeAmount={normalizeAmount}
 				/>
 			</div>
 		</TransactionDetail>

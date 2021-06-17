@@ -70,7 +70,6 @@ export const WalletListItem = ({ wallet, activeWalletId, onClick }: WalletListIt
 				<Amount
 					value={wallet.convertedBalance()}
 					ticker={wallet.exchangeCurrency() || "BTC"}
-					normalize={false}
 				/>
 			</TableCell>
 		</TableRow>
