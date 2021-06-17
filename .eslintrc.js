@@ -67,6 +67,7 @@ module.exports = {
 		"@typescript-eslint/restrict-plus-operands": "warn",
 		"@typescript-eslint/restrict-template-expressions": "warn",
 		"@typescript-eslint/unbound-method": "warn",
+		"array-func/no-unnecessary-this-arg": "warn",
 		"arrow-body-style": ["error", "as-needed"],
 		curly: "error",
 		"import/default": "error",
