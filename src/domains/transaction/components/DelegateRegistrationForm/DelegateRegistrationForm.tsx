@@ -57,7 +57,7 @@ const transactionDetails = ({
 		</TransactionDetail>
 
 		{/* @TODO: normalise fee in SDK */}
-		<TransactionFee currency={wallet.currency()} value={transaction.fee()} paddingPosition="top" />
+		<TransactionFee currency={wallet.currency()} value={transaction.fee().toHuman()} paddingPosition="top" />
 	</>
 );
 

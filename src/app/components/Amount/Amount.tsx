@@ -7,7 +7,6 @@ interface AmountProperties {
 	value: number;
 	locale?: string;
 	showSign?: boolean;
-	normalize?: boolean;
 	isNegative?: boolean;
 }
 type FormatProperties = AmountProperties & { decimals: number };
@@ -28,12 +27,12 @@ const formatFiat = ({ ticker, value, decimals }: FormatProperties): string => {
 	return money.format();
 };
 
-const formatCrypto = ({ ticker, value, decimals, locale, normalize }: FormatProperties): string => {
+const formatCrypto = ({ ticker, value, decimals, locale }: FormatProperties): string => {
 	const numeral = Numeral.make(locale!, {
 		minimumFractionDigits: 0,
 		maximumFractionDigits: decimals,
 		currencyDisplay: "name",
-	}).formatAsCurrency(normalize ? +BigNumber.make(value).toHuman(decimals) : +value, "BTC");
+	}).formatAsCurrency(+value, "BTC");
 
 	/**
 	 * Intl.NumberFormat throws error for some tickers like DARK (?)
@@ -41,11 +40,11 @@ const formatCrypto = ({ ticker, value, decimals, locale, normalize }: FormatProp
 	return numeral.replace("BTC", ticker.toUpperCase());
 };
 
-export const Amount = ({ ticker, value, locale, showSign, normalize, isNegative, ...properties }: Properties) => {
+export const Amount = ({ ticker, value, locale, showSign, isNegative, ...properties }: Properties) => {
 	const tickerConfig: CurrencyConfig | undefined = CURRENCIES[ticker as ExchangeCurrencyList];
 	const decimals = tickerConfig?.decimals || 8;
 	const isFiat = decimals <= 2;
-	const amount = (isFiat ? formatFiat : formatCrypto)({ ticker, value, locale, decimals, normalize });
+	const amount = (isFiat ? formatFiat : formatCrypto)({ ticker, value, locale, decimals });
 
 	return (
 		<span data-testid="Amount" {...properties}>
