@@ -11,7 +11,7 @@ export const BalanceSkeleton = ({ width }: Properties) => {
 
 	return (
 		<div className="text-right">
-			<div className="text-xs font-semibold text-theme-secondary-700">{t("COMMON.YOUR_BALANCE")}</div>
+			<div className="text-xs font-semibold text-theme-secondary-500">{t("COMMON.YOUR_BALANCE")}</div>
 			<div className="flex justify-end mt-1">
 				<Skeleton height={16} width={width || 60} />
 			</div>
