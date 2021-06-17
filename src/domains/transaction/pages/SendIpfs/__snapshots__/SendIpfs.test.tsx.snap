@@ -2812,10 +2812,10 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               role="radio"
                               type="button"
                             >
-                              <div>
-                                <div
-                                  class="mb-2"
-                                >
+                              <div
+                                class="flex flex-col space-y-2"
+                              >
+                                <div>
                                   Slow
                                 </div>
                                 <div
@@ -2834,10 +2834,10 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               role="radio"
                               type="button"
                             >
-                              <div>
-                                <div
-                                  class="mb-2"
-                                >
+                              <div
+                                class="flex flex-col space-y-2"
+                              >
+                                <div>
                                   Average
                                 </div>
                                 <div
@@ -2856,10 +2856,10 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               role="radio"
                               type="button"
                             >
-                              <div>
-                                <div
-                                  class="mb-2"
-                                >
+                              <div
+                                class="flex flex-col space-y-2"
+                              >
+                                <div>
                                   Fast
                                 </div>
                                 <div

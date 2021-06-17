@@ -509,10 +509,10 @@ exports[`SendTransactionForm should select a network & update fees 1`] = `
             role="radio"
             type="button"
           >
-            <div>
-              <div
-                class="mb-2"
-              >
+            <div
+              class="flex flex-col space-y-2"
+            >
+              <div>
                 Slow
               </div>
               <span>
@@ -537,10 +537,10 @@ exports[`SendTransactionForm should select a network & update fees 1`] = `
             role="radio"
             type="button"
           >
-            <div>
-              <div
-                class="mb-2"
-              >
+            <div
+              class="flex flex-col space-y-2"
+            >
+              <div>
                 Average
               </div>
               <span>
@@ -565,10 +565,10 @@ exports[`SendTransactionForm should select a network & update fees 1`] = `
             role="radio"
             type="button"
           >
-            <div>
-              <div
-                class="mb-2"
-              >
+            <div
+              class="flex flex-col space-y-2"
+            >
+              <div>
                 Fast
               </div>
               <span>
@@ -880,10 +880,10 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
             role="radio"
             type="button"
           >
-            <div>
-              <div
-                class="mb-2"
-              >
+            <div
+              class="flex flex-col space-y-2"
+            >
+              <div>
                 Slow
               </div>
               <span>
@@ -908,10 +908,10 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
             role="radio"
             type="button"
           >
-            <div>
-              <div
-                class="mb-2"
-              >
+            <div
+              class="flex flex-col space-y-2"
+            >
+              <div>
                 Average
               </div>
               <span>
@@ -936,10 +936,10 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
             role="radio"
             type="button"
           >
-            <div>
-              <div
-                class="mb-2"
-              >
+            <div
+              class="flex flex-col space-y-2"
+            >
+              <div>
                 Fast
               </div>
               <span>

@@ -153,10 +153,10 @@ exports[`should display converted values when on live net 1`] = `
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-2"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Slow
           </div>
           <div
@@ -165,7 +165,7 @@ exports[`should display converted values when on live net 1`] = `
             0.006 DARK
           </div>
           <div
-            class="text-sm text-theme-secondary-500 mt-2"
+            class="text-sm text-theme-secondary-500"
           >
             <span
               data-testid="Amount"
@@ -182,10 +182,10 @@ exports[`should display converted values when on live net 1`] = `
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-2"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Average
           </div>
           <div
@@ -194,7 +194,7 @@ exports[`should display converted values when on live net 1`] = `
             0.456 DARK
           </div>
           <div
-            class="text-sm text-theme-secondary-500 mt-2"
+            class="text-sm text-theme-secondary-500"
           >
             <span
               data-testid="Amount"
@@ -211,10 +211,10 @@ exports[`should display converted values when on live net 1`] = `
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-2"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Fast
           </div>
           <div
@@ -223,7 +223,7 @@ exports[`should display converted values when on live net 1`] = `
             0.5 DARK
           </div>
           <div
-            class="text-sm text-theme-secondary-500 mt-2"
+            class="text-sm text-theme-secondary-500"
           >
             <span
               data-testid="Amount"
@@ -390,10 +390,10 @@ exports[`should keep different values for simple and advanced view types 2`] = `
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-2"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Slow
           </div>
           <div
@@ -410,10 +410,10 @@ exports[`should keep different values for simple and advanced view types 2`] = `
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-2"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Average
           </div>
           <div
@@ -430,10 +430,10 @@ exports[`should keep different values for simple and advanced view types 2`] = `
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-2"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Fast
           </div>
           <div
@@ -501,10 +501,10 @@ exports[`should render 1`] = `
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-2"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Slow
           </div>
           <div
@@ -521,10 +521,10 @@ exports[`should render 1`] = `
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-2"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Average
           </div>
           <div
@@ -541,10 +541,10 @@ exports[`should render 1`] = `
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-2"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Fast
           </div>
           <div
@@ -612,10 +612,10 @@ exports[`should update value when clicking button Average 1`] = `
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-2"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Slow
           </div>
           <div
@@ -632,10 +632,10 @@ exports[`should update value when clicking button Average 1`] = `
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-2"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Average
           </div>
           <div
@@ -652,10 +652,10 @@ exports[`should update value when clicking button Average 1`] = `
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-2"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Fast
           </div>
           <div
@@ -723,10 +723,10 @@ exports[`should update value when clicking button Fast 1`] = `
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-2"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Slow
           </div>
           <div
@@ -743,10 +743,10 @@ exports[`should update value when clicking button Fast 1`] = `
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-2"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Average
           </div>
           <div
@@ -763,10 +763,10 @@ exports[`should update value when clicking button Fast 1`] = `
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-2"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Fast
           </div>
           <div
@@ -834,10 +834,10 @@ exports[`should update value when clicking button Slow 1`] = `
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-2"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Slow
           </div>
           <div
@@ -854,10 +854,10 @@ exports[`should update value when clicking button Slow 1`] = `
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-2"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Average
           </div>
           <div
@@ -874,10 +874,10 @@ exports[`should update value when clicking button Slow 1`] = `
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-2"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Fast
           </div>
           <div
