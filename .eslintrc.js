@@ -131,7 +131,7 @@ module.exports = {
 		"testing-library/prefer-screen-queries": "warn", // @TODO: set to error and fix
 		"testing-library/prefer-user-event": "warn", // @TODO: set to error and fix
 		"testing-library/prefer-wait-for": "warn", // @TODO: set to error and fix
-		"testing-library/render-result-naming-convention": "error",
+		"testing-library/render-result-naming-convention": "warn", // @TODO: set to error and fix
 		"unused-imports/no-unused-imports-ts": "error",
 	},
 	settings: {
