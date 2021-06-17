@@ -16,10 +16,10 @@ export const SummaryStep = ({
 	transaction: Contracts.SignedTransactionData;
 	senderWallet: ProfileContracts.IReadWriteWallet;
 }) => {
-	const recipients = transaction.data().asset?.payments?.map((payment: { recipientId: string; amount: string }) => ({
+	const recipients = transaction.data().asset?.payments?.map((payment: { recipientId: string; amount: number }) => ({
 		address: payment.recipientId,
-		amount: BigNumber.make(payment.amount),
-	})) || [{ address: transaction.recipient(), amount: transaction.amount() }];
+		amount: +payment.amount,
+	})) || [{ address: transaction.recipient(), amount: transaction.amount().toHuman() }];
 
 	const transactionAmount = recipients.reduce(
 		(sum: BigNumber, recipient: Contracts.MultiPaymentRecipient) => sum.plus(recipient.amount),

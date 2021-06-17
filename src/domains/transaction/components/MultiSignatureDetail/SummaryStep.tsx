@@ -47,7 +47,7 @@ export const SummaryStep = ({
 		recipients = transaction
 			.get<{ payments: Record<string, string>[] }>("asset")
 			?.payments?.map((item) => ({ address: item.recipientId, amount: +item.amount })) || [
-			{ address: transaction.get<string>("recipientId"), amount: transaction.amount() },
+			{ address: transaction.get<string>("recipientId"), amount: transaction.amount().toHuman() },
 		];
 
 		transactionAmount = recipients.reduce(
