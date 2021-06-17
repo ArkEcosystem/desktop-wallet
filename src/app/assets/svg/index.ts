@@ -87,6 +87,7 @@ import { ReactComponent as Reload } from "./reload.svg";
 import { ReactComponent as ReplyArrow } from "./reply-arrow.svg";
 import { ReactComponent as Report } from "./report.svg";
 import { ReactComponent as Reset } from "./reset.svg";
+import { ReactComponent as Return } from "./return.svg";
 import { ReactComponent as Search } from "./search.svg";
 import { ReactComponent as Send } from "./send.svg";
 import { ReactComponent as Sent } from "./sent.svg";
@@ -225,4 +226,5 @@ export const SvgCollection: any = {
 	Vote,
 	VoteCombination,
 	Voted,
+	Return,
 };

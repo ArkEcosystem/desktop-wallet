@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/distribution/drivers/memory/wallets/read-only-wallet";
+import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/distribution/read-only-wallet";
 import { toasts } from "app/services";
 import { createMemoryHistory } from "history";
 import nock from "nock";

@@ -34,6 +34,7 @@ export const TransactionFixture = {
 	isConfirmed: () => false,
 	isSent: () => true,
 	isReceived: () => false,
+	isReturn: () => false,
 	isTransfer: () => true,
 	isSecondSignature: () => false,
 	isMultiSignatureRegistration: () => false,
