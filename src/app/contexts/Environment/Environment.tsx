@@ -8,14 +8,14 @@ interface Context {
 	persist: () => Promise<void>;
 }
 
-interface Props {
+interface Properties {
 	children: React.ReactNode;
 	env: Environment;
 }
 
 export const EnvironmentContext = React.createContext<any>(undefined);
 
-export const EnvironmentProvider = ({ children, env }: Props) => {
+export const EnvironmentProvider = ({ children, env }: Properties) => {
 	const [state, setState] = React.useState<any>(undefined);
 
 	const persist = React.useCallback(async () => {

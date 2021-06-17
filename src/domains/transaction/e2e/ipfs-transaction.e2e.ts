@@ -62,7 +62,7 @@ test("should send IPFS successfully", async (t) => {
 	await t.click(Selector("[data-testid=SendIpfs__button--submit]"));
 
 	// Transaction successful
-	await t.expect(Selector("h1").withText(translations.TRANSACTION.SUCCESS.TITLE).exists).ok({ timeout: 60000 });
+	await t.expect(Selector("h1").withText(translations.TRANSACTION.SUCCESS.TITLE).exists).ok({ timeout: 60_000 });
 });
 
 test("should navigate to IPFS page", async (t) => {

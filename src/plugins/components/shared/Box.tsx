@@ -1,7 +1,7 @@
 import styled, { CSSObject } from "styled-components";
 
-interface Props {
+interface Properties {
 	styled: CSSObject;
 }
 
-export const Box = styled.div<Props>((props: Props) => props.styled);
+export const Box = styled.div<Properties>((properties: Properties) => properties.styled);

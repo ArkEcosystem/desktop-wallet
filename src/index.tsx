@@ -14,9 +14,12 @@ if (process.env.NODE_ENV && ["development", "production"].includes(process.env.N
 	// @ts-ignore
 	if (isObject(window.__REACT_DEVTOOLS_GLOBAL_HOOK__)) {
 		// @ts-ignore
-		for (const prop in window.__REACT_DEVTOOLS_GLOBAL_HOOK__) {
+		for (const property in window.__REACT_DEVTOOLS_GLOBAL_HOOK__) {
 			// @ts-ignore
-			window.__REACT_DEVTOOLS_GLOBAL_HOOK__[prop] = isFunction(window.__REACT_DEVTOOLS_GLOBAL_HOOK__[prop])
+			window.__REACT_DEVTOOLS_GLOBAL_HOOK__[property] = isFunction(
+				// @ts-ignore
+				window.__REACT_DEVTOOLS_GLOBAL_HOOK__[property],
+			)
 				? Function.prototype
 				: null;
 		}
@@ -26,20 +29,20 @@ if (process.env.NODE_ENV && ["development", "production"].includes(process.env.N
 export const AppRouter = ({ children }: { children: React.ReactNode }) => {
 	const [isOpen, setIsOpen] = useState(false);
 
-	const confirmationFnRef = useRef<(allowNavigate: boolean) => void>();
+	const confirmationFunctionReference = useRef<(allowNavigate: boolean) => void>();
 
 	const onCancel = () => {
-		confirmationFnRef.current?.(false);
+		confirmationFunctionReference.current?.(false);
 		setIsOpen(false);
 	};
 
 	const onConfirm = () => {
-		confirmationFnRef.current?.(true);
+		confirmationFunctionReference.current?.(true);
 		setIsOpen(false);
 	};
 
 	const getUserConfirmation = useCallback((_, callback) => {
-		confirmationFnRef.current = callback;
+		confirmationFunctionReference.current = callback;
 		setIsOpen(true);
 	}, []);
 
@@ -55,5 +58,5 @@ ReactDOM.render(
 	<AppRouter>
 		<App />
 	</AppRouter>,
-	document.getElementById("root"),
+	document.querySelector("#root"),
 );

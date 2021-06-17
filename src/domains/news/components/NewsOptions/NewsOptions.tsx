@@ -18,7 +18,7 @@ type CoinOption = {
 	coin: string;
 } & Option;
 
-interface NewsOptionsProps {
+interface NewsOptionsProperties {
 	selectedCategories: string[];
 	selectedCoins: string[];
 	onSearch?: (search: string) => void;
@@ -30,13 +30,13 @@ const HEADER_HEIGHT = 84;
 const VERTICAL_PADDING = 20 + 32;
 // endregion
 
-export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSubmit }: NewsOptionsProps) => {
+export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSubmit }: NewsOptionsProperties) => {
 	const { t } = useTranslation();
 
 	const [categories, setCategories] = useState<Option[]>(
 		AVAILABLE_CATEGORIES.map((name: string) => ({
 			name,
-			isSelected: !selectedCategories.length || selectedCategories.includes(name),
+			isSelected: selectedCategories.length === 0 || selectedCategories.includes(name),
 		})),
 	);
 
@@ -83,20 +83,21 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 	};
 
 	const handleSearchInput = (searchQuery: string) => {
-		const query = searchQuery.substr(0, 32);
+		const query = searchQuery.slice(0, 32);
 		setSearchQuery(query);
 		onSearch?.(query);
 	};
 
 	const handleQueryUpdate = useCallback(() => {
 		const categoryNames = categories.reduce(
-			(acc: string[], category: Option) =>
-				category.name !== "All" && category.isSelected ? acc.concat(category.name) : acc,
+			(accumulator: string[], category: Option) =>
+				category.name !== "All" && category.isSelected ? accumulator.concat(category.name) : accumulator,
 			[],
 		);
 
 		const coinNames = coins.reduce(
-			(acc: string[], coin: CoinOption) => (coin.isSelected ? acc.concat(coin.coin) : acc),
+			(accumulator: string[], coin: CoinOption) =>
+				coin.isSelected ? accumulator.concat(coin.coin) : accumulator,
 			[],
 		);
 

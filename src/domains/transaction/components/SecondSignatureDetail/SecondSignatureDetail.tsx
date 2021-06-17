@@ -9,13 +9,13 @@ import {
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-interface SecondSignatureDetailProps {
+interface SecondSignatureDetailProperties {
 	isOpen: boolean;
 	transaction: any;
 	onClose?: any;
 }
 
-export const SecondSignatureDetail = ({ isOpen, transaction, onClose }: SecondSignatureDetailProps) => {
+export const SecondSignatureDetail = ({ isOpen, transaction, onClose }: SecondSignatureDetailProperties) => {
 	const { t } = useTranslation();
 
 	const wallet = useMemo(() => transaction.wallet(), [transaction]);

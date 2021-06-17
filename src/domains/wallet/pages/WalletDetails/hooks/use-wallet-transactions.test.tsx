@@ -12,7 +12,7 @@ describe("Wallet Transactions Hook", () => {
 	beforeAll(() => {
 		nock("https://dwallets.ark.io")
 			.get("/api/transactions")
-			.query((params) => params.page === undefined || params.page === "1")
+			.query((parameters) => parameters.page === undefined || parameters.page === "1")
 			.reply(200, () => {
 				const { meta, data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
 				return {
@@ -100,7 +100,7 @@ describe("Wallet Transactions Hook", () => {
 
 		render(<Component />);
 
-		jest.advanceTimersByTime(50000);
+		jest.advanceTimersByTime(50_000);
 
 		await waitFor(() => expect(spySync).toHaveBeenCalledTimes(2));
 

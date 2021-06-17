@@ -12,17 +12,17 @@ export enum FeeWarningVariant {
 	High = "HIGH",
 }
 
-interface FeeWarningProps {
+interface FeeWarningProperties {
 	isOpen: boolean;
 	variant?: FeeWarningVariant;
 	onCancel: (suppressWarning: boolean) => Promise<void>;
 	onConfirm: (suppressWarning: boolean) => Promise<void>;
 }
 
-export const FeeWarning = ({ isOpen, variant, onCancel, onConfirm }: FeeWarningProps) => {
+export const FeeWarning = ({ isOpen, variant, onCancel, onConfirm }: FeeWarningProperties) => {
 	const { t } = useTranslation();
 
-	const { setValue, watch } = useFormContext();
+	const { setValue, getValues, watch } = useFormContext();
 
 	const { suppressWarning } = watch();
 
@@ -54,13 +54,16 @@ export const FeeWarning = ({ isOpen, variant, onCancel, onConfirm }: FeeWarningP
 			<div className="flex justify-end mt-8 space-x-3">
 				<Button
 					variant="secondary"
-					onClick={() => onCancel(suppressWarning)}
+					onClick={() => onCancel(!!getValues("suppressWarning"))}
 					data-testid="FeeWarning__cancel-button"
 				>
 					{t("COMMON.CANCEL")}
 				</Button>
 
-				<Button data-testid="FeeWarning__continue-button" onClick={() => onConfirm(suppressWarning)}>
+				<Button
+					data-testid="FeeWarning__continue-button"
+					onClick={() => onConfirm(!!getValues("suppressWarning"))}
+				>
 					{t("COMMON.CONTINUE")}
 				</Button>
 			</div>

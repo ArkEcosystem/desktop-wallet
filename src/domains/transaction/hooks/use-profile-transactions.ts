@@ -18,7 +18,7 @@ interface TransactionFilters {
 	timestamp?: number;
 }
 
-interface FetchTransactionProps {
+interface FetchTransactionProperties {
 	flush?: boolean;
 	mode?: string;
 	transactionType?: any;
@@ -100,7 +100,7 @@ export const useProfileTransactions = ({
 		({ activeMode, activeTransactionType, timestamp }: TransactionFilters) => {
 			lastQuery.current = JSON.stringify({ activeMode, activeTransactionType });
 
-			const hasWallets = wallets.length !== 0;
+			const hasWallets = wallets.length > 0;
 			cursor.current = 1;
 
 			/* istanbul ignore next */
@@ -122,7 +122,7 @@ export const useProfileTransactions = ({
 	);
 
 	const fetchTransactions = useCallback(
-		({ flush = false, mode = "all", transactionType, wallets = [], cursor = 1 }: FetchTransactionProps) => {
+		({ flush = false, mode = "all", transactionType, wallets = [], cursor = 1 }: FetchTransactionProperties) => {
 			if (wallets.length === 0) {
 				return { items: () => [], hasMorePages: () => false };
 			}
@@ -132,10 +132,10 @@ export const useProfileTransactions = ({
 			}
 
 			const defaultQuery = { limit: 30, addresses: wallets.map((wallet) => wallet.address(), cursor) };
-			const queryParams = transactionType ? { ...defaultQuery, ...transactionType } : defaultQuery;
+			const queryParameters = transactionType ? { ...defaultQuery, ...transactionType } : defaultQuery;
 
 			// @ts-ignore
-			return profile.transactionAggregate()[mode](queryParams);
+			return profile.transactionAggregate()[mode](queryParameters);
 		},
 		[profile],
 	);
@@ -191,7 +191,7 @@ export const useProfileTransactions = ({
 	const { start, stop } = useSynchronizer([
 		{
 			callback: checkNewTransactions,
-			interval: 30000,
+			interval: 30_000,
 		},
 	]);
 

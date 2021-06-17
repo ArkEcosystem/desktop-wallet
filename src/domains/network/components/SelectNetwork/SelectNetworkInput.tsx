@@ -5,13 +5,13 @@ import cn from "classnames";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import React from "react";
 
-type Props = {
+type Properties = {
 	network?: Networks.Network;
 	suggestion?: string;
 } & React.InputHTMLAttributes<any>;
 
-export const SelectNetworkInput = React.forwardRef<HTMLInputElement, Props>(
-	({ network, suggestion, ...props }: Props, ref) => {
+export const SelectNetworkInput = React.forwardRef<HTMLInputElement, Properties>(
+	({ network, suggestion, ...properties }: Properties, reference) => {
 		const fieldContext = useFormField();
 
 		const isInvalidValue = fieldContext?.isInvalid;
@@ -19,7 +19,7 @@ export const SelectNetworkInput = React.forwardRef<HTMLInputElement, Props>(
 		return (
 			<Input
 				data-testid="SelectNetworkInput__input"
-				ref={ref}
+				ref={reference}
 				suggestion={suggestion}
 				addons={{
 					start: (
@@ -37,7 +37,7 @@ export const SelectNetworkInput = React.forwardRef<HTMLInputElement, Props>(
 						/>
 					),
 				}}
-				{...props}
+				{...properties}
 			/>
 		);
 	},

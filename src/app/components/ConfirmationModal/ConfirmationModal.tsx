@@ -5,7 +5,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Size } from "types";
 
-interface Props {
+interface Properties {
 	isOpen?: boolean;
 	description?: string;
 	title?: string;
@@ -14,7 +14,7 @@ interface Props {
 	size?: Size;
 }
 
-export const ConfirmationModal = ({ description, title, size, isOpen, onCancel, onConfirm }: Props) => {
+export const ConfirmationModal = ({ description, title, size, isOpen, onCancel, onConfirm }: Properties) => {
 	const { t } = useTranslation();
 
 	return (

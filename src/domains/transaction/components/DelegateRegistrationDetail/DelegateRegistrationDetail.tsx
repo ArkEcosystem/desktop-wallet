@@ -12,13 +12,13 @@ import {
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-interface DelegateRegistrationDetailProps {
+interface DelegateRegistrationDetailProperties {
 	isOpen: boolean;
 	transaction: any;
 	onClose?: any;
 }
 
-export const DelegateRegistrationDetail = ({ isOpen, transaction, onClose }: DelegateRegistrationDetailProps) => {
+export const DelegateRegistrationDetail = ({ isOpen, transaction, onClose }: DelegateRegistrationDetailProperties) => {
 	const { t } = useTranslation();
 
 	const wallet = useMemo(() => transaction.wallet(), [transaction]);

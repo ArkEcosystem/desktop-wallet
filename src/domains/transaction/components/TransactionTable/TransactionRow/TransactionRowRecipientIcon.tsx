@@ -5,13 +5,13 @@ import cn from "classnames";
 import React from "react";
 import { Size } from "types";
 
-interface Props {
+interface Properties {
 	type: string;
 	recipient?: string;
 	size?: Size;
 }
 
-export const TransactionRowRecipientIcon = ({ type, recipient, size }: Props) => {
+export const TransactionRowRecipientIcon = ({ type, recipient, size }: Properties) => {
 	const transactionIcon: Record<string, string> = {
 		transfer: "Transfer",
 		multiPayment: "Multipayment",

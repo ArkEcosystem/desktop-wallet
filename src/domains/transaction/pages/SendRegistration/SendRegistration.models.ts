@@ -37,5 +37,5 @@ export interface SendRegistrationForm {
 
 	formFields: string[];
 
-	component: (props: SendRegistrationComponent) => JSX.Element;
+	component: (properties: SendRegistrationComponent) => JSX.Element;
 }

@@ -23,7 +23,7 @@ describe("LedgerImportStep", () => {
 	];
 
 	const renderComponent = (wallets: LedgerData[] = walletsData) => {
-		let formRef: ReturnType<typeof useForm>;
+		let formReference: ReturnType<typeof useForm>;
 
 		const Component = () => {
 			const form = useForm({
@@ -31,7 +31,7 @@ describe("LedgerImportStep", () => {
 					network: wallet.network(),
 				},
 			});
-			formRef = form;
+			formReference = form;
 			return (
 				<FormProvider {...form}>
 					<LedgerProvider transport={transport}>
@@ -43,7 +43,7 @@ describe("LedgerImportStep", () => {
 
 		return {
 			...render(<Component />),
-			formRef,
+			formRef: formReference,
 		};
 	};
 

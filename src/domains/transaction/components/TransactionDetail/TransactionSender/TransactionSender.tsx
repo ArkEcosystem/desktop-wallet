@@ -5,15 +5,15 @@ import { Icon } from "app/components/Icon";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { TransactionDetail, TransactionDetailProps } from "../TransactionDetail";
+import { TransactionDetail, TransactionDetailProperties } from "../TransactionDetail";
 
-type TransactionSenderProps = {
+type TransactionSenderProperties = {
 	address: string;
 	alias?: string;
 	isDelegate?: boolean;
-} & TransactionDetailProps;
+} & TransactionDetailProperties;
 
-export const TransactionSender = ({ address, alias, isDelegate, ...props }: TransactionSenderProps) => {
+export const TransactionSender = ({ address, alias, isDelegate, ...properties }: TransactionSenderProperties) => {
 	const { t } = useTranslation();
 
 	return (
@@ -32,7 +32,7 @@ export const TransactionSender = ({ address, alias, isDelegate, ...props }: Tran
 					<Avatar address={address} size="lg" />
 				</div>
 			}
-			{...props}
+			{...properties}
 		>
 			<Address address={address} walletName={alias} />
 		</TransactionDetail>

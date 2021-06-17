@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import tw, { styled } from "twin.macro";
 import { openFile } from "utils/electron-utils";
 
-interface SelectProfileImageProps {
+interface SelectProfileImageProperties {
 	className?: string;
 	value?: string;
 	name?: string;
@@ -44,7 +44,7 @@ const ProfileImageStyled = styled.div`
 	}
 `;
 
-export const SelectProfileImage = ({ className, value, name, showLabel, onSelect }: SelectProfileImageProps) => {
+export const SelectProfileImage = ({ className, value, name, showLabel, onSelect }: SelectProfileImageProperties) => {
 	const { t } = useTranslation();
 
 	const handleUploadImage = async () => {

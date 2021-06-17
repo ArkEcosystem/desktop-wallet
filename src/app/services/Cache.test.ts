@@ -14,14 +14,14 @@ describe("Cache", () => {
 	it("should remember a value if it is a function", async () => {
 		subject.flush();
 
-		const valueFn = jest.fn(() => "value");
+		const valueFunction = jest.fn(() => "value");
 
-		await expect(subject.remember("cacheKey", valueFn)).resolves.toBe("value");
-		await expect(subject.remember("cacheKey", valueFn)).resolves.toBe("value");
-		await expect(subject.remember("cacheKey", valueFn)).resolves.toBe("value");
-		await expect(subject.remember("cacheKey", valueFn)).resolves.toBe("value");
-		await expect(subject.remember("cacheKey", valueFn)).resolves.toBe("value");
+		await expect(subject.remember("cacheKey", valueFunction)).resolves.toBe("value");
+		await expect(subject.remember("cacheKey", valueFunction)).resolves.toBe("value");
+		await expect(subject.remember("cacheKey", valueFunction)).resolves.toBe("value");
+		await expect(subject.remember("cacheKey", valueFunction)).resolves.toBe("value");
+		await expect(subject.remember("cacheKey", valueFunction)).resolves.toBe("value");
 
-		expect(valueFn).toHaveBeenCalledTimes(1);
+		expect(valueFunction).toHaveBeenCalledTimes(1);
 	});
 });

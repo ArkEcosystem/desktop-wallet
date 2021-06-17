@@ -5,7 +5,7 @@ export interface GridWallet {
 	wallet?: Contracts.IReadWriteWallet;
 }
 
-export interface WalletGridProps {
+export interface WalletGridProperties {
 	isVisible?: boolean;
 	isLoading?: boolean;
 	sliderOptions?: Record<string, any>;
@@ -13,7 +13,7 @@ export interface WalletGridProps {
 	onWalletAction?: any;
 }
 
-export interface WalletListProps {
+export interface WalletListProperties {
 	wallets: GridWallet[];
 	walletsDisplayType?: string;
 	isVisible?: boolean;
@@ -23,7 +23,7 @@ export interface WalletListProps {
 	onRowClick?: (walletId: string) => void;
 }
 
-export interface UseWalletDisplayProps {
+export interface UseWalletDisplayProperties {
 	wallets?: Contracts.IReadWriteWallet[];
 	selectedNetworkIds?: string[];
 	displayType?: string;

@@ -3,14 +3,14 @@ import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profil
 import { upperFirst } from "@arkecosystem/utils";
 import { useLedgerContext } from "app/contexts";
 
-type SignFn = (input: any) => Promise<string>;
+type SignFunction = (input: any) => Promise<string>;
 
 const prepareMultiSignature = async (
 	input: Services.TransactionInputs,
 	wallet: ProfileContracts.IReadWriteWallet,
 ): Promise<Services.TransactionInputs> => ({
 	...input,
-	nonce: wallet.nonce().plus(1).toFixed(), // @TODO: let the PSDK handle this - needs some reworks for musig derivation
+	nonce: wallet.nonce().plus(1).toFixed(0), // @TODO: let the PSDK handle this - needs some reworks for musig derivation
 	signatory: await wallet
 		.signatory()
 		.multiSignature(wallet.multiSignature().all().min, wallet.multiSignature().all().publicKeys),
@@ -24,10 +24,10 @@ const prepareLedger = async (input: Services.TransactionInputs, wallet: ProfileC
 const withAbortPromise = (signal?: AbortSignal, callback?: () => void) => <T>(promise: Promise<T>) =>
 	new Promise<T>((resolve, reject) => {
 		if (signal) {
-			signal.onabort = () => {
+			signal.addEventListener("abort", () => {
 				callback?.();
 				reject("ERR_ABORT");
-			};
+			});
 		}
 
 		return promise.then(resolve).catch(reject);
@@ -47,7 +47,7 @@ export const useTransactionBuilder = () => {
 		const service = wallet.transaction();
 
 		// @ts-ignore
-		const signFn = (service[`sign${upperFirst(type)}`] as SignFn).bind(service);
+		const signFunction = (service[`sign${upperFirst(type)}`] as SignFunction).bind(service);
 		let data = { ...input };
 
 		if (wallet.isMultiSignature()) {
@@ -58,7 +58,7 @@ export const useTransactionBuilder = () => {
 			data = await withAbortPromise(options?.abortSignal, abortConnectionRetry)(prepareLedger(data, wallet));
 		}
 
-		const uuid = await signFn(data);
+		const uuid = await signFunction(data);
 
 		return {
 			uuid,

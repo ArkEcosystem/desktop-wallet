@@ -250,15 +250,15 @@ describe("SecondSignatureRegistrationForm", () => {
 
 		const walletMnemonic = passphrase.split(" ");
 
-		for (let i = 0; i < 3; i++) {
-			const wordNumber = parseInt(screen.getByText(/Select the/).innerHTML.replace(/Select the/, ""));
+		for (let index = 0; index < 3; index++) {
+			const wordNumber = Number.parseInt(screen.getByText(/Select the/).innerHTML.replace(/Select the/, ""));
 
 			act(() => {
 				fireEvent.click(screen.getByText(walletMnemonic[wordNumber - 1]));
 			});
 
-			if (i < 2) {
-				await waitFor(() => expect(screen.queryAllByText(/The ([0-9]+)/).length === 2 - i));
+			if (index < 2) {
+				await waitFor(() => expect(screen.queryAllByText(/The (\d+)/).length === 2 - index));
 			}
 		}
 

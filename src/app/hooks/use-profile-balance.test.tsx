@@ -34,7 +34,7 @@ describe("useProfileBalance", () => {
 		const profile = env.profiles().findById(getDefaultProfileId());
 		const profileConvertedBalanceMock = jest
 			.spyOn(profile, "convertedBalance")
-			.mockImplementation(() => BigNumber.make(10000));
+			.mockImplementation(() => BigNumber.make(10_000));
 
 		const wrapper = ({ children }: any) => <ConfigurationProvider>{children}</ConfigurationProvider>;
 

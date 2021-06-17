@@ -9,7 +9,7 @@ import { SentryErrorBoundary } from "./SentryErrorBoundary";
 const SentryContext = React.createContext<any>(undefined);
 
 const useSentry = () => {
-	const initializedProfileRef = useRef<Contracts.IProfile>();
+	const initializedProfileReference = useRef<Contracts.IProfile>();
 
 	const setProfileContext = (profile?: Contracts.IProfile) => {
 		if (!profile) {
@@ -61,16 +61,16 @@ const useSentry = () => {
 	};
 
 	const initSentry = (profile: Contracts.IProfile) => {
-		if (initializedProfileRef.current?.id() === profile.id()) {
+		if (initializedProfileReference.current?.id() === profile.id()) {
 			return;
 		}
 
-		initializedProfileRef.current = profile;
+		initializedProfileReference.current = profile;
 
 		Sentry.init({
 			dsn: process.env.REACT_APP_SENTRY_DSN,
 			integrations: [new Integrations.BrowserTracing()],
-			tracesSampleRate: 1.0,
+			tracesSampleRate: 1,
 		});
 
 		setProfileContext(profile);
@@ -87,8 +87,8 @@ const useSentry = () => {
 		Sentry.captureMessage(message);
 	};
 
-	const captureException = (err: Error) => {
-		Sentry.captureException(err);
+	const captureException = (error: Error) => {
+		Sentry.captureException(error);
 	};
 
 	return {

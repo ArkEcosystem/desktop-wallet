@@ -4,7 +4,7 @@ import tw, { styled } from "twin.macro";
 
 import { Card } from "./Card";
 
-type CardControlProps = {
+type CardControlProperties = {
 	children: React.ReactNode;
 	type?: "radio" | "checkbox";
 	checked?: boolean;
@@ -41,12 +41,25 @@ export const CardControlState = () => (
 	</StateStyle>
 );
 
-export const CardControl = React.forwardRef<HTMLInputElement, CardControlProps>(
-	({ children, type, checked, defaultChecked, onChange, disabled, value, name, ...props }: CardControlProps, ref) => (
-		<label tw="cursor-pointer" {...props}>
+export const CardControl = React.forwardRef<HTMLInputElement, CardControlProperties>(
+	(
+		{
+			children,
+			type,
+			checked,
+			defaultChecked,
+			onChange,
+			disabled,
+			value,
+			name,
+			...properties
+		}: CardControlProperties,
+		reference,
+	) => (
+		<label tw="cursor-pointer" {...properties}>
 			<Input
 				data-testid={`card-control__${name}`}
-				ref={ref}
+				ref={reference}
 				type={type}
 				checked={checked}
 				onChange={onChange}

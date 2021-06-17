@@ -5,7 +5,7 @@ import tw, { styled } from "twin.macro";
 
 import { FormFieldProvider } from "./useFormField";
 
-type FormFieldProps = {
+type FormFieldProperties = {
 	name: string;
 } & React.FieldsetHTMLAttributes<any>;
 
@@ -21,7 +21,7 @@ export const FormFieldStyled = styled.fieldset<{ isInvalid: boolean }>`
 	}
 `;
 
-export function FormField({ name, ...props }: FormFieldProps) {
+export function FormField({ name, ...properties }: FormFieldProperties) {
 	const FormProvider = useFormContext();
 	const { isInvalid, errorMessage } = React.useMemo(() => {
 		const error: { message: string } | undefined = get(FormProvider?.errors, name);
@@ -33,8 +33,8 @@ export function FormField({ name, ...props }: FormFieldProps) {
 	}, [FormProvider, name]);
 
 	return (
-		<FormFieldStyled isInvalid={isInvalid} className="flex flex-col space-y-2" {...props}>
-			<FormFieldProvider value={{ isInvalid, name, errorMessage }}>{props.children}</FormFieldProvider>
+		<FormFieldStyled isInvalid={isInvalid} className="flex flex-col space-y-2" {...properties}>
+			<FormFieldProvider value={{ isInvalid, name, errorMessage }}>{properties.children}</FormFieldProvider>
 		</FormFieldStyled>
 	);
 }

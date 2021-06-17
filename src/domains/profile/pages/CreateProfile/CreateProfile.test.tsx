@@ -17,7 +17,7 @@ jest.mock("fs", () => ({
 
 let showOpenDialogMock: jest.SpyInstance;
 
-const showOpenDialogParams = {
+const showOpenDialogParameters = {
 	defaultPath: os.homedir(),
 	properties: ["openFile"],
 	filters: [{ name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] }],
@@ -82,7 +82,7 @@ describe("CreateProfile", () => {
 			fireEvent.click(getByTestId("SelectProfileImage__upload-button"));
 		});
 
-		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
+		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParameters);
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 1" } });
 
@@ -297,7 +297,7 @@ describe("CreateProfile", () => {
 			fireEvent.click(getByTestId("SelectProfileImage__upload-button"));
 		});
 
-		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
+		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParameters);
 
 		act(() => getAllByTestId("Input")[0].focus());
 
@@ -320,7 +320,7 @@ describe("CreateProfile", () => {
 			fireEvent.click(getByTestId("SelectProfileImage__upload-button"));
 		});
 
-		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
+		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParameters);
 
 		await act(async () => {
 			fireEvent.click(getByTestId("SelectProfileImage__remove-button"));
@@ -357,7 +357,7 @@ describe("CreateProfile", () => {
 			fireEvent.click(getByTestId("SelectProfileImage__upload-button"));
 		});
 
-		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
+		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParameters);
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 5" } });
 

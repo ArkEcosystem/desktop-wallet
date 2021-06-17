@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 
 import { ImportFile } from "./models";
 
-interface ProcessingImportProps {
+interface ProcessingImportProperties {
 	env: Environment;
 	file: ImportFile;
 	password?: string;
@@ -28,7 +28,7 @@ export const ProcessingImport = ({
 	password,
 	onSuccess,
 	shouldRequestPassword = false,
-}: ProcessingImportProps) => {
+}: ProcessingImportProperties) => {
 	const { t } = useTranslation();
 	const { importProfile } = useProfileImport({ env });
 	const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(shouldRequestPassword);

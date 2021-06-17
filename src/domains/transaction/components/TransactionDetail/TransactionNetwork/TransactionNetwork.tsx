@@ -4,13 +4,13 @@ import { getNetworkExtendedData } from "domains/network/helpers";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { TransactionDetail, TransactionDetailProps } from "../TransactionDetail";
+import { TransactionDetail, TransactionDetailProperties } from "../TransactionDetail";
 
-type TransactionNetworkProps = {
+type TransactionNetworkProperties = {
 	network: Networks.Network;
-} & TransactionDetailProps;
+} & TransactionDetailProperties;
 
-export const TransactionNetwork = ({ network, ...props }: TransactionNetworkProps) => {
+export const TransactionNetwork = ({ network, ...properties }: TransactionNetworkProperties) => {
 	const { t } = useTranslation();
 
 	const networkExtendedData = getNetworkExtendedData(network.id());
@@ -19,7 +19,7 @@ export const TransactionNetwork = ({ network, ...props }: TransactionNetworkProp
 		<TransactionDetail
 			label={t("TRANSACTION.CRYPTOASSET")}
 			extra={<NetworkIcon size="lg" coin={network.coin()} network={network.id()} />}
-			{...props}
+			{...properties}
 		>
 			{networkExtendedData?.displayName}
 		</TransactionDetail>

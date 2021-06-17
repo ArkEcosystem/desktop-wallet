@@ -4,12 +4,12 @@ import { Image } from "app/components/Image";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-interface Props {
+interface Properties {
 	plugin: any;
 	downloadProgress: { percent?: number; transferredBytes?: number; totalBytes: number };
 }
 
-export const SecondStep = ({ plugin, downloadProgress }: Props) => {
+export const SecondStep = ({ plugin, downloadProgress }: Properties) => {
 	const { t } = useTranslation();
 
 	const hasSize = plugin.size && plugin.size !== "0 B";

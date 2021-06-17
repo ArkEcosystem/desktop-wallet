@@ -113,8 +113,8 @@ export class PluginControllerRepository {
 				plugin.config().validate();
 
 				plugins[plugin.config().id()] = plugin;
-			} catch (e) {
-				console.error(`Failed to parse the plugin from "${entry.dir}".`, e.message);
+			} catch (error) {
+				console.error(`Failed to parse the plugin from "${entry.dir}".`, error.message);
 			}
 		}
 
@@ -136,13 +136,16 @@ export class PluginControllerRepository {
 		return this.#plugins.some((plugin) => plugin.hooks().hasFilter(namespace, hookName));
 	}
 
-	applyFilters<T>(namespace: string, hookName: string, content: T, props?: Record<string, any>): T {
+	applyFilters<T>(namespace: string, hookName: string, content: T, properties?: Record<string, any>): T {
 		const plugins = this.#plugins.filter((plugin) => plugin.hooks().hasFilter(namespace, hookName));
 
-		if (!plugins.length) {
+		if (plugins.length === 0) {
 			return content;
 		}
 
-		return plugins.reduce((acc, plugin) => plugin.hooks().applyFilter(namespace, hookName, acc, props)!, content);
+		return plugins.reduce(
+			(accumulator, plugin) => plugin.hooks().applyFilter(namespace, hookName, accumulator, properties)!,
+			content,
+		);
 	}
 }

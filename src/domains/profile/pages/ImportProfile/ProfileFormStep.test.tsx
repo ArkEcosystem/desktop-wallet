@@ -11,7 +11,7 @@ import { act, env, fireEvent, renderWithRouter, waitFor } from "utils/testing-li
 let profile: Contracts.IProfile;
 
 let showOpenDialogMock: jest.SpyInstance;
-const showOpenDialogParams = {
+const showOpenDialogParameters = {
 	defaultPath: os.homedir(),
 	properties: ["openFile"],
 	filters: [{ name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] }],
@@ -101,7 +101,7 @@ describe("Import Profile - Profile Form Step", () => {
 			fireEvent.click(getByTestId("SelectProfileImage__upload-button"));
 		});
 
-		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
+		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParameters);
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 1" } });
 
@@ -149,7 +149,7 @@ describe("Import Profile - Profile Form Step", () => {
 			fireEvent.click(getByTestId("SelectProfileImage__upload-button"));
 		});
 
-		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
+		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParameters);
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 1" } });
 

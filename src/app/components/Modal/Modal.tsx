@@ -7,7 +7,7 @@ import { Size } from "types";
 
 import { useModal } from ".";
 
-interface ModalProps {
+interface ModalProperties {
 	children: React.ReactNode;
 	title: string | React.ReactNode;
 	titleClass?: string;
@@ -20,7 +20,7 @@ interface ModalProps {
 	onClick?: any;
 }
 
-interface ModalContentProps {
+interface ModalContentProperties {
 	children: React.ReactNode;
 	title: string | React.ReactNode;
 	titleClass?: string;
@@ -54,7 +54,7 @@ const ModalContainer = styled.div<{ size?: Size }>`
 	}}
 `;
 
-const ModalContent = (props: ModalContentProps) => (
+const ModalContent = (properties: ModalContentProperties) => (
 	<div
 		className="flex overflow-hidden relative flex-col p-10 shadow-2xl rounded-2.5xl bg-theme-background"
 		data-testid="modal__inner"
@@ -64,7 +64,7 @@ const ModalContent = (props: ModalContentProps) => (
 				data-testid="modal__close-btn"
 				variant="transparent"
 				size="icon"
-				onClick={props.onClose}
+				onClick={properties.onClose}
 				className="w-11 h-11"
 			>
 				<Icon name="CrossSlim" width={14} height={14} />
@@ -72,34 +72,34 @@ const ModalContent = (props: ModalContentProps) => (
 		</div>
 
 		<div className="relative space-y-4">
-			{props.banner && (
+			{properties.banner && (
 				<div className="relative -mx-10 mb-10 -mt-10 h-56">
-					{props.banner}
+					{properties.banner}
 
 					<div className="absolute bottom-0 left-0 mb-10 ml-10">
 						<h2
 							className={`text-4xl font-extrabold leading-tight m-0 ${
-								props.titleClass || "text-theme-text"
+								properties.titleClass || "text-theme-text"
 							}`}
 						>
-							{props.title}
+							{properties.title}
 						</h2>
 					</div>
 				</div>
 			)}
 
-			{!props.banner && props.title && (
-				<h2 className={cs("mb-0 text-3xl font-bold", props.titleClass)}>{props.title}</h2>
+			{!properties.banner && properties.title && (
+				<h2 className={cs("mb-0 text-3xl font-bold", properties.titleClass)}>{properties.title}</h2>
 			)}
 
 			<div className="flex-1">
-				{props.image}
+				{properties.image}
 
-				{props.description && (
-					<div className="whitespace-pre-line text-theme-secondary-text">{props.description}</div>
+				{properties.description && (
+					<div className="whitespace-pre-line text-theme-secondary-text">{properties.description}</div>
 				)}
 
-				{props.children}
+				{properties.children}
 			</div>
 		</div>
 	</div>
@@ -115,8 +115,8 @@ export const Modal = ({
 	size,
 	children,
 	onClose,
-}: ModalProps) => {
-	const refShouldClose = useRef<boolean | null>(null);
+}: ModalProperties) => {
+	const referenceShouldClose = useRef<boolean | null>(null);
 	useModal({ isOpen, onClose });
 
 	if (!isOpen) {
@@ -124,12 +124,12 @@ export const Modal = ({
 	}
 
 	const handleClickOverlay = () => {
-		if (refShouldClose.current === null) {
-			refShouldClose.current = true;
+		if (referenceShouldClose.current === null) {
+			referenceShouldClose.current = true;
 		}
 
-		if (!refShouldClose.current) {
-			refShouldClose.current = null;
+		if (!referenceShouldClose.current) {
+			referenceShouldClose.current = null;
 			return;
 		}
 
@@ -137,7 +137,7 @@ export const Modal = ({
 	};
 
 	const handleClickContent = () => {
-		refShouldClose.current = false;
+		referenceShouldClose.current = false;
 	};
 
 	return (

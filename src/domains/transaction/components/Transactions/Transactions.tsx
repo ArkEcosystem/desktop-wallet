@@ -9,7 +9,7 @@ import { useProfileTransactions } from "domains/transaction/hooks/use-profile-tr
 import React, { memo, useEffect, useMemo, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 
-interface TransactionsProps {
+interface TransactionsProperties {
 	fetchMoreAction?: Function;
 	onRowClick?: (row: DTO.ExtendedTransactionData) => void;
 	emptyText?: string;
@@ -35,7 +35,7 @@ export const Transactions = memo(
 		title,
 		isUpdatingWallet,
 		onLoading,
-	}: TransactionsProps) => {
+	}: TransactionsProperties) => {
 		const { t } = useTranslation();
 
 		const [transactionModalItem, setTransactionModalItem] = useState<DTO.ExtendedTransactionData | undefined>(
@@ -77,7 +77,7 @@ export const Transactions = memo(
 
 		useEffect(() => {
 			if (isUpdatingWallet) {
-				updateFilters({ activeMode, activeTransactionType, timestamp: new Date().getTime() });
+				updateFilters({ activeMode, activeTransactionType, timestamp: Date.now() });
 			}
 		}, [isUpdatingWallet]); // eslint-disable-line react-hooks/exhaustive-deps
 

@@ -18,13 +18,13 @@ export type CircleProps = {
 const CircleWrapper = styled.div<CircleProps>(getStyles);
 
 export const Circle = forwardRef<HTMLDivElement, CircleProps>(
-	({ className, noShadow, shadowClassName, size, children, ...props }: CircleProps, ref) => (
+	({ className, noShadow, shadowClassName, size, children, ...properties }: CircleProps, reference) => (
 		<CircleWrapper
-			ref={ref}
+			ref={reference}
 			size={size}
 			noShadow={!!noShadow}
 			className={cn(className, shadowClassName || "ring-theme-background")}
-			{...props}
+			{...properties}
 		>
 			{children}
 		</CircleWrapper>

@@ -3,7 +3,7 @@ import { styled } from "twin.macro";
 
 import { getStyles } from "./TableCell.styles";
 
-type TableCellProps = {
+type TableCellProperties = {
 	variant?: "start" | "middle" | "end";
 	className?: string;
 	innerClassName?: string;
@@ -11,10 +11,17 @@ type TableCellProps = {
 	children: React.ReactNode;
 } & React.HTMLProps<any>;
 
-const TableCellInnerWrapper = styled.div<TableCellProps>(getStyles);
+const TableCellInnerWrapper = styled.div<TableCellProperties>(getStyles);
 
-export const TableCell = ({ variant, className, innerClassName, isCompact, children, ...props }: TableCellProps) => (
-	<td className={className} {...props}>
+export const TableCell = ({
+	variant,
+	className,
+	innerClassName,
+	isCompact,
+	children,
+	...properties
+}: TableCellProperties) => (
+	<td className={className} {...properties}>
 		<TableCellInnerWrapper variant={variant} className={innerClassName} isCompact={isCompact}>
 			{children}
 		</TableCellInnerWrapper>

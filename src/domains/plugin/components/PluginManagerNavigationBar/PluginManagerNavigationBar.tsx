@@ -8,7 +8,7 @@ import { styled } from "twin.macro";
 
 import { defaultStyle } from "./styles";
 
-interface Props {
+interface Properties {
 	hasUpdatesAvailable: boolean;
 	installedPluginsCount: number;
 	menu: any[];
@@ -38,7 +38,7 @@ export const PluginManagerNavigationBar = ({
 	onChange,
 	onSelectGridView,
 	onSelectListView,
-}: Props) => {
+}: Properties) => {
 	const { t } = useTranslation();
 
 	return (

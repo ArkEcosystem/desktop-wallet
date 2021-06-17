@@ -1,7 +1,7 @@
 import React from "react";
 import tw, { css, styled } from "twin.macro";
 
-interface StepIndicatorProps {
+interface StepIndicatorProperties {
 	activeIndex?: number;
 	size?: number;
 }
@@ -23,12 +23,12 @@ const StepWrapper = styled.ul`
 	${tw`flex space-x-3`}
 `;
 
-export const StepIndicator: React.FC<StepIndicatorProps> = (props: StepIndicatorProps) => {
-	const steps = [...Array(props.size)];
+export const StepIndicator: React.FC<StepIndicatorProperties> = (properties: StepIndicatorProperties) => {
+	const steps = [...new Array(properties.size)];
 	return (
 		<StepWrapper>
 			{steps.map((_, index) => (
-				<StepStyled key={index} isActive={props.activeIndex! >= index + 1} />
+				<StepStyled key={index} isActive={properties.activeIndex! >= index + 1} />
 			))}
 		</StepWrapper>
 	);

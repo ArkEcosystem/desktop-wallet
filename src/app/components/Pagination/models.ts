@@ -1,4 +1,4 @@
-export interface PaginationProps {
+export interface PaginationProperties {
 	totalCount: number;
 	itemsPerPage: number;
 	onSelectPage: any;
@@ -6,7 +6,7 @@ export interface PaginationProps {
 	className?: string;
 }
 
-export interface PaginationSearchProps {
+export interface PaginationSearchProperties {
 	children?: React.ReactNode;
 	onClick: () => void;
 	onSelectPage: (page?: number) => void;
@@ -14,7 +14,7 @@ export interface PaginationSearchProps {
 	isDisabled?: boolean;
 }
 
-export interface PaginationSearchFormProps {
+export interface PaginationSearchFormProperties {
 	onClose: () => void;
 	totalPages?: number;
 	onSelectPage: (page?: number) => void;

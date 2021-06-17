@@ -117,13 +117,13 @@ describe("EncryptionPasswordStep", () => {
 		await waitFor(() => expect(getByTestId("CreateWallet__ConfirmPassphraseStep")).toBeTruthy());
 
 		const walletMnemonic = passphrase.split(" ");
-		for (let i = 0; i < 3; i++) {
-			const wordNumber = parseInt(getByText(/Select the/).innerHTML.replace(/Select the/, ""));
+		for (let index = 0; index < 3; index++) {
+			const wordNumber = Number.parseInt(getByText(/Select the/).innerHTML.replace(/Select the/, ""));
 
 			await actAsync(async () => {
 				fireEvent.click(getByText(walletMnemonic[wordNumber - 1]));
-				if (i < 2) {
-					await waitFor(() => expect(queryAllByText(/The #([0-9]+) word/).length === 2 - i));
+				if (index < 2) {
+					await waitFor(() => expect(queryAllByText(/The #(\d+) word/).length === 2 - index));
 				}
 			});
 		}
@@ -255,13 +255,13 @@ describe("EncryptionPasswordStep", () => {
 		await waitFor(() => expect(getByTestId("CreateWallet__ConfirmPassphraseStep")).toBeTruthy());
 
 		const walletMnemonic = passphrase.split(" ");
-		for (let i = 0; i < 3; i++) {
-			const wordNumber = parseInt(getByText(/Select the/).innerHTML.replace(/Select the/, ""));
+		for (let index = 0; index < 3; index++) {
+			const wordNumber = Number.parseInt(getByText(/Select the/).innerHTML.replace(/Select the/, ""));
 
 			await actAsync(async () => {
 				fireEvent.click(getByText(walletMnemonic[wordNumber - 1]));
-				if (i < 2) {
-					await waitFor(() => expect(queryAllByText(/The #([0-9]+) word/).length === 2 - i));
+				if (index < 2) {
+					await waitFor(() => expect(queryAllByText(/The #(\d+) word/).length === 2 - index));
 				}
 			});
 		}

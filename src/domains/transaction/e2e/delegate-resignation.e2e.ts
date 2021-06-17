@@ -75,15 +75,15 @@ test("should fail delegate resignation submission", async (t: any) => {
 
 	await goToDelegateResignationPage(t);
 
-	const continueBtn = "[data-testid=SendDelegateResignation__continue-button]";
+	const continueButton = "[data-testid=SendDelegateResignation__continue-button]";
 
 	// Go to step 2
-	await t.hover(Selector(continueBtn));
-	await t.click(Selector(continueBtn));
+	await t.hover(Selector(continueButton));
+	await t.click(Selector(continueButton));
 
 	// Go to step 3 (authentication)
-	await t.hover(Selector(continueBtn));
-	await t.click(Selector(continueBtn));
+	await t.hover(Selector(continueButton));
+	await t.click(Selector(continueButton));
 
 	// Type wrong mnemonic
 	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "wrong mnemonic", { replace: true });

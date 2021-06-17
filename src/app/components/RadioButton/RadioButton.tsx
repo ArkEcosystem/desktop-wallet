@@ -4,11 +4,11 @@ import { Color } from "types";
 
 import { getStyles } from "./RadioButton.styles";
 
-type RadioButtonProps = {
+type RadioButtonProperties = {
 	color?: Color;
 } & React.InputHTMLAttributes<any>;
 
-export const RadioButton = styled.input<RadioButtonProps>(getStyles);
+export const RadioButton = styled.input<RadioButtonProperties>(getStyles);
 
 RadioButton.defaultProps = {
 	type: "radio",

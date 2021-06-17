@@ -1,6 +1,6 @@
 import React from "react";
 
-interface Props {
+interface Properties {
 	isFloatingLabel: boolean;
 	label: string;
 	labelClass: string;
@@ -26,7 +26,7 @@ export const ListDividedItem = ({
 	content,
 	contentClass,
 	wrapperClass,
-}: Props) => (
+}: Properties) => (
 	<li className={`flex flex-col w-full ${wrapperClass || ""}`} data-testid="list-divided-item__wrapper">
 		<div
 			className={`flex justify-between ${isFloatingLabel ? "flex-col items-start" : "items-center"}`}

@@ -9,15 +9,15 @@ import { useTranslation } from "react-i18next";
 import {
 	markAsRead,
 	NotificationItem,
-	NotificationItemProps,
-	NotificationsProps,
+	NotificationItemProperties,
+	NotificationsProperties,
 	NotificationsWrapper,
 	NotificationTransactionItem,
 } from ".";
 
-export const Notifications = ({ profile, onNotificationAction, onTransactionClick }: NotificationsProps) => {
+export const Notifications = ({ profile, onNotificationAction, onTransactionClick }: NotificationsProperties) => {
 	const { t } = useTranslation();
-	const env = useEnvironmentContext();
+	const environment = useEnvironmentContext();
 	const {
 		notifications: { sortTransactionNotificationsDesc },
 	} = useNotifications();
@@ -31,11 +31,11 @@ export const Notifications = ({ profile, onNotificationAction, onTransactionClic
 		[profile],
 	);
 
-	const wrapperRef = useRef();
+	const wrapperReference = useRef();
 	const notifications = byType(["plugin", "wallet"]);
 	const transactions = sortTransactionNotificationsDesc(byType(["transaction"]));
 
-	if (!transactions.length && !notifications.length) {
+	if (transactions.length === 0 && notifications.length === 0) {
 		return (
 			<NotificationsWrapper>
 				<EmptyBlock>
@@ -47,19 +47,21 @@ export const Notifications = ({ profile, onNotificationAction, onTransactionClic
 	}
 
 	return (
-		<NotificationsWrapper ref={wrapperRef as React.MutableRefObject<any>} data-testid="NotificationsWrapper">
+		<NotificationsWrapper ref={wrapperReference as React.MutableRefObject<any>} data-testid="NotificationsWrapper">
 			{notifications.length > 0 && (
 				<>
 					<div className="-top-5 z-10 py-4 pr-8 pl-4 -mx-4 mb-2 text-sm font-bold text-theme-secondary-500">
 						{t("COMMON.NOTIFICATIONS.PLUGINS_TITLE")}
 					</div>
 					<Table hideHeader columns={[{ Header: "-", className: "hidden" }]} data={notifications}>
-						{(notification: NotificationItemProps) => (
+						{(notification: NotificationItemProperties) => (
 							<NotificationItem
 								{...notification}
 								onAction={onNotificationAction}
-								onVisibilityChange={(isVisible) => markAsRead(isVisible, notification.id, profile, env)}
-								containmentRef={wrapperRef}
+								onVisibilityChange={(isVisible) =>
+									markAsRead(isVisible, notification.id, profile, environment)
+								}
+								containmentRef={wrapperReference}
 							/>
 						)}
 					</Table>
@@ -72,12 +74,14 @@ export const Notifications = ({ profile, onNotificationAction, onTransactionClic
 						{t("COMMON.NOTIFICATIONS.TRANSACTIONS_TITLE")}
 					</div>
 					<Table hideHeader columns={[{ Header: "-", className: "hidden" }]} data={transactions}>
-						{(notification: NotificationItemProps) => (
+						{(notification: NotificationItemProperties) => (
 							<NotificationTransactionItem
 								notification={notification}
 								profile={profile}
-								containmentRef={wrapperRef}
-								onVisibilityChange={(isVisible) => markAsRead(isVisible, notification.id, profile, env)}
+								containmentRef={wrapperReference}
+								onVisibilityChange={(isVisible) =>
+									markAsRead(isVisible, notification.id, profile, environment)
+								}
 								onTransactionClick={onTransactionClick}
 							/>
 						)}

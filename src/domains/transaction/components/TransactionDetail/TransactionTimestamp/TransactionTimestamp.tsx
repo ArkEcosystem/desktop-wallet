@@ -5,11 +5,11 @@ import { useTranslation } from "react-i18next";
 
 import { TransactionDetail } from "../TransactionDetail";
 
-interface TransactionTimestampProps {
+interface TransactionTimestampProperties {
 	timestamp: DateTime;
 }
 
-export const TransactionTimestamp = ({ timestamp }: TransactionTimestampProps) => {
+export const TransactionTimestamp = ({ timestamp }: TransactionTimestampProperties) => {
 	const { t } = useTranslation();
 	const format = useTimeFormat();
 

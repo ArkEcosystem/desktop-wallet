@@ -40,7 +40,7 @@ const randomAddress = "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib";
 const route = `/profiles/${fixtureProfileId}/wallets/import`;
 const history = createMemoryHistory();
 
-jest.setTimeout(30000);
+jest.setTimeout(30_000);
 
 describe("ImportWallet", () => {
 	beforeAll(() => {
@@ -382,7 +382,7 @@ describe("ImportWallet", () => {
 			() => {
 				expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
 			},
-			{ timeout: 15000 },
+			{ timeout: 15_000 },
 		);
 	});
 

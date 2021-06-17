@@ -1,13 +1,13 @@
 import { Image } from "app/components/Image";
 import React from "react";
 
-interface EmptyResultsProps {
+interface EmptyResultsProperties {
 	className?: string;
 	title?: string;
 	subtitle?: string;
 }
 
-export const EmptyResults = ({ className, title, subtitle }: EmptyResultsProps) => (
+export const EmptyResults = ({ className, title, subtitle }: EmptyResultsProperties) => (
 	<div
 		className={`flex flex-col justify-center h-full text-center bg-theme-background ${className}`}
 		data-testid="EmptyResults"

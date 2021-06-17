@@ -37,7 +37,7 @@ describe("MultiPaymentDetail", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render with recipients", () => {
+	it("should render with recipients", async () => {
 		const { asFragment, getByText, getByTestId } = render(
 			<MultiPaymentDetail
 				isOpen={true}
@@ -47,15 +47,15 @@ describe("MultiPaymentDetail", () => {
 					recipients: () => [
 						{
 							address: "adsad12312xsd1w312e1s13203e12",
-							amount: BigNumber.make(20000000000),
+							amount: BigNumber.make(20_000_000_000),
 						},
 						{
 							address: "adsad12312xsd1w312e1s13203e13",
-							amount: BigNumber.make(199000000000),
+							amount: BigNumber.make(199_000_000_000),
 						},
 						{
 							address: "adsad12312xsd1w312e1s13203e14",
-							amount: BigNumber.make(199000000000),
+							amount: BigNumber.make(199_000_000_000),
 						},
 					],
 					blockId: () => "adsad12312xsd1w312e1s13203e12",
@@ -64,7 +64,7 @@ describe("MultiPaymentDetail", () => {
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_TRANSFER_DETAIL.TITLE);
-		waitFor(() => expect(getByText("Well Confirmed")).toBeTruthy());
+		await waitFor(() => expect(getByText(translations.WELL_CONFIRMED)).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

@@ -4,13 +4,13 @@ import tw, { styled } from "twin.macro";
 // UI Elements
 import { SideBarItem } from "./SideBarItem";
 
-interface Props {
+interface Properties {
 	activeItem: string;
 	handleActiveItem: any;
 	items: any;
 }
 
-export interface ItemProps {
+export interface ItemProperties {
 	itemKey: string;
 	label: string;
 	icon: string;
@@ -25,11 +25,11 @@ const SideBarContainer = styled.div`
 	width: 210px;
 `;
 
-export const SideBar = ({ activeItem, handleActiveItem, items }: Props) => (
+export const SideBar = ({ activeItem, handleActiveItem, items }: Properties) => (
 	<SideBarContainer>
 		<ul>
 			{items &&
-				items.map(({ label, route, itemKey, icon }: ItemProps, index: number) => (
+				items.map(({ label, route, itemKey, icon }: ItemProperties, index: number) => (
 					<SideBarItem
 						label={label}
 						route={route}

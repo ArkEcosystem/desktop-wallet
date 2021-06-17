@@ -18,10 +18,10 @@ import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import tw, { css, styled } from "twin.macro";
 
-import { AddRecipientProps, ToggleButtonProps } from "./AddRecipient.models";
+import { AddRecipientProperties, ToggleButtonProperties } from "./AddRecipient.models";
 import { AddRecipientWrapper } from "./AddRecipient.styles";
 
-const TransferType = ({ isSingle, disableMultiple, onChange }: ToggleButtonProps) => {
+const TransferType = ({ isSingle, disableMultiple, onChange }: ToggleButtonProperties) => {
 	const { t } = useTranslation();
 
 	return (
@@ -82,12 +82,13 @@ export const AddRecipient = ({
 	disableMultiPaymentOption,
 	withDeeplink,
 	onChange,
-}: AddRecipientProps) => {
+}: AddRecipientProperties) => {
 	const { t } = useTranslation();
 	const [addedRecipients, setAddedRecipients] = useState<RecipientListItem[]>([]);
-	const [isSingle, setIsSingle] = useState(recipients!.length <= 1);
+	// @ts-ignore
+	const [isSingle, setIsSingle] = useState(recipients.length <= 1);
 	const [recipientsAmount, setRecipientsAmount] = useState<any>();
-	const isMountedRef = useRef(false);
+	const isMountedReference = useRef(false);
 
 	const {
 		getValues,
@@ -211,7 +212,7 @@ export const AddRecipient = ({
 
 	//region Update AddedRecipients state when comes back to the current page
 	useEffect(() => {
-		if (isMountedRef.current) {
+		if (isMountedReference.current) {
 			return;
 		}
 
@@ -223,7 +224,7 @@ export const AddRecipient = ({
 	}, [recipients, setValue, getValues]);
 
 	useEffect(() => {
-		isMountedRef.current = true;
+		isMountedReference.current = true;
 	}, []);
 	//endregion
 

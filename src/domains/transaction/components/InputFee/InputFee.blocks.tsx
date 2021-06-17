@@ -4,9 +4,9 @@ import { InputRange } from "app/components/Input";
 import { Skeleton } from "app/components/Skeleton";
 import React from "react";
 
-import { InputFeeAdvancedProps, InputFeeSimpleProps, InputFeeSimpleValue } from "./InputFee.contracts";
+import { InputFeeAdvancedProperties, InputFeeSimpleProperties, InputFeeSimpleValue } from "./InputFee.contracts";
 
-export const InputFeeAdvanced = ({ onChange, value, min, max, step, disabled }: InputFeeAdvancedProps) => (
+export const InputFeeAdvanced = ({ onChange, value, min, max, step, disabled }: InputFeeAdvancedProperties) => (
 	<InputRange disabled={disabled} value={value} min={+min} max={+max} step={step} onChange={onChange} />
 );
 
@@ -18,7 +18,7 @@ export const InputFeeSimple = ({
 	exchangeTicker,
 	showConvertedValues,
 	loading,
-}: InputFeeSimpleProps) => (
+}: InputFeeSimpleProperties) => (
 	<ButtonGroup>
 		{Object.entries(options).map(([optionValue, { label, displayValue, displayValueConverted }]) => (
 			<ButtonGroupOption

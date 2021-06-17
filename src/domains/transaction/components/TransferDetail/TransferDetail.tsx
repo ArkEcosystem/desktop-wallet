@@ -12,13 +12,13 @@ import {
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-interface TransferDetailProps {
+interface TransferDetailProperties {
 	isOpen: boolean;
 	transaction: any;
 	onClose?: any;
 }
 
-export const TransferDetail = ({ isOpen, transaction, onClose }: TransferDetailProps) => {
+export const TransferDetail = ({ isOpen, transaction, onClose }: TransferDetailProperties) => {
 	const { t } = useTranslation();
 
 	const wallet = useMemo(() => transaction.wallet(), [transaction]);

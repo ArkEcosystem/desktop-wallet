@@ -13,7 +13,7 @@ import { useHistory } from "react-router-dom";
 export const PluginDetails = () => {
 	const { t } = useTranslation();
 	const activeProfile = useActiveProfile();
-	const queryParams = useQueryParams();
+	const queryParameters = useQueryParams();
 	const history = useHistory();
 
 	const [isUninstallOpen, setIsUninstallOpen] = React.useState(false);
@@ -33,8 +33,8 @@ export const PluginDetails = () => {
 		fetchSize,
 	} = usePluginManagerContext();
 
-	const pluginId = queryParams.get("pluginId");
-	const repositoryURL = queryParams.get("repositoryURL");
+	const pluginId = queryParameters.get("pluginId");
+	const repositoryURL = queryParameters.get("repositoryURL");
 
 	const pluginCtrl = pluginManager.plugins().findById(pluginId!);
 	const isInstalled = !!pluginCtrl;
@@ -87,8 +87,8 @@ export const PluginDetails = () => {
 		try {
 			pluginCtrl?.enable(activeProfile, { autoRun: true });
 			trigger();
-		} catch (e) {
-			toasts.error(t("PLUGINS.ENABLE_FAILURE", { name: pluginData.title, msg: e.message }));
+		} catch (error) {
+			toasts.error(t("PLUGINS.ENABLE_FAILURE", { name: pluginData.title, msg: error.message }));
 		}
 	};
 

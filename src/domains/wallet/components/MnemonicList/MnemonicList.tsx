@@ -1,18 +1,14 @@
 import React from "react";
 
-interface Props {
+interface Properties {
 	mnemonic: string;
 }
 
-export function MnemonicList({ mnemonic }: Props) {
+export function MnemonicList({ mnemonic }: Properties) {
 	let mnemonicWords: string[];
 
 	// Check for Japanese "space"
-	if (/\u3000/.test(mnemonic)) {
-		mnemonicWords = mnemonic.split("\u3000");
-	} else {
-		mnemonicWords = mnemonic.split(" ");
-	}
+	mnemonicWords = /\u3000/.test(mnemonic) ? mnemonic.split("\u3000") : mnemonic.split(" ");
 
 	return (
 		<ul className="grid grid-cols-2 gap-x-3 gap-y-5 md:grid-cols-3 lg:grid-cols-4">

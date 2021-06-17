@@ -1,6 +1,6 @@
 import React from "react";
 
-interface CircularProgressBarProps {
+interface CircularProgressBarProperties {
 	size: number;
 	strokeWidth: number;
 	strokeColor?: string;
@@ -20,7 +20,7 @@ export const CircularProgressBar = ({
 	fontSize,
 	showValue,
 	className,
-}: CircularProgressBarProps) => {
+}: CircularProgressBarProperties) => {
 	// Enclose circle in a circumscribed square
 	const viewBox = `0 0 ${size} ${size}`;
 	// SVG centers the stroke width in the radius and subtracts so that the circle fits the square

@@ -34,8 +34,13 @@ import { bootEnvWithProfileFixtures, isE2E, isUnit } from "utils/test-helpers";
 
 import { middlewares, RouterView, routes } from "../router";
 import { ConfigurationProvider, EnvironmentProvider, LedgerProvider, useEnvironmentContext } from "./contexts";
-import { useDeeplink, useEnvSynchronizer, useNetworkStatus, useProfileSynchronizer } from "./hooks";
-import { i18n } from "./i18n";
+import {
+	useDeeplink,
+	useEnvSynchronizer as useEnvironmentSynchronizer,
+	useNetworkStatus,
+	useProfileSynchronizer,
+} from "./hooks";
+import { i18n as index18n } from "./i18n";
 import { PluginProviders } from "./PluginProviders";
 import { SentryProvider } from "./sentry/SentryProvider";
 import { SentryRouterWrapper } from "./sentry/SentryRouterWrapper";
@@ -52,7 +57,7 @@ const Main = () => {
 	const { env } = useEnvironmentContext();
 	const { loadPlugins } = usePluginManagerContext();
 	const isOnline = useNetworkStatus();
-	const { start } = useEnvSynchronizer();
+	const { start } = useEnvironmentSynchronizer();
 	const history = useHistory();
 
 	useProfileSynchronizer({
@@ -134,7 +139,7 @@ export const App = () => {
 	/* istanbul ignore next */
 	const storage = isE2E() || isUnit() ? new StubStorage() : "indexeddb";
 
-	const [env] = useState(
+	const [environment] = useState(
 		() =>
 			new Environment({
 				coins: {
@@ -161,8 +166,8 @@ export const App = () => {
 	);
 
 	return (
-		<I18nextProvider i18n={i18n}>
-			<EnvironmentProvider env={env}>
+		<I18nextProvider i18n={index18n}>
+			<EnvironmentProvider env={environment}>
 				<ConfigurationProvider defaultConfiguration={{ profileIsSyncingExchangeRates: true }}>
 					<SentryProvider>
 						<LedgerProvider transport={LedgerTransportNodeHID}>

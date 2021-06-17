@@ -25,7 +25,7 @@ const ButtonGroupOptionStyled = styled.button(() => [
 	`,
 ]);
 
-interface ButtonGroupOptionProps {
+interface ButtonGroupOptionProperties {
 	children: React.ReactNode;
 	value: string | number;
 	disabled?: boolean;
@@ -39,7 +39,7 @@ export const ButtonGroupOption = ({
 	isSelected,
 	setSelectedValue,
 	children,
-}: ButtonGroupOptionProps) => (
+}: ButtonGroupOptionProperties) => (
 	<ButtonGroupOptionStyled
 		disabled={disabled}
 		type="button"

@@ -12,7 +12,7 @@ import { BaseTransactionRowInfo } from "../TransactionRow/TransactionRowInfo";
 import { BaseTransactionRowMode } from "../TransactionRow/TransactionRowMode";
 import { BaseTransactionRowRecipientLabel } from "../TransactionRow/TransactionRowRecipientLabel";
 
-interface Props {
+interface Properties {
 	transactions: Contracts.SignedTransactionData[];
 	wallet: ProfileContracts.IReadWriteWallet;
 	onClick?: (transaction: Contracts.SignedTransactionData) => void;
@@ -158,7 +158,7 @@ const Row = ({
 	);
 };
 
-export const SignedTransactionTable = ({ transactions, wallet, onClick }: Props) => {
+export const SignedTransactionTable = ({ transactions, wallet, onClick }: Properties) => {
 	const { t } = useTranslation();
 
 	const columns = [

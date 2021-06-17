@@ -69,7 +69,7 @@ describe("Electron utils", () => {
 
 			expect("ELECTRON_IS_DEV" in process.env).toBe(true);
 			expect(process.env.ELECTRON_IS_DEV).toBe("1");
-			expect(parseInt(process.env.ELECTRON_IS_DEV!, 10)).toBe(1);
+			expect(Number.parseInt(process.env.ELECTRON_IS_DEV!, 10)).toBe(1);
 
 			setScreenshotProtection(true);
 

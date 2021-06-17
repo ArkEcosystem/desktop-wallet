@@ -1,47 +1,47 @@
 import { EventEmitter } from "events";
 
-type HandlerFn = (...args: any[]) => any;
+type HandlerFunction = (...arguments_: any[]) => any;
 
-const formatKey = (...args: string[]) => args.join(".");
+const formatKey = (...arguments_: string[]) => arguments_.join(".");
 
 export class PluginHooks extends EventEmitter {
-	#filters: Map<string, HandlerFn[]> = new Map();
-	#commands: Map<string, HandlerFn> = new Map();
+	#filters: Map<string, HandlerFunction[]> = new Map();
+	#commands: Map<string, HandlerFunction> = new Map();
 
 	hasCommand(commandName: string) {
 		return this.#commands.has(commandName);
 	}
 
-	registerCommand(commandName: string, handler: HandlerFn) {
+	registerCommand(commandName: string, handler: HandlerFunction) {
 		if (this.#commands.has(commandName)) {
 			throw new Error(`Command ${commandName} already registered.`);
 		}
 
 		if (typeof handler !== "function") {
-			throw new Error(`Expected handler to be a function, but found type '${typeof handler}'`);
+			throw new TypeError(`Expected handler to be a function, but found type '${typeof handler}'`);
 		}
 
 		this.#commands.set(commandName, handler);
 	}
 
-	executeCommand(commandName: string, ...args: any[]) {
+	executeCommand(commandName: string, ...arguments_: any[]) {
 		if (!this.#commands.has(commandName)) {
 			throw new Error(`Command ${commandName} not found.`);
 		}
 
-		return this.#commands.get(commandName)?.(...args);
+		return this.#commands.get(commandName)?.(...arguments_);
 	}
 
 	hasFilter(namespace: string, hookName: string) {
 		return this.#filters.has(formatKey(namespace, hookName));
 	}
 
-	addFilter(namespace: string, hookName: string, handler: HandlerFn) {
+	addFilter(namespace: string, hookName: string, handler: HandlerFunction) {
 		const key = formatKey(namespace, hookName);
 		const current = this.#filters.get(key) || [];
 
 		if (typeof handler !== "function") {
-			throw new Error(`Expected handler to be a function, but found type '${typeof handler}'`);
+			throw new TypeError(`Expected handler to be a function, but found type '${typeof handler}'`);
 		}
 
 		current.push(handler);
@@ -53,7 +53,7 @@ export class PluginHooks extends EventEmitter {
 		namespace: string,
 		hookName: string,
 		content: T,
-		props?: Record<string, any>,
+		properties?: Record<string, any>,
 	): T | undefined {
 		const key = formatKey(namespace, hookName);
 
@@ -61,7 +61,7 @@ export class PluginHooks extends EventEmitter {
 			return;
 		}
 
-		return this.#filters.get(key)!.reduce((acc, handler) => handler(acc, props), content);
+		return this.#filters.get(key)!.reduce((accumulator, handler) => handler(accumulator, properties), content);
 	}
 
 	clearAll() {

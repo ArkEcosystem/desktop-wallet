@@ -4,7 +4,7 @@ import { useEnvironmentContext } from "app/contexts";
 import { useTransactionTypes } from "domains/transaction/hooks/use-transaction-types";
 import React, { useEffect, useState } from "react";
 
-interface Props {
+interface Properties {
 	transaction?: DTO.ExtendedTransactionData;
 	type: string;
 	recipient: string;
@@ -58,7 +58,7 @@ const VoteLabel = ({ delegates, isUnvote }: { delegates: Contracts.IReadOnlyWall
 	</span>
 );
 
-export const BaseTransactionRowRecipientLabel = ({ transaction, type, recipient, walletName }: Props) => {
+export const BaseTransactionRowRecipientLabel = ({ transaction, type, recipient, walletName }: Properties) => {
 	const { env } = useEnvironmentContext();
 
 	const [delegates, setDelegates] = useState<{

@@ -13,13 +13,13 @@ const ToggleIcon = styled.span<{ isOpen: boolean; isDisabled?: boolean }>`
 			: ""}
 `;
 
-type Props = {
+type Properties = {
 	isOpen?: boolean;
 	label?: React.ReactNode;
 	alternativeLabel?: React.ReactNode;
 } & React.ButtonHTMLAttributes<any>;
 
-export const CollapseToggleButton = ({ isOpen, className, label, alternativeLabel, ...props }: Props) => {
+export const CollapseToggleButton = ({ isOpen, className, label, alternativeLabel, ...properties }: Properties) => {
 	const { t } = useTranslation();
 
 	return (
@@ -28,10 +28,10 @@ export const CollapseToggleButton = ({ isOpen, className, label, alternativeLabe
 			className={`flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 ${
 				className || "text-theme-secondary-500"
 			}`}
-			{...props}
+			{...properties}
 		>
 			<span>{isOpen ? label || t("COMMON.HIDE") : alternativeLabel || label || t("COMMON.SHOW")}</span>
-			<ToggleIcon isOpen={isOpen!} isDisabled={props.disabled}>
+			<ToggleIcon isOpen={isOpen!} isDisabled={properties.disabled}>
 				<Icon name="ChevronDown" width={8} height={5} />
 			</ToggleIcon>
 		</button>

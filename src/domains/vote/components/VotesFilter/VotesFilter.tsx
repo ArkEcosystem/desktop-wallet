@@ -7,9 +7,9 @@ import cn from "classnames";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { FilterProps } from ".";
+import { FilterProperties } from ".";
 
-export const VotesFilter = ({ onChange, selectedOption = "all", totalCurrentVotes }: FilterProps) => {
+export const VotesFilter = ({ onChange, selectedOption = "all", totalCurrentVotes }: FilterProperties) => {
 	const { t } = useTranslation();
 
 	return (

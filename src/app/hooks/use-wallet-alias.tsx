@@ -1,14 +1,14 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { useEnvironmentContext } from "app/contexts";
 
-interface Props {
+interface Properties {
 	address: string;
 	profile: Contracts.IProfile;
 	coinId?: string;
 	networkId?: string;
 }
 
-export const useWalletAlias = ({ address, profile, coinId, networkId }: Props) => {
+export const useWalletAlias = ({ address, profile, coinId, networkId }: Properties) => {
 	const { env } = useEnvironmentContext();
 
 	const contact = profile.contacts().findByAddress(address)[0];

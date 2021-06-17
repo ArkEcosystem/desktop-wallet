@@ -15,7 +15,7 @@ export interface PluginAPI {
 	};
 	http(): {
 		create: () => HttpClient;
-		decorate: (key: string, callback: <T = any>(arg: T) => T) => void;
+		decorate: (key: string, callback: <T = any>(argument: T) => T) => void;
 		get: (url: string, query?: object) => Promise<HttpResponse>;
 		post: (url: string, data?: object) => Promise<HttpResponse>;
 	};
@@ -34,7 +34,7 @@ export interface PluginAPI {
 		persist: () => void;
 	};
 	theme(): {
-		decorate: <T = any>(key: string, callback: (Component: T, props: Record<string, any>) => T) => void;
+		decorate: <T = any>(key: string, callback: (Component: T, properties: Record<string, any>) => T) => void;
 	};
 	timers(): {
 		clearInterval: (handle: number) => void;
@@ -43,7 +43,7 @@ export interface PluginAPI {
 		setTimeout: (handler: Function, timeout: number) => number;
 	};
 	message(): {
-		useSignMessageModal: (params: {
+		useSignMessageModal: (parameters: {
 			message: string;
 			walletId: string;
 		}) => [

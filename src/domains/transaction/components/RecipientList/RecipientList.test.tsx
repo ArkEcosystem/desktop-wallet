@@ -76,11 +76,11 @@ describe("RecipientList", () => {
 
 		const removeButtons = screen.getAllByTestId("recipient-list__remove-recipient");
 
-		for (let i = 0; i < removeButtons.length; i++) {
-			if (!i) {
-				expect(removeButtons[i]).toBeDisabled();
+		for (const [index, removeButton] of removeButtons.entries()) {
+			if (!index) {
+				expect(removeButton).toBeDisabled();
 			} else {
-				expect(removeButtons[i]).not.toBeDisabled();
+				expect(removeButton).not.toBeDisabled();
 			}
 		}
 
@@ -94,10 +94,10 @@ describe("RecipientList", () => {
 			<RecipientList onRemove={onRemove} recipients={recipients} isEditable={true} assetSymbol="ARK" />,
 		);
 
-		const removeBtn = getAllByTestId("recipient-list__remove-recipient");
-		expect(removeBtn[0]).toBeTruthy();
+		const removeButton = getAllByTestId("recipient-list__remove-recipient");
+		expect(removeButton[0]).toBeTruthy();
 		await act(async () => {
-			fireEvent.click(removeBtn[0]);
+			fireEvent.click(removeButton[0]);
 		});
 
 		expect(onRemove).toBeCalled();
@@ -110,10 +110,10 @@ describe("RecipientList", () => {
 			<RecipientList recipients={recipients} isEditable={true} assetSymbol="ARK" />,
 		);
 
-		const removeBtn = getAllByTestId("recipient-list__remove-recipient");
-		expect(removeBtn[0]).toBeTruthy();
+		const removeButton = getAllByTestId("recipient-list__remove-recipient");
+		expect(removeButton[0]).toBeTruthy();
 		await act(async () => {
-			fireEvent.click(removeBtn[0]);
+			fireEvent.click(removeButton[0]);
 		});
 
 		expect(onRemove).not.toBeCalled();

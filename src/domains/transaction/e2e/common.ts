@@ -12,12 +12,12 @@ export const goToTransferPage = async (t: any) => {
 				translations.TRANSACTION.PAGE_TRANSACTION_SEND.FORM_STEP.TITLE.replace("{{ticker}}", "DARK"),
 			).exists,
 		)
-		.ok({ timeout: 60000 });
+		.ok({ timeout: 60_000 });
 };
 
 export const goToRegistrationPage = async (t: any) => {
 	await t.click(Selector('[data-testid="navbar__useractions"]'));
-	await t.expect(Selector("li").withText(translations.COMMON.REGISTRATIONS).exists).ok({ timeout: 60000 });
+	await t.expect(Selector("li").withText(translations.COMMON.REGISTRATIONS).exists).ok({ timeout: 60_000 });
 	await t.click(Selector("li").withText(translations.COMMON.REGISTRATIONS));
 	await t.click(Selector("button").withText(translations.COMMON.REGISTER));
 	await t.expect(Selector("[data-testid=Registration__form]").exists).ok();

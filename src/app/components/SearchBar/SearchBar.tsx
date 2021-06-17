@@ -4,14 +4,14 @@ import { Input } from "app/components/Input";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-interface SearchBarProps {
+interface SearchBarProperties {
 	placeholder?: string;
 	className?: string;
 	children?: React.ReactNode;
 	onSearch?: any;
 }
 
-export const SearchBar = ({ placeholder, className, children, onSearch }: SearchBarProps) => {
+export const SearchBar = ({ placeholder, className, children, onSearch }: SearchBarProperties) => {
 	const [query, setQuery] = useState("");
 
 	const { t } = useTranslation();

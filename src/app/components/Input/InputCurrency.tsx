@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 import { Input } from "./Input";
 
-type Props = {
+type Properties = {
 	addons?: any;
 	onChange?: (value: any) => void;
 	as?: React.ElementType<any>;
@@ -11,8 +11,8 @@ type Props = {
 
 const sanitize = (value?: string) => Currency.fromString(value || "").display;
 
-export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
-	({ onChange, value, as: Component, children, ...props }: Props, ref: any) => {
+export const InputCurrency = React.forwardRef<HTMLInputElement, Properties>(
+	({ onChange, value, as: Component, children, ...properties }: Properties, reference: any) => {
 		const [amount, setAmount] = useState<string>(sanitize(value?.toString()));
 
 		useEffect(() => {
@@ -20,7 +20,7 @@ export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
 			setAmount(sanitize(value?.toString()));
 		}, [value]);
 
-		ref = useRef<HTMLInputElement>();
+		reference = useRef<HTMLInputElement>();
 
 		const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
 			const sanitizedValue = sanitize(event.target.value);
@@ -30,7 +30,7 @@ export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
 		};
 
 		if (Component) {
-			return <Component value={amount} onChange={handleInput} ref={ref} {...props} />;
+			return <Component value={amount} onChange={handleInput} ref={reference} {...properties} />;
 		}
 
 		return (
@@ -40,8 +40,8 @@ export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
 					type="text"
 					value={amount}
 					onChange={handleInput}
-					ref={ref}
-					{...props}
+					ref={reference}
+					{...properties}
 				/>
 				{children}
 			</div>

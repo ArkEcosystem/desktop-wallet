@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 import { PluginImage } from "../PluginImage";
 import { PluginSpecs } from "./components/PluginSpecs";
 
-interface Props {
+interface Properties {
 	title?: string;
 	description?: string;
 	logo?: string;
@@ -44,37 +44,37 @@ export const PluginHeader = ({
 	onDisable,
 	onUpdate,
 	updatingStats,
-	...props
-}: Props) => {
+	...properties
+}: Properties) => {
 	const { t } = useTranslation();
 
 	const actions = useMemo(() => {
 		const result: DropdownOption[] = [];
 
-		if (props.hasUpdateAvailable) {
+		if (properties.hasUpdateAvailable) {
 			result.push({
 				label: t("COMMON.UPDATE"),
 				value: "update",
-				disabled: props.isCompatible === false,
+				disabled: properties.isCompatible === false,
 			});
 		}
 
-		if (props.isEnabled) {
+		if (properties.isEnabled) {
 			result.push({ label: t("COMMON.DISABLE"), value: "disable" });
 		} else {
-			result.push({ label: t("COMMON.ENABLE"), value: "enable", disabled: props.isCompatible === false });
+			result.push({ label: t("COMMON.ENABLE"), value: "enable", disabled: properties.isCompatible === false });
 		}
 
 		result.push({ label: t("COMMON.DELETE"), value: "delete" });
 
 		return result;
-	}, [t, props]);
+	}, [t, properties]);
 
 	const getPluginButtons = () => {
-		if (props.isInstalled) {
+		if (properties.isInstalled) {
 			return (
 				<div className="flex items-center space-x-3">
-					{props.hasLaunch && (
+					{properties.hasLaunch && (
 						<Button data-testid="PluginHeader__button--launch" onClick={onLaunch}>
 							{t("COMMON.LAUNCH")}
 						</Button>
@@ -146,8 +146,8 @@ export const PluginHeader = ({
 			<div className="flex w-full">
 				<PluginImage
 					size="lg"
-					logoURL={props.logo}
-					isEnabled={props.isEnabled}
+					logoURL={properties.logo}
+					isEnabled={properties.isEnabled}
 					isUpdating={updatingStats?.percent !== undefined}
 					updatingProgress={updatingStats?.percent}
 					showUpdatingLabel
@@ -156,15 +156,17 @@ export const PluginHeader = ({
 				<div className="flex flex-col justify-between pl-8 w-full min-w-0">
 					<div className="flex justify-between items-end">
 						<div className="flex overflow-hidden flex-col mr-8 space-y-2 leading-tight">
-							<span className="text-2xl font-bold">{props.title}</span>
-							<span className="text-medium text-theme-secondary-500 truncate">{props.description}</span>
+							<span className="text-2xl font-bold">{properties.title}</span>
+							<span className="text-medium text-theme-secondary-500 truncate">
+								{properties.description}
+							</span>
 						</div>
 						<div className="flex">{getPluginButtons()}</div>
 					</div>
 
 					<Divider dashed />
 
-					<PluginSpecs {...props} />
+					<PluginSpecs {...properties} />
 				</div>
 			</div>
 		</div>

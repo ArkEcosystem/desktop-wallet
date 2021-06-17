@@ -14,7 +14,7 @@ import {
 import { MessagePluginService } from "plugins/services/message/MessagePluginService";
 import React from "react";
 
-interface Props {
+interface Properties {
 	children: React.ReactNode;
 }
 
@@ -33,7 +33,7 @@ export const services = [
 	new MessagePluginService(),
 ];
 
-export const PluginProviders = ({ children }: Props) => {
+export const PluginProviders = ({ children }: Properties) => {
 	/* istanbul ignore next */
 	const servicesData = isTest ? [] : services;
 	return (

@@ -106,7 +106,8 @@ describe("useWalletConfig", () => {
 			wrapper,
 		});
 
-		act(() => {
+		// eslint-disable-next-line @typescript-eslint/require-await
+		await act(async () => {
 			result.current.setValue("selectedNetworkIds", ["ark.devnet"]);
 		});
 

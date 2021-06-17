@@ -19,7 +19,7 @@ import { useMessageSigner } from "./hooks/use-message-signer";
 import { LedgerConfirmationStep } from "./LedgerConfirmationStep";
 import { SignedStep } from "./SignedStep";
 
-interface SignMessageProps {
+interface SignMessageProperties {
 	profile: ProfileContracts.IProfile;
 	walletId: string;
 	isOpen: boolean;
@@ -43,7 +43,7 @@ export const SignMessage = ({
 	onClose,
 	onCancel,
 	onSign,
-}: SignMessageProps) => {
+}: SignMessageProperties) => {
 	const [activeTab, setActiveTab] = useState("form");
 
 	const [message, setMessage] = useState<string>();
@@ -65,7 +65,7 @@ export const SignMessage = ({
 
 	const { abortConnectionRetry, connect, isConnected, hasDeviceAvailable, transport } = useLedgerContext();
 
-	const abortRef = useRef(new AbortController());
+	const abortReference = useRef(new AbortController());
 	const { sign } = useMessageSigner(transport);
 
 	const isLedger = wallet.isLedger();
@@ -80,7 +80,7 @@ export const SignMessage = ({
 	const handleSubmit = async ({ message, mnemonic, encryptionPassword }: Record<string, any>) => {
 		setMessage(message);
 
-		const abortSignal = abortRef.current?.signal;
+		const abortSignal = abortReference.current?.signal;
 
 		if (isLedger) {
 			setActiveTab("ledger");
@@ -128,7 +128,7 @@ export const SignMessage = ({
 	}, [isConnected, hasDeviceAvailable, ledgerState]);
 
 	const handleClose = () => {
-		abortRef.current.abort();
+		abortReference.current.abort();
 		onClose?.();
 	};
 

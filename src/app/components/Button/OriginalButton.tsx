@@ -6,7 +6,7 @@ import { ButtonVariant, Size } from "types";
 
 import { getStyles } from "./Button.styles";
 
-type ButtonProps = {
+type ButtonProperties = {
 	variant?: ButtonVariant;
 	size?: Size;
 	isLoading?: boolean;
@@ -16,10 +16,13 @@ type ButtonProps = {
 	iconPosition?: "left" | "right";
 } & React.ButtonHTMLAttributes<any>;
 
-const StyledButton = styled.button<ButtonProps>(getStyles);
+const StyledButton = styled.button<ButtonProperties>(getStyles);
 
-export const OriginalButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
-	({ children, icon, isLoading, iconWidth, iconHeight, iconPosition, ...props }: ButtonProps, ref) => {
+export const OriginalButton = React.forwardRef<HTMLButtonElement, ButtonProperties>(
+	(
+		{ children, icon, isLoading, iconWidth, iconHeight, iconPosition, ...properties }: ButtonProperties,
+		reference,
+	) => {
 		const renderContent = () => {
 			if (isLoading) {
 				return (
@@ -46,7 +49,7 @@ export const OriginalButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
 		};
 
 		return (
-			<StyledButton {...props} ref={ref}>
+			<StyledButton {...properties} ref={reference}>
 				<div className="flex relative items-center space-x-2">{renderContent()}</div>
 			</StyledButton>
 		);

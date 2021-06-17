@@ -76,7 +76,8 @@ describe("HttpPluginService", () => {
 		const fixture = (api: PluginAPI) => {
 			api.http()
 				.get("https://wallets.ark.io")
-				.then((result) => result.json());
+				.then((result) => result.json())
+				.catch((error) => console.log(error));
 		};
 
 		ctrl = new PluginController(config, fixture);

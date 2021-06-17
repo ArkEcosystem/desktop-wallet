@@ -63,8 +63,8 @@ export class ToastService {
 
 	private toast(type: ToastTypeOptions, content: ToastContent, options?: ToastOptions): ToastId {
 		return toast(
-			(props) => (
-				<ToastMessage type={type} {...props}>
+			(properties) => (
+				<ToastMessage type={type} {...properties}>
 					{content}
 				</ToastMessage>
 			),

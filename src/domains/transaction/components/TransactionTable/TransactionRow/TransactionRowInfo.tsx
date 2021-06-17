@@ -4,13 +4,13 @@ import { Tooltip } from "app/components/Tooltip";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-interface Props {
+interface Properties {
 	memo?: string;
 	isMultiSignatureRegistration: boolean;
 	isLedger?: boolean;
 }
 
-export const BaseTransactionRowInfo = ({ memo, isMultiSignatureRegistration, isLedger }: Props) => {
+export const BaseTransactionRowInfo = ({ memo, isMultiSignatureRegistration, isLedger }: Properties) => {
 	const { t } = useTranslation();
 
 	return (

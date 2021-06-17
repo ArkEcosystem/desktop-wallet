@@ -16,7 +16,7 @@ import { SignIn } from "./SignIn";
 
 let profile: Contracts.IProfile;
 
-jest.setTimeout(30000);
+jest.setTimeout(30_000);
 
 describe("SignIn", () => {
 	beforeEach(async () => {
@@ -125,9 +125,11 @@ describe("SignIn", () => {
 
 		const { findByTestId, getByTestId } = renderContext;
 
-		for (const i of [1, 2, 3]) {
+		for (const index of [1, 2, 3]) {
 			await act(async () => {
-				fireEvent.input(getByTestId("SignIn__input--password"), { target: { value: `wrong password ${i}` } });
+				fireEvent.input(getByTestId("SignIn__input--password"), {
+					target: { value: `wrong password ${index}` },
+				});
 			});
 
 			// wait for form to be updated
@@ -145,7 +147,7 @@ describe("SignIn", () => {
 		expect(getByTestId("SignIn__input--password")).toBeDisabled();
 
 		act(() => {
-			jest.advanceTimersByTime(65000);
+			jest.advanceTimersByTime(65_000);
 			jest.clearAllTimers();
 		});
 
@@ -153,7 +155,7 @@ describe("SignIn", () => {
 		await findByTestId("SignIn__submit-button");
 
 		await waitFor(() => expect(getByTestId("Input__error")).toHaveAttribute("data-errortext", "Password invalid"), {
-			timeout: 10000,
+			timeout: 10_000,
 		});
 	});
 });

@@ -4,7 +4,7 @@ import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
 
-import { PaginationProps, PaginationSearch } from ".";
+import { PaginationProperties, PaginationSearch } from ".";
 import { PaginationButton, PaginationWrapper } from "./Pagination.styles";
 
 const Wrapper = styled.nav`
@@ -15,7 +15,13 @@ const PaginationButtonStyled = styled.button`
 	${PaginationButton}
 `;
 
-export const Pagination = ({ totalCount, itemsPerPage, onSelectPage, currentPage, className }: PaginationProps) => {
+export const Pagination = ({
+	totalCount,
+	itemsPerPage,
+	onSelectPage,
+	currentPage,
+	className,
+}: PaginationProperties) => {
 	const [buttonsDisabled, setButtonsDisabled] = useState(false);
 
 	const { t } = useTranslation();
@@ -29,13 +35,13 @@ export const Pagination = ({ totalCount, itemsPerPage, onSelectPage, currentPage
 		let buttons;
 
 		if (totalPages <= buttonCount) {
-			buttons = Array(...Array(totalPages)).map((_, i) => i + 1);
+			buttons = new Array(...new Array(totalPages)).map((_, index) => index + 1);
 		} else if (currentPage <= subRangeLength + 1) {
-			buttons = Array(...Array(buttonCount)).map((_, i) => i + 1);
+			buttons = new Array(...new Array(buttonCount)).map((_, index) => index + 1);
 		} else if (currentPage >= totalPages - subRangeLength) {
-			buttons = Array(...Array(buttonCount)).map((_, i) => totalPages - buttonCount + i + 1);
+			buttons = new Array(...new Array(buttonCount)).map((_, index) => totalPages - buttonCount + index + 1);
 		} else {
-			buttons = Array(...Array(buttonCount)).map((_, i) => currentPage - subRangeLength + i);
+			buttons = new Array(...new Array(buttonCount)).map((_, index) => currentPage - subRangeLength + index);
 		}
 
 		return buttons;

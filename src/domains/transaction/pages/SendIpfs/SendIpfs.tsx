@@ -40,7 +40,7 @@ export const SendIpfs = () => {
 
 	const { fee, fees } = watch();
 
-	const abortRef = useRef(new AbortController());
+	const abortReference = useRef(new AbortController());
 	const transactionBuilder = useTransactionBuilder();
 	const { sign } = useWalletSignatory(activeWallet);
 
@@ -98,7 +98,7 @@ export const SendIpfs = () => {
 				await activeWallet.ledger().connect(transport);
 			}
 
-			const abortSignal = abortRef.current?.signal;
+			const abortSignal = abortReference.current?.signal;
 			const { uuid, transaction } = await transactionBuilder.build("ipfs", transactionInput, activeWallet, {
 				abortSignal,
 			});
@@ -123,7 +123,7 @@ export const SendIpfs = () => {
 
 	const handleBack = () => {
 		// Abort any existing listener
-		abortRef.current.abort();
+		abortReference.current.abort();
 
 		if (activeTab === 1) {
 			return history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`);
@@ -133,7 +133,7 @@ export const SendIpfs = () => {
 	};
 
 	const handleNext = async (suppressWarning?: boolean) => {
-		abortRef.current = new AbortController();
+		abortReference.current = new AbortController();
 
 		const newIndex = activeTab + 1;
 

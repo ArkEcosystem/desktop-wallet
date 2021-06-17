@@ -74,10 +74,10 @@ describe("UpdateWalletName", () => {
 
 		expect(input).toHaveValue(name);
 
-		const submitBtn = getByTestId("UpdateWalletName__submit");
+		const submitButton = getByTestId("UpdateWalletName__submit");
 
 		act(() => {
-			fireEvent.click(submitBtn);
+			fireEvent.click(submitButton);
 		});
 
 		waitFor(() => {

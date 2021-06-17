@@ -29,7 +29,7 @@ export interface DropdownOptionGroup {
 }
 
 export type DropdownVariantType = "options" | "custom" | "votesFilter";
-interface DropdownProps {
+interface DropdownProperties {
 	as?: React.ElementType;
 	children?: React.ReactNode;
 	onSelect?: any;
@@ -49,7 +49,7 @@ const isOptionGroup = (options: DropdownOption | DropdownOptionGroup) =>
 	(options as DropdownOptionGroup).key !== undefined;
 
 const renderOptionGroup = ({ key, hasDivider, title, options }: DropdownOptionGroup, onSelect: any) =>
-	options.length ? (
+	options.length > 0 ? (
 		<div key={key} className="mt-4 first:mt-0">
 			{hasDivider && (
 				<div className="mx-8 -my-2">
@@ -68,7 +68,7 @@ const renderOptionGroup = ({ key, hasDivider, title, options }: DropdownOptionGr
 	) : null;
 
 const renderOptions = (options: DropdownOption[] | DropdownOptionGroup[], onSelect: any, key?: string) => {
-	if (options.length && isOptionGroup(options[0])) {
+	if (options.length > 0 && isOptionGroup(options[0])) {
 		return (
 			<div className="pt-5 pb-1">
 				{(options as DropdownOptionGroup[]).map((optionGroup: DropdownOptionGroup) =>
@@ -173,7 +173,7 @@ export const Dropdown = ({
 	toggleSize,
 	toggleContent,
 	disableToggle,
-}: DropdownProps) => {
+}: DropdownProperties) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const toggle = (e: any) => {
@@ -191,15 +191,15 @@ export const Dropdown = ({
 		}
 	};
 
-	const ref = useRef(null);
+	const reference = useRef(null);
 
 	useEffect(() => {
 		const handleResize = () => {
-			const numberFromPixels = (value: string): number => (value ? parseInt(value.replace("px", "")) : 0);
+			const numberFromPixels = (value: string): number => (value ? Number.parseInt(value.replace("px", "")) : 0);
 
 			const OFFSET = 30;
 
-			const parent = (ref.current as unknown) as HTMLElement;
+			const parent = (reference.current as unknown) as HTMLElement;
 
 			const toggleElement: HTMLElement | null = parent.querySelector('[data-testid="dropdown__toggle"]');
 			const dropdownElement: HTMLElement | null = parent.querySelector('[data-testid="dropdown__content"]');
@@ -261,7 +261,7 @@ export const Dropdown = ({
 		return () => window.removeEventListener("resize", handleResize);
 	}, [isOpen]);
 
-	useEffect(() => clickOutsideHandler(ref, hide), [ref]);
+	useEffect(() => clickOutsideHandler(reference, hide), [reference]);
 
 	useEffect(() => {
 		const handleKeys = (e: any) => {
@@ -279,7 +279,7 @@ export const Dropdown = ({
 	}, [isOpen]);
 
 	return (
-		<div ref={ref} className="relative">
+		<div ref={reference} className="relative">
 			<span data-testid="dropdown__toggle" onClick={(event: any) => !disableToggle && toggle(event)}>
 				{renderToggle(isOpen, toggleContent, toggleIcon, toggleSize)}
 			</span>

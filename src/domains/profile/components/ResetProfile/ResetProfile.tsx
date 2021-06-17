@@ -8,7 +8,7 @@ import { toasts } from "app/services";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-interface ResetProfileProps {
+interface ResetProfileProperties {
 	isOpen: boolean;
 	profile: Contracts.IProfile;
 	onClose?: () => void;
@@ -16,7 +16,7 @@ interface ResetProfileProps {
 	onReset?: () => void;
 }
 
-export const ResetProfile = ({ isOpen, profile, onClose, onCancel, onReset }: ResetProfileProps) => {
+export const ResetProfile = ({ isOpen, profile, onClose, onCancel, onReset }: ResetProfileProperties) => {
 	const { t } = useTranslation();
 
 	const { persist } = useEnvironmentContext();

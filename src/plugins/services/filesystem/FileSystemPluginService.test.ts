@@ -37,7 +37,8 @@ describe("FileSystemPluginService", () => {
 		const fixture = (api: PluginAPI) => {
 			api.filesystem()
 				.askUserToOpenFile()
-				.then((value) => (content = value));
+				.then((value) => (content = value))
+				.catch((error) => console.log(error));
 		};
 
 		ctrl = new PluginController(config, fixture);

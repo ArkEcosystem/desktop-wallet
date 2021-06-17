@@ -3,11 +3,11 @@ import React from "react";
 import { Route } from "react-router-dom";
 import { act, renderWithRouter } from "testing-library";
 
-import { useQueryParams } from "./use-query-params";
+import { useQueryParams as useQueryParameters } from "./use-query-params";
 
 describe("useQueryParams hook", () => {
 	const TestComponent: React.FC = () => {
-		const reloadPath = useQueryParams();
+		const reloadPath = useQueryParameters();
 
 		const handle = () => {
 			reloadPath.get("");

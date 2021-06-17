@@ -1,26 +1,26 @@
 import React from "react";
 
-import { ClipboardButton, ClipboardButtonProps } from "./ClipboardButton";
-import { ClipboardIcon, ClipboardIconProps } from "./ClipboardIcon";
+import { ClipboardButton, ClipboardButtonProperties } from "./ClipboardButton";
+import { ClipboardIcon, ClipboardIconProperties } from "./ClipboardIcon";
 
-export interface ClipboardCommonProps {
+export interface ClipboardCommonProperties {
 	data: string | object;
 	options?: Record<string, any>;
 	children: React.ReactNode;
 }
 
-type ClipboardProps = ClipboardIconProps | ClipboardButtonProps;
+type ClipboardProperties = ClipboardIconProperties | ClipboardButtonProperties;
 
-export const Clipboard = (props: ClipboardProps) => {
-	if (!props.children) {
+export const Clipboard = (properties: ClipboardProperties) => {
+	if (!properties.children) {
 		return null;
 	}
 
-	if (props.variant === "icon") {
-		return <ClipboardIcon {...props}>{props.children}</ClipboardIcon>;
+	if (properties.variant === "icon") {
+		return <ClipboardIcon {...properties}>{properties.children}</ClipboardIcon>;
 	}
 
-	return <ClipboardButton {...props}>{props.children}</ClipboardButton>;
+	return <ClipboardButton {...properties}>{properties.children}</ClipboardButton>;
 };
 
 Clipboard.defaultProps = {

@@ -27,7 +27,7 @@ import { useHistory } from "react-router-dom";
 
 const categories = ["gaming", "utility", "exchange", "other"];
 
-interface LatestPluginsProps {
+interface LatestPluginsProperties {
 	onCurrentViewChange: (view: string) => void;
 	onDelete: any;
 	onSelect: (pluginId: string) => void;
@@ -51,7 +51,7 @@ const LatestPlugins = ({
 	onEnable,
 	onDisable,
 	isLoading,
-}: LatestPluginsProps) => {
+}: LatestPluginsProperties) => {
 	const { t } = useTranslation();
 
 	const renderPlugins = (plugins: any[], category: string) => {
@@ -244,8 +244,8 @@ export const PluginManager = () => {
 		try {
 			pluginManager.plugins().findById(pluginData.id)?.enable(activeProfile, { autoRun: true });
 			persist();
-		} catch (e) {
-			toasts.error(t("PLUGINS.ENABLE_FAILURE", { name: pluginData.title, msg: e.message }));
+		} catch (error) {
+			toasts.error(t("PLUGINS.ENABLE_FAILURE", { name: pluginData.title, msg: error.message }));
 		}
 	};
 
@@ -341,7 +341,7 @@ export const PluginManager = () => {
 		};
 
 		if (name !== "latest" && name !== "all") {
-			menuItem.count = allPlugins.filter((pkg) => pkg.hasCategory(name)).length;
+			menuItem.count = allPlugins.filter((package_) => package_.hasCategory(name)).length;
 		}
 
 		return menuItem;

@@ -7,9 +7,9 @@ import React, { useState } from "react";
 import { act, env, fireEvent, render } from "utils/testing-library";
 
 import { InputFee } from "./InputFee";
-import { InputFeeProps, InputFeeSimpleValue, InputFeeViewType } from "./InputFee.contracts";
+import { InputFeeProperties, InputFeeSimpleValue, InputFeeViewType } from "./InputFee.contracts";
 
-const getDefaultProps = () => ({
+const getDefaultProperties = () => ({
 	min: "0.006",
 	max: "0.5",
 	avg: "0.456",
@@ -23,7 +23,7 @@ const getDefaultProps = () => ({
 	onChangeSimpleValue: jest.fn(),
 });
 
-let defaultProps: InputFeeProps;
+let defaultProps: InputFeeProperties;
 let network: Networks.Network;
 let profile: Contracts.IProfile;
 let Wrapper: React.FC;
@@ -34,7 +34,7 @@ describe("InputFee", () => {
 		network = profile.wallets().first().network();
 
 		defaultProps = {
-			...getDefaultProps(),
+			...getDefaultProperties(),
 			network,
 			profile,
 		};
@@ -45,19 +45,19 @@ describe("InputFee", () => {
 			const [viewType, setViewType] = useState(defaultProps.viewType);
 			const [simpleValue, setSimpleValue] = useState(defaultProps.simpleValue);
 
-			const handleChangeValue = (val: string) => {
-				setValue(val);
-				defaultProps.onChange(val);
+			const handleChangeValue = (value_: string) => {
+				setValue(value_);
+				defaultProps.onChange(value_);
 			};
 
-			const handleChangeViewType = (val: InputFeeViewType) => {
-				setViewType(val);
-				defaultProps.onChangeViewType(val);
+			const handleChangeViewType = (value_: InputFeeViewType) => {
+				setViewType(value_);
+				defaultProps.onChangeViewType(value_);
 			};
 
-			const handleChangeSimpleValue = (val: InputFeeSimpleValue) => {
-				setSimpleValue(val);
-				defaultProps.onChangeSimpleValue(val);
+			const handleChangeSimpleValue = (value_: InputFeeSimpleValue) => {
+				setSimpleValue(value_);
+				defaultProps.onChangeSimpleValue(value_);
 			};
 
 			return (
@@ -120,9 +120,9 @@ describe("InputFee", () => {
 
 	describe("simple view type", () => {
 		it.each([
-			[translations.FEES.SLOW, getDefaultProps().min],
-			[translations.FEES.AVERAGE, getDefaultProps().avg],
-			[translations.FEES.FAST, getDefaultProps().max],
+			[translations.FEES.SLOW, getDefaultProperties().min],
+			[translations.FEES.AVERAGE, getDefaultProperties().avg],
+			[translations.FEES.FAST, getDefaultProperties().max],
 		])("should update value when clicking button %s", (optionText, optionValue) => {
 			const { asFragment } = render(<Wrapper />);
 
@@ -149,14 +149,14 @@ describe("InputFee", () => {
 			defaultProps.viewType = InputFeeViewType.Advanced;
 			const { asFragment } = render(<Wrapper />);
 
-			const inputEl = screen.getByTestId("InputCurrency");
+			const inputElement = screen.getByTestId("InputCurrency");
 
 			act(() => {
-				fireEvent.input(inputEl, { target: { value: "0.447" } });
+				fireEvent.input(inputElement, { target: { value: "0.447" } });
 			});
 
 			expect(defaultProps.onChange).toHaveBeenCalledWith("0.447");
-			expect(inputEl).toHaveValue("0.447");
+			expect(inputElement).toHaveValue("0.447");
 			expect(asFragment()).toMatchSnapshot();
 		});
 

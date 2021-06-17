@@ -16,13 +16,13 @@ const TabStyled = styled(OptionButton)<{ isActive: boolean; isComplete: boolean;
 	min-height: 56px;
 `;
 
-interface TabProps {
+interface TabProperties {
 	activeTab: number;
 	tabId: number;
 	wordPosition: number;
 }
 
-const Tab = ({ activeTab, tabId, wordPosition }: TabProps) => {
+const Tab = ({ activeTab, tabId, wordPosition }: TabProperties) => {
 	const { isActive, isComplete, isPending } = React.useMemo(
 		() => ({
 			isActive: activeTab === tabId,
@@ -58,12 +58,12 @@ const Tab = ({ activeTab, tabId, wordPosition }: TabProps) => {
 	);
 };
 
-interface Props {
+interface Properties {
 	activeTab: number;
 	wordPositions: number[];
 }
 
-export const MnemonicVerificationProgress = ({ activeTab, wordPositions }: Props) => (
+export const MnemonicVerificationProgress = ({ activeTab, wordPositions }: Properties) => (
 	<ul className="flex space-x-2">
 		{wordPositions.map((position, index) => (
 			<Tab key={index} activeTab={activeTab} tabId={index} wordPosition={position} />

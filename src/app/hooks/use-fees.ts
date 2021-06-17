@@ -13,7 +13,7 @@ export const useFees = (profile: ProfileContracts.IProfile) => {
 
 			try {
 				transactionFees = env.fees().findByType(coin, network, type);
-			} catch (error) {
+			} catch {
 				await env.fees().syncAll(profile);
 
 				transactionFees = env.fees().findByType(coin, network, type);

@@ -40,7 +40,7 @@ export const scannerReducer = (state: State, action: Action): State => {
 		case "toggleSelectAll": {
 			const { selected, wallets } = state;
 
-			if (!selected.length || wallets.length > selected.length) {
+			if (selected.length === 0 || wallets.length > selected.length) {
 				return { ...state, selected: wallets.map(pathMapper) };
 			}
 

@@ -5,12 +5,12 @@ import { useEnvironmentContext } from "app/contexts";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-interface SyncReceivedTransactionsParams {
+interface SyncReceivedTransactionsParameters {
 	lookupLimit?: number;
 	allowedTransactionTypes?: string[];
 }
 
-type NotifyReceivedTransactionsParams = SyncReceivedTransactionsParams & { profile: ProfileContracts.IProfile };
+type NotifyReceivedTransactionsParameters = SyncReceivedTransactionsParameters & { profile: ProfileContracts.IProfile };
 
 const fetchRecentProfileTransactions = async (profile: ProfileContracts.IProfile, limit: number) => {
 	const query = {
@@ -89,7 +89,7 @@ const notifyReceivedTransactions: any = async ({
 	profile,
 	lookupLimit = 10,
 	allowedTransactionTypes = ["transfer", "multiPayment"],
-}: NotifyReceivedTransactionsParams) => {
+}: NotifyReceivedTransactionsParameters) => {
 	const allRecentTransactions = await fetchRecentProfileTransactions(profile, lookupLimit);
 	// @ts-ignore
 	const newUnseenTransactions = filterUnseenTransactions(profile, allRecentTransactions, allowedTransactionTypes);
@@ -105,8 +105,9 @@ const findNotificationByVersion = (profile: ProfileContracts.IProfile, version?:
 		.values()
 		.find((n) => n.type === "wallet" && n.action === "update" && n?.meta?.version === version);
 
-const notifyWalletUpdate = (env: Environment, t: any) => ({ version }: { version: string }) => {
-	env.profiles()
+const notifyWalletUpdate = (environment: Environment, t: any) => ({ version }: { version: string }) => {
+	environment
+		.profiles()
 		.values()
 		.forEach((profile: ProfileContracts.IProfile) => {
 			if (findNotificationByVersion(profile, version)) {
@@ -125,8 +126,9 @@ const notifyWalletUpdate = (env: Environment, t: any) => ({ version }: { version
 		});
 };
 
-const deleteNotificationsByVersion = (env: Environment) => ({ version }: { version?: string }) => {
-	env.profiles()
+const deleteNotificationsByVersion = (environment: Environment) => ({ version }: { version?: string }) => {
+	environment
+		.profiles()
 		.values()
 		.forEach((profile: ProfileContracts.IProfile) => {
 			const notification = findNotificationByVersion(profile, version);
@@ -146,11 +148,13 @@ export const useNotifications = () => {
 	const profiles = env.profiles();
 
 	return useMemo(() => {
-		const syncReceivedTransactions = async (params?: SyncReceivedTransactionsParams) => {
+		const syncReceivedTransactions = async (parameters?: SyncReceivedTransactionsParameters) => {
 			const savedNotifications = await Promise.all(
 				profiles
 					.values()
-					.map((profile: ProfileContracts.IProfile) => notifyReceivedTransactions({ ...params, profile })),
+					.map((profile: ProfileContracts.IProfile) =>
+						notifyReceivedTransactions({ ...parameters, profile }),
+					),
 			);
 
 			await persist();

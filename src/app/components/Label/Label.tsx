@@ -3,13 +3,13 @@ import { Size } from "types";
 
 import { getStyles } from "./Label.styles";
 
-interface LabelProps {
+interface LabelProperties {
 	color?: "primary" | "success" | "danger" | "warning" | "neutral";
 	size?: Size;
 	variant?: "solid";
 }
 
-export const Label = styled.div<LabelProps>(getStyles);
+export const Label = styled.div<LabelProperties>(getStyles);
 
 Label.defaultProps = {
 	color: "primary",
