@@ -102,6 +102,44 @@
 	--theme-shadow-opacity-inner: 0.06;
 }
 
+.theme-light-green {
+	--theme-color-primary-rgb: 40, 149, 72;
+	--theme-color-primary-50: #f6fdf8;
+	--theme-color-primary-100: #e2f0e6; /* green-200 */
+	--theme-color-primary-200: #e2f0e6;
+	--theme-color-primary-300: #8cc69d; /* green-400 */
+	--theme-color-primary-400: #8cc69d;
+	--theme-color-primary-500: #42b263;
+	--theme-color-primary-600: #289548;
+	--theme-color-primary-700: #307845;
+	--theme-color-primary-800: #2b4f35;
+	--theme-color-primary-900: #26372b;
+
+	--theme-background-color: var(--theme-white);
+	--theme-secondary-background-color: var(--theme-color-secondary-100);
+
+	--theme-text-color: var(--theme-color-secondary-900);
+	--theme-secondary-text-color: var(--theme-color-secondary-700);
+
+	--theme-scrollbar-color: var(--theme-color-primary-100);
+	--theme-scrollbar-hover-color: var(--theme-color-primary-200);
+
+	--theme-shadow-color: 0, 0, 0;
+
+	--theme-shadow-opacity-xs: 0.05;
+	--theme-shadow-opacity-sm: 0.05;
+	--theme-shadow-opacity-base-primary: 0.1;
+	--theme-shadow-opacity-base-secondary: 0.06;
+	--theme-shadow-opacity-md-primary: 0.1;
+	--theme-shadow-opacity-md-secondary: 0.06;
+	--theme-shadow-opacity-lg-primary: 0.1;
+	--theme-shadow-opacity-lg-secondary: 0.05;
+	--theme-shadow-opacity-xl-primary: 0.1;
+	--theme-shadow-opacity-xl-secondary: 0.04;
+	--theme-shadow-opacity-2xl: 0.25;
+	--theme-shadow-opacity-inner: 0.06;
+}
+
 .theme-dark {
 	--theme-background-color: var(--theme-color-secondary-900);
 	--theme-secondary-background-color: var(--theme-black);
