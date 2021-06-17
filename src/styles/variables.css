@@ -16,11 +16,11 @@
 	--theme-color-blue-800: #0b4dc7;
 	--theme-color-blue-900: #173e85;
 
-	--theme-color-green-rgb: 40, 149, 72;
+	--theme-color-green-rgb: 40, 14, 72;
 	--theme-color-green-50: #f6fdf8;
-	--theme-color-green-100: #e2f0e6; /* green-200 */
+	--theme-color-green-100: #edf7f0;
 	--theme-color-green-200: #e2f0e6;
-	--theme-color-green-300: #8cc69d; /* green-400 */
+	--theme-color-green-300: #b0dbbc;
 	--theme-color-green-400: #8cc69d;
 	--theme-color-green-500: #42b263;
 	--theme-color-green-600: #289548;
@@ -55,17 +55,17 @@
 	--theme-color-secondary-900: #212225;
 	--theme-color-secondary-900-rgb: 33, 34, 37;
 
-	--theme-color-success-rgb: 40, 149, 72;
-	--theme-color-success-50: #f6fdf8;
-	--theme-color-success-100: #edf7f0;
-	--theme-color-success-200: #e2f0e6;
-	--theme-color-success-300: #b0dbbc;
-	--theme-color-success-400: #8cc69d;
-	--theme-color-success-500: #42b263;
-	--theme-color-success-600: #289548;
-	--theme-color-success-700: #307845;
-	--theme-color-success-800: #2b4f35;
-	--theme-color-success-900: #26372b;
+	--theme-color-success-rgb: var(--theme-color-green-rgb);
+	--theme-color-success-50: var(--theme-color-green-50);
+	--theme-color-success-100: var(--theme-color-green-100);
+	--theme-color-success-200: var(--theme-color-green-200);
+	--theme-color-success-300: var(--theme-color-green-300);
+	--theme-color-success-400: var(--theme-color-green-400);
+	--theme-color-success-500: var(--theme-color-green-500);
+	--theme-color-success-600: var(--theme-color-green-600);
+	--theme-color-success-700: var(--theme-color-green-700);
+	--theme-color-success-800: var(--theme-color-green-800);
+	--theme-color-success-900: var(--theme-color-green-900);
 
 	--theme-color-warning-rgb: 255, 174, 16;
 	--theme-color-warning-50: #fff8eb;
@@ -133,9 +133,9 @@
 .theme-light-green {
 	--theme-color-primary-rgb: var(--theme-color-green-rgb);
 	--theme-color-primary-50: var(--theme-color-green-50);
-	--theme-color-primary-100: var(--theme-color-green-100);
+	--theme-color-primary-100: var(--theme-color-green-200);
 	--theme-color-primary-200: var(--theme-color-green-200);
-	--theme-color-primary-300: var(--theme-color-green-300);
+	--theme-color-primary-300: var(--theme-color-green-400);
 	--theme-color-primary-400: var(--theme-color-green-400);
 	--theme-color-primary-500: var(--theme-color-green-500);
 	--theme-color-primary-600: var(--theme-color-green-600);
