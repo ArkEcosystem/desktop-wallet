@@ -15,6 +15,7 @@ module.exports = {
 	},
 	plugins: [
 		"@typescript-eslint",
+		"array-func",
 		"jest",
 		"prettier",
 		"react-hooks",
@@ -65,6 +66,9 @@ module.exports = {
 		"@typescript-eslint/restrict-plus-operands": "warn",
 		"@typescript-eslint/restrict-template-expressions": "warn",
 		"@typescript-eslint/unbound-method": "warn",
+		"array-func/avoid-reverse": "error",
+		"array-func/prefer-flat-map": "error",
+		"array-func/prefer-flat": "error",
 		"arrow-body-style": ["error", "as-needed"],
 		curly: "error",
 		"import/default": "error",
