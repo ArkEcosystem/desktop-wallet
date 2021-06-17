@@ -43,7 +43,7 @@ export const MultiPaymentDetail = ({ isOpen, transaction, onClose }: MultiPaymen
 				isSent={transaction.isSent()}
 			/>
 
-			<TransactionFee currency={wallet.currency()} value={transaction.fee().toHuman()} />
+			<TransactionFee currency={wallet.currency()} value={transaction.fee()} />
 
 			{transaction.memo() && <TransactionMemo memo={transaction.memo()} />}
 

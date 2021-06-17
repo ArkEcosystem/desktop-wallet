@@ -29,7 +29,7 @@ export const LegacyMagistrateDetail = ({ isOpen, transaction, onClose }: LegacyM
 				border={false}
 			/>
 
-			<TransactionFee currency={wallet.currency()} value={transaction.fee().toHuman()} />
+			<TransactionFee currency={wallet.currency()} value={transaction.fee()} />
 
 			<TransactionTimestamp timestamp={transaction.timestamp()} />
 
