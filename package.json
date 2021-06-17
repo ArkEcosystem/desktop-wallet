@@ -33,7 +33,7 @@
 		"electron-rebuild": "electron-builder install-app-deps",
 		"format": "yarn lint && yarn prettier",
 		"postinstall": "yarn electron-rebuild",
-		"lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+		"lint": "eslint '*/**/*.{js,ts,tsx}' --fix",
 		"prettier": "prettier --write \"./*.{ts,tsx,js,json,md}\" \"./**/*.{ts,tsx,js,json,md}\"",
 		"start": "cross-env BROWSER=none react-app-rewired start",
 		"test": "react-app-rewired --expose-gc test --env=./src/tests/custom-env.js --logHeapUsage",
