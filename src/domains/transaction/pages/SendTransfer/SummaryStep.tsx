@@ -1,6 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import {
 	TransactionAmount,
 	TransactionFee,

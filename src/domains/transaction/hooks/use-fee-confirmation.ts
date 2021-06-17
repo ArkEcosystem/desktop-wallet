@@ -1,5 +1,4 @@
 import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
 import { FeeWarningVariant } from "domains/transaction/components/FeeWarning";

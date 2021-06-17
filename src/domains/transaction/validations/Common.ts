@@ -1,5 +1,4 @@
 import { Networks } from "@arkecosystem/platform-sdk";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 
 export const common = (t: any) => ({
 	fee: (balance = 0, network?: Networks.Network) => ({
@@ -35,7 +34,7 @@ export const common = (t: any) => ({
 					});
 				}
 
-				if (Math.sign(fee) === -1) {
+				if (Math.sign(+fee) === -1) {
 					return t("TRANSACTION.VALIDATION.FEE_NEGATIVE");
 				}
 

@@ -1,4 +1,3 @@
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { useFormField } from "app/components/Form/useFormField";
 import { Range } from "app/components/Range";
 import cn from "classnames";
