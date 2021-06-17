@@ -1,15 +1,15 @@
 import React from "react";
 import tw, { css, styled } from "twin.macro";
 
-export const ButtonGroup = ({ children }: React.PropsWithChildren<{}>) => (
-	<div data-testid="ButtonGroup" role="radiogroup" className="w-full inline-flex items-center space-x-2">
+export const ButtonGroup = ({ children }: React.PropsWithChildren<Record<string, unknown>>) => (
+	<div data-testid="ButtonGroup" role="radiogroup" className="w-full inline-flex items-center space-x-3">
 		{children}
 	</div>
 );
 
 const ButtonGroupOptionStyled = styled.button(() => [
 	tw`flex items-center justify-center w-full h-full`,
-	tw`px-5 py-4 focus:outline-none font-semibold text-theme-secondary-700 `,
+	tw`p-3 focus:outline-none font-semibold text-theme-secondary-700 `,
 	tw`rounded border-2 border-theme-primary-100`,
 	tw`transition-colors duration-300`,
 	tw`dark:(border-theme-secondary-800 text-theme-secondary-200)`,

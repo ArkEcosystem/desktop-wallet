@@ -28,16 +28,16 @@ export const InputFeeSimple = ({
 				setSelectedValue={() => onChange(optionValue as InputFeeSimpleValue)}
 			>
 				<div>
-					<div className="mb-3">{label}</div>
+					<div className="mb-2">{label}</div>
 					{loading ? (
 						<Skeleton width={100} className="h-3 my-1" />
 					) : (
 						<>
-							<div className="font-normal text-sm">
+							<div className="text-sm">
 								{displayValue} {ticker}
 							</div>
 							{showConvertedValues && (
-								<div className="font-normal text-sm text-theme-secondary-500 mt-3">
+								<div className="text-sm text-theme-secondary-500 mt-2">
 									<Amount normalize={false} ticker={exchangeTicker} value={displayValueConverted} />
 								</div>
 							)}
