@@ -275,7 +275,7 @@ export const AddRecipient = ({
 	};
 
 	const addons =
-		!errors.amount && !errors.fee && isSenderFilled && !senderWallet!.network().isTest()
+		!errors.amount && !errors.fee && isSenderFilled && !senderWallet?.network().isTest()
 			? {
 					end: (
 						<Amount
