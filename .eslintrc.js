@@ -155,6 +155,7 @@ module.exports = {
 		"unicorn/error-message": "warn", // @TODO: set to error and fix resulting issues
 		"unicorn/explicit-length-check": "warn", // @TODO: set to error and fix resulting issues
 		"unicorn/filename-case": "warn", // @TODO: set to error and fix resulting issues
+		"unicorn/import-style": "warn", // @TODO: set to error and fix resulting issues
 		"unicorn/no-abusive-eslint-disable": "warn", // @TODO: set to error and fix resulting issues
 		"unicorn/no-array-callback-reference": "warn", // @TODO: set to error and fix resulting issues
 		"unicorn/no-array-for-each": "warn", // @TODO: set to error and fix resulting issues
@@ -168,9 +169,9 @@ module.exports = {
 		"unicorn/prefer-node-protocol": "off",
 		"unicorn/prefer-number-properties": "warn", // @TODO: set to error and fix resulting issues
 		"unicorn/prefer-prototype-methods": "warn", // @TODO: set to error and fix resulting issues
-		"unicorn/prevent-abbreviations": "error", // @TODO: set to error and fix resulting issues
 		"unicorn/prefer-spread": "warn", // @TODO: set to error and fix resulting issues
 		"unicorn/prefer-string-slice": "warn", // @TODO: set to error and fix resulting issues
+		"unicorn/prevent-abbreviations": "error", // @TODO: set to error and fix resulting issues
 		"unicorn/prevent-abbreviations": "warn", // @TODO: set to error and fix resulting issues
 		"unused-imports/no-unused-imports-ts": "error",
 	},
