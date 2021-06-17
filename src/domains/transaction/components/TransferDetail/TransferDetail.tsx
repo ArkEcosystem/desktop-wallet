@@ -35,7 +35,7 @@ export const TransferDetail = ({ isOpen, transaction, onClose }: TransferDetailP
 			<TransactionRecipients currency={wallet.currency()} recipients={[{ address: transaction.recipient() }]} />
 
 			<TransactionAmount
-				amount={transaction.amount().toHuman()}
+				amount={transaction.amount()}
 				convertedAmount={transaction.convertedAmount()}
 				currency={wallet.currency()}
 				exchangeCurrency={wallet.exchangeCurrency()}

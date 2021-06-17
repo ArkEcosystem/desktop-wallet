@@ -35,7 +35,7 @@ export const MultiPaymentDetail = ({ isOpen, transaction, onClose }: MultiPaymen
 			<TransactionRecipients currency={wallet.currency()} recipients={transaction.recipients()} />
 
 			<TransactionAmount
-				amount={transaction.amount().toHuman()}
+				amount={transaction.amount()}
 				convertedAmount={transaction.convertedAmount()}
 				currency={wallet.currency()}
 				exchangeCurrency={wallet.exchangeCurrency()}
