@@ -42,7 +42,7 @@ export const TransferDetail = ({ isOpen, transaction, onClose }: TransferDetailP
 				isSent={transaction.isSent()}
 			/>
 
-			<TransactionFee currency={wallet.currency()} value={transaction.fee()} />
+			<TransactionFee currency={wallet.currency()} value={transaction.fee().toHuman()} />
 
 			{transaction.memo() && <TransactionMemo memo={transaction.memo()} />}
 

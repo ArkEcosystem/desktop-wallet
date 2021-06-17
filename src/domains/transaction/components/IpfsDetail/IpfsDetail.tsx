@@ -32,7 +32,7 @@ export const IpfsDetail = ({ isOpen, transaction, onClose }: IpfsDetailPropertie
 				border={false}
 			/>
 
-			<TransactionFee currency={wallet.currency()} value={transaction.fee()} />
+			<TransactionFee currency={wallet.currency()} value={transaction.fee().toHuman()} />
 
 			<TransactionDetail
 				label={t("TRANSACTION.IPFS_HASH")}

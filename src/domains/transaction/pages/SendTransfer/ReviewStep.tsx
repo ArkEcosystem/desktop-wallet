@@ -1,6 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Header } from "app/components/Header";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import {
@@ -19,10 +17,10 @@ export const ReviewStep = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) =
 
 	const { fee, recipients, memo } = watch();
 
-	let amount = BigNumber.ZERO;
+	let amount = 0;
 
 	for (const recipient of recipients) {
-		amount = amount.plus(recipient.amount);
+		amount += recipient.amount;
 	}
 
 	useEffect(() => {
@@ -42,13 +40,7 @@ export const ReviewStep = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) =
 			{memo && <TransactionMemo memo={memo} />}
 
 			<div className="mt-2">
-				<TotalAmountBox
-					amount={amount.toSatoshi(wallet.config().get(Coins.ConfigKey.CurrencyDecimals))}
-					fee={BigNumber.make(fee)
-						.toSatoshi(wallet.config().get(Coins.ConfigKey.CurrencyDecimals))
-						.toString()}
-					ticker={wallet.currency()}
-				/>
+				<TotalAmountBox amount={amount} fee={fee} ticker={wallet.currency()} />
 			</div>
 		</section>
 	);

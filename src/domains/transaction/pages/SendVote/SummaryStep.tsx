@@ -18,6 +18,6 @@ export const SummaryStep = ({
 	<TransactionSuccessful transaction={transaction} senderWallet={senderWallet}>
 		<TransactionVotes votes={votes} unvotes={unvotes} />
 
-		<TransactionFee currency={senderWallet.currency()} value={transaction.fee()} paddingPosition="top" />
+		<TransactionFee currency={senderWallet.currency()} value={transaction.fee().toHuman()} paddingPosition="top" />
 	</TransactionSuccessful>
 );

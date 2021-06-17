@@ -1,4 +1,3 @@
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Amount } from "app/components/Amount";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
@@ -10,8 +9,8 @@ import { useTranslation } from "react-i18next";
 import { TransactionDetail, TransactionDetailProperties } from "../TransactionDetail";
 
 type TransactionAmountProperties = {
-	amount: BigNumber;
-	convertedAmount?: BigNumber;
+	amount: number;
+	convertedAmount?: number;
 	currency: string;
 	exchangeCurrency?: string;
 	isMultiPayment?: boolean;

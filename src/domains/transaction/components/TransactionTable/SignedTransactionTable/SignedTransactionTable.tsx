@@ -137,7 +137,7 @@ const Row = ({
 			<TableCell innerClassName="justify-end">
 				<BaseTransactionRowAmount
 					isSent={true}
-					total={transaction.amount().plus(transaction.fee())}
+					total={transaction.amount().plus(transaction.fee()).toHuman()}
 					wallet={wallet}
 				/>
 			</TableCell>

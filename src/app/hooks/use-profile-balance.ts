@@ -1,5 +1,4 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { useEffect, useState } from "react";
 
 interface BalanceProperties {
@@ -8,7 +7,7 @@ interface BalanceProperties {
 }
 
 export const useProfileBalance = ({ profile, isLoading = false }: BalanceProperties) => {
-	const [convertedBalance, setConvertedBalance] = useState(BigNumber.ZERO);
+	const [convertedBalance, setConvertedBalance] = useState(0);
 
 	const balance = profile?.status().isRestored() ? profile?.convertedBalance() : convertedBalance;
 
@@ -21,7 +20,7 @@ export const useProfileBalance = ({ profile, isLoading = false }: BalancePropert
 			return;
 		}
 
-		if (balance?.isEqualTo(convertedBalance)) {
+		if (balance === convertedBalance) {
 			return;
 		}
 

@@ -240,7 +240,7 @@ export const WalletHeader = ({
 	return (
 		<>
 			<header className="flex items-center" data-testid="WalletHeader">
-				<div className="flex items-center pr-12 w-1/2 border-r h-13 border-theme-secondary-800">
+				<div className="flex items-center w-1/2 pr-12 border-r h-13 border-theme-secondary-800">
 					<div className="flex -space-x-1">
 						<NetworkIcon
 							coin={wallet.coinId()}
@@ -252,7 +252,7 @@ export const WalletHeader = ({
 						<Avatar size="lg" address={wallet.address()} shadowClassName="ring-theme-secondary-900" />
 					</div>
 
-					<div className="flex overflow-hidden flex-col py-2 pr-2 -my-2 ml-4 -mr-2 w-full">
+					<div className="flex flex-col w-full py-2 pr-2 ml-4 -my-2 -mr-2 overflow-hidden">
 						<div className="flex items-center space-x-5 text-theme-secondary-text">
 							{wallet.alias() && (
 								<span data-testid="WalletHeader__name" className="text-sm font-semibold">
@@ -269,7 +269,7 @@ export const WalletHeader = ({
 							</div>
 						</div>
 
-						<div className="flex items-center space-x-5 w-full">
+						<div className="flex items-center w-full space-x-5">
 							<TruncateMiddleDynamic
 								value={wallet.address()}
 								className="flex-1 text-lg font-semibold text-white whitespace-nowrap"
@@ -306,7 +306,7 @@ export const WalletHeader = ({
 					</div>
 				</div>
 
-				<div className="flex items-center pl-12 w-1/2 h-13">
+				<div className="flex items-center w-1/2 pl-12 h-13">
 					<div className="flex flex-col mr-auto">
 						<div className="flex items-center text-sm font-semibold text-theme-secondary-text">
 							<span>{t("COMMON.BALANCE")}:</span>
@@ -391,9 +391,7 @@ export const WalletHeader = ({
 					<Button
 						data-testid="WalletHeader__send-button"
 						disabled={
-							wallet.balance().isZero() ||
-							!wallet.hasBeenFullyRestored() ||
-							!wallet.hasSyncedWithNetwork()
+							wallet.balance() === 0 || !wallet.hasBeenFullyRestored() || !wallet.hasSyncedWithNetwork()
 						}
 						className="my-auto ml-1"
 						onClick={onSend}

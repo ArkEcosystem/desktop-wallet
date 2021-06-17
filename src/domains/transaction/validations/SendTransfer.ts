@@ -1,6 +1,5 @@
 import { Coins, Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 
 import { RecipientListItem } from "../components/RecipientList/RecipientList.models";
 
@@ -58,19 +57,19 @@ export const sendTransfer = (t: any) => ({
 	}),
 	amount: (
 		network: Networks.Network,
-		balance: BigNumber,
+		balance: number,
 		recipients: RecipientListItem[],
 		isSingleRecipient: boolean,
 	) => ({
 		validate: {
 			valid: (amountValue: any) => {
-				const amount = BigNumber.make(amountValue || 0);
-				const hasSufficientBalance = balance?.isGreaterThanOrEqualTo(amount) && !balance?.isZero();
+				const amount = amountValue || 0;
+				const hasSufficientBalance = Number(balance || 0) >= amount && balance !== 0;
 				const shouldRequire = isSingleRecipient || recipients.length === 0;
 
 				if (!hasSufficientBalance) {
 					return t("TRANSACTION.VALIDATION.LOW_BALANCE", {
-						balance: balance?.toHuman(),
+						balance,
 						coinId: network?.coin(),
 					});
 				}

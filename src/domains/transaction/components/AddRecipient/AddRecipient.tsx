@@ -28,7 +28,7 @@ const ToggleButtons = ({ isSingle, disableMultiple, onChange }: ToggleButtonProp
 				</div>
 				<div>
 					<Tooltip content={t("TRANSACTION.RECIPIENTS_HELPTEXT", { count: 64 })}>
-						<div className="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200">
+						<div className="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200">
 							<Icon width={10} height={10} name="QuestionMark" />
 						</div>
 					</Tooltip>
@@ -118,19 +118,19 @@ export const AddRecipient = ({
 	const senderWallet = useMemo(() => profile.wallets().findByAddress(senderAddress), [profile, senderAddress]);
 
 	const remainingBalance = useMemo(() => {
-		const senderBalance = senderWallet?.balance().denominated() || BigNumber.ZERO;
+		const senderBalance = senderWallet?.balance() || 0;
 
 		if (isSingle) {
 			return senderBalance;
 		}
 
-		return addedRecipients.reduce((sum, item) => sum.minus(item.amount!), senderBalance);
+		return addedRecipients.reduce((sum, item) => sum - Number(item.amount || 0), senderBalance);
 	}, [addedRecipients, senderWallet, isSingle]);
 
 	const maximumAmount = useMemo(() => {
-		const maximum = senderWallet?.balance().denominated().minus(fee);
+		const maximum = (senderWallet?.balance() || 0) - fee;
 
-		return maximum?.isPositive() ? maximum : undefined;
+		return Math.sign(maximum) ? maximum : undefined;
 	}, [fee, senderWallet]);
 
 	const isSenderFilled = useMemo(() => !!network?.id() && !!senderAddress, [network, senderAddress]);
@@ -147,7 +147,7 @@ export const AddRecipient = ({
 	}, [register]);
 
 	useEffect(() => {
-		const remaining = remainingBalance.isLessThanOrEqualTo(BigNumber.ZERO) ? BigNumber.ZERO : remainingBalance;
+		const remaining = remainingBalance <= 0 ? 0 : remainingBalance;
 
 		setValue("remainingBalance", remaining);
 	}, [remainingBalance, setValue, amount, recipientAddress, fee, senderAddress]);
@@ -181,7 +181,7 @@ export const AddRecipient = ({
 
 		if (isSingle && addedRecipients.length === 1) {
 			setValue("amount", addedRecipients[0].amount);
-			setValue("displayAmount", addedRecipients[0].amount?.toHuman());
+			setValue("displayAmount", addedRecipients[0].amount);
 			setValue("recipientAddress", addedRecipients[0].address);
 		}
 
@@ -225,7 +225,7 @@ export const AddRecipient = ({
 
 		onChange?.([
 			{
-				amount: BigNumber.make(amountValue),
+				amount: +amountValue,
 				address: recipientAddressValue,
 			},
 		]);
@@ -235,7 +235,7 @@ export const AddRecipient = ({
 		const newRecipients = [
 			...addedRecipients,
 			{
-				amount: BigNumber.make(amount),
+				amount: +amount,
 				displayAmount,
 				address,
 			},
@@ -332,9 +332,8 @@ export const AddRecipient = ({
 											setValue("isSendAllSelected", !getValues("isSendAllSelected"));
 
 											if (getValues("isSendAllSelected")) {
-												const remaining = remainingBalance.isGreaterThan(fee)
-													? remainingBalance.minus(fee)
-													: remainingBalance;
+												const remaining =
+													remainingBalance > fee ? remainingBalance - fee : remainingBalance;
 
 												setValue("displayAmount", remaining.toString());
 
@@ -366,7 +365,7 @@ export const AddRecipient = ({
 						}
 						data-testid="AddRecipient__add-button"
 						variant="secondary"
-						className="mt-4 w-full"
+						className="w-full mt-4"
 						onClick={() =>
 							handleAddRecipient(
 								recipientAddress as string,

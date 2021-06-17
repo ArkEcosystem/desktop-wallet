@@ -1,9 +1,7 @@
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
-
 export interface RecipientListItem {
 	address: string;
 	displayAmount?: string;
-	amount?: BigNumber;
+	amount?: number;
 	assetSymbol?: string;
 	isEditable?: boolean;
 	label?: string;

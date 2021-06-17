@@ -29,7 +29,7 @@ export const SecondSignatureDetail = ({ isOpen, transaction, onClose }: SecondSi
 				border={false}
 			/>
 
-			<TransactionFee currency={wallet.currency()} value={transaction.fee()} />
+			<TransactionFee currency={wallet.currency()} value={transaction.fee().toHuman()} />
 
 			<TransactionTimestamp timestamp={transaction.timestamp()} />
 

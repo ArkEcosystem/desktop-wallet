@@ -4,7 +4,7 @@ import React from "react";
 
 interface AmountProperties {
 	ticker: string;
-	value: BigNumber;
+	value: number;
 	locale?: string;
 	showSign?: boolean;
 	normalize?: boolean;
@@ -23,7 +23,7 @@ type ExchangeCurrencyList = keyof typeof CURRENCIES;
 const formatSign = (amount: string, isNegative: boolean) => `${isNegative ? "-" : "+"} ${amount}`;
 
 const formatFiat = ({ ticker, value, decimals }: FormatProperties): string => {
-	const cents = value.times(Math.pow(10, decimals)).decimalPlaces(0).toNumber();
+	const cents = BigNumber.make(value).times(Math.pow(10, decimals)).decimalPlaces(0).toNumber();
 	const money = Money.make(cents, ticker);
 	return money.format();
 };
@@ -33,7 +33,7 @@ const formatCrypto = ({ ticker, value, decimals, locale, normalize }: FormatProp
 		minimumFractionDigits: 0,
 		maximumFractionDigits: decimals,
 		currencyDisplay: "name",
-	}).formatAsCurrency(normalize ? +value.toHuman(decimals) : +value, "BTC");
+	}).formatAsCurrency(normalize ? +BigNumber.make(value).toHuman(decimals) : +value, "BTC");
 
 	/**
 	 * Intl.NumberFormat throws error for some tickers like DARK (?)

@@ -39,7 +39,7 @@ export const SummaryStep = ({
 				isSent={true}
 			/>
 
-			<TransactionFee currency={currency} value={transaction.fee()} paddingPosition="top" />
+			<TransactionFee currency={currency} value={transaction.fee().toHuman()} paddingPosition="top" />
 		</TransactionSuccessful>
 	);
 };

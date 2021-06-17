@@ -1,5 +1,4 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Icon } from "app/components/Icon";
 import { Tooltip } from "app/components/Tooltip";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
@@ -24,9 +23,9 @@ export const TransferLedgerReview = ({
 
 	const { fee, recipients, memo } = getValues();
 
-	let amount = BigNumber.ZERO;
+	let amount = 0;
 	for (const recipient of recipients) {
-		amount = amount.plus(recipient.amount);
+		amount += recipient.amount;
 	}
 
 	const expirationType = wallet.network().expirationType();
@@ -49,7 +48,7 @@ export const TransferLedgerReview = ({
 							<span>{t("COMMON.EXPIRATION")}</span>
 
 							<Tooltip content={expirationTypeTranslations[expirationType]}>
-								<div className="flex justify-center items-center w-4 h-4 rounded-full bg-theme-primary-100 text-theme-primary-600 dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200">
+								<div className="flex items-center justify-center w-4 h-4 rounded-full bg-theme-primary-100 text-theme-primary-600 dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200">
 									<Icon width={9} height={9} name="QuestionMark" />
 								</div>
 							</Tooltip>

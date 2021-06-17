@@ -10,11 +10,11 @@ import { sanitizeStep } from "./utils";
 
 interface Properties {
 	disabled?: boolean;
-	value: string;
+	value: number;
 	min: number;
 	max: number;
 	step: number;
-	onChange: (value: string) => void;
+	onChange: (value: number) => void;
 }
 
 export const InputRange = React.forwardRef<HTMLInputElement, Properties>(
@@ -41,7 +41,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Properties>(
 		const sanitizedStep = sanitizeStep({ min, max, step });
 
 		const handleRangeChange = ([rangeValue]: number[]) => {
-			onChange(rangeValue.toString());
+			onChange(rangeValue);
 		};
 
 		return (

@@ -19,13 +19,11 @@ export const useFees = (profile: ProfileContracts.IProfile) => {
 				transactionFees = env.fees().findByType(coin, network, type);
 			}
 
-			const bigNumber = profile.coins().get(coin, network).bigNumber();
-
 			return {
-				static: bigNumber.make(transactionFees.static).toHuman(),
-				avg: bigNumber.make(transactionFees.avg).toHuman(),
-				min: bigNumber.make(transactionFees.min).toHuman(),
-				max: bigNumber.make(transactionFees.max).toHuman(),
+				static: transactionFees.static.toHuman(),
+				avg: transactionFees.avg.toHuman(),
+				min: transactionFees.min.toHuman(),
+				max: transactionFees.max.toHuman(),
 			};
 		},
 		[env, profile],

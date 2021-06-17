@@ -37,7 +37,7 @@ export const DelegateResignationDetail = ({ isOpen, transaction, onClose }: Dele
 				{wallet.username()}
 			</TransactionDetail>
 
-			<TransactionFee currency={wallet.currency()} value={transaction.fee()} />
+			<TransactionFee currency={wallet.currency()} value={transaction.fee().toHuman()} />
 
 			<TransactionTimestamp timestamp={transaction.timestamp()} />
 

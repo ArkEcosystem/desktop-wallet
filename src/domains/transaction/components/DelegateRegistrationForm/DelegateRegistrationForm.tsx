@@ -56,7 +56,8 @@ const transactionDetails = ({
 			{transaction.data().asset.delegate.username}
 		</TransactionDetail>
 
-		<TransactionFee currency={wallet.currency()} value={transaction.fee()} paddingPosition="top" />
+		{/* @TODO: normalise fee in SDK */}
+		<TransactionFee currency={wallet.currency()} value={transaction.fee().toHuman()} paddingPosition="top" />
 	</>
 );
 

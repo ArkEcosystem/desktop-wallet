@@ -1,4 +1,3 @@
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { RecipientList } from "domains/transaction/components/RecipientList";
@@ -9,7 +8,7 @@ import { TransactionDetail, TransactionDetailProperties } from "../TransactionDe
 
 type TransactionRecipientsProperties = {
 	currency: string;
-	recipients: { address: string; alias?: string; amount?: BigNumber }[];
+	recipients: { address: string; alias?: string; amount?: number }[];
 	normalizeAmount?: boolean;
 } & TransactionDetailProperties;
 

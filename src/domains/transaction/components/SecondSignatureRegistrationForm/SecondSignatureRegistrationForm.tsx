@@ -59,7 +59,7 @@ const transactionDetails = ({
 			{translations("TRANSACTION.TRANSACTION_TYPES.SECOND_SIGNATURE")}
 		</TransactionDetail>
 
-		<TransactionFee currency={wallet.currency()} value={transaction.fee()} paddingPosition="top" />
+		<TransactionFee currency={wallet.currency()} value={transaction.fee().toHuman()} paddingPosition="top" />
 	</>
 );
 

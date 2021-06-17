@@ -2,7 +2,7 @@ import { Networks } from "@arkecosystem/platform-sdk";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 
 export const common = (t: any) => ({
-	fee: (balance: BigNumber = BigNumber.ZERO, network?: Networks.Network) => ({
+	fee: (balance = 0, network?: Networks.Network) => ({
 		validate: {
 			valid: (fee?: string | number) => {
 				if (fee === undefined || fee === "") {
@@ -15,7 +15,7 @@ export const common = (t: any) => ({
 					return true;
 				}
 
-				if (balance.isZero() || balance.isNegative()) {
+				if (balance === 0 || Math.sign(balance) === -1) {
 					return t("TRANSACTION.VALIDATION.LOW_BALANCE", {
 						balance: "0",
 						coinId: network.coin(),
@@ -26,7 +26,7 @@ export const common = (t: any) => ({
 
 				if (feeSatoshi.isGreaterThan(balance)) {
 					return t("TRANSACTION.VALIDATION.LOW_BALANCE", {
-						balance: balance?.toHuman(),
+						balance,
 						coinId: network.coin(),
 					});
 				}

@@ -64,7 +64,7 @@ export const VoteDetail = ({ transaction, isOpen, onClose }: VoteDetailPropertie
 
 			<TransactionVotes isLoading={isLoadingDelegates} {...delegates} />
 
-			<TransactionFee currency={wallet.currency()} value={transaction.fee()} />
+			<TransactionFee currency={wallet.currency()} value={transaction.fee().toHuman()} />
 
 			<TransactionTimestamp timestamp={transaction.timestamp()} />
 
