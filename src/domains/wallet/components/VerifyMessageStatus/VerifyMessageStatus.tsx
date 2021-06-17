@@ -2,7 +2,7 @@ import { Image } from "app/components/Image";
 import { Modal } from "app/components/Modal";
 import React from "react";
 
-interface Props {
+interface Properties {
 	type?: "success" | "error";
 	title?: string;
 	description?: string;
@@ -10,7 +10,7 @@ interface Props {
 	onClose?: () => void;
 }
 
-export const VerifyMessageStatus = ({ title, description, type, isOpen, onClose }: Props) => {
+export const VerifyMessageStatus = ({ title, description, type, isOpen, onClose }: Properties) => {
 	const image = type === "success" ? "SuccessBanner" : "ErrorBanner";
 
 	return (

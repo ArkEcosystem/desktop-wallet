@@ -43,10 +43,10 @@ describe("DeleteContact", () => {
 		const { getByTestId } = renderWithRouter(
 			<DeleteContact isOpen={true} onDelete={onDelete} profile={profile} contact={contact} />,
 		);
-		const deleteBtn = getByTestId("DeleteResource__submit-button");
+		const deleteButton = getByTestId("DeleteResource__submit-button");
 
 		act(() => {
-			fireEvent.click(deleteBtn);
+			fireEvent.click(deleteButton);
 		});
 
 		await waitFor(() => expect(onDelete).toBeCalled());

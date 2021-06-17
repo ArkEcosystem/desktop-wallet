@@ -6,7 +6,7 @@ import { PluginListItem } from "domains/plugin/components/PluginListItem";
 import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 
-interface PluginListProps {
+interface PluginListProperties {
 	className?: string;
 	emptyMessage?: string;
 	itemsPerPage?: number;
@@ -38,7 +38,7 @@ export const PluginList = ({
 	onInstall,
 	onLaunch,
 	onUpdate,
-}: PluginListProps) => {
+}: PluginListProperties) => {
 	const { t } = useTranslation();
 
 	const [currentPage, setCurrentPage] = React.useState(1);
@@ -88,7 +88,7 @@ export const PluginList = ({
 		});
 	}
 
-	if (!plugins.length) {
+	if (plugins.length === 0) {
 		return (
 			<EmptyBlock data-testid="PluginList__empty-message">
 				<Trans>{emptyMessage || t("PLUGINS.PAGE_PLUGIN_MANAGER.NO_PLUGINS_AVAILABLE")}</Trans>

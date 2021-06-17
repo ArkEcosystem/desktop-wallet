@@ -37,7 +37,7 @@ export class StorePluginService implements PluginService {
 		const data = new Repositories.DataRepository();
 		const stored = this.restore(pluginId);
 
-		if (stored && Object.keys(stored).length) {
+		if (stored && Object.keys(stored).length > 0) {
 			data.fill(stored);
 		}
 

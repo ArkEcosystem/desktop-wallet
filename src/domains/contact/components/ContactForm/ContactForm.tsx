@@ -14,7 +14,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { lowerCaseEquals } from "utils/equals";
 
-interface AddressListItemProps {
+interface AddressListItemProperties {
 	address: any;
 	onRemove: any;
 }
@@ -24,7 +24,7 @@ interface NetworkOption {
 	value: string;
 }
 
-const AddressListItem = ({ address, onRemove }: AddressListItemProps) => (
+const AddressListItem = ({ address, onRemove }: AddressListItemProperties) => (
 	<div
 		data-testid="contact-form__address-list-item"
 		className="flex items-center py-4 border-b border-dashed last:pb-0 last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -52,12 +52,12 @@ const AddressListItem = ({ address, onRemove }: AddressListItemProps) => (
 	</div>
 );
 
-interface AddressListProps {
+interface AddressListProperties {
 	addresses: any[];
 	onRemove: any;
 }
 
-const AddressList = ({ addresses, onRemove }: AddressListProps) => {
+const AddressList = ({ addresses, onRemove }: AddressListProperties) => {
 	const { t } = useTranslation();
 
 	return (
@@ -75,7 +75,7 @@ const AddressList = ({ addresses, onRemove }: AddressListProps) => {
 	);
 };
 
-interface ContactFormProps {
+interface ContactFormProperties {
 	contact?: Contracts.IContact;
 	profile: Contracts.IProfile;
 	onCancel?: any;
@@ -85,7 +85,15 @@ interface ContactFormProps {
 	errors?: any;
 }
 
-export const ContactForm = ({ profile, contact, onChange, onCancel, onDelete, onSave, errors }: ContactFormProps) => {
+export const ContactForm = ({
+	profile,
+	contact,
+	onChange,
+	onCancel,
+	onDelete,
+	onSave,
+	errors,
+}: ContactFormProperties) => {
 	const nameMaxLength = 42;
 
 	const [addresses, setAddresses] = useState(() =>
@@ -123,8 +131,8 @@ export const ContactForm = ({ profile, contact, onChange, onCancel, onDelete, on
 	const { networkOptions, networkById } = useNetworkOptions();
 
 	const filteredNetworks = useMemo(() => {
-		const usedNetworks = addresses.map((address: any) => address.network);
-		return networkOptions.filter(({ value }: NetworkOption) => !usedNetworks.includes(value));
+		const usedNetworks = new Set(addresses.map((address: any) => address.network));
+		return networkOptions.filter(({ value }: NetworkOption) => !usedNetworks.has(value));
 	}, [addresses, networkOptions]);
 
 	const handleAddAddress = async () => {
@@ -151,7 +159,7 @@ export const ContactForm = ({ profile, contact, onChange, onCancel, onDelete, on
 
 	const handleRemoveAddress = (item: any) => {
 		setAddresses(
-			addresses.filter((curr: any) => !(curr.address === item.address && curr.network === item.network)),
+			addresses.filter((current: any) => !(current.address === item.address && current.network === item.network)),
 		);
 	};
 
@@ -189,14 +197,14 @@ export const ContactForm = ({ profile, contact, onChange, onCancel, onDelete, on
 									field: t("CONTACTS.CONTACT_FORM.NAME"),
 								}).toString(),
 							duplicateName: (name) =>
-								!profile
+								profile
 									.contacts()
 									.values()
 									.filter(
 										(item: Contracts.IContact) =>
 											item.id() !== contact?.id() &&
 											lowerCaseEquals(item.name().trim(), name.trim()),
-									).length ||
+									).length === 0 ||
 								t("CONTACTS.VALIDATION.NAME_EXISTS", {
 									name: name.trim(),
 								}).toString(),

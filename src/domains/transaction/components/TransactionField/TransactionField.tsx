@@ -1,6 +1,6 @@
 import React from "react";
 
-interface TransactionFieldProps {
+interface TransactionFieldProperties {
 	border: boolean;
 	children: React.ReactNode;
 	className?: string;
@@ -9,7 +9,14 @@ interface TransactionFieldProps {
 	padding?: boolean;
 }
 
-export const TransactionField = ({ border, children, className, extra, label, padding }: TransactionFieldProps) => (
+export const TransactionField = ({
+	border,
+	children,
+	className,
+	extra,
+	label,
+	padding,
+}: TransactionFieldProperties) => (
 	<div
 		className={`flex items-center ${padding || "py-4"} ${
 			!border || "border-t border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"

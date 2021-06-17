@@ -26,7 +26,7 @@ jest.mock("react-router-dom", () => ({
 let profile: Contracts.IProfile;
 let showOpenDialogMock: jest.SpyInstance;
 
-const showOpenDialogParams = {
+const showOpenDialogParameters = {
 	defaultPath: os.homedir(),
 	properties: ["openFile"],
 	filters: [{ name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] }],
@@ -155,7 +155,7 @@ describe("Settings", () => {
 			fireEvent.click(getByTestId("SelectProfileImage__upload-button"));
 		});
 
-		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
+		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParameters);
 
 		act(() => getByTestId("General-settings__input--name").focus());
 
@@ -201,7 +201,7 @@ describe("Settings", () => {
 			fireEvent.click(getByTestId("SelectProfileImage__upload-button"));
 		});
 
-		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
+		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParameters);
 
 		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "test profile" } });
 
@@ -229,7 +229,7 @@ describe("Settings", () => {
 			fireEvent.click(getByTestId("SelectProfileImage__remove-button"));
 		});
 
-		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
+		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParameters);
 
 		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "t" } });
 		await waitFor(() => expect(getByTestId("General-settings__submit-button")).toBeEnabled());
@@ -257,7 +257,7 @@ describe("Settings", () => {
 			fireEvent.click(getByTestId("SelectProfileImage__upload-button"));
 		});
 
-		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParams);
+		expect(showOpenDialogMock).toHaveBeenCalledWith(showOpenDialogParameters);
 
 		expect(env.profiles().count()).toEqual(profilesCount);
 		expect(asFragment()).toMatchSnapshot();
@@ -297,7 +297,7 @@ describe("Settings", () => {
 		const otherProfile = env
 			.profiles()
 			.values()
-			.filter((el: Profile) => el.id() !== profile.id())[0];
+			.find((element: Profile) => element.id() !== profile.id());
 
 		fireEvent.input(getByTestId("General-settings__input--name"), {
 			target: { value: otherProfile.settings().get(Contracts.ProfileSetting.Name) },
@@ -327,7 +327,7 @@ describe("Settings", () => {
 		const otherProfile = env
 			.profiles()
 			.values()
-			.filter((el: Profile) => el.id() !== profile.id())[0];
+			.find((element: Profile) => element.id() !== profile.id());
 
 		act(() => {
 			fireEvent.input(getByTestId("General-settings__input--name"), {
@@ -382,7 +382,7 @@ describe("Settings", () => {
 		const otherProfile = env
 			.profiles()
 			.values()
-			.filter((el: Profile) => el.id() !== profile.id())[0];
+			.find((element: Profile) => element.id() !== profile.id());
 
 		act(() => {
 			fireEvent.input(getByTestId("General-settings__input--name"), {

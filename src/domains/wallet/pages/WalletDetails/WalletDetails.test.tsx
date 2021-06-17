@@ -27,7 +27,7 @@ import {
 
 import { WalletDetails } from "./WalletDetails";
 
-jest.setTimeout(10000);
+jest.setTimeout(10_000);
 
 const history = createMemoryHistory();
 let walletUrl: string;
@@ -65,15 +65,13 @@ const renderPage = async ({
 	}
 
 	if (waitForTransactions) {
-		if (withProfileSynchronizer) {
-			await waitFor(() =>
-				expect(within(getByTestId("TransactionTable")).queryAllByTestId("TableRow")).toHaveLength(1),
-			);
-		} else {
-			await waitFor(() =>
-				expect(within(getByTestId("TransactionTable")).queryAllByTestId("TableRow")).not.toHaveLength(0),
-			);
-		}
+		await (withProfileSynchronizer
+			? waitFor(() =>
+					expect(within(getByTestId("TransactionTable")).queryAllByTestId("TableRow")).toHaveLength(1),
+			  )
+			: waitFor(() =>
+					expect(within(getByTestId("TransactionTable")).queryAllByTestId("TableRow")).not.toHaveLength(0),
+			  ));
 	}
 
 	return rendered;
@@ -132,7 +130,7 @@ describe("WalletDetails", () => {
 				message: "Wallet not found",
 			})
 			.get("/api/transactions")
-			.query((params) => !!params.address)
+			.query((parameters) => !!parameters.address)
 			.reply(200, (url) => {
 				const { meta, data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
 				const filteredUrl =
@@ -343,10 +341,10 @@ describe("WalletDetails", () => {
 			withProfileSynchronizer: true,
 		});
 
-		const fetchMoreTransactionsBtn = getByTestId("transactions__fetch-more-button");
+		const fetchMoreTransactionsButton = getByTestId("transactions__fetch-more-button");
 
 		act(() => {
-			fireEvent.click(fetchMoreTransactionsBtn);
+			fireEvent.click(fetchMoreTransactionsButton);
 		});
 
 		await waitFor(() => {

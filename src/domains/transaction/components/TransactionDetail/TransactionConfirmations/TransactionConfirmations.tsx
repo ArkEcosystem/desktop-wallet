@@ -6,12 +6,12 @@ import { useTranslation } from "react-i18next";
 
 import { TransactionDetail } from "../TransactionDetail";
 
-interface TransactionConfirmationsProps {
+interface TransactionConfirmationsProperties {
 	isConfirmed: boolean;
 	confirmations: BigNumber;
 }
 
-export const TransactionConfirmations = ({ isConfirmed, confirmations }: TransactionConfirmationsProps) => {
+export const TransactionConfirmations = ({ isConfirmed, confirmations }: TransactionConfirmationsProperties) => {
 	const { t } = useTranslation();
 
 	const renderConfirmationStatus = (isConfirmed: boolean, confirmations: BigNumber) => {

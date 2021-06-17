@@ -19,29 +19,29 @@ export const useTextTruncate = (referenceElement: any, value: string, offset = 0
 		element.innerHTML = value;
 		element.classList.add("fixed", "invisible", "w-auto", "whitespace-nowrap");
 
-		referenceElement.appendChild(element);
+		referenceElement.append(element);
 
-		let temp = value;
+		let temporary = value;
 
 		if (!hasOverflow(element, referenceElement)) {
-			referenceElement.removeChild(element);
+			element.remove();
 			return value;
 		}
 
 		let mid = Math.floor(value.length / 2) - 1;
 
 		do {
-			const prefix = value.substr(0, mid);
-			const suffix = value.substr(-mid);
+			const prefix = value.slice(0, Math.max(0, mid));
+			const suffix = value.slice(-mid);
 
-			temp = `${prefix}…${suffix}`;
+			temporary = `${prefix}…${suffix}`;
 
-			element.innerHTML = temp;
+			element.innerHTML = temporary;
 
 			mid--;
 		} while (hasOverflow(element, referenceElement));
 
-		referenceElement.removeChild(element);
+		element.remove();
 
-		return temp;
+		return temporary;
 	}, [value, offset, referenceElement]);

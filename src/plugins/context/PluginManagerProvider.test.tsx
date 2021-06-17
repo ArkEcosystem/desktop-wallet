@@ -17,11 +17,11 @@ describe("PluginManagerProvider", () => {
 	beforeAll(() => {
 		nock("https://registry.npmjs.com")
 			.get("/-/v1/search")
-			.query((params) => params.from === "0")
+			.query((parameters) => parameters.from === "0")
 			.once()
 			.reply(200, require("tests/fixtures/plugins/registry-response.json"))
 			.get("/-/v1/search")
-			.query((params) => params.from === "250")
+			.query((parameters) => parameters.from === "250")
 			.once()
 			.reply(200, {})
 			.persist();
@@ -139,8 +139,8 @@ describe("PluginManagerProvider", () => {
 				<div>
 					<button onClick={onClick}>Click</button>
 					<ul>
-						{allPlugins.map((pkg) => (
-							<li key={pkg.name()}>{pkg.name()}</li>
+						{allPlugins.map((package_) => (
+							<li key={package_.name()}>{package_.name()}</li>
 						))}
 					</ul>
 				</div>
@@ -185,10 +185,10 @@ describe("PluginManagerProvider", () => {
 				<div>
 					<button onClick={onClick}>Fetch</button>
 					<ul>
-						{allPlugins.map((pkg) => (
-							<li key={pkg.name()}>
-								<span>{pkg.name()}</span>
-								<button onClick={() => installPlugin("/plugins/temp/test-plugin", pkg.name())}>
+						{allPlugins.map((package_) => (
+							<li key={package_.name()}>
+								<span>{package_.name()}</span>
+								<button onClick={() => installPlugin("/plugins/temp/test-plugin", package_.name())}>
 									Install
 								</button>
 							</li>
@@ -350,8 +350,8 @@ describe("PluginManagerProvider", () => {
 				<div>
 					<button onClick={onClick}>Click</button>
 					<ul>
-						{pluginDatas.map((pkg) => (
-							<li key={pkg.id}>{pkg.hasUpdateAvailable ? "Update Available" : "No"}</li>
+						{pluginDatas.map((package_) => (
+							<li key={package_.id}>{package_.hasUpdateAvailable ? "Update Available" : "No"}</li>
 						))}
 					</ul>
 				</div>
@@ -431,15 +431,15 @@ describe("PluginManagerProvider", () => {
 				<div>
 					<button onClick={onClick}>Fetch</button>
 					<ul>
-						{allPlugins.map((pkg) => (
-							<li key={pkg.name()}>
-								<span>{pkg.name()}</span>
-								{updatingStats[pkg.name()]?.completed ? (
+						{allPlugins.map((package_) => (
+							<li key={package_.name()}>
+								<span>{package_.name()}</span>
+								{updatingStats[package_.name()]?.completed ? (
 									<span>Update Completed</span>
-								) : hasUpdateAvailable(pkg.id()) ? (
+								) : hasUpdateAvailable(package_.id()) ? (
 									<span>Update Available</span>
 								) : null}
-								<button onClick={() => updatePlugin(pkg.name())}>Update</button>
+								<button onClick={() => updatePlugin(package_.name())}>Update</button>
 							</li>
 						))}
 					</ul>
@@ -522,15 +522,15 @@ describe("PluginManagerProvider", () => {
 				<div>
 					<button onClick={onClick}>Fetch</button>
 					<ul>
-						{allPlugins.map((pkg) => (
-							<li key={pkg.name()}>
-								<span>{pkg.name()}</span>
-								{updatingStats[pkg.name()]?.failed ? (
+						{allPlugins.map((package_) => (
+							<li key={package_.name()}>
+								<span>{package_.name()}</span>
+								{updatingStats[package_.name()]?.failed ? (
 									<span>Updated failed</span>
 								) : (
 									<>
-										{hasUpdateAvailable(pkg.id()) ? <span>Update Available</span> : null}
-										<button onClick={() => updatePlugin(pkg.name())}>Update</button>
+										{hasUpdateAvailable(package_.id()) ? <span>Update Available</span> : null}
+										<button onClick={() => updatePlugin(package_.name())}>Update</button>
 									</>
 								)}
 							</li>
@@ -584,8 +584,8 @@ describe("PluginManagerProvider", () => {
 					)}
 
 					<ul>
-						{searchResults.map((pkg) => (
-							<li key={pkg.name()}>{pkg.name()}</li>
+						{searchResults.map((package_) => (
+							<li key={package_.name()}>{package_.name()}</li>
 						))}
 					</ul>
 				</div>
@@ -638,8 +638,8 @@ describe("PluginManagerProvider", () => {
 						/>
 					)}
 					<ul>
-						{searchResults.map((pkg) => (
-							<li key={pkg.name()}>{pkg.name()}</li>
+						{searchResults.map((package_) => (
+							<li key={package_.name()}>{package_.name()}</li>
 						))}
 					</ul>
 				</div>

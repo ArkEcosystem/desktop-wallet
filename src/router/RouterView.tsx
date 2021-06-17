@@ -8,13 +8,13 @@ import { Middleware } from "./interfaces";
 
 const Wrapper = styled.div``;
 
-interface Props {
+interface Properties {
 	routes: RouteConfig[];
 	wrapper?: React.ElementType;
 	middlewares?: Middleware[];
 }
 
-export const RouterView = ({ routes, wrapper, middlewares }: Props) => {
+export const RouterView = ({ routes, wrapper, middlewares }: Properties) => {
 	const location = useLocation();
 	const history = useHistory();
 	const { env } = useEnvironmentContext();
@@ -40,15 +40,15 @@ export const RouterView = ({ routes, wrapper, middlewares }: Props) => {
 
 	return (
 		<Switch>
-			{routes.map((route, i) => (
+			{routes.map((route, index) => (
 				<Route
-					key={i}
+					key={index}
 					path={route.path}
-					render={(props) =>
+					render={(properties) =>
 						canActivate ? (
 							<Wrapper data-testid="RouterView__wrapper" as={wrapper}>
 								{/* @ts-ignore */}
-								<route.component {...props} routes={route.routes} />
+								<route.component {...properties} routes={route.routes} />
 							</Wrapper>
 						) : (
 							<Redirect to={redirectUrl || "/"} />

@@ -4,7 +4,7 @@ import du from "du";
 import parseAuthor from "parse-author";
 import semver from "semver";
 
-import appPkg from "../../../../package.json";
+import appPackage from "../../../../package.json";
 import { allPermissions } from "./permissions";
 import { schema } from "./schema";
 
@@ -93,7 +93,7 @@ export class PluginConfigurationData {
 
 		const result = intersection(categories, validCategories);
 
-		return result.length ? result : ["other"];
+		return result.length > 0 ? result : ["other"];
 	}
 
 	hasCategory(categoryName: string) {
@@ -138,13 +138,9 @@ export class PluginConfigurationData {
 	logo() {
 		let logo: string | undefined;
 
-		if (this.#config.has("logo")) {
-			logo = this.#config.get("logo");
-		} else {
-			logo = this.#manifest.get("logo");
-		}
+		logo = this.#config.has("logo") ? this.#config.get("logo") : this.#manifest.get("logo");
 
-		const regex = /(?:https?:)?\/(?:raw\.githubusercontent\.com)\/([A-Za-z0-9-_.]+)(?:\/[A-z0-9_-].*)(\.(jpe?g|png|gif))$/;
+		const regex = /(?:ht{2}ps?:)?\/raw\.githubusercontent\.com\/([\w.-]+)\/[\dA-z-].*(\.(jpe?g|png|gif))$/;
 
 		if (logo && regex.test(logo)) {
 			return logo;
@@ -165,9 +161,9 @@ export class PluginConfigurationData {
 		const name = this.get("name")!;
 
 		const parts = name.split("/");
-		const tmp = parts[parts.length > 1 ? 1 : 0];
+		const temporary = parts[parts.length > 1 ? 1 : 0];
 
-		return startCase(tmp);
+		return startCase(temporary);
 	}
 
 	isOfficial() {
@@ -216,7 +212,7 @@ export class PluginConfigurationData {
 	isCompatible() {
 		const minimumVersion = this.minimumVersion();
 		const validMinimumVersion = semver.valid(minimumVersion) ? semver.coerce(minimumVersion)!.version : "0.0.0";
-		return minimumVersion ? semver.gte(appPkg.version, validMinimumVersion) : true;
+		return minimumVersion ? semver.gte(appPackage.version, validMinimumVersion) : true;
 	}
 
 	toObject() {

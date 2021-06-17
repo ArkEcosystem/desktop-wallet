@@ -4,7 +4,7 @@ import { useEnvironmentContext } from "app/contexts";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-interface DeleteContactProps {
+interface DeleteContactProperties {
 	isOpen: boolean;
 	contact: Contracts.IContact;
 	profile: Contracts.IProfile;
@@ -13,7 +13,7 @@ interface DeleteContactProps {
 	onDelete?: any;
 }
 
-export const DeleteContact = ({ isOpen, contact, profile, onCancel, onClose, onDelete }: DeleteContactProps) => {
+export const DeleteContact = ({ isOpen, contact, profile, onCancel, onClose, onDelete }: DeleteContactProperties) => {
 	const { t } = useTranslation();
 
 	const { persist } = useEnvironmentContext();

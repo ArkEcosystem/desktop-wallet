@@ -5,16 +5,16 @@ import { getStyles } from "./TableRow.styles";
 
 export type TableRowFunction = (event: React.MouseEvent<HTMLTableRowElement, MouseEvent>) => void;
 
-type TableRowProps = {
+type TableRowProperties = {
 	border?: boolean;
 	children: React.ReactNode;
 	onClick?: TableRowFunction;
 	isSelected?: boolean;
 } & React.HTMLProps<any>;
 
-const TableRowStyled = styled.tr<TableRowProps>(getStyles);
+const TableRowStyled = styled.tr<TableRowProperties>(getStyles);
 
-export const TableRow = ({ border, children, isSelected, onClick }: TableRowProps) => (
+export const TableRow = ({ border, children, isSelected, onClick }: TableRowProperties) => (
 	<TableRowStyled data-testid="TableRow" className="group" border={border} isSelected={isSelected} onClick={onClick}>
 		{children}
 	</TableRowStyled>

@@ -31,14 +31,14 @@ export const useSynchronizer = (jobs: Job[]) => {
 		[persist, setError],
 	);
 
-	const stop = useCallback((props?: { clearTimers: boolean }) => {
+	const stop = useCallback((properties?: { clearTimers: boolean }) => {
 		setError(undefined);
 
 		for (const timer of timers.current) {
 			clearInterval(timer);
 		}
 
-		if (props?.clearTimers) {
+		if (properties?.clearTimers) {
 			timers.current = [];
 		}
 	}, []);

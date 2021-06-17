@@ -10,7 +10,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { Trans, useTranslation } from "react-i18next";
 
-interface SendTransactionFormProps {
+interface SendTransactionFormProperties {
 	children?: React.ReactNode;
 	networks: Networks.Network[];
 	profile: Contracts.IProfile;
@@ -26,7 +26,7 @@ export const SendTransactionForm = ({
 	profile,
 	transactionType,
 	disableNetworkField,
-}: SendTransactionFormProps) => {
+}: SendTransactionFormProperties) => {
 	const { t } = useTranslation();
 	const [wallets, setWallets] = useState<Contracts.IReadWriteWallet[]>([]);
 	const [availableNetworks, setAvailableNetworks] = useState<Networks.Network[]>([]);

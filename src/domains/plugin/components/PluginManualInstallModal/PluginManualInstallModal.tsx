@@ -9,13 +9,13 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-interface Props {
+interface Properties {
 	isOpen: boolean;
 	onClose?: () => void;
 	onSuccess: (result: { pluginId: string; repositoryURL: string }) => void;
 }
 
-export const PluginManualInstallModal = ({ isOpen, onClose, onSuccess }: Props) => {
+export const PluginManualInstallModal = ({ isOpen, onClose, onSuccess }: Properties) => {
 	const { t } = useTranslation();
 
 	const [isLoading, setIsLoading] = useState(false);
@@ -67,7 +67,7 @@ export const PluginManualInstallModal = ({ isOpen, onClose, onSuccess }: Props) 
 									field: t("PLUGINS.MODAL_MANUAL_INSTALL_PLUGIN.REPOSITORY_URL"),
 								}).toString(),
 								validate: (value) => {
-									const regex = /https?:\/\/(?:www\.)?(?:github\.com)\/([A-Za-z0-9-_.]+)(?:\/[A-z0-9_-]+)?\/?/;
+									const regex = /https?:\/\/(?:www\.)?github\.com\/([\w.-]+)(?:\/[\dA-z-]+)?\/?/;
 
 									if (!regex.test(value)) {
 										return t("COMMON.VALIDATION.FIELD_INVALID", {

@@ -12,26 +12,26 @@ export interface Participant {
 	publicKey: string;
 }
 
-interface Props {
+interface Properties {
 	profile: Contracts.IProfile;
 	wallet: Contracts.IReadWriteWallet;
 	onChange?: (wallets: Participant[]) => void;
 	defaultParticipants?: Participant[];
 }
 
-export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants }: Props) => {
+export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants }: Properties) => {
 	const { t } = useTranslation();
 
 	const [isValidating, setIsValidating] = useState(false);
 	const [participants, setParticipants] = useState<Participant[]>(defaultParticipants!);
-	const lastValidationRef = useRef<unknown | undefined>();
+	const lastValidationReference = useRef<unknown | undefined>();
 
 	const form = useForm({ mode: "onSubmit", reValidateMode: "onSubmit" });
 	const { register, handleSubmit, setValue, watch } = form;
 	const address = watch("address");
 
 	useEffect(() => {
-		if (!defaultParticipants!.length) {
+		if (defaultParticipants!.length === 0) {
 			setParticipants([
 				{
 					address: wallet.address(),
@@ -42,10 +42,10 @@ export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants 
 	}, [wallet, defaultParticipants]);
 
 	const addParticipant = () => {
-		const ref = lastValidationRef.current as Contracts.IReadWriteWallet;
+		const reference = lastValidationReference.current as Contracts.IReadWriteWallet;
 		const participant = {
-			address: ref.address(),
-			publicKey: ref.publicKey()!,
+			address: reference.address(),
+			publicKey: reference.publicKey()!,
 		};
 
 		const newParticipants = [...participants, participant];
@@ -76,7 +76,7 @@ export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants 
 	const findByAddress = useCallback(
 		async (address: string) => {
 			setIsValidating(true);
-			lastValidationRef.current = undefined;
+			lastValidationReference.current = undefined;
 
 			try {
 				let participantWallet: unknown = profile.wallets().findByAddress(address);
@@ -96,7 +96,7 @@ export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants 
 					return t("TRANSACTION.MULTISIGNATURE.ERROR.PUBLIC_KEY_NOT_FOUND");
 				}
 
-				lastValidationRef.current = participantWallet;
+				lastValidationReference.current = participantWallet;
 				return true;
 			} catch {
 				return t("TRANSACTION.MULTISIGNATURE.ERROR.ADDRESS_NOT_FOUND");

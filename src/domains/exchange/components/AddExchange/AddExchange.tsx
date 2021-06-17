@@ -5,12 +5,12 @@ import { Table, TableCell, TableRow } from "app/components/Table";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-interface AddExchangeProps {
+interface AddExchangeProperties {
 	isOpen: boolean;
 	onClose?: any;
 }
 
-export const AddExchange = ({ isOpen, onClose }: AddExchangeProps) => {
+export const AddExchange = ({ isOpen, onClose }: AddExchangeProperties) => {
 	const { t } = useTranslation();
 
 	const data = [

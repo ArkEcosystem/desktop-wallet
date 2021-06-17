@@ -4,7 +4,7 @@ import React from "react";
 import tw, { styled } from "twin.macro";
 import { Size } from "types";
 
-interface Props {
+interface Properties {
 	address?: string;
 	className?: string;
 	shadowClassName?: string;
@@ -14,7 +14,7 @@ interface Props {
 	children?: React.ReactNode;
 }
 
-const AvatarWrapper = styled.div<Props>`
+const AvatarWrapper = styled.div<Properties>`
 	${tw`transition-all duration-100 relative inline-flex items-center justify-center align-middle rounded-full`}
 
 	${({ size }) => {
@@ -34,7 +34,7 @@ const AvatarWrapper = styled.div<Props>`
 		noShadow ? tw`ring-0` : shadowClassName ? tw`ring-6` : tw`ring-6 ring-theme-background`}
 `;
 
-export const Avatar = ({ address, className, highlight, noShadow, shadowClassName, size, children }: Props) => {
+export const Avatar = ({ address, className, highlight, noShadow, shadowClassName, size, children }: Properties) => {
 	const svg = React.useMemo(() => (address ? Helpers.Avatar.make(address) : undefined), [address]);
 
 	return (

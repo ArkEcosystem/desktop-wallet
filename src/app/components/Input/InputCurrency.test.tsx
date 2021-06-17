@@ -82,7 +82,7 @@ describe("InputCurrency", () => {
 	});
 
 	it("should render with a custom element", async () => {
-		const CustomInput = React.forwardRef((_, ref) => <input placeholder="Custom Input" ref={ref} />);
+		const CustomInput = React.forwardRef((_, reference) => <input placeholder="Custom Input" ref={reference} />);
 		CustomInput.displayName = "CustomInput";
 		const { getByPlaceholderText } = render(<InputCurrency as={CustomInput} />);
 

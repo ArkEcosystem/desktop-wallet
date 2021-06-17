@@ -3,10 +3,10 @@ import cn from "classnames";
 import React from "react";
 import { RouteComponentProps, withRouter } from "react-router-dom";
 
-import { ItemProps } from "../SideBar";
+import { ItemProperties } from "../SideBar";
 
 export const SideBarItem = withRouter(
-	({ label, icon, itemKey, isActive, handleActiveItem }: ItemProps & RouteComponentProps) => {
+	({ label, icon, itemKey, isActive, handleActiveItem }: ItemProperties & RouteComponentProps) => {
 		const handleClick = () => {
 			handleActiveItem(itemKey);
 		};

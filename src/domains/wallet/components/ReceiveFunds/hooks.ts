@@ -2,7 +2,7 @@ import { QRCode, URI } from "@arkecosystem/platform-sdk-support";
 import { useCallback, useEffect, useState } from "react";
 import { shouldUseDarkColors } from "utils/electron-utils";
 
-interface QRCodeProps {
+interface QRCodeProperties {
 	network: string;
 	coin: string;
 	amount: string;
@@ -11,7 +11,7 @@ interface QRCodeProps {
 	method?: string;
 }
 
-export const useQRCode = ({ network, amount, address, memo, coin, method }: QRCodeProps) => {
+export const useQRCode = ({ network, amount, address, memo, coin, method }: QRCodeProperties) => {
 	const [qrCodeData, setQrCodeData] = useState<{ uri?: string; image?: string }>({
 		uri: undefined,
 		image: undefined,
@@ -19,7 +19,7 @@ export const useQRCode = ({ network, amount, address, memo, coin, method }: QRCo
 
 	const maxLength = 255;
 
-	const formatQR = useCallback(({ amount, address, memo, coin, network, method = "transfer" }: QRCodeProps) => {
+	const formatQR = useCallback(({ amount, address, memo, coin, network, method = "transfer" }: QRCodeProperties) => {
 		const uri = new URI();
 
 		return uri.serialize({

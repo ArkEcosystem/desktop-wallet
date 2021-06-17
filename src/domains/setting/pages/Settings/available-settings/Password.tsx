@@ -7,9 +7,9 @@ import { useActiveProfile, useValidation } from "app/hooks";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { SettingsProps } from "../Settings.models";
+import { SettingsProperties } from "../Settings.models";
 
-export const PasswordSettings = ({ formConfig, onSuccess, onError }: SettingsProps) => {
+export const PasswordSettings = ({ formConfig, onSuccess, onError }: SettingsProperties) => {
 	const activeProfile = useActiveProfile();
 	const { persist } = useEnvironmentContext();
 
@@ -28,7 +28,7 @@ export const PasswordSettings = ({ formConfig, onSuccess, onError }: SettingsPro
 			} else {
 				activeProfile.auth().setPassword(password);
 			}
-		} catch (error) {
+		} catch {
 			return onError(t("SETTINGS.PASSWORD.ERROR.MISMATCH"));
 		}
 

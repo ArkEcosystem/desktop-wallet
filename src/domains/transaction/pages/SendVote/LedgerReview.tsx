@@ -33,7 +33,7 @@ export const VoteLedgerReview = ({
 			{votes.length > 0 && (
 				<TransactionDetail
 					label={t("TRANSACTION.VOTES_COUNT", { count: votes.length })}
-					border={!!unvotes.length}
+					border={unvotes.length > 0}
 				>
 					<VoteList votes={votes} />
 				</TransactionDetail>

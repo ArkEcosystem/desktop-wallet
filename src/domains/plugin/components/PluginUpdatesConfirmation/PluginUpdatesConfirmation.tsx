@@ -8,14 +8,14 @@ import { useTranslation } from "react-i18next";
 
 import { PluginImage } from "../PluginImage";
 
-interface Props {
+interface Properties {
 	isOpen: boolean;
 	plugins: any[];
 	onClose?: () => void;
 	onContinue?: () => void;
 }
 
-export const PluginUpdatesConfirmation = ({ isOpen, plugins, onClose, onContinue }: Props) => {
+export const PluginUpdatesConfirmation = ({ isOpen, plugins, onClose, onContinue }: Properties) => {
 	const { t } = useTranslation();
 
 	const columns = [

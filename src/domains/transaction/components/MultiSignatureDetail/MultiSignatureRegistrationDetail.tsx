@@ -12,7 +12,7 @@ import {
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-interface MultisignatureRegistrationDetailProps {
+interface MultisignatureRegistrationDetailProperties {
 	isOpen: boolean;
 	transaction: DTO.ExtendedTransactionData;
 	onClose?: () => void;
@@ -22,7 +22,7 @@ export const MultiSignatureRegistrationDetail = ({
 	isOpen,
 	transaction,
 	onClose,
-}: MultisignatureRegistrationDetailProps) => {
+}: MultisignatureRegistrationDetailProperties) => {
 	const { t } = useTranslation();
 
 	const wallet = transaction.wallet();

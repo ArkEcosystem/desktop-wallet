@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 
 import { PluginImage } from "../PluginImage";
 
-interface PluginListItemProps {
+interface PluginListItemProperties {
 	onDelete?: (plugin: any) => void;
 	onInstall: any;
 	onLaunch?: (plugin: any) => void;
@@ -35,7 +35,7 @@ export const PluginListItem = ({
 	updatingProgress,
 	plugin,
 	showCategory,
-}: PluginListItemProps) => {
+}: PluginListItemProperties) => {
 	const { t } = useTranslation();
 
 	const handleInstall = () => {

@@ -1,8 +1,8 @@
 const { autoUpdater } = require("electron-updater");
-const { version } = require("../../package.json");
 const logger = require("electron-log");
+const { version } = require("../../package.json");
 
-const setupDev = (testVersion) => {
+const setupDevelopment = (testVersion) => {
 	if (testVersion) {
 		autoUpdater.currentVersion = testVersion;
 	}
@@ -23,7 +23,7 @@ const setupConfig = ({ isDev, testVersion, isE2e }) => {
 		autoUpdater.updateConfigPath = "app-update.yml";
 	}
 	if (isDev) {
-		setupDev(testVersion);
+		setupDevelopment(testVersion);
 	}
 };
 
@@ -61,11 +61,11 @@ const setupUpdater = ({ ipcMain, mainWindow, isDev }) => {
 
 	const { QUIT_INSTALL, CANCEL, CHECK_UPDATES, DOWNLOAD_UPDATE } = ipcEvents();
 
-	updaterEvents.forEach((evt) =>
-		autoUpdater.on(evt, (data) => {
-			sendToWindow(`updater:${evt}`, data, mainWindow);
-		}),
-	);
+	for (const event_ of updaterEvents) {
+		autoUpdater.on(event_, (data) => {
+			sendToWindow(`updater:${event_}`, data, mainWindow);
+		});
+	}
 
 	ipcMain.handle(QUIT_INSTALL, () => {
 		setImmediate(() => autoUpdater.quitAndInstall());

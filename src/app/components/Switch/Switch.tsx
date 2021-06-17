@@ -13,7 +13,7 @@ export interface SwitchOption<TValue = string> {
 	value: TValue;
 }
 
-interface Props<TOptionValue = string> {
+interface Properties<TOptionValue = string> {
 	value: TOptionValue;
 	onChange: (value: TOptionValue) => void;
 	leftOption: SwitchOption<TOptionValue>;
@@ -31,7 +31,7 @@ export function Switch<TOptionValue = string>({
 	size,
 	disabled,
 	className,
-}: Props<TOptionValue>) {
+}: Properties<TOptionValue>) {
 	const renderOption = (option: SwitchOption<TOptionValue>) => (
 		<SwitchText
 			role="button"

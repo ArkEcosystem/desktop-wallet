@@ -1,11 +1,11 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-interface Props {
+interface Properties {
 	plugin: any;
 }
 
-export const FirstStep = ({ plugin }: Props) => {
+export const FirstStep = ({ plugin }: Properties) => {
 	const { t, i18n } = useTranslation();
 	const translatedPermissions = plugin.permissions.map((permission: string) => {
 		const key = `PLUGINS.PERMISSIONS.${permission}`;

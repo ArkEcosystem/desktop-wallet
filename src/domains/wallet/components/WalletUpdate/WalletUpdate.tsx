@@ -11,7 +11,7 @@ import { FirstStep } from "./Step1";
 import { SecondStep } from "./Step2";
 import { ThirdStep } from "./Step3";
 
-interface WalletUpdateProps {
+interface WalletUpdateProperties {
 	version?: string;
 	profile?: Contracts.IProfile;
 	isOpen: boolean;
@@ -19,7 +19,7 @@ interface WalletUpdateProps {
 	onCancel?: any;
 }
 
-export const WalletUpdate = ({ isOpen, onClose, onCancel, version }: WalletUpdateProps) => {
+export const WalletUpdate = ({ isOpen, onClose, onCancel, version }: WalletUpdateProperties) => {
 	const [activeStep, setActiveStep] = useState(1);
 
 	const { t } = useTranslation();

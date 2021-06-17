@@ -136,14 +136,14 @@ export const mockRequest = (url: string | object | Function, fixture: string | o
 	RequestMock()
 		.onRequestTo(url)
 		.respond(
-			(req: any, res: any) => {
+			(request: any, res: any) => {
 				const getBody = () => {
 					if (typeof fixture === "string") {
 						return require(`../tests/fixtures/${fixture}.json`);
 					}
 
 					if (typeof fixture === "function") {
-						return fixture(req);
+						return fixture(request);
 					}
 
 					return fixture;
@@ -265,7 +265,7 @@ export const requestMocks = {
 		mockRequest(/https:\/\/registry\.npmjs\.com\/-\/v1\/search.*from=0.*/, "plugins/registry-response"),
 		mockRequest(/https:\/\/registry\.npmjs\.com\/-\/v1\/search.*from=250.*/, () => ({})),
 		mockRequest(/logo.png$/, () => "/assets/background.png"),
-		mockRequest(/master\/images\/preview-[0-9].png$/, () => "/assets/background.png"),
+		mockRequest(/master\/images\/preview-\d.png$/, () => "/assets/background.png"),
 		...pluginNames.map((pluginName) =>
 			mockRequest(`https://registry.npmjs.com/${pluginName}`, `plugins/registry/${pluginName}`),
 		),

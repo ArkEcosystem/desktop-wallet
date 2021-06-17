@@ -52,17 +52,19 @@ const useDeepLinkHandler = () => {
 					const profile = env.profiles().findById(profileId);
 
 					/* istanbul ignore next */
-					if (deeplinkSchema.coin) {
-						if (!allAvailableNetworks.some((item) => lowerCaseEquals(item.coin(), deeplinkSchema.coin))) {
-							throw new Error(`Coin "${deeplinkSchema.coin}" not supported.`);
-						}
+					if (
+						deeplinkSchema.coin &&
+						!allAvailableNetworks.some((item) => lowerCaseEquals(item.coin(), deeplinkSchema.coin))
+					) {
+						throw new Error(`Coin "${deeplinkSchema.coin}" not supported.`);
 					}
 
 					/* istanbul ignore next */
-					if (deeplinkSchema.network) {
-						if (!allAvailableNetworks.some((item) => lowerCaseEquals(item.id(), deeplinkSchema.network))) {
-							throw new Error(`Network "${deeplinkSchema.network}" not supported.`);
-						}
+					if (
+						deeplinkSchema.network &&
+						!allAvailableNetworks.some((item) => lowerCaseEquals(item.id(), deeplinkSchema.network))
+					) {
+						throw new Error(`Network "${deeplinkSchema.network}" not supported.`);
 					}
 
 					const availableWallets = profile
@@ -75,15 +77,15 @@ const useDeepLinkHandler = () => {
 						);
 					}
 
-					const queryParams = querystring.encode(deeplinkSchema);
+					const queryParameters = querystring.encode(deeplinkSchema);
 
 					if (deeplinkSchema.method === "transfer") {
-						return navigate(`/profiles/${profileId}/send-transfer?${queryParams}`);
+						return navigate(`/profiles/${profileId}/send-transfer?${queryParameters}`);
 					}
 
 					return navigate("/");
-				} catch (e) {
-					toasts.error(`Invalid URI: ${e.message}`);
+				} catch (error) {
+					toasts.error(`Invalid URI: ${error.message}`);
 				}
 			}
 		},

@@ -4,12 +4,12 @@ import { Spinner } from "app/components/Spinner";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-interface LedgerConfirmationProps {
+interface LedgerConfirmationProperties {
 	children?: React.ReactNode;
 	detailsHeading?: any;
 }
 
-export const LedgerConfirmation = ({ children, detailsHeading }: LedgerConfirmationProps) => {
+export const LedgerConfirmation = ({ children, detailsHeading }: LedgerConfirmationProperties) => {
 	const { t } = useTranslation();
 
 	return (

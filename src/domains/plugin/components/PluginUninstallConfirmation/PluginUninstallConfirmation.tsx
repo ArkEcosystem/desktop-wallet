@@ -8,7 +8,7 @@ import { PluginController, usePluginManagerContext } from "plugins";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-interface Props {
+interface Properties {
 	isOpen: boolean;
 	profile: Contracts.IProfile;
 	plugin: PluginController;
@@ -16,7 +16,7 @@ interface Props {
 	onDelete?: () => void;
 }
 
-export const PluginUninstallConfirmation = ({ isOpen, profile, plugin, onClose, onDelete }: Props) => {
+export const PluginUninstallConfirmation = ({ isOpen, profile, plugin, onClose, onDelete }: Properties) => {
 	const { t } = useTranslation();
 
 	const { persist } = useEnvironmentContext();

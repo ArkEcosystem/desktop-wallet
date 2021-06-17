@@ -7,16 +7,16 @@ import { Tooltip } from "app/components/Tooltip";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { TransactionDetail, TransactionDetailProps } from "../TransactionDetail";
+import { TransactionDetail, TransactionDetailProperties } from "../TransactionDetail";
 
-type TransactionAmountProps = {
+type TransactionAmountProperties = {
 	amount: BigNumber;
 	convertedAmount?: BigNumber;
 	currency: string;
 	exchangeCurrency?: string;
 	isMultiPayment?: boolean;
 	isSent: boolean;
-} & TransactionDetailProps;
+} & TransactionDetailProperties;
 
 export const TransactionAmount = ({
 	amount,
@@ -25,8 +25,8 @@ export const TransactionAmount = ({
 	exchangeCurrency,
 	isMultiPayment,
 	isSent,
-	...props
-}: TransactionAmountProps) => {
+	...properties
+}: TransactionAmountProperties) => {
 	const { t } = useTranslation();
 
 	const renderModeIcon = (isSent: boolean) => {
@@ -50,7 +50,7 @@ export const TransactionAmount = ({
 		<TransactionDetail
 			label={isMultiPayment ? t("TRANSACTION.TOTAL_AMOUNT") : t("TRANSACTION.AMOUNT")}
 			extra={renderModeIcon(isSent)}
-			{...props}
+			{...properties}
 		>
 			<Label color={isSent ? "danger" : "success"}>
 				<Amount ticker={currency} value={amount} isNegative={isSent} showSign />

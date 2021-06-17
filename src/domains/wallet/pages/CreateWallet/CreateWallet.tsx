@@ -64,13 +64,13 @@ export const CreateWallet = () => {
 				});
 
 				activeProfile.wallets().push(wallet);
-			} catch (error) {
+			} catch {
 				setGenerationError(t("WALLETS.PAGE_CREATE_WALLET.NETWORK_STEP.GENERATION_ERROR"));
 			}
 		}
 
 		if (name) {
-			const formattedName = name.trim().substring(0, nameMaxLength);
+			const formattedName = name.trim().slice(0, Math.max(0, nameMaxLength));
 			activeProfile.wallets().update(wallet.id(), { alias: formattedName });
 		}
 
@@ -135,7 +135,7 @@ export const CreateWallet = () => {
 			try {
 				await generateWallet();
 				setActiveTab(newIndex);
-			} catch (error) {
+			} catch {
 				setGenerationError(t("WALLETS.PAGE_CREATE_WALLET.NETWORK_STEP.GENERATION_ERROR"));
 			} finally {
 				setIsGeneratingWallet(false);

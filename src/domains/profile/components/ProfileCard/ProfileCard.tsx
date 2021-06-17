@@ -6,7 +6,7 @@ import cn from "classnames";
 import { ProfileAvatar } from "domains/profile/components/ProfileAvatar";
 import React from "react";
 
-interface ProfileCardProps {
+interface ProfileCardProperties {
 	actions?: DropdownOption[];
 	className?: string;
 	profile: Contracts.IProfile;
@@ -15,7 +15,14 @@ interface ProfileCardProps {
 	onSelect?: any;
 }
 
-export const ProfileCard = ({ actions, className, profile, showSettings, onClick, onSelect }: ProfileCardProps) => (
+export const ProfileCard = ({
+	actions,
+	className,
+	profile,
+	showSettings,
+	onClick,
+	onSelect,
+}: ProfileCardProperties) => (
 	<Card
 		className={cn("w-40 h-40 leading-tight", className)}
 		onClick={onClick}

@@ -18,7 +18,7 @@ const Thumb = styled.div`
 	${tw`m-0 transition-colors duration-100 w-4 h-4 rounded-full bg-theme-background border-3 border-theme-primary-600 focus:outline-none focus:shadow-outline`}
 `;
 
-interface Props {
+interface Properties {
 	values: number[];
 	onChange: (values: number[]) => void;
 	min: number;
@@ -27,7 +27,7 @@ interface Props {
 	isInvalid?: boolean;
 }
 
-export const Range = ({ values, min, max, step, onChange, isInvalid }: Props) => {
+export const Range = ({ values, min, max, step, onChange, isInvalid }: Properties) => {
 	const color = !isInvalid ? "var(--theme-color-primary-600)" : "var(--theme-color-danger-700)";
 
 	/*

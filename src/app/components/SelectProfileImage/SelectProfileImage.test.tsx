@@ -45,8 +45,8 @@ describe("SelectProfileImage", () => {
 			filePaths: ["banner.png"],
 		}));
 
-		const btn = getByTestId("SelectProfileImage__upload-button");
-		btn.onClick = openFileDialog;
+		const button = getByTestId("SelectProfileImage__upload-button");
+		button.onClick = openFileDialog;
 		act(() => {
 			fireEvent.click(getByTestId("SelectProfileImage__upload-button"));
 		});
@@ -70,8 +70,8 @@ describe("SelectProfileImage", () => {
 			filePaths: null,
 		}));
 
-		const btn = getByTestId("SelectProfileImage__upload-button");
-		btn.onClick = openFileDialog;
+		const button = getByTestId("SelectProfileImage__upload-button");
+		button.onClick = openFileDialog;
 		act(() => {
 			fireEvent.click(getByTestId("SelectProfileImage__upload-button"));
 		});

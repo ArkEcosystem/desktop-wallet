@@ -34,9 +34,9 @@ export const useProfileAddresses = ({
 			return addressNetwork === network?.id();
 		};
 
-		profileWallets.forEach((wallet) => {
+		for (const wallet of profileWallets) {
 			if (!isNetworkSelected(wallet.network().id())) {
-				return;
+				continue;
 			}
 
 			const address = {
@@ -50,30 +50,27 @@ export const useProfileAddresses = ({
 
 			allAddresses.push(address);
 			profileAddresses.push(address);
-		});
+		}
 
-		contacts.forEach((contact) => {
-			contact
-				.addresses()
-				.values()
-				.forEach((contactAddress) => {
-					if (!isNetworkSelected(contactAddress.network())) {
-						return;
-					}
+		for (const contact of contacts) {
+			for (const contactAddress of contact.addresses().values()) {
+				if (!isNetworkSelected(contactAddress.network())) {
+					continue;
+				}
 
-					const address = {
-						id: contactAddress.id(),
-						address: contactAddress.address(),
-						alias: contact.name(),
-						avatar: contactAddress.avatar(),
-						network: contactAddress.network(),
-						type: "contact",
-					};
+				const address = {
+					id: contactAddress.id(),
+					address: contactAddress.address(),
+					alias: contact.name(),
+					avatar: contactAddress.avatar(),
+					network: contactAddress.network(),
+					type: "contact",
+				};
 
-					allAddresses.push(address);
-					contactAddresses.push(address);
-				});
-		});
+				allAddresses.push(address);
+				contactAddresses.push(address);
+			}
+		}
 
 		return {
 			contactAddresses,

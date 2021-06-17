@@ -5,7 +5,7 @@ import { ContactForm } from "domains/contact/components/ContactForm";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-interface CreateContactProps {
+interface CreateContactProperties {
 	isOpen: boolean;
 	profile: Contracts.IProfile;
 	onClose?: any;
@@ -13,7 +13,7 @@ interface CreateContactProps {
 	onSave: any;
 }
 
-export const CreateContact = ({ isOpen, profile, onClose, onCancel, onSave }: CreateContactProps) => {
+export const CreateContact = ({ isOpen, profile, onClose, onCancel, onSave }: CreateContactProperties) => {
 	const { t } = useTranslation();
 	const [errors, setErrors] = useState<any>({});
 

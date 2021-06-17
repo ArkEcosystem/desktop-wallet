@@ -3,7 +3,7 @@ import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { useEnvironmentContext } from "app/contexts";
 import { useCallback } from "react";
 
-interface Params {
+interface Parameters_ {
 	ticker?: string;
 	exchangeTicker?: string;
 }
@@ -12,7 +12,7 @@ interface UseExchangeRate {
 	convert: (value: string) => BigNumber;
 }
 
-export const useExchangeRate = ({ ticker, exchangeTicker }: Params): UseExchangeRate => {
+export const useExchangeRate = ({ ticker, exchangeTicker }: Parameters_): UseExchangeRate => {
 	const { env } = useEnvironmentContext();
 
 	const convert = useCallback(

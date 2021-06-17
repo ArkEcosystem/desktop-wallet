@@ -11,7 +11,7 @@ import { SelectedWallet } from "domains/wallet/components/SearchWallet/SearchWal
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-type SelectAddressProps = {
+type SelectAddressProperties = {
 	address?: string;
 	wallets: Contracts.IReadWriteWallet[];
 	profile: Contracts.IProfile;
@@ -34,8 +34,8 @@ const WalletAvatar = ({ address }: any) => {
 	return <Avatar address={address} size="sm" noShadow />;
 };
 
-export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressProps>(
-	({ address, wallets, profile, disabled, isInvalid, isVerified, onChange }: SelectAddressProps, ref) => {
+export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressProperties>(
+	({ address, wallets, profile, disabled, isInvalid, isVerified, onChange }: SelectAddressProperties, reference) => {
 		const [searchWalletIsOpen, setSearchWalletIsOpen] = useState(false);
 		const [selectedAddress, setSelectedAddress] = useState(address);
 
@@ -72,7 +72,7 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 
 					<Input
 						data-testid="SelectAddress__input"
-						ref={ref}
+						ref={reference}
 						value={selectedAddress || ""}
 						hideInputValue={true}
 						readOnly

@@ -10,7 +10,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-interface Props {
+interface Properties {
 	selectedAssets?: any[];
 	allAssets?: any[];
 	isOpen: boolean;
@@ -18,7 +18,7 @@ interface Props {
 	onUpdate?: any;
 }
 
-export const AddAssets = ({ selectedAssets, allAssets, isOpen, onClose, onUpdate }: Props) => {
+export const AddAssets = ({ selectedAssets, allAssets, isOpen, onClose, onUpdate }: Properties) => {
 	const form = useForm({ mode: "onChange" });
 
 	const { t } = useTranslation();

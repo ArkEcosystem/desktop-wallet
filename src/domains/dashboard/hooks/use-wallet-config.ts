@@ -11,7 +11,7 @@ export const useWalletConfig = ({
 	profile: Contracts.IProfile;
 	defaults?: DashboardConfiguration;
 }) => {
-	const env = useEnvironmentContext();
+	const environment = useEnvironmentContext();
 
 	const defaultConfiguration: DashboardConfiguration = {
 		walletsDisplayType: "all",
@@ -41,7 +41,7 @@ export const useWalletConfig = ({
 
 		setConfiguration({ dashboard: dashboardConfiguration });
 		profile.settings().set(Contracts.ProfileSetting.DashboardConfiguration, dashboardConfiguration);
-		await env.persist();
+		await environment.persist();
 	};
 
 	const { selectedNetworkIds, walletsDisplayType } = dashboardConfiguration;

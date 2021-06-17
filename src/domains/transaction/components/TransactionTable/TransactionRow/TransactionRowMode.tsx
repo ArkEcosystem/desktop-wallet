@@ -10,7 +10,7 @@ import { Size } from "types";
 
 import { TransactionRowRecipientIcon } from "./TransactionRowRecipientIcon";
 
-interface Props {
+interface Properties {
 	type: string;
 	isSent: boolean;
 	isReturn?: boolean;
@@ -18,7 +18,7 @@ interface Props {
 	iconSize?: Size;
 }
 
-export const BaseTransactionRowMode = ({ type, isSent, isReturn, recipient, iconSize = "lg" }: Props) => {
+export const BaseTransactionRowMode = ({ type, isSent, isReturn, recipient, iconSize = "lg" }: Properties) => {
 	const { t } = useTranslation();
 
 	const { modeIconName, tooltipContent, modeCircleStyle } = useMemo(() => {

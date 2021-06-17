@@ -3,16 +3,16 @@ import React from "react";
 
 import { Input } from "./Input";
 
-type InputPasswordProps = React.InputHTMLAttributes<any>;
+type InputPasswordProperties = React.InputHTMLAttributes<any>;
 
-export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordProps>((props, ref) => {
+export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordProperties>((properties, reference) => {
 	const [show, setShow] = React.useState(false);
 	const togglePasswordVisibility = () => setShow(!show);
 
 	return (
 		<Input
 			data-testid="InputPassword"
-			ref={ref}
+			ref={reference}
 			type={show ? "text" : "password"}
 			addons={{
 				end: (
@@ -29,7 +29,7 @@ export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordPro
 					</button>
 				),
 			}}
-			{...props}
+			{...properties}
 		/>
 	);
 });

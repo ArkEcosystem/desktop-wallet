@@ -11,14 +11,14 @@ import { useEnvironmentContext } from "app/contexts";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-interface AddressRowProps {
+interface AddressRowProperties {
 	index: number;
 	maxVotes: number;
 	wallet: Contracts.IReadWriteWallet;
 	onSelect?: (walletAddress: string) => void;
 }
 
-export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProps) => {
+export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProperties) => {
 	const { t } = useTranslation();
 	const { env } = useEnvironmentContext();
 

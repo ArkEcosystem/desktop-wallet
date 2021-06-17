@@ -10,7 +10,7 @@ import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, screen, wai
 
 import { LedgerTabs } from "./LedgerTabs";
 
-jest.setTimeout(20000);
+jest.setTimeout(20_000);
 
 describe("LedgerTabs", () => {
 	let profile: Contracts.IProfile;
@@ -21,7 +21,7 @@ describe("LedgerTabs", () => {
 	beforeAll(() => {
 		nock("https://dwallets.ark.io/api")
 			.get("/wallets")
-			.query((params) => !!params.address)
+			.query((parameters) => !!parameters.address)
 			.reply(200, {
 				meta: {},
 				data: [
@@ -36,13 +36,13 @@ describe("LedgerTabs", () => {
 				],
 			})
 			.get("/wallets")
-			.query((params) => !!params.address)
+			.query((parameters) => !!parameters.address)
 			.reply(200, {
 				meta: {},
 				data: [],
 			})
 			.get("/wallets")
-			.query((params) => !!params.address)
+			.query((parameters) => !!parameters.address)
 			.reply(200, {
 				meta: {},
 				data: [],
@@ -102,7 +102,7 @@ describe("LedgerTabs", () => {
 			.spyOn(wallet.coin().ledger(), "getPublicKey")
 			.mockRejectedValue(new Error("Failed"));
 
-		let formRef: ReturnType<typeof useForm>;
+		let formReference: ReturnType<typeof useForm>;
 		const Component = () => {
 			const form = useForm({ mode: "onChange" });
 			const { register } = form;
@@ -111,7 +111,7 @@ describe("LedgerTabs", () => {
 				register("network", { required: true });
 			}, [register]);
 
-			formRef = form;
+			formReference = form;
 
 			return (
 				<FormProvider {...form}>
@@ -126,7 +126,7 @@ describe("LedgerTabs", () => {
 		await waitFor(() => expect(nextSelector()).toBeDisabled());
 		await waitFor(() => expect(backSelector()).toBeEnabled());
 
-		formRef!.setValue("network", wallet.network(), { shouldDirty: true, shouldValidate: true });
+		formReference!.setValue("network", wallet.network(), { shouldDirty: true, shouldValidate: true });
 
 		expect(container).toMatchSnapshot();
 
@@ -147,7 +147,7 @@ describe("LedgerTabs", () => {
 		});
 
 		await waitFor(() => expect(screen.getByTestId("LedgerConnectionStep")).toBeInTheDocument());
-		await waitFor(() => expect(screen.queryByText("Failed")).toBeInTheDocument(), { timeout: 10000 });
+		await waitFor(() => expect(screen.queryByText("Failed")).toBeInTheDocument(), { timeout: 10_000 });
 
 		act(() => {
 			fireEvent.click(backSelector());
@@ -281,7 +281,7 @@ describe("LedgerTabs", () => {
 			fireEvent.click(nextSelector());
 		});
 
-		await waitFor(() => expect(screen.getByTestId("LedgerImportStep")).toBeInTheDocument(), { timeout: 10000 });
+		await waitFor(() => expect(screen.getByTestId("LedgerImportStep")).toBeInTheDocument(), { timeout: 10_000 });
 
 		// Import wallets before entering the last step
 		expect(profile.wallets().values()).toHaveLength(4);

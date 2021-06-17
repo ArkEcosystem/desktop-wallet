@@ -9,7 +9,7 @@ import { useHistory } from "react-router-dom";
 
 import { useWalletDisplay, WalletsGrid, WalletsList } from ".";
 
-interface WalletsProps {
+interface WalletsProperties {
 	title?: string;
 	viewType?: "grid" | "list";
 	wallets?: Contracts.IReadWriteWallet[];
@@ -32,7 +32,7 @@ export const Wallets = ({
 	walletsCount,
 	listPagerLimit = 10,
 	isLoading,
-}: WalletsProps) => {
+}: WalletsProperties) => {
 	const [viewMore, setViewMore] = useState(false);
 	const [isWaitingLedger, setIsWaitingLedger] = useState(false);
 

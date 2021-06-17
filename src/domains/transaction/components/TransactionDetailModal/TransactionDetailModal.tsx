@@ -10,13 +10,13 @@ import { TransferDetail } from "domains/transaction/components/TransferDetail";
 import { VoteDetail } from "domains/transaction/components/VoteDetail";
 import React from "react";
 
-interface TransactionDetailModalProps {
+interface TransactionDetailModalProperties {
 	isOpen: boolean;
 	transactionItem: DTO.ExtendedTransactionData;
 	onClose?: any;
 }
 
-export const TransactionDetailModal = ({ isOpen, transactionItem, onClose }: TransactionDetailModalProps) => {
+export const TransactionDetailModal = ({ isOpen, transactionItem, onClose }: TransactionDetailModalProperties) => {
 	const transactionType = transactionItem.type();
 	let TransactionModal;
 

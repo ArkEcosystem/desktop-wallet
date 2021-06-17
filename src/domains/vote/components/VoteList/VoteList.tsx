@@ -3,11 +3,11 @@ import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import React from "react";
 
-interface VoteListProps {
+interface VoteListProperties {
 	votes?: Contracts.IReadOnlyWallet[];
 }
 
-export const VoteList = ({ votes }: VoteListProps) => (
+export const VoteList = ({ votes }: VoteListProperties) => (
 	<div className="-my-2">
 		{votes?.map((vote: Contracts.IReadOnlyWallet, index: number) => (
 			<div

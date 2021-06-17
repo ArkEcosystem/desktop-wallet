@@ -24,7 +24,7 @@ describe("ThemePluginService", () => {
 
 	it("should override components when enabled", () => {
 		const fixture = (api: PluginAPI) => {
-			const MyButton = (props: any) => <span data-testid="plugin-button" {...props} />;
+			const MyButton = (properties: any) => <span data-testid="plugin-button" {...properties} />;
 			api.theme().decorate("test.button", () => MyButton);
 		};
 
@@ -33,7 +33,7 @@ describe("ThemePluginService", () => {
 
 		manager.plugins().push(ctrl);
 
-		const Button = (props: any) => <button data-testid="app-button" {...props} />;
+		const Button = (properties: any) => <button data-testid="app-button" {...properties} />;
 		const ThemedButton = withThemeDecorator("test.button", Button, manager);
 
 		const { rerender } = render(<ThemedButton>Hello</ThemedButton>);

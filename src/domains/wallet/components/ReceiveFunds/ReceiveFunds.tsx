@@ -13,7 +13,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-interface ReceiveFundsProps {
+interface ReceiveFundsProperties {
 	address: string;
 	icon: string;
 	name?: string;
@@ -22,7 +22,7 @@ interface ReceiveFundsProps {
 	onClose?: () => void;
 }
 
-const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: ReceiveFundsProps) => {
+const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: ReceiveFundsProperties) => {
 	const [isFormOpen, setIsFormOpen] = useState<boolean>(false);
 
 	const { t } = useTranslation();

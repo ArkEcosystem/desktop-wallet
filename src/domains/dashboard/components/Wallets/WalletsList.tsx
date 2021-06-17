@@ -7,7 +7,7 @@ import { WalletListItemSkeleton } from "app/components/WalletListItem/WalletList
 import React, { memo } from "react";
 import { Trans, useTranslation } from "react-i18next";
 
-import { WalletListProps } from ".";
+import { WalletListProperties } from ".";
 
 export const WalletsList = memo(
 	({
@@ -18,7 +18,7 @@ export const WalletsList = memo(
 		onRowClick,
 		onViewMore,
 		isLoading = false,
-	}: WalletListProps) => {
+	}: WalletListProperties) => {
 		const { t } = useTranslation();
 
 		const columns = [
@@ -32,13 +32,13 @@ export const WalletsList = memo(
 			},
 			{
 				Header: t("COMMON.BALANCE"),
-				accessor: ({ wallet }: { wallet: Contracts.IReadWriteWallet }) => wallet?.balance?.().toFixed(),
+				accessor: ({ wallet }: { wallet: Contracts.IReadWriteWallet }) => wallet?.balance?.().toFixed(0),
 				className: "flex-row-reverse justify-end",
 			},
 			{
 				Header: t("COMMON.FIAT_VALUE"),
 				accessor: ({ wallet }: { wallet: Contracts.IReadWriteWallet }) =>
-					wallet?.convertedBalance?.().toFixed(),
+					wallet?.convertedBalance?.().toFixed(0),
 				className: "flex-row-reverse justify-end",
 			},
 		];
@@ -47,7 +47,7 @@ export const WalletsList = memo(
 			return <></>;
 		}
 
-		const skeletonRows = new Array(3).fill({});
+		const skeletonRows = Array.from({ length: 3 }).fill({});
 
 		const tableRows = isLoading ? skeletonRows : wallets;
 

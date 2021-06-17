@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 
 import { UnconfirmedTransactionTable } from "../TransactionTable/UnconfirmedTransactionTable/UnconfirmedTransactionTable";
 
-interface ConfirmSendTransactionProps {
+interface ConfirmSendTransactionProperties {
 	isOpen: boolean;
 	onClose?: any;
 	onConfirm?: any;
@@ -18,7 +18,7 @@ export const ConfirmSendTransaction = ({
 	onClose,
 	onConfirm,
 	unconfirmedTransactions,
-}: ConfirmSendTransactionProps) => {
+}: ConfirmSendTransactionProperties) => {
 	const { t } = useTranslation();
 
 	return (

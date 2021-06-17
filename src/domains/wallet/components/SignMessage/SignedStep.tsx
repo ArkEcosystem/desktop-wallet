@@ -18,7 +18,7 @@ export const SignedStep = ({
 }) => {
 	const { t } = useTranslation();
 
-	const messageRef = useRef();
+	const messageReference = useRef();
 	const walletAlias = wallet.alias();
 
 	return (
@@ -43,7 +43,7 @@ export const SignedStep = ({
 					className="py-4"
 					name="signature"
 					wrap="hard"
-					ref={messageRef}
+					ref={messageReference}
 					defaultValue={JSON.stringify(signedMessage)}
 				/>
 			</FormField>

@@ -6,7 +6,7 @@ import { styled } from "twin.macro";
 import { Icon } from "../Icon";
 import { defaultTableStyle } from "./Table.styles";
 
-interface TableProps {
+interface TableProperties {
 	children?: any;
 	className?: string;
 	data: any[];
@@ -19,7 +19,7 @@ const TableWrapper = styled.div`
 	${defaultTableStyle}
 `;
 
-export const Table = ({ children, data, columns, hideHeader, className, initialState }: TableProps) => {
+export const Table = ({ children, data, columns, hideHeader, className, initialState }: TableProperties) => {
 	const tableData = useMemo(() => data, [data]);
 	const tableColumns = useMemo(() => columns, [columns]);
 

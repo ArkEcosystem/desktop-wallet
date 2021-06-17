@@ -3,14 +3,14 @@ import { useClipboard } from "app/hooks";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { ClipboardCommonProps } from "./Clipboard";
+import { ClipboardCommonProperties } from "./Clipboard";
 
-export type ClipboardIconProps = ClipboardCommonProps & {
+export type ClipboardIconProperties = ClipboardCommonProperties & {
 	variant: "icon";
 	tooltip?: string;
 };
 
-export const ClipboardIcon = ({ data, tooltip, options, children }: ClipboardIconProps) => {
+export const ClipboardIcon = ({ data, tooltip, options, children }: ClipboardIconProperties) => {
 	const { t } = useTranslation();
 
 	const [hasCopied, copy] = useClipboard({

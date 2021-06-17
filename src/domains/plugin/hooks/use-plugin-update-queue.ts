@@ -7,12 +7,12 @@ export const usePluginUpdateQueue = () => {
 	const [isUpdating, setIsUpdating] = useState(false);
 	const [isUpdateCompleted, setIsUpdateCompleted] = useState(false);
 	const { updatePlugin } = usePluginManagerContext();
-	const initialQueueRef = useRef<string[]>([]);
+	const initialQueueReference = useRef<string[]>([]);
 
 	const currentId = queue[0];
 
 	const startUpdate = (ids: string[]) => {
-		initialQueueRef.current = ids;
+		initialQueueReference.current = ids;
 		setQueue(ids);
 		setIsUpdating(true);
 		setIsUpdateCompleted(false);
@@ -28,11 +28,11 @@ export const usePluginUpdateQueue = () => {
 	}, [currentId]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	const hasUpdateComplete = (id: string) => {
-		return initialQueueRef.current.indexOf(id) >= 0 && !hasInUpdateQueue(id);
+		return initialQueueReference.current.includes(id) && !hasInUpdateQueue(id);
 	};
 
 	const hasInUpdateQueue = (id: string) => {
-		return queue.indexOf(id) >= 0;
+		return queue.includes(id);
 	};
 
 	useEffect(() => {
@@ -40,7 +40,7 @@ export const usePluginUpdateQueue = () => {
 			return;
 		}
 
-		if (!queue.length) {
+		if (queue.length === 0) {
 			setIsUpdating(false);
 			setIsUpdateCompleted(true);
 			return;

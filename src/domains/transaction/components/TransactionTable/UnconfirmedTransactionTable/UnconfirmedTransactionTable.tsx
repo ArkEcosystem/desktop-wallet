@@ -5,11 +5,11 @@ import { useTranslation } from "react-i18next";
 
 import { UnconfirmedTransactionRow } from "./UnconfirmedTransactionRow";
 
-interface Props {
+interface Properties {
 	transactions: DTO.ExtendedTransactionData[];
 }
 
-export const UnconfirmedTransactionTable = memo(({ transactions }: Props) => {
+export const UnconfirmedTransactionTable = memo(({ transactions }: Properties) => {
 	const { t } = useTranslation();
 
 	const columns: any = [

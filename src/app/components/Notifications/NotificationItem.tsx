@@ -1,7 +1,7 @@
 import React from "react";
 import VisibilitySensor from "react-visibility-sensor";
 
-import { NotificationItemProps, useActionNameMap } from ".";
+import { NotificationItemProperties, useActionNameMap } from ".";
 
 export const NotificationItem = ({
 	id,
@@ -11,7 +11,7 @@ export const NotificationItem = ({
 	onAction,
 	onVisibilityChange,
 	containmentRef,
-}: NotificationItemProps) => {
+}: NotificationItemProperties) => {
 	const { mapActionName } = useActionNameMap();
 	const action = mapActionName(actionName as string);
 

@@ -4,12 +4,12 @@ import { Color } from "types";
 
 import { getStyles } from "./Checkbox.styles";
 
-type CheckboxProps = {
+type CheckboxProperties = {
 	color?: Color;
 	variant?: string;
 } & React.InputHTMLAttributes<any>;
 
-export const Checkbox = styled.input<CheckboxProps>(getStyles);
+export const Checkbox = styled.input<CheckboxProperties>(getStyles);
 
 Checkbox.defaultProps = {
 	type: "checkbox",

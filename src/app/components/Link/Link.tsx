@@ -26,26 +26,26 @@ const AnchorStyled = styled.a(() => [
 	`,
 ]);
 
-type AnchorProps = {
+type AnchorProperties = {
 	isExternal?: boolean;
 	navigate?: () => void;
 	showExternalIcon?: boolean;
 } & React.AnchorHTMLAttributes<any>;
 
-const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>(
-	({ isExternal, showExternalIcon, href, children, rel, ...props }: AnchorProps, ref) => (
+const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProperties>(
+	({ isExternal, showExternalIcon, href, children, rel, ...properties }: AnchorProperties, reference) => (
 		<AnchorStyled
 			className="group"
 			data-testid="Link"
 			rel={isExternal ? "noopener noreferrer" : rel}
-			ref={ref}
+			ref={reference}
 			onClick={(event) => {
 				event.stopPropagation();
 				event.preventDefault();
-				return props.navigate?.();
+				return properties.navigate?.();
 			}}
 			href={href || "#"}
-			{...props}
+			{...properties}
 		>
 			<span className="break-all border-b border-transparent duration-200 group-hover:border-current">
 				{children}
@@ -65,33 +65,33 @@ const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>(
 
 Anchor.displayName = "Anchor";
 
-type Props = {
+type Properties = {
 	isExternal?: boolean;
 	children?: React.ReactNode;
 	tooltip?: string;
 	showExternalIcon?: boolean;
 } & Omit<LinkProps, "referrerPolicy">;
 
-export const Link = ({ tooltip, ...props }: Props) => {
+export const Link = ({ tooltip, ...properties }: Properties) => {
 	const { t } = useTranslation();
 
 	return (
 		<Tooltip content={tooltip} disabled={!tooltip}>
-			{props.isExternal ? (
+			{properties.isExternal ? (
 				<Anchor
 					onClick={(event) => {
 						event.stopPropagation();
 						event.preventDefault();
 						try {
-							openExternal(props.to);
+							openExternal(properties.to);
 						} catch {
-							toasts.error(t("COMMON.ERRORS.INVALID_URL", { url: props.to }));
+							toasts.error(t("COMMON.ERRORS.INVALID_URL", { url: properties.to }));
 						}
 					}}
-					{...props}
+					{...properties}
 				/>
 			) : (
-				<RouterLink component={Anchor} {...props} />
+				<RouterLink component={Anchor} {...properties} />
 			)}
 		</Tooltip>
 	);

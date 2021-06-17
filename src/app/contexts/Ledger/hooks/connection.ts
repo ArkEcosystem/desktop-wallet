@@ -11,7 +11,7 @@ import { connectionReducer, defaultConnectionState } from "./connection.state";
 export const useLedgerConnection = (transport: typeof Transport) => {
 	const { persist } = useEnvironmentContext();
 	const [state, dispatch] = useReducer(connectionReducer, defaultConnectionState);
-	const abortRetryRef = useRef<boolean>(false);
+	const abortRetryReference = useRef<boolean>(false);
 
 	const { isBusy, isConnected, error } = state;
 
@@ -57,15 +57,15 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 			retryOptions: retry.Options = { retries: 50, randomize: false, factor: 1 },
 		) => {
 			dispatch({ type: "waiting" });
-			abortRetryRef.current = false;
+			abortRetryReference.current = false;
 
 			const instance = profile.coins().set(coin, network);
 
 			try {
 				const slip44 = instance.config().get<number>("network.constants.slip44");
 
-				const connectFn: retry.RetryFunction<void> = async (bail, attempts) => {
-					if (abortRetryRef.current && attempts > 1) {
+				const connectFunction: retry.RetryFunction<void> = async (bail, attempts) => {
+					if (abortRetryReference.current && attempts > 1) {
 						bail(new Error("User aborted"));
 					}
 
@@ -75,7 +75,7 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 					await instance.ledger().getPublicKey(formatLedgerDerivationPath({ coinType: slip44 }));
 				};
 
-				await retry(connectFn, retryOptions);
+				await retry(connectFunction, retryOptions);
 				dispatch({ type: "connected" });
 			} catch (connectError) {
 				try {
@@ -98,7 +98,7 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 	const setBusy = useCallback(() => dispatch({ type: "busy" }), []);
 	const setIdle = useCallback(() => dispatch({ type: "connected" }), []);
 
-	const abortConnectionRetry = useCallback(() => (abortRetryRef.current = true), []);
+	const abortConnectionRetry = useCallback(() => (abortRetryReference.current = true), []);
 	const isAwaitingConnection = useMemo(() => state.isWaiting && !state.isConnected, [state]);
 	const isAwaitingDeviceConfirmation = useMemo(() => state.isWaiting && state.isConnected, [state]);
 	const hasDeviceAvailable = useMemo(() => !!state.device, [state]);

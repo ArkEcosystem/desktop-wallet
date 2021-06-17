@@ -23,6 +23,7 @@ module.exports = {
 		"sonarjs",
 		"testcafe",
 		"testing-library",
+		"unicorn",
 		"unused-imports",
 	],
 	extends: [
@@ -40,27 +41,30 @@ module.exports = {
 		"plugin:sonarjs/recommended",
 		"plugin:testcafe/recommended",
 		"plugin:testing-library/react",
+		"plugin:unicorn/recommended",
 		"prettier",
 	],
 	rules: {
-		"@typescript-eslint/ban-ts-comment": "off",
-		"@typescript-eslint/ban-types": "off",
+		"@typescript-eslint/ban-ts-comment": "warn",
+		"@typescript-eslint/ban-types": "warn",
 		"@typescript-eslint/consistent-type-definitions": ["error", "interface"],
-		"@typescript-eslint/explicit-module-boundary-types": "off",
-		"@typescript-eslint/no-explicit-any": "off",
-		"@typescript-eslint/no-floating-promises": "off",
-		"@typescript-eslint/no-misused-promises": "off",
-		"@typescript-eslint/no-non-null-assertion": "off",
-		"@typescript-eslint/no-unsafe-assignment": "off",
-		"@typescript-eslint/no-unsafe-call": "off",
-		"@typescript-eslint/no-unsafe-member-access": "off",
-		"@typescript-eslint/no-unsafe-return": "off",
-		"@typescript-eslint/no-unused-expressions": "off",
+		"@typescript-eslint/explicit-module-boundary-types": "warn",
+		"@typescript-eslint/no-empty-function": "warn",
+		"@typescript-eslint/no-explicit-any": "warn",
+		"@typescript-eslint/no-floating-promises": "warn",
+		"@typescript-eslint/no-misused-promises": "warn",
+		"@typescript-eslint/no-non-null-assertion": "warn",
+		"@typescript-eslint/no-unsafe-assignment": "warn",
+		"@typescript-eslint/no-unsafe-call": "warn",
+		"@typescript-eslint/no-unsafe-member-access": "warn",
+		"@typescript-eslint/no-unsafe-return": "warn",
+		"@typescript-eslint/no-unused-expressions": "warn",
 		"@typescript-eslint/no-unused-vars": ["error"],
-		"@typescript-eslint/no-var-requires": "off",
-		"@typescript-eslint/prefer-regexp-exec": "off",
-		"@typescript-eslint/restrict-template-expressions": "off",
-		"@typescript-eslint/unbound-method": "off",
+		"@typescript-eslint/no-var-requires": "warn",
+		"@typescript-eslint/prefer-regexp-exec": "warn",
+		"@typescript-eslint/restrict-plus-operands": "warn",
+		"@typescript-eslint/restrict-template-expressions": "warn",
+		"@typescript-eslint/unbound-method": "warn",
 		"arrow-body-style": ["error", "as-needed"],
 		curly: "error",
 		"import/default": "error",
@@ -96,7 +100,7 @@ module.exports = {
 		"no-unused-expressions": "off",
 		"no-unused-vars": "off",
 		"prefer-const": [
-			"error",
+			"warn",
 			{
 				destructuring: "all",
 			},
@@ -146,6 +150,29 @@ module.exports = {
 		"testing-library/prefer-user-event": "warn", // @TODO: set to error and fix
 		"testing-library/prefer-wait-for": "warn", // @TODO: set to error and fix
 		"testing-library/render-result-naming-convention": "warn", // @TODO: set to error and fix
+		"unicorn/consistent-destructuring": "warn", // @TODO: set to error and fix resulting issues
+		"unicorn/consistent-function-scoping": "warn", // @TODO: set to error and fix resulting issues
+		"unicorn/error-message": "warn", // @TODO: set to error and fix resulting issues
+		"unicorn/explicit-length-check": "warn", // @TODO: set to error and fix resulting issues
+		"unicorn/filename-case": "warn", // @TODO: set to error and fix resulting issues
+		"unicorn/import-style": "warn", // @TODO: set to error and fix resulting issues
+		"unicorn/no-abusive-eslint-disable": "warn", // @TODO: set to error and fix resulting issues
+		"unicorn/no-array-callback-reference": "warn", // @TODO: set to error and fix resulting issues
+		"unicorn/no-array-for-each": "warn", // @TODO: set to error and fix resulting issues
+		"unicorn/no-array-reduce": "warn", // @TODO: set to error and fix resulting issues
+		"unicorn/no-new-array": "warn", // @TODO: set to error and fix resulting issues
+		"unicorn/no-null": "warn", // @TODO: set to error and fix resulting issues
+		"unicorn/no-object-as-default-parameter": "warn", // @TODO: set to error and fix resulting issues
+		"unicorn/no-useless-undefined": "off",
+		"unicorn/prefer-array-some": "warn", // @TODO: set to error and fix resulting issues
+		"unicorn/prefer-module": "warn", // @TODO: set to error and fix resulting issues
+		"unicorn/prefer-node-protocol": "off",
+		"unicorn/prefer-number-properties": "warn", // @TODO: set to error and fix resulting issues
+		"unicorn/prefer-prototype-methods": "warn", // @TODO: set to error and fix resulting issues
+		"unicorn/prefer-spread": "warn", // @TODO: set to error and fix resulting issues
+		"unicorn/prefer-string-slice": "warn", // @TODO: set to error and fix resulting issues
+		"unicorn/prevent-abbreviations": "error", // @TODO: set to error and fix resulting issues
+		"unicorn/prevent-abbreviations": "warn", // @TODO: set to error and fix resulting issues
 		"unused-imports/no-unused-imports-ts": "error",
 	},
 	settings: {

@@ -2,7 +2,7 @@ import { Checkbox } from "app/components/Checkbox";
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { FilterNetworkProps, Network, NetworkOptions, ToggleAllOption } from ".";
+import { FilterNetworkProperties, Network, NetworkOptions, ToggleAllOption } from ".";
 
 export const FilterNetwork = ({
 	networks = [],
@@ -11,7 +11,7 @@ export const FilterNetwork = ({
 	onViewAll,
 	hideViewAll,
 	title,
-}: FilterNetworkProps) => {
+}: FilterNetworkProperties) => {
 	const [networkList, setNetworkList] = useState(networks);
 	const [showAll, setShowAll] = useState(false);
 	const { t } = useTranslation();
@@ -40,7 +40,7 @@ export const FilterNetwork = ({
 
 	const handleSelectAll = (checked: any) => {
 		const shouldSelectAll = checked && !networkList.every((n) => n.isSelected);
-		const allSelected = networkList.concat().map((n) => ({ ...n, isSelected: shouldSelectAll }));
+		const allSelected = [...networkList].map((n) => ({ ...n, isSelected: shouldSelectAll }));
 		onChange?.(allSelected[0], allSelected);
 	};
 
@@ -66,7 +66,7 @@ export const FilterNetwork = ({
 	);
 };
 
-export const FilterNetworks = ({ networks = [], ...props }: FilterNetworkProps) => {
+export const FilterNetworks = ({ networks = [], ...properties }: FilterNetworkProperties) => {
 	const { t } = useTranslation();
 
 	const { liveNetworks, testNetworks } = useMemo(
@@ -81,18 +81,18 @@ export const FilterNetworks = ({ networks = [], ...props }: FilterNetworkProps) 
 		<div className="space-y-4">
 			{liveNetworks.length > 0 && (
 				<FilterNetwork
-					{...props}
+					{...properties}
 					title={t("COMMON.PUBLIC_NETWORKS")}
 					networks={liveNetworks}
-					onChange={(_, updated) => props.onChange?.(_, [...updated, ...testNetworks])}
+					onChange={(_, updated) => properties.onChange?.(_, [...updated, ...testNetworks])}
 				/>
 			)}
-			{props.useTestNetworks && testNetworks.length > 0 && (
+			{properties.useTestNetworks && testNetworks.length > 0 && (
 				<FilterNetwork
-					{...props}
+					{...properties}
 					title={t("COMMON.DEVELOPMENT_NETWORKS")}
 					networks={testNetworks}
-					onChange={(_, updated) => props.onChange?.(_, [...updated, ...liveNetworks])}
+					onChange={(_, updated) => properties.onChange?.(_, [...updated, ...liveNetworks])}
 				/>
 			)}
 		</div>

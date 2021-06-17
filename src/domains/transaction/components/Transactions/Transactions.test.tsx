@@ -335,14 +335,14 @@ describe("Transactions", () => {
 				data: data.slice(0, 4),
 			}))
 			.get("/api/transactions")
-			.query((params) => !!params.senderId)
+			.query((parameters) => !!parameters.senderId)
 			.delayBody(500)
 			.reply(200, () => ({
 				meta,
 				data: data.slice(0, 1),
 			}))
 			.get("/api/transactions")
-			.query((params) => !!params.recipientId)
+			.query((parameters) => !!parameters.recipientId)
 			.reply(200, () => ({
 				meta,
 				data: data.slice(0, 3),

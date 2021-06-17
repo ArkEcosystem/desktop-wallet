@@ -21,8 +21,8 @@ describe("Plugin Permissions", () => {
 		const service = new PluginServiceData(new EventsPluginService());
 		const consoleSpy = jest.spyOn(console, "error").mockImplementation();
 
-		const protectedFn = isPluginEnabled({ service, plugin, profile })("result");
-		protectedFn();
+		const protectedFunction = isPluginEnabled({ service, plugin, profile })("result");
+		protectedFunction();
 
 		expect(consoleSpy).toHaveBeenCalledWith("The plugin plugin-test is not enabled by the current profile.");
 	});
@@ -32,8 +32,8 @@ describe("Plugin Permissions", () => {
 		const service = new PluginServiceData(new EventsPluginService());
 		const consoleSpy = jest.spyOn(console, "error").mockImplementation();
 
-		const protectedFn = isServiceDefinedInConfig({ service, plugin, profile })("result");
-		protectedFn();
+		const protectedFunction = isServiceDefinedInConfig({ service, plugin, profile })("result");
+		protectedFunction();
 
 		expect(consoleSpy).toHaveBeenCalledWith("The plugin plugin-test did not define EVENTS its permissions.");
 	});

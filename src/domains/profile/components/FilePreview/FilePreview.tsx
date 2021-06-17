@@ -6,7 +6,7 @@ import React from "react";
 
 type FilePreviewVariant = "success" | "loading" | "danger";
 
-interface FilePreviewProps {
+interface FilePreviewProperties {
 	file?: ImportFile;
 	variant?: FilePreviewVariant;
 	useBorders?: boolean;
@@ -44,7 +44,7 @@ export const FilePreviewPlain = ({ file, variant }: { file: ImportFile; variant?
 	);
 };
 
-export const FilePreview = ({ file, useBorders = true, variant }: FilePreviewProps) => {
+export const FilePreview = ({ file, useBorders = true, variant }: FilePreviewProperties) => {
 	if (!file) {
 		return <></>;
 	}

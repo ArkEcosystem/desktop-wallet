@@ -6,7 +6,7 @@ import tw, { styled } from "twin.macro";
 
 import { useFormField } from "../Form/useFormField";
 
-type InputProps = {
+type InputProperties = {
 	as?: React.ElementType;
 	ignoreContext?: boolean;
 	isInvalid?: boolean;
@@ -77,7 +77,7 @@ const InputStyled = styled.input`
 
 type InputElement = HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
 
-export const Input = React.forwardRef<InputElement, InputProps>(
+export const Input = React.forwardRef<InputElement, InputProperties>(
 	(
 		{
 			isInvalid,
@@ -95,9 +95,9 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 			hideInputValue,
 			style,
 			value,
-			...props
-		}: InputProps,
-		ref,
+			...properties
+		}: InputProperties,
+		reference,
 	) => {
 		let fieldContext = useFormField();
 
@@ -108,20 +108,20 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 		const isInvalidValue = fieldContext?.isInvalid || isInvalid;
 		const errorMessageValue = fieldContext?.errorMessage || errorMessage;
 
-		const focusRef = useRef<InputElement>(null);
-		ref = isFocused ? focusRef : ref;
+		const focusReference = useRef<InputElement>(null);
+		reference = isFocused ? focusReference : reference;
 		useEffect(() => {
-			if (isFocused && focusRef.current) {
-				focusRef.current.focus();
+			if (isFocused && focusReference.current) {
+				focusReference.current.focus();
 			}
-		}, [focusRef, isFocused]);
+		}, [focusReference, isFocused]);
 
-		const hiddenRef = useRef<HTMLDivElement>(null);
-		const suggestionRef = useRef<HTMLSpanElement>(null);
+		const hiddenReference = useRef<HTMLDivElement>(null);
+		const suggestionReference = useRef<HTMLSpanElement>(null);
 
 		const hideSuggestion = () => {
-			const suggestionWidth = suggestionRef?.current?.clientWidth || 0;
-			const parentWidth = suggestionRef?.current?.parentElement?.clientWidth || 0;
+			const suggestionWidth = suggestionReference?.current?.clientWidth || 0;
+			const parentWidth = suggestionReference?.current?.parentElement?.clientWidth || 0;
 
 			/* istanbul ignore next */
 			if (!suggestionWidth || suggestionWidth < parentWidth) {
@@ -129,12 +129,12 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 			}
 
 			/* istanbul ignore next */
-			return (hiddenRef?.current?.clientWidth || 0) >= suggestionWidth;
+			return (hiddenReference?.current?.clientWidth || 0) >= suggestionWidth;
 		};
 
 		return (
 			<>
-				<div ref={hiddenRef} className="fixed invisible w-auto whitespace-nowrap">
+				<div ref={hiddenReference} className="fixed invisible w-auto whitespace-nowrap">
 					{value}…
 				</div>
 				<InputWrapperStyled
@@ -159,8 +159,8 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 							aria-invalid={isInvalidValue}
 							disabled={disabled}
 							value={value}
-							ref={ref}
-							{...props}
+							ref={reference}
+							{...properties}
 						/>
 
 						{suggestion && (
@@ -172,7 +172,7 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 									innerClassName,
 								)}
 							>
-								<span ref={suggestionRef} className="truncate">
+								<span ref={suggestionReference} className="truncate">
 									{suggestion}
 								</span>
 							</span>

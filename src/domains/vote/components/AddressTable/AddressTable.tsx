@@ -7,12 +7,12 @@ import { useTranslation } from "react-i18next";
 
 import { AddressRow } from "./AddressRow";
 
-interface AddressTableProps {
+interface AddressTableProperties {
 	wallets: Contracts.IReadWriteWallet[];
 	onSelect?: (address: string) => void;
 }
 
-export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
+export const AddressTable = ({ wallets, onSelect }: AddressTableProperties) => {
 	const { t } = useTranslation();
 
 	const wallet = useMemo(() => wallets[0], [wallets]);
@@ -32,7 +32,7 @@ export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 		},
 		{
 			Header: t("COMMON.BALANCE"),
-			accessor: (wallet: Contracts.IReadWriteWallet) => wallet.balance?.().toFixed(),
+			accessor: (wallet: Contracts.IReadWriteWallet) => wallet.balance?.().toFixed(0),
 			className: "justify-end",
 		},
 		{

@@ -10,11 +10,11 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import Linkify from "react-linkify";
 
-type Props = {
+type Properties = {
 	coverImage?: string;
 } & BlockfolioSignal;
 
-export const NewsCard = ({ text, category, author, created_at: createdAt, coverImage }: Props) => {
+export const NewsCard = ({ text, category, author, created_at: createdAt, coverImage }: Properties) => {
 	const { t } = useTranslation();
 
 	// @ts-ignore

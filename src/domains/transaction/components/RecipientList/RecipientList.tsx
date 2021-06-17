@@ -11,8 +11,8 @@ import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
 
 import {
-	RecipientList as RecipientListProps,
-	RecipientListItem as RecipientListItemProps,
+	RecipientList as RecipientListProperties,
+	RecipientListItem as RecipientListItemProperties,
 } from "./RecipientList.models";
 import { defaultStyle } from "./RecipientList.styles";
 
@@ -33,7 +33,7 @@ const RecipientListItem = ({
 	disableButton,
 	showAmount,
 	normalizeAmount = true,
-}: RecipientListItemProps) => {
+}: RecipientListItemProperties) => {
 	const { t } = useTranslation();
 
 	if (variant === "condensed") {
@@ -127,7 +127,7 @@ export const RecipientList = ({
 	tooltipDisabled,
 	disableButton,
 	onRemove,
-}: RecipientListProps) => {
+}: RecipientListProperties) => {
 	const columns = [
 		{ Header: "Avatar", className: "hidden" },
 		{ Header: "Address", className: "hidden" },
@@ -143,7 +143,7 @@ export const RecipientList = ({
 	return (
 		<RecipientListWrapper>
 			<Table columns={columns} data={recipients}>
-				{(recipient: RecipientListItemProps, index: number) => (
+				{(recipient: RecipientListItemProperties, index: number) => (
 					<RecipientListItem
 						showAmount={showAmount}
 						address={recipient.address}

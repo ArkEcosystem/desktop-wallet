@@ -15,9 +15,9 @@ export function handleSingleInstance({
 		app.on("second-instance", (_, argv) => {
 			// Someone tried to run a second instance, we should focus our window.
 			// argv: An array of the second instance’s (command line / deep linked) arguments
-			for (const arg of argv) {
-				if (arg.startsWith("ark:")) {
-					broadcastURL(arg);
+			for (const argument of argv) {
+				if (argument.startsWith("ark:")) {
+					broadcastURL(argument);
 					break;
 				}
 			}

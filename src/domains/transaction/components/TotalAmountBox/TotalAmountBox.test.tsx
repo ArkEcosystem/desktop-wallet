@@ -8,7 +8,7 @@ describe("TotalAmountBox", () => {
 	it("should render", () => {
 		const fee = "1000000";
 		const { asFragment, getByTestId } = render(
-			<TotalAmountBox amount={BigNumber.make(10000000)} fee={fee} ticker="ARK" />,
+			<TotalAmountBox amount={BigNumber.make(10_000_000)} fee={fee} ticker="ARK" />,
 		);
 
 		expect(asFragment()).toMatchSnapshot();

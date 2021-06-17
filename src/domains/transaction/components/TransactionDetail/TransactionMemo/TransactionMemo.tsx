@@ -4,11 +4,11 @@ import { useTranslation } from "react-i18next";
 
 import { TransactionDetail } from "../TransactionDetail";
 
-interface TransactionMemoProps {
+interface TransactionMemoProperties {
 	memo: string;
 }
 
-export const TransactionMemo = ({ memo }: TransactionMemoProps) => {
+export const TransactionMemo = ({ memo }: TransactionMemoProperties) => {
 	const { t } = useTranslation();
 
 	return (

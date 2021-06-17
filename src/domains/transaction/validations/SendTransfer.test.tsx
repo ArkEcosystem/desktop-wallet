@@ -15,7 +15,7 @@ describe("Send transfer validations", () => {
 		await env.profiles().restore(profile);
 		await profile.sync();
 
-		translationMock = jest.fn((i18nString: string) => i18nString);
+		translationMock = jest.fn((index18nString: string) => index18nString);
 		network = env.profiles().first().wallets().first().network();
 	});
 

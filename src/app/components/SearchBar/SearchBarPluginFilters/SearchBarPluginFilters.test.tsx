@@ -62,7 +62,7 @@ describe("SearchBarPluginFilters", () => {
 	});
 
 	it("should emit onChange event", async () => {
-		const fn = jest.fn();
+		const function_ = jest.fn();
 		const categories = [
 			{
 				label: "Utility",
@@ -81,7 +81,7 @@ describe("SearchBarPluginFilters", () => {
 		};
 
 		const { getByTestId } = render(
-			<SearchBarPluginFilters categories={categories} initialValues={initialValues} onReset={fn} />,
+			<SearchBarPluginFilters categories={categories} initialValues={initialValues} onReset={function_} />,
 		);
 
 		expect(getByTestId("SearchBarPluginFilters")).toBeTruthy();
@@ -96,11 +96,11 @@ describe("SearchBarPluginFilters", () => {
 			fireEvent.click(resetLink);
 		});
 
-		await waitFor(() => expect(fn).toHaveBeenCalled());
+		await waitFor(() => expect(function_).toHaveBeenCalled());
 	});
 
 	it("should check category", () => {
-		const fn = jest.fn();
+		const function_ = jest.fn();
 		const categories = [
 			{
 				label: "Utility",
@@ -111,7 +111,7 @@ describe("SearchBarPluginFilters", () => {
 				value: "game",
 			},
 		];
-		const { getByTestId } = render(<SearchBarPluginFilters onChange={fn} categories={categories} />);
+		const { getByTestId } = render(<SearchBarPluginFilters onChange={function_} categories={categories} />);
 
 		expect(getByTestId("SearchBarPluginFilters")).toBeTruthy();
 		act(() => {
@@ -125,11 +125,11 @@ describe("SearchBarPluginFilters", () => {
 			fireEvent.click(gameCheckbox);
 		});
 
-		expect(fn).toBeCalledWith({ categories: ["game"] });
+		expect(function_).toBeCalledWith({ categories: ["game"] });
 	});
 
 	it("should uncheck category", () => {
-		const fn = jest.fn();
+		const function_ = jest.fn();
 		const categories = [
 			{
 				label: "Utility",
@@ -145,7 +145,7 @@ describe("SearchBarPluginFilters", () => {
 			categories: ["game"],
 		};
 		const { getByTestId } = render(
-			<SearchBarPluginFilters onChange={fn} categories={categories} initialValues={initialValues} />,
+			<SearchBarPluginFilters onChange={function_} categories={categories} initialValues={initialValues} />,
 		);
 
 		expect(getByTestId("SearchBarPluginFilters")).toBeTruthy();
@@ -160,11 +160,11 @@ describe("SearchBarPluginFilters", () => {
 			fireEvent.click(gameCheckbox);
 		});
 
-		expect(fn).toBeCalledWith({ categories: [] });
+		expect(function_).toBeCalledWith({ categories: [] });
 	});
 
 	it("should not emit onChange event upon category change", () => {
-		const fn = jest.fn();
+		const function_ = jest.fn();
 		const categories = [
 			{
 				label: "Utility",
@@ -195,7 +195,7 @@ describe("SearchBarPluginFilters", () => {
 			fireEvent.click(gameCheckbox);
 		});
 
-		expect(fn).not.toBeCalled();
+		expect(function_).not.toBeCalled();
 	});
 
 	it("should render with null initialValues", () => {

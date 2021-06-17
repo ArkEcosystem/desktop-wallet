@@ -13,7 +13,7 @@ import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Size } from "types";
 
-interface SearchWalletListItemProps {
+interface SearchWalletListItemProperties {
 	address: string;
 	balance: BigNumber;
 	coinId: string;
@@ -41,7 +41,7 @@ const SearchWalletListItem = ({
 	showFiatValue,
 	showNetwork,
 	onAction,
-}: SearchWalletListItemProps) => {
+}: SearchWalletListItemProperties) => {
 	const { t } = useTranslation();
 
 	return (
@@ -77,7 +77,7 @@ const SearchWalletListItem = ({
 	);
 };
 
-interface SearchWalletProps {
+interface SearchWalletProperties {
 	isOpen: boolean;
 	title: string;
 	description?: string;
@@ -103,7 +103,7 @@ export const SearchWallet = ({
 	onClose,
 	onSelectWallet,
 	profile,
-}: SearchWalletProps) => {
+}: SearchWalletProperties) => {
 	const [query, setQuery] = useState("");
 
 	const { t } = useTranslation();
@@ -116,7 +116,7 @@ export const SearchWallet = ({
 			},
 			{
 				Header: t("COMMON.BALANCE"),
-				accessor: (wallet: Contracts.IReadWriteWallet) => wallet.balance?.().toFixed(),
+				accessor: (wallet: Contracts.IReadWriteWallet) => wallet.balance?.().toFixed(0),
 				className: "justify-end",
 			},
 		];
@@ -126,7 +126,7 @@ export const SearchWallet = ({
 				...commonColumns,
 				{
 					Header: t("COMMON.VALUE"),
-					accessor: (wallet: Contracts.IReadWriteWallet) => wallet.convertedBalance?.().toFixed(),
+					accessor: (wallet: Contracts.IReadWriteWallet) => wallet.convertedBalance?.().toFixed(0),
 					className: "justify-end",
 				},
 				{
@@ -168,7 +168,7 @@ export const SearchWallet = ({
 	}, [searchPlaceholder, showFiatValue, t]);
 
 	const filteredWallets = useMemo(() => {
-		if (!query.length) {
+		if (query.length === 0) {
 			return wallets;
 		}
 
@@ -179,7 +179,7 @@ export const SearchWallet = ({
 		);
 	}, [wallets, query]);
 
-	const isEmptyResults = query.length > 0 && !filteredWallets.length;
+	const isEmptyResults = query.length > 0 && filteredWallets.length === 0;
 
 	return (
 		<Modal title={title} description={description} isOpen={isOpen} size={size} onClose={onClose}>

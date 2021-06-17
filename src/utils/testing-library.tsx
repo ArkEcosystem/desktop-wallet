@@ -180,12 +180,12 @@ export const defaultNetMocks = () => {
 
 export const useDefaultNetMocks = defaultNetMocks;
 
-const envWithMocks = () => {
+const environmentWithMocks = () => {
 	defaultNetMocks();
 	return new Environment({ coins: { ARK }, httpClient, storage: new StubStorage() });
 };
 
-export const env = envWithMocks();
+export const env = environmentWithMocks();
 
 export const syncDelegates = async (profile: Contracts.IProfile) => await env.delegates().syncAll(profile);
 

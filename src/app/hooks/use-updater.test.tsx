@@ -25,14 +25,14 @@ describe("useUpdater hook", () => {
 		});
 
 		jest.spyOn(electron.ipcRenderer, "on").mockImplementation(
-			(evt: any, callback: (evt: any, data?: any) => void) => {
-				if (evt === "updater:download-progress") {
-					callback(evt, { total: 10, percent: 30, transferred: 3 });
+			(event_: any, callback: (event__: any, data?: any) => void) => {
+				if (event_ === "updater:download-progress") {
+					callback(event_, { total: 10, percent: 30, transferred: 3 });
 				}
 
-				if (evt === "updater:update-downloaded" && updateDownloadedCalls === 0) {
+				if (event_ === "updater:update-downloaded" && updateDownloadedCalls === 0) {
 					updateDownloadedCalls += 1;
-					callback(evt);
+					callback(event_);
 				}
 			},
 		);
