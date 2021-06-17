@@ -56,7 +56,7 @@ export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants 
 	};
 
 	const removeParticipant = (index: number) => {
-		const remainingParticipants = [...participants];
+		const remainingParticipants = Array.from(participants);
 		remainingParticipants.splice(index, 1);
 
 		setParticipants(remainingParticipants);

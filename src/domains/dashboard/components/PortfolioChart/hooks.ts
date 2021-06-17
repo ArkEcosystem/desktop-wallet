@@ -60,7 +60,7 @@ export const usePortfolioData = ({ profile }: { profile: Contracts.IProfile }) =
 			}
 		}
 
-		return sortByDesc([...data], "percentage");
+		return sortByDesc(Array.from(data), "percentage");
 	}, [availableNetworks, balancePerCoin]);
 
 	return {

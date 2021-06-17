@@ -101,7 +101,7 @@ export const ChartContent = ({
 	height,
 	showAnimation = true,
 }: LineChartProperties) => {
-	const defaultValue = [...data].pop();
+	const defaultValue = Array.from(data).pop();
 	const [legend, setLegend] = useState(defaultValue);
 
 	return (

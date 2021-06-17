@@ -35,7 +35,7 @@ export const scannerReducer = (state: State, action: Action): State => {
 				current.push(action.path);
 			}
 
-			return { ...state, selected: [...current] };
+			return { ...state, selected: Array.from(current) };
 		}
 		case "toggleSelectAll": {
 			const { selected, wallets } = state;

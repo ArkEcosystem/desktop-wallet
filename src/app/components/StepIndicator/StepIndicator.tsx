@@ -24,7 +24,7 @@ const StepWrapper = styled.ul`
 `;
 
 export const StepIndicator: React.FC<StepIndicatorProperties> = (properties: StepIndicatorProperties) => {
-	const steps = [...new Array(properties.size)];
+	const steps = Array.from(new Array(properties.size));
 	return (
 		<StepWrapper>
 			{steps.map((_, index) => (

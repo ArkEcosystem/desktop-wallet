@@ -247,7 +247,7 @@ export const AddRecipient = ({
 	};
 
 	const handleRemoveRecipient = (index: number) => {
-		const remainingRecipients = [...addedRecipients];
+		const remainingRecipients = Array.from(addedRecipients);
 		remainingRecipients.splice(index, 1);
 
 		setAddedRecipients(remainingRecipients);

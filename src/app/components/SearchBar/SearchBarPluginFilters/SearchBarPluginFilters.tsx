@@ -20,7 +20,7 @@ const CategoryCheckboxes = ({ categories, selected, onChange }: any) => {
 	const isSelected = (categoryValue: any, list: string[]) => list?.some((item) => item === categoryValue);
 
 	const updateCategories = (isChecked: boolean, categoryValue: any) => {
-		const values = [...selected];
+		const values = Array.from(selected);
 
 		if (isChecked) {
 			values.push(categoryValue);

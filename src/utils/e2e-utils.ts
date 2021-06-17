@@ -185,7 +185,7 @@ export const requestMocks = {
 		// mainnet
 		mockRequest("https://wallets.ark.io/api/delegates", "coins/ark/mainnet/delegates"),
 	],
-	multisignature: [...multisignatureMocks()],
+	multisignature: Array.from(multisignatureMocks()),
 	transactions: [
 		// devnet
 		mockRequest("https://dwallets.ark.io/api/transactions/fees", "coins/ark/devnet/transaction-fees"),

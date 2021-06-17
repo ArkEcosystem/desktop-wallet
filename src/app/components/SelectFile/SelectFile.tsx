@@ -35,7 +35,7 @@ export const SelectFile = ({ onSelect, fileFormat }: SelectFileStepProperties) =
 
 		setIsDragging(false);
 
-		const firstAcceptedFileByExtension = [...event.dataTransfer.files].find(
+		const firstAcceptedFileByExtension = Array.from(event.dataTransfer.files).find(
 			({ name }) => path.extname(name) === fileFormat,
 		);
 

@@ -40,7 +40,7 @@ export const FilterNetwork = ({
 
 	const handleSelectAll = (checked: any) => {
 		const shouldSelectAll = checked && !networkList.every((n) => n.isSelected);
-		const allSelected = [...networkList].map((n) => ({ ...n, isSelected: shouldSelectAll }));
+		const allSelected = Array.from(networkList, (n) => ({ ...n, isSelected: shouldSelectAll }));
 		onChange?.(allSelected[0], allSelected);
 	};
 
