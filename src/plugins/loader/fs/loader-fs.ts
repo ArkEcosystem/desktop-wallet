@@ -84,8 +84,6 @@ export class PluginLoaderFileSystem {
 			files.push(...match);
 		}
 
-		const paths = files.map((file) => path.dirname(file));
-
-		return paths;
+		return files.map((file) => path.dirname(file));
 	}
 }

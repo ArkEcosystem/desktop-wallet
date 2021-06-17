@@ -144,9 +144,7 @@ export const DelegateTable = ({
 		}
 
 		const offset = (currentPage - 1) * itemsPerPage;
-		const paginatedItems = items.slice(offset).slice(0, itemsPerPage);
-
-		return paginatedItems;
+		return items.slice(offset).slice(0, itemsPerPage);
 	};
 
 	const showSkeleton = useMemo(() => totalDelegates === 0 && isLoading, [totalDelegates, isLoading]);

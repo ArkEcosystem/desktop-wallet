@@ -12,7 +12,6 @@ import {
 	env,
 	fireEvent,
 	getDefaultProfileId,
-	RenderResult,
 	renderWithRouter,
 	syncDelegates,
 	syncFees,
@@ -32,7 +31,7 @@ const history = createMemoryHistory();
 const renderPage = () => {
 	const path = "/profiles/:profileId/wallets/:walletId/send-delegate-resignation";
 
-	const rendered: RenderResult = renderWithRouter(
+	return renderWithRouter(
 		<Route path={path}>
 			<SendDelegateResignation />
 		</Route>,
@@ -41,8 +40,6 @@ const renderPage = () => {
 			history,
 		},
 	);
-
-	return rendered;
 };
 
 const transactionResponse = {

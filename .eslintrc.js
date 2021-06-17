@@ -18,7 +18,9 @@ module.exports = {
 		"jest",
 		"prettier",
 		"react-hooks",
+		"react",
 		"simple-import-sort",
+		"sonarjs",
 		"testcafe",
 		"testing-library",
 		"unused-imports",
@@ -35,6 +37,7 @@ module.exports = {
 		"plugin:prettier/recommended",
 		"plugin:react-hooks/recommended",
 		"plugin:react/recommended",
+		"plugin:sonarjs/recommended",
 		"plugin:testcafe/recommended",
 		"plugin:testing-library/react",
 		"prettier",
@@ -107,6 +110,15 @@ module.exports = {
 		"react-hooks/exhaustive-deps": "warn",
 		"react-hooks/rules-of-hooks": "error",
 		"react/self-closing-comp": "error",
+		"sonarjs/cognitive-complexity": "warn", // @TODO: set to error and resolve issues
+		"sonarjs/no-all-duplicated-branches": "warn", // @TODO: set to error and resolve issues
+		"sonarjs/no-collapsible-if": "warn", // @TODO: set to error and resolve issues
+		"sonarjs/no-duplicate-string": "warn", // @TODO: set to error and resolve issues
+		"sonarjs/no-identical-expressions": "warn", // @TODO: set to error and resolve issues
+		"sonarjs/no-identical-functions": "warn", // @TODO: set to error and resolve issues
+		"sonarjs/no-redundant-jump": "warn", // @TODO: set to error and resolve issues
+		"sonarjs/no-small-switch": "warn", // @TODO: set to error and resolve issues
+		"sonarjs/no-use-of-empty-return-value": "warn", // @TODO: set to error and resolve issues
 		"simple-import-sort/imports": "error",
 		"simple-import-sort/exports": "error",
 		"testing-library/await-async-query": "warn", // @TODO: set to error and fix

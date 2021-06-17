@@ -38,8 +38,7 @@ const formatCrypto = ({ ticker, value, decimals, locale, normalize }: FormatProp
 	/**
 	 * Intl.NumberFormat throws error for some tickers like DARK (?)
 	 */
-	const money = numeral.replace("BTC", ticker.toUpperCase());
-	return money;
+	return numeral.replace("BTC", ticker.toUpperCase());
 };
 
 export const Amount = ({ ticker, value, locale, showSign, normalize, isNegative, ...props }: Props) => {
