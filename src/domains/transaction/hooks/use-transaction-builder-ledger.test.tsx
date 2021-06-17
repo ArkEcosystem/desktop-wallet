@@ -126,7 +126,7 @@ describe("Use Transaction Builder with Ledger", () => {
 				new Promise((resolve) =>
 					setTimeout(() => {
 						resolve();
-					}, 20000),
+					}, 20_000),
 				),
 		);
 
@@ -149,8 +149,8 @@ describe("Use Transaction Builder with Ledger", () => {
 		await actHook(async () => {
 			try {
 				await result.current.build("transfer", input, wallet, { abortSignal });
-			} catch (e) {
-				error = e;
+			} catch (error_) {
+				error = error_;
 			}
 		});
 

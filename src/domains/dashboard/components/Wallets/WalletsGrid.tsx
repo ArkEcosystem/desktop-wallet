@@ -2,14 +2,14 @@ import { Slider } from "app/components/Slider";
 import { WalletCard } from "app/components/WalletCard";
 import React, { memo } from "react";
 
-import { WalletGridProps } from ".";
+import { WalletGridProperties } from ".";
 
-export const WalletsGrid = memo(({ isVisible, isLoading, wallets, sliderOptions, onWalletAction }: WalletGridProps) => {
+export const WalletsGrid = memo(({ isVisible, isLoading, wallets, sliderOptions, onWalletAction }: WalletGridProperties) => {
 	if (!isVisible) {
 		return <></>;
 	}
 
-	const skeletonSlides = new Array(3).fill({});
+	const skeletonSlides = Array.from({length: 3}).fill({});
 	const data = isLoading ? skeletonSlides : wallets;
 
 	return (

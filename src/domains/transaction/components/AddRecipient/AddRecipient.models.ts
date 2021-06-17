@@ -1,7 +1,7 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
 
-export interface AddRecipientProps {
+export interface AddRecipientProperties {
 	assetSymbol: string;
 	singleLabel?: string;
 	multipleLabel?: string;
@@ -15,7 +15,7 @@ export interface AddRecipientProps {
 	onChange?: (recipients: RecipientListItem[]) => void;
 }
 
-export interface ToggleButtonProps {
+export interface ToggleButtonProperties {
 	labelText?: string;
 	helpText?: string;
 	isSingle?: boolean;

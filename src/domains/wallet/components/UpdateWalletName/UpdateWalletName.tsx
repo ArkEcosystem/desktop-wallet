@@ -8,7 +8,7 @@ import { useForm, Validate } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { lowerCaseEquals } from "utils/equals";
 
-interface UpdateWalletNameProps {
+interface UpdateWalletNameProperties {
 	currentAlias?: string;
 	walletId?: string;
 	profile: Contracts.IProfile;
@@ -28,7 +28,7 @@ export const UpdateWalletName = ({
 	onCancel,
 	onSave,
 	validation,
-}: UpdateWalletNameProps) => {
+}: UpdateWalletNameProperties) => {
 	const methods = useForm<Record<string, any>>({ mode: "onChange", defaultValues: { name: currentAlias } });
 	const { formState, register, setValue } = methods;
 	const { isValid, errors } = formState;
@@ -43,7 +43,7 @@ export const UpdateWalletName = ({
 	}, [currentAlias, isOpen, setValue]);
 
 	const onSubmit = ({ name }: any) => {
-		onSave(name.trim().substring(0, nameMaxLength));
+		onSave(name.trim().slice(0, Math.max(0, nameMaxLength)));
 	};
 
 	return (
@@ -65,9 +65,9 @@ export const UpdateWalletName = ({
 							ref={register({
 								validate: {
 									whitespaceOnly: (alias) => {
-										if (alias.length) {
+										if (alias.length > 0) {
 											return (
-												!!alias.trim().length ||
+												alias.trim().length > 0 ||
 												t("COMMON.VALIDATION.FIELD_INVALID", {
 													field: t("WALLETS.WALLET_NAME"),
 												}).toString()
@@ -78,7 +78,7 @@ export const UpdateWalletName = ({
 									},
 									duplicateAlias: (alias) =>
 										!alias ||
-										!profile
+										profile
 											.wallets()
 											.values()
 											.filter(
@@ -86,7 +86,7 @@ export const UpdateWalletName = ({
 													item.id() !== walletId &&
 													item.alias() &&
 													lowerCaseEquals(item.alias()!.trim(), alias.trim()),
-											).length ||
+											).length === 0 ||
 										t("WALLETS.PAGE_CREATE_WALLET.VALIDATION.ALIAS_EXISTS", {
 											alias: alias.trim(),
 										}).toString(),

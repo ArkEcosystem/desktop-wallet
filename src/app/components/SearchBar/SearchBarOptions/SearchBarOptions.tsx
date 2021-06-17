@@ -3,13 +3,13 @@ import { Dropdown } from "app/components/Dropdown";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-interface SearchBarOptionsProps {
+interface SearchBarOptionsProperties {
 	selectedOption?: any;
 	options: any;
 	onSelect: any;
 }
 
-export const SearchBarOptions = (props: SearchBarOptionsProps) => {
+export const SearchBarOptions = (properties: SearchBarOptionsProperties) => {
 	const { t } = useTranslation();
 
 	return (
@@ -17,12 +17,12 @@ export const SearchBarOptions = (props: SearchBarOptionsProps) => {
 			<Dropdown
 				toggleContent={
 					<span className="flex font-semibold cursor-pointer select-none">
-						{props.selectedOption ? props.selectedOption.label : t("COMMON.TYPE")}
+						{properties.selectedOption ? properties.selectedOption.label : t("COMMON.TYPE")}
 						<SvgCollection.ChevronDown className="inline-block ml-2 w-2 text-black" />
 					</span>
 				}
-				options={props.options}
-				onSelect={props.onSelect}
+				options={properties.options}
+				onSelect={properties.onSelect}
 				position="left"
 			/>
 		</div>

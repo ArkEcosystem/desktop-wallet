@@ -9,7 +9,7 @@ interface Category {
 	value: string | number;
 }
 
-interface FilterProps {
+interface FilterProperties {
 	categories?: Category[];
 	initialValues?: any;
 	onChange?: any;
@@ -20,12 +20,12 @@ const CategoryCheckboxes = ({ categories, selected, onChange }: any) => {
 	const isSelected = (categoryValue: any, list: string[]) => list?.some((item) => item === categoryValue);
 
 	const updateCategories = (isChecked: boolean, categoryValue: any) => {
-		const values = selected.concat();
+		const values = [...selected];
 
 		if (isChecked) {
 			values.push(categoryValue);
 		} else {
-			const index = selected.findIndex((item: string) => item === categoryValue);
+			const index = selected.indexOf(categoryValue);
 			values.splice(index, 1);
 		}
 
@@ -43,7 +43,7 @@ const CategoryCheckboxes = ({ categories, selected, onChange }: any) => {
 						<span>
 							<Checkbox
 								checked={isSelected(category.value, selected)}
-								onChange={(ev: any) => updateCategories(ev.target.checked, category.value)}
+								onChange={(event_: any) => updateCategories(event_.target.checked, category.value)}
 								name="category"
 								data-testid={`SearchBarPluginFilters-category-${category.value}`}
 							/>
@@ -55,7 +55,7 @@ const CategoryCheckboxes = ({ categories, selected, onChange }: any) => {
 	);
 };
 
-export const SearchBarPluginFilters = ({ categories, initialValues, onReset, onChange }: FilterProps) => {
+export const SearchBarPluginFilters = ({ categories, initialValues, onReset, onChange }: FilterProperties) => {
 	const { t } = useTranslation();
 
 	const defaultCategories = [

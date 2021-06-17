@@ -8,7 +8,7 @@ import { getTrackBackground } from "react-range";
 import { InputCurrency } from "./InputCurrency";
 import { sanitizeStep } from "./utils";
 
-interface Props {
+interface Properties {
 	disabled?: boolean;
 	value: string;
 	min: number;
@@ -17,8 +17,8 @@ interface Props {
 	onChange: (value: string) => void;
 }
 
-export const InputRange = React.forwardRef<HTMLInputElement, Props>(
-	({ value, onChange, step, disabled, max, ...props }: Props, ref) => {
+export const InputRange = React.forwardRef<HTMLInputElement, Properties>(
+	({ value, onChange, step, disabled, max, ...properties }: Properties, reference) => {
 		const fieldContext = useFormField();
 
 		const rangeValues = useMemo<number[]>(() => {
@@ -32,7 +32,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 			return [Math.min(sanitized.toNumber(), max)];
 		}, [value, max]);
 
-		const min = Math.min(props.min, +value);
+		const min = Math.min(properties.min, +value);
 
 		const backgroundColor = !fieldContext?.isInvalid
 			? "rgba(var(--theme-color-primary-rgb), 0.1)"
@@ -60,11 +60,11 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 						  }
 				}
 				value={value}
-				ref={ref}
+				ref={reference}
 				onChange={onChange}
 			>
 				{!disabled && min < max && (
-					<div className={cn("absolute bottom-0 px-1 w-full", { invisible: !rangeValues.length })}>
+					<div className={cn("absolute bottom-0 px-1 w-full", { invisible: rangeValues.length === 0 })}>
 						<Range
 							step={sanitizedStep}
 							isInvalid={fieldContext?.isInvalid}

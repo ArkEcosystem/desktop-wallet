@@ -7,7 +7,7 @@ interface ActivityState {
 	threshold?: number;
 }
 
-interface HandlerParams {
+interface HandlerParameters {
 	profile?: Contracts.IProfile;
 	onTimeout?: CallbackFunction;
 }
@@ -29,7 +29,7 @@ export const useAutomaticSignout = () => {
 		activityState.current = {};
 	};
 
-	const monitorIdleTime = ({ profile, onTimeout }: HandlerParams) => {
+	const monitorIdleTime = ({ profile, onTimeout }: HandlerParameters) => {
 		if (!profile || !profile.status().isRestored()) {
 			clearActivityState();
 			return;

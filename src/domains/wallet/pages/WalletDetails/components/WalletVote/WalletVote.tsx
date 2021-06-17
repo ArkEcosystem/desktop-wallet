@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 
 import { WalletVoteSkeleton } from "./WalletVoteSkeleton";
 
-interface WalletVoteProps {
+interface WalletVoteProperties {
 	wallet: Contracts.IReadWriteWallet;
 	onButtonClick: (address?: string) => void;
 	env: Environment;
@@ -29,7 +29,7 @@ const HintIcon = ({ tooltipContent }: { tooltipContent: string }) => (
 	</Tooltip>
 );
 
-export const WalletVote = ({ wallet, onButtonClick, env, profile }: WalletVoteProps) => {
+export const WalletVote = ({ wallet, onButtonClick, env, profile }: WalletVoteProperties) => {
 	const { t } = useTranslation();
 	const [isLoading, setIsLoading] = useState(true);
 

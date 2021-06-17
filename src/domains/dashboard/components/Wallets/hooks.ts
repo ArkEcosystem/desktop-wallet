@@ -2,7 +2,7 @@ import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { chunk } from "@arkecosystem/utils";
 import { useMemo } from "react";
 
-import { GridWallet, UseWalletDisplayProps } from ".";
+import { GridWallet, UseWalletDisplayProperties } from ".";
 
 export const useWalletDisplay = ({
 	wallets = [],
@@ -10,7 +10,7 @@ export const useWalletDisplay = ({
 	displayType = "all",
 	viewMore = false,
 	listPagerLimit = 10,
-}: UseWalletDisplayProps) => {
+}: UseWalletDisplayProperties) => {
 	const sliderOptions = {
 		slideHeight: 192,
 		slidesPerView: 3,
@@ -68,8 +68,8 @@ export const useWalletDisplay = ({
 				const firstHalf = page.slice(0, walletsPerPage / 2);
 				const secondHalf = page.slice(walletsPerPage / 2, page.length);
 
-				for (let i = 0; i < firstHalf.length; i++) {
-					result.push(firstHalf[i], secondHalf[i]);
+				for (const [index, element] of firstHalf.entries()) {
+					result.push(element, secondHalf[index]);
 				}
 			}
 

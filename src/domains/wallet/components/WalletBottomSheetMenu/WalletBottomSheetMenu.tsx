@@ -64,12 +64,12 @@ const WalletTable = ({
 	);
 };
 
-interface WalletBottomSheetMenuProps {
+interface WalletBottomSheetMenuProperties {
 	wallets: Contracts.IReadWriteWallet[];
 	defaultIsOpen?: boolean;
 }
 
-export const WalletBottomSheetMenu = ({ wallets, defaultIsOpen }: WalletBottomSheetMenuProps) => {
+export const WalletBottomSheetMenu = ({ wallets, defaultIsOpen }: WalletBottomSheetMenuProperties) => {
 	const [isOpen, setIsOpen] = React.useState(defaultIsOpen!);
 
 	const activeProfile = useActiveProfile();

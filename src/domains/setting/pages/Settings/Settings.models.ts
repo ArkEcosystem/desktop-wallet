@@ -1,6 +1,6 @@
 import { DeepMap, FieldError, UseFormMethods } from "react-hook-form";
 
-export interface SettingsProps {
+export interface SettingsProperties {
 	formConfig: {
 		context: UseFormMethods<Record<string, any>>;
 		errors: DeepMap<Record<string, any>, FieldError>;

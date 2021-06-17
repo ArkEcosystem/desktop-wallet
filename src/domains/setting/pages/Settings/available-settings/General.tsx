@@ -19,9 +19,9 @@ import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 import { setScreenshotProtection } from "utils/electron-utils";
 
-import { SettingsProps } from "../Settings.models";
+import { SettingsProperties } from "../Settings.models";
 
-export const General = ({ formConfig, onSuccess }: SettingsProps) => {
+export const General = ({ formConfig, onSuccess }: SettingsProperties) => {
 	const reloadPath = useReloadPath();
 	const { persist } = useEnvironmentContext();
 	const { setProfileTheme } = useTheme();

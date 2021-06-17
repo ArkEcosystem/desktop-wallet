@@ -1,4 +1,4 @@
-export interface ToggleAllOptionProps {
+export interface ToggleAllOptionProperties {
 	onClick?: any;
 	isHidden?: boolean;
 	isSelected?: boolean;
@@ -13,7 +13,7 @@ export interface Network {
 	isLive?: boolean;
 }
 
-export interface FilterNetworkProps {
+export interface FilterNetworkProperties {
 	title?: string;
 	networks?: Network[];
 	onChange?: (network: Network, networks: Network[]) => void;

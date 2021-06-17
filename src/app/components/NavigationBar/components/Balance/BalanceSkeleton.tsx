@@ -2,11 +2,11 @@ import { Skeleton } from "app/components/Skeleton";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-interface Props {
+interface Properties {
 	width?: number;
 }
 
-export const BalanceSkeleton = ({ width }: Props) => {
+export const BalanceSkeleton = ({ width }: Properties) => {
 	const { t } = useTranslation();
 
 	return (

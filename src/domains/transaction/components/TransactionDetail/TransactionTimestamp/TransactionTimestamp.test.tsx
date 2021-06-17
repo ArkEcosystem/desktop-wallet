@@ -4,7 +4,7 @@ import { render } from "testing-library";
 
 import { TransactionTimestamp } from "./TransactionTimestamp";
 
-const datetime = DateTime.fromUnix(1596213281);
+const datetime = DateTime.fromUnix(1_596_213_281);
 
 describe("TransactionTimestamp", () => {
 	it("should render", () => {

@@ -112,8 +112,8 @@ describe("SelectRecipient", () => {
 
 	it("should call onChange prop when entered address in input", async () => {
 		const contactsSpy = jest.spyOn(profile.contacts(), "findByAddress").mockReturnValue([]);
-		const fn = jest.fn();
-		const { getByTestId } = render(<SelectRecipient profile={profile} onChange={fn} />);
+		const function_ = jest.fn();
+		const { getByTestId } = render(<SelectRecipient profile={profile} onChange={function_} />);
 		const address = "bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT";
 		const recipientInputField = getByTestId("SelectDropdown__input");
 
@@ -122,15 +122,15 @@ describe("SelectRecipient", () => {
 		});
 
 		expect(getByTestId("SelectDropdown__input")).toHaveValue(address);
-		expect(fn).toBeCalledWith(address);
+		expect(function_).toBeCalledWith(address);
 		contactsSpy.mockRestore();
 	});
 
 	it("should call onChange prop if provided", async () => {
-		const fn = jest.fn();
+		const function_ = jest.fn();
 
 		const { getByTestId, getAllByTestId } = render(
-			<SelectRecipient profile={profile} onChange={fn} address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" />,
+			<SelectRecipient profile={profile} onChange={function_} address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" />,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -154,14 +154,14 @@ describe("SelectRecipient", () => {
 		const selectedAddressValue = profile.contacts().values()[0].addresses().values()[0].address();
 
 		expect(getByTestId("SelectDropdown__input")).toHaveValue(selectedAddressValue);
-		expect(fn).toBeCalledWith(selectedAddressValue);
+		expect(function_).toBeCalledWith(selectedAddressValue);
 	});
 
 	it("should call onChange prop only when values change", async () => {
-		const fn = jest.fn();
+		const function_ = jest.fn();
 
 		const { getByTestId, getAllByTestId } = render(
-			<SelectRecipient profile={profile} onChange={fn} address="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib" />,
+			<SelectRecipient profile={profile} onChange={function_} address="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib" />,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -185,18 +185,18 @@ describe("SelectRecipient", () => {
 		const selectedAddressValue = profile.contacts().values()[0].addresses().values()[0].address();
 
 		expect(getByTestId("SelectDropdown__input")).toHaveValue(selectedAddressValue);
-		expect(fn).not.toBeCalled();
+		expect(function_).not.toBeCalled();
 	});
 
 	it("should filter recipients list by network if provided", async () => {
-		const fn = jest.fn();
+		const function_ = jest.fn();
 
 		const [wallet] = profile.wallets().findByCoinWithNetwork("ARK", "ark.devnet");
 
 		const { getByTestId, getAllByTestId } = render(
 			<SelectRecipient
 				profile={profile}
-				onChange={fn}
+				onChange={function_}
 				address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT"
 				network={wallet.coin().network()}
 			/>,

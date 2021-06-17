@@ -3,7 +3,7 @@ import { uniq } from "@arkecosystem/utils";
 import { useCallback, useMemo } from "react";
 import { matchPath } from "react-router-dom";
 
-export const useProfileUtils = (env: Environment) => {
+export const useProfileUtils = (environment: Environment) => {
 	const getProfileById = useCallback(
 		(id: string) => {
 			if (!id) {
@@ -13,14 +13,14 @@ export const useProfileUtils = (env: Environment) => {
 			let response: Contracts.IProfile | undefined;
 
 			try {
-				response = env.profiles().findById(id);
-			} catch (e) {
+				response = environment.profiles().findById(id);
+			} catch {
 				// Not a valid profile id. Ignore.
 			}
 
 			return response;
 		},
-		[env],
+		[environment],
 	);
 
 	const getProfileFromUrl = useCallback(

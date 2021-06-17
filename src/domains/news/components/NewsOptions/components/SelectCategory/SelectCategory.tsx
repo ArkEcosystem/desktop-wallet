@@ -1,7 +1,7 @@
 import React from "react";
 import tw, { styled } from "twin.macro";
 
-type Props = {
+type Properties = {
 	children: React.ReactNode;
 	type?: "radio" | "checkbox";
 	name?: string | number;
@@ -22,12 +22,12 @@ const CustomButton = styled.div`
 	}
 `;
 
-export const SelectCategory = React.forwardRef<HTMLInputElement, Props>(
-	({ children, type, name, value, checked, defaultChecked, disabled, onChange, ...props }: Props, ref) => (
-		<label htmlFor={name} tw="cursor-pointer" {...props}>
+export const SelectCategory = React.forwardRef<HTMLInputElement, Properties>(
+	({ children, type, name, value, checked, defaultChecked, disabled, onChange, ...properties }: Properties, reference) => (
+		<label htmlFor={name} tw="cursor-pointer" {...properties}>
 			<Input
 				data-testid={`SelectCategory__${name}`}
-				ref={ref}
+				ref={reference}
 				type={type}
 				name={name}
 				value={value}

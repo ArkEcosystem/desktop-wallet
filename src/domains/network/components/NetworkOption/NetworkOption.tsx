@@ -7,7 +7,7 @@ import React, { memo } from "react";
 
 type Network = Networks.Network & { extra?: CoinNetworkExtended };
 
-interface Props {
+interface Properties {
 	disabled?: boolean;
 	network?: Network;
 	as?: React.ElementType;
@@ -18,7 +18,7 @@ interface Props {
 	onClick?: () => void;
 }
 
-export const NetworkOption = memo(({ disabled, network, iconSize = 30, iconClassName, onClick, ...props }: Props) => {
+export const NetworkOption = memo(({ disabled, network, iconSize = 30, iconClassName, onClick, ...properties }: Properties) => {
 	if (!network?.extra) {
 		return <></>;
 	}
@@ -44,7 +44,7 @@ export const NetworkOption = memo(({ disabled, network, iconSize = 30, iconClass
 					}`}
 					aria-label={network.extra.displayName}
 					data-testid={`NetworkIcon-${network?.coin()}-${network?.id()}`}
-					{...props}
+					{...properties}
 				>
 					<Icon
 						data-testid="NetworkIcon__icon"

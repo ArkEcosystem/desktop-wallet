@@ -2,7 +2,7 @@ import { TransactionCompactRow } from "domains/transaction/components/Transactio
 import React, { useEffect, useState } from "react";
 import VisibilitySensor from "react-visibility-sensor";
 
-import { NotificationTransactionItemProps, NotificationTransactionItemSkeleton } from ".";
+import { NotificationTransactionItemProperties, NotificationTransactionItemSkeleton } from ".";
 
 export const NotificationTransactionItem = ({
 	notification,
@@ -10,7 +10,7 @@ export const NotificationTransactionItem = ({
 	onVisibilityChange,
 	containmentRef,
 	onTransactionClick,
-}: NotificationTransactionItemProps) => {
+}: NotificationTransactionItemProperties) => {
 	const [transaction, setTransaction] = useState<any>();
 	const [walletName, setWalletName] = useState<string>();
 

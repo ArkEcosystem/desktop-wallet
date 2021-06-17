@@ -12,7 +12,7 @@ import { useProfileAddresses } from "domains/profile/hooks/use-profile-addresses
 import { SearchRecipient } from "domains/transaction/components/SearchRecipient";
 import React, { useEffect, useState } from "react";
 
-type SelectRecipientProps = {
+type SelectRecipientProperties = {
 	network?: Networks.Network;
 	address?: string;
 	profile: Contracts.IProfile;
@@ -54,8 +54,8 @@ const OptionLabel = ({ option, profile }: { option: any; profile: Contracts.IPro
 	);
 };
 
-export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipientProps>(
-	({ address, profile, disabled, isInvalid, network, placeholder, onChange }: SelectRecipientProps, ref) => {
+export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipientProperties>(
+	({ address, profile, disabled, isInvalid, network, placeholder, onChange }: SelectRecipientProperties, reference) => {
 		const [isRecipientSearchOpen, setIsRecipientSearchOpen] = useState(false);
 		const [selectedAddress, setSelectedAddress] = useState(address);
 		const fieldContext = useFormField();
@@ -112,7 +112,7 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 						disabled={disabled}
 						defaultValue={selectedAddress}
 						placeholder={placeholder}
-						ref={ref}
+						ref={reference}
 						options={recipientAddresses}
 						allowFreeInput={true}
 						onChange={(option: any) => onInputChange(option.value)}

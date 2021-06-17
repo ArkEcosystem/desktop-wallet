@@ -25,7 +25,7 @@ export enum CoreTransactionType {
 	HtlcRefund = 10,
 }
 
-interface TransactionTypeProps {
+interface TransactionTypeProperties {
 	wallets?: Contracts.IReadWriteWallet[];
 }
 
@@ -84,7 +84,7 @@ const magistrate: Record<string, any> = {
 
 const magistrateTypes = Object.keys(magistrate);
 
-export const useTransactionTypes = ({ wallets = [] }: TransactionTypeProps = {}) => {
+export const useTransactionTypes = ({ wallets = [] }: TransactionTypeProperties = {}) => {
 	const { t } = useTranslation();
 
 	const allTransactionTypeLabels: Record<string, string> = {
@@ -121,7 +121,7 @@ export const useTransactionTypes = ({ wallets = [] }: TransactionTypeProps = {})
 
 	const getLabel = (type: string) => allTransactionTypeLabels[type];
 
-	const getQueryParamsByType = (type: string) => core[type] || magistrate[type];
+	const getQueryParametersByType = (type: string) => core[type] || magistrate[type];
 
 	const availableTypes = useMemo(() => {
 		const allSupportedTypes = wallets.reduce((all: string[], wallet: Contracts.IReadWriteWallet) => {
@@ -151,6 +151,6 @@ export const useTransactionTypes = ({ wallets = [] }: TransactionTypeProps = {})
 			core: availableTypes,
 			magistrate: Object.keys(magistrate),
 		},
-		getQueryParamsByType,
+		getQueryParamsByType: getQueryParametersByType,
 	};
 };

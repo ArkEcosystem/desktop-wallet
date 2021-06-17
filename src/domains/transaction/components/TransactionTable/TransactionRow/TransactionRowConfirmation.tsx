@@ -5,7 +5,7 @@ import React from "react";
 
 import { TransactionStatus } from "../TransactionTable.models";
 
-interface Props {
+interface Properties {
 	isSignaturePending?: boolean;
 	transaction: DTO.ExtendedTransactionData;
 }
@@ -22,7 +22,7 @@ const getStatus = (isConfirmed: boolean, isSignaturePending?: boolean): Transact
 	return "pending";
 };
 
-export const TransactionRowConfirmation = ({ transaction, isSignaturePending }: Props) => {
+export const TransactionRowConfirmation = ({ transaction, isSignaturePending }: Properties) => {
 	const status = getStatus(transaction?.isConfirmed(), isSignaturePending);
 	const tooltipContent =
 		status === "actionRequired" ? "Action Required" : `${transaction?.confirmations()} confirmations`;

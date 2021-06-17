@@ -54,7 +54,7 @@ describe("useProfileTransactions", () => {
 				},
 			);
 
-			jest.advanceTimersByTime(30000);
+			jest.advanceTimersByTime(30_000);
 			await waitFor(() => expect(result.current.transactions).toHaveLength(4));
 		});
 
@@ -75,7 +75,7 @@ describe("useProfileTransactions", () => {
 				},
 			);
 
-			jest.advanceTimersByTime(30000);
+			jest.advanceTimersByTime(30_000);
 
 			await waitFor(() => expect(result.current.transactions.length).toEqual(0));
 		});
@@ -98,7 +98,7 @@ describe("useProfileTransactions", () => {
 				},
 			);
 
-			jest.advanceTimersByTime(30000);
+			jest.advanceTimersByTime(30_000);
 
 			await waitFor(() => expect(result.current.transactions.length).toEqual(0));
 		});

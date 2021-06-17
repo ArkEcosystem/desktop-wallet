@@ -11,13 +11,13 @@ import {
 } from "domains/transaction/components/TransactionDetail";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
-interface DelegateResignationDetailProps {
+interface DelegateResignationDetailProperties {
 	isOpen: boolean;
 	transaction: any;
 	onClose?: any;
 }
 
-export const DelegateResignationDetail = ({ isOpen, transaction, onClose }: DelegateResignationDetailProps) => {
+export const DelegateResignationDetail = ({ isOpen, transaction, onClose }: DelegateResignationDetailProperties) => {
 	const { t } = useTranslation();
 
 	const wallet = useMemo(() => transaction.wallet(), [transaction]);

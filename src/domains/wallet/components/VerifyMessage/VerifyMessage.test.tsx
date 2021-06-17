@@ -30,9 +30,9 @@ describe("VerifyMessage", () => {
 		isOpen = true,
 		walletId = wallet.id(),
 		profileId = profile.id(),
-		...props
+		...properties
 	}: any) => {
-		const result = render(<VerifyMessage isOpen={isOpen} walletId={walletId} profileId={profileId} {...props} />);
+		const result = render(<VerifyMessage isOpen={isOpen} walletId={walletId} profileId={profileId} {...properties} />);
 
 		const submitButton = screen.getByTestId("VerifyMessage__submit");
 

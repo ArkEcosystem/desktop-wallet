@@ -11,7 +11,7 @@ import { SelectNetworkInput } from "./SelectNetworkInput";
 
 type Network = Networks.Network & { extra?: CoinNetworkExtended };
 
-interface SelectNetworkProps {
+interface SelectNetworkProperties {
 	selected?: Networks.Network;
 	networks: Networks.Network[];
 	placeholder?: string;
@@ -36,7 +36,7 @@ export const SelectNetwork = ({
 	id,
 	disabled,
 	hideOptions,
-}: SelectNetworkProps) => {
+}: SelectNetworkProperties) => {
 	const { t } = useTranslation();
 
 	const [items, setItems] = useState<Network[]>([]);

@@ -5,7 +5,7 @@ import { Modal } from "app/components/Modal";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-interface DeleteResourceProps {
+interface DeleteResourceProperties {
 	isOpen: boolean;
 	title: string;
 	description?: string;
@@ -23,7 +23,7 @@ export const DeleteResource = ({
 	onClose,
 	onCancel,
 	onDelete,
-}: DeleteResourceProps) => {
+}: DeleteResourceProperties) => {
 	const { t } = useTranslation();
 
 	return (

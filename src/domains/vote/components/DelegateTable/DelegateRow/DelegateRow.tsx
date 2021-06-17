@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 
 import { DelegateRowSkeleton } from "./DelegateRowSkeleton";
 
-interface DelegateRowProps {
+interface DelegateRowProperties {
 	index: number;
 	delegate: Contracts.IReadOnlyWallet;
 	selectedUnvotes?: string[];
@@ -32,7 +32,7 @@ export const DelegateRow = ({
 	isLoading,
 	onUnvoteSelect,
 	onVoteSelect,
-}: DelegateRowProps) => {
+}: DelegateRowProperties) => {
 	const { t } = useTranslation();
 
 	const isSelectedUnvote = useMemo(
@@ -47,17 +47,9 @@ export const DelegateRow = ({
 
 	const getColorSelected = (): string => {
 		if (isVoted) {
-			if (!isSelectedUnvote) {
-				return "bg-theme-primary-50 dark:bg-theme-primary-900";
-			} else {
-				return "bg-theme-danger-50 dark:bg-theme-danger-900";
-			}
+			return !isSelectedUnvote ? "bg-theme-primary-50 dark:bg-theme-primary-900" : "bg-theme-danger-50 dark:bg-theme-danger-900";
 		} else {
-			if (isSelectedVote) {
-				return "bg-theme-success-50 dark:bg-theme-success-900";
-			} else {
-				return "";
-			}
+			return isSelectedVote ? "bg-theme-success-50 dark:bg-theme-success-900" : "";
 		}
 	};
 

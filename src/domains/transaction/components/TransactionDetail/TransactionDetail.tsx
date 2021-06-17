@@ -4,7 +4,7 @@ import { styled } from "twin.macro";
 
 import { getStyles } from "./TransactionDetail.styles";
 
-export interface TransactionDetailProps {
+export interface TransactionDetailProperties {
 	children?: React.ReactNode;
 	label?: string | React.ReactNode;
 	extra?: React.ReactNode;
@@ -15,12 +15,12 @@ export interface TransactionDetailProps {
 	className?: string;
 }
 
-const TransactionDetailStyled = styled.div<TransactionDetailProps>(getStyles);
+const TransactionDetailStyled = styled.div<TransactionDetailProperties>(getStyles);
 
-export const TransactionDetail = React.forwardRef<HTMLDivElement, TransactionDetailProps>(
+export const TransactionDetail = React.forwardRef<HTMLDivElement, TransactionDetailProperties>(
 	(
-		{ border, borderPosition, children, className, extra, label, padding, paddingPosition }: TransactionDetailProps,
-		ref,
+		{ border, borderPosition, children, className, extra, label, padding, paddingPosition }: TransactionDetailProperties,
+		reference,
 	) => (
 		<TransactionDetailStyled
 			data-testid="TransactionDetail"
@@ -29,7 +29,7 @@ export const TransactionDetail = React.forwardRef<HTMLDivElement, TransactionDet
 			padding={padding}
 			paddingPosition={paddingPosition}
 			className={cn("no-ligatures", className)}
-			ref={ref}
+			ref={reference}
 		>
 			<div className="flex-1 space-y-2 w-40 whitespace-nowrap">
 				{label && <div className="text-sm font-semibold text-theme-secondary-700 no-ligatures">{label}</div>}

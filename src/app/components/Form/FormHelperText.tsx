@@ -2,16 +2,16 @@ import React from "react";
 
 import { useFormField } from "./useFormField";
 
-interface FormHelperTextProps {
+interface FormHelperTextProperties {
 	isInvalid?: boolean;
 	errorMessage?: React.ReactNode;
 	children?: React.ReactNode;
 }
 
-export function FormHelperText({ children, ...props }: FormHelperTextProps) {
+export function FormHelperText({ children, ...properties }: FormHelperTextProperties) {
 	const fieldContext = useFormField();
-	const isInvalid = props.isInvalid || fieldContext?.isInvalid;
-	const errorMessage = props.errorMessage || fieldContext?.errorMessage;
+	const isInvalid = properties.isInvalid || fieldContext?.isInvalid;
+	const errorMessage = properties.errorMessage || fieldContext?.errorMessage;
 
 	if (isInvalid) {
 		return <p className="text-sm font-normal text-theme-danger-500">{errorMessage}</p>;

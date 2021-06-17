@@ -101,13 +101,13 @@ describe("SendVote", () => {
 		const history = createMemoryHistory();
 		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
 
-		const params = new URLSearchParams({
+		const parameters = new URLSearchParams({
 			votes: delegateData[0].address,
 		});
 
 		history.push({
 			pathname: voteURL,
-			search: `?${params}`,
+			search: `?${parameters}`,
 		});
 
 		const { container, getByTestId } = renderWithRouter(
@@ -139,13 +139,13 @@ describe("SendVote", () => {
 		const history = createMemoryHistory();
 		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
 
-		const params = new URLSearchParams({
+		const parameters = new URLSearchParams({
 			unvotes: delegateData[1].address,
 		});
 
 		history.push({
 			pathname: voteURL,
-			search: `?${params}`,
+			search: `?${parameters}`,
 		});
 
 		const { container, getByTestId } = renderWithRouter(
@@ -177,14 +177,14 @@ describe("SendVote", () => {
 		const history = createMemoryHistory();
 		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
 
-		const params = new URLSearchParams({
+		const parameters = new URLSearchParams({
 			unvotes: delegateData[1].address,
 			votes: delegateData[0].address,
 		});
 
 		history.push({
 			pathname: voteURL,
-			search: `?${params}`,
+			search: `?${parameters}`,
 		});
 
 		const { container, getByTestId } = renderWithRouter(
@@ -227,14 +227,14 @@ describe("SendVote", () => {
 		const history = createMemoryHistory();
 		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
 
-		const params = new URLSearchParams({
+		const parameters = new URLSearchParams({
 			unvotes: delegateData[1].address,
 			votes: delegateData[0].address,
 		});
 
 		history.push({
 			pathname: voteURL,
-			search: `?${params}`,
+			search: `?${parameters}`,
 		});
 
 		const { getByTestId } = renderWithRouter(
@@ -329,13 +329,13 @@ describe("SendVote", () => {
 		const history = createMemoryHistory();
 		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
 
-		const params = new URLSearchParams({
+		const parameters = new URLSearchParams({
 			votes: delegateData[0].address,
 		});
 
 		history.push({
 			pathname: voteURL,
-			search: `?${params}`,
+			search: `?${parameters}`,
 		});
 
 		const { result: form } = renderHook(() =>
@@ -414,13 +414,13 @@ describe("SendVote", () => {
 		const history = createMemoryHistory();
 		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
 
-		const params = new URLSearchParams({
+		const parameters = new URLSearchParams({
 			unvotes: delegateData[1].address,
 		});
 
 		history.push({
 			pathname: voteURL,
-			search: `?${params}`,
+			search: `?${parameters}`,
 		});
 
 		const { getByTestId, getByText } = renderWithRouter(
@@ -479,13 +479,13 @@ describe("SendVote", () => {
 		const history = createMemoryHistory();
 		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
 
-		const params = new URLSearchParams({
+		const parameters = new URLSearchParams({
 			unvotes: delegateData[1].address,
 		});
 
 		history.push({
 			pathname: voteURL,
-			search: `?${params}`,
+			search: `?${parameters}`,
 		});
 
 		const { container, getByTestId } = renderWithRouter(
@@ -547,13 +547,13 @@ describe("SendVote", () => {
 		const history = createMemoryHistory();
 		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
 
-		const params = new URLSearchParams({
+		const parameters = new URLSearchParams({
 			votes: delegateData[0].address,
 		});
 
 		history.push({
 			pathname: voteURL,
-			search: `?${params}`,
+			search: `?${parameters}`,
 		});
 
 		const { getByTestId, getByText } = renderWithRouter(
@@ -596,13 +596,13 @@ describe("SendVote", () => {
 		const history = createMemoryHistory();
 		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
 
-		const params = new URLSearchParams({
+		const parameters = new URLSearchParams({
 			votes: delegateData[0].address,
 		});
 
 		history.push({
 			pathname: voteURL,
-			search: `?${params}`,
+			search: `?${parameters}`,
 		});
 
 		const { getByTestId, getByText } = renderWithRouter(
@@ -645,13 +645,13 @@ describe("SendVote", () => {
 		const history = createMemoryHistory();
 		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
 
-		const params = new URLSearchParams({
+		const parameters = new URLSearchParams({
 			votes: delegateData[0].address,
 		});
 
 		history.push({
 			pathname: voteURL,
-			search: `?${params}`,
+			search: `?${parameters}`,
 		});
 
 		const { container, getByTestId } = renderWithRouter(
@@ -697,13 +697,13 @@ describe("SendVote", () => {
 		const history = createMemoryHistory();
 		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
 
-		const params = new URLSearchParams({
+		const parameters = new URLSearchParams({
 			votes: delegateData[0].address,
 		});
 
 		history.push({
 			pathname: voteURL,
-			search: `?${params}`,
+			search: `?${parameters}`,
 		});
 
 		const { container, getByTestId } = renderWithRouter(
@@ -776,13 +776,13 @@ describe("SendVote", () => {
 		const history = createMemoryHistory();
 		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
 
-		const params = new URLSearchParams({
+		const parameters = new URLSearchParams({
 			unvotes: delegateData[1].address,
 		});
 
 		history.push({
 			pathname: voteURL,
-			search: `?${params}`,
+			search: `?${parameters}`,
 		});
 
 		const { getByTestId } = renderWithRouter(
@@ -867,13 +867,13 @@ describe("SendVote", () => {
 		const history = createMemoryHistory();
 		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
 
-		const params = new URLSearchParams({
+		const parameters = new URLSearchParams({
 			unvotes: delegateData[1].address,
 		});
 
 		history.push({
 			pathname: voteURL,
-			search: `?${params}`,
+			search: `?${parameters}`,
 		});
 
 		const { getByTestId } = renderWithRouter(
@@ -924,13 +924,13 @@ describe("SendVote", () => {
 		const history = createMemoryHistory();
 		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
 
-		const params = new URLSearchParams({
+		const parameters = new URLSearchParams({
 			votes: delegateData[0].address,
 		});
 
 		history.push({
 			pathname: voteURL,
-			search: `?${params}`,
+			search: `?${parameters}`,
 		});
 
 		const { result: form } = renderHook(() =>

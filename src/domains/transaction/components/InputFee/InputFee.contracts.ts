@@ -24,7 +24,7 @@ type InputFeeSimpleOptions = {
 	};
 };
 
-interface InputFeeAdvancedProps {
+interface InputFeeAdvancedProperties {
 	onChange: (value: string) => void;
 	value: string;
 	min: string;
@@ -33,7 +33,7 @@ interface InputFeeAdvancedProps {
 	disabled?: boolean;
 }
 
-interface InputFeeSimpleProps {
+interface InputFeeSimpleProperties {
 	options: InputFeeSimpleOptions;
 	onChange: (value: InputFeeSimpleValue) => void;
 	value: InputFeeSimpleValue;
@@ -43,7 +43,7 @@ interface InputFeeSimpleProps {
 	loading?: boolean;
 }
 
-interface InputFeeProps {
+interface InputFeeProperties {
 	min: string;
 	avg: string;
 	max: string;
@@ -62,4 +62,4 @@ interface InputFeeProps {
 
 export { DEFAULT_SIMPLE_VALUE, DEFAULT_VIEW_TYPE, InputFeeSimpleValue, InputFeeViewType };
 
-export type { InputFeeAdvancedProps, InputFeeProps, InputFeeSimpleOptions, InputFeeSimpleProps };
+export type { InputFeeAdvancedProperties, InputFeeProperties, InputFeeSimpleOptions, InputFeeSimpleProperties };

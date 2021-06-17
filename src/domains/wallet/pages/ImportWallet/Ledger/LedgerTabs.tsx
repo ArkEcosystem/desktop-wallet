@@ -92,7 +92,7 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 	const [activeTab, setActiveTab] = useState<number>(activeIndex!);
 
 	const [showRetry, setShowRetry] = useState(false);
-	const retryFnRef = useRef<() => void>();
+	const retryFunctionReference = useRef<() => void>();
 
 	const importWallets = useCallback(
 		async ({ network, wallets }: any) => {
@@ -108,7 +108,7 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 
 		for (const [address, name] of Object.entries(names)) {
 			if (name) {
-				const formattedName = name.trim().substring(0, nameMaxLength);
+				const formattedName = name.trim().slice(0, Math.max(0, nameMaxLength));
 				const wallet = activeProfile.wallets().findByAddress(address);
 				wallet?.mutator().alias(formattedName);
 			}
@@ -133,9 +133,9 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 		setActiveTab(activeTab - (activeTab === 3 ? 2 : 1));
 	};
 
-	const handleRetry = useCallback((fn?: () => void) => {
-		retryFnRef.current = fn;
-		setShowRetry(!!fn);
+	const handleRetry = useCallback((function_?: () => void) => {
+		retryFunctionReference.current = function_;
+		setShowRetry(!!function_);
 	}, []);
 
 	return (
@@ -167,7 +167,7 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 				isNextDisabled={isBusy || !isValid}
 				isNextLoading={isSubmitting}
 				showRetry={showRetry}
-				onRetry={retryFnRef.current}
+				onRetry={retryFunctionReference.current}
 				onNext={handleNext}
 				onBack={handleBack}
 				onSubmit={handleSubmit((data: any) => saveNames(data))}

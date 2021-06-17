@@ -37,19 +37,19 @@ export const SendTransfer = () => {
 	const profile = useActiveProfile();
 	const { walletId: hasWalletId } = useParams();
 
-	const queryParams = useQueryParams();
+	const queryParameters = useQueryParams();
 
-	const deepLinkParams = useMemo(() => {
+	const deepLinkParameters = useMemo(() => {
 		const result: Record<string, string> = {};
-		for (const [key, value] of queryParams.entries()) {
+		for (const [key, value] of queryParameters.entries()) {
 			result[key] = value;
 		}
 		return result;
 	}, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-	const hasDeepLinkParams = Object.keys(deepLinkParams).length > 0;
+	const hasDeepLinkParameters = Object.keys(deepLinkParameters).length > 0;
 
-	const showNetworkStep = !hasDeepLinkParams && !hasWalletId;
+	const showNetworkStep = !hasDeepLinkParameters && !hasWalletId;
 	const firstTabIndex = showNetworkStep ? 0 : 1;
 
 	const [activeTab, setActiveTab] = useState(showNetworkStep ? 0 : 1);
@@ -91,7 +91,7 @@ export const SendTransfer = () => {
 	const { hasDeviceAvailable, isConnected, transport, connect } = useLedgerContext();
 
 	const [lastEstimatedExpiration, setLastEstimatedExpiration] = useState<number | undefined>();
-	const abortRef = useRef(new AbortController());
+	const abortReference = useRef(new AbortController());
 	const transactionBuilder = useTransactionBuilder();
 	const { sign } = useWalletSignatory(wallet!);
 	const { fetchWalletUnconfirmedTransactions } = useTransaction();
@@ -125,7 +125,7 @@ export const SendTransfer = () => {
 	}, [activeProfile, senderAddress]);
 
 	useEffect(() => {
-		if (Object.keys(deepLinkParams).length === 0) {
+		if (Object.keys(deepLinkParameters).length === 0) {
 			return;
 		}
 
@@ -133,26 +133,26 @@ export const SendTransfer = () => {
 			"network",
 			networks.find(
 				(item) =>
-					lowerCaseEquals(item.coin(), deepLinkParams.coin) &&
-					lowerCaseEquals(item.id(), deepLinkParams.network),
+					lowerCaseEquals(item.coin(), deepLinkParameters.coin) &&
+					lowerCaseEquals(item.id(), deepLinkParameters.network),
 			),
 		);
 
-		if (deepLinkParams.memo) {
-			setValue("memo", deepLinkParams.memo);
+		if (deepLinkParameters.memo) {
+			setValue("memo", deepLinkParameters.memo);
 		}
 
-		if (deepLinkParams.recipient) {
+		if (deepLinkParameters.recipient) {
 			setTimeout(
 				() =>
-					setValue("recipientAddress", deepLinkParams.recipient, {
+					setValue("recipientAddress", deepLinkParameters.recipient, {
 						shouldDirty: true,
 						shouldValidate: false,
 					}),
 				0,
 			);
 		}
-	}, [deepLinkParams, setValue, networks]);
+	}, [deepLinkParameters, setValue, networks]);
 
 	useEffect(() => {
 		if (!wallet?.address?.()) {
@@ -195,7 +195,7 @@ export const SendTransfer = () => {
 			const unconfirmed = await fetchWalletUnconfirmedTransactions(wallet!);
 			setUnconfirmedTransactions(unconfirmed);
 
-			if (unconfirmed.length) {
+			if (unconfirmed.length > 0) {
 				setIsConfirmModalOpen(true);
 				return;
 			}
@@ -222,24 +222,20 @@ export const SendTransfer = () => {
 				data: {},
 			};
 
-			if (isMultiPayment) {
-				transactionInput.data = {
+			transactionInput.data = isMultiPayment ? {
 					payments: recipients.map(({ address, amount }: { address: string; amount: BigNumber }) => ({
 						to: address,
 						amount: amount.toHuman(),
 					})),
-				};
-			} else {
-				transactionInput.data = {
+				} : {
 					to: recipients[0].address,
 					amount: recipients[0].amount.toHuman(),
 					memo: memo,
 				};
-			}
 
 			const expiration = await wallet?.coin()?.transaction()?.estimateExpiration();
 			if (expiration) {
-				transactionInput.data.expiration = parseInt(expiration);
+				transactionInput.data.expiration = Number.parseInt(expiration);
 				setLastEstimatedExpiration(transactionInput.data.expiration);
 			}
 
@@ -248,7 +244,7 @@ export const SendTransfer = () => {
 				await activeWallet.ledger().connect(transport);
 			}
 
-			const abortSignal = abortRef.current?.signal;
+			const abortSignal = abortReference.current?.signal;
 			const { uuid, transaction } = await transactionBuilder.build(
 				transactionType,
 				transactionInput,
@@ -278,7 +274,7 @@ export const SendTransfer = () => {
 
 	const handleBack = () => {
 		// Abort any existing listener
-		abortRef.current.abort();
+		abortReference.current.abort();
 
 		if (activeTab === firstTabIndex) {
 			return history.go(-1);
@@ -288,7 +284,7 @@ export const SendTransfer = () => {
 	};
 
 	const handleNext = async (suppressWarning?: boolean) => {
-		abortRef.current = new AbortController();
+		abortReference.current = new AbortController();
 
 		const newIndex = activeTab + 1;
 
@@ -330,7 +326,7 @@ export const SendTransfer = () => {
 								<FormStep
 									networks={networks}
 									profile={activeProfile}
-									deeplinkProps={deepLinkParams}
+									deeplinkProps={deepLinkParameters}
 									hasWalletId={hasWalletId}
 									disableNetworkField={showNetworkStep}
 								/>

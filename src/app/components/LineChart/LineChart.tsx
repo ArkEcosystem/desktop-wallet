@@ -7,7 +7,7 @@ import { styled } from "twin.macro";
 import { Icon } from "../Icon";
 import { chartStyles } from "./LineChart.styles";
 
-interface LineChartProps {
+interface LineChartProperties {
 	data: any[];
 	lines: any[];
 	period?: string;
@@ -100,8 +100,8 @@ export const ChartContent = ({
 	width,
 	height,
 	showAnimation = true,
-}: LineChartProps) => {
-	const defaultValue = data.concat().pop();
+}: LineChartProperties) => {
+	const defaultValue = [...data].pop();
 	const [legend, setLegend] = useState(defaultValue);
 
 	return (
@@ -146,13 +146,13 @@ export const ChartContent = ({
 	);
 };
 
-export const LineChart = (props: LineChartProps) => {
-	if (props.width) {
-		return <ChartContent {...props} />;
+export const LineChart = (properties: LineChartProperties) => {
+	if (properties.width) {
+		return <ChartContent {...properties} />;
 	}
 	return (
-		<ResponsiveContainer height={props.height} className="mb-16">
-			<ChartContent {...props} />
+		<ResponsiveContainer height={properties.height} className="mb-16">
+			<ChartContent {...properties} />
 		</ResponsiveContainer>
 	);
 };

@@ -7,17 +7,17 @@ import { useTranslation } from "react-i18next";
 
 import { usePortfolioData } from "./hooks";
 
-interface PortfolioChartProps {
+interface PortfolioChartProperties {
 	profile: Contracts.IProfile;
 	isVisible?: boolean;
 	showChartAnimation?: boolean;
 }
 
-export const PortfolioChart = memo(({ profile, isVisible = true, showChartAnimation }: PortfolioChartProps) => {
+export const PortfolioChart = memo(({ profile, isVisible = true, showChartAnimation }: PortfolioChartProperties) => {
 	const { t } = useTranslation();
 	const { percentages, balances, chartLines } = usePortfolioData({ profile });
 
-	if (!isVisible || !balances.length) {
+	if (!isVisible || balances.length === 0) {
 		return <></>;
 	}
 

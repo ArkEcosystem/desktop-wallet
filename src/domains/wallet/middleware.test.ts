@@ -15,9 +15,9 @@ describe("WalletMiddleware", () => {
 			pathname: "/profiles/create",
 		};
 		const redirect = jest.fn();
-		const params = { location, redirect, env };
+		const parameters = { location, redirect, env };
 		// @ts-ignore
-		expect(subject.handler(params)).toBe(true);
+		expect(subject.handler(parameters)).toBe(true);
 	});
 
 	it("should return true if path matches but is a subrouter", () => {
@@ -25,9 +25,9 @@ describe("WalletMiddleware", () => {
 			pathname: "/profiles/1/wallets/create",
 		};
 		const redirect = jest.fn();
-		const params = { location, redirect, env };
+		const parameters = { location, redirect, env };
 		// @ts-ignore
-		expect(subject.handler(params)).toBe(true);
+		expect(subject.handler(parameters)).toBe(true);
 	});
 
 	it("should return false if path matches but the wallet does not exist", () => {
@@ -35,9 +35,9 @@ describe("WalletMiddleware", () => {
 			pathname: "/profiles/1/wallets/1",
 		};
 		const redirect = jest.fn();
-		const params = { location, redirect, env };
+		const parameters = { location, redirect, env };
 		// @ts-ignore
-		expect(subject.handler(params)).toBe(false);
+		expect(subject.handler(parameters)).toBe(false);
 		expect(redirect).toHaveBeenCalled();
 	});
 
@@ -49,8 +49,8 @@ describe("WalletMiddleware", () => {
 			pathname: `/profiles/${profile.id()}/wallets/${wallet.id()}`,
 		};
 		const redirect = jest.fn();
-		const params = { location, redirect, env };
+		const parameters = { location, redirect, env };
 		// @ts-ignore
-		expect(subject.handler(params)).toBe(true);
+		expect(subject.handler(parameters)).toBe(true);
 	});
 });

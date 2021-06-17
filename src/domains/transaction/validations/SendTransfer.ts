@@ -33,7 +33,7 @@ export const sendTransfer = (t: any) => ({
 		validate: {
 			valid: async (addressValue: string | undefined) => {
 				const address = (addressValue || "").trim();
-				const shouldRequire = !address && !recipients.length;
+				const shouldRequire = !address && recipients.length === 0;
 				const hasAddedRecipients = !address && !isSingleRecipient && recipients.length > 0;
 
 				if (!network) {
@@ -66,7 +66,7 @@ export const sendTransfer = (t: any) => ({
 			valid: (amountValue: any) => {
 				const amount = BigNumber.make(amountValue || 0);
 				const hasSufficientBalance = balance?.isGreaterThanOrEqualTo(amount) && !balance?.isZero();
-				const shouldRequire = isSingleRecipient || !recipients.length;
+				const shouldRequire = isSingleRecipient || recipients.length === 0;
 
 				if (!hasSufficientBalance) {
 					return t("TRANSACTION.VALIDATION.LOW_BALANCE", {

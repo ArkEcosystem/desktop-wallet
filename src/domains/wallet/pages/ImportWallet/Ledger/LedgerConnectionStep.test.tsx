@@ -40,7 +40,7 @@ describe("LedgerConnectionStep", () => {
 	});
 
 	it("should emit event on fail", async () => {
-		jest.setTimeout(10000);
+		jest.setTimeout(10_000);
 
 		const getPublicKeySpy = jest
 			.spyOn(wallet.coin().ledger(), "getPublicKey")
@@ -76,7 +76,7 @@ describe("LedgerConnectionStep", () => {
 
 		await waitFor(() => expect(screen.queryByText("Open the ARK app on your device ...")).toBeInTheDocument());
 
-		await waitFor(() => expect(onFailed).toHaveBeenCalled(), { timeout: 10000 });
+		await waitFor(() => expect(onFailed).toHaveBeenCalled(), { timeout: 10_000 });
 		await waitFor(() => expect(screen.queryByText("Failed")).toBeInTheDocument());
 
 		expect(container).toMatchSnapshot();

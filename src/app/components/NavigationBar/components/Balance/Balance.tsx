@@ -6,20 +6,20 @@ import { useTranslation } from "react-i18next";
 
 import { BalanceSkeleton } from "./BalanceSkeleton";
 
-interface BalanceProps {
+interface BalanceProperties {
 	profile?: Contracts.IProfile;
 	isLoading?: boolean;
 }
 
-export const Balance = ({ profile, isLoading }: BalanceProps) => {
+export const Balance = ({ profile, isLoading }: BalanceProperties) => {
 	const [width, setWidth] = useState<number | undefined>();
 
-	const ref = useRef<HTMLDivElement>(null);
+	const reference = useRef<HTMLDivElement>(null);
 
 	const { t } = useTranslation();
 	const { convertedBalance } = useProfileBalance({ profile, isLoading });
 
-	useEffect(() => setWidth((width) => ref?.current?.clientWidth || width), [convertedBalance]);
+	useEffect(() => setWidth((width) => reference?.current?.clientWidth || width), [convertedBalance]);
 
 	if (isLoading) {
 		return <BalanceSkeleton width={width} />;
@@ -29,7 +29,7 @@ export const Balance = ({ profile, isLoading }: BalanceProps) => {
 		<div className="text-right">
 			<div className="text-xs font-semibold text-theme-secondary-700">{t("COMMON.YOUR_BALANCE")}</div>
 			<div
-				ref={ref}
+				ref={reference}
 				className="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
 				data-testid="Balance__value"
 			>

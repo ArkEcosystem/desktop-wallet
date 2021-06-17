@@ -8,7 +8,7 @@ import { Trans, useTranslation } from "react-i18next";
 
 import { PluginCardSkeleton } from "../PluginCard/PluginCardSkeleton";
 
-interface PluginGridProps {
+interface PluginGridProperties {
 	category?: string;
 	className?: string;
 	emptyMessage?: string;
@@ -44,7 +44,7 @@ export const PluginGrid = ({
 	onLaunch,
 	onSelect,
 	onUpdate,
-}: PluginGridProps) => {
+}: PluginGridProperties) => {
 	const { t } = useTranslation();
 
 	const [currentPage, setCurrentPage] = React.useState(1);
@@ -132,7 +132,7 @@ export const PluginGrid = ({
 		);
 	}
 
-	if (!plugins.length) {
+	if (plugins.length === 0) {
 		return (
 			<EmptyBlock data-testid="PluginGrid__empty-message">
 				<Trans>{emptyMessage || t("PLUGINS.PAGE_PLUGIN_MANAGER.NO_PLUGINS_AVAILABLE")}</Trans>

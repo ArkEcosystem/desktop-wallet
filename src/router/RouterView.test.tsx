@@ -4,7 +4,7 @@ import React from "react";
 import { MemoryRouter, Router, withRouter } from "react-router-dom";
 import { render } from "utils/testing-library";
 
-import { Middleware, MiddlewareParams } from "./interfaces";
+import { Middleware, MiddlewareParams as MiddlewareParameters } from "./interfaces";
 import { RouterView } from "./RouterView";
 
 describe("RouterView", () => {
@@ -75,7 +75,7 @@ describe("RouterView", () => {
 	});
 
 	it("should block /test router", () => {
-		const handler = jest.fn(({ location }: MiddlewareParams) => location.pathname !== "/test");
+		const handler = jest.fn(({ location }: MiddlewareParameters) => location.pathname !== "/test");
 		const testMiddleware: Middleware = {
 			handler,
 		};
@@ -97,7 +97,7 @@ describe("RouterView", () => {
 	});
 
 	it("should block /test router and redirect to a custom url", () => {
-		const handler = jest.fn(({ location, redirect }: MiddlewareParams) => {
+		const handler = jest.fn(({ location, redirect }: MiddlewareParameters) => {
 			if (location.pathname === "/test") {
 				redirect("/custom");
 				return false;

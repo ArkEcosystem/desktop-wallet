@@ -5,28 +5,28 @@ import { RecipientList } from "domains/transaction/components/RecipientList";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { TransactionDetail, TransactionDetailProps } from "../TransactionDetail";
+import { TransactionDetail, TransactionDetailProperties } from "../TransactionDetail";
 
-type TransactionRecipientsProps = {
+type TransactionRecipientsProperties = {
 	currency: string;
 	recipients: { address: string; alias?: string; amount?: BigNumber }[];
 	normalizeAmount?: boolean;
-} & TransactionDetailProps;
+} & TransactionDetailProperties;
 
 export const TransactionRecipients = ({
 	currency,
 	recipients,
 	normalizeAmount,
-	...props
-}: TransactionRecipientsProps) => {
+	...properties
+}: TransactionRecipientsProperties) => {
 	const { t } = useTranslation();
 
-	if (!recipients.length) {
+	if (recipients.length === 0) {
 		return null;
 	}
 
 	return recipients.length > 1 ? (
-		<TransactionDetail label={t("TRANSACTION.RECIPIENTS_COUNT", { count: recipients.length })} {...props}>
+		<TransactionDetail label={t("TRANSACTION.RECIPIENTS_COUNT", { count: recipients.length })} {...properties}>
 			<div className="-my-2">
 				<RecipientList
 					recipients={recipients}
@@ -40,7 +40,7 @@ export const TransactionRecipients = ({
 		<TransactionDetail
 			label={t("TRANSACTION.RECIPIENT")}
 			extra={<Avatar size="lg" address={recipients[0].address} />}
-			{...props}
+			{...properties}
 		>
 			<Address address={recipients[0].address} walletName={recipients[0].alias} />
 		</TransactionDetail>

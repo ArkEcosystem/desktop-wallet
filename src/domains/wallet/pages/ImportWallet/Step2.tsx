@@ -14,7 +14,7 @@ const MnemonicField = ({
 	profile,
 	label,
 	findAddress,
-	...props
+	...properties
 }: {
 	profile: Contracts.IProfile;
 	label: string;
@@ -41,13 +41,13 @@ const MnemonicField = ({
 									address,
 								}).toString()
 							);
-						} catch (e) {
+						} catch (error) {
 							/* istanbul ignore next */
-							return e.message;
+							return error.message;
 						}
 					},
 				})}
-				{...props}
+				{...properties}
 			/>
 		</FormField>
 	);
@@ -146,7 +146,7 @@ const ImportInputField = ({
 						await coin.__construct();
 						const { address } = await coin.address().fromWIF(value);
 						return address;
-					} catch (e) {
+					} catch {
 						throw new Error(t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.INVALID_WIF"));
 					}
 				}}

@@ -12,13 +12,13 @@ import {
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-interface IpfsDetailProps {
+interface IpfsDetailProperties {
 	isOpen: boolean;
 	transaction?: any;
 	onClose?: any;
 }
 
-export const IpfsDetail = ({ isOpen, transaction, onClose }: IpfsDetailProps) => {
+export const IpfsDetail = ({ isOpen, transaction, onClose }: IpfsDetailProperties) => {
 	const { t } = useTranslation();
 
 	const wallet = useMemo(() => transaction.wallet(), [transaction]);

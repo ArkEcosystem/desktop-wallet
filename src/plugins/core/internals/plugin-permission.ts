@@ -33,4 +33,4 @@ export const isPluginEnabled: Rule = ({ profile, plugin }) => (result) => {
 };
 
 export const applyPluginMiddlewares = (context: MiddlewareContext, rules: Rule[]) => (response: any) =>
-	rules.reduce((acc, rule) => rule(context)(acc), response);
+	rules.reduce((accumulator, rule) => rule(context)(accumulator), response);

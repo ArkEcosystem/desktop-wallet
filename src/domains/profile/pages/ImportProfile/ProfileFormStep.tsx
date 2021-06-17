@@ -17,7 +17,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { setThemeSource } from "utils/electron-utils";
 
-interface CreateProfileFormProps {
+interface CreateProfileFormProperties {
 	file?: ImportFile;
 	profile: Contracts.IProfile;
 	password?: string;
@@ -38,7 +38,7 @@ const CreateProfileForm = ({
 	showThemeToggleField = true,
 	showCurrencyField = true,
 	shouldValidate = false,
-}: CreateProfileFormProps) => {
+}: CreateProfileFormProperties) => {
 	const { t } = useTranslation();
 
 	const form = useForm<any>({
@@ -231,7 +231,7 @@ export const ImportProfileForm = ({
 	showThemeToggleField,
 	showCurrencyField,
 	shouldValidate,
-}: CreateProfileFormProps) => {
+}: CreateProfileFormProperties) => {
 	const { t } = useTranslation();
 
 	return (

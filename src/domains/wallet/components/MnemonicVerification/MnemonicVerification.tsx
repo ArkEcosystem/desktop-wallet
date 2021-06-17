@@ -4,7 +4,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { MnemonicVerificationOptions } from "./MnemonicVerificationOptions";
 import { MnemonicVerificationProgress } from "./MnemonicVerificationProgress";
 
-interface Props {
+interface Properties {
 	mnemonic: string;
 	wordPositions?: number[];
 	optionsLimit: number;
@@ -24,22 +24,18 @@ const randomWordPositions = () => {
 	return positions;
 };
 
-export function MnemonicVerification({ mnemonic, wordPositions, optionsLimit, handleComplete, isCompleted }: Props) {
+export function MnemonicVerification({ mnemonic, wordPositions, optionsLimit, handleComplete, isCompleted }: Properties) {
 	const [activeTab, setActiveTab] = useState(0);
 	const [positions, setPositions] = useState([] as number[]);
 
 	let mnemonicWords: string[];
 
 	// Check for Japanese "space"
-	if (/\u3000/.test(mnemonic)) {
-		mnemonicWords = mnemonic.split("\u3000");
-	} else {
-		mnemonicWords = mnemonic.split(" ");
-	}
+	mnemonicWords = /\u3000/.test(mnemonic) ? mnemonic.split("\u3000") : mnemonic.split(" ");
 
-	if (!wordPositions?.length && activeTab === 0 && !positions.length) {
+	if (!wordPositions?.length && activeTab === 0 && positions.length === 0) {
 		setPositions(randomWordPositions());
-	} else if (activeTab === 0 && !positions.length) {
+	} else if (activeTab === 0 && positions.length === 0) {
 		setPositions(wordPositions as number[]);
 	}
 

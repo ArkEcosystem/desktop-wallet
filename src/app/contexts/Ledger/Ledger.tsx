@@ -3,14 +3,14 @@ import React, { createContext, useContext } from "react";
 
 import { useLedgerConnection } from "./hooks/connection";
 
-interface Props {
+interface Properties {
 	transport: typeof Transport;
 	children: React.ReactNode;
 }
 
 const LedgerContext = createContext<any>(undefined);
 
-export const LedgerProvider = ({ transport, children }: Props) => {
+export const LedgerProvider = ({ transport, children }: Properties) => {
 	const ledger = useLedgerConnection(transport);
 	return <LedgerContext.Provider value={ledger}>{children}</LedgerContext.Provider>;
 };

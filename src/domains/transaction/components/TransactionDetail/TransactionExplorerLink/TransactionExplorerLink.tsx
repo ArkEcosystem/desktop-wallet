@@ -5,27 +5,27 @@ import { TruncateMiddleDynamic } from "app/components/TruncateMiddleDynamic";
 import React, { useRef } from "react";
 import { useTranslation } from "react-i18next";
 
-import { TransactionDetail, TransactionDetailProps } from "../TransactionDetail";
+import { TransactionDetail, TransactionDetailProperties } from "../TransactionDetail";
 
-type TransactionExplorerLinkProps = {
+type TransactionExplorerLinkProperties = {
 	id: string;
 	link: string;
 	variant: "block" | "transaction";
-} & TransactionDetailProps;
+} & TransactionDetailProperties;
 
-export const TransactionExplorerLink = ({ id, link, variant, ...props }: TransactionExplorerLinkProps) => {
+export const TransactionExplorerLink = ({ id, link, variant, ...properties }: TransactionExplorerLinkProperties) => {
 	const { t } = useTranslation();
 
-	const ref = useRef(null);
+	const reference = useRef(null);
 
 	const isTransactionLink = () => variant === "transaction";
 
 	return (
-		<TransactionDetail label={isTransactionLink() ? t("TRANSACTION.ID") : t("TRANSACTION.BLOCK_ID")} {...props}>
+		<TransactionDetail label={isTransactionLink() ? t("TRANSACTION.ID") : t("TRANSACTION.BLOCK_ID")} {...properties}>
 			<div className="flex overflow-hidden items-center space-x-3">
-				<span ref={ref} className="overflow-hidden">
+				<span ref={reference} className="overflow-hidden">
 					<Link to={link} isExternal>
-						<TruncateMiddleDynamic value={id} offset={22} parentRef={ref} />
+						<TruncateMiddleDynamic value={id} offset={22} parentRef={reference} />
 					</Link>
 				</span>
 

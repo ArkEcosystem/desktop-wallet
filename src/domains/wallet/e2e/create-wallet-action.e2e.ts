@@ -10,14 +10,14 @@ createFixture(
 	[],
 	[
 		mockRequest(
-			(request: any) => !!request.url.match(new RegExp(BASEURL + "wallets/([-0-9a-zA-Z]{1,34})")),
+			(request: any) => !!new RegExp(BASEURL + "wallets/([-0-9a-zA-Z]{1,34})").test(request.url),
 			"coins/ark/devnet/wallets/not-found",
 			404,
 		),
 		mockRequest(
 			(request: any) =>
-				!!request.url.match(
-					new RegExp(BASEURL + "transactions\\?page=1&limit=15&address=([-0-9a-zA-Z]{1,34})"),
+				!!new RegExp(BASEURL + "transactions\\?page=1&limit=15&address=([-0-9a-zA-Z]{1,34})").test(
+					request.url,
 				),
 			{
 				meta: {
@@ -36,10 +36,10 @@ createFixture(
 		),
 		mockRequest(
 			(request: any) =>
-				!!request.url.match(
-					new RegExp(
+				!!new RegExp(
 						"https://dmusig1.ark.io/transactions\\?publicKey=([-0-9a-zA-Z]{1,66})&state=(ready|pending)",
-					),
+					).test(
+					request.url,
 				),
 			[],
 		),
@@ -48,7 +48,7 @@ createFixture(
 
 test("should create a wallet", async (t) => {
 	const mnemonicWords = [];
-	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 60000 });
+	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 60_000 });
 	await t.click(Selector("span").withText("John Doe"));
 	await t.expect(Selector("div").withText(translations().COMMON.WALLETS).exists).ok();
 
@@ -71,19 +71,19 @@ test("should create a wallet", async (t) => {
 	// Show passphrase and go to third step
 	const mnemonicsCount = await Selector("[data-testid=MnemonicList__item]").count;
 
-	for (let i = 0; i <= mnemonicsCount - 1; i++) {
-		const textContent = await Selector("[data-testid=MnemonicList__item]").nth(i).textContent;
+	for (let index = 0; index <= mnemonicsCount - 1; index++) {
+		const textContent = await Selector("[data-testid=MnemonicList__item]").nth(index).textContent;
 
-		mnemonicWords.push(textContent.replace(/[0-9]+/, "").trim());
+		mnemonicWords.push(textContent.replace(/\d+/, "").trim());
 	}
 	await t.click(Selector("button").withExactText(translations().COMMON.CONTINUE));
 
 	// Confirm your password
 	await t.expect(Selector("button").withText(translations().COMMON.CONTINUE).hasAttribute("disabled")).ok();
 
-	for (let i = 0; i < 3; i++) {
+	for (let index = 0; index < 3; index++) {
 		const selectWordPhrase = await Selector("[data-testid=MnemonicVerificationOptions__title]").textContent;
-		const wordNumber = selectWordPhrase.match(/[0-9]+/)?.[0];
+		const wordNumber = selectWordPhrase.match(/\d+/)?.[0];
 		await t.click(
 			Selector("[data-testid=MnemonicVerificationOptions__button]").withText(
 				new RegExp(`^${mnemonicWords[Number(wordNumber) - 1]}$`),

@@ -3,14 +3,14 @@ import tw, { styled } from "twin.macro";
 
 import { TabContext, TabId, useTab } from "./useTab";
 
-interface TabsProps {
+interface TabsProperties {
 	children: React.ReactNode;
 	activeId?: TabId;
 	className?: string;
 	onChange?: (id: TabId) => void;
 }
 
-export function Tabs({ children, activeId, className, onChange }: TabsProps) {
+export function Tabs({ children, activeId, className, onChange }: TabsProperties) {
 	const context = useTab({ initialId: activeId });
 	const { currentId, setCurrentId } = context;
 
@@ -31,7 +31,7 @@ export function Tabs({ children, activeId, className, onChange }: TabsProps) {
 	);
 }
 
-interface TabProps {
+interface TabProperties {
 	children: React.ReactNode;
 	tabId: string | number;
 	count?: number;
@@ -39,21 +39,22 @@ interface TabProps {
 
 const TabButton = styled.button``;
 
-export const Tab = React.forwardRef<HTMLButtonElement, TabProps>((props: TabProps, ref) => {
+export const Tab = React.forwardRef<HTMLButtonElement, TabProperties>((properties: TabProperties, reference) => {
 	const context = React.useContext(TabContext);
-	const isActive = context?.isIdActive(props.tabId);
+	const isActive = context?.isIdActive(properties.tabId);
 
 	return (
 		<TabButton
-			data-testid={`tabs__tab-button-${props.tabId}`}
+			data-testid={`tabs__tab-button-${properties.tabId}`}
 			role="tab"
 			type="button"
 			className="group"
-			ref={ref}
+			ref={reference}
 			aria-selected={isActive}
 			tabIndex={isActive ? 0 : -1}
 			onKeyDown={(event: any) => {
-				if (event.key === "ArrowLeft") {
+				switch (event.key) {
+				case "ArrowLeft": {
 					let previousTab = event.target.previousElementSibling;
 
 					while (previousTab && previousTab.getAttribute("role") !== "tab") {
@@ -65,7 +66,10 @@ export const Tab = React.forwardRef<HTMLButtonElement, TabProps>((props: TabProp
 					}
 
 					previousTab.focus();
-				} else if (event.key === "ArrowRight") {
+				
+				break;
+				}
+				case "ArrowRight": {
 					let nextTab = event.target.nextElementSibling;
 
 					while (nextTab && nextTab.getAttribute("role") !== "tab") {
@@ -77,22 +81,30 @@ export const Tab = React.forwardRef<HTMLButtonElement, TabProps>((props: TabProp
 					}
 
 					nextTab.focus();
-				} else if (event.key === "Enter" || event.key === " ") {
-					context?.setCurrentId(props.tabId);
+				
+				break;
+				}
+				case "Enter": 
+				case " ": {
+					context?.setCurrentId(properties.tabId);
+				
+				break;
+				}
+				// No default
 				}
 			}}
-			onClick={() => context?.setCurrentId(props.tabId)}
+			onClick={() => context?.setCurrentId(properties.tabId)}
 		>
 			<div className="absolute inset-0 -mx-3 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400" />
 
-			<span>{props.children}</span>
+			<span>{properties.children}</span>
 
-			{props.count !== undefined && (
+			{properties.count !== undefined && (
 				<span
-					data-testid={`tabs__tab-button-${props.tabId}-count`}
+					data-testid={`tabs__tab-button-${properties.tabId}-count`}
 					className="py-0.5 px-1.5 ml-2 text-sm font-semibold rounded bg-theme-primary-100 dark:bg-theme-secondary-900"
 				>
-					{props.count}
+					{properties.count}
 				</span>
 			)}
 		</TabButton>
@@ -126,13 +138,13 @@ export const TabList = styled.div<{ noBackground?: boolean }>`
 	}
 `;
 
-type TabPanelProps = {
+type TabPanelProperties = {
 	children: React.ReactNode;
 	tabId: string | number;
 } & React.HTMLProps<any>;
 
-export const TabPanel = React.forwardRef<HTMLDivElement, TabProps>(
-	({ tabId, children, ...props }: TabPanelProps, ref) => {
+export const TabPanel = React.forwardRef<HTMLDivElement, TabProperties>(
+	({ tabId, children, ...properties }: TabPanelProperties, reference) => {
 		const context = React.useContext(TabContext);
 		const isActive = context?.isIdActive(tabId);
 
@@ -141,7 +153,7 @@ export const TabPanel = React.forwardRef<HTMLDivElement, TabProps>(
 		}
 
 		return (
-			<div data-testid="tab-pabel__active-panel" ref={ref} {...props}>
+			<div data-testid="tab-pabel__active-panel" ref={reference} {...properties}>
 				{children}
 			</div>
 		);

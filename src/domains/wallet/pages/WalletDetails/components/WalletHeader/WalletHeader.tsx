@@ -23,7 +23,7 @@ import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 import { openExternal } from "utils/electron-utils";
 
-interface WalletHeaderProps {
+interface WalletHeaderProperties {
 	profile: Contracts.IProfile;
 	wallet: Contracts.IReadWriteWallet;
 	currencyDelta?: number;
@@ -39,13 +39,13 @@ export const WalletHeader = ({
 	onSend,
 	isUpdatingTransactions,
 	onUpdate,
-}: WalletHeaderProps) => {
+}: WalletHeaderProperties) => {
 	const [modal, setModal] = useState<string | undefined>();
 
 	const { env } = useEnvironmentContext();
 	const { syncAll } = useWalletSync({ profile, env });
 	const [isSyncing, setIsSyncing] = useState(false);
-	const prevIsUpdatingTransactions = usePrevious(isUpdatingTransactions);
+	const previousIsUpdatingTransactions = usePrevious(isUpdatingTransactions);
 
 	const history = useHistory();
 
@@ -231,11 +231,11 @@ export const WalletHeader = ({
 	};
 
 	useEffect(() => {
-		if (isSyncing && prevIsUpdatingTransactions && !isUpdatingTransactions) {
+		if (isSyncing && previousIsUpdatingTransactions && !isUpdatingTransactions) {
 			setIsSyncing(false);
 			onUpdate?.(false);
 		}
-	}, [isSyncing, prevIsUpdatingTransactions, isUpdatingTransactions, onUpdate]);
+	}, [isSyncing, previousIsUpdatingTransactions, isUpdatingTransactions, onUpdate]);
 
 	return (
 		<>

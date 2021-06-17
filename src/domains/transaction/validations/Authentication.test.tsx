@@ -14,7 +14,7 @@ jest.mock("utils/debounce", () => ({
 
 describe("Authentication", () => {
 	beforeAll(async () => {
-		translationMock = jest.fn((i18nString: string) => i18nString);
+		translationMock = jest.fn((index18nString: string) => index18nString);
 
 		const profile = env.profiles().first();
 		await env.profiles().restore(profile);

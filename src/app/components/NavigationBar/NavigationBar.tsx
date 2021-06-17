@@ -30,7 +30,7 @@ interface MenuItem {
 	mountPath: any;
 }
 
-interface NavigationBarProps {
+interface NavigationBarProperties {
 	title?: string;
 	isBackDisabled?: boolean;
 	profile?: Contracts.IProfile;
@@ -61,14 +61,14 @@ const NavWrapper = styled.nav<{ noBorder?: boolean; noShadow?: boolean; scroll?:
 	}};
 `;
 
-interface UserInfoProps {
+interface UserInfoProperties {
 	avatarImage?: string;
 	onUserAction?: any;
 	userActions?: Action[];
 	userInitials?: string;
 }
 
-const UserInfo = ({ onUserAction, avatarImage, userActions, userInitials }: UserInfoProps) => (
+const UserInfo = ({ onUserAction, avatarImage, userActions, userInitials }: UserInfoProperties) => (
 	<Dropdown
 		onSelect={onUserAction}
 		options={userActions}
@@ -120,7 +120,7 @@ const NavigationBar = ({
 	userActions,
 	noBorder,
 	noShadow,
-}: NavigationBarProps) => {
+}: NavigationBarProperties) => {
 	const history = useHistory();
 	const { t } = useTranslation();
 
@@ -214,11 +214,11 @@ const NavigationBar = ({
 								<div className="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800" />
 
 								<div className="flex items-center">
-									<Tooltip content={wallets.length ? undefined : t("COMMON.NOTICE_NO_WALLETS")}>
+									<Tooltip content={wallets.length > 0 ? undefined : t("COMMON.NOTICE_NO_WALLETS")}>
 										<NavigationButtonWrapper>
 											<Button
 												data-testid="navbar__buttons--send"
-												disabled={!wallets.length}
+												disabled={wallets.length === 0}
 												size="icon"
 												variant="transparent"
 												onClick={() => history.push(`/profiles/${profile?.id()}/send-transfer`)}
@@ -232,11 +232,11 @@ const NavigationBar = ({
 								<div className="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800" />
 
 								<div className="flex items-center">
-									<Tooltip content={wallets.length ? undefined : t("COMMON.NOTICE_NO_WALLETS")}>
+									<Tooltip content={wallets.length > 0 ? undefined : t("COMMON.NOTICE_NO_WALLETS")}>
 										<NavigationButtonWrapper>
 											<Button
 												data-testid="navbar__buttons--receive"
-												disabled={!wallets.length}
+												disabled={wallets.length === 0}
 												size="icon"
 												variant="transparent"
 												onClick={() => setSearchWalletIsOpen(true)}

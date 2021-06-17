@@ -78,7 +78,7 @@ export const LedgerTable = ({
 
 	const showSkeleton = isScanning || (isBusy && wallets.length === 0);
 
-	const skeletonRows = new Array(5).fill({});
+	const skeletonRows = Array.from({length: 5}).fill({});
 	const data = showSkeleton ? skeletonRows : wallets;
 
 	return (
@@ -136,7 +136,7 @@ export const LedgerScanStep = ({
 	profile,
 }: {
 	profile: Contracts.IProfile;
-	setRetryFn?: (fn?: () => void) => void;
+	setRetryFn?: (function_?: () => void) => void;
 }) => {
 	const { t } = useTranslation();
 	const { watch, register, unregister, setValue } = useFormContext();

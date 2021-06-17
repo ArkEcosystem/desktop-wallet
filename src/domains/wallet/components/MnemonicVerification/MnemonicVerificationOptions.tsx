@@ -11,7 +11,7 @@ export const OptionButton = styled(motion.button)`
 	will-change: transform;
 `;
 
-interface Props {
+interface Properties {
 	handleChange: (value: string) => void;
 	answer: string;
 	options: string[];
@@ -19,7 +19,7 @@ interface Props {
 	position: number;
 }
 
-export const MnemonicVerificationOptions = ({ handleChange, options, limit, answer, position }: Props) => {
+export const MnemonicVerificationOptions = ({ handleChange, options, limit, answer, position }: Properties) => {
 	const controls = useAnimation();
 
 	const { t } = useTranslation();
@@ -28,8 +28,8 @@ export const MnemonicVerificationOptions = ({ handleChange, options, limit, answ
 
 	const handleClick = (value: string, index: number) => {
 		handleChange(value);
-		controls.start((i) => {
-			if (i !== index) {
+		controls.start((index_) => {
+			if (index_ !== index) {
 				return {};
 			}
 			return {

@@ -5,18 +5,18 @@ import path from "path";
 import React, { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-interface SelectFileStepProps {
+interface SelectFileStepProperties {
 	fileFormat: string;
 	onSelect?: (file: ReadableFile) => void;
 }
 
-export const SelectFile = ({ onSelect, fileFormat }: SelectFileStepProps) => {
+export const SelectFile = ({ onSelect, fileFormat }: SelectFileStepProperties) => {
 	const { t } = useTranslation();
 
 	const [isDragging, setIsDragging] = useState(false);
 	const { openFile, readFileContents } = useFiles();
 
-	const ref: any = useRef(null);
+	const reference: any = useRef(null);
 
 	const handleBrowseFiles = async () => {
 		const file = await openFile({ extensions: [fileFormat.replace(/\./g, "")] });
@@ -60,7 +60,7 @@ export const SelectFile = ({ onSelect, fileFormat }: SelectFileStepProps) => {
 		>
 			<div
 				data-testid="SelectFile__drop-zone"
-				ref={ref}
+				ref={reference}
 				onDragOver={(event: any) => event.preventDefault()}
 				onDragEnter={(event: any) => {
 					event.preventDefault();
@@ -69,7 +69,7 @@ export const SelectFile = ({ onSelect, fileFormat }: SelectFileStepProps) => {
 				onDragLeave={(event: any) => {
 					event.preventDefault();
 
-					const bounds = ref.current?.getBoundingClientRect();
+					const bounds = reference.current?.getBoundingClientRect();
 
 					/* istanbul ignore next */
 					if (

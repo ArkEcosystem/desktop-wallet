@@ -5,12 +5,12 @@ import { LaunchRender, usePluginManagerContext } from "plugins";
 import React from "react";
 
 export const PluginView = () => {
-	const queryParams = useQueryParams();
+	const queryParameters = useQueryParams();
 
 	const profile = useActiveProfile();
 	const { pluginManager } = usePluginManagerContext();
 
-	const pluginId = queryParams.get("pluginId")!;
+	const pluginId = queryParameters.get("pluginId")!;
 	const plugin = pluginManager.plugins().findById(pluginId);
 
 	return (

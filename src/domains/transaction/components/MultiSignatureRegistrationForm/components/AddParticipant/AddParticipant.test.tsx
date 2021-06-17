@@ -194,7 +194,7 @@ describe("Add Participant", () => {
 	it("should work with a remote wallet", async () => {
 		const scope = nock("https://dwallets.ark.io")
 			.get("/api/wallets")
-			.query((params) => !!params.address)
+			.query((parameters) => !!parameters.address)
 			.reply(200, {
 				meta: { count: 1, pageCount: 1, totalCount: 1 },
 				data: [walletFixture.data],

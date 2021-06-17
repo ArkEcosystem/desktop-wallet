@@ -1,7 +1,7 @@
 import React, { CSSProperties, ReactNode } from "react";
 import SkeletonReact from "react-loading-skeleton";
 
-interface SkeletonProps {
+interface SkeletonProperties {
 	count?: number;
 	duration?: number;
 	width?: string | number;
@@ -12,11 +12,11 @@ interface SkeletonProps {
 	className?: string;
 }
 
-export const Skeleton = (props: SkeletonProps) => (
+export const Skeleton = (properties: SkeletonProperties) => (
 	<SkeletonReact
 		wrapper={({ children }: { children: ReactNode }) => (
 			<span className="flex items-center leading-none">{children}</span>
 		)}
-		{...props}
+		{...properties}
 	/>
 );

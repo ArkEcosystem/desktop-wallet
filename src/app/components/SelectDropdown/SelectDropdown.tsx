@@ -14,7 +14,7 @@ interface Option {
 	isSelected?: boolean;
 }
 
-type SelectProps = {
+type SelectProperties = {
 	addons?: any;
 	options: Option[];
 	defaultValue?: string;
@@ -27,7 +27,7 @@ type SelectProps = {
 	renderLabel?: (option: Option) => JSX.Element;
 } & React.InputHTMLAttributes<any>;
 
-type SelectDropdownProps = {
+type SelectDropdownProperties = {
 	addons?: any;
 	options: Option[];
 	defaultSelectedItem?: Option;
@@ -57,7 +57,7 @@ const SelectDropdown = ({
 	showCaret = true,
 	renderLabel,
 	id,
-}: SelectDropdownProps) => {
+}: SelectDropdownProperties) => {
 	const { t } = useTranslation();
 
 	const [isTyping, setIsTyping] = useState(false);
@@ -266,7 +266,7 @@ const SelectDropdown = ({
 	);
 };
 
-export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
+export const Select = React.forwardRef<HTMLInputElement, SelectProperties>(
 	(
 		{
 			addons,
@@ -282,8 +282,8 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 			onChange,
 			renderLabel,
 			id,
-		}: SelectProps,
-		ref,
+		}: SelectProperties,
+		reference,
 	) => {
 		const defaultSelectedItem = useMemo(
 			() =>
@@ -302,7 +302,7 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 			<div className="relative w-full">
 				<Input
 					data-testid="select-list__input"
-					ref={ref}
+					ref={reference}
 					value={selected?.value || ""}
 					className="sr-only"
 					isInvalid={isInvalidField}

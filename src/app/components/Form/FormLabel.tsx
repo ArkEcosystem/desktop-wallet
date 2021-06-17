@@ -4,19 +4,19 @@ import { useTranslation } from "react-i18next";
 
 import { useFormField } from "./useFormField";
 
-type FormLabelProps = {
+type FormLabelProperties = {
 	label?: string;
 	optional?: boolean;
 } & React.LabelHTMLAttributes<any>;
 
-export function FormLabel(props: FormLabelProps) {
+export function FormLabel(properties: FormLabelProperties) {
 	const fieldContext = useFormField();
 
-	const labelProps = { ...props };
+	const labelProperties = { ...properties };
 
-	for (const prop of ["label", "optional"]) {
+	for (const property of ["label", "optional"]) {
 		// @ts-ignore
-		delete labelProps[prop];
+		delete labelProperties[property];
 	}
 
 	const { t } = useTranslation();
@@ -26,11 +26,11 @@ export function FormLabel(props: FormLabelProps) {
 			data-testid="FormLabel"
 			className="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
 			htmlFor={fieldContext?.name}
-			{...labelProps}
+			{...labelProperties}
 		>
-			{props.label || props.children}
+			{properties.label || properties.children}
 
-			{props.optional && (
+			{properties.optional && (
 				<Tooltip content={t("COMMON.VALIDATION.OPTIONAL")}>
 					<span
 						data-testid="FormLabel__optional"

@@ -9,18 +9,18 @@ import { InputFeeAdvanced, InputFeeSimple } from "./InputFee.blocks";
 import {
 	DEFAULT_SIMPLE_VALUE,
 	DEFAULT_VIEW_TYPE,
-	InputFeeProps,
+	InputFeeProperties,
 	InputFeeSimpleOptions,
 	InputFeeSimpleValue,
 	InputFeeViewType,
 } from "./InputFee.contracts";
 
 export const InputFee = memo(
-	({ min, avg, max, step, disabled, network, profile, loading, onChange, value, ...props }: InputFeeProps) => {
+	({ min, avg, max, step, disabled, network, profile, loading, onChange, value, ...properties }: InputFeeProperties) => {
 		const { t } = useTranslation();
 
-		const viewType = props.viewType ?? DEFAULT_VIEW_TYPE;
-		const simpleValue = props.simpleValue ?? DEFAULT_SIMPLE_VALUE;
+		const viewType = properties.viewType ?? DEFAULT_VIEW_TYPE;
+		const simpleValue = properties.simpleValue ?? DEFAULT_SIMPLE_VALUE;
 		const [advancedValue, setAdvancedValue] = useState<string>(value);
 
 		useEffect(() => {
@@ -55,29 +55,29 @@ export const InputFee = memo(
 			},
 		};
 
-		const onChangeViewType = (val: InputFeeViewType) => {
-			props.onChangeViewType(val);
+		const onChangeViewType = (value_: InputFeeViewType) => {
+			properties.onChangeViewType(value_);
 
-			if (val === InputFeeViewType.Simple) {
+			if (value_ === InputFeeViewType.Simple) {
 				const feeValue = options[simpleValue].displayValue;
 				onChange(feeValue);
 			}
 
-			if (val === InputFeeViewType.Advanced) {
+			if (value_ === InputFeeViewType.Advanced) {
 				onChange(advancedValue);
 			}
 		};
 
-		const onChangeSimpleValue = (val: InputFeeSimpleValue) => {
-			props.onChangeSimpleValue(val);
+		const onChangeSimpleValue = (value_: InputFeeSimpleValue) => {
+			properties.onChangeSimpleValue(value_);
 
-			const feeValue = options[val].displayValue;
+			const feeValue = options[value_].displayValue;
 			onChange(feeValue);
 		};
 
-		const onChangeAdvancedValue = (val: string) => {
-			setAdvancedValue(val);
-			onChange(val);
+		const onChangeAdvancedValue = (value_: string) => {
+			setAdvancedValue(value_);
+			onChange(value_);
 		};
 
 		if (disabled) {

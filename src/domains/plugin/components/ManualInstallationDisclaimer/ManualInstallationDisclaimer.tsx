@@ -6,7 +6,7 @@ import { Modal } from "app/components/Modal";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-interface ManualInstallationDisclaimerProps {
+interface ManualInstallationDisclaimerProperties {
 	isOpen: boolean;
 	onClose?: any;
 	onDecline?: any;
@@ -18,7 +18,7 @@ export const ManualInstallationDisclaimer = ({
 	onClose,
 	onDecline,
 	onAccept,
-}: ManualInstallationDisclaimerProps) => {
+}: ManualInstallationDisclaimerProperties) => {
 	const { t } = useTranslation();
 
 	const [rememberChoice, setRememberChoice] = useState(false);

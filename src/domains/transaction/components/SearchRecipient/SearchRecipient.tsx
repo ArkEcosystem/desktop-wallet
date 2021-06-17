@@ -18,12 +18,12 @@ interface Recipient {
 	type: string;
 }
 
-interface RecipientListItemProps {
+interface RecipientListItemProperties {
 	recipient: Recipient;
 	onAction: (address: string) => void;
 }
 
-const RecipientListItem = ({ recipient, onAction }: RecipientListItemProps) => {
+const RecipientListItem = ({ recipient, onAction }: RecipientListItemProperties) => {
 	const { t } = useTranslation();
 
 	return (
@@ -52,7 +52,7 @@ const RecipientListItem = ({ recipient, onAction }: RecipientListItemProps) => {
 	);
 };
 
-interface SearchRecipientProps {
+interface SearchRecipientProperties {
 	title?: string;
 	description?: string;
 	network?: Networks.Network;
@@ -70,7 +70,7 @@ export const SearchRecipient = ({
 	network,
 	onClose,
 	onAction,
-}: SearchRecipientProps) => {
+}: SearchRecipientProperties) => {
 	const { t } = useTranslation();
 
 	const contacts = profile.contacts().values();
@@ -110,9 +110,9 @@ export const SearchRecipient = ({
 			return addressNetwork === network?.id();
 		};
 
-		profileWallets.forEach((wallet) => {
+		for (const wallet of profileWallets) {
 			if (!isNetworkSelected(wallet.network().id())) {
-				return;
+				continue;
 			}
 
 			recipientsList.push({
@@ -123,15 +123,14 @@ export const SearchRecipient = ({
 				type: "wallet",
 				network: wallet.network().id(),
 			});
-		});
+		}
 
-		contacts.forEach((contact) => {
-			contact
+		for (const contact of contacts) {
+			for (const contactAddress of contact
 				.addresses()
-				.values()
-				.forEach((contactAddress) => {
+				.values()) {
 					if (!isNetworkSelected(contactAddress.network())) {
-						return;
+						continue;
 					}
 
 					recipientsList.push({
@@ -142,8 +141,8 @@ export const SearchRecipient = ({
 						network: contactAddress.network(),
 						type: "contact",
 					});
-				});
-		});
+				}
+		}
 
 		return recipientsList;
 	}, [profileWallets, contacts, network]);

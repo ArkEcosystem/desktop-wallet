@@ -7,14 +7,14 @@ import { TransactionRowAmount } from "./TransactionRowAmount";
 import { TransactionRowMode } from "./TransactionRowMode";
 import { TransactionRowRecipientLabel } from "./TransactionRowRecipientLabel";
 
-type Props = {
+type Properties = {
 	transaction: DTO.ExtendedTransactionData;
 	walletName?: string;
 	iconSize?: Size;
 } & React.HTMLProps<any>;
 
-export const TransactionCompactRow = ({ transaction, walletName, iconSize, ...props }: Props) => (
-	<TableRow {...props}>
+export const TransactionCompactRow = ({ transaction, walletName, iconSize, ...properties }: Properties) => (
+	<TableRow {...properties}>
 		<TableCell variant="start" innerClassName="space-x-3" isCompact>
 			<TransactionRowMode transaction={transaction} iconSize={iconSize} />
 			<TransactionRowRecipientLabel transaction={transaction} walletName={walletName} />

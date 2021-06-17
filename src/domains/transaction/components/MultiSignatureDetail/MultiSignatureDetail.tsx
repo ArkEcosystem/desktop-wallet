@@ -14,14 +14,14 @@ import { AuthenticationStep } from "../AuthenticationStep";
 import { SentStep } from "./SentStep";
 import { SummaryStep } from "./SummaryStep";
 
-interface MultiSignatureDetailProps {
+interface MultiSignatureDetailProperties {
 	isOpen: boolean;
 	wallet: ProfilesContracts.IReadWriteWallet;
 	transaction: Contracts.SignedTransactionData;
 	onClose?: () => void;
 }
 
-const Paginator = (props: {
+const Paginator = (properties: {
 	onCancel?: () => void;
 	onSign?: () => void;
 	onBack?: () => void;
@@ -33,29 +33,29 @@ const Paginator = (props: {
 	const { t } = useTranslation();
 	return (
 		<div className="flex justify-end mt-8 space-x-2">
-			{props.activeStep === 1 && (
+			{properties.activeStep === 1 && (
 				<>
-					<Button data-testid="Paginator__cancel" variant="secondary" onClick={props.onCancel}>
+					<Button data-testid="Paginator__cancel" variant="secondary" onClick={properties.onCancel}>
 						{t("COMMON.CANCEL")}
 					</Button>
 
-					<Button data-testid="Paginator__sign" onClick={props.onSign}>
+					<Button data-testid="Paginator__sign" onClick={properties.onSign}>
 						{t("COMMON.SIGN")}
 					</Button>
 				</>
 			)}
 
-			{props.activeStep === 2 && (
+			{properties.activeStep === 2 && (
 				<>
-					<Button data-testid="Paginator__back" variant="secondary" onClick={props.onBack}>
+					<Button data-testid="Paginator__back" variant="secondary" onClick={properties.onBack}>
 						{t("COMMON.BACK")}
 					</Button>
 
 					<Button
-						disabled={!props.isEnabled || props.isLoading}
+						disabled={!properties.isEnabled || properties.isLoading}
 						data-testid="Paginator__continue"
-						isLoading={props.isLoading}
-						onClick={props.onContinue}
+						isLoading={properties.isLoading}
+						onClick={properties.onContinue}
 					>
 						{t("COMMON.CONTINUE")}
 					</Button>
@@ -65,7 +65,7 @@ const Paginator = (props: {
 	);
 };
 
-export const MultiSignatureDetail = ({ isOpen, wallet, transaction, onClose }: MultiSignatureDetailProps) => {
+export const MultiSignatureDetail = ({ isOpen, wallet, transaction, onClose }: MultiSignatureDetailProperties) => {
 	const { t } = useTranslation();
 	const { persist } = useEnvironmentContext();
 	const form = useForm({ mode: "onChange" });

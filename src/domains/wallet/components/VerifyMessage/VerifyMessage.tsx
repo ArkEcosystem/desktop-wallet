@@ -16,7 +16,7 @@ enum VerificationMethod {
 	Json,
 }
 
-interface Props {
+interface Properties {
 	isOpen: boolean;
 	profileId: string;
 	walletId: string;
@@ -110,7 +110,7 @@ const ManualForm = () => {
 	);
 };
 
-export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, isOpen, onClose }: Props) => {
+export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, isOpen, onClose }: Properties) => {
 	const { env } = useEnvironmentContext();
 
 	const form = useForm({ mode: "onChange" });

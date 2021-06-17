@@ -13,7 +13,7 @@ export const delegateRegistration = (t: any) => ({
 			}),
 		},
 		validate: {
-			pattern: (value: string) => validatePattern(t, value, /[a-z0-9!@$&_.]+/),
+			pattern: (value: string) => validatePattern(t, value, /[\d!$&.@_a-z]+/),
 			unique: (value: string) =>
 				!usernames.includes(value) || t("COMMON.VALIDATION.EXISTS", { field: t("COMMON.DELEGATE_NAME") }),
 		},

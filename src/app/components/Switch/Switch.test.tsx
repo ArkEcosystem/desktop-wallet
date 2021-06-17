@@ -12,9 +12,9 @@ describe("Switch", () => {
 	const Wrapper = () => {
 		const [value, setValue] = useState("a");
 
-		const change = (val: string) => {
-			onChange(val);
-			setValue(val);
+		const change = (value_: string) => {
+			onChange(value_);
+			setValue(value_);
 		};
 
 		return <Switch value={value} onChange={change} leftOption={leftOption} rightOption={rightOption} />;

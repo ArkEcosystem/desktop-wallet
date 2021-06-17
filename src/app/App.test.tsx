@@ -42,11 +42,11 @@ describe("App", () => {
 
 		nock("https://registry.npmjs.com")
 			.get("/-/v1/search")
-			.query((params) => params.from === "0")
+			.query((parameters) => parameters.from === "0")
 			.once()
 			.reply(200, require("tests/fixtures/plugins/registry-response.json"))
 			.get("/-/v1/search")
-			.query((params) => params.from === "250")
+			.query((parameters) => parameters.from === "250")
 			.once()
 			.reply(200, {})
 			.persist();
@@ -74,9 +74,9 @@ describe("App", () => {
 			return true;
 		});
 		jest.spyOn(electron.ipcRenderer, "on").mockImplementation(
-			(evt: any, callback: (evt: any, progress: any) => void) => {
-				if (evt === "updater:download-progress") {
-					callback(evt, { total: 10, percent: 30, transferred: 3 });
+			(event_: any, callback: (event__: any, progress: any) => void) => {
+				if (event_ === "updater:download-progress") {
+					callback(event_, { total: 10, percent: 30, transferred: 3 });
 				}
 			},
 		);
@@ -253,7 +253,7 @@ describe("App", () => {
 	it("should render application error if the app fails to boot", async () => {
 		const consoleSpy = jest.spyOn(console, "error").mockImplementation(() => null);
 
-		const envSpy = jest.spyOn(Environment.prototype, "boot").mockImplementation(() => {
+		const environmentSpy = jest.spyOn(Environment.prototype, "boot").mockImplementation(() => {
 			throw new Error("failed to boot env");
 		});
 
@@ -265,7 +265,7 @@ describe("App", () => {
 			rendered = renderWithRouter(<App />, { withProviders: false });
 		});
 
-		expect(envSpy).toHaveBeenCalled();
+		expect(environmentSpy).toHaveBeenCalled();
 
 		const { container, asFragment, getByTestId } = rendered;
 
@@ -279,7 +279,7 @@ describe("App", () => {
 		});
 
 		consoleSpy.mockRestore();
-		envSpy.mockRestore();
+		environmentSpy.mockRestore();
 	});
 
 	it("should render mock", async () => {

@@ -2,7 +2,7 @@ import cn from "classnames";
 import React from "react";
 import tw, { css, styled } from "twin.macro";
 
-interface SectionProps {
+interface SectionProperties {
 	children: React.ReactNode;
 	borderClassName?: string;
 	backgroundClassName?: string;
@@ -34,7 +34,7 @@ export const Section = ({
 	borderClassName = "border-theme-secondary-300 dark:border-theme-secondary-800",
 	backgroundClassName,
 	innerClassName,
-}: SectionProps) => (
+}: SectionProperties) => (
 	<SectionWrapper
 		backgroundClassName={backgroundClassName}
 		border={border}

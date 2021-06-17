@@ -143,7 +143,7 @@ describe("Plugin Configuration", () => {
 
 	it("should return plugin size from package", async () => {
 		const subject1 = PluginConfigurationData.make({ name: "plugin-test" });
-		const subject2 = PluginConfigurationData.make({ name: "plugin-test", dist: { unpackedSize: 15000 } });
+		const subject2 = PluginConfigurationData.make({ name: "plugin-test", dist: { unpackedSize: 15_000 } });
 
 		await subject1.syncSize();
 		await subject2.syncSize();

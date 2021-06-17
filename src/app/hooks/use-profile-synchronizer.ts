@@ -13,9 +13,9 @@ import { useSynchronizer } from "./use-synchronizer";
 import { useTheme } from "./use-theme";
 
 enum Intervals {
-	Short = 30000,
-	Medium = 60000,
-	Long = 120000,
+	Short = 30_000,
+	Medium = 60_000,
+	Long = 120_000,
 }
 
 const useProfileWatcher = () => {
@@ -149,7 +149,7 @@ export const useProfileSyncStatus = () => {
 			current.status = "idle";
 			current.restored = [];
 			setConfiguration({ profileIsRestoring: false, profileIsSyncing: true });
-			profiles.forEach((profile) => profile.status().reset());
+			for (const profile of profiles)  {profile.status().reset();}
 		},
 	};
 };
@@ -212,11 +212,11 @@ export const useProfileRestore = () => {
 	};
 };
 
-interface ProfileSynchronizerProps {
+interface ProfileSynchronizerProperties {
 	onProfileRestoreError?: (error: any) => void;
 }
 
-export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchronizerProps = {}) => {
+export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchronizerProperties = {}) => {
 	const { env, persist } = useEnvironmentContext();
 	const { setConfiguration, profileIsSyncing } = useConfiguration();
 	const { restoreProfile } = useProfileRestore();

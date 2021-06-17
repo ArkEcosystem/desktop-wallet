@@ -2,7 +2,7 @@ import React from "react";
 
 import { useSlider } from ".";
 
-interface SliderProps {
+interface SliderProperties {
 	children?: any;
 	data?: any;
 	options?: any;
@@ -10,7 +10,7 @@ interface SliderProps {
 	paginationPosition: "bottom-center" | "top-right";
 }
 
-export const Slider = ({ children, data, options, className, paginationPosition }: SliderProps) => {
+export const Slider = ({ children, data, options, className, paginationPosition }: SliderProperties) => {
 	const { showPagination, containerHeight, slideStyles, wrapperRef } = useSlider({
 		container: ".slide-container",
 		paginationPosition,

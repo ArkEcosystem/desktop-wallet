@@ -7,13 +7,13 @@ import { TransactionRowAmount } from "../TransactionRow/TransactionRowAmount";
 import { TransactionRowRecipientIcon } from "../TransactionRow/TransactionRowRecipientIcon";
 import { TransactionRowRecipientLabel } from "../TransactionRow/TransactionRowRecipientLabel";
 
-type Props = {
+type Properties = {
 	transaction: DTO.ExtendedTransactionData;
 	walletName?: string;
 } & React.HTMLProps<any>;
 
-export const UnconfirmedTransactionRow = ({ transaction, walletName, ...props }: Props) => (
-	<TableRow {...props}>
+export const UnconfirmedTransactionRow = ({ transaction, walletName, ...properties }: Properties) => (
+	<TableRow {...properties}>
 		<TableCell variant="start" innerClassName="space-x-3 text-theme-secondary-500" isCompact>
 			<TimeAgo date={transaction.timestamp()?.toString() as string} />
 		</TableCell>

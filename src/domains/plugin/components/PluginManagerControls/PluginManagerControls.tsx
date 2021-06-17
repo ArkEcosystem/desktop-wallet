@@ -1,7 +1,7 @@
 import { LayoutControls } from "app/components/LayoutControls";
 import React from "react";
 
-interface PluginManagerControlsProps {
+interface PluginManagerControlsProperties {
 	onSelectGridView: any;
 	onSelectListView: any;
 	selectedViewType: string;
@@ -11,7 +11,7 @@ export const PluginManagerControls = ({
 	onSelectGridView,
 	onSelectListView,
 	selectedViewType,
-}: PluginManagerControlsProps) => (
+}: PluginManagerControlsProperties) => (
 	<div data-testid="PluginManagerControls" className="flex items-center">
 		<LayoutControls
 			onSelectGridView={onSelectGridView}

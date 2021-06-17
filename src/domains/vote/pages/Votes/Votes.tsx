@@ -32,10 +32,10 @@ export const Votes = () => {
 
 	const activeWallet = useActiveWallet();
 
-	const queryParams = useQueryParams();
-	const unvoteAddresses = queryParams.get("unvotes")?.split(",");
-	const voteAddresses = queryParams.get("votes")?.split(",");
-	const filter = (queryParams.get("filter") || "all") as FilterOption;
+	const queryParameters = useQueryParams();
+	const unvoteAddresses = queryParameters.get("unvotes")?.split(",");
+	const voteAddresses = queryParameters.get("votes")?.split(",");
+	const filter = (queryParameters.get("filter") || "all") as FilterOption;
 
 	const walletAddress = hasWalletId ? activeWallet.address() : "";
 	const walletMaxVotes = hasWalletId ? activeWallet.network().maximumVotesPerWallet() : undefined;
@@ -225,20 +225,20 @@ export const Votes = () => {
 	const handleContinue = (unvotes: string[], votes: string[]) => {
 		const walletId = hasWalletId ? activeWallet.id() : activeProfile.wallets().findByAddress(selectedAddress)?.id();
 
-		const params = new URLSearchParams();
+		const parameters = new URLSearchParams();
 
 		if (unvotes?.length > 0) {
-			params.append("unvotes", unvotes.join());
+			parameters.append("unvotes", unvotes.join(','));
 		}
 
 		/* istanbul ignore else */
 		if (votes?.length > 0) {
-			params.append("votes", votes.join());
+			parameters.append("votes", votes.join(','));
 		}
 
 		history.push({
 			pathname: `/profiles/${activeProfile.id()}/wallets/${walletId}/send-vote`,
-			search: `?${params}`,
+			search: `?${parameters}`,
 		});
 	};
 
@@ -249,7 +249,7 @@ export const Votes = () => {
 	}, [votes]);
 
 	const filteredWalletsByCoin = useMemo(() => {
-		if (!searchQuery.length) {
+		if (searchQuery.length === 0) {
 			return walletsByCoin;
 		}
 
@@ -267,7 +267,7 @@ export const Votes = () => {
 	}, [searchQuery, walletsByCoin]);
 
 	const filteredDelegates = useMemo(() => {
-		if (!searchQuery.length) {
+		if (searchQuery.length === 0) {
 			return filteredDelegatesVotes;
 		}
 
@@ -281,7 +281,7 @@ export const Votes = () => {
 
 	const isEmptyWalletsByCoin =
 		searchQuery.length > 0 &&
-		Object.keys(filteredWalletsByCoin).every((coin: string) => !filteredWalletsByCoin[coin].length);
+		Object.keys(filteredWalletsByCoin).every((coin: string) => filteredWalletsByCoin[coin].length === 0);
 
 	return (
 		<Page profile={activeProfile}>

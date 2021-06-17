@@ -20,7 +20,7 @@ export class HttpPluginService implements PluginService {
 		};
 	}
 
-	private send(type: "get" | "post", plugin: PluginController, url: string, ...args: any) {
+	private send(type: "get" | "post", plugin: PluginController, url: string, ...arguments_: any) {
 		const isValid = plugin
 			.config()
 			.urls()
@@ -30,6 +30,6 @@ export class HttpPluginService implements PluginService {
 			throw new Error(`URL "${url}" not found in the plugin "${plugin.config().name()}" manifest.`);
 		}
 
-		return httpClient[type](url, ...args);
+		return httpClient[type](url, ...arguments_);
 	}
 }

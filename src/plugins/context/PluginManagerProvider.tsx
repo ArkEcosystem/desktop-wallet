@@ -44,9 +44,9 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		try {
 			const results = await PluginLoaderFileSystem.ipc().search();
 			pluginManager.plugins().fill(results);
-		} catch (e) {
+		} catch (error) {
 			/* istanbul ignore next */
-			toasts.error(e.message);
+			toasts.error(error.message);
 		}
 	}, [pluginManager]);
 
@@ -58,7 +58,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		[pluginManager],
 	);
 
-	const trigger = useCallback(() => setState((prev: any) => ({ ...prev })), []);
+	const trigger = useCallback(() => setState((previous: any) => ({ ...previous })), []);
 
 	const reportPlugin = useCallback((pluginConfig: PluginConfigurationData) => {
 		const name = pluginConfig.name();
@@ -68,9 +68,9 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 
 		try {
 			openExternal(url);
-		} catch (e) {
+		} catch (error) {
 			/* istanbul ignore next */
-			toasts.error(e.message);
+			toasts.error(error.message);
 		}
 	}, []);
 
@@ -82,9 +82,9 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 
 				toasts.success(`The plugin ${plugin.config().title()} was removed successfully.`);
 				trigger();
-			} catch (e) {
+			} catch (error) {
 				/* istanbul ignore next */
-				toasts.error(e.message);
+				toasts.error(error.message);
 			}
 		},
 		[pluginManager, trigger],
@@ -123,12 +123,11 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 			);
 
 		setIsFetchingPackages(false);
-		setState((prev: any) => ({ ...prev, packages: configurations, registryPlugins }));
+		setState((previous: any) => ({ ...previous, packages: configurations, registryPlugins }));
 	}, [env]);
 
 	const filterPackages = useCallback(
-		(allPackages: PluginConfigurationData[]) => {
-			const filteredPackages = allPackages.filter((pluginPackage) => {
+		(allPackages: PluginConfigurationData[]) => allPackages.filter((pluginPackage) => {
 				let matchesQuery = true;
 
 				if (hasFilters) {
@@ -136,10 +135,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 				}
 
 				return matchesQuery;
-			});
-
-			return filteredPackages;
-		},
+			}),
 		[filters, hasFilters],
 	);
 
@@ -189,7 +185,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 
 			/* istanbul ignore next */
 			if (!realRepositoryURL) {
-				const config = pluginPackages.find((pkg) => pkg.name() === name);
+				const config = pluginPackages.find((package_) => package_.name() === name);
 				const source = config?.get<{ url: string }>("sourceProvider");
 
 				if (!source?.url) {
@@ -201,9 +197,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 
 			const archiveUrl = `${realRepositoryURL}/archive/master.zip`;
 
-			const savedDir = await ipcRenderer.invoke("plugin:download", { url: archiveUrl, name });
-
-			return savedDir;
+			return await ipcRenderer.invoke("plugin:download", { url: archiveUrl, name });
 		},
 		[pluginPackages],
 	);
@@ -226,11 +220,11 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 
 		configData.validate();
 
-		setState((prev: any) => {
-			const configurations = prev.configurations;
+		setState((previous: any) => {
+			const configurations = previous.configurations;
 
 			const merged = uniqBy([configData, ...configurations], (item) => item.id());
-			return { ...prev, configurations: merged };
+			return { ...previous, configurations: merged };
 		});
 
 		return configData.id();
@@ -257,22 +251,22 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 				if (value.name !== name) {
 					return;
 				}
-				setUpdatingStats((prev) => ({ ...prev, [value.name]: value }));
+				setUpdatingStats((previous) => ({ ...previous, [value.name]: value }));
 			};
 
 			ipcRenderer.on("plugin:download-progress", listener);
 
-			setUpdatingStats((prev) => ({ ...prev, [name]: { percent: 0.0 } }));
+			setUpdatingStats((previous) => ({ ...previous, [name]: { percent: 0 } }));
 
 			try {
 				const savedPath = await downloadPlugin(name);
 				await installPlugin(savedPath, name);
 
 				setTimeout(() => {
-					setUpdatingStats((prev) => ({ ...prev, [name]: { completed: true, failed: false } }));
+					setUpdatingStats((previous) => ({ ...previous, [name]: { completed: true, failed: false } }));
 				}, 1500);
-			} catch (e) {
-				setUpdatingStats((prev) => ({ ...prev, [name]: { failed: true } }));
+			} catch {
+				setUpdatingStats((previous) => ({ ...previous, [name]: { failed: true } }));
 			} finally {
 				ipcRenderer.removeListener("plugin:download-progress", listener);
 			}
@@ -281,14 +275,14 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 	);
 
 	const fetchSize = async (pluginId: string) => {
-		const pkg = state.registryPlugins.find((item) => item.id() === pluginId);
+		const package_ = state.registryPlugins.find((item) => item.id() === pluginId);
 
-		if (!pkg) {
+		if (!package_) {
 			return;
 		}
 
 		try {
-			const size = await pluginRegistry.size(pkg);
+			const size = await pluginRegistry.size(package_);
 			return prettyBytes(size);
 		} catch {
 			/* istanbul ignore next */

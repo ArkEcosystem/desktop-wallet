@@ -5,7 +5,7 @@ import { Icon } from "../Icon";
 
 export type AlertVariant = "info" | "success" | "warning" | "danger" | "hint";
 
-interface AlertProps {
+interface AlertProperties {
 	children: React.ReactNode;
 	className?: string;
 	title?: string;
@@ -36,7 +36,7 @@ const getColorVariant = (variant: string) => {
 	return colorVariant[variant];
 };
 
-export const Alert = ({ variant, title, children, className }: AlertProps) => (
+export const Alert = ({ variant, title, children, className }: AlertProperties) => (
 	<div
 		className={cls(
 			`flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-${
