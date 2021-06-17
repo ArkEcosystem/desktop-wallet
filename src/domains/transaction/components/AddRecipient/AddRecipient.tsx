@@ -196,6 +196,7 @@ export const AddRecipient = ({
 			return;
 		}
 
+		/* istanbul ignore next */
 		if (!isSingle) {
 			if (addedRecipients.length > 0) {
 				clearFields();
@@ -280,7 +281,13 @@ export const AddRecipient = ({
 		onChange?.(remainingRecipients);
 	};
 
-	const addons =
+	const recipientAddressAddons = !errors.recipientAddress && getValues("recipientAddress") && (
+		<div className="flex justify-center items-center w-5 h-5 bg-theme-success-200 text-theme-success-600 dark:bg-theme-success-600 dark:text-white rounded-full">
+			<Icon name="CheckmarkBig" width={10} height={10} data-testid="AddRecipient__recipient-address-checkmark" />
+		</div>
+	);
+
+	const amountAddons =
 		!errors.amount && !errors.fee && isSenderFilled && !senderWallet?.network().isTest()
 			? {
 					end: (
@@ -322,6 +329,7 @@ export const AddRecipient = ({
 							address={recipientAddress}
 							profile={profile}
 							placeholder={t("COMMON.ADDRESS")}
+							addons={recipientAddressAddons}
 							onChange={(address: any) => {
 								setValue("recipientAddress", address, { shouldValidate: true, shouldDirty: true });
 								singleRecipientOnChange(getValues("amount"), address);
@@ -346,7 +354,7 @@ export const AddRecipient = ({
 									data-testid="AddRecipient__amount"
 									placeholder={t("COMMON.AMOUNT_PLACEHOLDER")}
 									value={getValues("displayAmount") || recipientsAmount}
-									addons={addons}
+									addons={amountAddons}
 									onChange={(amount: string) => {
 										setValue("isSendAllSelected", false);
 										setValue("displayAmount", amount);
