@@ -40,7 +40,8 @@ describe("Plugin Controller subject", () => {
 			{ name: "plugin-test2", "desktop-wallet": { categories: ["exchange"] } },
 			() => void 0,
 		);
-		subject.push(plugin1, plugin2);
+		subject.push(plugin1);
+		subject.push(plugin2);
 
 		expect(subject.filterByCategory("exchange").length).toBe(1);
 	});
