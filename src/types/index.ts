@@ -4,7 +4,7 @@ export type Size = "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5
 
 export type Position = "top" | "top-right" | "right" | "bottom-right" | "bottom" | "bottom-left" | "left" | "top-left";
 
-export type ButtonVariant = "primary" | "secondary" | "danger" | "transparent";
+export type ButtonVariant = "primary" | "secondary" | "danger" | "transparent" | "secondary-blue"; // @TODO refactor: remove secondary-blue
 
 export type NavbarVariant = "full" | "logo-only";
 
