@@ -8,7 +8,7 @@ import cn from "classnames";
 import { MultiSignatureDetail } from "domains/transaction/components/MultiSignatureDetail";
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
 import { Transactions } from "domains/transaction/components/Transactions";
-import { SignedTransactionTable } from "domains/transaction/components/TransactionTable/SignedTransactionTable/SignedTransactionTable";
+import { PendingTransactions } from "domains/transaction/components/TransactionTable/PendingTransactionsTable";
 import React, { useEffect, useMemo, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
@@ -31,11 +31,11 @@ export const WalletDetails = () => {
 	const { profileIsSyncing } = useConfiguration();
 
 	const networkAllowsVoting = useMemo(() => activeWallet.network().allowsVoting(), [activeWallet]);
-	const { syncMultiSignatures, pendingMultiSignatureTransactions } = useWalletTransactions(activeWallet);
+	const { pendingSigned, pendingTransfers, syncPending } = useWalletTransactions(activeWallet);
 
 	useEffect(() => {
-		syncMultiSignatures();
-	}, [syncMultiSignatures]);
+		syncPending();
+	}, [syncPending]);
 
 	useEffect(() => {
 		if (activeWallet.hasBeenPartiallyRestored()) {
@@ -99,12 +99,13 @@ export const WalletDetails = () => {
 				)}
 
 				<Section className="flex-1">
-					{pendingMultiSignatureTransactions.length > 0 && (
+					{[...pendingSigned, ...pendingTransfers].length > 0 && (
 						<div className="mb-16">
-							<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.PENDING_TRANSACTIONS")}</h2>
-							<SignedTransactionTable
-								transactions={pendingMultiSignatureTransactions}
+							<PendingTransactions
+								transfers={pendingTransfers}
+								signed={pendingSigned}
 								wallet={activeWallet}
+								onPendingTransactionClick={setTransactionModalItem}
 								onClick={setSignedTransactionModalItem}
 							/>
 						</div>
