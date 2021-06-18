@@ -27,17 +27,17 @@ export const InputFeeSimple = ({
 				isSelected={() => optionValue === value}
 				setSelectedValue={() => onChange(optionValue as InputFeeSimpleValue)}
 			>
-				<div>
-					<div className="mb-3">{label}</div>
+				<div className="flex flex-col space-y-2">
+					<div>{label}</div>
 					{loading ? (
 						<Skeleton width={100} className="my-1 h-3" />
 					) : (
 						<>
-							<div className="text-sm font-normal">
+							<div className="text-sm">
 								{displayValue} {ticker}
 							</div>
 							{showConvertedValues && (
-								<div className="mt-3 text-sm font-normal text-theme-secondary-500">
+								<div className="text-sm text-theme-secondary-500">
 									<Amount ticker={exchangeTicker} value={displayValueConverted} />
 								</div>
 							)}

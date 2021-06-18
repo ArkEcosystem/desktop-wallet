@@ -142,30 +142,30 @@ exports[`should display converted values when on live net 1`] = `
       </div>
     </div>
     <div
-      class="inline-flex items-center space-x-2 w-full"
+      class="inline-flex items-center space-x-3 w-full"
       data-testid="ButtonGroup"
       role="radiogroup"
     >
       <button
         aria-checked="false"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-3"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Slow
           </div>
           <div
-            class="text-sm font-normal"
+            class="text-sm"
           >
             0.006 DARK
           </div>
           <div
-            class="mt-3 text-sm font-normal text-theme-secondary-500"
+            class="text-sm text-theme-secondary-500"
           >
             <span
               data-testid="Amount"
@@ -177,24 +177,24 @@ exports[`should display converted values when on live net 1`] = `
       </button>
       <button
         aria-checked="true"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-3"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Average
           </div>
           <div
-            class="text-sm font-normal"
+            class="text-sm"
           >
             0.456 DARK
           </div>
           <div
-            class="mt-3 text-sm font-normal text-theme-secondary-500"
+            class="text-sm text-theme-secondary-500"
           >
             <span
               data-testid="Amount"
@@ -206,24 +206,24 @@ exports[`should display converted values when on live net 1`] = `
       </button>
       <button
         aria-checked="false"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-3"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Fast
           </div>
           <div
-            class="text-sm font-normal"
+            class="text-sm"
           >
             0.5 DARK
           </div>
           <div
-            class="mt-3 text-sm font-normal text-theme-secondary-500"
+            class="text-sm text-theme-secondary-500"
           >
             <span
               data-testid="Amount"
@@ -379,25 +379,25 @@ exports[`should keep different values for simple and advanced view types 2`] = `
       </div>
     </div>
     <div
-      class="inline-flex items-center space-x-2 w-full"
+      class="inline-flex items-center space-x-3 w-full"
       data-testid="ButtonGroup"
       role="radiogroup"
     >
       <button
         aria-checked="false"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-3"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Slow
           </div>
           <div
-            class="text-sm font-normal"
+            class="text-sm"
           >
             0.006 DARK
           </div>
@@ -405,19 +405,19 @@ exports[`should keep different values for simple and advanced view types 2`] = `
       </button>
       <button
         aria-checked="true"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-3"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Average
           </div>
           <div
-            class="text-sm font-normal"
+            class="text-sm"
           >
             0.456 DARK
           </div>
@@ -425,19 +425,19 @@ exports[`should keep different values for simple and advanced view types 2`] = `
       </button>
       <button
         aria-checked="false"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-3"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Fast
           </div>
           <div
-            class="text-sm font-normal"
+            class="text-sm"
           >
             0.5 DARK
           </div>
@@ -490,25 +490,25 @@ exports[`should render 1`] = `
       </div>
     </div>
     <div
-      class="inline-flex items-center space-x-2 w-full"
+      class="inline-flex items-center space-x-3 w-full"
       data-testid="ButtonGroup"
       role="radiogroup"
     >
       <button
         aria-checked="false"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-3"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Slow
           </div>
           <div
-            class="text-sm font-normal"
+            class="text-sm"
           >
             0.006 DARK
           </div>
@@ -516,19 +516,19 @@ exports[`should render 1`] = `
       </button>
       <button
         aria-checked="true"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-3"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Average
           </div>
           <div
-            class="text-sm font-normal"
+            class="text-sm"
           >
             0.456 DARK
           </div>
@@ -536,19 +536,19 @@ exports[`should render 1`] = `
       </button>
       <button
         aria-checked="false"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-3"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Fast
           </div>
           <div
-            class="text-sm font-normal"
+            class="text-sm"
           >
             0.5 DARK
           </div>
@@ -601,25 +601,25 @@ exports[`should update value when clicking button Average 1`] = `
       </div>
     </div>
     <div
-      class="inline-flex items-center space-x-2 w-full"
+      class="inline-flex items-center space-x-3 w-full"
       data-testid="ButtonGroup"
       role="radiogroup"
     >
       <button
         aria-checked="false"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-3"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Slow
           </div>
           <div
-            class="text-sm font-normal"
+            class="text-sm"
           >
             0.006 DARK
           </div>
@@ -627,19 +627,19 @@ exports[`should update value when clicking button Average 1`] = `
       </button>
       <button
         aria-checked="true"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-3"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Average
           </div>
           <div
-            class="text-sm font-normal"
+            class="text-sm"
           >
             0.456 DARK
           </div>
@@ -647,19 +647,19 @@ exports[`should update value when clicking button Average 1`] = `
       </button>
       <button
         aria-checked="false"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-3"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Fast
           </div>
           <div
-            class="text-sm font-normal"
+            class="text-sm"
           >
             0.5 DARK
           </div>
@@ -712,25 +712,25 @@ exports[`should update value when clicking button Fast 1`] = `
       </div>
     </div>
     <div
-      class="inline-flex items-center space-x-2 w-full"
+      class="inline-flex items-center space-x-3 w-full"
       data-testid="ButtonGroup"
       role="radiogroup"
     >
       <button
         aria-checked="false"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-3"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Slow
           </div>
           <div
-            class="text-sm font-normal"
+            class="text-sm"
           >
             0.006 DARK
           </div>
@@ -738,19 +738,19 @@ exports[`should update value when clicking button Fast 1`] = `
       </button>
       <button
         aria-checked="false"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-3"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Average
           </div>
           <div
-            class="text-sm font-normal"
+            class="text-sm"
           >
             0.456 DARK
           </div>
@@ -758,19 +758,19 @@ exports[`should update value when clicking button Fast 1`] = `
       </button>
       <button
         aria-checked="true"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-3"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Fast
           </div>
           <div
-            class="text-sm font-normal"
+            class="text-sm"
           >
             0.5 DARK
           </div>
@@ -823,25 +823,25 @@ exports[`should update value when clicking button Slow 1`] = `
       </div>
     </div>
     <div
-      class="inline-flex items-center space-x-2 w-full"
+      class="inline-flex items-center space-x-3 w-full"
       data-testid="ButtonGroup"
       role="radiogroup"
     >
       <button
         aria-checked="true"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-3"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Slow
           </div>
           <div
-            class="text-sm font-normal"
+            class="text-sm"
           >
             0.006 DARK
           </div>
@@ -849,19 +849,19 @@ exports[`should update value when clicking button Slow 1`] = `
       </button>
       <button
         aria-checked="false"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-3"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Average
           </div>
           <div
-            class="text-sm font-normal"
+            class="text-sm"
           >
             0.456 DARK
           </div>
@@ -869,19 +869,19 @@ exports[`should update value when clicking button Slow 1`] = `
       </button>
       <button
         aria-checked="false"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
       >
-        <div>
-          <div
-            class="mb-3"
-          >
+        <div
+          class="flex flex-col space-y-2"
+        >
+          <div>
             Fast
           </div>
           <div
-            class="text-sm font-normal"
+            class="text-sm"
           >
             0.5 DARK
           </div>
