@@ -235,6 +235,10 @@ describe("AddRecipient", () => {
 						recipients={[
 							{
 								address: "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
+								amount: undefined,
+							},
+							{
+								address: "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
 								amount: 1,
 							},
 							{
@@ -279,7 +283,7 @@ describe("AddRecipient", () => {
 
 		fireEvent.click(screen.getByTestId("AddRecipient__add-button"));
 
-		await waitFor(() => expect(screen.getAllByTestId("recipient-list__recipient-list-item")).toHaveLength(3));
+		await waitFor(() => expect(screen.getAllByTestId("recipient-list__recipient-list-item")).toHaveLength(4));
 	});
 
 	it("should render checkmark for valid recipient address", async () => {
