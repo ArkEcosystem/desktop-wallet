@@ -31,11 +31,7 @@ export const SummaryStep = ({
 
 				<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>{senderWallet.username()}</TransactionDetail>
 
-				<TransactionFee
-					currency={senderWallet.currency()}
-					value={transaction.fee()}
-					paddingPosition="top"
-				/>
+				<TransactionFee currency={senderWallet.currency()} value={transaction.fee()} paddingPosition="top" />
 			</TransactionSuccessful>
 		</section>
 	);

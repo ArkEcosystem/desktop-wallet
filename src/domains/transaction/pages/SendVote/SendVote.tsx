@@ -286,9 +286,7 @@ export const SendVote = () => {
 						...voteTransactionInput,
 						data: isUnvote
 							? {
-									unvotes: unvotes.map((wallet: Contracts.IReadOnlyWallet) =>
-										wallet.publicKey(),
-									),
+									unvotes: unvotes.map((wallet: Contracts.IReadOnlyWallet) => wallet.publicKey()),
 							  }
 							: {
 									votes: votes.map((wallet: Contracts.IReadOnlyWallet) => wallet.publicKey()),

@@ -1,4 +1,3 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfileContracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import {
 	TransactionAmount,
@@ -16,15 +15,15 @@ export const SummaryStep = ({
 	senderWallet: ProfileContracts.IReadWriteWallet;
 }) => {
 	// @TODO: this differs per coin, can't be accessed like this
-	const recipients = transaction.data().data().asset?.payments?.map((payment: { recipientId: string; amount: number }) => ({
-		address: payment.recipientId,
-		amount: +payment.amount,
-	})) || [{ address: transaction.recipient(), amount: transaction.amount() }];
+	const recipients = transaction
+		.data()
+		.data()
+		.asset?.payments?.map((payment: { recipientId: string; amount: number }) => ({
+			address: payment.recipientId,
+			amount: +payment.amount,
+		})) || [{ address: transaction.recipient(), amount: transaction.amount() }];
 
-	const transactionAmount = recipients.reduce(
-		(sum: number, { amount }: { amount: number; }) => sum + amount,
-		0,
-	);
+	const transactionAmount = recipients.reduce((sum: number, { amount }: { amount: number }) => sum + amount, 0);
 
 	const currency = senderWallet.currency();
 
