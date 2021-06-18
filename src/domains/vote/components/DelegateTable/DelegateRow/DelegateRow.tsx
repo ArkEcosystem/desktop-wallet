@@ -35,9 +35,6 @@ export const DelegateRow = ({
 }: DelegateRowProperties) => {
 	const { t } = useTranslation();
 
-	// @TODO: use useTheme() instead
-	const isGreenTheme = document.body.classList.contains("theme-light-green");
-
 	const isSelectedUnvote = useMemo(
 		() => !!selectedUnvotes?.find((delegateAddress) => delegateAddress === delegate?.address?.()),
 		[delegate, selectedUnvotes],
@@ -56,9 +53,7 @@ export const DelegateRow = ({
 		}
 
 		if (isSelectedVote) {
-			return isGreenTheme
-				? "bg-blue-50 dark:bg-theme-success-900 text-blue-500"
-				: "bg-theme-success-50 dark:bg-theme-success-900";
+			return "bg-blue-50 dark:bg-theme-success-900 text-blue-500";
 		}
 
 		return "";
@@ -115,7 +110,7 @@ export const DelegateRow = ({
 							</span>
 						) : (
 							<Button
-								variant={isGreenTheme && isSelectedVote ? "secondary-blue" : "secondary"}
+								variant={isSelectedVote ? "secondary-blue" : "secondary"}
 								color={isSelectedVote ? "success" : "primary"}
 								onClick={() => onVoteSelect?.(delegate.address())}
 								data-testid={`DelegateRow__toggle-${index}`}
