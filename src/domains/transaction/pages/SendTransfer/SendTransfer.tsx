@@ -226,12 +226,12 @@ export const SendTransfer = () => {
 				? {
 						payments: recipients.map(({ address, amount }: { address: string; amount: BigNumber }) => ({
 							to: address,
-							amount: amount.toHuman(),
+							amount: amount,
 						})),
 				  }
 				: {
 						to: recipients[0].address,
-						amount: recipients[0].amount.toHuman(),
+						amount: recipients[0].amount,
 						memo: memo,
 				  };
 
@@ -265,6 +265,8 @@ export const SendTransfer = () => {
 			setTransaction(transaction);
 			setActiveTab(4);
 		} catch (error) {
+			console.log(error)
+
 			if (isMnemonicError(error)) {
 				setValue("mnemonic", "");
 				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
