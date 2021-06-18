@@ -1,7 +1,7 @@
 import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { useSynchronizer } from "app/hooks";
 import { useTransaction } from "domains/transaction/hooks";
-import { useCallback,useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 export const useWalletTransactions = (wallet: Contracts.IReadWriteWallet) => {
 	const { fetchWalletUnconfirmedTransactions } = useTransaction();
