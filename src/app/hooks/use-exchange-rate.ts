@@ -8,15 +8,15 @@ interface Parameters_ {
 }
 
 interface UseExchangeRate {
-	convert: (value: number) => number;
+	convert: (value?: number) => number;
 }
 
 export const useExchangeRate = ({ ticker, exchangeTicker }: Parameters_): UseExchangeRate => {
 	const { env } = useEnvironmentContext();
 
 	const convert = useCallback(
-		(value: number) => {
-			if (!ticker || !exchangeTicker) {
+		(value?: number) => {
+			if (!ticker || !exchangeTicker || !value) {
 				return 0;
 			}
 

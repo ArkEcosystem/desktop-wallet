@@ -280,12 +280,6 @@ export const AddRecipient = ({
 		onChange?.(remainingRecipients);
 	};
 
-	const recipientAddressAddons = !errors.recipientAddress && getValues("recipientAddress") && (
-		<div className="flex justify-center items-center w-5 h-5 rounded-full dark:text-white bg-theme-success-200 text-theme-success-600 dark:bg-theme-success-600">
-			<Icon name="CheckmarkBig" width={10} height={10} data-testid="AddRecipient__recipient-address-checkmark" />
-		</div>
-	);
-
 	const amountAddons =
 		!errors.amount && !errors.fee && isSenderFilled && !senderWallet?.network().isTest()
 			? {
@@ -327,7 +321,6 @@ export const AddRecipient = ({
 							address={recipientAddress}
 							profile={profile}
 							placeholder={t("COMMON.ADDRESS")}
-							addons={recipientAddressAddons}
 							onChange={(address: any) => {
 								setValue("recipientAddress", address, { shouldValidate: true, shouldDirty: true });
 								singleRecipientOnChange(getValues("amount"), address);
