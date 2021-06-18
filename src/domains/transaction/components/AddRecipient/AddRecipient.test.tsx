@@ -156,9 +156,7 @@ describe("AddRecipient", () => {
 			fireEvent.click(sendAll);
 		});
 
-		await waitFor(() =>
-			expect(form.current.getValues("amount")).toEqual(wallet.balance().toString()),
-		);
+		await waitFor(() => expect(form.current.getValues("amount")).toEqual(wallet.balance().toString()));
 		expect(container).toMatchSnapshot();
 	});
 

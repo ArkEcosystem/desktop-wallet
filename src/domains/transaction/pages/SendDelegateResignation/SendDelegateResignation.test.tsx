@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { screen, within } from "@testing-library/react";
 import { translations as transactionTranslations } from "domains/transaction/i18n";
 import { createMemoryHistory } from "history";

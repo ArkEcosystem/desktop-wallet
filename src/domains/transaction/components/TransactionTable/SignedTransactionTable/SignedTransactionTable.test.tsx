@@ -40,101 +40,106 @@ describe("Signed Transaction Table", () => {
 						.coin()
 						.signatory()
 						.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
-				})
+				}),
 		);
 
 		fixtures.multiSignature = new DTO.ExtendedSignedTransactionData(
 			await wallet
-			.coin()
-			.transaction()
-			.multiSignature({
-				nonce: "1",
-				fee: "0.00000001",
-				data: {
-					min: 2,
-					publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
-					senderPublicKey: wallet.publicKey()!,
-				},
-				signatory: await wallet
-					.coin()
-					.signatory()
-					.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
-				}),);
+				.coin()
+				.transaction()
+				.multiSignature({
+					nonce: "1",
+					fee: "0.00000001",
+					data: {
+						min: 2,
+						publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
+						senderPublicKey: wallet.publicKey()!,
+					},
+					signatory: await wallet
+						.coin()
+						.signatory()
+						.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
+				}),
+		);
 
 		fixtures.multiPayment = new DTO.ExtendedSignedTransactionData(
 			await wallet
-			.coin()
-			.transaction()
-			.multiPayment({
-				nonce: "1",
-				fee: "0.00000001",
-				data: {
-					payments: [
-						{
-							amount: "0.00000001",
-							to: wallet.address(),
-						},
-						{
-							amount: "0.00000002",
-							to: wallet.address(),
-						},
-					],
-				},
-				signatory: await wallet
-					.coin()
-					.signatory()
-					.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
-			}),);
+				.coin()
+				.transaction()
+				.multiPayment({
+					nonce: "1",
+					fee: "0.00000001",
+					data: {
+						payments: [
+							{
+								amount: "0.00000001",
+								to: wallet.address(),
+							},
+							{
+								amount: "0.00000002",
+								to: wallet.address(),
+							},
+						],
+					},
+					signatory: await wallet
+						.coin()
+						.signatory()
+						.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
+				}),
+		);
 
 		fixtures.vote = new DTO.ExtendedSignedTransactionData(
 			await wallet
-			.coin()
-			.transaction()
-			.vote({
-				nonce: "1",
-				fee: "0.00000001",
-				data: {
-					votes: ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
-					unvotes: [],
-				},
-				signatory: await wallet
-					.coin()
-					.signatory()
-					.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
-			}),);
+				.coin()
+				.transaction()
+				.vote({
+					nonce: "1",
+					fee: "0.00000001",
+					data: {
+						votes: ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
+						unvotes: [],
+					},
+					signatory: await wallet
+						.coin()
+						.signatory()
+						.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
+				}),
+		);
 
 		fixtures.unvote = new DTO.ExtendedSignedTransactionData(
 			await wallet
-			.coin()
-			.transaction()
-			.vote({
-				nonce: "1",
-				fee: "0.00000001",
-				data: {
-					votes: [],
-					unvotes: ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
-				},
-				signatory: await wallet
-					.coin()
-					.signatory()
-					.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
-				}),);
+				.coin()
+				.transaction()
+				.vote({
+					nonce: "1",
+					fee: "0.00000001",
+					data: {
+						votes: [],
+						unvotes: ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
+					},
+					signatory: await wallet
+						.coin()
+						.signatory()
+						.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
+				}),
+		);
 
 		fixtures.ipfs = new DTO.ExtendedSignedTransactionData(
 			await wallet
-			.coin()
-			.transaction()
-			.ipfs({
-				nonce: "1",
-				fee: "0.00000001",
-				data: {
-					hash: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco",
-				},
-				signatory: await wallet
-					.coin()
-					.signatory()
-					.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
-			}),);
+				.coin()
+				.transaction()
+				.ipfs({
+					nonce: "1",
+					fee: "0.00000001",
+					data: {
+						hash: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco",
+					},
+					signatory: await wallet
+						.coin()
+						.signatory()
+						.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
+				}),
+		);
 	});
 
 	it("should render", () => {

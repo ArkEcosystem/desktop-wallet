@@ -47,10 +47,7 @@ export const SummaryStep = ({
 			{ address: transaction.get<string>("recipientId"), amount: transaction.amount() },
 		];
 
-		transactionAmount = recipients.reduce(
-			(sum: number, { amount }: { amount: number; }) => sum + amount,
-			0,
-		);
+		transactionAmount = recipients.reduce((sum: number, { amount }: { amount: number }) => sum + amount, 0);
 	}
 
 	const [delegates, setDelegates] = useState<{

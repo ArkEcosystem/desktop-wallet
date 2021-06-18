@@ -2,7 +2,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { within } from "@testing-library/react";
 import { renderHook } from "@testing-library/react-hooks";
 import { Form } from "app/components/Form";

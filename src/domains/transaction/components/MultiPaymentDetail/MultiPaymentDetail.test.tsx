@@ -1,4 +1,3 @@
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import React from "react";
 import { render, waitFor } from "testing-library";
 import { TransactionFixture } from "tests/fixtures/transactions";

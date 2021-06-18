@@ -26,7 +26,7 @@ describe("Amount", () => {
 		const { container, rerender } = render(<Amount value={1} ticker="ARK" />);
 		expect(container).toHaveTextContent("1 ARK");
 
-		rerender(<Amount value={123456} ticker="BTC" />);
+		rerender(<Amount value={123_456} ticker="BTC" />);
 		expect(container).toHaveTextContent("123,456 BTC");
 
 		rerender(<Amount value={0} ticker="DARK" />);

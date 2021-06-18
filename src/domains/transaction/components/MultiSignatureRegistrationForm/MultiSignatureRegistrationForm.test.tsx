@@ -1,6 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { renderHook } from "@testing-library/react-hooks";
 import { Form } from "app/components/Form";
 import React from "react";

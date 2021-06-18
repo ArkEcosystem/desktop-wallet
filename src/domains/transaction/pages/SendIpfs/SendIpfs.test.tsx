@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { screen } from "@testing-library/react";
 import { act as hookAct, renderHook } from "@testing-library/react-hooks";
 import { LedgerProvider } from "app/contexts";

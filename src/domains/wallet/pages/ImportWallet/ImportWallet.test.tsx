@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/await-thenable */
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import Transport from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { act, renderHook } from "@testing-library/react-hooks";
@@ -184,12 +183,7 @@ describe("ImportWallet", () => {
 
 			return (
 				<FormProvider {...form}>
-					<ThirdStep
-						address={identityAddress}
-						balance={80}
-						nameMaxLength={42}
-						profile={profile}
-					/>
+					<ThirdStep address={identityAddress} balance={80} nameMaxLength={42} profile={profile} />
 				</FormProvider>
 			);
 		};

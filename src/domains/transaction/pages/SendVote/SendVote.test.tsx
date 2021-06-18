@@ -2,7 +2,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 // @README: This import is fine in tests but should be avoided in production code.
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/distribution/read-only-wallet";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { screen, within } from "@testing-library/react";
 import { renderHook } from "@testing-library/react-hooks";
 import { LedgerProvider } from "app/contexts";
