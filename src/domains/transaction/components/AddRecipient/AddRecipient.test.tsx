@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act, renderHook } from "@testing-library/react-hooks";
 import React, { useEffect } from "react";
 import { FormProvider, useForm } from "react-hook-form";
@@ -236,11 +235,11 @@ describe("AddRecipient", () => {
 						recipients={[
 							{
 								address: "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
-								amount: BigNumber.ONE,
+								amount: 1,
 							},
 							{
 								address: "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ay",
-								amount: BigNumber.ONE,
+								amount: 1,
 							},
 						]}
 					/>
@@ -494,11 +493,11 @@ describe("AddRecipient", () => {
 						recipients={[
 							{
 								address: "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
-								amount: BigNumber.ONE,
+								amount: 1,
 							},
 							{
 								address: "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ay",
-								amount: BigNumber.ONE,
+								amount: 1,
 							},
 						]}
 					/>
