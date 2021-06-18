@@ -22,10 +22,10 @@ export const FormStep = ({
 	const { getValues, register, setValue, watch } = useFormContext();
 
 	const [fees, setFees] = useState<TransactionFees>({
-		static: "25",
-		max: "0",
-		min: "0",
-		avg: "0",
+		static: 25,
+		max: 0,
+		min: 0,
+		avg: 0,
 	});
 
 	useEffect(() => {
@@ -51,7 +51,7 @@ export const FormStep = ({
 
 	useEffect(() => {
 		if (fee === undefined) {
-			setValue("fee", fees.avg !== "0" ? fees.avg : fees.static, { shouldValidate: true, shouldDirty: true });
+			setValue("fee", fees.avg !== 0 ? fees.avg : fees.static, { shouldValidate: true, shouldDirty: true });
 		}
 	}, [fee, fees, setValue]);
 

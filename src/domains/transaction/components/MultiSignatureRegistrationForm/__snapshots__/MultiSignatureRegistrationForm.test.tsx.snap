@@ -126,17 +126,21 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                                 class=""
                               >
                                 <div
-                                  class="flex items-center cursor-pointer"
-                                  data-testid="SelectRecipient__select-recipient"
+                                  class="flex items-center space-x-5"
                                 >
                                   <div
-                                    class="sc-bdfBwQ iyevwF"
-                                    height="20"
-                                    width="20"
+                                    class="flex items-center cursor-pointer"
+                                    data-testid="SelectRecipient__select-recipient"
                                   >
-                                    <svg>
-                                      user.svg
-                                    </svg>
+                                    <div
+                                      class="sc-bdfBwQ iyevwF"
+                                      height="20"
+                                      width="20"
+                                    >
+                                      <svg>
+                                        user.svg
+                                      </svg>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -233,11 +237,11 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                       role="rowgroup"
                     >
                       <tr
-                        class="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
+                        class="flex border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
                         data-testid="recipient-list__recipient-list-item"
                       >
                         <td
-                          class="py-6 w-14"
+                          class="flex-none py-6"
                         >
                           <div
                             class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
@@ -255,7 +259,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                           </div>
                         </td>
                         <td
-                          class="py-6"
+                          class="flex-1 py-6 ml-5 w-28"
                         >
                           <div
                             class="mb-1 text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
@@ -265,22 +269,18 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                             </span>
                           </div>
                           <div
-                            class="max-w-sm"
+                            class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
-                            <div
-                              class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
+                            <span
+                              class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                              data-testid="Address__address"
                             >
-                              <span
-                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
-                                data-testid="Address__address"
-                              >
-                                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                              </span>
-                            </div>
+                              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                            </span>
                           </div>
                         </td>
                         <td
-                          class="py-6 w-20 text-right"
+                          class="flex-none py-6 ml-3"
                         >
                           <span
                             class="inline-block"
@@ -417,25 +417,25 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                   </div>
                 </div>
                 <div
-                  class="w-full inline-flex items-center space-x-2"
+                  class="inline-flex items-center space-x-3 w-full"
                   data-testid="ButtonGroup"
                   role="radiogroup"
                 >
                   <button
                     aria-checked="false"
-                    class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+                    class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
                     data-testid="ButtonGroupOption"
                     role="radio"
                     type="button"
                   >
-                    <div>
-                      <div
-                        class="mb-3"
-                      >
+                    <div
+                      class="flex flex-col space-y-2"
+                    >
+                      <div>
                         Slow
                       </div>
                       <div
-                        class="font-normal text-sm"
+                        class="text-sm"
                       >
                         0 DARK
                       </div>
@@ -443,19 +443,19 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                   </button>
                   <button
                     aria-checked="true"
-                    class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+                    class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
                     data-testid="ButtonGroupOption"
                     role="radio"
                     type="button"
                   >
-                    <div>
-                      <div
-                        class="mb-3"
-                      >
+                    <div
+                      class="flex flex-col space-y-2"
+                    >
+                      <div>
                         Average
                       </div>
                       <div
-                        class="font-normal text-sm"
+                        class="text-sm"
                       >
                         1.354 DARK
                       </div>
@@ -463,19 +463,19 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                   </button>
                   <button
                     aria-checked="false"
-                    class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+                    class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
                     data-testid="ButtonGroupOption"
                     role="radio"
                     type="button"
                   >
-                    <div>
-                      <div
-                        class="mb-3"
-                      >
+                    <div
+                      class="flex flex-col space-y-2"
+                    >
+                      <div>
                         Fast
                       </div>
                       <div
-                        class="font-normal text-sm"
+                        class="text-sm"
                       >
                         10 DARK
                       </div>

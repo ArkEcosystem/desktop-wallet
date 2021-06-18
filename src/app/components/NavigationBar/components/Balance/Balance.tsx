@@ -27,7 +27,7 @@ export const Balance = ({ profile, isLoading }: BalanceProperties) => {
 
 	return (
 		<div className="text-right">
-			<div className="text-xs font-semibold text-theme-secondary-700">{t("COMMON.YOUR_BALANCE")}</div>
+			<div className="text-xs font-semibold text-theme-secondary-500">{t("COMMON.YOUR_BALANCE")}</div>
 			<div
 				ref={reference}
 				className="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -36,7 +36,6 @@ export const Balance = ({ profile, isLoading }: BalanceProperties) => {
 				<Amount
 					value={convertedBalance}
 					ticker={profile?.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency) || ""}
-					normalize={false}
 				/>
 			</div>
 		</div>

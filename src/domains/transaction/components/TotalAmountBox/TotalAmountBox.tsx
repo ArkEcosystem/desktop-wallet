@@ -6,8 +6,8 @@ import { useTranslation } from "react-i18next";
 import tw from "twin.macro";
 
 interface Properties {
-	amount: BigNumber;
-	fee: string;
+	amount: number;
+	fee: number;
 	ticker: string;
 }
 
@@ -34,7 +34,7 @@ export const TotalAmountBox = ({ amount, fee, ticker }: Properties) => {
 						<AmountLabel>{t("TRANSACTION.TRANSACTION_FEE")}</AmountLabel>
 						<Amount
 							ticker={ticker}
-							value={BigNumber.make(fee)}
+							value={fee}
 							className="mt-1 text-lg font-semibold"
 							data-testid="total-amount-box__transaction-fee"
 						/>
@@ -52,7 +52,7 @@ export const TotalAmountBox = ({ amount, fee, ticker }: Properties) => {
 				<AmountLabel>{t("TRANSACTION.TOTAL_AMOUNT")}</AmountLabel>
 				<Amount
 					ticker={ticker}
-					value={amount.plus(fee)}
+					value={amount + fee}
 					className="text-2xl font-bold"
 					data-testid="total-amount-box__total"
 				/>

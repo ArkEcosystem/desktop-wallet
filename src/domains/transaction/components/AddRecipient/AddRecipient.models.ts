@@ -16,11 +16,7 @@ export interface AddRecipientProperties {
 }
 
 export interface ToggleButtonProperties {
-	labelText?: string;
-	helpText?: string;
-	isSingle?: boolean;
-	singleLabel?: string;
-	multipleLabel?: string;
+	isSingle: boolean;
 	disableMultiple?: boolean;
-	onChange?: (isSingle: boolean) => void;
+	onChange: (isSingle: boolean) => void;
 }

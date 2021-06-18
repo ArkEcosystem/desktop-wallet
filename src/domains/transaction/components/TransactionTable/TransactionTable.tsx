@@ -68,7 +68,7 @@ export const TransactionTable = memo(
 				{
 					Header: t("COMMON.AMOUNT"),
 					id: "amount",
-					accessor: (transaction: DTO.ExtendedTransactionData) => transaction.total?.().toHuman(),
+					accessor: (transaction: DTO.ExtendedTransactionData) => transaction.total?.(),
 					sortDescFirst: true,
 					className: "justify-end",
 				},
@@ -82,7 +82,7 @@ export const TransactionTable = memo(
 					{
 						Header: t("COMMON.AMOUNT"),
 						id: "amount",
-						accessor: (transaction: DTO.ExtendedTransactionData) => transaction.total?.().toHuman(),
+						accessor: (transaction: DTO.ExtendedTransactionData) => transaction.total?.(),
 						className: "justify-end",
 					},
 				];

@@ -1,6 +1,5 @@
 import { Coins, Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 
 import { RecipientListItem } from "../components/RecipientList/RecipientList.models";
 
@@ -23,6 +22,11 @@ export const sendTransfer = (t: any) => ({
 		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 			field: t("COMMON.CRYPTOASSET"),
 		}),
+	}),
+	recipients: () => ({
+		validate: {
+			valid: (recipients: RecipientListItem[]) => recipients.length > 0,
+		},
 	}),
 	recipientAddress: (
 		profile: Contracts.IProfile,
@@ -58,19 +62,19 @@ export const sendTransfer = (t: any) => ({
 	}),
 	amount: (
 		network: Networks.Network,
-		balance: BigNumber,
+		balance: number,
 		recipients: RecipientListItem[],
 		isSingleRecipient: boolean,
 	) => ({
 		validate: {
 			valid: (amountValue: any) => {
-				const amount = BigNumber.make(amountValue || 0);
-				const hasSufficientBalance = balance?.isGreaterThanOrEqualTo(amount) && !balance?.isZero();
+				const amount = amountValue || 0;
+				const hasSufficientBalance = Number(balance || 0) >= amount && balance !== 0;
 				const shouldRequire = isSingleRecipient || recipients.length === 0;
 
 				if (!hasSufficientBalance) {
 					return t("TRANSACTION.VALIDATION.LOW_BALANCE", {
-						balance: balance?.toHuman(),
+						balance,
 						coinId: network?.coin(),
 					});
 				}
@@ -82,10 +86,10 @@ export const sendTransfer = (t: any) => ({
 						});
 					}
 
-					if (amount.isZero()) {
+					if (amount === 0) {
 						return t("TRANSACTION.VALIDATION.AMOUNT_BELOW_MINIMUM", {
 							min: "0.00000001",
-							coinId: network.coin(),
+							coinId: network?.coin(),
 						});
 					}
 				}

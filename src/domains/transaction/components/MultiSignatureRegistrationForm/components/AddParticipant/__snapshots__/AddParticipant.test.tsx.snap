@@ -137,17 +137,21 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                         class="pl-3"
                       >
                         <div
-                          class="flex items-center cursor-pointer"
-                          data-testid="SelectRecipient__select-recipient"
+                          class="flex items-center space-x-5"
                         >
                           <div
-                            class="sc-bdfBwQ iyevwF"
-                            height="20"
-                            width="20"
+                            class="flex items-center cursor-pointer"
+                            data-testid="SelectRecipient__select-recipient"
                           >
-                            <svg>
-                              user.svg
-                            </svg>
+                            <div
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                user.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -243,11 +247,11 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
               role="rowgroup"
             >
               <tr
-                class="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
+                class="flex border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
                 data-testid="recipient-list__recipient-list-item"
               >
                 <td
-                  class="py-6 w-14"
+                  class="flex-none py-6"
                 >
                   <div
                     class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
@@ -265,7 +269,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                   </div>
                 </td>
                 <td
-                  class="py-6"
+                  class="flex-1 py-6 ml-5 w-28"
                 >
                   <div
                     class="mb-1 text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
@@ -275,22 +279,18 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                     </span>
                   </div>
                   <div
-                    class="max-w-sm"
+                    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                   >
-                    <div
-                      class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
+                    <span
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
-                      <span
-                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
-                        data-testid="Address__address"
-                      >
-                        D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                      </span>
-                    </div>
+                      D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                    </span>
                   </div>
                 </td>
                 <td
-                  class="py-6 w-20 text-right"
+                  class="flex-none py-6 ml-3"
                 >
                   <span
                     class="inline-block"
@@ -468,17 +468,21 @@ exports[`Add Participant should fail to find 1`] = `
                         class="pl-3"
                       >
                         <div
-                          class="flex items-center cursor-pointer"
-                          data-testid="SelectRecipient__select-recipient"
+                          class="flex items-center space-x-5"
                         >
                           <div
-                            class="sc-bdfBwQ iyevwF"
-                            height="20"
-                            width="20"
+                            class="flex items-center cursor-pointer"
+                            data-testid="SelectRecipient__select-recipient"
                           >
-                            <svg>
-                              user.svg
-                            </svg>
+                            <div
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                user.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -574,11 +578,11 @@ exports[`Add Participant should fail to find 1`] = `
               role="rowgroup"
             >
               <tr
-                class="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
+                class="flex border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
                 data-testid="recipient-list__recipient-list-item"
               >
                 <td
-                  class="py-6 w-14"
+                  class="flex-none py-6"
                 >
                   <div
                     class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
@@ -596,7 +600,7 @@ exports[`Add Participant should fail to find 1`] = `
                   </div>
                 </td>
                 <td
-                  class="py-6"
+                  class="flex-1 py-6 ml-5 w-28"
                 >
                   <div
                     class="mb-1 text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
@@ -606,22 +610,18 @@ exports[`Add Participant should fail to find 1`] = `
                     </span>
                   </div>
                   <div
-                    class="max-w-sm"
+                    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                   >
-                    <div
-                      class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
+                    <span
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
-                      <span
-                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
-                        data-testid="Address__address"
-                      >
-                        D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                      </span>
-                    </div>
+                      D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                    </span>
                   </div>
                 </td>
                 <td
-                  class="py-6 w-20 text-right"
+                  class="flex-none py-6 ml-3"
                 >
                   <span
                     class="inline-block"
@@ -809,17 +809,21 @@ exports[`Add Participant should fail with a duplicate address 1`] = `
                         class="pl-3"
                       >
                         <div
-                          class="flex items-center cursor-pointer"
-                          data-testid="SelectRecipient__select-recipient"
+                          class="flex items-center space-x-5"
                         >
                           <div
-                            class="sc-bdfBwQ iyevwF"
-                            height="20"
-                            width="20"
+                            class="flex items-center cursor-pointer"
+                            data-testid="SelectRecipient__select-recipient"
                           >
-                            <svg>
-                              user.svg
-                            </svg>
+                            <div
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                user.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -967,11 +971,11 @@ exports[`Add Participant should fail with a duplicate address 1`] = `
               role="rowgroup"
             >
               <tr
-                class="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
+                class="flex border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
                 data-testid="recipient-list__recipient-list-item"
               >
                 <td
-                  class="py-6 w-14"
+                  class="flex-none py-6"
                 >
                   <div
                     class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
@@ -989,7 +993,7 @@ exports[`Add Participant should fail with a duplicate address 1`] = `
                   </div>
                 </td>
                 <td
-                  class="py-6"
+                  class="flex-1 py-6 ml-5 w-28"
                 >
                   <div
                     class="mb-1 text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
@@ -999,22 +1003,18 @@ exports[`Add Participant should fail with a duplicate address 1`] = `
                     </span>
                   </div>
                   <div
-                    class="max-w-sm"
+                    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                   >
-                    <div
-                      class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
+                    <span
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
-                      <span
-                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
-                        data-testid="Address__address"
-                      >
-                        D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                      </span>
-                    </div>
+                      D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                    </span>
                   </div>
                 </td>
                 <td
-                  class="py-6 w-20 text-right"
+                  class="flex-none py-6 ml-3"
                 >
                   <span
                     class="inline-block"
@@ -1192,17 +1192,21 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                         class="pl-3"
                       >
                         <div
-                          class="flex items-center cursor-pointer"
-                          data-testid="SelectRecipient__select-recipient"
+                          class="flex items-center space-x-5"
                         >
                           <div
-                            class="sc-bdfBwQ iyevwF"
-                            height="20"
-                            width="20"
+                            class="flex items-center cursor-pointer"
+                            data-testid="SelectRecipient__select-recipient"
                           >
-                            <svg>
-                              user.svg
-                            </svg>
+                            <div
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                user.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -1298,11 +1302,11 @@ exports[`Add Participant should fail with cold wallet 1`] = `
               role="rowgroup"
             >
               <tr
-                class="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
+                class="flex border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
                 data-testid="recipient-list__recipient-list-item"
               >
                 <td
-                  class="py-6 w-14"
+                  class="flex-none py-6"
                 >
                   <div
                     class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
@@ -1320,7 +1324,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                   </div>
                 </td>
                 <td
-                  class="py-6"
+                  class="flex-1 py-6 ml-5 w-28"
                 >
                   <div
                     class="mb-1 text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
@@ -1330,22 +1334,18 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                     </span>
                   </div>
                   <div
-                    class="max-w-sm"
+                    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                   >
-                    <div
-                      class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
+                    <span
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
-                      <span
-                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
-                        data-testid="Address__address"
-                      >
-                        D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                      </span>
-                    </div>
+                      D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                    </span>
                   </div>
                 </td>
                 <td
-                  class="py-6 w-20 text-right"
+                  class="flex-none py-6 ml-3"
                 >
                   <span
                     class="inline-block"
@@ -1480,17 +1480,21 @@ exports[`Add Participant should render custom participants 1`] = `
                         class=""
                       >
                         <div
-                          class="flex items-center cursor-pointer"
-                          data-testid="SelectRecipient__select-recipient"
+                          class="flex items-center space-x-5"
                         >
                           <div
-                            class="sc-bdfBwQ iyevwF"
-                            height="20"
-                            width="20"
+                            class="flex items-center cursor-pointer"
+                            data-testid="SelectRecipient__select-recipient"
                           >
-                            <svg>
-                              user.svg
-                            </svg>
+                            <div
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                user.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -1587,11 +1591,11 @@ exports[`Add Participant should render custom participants 1`] = `
               role="rowgroup"
             >
               <tr
-                class="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
+                class="flex border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
                 data-testid="recipient-list__recipient-list-item"
               >
                 <td
-                  class="py-6 w-14"
+                  class="flex-none py-6"
                 >
                   <div
                     class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
@@ -1609,7 +1613,7 @@ exports[`Add Participant should render custom participants 1`] = `
                   </div>
                 </td>
                 <td
-                  class="py-6"
+                  class="flex-1 py-6 ml-5 w-28"
                 >
                   <div
                     class="mb-1 text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
@@ -1619,22 +1623,18 @@ exports[`Add Participant should render custom participants 1`] = `
                     </span>
                   </div>
                   <div
-                    class="max-w-sm"
+                    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                   >
-                    <div
-                      class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
+                    <span
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
-                      <span
-                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
-                        data-testid="Address__address"
-                      >
-                        D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
-                      </span>
-                    </div>
+                      D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
+                    </span>
                   </div>
                 </td>
                 <td
-                  class="py-6 w-20 text-right"
+                  class="flex-none py-6 ml-3"
                 >
                   <span
                     class="inline-block"
@@ -1768,17 +1768,21 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                         class=""
                       >
                         <div
-                          class="flex items-center cursor-pointer"
-                          data-testid="SelectRecipient__select-recipient"
+                          class="flex items-center space-x-5"
                         >
                           <div
-                            class="sc-bdfBwQ iyevwF"
-                            height="20"
-                            width="20"
+                            class="flex items-center cursor-pointer"
+                            data-testid="SelectRecipient__select-recipient"
                           >
-                            <svg>
-                              user.svg
-                            </svg>
+                            <div
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                user.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -2182,11 +2186,11 @@ exports[`Add Participant should work with a remote wallet 1`] = `
               role="rowgroup"
             >
               <tr
-                class="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
+                class="flex border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
                 data-testid="recipient-list__recipient-list-item"
               >
                 <td
-                  class="py-6 w-14"
+                  class="flex-none py-6"
                 >
                   <div
                     class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
@@ -2204,7 +2208,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                   </div>
                 </td>
                 <td
-                  class="py-6"
+                  class="flex-1 py-6 ml-5 w-28"
                 >
                   <div
                     class="mb-1 text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
@@ -2214,22 +2218,18 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                     </span>
                   </div>
                   <div
-                    class="max-w-sm"
+                    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                   >
-                    <div
-                      class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
+                    <span
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
-                      <span
-                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
-                        data-testid="Address__address"
-                      >
-                        D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                      </span>
-                    </div>
+                      D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                    </span>
                   </div>
                 </td>
                 <td
-                  class="py-6 w-20 text-right"
+                  class="flex-none py-6 ml-3"
                 >
                   <span
                     class="inline-block"
@@ -2262,11 +2262,11 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                 </td>
               </tr>
               <tr
-                class="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
+                class="flex border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
                 data-testid="recipient-list__recipient-list-item"
               >
                 <td
-                  class="py-6 w-14"
+                  class="flex-none py-6"
                 >
                   <div
                     class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
@@ -2284,7 +2284,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                   </div>
                 </td>
                 <td
-                  class="py-6"
+                  class="flex-1 py-6 ml-5 w-28"
                 >
                   <div
                     class="mb-1 text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
@@ -2294,22 +2294,18 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                     </span>
                   </div>
                   <div
-                    class="max-w-sm"
+                    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                   >
-                    <div
-                      class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
+                    <span
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
-                      <span
-                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
-                        data-testid="Address__address"
-                      >
-                        D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib
-                      </span>
-                    </div>
+                      D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib
+                    </span>
                   </div>
                 </td>
                 <td
-                  class="py-6 w-20 text-right"
+                  class="flex-none py-6 ml-3"
                 >
                   <span
                     class="inline-block"
@@ -2443,17 +2439,21 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                         class=""
                       >
                         <div
-                          class="flex items-center cursor-pointer"
-                          data-testid="SelectRecipient__select-recipient"
+                          class="flex items-center space-x-5"
                         >
                           <div
-                            class="sc-bdfBwQ iyevwF"
-                            height="20"
-                            width="20"
+                            class="flex items-center cursor-pointer"
+                            data-testid="SelectRecipient__select-recipient"
                           >
-                            <svg>
-                              user.svg
-                            </svg>
+                            <div
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                user.svg
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -2857,11 +2857,11 @@ exports[`Add Participant should work with an imported wallet 1`] = `
               role="rowgroup"
             >
               <tr
-                class="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
+                class="flex border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
                 data-testid="recipient-list__recipient-list-item"
               >
                 <td
-                  class="py-6 w-14"
+                  class="flex-none py-6"
                 >
                   <div
                     class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
@@ -2879,7 +2879,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                   </div>
                 </td>
                 <td
-                  class="py-6"
+                  class="flex-1 py-6 ml-5 w-28"
                 >
                   <div
                     class="mb-1 text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
@@ -2889,22 +2889,18 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                     </span>
                   </div>
                   <div
-                    class="max-w-sm"
+                    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                   >
-                    <div
-                      class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
+                    <span
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
-                      <span
-                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
-                        data-testid="Address__address"
-                      >
-                        D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                      </span>
-                    </div>
+                      D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                    </span>
                   </div>
                 </td>
                 <td
-                  class="py-6 w-20 text-right"
+                  class="flex-none py-6 ml-3"
                 >
                   <span
                     class="inline-block"
@@ -2937,11 +2933,11 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                 </td>
               </tr>
               <tr
-                class="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
+                class="flex border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
                 data-testid="recipient-list__recipient-list-item"
               >
                 <td
-                  class="py-6 w-14"
+                  class="flex-none py-6"
                 >
                   <div
                     class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
@@ -2959,7 +2955,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                   </div>
                 </td>
                 <td
-                  class="py-6"
+                  class="flex-1 py-6 ml-5 w-28"
                 >
                   <div
                     class="mb-1 text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
@@ -2969,22 +2965,18 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                     </span>
                   </div>
                   <div
-                    class="max-w-sm"
+                    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                   >
-                    <div
-                      class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
+                    <span
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
-                      <span
-                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
-                        data-testid="Address__address"
-                      >
-                        D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
-                      </span>
-                    </div>
+                      D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
+                    </span>
                   </div>
                 </td>
                 <td
-                  class="py-6 w-20 text-right"
+                  class="flex-none py-6 ml-3"
                 >
                   <span
                     class="inline-block"

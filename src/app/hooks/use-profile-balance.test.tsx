@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { renderHook } from "@testing-library/react-hooks";
 import { ConfigurationProvider } from "app/contexts";
 import React from "react";
@@ -16,7 +15,7 @@ describe("useProfileBalance", () => {
 			result: { current },
 		} = renderHook(() => useProfileBalance({ profile }), { wrapper });
 
-		expect(current.convertedBalance).toEqual(BigNumber.ZERO);
+		expect(current.convertedBalance).toEqual(0);
 	});
 
 	it("should get zero balance if loading", async () => {
@@ -27,14 +26,12 @@ describe("useProfileBalance", () => {
 			result: { current },
 		} = renderHook(() => useProfileBalance({ profile, isLoading: true }), { wrapper });
 
-		expect(current.convertedBalance).toEqual(BigNumber.ZERO);
+		expect(current.convertedBalance).toEqual(0);
 	});
 
 	it("should update balance", async () => {
 		const profile = env.profiles().findById(getDefaultProfileId());
-		const profileConvertedBalanceMock = jest
-			.spyOn(profile, "convertedBalance")
-			.mockImplementation(() => BigNumber.make(10_000));
+		const profileConvertedBalanceMock = jest.spyOn(profile, "convertedBalance").mockReturnValue(10_000);
 
 		const wrapper = ({ children }: any) => <ConfigurationProvider>{children}</ConfigurationProvider>;
 
@@ -42,7 +39,7 @@ describe("useProfileBalance", () => {
 			result: { current },
 		} = renderHook(() => useProfileBalance({ profile }), { wrapper });
 
-		expect(current.convertedBalance).toEqual(BigNumber.ZERO);
+		expect(current.convertedBalance).toEqual(10_000);
 		profileConvertedBalanceMock.mockRestore();
 	});
 
@@ -59,7 +56,7 @@ describe("useProfileBalance", () => {
 			result: { current },
 		} = renderHook(() => useProfileBalance({ profile }), { wrapper });
 
-		expect(current.convertedBalance).toEqual(BigNumber.ZERO);
+		expect(current.convertedBalance).toEqual(0);
 		profileConvertedBalanceMock.mockRestore();
 		mockProfileStatus.mockRestore();
 	});
@@ -74,7 +71,7 @@ describe("useProfileBalance", () => {
 			result: { current },
 		} = renderHook(() => useProfileBalance({ profile }), { wrapper });
 
-		expect(current.convertedBalance).toEqual(BigNumber.ZERO);
+		expect(current.convertedBalance).toEqual(0);
 		profileConvertedBalanceMock.mockRestore();
 	});
 });

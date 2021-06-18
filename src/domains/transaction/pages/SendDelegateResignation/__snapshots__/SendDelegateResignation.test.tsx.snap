@@ -215,7 +215,7 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
               class="text-right"
             >
               <div
-                class="text-xs font-semibold text-theme-secondary-700"
+                class="text-xs font-semibold text-theme-secondary-500"
               >
                 Your Balance
               </div>
@@ -788,7 +788,7 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
               class="text-right"
             >
               <div
-                class="text-xs font-semibold text-theme-secondary-700"
+                class="text-xs font-semibold text-theme-secondary-500"
               >
                 Your Balance
               </div>
@@ -1052,25 +1052,25 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
                           </div>
                         </div>
                         <div
-                          class="w-full inline-flex items-center space-x-2"
+                          class="inline-flex items-center space-x-3 w-full"
                           data-testid="ButtonGroup"
                           role="radiogroup"
                         >
                           <button
                             aria-checked="false"
-                            class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+                            class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
                             data-testid="ButtonGroupOption"
                             role="radio"
                             type="button"
                           >
-                            <div>
-                              <div
-                                class="mb-3"
-                              >
+                            <div
+                              class="flex flex-col space-y-2"
+                            >
+                              <div>
                                 Slow
                               </div>
                               <div
-                                class="font-normal text-sm"
+                                class="text-sm"
                               >
                                 25 DARK
                               </div>
@@ -1078,19 +1078,19 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
                           </button>
                           <button
                             aria-checked="true"
-                            class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+                            class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
                             data-testid="ButtonGroupOption"
                             role="radio"
                             type="button"
                           >
-                            <div>
-                              <div
-                                class="mb-3"
-                              >
+                            <div
+                              class="flex flex-col space-y-2"
+                            >
+                              <div>
                                 Average
                               </div>
                               <div
-                                class="font-normal text-sm"
+                                class="text-sm"
                               >
                                 25 DARK
                               </div>
@@ -1098,19 +1098,19 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
                           </button>
                           <button
                             aria-checked="false"
-                            class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+                            class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
                             data-testid="ButtonGroupOption"
                             role="radio"
                             type="button"
                           >
-                            <div>
-                              <div
-                                class="mb-3"
-                              >
+                            <div
+                              class="flex flex-col space-y-2"
+                            >
+                              <div>
                                 Fast
                               </div>
                               <div
-                                class="font-normal text-sm"
+                                class="text-sm"
                               >
                                 25 DARK
                               </div>
@@ -1372,7 +1372,7 @@ exports[`SendDelegateResignation Delegate Resignation should render 2nd step 1`]
               class="text-right"
             >
               <div
-                class="text-xs font-semibold text-theme-secondary-700"
+                class="text-xs font-semibold text-theme-secondary-500"
               >
                 Your Balance
               </div>
@@ -1923,7 +1923,7 @@ exports[`SendDelegateResignation Delegate Resignation should render 3rd step 1`]
               class="text-right"
             >
               <div
-                class="text-xs font-semibold text-theme-secondary-700"
+                class="text-xs font-semibold text-theme-secondary-500"
               >
                 Your Balance
               </div>
@@ -2414,7 +2414,7 @@ exports[`SendDelegateResignation Delegate Resignation should show error step 1`]
               class="text-right"
             >
               <div
-                class="text-xs font-semibold text-theme-secondary-700"
+                class="text-xs font-semibold text-theme-secondary-500"
               >
                 Your Balance
               </div>
@@ -2784,7 +2784,7 @@ exports[`SendDelegateResignation Delegate Resignation should show error step and
               class="text-right"
             >
               <div
-                class="text-xs font-semibold text-theme-secondary-700"
+                class="text-xs font-semibold text-theme-secondary-500"
               >
                 Your Balance
               </div>
@@ -3154,7 +3154,7 @@ exports[`SendDelegateResignation Delegate Resignation should show mnemonic authe
               class="text-right"
             >
               <div
-                class="text-xs font-semibold text-theme-secondary-700"
+                class="text-xs font-semibold text-theme-secondary-500"
               >
                 Your Balance
               </div>
@@ -3660,7 +3660,7 @@ exports[`SendDelegateResignation Delegate Resignation should successfully sign a
               class="text-right"
             >
               <div
-                class="text-xs font-semibold text-theme-secondary-700"
+                class="text-xs font-semibold text-theme-secondary-500"
               >
                 Your Balance
               </div>
@@ -4268,7 +4268,7 @@ exports[`SendDelegateResignation Delegate Resignation should successfully sign a
               class="text-right"
             >
               <div
-                class="text-xs font-semibold text-theme-secondary-700"
+                class="text-xs font-semibold text-theme-secondary-500"
               >
                 Your Balance
               </div>

@@ -36,7 +36,7 @@ test("should send multiple transfer successfully", async (t) => {
 	await goToTransferPage(t);
 
 	// Select multiple button
-	await t.click(Selector("[data-testid=AddRecipient__multi]"));
+	await t.click(Selector("span").withText(translations.TRANSACTION.MULTIPLE));
 
 	await t.typeText(Selector("[data-testid=AddRecipient__amount]"), "10", { replace: true });
 
@@ -74,7 +74,7 @@ test("should show an error if wrong mnemonic", async (t: any) => {
 	await goToTransferPage(t);
 
 	// Select multiple button
-	await t.click(Selector("[data-testid=AddRecipient__multi]"));
+	await t.click(Selector("span").withText(translations.TRANSACTION.MULTIPLE));
 
 	// Add recipient #1
 	await t.typeText(Selector("[data-testid=AddRecipient__amount]"), "10", { replace: true });
@@ -114,7 +114,7 @@ test("should not clear values when returning a step", async (t: any) => {
 	await goToTransferPage(t);
 
 	// Select multiple button
-	await t.click(Selector("[data-testid=AddRecipient__multi]"));
+	await t.click(Selector("span").withText(translations.TRANSACTION.MULTIPLE));
 
 	// Add recipient #1
 	await t.typeText(Selector("[data-testid=AddRecipient__amount]"), "10", { replace: true });
@@ -137,6 +137,35 @@ test("should not clear values when returning a step", async (t: any) => {
 	await t.expect(Selector("h1").withText(translations.TRANSACTION.REVIEW_STEP.TITLE).exists).ok();
 	await t.click(Selector("button").withText(translations.COMMON.BACK));
 
-	await t.expect(Selector("[data-testid=AddRecipient__multi]").exists).ok();
+	await t.expect(Selector("span").withText(translations.TRANSACTION.MULTIPLE).exists).ok();
 	await t.expect(Selector("[data-testid=recipient-list__recipient-list-item]").count).eql(2);
+});
+
+test("should not able go to next step without recipient after fill single fields", async (t: any) => {
+	// Navigate to profile page
+	await goToProfile(t);
+
+	// Navigate to wallet page
+	await goToWallet(t);
+
+	// Navigate to transfer page
+	await goToTransferPage(t);
+
+	// Add single recipient
+	await t.typeText(Selector("[data-testid=AddRecipient__amount]"), "10", { replace: true });
+	await t.typeText(Selector("[data-testid=SelectDropdown__input]"), "DReUcXWdCz2QLKzHM9NdZQE7fAwAyPwAmd", {
+		paste: true,
+	});
+
+	await t.expect(Selector("button").withText(translations.COMMON.CONTINUE).hasAttribute("disabled")).notOk();
+
+	// Select multiple button
+	await t.click(Selector("span").withText(translations.TRANSACTION.MULTIPLE));
+
+	await t.expect(Selector("button").withText(translations.COMMON.CONTINUE).hasAttribute("disabled")).ok();
+
+	// Add recipient #1
+	await t.click(Selector("button").withText(translations.TRANSACTION.ADD_RECIPIENT));
+
+	await t.expect(Selector("button").withText(translations.COMMON.CONTINUE).hasAttribute("disabled")).notOk();
 });

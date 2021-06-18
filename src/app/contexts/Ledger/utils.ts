@@ -1,9 +1,7 @@
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
-
 export interface LedgerData {
 	address: string;
 	path: string;
-	balance?: BigNumber;
+	balance?: number;
 	isNew?: boolean;
 }
 

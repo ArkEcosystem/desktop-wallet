@@ -1,6 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Header } from "app/components/Header";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import {
@@ -33,12 +31,7 @@ export const ReviewStep = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) =
 			<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>{username}</TransactionDetail>
 
 			<div className="mt-2">
-				<TotalAmountBox
-					fee={BigNumber.make(fee)
-						.toSatoshi(wallet.config().get(Coins.ConfigKey.CurrencyDecimals))
-						.toString()}
-					ticker={wallet.currency()}
-				/>
+				<TotalAmountBox fee={fee} ticker={wallet.currency()} />
 			</div>
 		</section>
 	);

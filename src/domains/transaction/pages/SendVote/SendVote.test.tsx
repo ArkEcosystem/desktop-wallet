@@ -2,7 +2,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 // @README: This import is fine in tests but should be avoided in production code.
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/distribution/read-only-wallet";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { screen, within } from "@testing-library/react";
 import { renderHook } from "@testing-library/react-hooks";
 import { LedgerProvider } from "app/contexts";
@@ -39,9 +38,9 @@ const createVoteTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 		id: () => voteFixture.data.id,
 		sender: () => voteFixture.data.sender,
 		recipient: () => voteFixture.data.recipient,
-		amount: () => BigNumber.make(voteFixture.data.amount),
-		fee: () => BigNumber.make(voteFixture.data.fee),
-		data: () => voteFixture.data,
+		amount: () => voteFixture.data.amount / 1e8,
+		fee: () => voteFixture.data.fee / 1e8,
+		data: () => ({ data: () => voteFixture.data }),
 	});
 
 const createUnvoteTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
@@ -50,9 +49,9 @@ const createUnvoteTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 		id: () => unvoteFixture.data.id,
 		sender: () => unvoteFixture.data.sender,
 		recipient: () => unvoteFixture.data.recipient,
-		amount: () => BigNumber.make(unvoteFixture.data.amount),
-		fee: () => BigNumber.make(unvoteFixture.data.fee),
-		data: () => unvoteFixture.data,
+		amount: () => unvoteFixture.data.amount / 1e8,
+		fee: () => unvoteFixture.data.fee / 1e8,
+		data: () => ({ data: () => voteFixture.data }),
 	});
 
 const passphrase = getDefaultWalletMnemonic();
@@ -829,7 +828,7 @@ describe("SendVote", () => {
 		expect(signMock).toHaveBeenCalledWith(
 			expect.objectContaining({
 				data: expect.anything(),
-				fee: expect.any(String),
+				fee: expect.any(Number),
 				nonce: expect.any(String),
 				signatory: expect.any(Object),
 			}),

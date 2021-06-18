@@ -1,8 +1,7 @@
 import { Networks } from "@arkecosystem/platform-sdk";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 
 export const common = (t: any) => ({
-	fee: (balance: BigNumber = BigNumber.ZERO, network?: Networks.Network) => ({
+	fee: (balance = 0, network?: Networks.Network) => ({
 		validate: {
 			valid: (fee?: string | number) => {
 				if (fee === undefined || fee === "") {
@@ -15,29 +14,27 @@ export const common = (t: any) => ({
 					return true;
 				}
 
-				if (balance.isZero() || balance.isNegative()) {
-					return t("TRANSACTION.VALIDATION.LOW_BALANCE", {
-						balance: "0",
+				if (balance === 0 || Math.sign(balance) === -1) {
+					return t("TRANSACTION.VALIDATION.LOW_BALANCE_AMOUNT", {
+						balance: 0,
 						coinId: network.coin(),
 					});
 				}
 
-				const feeSatoshi = BigNumber.make(fee);
-
-				if (feeSatoshi.isGreaterThan(balance)) {
-					return t("TRANSACTION.VALIDATION.LOW_BALANCE", {
-						balance: balance?.toHuman(),
+				if (fee > balance) {
+					return t("TRANSACTION.VALIDATION.LOW_BALANCE_AMOUNT", {
+						balance,
 						coinId: network.coin(),
 					});
 				}
 
-				if (feeSatoshi.isZero() && network && !network.chargesZeroFees()) {
+				if (fee === 0 && network && !network.chargesZeroFees()) {
 					return t("COMMON.VALIDATION.FIELD_REQUIRED", {
 						field: t("COMMON.FEE"),
 					});
 				}
 
-				if (feeSatoshi.isNegative()) {
+				if (Math.sign(+fee) === -1) {
 					return t("TRANSACTION.VALIDATION.FEE_NEGATIVE");
 				}
 

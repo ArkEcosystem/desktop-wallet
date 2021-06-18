@@ -1,4 +1,3 @@
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Amount } from "app/components/Amount";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -7,7 +6,7 @@ import { TransactionDetail, TransactionDetailProperties } from "../TransactionDe
 
 type TransactionFeeProperties = {
 	currency: string;
-	value: BigNumber;
+	value: number;
 } & TransactionDetailProperties;
 
 export const TransactionFee = ({ currency, value, ...properties }: TransactionFeeProperties) => {

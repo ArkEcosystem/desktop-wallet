@@ -25,7 +25,7 @@ const createTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 		recipient: () => transactionFixture.data.recipient,
 		amount: () => BigNumber.make(transactionFixture.data.amount),
 		fee: () => BigNumber.make(transactionFixture.data.fee),
-		data: () => transactionFixture.data,
+		data: () => ({ data: () => transactionFixture.data }),
 	});
 
 describe("Use Transaction Builder with Ledger", () => {

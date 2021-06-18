@@ -1,5 +1,6 @@
 import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import { Divider } from "app/components/Divider";
 import { FormField, FormLabel } from "app/components/Form";
 import { useFees } from "app/hooks";
 import { toasts } from "app/services";
@@ -47,7 +48,7 @@ export const SendTransactionForm = ({
 			setValue("fees", transactionFees);
 
 			if (!getValues("fee")) {
-				setValue("fee", transactionFees.avg !== "0" ? transactionFees.avg : transactionFees.static, {
+				setValue("fee", transactionFees.avg !== 0 ? transactionFees.avg : transactionFees.static, {
 					shouldValidate: true,
 					shouldDirty: true,
 				});
@@ -105,71 +106,77 @@ export const SendTransactionForm = ({
 	}, [profile, networks]);
 
 	return (
-		<div className="space-y-5 SendTransactionForm">
-			<FormField name="network">
-				<FormLabel label={t("COMMON.CRYPTOASSET")} />
-				<SelectNetwork
-					id="SendTransactionForm__network"
-					networks={availableNetworks}
-					selected={network}
-					disabled={disableNetworkField || (hasWalletId && !!senderAddress)}
-					onSelect={handleSelectNetwork}
-					hideOptions
-				/>
-			</FormField>
-
-			<FormField name="senderAddress">
-				<FormLabel label={t("TRANSACTION.SENDER")} />
-
-				<div data-testid="sender-address">
-					<SelectAddress
-						address={senderAddress}
-						wallets={wallets}
-						profile={profile}
-						disabled={wallets.length === 0}
-						onChange={handleSelectSender}
-					/>
-				</div>
-			</FormField>
-
-			{children}
-
-			{showFeeInput && (
-				<FormField name="fee">
-					<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
-					<InputFee
-						min={fees?.min}
-						avg={fees?.avg}
-						max={fees?.max}
-						loading={!fees}
-						value={fee}
-						step={0.01}
-						disabled={!dynamicFees}
-						network={network}
-						profile={profile}
-						onChange={(value) => {
-							setValue("fee", value, { shouldValidate: true, shouldDirty: true });
-						}}
-						viewType={inputFeeSettings.viewType}
-						onChangeViewType={(viewType) => {
-							setValue(
-								"inputFeeSettings",
-								{ ...inputFeeSettings, viewType },
-								{ shouldValidate: true, shouldDirty: true },
-							);
-						}}
-						simpleValue={inputFeeSettings.simpleValue}
-						onChangeSimpleValue={(simpleValue) => {
-							setValue(
-								"inputFeeSettings",
-								{ ...inputFeeSettings, simpleValue },
-								{ shouldValidate: true, shouldDirty: true },
-							);
-						}}
+		<section>
+			<div className="space-y-5">
+				<FormField name="network">
+					<FormLabel label={t("COMMON.CRYPTOASSET")} />
+					<SelectNetwork
+						id="SendTransactionForm__network"
+						networks={availableNetworks}
+						selected={network}
+						disabled={disableNetworkField || (hasWalletId && !!senderAddress)}
+						onSelect={handleSelectNetwork}
+						hideOptions
 					/>
 				</FormField>
-			)}
-		</div>
+
+				<FormField name="senderAddress">
+					<FormLabel label={t("TRANSACTION.SENDER")} />
+
+					<div data-testid="sender-address">
+						<SelectAddress
+							address={senderAddress}
+							wallets={wallets}
+							profile={profile}
+							disabled={wallets.length === 0}
+							onChange={handleSelectSender}
+						/>
+					</div>
+				</FormField>
+
+				{children}
+
+				{showFeeInput && (
+					<FormField name="fee">
+						<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
+						<InputFee
+							min={fees?.min}
+							avg={fees?.avg}
+							max={fees?.max}
+							loading={!fees}
+							value={fee}
+							step={0.01}
+							disabled={!dynamicFees}
+							network={network}
+							profile={profile}
+							onChange={(value) => {
+								setValue("fee", value, { shouldValidate: true, shouldDirty: true });
+							}}
+							viewType={inputFeeSettings.viewType}
+							onChangeViewType={(viewType) => {
+								setValue(
+									"inputFeeSettings",
+									{ ...inputFeeSettings, viewType },
+									{ shouldValidate: true, shouldDirty: true },
+								);
+							}}
+							simpleValue={inputFeeSettings.simpleValue}
+							onChangeSimpleValue={(simpleValue) => {
+								setValue(
+									"inputFeeSettings",
+									{ ...inputFeeSettings, simpleValue },
+									{ shouldValidate: true, shouldDirty: true },
+								);
+							}}
+						/>
+					</FormField>
+				)}
+			</div>
+
+			<div className="pt-2">
+				<Divider dashed />
+			</div>
+		</section>
 	);
 };
 

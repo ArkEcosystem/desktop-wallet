@@ -1,4 +1,5 @@
-import { Contracts, Services } from "@arkecosystem/platform-sdk";
+import { Services } from "@arkecosystem/platform-sdk";
+import { DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
@@ -24,7 +25,7 @@ export const SendIpfs = () => {
 	const history = useHistory();
 
 	const [activeTab, setActiveTab] = useState(1);
-	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
+	const [transaction, setTransaction] = useState((null as unknown) as DTO.ExtendedSignedTransactionData);
 
 	const { env, persist } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();

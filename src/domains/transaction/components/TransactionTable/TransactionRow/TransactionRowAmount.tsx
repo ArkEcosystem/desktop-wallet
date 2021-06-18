@@ -1,5 +1,4 @@
 import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Amount } from "app/components/Amount";
 import { Label } from "app/components/Label";
 import React from "react";
@@ -7,13 +6,13 @@ import React from "react";
 interface Properties {
 	isSent: boolean;
 	wallet: Contracts.IReadWriteWallet;
-	total: BigNumber;
-	convertedTotal?: BigNumber;
+	total: number;
+	convertedTotal?: number;
 	exchangeCurrency?: string;
 }
 
 export const BaseTransactionRowAmount = ({ isSent, wallet, total, convertedTotal, exchangeCurrency }: Properties) => {
-	const isNegative = !total.isZero() && isSent;
+	const isNegative = total !== 0 && isSent;
 
 	if (exchangeCurrency) {
 		return (

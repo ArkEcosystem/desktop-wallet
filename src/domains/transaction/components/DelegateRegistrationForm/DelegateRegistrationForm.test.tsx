@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { translations } from "domains/transaction/i18n";
 import React from "react";
@@ -49,9 +48,9 @@ const createTransactionMock = (wallet: ProfilesContracts.IReadWriteWallet) =>
 		id: () => delegateRegistrationFixture.data.id,
 		sender: () => delegateRegistrationFixture.data.sender,
 		recipient: () => delegateRegistrationFixture.data.recipient,
-		amount: () => BigNumber.make(delegateRegistrationFixture.data.amount),
-		fee: () => BigNumber.make(delegateRegistrationFixture.data.fee),
-		data: () => delegateRegistrationFixture.data,
+		amount: () => delegateRegistrationFixture.data.amount / 1e8,
+		fee: () => delegateRegistrationFixture.data.fee / 1e8,
+		data: () => ({ data: () => delegateRegistrationFixture.data }),
 	});
 
 describe("DelegateRegistrationForm", () => {
@@ -303,9 +302,9 @@ describe("DelegateRegistrationForm", () => {
 			id: () => delegateRegistrationFixture.data.id,
 			sender: () => delegateRegistrationFixture.data.sender,
 			recipient: () => delegateRegistrationFixture.data.recipient,
-			amount: () => BigNumber.make(delegateRegistrationFixture.data.amount),
-			fee: () => BigNumber.make(delegateRegistrationFixture.data.fee),
-			data: () => delegateRegistrationFixture.data,
+			amount: () => delegateRegistrationFixture.data.amount / 1e8,
+			fee: () => delegateRegistrationFixture.data.fee / 1e8,
+			data: () => ({ data: () => delegateRegistrationFixture.data }),
 		} as Contracts.SignedTransactionData;
 
 		const { getByText } = render(

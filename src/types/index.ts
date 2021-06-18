@@ -11,8 +11,8 @@ export type NavbarVariant = "full" | "logo-only";
 export type Theme = "system" | "dark" | "light";
 
 export interface TransactionFees {
-	static: string;
-	max: string;
-	min: string;
-	avg: string;
+	static: number;
+	max: number;
+	min: number;
+	avg: number;
 }

@@ -1,5 +1,4 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Icon } from "app/components/Icon";
 import { Tooltip } from "app/components/Tooltip";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
@@ -24,9 +23,9 @@ export const TransferLedgerReview = ({
 
 	const { fee, recipients, memo } = getValues();
 
-	let amount = BigNumber.ZERO;
+	let amount = 0;
 	for (const recipient of recipients) {
-		amount = amount.plus(recipient.amount);
+		amount += recipient.amount;
 	}
 
 	const expirationType = wallet.network().expirationType();

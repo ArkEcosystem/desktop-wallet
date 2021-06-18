@@ -1,6 +1,5 @@
 import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
@@ -19,7 +18,7 @@ export const ThirdStep = ({
 	profile,
 }: {
 	address: string;
-	balance: BigNumber;
+	balance: number;
 	nameMaxLength: number;
 	profile: Contracts.IProfile;
 }) => {
