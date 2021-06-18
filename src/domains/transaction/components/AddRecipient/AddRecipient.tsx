@@ -1,10 +1,14 @@
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { Amount } from "app/components/Amount";
 import { Button } from "app/components/Button";
 import { FormField, FormLabel, SubForm } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputCurrency } from "app/components/Input";
+import { Switch } from "app/components/Switch";
 import { Tooltip } from "app/components/Tooltip";
 import { useValidation } from "app/hooks";
+import { useExchangeRate } from "app/hooks/use-exchange-rate";
 import cn from "classnames";
 import { SelectRecipient } from "domains/profile/components/SelectRecipient";
 import { RecipientList } from "domains/transaction/components/RecipientList";
@@ -17,55 +21,38 @@ import tw, { css, styled } from "twin.macro";
 import { AddRecipientProperties, ToggleButtonProperties } from "./AddRecipient.models";
 import { AddRecipientWrapper } from "./AddRecipient.styles";
 
-const ToggleButtons = ({ isSingle, disableMultiple, onChange }: ToggleButtonProperties) => {
+const TransferType = ({ isSingle, disableMultiple, onChange }: ToggleButtonProperties) => {
 	const { t } = useTranslation();
 
 	return (
-		<div className="text-theme-secondary-text hover:text-theme-primary-600">
-			<div className="flex items-center mb-2 space-x-2">
-				<div className="font-normal transition-colors duration-100 text-md">
-					{t("TRANSACTION.SINGLE_OR_MULTI")}
-				</div>
-				<div>
-					<Tooltip content={t("TRANSACTION.RECIPIENTS_HELPTEXT", { count: 64 })}>
-						<div className="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200">
-							<Icon width={10} height={10} name="QuestionMark" />
-						</div>
-					</Tooltip>
-				</div>
-			</div>
+		<div className="flex items-center space-x-2">
+			<Tooltip
+				content={t("TRANSACTION.PAGE_TRANSACTION_SEND.FORM_STEP.MULTIPLE_UNAVAILBLE")}
+				disabled={!disableMultiple}
+			>
+				<span>
+					<Switch
+						size="sm"
+						disabled={disableMultiple}
+						value={isSingle}
+						onChange={onChange}
+						leftOption={{
+							label: t("TRANSACTION.SINGLE"),
+							value: true,
+						}}
+						rightOption={{
+							label: t("TRANSACTION.MULTIPLE"),
+							value: false,
+						}}
+					/>
+				</span>
+			</Tooltip>
 
-			<div className="flex items-stretch select-buttons">
-				<div className="flex-1">
-					<Button
-						data-testid="AddRecipient__single"
-						className="w-full"
-						size="lg"
-						variant={isSingle ? "primary" : "secondary"}
-						onClick={() => onChange?.(true)}
-					>
-						{t("TRANSACTION.SINGLE")}
-					</Button>
+			<Tooltip content={t("TRANSACTION.RECIPIENTS_HELPTEXT", { count: 64 })}>
+				<div className="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 questionmark">
+					<Icon width={10} height={10} name="QuestionMark" />
 				</div>
-
-				<Tooltip
-					content={t("TRANSACTION.PAGE_TRANSACTION_SEND.FORM_STEP.MULTIPLE_UNAVAILBLE")}
-					disabled={!disableMultiple}
-				>
-					<div className="flex-1">
-						<Button
-							data-testid="AddRecipient__multi"
-							disabled={disableMultiple}
-							className="w-full border-l-0"
-							size="lg"
-							variant={!isSingle ? "primary" : "secondary"}
-							onClick={() => onChange?.(false)}
-						>
-							{t("TRANSACTION.MULTIPLE")}
-						</Button>
-					</div>
-				</Tooltip>
-			</div>
+			</Tooltip>
 		</div>
 	);
 };
@@ -117,6 +104,10 @@ export const AddRecipient = ({
 
 	const senderWallet = useMemo(() => profile.wallets().findByAddress(senderAddress), [profile, senderAddress]);
 
+	const ticker = network?.ticker();
+	const exchangeTicker = profile.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency) as string;
+	const { convert } = useExchangeRate({ ticker, exchangeTicker });
+
 	const remainingBalance = useMemo(() => {
 		const senderBalance = senderWallet?.balance().denominated() || BigNumber.ZERO;
 
@@ -127,11 +118,11 @@ export const AddRecipient = ({
 		return addedRecipients.reduce((sum, item) => sum.minus(item.amount!), senderBalance);
 	}, [addedRecipients, senderWallet, isSingle]);
 
-	const maximumAmount = useMemo(() => {
-		const maximum = senderWallet?.balance().denominated().minus(fee);
+	const remainingNetBalance = useMemo(() => {
+		const netBalance = remainingBalance.minus(fee || 0);
 
-		return maximum?.isPositive() ? maximum : undefined;
-	}, [fee, senderWallet]);
+		return netBalance?.isPositive() ? netBalance : BigNumber.ZERO;
+	}, [fee, remainingBalance]);
 
 	const isSenderFilled = useMemo(() => !!network?.id() && !!senderAddress, [network, senderAddress]);
 
@@ -171,26 +162,52 @@ export const AddRecipient = ({
 	}, [network, recipientAddress, trigger]);
 
 	useEffect(() => {
-		register("amount", sendTransfer.amount(network, remainingBalance, addedRecipients, isSingle));
+		register("amount", sendTransfer.amount(network, remainingNetBalance, addedRecipients, isSingle));
 		register("displayAmount");
 		register("recipientAddress", sendTransfer.recipientAddress(profile, network, addedRecipients, isSingle));
-	}, [register, remainingBalance, network, sendTransfer, addedRecipients, isSingle, profile]);
+	}, [register, network, sendTransfer, addedRecipients, isSingle, profile, remainingNetBalance]);
 
 	useEffect(() => {
-		clearErrors();
+		if (getValues("displayAmount")) {
+			trigger("amount");
+		}
+	}, [fee, getValues, trigger]);
+
+	useEffect(() => {
+		//region added Timeout to prevent show error for recipientAddress when switch between transfer type
+		setTimeout(() => clearErrors(), 0);
+		//endregion
+
+		if (!isMountedReference.current) {
+			return;
+		}
 
 		if (isSingle && addedRecipients.length === 1) {
 			setValue("amount", addedRecipients[0].amount);
 			setValue("displayAmount", addedRecipients[0].amount?.toHuman());
 			setValue("recipientAddress", addedRecipients[0].address);
+			return;
 		}
 
-		// Clear the recipient inputs when moving back to multiple tab with
-		// added recipients.
-		if (!isSingle && addedRecipients.length > 0) {
+		//region Clear the fields and update the recipient item(s) when switch between transfer type, to prevent enable/disable continue button
+		if (isSingle && recipients?.length !== 1) {
 			clearFields();
+			onChange?.([]);
+			return;
 		}
-	}, [isSingle, clearErrors, clearFields, addedRecipients, setValue]);
+
+		/* istanbul ignore next */
+		if (!isSingle) {
+			if (addedRecipients.length > 0) {
+				clearFields();
+				onChange?.(addedRecipients);
+				return;
+			}
+
+			onChange?.([]);
+		}
+		//endregion
+	}, [isSingle, clearErrors, clearFields, addedRecipients, setValue]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	useEffect(() => {
 		if (!isSingle) {
@@ -198,6 +215,7 @@ export const AddRecipient = ({
 		}
 	}, [isSingle, setValue]);
 
+	//region Update AddedRecipients state when comes back to the current page
 	useEffect(() => {
 		if (isMountedReference.current) {
 			return;
@@ -213,6 +231,7 @@ export const AddRecipient = ({
 	useEffect(() => {
 		isMountedReference.current = true;
 	}, []);
+	//endregion
 
 	const singleRecipientOnChange = (amountValue: string, recipientAddressValue: string) => {
 		if (!isSingle) {
@@ -232,14 +251,22 @@ export const AddRecipient = ({
 	};
 
 	const handleAddRecipient = (address: string, amount: string, displayAmount: string) => {
-		const newRecipients = [
-			...addedRecipients,
-			{
-				amount: BigNumber.make(amount),
-				displayAmount,
-				address,
-			},
-		];
+		let newRecipient: RecipientListItem = {
+			amount: BigNumber.make(amount),
+			displayAmount,
+			address,
+		};
+
+		/* istanbul ignore next */
+		if (!senderWallet?.network().isTest()) {
+			newRecipient = {
+				...newRecipient,
+				exchangeAmount: convert(amount),
+				exchangeTicker: exchangeTicker,
+			};
+		}
+
+		const newRecipients = [...addedRecipients, newRecipient];
 
 		setAddedRecipients(newRecipients);
 		onChange?.(newRecipients);
@@ -254,48 +281,55 @@ export const AddRecipient = ({
 		onChange?.(remainingRecipients);
 	};
 
-	const addons =
-		!errors.amount && !errors.fee && isSingle && isSenderFilled
+	const recipientAddressAddons = !errors.recipientAddress && getValues("recipientAddress") && (
+		<div className="flex justify-center items-center w-5 h-5 bg-theme-success-200 text-theme-success-600 dark:bg-theme-success-600 dark:text-white rounded-full">
+			<Icon name="CheckmarkBig" width={10} height={10} data-testid="AddRecipient__recipient-address-checkmark" />
+		</div>
+	);
+
+	const amountAddons =
+		!errors.amount && !errors.fee && isSenderFilled && !senderWallet?.network().isTest()
 			? {
 					end: (
-						<span className="text-sm font-semibold whitespace-no-break text-theme-secondary-500 dark:text-theme-secondary-700">
-							{t("COMMON.MAX")} {maximumAmount?.toString()}
-						</span>
+						<Amount
+							value={convert(amount || 0)}
+							ticker={exchangeTicker}
+							data-testid="AddRecipient__currency-balance"
+							className="text-sm font-semibold whitespace-no-break text-theme-secondary-500 dark:text-theme-secondary-700"
+							normalize={false}
+						/>
 					),
 			  }
 			: undefined;
 
 	return (
 		<AddRecipientWrapper>
-			{showMultiPaymentOption && (
-				<ToggleButtons
-					isSingle={isSingle}
-					disableMultiple={disableMultiPaymentOption}
-					onChange={(isSingle) => setIsSingle(isSingle)}
-				/>
-			)}
+			<div className="flex justify-between items-center mb-2 text-theme-secondary-text hover:text-theme-primary-600">
+				<div className="text-sm font-semibold transition-colors duration-100">{t("TRANSACTION.RECIPIENT")}</div>
 
-			<SubForm
-				data-testid="AddRecipient__form-wrapper"
-				className={cn({ "mt-6": showMultiPaymentOption })}
-				noBackground={isSingle}
-				noPadding={isSingle}
-			>
+				{showMultiPaymentOption && (
+					<TransferType
+						isSingle={isSingle}
+						disableMultiple={disableMultiPaymentOption}
+						onChange={(isSingle) => setIsSingle(isSingle)}
+					/>
+				)}
+			</div>
+
+			<SubForm data-testid="AddRecipient__form-wrapper" noBackground={isSingle} noPadding={isSingle}>
 				<div className="space-y-5">
 					<FormField name="recipientAddress">
-						<FormLabel
-							label={
-								isSingle
-									? t("COMMON.RECIPIENT")
-									: t("COMMON.RECIPIENT_#", { count: addedRecipients.length + 1 })
-							}
-						/>
+						{!isSingle && (
+							<FormLabel label={t("COMMON.RECIPIENT_#", { count: addedRecipients.length + 1 })} />
+						)}
+
 						<SelectRecipient
 							network={network}
 							disabled={!isSenderFilled}
 							address={recipientAddress}
 							profile={profile}
 							placeholder={t("COMMON.ADDRESS")}
+							addons={recipientAddressAddons}
 							onChange={(address: any) => {
 								setValue("recipientAddress", address, { shouldValidate: true, shouldDirty: true });
 								singleRecipientOnChange(getValues("amount"), address);
@@ -304,15 +338,23 @@ export const AddRecipient = ({
 					</FormField>
 
 					<FormField name="amount">
-						<FormLabel label={t("COMMON.AMOUNT")} />
+						<FormLabel>
+							<span>{t("COMMON.AMOUNT")}</span>
+							{isSenderFilled && (
+								<span className="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700">
+									{`(${t("COMMON.AVAILABLE")} ${remainingNetBalance})`}
+								</span>
+							)}
+						</FormLabel>
+
 						<div className="flex space-x-2">
 							<div className="flex-1">
 								<InputCurrency
 									disabled={!isSenderFilled}
 									data-testid="AddRecipient__amount"
-									placeholder={t("COMMON.AMOUNT")}
+									placeholder={t("COMMON.AMOUNT_PLACEHOLDER")}
 									value={getValues("displayAmount") || recipientsAmount}
-									addons={addons}
+									addons={amountAddons}
 									onChange={(amount: string) => {
 										setValue("isSendAllSelected", false);
 										setValue("displayAmount", amount);
@@ -333,7 +375,7 @@ export const AddRecipient = ({
 
 											if (getValues("isSendAllSelected")) {
 												const remaining = remainingBalance.isGreaterThan(fee)
-													? remainingBalance.minus(fee)
+													? remainingNetBalance
 													: remainingBalance;
 
 												setValue("displayAmount", remaining.toString());

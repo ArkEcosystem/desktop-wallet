@@ -21,7 +21,7 @@ describe("Common", () => {
 	it("should validate low balance", () => {
 		const commonValidation = common(t).fee(BigNumber.make(1), network);
 		expect(commonValidation.validate.valid("1234")).toBe(
-			t("TRANSACTION.VALIDATION.LOW_BALANCE", {
+			t("TRANSACTION.VALIDATION.LOW_BALANCE_AMOUNT", {
 				balance: "1",
 				coinId: network.coin(),
 			}),
@@ -29,7 +29,7 @@ describe("Common", () => {
 	});
 
 	it("should validate zero balance", () => {
-		const error = t("TRANSACTION.VALIDATION.LOW_BALANCE", {
+		const error = t("TRANSACTION.VALIDATION.LOW_BALANCE_AMOUNT", {
 			balance: "0",
 			coinId: network.coin(),
 		});

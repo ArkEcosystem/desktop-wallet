@@ -1747,7 +1747,7 @@ describe("SendTransfer", () => {
 		const history = createMemoryHistory();
 		history.push(transferURL);
 
-		const { getAllByTestId, getByTestId } = renderWithRouter(
+		const { getAllByTestId, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
 				<LedgerProvider transport={getDefaultLedgerTransport()}>
 					<SendTransfer />
@@ -1767,9 +1767,9 @@ describe("SendTransfer", () => {
 			expect(getByTestId("SelectNetworkInput__input")).toHaveValue(networkLabel);
 		});
 
-		// Select multiple tab
+		// Select multiple type
 		act(() => {
-			fireEvent.click(getByTestId("AddRecipient__multi"));
+			fireEvent.click(getByText(transactionTranslations.MULTIPLE));
 		});
 
 		// Select recipient

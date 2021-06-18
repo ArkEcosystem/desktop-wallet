@@ -16,7 +16,7 @@ export const common = (t: any) => ({
 				}
 
 				if (balance.isZero() || balance.isNegative()) {
-					return t("TRANSACTION.VALIDATION.LOW_BALANCE", {
+					return t("TRANSACTION.VALIDATION.LOW_BALANCE_AMOUNT", {
 						balance: "0",
 						coinId: network.coin(),
 					});
@@ -25,7 +25,7 @@ export const common = (t: any) => ({
 				const feeSatoshi = BigNumber.make(fee);
 
 				if (feeSatoshi.isGreaterThan(balance)) {
-					return t("TRANSACTION.VALIDATION.LOW_BALANCE", {
+					return t("TRANSACTION.VALIDATION.LOW_BALANCE_AMOUNT", {
 						balance: balance?.toHuman(),
 						coinId: network.coin(),
 					});

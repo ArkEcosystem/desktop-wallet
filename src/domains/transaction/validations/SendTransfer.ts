@@ -24,6 +24,11 @@ export const sendTransfer = (t: any) => ({
 			field: t("COMMON.CRYPTOASSET"),
 		}),
 	}),
+	recipients: () => ({
+		validate: {
+			valid: (recipients: RecipientListItem[]) => recipients.length > 0,
+		},
+	}),
 	recipientAddress: (
 		profile: Contracts.IProfile,
 		network: Networks.Network,
@@ -69,10 +74,7 @@ export const sendTransfer = (t: any) => ({
 				const shouldRequire = isSingleRecipient || recipients.length === 0;
 
 				if (!hasSufficientBalance) {
-					return t("TRANSACTION.VALIDATION.LOW_BALANCE", {
-						balance: balance?.toHuman(),
-						coinId: network?.coin(),
-					});
+					return t("TRANSACTION.VALIDATION.LOW_BALANCE");
 				}
 
 				if (shouldRequire) {
