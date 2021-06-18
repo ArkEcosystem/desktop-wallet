@@ -224,7 +224,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                 data-testid="Balance__value"
               >
                 <span
-                  data-testid="Amount"
+                  data-testid="AmountCrypto"
                 >
                   0 BTC
                 </span>
@@ -887,11 +887,12 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                   <div>
                                     Slow
                                   </div>
-                                  <div
+                                  <span
                                     class="text-sm"
+                                    data-testid="AmountCrypto"
                                   >
                                     0.00357 DARK
-                                  </div>
+                                  </span>
                                 </div>
                               </button>
                               <button
@@ -907,11 +908,12 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                   <div>
                                     Average
                                   </div>
-                                  <div
+                                  <span
                                     class="text-sm"
+                                    data-testid="AmountCrypto"
                                   >
                                     0.07320598 DARK
-                                  </div>
+                                  </span>
                                 </div>
                               </button>
                               <button
@@ -927,11 +929,12 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                   <div>
                                     Fast
                                   </div>
-                                  <div
+                                  <span
                                     class="text-sm"
+                                    data-testid="AmountCrypto"
                                   >
                                     0.1 DARK
-                                  </div>
+                                  </span>
                                 </div>
                               </button>
                             </div>
@@ -1210,7 +1213,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                 data-testid="Balance__value"
               >
                 <span
-                  data-testid="Amount"
+                  data-testid="AmountCrypto"
                 >
                   0 BTC
                 </span>
@@ -1549,7 +1552,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                               color="danger"
                             >
                               <span
-                                data-testid="Amount"
+                                data-testid="AmountCrypto"
                               >
                                 - 400,000 DARK
                               </span>
@@ -1586,7 +1589,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                             class="font-semibold"
                           >
                             <span
-                              data-testid="Amount"
+                              data-testid="AmountCrypto"
                             >
                               0.1 DARK
                             </span>
@@ -1815,7 +1818,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                                       data-testid="TransactionRowAmount"
                                     >
                                       <span
-                                        data-testid="Amount"
+                                        data-testid="AmountCrypto"
                                       >
                                         - 1 DARK
                                       </span>
@@ -2090,7 +2093,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                 data-testid="Balance__value"
               >
                 <span
-                  data-testid="Amount"
+                  data-testid="AmountCrypto"
                 >
                   0 BTC
                 </span>
@@ -3060,7 +3063,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                 data-testid="Balance__value"
               >
                 <span
-                  data-testid="Amount"
+                  data-testid="AmountCrypto"
                 >
                   0 BTC
                 </span>
@@ -3774,11 +3777,12 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                   <div>
                                     Slow
                                   </div>
-                                  <div
+                                  <span
                                     class="text-sm"
+                                    data-testid="AmountCrypto"
                                   >
                                     0.00357 DARK
-                                  </div>
+                                  </span>
                                 </div>
                               </button>
                               <button
@@ -3794,11 +3798,12 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                   <div>
                                     Average
                                   </div>
-                                  <div
+                                  <span
                                     class="text-sm"
+                                    data-testid="AmountCrypto"
                                   >
                                     0.07320598 DARK
-                                  </div>
+                                  </span>
                                 </div>
                               </button>
                               <button
@@ -3814,11 +3819,12 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                   <div>
                                     Fast
                                   </div>
-                                  <div
+                                  <span
                                     class="text-sm"
+                                    data-testid="AmountCrypto"
                                   >
                                     0.1 DARK
-                                  </div>
+                                  </span>
                                 </div>
                               </button>
                             </div>
@@ -4097,7 +4103,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                 data-testid="Balance__value"
               >
                 <span
-                  data-testid="Amount"
+                  data-testid="AmountCrypto"
                 >
                   0 BTC
                 </span>
@@ -4786,11 +4792,12 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                   <div>
                                     Slow
                                   </div>
-                                  <div
+                                  <span
                                     class="text-sm"
+                                    data-testid="AmountCrypto"
                                   >
                                     0.00357 DARK
-                                  </div>
+                                  </span>
                                 </div>
                               </button>
                               <button
@@ -4806,11 +4813,12 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                   <div>
                                     Average
                                   </div>
-                                  <div
+                                  <span
                                     class="text-sm"
+                                    data-testid="AmountCrypto"
                                   >
                                     0.07320598 DARK
-                                  </div>
+                                  </span>
                                 </div>
                               </button>
                               <button
@@ -4826,11 +4834,12 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                   <div>
                                     Fast
                                   </div>
-                                  <div
+                                  <span
                                     class="text-sm"
+                                    data-testid="AmountCrypto"
                                   >
                                     0.1 DARK
-                                  </div>
+                                  </span>
                                 </div>
                               </button>
                             </div>
@@ -6678,7 +6687,7 @@ exports[`SendTransfer should render network selection without selected wallet 1`
                 data-testid="Balance__value"
               >
                 <span
-                  data-testid="Amount"
+                  data-testid="AmountCrypto"
                 >
                   0 BTC
                 </span>
@@ -7279,7 +7288,7 @@ exports[`SendTransfer should render review step 1`] = `
               </span>
               <span
                 class="mt-1 text-lg font-semibold"
-                data-testid="total-amount-box__transaction-amount"
+                data-testid="AmountCrypto"
               >
                 1 DARK
               </span>
@@ -7294,7 +7303,7 @@ exports[`SendTransfer should render review step 1`] = `
               </span>
               <span
                 class="mt-1 text-lg font-semibold"
-                data-testid="total-amount-box__transaction-fee"
+                data-testid="AmountCrypto"
               >
                 1 DARK
               </span>
@@ -7328,7 +7337,7 @@ exports[`SendTransfer should render review step 1`] = `
           </span>
           <span
             class="text-2xl font-bold"
-            data-testid="total-amount-box__total"
+            data-testid="AmountCrypto"
           >
             11 DARK
           </span>
@@ -7603,7 +7612,7 @@ exports[`SendTransfer should render summary step 1`] = `
               color="danger"
             >
               <span
-                data-testid="Amount"
+                data-testid="AmountCrypto"
               >
                 - 1 DARK
               </span>
@@ -7640,7 +7649,7 @@ exports[`SendTransfer should render summary step 1`] = `
             class="font-semibold"
           >
             <span
-              data-testid="Amount"
+              data-testid="AmountCrypto"
             >
               1 DARK
             </span>
@@ -7876,7 +7885,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                 data-testid="Balance__value"
               >
                 <span
-                  data-testid="Amount"
+                  data-testid="AmountCrypto"
                 >
                   0 BTC
                 </span>
@@ -8577,13 +8586,12 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                   <div>
                                     Slow
                                   </div>
-                                  <div
+                                  <span
                                     class="text-sm"
+                                    data-testid="AmountCrypto"
                                   >
-                                    0.00357
-                                     
-                                    DARK
-                                  </div>
+                                    0.00357 DARK
+                                  </span>
                                 </div>
                               </button>
                               <button
@@ -8599,13 +8607,12 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                   <div>
                                     Average
                                   </div>
-                                  <div
+                                  <span
                                     class="text-sm"
+                                    data-testid="AmountCrypto"
                                   >
-                                    0.07320598
-                                     
-                                    DARK
-                                  </div>
+                                    0.07320598 DARK
+                                  </span>
                                 </div>
                               </button>
                               <button
@@ -8621,13 +8628,12 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                   <div>
                                     Fast
                                   </div>
-                                  <div
+                                  <span
                                     class="text-sm"
+                                    data-testid="AmountCrypto"
                                   >
-                                    0.1
-                                     
-                                    DARK
-                                  </div>
+                                    0.1 DARK
+                                  </span>
                                 </div>
                               </button>
                             </div>
@@ -8906,7 +8912,7 @@ exports[`SendTransfer should select cryptoasset 1`] = `
                 data-testid="Balance__value"
               >
                 <span
-                  data-testid="Amount"
+                  data-testid="AmountCrypto"
                 >
                   0 BTC
                 </span>
@@ -9384,7 +9390,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                 data-testid="Balance__value"
               >
                 <span
-                  data-testid="Amount"
+                  data-testid="AmountCrypto"
                 >
                   0 BTC
                 </span>
@@ -9723,7 +9729,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                               color="danger"
                             >
                               <span
-                                data-testid="Amount"
+                                data-testid="AmountCrypto"
                               >
                                 - 400,000 DARK
                               </span>
@@ -9760,7 +9766,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                             class="font-semibold"
                           >
                             <span
-                              data-testid="Amount"
+                              data-testid="AmountCrypto"
                             >
                               0.1 DARK
                             </span>
@@ -10021,7 +10027,7 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
                 data-testid="Balance__value"
               >
                 <span
-                  data-testid="Amount"
+                  data-testid="AmountCrypto"
                 >
                   0 BTC
                 </span>
@@ -10360,7 +10366,7 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
                               color="danger"
                             >
                               <span
-                                data-testid="Amount"
+                                data-testid="AmountCrypto"
                               >
                                 - 400,000 DARK
                               </span>
@@ -10397,7 +10403,7 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
                             class="font-semibold"
                           >
                             <span
-                              data-testid="Amount"
+                              data-testid="AmountCrypto"
                             >
                               0.1 DARK
                             </span>
@@ -10658,7 +10664,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                 data-testid="Balance__value"
               >
                 <span
-                  data-testid="Amount"
+                  data-testid="AmountCrypto"
                 >
                   0 BTC
                 </span>
@@ -10997,7 +11003,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                               color="danger"
                             >
                               <span
-                                data-testid="Amount"
+                                data-testid="AmountCrypto"
                               >
                                 - 400,000 DARK
                               </span>
@@ -11034,7 +11040,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                             class="font-semibold"
                           >
                             <span
-                              data-testid="Amount"
+                              data-testid="AmountCrypto"
                             >
                               0.1 DARK
                             </span>
@@ -11263,7 +11269,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                                       data-testid="TransactionRowAmount"
                                     >
                                       <span
-                                        data-testid="Amount"
+                                        data-testid="AmountCrypto"
                                       >
                                         - 1 DARK
                                       </span>
@@ -11329,7 +11335,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                                       data-testid="TransactionRowAmount"
                                     >
                                       <span
-                                        data-testid="Amount"
+                                        data-testid="AmountCrypto"
                                       >
                                         - 1 DARK
                                       </span>
@@ -11606,7 +11612,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                 data-testid="Balance__value"
               >
                 <span
-                  data-testid="Amount"
+                  data-testid="AmountCrypto"
                 >
                   0 BTC
                 </span>
@@ -11945,7 +11951,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                               color="danger"
                             >
                               <span
-                                data-testid="Amount"
+                                data-testid="AmountCrypto"
                               >
                                 - 400,000 DARK
                               </span>
@@ -11982,7 +11988,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                             class="font-semibold"
                           >
                             <span
-                              data-testid="Amount"
+                              data-testid="AmountCrypto"
                             >
                               0.1 DARK
                             </span>
@@ -12243,7 +12249,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                 data-testid="Balance__value"
               >
                 <span
-                  data-testid="Amount"
+                  data-testid="AmountCrypto"
                 >
                   0 BTC
                 </span>
@@ -12582,7 +12588,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                               color="danger"
                             >
                               <span
-                                data-testid="Amount"
+                                data-testid="AmountCrypto"
                               >
                                 - 400,000 DARK
                               </span>
@@ -12619,7 +12625,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                             class="font-semibold"
                           >
                             <span
-                              data-testid="Amount"
+                              data-testid="AmountCrypto"
                             >
                               0.1 DARK
                             </span>
@@ -12880,7 +12886,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                 data-testid="Balance__value"
               >
                 <span
-                  data-testid="Amount"
+                  data-testid="AmountCrypto"
                 >
                   0 BTC
                 </span>
@@ -13219,7 +13225,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                               color="danger"
                             >
                               <span
-                                data-testid="Amount"
+                                data-testid="AmountCrypto"
                               >
                                 - 400,000 DARK
                               </span>
@@ -13256,7 +13262,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                             class="font-semibold"
                           >
                             <span
-                              data-testid="Amount"
+                              data-testid="AmountCrypto"
                             >
                               0.1 DARK
                             </span>
@@ -13517,7 +13523,7 @@ exports[`SendTransfer should show error step and go back 1`] = `
                 data-testid="Balance__value"
               >
                 <span
-                  data-testid="Amount"
+                  data-testid="AmountCrypto"
                 >
                   0 BTC
                 </span>

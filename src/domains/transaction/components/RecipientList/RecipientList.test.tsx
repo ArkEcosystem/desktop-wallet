@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import React from "react";
 import { act } from "react-dom/test-utils";
 import { fireEvent, render, screen } from "utils/testing-library";
@@ -10,25 +9,25 @@ const recipients = [
 	{
 		address: "FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ",
 		walletName: "Recipient 1",
-		amount: BigNumber.make("100"),
+		amount: 100,
 		assetSymbol: "ARK",
 	},
 	{
 		address: "AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ",
 		walletName: "Recipient 2",
 		isMultisig: true,
-		amount: BigNumber.make("100"),
+		amount: 100,
 		assetSymbol: "ARK",
 	},
 	{
 		address: "FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ",
 		walletName: "Recipient 3",
-		amount: BigNumber.make("100"),
+		amount: 100,
 		assetSymbol: "ARK",
 	},
 	{
 		address: "FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ",
-		amount: BigNumber.make("100"),
+		amount: 100,
 		assetSymbol: "ARK",
 	},
 ];
@@ -41,13 +40,7 @@ describe("RecipientList", () => {
 
 	it("should render condensed variant", () => {
 		const { container } = render(
-			<RecipientList
-				recipients={recipients}
-				isEditable={true}
-				assetSymbol="ARK"
-				variant="condensed"
-				normalizeAmount={false}
-			/>,
+			<RecipientList recipients={recipients} isEditable={true} assetSymbol="ARK" variant="condensed" />,
 		);
 		expect(container).toMatchSnapshot();
 	});
