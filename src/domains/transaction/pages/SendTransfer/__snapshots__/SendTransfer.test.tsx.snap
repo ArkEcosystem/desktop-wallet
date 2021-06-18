@@ -870,25 +870,25 @@ exports[`SendTransfer should display disabled address selection input if selecte
                               </div>
                             </div>
                             <div
-                              class="inline-flex items-center space-x-2 w-full"
+                              class="inline-flex items-center space-x-3 w-full"
                               data-testid="ButtonGroup"
                               role="radiogroup"
                             >
                               <button
                                 aria-checked="false"
-                                class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+                                class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
                                 data-testid="ButtonGroupOption"
                                 role="radio"
                                 type="button"
                               >
-                                <div>
-                                  <div
-                                    class="mb-3"
-                                  >
+                                <div
+                                  class="flex flex-col space-y-2"
+                                >
+                                  <div>
                                     Slow
                                   </div>
                                   <div
-                                    class="text-sm font-normal"
+                                    class="text-sm"
                                   >
                                     0.00357 DARK
                                   </div>
@@ -896,19 +896,19 @@ exports[`SendTransfer should display disabled address selection input if selecte
                               </button>
                               <button
                                 aria-checked="true"
-                                class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+                                class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
                                 data-testid="ButtonGroupOption"
                                 role="radio"
                                 type="button"
                               >
-                                <div>
-                                  <div
-                                    class="mb-3"
-                                  >
+                                <div
+                                  class="flex flex-col space-y-2"
+                                >
+                                  <div>
                                     Average
                                   </div>
                                   <div
-                                    class="text-sm font-normal"
+                                    class="text-sm"
                                   >
                                     0.07320598 DARK
                                   </div>
@@ -916,19 +916,19 @@ exports[`SendTransfer should display disabled address selection input if selecte
                               </button>
                               <button
                                 aria-checked="false"
-                                class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+                                class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
                                 data-testid="ButtonGroupOption"
                                 role="radio"
                                 type="button"
                               >
-                                <div>
-                                  <div
-                                    class="mb-3"
-                                  >
+                                <div
+                                  class="flex flex-col space-y-2"
+                                >
+                                  <div>
                                     Fast
                                   </div>
                                   <div
-                                    class="text-sm font-normal"
+                                    class="text-sm"
                                   >
                                     0.1 DARK
                                   </div>
@@ -3757,25 +3757,25 @@ exports[`SendTransfer should render form and use location state 1`] = `
                               </div>
                             </div>
                             <div
-                              class="inline-flex items-center space-x-2 w-full"
+                              class="inline-flex items-center space-x-3 w-full"
                               data-testid="ButtonGroup"
                               role="radiogroup"
                             >
                               <button
                                 aria-checked="false"
-                                class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+                                class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
                                 data-testid="ButtonGroupOption"
                                 role="radio"
                                 type="button"
                               >
-                                <div>
-                                  <div
-                                    class="mb-3"
-                                  >
+                                <div
+                                  class="flex flex-col space-y-2"
+                                >
+                                  <div>
                                     Slow
                                   </div>
                                   <div
-                                    class="text-sm font-normal"
+                                    class="text-sm"
                                   >
                                     0.00357 DARK
                                   </div>
@@ -3783,19 +3783,19 @@ exports[`SendTransfer should render form and use location state 1`] = `
                               </button>
                               <button
                                 aria-checked="true"
-                                class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+                                class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
                                 data-testid="ButtonGroupOption"
                                 role="radio"
                                 type="button"
                               >
-                                <div>
-                                  <div
-                                    class="mb-3"
-                                  >
+                                <div
+                                  class="flex flex-col space-y-2"
+                                >
+                                  <div>
                                     Average
                                   </div>
                                   <div
-                                    class="text-sm font-normal"
+                                    class="text-sm"
                                   >
                                     0.07320598 DARK
                                   </div>
@@ -3803,19 +3803,19 @@ exports[`SendTransfer should render form and use location state 1`] = `
                               </button>
                               <button
                                 aria-checked="false"
-                                class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+                                class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
                                 data-testid="ButtonGroupOption"
                                 role="radio"
                                 type="button"
                               >
-                                <div>
-                                  <div
-                                    class="mb-3"
-                                  >
+                                <div
+                                  class="flex flex-col space-y-2"
+                                >
+                                  <div>
                                     Fast
                                   </div>
                                   <div
-                                    class="text-sm font-normal"
+                                    class="text-sm"
                                   >
                                     0.1 DARK
                                   </div>
@@ -4769,25 +4769,25 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                               </div>
                             </div>
                             <div
-                              class="inline-flex items-center space-x-2 w-full"
+                              class="inline-flex items-center space-x-3 w-full"
                               data-testid="ButtonGroup"
                               role="radiogroup"
                             >
                               <button
                                 aria-checked="false"
-                                class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+                                class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
                                 data-testid="ButtonGroupOption"
                                 role="radio"
                                 type="button"
                               >
-                                <div>
-                                  <div
-                                    class="mb-3"
-                                  >
+                                <div
+                                  class="flex flex-col space-y-2"
+                                >
+                                  <div>
                                     Slow
                                   </div>
                                   <div
-                                    class="text-sm font-normal"
+                                    class="text-sm"
                                   >
                                     0.00357 DARK
                                   </div>
@@ -4795,19 +4795,19 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                               </button>
                               <button
                                 aria-checked="true"
-                                class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+                                class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
                                 data-testid="ButtonGroupOption"
                                 role="radio"
                                 type="button"
                               >
-                                <div>
-                                  <div
-                                    class="mb-3"
-                                  >
+                                <div
+                                  class="flex flex-col space-y-2"
+                                >
+                                  <div>
                                     Average
                                   </div>
                                   <div
-                                    class="text-sm font-normal"
+                                    class="text-sm"
                                   >
                                     0.07320598 DARK
                                   </div>
@@ -4815,19 +4815,19 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                               </button>
                               <button
                                 aria-checked="false"
-                                class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+                                class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
                                 data-testid="ButtonGroupOption"
                                 role="radio"
                                 type="button"
                               >
-                                <div>
-                                  <div
-                                    class="mb-3"
-                                  >
+                                <div
+                                  class="flex flex-col space-y-2"
+                                >
+                                  <div>
                                     Fast
                                   </div>
                                   <div
-                                    class="text-sm font-normal"
+                                    class="text-sm"
                                   >
                                     0.1 DARK
                                   </div>
@@ -8560,25 +8560,25 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                               </div>
                             </div>
                             <div
-                              class="inline-flex items-center space-x-2 w-full"
+                              class="inline-flex items-center space-x-3 w-full"
                               data-testid="ButtonGroup"
                               role="radiogroup"
                             >
                               <button
                                 aria-checked="false"
-                                class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+                                class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
                                 data-testid="ButtonGroupOption"
                                 role="radio"
                                 type="button"
                               >
-                                <div>
-                                  <div
-                                    class="mb-3"
-                                  >
+                                <div
+                                  class="flex flex-col space-y-2"
+                                >
+                                  <div>
                                     Slow
                                   </div>
                                   <div
-                                    class="text-sm font-normal"
+                                    class="text-sm"
                                   >
                                     0.00357
                                      
@@ -8588,19 +8588,19 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                               </button>
                               <button
                                 aria-checked="true"
-                                class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+                                class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
                                 data-testid="ButtonGroupOption"
                                 role="radio"
                                 type="button"
                               >
-                                <div>
-                                  <div
-                                    class="mb-3"
-                                  >
+                                <div
+                                  class="flex flex-col space-y-2"
+                                >
+                                  <div>
                                     Average
                                   </div>
                                   <div
-                                    class="text-sm font-normal"
+                                    class="text-sm"
                                   >
                                     0.07320598
                                      
@@ -8610,19 +8610,19 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                               </button>
                               <button
                                 aria-checked="false"
-                                class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+                                class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 kVquVL"
                                 data-testid="ButtonGroupOption"
                                 role="radio"
                                 type="button"
                               >
-                                <div>
-                                  <div
-                                    class="mb-3"
-                                  >
+                                <div
+                                  class="flex flex-col space-y-2"
+                                >
+                                  <div>
                                     Fast
                                   </div>
                                   <div
-                                    class="text-sm font-normal"
+                                    class="text-sm"
                                   >
                                     0.1
                                      
