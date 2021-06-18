@@ -89,7 +89,7 @@ export const sendTransfer = (t: any) => ({
 					if (amount === 0) {
 						return t("TRANSACTION.VALIDATION.AMOUNT_BELOW_MINIMUM", {
 							min: "0.00000001",
-							coinId: network.coin(),
+							coinId: network?.coin(),
 						});
 					}
 				}
