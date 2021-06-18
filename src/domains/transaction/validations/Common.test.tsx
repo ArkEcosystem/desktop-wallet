@@ -33,11 +33,14 @@ describe("Common", () => {
 			coinId: network.coin(),
 		});
 
-		let commonValidation = common(t).fee(0, network);
-		expect(commonValidation.validate.valid("1234")).toBe(error);
+		expect(common(t).fee(0, network).validate.valid(1234)).toBe(error);
+		expect(common(t).fee(-1, network).validate.valid(1234)).toBe(error);
+	});
 
-		commonValidation = common(t).fee(-1, network);
-		expect(commonValidation.validate.valid("1234")).toBe(error);
+	it("should require a fee", () => {
+		expect(common(t).fee(1, network).validate.valid(0)).toBe(t("COMMON.VALIDATION.FIELD_REQUIRED", {
+			field: t("COMMON.FEE"),
+		}));
 	});
 
 	it("should fail to validate negative fee", () => {
