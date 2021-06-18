@@ -8,7 +8,7 @@ interface Parameters_ {
 }
 
 interface UseExchangeRate {
-	convert: (value: number) => number;
+	convert: (value?: number) => number;
 }
 
 export const useExchangeRate = ({ ticker, exchangeTicker }: Parameters_): UseExchangeRate => {
