@@ -38,9 +38,11 @@ describe("Common", () => {
 	});
 
 	it("should require a fee", () => {
-		expect(common(t).fee(1, network).validate.valid(0)).toBe(t("COMMON.VALIDATION.FIELD_REQUIRED", {
-			field: t("COMMON.FEE"),
-		}));
+		expect(common(t).fee(1, network).validate.valid(0)).toBe(
+			t("COMMON.VALIDATION.FIELD_REQUIRED", {
+				field: t("COMMON.FEE"),
+			}),
+		);
 	});
 
 	it("should fail to validate negative fee", () => {
