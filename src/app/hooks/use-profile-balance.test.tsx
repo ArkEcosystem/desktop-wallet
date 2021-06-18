@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { renderHook } from "@testing-library/react-hooks";
 import { ConfigurationProvider } from "app/contexts";
 import React from "react";
@@ -32,9 +31,7 @@ describe("useProfileBalance", () => {
 
 	it("should update balance", async () => {
 		const profile = env.profiles().findById(getDefaultProfileId());
-		const profileConvertedBalanceMock = jest
-			.spyOn(profile, "convertedBalance")
-			.mockReturnValue(10_000);
+		const profileConvertedBalanceMock = jest.spyOn(profile, "convertedBalance").mockReturnValue(10_000);
 
 		const wrapper = ({ children }: any) => <ConfigurationProvider>{children}</ConfigurationProvider>;
 
