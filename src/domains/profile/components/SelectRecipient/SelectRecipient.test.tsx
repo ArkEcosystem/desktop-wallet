@@ -48,8 +48,6 @@ describe("SelectRecipient", () => {
 			/>,
 		);
 
-		screen.debug(undefined, 3_000_000);
-
 		await waitFor(() => {
 			expect(screen.getByText("addonsTest")).toBeInTheDocument();
 		});
