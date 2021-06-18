@@ -129,13 +129,7 @@ describe("InputFee", () => {
 			jest.spyOn(network, "isLive").mockReturnValueOnce(true);
 
 			// use fiat currency for the converted balance
-			jest.spyOn(profile.settings(), "get").mockImplementation((key: string) => {
-				if (key === Contracts.ProfileSetting.ExchangeCurrency) {
-					return "EUR";
-				}
-
-				return profile.settings().get(key);
-			});
+			jest.spyOn(profile.settings(), "get").mockReturnValue("EUR");
 
 			const { asFragment } = render(<InputFee {...defaultProps} />);
 
