@@ -176,7 +176,7 @@ describe("AddRecipient", () => {
 			fireEvent.click(sendAll);
 		});
 
-		await waitFor(() => expect(form.current.getValues("amount")).toEqual("0"));
+		await waitFor(() => expect(form.current.getValues("amount")).toEqual(0));
 		expect(container).toMatchSnapshot();
 	});
 
@@ -559,7 +559,7 @@ describe("AddRecipient", () => {
 
 	it("should fill inputs in the single tab if one recipient is added in the multiple tab", async () => {
 		const values = {
-			amount: "0.00000001",
+			amount: 1,
 			recipientAddress: "DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T",
 		};
 
@@ -611,6 +611,6 @@ describe("AddRecipient", () => {
 			fireEvent.click(screen.getByText(transactionTranslations.SINGLE));
 		});
 
-		await waitFor(() => expect(screen.getByTestId("AddRecipient__amount")).toHaveValue(values.amount));
+		await waitFor(() => expect(screen.getByTestId("AddRecipient__amount")).toHaveValue(values.amount.toString()));
 	});
 });

@@ -1316,7 +1316,7 @@ exports[`AddRecipient should set available amount 1`] = `
         class="space-y-5"
       >
         <fieldset
-          class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
+          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
         >
           <div>
             <div
@@ -1333,14 +1333,14 @@ exports[`AddRecipient should set available amount 1`] = `
                   …
                 </div>
                 <div
-                  class="sr-only Input__InputWrapperStyled-wu99qs-0 jYUFQr"
+                  class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                 >
                   <div
-                    class="flex relative flex-1 h-full"
+                    class="relative flex flex-1 h-full"
                   >
                     <input
                       aria-invalid="false"
-                      class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                       data-testid="select-list__input"
                       name="recipientAddress"
                       readonly=""
@@ -1372,10 +1372,10 @@ exports[`AddRecipient should set available amount 1`] = `
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                     >
                       <div
-                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 border-theme-secondary-200 ring-theme-background dark:bg-theme-secondary-700 dark:border-theme-secondary-700"
+                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 border-theme-secondary-200 dark:bg-theme-secondary-700 dark:border-theme-secondary-700 ring-theme-background"
                       />
                       <div
-                        class="flex relative flex-1 h-full"
+                        class="relative flex flex-1 h-full"
                       >
                         <input
                           aria-autocomplete="list"
@@ -1383,7 +1383,7 @@ exports[`AddRecipient should set available amount 1`] = `
                           aria-invalid="false"
                           aria-labelledby="downshift-23-label"
                           autocomplete="off"
-                          class="p-0 w-full bg-transparent border-none cursor-default focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                           data-testid="SelectDropdown__input"
                           id="downshift-23-input"
                           name="recipientAddress"
@@ -1392,7 +1392,7 @@ exports[`AddRecipient should set available amount 1`] = `
                         />
                       </div>
                       <div
-                        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-primary-300 dark:divide-theme-secondary-800 dark:text-theme-secondary-600"
+                        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
                       >
                         <div
                           class=""
@@ -1431,7 +1431,7 @@ exports[`AddRecipient should set available amount 1`] = `
           </div>
         </fieldset>
         <fieldset
-          class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
+          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
         >
           <label
             class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -1466,10 +1466,10 @@ exports[`AddRecipient should set available amount 1`] = `
                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                 >
                   <div
-                    class="flex relative flex-1 h-full"
+                    class="relative flex flex-1 h-full"
                   >
                     <input
-                      class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                       data-testid="AddRecipient__amount"
                       name="amount"
                       placeholder="Enter an amount"
@@ -1570,7 +1570,7 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
         class="space-y-5"
       >
         <fieldset
-          class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
+          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
         >
           <div>
             <div
@@ -1587,14 +1587,14 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
                   …
                 </div>
                 <div
-                  class="sr-only Input__InputWrapperStyled-wu99qs-0 jYUFQr"
+                  class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                 >
                   <div
-                    class="flex relative flex-1 h-full"
+                    class="relative flex flex-1 h-full"
                   >
                     <input
                       aria-invalid="false"
-                      class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                       data-testid="select-list__input"
                       name="recipientAddress"
                       readonly=""
@@ -1626,10 +1626,10 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                     >
                       <div
-                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 border-theme-secondary-200 ring-theme-background dark:bg-theme-secondary-700 dark:border-theme-secondary-700"
+                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 border-theme-secondary-200 dark:bg-theme-secondary-700 dark:border-theme-secondary-700 ring-theme-background"
                       />
                       <div
-                        class="flex relative flex-1 h-full"
+                        class="relative flex flex-1 h-full"
                       >
                         <input
                           aria-autocomplete="list"
@@ -1637,7 +1637,7 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
                           aria-invalid="false"
                           aria-labelledby="downshift-25-label"
                           autocomplete="off"
-                          class="p-0 w-full bg-transparent border-none cursor-default focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                           data-testid="SelectDropdown__input"
                           id="downshift-25-input"
                           name="recipientAddress"
@@ -1646,7 +1646,7 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
                         />
                       </div>
                       <div
-                        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-primary-300 dark:divide-theme-secondary-800 dark:text-theme-secondary-600"
+                        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
                       >
                         <div
                           class=""
@@ -1685,7 +1685,7 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
           </div>
         </fieldset>
         <fieldset
-          class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
+          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
         >
           <label
             class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -1720,10 +1720,10 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                 >
                   <div
-                    class="flex relative flex-1 h-full"
+                    class="relative flex flex-1 h-full"
                   >
                     <input
-                      class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                       data-testid="AddRecipient__amount"
                       name="amount"
                       placeholder="Enter an amount"
@@ -1732,7 +1732,7 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
                     />
                   </div>
                   <div
-                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-primary-300 dark:divide-theme-secondary-800 dark:text-theme-secondary-600"
+                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
                   >
                     <div
                       class=""
