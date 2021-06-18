@@ -55,5 +55,4 @@ export const Amount = ({ ticker, value, locale, showSign, isNegative, ...propert
 
 Amount.defaultProps = {
 	locale: "en",
-	normalize: true,
 };
