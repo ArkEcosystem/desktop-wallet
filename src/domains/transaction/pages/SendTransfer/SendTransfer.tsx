@@ -1,5 +1,5 @@
-import { Contracts, Networks, Services } from "@arkecosystem/platform-sdk";
-import { Contracts as ProfileContracts, DTO } from "@arkecosystem/platform-sdk-profiles";
+import { Networks, Services } from "@arkecosystem/platform-sdk";
+import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
@@ -55,13 +55,13 @@ export const SendTransfer = () => {
 	const [activeTab, setActiveTab] = useState(showNetworkStep ? 0 : 1);
 	const [unconfirmedTransactions, setUnconfirmedTransactions] = useState<DTO.ExtendedTransactionData[]>([]);
 	const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
-	const [transaction, setTransaction] = useState<Contracts.SignedTransactionData | null>(null);
+	const [transaction, setTransaction] = useState<DTO.ExtendedSignedTransactionData | null>(null);
 
 	const { persist } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 
-	const [wallet, setWallet] = useState<ProfileContracts.IReadWriteWallet | undefined>(
+	const [wallet, setWallet] = useState<Contracts.IReadWriteWallet | undefined>(
 		hasWalletId ? activeWallet : undefined,
 	);
 

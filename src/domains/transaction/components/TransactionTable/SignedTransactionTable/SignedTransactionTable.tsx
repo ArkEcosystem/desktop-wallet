@@ -1,5 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
-import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { Table, TableCell, TableRow } from "app/components/Table";
@@ -13,23 +12,23 @@ import { BaseTransactionRowMode } from "../TransactionRow/TransactionRowMode";
 import { BaseTransactionRowRecipientLabel } from "../TransactionRow/TransactionRowRecipientLabel";
 
 interface Properties {
-	transactions: Contracts.SignedTransactionData[];
-	wallet: ProfileContracts.IReadWriteWallet;
-	onClick?: (transaction: Contracts.SignedTransactionData) => void;
+	transactions: DTO.ExtendedSignedTransactionData[];
+	wallet: Contracts.IReadWriteWallet;
+	onClick?: (transaction: DTO.ExtendedSignedTransactionData) => void;
 }
 
 const StatusLabel = ({
 	wallet,
 	transaction,
 }: {
-	wallet: ProfileContracts.IReadWriteWallet;
-	transaction: Contracts.SignedTransactionData;
+	wallet: Contracts.IReadWriteWallet;
+	transaction: DTO.ExtendedSignedTransactionData;
 }) => {
 	const { t } = useTranslation();
 
 	const isMultiSignatureReady = useMemo(() => {
 		try {
-			return wallet.coin().multiSignature().isMultiSignatureReady(transaction);
+			return wallet.coin().multiSignature().isMultiSignatureReady(transaction.data());
 		} catch {
 			return false;
 		}
@@ -49,7 +48,7 @@ const StatusLabel = ({
 		return (
 			<Tooltip
 				content={t("TRANSACTION.MULTISIGNATURE.AWAITING_OTHER_SIGNATURE_COUNT", {
-					count: wallet.coin().multiSignature().remainingSignatureCount(transaction),
+					count: wallet.coin().multiSignature().remainingSignatureCount(transaction.data()),
 				})}
 			>
 				<span className="p-1 text-theme-warning-300">
@@ -94,10 +93,10 @@ const Row = ({
 	onRowClick,
 	wallet,
 }: {
-	transaction: Contracts.SignedTransactionData;
-	onSign?: (transaction: Contracts.SignedTransactionData) => void;
-	onRowClick?: (transaction: Contracts.SignedTransactionData) => void;
-	wallet: ProfileContracts.IReadWriteWallet;
+	transaction: DTO.ExtendedSignedTransactionData;
+	onSign?: (transaction: DTO.ExtendedSignedTransactionData) => void;
+	onRowClick?: (transaction: DTO.ExtendedSignedTransactionData) => void;
+	wallet: Contracts.IReadWriteWallet;
 }) => {
 	const { t } = useTranslation();
 
@@ -137,7 +136,7 @@ const Row = ({
 			<TableCell innerClassName="justify-end">
 				<BaseTransactionRowAmount
 					isSent={true}
-					total={transaction.amount().plus(transaction.fee()).toHuman()}
+					total={transaction.amount() + transaction.fee()}
 					wallet={wallet}
 				/>
 			</TableCell>
@@ -200,7 +199,7 @@ export const SignedTransactionTable = ({ transactions, wallet, onClick }: Proper
 	return (
 		<div data-testid="SignedTransactionTable" className="relative">
 			<Table columns={columns} data={transactions}>
-				{(transaction: Contracts.SignedTransactionData) => (
+				{(transaction: DTO.ExtendedSignedTransactionData) => (
 					<Row transaction={transaction} wallet={wallet} onSign={onClick} onRowClick={onClick} />
 				)}
 			</Table>

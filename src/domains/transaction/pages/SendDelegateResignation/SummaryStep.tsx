@@ -1,5 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
-import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { TransactionDetail, TransactionFee } from "domains/transaction/components/TransactionDetail";
@@ -11,8 +10,8 @@ export const SummaryStep = ({
 	senderWallet,
 	transaction,
 }: {
-	senderWallet: ProfileContracts.IReadWriteWallet;
-	transaction: Contracts.SignedTransactionData;
+	senderWallet: Contracts.IReadWriteWallet;
+	transaction: DTO.ExtendedSignedTransactionData;
 }) => {
 	const { t } = useTranslation();
 
@@ -34,7 +33,7 @@ export const SummaryStep = ({
 
 				<TransactionFee
 					currency={senderWallet.currency()}
-					value={transaction.fee().toHuman()}
+					value={transaction.fee()}
 					paddingPosition="top"
 				/>
 			</TransactionSuccessful>

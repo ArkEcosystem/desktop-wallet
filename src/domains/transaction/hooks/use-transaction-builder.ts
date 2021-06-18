@@ -1,5 +1,5 @@
-import { Contracts, Services } from "@arkecosystem/platform-sdk";
-import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
+import { Services } from "@arkecosystem/platform-sdk";
+import { Contracts as ProfileContracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { upperFirst } from "@arkecosystem/utils";
 import { useLedgerContext } from "app/contexts";
 
@@ -43,7 +43,7 @@ export const useTransactionBuilder = () => {
 		options?: {
 			abortSignal?: AbortSignal;
 		},
-	): Promise<{ uuid: string; transaction: Contracts.SignedTransactionData }> => {
+	): Promise<{ uuid: string; transaction: DTO.ExtendedSignedTransactionData }> => {
 		const service = wallet.transaction();
 
 		// @ts-ignore

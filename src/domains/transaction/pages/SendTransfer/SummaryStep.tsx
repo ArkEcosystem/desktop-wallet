@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts as ProfileContracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import {
 	TransactionAmount,
 	TransactionFee,
@@ -12,13 +12,14 @@ export const SummaryStep = ({
 	transaction,
 	senderWallet,
 }: {
-	transaction: Contracts.SignedTransactionData;
+	transaction: DTO.ExtendedSignedTransactionData;
 	senderWallet: ProfileContracts.IReadWriteWallet;
 }) => {
-	const recipients = transaction.data().asset?.payments?.map((payment: { recipientId: string; amount: number }) => ({
+	// @TODO: this differs per coin, can't be accessed like this
+	const recipients = transaction.data().data().asset?.payments?.map((payment: { recipientId: string; amount: number }) => ({
 		address: payment.recipientId,
 		amount: +payment.amount,
-	})) || [{ address: transaction.recipient(), amount: transaction.amount().toHuman() }];
+	})) || [{ address: transaction.recipient(), amount: transaction.amount() }];
 
 	const transactionAmount = recipients.reduce(
 		(sum: number, recipient: Contracts.MultiPaymentRecipient) => sum + recipient.amount.toHuman(),
@@ -38,7 +39,7 @@ export const SummaryStep = ({
 				isSent={true}
 			/>
 
-			<TransactionFee currency={currency} value={transaction.fee().toHuman()} paddingPosition="top" />
+			<TransactionFee currency={currency} value={transaction.fee()} paddingPosition="top" />
 		</TransactionSuccessful>
 	);
 };

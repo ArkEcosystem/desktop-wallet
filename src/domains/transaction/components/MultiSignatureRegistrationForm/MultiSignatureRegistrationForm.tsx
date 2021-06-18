@@ -43,7 +43,7 @@ const transactionDetails = ({ transaction, translations, wallet }: SendRegistrat
 			{transaction.generatedAddress}
 		</TransactionDetail>
 
-		<TransactionFee currency={wallet.currency()} value={transaction.fee().toHuman()} paddingPosition="top" />
+		<TransactionFee currency={wallet.currency()} value={transaction.fee()} paddingPosition="top" />
 	</>
 );
 

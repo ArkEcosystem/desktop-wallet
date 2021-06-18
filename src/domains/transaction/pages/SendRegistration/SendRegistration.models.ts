@@ -1,37 +1,37 @@
-import { Contracts, Signatories } from "@arkecosystem/platform-sdk";
-import { Contracts as ProfileContracts, Environment } from "@arkecosystem/platform-sdk-profiles";
+import { Signatories } from "@arkecosystem/platform-sdk";
+import { Contracts, DTO, Environment } from "@arkecosystem/platform-sdk-profiles";
 import { TFunction } from "i18next";
 import { useForm } from "react-hook-form";
 import { TransactionFees } from "types";
 
-export type ExtendedSignedTransactionData = Contracts.SignedTransactionData & {
+export type ExtendedSignedTransactionData = DTO.ExtendedSignedTransactionData & {
 	generatedAddress?: string;
 };
 
 export interface SendRegistrationDetailsOptions {
 	transaction: ExtendedSignedTransactionData;
 	translations: TFunction;
-	wallet: ProfileContracts.IReadWriteWallet;
+	wallet: Contracts.IReadWriteWallet;
 }
 
 export interface SendRegistrationComponent {
 	activeTab: number;
 	fees: TransactionFees;
-	wallet: ProfileContracts.IReadWriteWallet;
-	profile: ProfileContracts.IProfile;
+	wallet: Contracts.IReadWriteWallet;
+	profile: Contracts.IProfile;
 }
 
 export interface SendRegistrationSignOptions {
 	env: Environment;
 	form: ReturnType<typeof useForm>;
-	profile: ProfileContracts.IProfile;
+	profile: Contracts.IProfile;
 	signatory: Signatories.Signatory;
 }
 
 export interface SendRegistrationForm {
 	transactionDetails: ({ transaction, translations, wallet }: SendRegistrationDetailsOptions) => JSX.Element;
 
-	signTransaction: (options: SendRegistrationSignOptions) => Promise<Contracts.SignedTransactionData>;
+	signTransaction: (options: SendRegistrationSignOptions) => Promise<DTO.ExtendedSignedTransactionData>;
 
 	tabSteps: number;
 

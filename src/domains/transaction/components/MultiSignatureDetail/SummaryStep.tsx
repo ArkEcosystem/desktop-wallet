@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts as ProfileContracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Circle } from "app/components/Circle";
 import { Clipboard } from "app/components/Clipboard";
@@ -25,7 +25,7 @@ export const SummaryStep = ({
 	transaction,
 }: {
 	wallet: ProfileContracts.IReadWriteWallet;
-	transaction: Contracts.SignedTransactionData;
+	transaction: DTO.ExtendedSignedTransactionData;
 }) => {
 	const { env } = useEnvironmentContext();
 	const { t } = useTranslation();
@@ -47,7 +47,7 @@ export const SummaryStep = ({
 		recipients = transaction
 			.get<{ payments: Record<string, string>[] }>("asset")
 			?.payments?.map((item) => ({ address: item.recipientId, amount: +item.amount })) || [
-			{ address: transaction.get<string>("recipientId"), amount: transaction.amount().toHuman() },
+			{ address: transaction.get<string>("recipientId"), amount: transaction.amount() },
 		];
 
 		transactionAmount = recipients.reduce(
@@ -128,7 +128,7 @@ export const SummaryStep = ({
 				</TransactionDetail>
 			)}
 
-			<TransactionFee currency={wallet.currency()} value={transaction.fee().toHuman()} />
+			<TransactionFee currency={wallet.currency()} value={transaction.fee()} />
 
 			{/* @TODO
 				<TransactionTimestamp timestamp={DateTime.make("08.10.2020 20:00:48")} />
