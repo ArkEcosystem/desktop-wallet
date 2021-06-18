@@ -1,7 +1,7 @@
-import { screen } from "@testing-library/react";
-import { AmountCrypto } from "app/components/Amount/AmountGeneric";
+import { render, screen } from "@testing-library/react";
 import React from "react";
-import { render } from "utils/testing-library";
+
+import { AmountCrypto } from "./AmountCrypto";
 
 describe("AmountCrypto", () => {
 	it("should format crypto", () => {
@@ -14,10 +14,10 @@ describe("AmountCrypto", () => {
 		rerender(<AmountCrypto value={0} ticker="DARK" />);
 		expect(screen.getByTestId("AmountCrypto")).toHaveTextContent("0 DARK");
 
-		rerender(<AmountCrypto value={10} ticker="ARK" showSign />);
+		rerender(<AmountCrypto value={10} ticker="ARK" withSign />);
 		expect(screen.getByTestId("AmountCrypto")).toHaveTextContent("+ 10 ARK");
 
-		rerender(<AmountCrypto value={10} ticker="ARK" showSign isNegative />);
+		rerender(<AmountCrypto value={10} ticker="ARK" withSign isNegative />);
 		expect(screen.getByTestId("AmountCrypto")).toHaveTextContent("- 10 ARK");
 	});
 
