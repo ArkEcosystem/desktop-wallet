@@ -22,7 +22,6 @@ type SelectRecipientProperties = {
 	contactSearchDescription?: string;
 	placeholder?: string;
 	onChange?: (address: string) => void;
-	addons?: any;
 } & Omit<React.InputHTMLAttributes<any>, "onChange">;
 
 const ProfileAvatar = ({ address }: any) => {
@@ -57,7 +56,7 @@ const OptionLabel = ({ option, profile }: { option: any; profile: Contracts.IPro
 
 export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipientProperties>(
 	(
-		{ address, profile, disabled, isInvalid, network, placeholder, onChange, addons }: SelectRecipientProperties,
+		{ address, profile, disabled, isInvalid, network, placeholder, onChange }: SelectRecipientProperties,
 		reference,
 	) => {
 		const [isRecipientSearchOpen, setIsRecipientSearchOpen] = useState(false);
@@ -123,16 +122,12 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 						addons={{
 							start: <ProfileAvatar address={selectedAddress} />,
 							end: (
-								<div className="flex items-center space-x-5">
-									{addons}
-
-									<div
-										data-testid="SelectRecipient__select-recipient"
-										className="flex items-center cursor-pointer"
-										onClick={openRecipients}
-									>
-										<Icon name="User" width={20} height={20} />
-									</div>
+								<div
+									data-testid="SelectRecipient__select-recipient"
+									className="flex items-center cursor-pointer"
+									onClick={openRecipients}
+								>
+									<Icon name="User" width={20} height={20} />
 								</div>
 							),
 						}}
