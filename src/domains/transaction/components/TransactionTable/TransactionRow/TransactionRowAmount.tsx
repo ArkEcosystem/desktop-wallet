@@ -23,12 +23,9 @@ const BaseTransactionRowAmount: React.FC<Properties> = ({
 
 	if (!!exchangeCurrency && !isNil(convertedTotal)) {
 		return (
-			<Amount
-				data-testid="TransactionRowAmount"
-				value={convertedTotal}
-				ticker={exchangeCurrency}
-				className="text-theme-secondary-text"
-			/>
+			<div data-testid="TransactionRowAmount">
+				<Amount value={convertedTotal} ticker={exchangeCurrency} className="text-theme-secondary-text" />
+			</div>
 		);
 	}
 

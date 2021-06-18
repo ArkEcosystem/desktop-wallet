@@ -15,7 +15,7 @@ import {
 	InputFeeViewType,
 } from "./InputFee.contracts";
 
-export const InputFee = memo(
+export const InputFee: React.FC<InputFeeProperties> = memo(
 	({
 		min,
 		avg,
@@ -33,12 +33,12 @@ export const InputFee = memo(
 
 		const viewType = properties.viewType ?? DEFAULT_VIEW_TYPE;
 		const simpleValue = properties.simpleValue ?? DEFAULT_SIMPLE_VALUE;
-		const [advancedValue, setAdvancedValue] = useState<number>(value);
+		const [advancedValue, setAdvancedValue] = useState(value);
 
 		useEffect(() => {
 			const setDefaultAdvancedValue = () => {
 				if (avg && isNil(advancedValue)) {
-					setAdvancedValue(avg);
+					setAdvancedValue(avg.toString());
 				}
 			};
 
@@ -67,29 +67,29 @@ export const InputFee = memo(
 			},
 		};
 
-		const onChangeViewType = (value_: InputFeeViewType) => {
-			properties.onChangeViewType(value_);
+		const onChangeViewType = (newValue: InputFeeViewType) => {
+			properties.onChangeViewType(newValue);
 
-			if (value_ === InputFeeViewType.Simple) {
+			if (newValue === InputFeeViewType.Simple) {
 				const feeValue = options[simpleValue].displayValue;
-				onChange(feeValue);
+				onChange(feeValue.toString());
 			}
 
-			if (value_ === InputFeeViewType.Advanced) {
-				onChange(advancedValue);
+			if (newValue === InputFeeViewType.Advanced) {
+				onChange(advancedValue ?? "");
 			}
 		};
 
-		const onChangeSimpleValue = (value_: InputFeeSimpleValue) => {
-			properties.onChangeSimpleValue(value_);
+		const onChangeSimpleValue = (newValue: InputFeeSimpleValue) => {
+			properties.onChangeSimpleValue(newValue);
 
-			const feeValue = options[value_].displayValue;
-			onChange(feeValue);
+			const feeValue = options[newValue].displayValue;
+			onChange(feeValue.toString());
 		};
 
-		const onChangeAdvancedValue = (value_: number) => {
-			setAdvancedValue(value_);
-			onChange(value_);
+		const onChangeAdvancedValue = (newValue: string) => {
+			setAdvancedValue(newValue);
+			onChange(newValue);
 		};
 
 		if (disabled) {
@@ -99,7 +99,7 @@ export const InputFee = memo(
 					min={min}
 					max={max}
 					step={step}
-					value={advancedValue}
+					value={advancedValue ?? ""}
 					onChange={onChangeAdvancedValue}
 				/>
 			);
@@ -141,7 +141,7 @@ export const InputFee = memo(
 						min={min}
 						max={max}
 						step={step}
-						value={advancedValue}
+						value={advancedValue ?? ""}
 						onChange={onChangeAdvancedValue}
 					/>
 				)}

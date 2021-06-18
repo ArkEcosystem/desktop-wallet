@@ -24,6 +24,7 @@ describe("AmountCrypto", () => {
 	/**
 	 * [CI] Node does not support the internationalization package
 	 */
+	// eslint-disable-next-line jest/no-disabled-tests
 	it.skip("should format crypto with custom locale", () => {
 		render(<AmountCrypto value={0.1} ticker="ARK" locale="pt-BR" />);
 		expect(screen.getByTestId("AmountCrypto")).toHaveTextContent("0,1 ARK");

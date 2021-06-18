@@ -1,18 +1,19 @@
 import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { screen } from "@testing-library/react";
+import { act, fireEvent,screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { translations } from "domains/transaction/i18n";
 import { describe } from "jest-circus";
 import React, { useState } from "react";
-import { act, env, fireEvent, render } from "utils/testing-library";
+import { env, render } from "utils/testing-library";
 
 import { InputFee } from "./InputFee";
 import { InputFeeProperties, InputFeeSimpleValue, InputFeeViewType } from "./InputFee.contracts";
 
-const getDefaultProperties = () => ({
-	min: "0.006",
-	max: "0.5",
-	avg: "0.456",
+const getDefaultProperties = (): InputFeeProperties => ({
+	min: 0.006,
+	max: 0.5,
+	avg: 0.456,
 	value: "0.3",
 	step: 0.001,
 	disabled: false,
@@ -45,14 +46,14 @@ describe("InputFee", () => {
 			const [viewType, setViewType] = useState(defaultProps.viewType);
 			const [simpleValue, setSimpleValue] = useState(defaultProps.simpleValue);
 
-			const handleChangeValue = (value_: string) => {
-				setValue(value_);
-				defaultProps.onChange(value_);
+			const handleChangeValue = (newValue: string) => {
+				setValue(newValue);
+				defaultProps.onChange(newValue);
 			};
 
-			const handleChangeViewType = (value_: InputFeeViewType) => {
-				setViewType(value_);
-				defaultProps.onChangeViewType(value_);
+			const handleChangeViewType = (newValue: InputFeeViewType) => {
+				setViewType(newValue);
+				defaultProps.onChangeViewType(newValue);
 			};
 
 			const handleChangeSimpleValue = (value_: InputFeeSimpleValue) => {
@@ -78,7 +79,7 @@ describe("InputFee", () => {
 		const { asFragment } = render(<InputFee {...defaultProps} />);
 
 		expect(screen.queryByTestId("InputCurrency")).not.toBeInTheDocument();
-		expect(screen.queryByTestId("ButtonGroup")).toBeInTheDocument();
+		expect(screen.getByTestId("ButtonGroup")).toBeInTheDocument();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -86,34 +87,27 @@ describe("InputFee", () => {
 		const { asFragment } = render(<Wrapper />);
 
 		// go to advanced mode and check value changes
-		act(() => {
-			fireEvent.click(screen.getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
-		});
+		userEvent.click(screen.getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
 
 		expect(defaultProps.onChangeViewType).toBeCalledWith(InputFeeViewType.Advanced);
 		expect(defaultProps.onChange).toBeCalledWith(defaultProps.value);
 
-		expect(screen.queryByTestId("InputCurrency")).toBeInTheDocument();
+		expect(screen.getByTestId("InputCurrency")).toBeInTheDocument();
 		expect(screen.queryByTestId("ButtonGroup")).not.toBeInTheDocument();
 		expect(asFragment()).toMatchSnapshot();
 
 		// go to simple mode
-		act(() => {
-			fireEvent.click(screen.getByText(translations.INPUT_FEE_VIEW_TYPE.SIMPLE));
-		});
+		userEvent.click(screen.getByText(translations.INPUT_FEE_VIEW_TYPE.SIMPLE));
 
 		expect(defaultProps.onChangeViewType).toBeCalledWith(InputFeeViewType.Simple);
-		expect(defaultProps.onChange).toBeCalledWith(defaultProps.avg);
+		expect(defaultProps.onChange).toBeCalledWith(defaultProps.avg.toString());
 
 		expect(screen.queryByTestId("InputCurrency")).not.toBeInTheDocument();
-		expect(screen.queryByTestId("ButtonGroup")).toBeInTheDocument();
+		expect(screen.getByTestId("ButtonGroup")).toBeInTheDocument();
 		expect(asFragment()).toMatchSnapshot();
 
 		// go back to advanced mode and repeat checks
-		act(() => {
-			fireEvent.click(screen.getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
-		});
-
+		userEvent.click(screen.getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
 		expect(defaultProps.onChangeViewType).toBeCalledWith(InputFeeViewType.Advanced);
 		expect(defaultProps.onChange).toBeCalledWith(defaultProps.value);
 	});
@@ -126,20 +120,27 @@ describe("InputFee", () => {
 		])("should update value when clicking button %s", (optionText, optionValue) => {
 			const { asFragment } = render(<Wrapper />);
 
-			act(() => {
-				fireEvent.click(screen.getByText(optionText));
-			});
-
-			expect(defaultProps.onChange).toHaveBeenCalledWith(optionValue);
+			userEvent.click(screen.getByText(optionText));
+			expect(defaultProps.onChange).toHaveBeenCalledWith(optionValue.toString());
 			expect(asFragment()).toMatchSnapshot();
 		});
 
 		it("should display converted values when on live net", () => {
 			jest.spyOn(network, "isLive").mockReturnValueOnce(true);
 
-			const { asFragment, queryAllByTestId } = render(<Wrapper />);
+			// use fiat currency for the converted balance
+			jest.spyOn(profile.settings(), "get").mockImplementation((key: string) => {
+				if (key === Contracts.ProfileSetting.ExchangeCurrency) {
+					return "EUR";
+				}
 
-			expect(queryAllByTestId("Amount")).toHaveLength(3);
+				return profile.settings().get(key);
+			});
+
+			const { asFragment } = render(<InputFee {...defaultProps} />);
+
+			expect(screen.getAllByTestId("AmountCrypto")).toHaveLength(3);
+			expect(screen.getAllByTestId("AmountFiat")).toHaveLength(3);
 			expect(asFragment()).toMatchSnapshot();
 		});
 	});
@@ -150,6 +151,7 @@ describe("InputFee", () => {
 			const { asFragment } = render(<Wrapper />);
 
 			const inputElement = screen.getByTestId("InputCurrency");
+			expect(inputElement).toBeInTheDocument();
 
 			act(() => {
 				fireEvent.input(inputElement, { target: { value: "0.447" } });
@@ -162,9 +164,7 @@ describe("InputFee", () => {
 
 		it("should use avg as the default value", () => {
 			defaultProps.viewType = InputFeeViewType.Advanced;
-			defaultProps.avg = "0.1234";
-
-			// @ts-ignore
+			defaultProps.avg = 0.1234;
 			defaultProps.value = undefined;
 
 			render(<InputFee {...defaultProps} />);
