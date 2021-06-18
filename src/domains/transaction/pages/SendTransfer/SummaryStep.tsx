@@ -1,4 +1,4 @@
-import { Contracts as ProfileContracts, DTO } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import {
 	TransactionAmount,
 	TransactionFee,
@@ -12,7 +12,7 @@ export const SummaryStep = ({
 	senderWallet,
 }: {
 	transaction: DTO.ExtendedSignedTransactionData;
-	senderWallet: ProfileContracts.IReadWriteWallet;
+	senderWallet: Contracts.IReadWriteWallet;
 }) => {
 	// @TODO: this differs per coin, can't be accessed like this
 	const recipients = transaction
