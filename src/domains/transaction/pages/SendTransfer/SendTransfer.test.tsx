@@ -45,7 +45,7 @@ const createTransactionMultipleMock = (wallet: Contracts.IReadWriteWallet) =>
 		id: () => transactionMultipleFixture.data.id,
 		sender: () => transactionMultipleFixture.data.sender,
 		recipient: () => transactionMultipleFixture.data.recipient,
-		amount: () => BigNumber.make(transactionMultipleFixture.data.amount),
+		amount: () => transactionMultipleFixture.data.amount / 1e8,
 		fee: () => transactionMultipleFixture.data.fee / 1e8,
 		data: () => ({ data: () => transactionMultipleFixture.data }),
 	});
@@ -56,7 +56,7 @@ const createTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 		id: () => transactionFixture.data.id,
 		sender: () => transactionFixture.data.sender,
 		recipient: () => transactionFixture.data.recipient,
-		amount: () => BigNumber.make(transactionFixture.data.amount),
+		amount: () => transactionFixture.data.amount / 1e8,
 		fee: () => transactionFixture.data.fee / 1e8,
 		data: () => ({ data: () => transactionFixture.data }),
 	});

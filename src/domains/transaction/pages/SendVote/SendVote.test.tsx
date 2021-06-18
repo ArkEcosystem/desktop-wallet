@@ -39,7 +39,7 @@ const createVoteTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 		id: () => voteFixture.data.id,
 		sender: () => voteFixture.data.sender,
 		recipient: () => voteFixture.data.recipient,
-		amount: () => BigNumber.make(voteFixture.data.amount),
+		amount: () => voteFixture.data.amount / 1e8,
 		fee: () => voteFixture.data.fee / 1e8,
 		data: () => ({ data: () => voteFixture.data }),
 	});
@@ -50,7 +50,7 @@ const createUnvoteTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 		id: () => unvoteFixture.data.id,
 		sender: () => unvoteFixture.data.sender,
 		recipient: () => unvoteFixture.data.recipient,
-		amount: () => BigNumber.make(unvoteFixture.data.amount),
+		amount: () => unvoteFixture.data.amount / 1e8,
 		fee: () => unvoteFixture.data.fee / 1e8,
 		data: () => ({ data: () => voteFixture.data }),
 	});

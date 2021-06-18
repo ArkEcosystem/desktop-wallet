@@ -41,7 +41,7 @@ describe("SecondSignatureRegistrationForm", () => {
 			id: () => secondSignatureFixture.data.id,
 			sender: () => secondSignatureFixture.data.sender,
 			recipient: () => secondSignatureFixture.data.recipient,
-			amount: () => BigNumber.make(secondSignatureFixture.data.amount),
+			amount: () => secondSignatureFixture.data.amount / 1e8,
 			fee: () => secondSignatureFixture.data.fee / 1e8,
 			data: () => ({ data: () => secondSignatureFixture.data }),
 		});
@@ -295,7 +295,7 @@ describe("SecondSignatureRegistrationForm", () => {
 			id: () => secondSignatureFixture.data.id,
 			sender: () => secondSignatureFixture.data.sender,
 			recipient: () => secondSignatureFixture.data.recipient,
-			amount: () => BigNumber.make(secondSignatureFixture.data.amount),
+			amount: () => secondSignatureFixture.data.amount / 1e8,
 			fee: () => secondSignatureFixture.data.fee / 1e8,
 			data: () => ({ data: () => secondSignatureFixture.data }),
 		} as Contracts.SignedTransactionData;

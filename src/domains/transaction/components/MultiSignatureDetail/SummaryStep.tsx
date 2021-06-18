@@ -1,6 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
-import { Contracts as ProfileContracts, DTO } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Circle } from "app/components/Circle";
 import { Clipboard } from "app/components/Clipboard";
 import { Header } from "app/components/Header";
@@ -24,7 +22,7 @@ export const SummaryStep = ({
 	wallet,
 	transaction,
 }: {
-	wallet: ProfileContracts.IReadWriteWallet;
+	wallet: Contracts.IReadWriteWallet;
 	transaction: DTO.ExtendedSignedTransactionData;
 }) => {
 	const { env } = useEnvironmentContext();
@@ -56,8 +54,8 @@ export const SummaryStep = ({
 	}
 
 	const [delegates, setDelegates] = useState<{
-		votes: ProfileContracts.IReadOnlyWallet[];
-		unvotes: ProfileContracts.IReadOnlyWallet[];
+		votes: Contracts.IReadOnlyWallet[];
+		unvotes: Contracts.IReadOnlyWallet[];
 	}>({
 		votes: [],
 		unvotes: [],

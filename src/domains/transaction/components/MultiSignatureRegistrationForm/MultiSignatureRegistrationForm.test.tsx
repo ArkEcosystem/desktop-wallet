@@ -25,7 +25,7 @@ describe("MultiSignature Registration Form", () => {
 			id: () => multiSignatureFixture.data.id,
 			sender: () => multiSignatureFixture.data.sender,
 			recipient: () => multiSignatureFixture.data.recipient,
-			amount: () => BigNumber.make(multiSignatureFixture.data.amount),
+			amount: () => multiSignatureFixture.data.amount / 1e8,
 			fee: () => multiSignatureFixture.data.fee / 1e8,
 			data: () => ({ data: () => multiSignatureFixture.data }),
 		});
@@ -187,7 +187,7 @@ describe("MultiSignature Registration Form", () => {
 			id: () => multiSignatureFixture.data.id,
 			sender: () => multiSignatureFixture.data.sender,
 			recipient: () => multiSignatureFixture.data.recipient,
-			amount: () => BigNumber.make(multiSignatureFixture.data.amount),
+			amount: () => multiSignatureFixture.data.amount / 1e8,
 			fee: () => multiSignatureFixture.data.fee / 1e8,
 			data: () => ({ data: () => multiSignatureFixture.data }),
 		} as Contracts.SignedTransactionData;
