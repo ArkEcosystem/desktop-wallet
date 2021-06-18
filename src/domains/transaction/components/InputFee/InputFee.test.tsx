@@ -1,6 +1,6 @@
 import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { act, fireEvent,screen } from "@testing-library/react";
+import { act, fireEvent, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { translations } from "domains/transaction/i18n";
 import { describe } from "jest-circus";
