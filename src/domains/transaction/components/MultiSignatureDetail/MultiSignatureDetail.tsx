@@ -1,5 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
-import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Modal } from "app/components/Modal";
@@ -16,8 +15,8 @@ import { SummaryStep } from "./SummaryStep";
 
 interface MultiSignatureDetailProperties {
 	isOpen: boolean;
-	wallet: ProfilesContracts.IReadWriteWallet;
-	transaction: Contracts.SignedTransactionData;
+	wallet: Contracts.IReadWriteWallet;
+	transaction: DTO.ExtendedSignedTransactionData;
 	onClose?: () => void;
 }
 

@@ -1,5 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
-import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Header } from "app/components/Header";
 import { Image } from "app/components/Image";
 import {
@@ -12,8 +11,8 @@ import { useTranslation } from "react-i18next";
 
 interface TransactionSuccessfulProperties {
 	children?: React.ReactNode;
-	transaction?: Contracts.SignedTransactionData;
-	senderWallet?: ProfileContracts.IReadWriteWallet;
+	transaction?: DTO.ExtendedSignedTransactionData;
+	senderWallet?: Contracts.IReadWriteWallet;
 }
 
 export const TransactionSuccessful = ({ children, transaction, senderWallet }: TransactionSuccessfulProperties) => {

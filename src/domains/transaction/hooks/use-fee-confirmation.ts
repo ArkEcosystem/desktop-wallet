@@ -1,5 +1,4 @@
 import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
 import { FeeWarningVariant } from "domains/transaction/components/FeeWarning";
@@ -20,17 +19,15 @@ export const useFeeConfirmation = (fee: number | string, fees: TransactionFees) 
 			return;
 		}
 
-		const value = BigNumber.make(fee);
-
-		if (value.isLessThan(fees?.min)) {
+		if (fee < fees?.min) {
 			setFeeWarningVariant(FeeWarningVariant.Low);
 		}
 
-		if (value.isGreaterThan(fees?.static)) {
+		if (fee > fees?.static) {
 			setFeeWarningVariant(FeeWarningVariant.High);
 		}
 
-		if (value.isGreaterThanOrEqualTo(fees?.min) && value.isLessThanOrEqualTo(fees?.static)) {
+		if (fee >= fees?.min && fee <= fees?.static) {
 			setFeeWarningVariant(undefined);
 		}
 	}, [fee, fees]);

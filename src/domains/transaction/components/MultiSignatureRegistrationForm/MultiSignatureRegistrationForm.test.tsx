@@ -1,6 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { renderHook } from "@testing-library/react-hooks";
 import { Form } from "app/components/Form";
 import React from "react";
@@ -25,9 +24,9 @@ describe("MultiSignature Registration Form", () => {
 			id: () => multiSignatureFixture.data.id,
 			sender: () => multiSignatureFixture.data.sender,
 			recipient: () => multiSignatureFixture.data.recipient,
-			amount: () => BigNumber.make(multiSignatureFixture.data.amount),
-			fee: () => BigNumber.make(multiSignatureFixture.data.fee),
-			data: () => multiSignatureFixture.data,
+			amount: () => multiSignatureFixture.data.amount / 1e8,
+			fee: () => multiSignatureFixture.data.fee / 1e8,
+			data: () => ({ data: () => multiSignatureFixture.data }),
 		});
 
 	beforeEach(async () => {
@@ -187,9 +186,9 @@ describe("MultiSignature Registration Form", () => {
 			id: () => multiSignatureFixture.data.id,
 			sender: () => multiSignatureFixture.data.sender,
 			recipient: () => multiSignatureFixture.data.recipient,
-			amount: () => BigNumber.make(multiSignatureFixture.data.amount),
-			fee: () => BigNumber.make(multiSignatureFixture.data.fee),
-			data: () => multiSignatureFixture.data,
+			amount: () => multiSignatureFixture.data.amount / 1e8,
+			fee: () => multiSignatureFixture.data.fee / 1e8,
+			data: () => ({ data: () => multiSignatureFixture.data }),
 		} as Contracts.SignedTransactionData;
 		const { asFragment } = render(<DetailsComponent />);
 

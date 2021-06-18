@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Contracts } from "@arkecosystem/platform-sdk";
 import { DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Page, Section } from "app/components/Layout";
 import { useConfiguration, useEnvironmentContext } from "app/contexts";
@@ -18,7 +17,7 @@ import { WalletHeader, WalletVote } from "./components";
 import { useWalletTransactions } from "./hooks/use-wallet-transactions";
 
 export const WalletDetails = () => {
-	const [signedTransactionModalItem, setSignedTransactionModalItem] = useState<Contracts.SignedTransactionData>();
+	const [signedTransactionModalItem, setSignedTransactionModalItem] = useState<DTO.ExtendedSignedTransactionData>();
 	const [transactionModalItem, setTransactionModalItem] = useState<DTO.ExtendedTransactionData>();
 
 	const [isUpdatingTransactions, setIsUpdatingTransactions] = useState(false);

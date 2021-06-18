@@ -1,7 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 // @README: This import is fine in tests but should be avoided in production code.
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/distribution/read-only-wallet";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { translations as walletTranslations } from "domains/wallet/i18n";
 import React from "react";
@@ -45,7 +44,7 @@ describe("WalletVote", () => {
 	});
 
 	it("should render disabled vote button", async () => {
-		const balanceSpy = jest.spyOn(wallet, "balance").mockReturnValue(BigNumber.ZERO);
+		const balanceSpy = jest.spyOn(wallet, "balance").mockReturnValue(0);
 
 		const { asFragment, getByRole, getByTestId } = render(
 			<WalletVote profile={profile} wallet={wallet} onButtonClick={jest.fn()} env={env} />,

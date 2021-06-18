@@ -212,7 +212,7 @@ export const WalletVote = ({ wallet, onButtonClick, env, profile }: WalletVotePr
 				data-testid="WalletVote__button"
 				disabled={
 					isLoading ||
-					wallet.balance().isZero() ||
+					wallet.balance() === 0 ||
 					!wallet.hasBeenFullyRestored() ||
 					!wallet.hasSyncedWithNetwork()
 				}

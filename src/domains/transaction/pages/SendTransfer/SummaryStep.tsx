@@ -1,6 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
-import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import {
 	TransactionAmount,
 	TransactionFee,
@@ -13,18 +11,19 @@ export const SummaryStep = ({
 	transaction,
 	senderWallet,
 }: {
-	transaction: Contracts.SignedTransactionData;
-	senderWallet: ProfileContracts.IReadWriteWallet;
+	transaction: DTO.ExtendedSignedTransactionData;
+	senderWallet: Contracts.IReadWriteWallet;
 }) => {
-	const recipients = transaction.data().asset?.payments?.map((payment: { recipientId: string; amount: string }) => ({
-		address: payment.recipientId,
-		amount: BigNumber.make(payment.amount),
-	})) || [{ address: transaction.recipient(), amount: transaction.amount() }];
+	// @TODO: this differs per coin, can't be accessed like this
+	const recipients = transaction
+		.data()
+		.data()
+		.asset?.payments?.map((payment: { recipientId: string; amount: number }) => ({
+			address: payment.recipientId,
+			amount: +payment.amount,
+		})) || [{ address: transaction.recipient(), amount: transaction.amount() }];
 
-	const transactionAmount = recipients.reduce(
-		(sum: BigNumber, recipient: Contracts.MultiPaymentRecipient) => sum.plus(recipient.amount),
-		BigNumber.ZERO,
-	);
+	const transactionAmount = recipients.reduce((sum: number, { amount }: { amount: number }) => sum + amount, 0);
 
 	const currency = senderWallet.currency();
 

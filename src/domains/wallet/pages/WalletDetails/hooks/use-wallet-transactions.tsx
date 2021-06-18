@@ -1,10 +1,9 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
-import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { useSynchronizer } from "app/hooks";
 import { useCallback, useEffect, useMemo } from "react";
 
-export const useWalletTransactions = (wallet: ProfileContracts.IReadWriteWallet) => {
-	const pendingMultiSignatureTransactions: Contracts.SignedTransactionData[] = Object.values({
+export const useWalletTransactions = (wallet: Contracts.IReadWriteWallet) => {
+	const pendingMultiSignatureTransactions: DTO.ExtendedSignedTransactionData[] = Object.values({
 		...wallet.transaction().waitingForOtherSignatures(),
 		...wallet.transaction().waitingForOurSignature(),
 		...wallet.transaction().signed(),

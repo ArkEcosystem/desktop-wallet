@@ -1,4 +1,5 @@
-import { Contracts, Networks } from "@arkecosystem/platform-sdk";
+import { Networks } from "@arkecosystem/platform-sdk";
+import { DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
@@ -27,7 +28,7 @@ export const SendRegistration = () => {
 	const history = useHistory();
 
 	const [activeTab, setActiveTab] = useState(1);
-	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
+	const [transaction, setTransaction] = useState((null as unknown) as DTO.ExtendedSignedTransactionData);
 	const [registrationForm, setRegistrationForm] = useState<SendRegistrationForm>();
 
 	const { registrationType } = useParams();

@@ -34,7 +34,6 @@ const RecipientListItem = ({
 	tooltipDisabled,
 	disableButton,
 	showAmount,
-	normalizeAmount = true,
 }: RecipientListItemProperties) => {
 	const { t } = useTranslation();
 
@@ -57,7 +56,7 @@ const RecipientListItem = ({
 				{showAmount && (
 					<td className="py-4 text-right">
 						<Label color="danger">
-							<Amount ticker={assetSymbol!} value={amount!} showSign normalize={normalizeAmount} />
+							<Amount ticker={assetSymbol!} value={amount!} showSign />
 						</Label>
 					</td>
 				)}
@@ -76,7 +75,7 @@ const RecipientListItem = ({
 				<Avatar address={address} size="lg" />
 			</td>
 
-			<td className="ml-5 w-28 flex-1 py-6">
+			<td className="flex-1 py-6 ml-5 w-28">
 				<div className="mb-1 text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700">
 					<span>{t(label || "COMMON.RECIPIENT_#", { count: listIndex! + 1 })}</span>
 				</div>
@@ -86,18 +85,18 @@ const RecipientListItem = ({
 			{showAmount && (
 				<td className="flex-1 flex-shrink-0 py-6 pl-3">
 					<div className="mb-1 text-sm font-semibold text-right text-theme-secondary-500 dark:text-theme-secondary-700">
-						{exchangeAmount && <Amount ticker={exchangeTicker!} value={exchangeAmount} normalize={false} />}
+						{exchangeAmount && <Amount ticker={exchangeTicker!} value={exchangeAmount} />}
 
 						{!exchangeAmount && <span>{t("COMMON.AMOUNT")}</span>}
 					</div>
 					<div className="font-semibold text-right">
-						<Amount ticker={assetSymbol!} value={amount!} normalize={false} />
+						<Amount ticker={assetSymbol!} value={amount!} />
 					</div>
 				</td>
 			)}
 
 			{isEditable && (
-				<td className="ml-3 flex-none py-6">
+				<td className="flex-none py-6 ml-3">
 					<Tooltip content={tooltipDisabled} disabled={!isButtonDisabled}>
 						<span className="inline-block">
 							<Button
@@ -125,7 +124,6 @@ export const RecipientList = ({
 	variant,
 	label,
 	showAmount,
-	normalizeAmount,
 	tooltipDisabled,
 	disableButton,
 	onRemove,
@@ -161,7 +159,6 @@ export const RecipientList = ({
 						tooltipDisabled={tooltipDisabled}
 						disableButton={disableButton}
 						onRemove={onRemove}
-						normalizeAmount={normalizeAmount}
 					/>
 				)}
 			</Table>

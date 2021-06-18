@@ -1,5 +1,4 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { uniq } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
@@ -167,7 +166,7 @@ export const ImportWallet = () => {
 								<TabPanel tabId={4}>
 									<ThirdStep
 										address={walletData?.address() as string}
-										balance={walletData?.balance() as BigNumber}
+										balance={walletData?.balance() as number}
 										nameMaxLength={nameMaxLength}
 										profile={activeProfile}
 									/>

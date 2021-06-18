@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { screen } from "@testing-library/react";
 import { act as hookAct, renderHook } from "@testing-library/react-hooks";
 import { LedgerProvider } from "app/contexts";
@@ -36,9 +35,9 @@ const createTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 		id: () => ipfsFixture.data.id,
 		sender: () => ipfsFixture.data.sender,
 		recipient: () => ipfsFixture.data.recipient,
-		amount: () => BigNumber.make(ipfsFixture.data.amount),
-		fee: () => BigNumber.make(ipfsFixture.data.fee),
-		data: () => ipfsFixture.data,
+		amount: () => ipfsFixture.data.amount / 1e8,
+		fee: () => ipfsFixture.data.fee / 1e8,
+		data: () => ({ data: () => ipfsFixture.data }),
 	});
 
 let profile: Contracts.IProfile;
@@ -115,9 +114,22 @@ describe("SendIpfs", () => {
 	it("should render summary step", async () => {
 		const { result: form } = renderHook(() => useForm());
 
-		const transaction = await wallet
-			.transactionIndex()
-			.findById("1e9b975eff66a731095876c3b6cbff14fd4dec3bb37a4127c46db3d69131067e");
+		const transaction = new DTO.ExtendedSignedTransactionData(
+			await wallet
+				.coin()
+				.transaction()
+				.ipfs({
+					nonce: "1",
+					fee: "1",
+					data: {
+						hash: ipfsFixture.data.asset.ipfs,
+					},
+					signatory: await wallet
+						.coin()
+						.signatory()
+						.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
+				}),
+		);
 
 		hookAct(() => {
 			const { getByTestId, asFragment } = render(
@@ -689,7 +701,7 @@ describe("SendIpfs", () => {
 		expect(signMock).toHaveBeenCalledWith(
 			expect.objectContaining({
 				data: expect.anything(),
-				fee: expect.any(String),
+				fee: expect.any(Number),
 				nonce: expect.any(String),
 				signatory: expect.any(Object),
 			}),

@@ -1,6 +1,5 @@
 import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 
 enum InputFeeViewType {
 	Simple,
@@ -19,16 +18,16 @@ const DEFAULT_VIEW_TYPE = InputFeeViewType.Simple;
 type InputFeeSimpleOptions = {
 	[key in InputFeeSimpleValue]: {
 		label: string;
-		displayValue: string;
-		displayValueConverted: BigNumber;
+		displayValue: number;
+		displayValueConverted: number;
 	};
 };
 
 interface InputFeeAdvancedProperties {
-	onChange: (value: string) => void;
-	value: string;
-	min: string;
-	max: string;
+	onChange: (value: number) => void;
+	value: number;
+	min: number;
+	max: number;
 	step: number;
 	disabled?: boolean;
 }
@@ -44,9 +43,9 @@ interface InputFeeSimpleProperties {
 }
 
 interface InputFeeProperties {
-	min: string;
-	avg: string;
-	max: string;
+	min: number;
+	avg: number;
+	max: number;
 	step: number;
 	disabled?: boolean;
 	network?: Networks.Network;
@@ -54,8 +53,8 @@ interface InputFeeProperties {
 	loading?: boolean;
 	viewType?: InputFeeViewType;
 	simpleValue?: InputFeeSimpleValue;
-	value: string;
-	onChange: (value: string) => void;
+	value: number;
+	onChange: (value: number) => void;
 	onChangeViewType: (value: InputFeeViewType) => void;
 	onChangeSimpleValue: (value: InputFeeSimpleValue) => void;
 }

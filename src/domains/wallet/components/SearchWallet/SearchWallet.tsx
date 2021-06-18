@@ -1,5 +1,4 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
@@ -15,10 +14,10 @@ import { Size } from "types";
 
 interface SearchWalletListItemProperties {
 	address: string;
-	balance: BigNumber;
+	balance: number;
 	coinId: string;
 	coinName: string;
-	convertedBalance: BigNumber;
+	convertedBalance: number;
 	currency: string;
 	exchangeCurrency: string;
 	index: number;
@@ -60,7 +59,7 @@ const SearchWalletListItem = ({
 
 			{showFiatValue && (
 				<TableCell innerClassName="text-theme-secondary-400 justify-end">
-					<Amount value={convertedBalance} ticker={exchangeCurrency} normalize={false} />
+					<Amount value={convertedBalance} ticker={exchangeCurrency} />
 				</TableCell>
 			)}
 

@@ -34,10 +34,10 @@ export const FormStep = ({
 	const { getValues, setValue, watch, register } = form;
 
 	const [fees, setFees] = useState<TransactionFees>({
-		static: "5",
-		min: "0",
-		avg: "0",
-		max: "0",
+		static: 5,
+		min: 0,
+		avg: 0,
+		max: 0,
 	});
 
 	useEffect(() => {

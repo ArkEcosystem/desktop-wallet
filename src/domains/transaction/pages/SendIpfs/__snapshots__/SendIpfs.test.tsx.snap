@@ -993,7 +993,9 @@ exports[`SendIpfs should render summary step 1`] = `
           </div>
           <div
             class="font-semibold"
-          />
+          >
+            QmPRqPTEEwx95WNcSsk6YQk7aGW9hoZbTF9zE92dBj9H68
+          </div>
         </div>
         <div
           class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text ring-theme-background"
@@ -2812,7 +2814,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               </div>
                             </div>
                             <div
-                              class="w-full inline-flex items-center space-x-2"
+                              class="inline-flex items-center space-x-2 w-full"
                               data-testid="ButtonGroup"
                               role="radiogroup"
                             >
@@ -2830,7 +2832,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                                     Slow
                                   </div>
                                   <div
-                                    class="font-normal text-sm"
+                                    class="text-sm font-normal"
                                   >
                                     5
                                      
@@ -2852,7 +2854,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                                     Average
                                   </div>
                                   <div
-                                    class="font-normal text-sm"
+                                    class="text-sm font-normal"
                                   >
                                     5
                                      
@@ -2874,7 +2876,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                                     Fast
                                   </div>
                                   <div
-                                    class="font-normal text-sm"
+                                    class="text-sm font-normal"
                                   >
                                     5
                                      

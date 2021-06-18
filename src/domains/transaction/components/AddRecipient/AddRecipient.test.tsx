@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act, renderHook } from "@testing-library/react-hooks";
 import React, { useEffect } from "react";
 import { FormProvider, useForm } from "react-hook-form";
@@ -113,7 +112,7 @@ describe("AddRecipient", () => {
 			expect(form.current.getValues("amount")).toEqual("1");
 			expect(getByTestId("SelectDropdown__input")).toHaveValue("bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT");
 			expect(onChange).toHaveBeenCalledWith([
-				{ amount: expect.any(BigNumber), address: "bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" },
+				{ amount: expect.any(Number), address: "bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" },
 			]);
 		});
 	});
@@ -152,9 +151,7 @@ describe("AddRecipient", () => {
 			fireEvent.click(sendAll);
 		});
 
-		await waitFor(() =>
-			expect(form.current.getValues("amount")).toEqual(wallet.balance().denominated().toString()),
-		);
+		await waitFor(() => expect(form.current.getValues("amount")).toEqual(wallet.balance()));
 		expect(container).toMatchSnapshot();
 	});
 
@@ -178,7 +175,7 @@ describe("AddRecipient", () => {
 			fireEvent.click(sendAll);
 		});
 
-		await waitFor(() => expect(form.current.getValues("amount")).toEqual("0"));
+		await waitFor(() => expect(form.current.getValues("amount")).toEqual(0));
 		expect(container).toMatchSnapshot();
 	});
 
@@ -238,11 +235,15 @@ describe("AddRecipient", () => {
 						recipients={[
 							{
 								address: "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
-								amount: BigNumber.ONE,
+								amount: undefined,
+							},
+							{
+								address: "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
+								amount: 1,
 							},
 							{
 								address: "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ay",
-								amount: BigNumber.ONE,
+								amount: 1,
 							},
 						]}
 					/>
@@ -282,7 +283,7 @@ describe("AddRecipient", () => {
 
 		fireEvent.click(screen.getByTestId("AddRecipient__add-button"));
 
-		await waitFor(() => expect(screen.getAllByTestId("recipient-list__recipient-list-item")).toHaveLength(3));
+		await waitFor(() => expect(screen.getAllByTestId("recipient-list__recipient-list-item")).toHaveLength(4));
 	});
 
 	it("should render checkmark for valid recipient address", async () => {
@@ -402,7 +403,7 @@ describe("AddRecipient", () => {
 	});
 
 	it("should show error for zero balance", async () => {
-		const mockWalletBalance = jest.spyOn(wallet, "balance").mockReturnValue(BigNumber.ZERO);
+		const mockWalletBalance = jest.spyOn(wallet, "balance").mockReturnValue(0);
 
 		const { getByTestId, getAllByTestId, form } = await renderWithFormProvider(
 			<AddRecipient profile={profile} assetSymbol="ARK" />,
@@ -496,11 +497,11 @@ describe("AddRecipient", () => {
 						recipients={[
 							{
 								address: "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
-								amount: BigNumber.ONE,
+								amount: 1,
 							},
 							{
 								address: "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ay",
-								amount: BigNumber.ONE,
+								amount: 1,
 							},
 						]}
 					/>
@@ -561,7 +562,7 @@ describe("AddRecipient", () => {
 
 	it("should fill inputs in the single tab if one recipient is added in the multiple tab", async () => {
 		const values = {
-			amount: "0.00000001",
+			amount: 1,
 			recipientAddress: "DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T",
 		};
 
@@ -613,6 +614,6 @@ describe("AddRecipient", () => {
 			fireEvent.click(screen.getByText(transactionTranslations.SINGLE));
 		});
 
-		await waitFor(() => expect(screen.getByTestId("AddRecipient__amount")).toHaveValue(values.amount));
+		await waitFor(() => expect(screen.getByTestId("AddRecipient__amount")).toHaveValue(values.amount.toString()));
 	});
 });

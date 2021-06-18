@@ -569,7 +569,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                   </div>
                                 </span>
                                 <div
-                                  class="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 questionmark"
+                                  class="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200"
                                 >
                                   <div
                                     class="sc-bdfBwQ TENjd"
@@ -870,7 +870,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                               </div>
                             </div>
                             <div
-                              class="w-full inline-flex items-center space-x-2"
+                              class="inline-flex items-center space-x-2 w-full"
                               data-testid="ButtonGroup"
                               role="radiogroup"
                             >
@@ -888,7 +888,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                     Slow
                                   </div>
                                   <div
-                                    class="font-normal text-sm"
+                                    class="text-sm font-normal"
                                   >
                                     0.00357 DARK
                                   </div>
@@ -908,7 +908,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                     Average
                                   </div>
                                   <div
-                                    class="font-normal text-sm"
+                                    class="text-sm font-normal"
                                   >
                                     0.07320598 DARK
                                   </div>
@@ -928,7 +928,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                     Fast
                                   </div>
                                   <div
-                                    class="font-normal text-sm"
+                                    class="text-sm font-normal"
                                   >
                                     0.1 DARK
                                   </div>
@@ -1817,7 +1817,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                                       <span
                                         data-testid="Amount"
                                       >
-                                        - 0.00000001 DARK
+                                        - 1 DARK
                                       </span>
                                     </div>
                                   </div>
@@ -2534,7 +2534,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                   </div>
                 </span>
                 <div
-                  class="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 questionmark"
+                  class="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200"
                 >
                   <div
                     class="sc-bdfBwQ TENjd"
@@ -3431,7 +3431,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                   </div>
                                 </span>
                                 <div
-                                  class="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 questionmark"
+                                  class="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200"
                                 >
                                   <div
                                     class="sc-bdfBwQ TENjd"
@@ -3546,7 +3546,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                                     class="flex items-center space-x-5"
                                                   >
                                                     <div
-                                                      class="flex justify-center items-center w-5 h-5 bg-theme-success-200 text-theme-success-600 dark:bg-theme-success-600 dark:text-white rounded-full"
+                                                      class="flex justify-center items-center w-5 h-5 rounded-full dark:text-white bg-theme-success-200 text-theme-success-600 dark:bg-theme-success-600"
                                                     >
                                                       <div
                                                         class="sc-bdfBwQ TENjd"
@@ -3757,7 +3757,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                               </div>
                             </div>
                             <div
-                              class="w-full inline-flex items-center space-x-2"
+                              class="inline-flex items-center space-x-2 w-full"
                               data-testid="ButtonGroup"
                               role="radiogroup"
                             >
@@ -3775,7 +3775,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                     Slow
                                   </div>
                                   <div
-                                    class="font-normal text-sm"
+                                    class="text-sm font-normal"
                                   >
                                     0.00357 DARK
                                   </div>
@@ -3795,7 +3795,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                     Average
                                   </div>
                                   <div
-                                    class="font-normal text-sm"
+                                    class="text-sm font-normal"
                                   >
                                     0.07320598 DARK
                                   </div>
@@ -3815,7 +3815,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                     Fast
                                   </div>
                                   <div
-                                    class="font-normal text-sm"
+                                    class="text-sm font-normal"
                                   >
                                     0.1 DARK
                                   </div>
@@ -4468,7 +4468,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                   </div>
                                 </span>
                                 <div
-                                  class="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 questionmark"
+                                  class="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200"
                                 >
                                   <div
                                     class="sc-bdfBwQ TENjd"
@@ -4769,7 +4769,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                               </div>
                             </div>
                             <div
-                              class="w-full inline-flex items-center space-x-2"
+                              class="inline-flex items-center space-x-2 w-full"
                               data-testid="ButtonGroup"
                               role="radiogroup"
                             >
@@ -4787,7 +4787,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                     Slow
                                   </div>
                                   <div
-                                    class="font-normal text-sm"
+                                    class="text-sm font-normal"
                                   >
                                     0.00357 DARK
                                   </div>
@@ -4807,7 +4807,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                     Average
                                   </div>
                                   <div
-                                    class="font-normal text-sm"
+                                    class="text-sm font-normal"
                                   >
                                     0.07320598 DARK
                                   </div>
@@ -4827,7 +4827,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                     Fast
                                   </div>
                                   <div
-                                    class="font-normal text-sm"
+                                    class="text-sm font-normal"
                                   >
                                     0.1 DARK
                                   </div>
@@ -5106,7 +5106,7 @@ exports[`SendTransfer should render form step 1`] = `
                   </div>
                 </span>
                 <div
-                  class="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 questionmark"
+                  class="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200"
                 >
                   <div
                     class="sc-bdfBwQ TENjd"
@@ -5629,7 +5629,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                   </div>
                 </span>
                 <div
-                  class="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 questionmark"
+                  class="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200"
                 >
                   <div
                     class="sc-bdfBwQ TENjd"
@@ -6152,7 +6152,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
                   </div>
                 </span>
                 <div
-                  class="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 questionmark"
+                  class="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200"
                 >
                   <div
                     class="sc-bdfBwQ TENjd"
@@ -7330,7 +7330,7 @@ exports[`SendTransfer should render review step 1`] = `
             class="text-2xl font-bold"
             data-testid="total-amount-box__total"
           >
-            2 DARK
+            11 DARK
           </span>
         </div>
       </div>
@@ -7396,14 +7396,16 @@ exports[`SendTransfer should render summary step 1`] = `
                   data-testid="Link"
                   href="#"
                   rel="noopener noreferrer"
-                  to="https://dexplorer.ark.io/transaction/undefined"
+                  to="https://dexplorer.ark.io/transaction/d41e4a07ddc5da1a52df04f2d428a43524bb621da811bead821e111094929e5a"
                 >
                   <span
                     class="break-all border-b border-transparent duration-200 group-hover:border-current"
                   >
                     <span
                       class="inline-flex overflow-hidden"
-                    />
+                    >
+                      d41e4a07ddc5da1a52df04f2d428a43524bb621da811bead821e111094929e5a
+                    </span>
                   </span>
                   <span
                     class="align-middle"
@@ -7556,7 +7558,14 @@ exports[`SendTransfer should render summary step 1`] = `
           >
             <div
               class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
-            />
+            >
+              <span
+                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                data-testid="Address__address"
+              >
+                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+              </span>
+            </div>
           </div>
         </div>
         <div
@@ -7565,7 +7574,13 @@ exports[`SendTransfer should render summary step 1`] = `
         >
           <div
             class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
-          />
+          >
+            <img
+              alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+              title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+            />
+          </div>
         </div>
       </div>
       <div
@@ -7590,7 +7605,7 @@ exports[`SendTransfer should render summary step 1`] = `
               <span
                 data-testid="Amount"
               >
-                - NaN DARK
+                - 1 DARK
               </span>
             </div>
           </div>
@@ -7627,7 +7642,7 @@ exports[`SendTransfer should render summary step 1`] = `
             <span
               data-testid="Amount"
             >
-              NaN DARK
+              1 DARK
             </span>
           </div>
         </div>
@@ -8238,7 +8253,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                   </div>
                                 </span>
                                 <div
-                                  class="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 questionmark"
+                                  class="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200"
                                 >
                                   <div
                                     class="sc-bdfBwQ TENjd"
@@ -8545,7 +8560,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                               </div>
                             </div>
                             <div
-                              class="w-full inline-flex items-center space-x-2"
+                              class="inline-flex items-center space-x-2 w-full"
                               data-testid="ButtonGroup"
                               role="radiogroup"
                             >
@@ -8563,7 +8578,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                     Slow
                                   </div>
                                   <div
-                                    class="font-normal text-sm"
+                                    class="text-sm font-normal"
                                   >
                                     0.00357
                                      
@@ -8585,7 +8600,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                     Average
                                   </div>
                                   <div
-                                    class="font-normal text-sm"
+                                    class="text-sm font-normal"
                                   >
                                     0.07320598
                                      
@@ -8607,7 +8622,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                     Fast
                                   </div>
                                   <div
-                                    class="font-normal text-sm"
+                                    class="text-sm font-normal"
                                   >
                                     0.1
                                      
@@ -11250,7 +11265,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                                       <span
                                         data-testid="Amount"
                                       >
-                                        - 0.00000001 DARK
+                                        - 1 DARK
                                       </span>
                                     </div>
                                   </div>
@@ -11316,7 +11331,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                                       <span
                                         data-testid="Amount"
                                       >
-                                        - 0.00000001 DARK
+                                        - 1 DARK
                                       </span>
                                     </div>
                                   </div>

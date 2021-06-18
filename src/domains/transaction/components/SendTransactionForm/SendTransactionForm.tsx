@@ -48,7 +48,7 @@ export const SendTransactionForm = ({
 			setValue("fees", transactionFees);
 
 			if (!getValues("fee")) {
-				setValue("fee", transactionFees.avg !== "0" ? transactionFees.avg : transactionFees.static, {
+				setValue("fee", transactionFees.avg !== 0 ? transactionFees.avg : transactionFees.static, {
 					shouldValidate: true,
 					shouldDirty: true,
 				});
