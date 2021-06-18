@@ -42,7 +42,6 @@ export const translations: { [key: string]: any } = {
 	SIGN_CONTINUE: "Sign & Continue",
 	SIGNATURES: "Signatures",
 	SINGLE: "Single",
-	SINGLE_OR_MULTI: "Select a Single or Multiple Recipient Transaction",
 	MEMO: "Memo",
 	TIMESTAMP: "Timestamp",
 	TOTAL_AMOUNT: "Total Amount",
@@ -341,7 +340,8 @@ export const translations: { [key: string]: any } = {
 	},
 
 	VALIDATION: {
-		LOW_BALANCE: "The balance is too low ({{balance}} {{ coinId }})",
+		LOW_BALANCE: "The balance is too low",
+		LOW_BALANCE_AMOUNT: "The balance is too low ({{balance}} {{ coinId }})",
 		AMOUNT_BELOW_MINIMUM: "The amount is below the minimum ({{min}} {{ coinId }})",
 		FEE_NEGATIVE: "Fee cannot be negative",
 	},

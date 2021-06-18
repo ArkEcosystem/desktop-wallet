@@ -99,7 +99,7 @@ export const SendTransfer = () => {
 	useEffect(() => {
 		register("remainingBalance");
 		register("network", sendTransfer.network());
-		register("recipients");
+		register("recipients", sendTransfer.recipients());
 		register("senderAddress", sendTransfer.senderAddress());
 		register("fees");
 		register("fee", common.fee(remainingBalance, wallet?.network?.()));
@@ -265,7 +265,6 @@ export const SendTransfer = () => {
 			setTransaction(transaction);
 			setActiveTab(4);
 		} catch (error) {
-			console.log(error);
 			if (isMnemonicError(error)) {
 				setValue("mnemonic", "");
 				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
@@ -367,7 +366,7 @@ export const SendTransfer = () => {
 								/>
 							</TabPanel>
 
-							<div className="flex justify-end mt-10 space-x-3">
+							<div className="flex justify-end mt-8 space-x-3">
 								{activeTab < 4 && (
 									<>
 										{activeTab < 3 && (

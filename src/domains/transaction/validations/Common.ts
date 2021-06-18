@@ -15,14 +15,14 @@ export const common = (t: any) => ({
 				}
 
 				if (balance === 0 || Math.sign(balance) === -1) {
-					return t("TRANSACTION.VALIDATION.LOW_BALANCE", {
-						balance: "0",
+					return t("TRANSACTION.VALIDATION.LOW_BALANCE_AMOUNT", {
+						balance: 0,
 						coinId: network.coin(),
 					});
 				}
 
 				if (fee > balance) {
-					return t("TRANSACTION.VALIDATION.LOW_BALANCE", {
+					return t("TRANSACTION.VALIDATION.LOW_BALANCE_AMOUNT", {
 						balance,
 						coinId: network.coin(),
 					});

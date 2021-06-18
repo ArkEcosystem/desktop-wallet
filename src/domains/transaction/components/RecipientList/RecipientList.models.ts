@@ -2,6 +2,8 @@ export interface RecipientListItem {
 	address: string;
 	displayAmount?: string;
 	amount?: number;
+	exchangeAmount?: number;
+	exchangeTicker?: string;
 	assetSymbol?: string;
 	isEditable?: boolean;
 	label?: string;

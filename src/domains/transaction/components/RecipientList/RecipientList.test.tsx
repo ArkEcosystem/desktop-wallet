@@ -118,4 +118,21 @@ describe("RecipientList", () => {
 
 		expect(onRemove).not.toBeCalled();
 	});
+
+	it("should render exchange amount", async () => {
+		const recipients = [
+			{
+				address: "FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ",
+				walletName: "Recipient 1",
+				amount: 100,
+				exchangeAmount: 1,
+				exchangeTicker: "USD",
+				assetSymbol: "ARK",
+			},
+		];
+
+		render(<RecipientList recipients={recipients} showAmount={true} isEditable={true} assetSymbol="ARK" />);
+
+		expect(screen.getByText("$1.00")).toBeInTheDocument();
+	});
 });

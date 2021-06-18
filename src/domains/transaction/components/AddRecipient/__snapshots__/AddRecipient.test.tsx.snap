@@ -6,69 +6,66 @@ exports[`AddRecipient should render 1`] = `
     class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 cmbDGH"
   >
     <div
-      class="text-theme-secondary-text hover:text-theme-primary-600"
+      class="flex justify-between items-center mb-2 text-theme-secondary-text hover:text-theme-primary-600"
     >
       <div
-        class="flex items-center mb-2 space-x-2"
+        class="text-sm font-semibold transition-colors duration-100"
       >
-        <div
-          class="font-normal transition-colors duration-100 text-md"
-        >
-          Select a Single or Multiple Recipient Transaction
-        </div>
-        <div>
-          <div
-            class="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200"
-          >
-            <div
-              class="sc-bdfBwQ TENjd"
-              height="10"
-              width="10"
-            >
-              <svg>
-                questionmark.svg
-              </svg>
-            </div>
-          </div>
-        </div>
+        Recipient
       </div>
       <div
-        class="flex items-stretch select-buttons"
+        class="flex items-center space-x-2"
       >
-        <div
-          class="flex-1"
-        >
-          <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 gmqqPG w-full"
-            data-testid="AddRecipient__single"
-            type="button"
+        <span>
+          <div
+            class="flex items-center"
           >
-            <div
-              class="flex relative items-center space-x-2"
+            <span
+              class="Switch__SwitchText-sc-1fue7gg-0 jrkMzU"
+              role="button"
             >
               Single
-            </div>
-          </button>
-        </div>
-        <div
-          class="flex-1"
-        >
-          <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 hfmmWr w-full border-l-0"
-            data-testid="AddRecipient__multi"
-            type="button"
-          >
-            <div
-              class="flex relative items-center space-x-2"
+            </span>
+            <label
+              class="flex"
+            >
+              <input
+                class="Toggle__Input-qyyifx-0 WGuGL"
+                type="checkbox"
+              />
+              <div
+                class="Toggle__Handle-qyyifx-1 geejDn"
+              >
+                <span
+                  class="Toggle__HandleInner-qyyifx-2 eSIhju"
+                />
+              </div>
+            </label>
+            <span
+              class="Switch__SwitchText-sc-1fue7gg-0 khGGFd"
+              role="button"
             >
               Multiple
-            </div>
-          </button>
+            </span>
+          </div>
+        </span>
+        <div
+          class="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200"
+        >
+          <div
+            class="sc-bdfBwQ TENjd"
+            height="10"
+            width="10"
+          >
+            <svg>
+              questionmark.svg
+            </svg>
+          </div>
         </div>
       </div>
     </div>
     <div
-      class="SubForm__SubFormWrapper-c4tqfs-0 jJZhtj mt-6"
+      class="SubForm__SubFormWrapper-c4tqfs-0 jJZhtj"
     >
       <div
         class="space-y-5"
@@ -76,13 +73,6 @@ exports[`AddRecipient should render 1`] = `
         <fieldset
           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
         >
-          <label
-            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-            data-testid="FormLabel"
-            for="recipientAddress"
-          >
-            Recipient
-          </label>
           <div>
             <div
               class="flex relative items-center w-full text-left"
@@ -163,17 +153,21 @@ exports[`AddRecipient should render 1`] = `
                           class=""
                         >
                           <div
-                            class="flex items-center cursor-pointer"
-                            data-testid="SelectRecipient__select-recipient"
+                            class="flex items-center space-x-5"
                           >
                             <div
-                              class="sc-bdfBwQ iyevwF"
-                              height="20"
-                              width="20"
+                              class="flex items-center cursor-pointer"
+                              data-testid="SelectRecipient__select-recipient"
                             >
-                              <svg>
-                                user.svg
-                              </svg>
+                              <div
+                                class="sc-bdfBwQ iyevwF"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  user.svg
+                                </svg>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -199,7 +193,14 @@ exports[`AddRecipient should render 1`] = `
             data-testid="FormLabel"
             for="amount"
           >
-            Amount
+            <span>
+              Amount
+            </span>
+            <span
+              class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+            >
+              (Available 33.75089801)
+            </span>
           </label>
           <div
             class="flex space-x-2"
@@ -226,25 +227,10 @@ exports[`AddRecipient should render 1`] = `
                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                       data-testid="AddRecipient__amount"
                       name="amount"
-                      placeholder="Amount"
+                      placeholder="Enter an amount"
                       type="text"
                       value=""
                     />
-                  </div>
-                  <div
-                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
-                  >
-                    <div
-                      class=""
-                    >
-                      <span
-                        class="text-sm font-semibold whitespace-no-break text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        Max
-                         
-                        33.75089801
-                      </span>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -268,75 +254,72 @@ exports[`AddRecipient should render 1`] = `
 </div>
 `;
 
-exports[`AddRecipient should render with multiple recipients tab 1`] = `
+exports[`AddRecipient should render with multiple recipients switch 1`] = `
 <div>
   <div
     class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 cmbDGH"
   >
     <div
-      class="text-theme-secondary-text hover:text-theme-primary-600"
+      class="flex justify-between items-center mb-2 text-theme-secondary-text hover:text-theme-primary-600"
     >
       <div
-        class="flex items-center mb-2 space-x-2"
+        class="text-sm font-semibold transition-colors duration-100"
       >
-        <div
-          class="font-normal transition-colors duration-100 text-md"
-        >
-          Select a Single or Multiple Recipient Transaction
-        </div>
-        <div>
-          <div
-            class="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200"
-          >
-            <div
-              class="sc-bdfBwQ TENjd"
-              height="10"
-              width="10"
-            >
-              <svg>
-                questionmark.svg
-              </svg>
-            </div>
-          </div>
-        </div>
+        Recipient
       </div>
       <div
-        class="flex items-stretch select-buttons"
+        class="flex items-center space-x-2"
       >
-        <div
-          class="flex-1"
-        >
-          <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 gmqqPG w-full"
-            data-testid="AddRecipient__single"
-            type="button"
+        <span>
+          <div
+            class="flex items-center"
           >
-            <div
-              class="flex relative items-center space-x-2"
+            <span
+              class="Switch__SwitchText-sc-1fue7gg-0 jrkMzU"
+              role="button"
             >
               Single
-            </div>
-          </button>
-        </div>
-        <div
-          class="flex-1"
-        >
-          <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 hfmmWr w-full border-l-0"
-            data-testid="AddRecipient__multi"
-            type="button"
-          >
-            <div
-              class="flex relative items-center space-x-2"
+            </span>
+            <label
+              class="flex"
+            >
+              <input
+                class="Toggle__Input-qyyifx-0 WGuGL"
+                type="checkbox"
+              />
+              <div
+                class="Toggle__Handle-qyyifx-1 geejDn"
+              >
+                <span
+                  class="Toggle__HandleInner-qyyifx-2 eSIhju"
+                />
+              </div>
+            </label>
+            <span
+              class="Switch__SwitchText-sc-1fue7gg-0 khGGFd"
+              role="button"
             >
               Multiple
-            </div>
-          </button>
+            </span>
+          </div>
+        </span>
+        <div
+          class="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200"
+        >
+          <div
+            class="sc-bdfBwQ TENjd"
+            height="10"
+            width="10"
+          >
+            <svg>
+              questionmark.svg
+            </svg>
+          </div>
         </div>
       </div>
     </div>
     <div
-      class="SubForm__SubFormWrapper-c4tqfs-0 jJZhtj mt-6"
+      class="SubForm__SubFormWrapper-c4tqfs-0 jJZhtj"
     >
       <div
         class="space-y-5"
@@ -344,13 +327,6 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
         <fieldset
           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
         >
-          <label
-            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-            data-testid="FormLabel"
-            for="recipientAddress"
-          >
-            Recipient
-          </label>
           <div>
             <div
               class="flex relative items-center w-full text-left"
@@ -431,17 +407,21 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
                           class=""
                         >
                           <div
-                            class="flex items-center cursor-pointer"
-                            data-testid="SelectRecipient__select-recipient"
+                            class="flex items-center space-x-5"
                           >
                             <div
-                              class="sc-bdfBwQ iyevwF"
-                              height="20"
-                              width="20"
+                              class="flex items-center cursor-pointer"
+                              data-testid="SelectRecipient__select-recipient"
                             >
-                              <svg>
-                                user.svg
-                              </svg>
+                              <div
+                                class="sc-bdfBwQ iyevwF"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  user.svg
+                                </svg>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -467,7 +447,14 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
             data-testid="FormLabel"
             for="amount"
           >
-            Amount
+            <span>
+              Amount
+            </span>
+            <span
+              class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+            >
+              (Available 33.75089801)
+            </span>
           </label>
           <div
             class="flex space-x-2"
@@ -494,25 +481,10 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                       data-testid="AddRecipient__amount"
                       name="amount"
-                      placeholder="Amount"
+                      placeholder="Enter an amount"
                       type="text"
                       value=""
                     />
-                  </div>
-                  <div
-                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
-                  >
-                    <div
-                      class=""
-                    >
-                      <span
-                        class="text-sm font-semibold whitespace-no-break text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        Max
-                         
-                        33.75089801
-                      </span>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -542,69 +514,66 @@ exports[`AddRecipient should render with single recipient data 1`] = `
     class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 cmbDGH"
   >
     <div
-      class="text-theme-secondary-text hover:text-theme-primary-600"
+      class="flex justify-between items-center mb-2 text-theme-secondary-text hover:text-theme-primary-600"
     >
       <div
-        class="flex items-center mb-2 space-x-2"
+        class="text-sm font-semibold transition-colors duration-100"
       >
-        <div
-          class="font-normal transition-colors duration-100 text-md"
-        >
-          Select a Single or Multiple Recipient Transaction
-        </div>
-        <div>
-          <div
-            class="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200"
-          >
-            <div
-              class="sc-bdfBwQ TENjd"
-              height="10"
-              width="10"
-            >
-              <svg>
-                questionmark.svg
-              </svg>
-            </div>
-          </div>
-        </div>
+        Recipient
       </div>
       <div
-        class="flex items-stretch select-buttons"
+        class="flex items-center space-x-2"
       >
-        <div
-          class="flex-1"
-        >
-          <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 gmqqPG w-full"
-            data-testid="AddRecipient__single"
-            type="button"
+        <span>
+          <div
+            class="flex items-center"
           >
-            <div
-              class="flex relative items-center space-x-2"
+            <span
+              class="Switch__SwitchText-sc-1fue7gg-0 jrkMzU"
+              role="button"
             >
               Single
-            </div>
-          </button>
-        </div>
-        <div
-          class="flex-1"
-        >
-          <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 hfmmWr w-full border-l-0"
-            data-testid="AddRecipient__multi"
-            type="button"
-          >
-            <div
-              class="flex relative items-center space-x-2"
+            </span>
+            <label
+              class="flex"
+            >
+              <input
+                class="Toggle__Input-qyyifx-0 WGuGL"
+                type="checkbox"
+              />
+              <div
+                class="Toggle__Handle-qyyifx-1 geejDn"
+              >
+                <span
+                  class="Toggle__HandleInner-qyyifx-2 eSIhju"
+                />
+              </div>
+            </label>
+            <span
+              class="Switch__SwitchText-sc-1fue7gg-0 khGGFd"
+              role="button"
             >
               Multiple
-            </div>
-          </button>
+            </span>
+          </div>
+        </span>
+        <div
+          class="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200"
+        >
+          <div
+            class="sc-bdfBwQ TENjd"
+            height="10"
+            width="10"
+          >
+            <svg>
+              questionmark.svg
+            </svg>
+          </div>
         </div>
       </div>
     </div>
     <div
-      class="SubForm__SubFormWrapper-c4tqfs-0 jJZhtj mt-6"
+      class="SubForm__SubFormWrapper-c4tqfs-0 jJZhtj"
     >
       <div
         class="space-y-5"
@@ -612,13 +581,6 @@ exports[`AddRecipient should render with single recipient data 1`] = `
         <fieldset
           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
         >
-          <label
-            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-            data-testid="FormLabel"
-            for="recipientAddress"
-          >
-            Recipient
-          </label>
           <div>
             <div
               class="flex relative items-center w-full text-left"
@@ -710,17 +672,35 @@ exports[`AddRecipient should render with single recipient data 1`] = `
                           class=""
                         >
                           <div
-                            class="flex items-center cursor-pointer"
-                            data-testid="SelectRecipient__select-recipient"
+                            class="flex items-center space-x-5"
                           >
                             <div
-                              class="sc-bdfBwQ iyevwF"
-                              height="20"
-                              width="20"
+                              class="flex justify-center items-center w-5 h-5 rounded-full dark:text-white bg-theme-success-200 text-theme-success-600 dark:bg-theme-success-600"
                             >
-                              <svg>
-                                user.svg
-                              </svg>
+                              <div
+                                class="sc-bdfBwQ TENjd"
+                                data-testid="AddRecipient__recipient-address-checkmark"
+                                height="10"
+                                width="10"
+                              >
+                                <svg>
+                                  checkmark-big.svg
+                                </svg>
+                              </div>
+                            </div>
+                            <div
+                              class="flex items-center cursor-pointer"
+                              data-testid="SelectRecipient__select-recipient"
+                            >
+                              <div
+                                class="sc-bdfBwQ iyevwF"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  user.svg
+                                </svg>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -746,7 +726,14 @@ exports[`AddRecipient should render with single recipient data 1`] = `
             data-testid="FormLabel"
             for="amount"
           >
-            Amount
+            <span>
+              Amount
+            </span>
+            <span
+              class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+            >
+              (Available 33.75089801)
+            </span>
           </label>
           <div
             class="flex space-x-2"
@@ -773,25 +760,10 @@ exports[`AddRecipient should render with single recipient data 1`] = `
                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                       data-testid="AddRecipient__amount"
                       name="amount"
-                      placeholder="Amount"
+                      placeholder="Enter an amount"
                       type="text"
                       value="1"
                     />
-                  </div>
-                  <div
-                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
-                  >
-                    <div
-                      class=""
-                    >
-                      <span
-                        class="text-sm font-semibold whitespace-no-break text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        Max
-                         
-                        33.75089801
-                      </span>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -821,69 +793,66 @@ exports[`AddRecipient should render without recipients 1`] = `
     class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 cmbDGH"
   >
     <div
-      class="text-theme-secondary-text hover:text-theme-primary-600"
+      class="flex justify-between items-center mb-2 text-theme-secondary-text hover:text-theme-primary-600"
     >
       <div
-        class="flex items-center mb-2 space-x-2"
+        class="text-sm font-semibold transition-colors duration-100"
       >
-        <div
-          class="font-normal transition-colors duration-100 text-md"
-        >
-          Select a Single or Multiple Recipient Transaction
-        </div>
-        <div>
-          <div
-            class="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200"
-          >
-            <div
-              class="sc-bdfBwQ TENjd"
-              height="10"
-              width="10"
-            >
-              <svg>
-                questionmark.svg
-              </svg>
-            </div>
-          </div>
-        </div>
+        Recipient
       </div>
       <div
-        class="flex items-stretch select-buttons"
+        class="flex items-center space-x-2"
       >
-        <div
-          class="flex-1"
-        >
-          <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 gmqqPG w-full"
-            data-testid="AddRecipient__single"
-            type="button"
+        <span>
+          <div
+            class="flex items-center"
           >
-            <div
-              class="flex relative items-center space-x-2"
+            <span
+              class="Switch__SwitchText-sc-1fue7gg-0 jrkMzU"
+              role="button"
             >
               Single
-            </div>
-          </button>
-        </div>
-        <div
-          class="flex-1"
-        >
-          <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 hfmmWr w-full border-l-0"
-            data-testid="AddRecipient__multi"
-            type="button"
-          >
-            <div
-              class="flex relative items-center space-x-2"
+            </span>
+            <label
+              class="flex"
+            >
+              <input
+                class="Toggle__Input-qyyifx-0 WGuGL"
+                type="checkbox"
+              />
+              <div
+                class="Toggle__Handle-qyyifx-1 geejDn"
+              >
+                <span
+                  class="Toggle__HandleInner-qyyifx-2 eSIhju"
+                />
+              </div>
+            </label>
+            <span
+              class="Switch__SwitchText-sc-1fue7gg-0 khGGFd"
+              role="button"
             >
               Multiple
-            </div>
-          </button>
+            </span>
+          </div>
+        </span>
+        <div
+          class="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200"
+        >
+          <div
+            class="sc-bdfBwQ TENjd"
+            height="10"
+            width="10"
+          >
+            <svg>
+              questionmark.svg
+            </svg>
+          </div>
         </div>
       </div>
     </div>
     <div
-      class="SubForm__SubFormWrapper-c4tqfs-0 jJZhtj mt-6"
+      class="SubForm__SubFormWrapper-c4tqfs-0 jJZhtj"
     >
       <div
         class="space-y-5"
@@ -891,13 +860,6 @@ exports[`AddRecipient should render without recipients 1`] = `
         <fieldset
           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
         >
-          <label
-            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-            data-testid="FormLabel"
-            for="recipientAddress"
-          >
-            Recipient
-          </label>
           <div>
             <div
               class="flex relative items-center w-full text-left"
@@ -978,17 +940,21 @@ exports[`AddRecipient should render without recipients 1`] = `
                           class=""
                         >
                           <div
-                            class="flex items-center cursor-pointer"
-                            data-testid="SelectRecipient__select-recipient"
+                            class="flex items-center space-x-5"
                           >
                             <div
-                              class="sc-bdfBwQ iyevwF"
-                              height="20"
-                              width="20"
+                              class="flex items-center cursor-pointer"
+                              data-testid="SelectRecipient__select-recipient"
                             >
-                              <svg>
-                                user.svg
-                              </svg>
+                              <div
+                                class="sc-bdfBwQ iyevwF"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  user.svg
+                                </svg>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -1014,7 +980,14 @@ exports[`AddRecipient should render without recipients 1`] = `
             data-testid="FormLabel"
             for="amount"
           >
-            Amount
+            <span>
+              Amount
+            </span>
+            <span
+              class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+            >
+              (Available 33.75089801)
+            </span>
           </label>
           <div
             class="flex space-x-2"
@@ -1041,25 +1014,10 @@ exports[`AddRecipient should render without recipients 1`] = `
                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                       data-testid="AddRecipient__amount"
                       name="amount"
-                      placeholder="Amount"
+                      placeholder="Enter an amount"
                       type="text"
                       value=""
                     />
-                  </div>
-                  <div
-                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
-                  >
-                    <div
-                      class=""
-                    >
-                      <span
-                        class="text-sm font-semibold whitespace-no-break text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        Max
-                         
-                        33.75089801
-                      </span>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -1083,11 +1041,20 @@ exports[`AddRecipient should render without recipients 1`] = `
 </div>
 `;
 
-exports[`AddRecipient should render without the single & multiple tabs 1`] = `
+exports[`AddRecipient should render without the single & multiple switch 1`] = `
 <div>
   <div
     class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 cmbDGH"
   >
+    <div
+      class="flex justify-between items-center mb-2 text-theme-secondary-text hover:text-theme-primary-600"
+    >
+      <div
+        class="text-sm font-semibold transition-colors duration-100"
+      >
+        Recipient
+      </div>
+    </div>
     <div
       class="SubForm__SubFormWrapper-c4tqfs-0 jJZhtj"
     >
@@ -1097,13 +1064,6 @@ exports[`AddRecipient should render without the single & multiple tabs 1`] = `
         <fieldset
           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
         >
-          <label
-            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-            data-testid="FormLabel"
-            for="recipientAddress"
-          >
-            Recipient
-          </label>
           <div>
             <div
               class="flex relative items-center w-full text-left"
@@ -1184,17 +1144,21 @@ exports[`AddRecipient should render without the single & multiple tabs 1`] = `
                           class=""
                         >
                           <div
-                            class="flex items-center cursor-pointer"
-                            data-testid="SelectRecipient__select-recipient"
+                            class="flex items-center space-x-5"
                           >
                             <div
-                              class="sc-bdfBwQ iyevwF"
-                              height="20"
-                              width="20"
+                              class="flex items-center cursor-pointer"
+                              data-testid="SelectRecipient__select-recipient"
                             >
-                              <svg>
-                                user.svg
-                              </svg>
+                              <div
+                                class="sc-bdfBwQ iyevwF"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  user.svg
+                                </svg>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -1220,7 +1184,14 @@ exports[`AddRecipient should render without the single & multiple tabs 1`] = `
             data-testid="FormLabel"
             for="amount"
           >
-            Amount
+            <span>
+              Amount
+            </span>
+            <span
+              class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+            >
+              (Available 33.75089801)
+            </span>
           </label>
           <div
             class="flex space-x-2"
@@ -1247,25 +1218,10 @@ exports[`AddRecipient should render without the single & multiple tabs 1`] = `
                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                       data-testid="AddRecipient__amount"
                       name="amount"
-                      placeholder="Amount"
+                      placeholder="Enter an amount"
                       type="text"
                       value=""
                     />
-                  </div>
-                  <div
-                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
-                  >
-                    <div
-                      class=""
-                    >
-                      <span
-                        class="text-sm font-semibold whitespace-no-break text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        Max
-                         
-                        33.75089801
-                      </span>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -1295,83 +1251,73 @@ exports[`AddRecipient should set available amount 1`] = `
     class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 cmbDGH"
   >
     <div
-      class="text-theme-secondary-text hover:text-theme-primary-600"
+      class="flex justify-between items-center mb-2 text-theme-secondary-text hover:text-theme-primary-600"
     >
       <div
-        class="flex items-center mb-2 space-x-2"
+        class="text-sm font-semibold transition-colors duration-100"
       >
-        <div
-          class="font-normal transition-colors duration-100 text-md"
-        >
-          Select a Single or Multiple Recipient Transaction
-        </div>
-        <div>
-          <div
-            class="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200"
-          >
-            <div
-              class="sc-bdfBwQ TENjd"
-              height="10"
-              width="10"
-            >
-              <svg>
-                questionmark.svg
-              </svg>
-            </div>
-          </div>
-        </div>
+        Recipient
       </div>
       <div
-        class="flex items-stretch select-buttons"
+        class="flex items-center space-x-2"
       >
-        <div
-          class="flex-1"
-        >
-          <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 gmqqPG w-full"
-            data-testid="AddRecipient__single"
-            type="button"
+        <span>
+          <div
+            class="flex items-center"
           >
-            <div
-              class="flex relative items-center space-x-2"
+            <span
+              class="Switch__SwitchText-sc-1fue7gg-0 jrkMzU"
+              role="button"
             >
               Single
-            </div>
-          </button>
-        </div>
-        <div
-          class="flex-1"
-        >
-          <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 hfmmWr w-full border-l-0"
-            data-testid="AddRecipient__multi"
-            type="button"
-          >
-            <div
-              class="flex relative items-center space-x-2"
+            </span>
+            <label
+              class="flex"
+            >
+              <input
+                class="Toggle__Input-qyyifx-0 WGuGL"
+                type="checkbox"
+              />
+              <div
+                class="Toggle__Handle-qyyifx-1 geejDn"
+              >
+                <span
+                  class="Toggle__HandleInner-qyyifx-2 eSIhju"
+                />
+              </div>
+            </label>
+            <span
+              class="Switch__SwitchText-sc-1fue7gg-0 khGGFd"
+              role="button"
             >
               Multiple
-            </div>
-          </button>
+            </span>
+          </div>
+        </span>
+        <div
+          class="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200"
+        >
+          <div
+            class="sc-bdfBwQ TENjd"
+            height="10"
+            width="10"
+          >
+            <svg>
+              questionmark.svg
+            </svg>
+          </div>
         </div>
       </div>
     </div>
     <div
-      class="SubForm__SubFormWrapper-c4tqfs-0 jJZhtj mt-6"
+      class="SubForm__SubFormWrapper-c4tqfs-0 jJZhtj"
     >
       <div
         class="space-y-5"
       >
         <fieldset
-          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+          class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
         >
-          <label
-            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-            data-testid="FormLabel"
-            for="recipientAddress"
-          >
-            Recipient
-          </label>
           <div>
             <div
               class="flex relative items-center w-full text-left"
@@ -1387,14 +1333,14 @@ exports[`AddRecipient should set available amount 1`] = `
                   …
                 </div>
                 <div
-                  class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
+                  class="sr-only Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                 >
                   <div
-                    class="relative flex flex-1 h-full"
+                    class="flex relative flex-1 h-full"
                   >
                     <input
                       aria-invalid="false"
-                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                       data-testid="select-list__input"
                       name="recipientAddress"
                       readonly=""
@@ -1426,10 +1372,10 @@ exports[`AddRecipient should set available amount 1`] = `
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                     >
                       <div
-                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 border-theme-secondary-200 dark:bg-theme-secondary-700 dark:border-theme-secondary-700 ring-theme-background"
+                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 border-theme-secondary-200 ring-theme-background dark:bg-theme-secondary-700 dark:border-theme-secondary-700"
                       />
                       <div
-                        class="relative flex flex-1 h-full"
+                        class="flex relative flex-1 h-full"
                       >
                         <input
                           aria-autocomplete="list"
@@ -1437,7 +1383,7 @@ exports[`AddRecipient should set available amount 1`] = `
                           aria-invalid="false"
                           aria-labelledby="downshift-23-label"
                           autocomplete="off"
-                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
+                          class="p-0 w-full bg-transparent border-none cursor-default focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                           data-testid="SelectDropdown__input"
                           id="downshift-23-input"
                           name="recipientAddress"
@@ -1446,23 +1392,27 @@ exports[`AddRecipient should set available amount 1`] = `
                         />
                       </div>
                       <div
-                        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-primary-300 dark:divide-theme-secondary-800 dark:text-theme-secondary-600"
                       >
                         <div
                           class=""
                         >
                           <div
-                            class="flex items-center cursor-pointer"
-                            data-testid="SelectRecipient__select-recipient"
+                            class="flex items-center space-x-5"
                           >
                             <div
-                              class="sc-bdfBwQ iyevwF"
-                              height="20"
-                              width="20"
+                              class="flex items-center cursor-pointer"
+                              data-testid="SelectRecipient__select-recipient"
                             >
-                              <svg>
-                                user.svg
-                              </svg>
+                              <div
+                                class="sc-bdfBwQ iyevwF"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  user.svg
+                                </svg>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -1481,14 +1431,21 @@ exports[`AddRecipient should set available amount 1`] = `
           </div>
         </fieldset>
         <fieldset
-          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+          class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
         >
           <label
             class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
             data-testid="FormLabel"
             for="amount"
           >
-            Amount
+            <span>
+              Amount
+            </span>
+            <span
+              class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+            >
+              (Available 33.75089801)
+            </span>
           </label>
           <div
             class="flex space-x-2"
@@ -1509,31 +1466,16 @@ exports[`AddRecipient should set available amount 1`] = `
                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                 >
                   <div
-                    class="relative flex flex-1 h-full"
+                    class="flex relative flex-1 h-full"
                   >
                     <input
-                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                       data-testid="AddRecipient__amount"
                       name="amount"
-                      placeholder="Amount"
+                      placeholder="Enter an amount"
                       type="text"
                       value=""
                     />
-                  </div>
-                  <div
-                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
-                  >
-                    <div
-                      class=""
-                    >
-                      <span
-                        class="text-sm font-semibold whitespace-no-break text-theme-secondary-500 dark:text-theme-secondary-700"
-                      >
-                        Max
-                         
-                        33.75089801
-                      </span>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -1563,83 +1505,73 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
     class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 cmbDGH"
   >
     <div
-      class="text-theme-secondary-text hover:text-theme-primary-600"
+      class="flex justify-between items-center mb-2 text-theme-secondary-text hover:text-theme-primary-600"
     >
       <div
-        class="flex items-center mb-2 space-x-2"
+        class="text-sm font-semibold transition-colors duration-100"
       >
-        <div
-          class="font-normal transition-colors duration-100 text-md"
-        >
-          Select a Single or Multiple Recipient Transaction
-        </div>
-        <div>
-          <div
-            class="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200"
-          >
-            <div
-              class="sc-bdfBwQ TENjd"
-              height="10"
-              width="10"
-            >
-              <svg>
-                questionmark.svg
-              </svg>
-            </div>
-          </div>
-        </div>
+        Recipient
       </div>
       <div
-        class="flex items-stretch select-buttons"
+        class="flex items-center space-x-2"
       >
-        <div
-          class="flex-1"
-        >
-          <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 gmqqPG w-full"
-            data-testid="AddRecipient__single"
-            type="button"
+        <span>
+          <div
+            class="flex items-center"
           >
-            <div
-              class="flex relative items-center space-x-2"
+            <span
+              class="Switch__SwitchText-sc-1fue7gg-0 jrkMzU"
+              role="button"
             >
               Single
-            </div>
-          </button>
-        </div>
-        <div
-          class="flex-1"
-        >
-          <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 hfmmWr w-full border-l-0"
-            data-testid="AddRecipient__multi"
-            type="button"
-          >
-            <div
-              class="flex relative items-center space-x-2"
+            </span>
+            <label
+              class="flex"
+            >
+              <input
+                class="Toggle__Input-qyyifx-0 WGuGL"
+                type="checkbox"
+              />
+              <div
+                class="Toggle__Handle-qyyifx-1 geejDn"
+              >
+                <span
+                  class="Toggle__HandleInner-qyyifx-2 eSIhju"
+                />
+              </div>
+            </label>
+            <span
+              class="Switch__SwitchText-sc-1fue7gg-0 khGGFd"
+              role="button"
             >
               Multiple
-            </div>
-          </button>
+            </span>
+          </div>
+        </span>
+        <div
+          class="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200"
+        >
+          <div
+            class="sc-bdfBwQ TENjd"
+            height="10"
+            width="10"
+          >
+            <svg>
+              questionmark.svg
+            </svg>
+          </div>
         </div>
       </div>
     </div>
     <div
-      class="SubForm__SubFormWrapper-c4tqfs-0 jJZhtj mt-6"
+      class="SubForm__SubFormWrapper-c4tqfs-0 jJZhtj"
     >
       <div
         class="space-y-5"
       >
         <fieldset
-          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+          class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
         >
-          <label
-            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-            data-testid="FormLabel"
-            for="recipientAddress"
-          >
-            Recipient
-          </label>
           <div>
             <div
               class="flex relative items-center w-full text-left"
@@ -1655,14 +1587,14 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
                   …
                 </div>
                 <div
-                  class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
+                  class="sr-only Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                 >
                   <div
-                    class="relative flex flex-1 h-full"
+                    class="flex relative flex-1 h-full"
                   >
                     <input
                       aria-invalid="false"
-                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                       data-testid="select-list__input"
                       name="recipientAddress"
                       readonly=""
@@ -1694,10 +1626,10 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                     >
                       <div
-                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 border-theme-secondary-200 dark:bg-theme-secondary-700 dark:border-theme-secondary-700 ring-theme-background"
+                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 border-theme-secondary-200 ring-theme-background dark:bg-theme-secondary-700 dark:border-theme-secondary-700"
                       />
                       <div
-                        class="relative flex flex-1 h-full"
+                        class="flex relative flex-1 h-full"
                       >
                         <input
                           aria-autocomplete="list"
@@ -1705,7 +1637,7 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
                           aria-invalid="false"
                           aria-labelledby="downshift-25-label"
                           autocomplete="off"
-                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
+                          class="p-0 w-full bg-transparent border-none cursor-default focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                           data-testid="SelectDropdown__input"
                           id="downshift-25-input"
                           name="recipientAddress"
@@ -1714,23 +1646,27 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
                         />
                       </div>
                       <div
-                        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                        class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-primary-300 dark:divide-theme-secondary-800 dark:text-theme-secondary-600"
                       >
                         <div
                           class=""
                         >
                           <div
-                            class="flex items-center cursor-pointer"
-                            data-testid="SelectRecipient__select-recipient"
+                            class="flex items-center space-x-5"
                           >
                             <div
-                              class="sc-bdfBwQ iyevwF"
-                              height="20"
-                              width="20"
+                              class="flex items-center cursor-pointer"
+                              data-testid="SelectRecipient__select-recipient"
                             >
-                              <svg>
-                                user.svg
-                              </svg>
+                              <div
+                                class="sc-bdfBwQ iyevwF"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  user.svg
+                                </svg>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -1749,14 +1685,21 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
           </div>
         </fieldset>
         <fieldset
-          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+          class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 cnlnjc"
         >
           <label
             class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
             data-testid="FormLabel"
             for="amount"
           >
-            Amount
+            <span>
+              Amount
+            </span>
+            <span
+              class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+            >
+              (Available undefined)
+            </span>
           </label>
           <div
             class="flex space-x-2"
@@ -1777,28 +1720,28 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                 >
                   <div
-                    class="relative flex flex-1 h-full"
+                    class="flex relative flex-1 h-full"
                   >
                     <input
-                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                       data-testid="AddRecipient__amount"
                       name="amount"
-                      placeholder="Amount"
+                      placeholder="Enter an amount"
                       type="text"
                       value=""
                     />
                   </div>
                   <div
-                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-primary-300 dark:divide-theme-secondary-800 dark:text-theme-secondary-600"
                   >
                     <div
                       class=""
                     >
                       <span
                         class="text-sm font-semibold whitespace-no-break text-theme-secondary-500 dark:text-theme-secondary-700"
+                        data-testid="AddRecipient__currency-balance"
                       >
-                        Max
-                         
+                        0 BTC
                       </span>
                     </div>
                   </div>
