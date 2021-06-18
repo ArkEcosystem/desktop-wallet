@@ -1,5 +1,4 @@
 import { DateTime } from "@arkecosystem/platform-sdk-intl";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { useEnvironmentContext } from "app/contexts";
 import { useCallback } from "react";
 
@@ -9,19 +8,19 @@ interface Parameters_ {
 }
 
 interface UseExchangeRate {
-	convert: (value: string) => BigNumber;
+	convert: (value: number) => number;
 }
 
 export const useExchangeRate = ({ ticker, exchangeTicker }: Parameters_): UseExchangeRate => {
 	const { env } = useEnvironmentContext();
 
 	const convert = useCallback(
-		(value: string) => {
+		(value: number) => {
 			if (!ticker || !exchangeTicker) {
-				return BigNumber.ZERO;
+				return 0;
 			}
 
-			return env.exchangeRates().exchange(ticker, exchangeTicker, DateTime.make(), BigNumber.make(value));
+			return env.exchangeRates().exchange(ticker, exchangeTicker, DateTime.make(), value);
 		},
 		[env, exchangeTicker, ticker],
 	);

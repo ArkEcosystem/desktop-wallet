@@ -1,5 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
-import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
@@ -11,8 +10,8 @@ export const SummaryStep = ({
 	transaction,
 	senderWallet,
 }: {
-	transaction: Contracts.SignedTransactionData;
-	senderWallet: ProfileContracts.IReadWriteWallet;
+	transaction: DTO.ExtendedSignedTransactionData;
+	senderWallet: Contracts.IReadWriteWallet;
 }) => {
 	const { t } = useTranslation();
 
@@ -27,7 +26,8 @@ export const SummaryStep = ({
 				}
 				paddingPosition="top"
 			>
-				{transaction.data().asset?.ipfs}
+				{/* @TODO: this differs per coin, can't be accessed like this */}
+				{transaction.data().data().asset?.ipfs}
 			</TransactionDetail>
 		</TransactionSuccessful>
 	);

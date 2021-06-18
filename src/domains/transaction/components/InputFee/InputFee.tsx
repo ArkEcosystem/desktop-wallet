@@ -33,7 +33,7 @@ export const InputFee = memo(
 
 		const viewType = properties.viewType ?? DEFAULT_VIEW_TYPE;
 		const simpleValue = properties.simpleValue ?? DEFAULT_SIMPLE_VALUE;
-		const [advancedValue, setAdvancedValue] = useState<string>(value);
+		const [advancedValue, setAdvancedValue] = useState<number>(value);
 
 		useEffect(() => {
 			const setDefaultAdvancedValue = () => {
@@ -87,13 +87,12 @@ export const InputFee = memo(
 			onChange(feeValue);
 		};
 
-		const onChangeAdvancedValue = (value_: string) => {
+		const onChangeAdvancedValue = (value_: number) => {
 			setAdvancedValue(value_);
 			onChange(value_);
 		};
 
 		if (disabled) {
-			// @TODO update when implementing InputFeeAdvanced
 			return (
 				<InputFeeAdvanced
 					disabled

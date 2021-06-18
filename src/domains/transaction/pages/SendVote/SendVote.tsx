@@ -1,5 +1,5 @@
-import { Contracts, Services } from "@arkecosystem/platform-sdk";
-import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
+import { Services } from "@arkecosystem/platform-sdk";
+import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
@@ -34,9 +34,9 @@ export const SendVote = () => {
 	const voteAddresses = queryParameters.get("votes")?.split(",");
 
 	const [activeTab, setActiveTab] = useState(1);
-	const [unvotes, setUnvotes] = useState<ProfileContracts.IReadOnlyWallet[]>([]);
-	const [votes, setVotes] = useState<ProfileContracts.IReadOnlyWallet[]>([]);
-	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
+	const [unvotes, setUnvotes] = useState<Contracts.IReadOnlyWallet[]>([]);
+	const [votes, setVotes] = useState<Contracts.IReadOnlyWallet[]>([]);
+	const [transaction, setTransaction] = useState((null as unknown) as DTO.ExtendedSignedTransactionData);
 
 	const form = useForm({ mode: "onChange" });
 
@@ -212,7 +212,7 @@ export const SendVote = () => {
 						{
 							...voteTransactionInput,
 							data: {
-								unvotes: unvotes.map((wallet: ProfileContracts.IReadOnlyWallet) => wallet.publicKey()),
+								unvotes: unvotes.map((wallet: Contracts.IReadOnlyWallet) => wallet.publicKey()),
 							},
 						},
 						senderWallet,
@@ -232,7 +232,7 @@ export const SendVote = () => {
 						{
 							...voteTransactionInput,
 							data: {
-								votes: votes.map((wallet: ProfileContracts.IReadOnlyWallet) => wallet.publicKey()),
+								votes: votes.map((wallet: Contracts.IReadOnlyWallet) => wallet.publicKey()),
 							},
 						},
 						senderWallet,
@@ -258,8 +258,8 @@ export const SendVote = () => {
 						{
 							...voteTransactionInput,
 							data: {
-								votes: votes.map((wallet: ProfileContracts.IReadOnlyWallet) => wallet.publicKey()),
-								unvotes: unvotes.map((wallet: ProfileContracts.IReadOnlyWallet) => wallet.publicKey()),
+								votes: votes.map((wallet: Contracts.IReadOnlyWallet) => wallet.publicKey()),
+								unvotes: unvotes.map((wallet: Contracts.IReadOnlyWallet) => wallet.publicKey()),
 							},
 						},
 						senderWallet!,
@@ -286,12 +286,10 @@ export const SendVote = () => {
 						...voteTransactionInput,
 						data: isUnvote
 							? {
-									unvotes: unvotes.map((wallet: ProfileContracts.IReadOnlyWallet) =>
-										wallet.publicKey(),
-									),
+									unvotes: unvotes.map((wallet: Contracts.IReadOnlyWallet) => wallet.publicKey()),
 							  }
 							: {
-									votes: votes.map((wallet: ProfileContracts.IReadOnlyWallet) => wallet.publicKey()),
+									votes: votes.map((wallet: Contracts.IReadOnlyWallet) => wallet.publicKey()),
 							  },
 					},
 					senderWallet!,

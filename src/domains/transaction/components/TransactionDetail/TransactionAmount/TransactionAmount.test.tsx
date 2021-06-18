@@ -1,4 +1,3 @@
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import React from "react";
 import { render } from "testing-library";
 
@@ -7,13 +6,13 @@ import { TransactionAmount } from "./TransactionAmount";
 
 describe("TransactionAmount", () => {
 	it("should render", () => {
-		const { container } = render(<TransactionAmount amount={BigNumber.ONE} currency="DARK" />);
+		const { container } = render(<TransactionAmount amount={1} currency="DARK" />);
 
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render currency amount", () => {
-		const { container } = render(<TransactionAmount amount={BigNumber.ONE} currency="DARK" />);
+		const { container } = render(<TransactionAmount amount={1} currency="DARK" />);
 
 		expect(container).toHaveTextContent("1 DARK");
 		expect(container).toMatchSnapshot();
@@ -21,12 +20,7 @@ describe("TransactionAmount", () => {
 
 	it("should render converted currency amount", () => {
 		const { container } = render(
-			<TransactionAmount
-				amount={BigNumber.ONE}
-				convertedAmount={BigNumber.ONE}
-				currency="DARK"
-				exchangeCurrency="ARK"
-			/>,
+			<TransactionAmount amount={1} convertedAmount={1} currency="DARK" exchangeCurrency="ARK" />,
 		);
 
 		expect(container).toHaveTextContent("1 DARK");
@@ -34,9 +28,7 @@ describe("TransactionAmount", () => {
 	});
 
 	it.each([false, true])("should render label for multiple recipients", (isMultiPayment) => {
-		const { container } = render(
-			<TransactionAmount amount={BigNumber.ONE} currency="DARK" isMultiPayment={isMultiPayment} />,
-		);
+		const { container } = render(<TransactionAmount amount={1} currency="DARK" isMultiPayment={isMultiPayment} />);
 
 		expect(container).toHaveTextContent(
 			isMultiPayment ? transactionTranslations.TOTAL_AMOUNT : transactionTranslations.AMOUNT,
@@ -45,9 +37,7 @@ describe("TransactionAmount", () => {
 	});
 
 	it.each(["Sent", "Received"])("should render '%s' icon", (type) => {
-		const { container } = render(
-			<TransactionAmount amount={BigNumber.ONE} currency="DARK" isSent={type === "Sent"} />,
-		);
+		const { container } = render(<TransactionAmount amount={1} currency="DARK" isSent={type === "Sent"} />);
 
 		expect(container).toHaveTextContent(`${type.toLowerCase()}.svg`);
 	});

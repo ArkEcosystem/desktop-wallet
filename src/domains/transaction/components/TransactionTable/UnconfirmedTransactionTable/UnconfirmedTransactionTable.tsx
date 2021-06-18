@@ -23,7 +23,7 @@ export const UnconfirmedTransactionTable = memo(({ transactions }: Properties) =
 		},
 		{
 			Header: t("COMMON.AMOUNT"),
-			accessor: (transaction: DTO.ExtendedTransactionData) => transaction.total?.().toHuman(),
+			accessor: (transaction: DTO.ExtendedTransactionData) => transaction.total?.(),
 			className: "justify-end",
 		},
 	];

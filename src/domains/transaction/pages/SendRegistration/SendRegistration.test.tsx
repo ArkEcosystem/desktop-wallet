@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { translations as transactionTranslations } from "domains/transaction/i18n";
 import { createMemoryHistory } from "history";
 import nock from "nock";
@@ -64,9 +63,9 @@ const createTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 		id: () => DelegateRegistrationFixture.data.id,
 		sender: () => DelegateRegistrationFixture.data.sender,
 		recipient: () => DelegateRegistrationFixture.data.recipient,
-		amount: () => BigNumber.make(DelegateRegistrationFixture.data.amount),
-		fee: () => BigNumber.make(DelegateRegistrationFixture.data.fee),
-		data: () => DelegateRegistrationFixture.data,
+		amount: () => DelegateRegistrationFixture.data.amount / 1e8,
+		fee: () => DelegateRegistrationFixture.data.fee / 1e8,
+		data: () => ({ data: () => DelegateRegistrationFixture.data }),
 	});
 
 describe("Registration", () => {

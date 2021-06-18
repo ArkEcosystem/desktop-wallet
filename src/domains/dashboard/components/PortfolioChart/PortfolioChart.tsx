@@ -32,7 +32,7 @@ export const PortfolioChart = memo(({ profile, isVisible = true, showChartAnimat
 				lines={chartLines}
 			/>
 
-			{!profile.balance().isZero() && (
+			{profile.balance() !== 0 && (
 				<>
 					<div className="pt-6 mb-2 border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800" />
 

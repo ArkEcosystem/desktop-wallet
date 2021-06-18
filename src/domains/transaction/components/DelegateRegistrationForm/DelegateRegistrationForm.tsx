@@ -1,5 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
-import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { TabPanel, Tabs } from "app/components/Tabs";
@@ -18,8 +17,8 @@ const component = ({
 }: {
 	activeTab: number;
 	fees: any;
-	wallet: ProfilesContracts.IReadWriteWallet;
-	profile: ProfilesContracts.IProfile;
+	wallet: Contracts.IReadWriteWallet;
+	profile: Contracts.IProfile;
 }) => (
 	<Tabs activeId={activeTab}>
 		<TabPanel tabId={1}>
@@ -36,9 +35,9 @@ const transactionDetails = ({
 	translations,
 	wallet,
 }: {
-	transaction: Contracts.SignedTransactionData;
+	transaction: DTO.ExtendedSignedTransactionData;
 	translations: any;
-	wallet: ProfilesContracts.IReadWriteWallet;
+	wallet: Contracts.IReadWriteWallet;
 }) => (
 	<>
 		<TransactionDetail
@@ -53,9 +52,11 @@ const transactionDetails = ({
 		</TransactionDetail>
 
 		<TransactionDetail label={translations("TRANSACTION.DELEGATE_NAME")}>
-			{transaction.data().asset.delegate.username}
+			{/* @TODO: this differs per coin, can't be accessed like this */}
+			{transaction.data().data().asset.delegate.username}
 		</TransactionDetail>
 
+		{/* @TODO: normalise fee in SDK */}
 		<TransactionFee currency={wallet.currency()} value={transaction.fee()} paddingPosition="top" />
 	</>
 );

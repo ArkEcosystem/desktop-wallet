@@ -1,6 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
-import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Circle } from "app/components/Circle";
 import { Clipboard } from "app/components/Clipboard";
 import { Header } from "app/components/Header";
@@ -24,8 +22,8 @@ export const SummaryStep = ({
 	wallet,
 	transaction,
 }: {
-	wallet: ProfileContracts.IReadWriteWallet;
-	transaction: Contracts.SignedTransactionData;
+	wallet: Contracts.IReadWriteWallet;
+	transaction: DTO.ExtendedSignedTransactionData;
 }) => {
 	const { env } = useEnvironmentContext();
 	const { t } = useTranslation();
@@ -33,32 +31,28 @@ export const SummaryStep = ({
 
 	const type = transaction.type();
 
-	const isTransferType = () => ["transfer", "multiPayment"].includes(type);
-
 	// TODO: Move this helpers to SignedData on platform-sdk
 	const participants = transaction
 		.get<{ publicKeys: string[] }>("multiSignature")
 		.publicKeys.filter((pubKey) => pubKey !== wallet.publicKey());
 
 	let recipients: any;
-	let transactionAmount: BigNumber;
+	let transactionAmount: number;
 
-	if (isTransferType()) {
+	if (transaction.isTransfer() || transaction.isMultiPayment()) {
 		recipients = transaction
 			.get<{ payments: Record<string, string>[] }>("asset")
-			?.payments?.map((item) => ({ address: item.recipientId, amount: BigNumber.make(item.amount) })) || [
+			// @TODO: this is not normalised because DW is accessing raw data which is ARK specific
+			?.payments?.map((item) => ({ address: item.recipientId, amount: +item.amount / 1e8 })) || [
 			{ address: transaction.get<string>("recipientId"), amount: transaction.amount() },
 		];
 
-		transactionAmount = recipients.reduce(
-			(sum: BigNumber, recipient: Contracts.MultiPaymentRecipient) => sum.plus(recipient.amount),
-			BigNumber.ZERO,
-		);
+		transactionAmount = recipients.reduce((sum: number, { amount }: { amount: number }) => sum + amount, 0);
 	}
 
 	const [delegates, setDelegates] = useState<{
-		votes: ProfileContracts.IReadOnlyWallet[];
-		unvotes: ProfileContracts.IReadOnlyWallet[];
+		votes: Contracts.IReadOnlyWallet[];
+		unvotes: Contracts.IReadOnlyWallet[];
 	}>({
 		votes: [],
 		unvotes: [],
@@ -104,7 +98,7 @@ export const SummaryStep = ({
 
 			{recipients && <TransactionRecipients currency={wallet.currency()} recipients={recipients} />}
 
-			{isTransferType() && (
+			{(transaction.isTransfer() || transaction.isMultiPayment()) && (
 				<TransactionAmount
 					amount={transactionAmount!}
 					currency={wallet.currency()}

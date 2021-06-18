@@ -1,5 +1,4 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Amount } from "app/components/Amount";
 import { Button } from "app/components/Button";
 import { FormField, FormLabel, SubForm } from "app/components/Form";
@@ -49,7 +48,7 @@ const TransferType = ({ isSingle, disableMultiple, onChange }: ToggleButtonPrope
 			</Tooltip>
 
 			<Tooltip content={t("TRANSACTION.RECIPIENTS_HELPTEXT", { count: 64 })}>
-				<div className="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 questionmark">
+				<div className="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200">
 					<Icon width={10} height={10} name="QuestionMark" />
 				</div>
 			</Tooltip>
@@ -109,19 +108,19 @@ export const AddRecipient = ({
 	const { convert } = useExchangeRate({ ticker, exchangeTicker });
 
 	const remainingBalance = useMemo(() => {
-		const senderBalance = senderWallet?.balance().denominated() || BigNumber.ZERO;
+		const senderBalance = senderWallet?.balance() || 0;
 
 		if (isSingle) {
 			return senderBalance;
 		}
 
-		return addedRecipients.reduce((sum, item) => sum.minus(item.amount!), senderBalance);
+		return addedRecipients.reduce((sum, item) => sum - Number(item.amount || 0), senderBalance);
 	}, [addedRecipients, senderWallet, isSingle]);
 
 	const remainingNetBalance = useMemo(() => {
-		const netBalance = remainingBalance.minus(fee || 0);
+		const netBalance = remainingBalance - (fee || 0);
 
-		return netBalance?.isPositive() ? netBalance : BigNumber.ZERO;
+		return Math.sign(netBalance) ? netBalance : undefined;
 	}, [fee, remainingBalance]);
 
 	const isSenderFilled = useMemo(() => !!network?.id() && !!senderAddress, [network, senderAddress]);
@@ -138,7 +137,7 @@ export const AddRecipient = ({
 	}, [register]);
 
 	useEffect(() => {
-		const remaining = remainingBalance.isLessThanOrEqualTo(BigNumber.ZERO) ? BigNumber.ZERO : remainingBalance;
+		const remaining = remainingBalance <= 0 ? 0 : remainingBalance;
 
 		setValue("remainingBalance", remaining);
 	}, [remainingBalance, setValue, amount, recipientAddress, fee, senderAddress]);
@@ -162,7 +161,7 @@ export const AddRecipient = ({
 	}, [network, recipientAddress, trigger]);
 
 	useEffect(() => {
-		register("amount", sendTransfer.amount(network, remainingNetBalance, addedRecipients, isSingle));
+		register("amount", sendTransfer.amount(network, remainingNetBalance!, addedRecipients, isSingle));
 		register("displayAmount");
 		register("recipientAddress", sendTransfer.recipientAddress(profile, network, addedRecipients, isSingle));
 	}, [register, network, sendTransfer, addedRecipients, isSingle, profile, remainingNetBalance]);
@@ -184,7 +183,7 @@ export const AddRecipient = ({
 
 		if (isSingle && addedRecipients.length === 1) {
 			setValue("amount", addedRecipients[0].amount);
-			setValue("displayAmount", addedRecipients[0].amount?.toHuman());
+			setValue("displayAmount", addedRecipients[0].amount);
 			setValue("recipientAddress", addedRecipients[0].address);
 			return;
 		}
@@ -233,26 +232,26 @@ export const AddRecipient = ({
 	}, []);
 	//endregion
 
-	const singleRecipientOnChange = (amountValue: string, recipientAddressValue: string) => {
+	const singleRecipientOnChange = (amountValue: number, recipientAddressValue: string) => {
 		if (!isSingle) {
 			return;
 		}
 
-		if (!recipientAddressValue || !BigNumber.make(amountValue).toNumber()) {
+		if (!recipientAddressValue || !amountValue) {
 			return onChange?.([]);
 		}
 
 		onChange?.([
 			{
-				amount: BigNumber.make(amountValue),
+				amount: +amountValue,
 				address: recipientAddressValue,
 			},
 		]);
 	};
 
-	const handleAddRecipient = (address: string, amount: string, displayAmount: string) => {
+	const handleAddRecipient = (address: string, amount: number, displayAmount: string) => {
 		let newRecipient: RecipientListItem = {
-			amount: BigNumber.make(amount),
+			amount: +amount,
 			displayAmount,
 			address,
 		};
@@ -261,7 +260,7 @@ export const AddRecipient = ({
 		if (!senderWallet?.network().isTest()) {
 			newRecipient = {
 				...newRecipient,
-				exchangeAmount: convert(amount),
+				exchangeAmount: convert(+amount),
 				exchangeTicker: exchangeTicker,
 			};
 		}
@@ -282,7 +281,7 @@ export const AddRecipient = ({
 	};
 
 	const recipientAddressAddons = !errors.recipientAddress && getValues("recipientAddress") && (
-		<div className="flex justify-center items-center w-5 h-5 bg-theme-success-200 text-theme-success-600 dark:bg-theme-success-600 dark:text-white rounded-full">
+		<div className="flex justify-center items-center w-5 h-5 rounded-full dark:text-white bg-theme-success-200 text-theme-success-600 dark:bg-theme-success-600">
 			<Icon name="CheckmarkBig" width={10} height={10} data-testid="AddRecipient__recipient-address-checkmark" />
 		</div>
 	);
@@ -296,7 +295,6 @@ export const AddRecipient = ({
 							ticker={exchangeTicker}
 							data-testid="AddRecipient__currency-balance"
 							className="text-sm font-semibold whitespace-no-break text-theme-secondary-500 dark:text-theme-secondary-700"
-							normalize={false}
 						/>
 					),
 			  }
@@ -359,7 +357,7 @@ export const AddRecipient = ({
 										setValue("isSendAllSelected", false);
 										setValue("displayAmount", amount);
 										setValue("amount", amount, { shouldValidate: true, shouldDirty: true });
-										singleRecipientOnChange(amount, recipientAddress);
+										singleRecipientOnChange(+amount, recipientAddress);
 									}}
 								/>
 							</div>
@@ -374,18 +372,17 @@ export const AddRecipient = ({
 											setValue("isSendAllSelected", !getValues("isSendAllSelected"));
 
 											if (getValues("isSendAllSelected")) {
-												const remaining = remainingBalance.isGreaterThan(fee)
-													? remainingNetBalance
-													: remainingBalance;
+												const remaining =
+													remainingBalance > fee ? remainingNetBalance : remainingBalance;
 
-												setValue("displayAmount", remaining.toString());
+												setValue("displayAmount", remaining);
 
-												setValue("amount", remaining.toString(), {
+												setValue("amount", remaining, {
 													shouldValidate: true,
 													shouldDirty: true,
 												});
 
-												singleRecipientOnChange(remaining.toString(), recipientAddress);
+												singleRecipientOnChange(remaining!, recipientAddress);
 											}
 										}}
 										data-testid="AddRecipient__send-all"
@@ -425,7 +422,6 @@ export const AddRecipient = ({
 			{!isSingle && addedRecipients.length > 0 && (
 				<div className="mt-3 border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800">
 					<RecipientList
-						normalizeAmount={false}
 						network={network}
 						recipients={addedRecipients}
 						onRemove={handleRemoveRecipient}

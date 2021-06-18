@@ -1,4 +1,3 @@
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { useFormField } from "app/components/Form/useFormField";
 import { Range } from "app/components/Range";
 import cn from "classnames";
@@ -10,11 +9,11 @@ import { sanitizeStep } from "./utils";
 
 interface Properties {
 	disabled?: boolean;
-	value: string;
+	value: number;
 	min: number;
 	max: number;
 	step: number;
-	onChange: (value: string) => void;
+	onChange: (value: number) => void;
 }
 
 export const InputRange = React.forwardRef<HTMLInputElement, Properties>(
@@ -22,14 +21,14 @@ export const InputRange = React.forwardRef<HTMLInputElement, Properties>(
 		const fieldContext = useFormField();
 
 		const rangeValues = useMemo<number[]>(() => {
-			const sanitized = BigNumber.make(value);
+			const sanitized = +value;
 
 			/* istanbul ignore next */
-			if (isNaN(sanitized.toNumber()) || sanitized.isZero()) {
+			if (isNaN(sanitized) || sanitized === 0) {
 				return [];
 			}
 
-			return [Math.min(sanitized.toNumber(), max)];
+			return [Math.min(sanitized, max)];
 		}, [value, max]);
 
 		const min = Math.min(properties.min, +value);
@@ -41,7 +40,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Properties>(
 		const sanitizedStep = sanitizeStep({ min, max, step });
 
 		const handleRangeChange = ([rangeValue]: number[]) => {
-			onChange(rangeValue.toString());
+			onChange(rangeValue);
 		};
 
 		return (

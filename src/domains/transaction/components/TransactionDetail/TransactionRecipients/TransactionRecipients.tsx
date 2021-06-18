@@ -1,4 +1,3 @@
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { RecipientList } from "domains/transaction/components/RecipientList";
@@ -9,16 +8,10 @@ import { TransactionDetail, TransactionDetailProperties } from "../TransactionDe
 
 type TransactionRecipientsProperties = {
 	currency: string;
-	recipients: { address: string; alias?: string; amount?: BigNumber }[];
-	normalizeAmount?: boolean;
+	recipients: { address: string; alias?: string; amount?: number }[];
 } & TransactionDetailProperties;
 
-export const TransactionRecipients = ({
-	currency,
-	recipients,
-	normalizeAmount,
-	...properties
-}: TransactionRecipientsProperties) => {
+export const TransactionRecipients = ({ currency, recipients, ...properties }: TransactionRecipientsProperties) => {
 	const { t } = useTranslation();
 
 	if (recipients.length === 0) {
@@ -28,12 +21,7 @@ export const TransactionRecipients = ({
 	return recipients.length > 1 ? (
 		<TransactionDetail label={t("TRANSACTION.RECIPIENTS_COUNT", { count: recipients.length })} {...properties}>
 			<div className="-my-2">
-				<RecipientList
-					recipients={recipients}
-					assetSymbol={currency}
-					variant="condensed"
-					normalizeAmount={normalizeAmount}
-				/>
+				<RecipientList recipients={recipients} assetSymbol={currency} variant="condensed" />
 			</div>
 		</TransactionDetail>
 	) : (

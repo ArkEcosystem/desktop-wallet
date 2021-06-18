@@ -124,8 +124,8 @@ describe("RecipientList", () => {
 			{
 				address: "FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ",
 				walletName: "Recipient 1",
-				amount: BigNumber.make("100"),
-				exchangeAmount: BigNumber.make("1"),
+				amount: 100,
+				exchangeAmount: 1,
 				exchangeTicker: "USD",
 				assetSymbol: "ARK",
 			},

@@ -317,7 +317,6 @@ export const WalletHeader = ({
 									ticker={profile.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency)!}
 									data-testid="WalletHeader__currency-balance"
 									className="ml-1"
-									normalize={false}
 								/>
 							)}
 
@@ -391,9 +390,7 @@ export const WalletHeader = ({
 					<Button
 						data-testid="WalletHeader__send-button"
 						disabled={
-							wallet.balance().isZero() ||
-							!wallet.hasBeenFullyRestored() ||
-							!wallet.hasSyncedWithNetwork()
+							wallet.balance() === 0 || !wallet.hasBeenFullyRestored() || !wallet.hasSyncedWithNetwork()
 						}
 						className="my-auto ml-1"
 						onClick={onSend}

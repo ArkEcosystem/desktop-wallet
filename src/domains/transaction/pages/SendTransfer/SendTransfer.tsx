@@ -1,5 +1,5 @@
-import { Contracts, Networks, Services } from "@arkecosystem/platform-sdk";
-import { Contracts as ProfileContracts, DTO } from "@arkecosystem/platform-sdk-profiles";
+import { Networks, Services } from "@arkecosystem/platform-sdk";
+import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
@@ -55,13 +55,13 @@ export const SendTransfer = () => {
 	const [activeTab, setActiveTab] = useState(showNetworkStep ? 0 : 1);
 	const [unconfirmedTransactions, setUnconfirmedTransactions] = useState<DTO.ExtendedTransactionData[]>([]);
 	const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
-	const [transaction, setTransaction] = useState<Contracts.SignedTransactionData | null>(null);
+	const [transaction, setTransaction] = useState<DTO.ExtendedSignedTransactionData | null>(null);
 
 	const { persist } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 
-	const [wallet, setWallet] = useState<ProfileContracts.IReadWriteWallet | undefined>(
+	const [wallet, setWallet] = useState<Contracts.IReadWriteWallet | undefined>(
 		hasWalletId ? activeWallet : undefined,
 	);
 
@@ -177,15 +177,15 @@ export const SendTransfer = () => {
 		}
 
 		/* istanbul ignore next */
-		if (BigNumber.make(amount).isLessThanOrEqualTo(fee)) {
+		if (amount <= fee) {
 			// @TODO remove ignore coverage after BigNumber refactor
 			return;
 		}
 
-		const remaining = remainingBalance.minus(fee);
+		const remaining = remainingBalance - fee;
 
-		setValue("displayAmount", remaining.toHuman());
-		setValue("amount", remaining.toString());
+		setValue("displayAmount", remaining);
+		setValue("amount", remaining);
 
 		form.trigger(["fee", "amount"]);
 	}, [fee]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -226,12 +226,12 @@ export const SendTransfer = () => {
 				? {
 						payments: recipients.map(({ address, amount }: { address: string; amount: BigNumber }) => ({
 							to: address,
-							amount: amount.toHuman(),
+							amount: amount,
 						})),
 				  }
 				: {
 						to: recipients[0].address,
-						amount: recipients[0].amount.toHuman(),
+						amount: recipients[0].amount,
 						memo: memo,
 				  };
 

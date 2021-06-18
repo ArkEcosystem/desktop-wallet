@@ -1,5 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
-import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Header } from "app/components/Header";
 import { Image } from "app/components/Image";
 import React from "react";
@@ -11,8 +10,8 @@ export const SentStep = ({
 	transaction,
 	wallet,
 }: {
-	transaction: Contracts.SignedTransactionData;
-	wallet: ProfileContracts.IReadWriteWallet;
+	transaction: DTO.ExtendedSignedTransactionData;
+	wallet: Contracts.IReadWriteWallet;
 }) => {
 	const { t } = useTranslation();
 	const participants = transaction
