@@ -22,7 +22,7 @@ export const SummaryStep = ({
 	})) || [{ address: transaction.recipient(), amount: transaction.amount() }];
 
 	const transactionAmount = recipients.reduce(
-		(sum: number, recipient: Contracts.MultiPaymentRecipient) => sum + recipient.amount.toHuman(),
+		(sum: number, recipient: Contracts.MultiPaymentRecipient) => sum + recipient.amount,
 		0,
 	);
 
