@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { DateTime } from "@arkecosystem/platform-sdk-intl";
-import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { screen } from "@testing-library/react";
 import { act as hookAct, renderHook } from "@testing-library/react-hooks";
@@ -233,9 +233,24 @@ describe("SendTransfer", () => {
 		const { result: form } = renderHook(() => useForm());
 		await wallet.synchroniser().identity();
 
-		const transaction = await wallet
-			.transactionIndex()
-			.findById("8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877");
+		const transaction = new DTO.ExtendedSignedTransactionData(
+			await wallet
+				.coin()
+				.transaction()
+				.transfer({
+					nonce: "1",
+					fee: "1",
+					data: {
+						to: wallet.address(),
+						amount: "1",
+					},
+					signatory: await wallet
+						.coin()
+						.signatory()
+						.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
+				}),
+		);
+
 
 		const { getByTestId, asFragment } = render(
 			<FormProvider {...form.current}>
@@ -1107,7 +1122,7 @@ describe("SendTransfer", () => {
 		expect(signMock).toHaveBeenCalledWith(
 			expect.objectContaining({
 				data: expect.anything(),
-				fee: "0.00357",
+				fee: expect.any(Number),
 				nonce: expect.any(String),
 				signatory: expect.any(Object),
 			}),
@@ -1931,13 +1946,13 @@ describe("SendTransfer", () => {
 						isMultiPayment: () => false,
 						isConfirmed: () => false,
 						timestamp: () => DateTime.make(),
-						total: () => BigNumber.make(1),
+						total: () => 1,
 						isSent: () => true,
 						wallet: () => wallet,
 						type: () => "transfer",
 						recipient: () => "D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
 						recipients: () => ["D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb", wallet.address()],
-						convertedTotal: () => BigNumber.ZERO,
+						convertedTotal: () => 0,
 						isVote: () => false,
 						isUnvote: () => false,
 					},
@@ -1946,13 +1961,13 @@ describe("SendTransfer", () => {
 						isMultiPayment: () => true,
 						isConfirmed: () => false,
 						timestamp: () => DateTime.make(),
-						total: () => BigNumber.make(1),
+						total: () => 1,
 						isSent: () => true,
 						wallet: () => wallet,
 						type: () => "multiPayment",
 						recipient: () => "D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
 						recipients: () => ["D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb", wallet.address()],
-						convertedTotal: () => BigNumber.ZERO,
+						convertedTotal: () => 0,
 						isVote: () => false,
 						isUnvote: () => false,
 					},
@@ -2124,13 +2139,13 @@ describe("SendTransfer", () => {
 						isMultiPayment: () => false,
 						isConfirmed: () => false,
 						timestamp: () => DateTime.make(),
-						total: () => BigNumber.make(1),
+						total: () => 1,
 						isSent: () => true,
 						wallet: () => wallet,
 						type: () => "transfer",
 						recipient: () => "D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
 						recipients: () => ["D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb", wallet.address()],
-						convertedTotal: () => BigNumber.ZERO,
+						convertedTotal: () => 0,
 						isVote: () => false,
 						isUnvote: () => false,
 					},
