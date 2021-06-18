@@ -53,7 +53,7 @@ export const DelegateRow = ({
 		}
 
 		if (isSelectedVote) {
-			return "bg-blue-50 dark:bg-theme-success-900 text-blue-500";
+			return "bg-theme-info-50 dark:bg-theme-info-900 text-theme-info-500";
 		}
 
 		return "";
@@ -110,7 +110,7 @@ export const DelegateRow = ({
 							</span>
 						) : (
 							<Button
-								variant={isSelectedVote ? "secondary-blue" : "secondary"}
+								variant={isSelectedVote ? "info" : "secondary"}
 								color={isSelectedVote ? "success" : "primary"}
 								onClick={() => onVoteSelect?.(delegate.address())}
 								data-testid={`DelegateRow__toggle-${index}`}

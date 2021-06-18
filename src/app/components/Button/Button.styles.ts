@@ -23,8 +23,6 @@ const getVariant = (variant: ButtonVariant, disabled: boolean): any => {
 			return tw`bg-theme-primary-600 hover:bg-theme-primary-700 text-white`;
 		case "secondary":
 			return tw`bg-theme-primary-100 hover:bg-theme-primary-700 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 hover:text-white`;
-		case "secondary-blue":
-			return tw`bg-blue-100 hover:bg-blue-700 dark:bg-theme-secondary-800 text-blue-600 dark:text-theme-secondary-200 hover:text-white`;
 		case "danger":
 			return tw`
 				bg-theme-danger-100 text-theme-danger-400
@@ -32,6 +30,8 @@ const getVariant = (variant: ButtonVariant, disabled: boolean): any => {
 				focus:ring-theme-danger-300
 				dark:(bg-theme-danger-400 text-white)
 			`;
+		case "info":
+			return tw`bg-theme-info-100 hover:bg-theme-info-700 dark:bg-theme-secondary-800 text-theme-info-600 dark:text-theme-secondary-200 hover:text-white`;
 		default:
 			return tw`border-none`;
 	}
