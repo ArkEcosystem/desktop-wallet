@@ -22,17 +22,13 @@ const BaseTransactionRowAmount: React.FC<Properties> = ({
 	const isNegative = total !== 0 && isSent;
 
 	if (!!exchangeCurrency && !isNil(convertedTotal)) {
-		return (
-			<div data-testid="TransactionRowAmount">
-				<Amount value={convertedTotal} ticker={exchangeCurrency} className="text-theme-secondary-text" />
-			</div>
-		);
+		return <Amount value={convertedTotal} ticker={exchangeCurrency} className="text-theme-secondary-text" />;
 	}
 
 	const color = isSent ? "danger" : "success";
 
 	return (
-		<Label data-testid="TransactionRowAmount" color={color} className="whitespace-nowrap">
+		<Label color={color} className="whitespace-nowrap">
 			<AmountCrypto withSign ticker={wallet.currency()} value={total} isNegative={isNegative} />
 		</Label>
 	);
