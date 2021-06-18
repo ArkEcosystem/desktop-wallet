@@ -153,17 +153,21 @@ exports[`AddRecipient should render 1`] = `
                           class=""
                         >
                           <div
-                            class="flex items-center cursor-pointer"
-                            data-testid="SelectRecipient__select-recipient"
+                            class="flex items-center space-x-5"
                           >
                             <div
-                              class="sc-bdfBwQ iyevwF"
-                              height="20"
-                              width="20"
+                              class="flex items-center cursor-pointer"
+                              data-testid="SelectRecipient__select-recipient"
                             >
-                              <svg>
-                                user.svg
-                              </svg>
+                              <div
+                                class="sc-bdfBwQ iyevwF"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  user.svg
+                                </svg>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -403,17 +407,21 @@ exports[`AddRecipient should render with multiple recipients switch 1`] = `
                           class=""
                         >
                           <div
-                            class="flex items-center cursor-pointer"
-                            data-testid="SelectRecipient__select-recipient"
+                            class="flex items-center space-x-5"
                           >
                             <div
-                              class="sc-bdfBwQ iyevwF"
-                              height="20"
-                              width="20"
+                              class="flex items-center cursor-pointer"
+                              data-testid="SelectRecipient__select-recipient"
                             >
-                              <svg>
-                                user.svg
-                              </svg>
+                              <div
+                                class="sc-bdfBwQ iyevwF"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  user.svg
+                                </svg>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -664,17 +672,35 @@ exports[`AddRecipient should render with single recipient data 1`] = `
                           class=""
                         >
                           <div
-                            class="flex items-center cursor-pointer"
-                            data-testid="SelectRecipient__select-recipient"
+                            class="flex items-center space-x-5"
                           >
                             <div
-                              class="sc-bdfBwQ iyevwF"
-                              height="20"
-                              width="20"
+                              class="flex justify-center items-center w-5 h-5 bg-theme-success-200 text-theme-success-600 dark:bg-theme-success-600 dark:text-white rounded-full"
                             >
-                              <svg>
-                                user.svg
-                              </svg>
+                              <div
+                                class="sc-bdfBwQ TENjd"
+                                data-testid="AddRecipient__recipient-address-checkmark"
+                                height="10"
+                                width="10"
+                              >
+                                <svg>
+                                  checkmark-big.svg
+                                </svg>
+                              </div>
+                            </div>
+                            <div
+                              class="flex items-center cursor-pointer"
+                              data-testid="SelectRecipient__select-recipient"
+                            >
+                              <div
+                                class="sc-bdfBwQ iyevwF"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  user.svg
+                                </svg>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -914,17 +940,21 @@ exports[`AddRecipient should render without recipients 1`] = `
                           class=""
                         >
                           <div
-                            class="flex items-center cursor-pointer"
-                            data-testid="SelectRecipient__select-recipient"
+                            class="flex items-center space-x-5"
                           >
                             <div
-                              class="sc-bdfBwQ iyevwF"
-                              height="20"
-                              width="20"
+                              class="flex items-center cursor-pointer"
+                              data-testid="SelectRecipient__select-recipient"
                             >
-                              <svg>
-                                user.svg
-                              </svg>
+                              <div
+                                class="sc-bdfBwQ iyevwF"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  user.svg
+                                </svg>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -1114,17 +1144,21 @@ exports[`AddRecipient should render without the single & multiple switch 1`] = `
                           class=""
                         >
                           <div
-                            class="flex items-center cursor-pointer"
-                            data-testid="SelectRecipient__select-recipient"
+                            class="flex items-center space-x-5"
                           >
                             <div
-                              class="sc-bdfBwQ iyevwF"
-                              height="20"
-                              width="20"
+                              class="flex items-center cursor-pointer"
+                              data-testid="SelectRecipient__select-recipient"
                             >
-                              <svg>
-                                user.svg
-                              </svg>
+                              <div
+                                class="sc-bdfBwQ iyevwF"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  user.svg
+                                </svg>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -1364,17 +1398,21 @@ exports[`AddRecipient should set available amount 1`] = `
                           class=""
                         >
                           <div
-                            class="flex items-center cursor-pointer"
-                            data-testid="SelectRecipient__select-recipient"
+                            class="flex items-center space-x-5"
                           >
                             <div
-                              class="sc-bdfBwQ iyevwF"
-                              height="20"
-                              width="20"
+                              class="flex items-center cursor-pointer"
+                              data-testid="SelectRecipient__select-recipient"
                             >
-                              <svg>
-                                user.svg
-                              </svg>
+                              <div
+                                class="sc-bdfBwQ iyevwF"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  user.svg
+                                </svg>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -1614,17 +1652,21 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
                           class=""
                         >
                           <div
-                            class="flex items-center cursor-pointer"
-                            data-testid="SelectRecipient__select-recipient"
+                            class="flex items-center space-x-5"
                           >
                             <div
-                              class="sc-bdfBwQ iyevwF"
-                              height="20"
-                              width="20"
+                              class="flex items-center cursor-pointer"
+                              data-testid="SelectRecipient__select-recipient"
                             >
-                              <svg>
-                                user.svg
-                              </svg>
+                              <div
+                                class="sc-bdfBwQ iyevwF"
+                                height="20"
+                                width="20"
+                              >
+                                <svg>
+                                  user.svg
+                                </svg>
+                              </div>
                             </div>
                           </div>
                         </div>
