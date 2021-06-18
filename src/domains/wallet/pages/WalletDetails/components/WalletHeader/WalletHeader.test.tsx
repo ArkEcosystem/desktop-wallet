@@ -110,7 +110,7 @@ describe("WalletHeader", () => {
 	});
 
 	it("send button should be disabled if wallet has no balance", async () => {
-		const balanceSpy = jest.spyOn(wallet, "balance").mockReturnValue(BigNumber.ZERO);
+		const balanceSpy = jest.spyOn(wallet, "balance").mockReturnValue(0);
 
 		const { getByTestId, getByText } = render(<WalletHeader profile={profile} wallet={wallet} />);
 		await waitFor(() => expect(getByText(wallet.address())).toBeTruthy());

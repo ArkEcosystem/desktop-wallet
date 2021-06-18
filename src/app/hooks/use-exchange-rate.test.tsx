@@ -41,7 +41,7 @@ describe("useExchangeRate", () => {
 			},
 		);
 
-		expect(hook.result.current.convert("1").toNumber()).toEqual(0);
+		expect(hook.result.current.convert("1")).toEqual(0);
 
 		hook = renderHook(
 			() =>
@@ -53,6 +53,6 @@ describe("useExchangeRate", () => {
 			},
 		);
 
-		expect(hook.result.current.convert("1").toNumber()).toEqual(0);
+		expect(hook.result.current.convert("1")).toEqual(0);
 	});
 });

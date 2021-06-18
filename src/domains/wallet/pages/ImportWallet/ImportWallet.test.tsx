@@ -186,7 +186,7 @@ describe("ImportWallet", () => {
 				<FormProvider {...form}>
 					<ThirdStep
 						address={identityAddress}
-						balance={BigNumber.make(80)}
+						balance={80}
 						nameMaxLength={42}
 						profile={profile}
 					/>

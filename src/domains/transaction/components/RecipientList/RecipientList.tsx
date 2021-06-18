@@ -41,7 +41,7 @@ const RecipientListItem = ({
 				className="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
 				data-testid="recipient-list__recipient-list-item"
 			>
-				<td className="w-12 py-4">
+				<td className="py-4 w-12">
 					<Avatar size="sm" address={address} />
 				</td>
 
@@ -94,7 +94,7 @@ const RecipientListItem = ({
 			)}
 
 			{isEditable && (
-				<td className="w-20 py-6 text-right">
+				<td className="py-6 w-20 text-right">
 					<Tooltip content={tooltipDisabled} disabled={!isButtonDisabled}>
 						<span className="inline-block">
 							<Button

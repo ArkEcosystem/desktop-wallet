@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import * as utils from "utils/electron-utils";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
@@ -25,23 +25,26 @@ describe("Signed Transaction Table", () => {
 
 		await profile.sync();
 
-		fixtures.transfer = await wallet
-			.coin()
-			.transaction()
-			.transfer({
-				nonce: "1",
-				fee: "0.00000001",
-				data: {
-					to: wallet.address(),
-					amount: "0.00000001",
-				},
-				signatory: await wallet
-					.coin()
-					.signatory()
-					.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
-			});
+		fixtures.transfer = new DTO.ExtendedSignedTransactionData(
+			await wallet
+				.coin()
+				.transaction()
+				.transfer({
+					nonce: "1",
+					fee: "0.00000001",
+					data: {
+						to: wallet.address(),
+						amount: "0.00000001",
+					},
+					signatory: await wallet
+						.coin()
+						.signatory()
+						.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
+				})
+		);
 
-		fixtures.multiSignature = await wallet
+		fixtures.multiSignature = new DTO.ExtendedSignedTransactionData(
+			await wallet
 			.coin()
 			.transaction()
 			.multiSignature({
@@ -56,9 +59,10 @@ describe("Signed Transaction Table", () => {
 					.coin()
 					.signatory()
 					.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
-			});
+				}),);
 
-		fixtures.multiPayment = await wallet
+		fixtures.multiPayment = new DTO.ExtendedSignedTransactionData(
+			await wallet
 			.coin()
 			.transaction()
 			.multiPayment({
@@ -80,9 +84,10 @@ describe("Signed Transaction Table", () => {
 					.coin()
 					.signatory()
 					.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
-			});
+			}),);
 
-		fixtures.vote = await wallet
+		fixtures.vote = new DTO.ExtendedSignedTransactionData(
+			await wallet
 			.coin()
 			.transaction()
 			.vote({
@@ -96,9 +101,10 @@ describe("Signed Transaction Table", () => {
 					.coin()
 					.signatory()
 					.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
-			});
+			}),);
 
-		fixtures.unvote = await wallet
+		fixtures.unvote = new DTO.ExtendedSignedTransactionData(
+			await wallet
 			.coin()
 			.transaction()
 			.vote({
@@ -112,9 +118,10 @@ describe("Signed Transaction Table", () => {
 					.coin()
 					.signatory()
 					.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
-			});
+				}),);
 
-		fixtures.ipfs = await wallet
+		fixtures.ipfs = new DTO.ExtendedSignedTransactionData(
+			await wallet
 			.coin()
 			.transaction()
 			.ipfs({
@@ -127,7 +134,7 @@ describe("Signed Transaction Table", () => {
 					.coin()
 					.signatory()
 					.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
-			});
+			}),);
 	});
 
 	it("should render", () => {

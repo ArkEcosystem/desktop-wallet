@@ -28,7 +28,7 @@ const ToggleButtons = ({ isSingle, disableMultiple, onChange }: ToggleButtonProp
 				</div>
 				<div>
 					<Tooltip content={t("TRANSACTION.RECIPIENTS_HELPTEXT", { count: 64 })}>
-						<div className="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200">
+						<div className="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200">
 							<Icon width={10} height={10} name="QuestionMark" />
 						</div>
 					</Tooltip>
@@ -365,7 +365,7 @@ export const AddRecipient = ({
 						}
 						data-testid="AddRecipient__add-button"
 						variant="secondary"
-						className="w-full mt-4"
+						className="mt-4 w-full"
 						onClick={() =>
 							handleAddRecipient(
 								recipientAddress as string,

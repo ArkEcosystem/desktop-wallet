@@ -37,8 +37,8 @@ const createTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 		sender: () => ipfsFixture.data.sender,
 		recipient: () => ipfsFixture.data.recipient,
 		amount: () => BigNumber.make(ipfsFixture.data.amount),
-		fee: () => BigNumber.make(ipfsFixture.data.fee),
-		data: () => ipfsFixture.data,
+		fee: () => ipfsFixture.data.fee / 1e8,
+		data: () => ({ data: () => ipfsFixture.data }),
 	});
 
 let profile: Contracts.IProfile;
@@ -689,7 +689,7 @@ describe("SendIpfs", () => {
 		expect(signMock).toHaveBeenCalledWith(
 			expect.objectContaining({
 				data: expect.anything(),
-				fee: expect.any(String),
+				fee: expect.any(Number),
 				nonce: expect.any(String),
 				signatory: expect.any(Object),
 			}),

@@ -45,7 +45,7 @@ describe("WalletVote", () => {
 	});
 
 	it("should render disabled vote button", async () => {
-		const balanceSpy = jest.spyOn(wallet, "balance").mockReturnValue(BigNumber.ZERO);
+		const balanceSpy = jest.spyOn(wallet, "balance").mockReturnValue(0);
 
 		const { asFragment, getByRole, getByTestId } = render(
 			<WalletVote profile={profile} wallet={wallet} onButtonClick={jest.fn()} env={env} />,

@@ -33,8 +33,6 @@ export const SummaryStep = ({
 
 	const type = transaction.type();
 
-	const isTransferType = () => ["transfer", "multiPayment"].includes(type);
-
 	// TODO: Move this helpers to SignedData on platform-sdk
 	const participants = transaction
 		.get<{ publicKeys: string[] }>("multiSignature")
@@ -43,16 +41,17 @@ export const SummaryStep = ({
 	let recipients: any;
 	let transactionAmount: number;
 
-	if (isTransferType()) {
+	if (transaction.isTransfer() || transaction.isMultiPayment()) {
 		recipients = transaction
 			.get<{ payments: Record<string, string>[] }>("asset")
-			?.payments?.map((item) => ({ address: item.recipientId, amount: +item.amount })) || [
+			// @TODO: this is not normalised because DW is accessing raw data which is ARK specific
+			?.payments?.map((item) => ({ address: item.recipientId, amount: +item.amount / 1e8 })) || [
 			{ address: transaction.get<string>("recipientId"), amount: transaction.amount() },
 		];
 
 		transactionAmount = recipients.reduce(
-			(sum: BigNumber, recipient: Contracts.MultiPaymentRecipient) => sum.plus(recipient.amount),
-			BigNumber.ZERO,
+			(sum: number, { amount }: { amount: number; }) => sum + amount,
+			0,
 		);
 	}
 
@@ -104,7 +103,7 @@ export const SummaryStep = ({
 
 			{recipients && <TransactionRecipients currency={wallet.currency()} recipients={recipients} />}
 
-			{isTransferType() && (
+			{(transaction.isTransfer() || transaction.isMultiPayment()) && (
 				<TransactionAmount
 					amount={transactionAmount!}
 					currency={wallet.currency()}
@@ -150,7 +149,7 @@ export const SummaryStep = ({
 				</div>
 			</TransactionDetail>
 
-			<div className="px-10 pt-6 mt-4 -mx-10 border-t border-theme-secondary-300 dark:border-theme-secondary-800">
+			<div className="px-10 pt-6 -mx-10 mt-4 border-t border-theme-secondary-300 dark:border-theme-secondary-800">
 				<Signatures transactionId={transaction.id()} publicKeys={participants} wallet={wallet} />
 			</div>
 		</section>

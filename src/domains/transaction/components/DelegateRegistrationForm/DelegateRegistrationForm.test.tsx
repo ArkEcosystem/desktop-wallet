@@ -50,8 +50,8 @@ const createTransactionMock = (wallet: ProfilesContracts.IReadWriteWallet) =>
 		sender: () => delegateRegistrationFixture.data.sender,
 		recipient: () => delegateRegistrationFixture.data.recipient,
 		amount: () => BigNumber.make(delegateRegistrationFixture.data.amount),
-		fee: () => BigNumber.make(delegateRegistrationFixture.data.fee),
-		data: () => delegateRegistrationFixture.data,
+		fee: () => delegateRegistrationFixture.data.fee / 1e8,
+		data: () => ({ data: () => delegateRegistrationFixture.data }),
 	});
 
 describe("DelegateRegistrationForm", () => {
@@ -304,8 +304,8 @@ describe("DelegateRegistrationForm", () => {
 			sender: () => delegateRegistrationFixture.data.sender,
 			recipient: () => delegateRegistrationFixture.data.recipient,
 			amount: () => BigNumber.make(delegateRegistrationFixture.data.amount),
-			fee: () => BigNumber.make(delegateRegistrationFixture.data.fee),
-			data: () => delegateRegistrationFixture.data,
+			fee: () => delegateRegistrationFixture.data.fee / 1e8,
+			data: () => ({ data: () => delegateRegistrationFixture.data }),
 		} as Contracts.SignedTransactionData;
 
 		const { getByText } = render(

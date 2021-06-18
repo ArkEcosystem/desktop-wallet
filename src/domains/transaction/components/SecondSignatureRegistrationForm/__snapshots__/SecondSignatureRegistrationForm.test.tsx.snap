@@ -364,7 +364,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                 </div>
               </div>
               <div
-                class="w-full inline-flex items-center space-x-2"
+                class="inline-flex items-center space-x-2 w-full"
                 data-testid="ButtonGroup"
                 role="radiogroup"
               >
@@ -382,7 +382,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                       Slow
                     </div>
                     <div
-                      class="font-normal text-sm"
+                      class="text-sm font-normal"
                     >
                       0 DARK
                     </div>
@@ -402,7 +402,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                       Average
                     </div>
                     <div
-                      class="font-normal text-sm"
+                      class="text-sm font-normal"
                     >
                       1.354 DARK
                     </div>
@@ -422,7 +422,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                       Fast
                     </div>
                     <div
-                      class="font-normal text-sm"
+                      class="text-sm font-normal"
                     >
                       10 DARK
                     </div>

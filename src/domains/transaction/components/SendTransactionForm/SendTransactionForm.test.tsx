@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { httpClient, toasts } from "app/services";
 import React from "react";
@@ -134,7 +135,7 @@ describe("SendTransactionForm", () => {
 		const { getByTestId } = rendered;
 
 		await act(async () => {
-			await waitFor(() => expect(form.current.getValues("fee")).toEqual("0.07320598"));
+			await waitFor(() => expect(form.current.getValues("fee")).toEqual(0.07320598));
 
 			fireEvent.click(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper"));
 			await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
@@ -150,10 +151,10 @@ describe("SendTransactionForm", () => {
 	it("should use static fees if avg is not available", async () => {
 		const { result: form } = renderHook(() => useForm());
 		const mockFees = jest.spyOn(env.fees(), "findByType").mockReturnValue({
-			static: "10000000",
-			max: "663000000",
-			min: "357000",
-			avg: "0",
+			static: BigNumber.make(10000000, 8),
+			max: BigNumber.make(663000000, 8),
+			min: BigNumber.make(357000, 8),
+			avg: BigNumber.make(0, 8),
 		});
 
 		form.current.register("fee");
@@ -184,7 +185,7 @@ describe("SendTransactionForm", () => {
 		const { getByTestId } = rendered;
 
 		await act(async () => {
-			await waitFor(() => expect(form.current.getValues("fee")).toEqual("0.1"));
+			await waitFor(() => expect(form.current.getValues("fee")).toEqual(0.1));
 
 			fireEvent.click(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper"));
 			await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());

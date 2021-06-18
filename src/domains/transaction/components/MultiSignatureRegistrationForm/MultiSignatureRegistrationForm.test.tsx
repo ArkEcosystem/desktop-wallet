@@ -26,8 +26,8 @@ describe("MultiSignature Registration Form", () => {
 			sender: () => multiSignatureFixture.data.sender,
 			recipient: () => multiSignatureFixture.data.recipient,
 			amount: () => BigNumber.make(multiSignatureFixture.data.amount),
-			fee: () => BigNumber.make(multiSignatureFixture.data.fee),
-			data: () => multiSignatureFixture.data,
+			fee: () => multiSignatureFixture.data.fee / 1e8,
+			data: () => ({ data: () => multiSignatureFixture.data }),
 		});
 
 	beforeEach(async () => {
@@ -188,8 +188,8 @@ describe("MultiSignature Registration Form", () => {
 			sender: () => multiSignatureFixture.data.sender,
 			recipient: () => multiSignatureFixture.data.recipient,
 			amount: () => BigNumber.make(multiSignatureFixture.data.amount),
-			fee: () => BigNumber.make(multiSignatureFixture.data.fee),
-			data: () => multiSignatureFixture.data,
+			fee: () => multiSignatureFixture.data.fee / 1e8,
+			data: () => ({ data: () => multiSignatureFixture.data }),
 		} as Contracts.SignedTransactionData;
 		const { asFragment } = render(<DetailsComponent />);
 

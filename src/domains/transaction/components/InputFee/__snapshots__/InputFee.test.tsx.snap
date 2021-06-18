@@ -142,7 +142,7 @@ exports[`should display converted values when on live net 1`] = `
       </div>
     </div>
     <div
-      class="w-full inline-flex items-center space-x-2"
+      class="inline-flex items-center space-x-2 w-full"
       data-testid="ButtonGroup"
       role="radiogroup"
     >
@@ -160,12 +160,12 @@ exports[`should display converted values when on live net 1`] = `
             Slow
           </div>
           <div
-            class="font-normal text-sm"
+            class="text-sm font-normal"
           >
             0.006 DARK
           </div>
           <div
-            class="font-normal text-sm text-theme-secondary-500 mt-3"
+            class="mt-3 text-sm font-normal text-theme-secondary-500"
           >
             <span
               data-testid="Amount"
@@ -189,12 +189,12 @@ exports[`should display converted values when on live net 1`] = `
             Average
           </div>
           <div
-            class="font-normal text-sm"
+            class="text-sm font-normal"
           >
             0.456 DARK
           </div>
           <div
-            class="font-normal text-sm text-theme-secondary-500 mt-3"
+            class="mt-3 text-sm font-normal text-theme-secondary-500"
           >
             <span
               data-testid="Amount"
@@ -218,12 +218,12 @@ exports[`should display converted values when on live net 1`] = `
             Fast
           </div>
           <div
-            class="font-normal text-sm"
+            class="text-sm font-normal"
           >
             0.5 DARK
           </div>
           <div
-            class="font-normal text-sm text-theme-secondary-500 mt-3"
+            class="mt-3 text-sm font-normal text-theme-secondary-500"
           >
             <span
               data-testid="Amount"
@@ -379,7 +379,7 @@ exports[`should keep different values for simple and advanced view types 2`] = `
       </div>
     </div>
     <div
-      class="w-full inline-flex items-center space-x-2"
+      class="inline-flex items-center space-x-2 w-full"
       data-testid="ButtonGroup"
       role="radiogroup"
     >
@@ -397,7 +397,7 @@ exports[`should keep different values for simple and advanced view types 2`] = `
             Slow
           </div>
           <div
-            class="font-normal text-sm"
+            class="text-sm font-normal"
           >
             0.006 DARK
           </div>
@@ -417,7 +417,7 @@ exports[`should keep different values for simple and advanced view types 2`] = `
             Average
           </div>
           <div
-            class="font-normal text-sm"
+            class="text-sm font-normal"
           >
             0.456 DARK
           </div>
@@ -437,7 +437,7 @@ exports[`should keep different values for simple and advanced view types 2`] = `
             Fast
           </div>
           <div
-            class="font-normal text-sm"
+            class="text-sm font-normal"
           >
             0.5 DARK
           </div>
@@ -490,7 +490,7 @@ exports[`should render 1`] = `
       </div>
     </div>
     <div
-      class="w-full inline-flex items-center space-x-2"
+      class="inline-flex items-center space-x-2 w-full"
       data-testid="ButtonGroup"
       role="radiogroup"
     >
@@ -508,7 +508,7 @@ exports[`should render 1`] = `
             Slow
           </div>
           <div
-            class="font-normal text-sm"
+            class="text-sm font-normal"
           >
             0.006 DARK
           </div>
@@ -528,7 +528,7 @@ exports[`should render 1`] = `
             Average
           </div>
           <div
-            class="font-normal text-sm"
+            class="text-sm font-normal"
           >
             0.456 DARK
           </div>
@@ -548,7 +548,7 @@ exports[`should render 1`] = `
             Fast
           </div>
           <div
-            class="font-normal text-sm"
+            class="text-sm font-normal"
           >
             0.5 DARK
           </div>
@@ -601,7 +601,7 @@ exports[`should update value when clicking button Average 1`] = `
       </div>
     </div>
     <div
-      class="w-full inline-flex items-center space-x-2"
+      class="inline-flex items-center space-x-2 w-full"
       data-testid="ButtonGroup"
       role="radiogroup"
     >
@@ -619,7 +619,7 @@ exports[`should update value when clicking button Average 1`] = `
             Slow
           </div>
           <div
-            class="font-normal text-sm"
+            class="text-sm font-normal"
           >
             0.006 DARK
           </div>
@@ -639,7 +639,7 @@ exports[`should update value when clicking button Average 1`] = `
             Average
           </div>
           <div
-            class="font-normal text-sm"
+            class="text-sm font-normal"
           >
             0.456 DARK
           </div>
@@ -659,7 +659,7 @@ exports[`should update value when clicking button Average 1`] = `
             Fast
           </div>
           <div
-            class="font-normal text-sm"
+            class="text-sm font-normal"
           >
             0.5 DARK
           </div>
@@ -712,7 +712,7 @@ exports[`should update value when clicking button Fast 1`] = `
       </div>
     </div>
     <div
-      class="w-full inline-flex items-center space-x-2"
+      class="inline-flex items-center space-x-2 w-full"
       data-testid="ButtonGroup"
       role="radiogroup"
     >
@@ -730,7 +730,7 @@ exports[`should update value when clicking button Fast 1`] = `
             Slow
           </div>
           <div
-            class="font-normal text-sm"
+            class="text-sm font-normal"
           >
             0.006 DARK
           </div>
@@ -750,7 +750,7 @@ exports[`should update value when clicking button Fast 1`] = `
             Average
           </div>
           <div
-            class="font-normal text-sm"
+            class="text-sm font-normal"
           >
             0.456 DARK
           </div>
@@ -770,7 +770,7 @@ exports[`should update value when clicking button Fast 1`] = `
             Fast
           </div>
           <div
-            class="font-normal text-sm"
+            class="text-sm font-normal"
           >
             0.5 DARK
           </div>
@@ -823,7 +823,7 @@ exports[`should update value when clicking button Slow 1`] = `
       </div>
     </div>
     <div
-      class="w-full inline-flex items-center space-x-2"
+      class="inline-flex items-center space-x-2 w-full"
       data-testid="ButtonGroup"
       role="radiogroup"
     >
@@ -841,7 +841,7 @@ exports[`should update value when clicking button Slow 1`] = `
             Slow
           </div>
           <div
-            class="font-normal text-sm"
+            class="text-sm font-normal"
           >
             0.006 DARK
           </div>
@@ -861,7 +861,7 @@ exports[`should update value when clicking button Slow 1`] = `
             Average
           </div>
           <div
-            class="font-normal text-sm"
+            class="text-sm font-normal"
           >
             0.456 DARK
           </div>
@@ -881,7 +881,7 @@ exports[`should update value when clicking button Slow 1`] = `
             Fast
           </div>
           <div
-            class="font-normal text-sm"
+            class="text-sm font-normal"
           >
             0.5 DARK
           </div>

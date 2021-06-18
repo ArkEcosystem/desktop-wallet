@@ -48,7 +48,7 @@ export const TransferLedgerReview = ({
 							<span>{t("COMMON.EXPIRATION")}</span>
 
 							<Tooltip content={expirationTypeTranslations[expirationType]}>
-								<div className="flex items-center justify-center w-4 h-4 rounded-full bg-theme-primary-100 text-theme-primary-600 dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200">
+								<div className="flex justify-center items-center w-4 h-4 rounded-full bg-theme-primary-100 text-theme-primary-600 dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200">
 									<Icon width={9} height={9} name="QuestionMark" />
 								</div>
 							</Tooltip>

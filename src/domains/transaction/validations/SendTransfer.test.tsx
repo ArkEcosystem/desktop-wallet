@@ -31,13 +31,13 @@ describe("Send transfer validations", () => {
 	});
 
 	it("amount", () => {
-		const noBalance = sendTransfer(translationMock, env).amount(network, BigNumber.ZERO, [], false);
+		const noBalance = sendTransfer(translationMock).amount(network, BigNumber.ZERO, [], false);
 		expect(noBalance.validate.valid("1")).toBe("TRANSACTION.VALIDATION.LOW_BALANCE");
 
-		const noAmount = sendTransfer(translationMock, env).amount(network, BigNumber.ONE, [], false);
+		const noAmount = sendTransfer(translationMock).amount(network, BigNumber.ONE, [], false);
 		expect(noAmount.validate.valid("")).toBe("COMMON.VALIDATION.FIELD_REQUIRED");
 
-		const amountTooSmall = sendTransfer(translationMock, env).amount(network, BigNumber.ONE, [], false);
-		expect(amountTooSmall.validate.valid("0")).toBe("TRANSACTION.VALIDATION.AMOUNT_BELOW_MINIMUM");
+		const amountTooSmall = sendTransfer(translationMock).amount(network, BigNumber.ONE, [], false);
+		expect(amountTooSmall.validate.valid(0)).toBe("TRANSACTION.VALIDATION.AMOUNT_BELOW_MINIMUM");
 	});
 });

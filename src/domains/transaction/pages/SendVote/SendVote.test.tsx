@@ -40,8 +40,8 @@ const createVoteTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 		sender: () => voteFixture.data.sender,
 		recipient: () => voteFixture.data.recipient,
 		amount: () => BigNumber.make(voteFixture.data.amount),
-		fee: () => BigNumber.make(voteFixture.data.fee),
-		data: () => voteFixture.data,
+		fee: () => voteFixture.data.fee / 1e8,
+		data: () => ({ data: () => voteFixture.data }),
 	});
 
 const createUnvoteTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
@@ -51,8 +51,8 @@ const createUnvoteTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 		sender: () => unvoteFixture.data.sender,
 		recipient: () => unvoteFixture.data.recipient,
 		amount: () => BigNumber.make(unvoteFixture.data.amount),
-		fee: () => BigNumber.make(unvoteFixture.data.fee),
-		data: () => unvoteFixture.data,
+		fee: () => unvoteFixture.data.fee / 1e8,
+		data: () => ({ data: () => voteFixture.data }),
 	});
 
 const passphrase = getDefaultWalletMnemonic();
@@ -829,7 +829,7 @@ describe("SendVote", () => {
 		expect(signMock).toHaveBeenCalledWith(
 			expect.objectContaining({
 				data: expect.anything(),
-				fee: expect.any(String),
+				fee: expect.any(Number),
 				nonce: expect.any(String),
 				signatory: expect.any(Object),
 			}),

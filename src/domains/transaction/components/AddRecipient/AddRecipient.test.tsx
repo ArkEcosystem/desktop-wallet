@@ -117,7 +117,7 @@ describe("AddRecipient", () => {
 			expect(form.current.getValues("amount")).toEqual("1");
 			expect(getByTestId("SelectDropdown__input")).toHaveValue("bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT");
 			expect(onChange).toHaveBeenCalledWith([
-				{ amount: expect.any(BigNumber), address: "bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" },
+				{ amount: expect.any(Number), address: "bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" },
 			]);
 		});
 	});
@@ -157,7 +157,7 @@ describe("AddRecipient", () => {
 		});
 
 		await waitFor(() =>
-			expect(form.current.getValues("amount")).toEqual(wallet.balance().denominated().toString()),
+			expect(form.current.getValues("amount")).toEqual(wallet.balance().toString()),
 		);
 		expect(container).toMatchSnapshot();
 	});
@@ -354,7 +354,7 @@ describe("AddRecipient", () => {
 	});
 
 	it("should show error for zero balance", async () => {
-		const mockWalletBalance = jest.spyOn(wallet, "balance").mockReturnValue(BigNumber.ZERO);
+		const mockWalletBalance = jest.spyOn(wallet, "balance").mockReturnValue(0);
 
 		const { getByTestId, getAllByTestId, form } = await renderWithFormProvider(
 			<AddRecipient profile={profile} assetSymbol="ARK" isSingleRecipient={false} />,

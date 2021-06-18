@@ -42,8 +42,8 @@ describe("SecondSignatureRegistrationForm", () => {
 			sender: () => secondSignatureFixture.data.sender,
 			recipient: () => secondSignatureFixture.data.recipient,
 			amount: () => BigNumber.make(secondSignatureFixture.data.amount),
-			fee: () => BigNumber.make(secondSignatureFixture.data.fee),
-			data: () => secondSignatureFixture.data,
+			fee: () => secondSignatureFixture.data.fee / 1e8,
+			data: () => ({ data: () => secondSignatureFixture.data }),
 		});
 
 	const Component = ({
@@ -296,8 +296,8 @@ describe("SecondSignatureRegistrationForm", () => {
 			sender: () => secondSignatureFixture.data.sender,
 			recipient: () => secondSignatureFixture.data.recipient,
 			amount: () => BigNumber.make(secondSignatureFixture.data.amount),
-			fee: () => BigNumber.make(secondSignatureFixture.data.fee),
-			data: () => secondSignatureFixture.data,
+			fee: () => secondSignatureFixture.data.fee / 1e8,
+			data: () => ({ data: () => secondSignatureFixture.data }),
 		} as Contracts.SignedTransactionData;
 		const { asFragment } = render(<DetailsComponent />);
 

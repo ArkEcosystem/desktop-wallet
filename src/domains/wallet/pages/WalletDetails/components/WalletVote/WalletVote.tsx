@@ -162,11 +162,11 @@ export const WalletVote = ({ wallet, onButtonClick, env, profile }: WalletVotePr
 					)}
 				</div>
 
-				<div className="flex flex-col items-end justify-between pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800">
+				<div className="flex flex-col justify-between items-end pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800">
 					<span className="text-sm text-theme-secondary-500 dark:text-theme-secondary-700">
 						{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.DELEGATE_STATUS")}
 					</span>
-					<div className="flex items-center justify-end space-x-2">{renderStatuses()}</div>
+					<div className="flex justify-end items-center space-x-2">{renderStatuses()}</div>
 				</div>
 			</>
 		);

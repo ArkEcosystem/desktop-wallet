@@ -65,8 +65,8 @@ const createTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 		sender: () => DelegateRegistrationFixture.data.sender,
 		recipient: () => DelegateRegistrationFixture.data.recipient,
 		amount: () => BigNumber.make(DelegateRegistrationFixture.data.amount),
-		fee: () => BigNumber.make(DelegateRegistrationFixture.data.fee),
-		data: () => DelegateRegistrationFixture.data,
+		fee: () => DelegateRegistrationFixture.data.fee / 1e8,
+		data: () => ({ data: () => DelegateRegistrationFixture.data }),
 	});
 
 describe("Registration", () => {

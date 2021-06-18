@@ -30,7 +30,7 @@ export const InputFeeSimple = ({
 				<div>
 					<div className="mb-3">{label}</div>
 					{loading ? (
-						<Skeleton width={100} className="h-3 my-1" />
+						<Skeleton width={100} className="my-1 h-3" />
 					) : (
 						<>
 							<div className="text-sm font-normal">

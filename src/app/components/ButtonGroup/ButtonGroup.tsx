@@ -2,7 +2,7 @@ import React from "react";
 import tw, { css, styled } from "twin.macro";
 
 export const ButtonGroup = ({ children }: React.PropsWithChildren<{}>) => (
-	<div data-testid="ButtonGroup" role="radiogroup" className="w-full inline-flex items-center space-x-2">
+	<div data-testid="ButtonGroup" role="radiogroup" className="inline-flex items-center space-x-2 w-full">
 		{children}
 	</div>
 );

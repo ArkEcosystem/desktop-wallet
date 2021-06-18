@@ -873,7 +873,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                             </div>
                           </div>
                           <div
-                            class="w-full inline-flex items-center space-x-2"
+                            class="inline-flex items-center space-x-2 w-full"
                             data-testid="ButtonGroup"
                             role="radiogroup"
                           >
@@ -891,7 +891,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                   Slow
                                 </div>
                                 <div
-                                  class="font-normal text-sm"
+                                  class="text-sm font-normal"
                                 >
                                   0.00357 DARK
                                 </div>
@@ -911,7 +911,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                   Average
                                 </div>
                                 <div
-                                  class="font-normal text-sm"
+                                  class="text-sm font-normal"
                                 >
                                   0.07320598 DARK
                                 </div>
@@ -931,7 +931,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                   Fast
                                 </div>
                                 <div
-                                  class="font-normal text-sm"
+                                  class="text-sm font-normal"
                                 >
                                   0.1 DARK
                                 </div>
@@ -993,10 +993,10 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
         class="flex relative h-21"
       >
         <button
-          class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
+          class="flex w-12 BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD"
         >
           <div
-            class="sc-bdfBwQ iMKUsi mx-auto"
+            class="mx-auto sc-bdfBwQ iMKUsi"
             height="10"
             width="6"
           >
@@ -1006,7 +1006,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
           </div>
         </button>
         <div
-          class="flex flex-1 px-8 "
+          class="flex flex-1 px-8"
         >
           <div
             class="flex items-center my-auto"
@@ -1103,7 +1103,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -1142,7 +1142,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iyevwF p-1"
+                      class="p-1 sc-bdfBwQ iyevwF"
                       height="20"
                       width="20"
                     >
@@ -1172,7 +1172,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -1221,11 +1221,11 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                     data-testid="Avatar"
                   >
                     <div
-                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                     >
                       <img
                         alt="Profile Avatar"
@@ -1249,7 +1249,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Qqquu flex-1"
+        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 Qqquu"
       >
         <div
           class="container px-10 mx-auto"
@@ -1351,7 +1351,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                                     class="align-middle"
                                   >
                                     <div
-                                      class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
+                                      class="inline-block flex-shrink-0 pb-px text-sm duration-200 sc-bdfBwQ fPrsah"
                                       data-testid="Link__external"
                                       height="1em"
                                       width="1em"
@@ -1443,7 +1443,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                               class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                             >
                               <span
-                                class="font-semibold text-base text-theme-text"
+                                class="text-base font-semibold text-theme-text"
                                 data-testid="Address__alias"
                               >
                                 <span
@@ -1454,7 +1454,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                                 </span>
                               </span>
                               <span
-                                class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                                class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                                 data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -1466,11 +1466,11 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                           class="flex items-center -space-x-2"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -1500,7 +1500,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                               class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                             >
                               <span
-                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                                class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
                                 data-testid="Address__address"
                               >
                                 D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
@@ -1509,11 +1509,11 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                          class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                           data-testid="Avatar"
                         >
                           <div
-                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                            class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                           >
                             <img
                               alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
@@ -1551,7 +1551,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                           </div>
                         </div>
                         <div
-                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-danger-100 text-theme-danger-500 dark:border-theme-danger-400 dark:text-theme-danger-400 ring-theme-background"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-danger-100 text-theme-danger-500 ring-theme-background dark:border-theme-danger-400 dark:text-theme-danger-400"
                         >
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -1594,7 +1594,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP block"
+                    class="block OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                     data-testid="SendTransfer__button--back-to-wallet"
                     type="button"
                   >
@@ -1623,7 +1623,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                     class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+                      class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="modal__close-btn"
                       type="button"
                     >
@@ -1663,7 +1663,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                         data-testid="TransactionTable"
                       >
                         <div
-                          class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+                          class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
                           role="table"
                         >
                           <table
@@ -1676,7 +1676,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                                 role="row"
                               >
                                 <th
-                                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                                  class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                                   colspan="1"
                                   data-testid="table__th--0"
                                   role="columnheader"
@@ -1684,16 +1684,16 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                                   title="Toggle SortBy"
                                 >
                                   <div
-                                    class="flex flex-inline align-top"
+                                    class="flex align-top flex-inline"
                                   >
                                     <div>
                                       Date
                                     </div>
                                     <div
-                                      class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                                      class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                                     >
                                       <div
-                                        class="sc-bdfBwQ kJrqvM transition-transform"
+                                        class="transition-transform sc-bdfBwQ kJrqvM"
                                         height="5"
                                         role="img"
                                         width="8"
@@ -1706,13 +1706,13 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                                   </div>
                                 </th>
                                 <th
-                                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                                  class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                                   colspan="1"
                                   data-testid="table__th--1"
                                   role="columnheader"
                                 >
                                   <div
-                                    class="flex flex-inline align-top"
+                                    class="flex align-top flex-inline"
                                   >
                                     <div>
                                       Recipient
@@ -1720,7 +1720,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                                   </div>
                                 </th>
                                 <th
-                                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                                  class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                                   colspan="1"
                                   data-testid="table__th--2"
                                   role="columnheader"
@@ -1728,16 +1728,16 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                                   title="Toggle SortBy"
                                 >
                                   <div
-                                    class="flex flex-inline align-top justify-end flex-row-reverse"
+                                    class="flex flex-row-reverse justify-end align-top flex-inline"
                                   >
                                     <div>
                                       Amount
                                     </div>
                                     <div
-                                      class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
+                                      class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                                     >
                                       <div
-                                        class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                                        class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                                         height="5"
                                         role="img"
                                         width="8"
@@ -1760,7 +1760,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                               >
                                 <td>
                                   <div
-                                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE space-x-3 text-theme-secondary-500"
+                                    class="space-x-3 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE text-theme-secondary-500"
                                   >
                                     <span
                                       data-testid="timeago"
@@ -1771,14 +1771,14 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                                 </td>
                                 <td>
                                   <div
-                                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 hAleYq space-x-3 w-50"
+                                    class="space-x-3 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 hAleYq w-50"
                                   >
                                     <div
-                                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
+                                      class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background dark:group-hover:ring-black dark:group-hover:bg-black group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
                                       data-testid="Avatar"
                                     >
                                       <div
-                                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                                        class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                                       >
                                         <img
                                           alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
@@ -1791,7 +1791,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                                       class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                                     >
                                       <span
-                                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                                        class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
                                         data-testid="Address__address"
                                       >
                                         D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
@@ -1801,10 +1801,10 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                                 </td>
                                 <td>
                                   <div
-                                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo justify-end"
+                                    class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo"
                                   >
                                     <div
-                                      class="Label-sc-1tj9hzr-0 ganlOQ whitespace-nowrap"
+                                      class="whitespace-nowrap Label-sc-1tj9hzr-0 ganlOQ"
                                       color="danger"
                                       data-testid="TransactionRowAmount"
                                     >
@@ -1873,10 +1873,10 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
         class="flex relative h-21"
       >
         <button
-          class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
+          class="flex w-12 BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD"
         >
           <div
-            class="sc-bdfBwQ iMKUsi mx-auto"
+            class="mx-auto sc-bdfBwQ iMKUsi"
             height="10"
             width="6"
           >
@@ -1886,7 +1886,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
           </div>
         </button>
         <div
-          class="flex flex-1 px-8 "
+          class="flex flex-1 px-8"
         >
           <div
             class="flex items-center my-auto"
@@ -1983,7 +1983,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -2022,7 +2022,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iyevwF p-1"
+                      class="p-1 sc-bdfBwQ iyevwF"
                       height="20"
                       width="20"
                     >
@@ -2052,7 +2052,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -2101,11 +2101,11 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                     data-testid="Avatar"
                   >
                     <div
-                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                     >
                       <img
                         alt="Profile Avatar"
@@ -2129,7 +2129,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Qqquu flex-1"
+        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 Qqquu"
       >
         <div
           class="container px-10 mx-auto"
@@ -2186,7 +2186,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                       </div>
                     </div>
                     <fieldset
-                      class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
+                      class="flex flex-col space-y-2 FormField__FormFieldStyled-yeauwd-0 qzrKg"
                     >
                       <label
                         class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -2204,11 +2204,11 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                         class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
                       >
                         <div
-                          class="relative flex flex-1 h-full"
+                          class="flex relative flex-1 h-full"
                         >
                           <input
                             aria-invalid="true"
-                            class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                            class="p-0 w-full bg-transparent border-none focus:ring-0 Input__InputStyled-wu99qs-1 ioFtLo no-ligatures"
                             data-testid="AuthenticationStep__mnemonic"
                             name="mnemonic"
                             type="password"
@@ -2216,7 +2216,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                           />
                         </div>
                         <div
-                          class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+                          class="flex items-center space-x-3 divide-x divide-theme-secondary-300 text-theme-danger-500 dark:divide-theme-secondary-800"
                         >
                           <span
                             data-errortext="Invalid Mnemonic"
@@ -3742,7 +3742,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                             </div>
                           </div>
                           <div
-                            class="w-full inline-flex items-center space-x-2"
+                            class="inline-flex items-center space-x-2 w-full"
                             data-testid="ButtonGroup"
                             role="radiogroup"
                           >
@@ -3760,7 +3760,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                   Slow
                                 </div>
                                 <div
-                                  class="font-normal text-sm"
+                                  class="text-sm font-normal"
                                 >
                                   0.00357 DARK
                                 </div>
@@ -3780,7 +3780,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                   Average
                                 </div>
                                 <div
-                                  class="font-normal text-sm"
+                                  class="text-sm font-normal"
                                 >
                                   0.07320598 DARK
                                 </div>
@@ -3800,7 +3800,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                   Fast
                                 </div>
                                 <div
-                                  class="font-normal text-sm"
+                                  class="text-sm font-normal"
                                 >
                                   0.1 DARK
                                 </div>
@@ -4756,7 +4756,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                             </div>
                           </div>
                           <div
-                            class="w-full inline-flex items-center space-x-2"
+                            class="inline-flex items-center space-x-2 w-full"
                             data-testid="ButtonGroup"
                             role="radiogroup"
                           >
@@ -4774,7 +4774,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                   Slow
                                 </div>
                                 <div
-                                  class="font-normal text-sm"
+                                  class="text-sm font-normal"
                                 >
                                   0.00357 DARK
                                 </div>
@@ -4794,7 +4794,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                   Average
                                 </div>
                                 <div
-                                  class="font-normal text-sm"
+                                  class="text-sm font-normal"
                                 >
                                   0.07320598 DARK
                                 </div>
@@ -4814,7 +4814,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                   Fast
                                 </div>
                                 <div
-                                  class="font-normal text-sm"
+                                  class="text-sm font-normal"
                                 >
                                   0.1 DARK
                                 </div>
@@ -7290,7 +7290,7 @@ exports[`SendTransfer should render review step 1`] = `
             class="text-2xl font-bold"
             data-testid="total-amount-box__total"
           >
-            2 DARK
+            11 DARK
           </span>
         </div>
       </div>
@@ -7369,7 +7369,7 @@ exports[`SendTransfer should render summary step 1`] = `
                     class="align-middle"
                   >
                     <div
-                      class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
+                      class="inline-block flex-shrink-0 pb-px text-sm duration-200 sc-bdfBwQ fPrsah"
                       data-testid="Link__external"
                       height="1em"
                       width="1em"
@@ -7461,7 +7461,7 @@ exports[`SendTransfer should render summary step 1`] = `
               class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
             >
               <span
-                class="font-semibold text-base text-theme-text"
+                class="text-base font-semibold text-theme-text"
                 data-testid="Address__alias"
               >
                 <span
@@ -7472,7 +7472,7 @@ exports[`SendTransfer should render summary step 1`] = `
                 </span>
               </span>
               <span
-                class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                 data-testid="Address__address"
               >
                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -7484,11 +7484,11 @@ exports[`SendTransfer should render summary step 1`] = `
           class="flex items-center -space-x-2"
         >
           <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
             data-testid="Avatar"
           >
             <div
-              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
             >
               <img
                 alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -7520,11 +7520,11 @@ exports[`SendTransfer should render summary step 1`] = `
           </div>
         </div>
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+          class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
           data-testid="Avatar"
         >
           <div
-            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+            class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
           />
         </div>
       </div>
@@ -7556,7 +7556,7 @@ exports[`SendTransfer should render summary step 1`] = `
           </div>
         </div>
         <div
-          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-danger-100 text-theme-danger-500 dark:border-theme-danger-400 dark:text-theme-danger-400 ring-theme-background"
+          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-danger-100 text-theme-danger-500 ring-theme-background dark:border-theme-danger-400 dark:text-theme-danger-400"
         >
           <div
             class="sc-bdfBwQ fPrsah"
@@ -8518,7 +8518,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                             </div>
                           </div>
                           <div
-                            class="w-full inline-flex items-center space-x-2"
+                            class="inline-flex items-center space-x-2 w-full"
                             data-testid="ButtonGroup"
                             role="radiogroup"
                           >
@@ -8536,7 +8536,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                   Slow
                                 </div>
                                 <div
-                                  class="font-normal text-sm"
+                                  class="text-sm font-normal"
                                 >
                                   0.00357
                                    
@@ -8558,7 +8558,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                   Average
                                 </div>
                                 <div
-                                  class="font-normal text-sm"
+                                  class="text-sm font-normal"
                                 >
                                   0.07320598
                                    
@@ -8580,7 +8580,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                   Fast
                                 </div>
                                 <div
-                                  class="font-normal text-sm"
+                                  class="text-sm font-normal"
                                 >
                                   0.1
                                    
@@ -9674,7 +9674,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                               <span
                                 data-testid="Amount"
                               >
-                                - 400,000 DARK
+                                - 40,000,000,000,000 DARK
                               </span>
                             </div>
                           </div>
@@ -10311,7 +10311,7 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
                               <span
                                 data-testid="Amount"
                               >
-                                - 400,000 DARK
+                                - 40,000,000,000,000 DARK
                               </span>
                             </div>
                           </div>
@@ -10396,10 +10396,10 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
         class="flex relative h-21"
       >
         <button
-          class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
+          class="flex w-12 BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD"
         >
           <div
-            class="sc-bdfBwQ iMKUsi mx-auto"
+            class="mx-auto sc-bdfBwQ iMKUsi"
             height="10"
             width="6"
           >
@@ -10409,7 +10409,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
           </div>
         </button>
         <div
-          class="flex flex-1 px-8 "
+          class="flex flex-1 px-8"
         >
           <div
             class="flex items-center my-auto"
@@ -10506,7 +10506,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -10545,7 +10545,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iyevwF p-1"
+                      class="p-1 sc-bdfBwQ iyevwF"
                       height="20"
                       width="20"
                     >
@@ -10575,7 +10575,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -10624,11 +10624,11 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                     data-testid="Avatar"
                   >
                     <div
-                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                     >
                       <img
                         alt="Profile Avatar"
@@ -10652,7 +10652,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Qqquu flex-1"
+        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 Qqquu"
       >
         <div
           class="container px-10 mx-auto"
@@ -10754,7 +10754,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                                     class="align-middle"
                                   >
                                     <div
-                                      class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
+                                      class="inline-block flex-shrink-0 pb-px text-sm duration-200 sc-bdfBwQ fPrsah"
                                       data-testid="Link__external"
                                       height="1em"
                                       width="1em"
@@ -10846,7 +10846,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                               class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                             >
                               <span
-                                class="font-semibold text-base text-theme-text"
+                                class="text-base font-semibold text-theme-text"
                                 data-testid="Address__alias"
                               >
                                 <span
@@ -10857,7 +10857,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                                 </span>
                               </span>
                               <span
-                                class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                                class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                                 data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -10869,11 +10869,11 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                           class="flex items-center -space-x-2"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -10903,7 +10903,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                               class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                             >
                               <span
-                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                                class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
                                 data-testid="Address__address"
                               >
                                 D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
@@ -10912,11 +10912,11 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                          class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                           data-testid="Avatar"
                         >
                           <div
-                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                            class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                           >
                             <img
                               alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
@@ -10954,7 +10954,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                           </div>
                         </div>
                         <div
-                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-danger-100 text-theme-danger-500 dark:border-theme-danger-400 dark:text-theme-danger-400 ring-theme-background"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-danger-100 text-theme-danger-500 ring-theme-background dark:border-theme-danger-400 dark:text-theme-danger-400"
                         >
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -10997,7 +10997,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP block"
+                    class="block OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                     data-testid="SendTransfer__button--back-to-wallet"
                     type="button"
                   >
@@ -11026,7 +11026,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                     class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+                      class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="modal__close-btn"
                       type="button"
                     >
@@ -11066,7 +11066,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                         data-testid="TransactionTable"
                       >
                         <div
-                          class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+                          class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
                           role="table"
                         >
                           <table
@@ -11079,7 +11079,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                                 role="row"
                               >
                                 <th
-                                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                                  class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                                   colspan="1"
                                   data-testid="table__th--0"
                                   role="columnheader"
@@ -11087,16 +11087,16 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                                   title="Toggle SortBy"
                                 >
                                   <div
-                                    class="flex flex-inline align-top"
+                                    class="flex align-top flex-inline"
                                   >
                                     <div>
                                       Date
                                     </div>
                                     <div
-                                      class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                                      class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                                     >
                                       <div
-                                        class="sc-bdfBwQ kJrqvM transition-transform"
+                                        class="transition-transform sc-bdfBwQ kJrqvM"
                                         height="5"
                                         role="img"
                                         width="8"
@@ -11109,13 +11109,13 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                                   </div>
                                 </th>
                                 <th
-                                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                                  class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                                   colspan="1"
                                   data-testid="table__th--1"
                                   role="columnheader"
                                 >
                                   <div
-                                    class="flex flex-inline align-top"
+                                    class="flex align-top flex-inline"
                                   >
                                     <div>
                                       Recipient
@@ -11123,7 +11123,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                                   </div>
                                 </th>
                                 <th
-                                  class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                                  class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
                                   colspan="1"
                                   data-testid="table__th--2"
                                   role="columnheader"
@@ -11131,16 +11131,16 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                                   title="Toggle SortBy"
                                 >
                                   <div
-                                    class="flex flex-inline align-top justify-end flex-row-reverse"
+                                    class="flex flex-row-reverse justify-end align-top flex-inline"
                                   >
                                     <div>
                                       Amount
                                     </div>
                                     <div
-                                      class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
+                                      class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
                                     >
                                       <div
-                                        class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                                        class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
                                         height="5"
                                         role="img"
                                         width="8"
@@ -11163,7 +11163,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                               >
                                 <td>
                                   <div
-                                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE space-x-3 text-theme-secondary-500"
+                                    class="space-x-3 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE text-theme-secondary-500"
                                   >
                                     <span
                                       data-testid="timeago"
@@ -11174,14 +11174,14 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                                 </td>
                                 <td>
                                   <div
-                                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 hAleYq space-x-3 w-50"
+                                    class="space-x-3 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 hAleYq w-50"
                                   >
                                     <div
-                                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
+                                      class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background dark:group-hover:ring-black dark:group-hover:bg-black group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
                                       data-testid="Avatar"
                                     >
                                       <div
-                                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                                        class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                                       >
                                         <img
                                           alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
@@ -11194,7 +11194,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                                       class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                                     >
                                       <span
-                                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                                        class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
                                         data-testid="Address__address"
                                       >
                                         D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
@@ -11204,10 +11204,10 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                                 </td>
                                 <td>
                                   <div
-                                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo justify-end"
+                                    class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo"
                                   >
                                     <div
-                                      class="Label-sc-1tj9hzr-0 ganlOQ whitespace-nowrap"
+                                      class="whitespace-nowrap Label-sc-1tj9hzr-0 ganlOQ"
                                       color="danger"
                                       data-testid="TransactionRowAmount"
                                     >
@@ -11226,7 +11226,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                               >
                                 <td>
                                   <div
-                                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE space-x-3 text-theme-secondary-500"
+                                    class="space-x-3 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE text-theme-secondary-500"
                                   >
                                     <span
                                       data-testid="timeago"
@@ -11237,10 +11237,10 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                                 </td>
                                 <td>
                                   <div
-                                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 hAleYq space-x-3 w-50"
+                                    class="space-x-3 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 hAleYq w-50"
                                   >
                                     <div
-                                      class="Circle__CircleWrapper-uw7h4j-0 byFmWC border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600 ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-background"
+                                      class="Circle__CircleWrapper-uw7h4j-0 byFmWC border-theme-text text-theme-text ring-theme-background bg-theme-background dark:border-theme-secondary-600 dark:text-theme-secondary-600 dark:group-hover:ring-black dark:group-hover:bg-black group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100"
                                       data-testid="TransactionRowRecipientIcon"
                                     >
                                       <div
@@ -11270,10 +11270,10 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                                 </td>
                                 <td>
                                   <div
-                                    class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo justify-end"
+                                    class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo"
                                   >
                                     <div
-                                      class="Label-sc-1tj9hzr-0 ganlOQ whitespace-nowrap"
+                                      class="whitespace-nowrap Label-sc-1tj9hzr-0 ganlOQ"
                                       color="danger"
                                       data-testid="TransactionRowAmount"
                                     >
@@ -11344,10 +11344,10 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
         class="flex relative h-21"
       >
         <button
-          class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
+          class="flex w-12 BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD"
         >
           <div
-            class="sc-bdfBwQ iMKUsi mx-auto"
+            class="mx-auto sc-bdfBwQ iMKUsi"
             height="10"
             width="6"
           >
@@ -11357,7 +11357,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
           </div>
         </button>
         <div
-          class="flex flex-1 px-8 "
+          class="flex flex-1 px-8"
         >
           <div
             class="flex items-center my-auto"
@@ -11454,7 +11454,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -11493,7 +11493,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iyevwF p-1"
+                      class="p-1 sc-bdfBwQ iyevwF"
                       height="20"
                       width="20"
                     >
@@ -11523,7 +11523,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -11572,11 +11572,11 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                     data-testid="Avatar"
                   >
                     <div
-                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                     >
                       <img
                         alt="Profile Avatar"
@@ -11600,7 +11600,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Qqquu flex-1"
+        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 Qqquu"
       >
         <div
           class="container px-10 mx-auto"
@@ -11702,7 +11702,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                                     class="align-middle"
                                   >
                                     <div
-                                      class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
+                                      class="inline-block flex-shrink-0 pb-px text-sm duration-200 sc-bdfBwQ fPrsah"
                                       data-testid="Link__external"
                                       height="1em"
                                       width="1em"
@@ -11794,7 +11794,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                               class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                             >
                               <span
-                                class="font-semibold text-base text-theme-text"
+                                class="text-base font-semibold text-theme-text"
                                 data-testid="Address__alias"
                               >
                                 <span
@@ -11805,7 +11805,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                                 </span>
                               </span>
                               <span
-                                class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                                class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                                 data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -11817,11 +11817,11 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                           class="flex items-center -space-x-2"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -11851,7 +11851,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                               class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                             >
                               <span
-                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                                class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
                                 data-testid="Address__address"
                               >
                                 D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
@@ -11860,11 +11860,11 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                          class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                           data-testid="Avatar"
                         >
                           <div
-                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                            class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                           >
                             <img
                               alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
@@ -11902,7 +11902,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                           </div>
                         </div>
                         <div
-                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-danger-100 text-theme-danger-500 dark:border-theme-danger-400 dark:text-theme-danger-400 ring-theme-background"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-danger-100 text-theme-danger-500 ring-theme-background dark:border-theme-danger-400 dark:text-theme-danger-400"
                         >
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -11945,7 +11945,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP block"
+                    class="block OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                     data-testid="SendTransfer__button--back-to-wallet"
                     type="button"
                   >
@@ -11981,10 +11981,10 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
         class="flex relative h-21"
       >
         <button
-          class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
+          class="flex w-12 BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD"
         >
           <div
-            class="sc-bdfBwQ iMKUsi mx-auto"
+            class="mx-auto sc-bdfBwQ iMKUsi"
             height="10"
             width="6"
           >
@@ -11994,7 +11994,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
           </div>
         </button>
         <div
-          class="flex flex-1 px-8 "
+          class="flex flex-1 px-8"
         >
           <div
             class="flex items-center my-auto"
@@ -12091,7 +12091,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -12130,7 +12130,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iyevwF p-1"
+                      class="p-1 sc-bdfBwQ iyevwF"
                       height="20"
                       width="20"
                     >
@@ -12160,7 +12160,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -12209,11 +12209,11 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                     data-testid="Avatar"
                   >
                     <div
-                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                     >
                       <img
                         alt="Profile Avatar"
@@ -12237,7 +12237,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Qqquu flex-1"
+        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 Qqquu"
       >
         <div
           class="container px-10 mx-auto"
@@ -12339,7 +12339,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                                     class="align-middle"
                                   >
                                     <div
-                                      class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
+                                      class="inline-block flex-shrink-0 pb-px text-sm duration-200 sc-bdfBwQ fPrsah"
                                       data-testid="Link__external"
                                       height="1em"
                                       width="1em"
@@ -12431,7 +12431,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                               class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                             >
                               <span
-                                class="font-semibold text-base text-theme-text"
+                                class="text-base font-semibold text-theme-text"
                                 data-testid="Address__alias"
                               >
                                 <span
@@ -12442,7 +12442,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                                 </span>
                               </span>
                               <span
-                                class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                                class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                                 data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -12454,11 +12454,11 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                           class="flex items-center -space-x-2"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -12488,7 +12488,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                               class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                             >
                               <span
-                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                                class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
                                 data-testid="Address__address"
                               >
                                 D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
@@ -12497,11 +12497,11 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                          class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                           data-testid="Avatar"
                         >
                           <div
-                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                            class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                           >
                             <img
                               alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
@@ -12539,7 +12539,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                           </div>
                         </div>
                         <div
-                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-danger-100 text-theme-danger-500 dark:border-theme-danger-400 dark:text-theme-danger-400 ring-theme-background"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-danger-100 text-theme-danger-500 ring-theme-background dark:border-theme-danger-400 dark:text-theme-danger-400"
                         >
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -12582,7 +12582,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP block"
+                    class="block OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                     data-testid="SendTransfer__button--back-to-wallet"
                     type="button"
                   >
@@ -12618,10 +12618,10 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
         class="flex relative h-21"
       >
         <button
-          class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
+          class="flex w-12 BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD"
         >
           <div
-            class="sc-bdfBwQ iMKUsi mx-auto"
+            class="mx-auto sc-bdfBwQ iMKUsi"
             height="10"
             width="6"
           >
@@ -12631,7 +12631,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
           </div>
         </button>
         <div
-          class="flex flex-1 px-8 "
+          class="flex flex-1 px-8"
         >
           <div
             class="flex items-center my-auto"
@@ -12728,7 +12728,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -12767,7 +12767,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iyevwF p-1"
+                      class="p-1 sc-bdfBwQ iyevwF"
                       height="20"
                       width="20"
                     >
@@ -12797,7 +12797,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -12846,11 +12846,11 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                     data-testid="Avatar"
                   >
                     <div
-                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                     >
                       <img
                         alt="Profile Avatar"
@@ -12874,7 +12874,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Qqquu flex-1"
+        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 Qqquu"
       >
         <div
           class="container px-10 mx-auto"
@@ -12976,7 +12976,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                                     class="align-middle"
                                   >
                                     <div
-                                      class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
+                                      class="inline-block flex-shrink-0 pb-px text-sm duration-200 sc-bdfBwQ fPrsah"
                                       data-testid="Link__external"
                                       height="1em"
                                       width="1em"
@@ -13068,7 +13068,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                               class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                             >
                               <span
-                                class="font-semibold text-base text-theme-text"
+                                class="text-base font-semibold text-theme-text"
                                 data-testid="Address__alias"
                               >
                                 <span
@@ -13079,7 +13079,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                                 </span>
                               </span>
                               <span
-                                class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                                class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                                 data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -13091,11 +13091,11 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                           class="flex items-center -space-x-2"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                            class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                              class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                             >
                               <img
                                 alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -13125,7 +13125,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                               class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                             >
                               <span
-                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                                class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
                                 data-testid="Address__address"
                               >
                                 D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
@@ -13134,11 +13134,11 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                          class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                           data-testid="Avatar"
                         >
                           <div
-                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                            class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                           >
                             <img
                               alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
@@ -13176,7 +13176,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                           </div>
                         </div>
                         <div
-                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-danger-100 text-theme-danger-500 dark:border-theme-danger-400 dark:text-theme-danger-400 ring-theme-background"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-danger-100 text-theme-danger-500 ring-theme-background dark:border-theme-danger-400 dark:text-theme-danger-400"
                         >
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -13219,7 +13219,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                   class="flex justify-end mt-10 space-x-3"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP block"
+                    class="block OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                     data-testid="SendTransfer__button--back-to-wallet"
                     type="button"
                   >
@@ -13255,10 +13255,10 @@ exports[`SendTransfer should show error step and go back 1`] = `
         class="flex relative h-21"
       >
         <button
-          class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
+          class="flex w-12 BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD"
         >
           <div
-            class="sc-bdfBwQ iMKUsi mx-auto"
+            class="mx-auto sc-bdfBwQ iMKUsi"
             height="10"
             width="6"
           >
@@ -13268,7 +13268,7 @@ exports[`SendTransfer should show error step and go back 1`] = `
           </div>
         </button>
         <div
-          class="flex flex-1 px-8 "
+          class="flex flex-1 px-8"
         >
           <div
             class="flex items-center my-auto"
@@ -13365,7 +13365,7 @@ exports[`SendTransfer should show error step and go back 1`] = `
                         class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ liSwOQ p-1"
+                          class="p-1 sc-bdfBwQ liSwOQ"
                           height="18"
                           width="15"
                         >
@@ -13404,7 +13404,7 @@ exports[`SendTransfer should show error step and go back 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iyevwF p-1"
+                      class="p-1 sc-bdfBwQ iyevwF"
                       height="20"
                       width="20"
                     >
@@ -13434,7 +13434,7 @@ exports[`SendTransfer should show error step and go back 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah p-1"
+                      class="p-1 sc-bdfBwQ iSzUah"
                       height="22"
                       width="22"
                     >
@@ -13483,11 +13483,11 @@ exports[`SendTransfer should show error step and go back 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                     data-testid="Avatar"
                   >
                     <div
-                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
                     >
                       <img
                         alt="Profile Avatar"
@@ -13511,7 +13511,7 @@ exports[`SendTransfer should show error step and go back 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 Qqquu flex-1"
+        class="flex-1 Section__SectionWrapper-sc-8cjvre-0 Qqquu"
       >
         <div
           class="container px-10 mx-auto"
@@ -13586,7 +13586,7 @@ exports[`SendTransfer should show error step and go back 1`] = `
                         </div>
                       </button>
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS space-x-2"
+                        class="space-x-2 OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
                         data-testid="ErrorStep__repeat-button"
                         type="button"
                       >

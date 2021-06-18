@@ -47,8 +47,8 @@ const transactionResponse = {
 	sender: () => transactionFixture.data.sender,
 	recipient: () => transactionFixture.data.recipient,
 	amount: () => BigNumber.make(transactionFixture.data.amount),
-	fee: () => BigNumber.make(transactionFixture.data.fee),
-	data: () => transactionFixture.data,
+	fee: () => transactionFixture.data.fee / 1e8,
+	data: () => ({ data: () => transactionFixture.data }),
 };
 
 const createTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
