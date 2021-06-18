@@ -8,14 +8,14 @@ interface Input {
 }
 
 interface Output {
-	convert: (value: number | undefined) => number;
+	convert: (value?: number) => number;
 }
 
 export const useExchangeRate = ({ ticker, exchangeTicker }: Input): Output => {
 	const { env } = useEnvironmentContext();
 
 	const convert = useCallback(
-		(value: number | undefined) => {
+		(value?: number) => {
 			if (!ticker || !exchangeTicker || !value) {
 				return 0;
 			}

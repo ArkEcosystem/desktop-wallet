@@ -27,7 +27,7 @@ describe("useExchangeRate", () => {
 		expect(converted).toEqual(1);
 	});
 
-	it("should default to 0 when value, ticker or exchangeTicker are not provided", () => {
+	it("should default to 0 when ticker or exchangeTicker are not provided", () => {
 		let hook: RenderHookResult<any, any>;
 
 		hook = renderHook(
@@ -53,8 +53,12 @@ describe("useExchangeRate", () => {
 		);
 
 		expect(hook.result.current.convert(1)).toEqual(0);
+	});
 
-		hook = renderHook(
+	it("should return 0 when value is undefined", () => {
+		const {
+			result: { current },
+		} = renderHook(
 			() =>
 				useExchangeRate({
 					ticker: "ARK",
@@ -65,6 +69,6 @@ describe("useExchangeRate", () => {
 			},
 		);
 
-		expect(hook.result.current.convert()).toEqual(0);
+		expect(current.convert(undefined)).toEqual(0);
 	});
 });
