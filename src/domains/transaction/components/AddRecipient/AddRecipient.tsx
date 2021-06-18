@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { Amount } from "app/components/Amount";
+import { AmountCrypto } from "app/components/Amount";
 import { Button } from "app/components/Button";
 import { FormField, FormLabel, SubForm } from "app/components/Form";
 import { Icon } from "app/components/Icon";
@@ -290,7 +290,7 @@ export const AddRecipient = ({
 		!errors.amount && !errors.fee && isSenderFilled && !senderWallet?.network().isTest()
 			? {
 					end: (
-						<Amount
+						<AmountCrypto
 							value={convert(amount || 0)}
 							ticker={exchangeTicker}
 							data-testid="AddRecipient__currency-balance"

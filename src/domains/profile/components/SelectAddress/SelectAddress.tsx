@@ -100,7 +100,7 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 					searchPlaceholder={t("PROFILE.MODAL_SELECT_SENDER.SEARCH_PLACEHOLDER")}
 					wallets={wallets}
 					size="4xl"
-					showFiatValue={false}
+					showConvertedValue={false}
 					showNetwork={false}
 					onSelectWallet={handleSelectWallet}
 					onClose={() => setSearchWalletIsOpen(false)}

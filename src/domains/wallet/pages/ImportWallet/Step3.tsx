@@ -1,7 +1,7 @@
 import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
-import { Amount } from "app/components/Amount";
+import { AmountCrypto } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -50,7 +50,7 @@ export const ThirdStep = ({
 			</div>
 
 			<TransactionDetail label={t("COMMON.BALANCE")} borderPosition="bottom" paddingPosition="bottom">
-				<Amount value={balance} ticker={network.ticker()} />
+				<AmountCrypto value={balance} ticker={network.ticker()} />
 			</TransactionDetail>
 
 			<FormField name="name">

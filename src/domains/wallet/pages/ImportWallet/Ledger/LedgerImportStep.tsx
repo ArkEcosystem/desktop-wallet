@@ -1,7 +1,7 @@
 import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
-import { Amount } from "app/components/Amount";
+import { AmountCrypto } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { FormField, FormLabel } from "app/components/Form";
@@ -94,7 +94,7 @@ const MultipleImport = ({
 									<div>
 										<Address walletName={walletName} address={wallet.address} maxNameChars={8} />
 										<p className="mt-1 text-sm font-medium text-theme-secondary-500">
-											<Amount value={wallet.balance!} ticker={network.ticker()} />
+											<AmountCrypto value={wallet.balance!} ticker={network.ticker()} />
 										</p>
 									</div>
 								</div>
@@ -143,7 +143,7 @@ const SingleImport = ({
 			</TransactionDetail>
 
 			<TransactionDetail label={t("COMMON.BALANCE")} borderPosition="bottom" paddingPosition="bottom">
-				<Amount value={wallet.balance!} ticker={network.ticker()} />
+				<AmountCrypto value={wallet.balance!} ticker={network.ticker()} />
 			</TransactionDetail>
 
 			<FormField name={`names.${wallet.address}`}>
