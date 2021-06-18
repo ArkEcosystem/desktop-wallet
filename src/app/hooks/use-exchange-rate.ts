@@ -2,21 +2,21 @@ import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import { useEnvironmentContext } from "app/contexts";
 import { useCallback } from "react";
 
-interface Parameters_ {
+interface Input {
 	ticker?: string;
 	exchangeTicker?: string;
 }
 
-interface UseExchangeRate {
-	convert: (value: number) => number;
+interface Output {
+	convert: (value: number | undefined) => number;
 }
 
-export const useExchangeRate = ({ ticker, exchangeTicker }: Parameters_): UseExchangeRate => {
+export const useExchangeRate = ({ ticker, exchangeTicker }: Input): Output => {
 	const { env } = useEnvironmentContext();
 
 	const convert = useCallback(
-		(value: number) => {
-			if (!ticker || !exchangeTicker) {
+		(value: number | undefined) => {
+			if (!ticker || !exchangeTicker || !value) {
 				return 0;
 			}
 

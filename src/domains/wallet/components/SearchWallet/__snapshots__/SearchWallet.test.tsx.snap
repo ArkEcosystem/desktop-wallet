@@ -134,6 +134,36 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                         colspan="1"
                         data-testid="table__th--2"
                         role="columnheader"
+                        style="cursor: pointer;"
+                        title="Toggle SortBy"
+                      >
+                        <div
+                          class="flex flex-inline align-top justify-end flex-row-reverse"
+                        >
+                          <div>
+                            Value
+                          </div>
+                          <div
+                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
+                          >
+                            <div
+                              class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                              height="5"
+                              role="img"
+                              width="8"
+                            >
+                              <svg>
+                                chevron-down.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        colspan="1"
+                        data-testid="table__th--3"
+                        role="columnheader"
                       >
                         <div
                           class="flex flex-inline align-top justify-end"
@@ -249,9 +279,20 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                           class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT font-semibold justify-end"
                         >
                           <span
-                            data-testid="Amount"
+                            data-testid="AmountCrypto"
                           >
                             33.75089801 DARK
+                          </span>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT text-theme-secondary-400 justify-end"
+                        >
+                          <span
+                            data-testid="AmountCrypto"
+                          >
+                            0 BTC
                           </span>
                         </div>
                       </td>
@@ -343,9 +384,20 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                           class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT font-semibold justify-end"
                         >
                           <span
-                            data-testid="Amount"
+                            data-testid="AmountCrypto"
                           >
                             57.68 DARK
+                          </span>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT text-theme-secondary-400 justify-end"
+                        >
+                          <span
+                            data-testid="AmountCrypto"
+                          >
+                            0 BTC
                           </span>
                         </div>
                       </td>
@@ -513,6 +565,36 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
                         colspan="1"
                         data-testid="table__th--2"
                         role="columnheader"
+                        style="cursor: pointer;"
+                        title="Toggle SortBy"
+                      >
+                        <div
+                          class="flex flex-inline align-top justify-end flex-row-reverse"
+                        >
+                          <div>
+                            Value
+                          </div>
+                          <div
+                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
+                          >
+                            <div
+                              class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                              height="5"
+                              role="img"
+                              width="8"
+                            >
+                              <svg>
+                                chevron-down.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        colspan="1"
+                        data-testid="table__th--3"
+                        role="columnheader"
                       >
                         <div
                           class="flex flex-inline align-top justify-end"
@@ -628,9 +710,20 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
                           class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT font-semibold justify-end"
                         >
                           <span
-                            data-testid="Amount"
+                            data-testid="AmountCrypto"
                           >
                             33.75089801 DARK
+                          </span>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT text-theme-secondary-400 justify-end"
+                        >
+                          <span
+                            data-testid="AmountCrypto"
+                          >
+                            0 BTC
                           </span>
                         </div>
                       </td>
@@ -722,9 +815,20 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
                           class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT font-semibold justify-end"
                         >
                           <span
-                            data-testid="Amount"
+                            data-testid="AmountCrypto"
                           >
                             57.68 DARK
+                          </span>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT text-theme-secondary-400 justify-end"
+                        >
+                          <span
+                            data-testid="AmountCrypto"
+                          >
+                            0 BTC
                           </span>
                         </div>
                       </td>
@@ -1037,7 +1141,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                           class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT font-semibold justify-end"
                         >
                           <span
-                            data-testid="Amount"
+                            data-testid="AmountCrypto"
                           >
                             33.75089801 DARK
                           </span>
@@ -1048,7 +1152,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                           class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT text-theme-secondary-400 justify-end"
                         >
                           <span
-                            data-testid="Amount"
+                            data-testid="AmountCrypto"
                           >
                             0 BTC
                           </span>
@@ -1142,7 +1246,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                           class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT font-semibold justify-end"
                         >
                           <span
-                            data-testid="Amount"
+                            data-testid="AmountCrypto"
                           >
                             57.68 DARK
                           </span>
@@ -1153,7 +1257,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                           class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT text-theme-secondary-400 justify-end"
                         >
                           <span
-                            data-testid="Amount"
+                            data-testid="AmountCrypto"
                           >
                             0 BTC
                           </span>
@@ -1468,7 +1572,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                           class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT font-semibold justify-end"
                         >
                           <span
-                            data-testid="Amount"
+                            data-testid="AmountCrypto"
                           >
                             33.75089801 DARK
                           </span>
@@ -1479,7 +1583,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                           class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT text-theme-secondary-400 justify-end"
                         >
                           <span
-                            data-testid="Amount"
+                            data-testid="AmountCrypto"
                           >
                             0 BTC
                           </span>
@@ -1573,7 +1677,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                           class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT font-semibold justify-end"
                         >
                           <span
-                            data-testid="Amount"
+                            data-testid="AmountCrypto"
                           >
                             57.68 DARK
                           </span>
@@ -1584,7 +1688,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                           class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT text-theme-secondary-400 justify-end"
                         >
                           <span
-                            data-testid="Amount"
+                            data-testid="AmountCrypto"
                           >
                             0 BTC
                           </span>

@@ -125,7 +125,7 @@ exports[`WalletHeader should render 1`] = `
         </div>
         <span
           class="text-lg font-semibold text-white"
-          data-testid="WalletHeader__balance"
+          data-testid="AmountCrypto"
         >
           33.75089801 DARK
         </span>
@@ -349,14 +349,14 @@ exports[`WalletHeader should render amount for wallet in live network 1`] = `
           </span>
           <span
             class="ml-1"
-            data-testid="WalletHeader__currency-balance"
+            data-testid="AmountCrypto"
           >
             0 BTC
           </span>
         </div>
         <span
           class="text-lg font-semibold text-white"
-          data-testid="WalletHeader__balance"
+          data-testid="AmountCrypto"
         >
           33.75089801 DARK
         </span>
@@ -599,7 +599,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
         </div>
         <span
           class="text-lg font-semibold text-white"
-          data-testid="WalletHeader__balance"
+          data-testid="AmountCrypto"
         >
           33.75089801 DARK
         </span>
@@ -842,7 +842,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
         </div>
         <span
           class="text-lg font-semibold text-white"
-          data-testid="WalletHeader__balance"
+          data-testid="AmountCrypto"
         >
           33.75089801 DARK
         </span>
@@ -1096,7 +1096,7 @@ exports[`WalletHeader should show modifiers 1`] = `
         </div>
         <span
           class="text-lg font-semibold text-white"
-          data-testid="WalletHeader__balance"
+          data-testid="AmountCrypto"
         >
           33.75089801 DARK
         </span>
@@ -1321,7 +1321,7 @@ exports[`WalletHeader should use empty string in clipboard copy if publickey is 
         </div>
         <span
           class="text-lg font-semibold text-white"
-          data-testid="WalletHeader__balance"
+          data-testid="AmountCrypto"
         >
           33.75089801 DARK
         </span>
