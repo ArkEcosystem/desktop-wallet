@@ -7,14 +7,20 @@ import { PendingTransferRow } from "../TransactionRow/PendingTransferRow";
 import { SignedTransactionRow } from "../TransactionRow/SignedTransactionRow";
 
 interface Properties {
-	transfers: DTO.ExtendedTransactionData[];
-	signed: DTO.ExtendedSignedTransactionData[];
+	transfers?: DTO.ExtendedTransactionData[];
+	signed?: DTO.ExtendedSignedTransactionData[];
 	wallet: Contracts.IReadWriteWallet;
 	onClick?: (transaction: DTO.ExtendedSignedTransactionData) => void;
 	onPendingTransactionClick?: (transaction: DTO.ExtendedTransactionData) => void;
 }
 
-export const PendingTransactions = ({ transfers, signed, wallet, onClick, onPendingTransactionClick }: Properties) => {
+export const PendingTransactions = ({
+	transfers = [],
+	signed = [],
+	wallet,
+	onClick,
+	onPendingTransactionClick,
+}: Properties) => {
 	const { t } = useTranslation();
 
 	const columns = [
