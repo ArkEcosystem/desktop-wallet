@@ -126,21 +126,17 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                                 class=""
                               >
                                 <div
-                                  class="flex items-center space-x-5"
+                                  class="flex items-center cursor-pointer"
+                                  data-testid="SelectRecipient__select-recipient"
                                 >
                                   <div
-                                    class="flex items-center cursor-pointer"
-                                    data-testid="SelectRecipient__select-recipient"
+                                    class="sc-bdfBwQ iyevwF"
+                                    height="20"
+                                    width="20"
                                   >
-                                    <div
-                                      class="sc-bdfBwQ iyevwF"
-                                      height="20"
-                                      width="20"
-                                    >
-                                      <svg>
-                                        user.svg
-                                      </svg>
-                                    </div>
+                                    <svg>
+                                      user.svg
+                                    </svg>
                                   </div>
                                 </div>
                               </div>

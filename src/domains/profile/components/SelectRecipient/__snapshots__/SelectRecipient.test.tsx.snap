@@ -1,7 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SelectRecipient should render addons 1`] = `undefined`;
-
 exports[`SelectRecipient should render disabled 1`] = `
 <div>
   <div>
@@ -82,21 +80,17 @@ exports[`SelectRecipient should render disabled 1`] = `
                   class=""
                 >
                   <div
-                    class="flex items-center space-x-5"
+                    class="flex items-center cursor-pointer"
+                    data-testid="SelectRecipient__select-recipient"
                   >
                     <div
-                      class="flex items-center cursor-pointer"
-                      data-testid="SelectRecipient__select-recipient"
+                      class="sc-bdfBwQ iyevwF"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-bdfBwQ iyevwF"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          user.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        user.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
@@ -194,21 +188,17 @@ exports[`SelectRecipient should render empty 1`] = `
                   class=""
                 >
                   <div
-                    class="flex items-center space-x-5"
+                    class="flex items-center cursor-pointer"
+                    data-testid="SelectRecipient__select-recipient"
                   >
                     <div
-                      class="flex items-center cursor-pointer"
-                      data-testid="SelectRecipient__select-recipient"
+                      class="sc-bdfBwQ iyevwF"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-bdfBwQ iyevwF"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          user.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        user.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
@@ -338,21 +328,17 @@ exports[`SelectRecipient should render invalid 1`] = `
                   class="pl-3"
                 >
                   <div
-                    class="flex items-center space-x-5"
+                    class="flex items-center cursor-pointer"
+                    data-testid="SelectRecipient__select-recipient"
                   >
                     <div
-                      class="flex items-center cursor-pointer"
-                      data-testid="SelectRecipient__select-recipient"
+                      class="sc-bdfBwQ iyevwF"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-bdfBwQ iyevwF"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          user.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        user.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
@@ -450,21 +436,17 @@ exports[`SelectRecipient should render with preselected address 1`] = `
                   class=""
                 >
                   <div
-                    class="flex items-center space-x-5"
+                    class="flex items-center cursor-pointer"
+                    data-testid="SelectRecipient__select-recipient"
                   >
                     <div
-                      class="flex items-center cursor-pointer"
-                      data-testid="SelectRecipient__select-recipient"
+                      class="sc-bdfBwQ iyevwF"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-bdfBwQ iyevwF"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          user.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        user.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
@@ -573,21 +555,17 @@ exports[`SelectRecipient should update internal state when prop changes 1`] = `
                   class=""
                 >
                   <div
-                    class="flex items-center space-x-5"
+                    class="flex items-center cursor-pointer"
+                    data-testid="SelectRecipient__select-recipient"
                   >
                     <div
-                      class="flex items-center cursor-pointer"
-                      data-testid="SelectRecipient__select-recipient"
+                      class="sc-bdfBwQ iyevwF"
+                      height="20"
+                      width="20"
                     >
-                      <div
-                        class="sc-bdfBwQ iyevwF"
-                        height="20"
-                        width="20"
-                      >
-                        <svg>
-                          user.svg
-                        </svg>
-                      </div>
+                      <svg>
+                        user.svg
+                      </svg>
                     </div>
                   </div>
                 </div>
