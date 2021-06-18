@@ -15,8 +15,8 @@ export const useExchangeRate = ({ ticker, exchangeTicker }: Parameters_): UseExc
 	const { env } = useEnvironmentContext();
 
 	const convert = useCallback(
-		(value: number) => {
-			if (!ticker || !exchangeTicker) {
+		(value?: number) => {
+			if (!ticker || !exchangeTicker || !value) {
 				return 0;
 			}
 
