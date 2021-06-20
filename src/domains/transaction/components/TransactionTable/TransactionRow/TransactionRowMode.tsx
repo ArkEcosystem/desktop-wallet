@@ -53,7 +53,6 @@ export const BaseTransactionRowMode = ({ type, isSent, isReturn, recipient, icon
 			<Tooltip content={tooltipContent}>
 				<Circle size={iconSize} className={cn(shadowClasses, modeCircleStyle)}>
 					<Icon
-						data-testid={`TransactionRowMode__${modeIconName}`}
 						name={modeIconName}
 						width={iconSize === "sm" ? 16 : 20}
 						height={iconSize === "sm" ? 16 : 20}
