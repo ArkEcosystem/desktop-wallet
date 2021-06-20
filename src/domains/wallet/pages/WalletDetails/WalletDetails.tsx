@@ -117,6 +117,7 @@ export const WalletDetails = () => {
 								{t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY.TITLE")}
 							</h2>
 						}
+						showUnconfirmed={false}
 						profile={activeProfile}
 						wallets={[activeWallet]}
 						isLoading={profileIsSyncing}
