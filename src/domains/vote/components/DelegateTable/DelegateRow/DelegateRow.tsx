@@ -48,10 +48,10 @@ export const DelegateRow = ({
 	const getColorSelected = (): string => {
 		if (isVoted) {
 			return !isSelectedUnvote
-				? "bg-theme-primary-50 dark:bg-theme-primary-900"
-				: "bg-theme-danger-50 dark:bg-theme-danger-900";
+				? "bg-theme-primary-50 dark:bg-theme-background dark:border-theme-primary-600"
+				: "bg-theme-danger-50 dark:bg-theme-background dark:border-theme-danger-400";
 		} else {
-			return isSelectedVote ? "bg-theme-success-50 dark:bg-theme-success-900" : "";
+			return isSelectedVote ? "bg-theme-success-50 dark:bg-theme-background dark:border-theme-success-600" : "";
 		}
 	};
 
@@ -61,12 +61,18 @@ export const DelegateRow = ({
 
 	return (
 		<TableRow>
-			<TableCell variant="start" innerClassName={`space-x-4 font-bold ${getColorSelected()}`}>
+			<TableCell
+				variant="start"
+				innerClassName={`space-x-4 font-bold border border-r-0 border-transparent ${getColorSelected()}`}
+			>
 				<Avatar size="lg" address={delegate.address()} noShadow />
 				<span>{delegate.username()}</span>
 			</TableCell>
 
-			<TableCell className="w-24" innerClassName={`justify-center ${getColorSelected()}`}>
+			<TableCell
+				className="w-24"
+				innerClassName={`justify-center border-t border-b border-transparent ${getColorSelected()}`}
+			>
 				<Link
 					data-testid="DelegateRow__address"
 					to={delegate.explorerLink()}
@@ -78,7 +84,11 @@ export const DelegateRow = ({
 				</Link>
 			</TableCell>
 
-			<TableCell variant="end" className="w-40" innerClassName={`justify-end ${getColorSelected()}`}>
+			<TableCell
+				variant="end"
+				className="w-40"
+				innerClassName={`justify-end border border-l-0 border-transparent ${getColorSelected()}`}
+			>
 				{isVoted ? (
 					<Button
 						variant="secondary"
