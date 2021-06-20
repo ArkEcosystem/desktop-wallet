@@ -2,6 +2,7 @@ import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Icon } from "app/components/Icon";
 import { TableCell, TableRow } from "app/components/Table";
 import { Tooltip } from "app/components/Tooltip";
+import { useTimeFormat } from "app/hooks/use-time-format";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -20,6 +21,7 @@ export const PendingTransferRow = ({
 	wallet: Contracts.IReadWriteWallet;
 }) => {
 	const { t } = useTranslation();
+	const timeFormat = useTimeFormat();
 
 	return (
 		<TableRow onClick={() => onRowClick?.(transaction)}>
@@ -32,9 +34,7 @@ export const PendingTransferRow = ({
 			</TableCell>
 
 			<TableCell innerClassName="text-theme-secondary-text">
-				<span data-testid="TransactionRow__timestamp">
-					{transaction?.timestamp()?.format("DD MMM YYYY HH:mm:ss")}
-				</span>
+				<span data-testid="TransactionRow__timestamp">{transaction?.timestamp()?.format(timeFormat)}</span>
 			</TableCell>
 
 			<TableCell innerClassName="space-x-4">

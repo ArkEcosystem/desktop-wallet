@@ -3,6 +3,7 @@ import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { TableCell, TableRow } from "app/components/Table";
 import { Tooltip } from "app/components/Tooltip";
+import { useTimeFormat } from "app/hooks/use-time-format";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -96,6 +97,7 @@ export const SignedTransactionRow = ({
 
 	const recipient = transaction.get<string>("recipientId");
 	const canBeSigned = wallet.transaction().canBeSigned(transaction.id());
+	const timeFormat = useTimeFormat();
 
 	return (
 		<TableRow onClick={() => onRowClick?.(transaction)}>
@@ -108,9 +110,7 @@ export const SignedTransactionRow = ({
 			</TableCell>
 
 			<TableCell innerClassName="text-theme-secondary-text">
-				<span data-testid="TransactionRow__timestamp">
-					{transaction.timestamp().format("DD MMM YYYY HH:mm:ss")}
-				</span>
+				<span data-testid="TransactionRow__timestamp">{transaction.timestamp().format(timeFormat)}</span>
 			</TableCell>
 
 			<TableCell innerClassName="space-x-4">
