@@ -36,6 +36,7 @@ export const SendTransfer = () => {
 	const history = useHistory();
 	const profile = useActiveProfile();
 	const { walletId: hasWalletId } = useParams();
+	const [errorMessage, setErrorMessage] = useState<string | undefined>();
 
 	const queryParameters = useQueryParams();
 
@@ -270,6 +271,7 @@ export const SendTransfer = () => {
 				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
 			}
 
+			setErrorMessage(JSON.stringify({ type: error.name, message: error.message }));
 			setActiveTab(5);
 		}
 	};
@@ -363,6 +365,7 @@ export const SendTransfer = () => {
 									}
 									isRepeatDisabled={isSubmitting}
 									onRepeat={handleSubmit(submitForm as any)}
+									errorMessage={errorMessage}
 								/>
 							</TabPanel>
 
