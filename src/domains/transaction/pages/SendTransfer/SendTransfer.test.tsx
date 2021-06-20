@@ -1734,6 +1734,9 @@ describe("SendTransfer", () => {
 
 		await waitFor(() => expect(getByTestId("ErrorStep")).toBeInTheDocument());
 		await waitFor(() => expect(getByTestId("ErrorStep__wallet-button")).toBeInTheDocument());
+		// Display error details with copy button
+		await waitFor(() => expect(getByTestId("ErrorStep__errorMessage")).toBeInTheDocument());
+		await waitFor(() => expect(getByTestId("clipboard-button__wrapper")).toBeInTheDocument());
 		await waitFor(() => expect(container).toMatchSnapshot());
 
 		act(() => {
