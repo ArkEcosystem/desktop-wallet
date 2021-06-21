@@ -5,6 +5,7 @@ import { Icon } from "app/components/Icon";
 import { Link } from "app/components/Link";
 import { TableCell, TableRow } from "app/components/Table";
 import { Tooltip } from "app/components/Tooltip";
+import cn from "classnames";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -45,7 +46,7 @@ export const DelegateRow = ({
 		[delegate, isVoted, selectedVotes],
 	);
 
-	const getColorSelected = (): string => {
+	const getColorSelected = (): string | undefined => {
 		if (isVoted) {
 			return !isSelectedUnvote
 				? "bg-theme-primary-50 dark:bg-theme-background dark:border-theme-primary-600"
@@ -53,10 +54,8 @@ export const DelegateRow = ({
 		}
 
 		if (isSelectedVote) {
-			return "bg-theme-info-50 dark:bg-theme-info-900 text-theme-info-500";
+			return "bg-theme-info-50 dark:bg-theme-background dark:border-theme-info-600";
 		}
-
-		return "";
 	};
 
 	if (isLoading) {
@@ -67,7 +66,7 @@ export const DelegateRow = ({
 		<TableRow>
 			<TableCell
 				variant="start"
-				innerClassName={`space-x-4 font-bold border border-r-0 border-transparent ${getColorSelected()}`}
+				innerClassName={cn("space-x-4 font-bold border border-r-0 border-transparent", getColorSelected())}
 			>
 				<Avatar size="lg" address={delegate.address()} noShadow />
 				<span>{delegate.username()}</span>
