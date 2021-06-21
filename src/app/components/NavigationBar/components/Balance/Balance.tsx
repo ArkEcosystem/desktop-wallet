@@ -26,11 +26,13 @@ export const Balance = ({ profile, isLoading }: BalanceProperties) => {
 		return <BalanceSkeleton width={width} />;
 	}
 
-	assertProfile(profile);
+	// @TODO: enable during maintenance work
+	// assertProfile(profile);
 
-	const ticker: string | undefined = profile.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency);
+	const ticker: string | undefined = profile?.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency) || "";
 
-	assertString(ticker);
+	// @TODO: enable during maintenance work
+	// assertString(ticker);
 
 	return (
 		<div className="text-right">
