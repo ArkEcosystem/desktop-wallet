@@ -46,7 +46,7 @@ export const DelegateRow = ({
 		[delegate, isVoted, selectedVotes],
 	);
 
-	const getColorSelected = (): string | undefined => {
+	const rowColor = useMemo(() => {
 		if (isVoted) {
 			return !isSelectedUnvote
 				? "bg-theme-primary-50 dark:bg-theme-background dark:border-theme-primary-600"
@@ -56,7 +56,7 @@ export const DelegateRow = ({
 		if (isSelectedVote) {
 			return "bg-theme-info-50 dark:bg-theme-background dark:border-theme-info-600";
 		}
-	};
+	}, [isVoted, isSelectedVote, isSelectedUnvote]);
 
 	if (isLoading) {
 		return <DelegateRowSkeleton />;
@@ -66,7 +66,7 @@ export const DelegateRow = ({
 		<TableRow>
 			<TableCell
 				variant="start"
-				innerClassName={cn("space-x-4 font-bold border border-r-0 border-transparent", getColorSelected())}
+				innerClassName={cn("space-x-4 font-bold border border-r-0 border-transparent", rowColor)}
 			>
 				<Avatar size="lg" address={delegate.address()} noShadow />
 				<span>{delegate.username()}</span>
@@ -74,7 +74,7 @@ export const DelegateRow = ({
 
 			<TableCell
 				className="w-24"
-				innerClassName={`justify-center border-t border-b border-transparent ${getColorSelected()}`}
+				innerClassName={cn("justify-center border-t border-b border-transparent", rowColor)}
 			>
 				<Link
 					data-testid="DelegateRow__address"
@@ -90,7 +90,7 @@ export const DelegateRow = ({
 			<TableCell
 				variant="end"
 				className="w-40"
-				innerClassName={`justify-end border border-l-0 border-transparent ${getColorSelected()}`}
+				innerClassName={cn("justify-end border border-l-0 border-transparent", rowColor)}
 			>
 				{isVoted ? (
 					<Button
