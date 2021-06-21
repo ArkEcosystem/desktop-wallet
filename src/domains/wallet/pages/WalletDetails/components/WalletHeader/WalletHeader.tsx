@@ -314,7 +314,7 @@ export const WalletHeader = ({
 							{!wallet.network().isTest() && (
 								<Amount
 									value={wallet.convertedBalance()}
-									ticker={profile.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency)!}
+									ticker={profile.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency)}
 									data-testid="WalletHeader__currency-balance"
 									className="ml-1"
 								/>
