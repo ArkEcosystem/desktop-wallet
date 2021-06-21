@@ -79,7 +79,7 @@ export const SecondSignatureRegistrationForm: SendRegistrationForm = {
 		const senderWallet = profile.wallets().findByAddress(senderAddress);
 
 		const transactionId = await senderWallet.transaction().signSecondSignature({
-			fee,
+			fee: +fee,
 			signatory,
 			data: {
 				mnemonic: secondMnemonic,

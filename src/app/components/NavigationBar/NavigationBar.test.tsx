@@ -204,7 +204,17 @@ describe("NavigationBar", () => {
 	});
 
 	it("should disable send transfer button when no wallets", () => {
-		const useNetworksMock = jest.spyOn(profile.settings(), "get").mockReturnValue(false);
+		const useNetworksMock = jest.spyOn(profile.settings(), "get").mockImplementation((key: string) => {
+			if (key === Contracts.ProfileSetting.UseTestNetworks) {
+				return false;
+			}
+			if (key === Contracts.ProfileSetting.ExchangeCurrency) {
+				return "USD";
+			}
+
+			return "";
+		});
+
 		const { container, getByTestId } = renderWithRouter(<NavigationBar profile={profile} />);
 
 		expect(container).toBeTruthy();

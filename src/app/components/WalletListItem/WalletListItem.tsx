@@ -1,6 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
-import { Amount } from "app/components/Amount";
+import { Amount, AmountCrypto } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { TableCell, TableRow } from "app/components/Table";
 import { WalletIcons } from "app/components/WalletIcons";
@@ -16,7 +16,11 @@ export interface WalletListItemProperties {
 	onClick?: (walletId: string) => void;
 }
 
-export const WalletListItem = ({ wallet, activeWalletId, onClick }: WalletListItemProperties) => {
+export const WalletListItem: React.FC<WalletListItemProperties> = ({
+	wallet,
+	activeWalletId,
+	onClick,
+}: WalletListItemProperties) => {
 	const isSelected = useMemo(() => activeWalletId === wallet.id(), [activeWalletId, wallet]);
 
 	const activeProfile = useActiveProfile();
@@ -63,11 +67,11 @@ export const WalletListItem = ({ wallet, activeWalletId, onClick }: WalletListIt
 			</TableCell>
 
 			<TableCell innerClassName="font-semibold justify-end">
-				<Amount value={wallet.balance()} ticker={wallet.network().ticker()} />
+				<AmountCrypto value={wallet.balance()} ticker={wallet.network().ticker()} />
 			</TableCell>
 
 			<TableCell variant="end" innerClassName="justify-end text-theme-secondary-400">
-				<Amount value={wallet.convertedBalance()} ticker={wallet.exchangeCurrency() || "BTC"} />
+				<Amount ticker={wallet.exchangeCurrency()} value={wallet.convertedBalance()} />
 			</TableCell>
 		</TableRow>
 	);

@@ -98,7 +98,7 @@ module.exports = {
 		"jest/valid-expect": "off",
 		"jest/valid-expect-in-promise": "off",
 		"max-lines": ["warn", { max: 300, skipBlankLines: true, skipComments: true }],
-		"max-lines-per-function": ["warn", { max: 20, skipBlankLines: true, skipComments: true }],
+		"max-lines-per-function": ["warn", { max: 40, skipBlankLines: true, skipComments: true }],
 		"no-unused-expressions": "off",
 		"no-unused-vars": "off",
 		"prefer-const": [

@@ -12,7 +12,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-import { Amount } from "../Amount";
+import { AmountCrypto } from "../Amount";
 import { WalletCardSkeleton } from "./WalletCardSkeleton";
 
 interface WalletCardProperties {
@@ -110,7 +110,7 @@ export const WalletCard = ({
 						<span className="font-semibold truncate text-theme-secondary-text">{alias}</span>
 					</div>
 
-					<Amount
+					<AmountCrypto
 						value={wallet.balance()}
 						ticker={wallet.network().ticker()}
 						className="mt-auto text-lg font-bold text-theme-text"

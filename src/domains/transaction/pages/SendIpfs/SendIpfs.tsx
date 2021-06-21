@@ -88,7 +88,7 @@ export const SendIpfs = () => {
 		});
 
 		const transactionInput: Services.IpfsInput = {
-			fee,
+			fee: +fee,
 			signatory,
 			data: { hash },
 		};
