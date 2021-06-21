@@ -1,8 +1,9 @@
 /* eslint-disable unicorn/no-null */
 
+import { Networks } from "@arkecosystem/platform-sdk";
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 
-import { assertNumber, assertProfile, assertString } from "./assertions";
+import { assertNetwork, assertNumber, assertProfile, assertString } from "./assertions";
 
 describe("#assertProfile", () => {
 	it("should pass with a profile instance", () => {
@@ -18,15 +19,34 @@ describe("#assertProfile", () => {
 	});
 
 	it("should fail without a profile instance", () => {
-		expect(() => assertProfile(undefined)).toThrow("Expected 'profile' to be defined, but received undefined");
-		expect(() => assertProfile(null)).toThrow("Expected 'profile' to be defined, but received null");
-		expect(() => assertProfile(true)).toThrow("Expected 'profile' to be defined, but received true");
-		expect(() => assertProfile(false)).toThrow("Expected 'profile' to be defined, but received false");
-		expect(() => assertProfile("")).toThrow("Expected 'profile' to be defined, but received ");
-		expect(() => assertProfile("a")).toThrow("Expected 'profile' to be defined, but received a");
-		expect(() => assertProfile(1)).toThrow("Expected 'profile' to be defined, but received 1");
-		expect(() => assertProfile({})).toThrow("Expected 'profile' to be defined, but received [object Object]");
-		expect(() => assertProfile([])).toThrow("Expected 'profile' to be defined, but received ");
+		expect(() => assertProfile(undefined)).toThrow("Expected 'profile' to be Contracts.IProfile, but received undefined");
+		expect(() => assertProfile(null)).toThrow("Expected 'profile' to be Contracts.IProfile, but received null");
+		expect(() => assertProfile(true)).toThrow("Expected 'profile' to be Contracts.IProfile, but received true");
+		expect(() => assertProfile(false)).toThrow("Expected 'profile' to be Contracts.IProfile, but received false");
+		expect(() => assertProfile("")).toThrow("Expected 'profile' to be Contracts.IProfile, but received ");
+		expect(() => assertProfile("a")).toThrow("Expected 'profile' to be Contracts.IProfile, but received a");
+		expect(() => assertProfile(1)).toThrow("Expected 'profile' to be Contracts.IProfile, but received 1");
+		expect(() => assertProfile({})).toThrow("Expected 'profile' to be Contracts.IProfile, but received [object Object]");
+		expect(() => assertProfile([])).toThrow("Expected 'profile' to be Contracts.IProfile, but received ");
+	});
+});
+
+describe("#assertNetwork", () => {
+	it("should pass with a network instance", () => {
+		// @ts-ignore
+		expect(() => assertNetwork(new Networks.Network())).not.toThrow();
+	});
+
+	it("should fail without a network instance", () => {
+		expect(() => assertNetwork(undefined)).toThrow("Expected 'network' to be Networks.Network, but received undefined");
+		expect(() => assertNetwork(null)).toThrow("Expected 'network' to be Networks.Network, but received null");
+		expect(() => assertNetwork(true)).toThrow("Expected 'network' to be Networks.Network, but received true");
+		expect(() => assertNetwork(false)).toThrow("Expected 'network' to be Networks.Network, but received false");
+		expect(() => assertNetwork("")).toThrow("Expected 'network' to be Networks.Network, but received ");
+		expect(() => assertNetwork("a")).toThrow("Expected 'network' to be Networks.Network, but received a");
+		expect(() => assertNetwork(1)).toThrow("Expected 'network' to be Networks.Network, but received 1");
+		expect(() => assertNetwork({})).toThrow("Expected 'network' to be Networks.Network, but received [object Object]");
+		expect(() => assertNetwork([])).toThrow("Expected 'network' to be Networks.Network, but received ");
 	});
 });
 

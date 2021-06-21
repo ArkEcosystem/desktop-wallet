@@ -1,10 +1,19 @@
+import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { AssertionError } from "assert";
 
 export function assertProfile(profile?: Contracts.IProfile): asserts profile is Profile {
 	if (!(profile instanceof Profile)) {
 		throw new AssertionError({
-			message: `Expected 'profile' to be defined, but received ${profile}`,
+			message: `Expected 'profile' to be Contracts.IProfile, but received ${profile}`,
+		});
+	}
+}
+
+export function assertNetwork(network?: Networks.Network): asserts network is Networks.Network {
+	if (!(network instanceof Networks.Network)) {
+		throw new AssertionError({
+			message: `Expected 'network' to be Networks.Network, but received ${network}`,
 		});
 	}
 }
