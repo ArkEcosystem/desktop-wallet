@@ -95,19 +95,6 @@ export const Transactions = memo(
 					{!title && (
 						<div className="mb-8 text-4xl font-bold">{t("DASHBOARD.TRANSACTION_HISTORY.TITLE")}</div>
 					)}
-
-					<FilterTransactions
-						wallets={wallets}
-						onSelect={(option, type) => {
-							setActiveTransactionTypeLabel(option.label);
-							updateFilters({
-								activeMode,
-								activeTransactionType: type,
-							});
-						}}
-						isDisabled={wallets.length === 0}
-						className="mt-6"
-					/>
 				</div>
 
 				<Tabs
@@ -132,6 +119,21 @@ export const Transactions = memo(
 						<Tab tabId="all">{t("TRANSACTION.ALL")}</Tab>
 						<Tab tabId="received">{t("TRANSACTION.INCOMING")}</Tab>
 						<Tab tabId="sent">{t("TRANSACTION.OUTGOING")}</Tab>
+
+						<div className="flex flex-1" />
+
+						<FilterTransactions
+							className="my-auto mr-6"
+							wallets={wallets}
+							onSelect={(option, type) => {
+								setActiveTransactionTypeLabel(option.label);
+								updateFilters({
+									activeMode,
+									activeTransactionType: type,
+								});
+							}}
+							isDisabled={wallets.length === 0}
+						/>
 					</TabList>
 				</Tabs>
 
