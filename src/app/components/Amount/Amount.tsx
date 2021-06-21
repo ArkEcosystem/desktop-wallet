@@ -28,7 +28,7 @@ const formatFiat = ({ ticker, value, decimals }: FormatProperties): string => {
 };
 
 const formatCrypto = ({ ticker, value, decimals, locale }: FormatProperties): string => {
-	const numeral = Numeral.make(locale!, {
+	const numeral = Numeral.make(locale, {
 		minimumFractionDigits: 0,
 		maximumFractionDigits: decimals,
 		currencyDisplay: "name",

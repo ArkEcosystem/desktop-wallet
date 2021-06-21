@@ -90,6 +90,17 @@ module.exports = {
 			"theme-hint-700": "var(--theme-color-hint-700)",
 			"theme-hint-800": "var(--theme-color-hint-800)",
 			"theme-hint-900": "var(--theme-color-hint-900)",
+
+			"theme-info-50": "var(--theme-color-info-50)",
+			"theme-info-100": "var(--theme-color-info-100)",
+			"theme-info-200": "var(--theme-color-info-200)",
+			"theme-info-300": "var(--theme-color-info-300)",
+			"theme-info-400": "var(--theme-color-info-400)",
+			"theme-info-500": "var(--theme-color-info-500)",
+			"theme-info-600": "var(--theme-color-info-600)",
+			"theme-info-700": "var(--theme-color-info-700)",
+			"theme-info-800": "var(--theme-color-info-800)",
+			"theme-info-900": "var(--theme-color-info-900)",
 		},
 		extend: {
 			opacity: {
