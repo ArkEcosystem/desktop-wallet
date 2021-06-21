@@ -1,11 +1,20 @@
 import { Coins, Networks } from "@arkecosystem/platform-sdk";
 import { Contracts, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Wallet } from "@arkecosystem/platform-sdk-profiles/distribution/wallet";
 import { AssertionError } from "assert";
 
 export function assertProfile(profile?: Contracts.IProfile): asserts profile is Profile {
 	if (!(profile instanceof Profile)) {
 		throw new AssertionError({
 			message: `Expected 'profile' to be Contracts.IProfile, but received ${profile}`,
+		});
+	}
+}
+
+export function assertWallet(wallet?: Contracts.IReadWriteWallet): asserts wallet is Wallet {
+	if (!(wallet instanceof Wallet)) {
+		throw new AssertionError({
+			message: `Expected 'wallet' to be Contracts.IReadWriteWallet, but received ${wallet}`,
 		});
 	}
 }

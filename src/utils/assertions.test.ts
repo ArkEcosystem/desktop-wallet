@@ -2,8 +2,9 @@
 
 import { Coins, Networks } from "@arkecosystem/platform-sdk";
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Wallet } from "@arkecosystem/platform-sdk-profiles/distribution/wallet";
 
-import { assertCoin, assertNetwork, assertNumber, assertProfile, assertString } from "./assertions";
+import { assertCoin, assertNetwork, assertNumber, assertProfile, assertString, assertWallet } from "./assertions";
 
 describe("#assertProfile", () => {
 	it("should pass with a profile instance", () => {
@@ -28,6 +29,25 @@ describe("#assertProfile", () => {
 		expect(() => assertProfile(1)).toThrow("Expected 'profile' to be Contracts.IProfile, but received 1");
 		expect(() => assertProfile({})).toThrow("Expected 'profile' to be Contracts.IProfile, but received [object Object]");
 		expect(() => assertProfile([])).toThrow("Expected 'profile' to be Contracts.IProfile, but received ");
+	});
+});
+
+describe("#assertWallet", () => {
+	it("should pass with a wallet instance", () => {
+		// @ts-ignore
+		expect(() => assertWallet(new Wallet())).not.toThrow();
+	});
+
+	it("should fail without a profile instance", () => {
+		expect(() => assertWallet(undefined)).toThrow("Expected 'wallet' to be Contracts.IReadWriteWallet, but received undefined");
+		expect(() => assertWallet(null)).toThrow("Expected 'wallet' to be Contracts.IReadWriteWallet, but received null");
+		expect(() => assertWallet(true)).toThrow("Expected 'wallet' to be Contracts.IReadWriteWallet, but received true");
+		expect(() => assertWallet(false)).toThrow("Expected 'wallet' to be Contracts.IReadWriteWallet, but received false");
+		expect(() => assertWallet("")).toThrow("Expected 'wallet' to be Contracts.IReadWriteWallet, but received ");
+		expect(() => assertWallet("a")).toThrow("Expected 'wallet' to be Contracts.IReadWriteWallet, but received a");
+		expect(() => assertWallet(1)).toThrow("Expected 'wallet' to be Contracts.IReadWriteWallet, but received 1");
+		expect(() => assertWallet({})).toThrow("Expected 'wallet' to be Contracts.IReadWriteWallet, but received [object Object]");
+		expect(() => assertWallet([])).toThrow("Expected 'wallet' to be Contracts.IReadWriteWallet, but received ");
 	});
 });
 
