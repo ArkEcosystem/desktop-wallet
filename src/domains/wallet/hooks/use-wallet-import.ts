@@ -71,6 +71,14 @@ export const useWalletImport = ({ profile }: { profile: Contracts.IProfile }) =>
 					}),
 				);
 
+			case OptionsValue.PUBLIC_KEY:
+				return profile.wallets().push(
+					await profile.walletFactory().fromPublicKey({
+						...defaultOptions,
+						publicKey: value,
+					}),
+				);
+
 			case OptionsValue.PRIVATE_KEY:
 				return profile.wallets().push(
 					await profile.walletFactory().fromPrivateKey({
