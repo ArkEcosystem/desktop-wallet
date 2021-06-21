@@ -3,7 +3,7 @@ import { Amount } from "app/components/Amount";
 import { useProfileBalance } from "app/hooks/use-profile-balance";
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { assertProfile,assertString } from "utils/assertions";
+import { assertProfile, assertString } from "utils/assertions";
 
 import { BalanceSkeleton } from "./BalanceSkeleton";
 

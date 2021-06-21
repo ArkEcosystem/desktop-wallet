@@ -20,14 +20,18 @@ describe("#assertProfile", () => {
 	});
 
 	it("should fail without a profile instance", () => {
-		expect(() => assertProfile(undefined)).toThrow("Expected 'profile' to be Contracts.IProfile, but received undefined");
+		expect(() => assertProfile(undefined)).toThrow(
+			"Expected 'profile' to be Contracts.IProfile, but received undefined",
+		);
 		expect(() => assertProfile(null)).toThrow("Expected 'profile' to be Contracts.IProfile, but received null");
 		expect(() => assertProfile(true)).toThrow("Expected 'profile' to be Contracts.IProfile, but received true");
 		expect(() => assertProfile(false)).toThrow("Expected 'profile' to be Contracts.IProfile, but received false");
 		expect(() => assertProfile("")).toThrow("Expected 'profile' to be Contracts.IProfile, but received ");
 		expect(() => assertProfile("a")).toThrow("Expected 'profile' to be Contracts.IProfile, but received a");
 		expect(() => assertProfile(1)).toThrow("Expected 'profile' to be Contracts.IProfile, but received 1");
-		expect(() => assertProfile({})).toThrow("Expected 'profile' to be Contracts.IProfile, but received [object Object]");
+		expect(() => assertProfile({})).toThrow(
+			"Expected 'profile' to be Contracts.IProfile, but received [object Object]",
+		);
 		expect(() => assertProfile([])).toThrow("Expected 'profile' to be Contracts.IProfile, but received ");
 	});
 });
@@ -39,14 +43,24 @@ describe("#assertWallet", () => {
 	});
 
 	it("should fail without a profile instance", () => {
-		expect(() => assertWallet(undefined)).toThrow("Expected 'wallet' to be Contracts.IReadWriteWallet, but received undefined");
-		expect(() => assertWallet(null)).toThrow("Expected 'wallet' to be Contracts.IReadWriteWallet, but received null");
-		expect(() => assertWallet(true)).toThrow("Expected 'wallet' to be Contracts.IReadWriteWallet, but received true");
-		expect(() => assertWallet(false)).toThrow("Expected 'wallet' to be Contracts.IReadWriteWallet, but received false");
+		expect(() => assertWallet(undefined)).toThrow(
+			"Expected 'wallet' to be Contracts.IReadWriteWallet, but received undefined",
+		);
+		expect(() => assertWallet(null)).toThrow(
+			"Expected 'wallet' to be Contracts.IReadWriteWallet, but received null",
+		);
+		expect(() => assertWallet(true)).toThrow(
+			"Expected 'wallet' to be Contracts.IReadWriteWallet, but received true",
+		);
+		expect(() => assertWallet(false)).toThrow(
+			"Expected 'wallet' to be Contracts.IReadWriteWallet, but received false",
+		);
 		expect(() => assertWallet("")).toThrow("Expected 'wallet' to be Contracts.IReadWriteWallet, but received ");
 		expect(() => assertWallet("a")).toThrow("Expected 'wallet' to be Contracts.IReadWriteWallet, but received a");
 		expect(() => assertWallet(1)).toThrow("Expected 'wallet' to be Contracts.IReadWriteWallet, but received 1");
-		expect(() => assertWallet({})).toThrow("Expected 'wallet' to be Contracts.IReadWriteWallet, but received [object Object]");
+		expect(() => assertWallet({})).toThrow(
+			"Expected 'wallet' to be Contracts.IReadWriteWallet, but received [object Object]",
+		);
 		expect(() => assertWallet([])).toThrow("Expected 'wallet' to be Contracts.IReadWriteWallet, but received ");
 	});
 });
@@ -77,14 +91,18 @@ describe("#assertNetwork", () => {
 	});
 
 	it("should fail without a network instance", () => {
-		expect(() => assertNetwork(undefined)).toThrow("Expected 'network' to be Networks.Network, but received undefined");
+		expect(() => assertNetwork(undefined)).toThrow(
+			"Expected 'network' to be Networks.Network, but received undefined",
+		);
 		expect(() => assertNetwork(null)).toThrow("Expected 'network' to be Networks.Network, but received null");
 		expect(() => assertNetwork(true)).toThrow("Expected 'network' to be Networks.Network, but received true");
 		expect(() => assertNetwork(false)).toThrow("Expected 'network' to be Networks.Network, but received false");
 		expect(() => assertNetwork("")).toThrow("Expected 'network' to be Networks.Network, but received ");
 		expect(() => assertNetwork("a")).toThrow("Expected 'network' to be Networks.Network, but received a");
 		expect(() => assertNetwork(1)).toThrow("Expected 'network' to be Networks.Network, but received 1");
-		expect(() => assertNetwork({})).toThrow("Expected 'network' to be Networks.Network, but received [object Object]");
+		expect(() => assertNetwork({})).toThrow(
+			"Expected 'network' to be Networks.Network, but received [object Object]",
+		);
 		expect(() => assertNetwork([])).toThrow("Expected 'network' to be Networks.Network, but received ");
 	});
 });
