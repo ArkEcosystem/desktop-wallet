@@ -3,6 +3,7 @@ import { Amount } from "app/components/Amount";
 import { useProfileBalance } from "app/hooks/use-profile-balance";
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { assertProfile,assertString } from "utils/assertions";
 
 import { BalanceSkeleton } from "./BalanceSkeleton";
 
@@ -25,6 +26,12 @@ export const Balance = ({ profile, isLoading }: BalanceProperties) => {
 		return <BalanceSkeleton width={width} />;
 	}
 
+	assertProfile(profile);
+
+	const ticker: string | undefined = profile.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency);
+
+	assertString(ticker);
+
 	return (
 		<div className="text-right">
 			<div className="text-xs font-semibold text-theme-secondary-500">{t("COMMON.YOUR_BALANCE")}</div>
@@ -33,10 +40,7 @@ export const Balance = ({ profile, isLoading }: BalanceProperties) => {
 				className="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
 				data-testid="Balance__value"
 			>
-				<Amount
-					value={convertedBalance}
-					ticker={profile?.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency) || ""}
-				/>
+				<Amount value={convertedBalance} ticker={ticker} />
 			</div>
 		</div>
 	);
