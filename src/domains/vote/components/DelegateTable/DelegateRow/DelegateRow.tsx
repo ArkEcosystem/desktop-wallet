@@ -50,9 +50,13 @@ export const DelegateRow = ({
 			return !isSelectedUnvote
 				? "bg-theme-primary-50 dark:bg-theme-background dark:border-theme-primary-600"
 				: "bg-theme-danger-50 dark:bg-theme-background dark:border-theme-danger-400";
-		} else {
-			return isSelectedVote ? "bg-theme-success-50 dark:bg-theme-background dark:border-theme-success-600" : "";
 		}
+
+		if (isSelectedVote) {
+			return "bg-theme-info-50 dark:bg-theme-info-900 text-theme-info-500";
+		}
+
+		return "";
 	};
 
 	if (isLoading) {
@@ -116,7 +120,7 @@ export const DelegateRow = ({
 							</span>
 						) : (
 							<Button
-								variant="secondary"
+								variant={isSelectedVote ? "info" : "secondary"}
 								color={isSelectedVote ? "success" : "primary"}
 								onClick={() => onVoteSelect?.(delegate.address())}
 								data-testid={`DelegateRow__toggle-${index}`}
