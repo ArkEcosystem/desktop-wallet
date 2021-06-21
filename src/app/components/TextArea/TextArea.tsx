@@ -1,3 +1,4 @@
+import cn from "classnames";
 import React, { useEffect } from "react";
 
 import { Input } from "../Input";
@@ -14,7 +15,16 @@ export const TextArea = React.forwardRef((properties: TextareaProperties, refere
 		}
 	}, [reference, properties.value]);
 
-	return <Input data-testid="TextArea" as="textarea" isTextArea ref={reference} {...properties} />;
+	return (
+		<Input
+			data-testid="TextArea"
+			as="textarea"
+			isTextArea
+			ref={reference}
+			{...properties}
+			innerClassName={cn({ "resize-none": properties.disabled })}
+		/>
+	);
 });
 
 TextArea.displayName = "TextArea";

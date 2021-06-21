@@ -1,5 +1,116 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ErrorStep should display error details 1`] = `
+<DocumentFragment>
+  <div
+    class="space-y-8"
+    data-testid="ErrorStep"
+  >
+    <div
+      class="flex justify-between items-end bg-theme-background"
+    >
+      <div
+        class="space-y-4"
+      >
+        <h1
+          class="mb-0 text-3xl"
+          data-testid="header__title"
+        >
+          Transaction Error
+        </h1>
+      </div>
+    </div>
+    <svg
+      class="w-full"
+    >
+      transaction-error-banner.svg
+    </svg>
+    <div
+      class="space-y-6"
+    >
+      <p
+        class="text-theme-secondary-text"
+      >
+        An error occurred that prevented the broadcast of this transaction. Select Retry to attempt to broadcast the transaction again. Alternatively, return to your wallet
+      </p>
+      <div
+        class="fixed invisible w-auto whitespace-nowrap"
+      >
+        …
+      </div>
+      <div
+        class="Input__InputWrapperStyled-wu99qs-0 glWYnv py-4 h-32"
+        disabled=""
+      >
+        <div
+          class="relative flex flex-1 h-full"
+        >
+          <textarea
+            class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full resize-none text-theme-secondary-text"
+            data-testid="ErrorStep__errorMessage"
+            disabled=""
+          >
+            Display error details
+          </textarea>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex"
+    >
+      <div
+        class="relative"
+      >
+        <button
+          class="ClipboardButton__StyledButton-sc-1ft1991-0 KCoaM"
+          data-testid="clipboard-button__wrapper"
+          type="button"
+        >
+          <div
+            class="flex items-center space-x-2"
+          >
+            <div
+              class="sc-bdfBwQ fPrsah"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                copy.svg
+              </svg>
+            </div>
+            <span>
+              Copy
+            </span>
+          </div>
+        </button>
+      </div>
+      <button
+        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP ml-auto mr-3"
+        data-testid="ErrorStep__wallet-button"
+        type="button"
+      >
+        <div
+          class="flex relative items-center space-x-2"
+        >
+          Back to Wallet
+        </div>
+      </button>
+      <button
+        class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
+        data-testid="ErrorStep__repeat-button"
+        type="button"
+      >
+        <div
+          class="flex relative items-center space-x-2"
+        >
+          Retry
+        </div>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`ErrorStep should emit onBack 1`] = `
 <DocumentFragment>
   <div
@@ -25,16 +136,20 @@ exports[`ErrorStep should emit onBack 1`] = `
     >
       transaction-error-banner.svg
     </svg>
-    <p
-      class="text-theme-secondary-text"
-    >
-      An error occurred that prevented the broadcast of this transaction. Select Retry to attempt to broadcast the transaction again. Alternatively, return to your wallet
-    </p>
     <div
-      class="flex justify-end space-x-3"
+      class="space-y-6"
+    >
+      <p
+        class="text-theme-secondary-text"
+      >
+        An error occurred that prevented the broadcast of this transaction. Select Retry to attempt to broadcast the transaction again. Alternatively, return to your wallet
+      </p>
+    </div>
+    <div
+      class="flex"
     >
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP ml-auto mr-3"
         data-testid="ErrorStep__wallet-button"
         type="button"
       >
@@ -45,7 +160,7 @@ exports[`ErrorStep should emit onBack 1`] = `
         </div>
       </button>
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS space-x-2"
+        class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
         data-testid="ErrorStep__repeat-button"
         type="button"
       >
@@ -85,16 +200,20 @@ exports[`ErrorStep should emit onRepeat 1`] = `
     >
       transaction-error-banner.svg
     </svg>
-    <p
-      class="text-theme-secondary-text"
-    >
-      An error occurred that prevented the broadcast of this transaction. Select Retry to attempt to broadcast the transaction again. Alternatively, return to your wallet
-    </p>
     <div
-      class="flex justify-end space-x-3"
+      class="space-y-6"
+    >
+      <p
+        class="text-theme-secondary-text"
+      >
+        An error occurred that prevented the broadcast of this transaction. Select Retry to attempt to broadcast the transaction again. Alternatively, return to your wallet
+      </p>
+    </div>
+    <div
+      class="flex"
     >
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP ml-auto mr-3"
         data-testid="ErrorStep__wallet-button"
         type="button"
       >
@@ -105,7 +224,7 @@ exports[`ErrorStep should emit onRepeat 1`] = `
         </div>
       </button>
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS space-x-2"
+        class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
         data-testid="ErrorStep__repeat-button"
         type="button"
       >
@@ -120,7 +239,7 @@ exports[`ErrorStep should emit onRepeat 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ErrorStep should render with custom title and description 1`] = `
+exports[`ErrorStep should render with custom title 1`] = `
 <DocumentFragment>
   <div
     class="space-y-8"
@@ -145,16 +264,20 @@ exports[`ErrorStep should render with custom title and description 1`] = `
     >
       transaction-error-banner.svg
     </svg>
-    <p
-      class="text-theme-secondary-text"
-    >
-      An error occurred that prevented the broadcast of this transaction. Select Retry to attempt to broadcast the transaction again. Alternatively, return to your wallet
-    </p>
     <div
-      class="flex justify-end space-x-3"
+      class="space-y-6"
+    >
+      <p
+        class="text-theme-secondary-text"
+      >
+        An error occurred that prevented the broadcast of this transaction. Select Retry to attempt to broadcast the transaction again. Alternatively, return to your wallet
+      </p>
+    </div>
+    <div
+      class="flex"
     >
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP ml-auto mr-3"
         data-testid="ErrorStep__wallet-button"
         type="button"
       >
@@ -165,7 +288,7 @@ exports[`ErrorStep should render with custom title and description 1`] = `
         </div>
       </button>
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS space-x-2"
+        class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
         data-testid="ErrorStep__repeat-button"
         type="button"
       >
@@ -205,16 +328,20 @@ exports[`ErrorStep should render with default texts 1`] = `
     >
       transaction-error-banner.svg
     </svg>
-    <p
-      class="text-theme-secondary-text"
-    >
-      An error occurred that prevented the broadcast of this transaction. Select Retry to attempt to broadcast the transaction again. Alternatively, return to your wallet
-    </p>
     <div
-      class="flex justify-end space-x-3"
+      class="space-y-6"
+    >
+      <p
+        class="text-theme-secondary-text"
+      >
+        An error occurred that prevented the broadcast of this transaction. Select Retry to attempt to broadcast the transaction again. Alternatively, return to your wallet
+      </p>
+    </div>
+    <div
+      class="flex"
     >
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP ml-auto mr-3"
         data-testid="ErrorStep__wallet-button"
         type="button"
       >
@@ -225,7 +352,7 @@ exports[`ErrorStep should render with default texts 1`] = `
         </div>
       </button>
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS space-x-2"
+        class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
         data-testid="ErrorStep__repeat-button"
         type="button"
       >

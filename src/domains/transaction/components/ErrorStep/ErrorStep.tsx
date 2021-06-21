@@ -1,6 +1,9 @@
 import { Button } from "app/components/Button";
+import { Clipboard } from "app/components/Clipboard";
 import { Header } from "app/components/Header";
+import { Icon } from "app/components/Icon";
 import { Image } from "app/components/Image";
+import { TextArea } from "app/components/TextArea";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -9,9 +12,10 @@ interface Properties {
 	isRepeatDisabled?: boolean;
 	onBack?: () => void;
 	onRepeat?: () => void;
+	errorMessage?: string;
 }
 
-export const ErrorStep = ({ title, onBack, onRepeat, isRepeatDisabled = false }: Properties) => {
+export const ErrorStep = ({ title, onBack, onRepeat, isRepeatDisabled = false, errorMessage }: Properties) => {
 	const { t } = useTranslation();
 
 	return (
@@ -20,19 +24,37 @@ export const ErrorStep = ({ title, onBack, onRepeat, isRepeatDisabled = false }:
 
 			<Image name="TransactionErrorBanner" domain="transaction" className="w-full" />
 
-			<p className="text-theme-secondary-text">{t("TRANSACTION.ERROR.DESCRIPTION")}</p>
+			<div className="space-y-6">
+				<p className="text-theme-secondary-text">{t("TRANSACTION.ERROR.DESCRIPTION")}</p>
 
-			<div className="flex justify-end space-x-3">
-				<Button onClick={() => onBack?.()} data-testid="ErrorStep__wallet-button" variant="secondary">
+				{errorMessage && (
+					<TextArea
+						data-testid="ErrorStep__errorMessage"
+						className="py-4 h-32"
+						defaultValue={errorMessage}
+						disabled
+					/>
+				)}
+			</div>
+
+			<div className="flex">
+				{errorMessage && (
+					<Clipboard variant="button" data={errorMessage}>
+						<Icon name="Copy" />
+						<span>{t("COMMON.COPY")}</span>
+					</Clipboard>
+				)}
+
+				<Button
+					className="ml-auto mr-3"
+					onClick={() => onBack?.()}
+					data-testid="ErrorStep__wallet-button"
+					variant="secondary"
+				>
 					{t("COMMON.BACK_TO_WALLET")}
 				</Button>
 
-				<Button
-					data-testid="ErrorStep__repeat-button"
-					disabled={isRepeatDisabled}
-					className="space-x-2"
-					onClick={() => onRepeat?.()}
-				>
+				<Button data-testid="ErrorStep__repeat-button" disabled={isRepeatDisabled} onClick={() => onRepeat?.()}>
 					{t("COMMON.RETRY")}
 				</Button>
 			</div>
