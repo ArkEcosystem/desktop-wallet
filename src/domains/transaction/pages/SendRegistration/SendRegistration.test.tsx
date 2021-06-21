@@ -63,8 +63,9 @@ const createTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 		id: () => DelegateRegistrationFixture.data.id,
 		sender: () => DelegateRegistrationFixture.data.sender,
 		recipient: () => DelegateRegistrationFixture.data.recipient,
-		amount: () => DelegateRegistrationFixture.data.amount / 1e8,
-		fee: () => DelegateRegistrationFixture.data.fee / 1e8,
+		amount: () => +DelegateRegistrationFixture.data.amount / 1e8,
+		fee: () => +DelegateRegistrationFixture.data.fee / 1e8,
+		username: () => DelegateRegistrationFixture.data.asset.delegate.username,
 		data: () => ({ data: () => DelegateRegistrationFixture.data }),
 	});
 
