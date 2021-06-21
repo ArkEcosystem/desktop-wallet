@@ -13,32 +13,17 @@ export const SummaryStep = ({
 }: {
 	transaction: DTO.ExtendedSignedTransactionData;
 	senderWallet: Contracts.IReadWriteWallet;
-}) => {
-	// @TODO: this differs per coin, can't be accessed like this
-	const recipients = transaction
-		.data()
-		.data()
-		.asset?.payments?.map((payment: { recipientId: string; amount: number }) => ({
-			address: payment.recipientId,
-			amount: +payment.amount,
-		})) || [{ address: transaction.recipient(), amount: transaction.amount() }];
+}): JSX.Element => (
+	<TransactionSuccessful transaction={transaction} senderWallet={senderWallet}>
+		<TransactionRecipients currency={senderWallet.currency()} recipients={transaction.recipients()} />
 
-	const transactionAmount = recipients.reduce((sum: number, { amount }: { amount: number }) => sum + amount, 0);
+		<TransactionAmount
+			amount={transaction.amount()}
+			currency={senderWallet.currency()}
+			isMultiPayment={transaction.recipients().length > 1}
+			isSent={true}
+		/>
 
-	const currency = senderWallet.currency();
-
-	return (
-		<TransactionSuccessful transaction={transaction} senderWallet={senderWallet}>
-			<TransactionRecipients currency={currency} recipients={recipients} />
-
-			<TransactionAmount
-				amount={transactionAmount}
-				currency={currency}
-				isMultiPayment={recipients.length > 1}
-				isSent={true}
-			/>
-
-			<TransactionFee currency={currency} value={transaction.fee()} paddingPosition="top" />
-		</TransactionSuccessful>
-	);
-};
+		<TransactionFee currency={senderWallet.currency()} value={transaction.fee()} paddingPosition="top" />
+	</TransactionSuccessful>
+);
