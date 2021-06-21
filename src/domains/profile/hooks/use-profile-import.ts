@@ -42,6 +42,17 @@ export const useProfileImport = ({ env }: { env: Environment }) => {
 
 		const profile = env.profiles().create("");
 
+		// Ensure that we sync all coins before restoring.
+		for (const wallet of data.wallets) {
+			if (wallet?.address && wallet?.balance.ARK) {
+				await profile.coins().set("ARK", "ark.mainnet").__construct();
+			}
+
+			if (wallet?.address && wallet?.balance.DARK) {
+				await profile.coins().set("ARK", "ark.devnet").__construct();
+			}
+		}
+
 		await Promise.all(
 			data.wallets.map(async (wallet: Record<string, any>) => {
 				if (wallet?.address && wallet?.balance.ARK) {
