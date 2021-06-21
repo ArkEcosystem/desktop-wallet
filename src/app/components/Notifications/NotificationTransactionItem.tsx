@@ -27,11 +27,12 @@ export const NotificationTransactionItem = ({
 			setWalletName(senderWallet[0]?.name());
 			setTransaction(notificationTransaction);
 		};
+
 		fetchTransaction();
 	}, [profile, notification]);
 
 	if (!transaction) {
-		return <TransactionCompactRowSkeleton />;
+		return <TransactionCompactRowSkeleton borderDotted />;
 	}
 
 	return (
