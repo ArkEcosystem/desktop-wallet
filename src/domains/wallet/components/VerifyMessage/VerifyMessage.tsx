@@ -7,7 +7,7 @@ import { TextArea } from "app/components/TextArea";
 import { useEnvironmentContext } from "app/contexts";
 import { useValidation } from "app/hooks";
 import { VerifyMessageStatus } from "domains/wallet/components/VerifyMessageStatus";
-import React, { ChangeEvent, useEffect, useState } from "react";
+import React, { ChangeEvent, useEffect, useRef, useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -27,6 +27,7 @@ interface Properties {
 
 const JsonForm = () => {
 	const { t } = useTranslation();
+	const jsonReference = useRef();
 
 	const { register, unregister, setValue } = useFormContext();
 
@@ -46,7 +47,8 @@ const JsonForm = () => {
 				<FormLabel label={t("WALLETS.MODAL_VERIFY_MESSAGE.JSON_STRING")} />
 				<TextArea
 					data-testid="VerifyMessage__json-jsonString"
-					className="py-4 h-32"
+					className="py-4"
+					initialHeight={90}
 					placeholder={'{"signatory": "...", "signature": "...", "message": "..."}'}
 					onChange={(event: ChangeEvent<HTMLInputElement>) =>
 						setValue("jsonString", event.target.value, {
@@ -54,6 +56,7 @@ const JsonForm = () => {
 							shouldValidate: true,
 						})
 					}
+					ref={jsonReference}
 				/>
 			</FormField>
 		</div>
