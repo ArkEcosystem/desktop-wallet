@@ -1,21 +1,16 @@
 import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
-import { Table, TableCell, TableRow } from "app/components/Table";
+import { TableCell, TableRow } from "app/components/Table";
 import { Tooltip } from "app/components/Tooltip";
+import { useTimeFormat } from "app/hooks/use-time-format";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-import { BaseTransactionRowAmount } from "../TransactionRow/TransactionRowAmount";
-import { BaseTransactionRowInfo } from "../TransactionRow/TransactionRowInfo";
-import { BaseTransactionRowMode } from "../TransactionRow/TransactionRowMode";
-import { BaseTransactionRowRecipientLabel } from "../TransactionRow/TransactionRowRecipientLabel";
-
-interface Properties {
-	transactions: DTO.ExtendedSignedTransactionData[];
-	wallet: Contracts.IReadWriteWallet;
-	onClick?: (transaction: DTO.ExtendedSignedTransactionData) => void;
-}
+import { BaseTransactionRowAmount } from "./TransactionRowAmount";
+import { BaseTransactionRowInfo } from "./TransactionRowInfo";
+import { BaseTransactionRowMode } from "./TransactionRowMode";
+import { BaseTransactionRowRecipientLabel } from "./TransactionRowRecipientLabel";
 
 const StatusLabel = ({
 	wallet,
@@ -87,7 +82,7 @@ const StatusLabel = ({
 	);
 };
 
-const Row = ({
+export const SignedTransactionRow = ({
 	transaction,
 	onSign,
 	onRowClick,
@@ -102,6 +97,7 @@ const Row = ({
 
 	const recipient = transaction.get<string>("recipientId");
 	const canBeSigned = wallet.transaction().canBeSigned(transaction.id());
+	const timeFormat = useTimeFormat();
 
 	return (
 		<TableRow onClick={() => onRowClick?.(transaction)}>
@@ -114,9 +110,7 @@ const Row = ({
 			</TableCell>
 
 			<TableCell innerClassName="text-theme-secondary-text">
-				<span data-testid="TransactionRow__timestamp">
-					{transaction.timestamp().format("DD MMM YYYY HH:mm:ss")}
-				</span>
+				<span data-testid="TransactionRow__timestamp">{transaction.timestamp().format(timeFormat)}</span>
 			</TableCell>
 
 			<TableCell innerClassName="space-x-4">
@@ -154,55 +148,5 @@ const Row = ({
 				) : null}
 			</TableCell>
 		</TableRow>
-	);
-};
-
-export const SignedTransactionTable = ({ transactions, wallet, onClick }: Properties) => {
-	const { t } = useTranslation();
-
-	const columns = [
-		{
-			Header: t("COMMON.ID"),
-			minimumWidth: true,
-		},
-		{
-			Header: t("COMMON.DATE"),
-			accessor: "timestamp",
-			sortDescFirst: true,
-			cellWidth: "w-50",
-		},
-		{
-			Header: t("COMMON.RECIPIENT"),
-			cellWidth: "w-96",
-		},
-		{
-			Header: t("COMMON.INFO"),
-			className: "justify-center",
-		},
-		{
-			Header: t("COMMON.STATUS"),
-			className: "justify-center",
-			minimumWidth: true,
-		},
-		{
-			Header: t("COMMON.AMOUNT"),
-			accessor: "amount",
-			className: "justify-end no-border",
-		},
-		{
-			Header: "Sign",
-			className: "hidden",
-			cellWidth: "w-24",
-		},
-	];
-
-	return (
-		<div data-testid="SignedTransactionTable" className="relative">
-			<Table columns={columns} data={transactions}>
-				{(transaction: DTO.ExtendedSignedTransactionData) => (
-					<Row transaction={transaction} wallet={wallet} onSign={onClick} onRowClick={onClick} />
-				)}
-			</Table>
-		</div>
 	);
 };

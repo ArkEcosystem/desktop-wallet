@@ -192,6 +192,59 @@ describe("useProfileTransactions", () => {
 		});
 	});
 
+	it("should hide unconfirmed transactions", async () => {
+		const profile = env.profiles().findById(getDefaultProfileId());
+
+		await syncDelegates(profile);
+
+		await env.profiles().restore(profile);
+		await profile.sync();
+
+		const wrapper = ({ children }: any) => (
+			<EnvironmentProvider env={env}>
+				<ConfigurationProvider>{children}</ConfigurationProvider>
+			</EnvironmentProvider>
+		);
+
+		const sent = await profile.transactionAggregate().all({ limit: 30 });
+		const items = sent.items();
+
+		const mockIsConfirmed = jest.spyOn(items[0], "isConfirmed").mockReturnValue(false);
+
+		const mockTransactionsAggregate = jest.spyOn(profile.transactionAggregate(), "all").mockImplementation(() => {
+			const response = {
+				hasMorePages: () => true,
+				items: () => items,
+			};
+			return Promise.resolve(response);
+		});
+
+		const {
+			result: { current },
+		} = renderHook(
+			() => useProfileTransactions({ profile, wallets: profile.wallets().values(), showUnconfirmed: false }),
+			{ wrapper },
+		);
+
+		await act(async () => {
+			jest.runOnlyPendingTimers();
+
+			await waitFor(() => expect(current.isLoadingMore).toBe(false));
+
+			act(() => {
+				jest.clearAllTimers();
+				current.updateFilters({ activeMode: "all" });
+				jest.runOnlyPendingTimers();
+			});
+
+			await waitFor(() => expect(current.isLoadingMore).toBe(false));
+			await waitFor(() => expect(current.transactions).toHaveLength(0));
+
+			mockTransactionsAggregate.mockRestore();
+			mockIsConfirmed.mockRestore();
+		});
+	});
+
 	it("#fetchMore", async () => {
 		const profile = env.profiles().findById(getDefaultProfileId());
 

@@ -40,7 +40,7 @@ describe("Wallet Transactions Hook", () => {
 		await profile.sync();
 	});
 
-	it("should sync multisignatures", async () => {
+	it("should sync pending transactions", async () => {
 		const signatory = await wallet
 			.signatory()
 			.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]);
@@ -49,28 +49,31 @@ describe("Wallet Transactions Hook", () => {
 			.coin()
 			.transaction()
 			.transfer({
-				fee: "1",
+				fee: 1,
 				signatory,
 				nonce: "1",
 				data: {
 					to: wallet.address(),
-					amount: "1",
+					amount: 1,
 				},
 			});
 
 		jest.spyOn(wallet.transaction(), "sync").mockResolvedValue(void 0);
 		jest.spyOn(wallet.transaction(), "broadcasted").mockReturnValue({ 1: transfer });
 
-		const confirm = jest.spyOn(wallet.transaction(), "confirm").mockResolvedValue(true);
+		let pendingSignedTransactions: DTO.ExtendedSignedTransactionData[];
+		let pendingTransferTransactions: DTO.ExtendedSignedTransactionData[];
 
 		const Component = () => {
-			const { syncMultiSignatures } = useWalletTransactions(wallet);
+			const { syncPending, pendingTransfers, pendingSigned } = useWalletTransactions(wallet);
 			const [loading, setLoading] = useState(false);
 
 			const run = async () => {
 				setLoading(true);
-				await syncMultiSignatures();
+				await syncPending();
 				setLoading(false);
+				pendingTransferTransactions = pendingTransfers;
+				pendingSignedTransactions = pendingSigned;
 			};
 			return loading ? <span>Loading</span> : <button onClick={run}>Sync</button>;
 		};
@@ -82,8 +85,8 @@ describe("Wallet Transactions Hook", () => {
 		});
 
 		await waitFor(() => expect(screen.queryByText("Loading")).not.toBeInTheDocument());
-
-		expect(confirm).toHaveBeenCalled();
+		await waitFor(() => expect(pendingSignedTransactions).toHaveLength(0));
+		await waitFor(() => expect(pendingTransferTransactions).toHaveLength(0));
 
 		jest.clearAllMocks();
 	});
@@ -93,14 +96,14 @@ describe("Wallet Transactions Hook", () => {
 		const spySync = jest.spyOn(wallet.transaction(), "sync");
 
 		const Component = () => {
-			const { pendingMultiSignatureTransactions } = useWalletTransactions(wallet);
+			const { pendingTransfers, pendingSigned } = useWalletTransactions(wallet);
 
-			return <h1>{pendingMultiSignatureTransactions.length}</h1>;
+			return <h1>{[...pendingSigned, ...pendingTransfers].length}</h1>;
 		};
 
 		render(<Component />);
 
-		jest.advanceTimersByTime(50_000);
+		jest.advanceTimersByTime(30_000);
 
 		await waitFor(() => expect(spySync).toHaveBeenCalledTimes(2));
 
@@ -117,10 +120,10 @@ describe("Wallet Transactions Hook", () => {
 			.transfer({
 				signatory: mnemonicSignatory,
 				nonce: "1",
-				fee: "1",
+				fee: 1,
 				data: {
 					to: wallet.address(),
-					amount: "1",
+					amount: 1,
 				},
 			});
 
@@ -133,10 +136,10 @@ describe("Wallet Transactions Hook", () => {
 			.transaction()
 			.transfer({
 				nonce: "1",
-				fee: "1",
+				fee: 1,
 				data: {
 					to: wallet.address(),
-					amount: "1",
+					amount: 1,
 				},
 				signatory,
 			});
@@ -146,19 +149,20 @@ describe("Wallet Transactions Hook", () => {
 			"2": transferWithMultisig,
 		});
 
+		let pendingSignedTransactions: DTO.ExtendedSignedTransactionData[];
 		const Component = () => {
-			const { pendingMultiSignatureTransactions, syncMultiSignatures } = useWalletTransactions(wallet);
+			const { pendingSigned, syncPending } = useWalletTransactions(wallet);
+			pendingSignedTransactions = pendingSigned;
 
 			useEffect(() => {
-				syncMultiSignatures();
-			}, [syncMultiSignatures]);
-			return <span>{pendingMultiSignatureTransactions.length}</span>;
+				syncPending();
+			}, [syncPending]);
+			return <span>{pendingSigned.length}</span>;
 		};
 
 		render(<Component />);
 
-		// @TODO: proper expectation
-		// expect(screen.getByText("1"));
+		await waitFor(() => expect(pendingSignedTransactions).toHaveLength(1));
 
 		signedMock.mockRestore();
 	});
