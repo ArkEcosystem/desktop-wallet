@@ -19,15 +19,15 @@ export const useFeeConfirmation = (fee: number | string, fees: TransactionFees) 
 			return;
 		}
 
-		if (fee < fees?.min) {
+		if (+fee < fees?.min) {
 			setFeeWarningVariant(FeeWarningVariant.Low);
 		}
 
-		if (fee > fees?.static) {
+		if (+fee > fees?.static) {
 			setFeeWarningVariant(FeeWarningVariant.High);
 		}
 
-		if (fee >= fees?.min && fee <= fees?.static) {
+		if (+fee >= fees?.min && +fee <= fees?.static) {
 			setFeeWarningVariant(undefined);
 		}
 	}, [fee, fees]);

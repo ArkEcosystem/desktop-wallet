@@ -1,6 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
-import { Amount } from "app/components/Amount";
+import { AmountCrypto } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
@@ -92,7 +92,7 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 			</TableCell>
 
 			<TableCell innerClassName="justify-end font-bold text-theme-secondary-text whitespace-nowrap">
-				<Amount value={wallet.balance()} ticker={wallet.network().ticker()} />
+				<AmountCrypto value={wallet.balance()} ticker={wallet.network().ticker()} />
 			</TableCell>
 
 			<TableCell innerClassName="space-x-4 font-bold">

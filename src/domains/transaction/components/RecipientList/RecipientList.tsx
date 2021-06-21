@@ -1,5 +1,5 @@
 import { Address } from "app/components/Address";
-import { Amount } from "app/components/Amount";
+import { Amount, AmountCrypto } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { OriginalButton as Button } from "app/components/Button/OriginalButton";
 import { Icon } from "app/components/Icon";
@@ -56,7 +56,7 @@ const RecipientListItem = ({
 				{showAmount && (
 					<td className="py-4 text-right">
 						<Label color="danger">
-							<Amount ticker={assetSymbol!} value={amount!} showSign />
+							<AmountCrypto withSign ticker={assetSymbol} value={amount!} />
 						</Label>
 					</td>
 				)}
@@ -85,12 +85,12 @@ const RecipientListItem = ({
 			{showAmount && (
 				<td className="flex-1 flex-shrink-0 py-6 pl-3">
 					<div className="mb-1 text-sm font-semibold text-right text-theme-secondary-500 dark:text-theme-secondary-700">
-						{exchangeAmount && <Amount ticker={exchangeTicker!} value={exchangeAmount} />}
+						{exchangeAmount && <Amount ticker={exchangeTicker} value={exchangeAmount} />}
 
 						{!exchangeAmount && <span>{t("COMMON.AMOUNT")}</span>}
 					</div>
 					<div className="font-semibold text-right">
-						<Amount ticker={assetSymbol!} value={amount!} />
+						<AmountCrypto ticker={assetSymbol} value={amount!} />
 					</div>
 				</td>
 			)}

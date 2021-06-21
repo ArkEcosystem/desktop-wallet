@@ -195,7 +195,7 @@ export const SendVote = () => {
 			});
 
 			const voteTransactionInput: Services.TransactionInput = {
-				fee,
+				fee: +fee,
 				signatory,
 			};
 

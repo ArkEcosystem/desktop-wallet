@@ -1,4 +1,4 @@
-import { Amount } from "app/components/Amount";
+import { Amount, AmountCrypto } from "app/components/Amount";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
@@ -17,7 +17,7 @@ type TransactionAmountProperties = {
 	isSent: boolean;
 } & TransactionDetailProperties;
 
-export const TransactionAmount = ({
+export const TransactionAmount: React.FC<TransactionAmountProperties> = ({
 	amount,
 	convertedAmount,
 	currency,
@@ -52,7 +52,7 @@ export const TransactionAmount = ({
 			{...properties}
 		>
 			<Label color={isSent ? "danger" : "success"}>
-				<Amount ticker={currency} value={amount} isNegative={isSent} showSign />
+				<AmountCrypto withSign ticker={currency} value={amount} isNegative={isSent} />
 			</Label>
 
 			{!!exchangeCurrency && !!convertedAmount && (

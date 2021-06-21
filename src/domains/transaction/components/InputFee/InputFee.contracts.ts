@@ -24,8 +24,8 @@ type InputFeeSimpleOptions = {
 };
 
 interface InputFeeAdvancedProperties {
-	onChange: (value: number) => void;
-	value: number;
+	onChange: (value: string) => void;
+	value: string;
 	min: number;
 	max: number;
 	step: number;
@@ -53,8 +53,8 @@ interface InputFeeProperties {
 	loading?: boolean;
 	viewType?: InputFeeViewType;
 	simpleValue?: InputFeeSimpleValue;
-	value: number;
-	onChange: (value: number) => void;
+	value: string | undefined;
+	onChange: (value: string) => void;
 	onChangeViewType: (value: InputFeeViewType) => void;
 	onChangeSimpleValue: (value: InputFeeSimpleValue) => void;
 }

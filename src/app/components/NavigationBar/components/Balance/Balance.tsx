@@ -11,7 +11,7 @@ interface BalanceProperties {
 	isLoading?: boolean;
 }
 
-export const Balance = ({ profile, isLoading }: BalanceProperties) => {
+export const Balance: React.FC<BalanceProperties> = ({ profile, isLoading }: BalanceProperties) => {
 	const [width, setWidth] = useState<number | undefined>();
 
 	const reference = useRef<HTMLDivElement>(null);
@@ -25,6 +25,14 @@ export const Balance = ({ profile, isLoading }: BalanceProperties) => {
 		return <BalanceSkeleton width={width} />;
 	}
 
+	// @TODO: enable during maintenance work
+	// assertProfile(profile);
+
+	const ticker: string | undefined = profile?.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency) || "";
+
+	// @TODO: enable during maintenance work
+	// assertString(ticker);
+
 	return (
 		<div className="text-right">
 			<div className="text-xs font-semibold text-theme-secondary-500">{t("COMMON.YOUR_BALANCE")}</div>
@@ -33,10 +41,7 @@ export const Balance = ({ profile, isLoading }: BalanceProperties) => {
 				className="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
 				data-testid="Balance__value"
 			>
-				<Amount
-					value={convertedBalance}
-					ticker={profile?.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency) || ""}
-				/>
+				<Amount value={convertedBalance} ticker={ticker} />
 			</div>
 		</div>
 	);

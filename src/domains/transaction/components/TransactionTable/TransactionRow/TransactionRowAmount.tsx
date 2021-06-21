@@ -1,5 +1,6 @@
 import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
-import { Amount } from "app/components/Amount";
+import { isNil } from "@arkecosystem/utils";
+import { Amount, AmountCrypto } from "app/components/Amount";
 import { Label } from "app/components/Label";
 import React from "react";
 
@@ -11,36 +12,35 @@ interface Properties {
 	exchangeCurrency?: string;
 }
 
-export const BaseTransactionRowAmount = ({ isSent, wallet, total, convertedTotal, exchangeCurrency }: Properties) => {
+const BaseTransactionRowAmount: React.FC<Properties> = ({
+	isSent,
+	wallet,
+	total,
+	convertedTotal,
+	exchangeCurrency,
+}: Properties) => {
 	const isNegative = total !== 0 && isSent;
 
-	if (exchangeCurrency) {
-		return (
-			<Amount
-				data-testid="TransactionRowAmount"
-				value={convertedTotal!}
-				ticker={exchangeCurrency}
-				className="text-theme-secondary-text"
-			/>
-		);
+	if (!!exchangeCurrency && !isNil(convertedTotal)) {
+		return <Amount value={convertedTotal} ticker={exchangeCurrency} className="text-theme-secondary-text" />;
 	}
 
 	const color = isSent ? "danger" : "success";
 
 	return (
-		<Label data-testid="TransactionRowAmount" color={color} className="whitespace-nowrap">
-			<Amount ticker={wallet.currency()} value={total} isNegative={isNegative} showSign />
+		<Label color={color} className="whitespace-nowrap">
+			<AmountCrypto withSign ticker={wallet.currency()} value={total} isNegative={isNegative} />
 		</Label>
 	);
 };
 
-export const TransactionRowAmount = ({
+const TransactionRowAmount = ({
 	transaction,
 	exchangeCurrency,
 }: {
 	transaction: DTO.ExtendedTransactionData;
 	exchangeCurrency?: string;
-}) => (
+}): JSX.Element => (
 	<BaseTransactionRowAmount
 		isSent={transaction.isSent()}
 		wallet={transaction.wallet()}
@@ -49,3 +49,5 @@ export const TransactionRowAmount = ({
 		exchangeCurrency={exchangeCurrency}
 	/>
 );
+
+export { BaseTransactionRowAmount, TransactionRowAmount };

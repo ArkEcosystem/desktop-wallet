@@ -21,7 +21,7 @@ exports[`TotalAmountBox should render 1`] = `
           </span>
           <span
             class="mt-1 text-lg font-semibold"
-            data-testid="total-amount-box__transaction-amount"
+            data-testid="AmountCrypto"
           >
             0.1 ARK
           </span>
@@ -36,7 +36,7 @@ exports[`TotalAmountBox should render 1`] = `
           </span>
           <span
             class="mt-1 text-lg font-semibold"
-            data-testid="total-amount-box__transaction-fee"
+            data-testid="AmountCrypto"
           >
             0.01 ARK
           </span>
@@ -70,7 +70,7 @@ exports[`TotalAmountBox should render 1`] = `
       </span>
       <span
         class="text-2xl font-bold"
-        data-testid="total-amount-box__total"
+        data-testid="AmountCrypto"
       >
         0.11 ARK
       </span>

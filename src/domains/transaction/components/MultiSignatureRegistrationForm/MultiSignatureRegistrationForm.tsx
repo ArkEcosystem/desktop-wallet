@@ -66,7 +66,7 @@ const signTransaction = async ({ env, form, profile }: SendRegistrationSignOptio
 
 	const uuid = await senderWallet!.transaction().signMultiSignature({
 		nonce: senderWallet!.nonce().plus(1).toString(),
-		fee,
+		fee: +fee,
 		signatory,
 		data: {
 			publicKeys: [...publicKeys],

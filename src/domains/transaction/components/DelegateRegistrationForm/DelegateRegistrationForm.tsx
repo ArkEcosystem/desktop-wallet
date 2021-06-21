@@ -76,7 +76,7 @@ export const DelegateRegistrationForm: SendRegistrationForm = {
 		const senderWallet = profile.wallets().findByAddress(senderAddress);
 
 		const transactionId = await senderWallet.transaction().signDelegateRegistration({
-			fee,
+			fee: +fee,
 			signatory,
 			data: {
 				username,
