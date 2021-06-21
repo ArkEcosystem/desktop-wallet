@@ -95,6 +95,11 @@ describe("Dashboard", () => {
 			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
 			{ timeout: 4000 },
 		);
+
+		await waitFor(() => {
+			expect(getByTestId("Balance__value")).toBeTruthy();
+		});
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
