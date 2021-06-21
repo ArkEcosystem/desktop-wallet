@@ -159,20 +159,18 @@ exports[`should display converted values when on live net 1`] = `
           <div>
             Slow
           </div>
-          <div
+          <span
             class="text-sm"
+            data-testid="AmountCrypto"
           >
             0.006 DARK
-          </div>
-          <div
+          </span>
+          <span
             class="text-sm text-theme-secondary-500"
+            data-testid="AmountFiat"
           >
-            <span
-              data-testid="Amount"
-            >
-              0 BTC
-            </span>
-          </div>
+            €0.00
+          </span>
         </div>
       </button>
       <button
@@ -188,20 +186,18 @@ exports[`should display converted values when on live net 1`] = `
           <div>
             Average
           </div>
-          <div
+          <span
             class="text-sm"
+            data-testid="AmountCrypto"
           >
             0.456 DARK
-          </div>
-          <div
+          </span>
+          <span
             class="text-sm text-theme-secondary-500"
+            data-testid="AmountFiat"
           >
-            <span
-              data-testid="Amount"
-            >
-              0 BTC
-            </span>
-          </div>
+            €0.00
+          </span>
         </div>
       </button>
       <button
@@ -217,20 +213,18 @@ exports[`should display converted values when on live net 1`] = `
           <div>
             Fast
           </div>
-          <div
+          <span
             class="text-sm"
+            data-testid="AmountCrypto"
           >
             0.5 DARK
-          </div>
-          <div
+          </span>
+          <span
             class="text-sm text-theme-secondary-500"
+            data-testid="AmountFiat"
           >
-            <span
-              data-testid="Amount"
-            >
-              0 BTC
-            </span>
-          </div>
+            €0.00
+          </span>
         </div>
       </button>
     </div>
@@ -396,11 +390,12 @@ exports[`should keep different values for simple and advanced view types 2`] = `
           <div>
             Slow
           </div>
-          <div
+          <span
             class="text-sm"
+            data-testid="AmountCrypto"
           >
             0.006 DARK
-          </div>
+          </span>
         </div>
       </button>
       <button
@@ -416,11 +411,12 @@ exports[`should keep different values for simple and advanced view types 2`] = `
           <div>
             Average
           </div>
-          <div
+          <span
             class="text-sm"
+            data-testid="AmountCrypto"
           >
             0.456 DARK
-          </div>
+          </span>
         </div>
       </button>
       <button
@@ -436,11 +432,12 @@ exports[`should keep different values for simple and advanced view types 2`] = `
           <div>
             Fast
           </div>
-          <div
+          <span
             class="text-sm"
+            data-testid="AmountCrypto"
           >
             0.5 DARK
-          </div>
+          </span>
         </div>
       </button>
     </div>
@@ -507,11 +504,12 @@ exports[`should render 1`] = `
           <div>
             Slow
           </div>
-          <div
+          <span
             class="text-sm"
+            data-testid="AmountCrypto"
           >
             0.006 DARK
-          </div>
+          </span>
         </div>
       </button>
       <button
@@ -527,11 +525,12 @@ exports[`should render 1`] = `
           <div>
             Average
           </div>
-          <div
+          <span
             class="text-sm"
+            data-testid="AmountCrypto"
           >
             0.456 DARK
-          </div>
+          </span>
         </div>
       </button>
       <button
@@ -547,11 +546,12 @@ exports[`should render 1`] = `
           <div>
             Fast
           </div>
-          <div
+          <span
             class="text-sm"
+            data-testid="AmountCrypto"
           >
             0.5 DARK
-          </div>
+          </span>
         </div>
       </button>
     </div>
@@ -618,11 +618,12 @@ exports[`should update value when clicking button Average 1`] = `
           <div>
             Slow
           </div>
-          <div
+          <span
             class="text-sm"
+            data-testid="AmountCrypto"
           >
             0.006 DARK
-          </div>
+          </span>
         </div>
       </button>
       <button
@@ -638,11 +639,12 @@ exports[`should update value when clicking button Average 1`] = `
           <div>
             Average
           </div>
-          <div
+          <span
             class="text-sm"
+            data-testid="AmountCrypto"
           >
             0.456 DARK
-          </div>
+          </span>
         </div>
       </button>
       <button
@@ -658,11 +660,12 @@ exports[`should update value when clicking button Average 1`] = `
           <div>
             Fast
           </div>
-          <div
+          <span
             class="text-sm"
+            data-testid="AmountCrypto"
           >
             0.5 DARK
-          </div>
+          </span>
         </div>
       </button>
     </div>
@@ -729,11 +732,12 @@ exports[`should update value when clicking button Fast 1`] = `
           <div>
             Slow
           </div>
-          <div
+          <span
             class="text-sm"
+            data-testid="AmountCrypto"
           >
             0.006 DARK
-          </div>
+          </span>
         </div>
       </button>
       <button
@@ -749,11 +753,12 @@ exports[`should update value when clicking button Fast 1`] = `
           <div>
             Average
           </div>
-          <div
+          <span
             class="text-sm"
+            data-testid="AmountCrypto"
           >
             0.456 DARK
-          </div>
+          </span>
         </div>
       </button>
       <button
@@ -769,11 +774,12 @@ exports[`should update value when clicking button Fast 1`] = `
           <div>
             Fast
           </div>
-          <div
+          <span
             class="text-sm"
+            data-testid="AmountCrypto"
           >
             0.5 DARK
-          </div>
+          </span>
         </div>
       </button>
     </div>
@@ -840,11 +846,12 @@ exports[`should update value when clicking button Slow 1`] = `
           <div>
             Slow
           </div>
-          <div
+          <span
             class="text-sm"
+            data-testid="AmountCrypto"
           >
             0.006 DARK
-          </div>
+          </span>
         </div>
       </button>
       <button
@@ -860,11 +867,12 @@ exports[`should update value when clicking button Slow 1`] = `
           <div>
             Average
           </div>
-          <div
+          <span
             class="text-sm"
+            data-testid="AmountCrypto"
           >
             0.456 DARK
-          </div>
+          </span>
         </div>
       </button>
       <button
@@ -880,11 +888,12 @@ exports[`should update value when clicking button Slow 1`] = `
           <div>
             Fast
           </div>
-          <div
+          <span
             class="text-sm"
+            data-testid="AmountCrypto"
           >
             0.5 DARK
-          </div>
+          </span>
         </div>
       </button>
     </div>

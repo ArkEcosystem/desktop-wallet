@@ -11,7 +11,7 @@ interface BalanceProperties {
 	isLoading?: boolean;
 }
 
-export const Balance = ({ profile, isLoading }: BalanceProperties) => {
+export const Balance: React.FC<BalanceProperties> = ({ profile, isLoading }: BalanceProperties) => {
 	const [width, setWidth] = useState<number | undefined>();
 
 	const reference = useRef<HTMLDivElement>(null);

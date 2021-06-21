@@ -30,7 +30,7 @@ describe("TransactionRow", () => {
 		expect(getByTestId("Address__address")).toBeTruthy();
 		expect(getByTestId("TransactionRowInfo")).toBeTruthy();
 		expect(getByTestId("TransactionRowConfirmation")).toBeTruthy();
-		expect(getByTestId("TransactionRowAmount")).toBeTruthy();
+		expect(getByTestId("AmountCrypto")).toBeTruthy();
 	});
 
 	it("should show transaction with currency", () => {
@@ -42,7 +42,7 @@ describe("TransactionRow", () => {
 				</tbody>
 			</table>,
 		);
-		const amounts = getAllByTestId("TransactionRowAmount");
+		const amounts = getAllByTestId("AmountCrypto");
 		expect(amounts).toHaveLength(2);
 	});
 

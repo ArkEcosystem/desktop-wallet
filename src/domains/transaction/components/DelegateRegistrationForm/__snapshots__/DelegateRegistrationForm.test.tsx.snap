@@ -767,7 +767,7 @@ exports[`DelegateRegistrationForm should render review step 1`] = `
                   </span>
                   <span
                     class="mt-1 text-lg font-semibold"
-                    data-testid="total-amount-box__transaction-amount"
+                    data-testid="AmountCrypto"
                   >
                     0 DARK
                   </span>
@@ -782,7 +782,7 @@ exports[`DelegateRegistrationForm should render review step 1`] = `
                   </span>
                   <span
                     class="mt-1 text-lg font-semibold"
-                    data-testid="total-amount-box__transaction-fee"
+                    data-testid="AmountCrypto"
                   >
                     2 DARK
                   </span>
@@ -816,7 +816,7 @@ exports[`DelegateRegistrationForm should render review step 1`] = `
               </span>
               <span
                 class="text-2xl font-bold"
-                data-testid="total-amount-box__total"
+                data-testid="AmountCrypto"
               >
                 2 DARK
               </span>

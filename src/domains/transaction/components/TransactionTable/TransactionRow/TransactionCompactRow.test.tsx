@@ -15,7 +15,7 @@ describe("TransactionCompactRow", () => {
 		);
 		expect(getByTestId("TransactionRowMode")).toBeTruthy();
 		expect(getByTestId("Address__address")).toBeTruthy();
-		expect(getByTestId("TransactionRowAmount")).toBeTruthy();
+		expect(getByTestId("AmountCrypto")).toBeTruthy();
 	});
 
 	it("should show transaction with custom icons size", () => {
@@ -28,6 +28,6 @@ describe("TransactionCompactRow", () => {
 		);
 		expect(getByTestId("TransactionRowMode")).toBeTruthy();
 		expect(getByTestId("Address__address")).toBeTruthy();
-		expect(getByTestId("TransactionRowAmount")).toBeTruthy();
+		expect(getByTestId("AmountCrypto")).toBeTruthy();
 	});
 });

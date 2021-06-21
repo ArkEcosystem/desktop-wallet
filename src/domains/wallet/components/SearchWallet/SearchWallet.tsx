@@ -1,6 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
-import { Amount } from "app/components/Amount";
+import { Amount, AmountCrypto } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { EmptyResults } from "app/components/EmptyResults";
@@ -22,7 +22,7 @@ interface SearchWalletListItemProperties {
 	exchangeCurrency: string;
 	index: number;
 	name?: string;
-	showFiatValue?: boolean;
+	showConvertedValue?: boolean;
 	showNetwork?: boolean;
 	onAction: any;
 }
@@ -37,7 +37,7 @@ const SearchWalletListItem = ({
 	exchangeCurrency,
 	index,
 	name,
-	showFiatValue,
+	showConvertedValue,
 	showNetwork,
 	onAction,
 }: SearchWalletListItemProperties) => {
@@ -54,10 +54,10 @@ const SearchWalletListItem = ({
 			</TableCell>
 
 			<TableCell innerClassName="font-semibold justify-end">
-				<Amount value={balance} ticker={currency} />
+				<AmountCrypto value={balance} ticker={currency} />
 			</TableCell>
 
-			{showFiatValue && (
+			{showConvertedValue && (
 				<TableCell innerClassName="text-theme-secondary-400 justify-end">
 					<Amount value={convertedBalance} ticker={exchangeCurrency} />
 				</TableCell>
@@ -83,7 +83,7 @@ interface SearchWalletProperties {
 	wallets: Contracts.IReadWriteWallet[];
 	searchPlaceholder?: string;
 	size?: Size;
-	showFiatValue?: boolean;
+	showConvertedValue?: boolean;
 	showNetwork?: boolean;
 	onClose?: any;
 	onSelectWallet?: any;
@@ -97,7 +97,7 @@ export const SearchWallet = ({
 	wallets,
 	searchPlaceholder,
 	size,
-	showFiatValue,
+	showConvertedValue,
 	showNetwork,
 	onClose,
 	onSelectWallet,
@@ -120,7 +120,7 @@ export const SearchWallet = ({
 			},
 		];
 
-		if (showFiatValue) {
+		if (showConvertedValue) {
 			return [
 				...commonColumns,
 				{
@@ -164,7 +164,7 @@ export const SearchWallet = ({
 				disableSortBy: true,
 			},
 		];
-	}, [searchPlaceholder, showFiatValue, t]);
+	}, [searchPlaceholder, showConvertedValue, t]);
 
 	const filteredWallets = useMemo(() => {
 		if (query.length === 0) {
@@ -198,7 +198,7 @@ export const SearchWallet = ({
 								(profile?.settings().get(Contracts.ProfileSetting.ExchangeCurrency) as string)
 							}
 							name={wallet.alias()}
-							showFiatValue={showFiatValue}
+							showConvertedValue={showConvertedValue}
 							showNetwork={showNetwork}
 							onAction={onSelectWallet}
 						/>
@@ -220,6 +220,6 @@ export const SearchWallet = ({
 SearchWallet.defaultProps = {
 	isOpen: false,
 	size: "5xl",
-	showFiatValue: true,
+	showConvertedValue: true,
 	showNetwork: true,
 };

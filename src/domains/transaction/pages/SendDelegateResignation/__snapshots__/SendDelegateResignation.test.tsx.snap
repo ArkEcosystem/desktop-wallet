@@ -224,7 +224,7 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
                 data-testid="Balance__value"
               >
                 <span
-                  data-testid="Amount"
+                  data-testid="AmountCrypto"
                 >
                   0 BTC
                 </span>
@@ -797,7 +797,7 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
                 data-testid="Balance__value"
               >
                 <span
-                  data-testid="Amount"
+                  data-testid="AmountCrypto"
                 >
                   0 BTC
                 </span>
@@ -1069,11 +1069,12 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
                               <div>
                                 Slow
                               </div>
-                              <div
+                              <span
                                 class="text-sm"
+                                data-testid="AmountCrypto"
                               >
                                 25 DARK
-                              </div>
+                              </span>
                             </div>
                           </button>
                           <button
@@ -1089,11 +1090,12 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
                               <div>
                                 Average
                               </div>
-                              <div
+                              <span
                                 class="text-sm"
+                                data-testid="AmountCrypto"
                               >
                                 25 DARK
-                              </div>
+                              </span>
                             </div>
                           </button>
                           <button
@@ -1109,11 +1111,12 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
                               <div>
                                 Fast
                               </div>
-                              <div
+                              <span
                                 class="text-sm"
+                                data-testid="AmountCrypto"
                               >
                                 25 DARK
-                              </div>
+                              </span>
                             </div>
                           </button>
                         </div>
@@ -1381,7 +1384,7 @@ exports[`SendDelegateResignation Delegate Resignation should render 2nd step 1`]
                 data-testid="Balance__value"
               >
                 <span
-                  data-testid="Amount"
+                  data-testid="AmountCrypto"
                 >
                   0 BTC
                 </span>
@@ -1614,7 +1617,7 @@ exports[`SendDelegateResignation Delegate Resignation should render 2nd step 1`]
                               </span>
                               <span
                                 class="mt-1 text-lg font-semibold"
-                                data-testid="total-amount-box__transaction-amount"
+                                data-testid="AmountCrypto"
                               >
                                 0 DARK
                               </span>
@@ -1629,7 +1632,7 @@ exports[`SendDelegateResignation Delegate Resignation should render 2nd step 1`]
                               </span>
                               <span
                                 class="mt-1 text-lg font-semibold"
-                                data-testid="total-amount-box__transaction-fee"
+                                data-testid="AmountCrypto"
                               >
                                 25 DARK
                               </span>
@@ -1663,7 +1666,7 @@ exports[`SendDelegateResignation Delegate Resignation should render 2nd step 1`]
                           </span>
                           <span
                             class="text-2xl font-bold"
-                            data-testid="total-amount-box__total"
+                            data-testid="AmountCrypto"
                           >
                             25 DARK
                           </span>
@@ -1932,7 +1935,7 @@ exports[`SendDelegateResignation Delegate Resignation should render 3rd step 1`]
                 data-testid="Balance__value"
               >
                 <span
-                  data-testid="Amount"
+                  data-testid="AmountCrypto"
                 >
                   0 BTC
                 </span>
@@ -2423,7 +2426,7 @@ exports[`SendDelegateResignation Delegate Resignation should show error step 1`]
                 data-testid="Balance__value"
               >
                 <span
-                  data-testid="Amount"
+                  data-testid="AmountCrypto"
                 >
                   0 BTC
                 </span>
@@ -2793,7 +2796,7 @@ exports[`SendDelegateResignation Delegate Resignation should show error step and
                 data-testid="Balance__value"
               >
                 <span
-                  data-testid="Amount"
+                  data-testid="AmountCrypto"
                 >
                   0 BTC
                 </span>
@@ -3163,7 +3166,7 @@ exports[`SendDelegateResignation Delegate Resignation should show mnemonic authe
                 data-testid="Balance__value"
               >
                 <span
-                  data-testid="Amount"
+                  data-testid="AmountCrypto"
                 >
                   0 BTC
                 </span>
@@ -3669,7 +3672,7 @@ exports[`SendDelegateResignation Delegate Resignation should successfully sign a
                 data-testid="Balance__value"
               >
                 <span
-                  data-testid="Amount"
+                  data-testid="AmountCrypto"
                 >
                   0 BTC
                 </span>
@@ -4017,7 +4020,7 @@ exports[`SendDelegateResignation Delegate Resignation should successfully sign a
                               class="font-semibold"
                             >
                               <span
-                                data-testid="Amount"
+                                data-testid="AmountCrypto"
                               >
                                 0.1 DARK
                               </span>
@@ -4277,7 +4280,7 @@ exports[`SendDelegateResignation Delegate Resignation should successfully sign a
                 data-testid="Balance__value"
               >
                 <span
-                  data-testid="Amount"
+                  data-testid="AmountCrypto"
                 >
                   0 BTC
                 </span>
@@ -4623,7 +4626,7 @@ exports[`SendDelegateResignation Delegate Resignation should successfully sign a
                               class="font-semibold"
                             >
                               <span
-                                data-testid="Amount"
+                                data-testid="AmountCrypto"
                               >
                                 0.1 DARK
                               </span>

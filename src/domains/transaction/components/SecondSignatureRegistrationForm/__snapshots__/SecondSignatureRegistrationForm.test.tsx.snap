@@ -381,11 +381,12 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                     <div>
                       Slow
                     </div>
-                    <div
+                    <span
                       class="text-sm"
+                      data-testid="AmountCrypto"
                     >
                       0 DARK
-                    </div>
+                    </span>
                   </div>
                 </button>
                 <button
@@ -401,11 +402,12 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                     <div>
                       Average
                     </div>
-                    <div
+                    <span
                       class="text-sm"
+                      data-testid="AmountCrypto"
                     >
                       1.354 DARK
-                    </div>
+                    </span>
                   </div>
                 </button>
                 <button
@@ -421,11 +423,12 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                     <div>
                       Fast
                     </div>
-                    <div
+                    <span
                       class="text-sm"
+                      data-testid="AmountCrypto"
                     >
                       10 DARK
-                    </div>
+                    </span>
                   </div>
                 </button>
               </div>
@@ -488,7 +491,7 @@ exports[`SecondSignatureRegistrationForm should render transaction details 1`] =
         class="font-semibold"
       >
         <span
-          data-testid="Amount"
+          data-testid="AmountCrypto"
         >
           0.1 DARK
         </span>
