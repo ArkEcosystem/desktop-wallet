@@ -40,14 +40,8 @@ export const SummaryStep = ({
 	let transactionAmount: number;
 
 	if (transaction.isTransfer() || transaction.isMultiPayment()) {
-		recipients = transaction
-			.get<{ payments: Record<string, string>[] }>("asset")
-			// @TODO: this is not normalised because DW is accessing raw data which is ARK specific
-			?.payments?.map((item) => ({ address: item.recipientId, amount: +item.amount / 1e8 })) || [
-			{ address: transaction.get<string>("recipientId"), amount: transaction.amount() },
-		];
-
-		transactionAmount = recipients.reduce((sum: number, { amount }: { amount: number }) => sum + amount, 0);
+		recipients = transaction.recipients();
+		transactionAmount = transaction.amount();
 	}
 
 	const [delegates, setDelegates] = useState<{
