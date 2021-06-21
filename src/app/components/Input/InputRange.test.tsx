@@ -70,7 +70,7 @@ describe("InputRange", () => {
 
 		waitFor(() => expect(thumb).toHaveAttribute("aria-valuenow", "6"));
 		waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("6"));
-		expect(properties.onChange).toHaveBeenCalledWith(6);
+		expect(properties.onChange).toHaveBeenCalledWith("6");
 	});
 
 	it("should not allow a value greater than the maximum", () => {

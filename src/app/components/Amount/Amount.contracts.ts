@@ -6,7 +6,7 @@ const DEFAULT_TICKER = "BTC";
 type CurrencyKey = keyof typeof CURRENCIES;
 
 interface AmountProperties {
-	ticker: string;
+	ticker?: string;
 	value: number;
 	withSign?: boolean;
 	isNegative?: boolean;
@@ -17,7 +17,7 @@ interface AmountProperties {
 interface FormatParameters {
 	locale?: string;
 	value: number;
-	ticker: string;
+	ticker?: string;
 }
 
 export { DEFAULT_DECIMALS, DEFAULT_TICKER };

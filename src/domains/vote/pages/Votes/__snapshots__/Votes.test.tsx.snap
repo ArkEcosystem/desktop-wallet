@@ -1861,9 +1861,9 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                 data-testid="Balance__value"
               >
                 <span
-                  data-testid="Amount"
+                  data-testid="AmountCrypto"
                 >
-                  0 
+                  0 BTC
                 </span>
               </div>
             </div>
@@ -7719,7 +7719,7 @@ exports[`Votes should show resigned delegate notice 1`] = `
                 data-testid="Balance__value"
               >
                 <span
-                  data-testid="Amount"
+                  data-testid="AmountCrypto"
                 >
                   0 BTC
                 </span>
