@@ -67,7 +67,7 @@ import { ReactComponent as Magistrate } from "./magistrate.svg";
 import { ReactComponent as Memo } from "./memo.svg";
 import { ReactComponent as Msq } from "./msq.svg";
 import { ReactComponent as Multipayment } from "./multipayment.svg";
-import { ReactComponent as Multisig } from "./multisig.svg";
+import { ReactComponent as Multisig } from "./multisignature.svg";
 import { ReactComponent as Notification } from "./notification.svg";
 import { ReactComponent as OfficialArkPlugin } from "./official-ark-plugin.svg";
 import { ReactComponent as OpenExplorer } from "./open-explorer.svg";

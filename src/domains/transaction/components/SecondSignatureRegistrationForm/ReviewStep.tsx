@@ -33,7 +33,7 @@ export const ReviewStep = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) =
 				label={t("TRANSACTION.TRANSACTION_TYPE")}
 				extra={
 					<Circle className="border-theme-text" size="lg">
-						<Icon name="Key" width={20} height={20} />
+						<Icon name="SecondSignature" width={20} height={20} />
 					</Circle>
 				}
 			>

@@ -15,7 +15,7 @@ export const TransactionRowRecipientIcon = ({ type, recipient, size }: Propertie
 	const transactionIcon: Record<string, string> = {
 		transfer: "Transfer",
 		multiPayment: "Multipayment",
-		secondSignature: "Key",
+		secondSignature: "SecondSignature",
 		multiSignature: "Multisig",
 		delegateRegistration: "Delegate",
 		delegateResignation: "DelegateResigned",
@@ -45,7 +45,7 @@ export const TransactionRowRecipientIcon = ({ type, recipient, size }: Propertie
 				shadowClasses,
 			)}
 		>
-			<Icon name={transactionIcon[type]} width={22} height={22} />
+			<Icon name={transactionIcon[type]} width={20} height={20} />
 		</Circle>
 	);
 };
