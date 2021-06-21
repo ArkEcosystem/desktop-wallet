@@ -25,7 +25,13 @@ export const Balance: React.FC<BalanceProperties> = ({ profile, isLoading }: Bal
 		return <BalanceSkeleton width={width} />;
 	}
 
-	const ticker = profile?.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency) ?? "";
+	// @TODO: enable during maintenance work
+	// assertProfile(profile);
+
+	const ticker: string | undefined = profile?.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency) || "";
+
+	// @TODO: enable during maintenance work
+	// assertString(ticker);
 
 	return (
 		<div className="text-right">
@@ -35,7 +41,7 @@ export const Balance: React.FC<BalanceProperties> = ({ profile, isLoading }: Bal
 				className="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
 				data-testid="Balance__value"
 			>
-				<Amount ticker={ticker} value={convertedBalance} />
+				<Amount value={convertedBalance} ticker={ticker} />
 			</div>
 		</div>
 	);
