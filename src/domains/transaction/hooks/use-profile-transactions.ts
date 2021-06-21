@@ -26,12 +26,19 @@ interface FetchTransactionProperties {
 	cursor?: number;
 }
 
+interface FilterTransactionProperties {
+	showUnconfirmed?: boolean;
+	transactions: DTO.ExtendedTransactionDataCollection;
+}
+
 export const useProfileTransactions = ({
 	profile,
 	wallets,
+	showUnconfirmed = true,
 }: {
 	profile: Contracts.IProfile;
 	wallets: Contracts.IReadWriteWallet[];
+	showUnconfirmed?: boolean;
 }) => {
 	const lastQuery = useRef<string>();
 	const isMounted = useRef(true);
@@ -74,11 +81,13 @@ export const useProfileTransactions = ({
 				return;
 			}
 
+			const items = filterTransactions({ showUnconfirmed, transactions: response });
+
 			setState((state) => ({
 				...state,
-				transactions: response.items(),
+				transactions: items,
 				isLoadingTransactions: false,
-				hasMore: response.items().length > 0 && response.hasMorePages(),
+				hasMore: items.length > 0 && response.hasMorePages(),
 			}));
 		};
 
@@ -140,6 +149,14 @@ export const useProfileTransactions = ({
 		[profile],
 	);
 
+	const filterTransactions = ({ showUnconfirmed, transactions }: FilterTransactionProperties) => {
+		if (!showUnconfirmed) {
+			return transactions.items().filter((transaction) => transaction.isConfirmed());
+		}
+
+		return transactions.items();
+	};
+
 	const fetchMore = useCallback(async () => {
 		cursor.current = cursor.current + 1;
 		setState((state) => ({ ...state, isLoadingMore: true }));
@@ -152,11 +169,13 @@ export const useProfileTransactions = ({
 			cursor: cursor.current,
 		});
 
+		const items = filterTransactions({ showUnconfirmed, transactions: response });
+
 		setState((state) => ({
 			...state,
 			isLoadingMore: false,
-			hasMore: response.items().length > 0 && response.hasMorePages(),
-			transactions: [...state.transactions, ...response.items()],
+			hasMore: items.length > 0 && response.hasMorePages(),
+			transactions: [...state.transactions, ...items],
 		}));
 	}, [activeMode, activeTransactionType, wallets.length]); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -172,7 +191,10 @@ export const useProfileTransactions = ({
 			cursor: 1,
 		});
 
-		const firstTransaction = response.items()[0];
+		const items = filterTransactions({ showUnconfirmed, transactions: response });
+
+		const firstTransaction = items[0];
+
 		const foundNew =
 			firstTransaction && !transactions.some((transaction) => firstTransaction.id() === transaction.id());
 
@@ -183,8 +205,8 @@ export const useProfileTransactions = ({
 		setState((state) => ({
 			...state,
 			isLoadingMore: false,
-			hasMore: response.items().length > 0 && response.hasMorePages(),
-			transactions: response.items(),
+			hasMore: items.length > 0 && response.hasMorePages(),
+			transactions: items,
 		}));
 	};
 

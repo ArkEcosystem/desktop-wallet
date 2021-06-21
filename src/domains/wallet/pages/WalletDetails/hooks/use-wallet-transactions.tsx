@@ -1,32 +1,38 @@
 import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { useSynchronizer } from "app/hooks";
-import { useCallback, useEffect, useMemo } from "react";
+import { useTransaction } from "domains/transaction/hooks";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 export const useWalletTransactions = (wallet: Contracts.IReadWriteWallet) => {
-	const pendingMultiSignatureTransactions: DTO.ExtendedSignedTransactionData[] = Object.values({
-		...wallet.transaction().waitingForOtherSignatures(),
-		...wallet.transaction().waitingForOurSignature(),
-		...wallet.transaction().signed(),
-	})
-		// TODO: Use the `isMultiSignature()` method from interface when ready on the platform-sdk
-		.filter((item) => !!item.get("multiSignature"));
+	const { fetchWalletUnconfirmedTransactions } = useTransaction();
 
-	const syncMultiSignatures = useCallback(async () => {
+	const [pendingTransfers, setPendingTransfers] = useState<DTO.ExtendedTransactionData[]>([]);
+	const [pendingSigned, setPendingSigned] = useState<DTO.ExtendedSignedTransactionData[]>([]);
+
+	const syncPending = useCallback(async () => {
 		await wallet.transaction().sync();
+		const sent = await fetchWalletUnconfirmedTransactions(wallet);
 
-		const broadcasted = Object.keys(wallet.transaction().broadcasted());
+		setPendingTransfers(sent);
 
-		await Promise.allSettled(broadcasted.map((id) => wallet.transaction().confirm(id)));
-	}, [wallet]);
+		setPendingSigned(
+			Object.values({
+				...wallet.transaction().waitingForOtherSignatures(),
+				...wallet.transaction().waitingForOurSignature(),
+				...wallet.transaction().signed(),
+				// TODO: Use the `isMultiSignature()` method from interface when ready form sdk
+			}).filter((item) => !!item.get("multiSignature")),
+		);
+	}, [wallet, setPendingTransfers, setPendingSigned, fetchWalletUnconfirmedTransactions]);
 
 	const jobs = useMemo(
 		() => [
 			{
-				callback: syncMultiSignatures,
-				interval: 30_000,
+				callback: syncPending,
+				interval: 15_000,
 			},
 		],
-		[syncMultiSignatures],
+		[syncPending],
 	);
 
 	const { start, stop } = useSynchronizer(jobs);
@@ -37,7 +43,8 @@ export const useWalletTransactions = (wallet: Contracts.IReadWriteWallet) => {
 	}, [start, stop]);
 
 	return {
-		pendingMultiSignatureTransactions,
-		syncMultiSignatures,
+		pendingSigned,
+		pendingTransfers,
+		syncPending,
 	};
 };
