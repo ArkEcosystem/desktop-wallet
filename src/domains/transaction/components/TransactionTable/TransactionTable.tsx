@@ -122,6 +122,7 @@ export const TransactionTable = memo(
 					{(row: DTO.ExtendedTransactionData | Skeleton) =>
 						isCompact ? (
 							<TransactionCompactRow
+								isLoading={showSkeleton}
 								onClick={() => onRowClick?.(row as DTO.ExtendedTransactionData)}
 								transaction={row as DTO.ExtendedTransactionData}
 							/>

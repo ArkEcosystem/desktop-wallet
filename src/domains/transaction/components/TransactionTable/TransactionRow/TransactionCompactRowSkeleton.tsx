@@ -4,13 +4,13 @@ import { TableCell, TableRow } from "app/components/Table";
 import { useRandomNumber } from "app/hooks";
 import React from "react";
 
-export const NotificationTransactionItemSkeleton = () => {
+export const TransactionCompactRowSkeleton: React.FC = () => {
 	const recipientWidth = useRandomNumber(120, 150);
 	const amountWidth = useRandomNumber(100, 130);
 
 	return (
 		<TableRow
-			data-testid="NotificationTransactionItemSkeleton"
+			data-testid="TransactionCompactRowSkeleton"
 			className="border-b border-dotted last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
 		>
 			<TableCell variant="start" innerClassName="space-x-3" isCompact>

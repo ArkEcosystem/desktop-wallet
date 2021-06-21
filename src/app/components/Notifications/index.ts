@@ -4,6 +4,5 @@ export * from "./NotificationItem";
 export * from "./Notifications";
 export * from "./NotificationsDropdown";
 export * from "./NotificationTransactionItem";
-export * from "./NotificationTransactionItemSkeleton";
 export * from "./styles";
 export * from "./utils";
