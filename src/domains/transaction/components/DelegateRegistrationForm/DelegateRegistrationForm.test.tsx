@@ -48,8 +48,9 @@ const createTransactionMock = (wallet: ProfilesContracts.IReadWriteWallet) =>
 		id: () => delegateRegistrationFixture.data.id,
 		sender: () => delegateRegistrationFixture.data.sender,
 		recipient: () => delegateRegistrationFixture.data.recipient,
-		amount: () => delegateRegistrationFixture.data.amount / 1e8,
-		fee: () => delegateRegistrationFixture.data.fee / 1e8,
+		amount: () => +delegateRegistrationFixture.data.amount / 1e8,
+		fee: () => +delegateRegistrationFixture.data.fee / 1e8,
+		username: () => delegateRegistrationFixture.data.asset.delegate.username,
 		data: () => ({ data: () => delegateRegistrationFixture.data }),
 	});
 
@@ -304,6 +305,7 @@ describe("DelegateRegistrationForm", () => {
 			recipient: () => delegateRegistrationFixture.data.recipient,
 			amount: () => delegateRegistrationFixture.data.amount / 1e8,
 			fee: () => delegateRegistrationFixture.data.fee / 1e8,
+			username: () => delegateRegistrationFixture.data.asset.delegate.username,
 			data: () => ({ data: () => delegateRegistrationFixture.data }),
 		} as Contracts.SignedTransactionData;
 

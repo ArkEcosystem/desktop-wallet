@@ -52,8 +52,7 @@ const transactionDetails = ({
 		</TransactionDetail>
 
 		<TransactionDetail label={translations("TRANSACTION.DELEGATE_NAME")}>
-			{/* @TODO: this differs per coin, can't be accessed like this */}
-			{transaction.data().data().asset.delegate.username}
+			{transaction.username()}
 		</TransactionDetail>
 
 		{/* @TODO: normalise fee in SDK */}
