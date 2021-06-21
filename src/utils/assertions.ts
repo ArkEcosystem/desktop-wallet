@@ -1,4 +1,4 @@
-import { Networks } from "@arkecosystem/platform-sdk";
+import { Coins, Networks } from "@arkecosystem/platform-sdk";
 import { Contracts, Profile } from "@arkecosystem/platform-sdk-profiles";
 import { AssertionError } from "assert";
 
@@ -6,6 +6,14 @@ export function assertProfile(profile?: Contracts.IProfile): asserts profile is 
 	if (!(profile instanceof Profile)) {
 		throw new AssertionError({
 			message: `Expected 'profile' to be Contracts.IProfile, but received ${profile}`,
+		});
+	}
+}
+
+export function assertCoin(coin?: Coins.Coin): asserts coin is Coins.Coin {
+	if (!(coin instanceof Coins.Coin)) {
+		throw new AssertionError({
+			message: `Expected 'coin' to be Coins.Coin, but received ${coin}`,
 		});
 	}
 }

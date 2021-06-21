@@ -1,9 +1,9 @@
 /* eslint-disable unicorn/no-null */
 
-import { Networks } from "@arkecosystem/platform-sdk";
+import { Coins, Networks } from "@arkecosystem/platform-sdk";
 import { Profile } from "@arkecosystem/platform-sdk-profiles";
 
-import { assertNetwork, assertNumber, assertProfile, assertString } from "./assertions";
+import { assertCoin, assertNetwork, assertNumber, assertProfile, assertString } from "./assertions";
 
 describe("#assertProfile", () => {
 	it("should pass with a profile instance", () => {
@@ -28,6 +28,25 @@ describe("#assertProfile", () => {
 		expect(() => assertProfile(1)).toThrow("Expected 'profile' to be Contracts.IProfile, but received 1");
 		expect(() => assertProfile({})).toThrow("Expected 'profile' to be Contracts.IProfile, but received [object Object]");
 		expect(() => assertProfile([])).toThrow("Expected 'profile' to be Contracts.IProfile, but received ");
+	});
+});
+
+describe("#assertCoin", () => {
+	it("should pass with a coin instance", () => {
+		// @ts-ignore
+		expect(() => assertCoin(new Coins.Coin())).not.toThrow();
+	});
+
+	it("should fail without a coin instance", () => {
+		expect(() => assertCoin(undefined)).toThrow("Expected 'coin' to be Coins.Coin, but received undefined");
+		expect(() => assertCoin(null)).toThrow("Expected 'coin' to be Coins.Coin, but received null");
+		expect(() => assertCoin(true)).toThrow("Expected 'coin' to be Coins.Coin, but received true");
+		expect(() => assertCoin(false)).toThrow("Expected 'coin' to be Coins.Coin, but received false");
+		expect(() => assertCoin("")).toThrow("Expected 'coin' to be Coins.Coin, but received ");
+		expect(() => assertCoin("a")).toThrow("Expected 'coin' to be Coins.Coin, but received a");
+		expect(() => assertCoin(1)).toThrow("Expected 'coin' to be Coins.Coin, but received 1");
+		expect(() => assertCoin({})).toThrow("Expected 'coin' to be Coins.Coin, but received [object Object]");
+		expect(() => assertCoin([])).toThrow("Expected 'coin' to be Coins.Coin, but received ");
 	});
 });
 
