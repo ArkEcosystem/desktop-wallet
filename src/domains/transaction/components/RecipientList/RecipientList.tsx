@@ -1,5 +1,5 @@
 import { Address } from "app/components/Address";
-import { Amount,AmountCrypto } from "app/components/Amount";
+import { Amount, AmountCrypto } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { OriginalButton as Button } from "app/components/Button/OriginalButton";
 import { Icon } from "app/components/Icon";
