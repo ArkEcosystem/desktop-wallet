@@ -76,6 +76,7 @@ export const InputFee: React.FC<InputFeeProperties> = memo(
 			}
 
 			if (newValue === InputFeeViewType.Advanced) {
+				/* istanbul ignore next */
 				onChange(advancedValue ?? "");
 			}
 		};
