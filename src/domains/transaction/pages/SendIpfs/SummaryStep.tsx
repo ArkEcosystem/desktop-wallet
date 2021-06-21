@@ -26,8 +26,7 @@ export const SummaryStep = ({
 				}
 				paddingPosition="top"
 			>
-				{/* @TODO: this differs per coin, can't be accessed like this */}
-				{transaction.data().data().asset?.ipfs}
+				{transaction.hash()}
 			</TransactionDetail>
 		</TransactionSuccessful>
 	);
