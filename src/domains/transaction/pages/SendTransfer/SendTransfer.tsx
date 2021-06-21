@@ -1,6 +1,5 @@
 import { Networks, Services } from "@arkecosystem/platform-sdk";
 import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
@@ -217,21 +216,21 @@ export const SendTransfer = () => {
 			});
 
 			const transactionInput: Services.TransactionInputs = {
-				fee,
+				fee: +fee,
 				signatory,
 				data: {},
 			};
 
 			transactionInput.data = isMultiPayment
 				? {
-						payments: recipients.map(({ address, amount }: { address: string; amount: BigNumber }) => ({
+						payments: recipients.map(({ address, amount }: { address: string; amount: number }) => ({
 							to: address,
-							amount: amount,
+							amount: +amount,
 						})),
 				  }
 				: {
 						to: recipients[0].address,
-						amount: recipients[0].amount,
+						amount: +recipients[0].amount,
 						memo: memo,
 				  };
 

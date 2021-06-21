@@ -118,7 +118,7 @@ export const AddRecipient = ({
 	}, [addedRecipients, senderWallet, isSingle]);
 
 	const remainingNetBalance = useMemo(() => {
-		const netBalance = remainingBalance - (fee || 0);
+		const netBalance = remainingBalance - (+fee || 0);
 
 		return Math.sign(netBalance) ? netBalance : undefined;
 	}, [fee, remainingBalance]);

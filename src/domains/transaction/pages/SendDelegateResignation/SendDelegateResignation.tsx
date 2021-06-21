@@ -87,7 +87,7 @@ export const SendDelegateResignation = () => {
 			});
 
 			const signedTransactionId = await activeWallet.transaction().signDelegateResignation({
-				fee,
+				fee: +fee,
 				signatory,
 			});
 

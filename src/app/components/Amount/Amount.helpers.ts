@@ -24,6 +24,8 @@ const formatCrypto = ({ locale, value, ...parameters }: FormatParameters): strin
 };
 
 const formatFiat = ({ value, ...parameters }: FormatParameters): string => {
+	// @TODO: remove ignore coverage after making ticker required
+	/* istanbul ignore next */
 	const ticker = parameters.ticker || DEFAULT_TICKER;
 	const decimals = getDecimalsByTicker(ticker);
 
