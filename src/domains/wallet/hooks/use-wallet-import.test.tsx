@@ -69,51 +69,32 @@ describe("useWalletImport", () => {
 		},
 	);
 
-	it("should reject import wallet from address", async () => {
-		const {
-			result: { current },
-		} = renderHook(() => useWalletImport({ profile }));
+	it.each([OptionsValue.ADDRESS, OptionsValue.PUBLIC_KEY, OptionsValue.PRIVATE_KEY])(
+		"should reject import wallet from %s",
+		async (importType) => {
+			const {
+				result: { current },
+			} = renderHook(() => useWalletImport({ profile }));
 
-		const mockEncryptedWif = jest.spyOn(profile.walletFactory(), "fromAddress").mockImplementation(() => {
-			throw new Error("error");
-		});
+			const methodName = `from${importType.charAt(0).toUpperCase()}${importType.slice(1)}` as never;
+			const mockEncryptedWif = jest.spyOn(profile.walletFactory(), methodName).mockImplementation(() => {
+				throw new Error("error");
+			});
 
-		await act(async () => {
-			await expect(
-				current.importWalletByType({
-					network,
-					type: OptionsValue.ADDRESS,
-					value: "address",
-					encryptedWif: "",
-				}),
-			).rejects.toBeTruthy();
-		});
+			await act(async () => {
+				await expect(
+					current.importWalletByType({
+						network,
+						type: importType,
+						value: importType,
+						encryptedWif: "",
+					}),
+				).rejects.toBeTruthy();
+			});
 
-		mockEncryptedWif.mockRestore();
-	});
-
-	it("should reject import wallet from privateKey", async () => {
-		const {
-			result: { current },
-		} = renderHook(() => useWalletImport({ profile }));
-
-		const mockEncryptedWif = jest.spyOn(profile.walletFactory(), "fromAddress").mockImplementation(() => {
-			throw new Error("error");
-		});
-
-		await act(async () => {
-			await expect(
-				current.importWalletByType({
-					network,
-					type: OptionsValue.PRIVATE_KEY,
-					value: "privateKey",
-					encryptedWif: "",
-				}),
-			).rejects.toBeTruthy();
-		});
-
-		mockEncryptedWif.mockRestore();
-	});
+			mockEncryptedWif.mockRestore();
+		},
+	);
 
 	it("should reject import wallet from WIF", async () => {
 		const {
