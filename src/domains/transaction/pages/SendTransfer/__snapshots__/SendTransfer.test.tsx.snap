@@ -13588,7 +13588,7 @@ exports[`SendTransfer should show error step and go back 1`] = `
                         …
                       </div>
                       <div
-                        class="Input__InputWrapperStyled-wu99qs-0 glWYnv py-4 h-32"
+                        class="Input__InputWrapperStyled-wu99qs-0 glWYnv py-4"
                         disabled=""
                       >
                         <div
@@ -13598,6 +13598,7 @@ exports[`SendTransfer should show error step and go back 1`] = `
                             class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full resize-none text-theme-secondary-text"
                             data-testid="ErrorStep__errorMessage"
                             disabled=""
+                            style="height: 4px;"
                           >
                             {"type":"Error","message":""}
                           </textarea>
