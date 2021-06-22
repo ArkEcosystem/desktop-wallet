@@ -18,7 +18,7 @@ export const TextArea = React.forwardRef(
 				// eslint-disable-next-line @typescript-eslint/restrict-plus-operands
 				current.style.height = `${current.scrollHeight + 4}px`;
 			}
-		}, [reference, properties.value]);
+		}, [reference, properties.value, initialHeight]);
 
 		return (
 			<Input
