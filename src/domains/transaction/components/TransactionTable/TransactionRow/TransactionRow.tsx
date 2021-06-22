@@ -52,6 +52,33 @@ export const TransactionRow = memo(
 
 		const isSignaturePending = showSignColumn && transaction.isMultiSignatureRegistration();
 
+		let lastCellContent = undefined;
+
+		if (isSignaturePending) {
+			lastCellContent = (
+				<Button data-testid="TransactionRow__sign" variant="secondary" onClick={onSign}>
+					<Icon name="Edit" />
+					<span>Sign</span>
+				</Button>
+			);
+		}
+
+		if (exchangeCurrency && !lastCellContent) {
+			if (transaction.wallet().network().isTest()) {
+				lastCellContent = (
+					<span data-testid="TransactionRow__currency" className="whitespace-nowrap">
+						N/A
+					</span>
+				);
+			} else {
+				lastCellContent = (
+					<span data-testid="TransactionRow__currency" className="whitespace-nowrap">
+						<TransactionRowAmount transaction={transaction} exchangeCurrency={exchangeCurrency} />
+					</span>
+				);
+			}
+		}
+
 		return (
 			<TableRow onClick={onClick} className={cn("group", className)} {...properties}>
 				{showExplorerLink && (
@@ -94,18 +121,7 @@ export const TransactionRow = memo(
 				</TableCell>
 
 				<TableCell variant="end" innerClassName="justify-end">
-					{isSignaturePending ? (
-						<Button data-testid="TransactionRow__sign" variant="secondary" onClick={onSign}>
-							<Icon name="Edit" />
-							<span>Sign</span>
-						</Button>
-					) : (
-						exchangeCurrency && (
-							<span data-testid="TransactionRow__currency" className="whitespace-nowrap">
-								<TransactionRowAmount transaction={transaction} exchangeCurrency={exchangeCurrency} />
-							</span>
-						)
-					)}
+					{lastCellContent}
 				</TableCell>
 			</TableRow>
 		);
