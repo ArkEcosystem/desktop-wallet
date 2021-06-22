@@ -61,7 +61,7 @@ export const PendingTransactions = ({
 
 	return (
 		<div data-testid="PendingTransactions" className="relative">
-			<h2 className="mb-6 font-bold">{t("WALLETS.PAGE_WALLET_DETAILS.PENDING_TRANSACTIONS")}</h2>
+			<h2 className="mb-6">{t("WALLETS.PAGE_WALLET_DETAILS.PENDING_TRANSACTIONS")}</h2>
 
 			<Table columns={columns} data={[...transfers, ...signed]}>
 				{(transaction: DTO.ExtendedTransactionData | DTO.ExtendedSignedTransactionData) => {
