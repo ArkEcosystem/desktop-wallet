@@ -6,8 +6,16 @@ const baseStyle = tw`transition-colors duration-100`;
 
 const getCursorStyles = (onClick?: TableRowFunction): any => (onClick ? tw`cursor-pointer` : "");
 
-const getBorderStyles = (border?: boolean): any =>
-	border ? tw`border-b last:border-b-0 border-dashed border-theme-secondary-300 dark:border-theme-secondary-800` : "";
+const getBorderStyles = (border?: boolean, dotted?: boolean): any => {
+	if (!border) {
+		return "";
+	}
+
+	return [
+		tw`border-b last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800`,
+		dotted ? tw`border-dotted` : tw`border-dashed`,
+	];
+};
 
 const getHoverStyles = (isSelected?: boolean): any =>
 	css`
@@ -18,8 +26,8 @@ const getHoverStyles = (isSelected?: boolean): any =>
 		}
 	`;
 
-export const getStyles = ({ onClick, border, isSelected }: any) => {
-	const styles = [baseStyle, getBorderStyles(border), getCursorStyles(onClick)];
+export const getStyles = ({ onClick, border, dotted, isSelected }: any) => {
+	const styles = [baseStyle, getBorderStyles(border, dotted), getCursorStyles(onClick)];
 
 	if (onClick) {
 		styles.push(getHoverStyles(isSelected));
