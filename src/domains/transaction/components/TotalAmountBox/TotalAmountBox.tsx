@@ -53,8 +53,3 @@ export const TotalAmountBox = ({ ticker, ...properties }: Properties) => {
 		</div>
 	);
 };
-
-TotalAmountBox.defaultProps = {
-	amount: 0,
-	fee: 0,
-};
