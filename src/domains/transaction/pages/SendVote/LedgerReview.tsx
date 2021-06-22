@@ -38,7 +38,7 @@ export const VoteLedgerReview = ({
 			)}
 
 			<div className="mt-2">
-				<TotalAmountBox fee={fee} ticker={wallet.currency()} />
+				<TotalAmountBox amount={0} fee={fee} ticker={wallet.currency()} />
 			</div>
 		</>
 	);
