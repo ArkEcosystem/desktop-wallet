@@ -31,14 +31,15 @@ const getVariant = (variant: ButtonVariant, disabled: boolean): any => {
 			return tw`
 				bg-theme-danger-100 text-theme-danger-400
 				hover:(bg-theme-danger-400 text-white dark:bg-theme-danger-500)
-				focus:ring-theme-danger-300
 				dark:(bg-theme-danger-400 text-white)
+				focus:ring-theme-danger-300
 			`;
 		case "info":
 			return tw`
 				bg-theme-info-100 text-theme-info-600
 				hover:(bg-theme-info-700 text-white)
 				dark:(bg-theme-info-600 text-white)
+				focus:ring-theme-info-300
 			`;
 		default:
 			return tw`border-none`;
