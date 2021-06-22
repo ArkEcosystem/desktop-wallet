@@ -4,7 +4,7 @@ import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
 import { Image } from "app/components/Image";
 import { TextArea } from "app/components/TextArea";
-import React from "react";
+import React, { useRef } from "react";
 import { useTranslation } from "react-i18next";
 
 interface Properties {
@@ -17,6 +17,7 @@ interface Properties {
 
 export const ErrorStep = ({ title, onBack, onRepeat, isRepeatDisabled = false, errorMessage }: Properties) => {
 	const { t } = useTranslation();
+	const errorMessageReference = useRef();
 
 	return (
 		<div data-testid="ErrorStep" className="space-y-8">
@@ -30,8 +31,10 @@ export const ErrorStep = ({ title, onBack, onRepeat, isRepeatDisabled = false, e
 				{errorMessage && (
 					<TextArea
 						data-testid="ErrorStep__errorMessage"
-						className="py-4 h-32"
+						className="py-4"
+						initialHeight={70}
 						defaultValue={errorMessage}
+						ref={errorMessageReference}
 						disabled
 					/>
 				)}
