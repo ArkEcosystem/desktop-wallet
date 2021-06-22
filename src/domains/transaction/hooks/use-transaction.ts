@@ -4,8 +4,7 @@ import { useCallback, useMemo } from "react";
 export const useTransaction = () => {
 	const fetchWalletUnconfirmedTransactions = useCallback(async (wallet: Contracts.IReadWriteWallet) => {
 		try {
-			const sent = await wallet.transactionIndex().sent({ limit: 20, cursor: 1 });
-			return sent
+			return (await wallet.transactionIndex().sent({ limit: 20, cursor: 1 }))
 				.items()
 				.filter(
 					(transaction) =>

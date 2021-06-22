@@ -173,6 +173,7 @@ module.exports = {
 		"unicorn/prefer-prototype-methods": "warn", // @TODO: set to error and fix resulting issues
 		"unicorn/prefer-spread": "warn", // @TODO: set to error and fix resulting issues
 		"unicorn/prefer-string-slice": "warn", // @TODO: set to error and fix resulting issues
+		"unicorn/prefer-ternary": "off",
 		"unicorn/prevent-abbreviations": "error", // @TODO: set to error and fix resulting issues
 		"unicorn/prevent-abbreviations": "warn", // @TODO: set to error and fix resulting issues
 		"unused-imports/no-unused-imports-ts": "error",
