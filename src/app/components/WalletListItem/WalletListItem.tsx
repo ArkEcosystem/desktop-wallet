@@ -50,9 +50,7 @@ export const WalletListItem: React.FC<WalletListItemProperties> = ({
 	if (wallet.network().isTest()) {
 		lastCellContent = "N/A";
 	} else {
-		lastCellContent = (
-			<Amount ticker={wallet.exchangeCurrency()} value={wallet.convertedBalance()} />
-		);
+		lastCellContent = <Amount ticker={wallet.exchangeCurrency()} value={wallet.convertedBalance()} />;
 	}
 
 	return (
