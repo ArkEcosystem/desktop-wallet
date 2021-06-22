@@ -269,10 +269,12 @@ describe("SecondSignatureRegistrationForm", () => {
 		const { result } = renderHook(() =>
 			useForm({
 				defaultValues: {
-					fee: "0",
+					fee: 0,
 				},
 			}),
 		);
+
+		result.current.register("fee");
 
 		render(<Component form={result.current} onSubmit={() => void 0} activeTab={4} />);
 

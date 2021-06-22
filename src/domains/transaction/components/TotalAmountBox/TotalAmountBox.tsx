@@ -1,20 +1,28 @@
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { AmountCrypto } from "app/components/Amount";
 import { Icon } from "app/components/Icon";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import tw from "twin.macro";
+import { assertNumber } from "utils/assertions";
 
 interface Properties {
-	amount: number;
-	fee: number;
+	amount: number | string;
+	fee: number | string;
 	ticker: string;
 }
 
 const AmountLabel = tw.span`text-sm font-semibold text-theme-secondary-700`;
 
-export const TotalAmountBox = ({ amount, fee, ticker }: Properties) => {
+export const TotalAmountBox = ({ ticker, ...properties }: Properties) => {
 	const { t } = useTranslation();
+
+	const amount = +properties.amount;
+	const fee = +properties.fee;
+
+	assertNumber(amount);
+	assertNumber(fee);
+
+	const total = amount + fee;
 
 	return (
 		<div className="rounded-lg border border-theme-secondary-300 dark:border-theme-secondary-800">
@@ -40,12 +48,8 @@ export const TotalAmountBox = ({ amount, fee, ticker }: Properties) => {
 
 			<div className="flex flex-col items-center py-6 rounded-b-lg border-t border-theme-secondary-300 justfiy-center bg-theme-secondary-100 dark:border-theme-secondary-800 dark:bg-theme-secondary-800">
 				<AmountLabel>{t("TRANSACTION.TOTAL_AMOUNT")}</AmountLabel>
-				<AmountCrypto ticker={ticker} value={amount + fee} className="text-2xl font-bold" />
+				<AmountCrypto ticker={ticker} value={total} className="text-2xl font-bold" />
 			</div>
 		</div>
 	);
-};
-
-TotalAmountBox.defaultProps = {
-	amount: BigNumber.ZERO,
 };

@@ -27,7 +27,15 @@ describe("LedgerReview", () => {
 			}),
 		];
 
-		const { result } = renderHook(() => useForm());
+		const { result } = renderHook(() =>
+			useForm({
+				defaultValues: {
+					fee: "0",
+				},
+			}),
+		);
+
+		result.current.register("fee");
 
 		const { container } = render(
 			<FormProvider {...result.current}>
@@ -49,7 +57,15 @@ describe("LedgerReview", () => {
 			}),
 		];
 
-		const { result } = renderHook(() => useForm());
+		const { result } = renderHook(() =>
+			useForm({
+				defaultValues: {
+					fee: "0",
+				},
+			}),
+		);
+
+		result.current.register("fee");
 
 		const { container } = render(
 			<FormProvider {...result.current}>
@@ -71,7 +87,15 @@ describe("LedgerReview", () => {
 			}),
 		];
 
-		const { result } = renderHook(() => useForm());
+		const { result } = renderHook(() =>
+			useForm({
+				defaultValues: {
+					fee: "0",
+				},
+			}),
+		);
+
+		result.current.register("fee");
 
 		const { container } = render(
 			<FormProvider {...result.current}>
