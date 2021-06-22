@@ -19,4 +19,15 @@ describe("TotalAmountBox", () => {
 		expect(total).toHaveTextContent("0.11 ARK");
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	it("should default to 0 for non numeric values", () => {
+		const { asFragment } = render(<TotalAmountBox fee={"someNaN"} amount={"someNaN"} ticker="ARK" />);
+
+		const [amount, fee, total] = screen.getAllByTestId("AmountCrypto");
+
+		expect(amount).toHaveTextContent("0 ARK");
+		expect(fee).toHaveTextContent("0 ARK");
+		expect(total).toHaveTextContent("0 ARK");
+		expect(asFragment()).toMatchSnapshot();
+	});
 });
