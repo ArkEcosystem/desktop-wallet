@@ -4,6 +4,7 @@ import { Icon } from "app/components/Icon";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import tw from "twin.macro";
+import { assertNumber } from "utils/assertions";
 
 interface Properties {
 	amount: number;
@@ -14,6 +15,9 @@ interface Properties {
 const AmountLabel = tw.span`text-sm font-semibold text-theme-secondary-700`;
 
 export const TotalAmountBox = ({ amount, fee, ticker }: Properties) => {
+    assertNumber(amount);
+    assertNumber(fee);
+
 	const { t } = useTranslation();
 
 	return (
@@ -40,7 +44,7 @@ export const TotalAmountBox = ({ amount, fee, ticker }: Properties) => {
 
 			<div className="flex flex-col items-center py-6 rounded-b-lg border-t border-theme-secondary-300 justfiy-center bg-theme-secondary-100 dark:border-theme-secondary-800 dark:bg-theme-secondary-800">
 				<AmountLabel>{t("TRANSACTION.TOTAL_AMOUNT")}</AmountLabel>
-				<AmountCrypto ticker={ticker} value={amount + fee} className="text-2xl font-bold" />
+				<AmountCrypto ticker={ticker} value={Number(amount) + Number(fee)} className="text-2xl font-bold" />
 			</div>
 		</div>
 	);
