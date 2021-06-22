@@ -13,6 +13,7 @@ const wallet = {
 		canBeSigned: () => false,
 		isAwaitingOurSignature: () => false,
 	}),
+	network: () => ({ isTest: () => true }),
 };
 
 export const TransactionFixture = {
