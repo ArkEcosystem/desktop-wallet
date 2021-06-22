@@ -45,6 +45,16 @@ export const WalletListItem: React.FC<WalletListItemProperties> = ({
 		networkId: wallet.networkId(),
 	});
 
+	let lastCellContent = undefined;
+
+	if (wallet.network().isTest()) {
+		lastCellContent = "N/A";
+	} else {
+		lastCellContent = (
+			<Amount ticker={wallet.exchangeCurrency()} value={wallet.convertedBalance()} />
+		);
+	}
+
 	return (
 		<TableRow isSelected={isSelected} onClick={() => onClick?.(wallet.id())}>
 			<TableCell variant="start" innerClassName="space-x-4">
@@ -71,7 +81,7 @@ export const WalletListItem: React.FC<WalletListItemProperties> = ({
 			</TableCell>
 
 			<TableCell variant="end" innerClassName="justify-end text-theme-secondary-400">
-				<Amount ticker={wallet.exchangeCurrency()} value={wallet.convertedBalance()} />
+				{lastCellContent}
 			</TableCell>
 		</TableRow>
 	);
