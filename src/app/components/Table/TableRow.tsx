@@ -8,6 +8,7 @@ export type TableRowFunction = (event: React.MouseEvent<HTMLTableRowElement, Mou
 
 type TableRowProperties = {
 	border?: boolean;
+	dotted?: boolean;
 	children: React.ReactNode;
 	onClick?: TableRowFunction;
 	isSelected?: boolean;
@@ -15,11 +16,12 @@ type TableRowProperties = {
 
 const TableRowStyled = styled.tr<TableRowProperties>(getStyles);
 
-export const TableRow = ({ border, children, isSelected, onClick }: TableRowProperties) => (
+export const TableRow = ({ border, dotted, children, isSelected, onClick }: TableRowProperties) => (
 	<TableRowStyled
 		data-testid="TableRow"
 		className={cn({ group: !!onClick })}
 		border={border}
+		dotted={dotted}
 		isSelected={isSelected}
 		onClick={onClick}
 	>
