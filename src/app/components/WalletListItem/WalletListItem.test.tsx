@@ -49,9 +49,11 @@ describe("WalletListItem", () => {
 	});
 
 	it("should render for selected wallet", () => {
+		jest.spyOn(wallet.network(), "isTest").mockReturnValue(false);
+
 		const walletId = "ac38fe6d-4b67-4ef1-85be-17c5f6841129";
 
-		const { asFragment } = renderWithRouter(
+		const { asFragment, queryByText } = renderWithRouter(
 			<table>
 				<tbody>
 					<Route path="/profiles/:profileId/dashboard">
@@ -66,6 +68,30 @@ describe("WalletListItem", () => {
 		);
 
 		expect(asFragment()).toMatchSnapshot();
+		expect(queryByText("N/A")).toBeNull();
+	});
+
+	it("should render with a N/A for fiat", () => {
+		jest.spyOn(wallet.network(), "isTest").mockReturnValue(true);
+
+		const walletId = "ac38fe6d-4b67-4ef1-85be-17c5f6841129";
+
+		const { asFragment, getByText } = renderWithRouter(
+			<table>
+				<tbody>
+					<Route path="/profiles/:profileId/dashboard">
+						<WalletListItem wallet={wallet} activeWalletId={walletId} />
+					</Route>
+				</tbody>
+			</table>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		expect(asFragment()).toMatchSnapshot();
+		expect(getByText("N/A")).toBeInTheDocument();
 	});
 
 	it("should render with default BTC as default exchangeCurrency", () => {
