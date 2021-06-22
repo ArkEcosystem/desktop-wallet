@@ -228,20 +228,13 @@ exports[`Dashboard should render 1`] = `
                 Your Balance
               </div>
               <div
-                class="flex justify-end mt-1"
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                      style="width: 60px; height: 16px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
+                <span
+                  data-testid="AmountCrypto"
+                >
+                  50.11421128 BTC
                 </span>
               </div>
             </div>
@@ -793,49 +786,6 @@ exports[`Dashboard should render 1`] = `
             >
               Transaction History
             </div>
-            <div
-              class="mt-6"
-              data-testid="FilterTransactions"
-            >
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <button
-                    class="flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-secondary-500"
-                    data-testid="CollapseToggleButton"
-                  >
-                    <span>
-                      <span
-                        class="text-theme-secondary-500 dark:text-theme-secondary-600"
-                      >
-                        Type: 
-                      </span>
-                      <span
-                        class="text-theme-secondary-700 dark:text-theme-secondary-200"
-                      >
-                        All
-                      </span>
-                    </span>
-                    <span
-                      class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 jmsVky"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM"
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </button>
-                </span>
-              </div>
-            </div>
           </div>
           <div
             class="mb-8"
@@ -888,6 +838,52 @@ exports[`Dashboard should render 1`] = `
                   Outgoing
                 </span>
               </button>
+              <div
+                class="flex flex-1"
+              />
+              <div
+                class="my-auto mr-6"
+                data-testid="FilterTransactions"
+              >
+                <div
+                  class="relative"
+                >
+                  <span
+                    data-testid="dropdown__toggle"
+                  >
+                    <button
+                      class="flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-secondary-500"
+                      data-testid="CollapseToggleButton"
+                    >
+                      <span>
+                        <span
+                          class="text-theme-secondary-500 dark:text-theme-secondary-600"
+                        >
+                          Type: 
+                        </span>
+                        <span
+                          class="text-theme-secondary-700 dark:text-theme-secondary-200"
+                        >
+                          All
+                        </span>
+                      </span>
+                      <span
+                        class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 jmsVky"
+                      >
+                        <div
+                          class="sc-bdfBwQ kJrqvM"
+                          height="5"
+                          width="8"
+                        >
+                          <svg>
+                            chevron-down.svg
+                          </svg>
+                        </div>
+                      </span>
+                    </button>
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
           <div
@@ -2492,49 +2488,6 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
             >
               Transaction History
             </div>
-            <div
-              class="mt-6"
-              data-testid="FilterTransactions"
-            >
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <button
-                    class="flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-secondary-500"
-                    data-testid="CollapseToggleButton"
-                  >
-                    <span>
-                      <span
-                        class="text-theme-secondary-500 dark:text-theme-secondary-600"
-                      >
-                        Type: 
-                      </span>
-                      <span
-                        class="text-theme-secondary-700 dark:text-theme-secondary-200"
-                      >
-                        All
-                      </span>
-                    </span>
-                    <span
-                      class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 jmsVky"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM"
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </button>
-                </span>
-              </div>
-            </div>
           </div>
           <div
             class="mb-8"
@@ -2587,6 +2540,52 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                   Outgoing
                 </span>
               </button>
+              <div
+                class="flex flex-1"
+              />
+              <div
+                class="my-auto mr-6"
+                data-testid="FilterTransactions"
+              >
+                <div
+                  class="relative"
+                >
+                  <span
+                    data-testid="dropdown__toggle"
+                  >
+                    <button
+                      class="flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-secondary-500"
+                      data-testid="CollapseToggleButton"
+                    >
+                      <span>
+                        <span
+                          class="text-theme-secondary-500 dark:text-theme-secondary-600"
+                        >
+                          Type: 
+                        </span>
+                        <span
+                          class="text-theme-secondary-700 dark:text-theme-secondary-200"
+                        >
+                          All
+                        </span>
+                      </span>
+                      <span
+                        class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 jmsVky"
+                      >
+                        <div
+                          class="sc-bdfBwQ kJrqvM"
+                          height="5"
+                          width="8"
+                        >
+                          <svg>
+                            chevron-down.svg
+                          </svg>
+                        </div>
+                      </span>
+                    </button>
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
           <div
@@ -2742,7 +2741,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -2956,7 +2955,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -3170,7 +3169,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -3384,7 +3383,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -3598,7 +3597,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -3812,7 +3811,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -4026,7 +4025,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -4240,7 +4239,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -5244,49 +5243,6 @@ exports[`Dashboard should show warning for errored networks 1`] = `
             >
               Transaction History
             </div>
-            <div
-              class="mt-6"
-              data-testid="FilterTransactions"
-            >
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <button
-                    class="flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-secondary-500"
-                    data-testid="CollapseToggleButton"
-                  >
-                    <span>
-                      <span
-                        class="text-theme-secondary-500 dark:text-theme-secondary-600"
-                      >
-                        Type: 
-                      </span>
-                      <span
-                        class="text-theme-secondary-700 dark:text-theme-secondary-200"
-                      >
-                        All
-                      </span>
-                    </span>
-                    <span
-                      class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 jmsVky"
-                    >
-                      <div
-                        class="sc-bdfBwQ kJrqvM"
-                        height="5"
-                        width="8"
-                      >
-                        <svg>
-                          chevron-down.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </button>
-                </span>
-              </div>
-            </div>
           </div>
           <div
             class="mb-8"
@@ -5339,6 +5295,52 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                   Outgoing
                 </span>
               </button>
+              <div
+                class="flex flex-1"
+              />
+              <div
+                class="my-auto mr-6"
+                data-testid="FilterTransactions"
+              >
+                <div
+                  class="relative"
+                >
+                  <span
+                    data-testid="dropdown__toggle"
+                  >
+                    <button
+                      class="flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-secondary-500"
+                      data-testid="CollapseToggleButton"
+                    >
+                      <span>
+                        <span
+                          class="text-theme-secondary-500 dark:text-theme-secondary-600"
+                        >
+                          Type: 
+                        </span>
+                        <span
+                          class="text-theme-secondary-700 dark:text-theme-secondary-200"
+                        >
+                          All
+                        </span>
+                      </span>
+                      <span
+                        class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 jmsVky"
+                      >
+                        <div
+                          class="sc-bdfBwQ kJrqvM"
+                          height="5"
+                          width="8"
+                        >
+                          <svg>
+                            chevron-down.svg
+                          </svg>
+                        </div>
+                      </span>
+                    </button>
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
           <div
