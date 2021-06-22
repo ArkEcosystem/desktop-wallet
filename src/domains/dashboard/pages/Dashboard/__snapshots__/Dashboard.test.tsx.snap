@@ -228,20 +228,13 @@ exports[`Dashboard should render 1`] = `
                 Your Balance
               </div>
               <div
-                class="flex justify-end mt-1"
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                      style="width: 60px; height: 16px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
+                <span
+                  data-testid="AmountCrypto"
+                >
+                  50.11421128 BTC
                 </span>
               </div>
             </div>
@@ -2742,7 +2735,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
                     <td>
@@ -2956,7 +2949,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
                     <td>
@@ -3170,7 +3163,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
                     <td>
@@ -3384,7 +3377,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
                     <td>
@@ -3598,7 +3591,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
                     <td>
@@ -3812,7 +3805,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
                     <td>
@@ -4026,7 +4019,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
                     <td>
@@ -4240,7 +4233,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
                     data-testid="TableRow"
                   >
                     <td>
