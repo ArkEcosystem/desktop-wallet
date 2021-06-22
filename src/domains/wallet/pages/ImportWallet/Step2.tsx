@@ -114,6 +114,25 @@ const ImportInputField = ({
 		return <AddressField network={network} profile={profile} />;
 	}
 
+	if (type === OptionsValue.PUBLIC_KEY) {
+		return (
+			<MnemonicField
+				profile={profile}
+				label={t("COMMON.PUBLIC_KEY")}
+				data-testid="ImportWallet__publicKey-input"
+				findAddress={async (value) => {
+					try {
+						await coin.__construct();
+						const { address } = await coin.address().fromPublicKey(value);
+						return address;
+					} catch {
+						throw new Error(t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.INVALID_PUBLIC_KEY"));
+					}
+				}}
+			/>
+		);
+	}
+
 	/* istanbul ignore next */
 	if (type === OptionsValue.PRIVATE_KEY) {
 		return (
