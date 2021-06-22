@@ -16,8 +16,8 @@ const AmountLabel = tw.span`text-sm font-semibold text-theme-secondary-700`;
 export const TotalAmountBox = ({ ticker, ...properties }: Properties) => {
 	const { t } = useTranslation();
 
-	const amount = +properties.amount || 0;
-	const fee = +properties.fee || 0;
+	const amount = +properties.amount;
+	const fee = +properties.fee;
 
 	assertNumber(amount);
 	assertNumber(fee);
@@ -52,4 +52,9 @@ export const TotalAmountBox = ({ ticker, ...properties }: Properties) => {
 			</div>
 		</div>
 	);
+};
+
+TotalAmountBox.defaultProps = {
+	amount: 0,
+	fee: 0,
 };
