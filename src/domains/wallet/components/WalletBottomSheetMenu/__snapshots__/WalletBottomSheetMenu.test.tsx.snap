@@ -165,7 +165,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                       class="flex flex-inline align-top justify-end flex-row-reverse"
                     >
                       <div>
-                        Fiat Value
+                        Currency
                       </div>
                       <div
                         class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
@@ -277,11 +277,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                     <div
                       class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kKpqmt justify-end text-theme-secondary-400"
                     >
-                      <span
-                        data-testid="AmountCrypto"
-                      >
-                        0 BTC
-                      </span>
+                      N/A
                     </div>
                   </td>
                 </tr>
@@ -389,11 +385,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                     <div
                       class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kKpqmt justify-end text-theme-secondary-400"
                     >
-                      <span
-                        data-testid="AmountCrypto"
-                      >
-                        0 BTC
-                      </span>
+                      N/A
                     </div>
                   </td>
                 </tr>

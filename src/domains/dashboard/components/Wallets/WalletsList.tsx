@@ -36,7 +36,7 @@ export const WalletsList = memo(
 				className: "flex-row-reverse justify-end",
 			},
 			{
-				Header: t("COMMON.FIAT_VALUE"),
+				Header: t("COMMON.CURRENCY"),
 				accessor: ({ wallet }: { wallet: Contracts.IReadWriteWallet }) =>
 					wallet?.convertedBalance?.().toFixed(0),
 				className: "flex-row-reverse justify-end",
