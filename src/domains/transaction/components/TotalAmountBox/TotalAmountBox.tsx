@@ -4,7 +4,6 @@ import { Icon } from "app/components/Icon";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import tw from "twin.macro";
-import { assertNumber } from "utils/assertions";
 
 interface Properties {
 	amount: number;
@@ -15,9 +14,6 @@ interface Properties {
 const AmountLabel = tw.span`text-sm font-semibold text-theme-secondary-700`;
 
 export const TotalAmountBox = ({ amount, fee, ticker }: Properties) => {
-    assertNumber(amount);
-    assertNumber(fee);
-
 	const { t } = useTranslation();
 
 	return (
