@@ -5,8 +5,9 @@ import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
 
-import { PaginationProperties, PaginationSearch } from "./Pagination.models";
+import { PaginationProperties } from "./Pagination.models";
 import { PaginationButton, PaginationWrapper } from "./Pagination.styles";
+import { PaginationSearch } from "./PaginationSearch";
 
 const Wrapper = styled.nav`
 	${PaginationWrapper}
@@ -58,7 +59,7 @@ const Pagination = ({
 	]);
 
 	if (totalPages <= 1) {
-		return;
+		return <></>;
 	}
 
 	const handleSelectPage = (page?: number) => {

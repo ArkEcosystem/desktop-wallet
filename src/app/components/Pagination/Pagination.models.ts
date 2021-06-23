@@ -1,6 +1,6 @@
 export interface PaginationProperties {
 	totalCount: number;
-	itemsPerPage: number;
+	itemsPerPage?: number;
 	onSelectPage: any;
 	currentPage: number;
 	className?: string;
