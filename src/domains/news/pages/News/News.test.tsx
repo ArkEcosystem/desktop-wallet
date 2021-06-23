@@ -1,12 +1,10 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Blockfolio, BlockfolioResponse } from "@arkecosystem/platform-sdk-news";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
-import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
+import { fireEvent, getDefaultProfileId, renderWithRouter, screen,waitFor } from "testing-library";
 import page1Fixture from "tests/fixtures/news/page-1.json";
 
 import { assets } from "../../data";
@@ -14,8 +12,6 @@ import { News } from "./News";
 
 const history = createMemoryHistory();
 const newsURL = `/profiles/${getDefaultProfileId()}/news`;
-
-let subject: Blockfolio;
 
 jest.setTimeout(10_000);
 
@@ -57,8 +53,6 @@ describe("News", () => {
 			.reply(200, require("tests/fixtures/news/filtered.json"))
 			.persist();
 
-		subject = new Blockfolio(httpClient);
-
 		window.scrollTo = jest.fn();
 	});
 
@@ -67,7 +61,7 @@ describe("News", () => {
 	});
 
 	it("should render", async () => {
-		const { getAllByTestId } = renderWithRouter(
+		renderWithRouter(
 			<Route path="/profiles/:profileId/news">
 				<News />
 			</Route>,
@@ -77,18 +71,11 @@ describe("News", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10_000 });
-	});
-
-	it("should retrieve blockfolio data using findByCoin", async () => {
-		const result: BlockfolioResponse = await subject.findByCoin({ coins: ["ARK"] });
-
-		expect(result.meta).toMatchObject(page1Fixture.meta);
-		expect(result.data).toMatchObject(page1Fixture.data.slice(0, 1));
+		await waitFor(() => expect(screen.getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10_000 });
 	});
 
 	it("should navigate on next and previous pages", async () => {
-		const { getAllByTestId, getByTestId } = renderWithRouter(
+		renderWithRouter(
 			<Route path="/profiles/:profileId/news">
 				<News />
 			</Route>,
@@ -98,25 +85,21 @@ describe("News", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10_000 });
+		await waitFor(() => expect(screen.getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10_000 });
 
-		act(() => {
-			fireEvent.click(getByTestId("Pagination__next"));
-		});
+		fireEvent.click(screen.getByTestId("Pagination__next"));
 
-		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10_000 });
+		await waitFor(() => expect(screen.getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10_000 });
 
-		act(() => {
-			fireEvent.click(getByTestId("Pagination__previous"));
-		});
+		fireEvent.click(screen.getByTestId("Pagination__previous"));
 
-		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10_000 });
+		await waitFor(() => expect(screen.getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10_000 });
 	});
 
 	it("should show no results screen", async () => {
 		history.push(newsURL);
 
-		const { getAllByTestId, getByTestId, queryAllByTestId } = renderWithRouter(
+		renderWithRouter(
 			<Route path="/profiles/:profileId/news">
 				<News defaultAssets={assets} />
 			</Route>,
@@ -126,24 +109,22 @@ describe("News", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10_000 });
+		await waitFor(() => expect(screen.getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10_000 });
 
-		act(() => {
-			fireEvent.change(getByTestId("NewsOptions__search"), {
-				target: {
-					value: "NoResult",
-				},
-			});
+		fireEvent.change(screen.getByTestId("NewsOptions__search"), {
+			target: {
+				value: "NoResult",
+			},
 		});
 
-		await waitFor(() => {
-			expect(queryAllByTestId("NewsCard")).toHaveLength(0);
-			expect(queryAllByTestId("EmptyResults")).toHaveLength(1);
-		});
+		await waitFor(() => expect(screen.getByTestId("NewsOptions__search")).toHaveValue("NoResult"));
+
+		await waitFor(() => expect(screen.queryAllByTestId("NewsCard")).toHaveLength(0));
+		await waitFor(() => expect(screen.queryAllByTestId("EmptyResults")).toHaveLength(1));
 	});
 
 	it("should filter results based on category query and asset", async () => {
-		const { getAllByTestId, getByTestId, getByText, asFragment } = renderWithRouter(
+		const { asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/news">
 				<News />
 			</Route>,
@@ -153,43 +134,41 @@ describe("News", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10_000 });
+		await waitFor(() => expect(screen.getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10_000 });
 
-		act(() => {
-			fireEvent.change(getByTestId("NewsOptions__search"), {
-				target: {
-					value: "Hacking",
-				},
-			});
+		fireEvent.change(screen.getByTestId("NewsOptions__search"), {
+			target: {
+				value: "Hacking",
+			},
 		});
 
+		await waitFor(() => expect(screen.getByTestId("NewsOptions__search")).toHaveValue("Hacking"));
+
 		for (const category of ["Marketing", "Community", "Emergency"]) {
-			act(() => {
-				fireEvent.click(getByTestId(`NewsOptions__category-${category}`));
-			});
+			fireEvent.click(screen.getByTestId(`NewsOptions__category-${category}`));
 		}
 
-		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10_000 });
+		await waitFor(() => expect(screen.getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10_000 });
 
 		expect(asFragment()).toMatchSnapshot();
 
-		act(() => {
-			fireEvent.change(getByTestId("NewsOptions__search"), {
-				target: {
-					value: "",
-				},
-			});
-
-			fireEvent.click(getByText(commonTranslations.SELECT_ALL));
+		fireEvent.change(screen.getByTestId("NewsOptions__search"), {
+			target: {
+				value: "",
+			},
 		});
 
-		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10_000 });
+		await waitFor(() => expect(screen.getByTestId("NewsOptions__search")).toHaveValue(""));
+
+		fireEvent.click(screen.getByText(commonTranslations.SELECT_ALL));
+
+		await waitFor(() => expect(screen.getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10_000 });
 
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should show not found with empty coins", async () => {
-		const { getAllByTestId, getByTestId, queryAllByTestId } = renderWithRouter(
+		renderWithRouter(
 			<Route path="/profiles/:profileId/news">
 				<News />
 			</Route>,
@@ -199,15 +178,11 @@ describe("News", () => {
 			},
 		);
 
-		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10_000 });
+		await waitFor(() => expect(screen.getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10_000 });
 
-		act(() => {
-			fireEvent.click(getByTestId("NetworkOption__ARK"));
-		});
+		fireEvent.click(screen.getByTestId("NetworkOption__ARK"));
 
-		await waitFor(() => {
-			expect(queryAllByTestId("NewsCard")).toHaveLength(0);
-			expect(queryAllByTestId("EmptyResults")).toHaveLength(1);
-		});
+		await waitFor(() => expect(screen.queryAllByTestId("NewsCard")).toHaveLength(0));
+		await waitFor(() => expect(screen.queryAllByTestId("EmptyResults")).toHaveLength(1));
 	});
 });
