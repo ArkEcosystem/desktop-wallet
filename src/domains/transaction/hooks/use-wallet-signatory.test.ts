@@ -57,7 +57,9 @@ describe("useWalletSignatory", () => {
 	it("should sign with private key", async () => {
 		const { result } = renderHook(() => useWalletSignatory(wallet));
 
-		const signatory = await result.current.sign({ privateKey: "d8839c2432bfd0a67ef10a804ba991eabba19f154a3d707917681d45822a5712" });
+		const signatory = await result.current.sign({
+			privateKey: "d8839c2432bfd0a67ef10a804ba991eabba19f154a3d707917681d45822a5712",
+		});
 
 		expect(signatory).toBeInstanceOf(Signatories.Signatory);
 		expect(signatory.actsWithPrivateKey()).toBeTrue();
@@ -83,6 +85,8 @@ describe("useWalletSignatory", () => {
 	it("should throw error if no input is provided", async () => {
 		const { result } = renderHook(() => useWalletSignatory(wallet));
 
-		await expect(result.current.sign({})).rejects.toThrowError("Signing failed. No mnemonic or encryption password provided");
+		await expect(result.current.sign({})).rejects.toThrowError(
+			"Signing failed. No mnemonic or encryption password provided",
+		);
 	});
 });

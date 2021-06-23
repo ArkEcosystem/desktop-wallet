@@ -10,7 +10,17 @@ interface SignInput {
 	privateKey?: string;
 }
 
-export const useWalletSignatory = (wallet: ProfileContracts.IReadWriteWallet): { sign: ({ mnemonic, secondMnemonic, encryptionPassword, wif, privateKey }: SignInput) => Promise<Signatories.Signatory>; } => ({
+export const useWalletSignatory = (
+	wallet: ProfileContracts.IReadWriteWallet,
+): {
+	sign: ({
+		mnemonic,
+		secondMnemonic,
+		encryptionPassword,
+		wif,
+		privateKey,
+	}: SignInput) => Promise<Signatories.Signatory>;
+} => ({
 	sign: useCallback(
 		async ({ mnemonic, secondMnemonic, encryptionPassword, wif, privateKey }: SignInput) => {
 			if (mnemonic && secondMnemonic) {
