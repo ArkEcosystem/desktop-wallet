@@ -59,18 +59,15 @@ const signTransaction = async ({ env, form, profile }: SendRegistrationSignOptio
 
 	const publicKeys = (participants as Participant[]).map((item) => item.publicKey);
 
-	const signatory = await senderWallet!
-		.coin()
-		.signatory()
-		.mnemonic("MNEMONIC FROM FORM");
+	const signatory = await senderWallet!.coin().signatory().mnemonic("MNEMONIC FROM FORM");
 
 	const uuid = await senderWallet!.transaction().signMultiSignature({
 		nonce: senderWallet!.nonce().plus(1).toString(),
 		fee: +fee,
 		signatory: await senderWallet!
-            .coin()
-            .signatory()
-            .multiSignature(+minParticipants, publicKeys),
+			.coin()
+			.signatory()
+			.multiSignature(+minParticipants, publicKeys),
 		data: {
 			publicKeys: [...publicKeys],
 			min: +minParticipants,
@@ -90,8 +87,8 @@ const signTransaction = async ({ env, form, profile }: SendRegistrationSignOptio
 	await env.persist();
 
 	const transaction: ExtendedSignedTransactionData = senderWallet!.transaction().transaction(transactionId);
-    console.log(transaction.data())
-    console.log(transaction.toBroadcast())
+	console.log(transaction.data());
+	console.log(transaction.toBroadcast());
 
 	// transaction.generatedAddress = (
 	// 	await senderWallet!.coin().address().fromMultiSignature(minParticipants, publicKeys)
