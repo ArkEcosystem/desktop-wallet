@@ -1,6 +1,7 @@
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { useFiles } from "app/hooks/use-files";
+import { toasts } from "app/services";
 import cn from "classnames";
 import { fromBuffer } from "file-type";
 import React, { useMemo } from "react";
@@ -63,7 +64,8 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 		const type = await fromBuffer(file.content);
 
 		if (!ALLOWED_EXTENSIONS.includes(type?.ext ?? "")) {
-			throw new Error("File is not an image");
+			toasts.error(t("COMMON.ERRORS.INVALID_IMAGE"));
+			return;
 		}
 
 		const imageBase64 = file.content.toString("base64");
