@@ -67,6 +67,7 @@ describe("SelectProfileImage", () => {
 
 	it("should not allow to upload an invalid file image", async () => {
 		const onSelect = jest.fn();
+		const toastSpy = jest.spyOn(toasts, "error");
 
 		const { asFragment } = render(<SelectProfileImage value="test" onSelect={onSelect} />);
 
@@ -83,7 +84,6 @@ describe("SelectProfileImage", () => {
 		button.addEventListener("click", openFileDialog as any);
 		userEvent.click(screen.getByTestId("SelectProfileImage__upload-button"));
 
-		const toastSpy = jest.spyOn(toasts, "error");
 		await waitFor(() => expect(toastSpy).toHaveBeenCalledWith(translations.ERRORS.INVALID_IMAGE));
 	});
 

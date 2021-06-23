@@ -1,5 +1,6 @@
 import { act, renderHook } from "@testing-library/react-hooks";
 import electron from "electron";
+import os from "os";
 
 import { useFiles } from "./use-files";
 
@@ -29,7 +30,7 @@ describe("useFiles", () => {
 		});
 
 		expect(showOpenDialogMock).toHaveBeenCalledWith({
-			defaultPath: expect.any(String),
+			defaultPath: os.homedir(),
 			filters: [{ extensions: ["json"], name: "" }],
 			properties: ["openFile"],
 		});
@@ -44,7 +45,7 @@ describe("useFiles", () => {
 		});
 
 		expect(showOpenDialogMock).toHaveBeenCalledWith({
-			defaultPath: expect.any(String),
+			defaultPath: os.homedir(),
 			filters: [{ extensions: ["json"], name: "" }],
 			properties: ["openFile"],
 		});
