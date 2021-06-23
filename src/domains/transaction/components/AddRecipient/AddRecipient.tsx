@@ -48,7 +48,7 @@ const TransferType = ({ isSingle, disableMultiple, onChange }: ToggleButtonPrope
 			</Tooltip>
 
 			<Tooltip content={t("TRANSACTION.RECIPIENTS_HELPTEXT", { count: 64 })}>
-				<div className="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200">
+				<div className="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer questionmark bg-theme-primary-100 hover:bg-theme-primary-700 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 hover:text-white">
 					<Icon width={10} height={10} name="QuestionMark" />
 				</div>
 			</Tooltip>
