@@ -6,7 +6,7 @@ export const PaginationSearchWrapper = css`
 	}
 
 	.search-control {
-		${tw`pr-2 pl-2 py-2 text-theme-secondary-500 hover:text-theme-primary-500 dark:text-theme-secondary-200`}
+		${tw`pr-2 pl-2 py-2 text-theme-secondary-500 hover:text-theme-primary-600 dark:text-theme-secondary-200`}
 	}
 `;
 
@@ -27,7 +27,7 @@ export const SearchInput = css`
 `;
 
 export const PaginationSearchToggleButton = css`
-	${tw`relative text-theme-primary-500 p-2 cursor-pointer flex flex-nowrap items-center dark:text-theme-secondary-200`}
+	${tw`relative text-theme-primary-600 p-2 cursor-pointer flex flex-nowrap items-center dark:text-theme-secondary-200`}
 
 	&:hover {
 		${tw`bg-theme-primary-600 text-white rounded`}
@@ -41,7 +41,7 @@ export const PaginationSearchToggleButton = css`
 `;
 
 export const PaginationButton = css`
-	${tw`text-theme-primary-500 dark:text-theme-secondary-200 cursor-pointer px-2 text-base inline-flex items-center font-semibold text-center transition-all duration-100 ease-linear justify-center`}
+	${tw`text-theme-primary-600 dark:text-theme-secondary-200 cursor-pointer px-2 text-base inline-flex items-center font-semibold text-center transition-all duration-100 ease-linear justify-center`}
 
 	&:not(:disabled):hover {
 		${tw`bg-theme-primary-600 text-white rounded`}
@@ -50,7 +50,7 @@ export const PaginationButton = css`
 	}
 
 	&.current-page {
-		${tw`bg-theme-primary-200 dark:bg-theme-secondary-600 text-theme-primary-500 dark:text-theme-secondary-200`}
+		${tw`bg-theme-primary-500 dark:bg-theme-secondary-600 text-white dark:text-theme-secondary-200`}
 	}
 
 	&:focus {

@@ -1,10 +1,11 @@
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
+import cn from "classnames";
 import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
 
-import { PaginationProperties, PaginationSearch } from ".";
+import { PaginationProperties, PaginationSearch } from "./Pagination.models";
 import { PaginationButton, PaginationWrapper } from "./Pagination.styles";
 
 const Wrapper = styled.nav`
@@ -15,11 +16,11 @@ const PaginationButtonStyled = styled.button`
 	${PaginationButton}
 `;
 
-export const Pagination = ({
+const Pagination = ({
 	totalCount,
-	itemsPerPage,
+	itemsPerPage = 4,
 	onSelectPage,
-	currentPage,
+	currentPage = 1,
 	className,
 }: PaginationProperties) => {
 	const [buttonsDisabled, setButtonsDisabled] = useState(false);
@@ -35,13 +36,13 @@ export const Pagination = ({
 		let buttons;
 
 		if (totalPages <= buttonCount) {
-			buttons = new Array(...new Array(totalPages)).map((_, index) => index + 1);
+			buttons = Array.from({ length: totalPages }).map((_, index) => index + 1);
 		} else if (currentPage <= subRangeLength + 1) {
-			buttons = new Array(...new Array(buttonCount)).map((_, index) => index + 1);
+			buttons = Array.from({ length: buttonCount }).map((_, index) => index + 1);
 		} else if (currentPage >= totalPages - subRangeLength) {
-			buttons = new Array(...new Array(buttonCount)).map((_, index) => totalPages - buttonCount + index + 1);
+			buttons = Array.from({ length: buttonCount }).map((_, index) => totalPages - buttonCount + index + 1);
 		} else {
-			buttons = new Array(...new Array(buttonCount)).map((_, index) => currentPage - subRangeLength + index);
+			buttons = Array.from({ length: buttonCount }).map((_, index) => currentPage - subRangeLength + index);
 		}
 
 		return buttons;
@@ -57,7 +58,7 @@ export const Pagination = ({
 	]);
 
 	if (totalPages <= 1) {
-		return null;
+		return;
 	}
 
 	const handleSelectPage = (page?: number) => {
@@ -110,7 +111,7 @@ export const Pagination = ({
 						aria-current={currentPage === page || undefined}
 						aria-label={t("COMMON.PAGE_#", { page })}
 						disabled={buttonsDisabled}
-						className={currentPage === page ? "current-page" : ""}
+						className={cn({ "current-page": currentPage === page })}
 						onClick={() => onSelectPage(page)}
 					>
 						{page}
@@ -153,7 +154,4 @@ export const Pagination = ({
 	);
 };
 
-Pagination.defaultProps = {
-	currentPage: 1,
-	itemsPerPage: 4,
-};
+export { Pagination };
