@@ -30,6 +30,7 @@ export const SendRegistration = () => {
 	const [activeTab, setActiveTab] = useState(1);
 	const [transaction, setTransaction] = useState((null as unknown) as DTO.ExtendedSignedTransactionData);
 	const [registrationForm, setRegistrationForm] = useState<SendRegistrationForm>();
+	const [errorMessage, setErrorMessage] = useState<string | undefined>();
 
 	const { registrationType } = useParams();
 
@@ -141,6 +142,7 @@ export const SendRegistration = () => {
 				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
 			}
 
+			setErrorMessage(JSON.stringify({ type: error.name, message: error.message }));
 			setActiveTab(10);
 		}
 	};
@@ -183,6 +185,7 @@ export const SendRegistration = () => {
 									}
 									isRepeatDisabled={isSubmitting}
 									onRepeat={form.handleSubmit(handleSubmit)}
+									errorMessage={errorMessage}
 								/>
 							</TabPanel>
 
