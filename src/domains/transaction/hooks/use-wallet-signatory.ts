@@ -11,18 +11,6 @@ interface SignInput {
 export const useWalletSignatory = (wallet: ProfileContracts.IReadWriteWallet) => {
 	const sign = useCallback(
 		async ({ mnemonic, secondMnemonic, encryptionPassword, wif, privateKey }: SignInput) => {
-			if (wif) {
-				return wallet.signatory().wif(wif);
-			}
-
-			if (privateKey) {
-				return wallet.signatory().privateKey(privateKey);
-			}
-
-			if (encryptionPassword) {
-				return wallet.signatory().wif(await wallet.wif().get(encryptionPassword));
-			}
-
 			if (mnemonic && secondMnemonic) {
 				return wallet.signatory().secondaryMnemonic(mnemonic, secondMnemonic);
 			}
@@ -31,8 +19,20 @@ export const useWalletSignatory = (wallet: ProfileContracts.IReadWriteWallet) =>
 				return wallet.signatory().mnemonic(mnemonic);
 			}
 
+			if (encryptionPassword) {
+				return wallet.signatory().wif(await wallet.wif().get(encryptionPassword));
+			}
+
 			if (wallet.isMultiSignature() || wallet.isLedger()) {
 				return wallet.signatory().senderPublicKey(wallet.publicKey()!);
+			}
+
+			if (wif) {
+				return wallet.signatory().wif(wif);
+			}
+
+			if (privateKey) {
+				return wallet.signatory().privateKey(privateKey);
 			}
 
 			throw new Error("Signing failed. No mnemonic or encryption password provided");
