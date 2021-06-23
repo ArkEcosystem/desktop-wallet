@@ -21,7 +21,7 @@ export const translations: { [key: string]: any } = {
 		UNVOTES: "Unvotes",
 		TOOLTIP: {
 			SELECTED_DELEGATE: "You have not yet selected a delegate",
-			VOTE_ONE_DELEGATE: "You can only vote for one delegate at a time",
+			MAX_VOTES: "You have selected the maximum number of delegates",
 		},
 		TOTAL: "Total",
 		VOTE: "Vote",
