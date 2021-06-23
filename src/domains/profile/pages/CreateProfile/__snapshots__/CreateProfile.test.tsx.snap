@@ -113,7 +113,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                     </fieldset>
                   </div>
                   <div
-                    class="group space-y-2 undefined"
+                    class="group space-y-2"
                   >
                     <div
                       class="flex flex-row"
@@ -866,7 +866,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                     </fieldset>
                   </div>
                   <div
-                    class="group space-y-2 undefined"
+                    class="group space-y-2"
                   >
                     <div
                       class="flex flex-row"
@@ -1610,7 +1610,7 @@ exports[`CreateProfile should not be able to create new profile if name consists
                     </fieldset>
                   </div>
                   <div
-                    class="group space-y-2 undefined"
+                    class="group space-y-2"
                   >
                     <div
                       class="flex flex-row"
@@ -2354,7 +2354,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                     </fieldset>
                   </div>
                   <div
-                    class="group space-y-2 undefined"
+                    class="group space-y-2"
                   >
                     <div
                       class="flex flex-row"
@@ -3098,7 +3098,7 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                     </fieldset>
                   </div>
                   <div
-                    class="group space-y-2 undefined"
+                    class="group space-y-2"
                   >
                     <div
                       class="flex flex-row"
@@ -3116,7 +3116,7 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                             src="data:image/png;base64,dGVzdCBtbmVtb25pYw=="
                           />
                           <button
-                            class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
+                            class="overflow-hidden absolute z-10 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                             data-testid="SelectProfileImage__upload-button"
                             type="button"
                           >
@@ -3136,7 +3136,7 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                           </button>
                         </div>
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex absolute z-20 -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
                           data-testid="SelectProfileImage__remove-button"
                           type="button"
                         >
@@ -3598,7 +3598,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                     </fieldset>
                   </div>
                   <div
-                    class="group space-y-2 undefined"
+                    class="group space-y-2"
                   >
                     <div
                       class="flex flex-row"
@@ -4322,7 +4322,7 @@ exports[`CreateProfile should render 1`] = `
                     </fieldset>
                   </div>
                   <div
-                    class="group space-y-2 undefined"
+                    class="group space-y-2"
                   >
                     <div
                       class="flex flex-row"
@@ -4801,7 +4801,7 @@ exports[`CreateProfile should store profile 1`] = `
                     </fieldset>
                   </div>
                   <div
-                    class="group space-y-2 undefined"
+                    class="group space-y-2"
                   >
                     <div
                       class="flex flex-row"
@@ -4819,7 +4819,7 @@ exports[`CreateProfile should store profile 1`] = `
                             src="data:image/png;base64,dGVzdCBtbmVtb25pYw=="
                           />
                           <button
-                            class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
+                            class="overflow-hidden absolute z-10 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                             data-testid="SelectProfileImage__upload-button"
                             type="button"
                           >
@@ -4839,7 +4839,7 @@ exports[`CreateProfile should store profile 1`] = `
                           </button>
                         </div>
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex absolute z-20 -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
                           data-testid="SelectProfileImage__remove-button"
                           type="button"
                         >
@@ -5546,7 +5546,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                     </fieldset>
                   </div>
                   <div
-                    class="group space-y-2 undefined"
+                    class="group space-y-2"
                   >
                     <div
                       class="flex flex-row"
@@ -6264,7 +6264,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                     </fieldset>
                   </div>
                   <div
-                    class="group space-y-2 undefined"
+                    class="group space-y-2"
                   >
                     <div
                       class="flex flex-row"
@@ -6287,7 +6287,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                             TE
                           </span>
                           <button
-                            class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
+                            class="overflow-hidden absolute z-10 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                             data-testid="SelectProfileImage__upload-button"
                             type="button"
                           >
@@ -6769,7 +6769,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                     </fieldset>
                   </div>
                   <div
-                    class="group space-y-2 undefined"
+                    class="group space-y-2"
                   >
                     <div
                       class="flex flex-row"
@@ -7248,7 +7248,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                     </fieldset>
                   </div>
                   <div
-                    class="group space-y-2 undefined"
+                    class="group space-y-2"
                   >
                     <div
                       class="flex flex-row"

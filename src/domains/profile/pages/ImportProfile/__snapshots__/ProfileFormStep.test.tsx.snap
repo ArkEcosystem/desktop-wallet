@@ -82,7 +82,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                   </fieldset>
                 </div>
                 <div
-                  class="group space-y-2 undefined"
+                  class="group space-y-2"
                 >
                   <div
                     class="flex flex-row"
@@ -105,7 +105,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                           AS
                         </span>
                         <button
-                          class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
+                          class="overflow-hidden absolute z-10 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                           data-testid="SelectProfileImage__upload-button"
                           type="button"
                         >
@@ -810,7 +810,7 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
                   </fieldset>
                 </div>
                 <div
-                  class="group space-y-2 undefined"
+                  class="group space-y-2"
                 >
                   <div
                     class="flex flex-row"
@@ -833,7 +833,7 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
                           JO
                         </span>
                         <button
-                          class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
+                          class="overflow-hidden absolute z-10 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                           data-testid="SelectProfileImage__upload-button"
                           type="button"
                         >
@@ -1280,7 +1280,7 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
                   </fieldset>
                 </div>
                 <div
-                  class="group space-y-2 undefined"
+                  class="group space-y-2"
                 >
                   <div
                     class="flex flex-row"
@@ -1303,7 +1303,7 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
                           TE
                         </span>
                         <button
-                          class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
+                          class="overflow-hidden absolute z-10 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                           data-testid="SelectProfileImage__upload-button"
                           type="button"
                         >
@@ -1750,7 +1750,7 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
                   </fieldset>
                 </div>
                 <div
-                  class="group space-y-2 undefined"
+                  class="group space-y-2"
                 >
                   <div
                     class="flex flex-row"
@@ -1773,7 +1773,7 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
                           JO
                         </span>
                         <button
-                          class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
+                          class="overflow-hidden absolute z-10 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                           data-testid="SelectProfileImage__upload-button"
                           type="button"
                         >
@@ -2220,7 +2220,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                   </fieldset>
                 </div>
                 <div
-                  class="group space-y-2 undefined"
+                  class="group space-y-2"
                 >
                   <div
                     class="flex flex-row"
@@ -2238,7 +2238,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                           src="data:image/png;base64,dGVzdCBtbmVtb25pYw=="
                         />
                         <button
-                          class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
+                          class="overflow-hidden absolute z-10 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                           data-testid="SelectProfileImage__upload-button"
                           type="button"
                         >
@@ -2258,7 +2258,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                         </button>
                       </div>
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex absolute z-20 -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
                         data-testid="SelectProfileImage__remove-button"
                         type="button"
                       >
@@ -2928,7 +2928,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                   </fieldset>
                 </div>
                 <div
-                  class="group space-y-2 undefined"
+                  class="group space-y-2"
                 >
                   <div
                     class="flex flex-row"
@@ -2946,7 +2946,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                           src="data:image/png;base64,dGVzdCBtbmVtb25pYw=="
                         />
                         <button
-                          class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
+                          class="overflow-hidden absolute z-10 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                           data-testid="SelectProfileImage__upload-button"
                           type="button"
                         >
@@ -2966,7 +2966,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                         </button>
                       </div>
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex absolute z-20 -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
                         data-testid="SelectProfileImage__remove-button"
                         type="button"
                       >
@@ -3642,7 +3642,7 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                   </fieldset>
                 </div>
                 <div
-                  class="group space-y-2 undefined"
+                  class="group space-y-2"
                 >
                   <div
                     class="flex flex-row"
@@ -3665,7 +3665,7 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                           TE
                         </span>
                         <button
-                          class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
+                          class="overflow-hidden absolute z-10 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                           data-testid="SelectProfileImage__upload-button"
                           type="button"
                         >
@@ -3931,7 +3931,7 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                   </fieldset>
                 </div>
                 <div
-                  class="group space-y-2 undefined"
+                  class="group space-y-2"
                 >
                   <div
                     class="flex flex-row"
@@ -3949,7 +3949,7 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                           src="data:image/png;base64,dGVzdCBtbmVtb25pYw=="
                         />
                         <button
-                          class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
+                          class="overflow-hidden absolute z-10 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                           data-testid="SelectProfileImage__upload-button"
                           type="button"
                         >
@@ -3969,7 +3969,7 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                         </button>
                       </div>
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex absolute z-20 -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
                         data-testid="SelectProfileImage__remove-button"
                         type="button"
                       >
