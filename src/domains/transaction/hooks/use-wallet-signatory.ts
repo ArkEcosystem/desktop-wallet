@@ -23,12 +23,12 @@ export const useWalletSignatory = (wallet: ProfileContracts.IReadWriteWallet) =>
 				return wallet.signatory().wif(await wallet.wif().get(encryptionPassword));
 			}
 
-			if (!!mnemonic && !!secondMnemonic) {
-				return wallet.signatory().secondaryMnemonic(mnemonic, secondMnemonic);
-			}
-
 			if (mnemonic) {
 				return wallet.signatory().mnemonic(mnemonic);
+			}
+
+			if (!!mnemonic && !!secondMnemonic) {
+				return wallet.signatory().secondaryMnemonic(mnemonic, secondMnemonic);
 			}
 
 			if (wallet.isMultiSignature() || wallet.isLedger()) {
