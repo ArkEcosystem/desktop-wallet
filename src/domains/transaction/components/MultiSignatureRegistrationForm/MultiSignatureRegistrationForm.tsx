@@ -62,12 +62,15 @@ const signTransaction = async ({ env, form, profile }: SendRegistrationSignOptio
 	const signatory = await senderWallet!
 		.coin()
 		.signatory()
-		.multiSignature(+minParticipants, [...publicKeys]);
+		.mnemonic("MNEMONIC FROM FORM");
 
 	const uuid = await senderWallet!.transaction().signMultiSignature({
 		nonce: senderWallet!.nonce().plus(1).toString(),
 		fee: +fee,
-		signatory,
+		signatory: await senderWallet!
+            .coin()
+            .signatory()
+            .multiSignature(+minParticipants, publicKeys),
 		data: {
 			publicKeys: [...publicKeys],
 			min: +minParticipants,
@@ -82,15 +85,17 @@ const signTransaction = async ({ env, form, profile }: SendRegistrationSignOptio
 	const transactionId = accepted[0];
 
 	await senderWallet!.transaction().sync();
-	await senderWallet!.transaction().addSignature(transactionId, signatory);
+	await senderWallet!.transaction().addSignature(transactionId, signatory); // use mnemonic or wif signatory
 
 	await env.persist();
 
 	const transaction: ExtendedSignedTransactionData = senderWallet!.transaction().transaction(transactionId);
+    console.log(transaction.data())
+    console.log(transaction.toBroadcast())
 
-	transaction.generatedAddress = (
-		await senderWallet!.coin().address().fromMultiSignature(minParticipants, publicKeys)
-	).address;
+	// transaction.generatedAddress = (
+	// 	await senderWallet!.coin().address().fromMultiSignature(minParticipants, publicKeys)
+	// ).address;
 	return transaction;
 };
 
