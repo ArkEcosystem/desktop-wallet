@@ -1,6 +1,5 @@
 import electron, { FileFilter, ipcRenderer } from "electron";
-import { readFileSync, writeFileSync } from "fs";
-import os from "os";
+import fs from "fs";
 import path from "path";
 import { Theme } from "types";
 
@@ -66,30 +65,9 @@ const saveFile = async (raw: any, defaultPath?: string, options?: DialogOptions)
 		throw new Error(`Writing to "${filePath}" is not allowed`);
 	}
 
-	writeFileSync(filePath, raw, encode);
+	fs.writeFileSync(filePath, raw, encode);
 
 	return options?.returnBasename ? path.basename(filePath) : filePath;
-};
-
-const openFile = async (defaultPath?: string | null, options?: DialogOptions) => {
-	const filters = options?.filters ? parseFilters(options.filters) : defaultFilters;
-	const encode = options?.encoding || defaultEncode;
-
-	const { filePaths } = await electron.remote.dialog.showOpenDialog({
-		defaultPath: defaultPath || os.homedir(),
-		properties: ["openFile"],
-		filters,
-	});
-
-	if (!filePaths || filePaths.length === 0) {
-		return;
-	}
-
-	if (options?.restrictToPath && !validatePath(options.restrictToPath, filePaths[0])) {
-		throw new Error(`Reading from "${filePaths[0]}" is not allowed`);
-	}
-
-	return readFileSync(filePaths[0], encode);
 };
 
 const openExternal = (value: string) => {
@@ -107,7 +85,6 @@ export {
 	isDevelopment as isDev,
 	isIdle,
 	openExternal,
-	openFile,
 	saveFile,
 	setScreenshotProtection,
 	setThemeSource,
