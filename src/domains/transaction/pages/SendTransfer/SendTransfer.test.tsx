@@ -97,7 +97,13 @@ describe("SendTransfer", () => {
 	});
 
 	it("should render form step", async () => {
-		const { result: form } = renderHook(() => useForm());
+		const { result: form } = renderHook(() =>
+			useForm({
+				defaultValues: {
+					senderAddress: wallet.address(),
+				},
+			}),
+		);
 
 		let rendered: RenderResult;
 
@@ -116,7 +122,13 @@ describe("SendTransfer", () => {
 	});
 
 	it("should render form step without test networks", async () => {
-		const { result: form } = renderHook(() => useForm());
+		const { result: form } = renderHook(() =>
+			useForm({
+				defaultValues: {
+					senderAddress: wallet.address(),
+				},
+			}),
+		);
 
 		const useNetworksMock = jest.spyOn(profile.settings(), "get").mockReturnValue(false);
 
@@ -139,7 +151,13 @@ describe("SendTransfer", () => {
 	});
 
 	it("should render network step without test networks", async () => {
-		const { result: form } = renderHook(() => useForm());
+		const { result: form } = renderHook(() =>
+			useForm({
+				defaultValues: {
+					senderAddress: wallet.address(),
+				},
+			}),
+		);
 
 		const useNetworksMock = jest.spyOn(profile.settings(), "get").mockReturnValue(false);
 
@@ -162,7 +180,13 @@ describe("SendTransfer", () => {
 	});
 
 	it("should render form step with deeplink values and use them", async () => {
-		const { result: form } = renderHook(() => useForm());
+		const { result: form } = renderHook(() =>
+			useForm({
+				defaultValues: {
+					senderAddress: wallet.address(),
+				},
+			}),
+		);
 		const deeplinkProperties: any = {
 			amount: "1.2",
 			coin: "ark",
@@ -185,7 +209,13 @@ describe("SendTransfer", () => {
 	});
 
 	it("should render 1st step with custom deeplink values and use them", async () => {
-		const { result: form } = renderHook(() => useForm());
+		const { result: form } = renderHook(() =>
+			useForm({
+				defaultValues: {
+					senderAddress: wallet.address(),
+				},
+			}),
+		);
 		const deeplinkProperties: any = {
 			amount: "1.2",
 			coin: "ark",
@@ -242,7 +272,13 @@ describe("SendTransfer", () => {
 	});
 
 	it("should render summary step", async () => {
-		const { result: form } = renderHook(() => useForm());
+		const { result: form } = renderHook(() =>
+			useForm({
+				defaultValues: {
+					senderAddress: wallet.address(),
+				},
+			}),
+		);
 		await wallet.synchroniser().identity();
 
 		const transaction = new DTO.ExtendedSignedTransactionData(

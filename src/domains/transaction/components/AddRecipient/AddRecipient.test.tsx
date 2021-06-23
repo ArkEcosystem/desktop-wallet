@@ -42,14 +42,18 @@ describe("AddRecipient", () => {
 	});
 
 	it("should render", async () => {
-		const { container } = await renderWithFormProvider(<AddRecipient profile={profile} assetSymbol="ARK" />);
+		const { container } = await renderWithFormProvider(
+			<AddRecipient profile={profile} wallet={wallet} assetSymbol="ARK" />,
+		);
 
 		// await waitFor(() => expect(getByTestId("SelectDropdown__input")).toHaveValue(""));
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render without recipients", async () => {
-		const { container } = await renderWithFormProvider(<AddRecipient profile={profile} recipients={undefined} />);
+		const { container } = await renderWithFormProvider(
+			<AddRecipient profile={profile} wallet={wallet} recipients={undefined} />,
+		);
 		expect(container).toMatchSnapshot();
 	});
 
@@ -60,7 +64,10 @@ describe("AddRecipient", () => {
 			recipientAddress: "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
 		};
 
-		const { getByTestId, container } = await renderWithFormProvider(<AddRecipient profile={profile} />, values);
+		const { getByTestId, container } = await renderWithFormProvider(
+			<AddRecipient profile={profile} wallet={wallet} />,
+			values,
+		);
 
 		await waitFor(() => {
 			expect(getByTestId("AddRecipient__amount")).toHaveValue("1");
@@ -72,7 +79,7 @@ describe("AddRecipient", () => {
 
 	it("should render with multiple recipients switch", async () => {
 		const { getByTestId, container } = await renderWithFormProvider(
-			<AddRecipient profile={profile} assetSymbol="ARK" showMultiPaymentOption />,
+			<AddRecipient profile={profile} wallet={wallet} assetSymbol="ARK" showMultiPaymentOption />,
 		);
 
 		await waitFor(() => expect(getByTestId("SelectDropdown__input")).toHaveValue(""));
@@ -81,7 +88,7 @@ describe("AddRecipient", () => {
 
 	it("should render without the single & multiple switch", async () => {
 		const { container } = await renderWithFormProvider(
-			<AddRecipient profile={profile} assetSymbol="ARK" showMultiPaymentOption={false} />,
+			<AddRecipient profile={profile} wallet={wallet} assetSymbol="ARK" showMultiPaymentOption={false} />,
 		);
 
 		expect(container).toMatchSnapshot();
@@ -91,7 +98,7 @@ describe("AddRecipient", () => {
 		const onChange = jest.fn();
 
 		const { getByTestId, form } = await renderWithFormProvider(
-			<AddRecipient profile={profile} assetSymbol="ARK" onChange={onChange} />,
+			<AddRecipient profile={profile} wallet={wallet} assetSymbol="ARK" onChange={onChange} />,
 		);
 
 		await act(async () => {
@@ -119,7 +126,7 @@ describe("AddRecipient", () => {
 
 	it("should select recipient", async () => {
 		const { getByTestId, getAllByTestId } = await renderWithFormProvider(
-			<AddRecipient profile={profile} assetSymbol="ARK" />,
+			<AddRecipient profile={profile} wallet={wallet} assetSymbol="ARK" />,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -143,7 +150,7 @@ describe("AddRecipient", () => {
 
 	it("should set available amount", async () => {
 		const { getByTestId, container, form } = await renderWithFormProvider(
-			<AddRecipient profile={profile} assetSymbol="ARK" />,
+			<AddRecipient profile={profile} wallet={wallet} assetSymbol="ARK" />,
 		);
 
 		const sendAll = getByTestId("AddRecipient__send-all");
@@ -167,7 +174,7 @@ describe("AddRecipient", () => {
 		);
 
 		const { getByTestId, container, form } = await renderWithFormProvider(
-			<AddRecipient profile={emptyProfile} assetSymbol="ARK" />,
+			<AddRecipient profile={emptyProfile} wallet={wallet} assetSymbol="ARK" />,
 		);
 
 		const sendAll = getByTestId("AddRecipient__send-all");
@@ -181,7 +188,7 @@ describe("AddRecipient", () => {
 
 	it("should toggle between single and multiple recipients", async () => {
 		const { getByText, queryByText } = await renderWithFormProvider(
-			<AddRecipient profile={profile} assetSymbol="ARK" />,
+			<AddRecipient profile={profile} wallet={wallet} assetSymbol="ARK" />,
 		);
 
 		const singleButton = getByText(transactionTranslations.SINGLE);
@@ -231,6 +238,7 @@ describe("AddRecipient", () => {
 				<FormProvider {...form}>
 					<AddRecipient
 						profile={profile}
+						wallet={wallet}
 						assetSymbol="ARK"
 						recipients={[
 							{
@@ -293,7 +301,7 @@ describe("AddRecipient", () => {
 		};
 
 		const { getByTestId } = await renderWithFormProvider(
-			<AddRecipient profile={profile} assetSymbol="ARK" />,
+			<AddRecipient profile={profile} wallet={wallet} assetSymbol="ARK" />,
 			values,
 		);
 
@@ -310,7 +318,7 @@ describe("AddRecipient", () => {
 		};
 
 		const { getByTestId } = await renderWithFormProvider(
-			<AddRecipient profile={profile} assetSymbol="ARK" />,
+			<AddRecipient profile={profile} wallet={wallet} assetSymbol="ARK" />,
 			values,
 		);
 
@@ -322,7 +330,7 @@ describe("AddRecipient", () => {
 
 	it("should show error for low balance", async () => {
 		const { getByTestId, getAllByTestId, form } = await renderWithFormProvider(
-			<AddRecipient profile={profile} assetSymbol="ARK" />,
+			<AddRecipient profile={profile} wallet={wallet} assetSymbol="ARK" />,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -356,7 +364,7 @@ describe("AddRecipient", () => {
 		const mockWalletBalance = jest.spyOn(wallet, "balance").mockReturnValue(0);
 
 		const { getByTestId, getAllByTestId, form } = await renderWithFormProvider(
-			<AddRecipient profile={profile} assetSymbol="ARK" />,
+			<AddRecipient profile={profile} wallet={wallet} assetSymbol="ARK" />,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -390,7 +398,7 @@ describe("AddRecipient", () => {
 
 	it("should show error for invalid address", async () => {
 		const { getByTestId, getAllByTestId, form } = await renderWithFormProvider(
-			<AddRecipient profile={profile} assetSymbol="ARK" />,
+			<AddRecipient profile={profile} wallet={wallet} assetSymbol="ARK" />,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -443,6 +451,7 @@ describe("AddRecipient", () => {
 				<FormProvider {...form}>
 					<AddRecipient
 						profile={profile}
+						wallet={wallet}
 						assetSymbol="ARK"
 						recipients={[
 							{
@@ -500,7 +509,7 @@ describe("AddRecipient", () => {
 
 			return (
 				<FormProvider {...form}>
-					<AddRecipient profile={profile} assetSymbol="ARK" recipients={[]} />
+					<AddRecipient profile={profile} wallet={wallet} assetSymbol="ARK" recipients={[]} />
 				</FormProvider>
 			);
 		};
@@ -531,7 +540,7 @@ describe("AddRecipient", () => {
 
 			return (
 				<FormProvider {...form}>
-					<AddRecipient profile={profile} assetSymbol="ARK" recipients={[]} />
+					<AddRecipient profile={profile} wallet={wallet} assetSymbol="ARK" recipients={[]} />
 				</FormProvider>
 			);
 		};
