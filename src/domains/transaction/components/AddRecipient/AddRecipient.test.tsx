@@ -42,14 +42,18 @@ describe("AddRecipient", () => {
 	});
 
 	it("should render", async () => {
-		const { container } = await renderWithFormProvider(<AddRecipient profile={profile} wallet={wallet} assetSymbol="ARK" />);
+		const { container } = await renderWithFormProvider(
+			<AddRecipient profile={profile} wallet={wallet} assetSymbol="ARK" />,
+		);
 
 		// await waitFor(() => expect(getByTestId("SelectDropdown__input")).toHaveValue(""));
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render without recipients", async () => {
-		const { container } = await renderWithFormProvider(<AddRecipient profile={profile} wallet={wallet} recipients={undefined} />);
+		const { container } = await renderWithFormProvider(
+			<AddRecipient profile={profile} wallet={wallet} recipients={undefined} />,
+		);
 		expect(container).toMatchSnapshot();
 	});
 
@@ -60,7 +64,10 @@ describe("AddRecipient", () => {
 			recipientAddress: "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
 		};
 
-		const { getByTestId, container } = await renderWithFormProvider(<AddRecipient profile={profile} wallet={wallet} />, values);
+		const { getByTestId, container } = await renderWithFormProvider(
+			<AddRecipient profile={profile} wallet={wallet} />,
+			values,
+		);
 
 		await waitFor(() => {
 			expect(getByTestId("AddRecipient__amount")).toHaveValue("1");
@@ -230,7 +237,8 @@ describe("AddRecipient", () => {
 			return (
 				<FormProvider {...form}>
 					<AddRecipient
-						profile={profile} wallet={wallet}
+						profile={profile}
+						wallet={wallet}
 						assetSymbol="ARK"
 						recipients={[
 							{
@@ -442,7 +450,8 @@ describe("AddRecipient", () => {
 			return (
 				<FormProvider {...form}>
 					<AddRecipient
-						profile={profile} wallet={wallet}
+						profile={profile}
+						wallet={wallet}
 						assetSymbol="ARK"
 						recipients={[
 							{
