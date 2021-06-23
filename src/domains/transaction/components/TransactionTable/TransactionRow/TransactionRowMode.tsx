@@ -22,7 +22,7 @@ export const BaseTransactionRowMode = ({ type, isSent, isReturn, recipient, icon
 	const { t } = useTranslation();
 
 	const { modeIconName, tooltipContent, modeCircleStyle } = useMemo(() => {
-		if (isReturn) {
+		if (isReturn && (type === "transfer" || type === "multiPayment")) {
 			return {
 				modeIconName: "Return",
 				tooltipContent: t("TRANSACTION.RETURN"),
