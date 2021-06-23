@@ -67,6 +67,7 @@ export const FormStep = ({
 						<AddRecipient
 							assetSymbol={senderWallet?.currency()}
 							profile={profile}
+							wallet={senderWallet}
 							recipients={getRecipients()}
 							showMultiPaymentOption={network?.allows(Enums.FeatureFlag.TransactionMultiPayment)}
 							disableMultiPaymentOption={senderWallet?.isLedger()}

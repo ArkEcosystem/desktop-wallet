@@ -20,7 +20,7 @@ import tw, { css, styled } from "twin.macro";
 import { AddRecipientProperties, ToggleButtonProperties } from "./AddRecipient.models";
 import { AddRecipientWrapper } from "./AddRecipient.styles";
 
-const TransferType = ({ isSingle, disableMultiple, onChange }: ToggleButtonProperties) => {
+const TransferType = ({ isSingle, disableMultiple, onChange, wallet }: ToggleButtonProperties) => {
 	const { t } = useTranslation();
 
 	return (
@@ -47,7 +47,7 @@ const TransferType = ({ isSingle, disableMultiple, onChange }: ToggleButtonPrope
 				</span>
 			</Tooltip>
 
-			<Tooltip content={t("TRANSACTION.RECIPIENTS_HELPTEXT", { count: 64 })}>
+			<Tooltip content={t("TRANSACTION.RECIPIENTS_HELPTEXT", { count: wallet.network().multiPaymentRecipients() })}>
 				<div className="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer questionmark bg-theme-primary-100 hover:bg-theme-primary-700 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 hover:text-white">
 					<Icon width={10} height={10} name="QuestionMark" />
 				</div>
@@ -76,6 +76,7 @@ const InputButtonStyled = styled.button(() => [
 export const AddRecipient = ({
 	assetSymbol,
 	profile,
+	wallet,
 	recipients,
 	showMultiPaymentOption,
 	disableMultiPaymentOption,
@@ -301,6 +302,7 @@ export const AddRecipient = ({
 
 				{showMultiPaymentOption && (
 					<TransferType
+						wallet={wallet}
 						isSingle={isSingle}
 						disableMultiple={disableMultiPaymentOption}
 						onChange={(isSingle) => setIsSingle(isSingle)}
