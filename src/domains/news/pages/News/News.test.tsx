@@ -4,7 +4,7 @@ import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
-import { fireEvent, getDefaultProfileId, renderWithRouter, screen,waitFor } from "testing-library";
+import { fireEvent, getDefaultProfileId, renderWithRouter, screen, waitFor } from "testing-library";
 import page1Fixture from "tests/fixtures/news/page-1.json";
 
 import { assets } from "../../data";
