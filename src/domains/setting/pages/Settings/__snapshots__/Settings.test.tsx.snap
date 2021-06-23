@@ -1031,7 +1031,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                       Personal Details
                     </h2>
                     <div
-                      class="group space-y-2 undefined"
+                      class="group space-y-2"
                     >
                       <span
                         class="text-sm font-semibold transition-colors duration-100 cursor-default text-theme-secondary-text group-hover:text-theme-primary-600"
@@ -1054,7 +1054,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                               src="data:image/png;base64,dGVzdCBtbmVtb25pYw=="
                             />
                             <button
-                              class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
+                              class="overflow-hidden absolute z-10 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                               data-testid="SelectProfileImage__upload-button"
                               type="button"
                             >
@@ -1074,7 +1074,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                             </button>
                           </div>
                           <button
-                            class="OriginalButton__StyledButton-sc-1y2wptt-0 gkZwMr flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
+                            class="OriginalButton__StyledButton-sc-1y2wptt-0 gkZwMr flex absolute z-20 -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
                             data-testid="SelectProfileImage__remove-button"
                             type="button"
                           >
@@ -2596,7 +2596,7 @@ exports[`Settings should render 1`] = `
                       Personal Details
                     </h2>
                     <div
-                      class="group space-y-2 undefined"
+                      class="group space-y-2"
                     >
                       <span
                         class="text-sm font-semibold transition-colors duration-100 cursor-default text-theme-secondary-text group-hover:text-theme-primary-600"
@@ -2624,7 +2624,7 @@ exports[`Settings should render 1`] = `
                               JO
                             </span>
                             <button
-                              class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
+                              class="overflow-hidden absolute z-10 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                               data-testid="SelectProfileImage__upload-button"
                               type="button"
                             >
@@ -7081,7 +7081,7 @@ exports[`Settings should update profile 1`] = `
                       Personal Details
                     </h2>
                     <div
-                      class="group space-y-2 undefined"
+                      class="group space-y-2"
                     >
                       <span
                         class="text-sm font-semibold transition-colors duration-100 cursor-default text-theme-secondary-text group-hover:text-theme-primary-600"
@@ -8626,7 +8626,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                       Personal Details
                     </h2>
                     <div
-                      class="group space-y-2 undefined"
+                      class="group space-y-2"
                     >
                       <span
                         class="text-sm font-semibold transition-colors duration-100 cursor-default text-theme-secondary-text group-hover:text-theme-primary-600"
@@ -8654,7 +8654,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                               T
                             </span>
                             <button
-                              class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
+                              class="overflow-hidden absolute z-10 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                               data-testid="SelectProfileImage__upload-button"
                               type="button"
                             >
@@ -10177,7 +10177,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                       Personal Details
                     </h2>
                     <div
-                      class="group space-y-2 undefined"
+                      class="group space-y-2"
                     >
                       <span
                         class="text-sm font-semibold transition-colors duration-100 cursor-default text-theme-secondary-text group-hover:text-theme-primary-600"

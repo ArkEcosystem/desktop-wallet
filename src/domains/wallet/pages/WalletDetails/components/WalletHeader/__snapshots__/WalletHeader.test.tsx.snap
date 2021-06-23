@@ -131,55 +131,43 @@ exports[`WalletHeader should render 1`] = `
         </span>
       </div>
       <div
-        class="flex items-center my-auto -space-x-2"
+        class="flex items-center my-auto space-x-3"
       >
         <button
           aria-busy="false"
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
+          class="WalletHeader__WalletHeaderButton-sc-1oc4bar-0 gKlulB"
           data-testid="WalletHeader__refresh"
           type="button"
         >
           <div
-            class="flex relative items-center space-x-2"
+            class="sc-bdfBwQ fPrsah"
+            height="1em"
+            style="animation-direction: reverse;"
+            width="1em"
           >
-            <div
-              class="sc-bdfBwQ fPrsah"
-              height="1em"
-              style="animation-direction: reverse;"
-              width="1em"
-            >
-              <svg>
-                reload.svg
-              </svg>
-            </div>
+            <svg>
+              reload.svg
+            </svg>
           </div>
         </button>
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
+          class="WalletHeader__WalletHeaderButton-sc-1oc4bar-0 gKlulB"
           data-testid="WalletHeader__star-button"
           type="button"
         >
           <div
-            class="flex relative items-center space-x-2"
+            class="sc-bdfBwQ fPrsah"
+            height="1em"
+            width="1em"
           >
-            <span
-              class=""
-            >
-              <div
-                class="sc-bdfBwQ fPrsah"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  star-outline.svg
-                </svg>
-              </div>
-            </span>
+            <svg>
+              star-outline.svg
+            </svg>
           </div>
         </button>
       </div>
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW my-auto ml-1"
+        class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW my-auto ml-3"
         data-testid="WalletHeader__send-button"
         type="button"
       >
@@ -362,55 +350,43 @@ exports[`WalletHeader should render amount for wallet in live network 1`] = `
         </span>
       </div>
       <div
-        class="flex items-center my-auto -space-x-2"
+        class="flex items-center my-auto space-x-3"
       >
         <button
           aria-busy="false"
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
+          class="WalletHeader__WalletHeaderButton-sc-1oc4bar-0 gKlulB"
           data-testid="WalletHeader__refresh"
           type="button"
         >
           <div
-            class="flex relative items-center space-x-2"
+            class="sc-bdfBwQ fPrsah"
+            height="1em"
+            style="animation-direction: reverse;"
+            width="1em"
           >
-            <div
-              class="sc-bdfBwQ fPrsah"
-              height="1em"
-              style="animation-direction: reverse;"
-              width="1em"
-            >
-              <svg>
-                reload.svg
-              </svg>
-            </div>
+            <svg>
+              reload.svg
+            </svg>
           </div>
         </button>
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
+          class="WalletHeader__WalletHeaderButton-sc-1oc4bar-0 gKlulB"
           data-testid="WalletHeader__star-button"
           type="button"
         >
           <div
-            class="flex relative items-center space-x-2"
+            class="sc-bdfBwQ fPrsah"
+            height="1em"
+            width="1em"
           >
-            <span
-              class=""
-            >
-              <div
-                class="sc-bdfBwQ fPrsah"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  star-outline.svg
-                </svg>
-              </div>
-            </span>
+            <svg>
+              star-outline.svg
+            </svg>
           </div>
         </button>
       </div>
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW my-auto ml-1"
+        class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW my-auto ml-3"
         data-testid="WalletHeader__send-button"
         type="button"
       >
@@ -605,55 +581,43 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
         </span>
       </div>
       <div
-        class="flex items-center my-auto -space-x-2"
+        class="flex items-center my-auto space-x-3"
       >
         <button
           aria-busy="false"
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
+          class="WalletHeader__WalletHeaderButton-sc-1oc4bar-0 gKlulB"
           data-testid="WalletHeader__refresh"
           type="button"
         >
           <div
-            class="flex relative items-center space-x-2"
+            class="sc-bdfBwQ fPrsah"
+            height="1em"
+            style="animation-direction: reverse;"
+            width="1em"
           >
-            <div
-              class="sc-bdfBwQ fPrsah"
-              height="1em"
-              style="animation-direction: reverse;"
-              width="1em"
-            >
-              <svg>
-                reload.svg
-              </svg>
-            </div>
+            <svg>
+              reload.svg
+            </svg>
           </div>
         </button>
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
+          class="WalletHeader__WalletHeaderButton-sc-1oc4bar-0 gKlulB"
           data-testid="WalletHeader__star-button"
           type="button"
         >
           <div
-            class="flex relative items-center space-x-2"
+            class="sc-bdfBwQ fPrsah"
+            height="1em"
+            width="1em"
           >
-            <span
-              class=""
-            >
-              <div
-                class="sc-bdfBwQ fPrsah"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  star-outline.svg
-                </svg>
-              </div>
-            </span>
+            <svg>
+              star-outline.svg
+            </svg>
           </div>
         </button>
       </div>
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW my-auto ml-1"
+        class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW my-auto ml-3"
         data-testid="WalletHeader__send-button"
         type="button"
       >
@@ -848,55 +812,43 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
         </span>
       </div>
       <div
-        class="flex items-center my-auto -space-x-2"
+        class="flex items-center my-auto space-x-3"
       >
         <button
           aria-busy="false"
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
+          class="WalletHeader__WalletHeaderButton-sc-1oc4bar-0 gKlulB"
           data-testid="WalletHeader__refresh"
           type="button"
         >
           <div
-            class="flex relative items-center space-x-2"
+            class="sc-bdfBwQ fPrsah"
+            height="1em"
+            style="animation-direction: reverse;"
+            width="1em"
           >
-            <div
-              class="sc-bdfBwQ fPrsah"
-              height="1em"
-              style="animation-direction: reverse;"
-              width="1em"
-            >
-              <svg>
-                reload.svg
-              </svg>
-            </div>
+            <svg>
+              reload.svg
+            </svg>
           </div>
         </button>
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
+          class="WalletHeader__WalletHeaderButton-sc-1oc4bar-0 gKlulB"
           data-testid="WalletHeader__star-button"
           type="button"
         >
           <div
-            class="flex relative items-center space-x-2"
+            class="sc-bdfBwQ fPrsah"
+            height="1em"
+            width="1em"
           >
-            <span
-              class=""
-            >
-              <div
-                class="sc-bdfBwQ fPrsah"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  star-outline.svg
-                </svg>
-              </div>
-            </span>
+            <svg>
+              star-outline.svg
+            </svg>
           </div>
         </button>
       </div>
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW my-auto ml-1"
+        class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW my-auto ml-3"
         data-testid="WalletHeader__send-button"
         type="button"
       >
@@ -1102,55 +1054,43 @@ exports[`WalletHeader should show modifiers 1`] = `
         </span>
       </div>
       <div
-        class="flex items-center my-auto -space-x-2"
+        class="flex items-center my-auto space-x-3"
       >
         <button
           aria-busy="false"
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
+          class="WalletHeader__WalletHeaderButton-sc-1oc4bar-0 gKlulB"
           data-testid="WalletHeader__refresh"
           type="button"
         >
           <div
-            class="flex relative items-center space-x-2"
+            class="sc-bdfBwQ fPrsah"
+            height="1em"
+            style="animation-direction: reverse;"
+            width="1em"
           >
-            <div
-              class="sc-bdfBwQ fPrsah"
-              height="1em"
-              style="animation-direction: reverse;"
-              width="1em"
-            >
-              <svg>
-                reload.svg
-              </svg>
-            </div>
+            <svg>
+              reload.svg
+            </svg>
           </div>
         </button>
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
+          class="WalletHeader__WalletHeaderButton-sc-1oc4bar-0 gKlulB"
           data-testid="WalletHeader__star-button"
           type="button"
         >
           <div
-            class="flex relative items-center space-x-2"
+            class="sc-bdfBwQ fPrsah"
+            height="1em"
+            width="1em"
           >
-            <span
-              class=""
-            >
-              <div
-                class="sc-bdfBwQ fPrsah"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  star-outline.svg
-                </svg>
-              </div>
-            </span>
+            <svg>
+              star-outline.svg
+            </svg>
           </div>
         </button>
       </div>
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW my-auto ml-1"
+        class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW my-auto ml-3"
         data-testid="WalletHeader__send-button"
         type="button"
       >
@@ -1327,55 +1267,43 @@ exports[`WalletHeader should use empty string in clipboard copy if publickey is 
         </span>
       </div>
       <div
-        class="flex items-center my-auto -space-x-2"
+        class="flex items-center my-auto space-x-3"
       >
         <button
           aria-busy="false"
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
+          class="WalletHeader__WalletHeaderButton-sc-1oc4bar-0 gKlulB"
           data-testid="WalletHeader__refresh"
           type="button"
         >
           <div
-            class="flex relative items-center space-x-2"
+            class="sc-bdfBwQ fPrsah"
+            height="1em"
+            style="animation-direction: reverse;"
+            width="1em"
           >
-            <div
-              class="sc-bdfBwQ fPrsah"
-              height="1em"
-              style="animation-direction: reverse;"
-              width="1em"
-            >
-              <svg>
-                reload.svg
-              </svg>
-            </div>
+            <svg>
+              reload.svg
+            </svg>
           </div>
         </button>
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
+          class="WalletHeader__WalletHeaderButton-sc-1oc4bar-0 gKlulB"
           data-testid="WalletHeader__star-button"
           type="button"
         >
           <div
-            class="flex relative items-center space-x-2"
+            class="sc-bdfBwQ fPrsah"
+            height="1em"
+            width="1em"
           >
-            <span
-              class=""
-            >
-              <div
-                class="sc-bdfBwQ fPrsah"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  star-outline.svg
-                </svg>
-              </div>
-            </span>
+            <svg>
+              star-outline.svg
+            </svg>
           </div>
         </button>
       </div>
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW my-auto ml-1"
+        class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW my-auto ml-3"
         data-testid="WalletHeader__send-button"
         type="button"
       >
