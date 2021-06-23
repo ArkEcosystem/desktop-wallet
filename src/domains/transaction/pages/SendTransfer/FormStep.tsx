@@ -1,6 +1,5 @@
 import { Enums, Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { InputCounter } from "app/components/Input";
@@ -31,12 +30,14 @@ export const FormStep = ({
 
 	const senderWallet = profile.wallets().findByAddress(senderAddress);
 
+	console.log({ senderAddress, senderWallet });
+
 	const getRecipients = () => {
 		if (deeplinkProps?.recipient && deeplinkProps?.amount) {
 			return [
 				{
 					address: deeplinkProps.recipient,
-					amount: BigNumber.make(deeplinkProps.amount),
+					amount: senderWallet?.coin().bigNumber().make(deeplinkProps.amount),
 				},
 			];
 		}
