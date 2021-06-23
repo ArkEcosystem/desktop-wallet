@@ -1,3 +1,4 @@
+import { Signatories } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { useCallback } from "react";
 
@@ -8,8 +9,9 @@ interface SignInput {
 	wif?: string;
 	privateKey?: string;
 }
-export const useWalletSignatory = (wallet: ProfileContracts.IReadWriteWallet) => {
-	const sign = useCallback(
+
+export const useWalletSignatory = (wallet: ProfileContracts.IReadWriteWallet): { sign: ({ mnemonic, secondMnemonic, encryptionPassword, wif, privateKey }: SignInput) => Promise<Signatories.Signatory>; } => ({
+	sign: useCallback(
 		async ({ mnemonic, secondMnemonic, encryptionPassword, wif, privateKey }: SignInput) => {
 			if (mnemonic && secondMnemonic) {
 				return wallet.signatory().secondaryMnemonic(mnemonic, secondMnemonic);
@@ -38,6 +40,5 @@ export const useWalletSignatory = (wallet: ProfileContracts.IReadWriteWallet) =>
 			throw new Error("Signing failed. No mnemonic or encryption password provided");
 		},
 		[wallet],
-	);
-	return { sign };
-};
+	),
+});
