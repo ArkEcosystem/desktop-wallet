@@ -36,16 +36,18 @@ export const News = ({ itemsPerPage }: Properties) => {
 	const [totalCount, setTotalCount] = useState(0);
 	const [currentPage, setCurrentPage] = useState(1);
 
-	let initialFilters: NewsFilters;
+	const [{ categories, coins, searchQuery }, setFilters] = useState<NewsFilters>(() => {
+		let initialFilters: NewsFilters;
 
-	try {
-		// @ts-ignore
-		initialFilters = JSON.parse(activeProfile.settings().get(Contracts.ProfileSetting.NewsFilters));
-	} catch {
-		initialFilters = { categories: [], coins: ["ARK"] };
-	}
+		try {
+			// @ts-ignore
+			initialFilters = JSON.parse(activeProfile.settings().get(Contracts.ProfileSetting.NewsFilters));
+		} catch {
+			initialFilters = { categories: [], coins: ["ARK"] };
+		}
 
-	const [{ categories, coins, searchQuery }, setFilters] = useState<NewsFilters>(initialFilters);
+		return initialFilters;
+	});
 
 	const [news, setNews] = useState<BlockfolioSignal[]>([]);
 
