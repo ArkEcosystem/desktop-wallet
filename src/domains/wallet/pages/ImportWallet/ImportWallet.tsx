@@ -115,7 +115,7 @@ export const ImportWallet = () => {
 
 		await persist();
 
-        return network.importMethods()[type];
+		return network.importMethods()[type];
 	};
 
 	const encryptMnemonic = async () => {
