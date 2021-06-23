@@ -47,7 +47,7 @@ const TransferType = ({ isSingle, disableMultiple, onChange, wallet }: ToggleBut
 				</span>
 			</Tooltip>
 
-			<Tooltip content={t("TRANSACTION.RECIPIENTS_HELPTEXT", { count: wallet.network().multiPaymentRecipients() })}>
+			<Tooltip content={t("TRANSACTION.RECIPIENTS_HELPTEXT", { count: wallet?.network().multiPaymentRecipients() })}>
 				<div className="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer questionmark bg-theme-primary-100 hover:bg-theme-primary-700 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 hover:text-white">
 					<Icon width={10} height={10} name="QuestionMark" />
 				</div>

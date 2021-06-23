@@ -7,7 +7,7 @@ export interface AddRecipientProperties {
 	multipleLabel?: string;
 	recipients?: RecipientListItem[];
 	profile: Contracts.IProfile;
-	wallet: Contracts.IReadWriteWallet;
+	wallet?: Contracts.IReadWriteWallet;
 	labelText?: string;
 	helpText?: string;
 	showMultiPaymentOption?: boolean;
@@ -17,7 +17,7 @@ export interface AddRecipientProperties {
 }
 
 export interface ToggleButtonProperties {
-	wallet: Contracts.IReadWriteWallet;
+	wallet?: Contracts.IReadWriteWallet;
 	isSingle: boolean;
 	disableMultiple?: boolean;
 	onChange: (isSingle: boolean) => void;

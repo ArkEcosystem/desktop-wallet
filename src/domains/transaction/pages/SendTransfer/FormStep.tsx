@@ -30,8 +30,6 @@ export const FormStep = ({
 
 	const senderWallet = profile.wallets().findByAddress(senderAddress);
 
-	console.log({ senderAddress, senderWallet });
-
 	const getRecipients = () => {
 		if (deeplinkProps?.recipient && deeplinkProps?.amount) {
 			return [
