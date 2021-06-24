@@ -23,10 +23,10 @@ interface NewsFilters {
 }
 
 interface Properties {
-	itemsPerPage?: number;
+	itemsPerPage: number;
 }
 
-export const News = ({ itemsPerPage }: Properties) => {
+export const News = ({ itemsPerPage = 15 }: Properties) => {
 	const activeProfile = useActiveProfile();
 	const { persist } = useEnvironmentContext();
 
@@ -158,8 +158,4 @@ export const News = ({ itemsPerPage }: Properties) => {
 			</Section>
 		</Page>
 	);
-};
-
-News.defaultProps = {
-	itemsPerPage: 15,
 };
