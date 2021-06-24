@@ -138,6 +138,8 @@ export const SendRegistration = () => {
 			setTransaction(transaction);
 			handleNext();
 		} catch (error) {
+			console.log(error);
+
 			if (isMnemonicError(error)) {
 				setValue("mnemonic", "");
 				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });

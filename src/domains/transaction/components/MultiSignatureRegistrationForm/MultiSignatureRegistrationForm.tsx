@@ -93,13 +93,7 @@ const signTransaction = async ({ env, form, profile }: SendRegistrationSignOptio
 	await senderWallet!.transaction().addSignature(
 		transactionId,
 		// eslint-disable-next-line react-hooks/rules-of-hooks
-		await useWalletSignatory(senderWallet!).sign({
-			mnemonic,
-			secondMnemonic: undefined,
-			encryptionPassword,
-			wif,
-			privateKey,
-		}),
+		(await senderWallet?.signatory().mnemonic(mnemonic))!,
 	);
 
 	await env.persist();
