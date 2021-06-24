@@ -121,6 +121,7 @@ export const SendRegistration = () => {
 
 			const signatory = await sign({
 				mnemonic,
+				/* istanbul ignore next */
 				secondMnemonic: registrationType === "secondSignature" ? undefined : secondMnemonic,
 				encryptionPassword,
 				wif,
