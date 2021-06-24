@@ -2,6 +2,7 @@ import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail, TransactionFee } from "domains/transaction/components/TransactionDetail";
+import { useWalletSignatory } from "domains/transaction/hooks";
 import {
 	ExtendedSignedTransactionData,
 	SendRegistrationComponent,
@@ -54,12 +55,10 @@ const signTransaction = async ({ env, form, profile }: SendRegistrationSignOptio
 	const { clearErrors, getValues } = form;
 
 	clearErrors("mnemonic");
-	const { fee, minParticipants, participants, senderAddress } = getValues();
+	const { fee, minParticipants, participants, senderAddress, mnemonic, encryptionPassword, wif, privateKey } = getValues();
 	const senderWallet = profile.wallets().findByAddress(senderAddress);
 
 	const publicKeys = (participants as Participant[]).map((item) => item.publicKey);
-
-	const signatory = await senderWallet!.coin().signatory().mnemonic("MNEMONIC FROM FORM");
 
 	const uuid = await senderWallet!.transaction().signMultiSignature({
 		nonce: senderWallet!.nonce().plus(1).toString(),
@@ -82,17 +81,25 @@ const signTransaction = async ({ env, form, profile }: SendRegistrationSignOptio
 	const transactionId = accepted[0];
 
 	await senderWallet!.transaction().sync();
-	await senderWallet!.transaction().addSignature(transactionId, signatory); // use mnemonic or wif signatory
+	await senderWallet!.transaction().addSignature(
+		transactionId,
+		// eslint-disable-next-line react-hooks/rules-of-hooks
+		await useWalletSignatory(senderWallet!).sign({
+			mnemonic,
+			secondMnemonic: undefined,
+			encryptionPassword,
+			wif,
+			privateKey,
+		})
+	);
 
 	await env.persist();
 
 	const transaction: ExtendedSignedTransactionData = senderWallet!.transaction().transaction(transactionId);
-	console.log(transaction.data());
-	console.log(transaction.toBroadcast());
 
-	// transaction.generatedAddress = (
-	// 	await senderWallet!.coin().address().fromMultiSignature(minParticipants, publicKeys)
-	// ).address;
+	transaction.generatedAddress = (
+		await senderWallet!.coin().address().fromMultiSignature(minParticipants, publicKeys)
+	).address;
 	return transaction;
 };
 
