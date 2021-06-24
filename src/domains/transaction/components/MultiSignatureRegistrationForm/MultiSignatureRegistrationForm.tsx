@@ -55,7 +55,16 @@ const signTransaction = async ({ env, form, profile }: SendRegistrationSignOptio
 	const { clearErrors, getValues } = form;
 
 	clearErrors("mnemonic");
-	const { fee, minParticipants, participants, senderAddress, mnemonic, encryptionPassword, wif, privateKey } = getValues();
+	const {
+		fee,
+		minParticipants,
+		participants,
+		senderAddress,
+		mnemonic,
+		encryptionPassword,
+		wif,
+		privateKey,
+	} = getValues();
 	const senderWallet = profile.wallets().findByAddress(senderAddress);
 
 	const publicKeys = (participants as Participant[]).map((item) => item.publicKey);
@@ -90,7 +99,7 @@ const signTransaction = async ({ env, form, profile }: SendRegistrationSignOptio
 			encryptionPassword,
 			wif,
 			privateKey,
-		})
+		}),
 	);
 
 	await env.persist();
