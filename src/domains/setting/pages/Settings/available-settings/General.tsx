@@ -25,7 +25,7 @@ export const General = ({ formConfig, onSuccess }: SettingsProperties) => {
 	const reloadPath = useReloadPath();
 	const { persist } = useEnvironmentContext();
 	const { setProfileTheme } = useTheme();
-	const { monitorIdleTime } = useAutomaticSignout();
+	const { updateIdleTime } = useAutomaticSignout();
 
 	const activeProfile = useActiveProfile();
 	const { syncExchangeRates } = useProfileJobs(activeProfile);
@@ -214,11 +214,7 @@ export const General = ({ formConfig, onSuccess }: SettingsProperties) => {
 
 		setScreenshotProtection(isScreenshotProtection);
 
-		monitorIdleTime({
-			profile: activeProfile,
-			onTimeout: () => history.push("/"),
-			reset: true,
-		});
+		updateIdleTime(activeProfile);
 
 		setProfileTheme(activeProfile);
 		await syncExchangeRates();

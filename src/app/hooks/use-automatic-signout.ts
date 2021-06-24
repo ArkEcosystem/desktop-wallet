@@ -3,9 +3,8 @@ import { useConfiguration } from "app/contexts";
 import { isIdle } from "utils/electron-utils";
 
 interface HandlerParameters {
-	profile?: Contracts.IProfile;
-	onTimeout?: CallbackFunction;
-	reset?: boolean;
+	profile: Contracts.IProfile;
+	onTimeout: CallbackFunction;
 }
 
 type CallbackFunction = () => void;
@@ -13,12 +12,21 @@ type CallbackFunction = () => void;
 export const useAutomaticSignout = () => {
 	const { activityState, setConfiguration } = useConfiguration();
 
-	const setActivityState = (callback: CallbackFunction, interval: number, threshold: number) => {
+	const setActivityState = (onTimeout: CallbackFunction, threshold: number) => {
 		clearActivityState();
 
-		const intervalId = +setInterval(callback, interval);
+		const callback = () => {
+			if (!isIdle(threshold)) {
+				return;
+			}
 
-		setConfiguration({ activityState: { intervalId, threshold } });
+			onTimeout();
+			clearActivityState();
+		};
+
+		const intervalId = +setInterval(callback, 15 * 1000);
+
+		setConfiguration({ activityState: { intervalId, onTimeout, threshold } });
 	};
 
 	const clearActivityState = () => {
@@ -26,37 +34,29 @@ export const useAutomaticSignout = () => {
 		setConfiguration({ activityState: {} });
 	};
 
-	const monitorIdleTime = ({ profile, onTimeout, reset }: HandlerParameters) => {
-		if (!profile || !profile.status().isRestored()) {
+	const updateIdleTime = (profile: Contracts.IProfile) => {
+		const idleThreshold =
+			(profile.settings().get(Contracts.ProfileSetting.AutomaticSignOutPeriod, 1) as number) * 60;
+
+		setActivityState(activityState.onTimeout, idleThreshold);
+	};
+
+	const monitorIdleTime = ({ profile, onTimeout }: HandlerParameters) => {
+		if (!profile.status().isRestored()) {
 			clearActivityState();
 			return;
 		}
 
-		if (reset) {
-			clearInterval(activityState.intervalId);
-		}
-
 		// Already counting
-		if (activityState.intervalId && !reset) {
+		if (activityState.intervalId) {
 			return;
 		}
 
 		const idleThreshold =
 			(profile.settings().get(Contracts.ProfileSetting.AutomaticSignOutPeriod, 1) as number) * 60;
 
-		setActivityState(
-			() => {
-				if (!isIdle(idleThreshold)) {
-					return;
-				}
-
-				onTimeout?.();
-				clearActivityState();
-			},
-			5 * 1000,
-			idleThreshold,
-		);
+		setActivityState(onTimeout, idleThreshold);
 	};
 
-	return { monitorIdleTime, resetAutomaticSignout: clearActivityState };
+	return { monitorIdleTime, resetAutomaticSignout: clearActivityState, updateIdleTime };
 };
