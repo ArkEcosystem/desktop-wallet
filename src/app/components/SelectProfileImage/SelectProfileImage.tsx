@@ -1,10 +1,12 @@
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
+import { useFiles } from "app/hooks/use-files";
+import { toasts } from "app/services";
 import cn from "classnames";
+import { fromBuffer } from "file-type";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import tw, { styled } from "twin.macro";
-import { openFile } from "utils/electron-utils";
 
 interface SelectProfileImageProperties {
 	className?: string;
@@ -44,18 +46,30 @@ const ProfileImageStyled = styled.div`
 	}
 `;
 
+const ALLOWED_EXTENSIONS = ["png", "jpg", "jpeg", "bmp"];
+
 export const SelectProfileImage = ({ className, value, name, showLabel, onSelect }: SelectProfileImageProperties) => {
 	const { t } = useTranslation();
+	const { openFile } = useFiles();
 
 	const handleUploadImage = async () => {
-		const raw = await openFile(null, {
-			filters: { name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] },
-			encoding: "base64",
+		const file = await openFile({
+			extensions: ALLOWED_EXTENSIONS,
 		});
 
-		if (raw) {
-			onSelect(`data:image/png;base64,${raw}`);
+		if (!file) {
+			return;
 		}
+
+		const type = await fromBuffer(file.content);
+
+		if (!ALLOWED_EXTENSIONS.includes(type?.ext ?? "")) {
+			toasts.error(t("COMMON.ERRORS.INVALID_IMAGE"));
+			return;
+		}
+
+		const imageBase64 = file.content.toString("base64");
+		onSelect(`data:image/png;base64,${imageBase64}`);
 	};
 
 	const isSvg = useMemo(() => value?.endsWith("</svg>"), [value]);

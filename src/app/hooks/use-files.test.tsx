@@ -1,20 +1,24 @@
 import { act, renderHook } from "@testing-library/react-hooks";
 import electron from "electron";
+import os from "os";
 
 import { useFiles } from "./use-files";
 
 describe("useFiles", () => {
 	it("should read file contents", () => {
 		const { result } = renderHook(() => useFiles());
-		expect(result.current.readFileContents("filePath")).toEqual({
-			content: "test mnemonic",
-			extension: "",
-			name: "filePath",
-		});
+
+		const { content, name, extension } = result.current.readFileContents("filePath");
+
+		expect(extension).toEqual("");
+		expect(name).toEqual("filePath");
+
+		expect(content).toBeInstanceOf(Buffer);
+		expect(content.toString()).toEqual("test mnemonic");
 	});
 
 	it("should open file", () => {
-		//@ts-ignore
+		// @ts-ignore
 		const showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
 			filePaths: ["filePath"],
 		}));
@@ -26,22 +30,22 @@ describe("useFiles", () => {
 		});
 
 		expect(showOpenDialogMock).toHaveBeenCalledWith({
+			defaultPath: os.homedir(),
 			filters: [{ extensions: ["json"], name: "" }],
 			properties: ["openFile"],
 		});
 
-		//@ts-ignore
+		// @ts-ignore
 		const showOpenDialogEmptyFilesMock = jest
 			.spyOn(electron.remote.dialog, "showOpenDialog")
-			.mockImplementation(() => ({
-				filePaths: [],
-			}));
+			.mockImplementation(() => ({ filePaths: [] } as any));
 
 		act(() => {
 			result.current.openFile({ extensions: ["json"] });
 		});
 
 		expect(showOpenDialogMock).toHaveBeenCalledWith({
+			defaultPath: os.homedir(),
 			filters: [{ extensions: ["json"], name: "" }],
 			properties: ["openFile"],
 		});
