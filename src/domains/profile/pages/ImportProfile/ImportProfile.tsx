@@ -3,6 +3,7 @@ import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
+import { ReadableFile } from "app/hooks/use-files";
 import { ImportError } from "domains/profile/pages/ImportProfile/ErrorStep";
 import { ProcessingImport } from "domains/profile/pages/ImportProfile/ProcessingImportStep";
 import { ImportProfileForm } from "domains/profile/pages/ImportProfile/ProfileFormStep";
@@ -11,8 +12,6 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-import { ImportFile } from "./models";
-
 export const ImportProfile = () => {
 	const { env, persist } = useEnvironmentContext();
 	const { t } = useTranslation();
@@ -20,11 +19,11 @@ export const ImportProfile = () => {
 
 	const [activeTab, setActiveTab] = useState(1);
 	const [fileFormat, setFileFormat] = useState(".dwe");
-	const [selectedFile, setSelectedFile] = useState<ImportFile>();
+	const [selectedFile, setSelectedFile] = useState<ReadableFile>();
 	const [password, setPassword] = useState<string>();
 	const [profile, setProfile] = useState<Contracts.IProfile>();
 
-	const handleSelectedFile = (file: ImportFile) => {
+	const handleSelectedFile = (file: ReadableFile) => {
 		setSelectedFile(file);
 		setActiveTab(2);
 	};

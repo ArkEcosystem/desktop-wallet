@@ -14,7 +14,7 @@ let showOpenDialogMock: jest.SpyInstance;
 const showOpenDialogParameters = {
 	defaultPath: os.homedir(),
 	properties: ["openFile"],
-	filters: [{ name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] }],
+	filters: [{ name: "", extensions: ["png", "jpg", "jpeg", "bmp"] }],
 };
 
 jest.mock("fs", () => ({

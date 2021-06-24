@@ -90,11 +90,11 @@ export const useProfileImport = ({ env }: { env: Environment }) => {
 		}
 
 		if (file?.extension === ".dwe") {
-			return await importProfileFromDwe(file.content, password);
+			return await importProfileFromDwe(file.content.toString(), password);
 		}
 
 		if (file?.extension === ".json") {
-			return await importLegacyProfile(file.content);
+			return await importLegacyProfile(file.content.toString());
 		}
 	};
 
