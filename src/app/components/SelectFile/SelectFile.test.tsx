@@ -1,4 +1,5 @@
 import electron from "electron";
+import os from "os";
 import React from "react";
 import { act, fireEvent, render, waitFor } from "utils/testing-library";
 
@@ -38,6 +39,7 @@ describe("SelectFile", () => {
 		});
 
 		expect(showOpenDialogMock).toHaveBeenCalledWith({
+			defaultPath: os.homedir(),
 			filters: [{ extensions: ["json"], name: "" }],
 			properties: ["openFile"],
 		});

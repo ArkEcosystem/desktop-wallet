@@ -20,7 +20,7 @@ let showOpenDialogMock: jest.SpyInstance;
 const showOpenDialogParameters = {
 	defaultPath: os.homedir(),
 	properties: ["openFile"],
-	filters: [{ name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] }],
+	filters: [{ name: "", extensions: ["png", "jpg", "jpeg", "bmp"] }],
 };
 
 const baseSettings = {
@@ -54,6 +54,8 @@ jest.mock("fs", () => ({
 	readFileSync: jest.fn(() => "avatarImage"),
 }));
 
+const BASE64_REGEX = /(?:[\d+/A-Za-z]{4})*(?:[\d+/A-Za-z]{2}==|[\d+/A-Za-z]{3}=)?/g;
+
 describe("CreateProfile", () => {
 	beforeAll(() => {
 		env.reset({ coins: { ARK }, httpClient, storage: new StubStorage() });
@@ -61,7 +63,7 @@ describe("CreateProfile", () => {
 
 	beforeEach(() => {
 		showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
-			filePaths: ["filePath"],
+			filePaths: ["banner.png"],
 		}));
 	});
 
@@ -105,7 +107,7 @@ describe("CreateProfile", () => {
 		expect(profiles[0].name()).toEqual("test profile 1");
 		expect(profiles[0].settings().all()).toEqual({
 			...baseSettings,
-			AVATAR: "data:image/png;base64,dGVzdCBtbmVtb25pYw==",
+			AVATAR: expect.stringMatching(BASE64_REGEX),
 			NAME: "test profile 1",
 			THEME: "dark",
 		});
@@ -123,7 +125,7 @@ describe("CreateProfile", () => {
 		expect(profiles[1].name()).toEqual("test profile 2");
 		expect(profiles[1].settings().all()).toEqual({
 			...baseSettings,
-			AVATAR: "data:image/png;base64,dGVzdCBtbmVtb25pYw==",
+			AVATAR: expect.stringMatching(BASE64_REGEX),
 			NAME: "test profile 2",
 			THEME: "light",
 		});

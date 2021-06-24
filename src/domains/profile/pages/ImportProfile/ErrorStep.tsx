@@ -1,13 +1,12 @@
 import { Button } from "app/components/Button";
 import { Header } from "app/components/Header";
+import { ReadableFile } from "app/hooks/use-files";
 import { FilePreview } from "domains/profile/components/FilePreview";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { ImportFile } from "./models";
-
 interface ImportErrorProperties {
-	file: ImportFile;
+	file: ReadableFile;
 	onRetry?: () => void;
 	onBack?: () => void;
 }

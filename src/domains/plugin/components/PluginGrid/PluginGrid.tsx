@@ -32,9 +32,9 @@ export const PluginGrid = ({
 	className,
 	emptyMessage,
 	isLoading,
-	itemsPerPage,
+	itemsPerPage = 15,
 	plugins,
-	showPagination,
+	showPagination = true,
 	skeletonsLimit = 3,
 	updatingStats,
 	onDelete,
@@ -140,7 +140,7 @@ export const PluginGrid = ({
 		);
 	}
 
-	const pagePlugins = chunk(plugins, itemsPerPage!)[currentPage - 1];
+	const pagePlugins = chunk(plugins, itemsPerPage)[currentPage - 1];
 
 	return (
 		<div data-testid="PluginGrid">
@@ -171,9 +171,4 @@ export const PluginGrid = ({
 			)}
 		</div>
 	);
-};
-
-PluginGrid.defaultProps = {
-	itemsPerPage: 15,
-	showPagination: true,
 };

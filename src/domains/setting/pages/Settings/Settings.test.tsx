@@ -29,7 +29,7 @@ let showOpenDialogMock: jest.SpyInstance;
 const showOpenDialogParameters = {
 	defaultPath: os.homedir(),
 	properties: ["openFile"],
-	filters: [{ name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] }],
+	filters: [{ name: "", extensions: ["png", "jpg", "jpeg", "bmp"] }],
 };
 
 jest.mock("fs", () => ({
@@ -148,7 +148,7 @@ describe("Settings", () => {
 
 		// Upload avatar image
 		showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
-			filePaths: ["filePath"],
+			filePaths: ["banner.png"],
 		}));
 
 		await act(async () => {
@@ -194,7 +194,7 @@ describe("Settings", () => {
 
 		// Upload avatar image
 		showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
-			filePaths: ["filePath"],
+			filePaths: ["banner.png"],
 		}));
 
 		await act(async () => {
