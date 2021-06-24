@@ -14,6 +14,7 @@ const ConfigurationContext = React.createContext<any>(undefined);
 
 export const ConfigurationProvider = ({ children, defaultConfiguration }: Properties) => {
 	const [configuration, setConfig] = React.useState<any>({
+		activityState: {},
 		// Domain specific configuration defaults
 		dashboard: null,
 		// Initial sync state of profile. Handled in profile synchronizer.

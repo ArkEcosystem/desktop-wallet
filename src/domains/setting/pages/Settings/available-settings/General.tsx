@@ -9,7 +9,7 @@ import { Select } from "app/components/SelectDropdown";
 import { SelectProfileImage } from "app/components/SelectProfileImage";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useProfileJobs, useReloadPath, useValidation } from "app/hooks";
+import { useActiveProfile, useAutomaticSignout, useProfileJobs, useReloadPath, useValidation } from "app/hooks";
 import { useTheme } from "app/hooks/use-theme";
 import { PlatformSdkChoices } from "data";
 import { ResetProfile } from "domains/profile/components/ResetProfile";
@@ -25,6 +25,7 @@ export const General = ({ formConfig, onSuccess }: SettingsProperties) => {
 	const reloadPath = useReloadPath();
 	const { persist } = useEnvironmentContext();
 	const { setProfileTheme } = useTheme();
+	const { monitorIdleTime } = useAutomaticSignout();
 
 	const activeProfile = useActiveProfile();
 	const { syncExchangeRates } = useProfileJobs(activeProfile);
@@ -212,6 +213,12 @@ export const General = ({ formConfig, onSuccess }: SettingsProperties) => {
 		}
 
 		setScreenshotProtection(isScreenshotProtection);
+
+		monitorIdleTime({
+			profile: activeProfile,
+			onTimeout: () => history.push("/"),
+			reset: true,
+		});
 
 		setProfileTheme(activeProfile);
 		await syncExchangeRates();

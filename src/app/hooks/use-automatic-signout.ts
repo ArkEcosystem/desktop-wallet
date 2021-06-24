@@ -1,42 +1,43 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { useRef } from "react";
+import { useConfiguration } from "app/contexts";
 import { isIdle } from "utils/electron-utils";
-
-interface ActivityState {
-	intervalId?: number;
-	threshold?: number;
-}
 
 interface HandlerParameters {
 	profile?: Contracts.IProfile;
 	onTimeout?: CallbackFunction;
+	reset?: boolean;
 }
 
 type CallbackFunction = () => void;
 
 export const useAutomaticSignout = () => {
-	const activityState = useRef<ActivityState>({});
+	const { activityState, setConfiguration } = useConfiguration();
 
 	const setActivityState = (callback: CallbackFunction, interval: number, threshold: number) => {
 		clearActivityState();
 
 		const intervalId = +setInterval(callback, interval);
-		activityState.current = { intervalId, threshold };
+
+		setConfiguration({ activityState: { intervalId, threshold } });
 	};
 
 	const clearActivityState = () => {
-		clearInterval(activityState.current.intervalId);
-		activityState.current = {};
+		clearInterval(activityState.intervalId);
+		setConfiguration({ activityState: {} });
 	};
 
-	const monitorIdleTime = ({ profile, onTimeout }: HandlerParameters) => {
+	const monitorIdleTime = ({ profile, onTimeout, reset }: HandlerParameters) => {
 		if (!profile || !profile.status().isRestored()) {
 			clearActivityState();
 			return;
 		}
 
+		if (reset) {
+			clearInterval(activityState.intervalId);
+		}
+
 		// Already counting
-		if (activityState.current.intervalId) {
+		if (activityState.intervalId && !reset) {
 			return;
 		}
 
@@ -52,10 +53,10 @@ export const useAutomaticSignout = () => {
 				onTimeout?.();
 				clearActivityState();
 			},
-			15 * 1000,
+			5 * 1000,
 			idleThreshold,
 		);
 	};
 
-	return { monitorIdleTime, resetAutomatiSignout: clearActivityState };
+	return { monitorIdleTime, resetAutomaticSignout: clearActivityState };
 };

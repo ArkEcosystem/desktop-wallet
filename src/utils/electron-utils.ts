@@ -79,7 +79,10 @@ const openExternal = (value: string) => {
 	ipcRenderer.send("open-external", url.toString());
 };
 
-const isIdle = (idleTreshold: number) => electron.remote.powerMonitor.getSystemIdleTime() >= idleTreshold;
+const isIdle = (idleTreshold: number) => {
+	console.log(electron.remote.powerMonitor.getSystemIdleTime());
+	return electron.remote.powerMonitor.getSystemIdleTime() >= idleTreshold;
+};
 
 export {
 	isDevelopment as isDev,

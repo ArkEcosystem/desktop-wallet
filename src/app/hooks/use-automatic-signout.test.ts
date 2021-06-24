@@ -87,6 +87,6 @@ describe("useAutomaticSignout", () => {
 
 		const { result } = renderHook(() => useAutomaticSignout());
 
-		expect(result.current.resetAutomatiSignout()).toBeUndefined();
+		expect(result.current.resetAutomaticSignout()).toBeUndefined();
 	});
 });

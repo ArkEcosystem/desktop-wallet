@@ -237,7 +237,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 	const { allJobs } = useProfileJobs(profile);
 	const { start, stop, runAll } = useSynchronizer(allJobs);
 	const { setProfileTheme, resetTheme } = useTheme();
-	const { monitorIdleTime, resetAutomatiSignout } = useAutomaticSignout();
+	const { monitorIdleTime, resetAutomaticSignout } = useAutomaticSignout();
 	const { setScreenshotProtection } = useScreenshotProtection();
 	const history = useHistory();
 
@@ -248,7 +248,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 			}
 
 			resetTheme();
-			resetAutomatiSignout();
+			resetAutomaticSignout();
 			resetStatuses(env.profiles().values());
 
 			stop({ clearTimers: true });
@@ -322,7 +322,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 		status,
 		onProfileRestoreError,
 		monitorIdleTime,
-		resetAutomatiSignout,
+		resetAutomaticSignout,
 		resetStatuses,
 		history,
 		setScreenshotProtection,
