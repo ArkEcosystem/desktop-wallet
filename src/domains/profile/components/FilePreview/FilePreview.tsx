@@ -1,18 +1,18 @@
 import { Icon } from "app/components/Icon";
 import { Spinner } from "app/components/Spinner";
 import { TruncateMiddle } from "app/components/TruncateMiddle";
-import { ImportFile } from "domains/profile/pages/ImportProfile/models";
+import { ReadableFile } from "app/hooks/use-files";
 import React from "react";
 
 type FilePreviewVariant = "success" | "loading" | "danger";
 
 interface FilePreviewProperties {
-	file?: ImportFile;
+	file?: ReadableFile;
 	variant?: FilePreviewVariant;
 	useBorders?: boolean;
 }
 
-export const FilePreviewPlain = ({ file, variant }: { file: ImportFile; variant?: FilePreviewVariant }) => {
+export const FilePreviewPlain = ({ file, variant }: { file: ReadableFile; variant?: FilePreviewVariant }) => {
 	const fileTypeIcon: Record<string, string> = {
 		".dwe": "DweFile",
 		".json": "JsonFile",

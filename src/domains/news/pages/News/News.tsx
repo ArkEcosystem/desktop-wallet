@@ -23,10 +23,10 @@ interface NewsFilters {
 }
 
 interface Properties {
-	itemsPerPage?: number;
+	itemsPerPage: number;
 }
 
-export const News = ({ itemsPerPage }: Properties) => {
+export const News = ({ itemsPerPage = 15 }: Properties) => {
 	const activeProfile = useActiveProfile();
 	const { persist } = useEnvironmentContext();
 
@@ -36,9 +36,18 @@ export const News = ({ itemsPerPage }: Properties) => {
 	const [totalCount, setTotalCount] = useState(0);
 	const [currentPage, setCurrentPage] = useState(1);
 
-	const [{ categories, coins, searchQuery }, setFilters] = useState<NewsFilters>(
-		activeProfile.settings().get(Contracts.ProfileSetting.NewsFilters) || { categories: [], coins: ["ARK"] },
-	);
+	const [{ categories, coins, searchQuery }, setFilters] = useState<NewsFilters>(() => {
+		let initialFilters: NewsFilters;
+
+		try {
+			// @ts-ignore
+			initialFilters = JSON.parse(activeProfile.settings().get(Contracts.ProfileSetting.NewsFilters));
+		} catch {
+			initialFilters = { categories: [], coins: ["ARK"] };
+		}
+
+		return initialFilters;
+	});
 
 	const [news, setNews] = useState<BlockfolioSignal[]>([]);
 
@@ -75,7 +84,7 @@ export const News = ({ itemsPerPage }: Properties) => {
 
 	useEffect(() => {
 		const updateSettings = async () => {
-			activeProfile.settings().set(Contracts.ProfileSetting.NewsFilters, { categories, coins });
+			activeProfile.settings().set(Contracts.ProfileSetting.NewsFilters, JSON.stringify({ categories, coins }));
 			await persist();
 		};
 
@@ -158,8 +167,4 @@ export const News = ({ itemsPerPage }: Properties) => {
 			</Section>
 		</Page>
 	);
-};
-
-News.defaultProps = {
-	itemsPerPage: 15,
 };

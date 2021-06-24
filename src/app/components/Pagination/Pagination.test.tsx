@@ -9,9 +9,7 @@ describe("Pagination", () => {
 	beforeEach(() => handleSelectPage.mockReset());
 
 	it("should render", () => {
-		const { asFragment } = render(
-			<Pagination totalCount={12} itemsPerPage={4} onSelectPage={handleSelectPage} currentPage={1} />,
-		);
+		const { asFragment } = render(<Pagination totalCount={12} onSelectPage={handleSelectPage} />);
 
 		expect(asFragment()).toMatchSnapshot();
 	});

@@ -26,7 +26,7 @@ interface PluginListProperties {
 export const PluginList = ({
 	className,
 	emptyMessage,
-	itemsPerPage,
+	itemsPerPage = 10,
 	plugins,
 	showCategory,
 	showPagination,
@@ -96,7 +96,7 @@ export const PluginList = ({
 		);
 	}
 
-	const pagePlugins = chunk(plugins, itemsPerPage!)[currentPage - 1];
+	const pagePlugins = chunk(plugins, itemsPerPage)[currentPage - 1];
 
 	return (
 		<div data-testid="PluginList" className={className}>
@@ -133,6 +133,5 @@ export const PluginList = ({
 };
 
 PluginList.defaultProps = {
-	itemsPerPage: 10,
 	showPagination: true,
 };

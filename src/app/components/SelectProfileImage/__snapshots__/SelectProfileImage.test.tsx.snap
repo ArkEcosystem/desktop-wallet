@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SelectProfileImage should handle upload file 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="group space-y-2"
   >
@@ -67,11 +67,81 @@ exports[`SelectProfileImage should handle upload file 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
+`;
+
+exports[`SelectProfileImage should not allow to upload an invalid file image 1`] = `
+<DocumentFragment>
+  <div
+    class="group space-y-2"
+  >
+    <span
+      class="text-sm font-semibold transition-colors duration-100 cursor-default text-theme-secondary-text group-hover:text-theme-primary-600"
+    >
+      Select Profile Image
+    </span>
+    <div
+      class="flex flex-row"
+    >
+      <div
+        class="relative w-20 h-20"
+      >
+        <div
+          class="SelectProfileImage__ProfileImageStyled-t6smk3-1 bVbLLU"
+        >
+          <img
+            alt="Avatar"
+            class="object-cover min-h-full"
+            data-testid="SelectProfileImage__avatar"
+            src="test"
+          />
+          <button
+            class="overflow-hidden absolute z-10 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
+            data-testid="SelectProfileImage__upload-button"
+            type="button"
+          >
+            <div
+              class="flex justify-center items-center h-full rounded-full dark:bg-black bg-theme-secondary-900 opacity-85"
+            >
+              <div
+                class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
+                height="18"
+                width="24"
+              >
+                <svg>
+                  upload.svg
+                </svg>
+              </div>
+            </div>
+          </button>
+        </div>
+        <button
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 gkZwMr flex absolute z-20 -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
+          data-testid="SelectProfileImage__remove-button"
+          type="button"
+        >
+          <div
+            class="flex relative items-center space-x-2"
+          >
+            <div
+              class="sc-bdfBwQ fdfkzt"
+              height="12"
+              width="12"
+            >
+              <svg>
+                close.svg
+              </svg>
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
 `;
 
 exports[`SelectProfileImage should not handle upload file 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="group space-y-2"
   >
@@ -137,11 +207,11 @@ exports[`SelectProfileImage should not handle upload file 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`SelectProfileImage should render 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="group space-y-2"
   >
@@ -186,11 +256,11 @@ exports[`SelectProfileImage should render 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`SelectProfileImage should render with value svg 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="group space-y-2"
   >
@@ -240,11 +310,11 @@ exports[`SelectProfileImage should render with value svg 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
 exports[`SelectProfileImage should render without value svg 1`] = `
-<div>
+<DocumentFragment>
   <div
     class="group space-y-2"
   >
@@ -310,5 +380,5 @@ exports[`SelectProfileImage should render without value svg 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
