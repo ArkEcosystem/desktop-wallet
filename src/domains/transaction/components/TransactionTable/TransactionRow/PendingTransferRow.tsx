@@ -39,8 +39,8 @@ export const PendingTransferRow = ({
 
 			<TableCell innerClassName="space-x-4">
 				<BaseTransactionRowMode
-					isSent={transaction.isSent()}
-					isReturn={transaction.isReturn()}
+					isSent={true}
+					isReturn={false}
 					type={transaction.type()}
 					recipient={transaction.recipient()}
 				/>
