@@ -2,7 +2,6 @@ import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail, TransactionFee } from "domains/transaction/components/TransactionDetail";
-import { useWalletSignatory } from "domains/transaction/hooks";
 import {
 	ExtendedSignedTransactionData,
 	SendRegistrationComponent,
