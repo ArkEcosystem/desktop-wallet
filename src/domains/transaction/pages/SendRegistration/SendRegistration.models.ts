@@ -25,7 +25,6 @@ export interface SendRegistrationSignOptions {
 	env: Environment;
 	form: ReturnType<typeof useForm>;
 	profile: Contracts.IProfile;
-	wallet: Contracts.IReadWriteWallet;
 	signatory: Signatories.Signatory;
 }
 
