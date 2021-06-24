@@ -61,9 +61,6 @@ const signTransaction = async ({ env, form, profile }: SendRegistrationSignOptio
 		participants,
 		senderAddress,
 		mnemonic,
-		encryptionPassword,
-		wif,
-		privateKey,
 	} = getValues();
 	const senderWallet = profile.wallets().findByAddress(senderAddress);
 
@@ -92,7 +89,7 @@ const signTransaction = async ({ env, form, profile }: SendRegistrationSignOptio
 	await senderWallet!.transaction().sync();
 	await senderWallet!.transaction().addSignature(
 		transactionId,
-		// eslint-disable-next-line react-hooks/rules-of-hooks
+		// @TODO: support WIF
 		(await senderWallet?.signatory().mnemonic(mnemonic))!,
 	);
 
