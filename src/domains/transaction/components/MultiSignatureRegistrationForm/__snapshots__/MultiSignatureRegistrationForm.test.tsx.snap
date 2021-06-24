@@ -809,7 +809,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
               >
-                Type
+                Transaction Type
               </div>
               <div
                 class="font-semibold"
@@ -817,19 +817,17 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                 Multisignature
               </div>
             </div>
-            <div>
+            <div
+              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-text border-theme-text dark:text-theme-secondary-600 dark:border-theme-secondary-600 ring-theme-background"
+            >
               <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-black bg-theme-background ring-theme-background"
+                class="sc-bdfBwQ iyevwF"
+                height="20"
+                width="20"
               >
-                <div
-                  class="sc-bdfBwQ iyevwF"
-                  height="20"
-                  width="20"
-                >
-                  <svg>
-                    multisig.svg
-                  </svg>
-                </div>
+                <svg>
+                  multisig.svg
+                </svg>
               </div>
             </div>
           </div>

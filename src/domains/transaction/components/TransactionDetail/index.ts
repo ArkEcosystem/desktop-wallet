@@ -8,4 +8,5 @@ export * from "./TransactionNetwork";
 export * from "./TransactionRecipients";
 export * from "./TransactionSender";
 export * from "./TransactionTimestamp";
+export * from "./TransactionType";
 export * from "./TransactionVotes";

@@ -1,12 +1,10 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { Circle } from "app/components/Circle";
 import { Header } from "app/components/Header";
-import { Icon } from "app/components/Icon";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import {
-	TransactionDetail,
 	TransactionNetwork,
 	TransactionSender,
+	TransactionType,
 } from "domains/transaction/components/TransactionDetail";
 import React, { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
@@ -29,16 +27,7 @@ export const ReviewStep = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) =
 
 			<TransactionSender address={wallet.address()} alias={wallet.alias()} />
 
-			<TransactionDetail
-				label={t("TRANSACTION.TRANSACTION_TYPE")}
-				extra={
-					<Circle className="border-theme-text" size="lg">
-						<Icon name="Key" width={20} height={20} />
-					</Circle>
-				}
-			>
-				{t("TRANSACTION.TRANSACTION_TYPES.SECOND_SIGNATURE")}
-			</TransactionDetail>
+			<TransactionType type="secondSignature" />
 
 			<div className="mt-2">
 				<TotalAmountBox amount={0} fee={fee} ticker={wallet.currency()} />
