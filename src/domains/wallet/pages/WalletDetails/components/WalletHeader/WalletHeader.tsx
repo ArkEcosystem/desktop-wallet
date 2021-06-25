@@ -106,7 +106,7 @@ export const WalletHeader = ({
 		options: [],
 	};
 
-	if (!wallet.isLedger() && wallet.hasBeenFullyRestored() && wallet.hasSyncedWithNetwork()) {
+	if (!wallet.isLedger() && !wallet.isMultiSignature() && wallet.hasBeenFullyRestored() && wallet.hasSyncedWithNetwork()) {
 		if (wallet.network().allows(Enums.FeatureFlag.TransactionDelegateRegistration) && !wallet.isDelegate()) {
 			registrationOptions.options.push({
 				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.REGISTER_DELEGATE"),
@@ -133,7 +133,7 @@ export const WalletHeader = ({
 		}
 	}
 
-	if (wallet.network().allows(Enums.FeatureFlag.TransactionMultiSignature)) {
+	if (!wallet.isMultiSignature() && wallet.network().allows(Enums.FeatureFlag.TransactionMultiSignature)) {
 		registrationOptions.options.push({
 			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.MULTISIGNATURE"),
 			value: "multi-signature",
@@ -146,14 +146,14 @@ export const WalletHeader = ({
 		options: [],
 	};
 
-	if (wallet.network().allows(Enums.FeatureFlag.MessageSign)) {
+	if (!wallet.isMultiSignature() && wallet.network().allows(Enums.FeatureFlag.MessageSign)) {
 		additionalOptions.options.push({
 			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SIGN_MESSAGE"),
 			value: "sign-message",
 		});
 	}
 
-	if (wallet.network().allows(Enums.FeatureFlag.MessageVerify)) {
+	if (!wallet.isMultiSignature() && wallet.network().allows(Enums.FeatureFlag.MessageVerify)) {
 		additionalOptions.options.push({
 			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.VERIFY_MESSAGE"),
 			value: "verify-message",
