@@ -190,14 +190,16 @@ export const CreateWallet = () => {
 								</div>
 
 								<div className="flex justify-end space-x-3">
-									<Button
-										disabled={isSubmitting}
-										data-testid="CreateWallet__back-button"
-										variant="secondary"
-										onClick={handleBack}
-									>
-										{t("COMMON.BACK")}
-									</Button>
+									{activeTab === 5 && (
+                                        <Button
+                                            disabled={isSubmitting}
+                                            data-testid="CreateWallet__back-button"
+                                            variant="secondary"
+                                            onClick={handleBack}
+                                        >
+                                            {t("COMMON.BACK")}
+                                        </Button>
+									)}
 
 									{activeTab < 4 && (
 										<Button
