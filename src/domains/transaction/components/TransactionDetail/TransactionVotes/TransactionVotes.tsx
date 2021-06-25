@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { TransactionDetail, TransactionType } from "domains/transaction/components/TransactionDetail";
+import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import { VoteList } from "domains/vote/components/VoteList";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -30,18 +30,8 @@ export const TransactionVotes = ({ isLoading, votes, unvotes }: TransactionVotes
 		);
 	}
 
-	const getTransactionType = () => {
-		if (votes.length > 0 && unvotes.length > 0) {
-			return "voteCombination";
-		}
-
-		return votes.length > 0 ? "vote" : "unvote";
-	};
-
 	return (
 		<>
-			<TransactionType type={getTransactionType()} />
-
 			{votes.length > 0 && (
 				<TransactionDetail label={t("TRANSACTION.VOTES_COUNT", { count: votes.length })}>
 					<VoteList votes={votes} />

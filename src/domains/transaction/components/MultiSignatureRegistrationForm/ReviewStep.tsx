@@ -4,7 +4,6 @@ import {
 	TransactionDetail,
 	TransactionNetwork,
 	TransactionSender,
-	TransactionType,
 } from "domains/transaction/components/TransactionDetail";
 import React, { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
@@ -42,8 +41,6 @@ export const ReviewStep = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) =
 					</span>
 				</div>
 			</TransactionDetail>
-
-			<TransactionType type="multiSignature" />
 
 			<div className="mt-2">
 				<TotalAmountBox amount={0} fee={fee} ticker={wallet.currency()} />

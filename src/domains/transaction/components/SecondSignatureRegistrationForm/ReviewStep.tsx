@@ -1,11 +1,7 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Header } from "app/components/Header";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
-import {
-	TransactionNetwork,
-	TransactionSender,
-	TransactionType,
-} from "domains/transaction/components/TransactionDetail";
+import { TransactionNetwork, TransactionSender } from "domains/transaction/components/TransactionDetail";
 import React, { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -26,8 +22,6 @@ export const ReviewStep = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) =
 			<TransactionNetwork network={wallet.network()} border={false} paddingPosition="bottom" className="mt-8" />
 
 			<TransactionSender address={wallet.address()} alias={wallet.alias()} />
-
-			<TransactionType type="secondSignature" />
 
 			<div className="mt-2">
 				<TotalAmountBox amount={0} fee={fee} ticker={wallet.currency()} />
