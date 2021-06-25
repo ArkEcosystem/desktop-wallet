@@ -14,7 +14,7 @@ import { useTranslation } from "react-i18next";
 
 interface MultisignatureRegistrationDetailProperties {
 	isOpen: boolean;
-	transaction: DTO.ExtendedTransactionData;
+	transaction: DTO.ExtendedConfirmedTransactionData;
 	onClose?: () => void;
 }
 

@@ -5,7 +5,7 @@ import { useTransactionTypes } from "domains/transaction/hooks/use-transaction-t
 import React, { useEffect, useState } from "react";
 
 interface Properties {
-	transaction?: DTO.ExtendedTransactionData;
+	transaction?: DTO.ExtendedConfirmedTransactionData;
 	type: string;
 	recipient: string;
 	walletName?: string;
@@ -118,7 +118,7 @@ export const TransactionRowRecipientLabel = ({
 	transaction,
 	walletName,
 }: {
-	transaction: DTO.ExtendedTransactionData;
+	transaction: DTO.ExtendedConfirmedTransactionData;
 	walletName?: string;
 }) => (
 	<BaseTransactionRowRecipientLabel

@@ -70,7 +70,7 @@ export const TransactionRowMode = ({
 	transaction,
 }: {
 	iconSize?: Size;
-	transaction: DTO.ExtendedTransactionData | Contracts.TransactionData;
+	transaction: DTO.ExtendedConfirmedTransactionData | Contracts.TransactionData;
 }) => (
 	<BaseTransactionRowMode
 		iconSize={iconSize}

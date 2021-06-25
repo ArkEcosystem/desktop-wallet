@@ -10,7 +10,7 @@ interface ConfirmSendTransactionProperties {
 	isOpen: boolean;
 	onClose?: any;
 	onConfirm?: any;
-	unconfirmedTransactions: DTO.ExtendedTransactionData[];
+	unconfirmedTransactions: DTO.ExtendedConfirmedTransactionData[];
 }
 
 export const ConfirmSendTransaction = ({

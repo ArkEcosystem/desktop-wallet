@@ -8,7 +8,7 @@ import { TransactionRowRecipientIcon } from "../TransactionRow/TransactionRowRec
 import { TransactionRowRecipientLabel } from "../TransactionRow/TransactionRowRecipientLabel";
 
 type Properties = {
-	transaction: DTO.ExtendedTransactionData;
+	transaction: DTO.ExtendedConfirmedTransactionData;
 	walletName?: string;
 } & React.HTMLProps<any>;
 

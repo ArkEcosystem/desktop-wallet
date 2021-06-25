@@ -9,13 +9,13 @@ import { TransactionRow } from "./TransactionRow/TransactionRow";
 type Skeleton = object;
 
 interface Properties {
-	transactions: DTO.ExtendedTransactionData[];
+	transactions: DTO.ExtendedConfirmedTransactionData[];
 	exchangeCurrency?: string;
 	showSignColumn?: boolean;
 	showExplorerLinkColumn?: boolean;
 	hideHeader?: boolean;
 	isCompact?: boolean;
-	onRowClick?: (row: DTO.ExtendedTransactionData) => void;
+	onRowClick?: (row: DTO.ExtendedConfirmedTransactionData) => void;
 	isLoading?: boolean;
 	skeletonRowsLimit?: number;
 }
@@ -48,7 +48,7 @@ export const TransactionTable = memo(
 				{
 					Header: t("COMMON.DATE"),
 					id: "date",
-					accessor: (transaction: DTO.ExtendedTransactionData) => transaction.timestamp?.()?.toUNIX(),
+					accessor: (transaction: DTO.ExtendedConfirmedTransactionData) => transaction.timestamp?.()?.toUNIX(),
 					sortDescFirst: true,
 					cellWidth: "w-50",
 				},
@@ -68,7 +68,7 @@ export const TransactionTable = memo(
 				{
 					Header: t("COMMON.AMOUNT"),
 					id: "amount",
-					accessor: (transaction: DTO.ExtendedTransactionData) => transaction.total?.(),
+					accessor: (transaction: DTO.ExtendedConfirmedTransactionData) => transaction.total?.(),
 					sortDescFirst: true,
 					className: "justify-end",
 				},
@@ -82,7 +82,7 @@ export const TransactionTable = memo(
 					{
 						Header: t("COMMON.AMOUNT"),
 						id: "amount",
-						accessor: (transaction: DTO.ExtendedTransactionData) => transaction.total?.(),
+						accessor: (transaction: DTO.ExtendedConfirmedTransactionData) => transaction.total?.(),
 						className: "justify-end",
 					},
 				];
@@ -119,18 +119,18 @@ export const TransactionTable = memo(
 		return (
 			<div data-testid="TransactionTable" className="relative">
 				<Table hideHeader={hideHeader} columns={columns} data={data} initialState={initialState}>
-					{(row: DTO.ExtendedTransactionData | Skeleton) =>
+					{(row: DTO.ExtendedConfirmedTransactionData | Skeleton) =>
 						isCompact ? (
 							<TransactionCompactRow
 								isLoading={showSkeleton}
-								onClick={() => onRowClick?.(row as DTO.ExtendedTransactionData)}
-								transaction={row as DTO.ExtendedTransactionData}
+								onClick={() => onRowClick?.(row as DTO.ExtendedConfirmedTransactionData)}
+								transaction={row as DTO.ExtendedConfirmedTransactionData}
 							/>
 						) : (
 							<TransactionRow
 								isLoading={showSkeleton}
-								onClick={() => onRowClick?.(row as DTO.ExtendedTransactionData)}
-								transaction={row as DTO.ExtendedTransactionData}
+								onClick={() => onRowClick?.(row as DTO.ExtendedConfirmedTransactionData)}
+								transaction={row as DTO.ExtendedConfirmedTransactionData}
 								exchangeCurrency={exchangeCurrency}
 								showExplorerLink={showExplorerLinkColumn}
 								showSignColumn={showSignColumn}

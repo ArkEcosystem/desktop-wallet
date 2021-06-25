@@ -6,7 +6,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 export const useWalletTransactions = (wallet: Contracts.IReadWriteWallet) => {
 	const { fetchWalletUnconfirmedTransactions } = useTransaction();
 
-	const [pendingTransfers, setPendingTransfers] = useState<DTO.ExtendedTransactionData[]>([]);
+	const [pendingTransfers, setPendingTransfers] = useState<DTO.ExtendedConfirmedTransactionData[]>([]);
 	const [pendingSigned, setPendingSigned] = useState<DTO.ExtendedSignedTransactionData[]>([]);
 
 	const syncPending = useCallback(async () => {

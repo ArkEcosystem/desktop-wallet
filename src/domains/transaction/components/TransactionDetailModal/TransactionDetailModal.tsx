@@ -12,7 +12,7 @@ import React from "react";
 
 interface TransactionDetailModalProperties {
 	isOpen: boolean;
-	transactionItem: DTO.ExtendedTransactionData;
+	transactionItem: DTO.ExtendedConfirmedTransactionData;
 	onClose?: any;
 }
 
