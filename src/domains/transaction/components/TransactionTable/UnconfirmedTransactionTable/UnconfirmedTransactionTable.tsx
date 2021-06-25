@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { UnconfirmedTransactionRow } from "./UnconfirmedTransactionRow";
 
 interface Properties {
-	transactions: DTO.ExtendedTransactionData[];
+	transactions: DTO.ExtendedConfirmedTransactionData[];
 }
 
 export const UnconfirmedTransactionTable = memo(({ transactions }: Properties) => {
@@ -15,7 +15,7 @@ export const UnconfirmedTransactionTable = memo(({ transactions }: Properties) =
 	const columns: any = [
 		{
 			Header: t("COMMON.DATE"),
-			accessor: (transaction: DTO.ExtendedTransactionData) => transaction.timestamp?.()?.toUNIX(),
+			accessor: (transaction: DTO.ExtendedConfirmedTransactionData) => transaction.timestamp?.()?.toUNIX(),
 			sortDescFirst: true,
 		},
 		{
@@ -23,7 +23,7 @@ export const UnconfirmedTransactionTable = memo(({ transactions }: Properties) =
 		},
 		{
 			Header: t("COMMON.AMOUNT"),
-			accessor: (transaction: DTO.ExtendedTransactionData) => transaction.total?.(),
+			accessor: (transaction: DTO.ExtendedConfirmedTransactionData) => transaction.total?.(),
 			className: "justify-end",
 		},
 	];
@@ -31,7 +31,7 @@ export const UnconfirmedTransactionTable = memo(({ transactions }: Properties) =
 	return (
 		<div data-testid="TransactionTable" className="relative">
 			<Table columns={columns} data={transactions}>
-				{(row: DTO.ExtendedTransactionData) => <UnconfirmedTransactionRow transaction={row} />}
+				{(row: DTO.ExtendedConfirmedTransactionData) => <UnconfirmedTransactionRow transaction={row} />}
 			</Table>
 		</div>
 	);

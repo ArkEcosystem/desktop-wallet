@@ -36,7 +36,7 @@ const TransactionRowAmount = ({
 	transaction,
 	exchangeCurrency,
 }: {
-	transaction: DTO.ExtendedTransactionData;
+	transaction: DTO.ExtendedConfirmedTransactionData;
 	exchangeCurrency?: string;
 }): JSX.Element => (
 	<BaseTransactionRowAmount

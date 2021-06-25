@@ -53,7 +53,7 @@ export const SendTransfer = () => {
 	const firstTabIndex = showNetworkStep ? 0 : 1;
 
 	const [activeTab, setActiveTab] = useState(showNetworkStep ? 0 : 1);
-	const [unconfirmedTransactions, setUnconfirmedTransactions] = useState<DTO.ExtendedTransactionData[]>([]);
+	const [unconfirmedTransactions, setUnconfirmedTransactions] = useState<DTO.ExtendedConfirmedTransactionData[]>([]);
 	const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
 	const [transaction, setTransaction] = useState<DTO.ExtendedSignedTransactionData | null>(null);
 

@@ -3,7 +3,7 @@ import { useSynchronizer } from "app/hooks";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 interface TransactionsState {
-	transactions: DTO.ExtendedTransactionData[];
+	transactions: DTO.ExtendedConfirmedTransactionData[];
 	isLoadingTransactions: boolean;
 	isLoadingMore: boolean;
 	activeMode?: string;
@@ -28,7 +28,7 @@ interface FetchTransactionProperties {
 
 interface FilterTransactionProperties {
 	showUnconfirmed?: boolean;
-	transactions: DTO.ExtendedTransactionDataCollection;
+	transactions: DTO.ExtendedConfirmedTransactionDataCollection;
 }
 
 export const useProfileTransactions = ({

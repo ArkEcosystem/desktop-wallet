@@ -8,7 +8,7 @@ import { TransactionRowMode } from "./TransactionRowMode";
 import { TransactionRowRecipientLabel } from "./TransactionRowRecipientLabel";
 
 type Properties = {
-	transaction: DTO.ExtendedTransactionData;
+	transaction: DTO.ExtendedConfirmedTransactionData;
 	walletName?: string;
 	isLoading?: boolean;
 } & React.HTMLProps<any>;

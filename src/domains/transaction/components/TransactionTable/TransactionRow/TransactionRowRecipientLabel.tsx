@@ -5,7 +5,7 @@ import { useTransactionTypes } from "domains/transaction/hooks/use-transaction-t
 import React, { useEffect, useState } from "react";
 
 interface Properties {
-	transaction?: DTO.ExtendedTransactionData;
+	transaction?: DTO.ExtendedConfirmedTransactionData;
 	type: string;
 	recipient: string;
 	walletName?: string;
@@ -72,8 +72,8 @@ export const BaseTransactionRowRecipientLabel = ({ transaction, type, recipient,
 	useEffect(() => {
 		if (transaction?.isVote() || transaction?.isUnvote()) {
 			setDelegates({
-				votes: env.delegates().map(transaction.wallet(), (transaction as DTO.VoteData).votes()),
-				unvotes: env.delegates().map(transaction.wallet(), (transaction as DTO.VoteData).unvotes()),
+				votes: env.delegates().map(transaction.wallet(), transaction.votes()),
+				unvotes: env.delegates().map(transaction.wallet(), transaction.unvotes()),
 			});
 		}
 	}, [env, transaction]);
@@ -94,12 +94,7 @@ export const BaseTransactionRowRecipientLabel = ({ transaction, type, recipient,
 	}
 
 	if (transaction?.isVoteCombination()) {
-		return (
-			<VoteCombinationLabel
-				votes={(transaction as DTO.VoteData)?.votes()}
-				unvotes={(transaction as DTO.VoteData)?.unvotes()}
-			/>
-		);
+		return <VoteCombinationLabel votes={transaction?.votes()} unvotes={transaction?.unvotes()} />;
 	}
 
 	if (transaction?.isVote() || transaction?.isUnvote()) {
@@ -118,7 +113,7 @@ export const TransactionRowRecipientLabel = ({
 	transaction,
 	walletName,
 }: {
-	transaction: DTO.ExtendedTransactionData;
+	transaction: DTO.ExtendedConfirmedTransactionData;
 	walletName?: string;
 }) => (
 	<BaseTransactionRowRecipientLabel

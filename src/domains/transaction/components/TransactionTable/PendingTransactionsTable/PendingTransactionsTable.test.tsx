@@ -4,7 +4,7 @@ import nock from "nock";
 import React from "react";
 import * as utils from "utils/electron-utils";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
-let transfers: DTO.ExtendedTransactionData[];
+let transfers: DTO.ExtendedConfirmedTransactionData[];
 
 describe("Signed Transaction Table", () => {
 	let profile: Contracts.IProfile;
