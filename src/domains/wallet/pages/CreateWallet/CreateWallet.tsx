@@ -141,7 +141,11 @@ export const CreateWallet = () => {
 				setIsGeneratingWallet(false);
 			}
 		} else {
-			setActiveTab(newIndex);
+			if (newIndex === 4 && !getValues("network").importMethods().bip39.canBeEncrypted) {
+				setActiveTab(newIndex + 1);
+			} else {
+				setActiveTab(newIndex);
+			}
 		}
 	};
 
