@@ -135,7 +135,9 @@ describe("SecondSignatureRegistrationForm", () => {
 			);
 			const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} activeTab={2} />);
 
-			await waitFor(() => expect(screen.getByTestId("SecondSignature__backup-step")).toBeTruthy());
+			await waitFor(() =>
+				expect(screen.getByTestId("SecondSignatureRegistrationForm__backup-step")).toBeTruthy(),
+			);
 
 			const writeTextMock = jest.fn();
 			const clipboardOriginal = navigator.clipboard;
@@ -244,7 +246,9 @@ describe("SecondSignatureRegistrationForm", () => {
 
 		render(<Component form={result.current} onSubmit={() => void 0} activeTab={3} />);
 
-		await waitFor(() => expect(screen.getByTestId("SecondSignature__confirmation-step")).toBeTruthy());
+		await waitFor(() =>
+			expect(screen.getByTestId("SecondSignatureRegistrationForm__verification-step")).toBeTruthy(),
+		);
 		expect(result.current.getValues("verification")).toBeUndefined();
 
 		const walletMnemonic = passphrase.split(" ");
@@ -278,7 +282,7 @@ describe("SecondSignatureRegistrationForm", () => {
 
 		render(<Component form={result.current} onSubmit={() => void 0} activeTab={4} />);
 
-		await waitFor(() => expect(screen.getByTestId("SecondSignature__review-step")).toBeTruthy());
+		await waitFor(() => expect(screen.getByTestId("SecondSignatureRegistrationForm__review-step")).toBeTruthy());
 	});
 
 	it("should render transaction details", async () => {
