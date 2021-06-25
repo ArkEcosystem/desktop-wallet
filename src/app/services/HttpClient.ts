@@ -64,6 +64,8 @@ export class HttpClient extends AbstractRequest {
 				throw new Error("Received no response. This looks like a bug.");
 			}
 
+			console.log({ method, url, data });
+
 			return new Response({
 				body: await response.text(),
 				headers: (response.headers as unknown) as Record<string, Primitive>,
