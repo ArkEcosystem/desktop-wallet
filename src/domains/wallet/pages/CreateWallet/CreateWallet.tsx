@@ -190,7 +190,7 @@ export const CreateWallet = () => {
 								</div>
 
 								<div className="flex justify-end space-x-3">
-									{activeTab !== 5 && (
+									{activeTab < 5 && (
                                         <Button
                                             disabled={isSubmitting}
                                             data-testid="CreateWallet__back-button"
