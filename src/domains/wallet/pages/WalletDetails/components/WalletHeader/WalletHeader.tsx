@@ -133,13 +133,13 @@ export const WalletHeader = ({
 				});
 			}
 		}
+	}
 
-		if (wallet.network().allows(Enums.FeatureFlag.TransactionMultiSignature)) {
-			registrationOptions.options.push({
-				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.MULTISIGNATURE"),
-				value: "multi-signature",
-			});
-		}
+	if (wallet.network().allows(Enums.FeatureFlag.TransactionMultiSignature)) {
+		registrationOptions.options.push({
+			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.MULTISIGNATURE"),
+			value: "multi-signature",
+		});
 	}
 
 	const additionalOptions: DropdownOptionGroup = {
