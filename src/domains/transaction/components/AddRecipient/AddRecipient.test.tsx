@@ -2,6 +2,7 @@
 import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
+import userEvent from "@testing-library/user-event";
 import React, { useEffect } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { env, fireEvent, getDefaultProfileId, render, screen, waitFor, within } from "utils/testing-library";
@@ -165,16 +166,16 @@ describe("AddRecipient", () => {
 	it("should show zero amount if wallet has zero or insufficient balance", async () => {
 		const emptyProfile = env.profiles().create("Empty");
 
-		emptyProfile.wallets().push(
-			await emptyProfile.walletFactory().fromMnemonicWithBIP39({
-				mnemonic: "test test",
-				coin: "ARK",
-				network: "ark.devnet",
-			}),
-		);
+		const emptyWallet = await emptyProfile.walletFactory().fromMnemonicWithBIP39({
+			mnemonic: "test test",
+			coin: "ARK",
+			network: "ark.devnet",
+		});
+
+		emptyProfile.wallets().push(emptyWallet);
 
 		const { getByTestId, container, form } = await renderWithFormProvider(
-			<AddRecipient profile={emptyProfile} wallet={wallet} assetSymbol="ARK" />,
+			<AddRecipient profile={emptyProfile} wallet={emptyWallet} assetSymbol="ARK" />,
 		);
 
 		const sendAll = getByTestId("AddRecipient__send-all");
@@ -574,5 +575,49 @@ describe("AddRecipient", () => {
 		});
 
 		await waitFor(() => expect(screen.getByTestId("AddRecipient__amount")).toHaveValue(values.amount.toString()));
+	});
+
+	it("should prevent adding more recipients than the coin supports", async () => {
+		const mockMultiPaymentRecipients = jest.spyOn(wallet.network(), "multiPaymentRecipients").mockReturnValue(1);
+
+		await renderWithFormProvider(
+			<AddRecipient
+				recipients={[
+					{
+						address: "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
+						amount: 1,
+					},
+				]}
+				profile={profile}
+				wallet={wallet}
+				assetSymbol="ARK"
+			/>,
+		);
+
+		await act(async () => {
+			userEvent.click(screen.getByText(transactionTranslations.MULTIPLE));
+		});
+
+		userEvent.click(screen.getByTestId("SelectRecipient__select-recipient"));
+
+		await waitFor(() => {
+			expect(screen.getByTestId("modal__inner")).toBeTruthy();
+		});
+
+		const [firstAddress] = screen.getAllByTestId("RecipientListItem__select-button");
+
+		await act(async () => {
+			userEvent.click(firstAddress);
+		});
+
+		fireEvent.change(screen.getByTestId("AddRecipient__amount"), {
+			target: {
+				value: "1",
+			},
+		});
+
+		expect(screen.getByTestId("AddRecipient__add-button")).toBeDisabled();
+
+		mockMultiPaymentRecipients.mockRestore();
 	});
 });
