@@ -1,6 +1,8 @@
 import { TFunction } from "i18next";
 
-const createTableColumns = (t: TFunction): {
+const createTableColumns = (
+	t: TFunction,
+): {
 	accessor?: string;
 	cellWidth?: string;
 	className?: string;

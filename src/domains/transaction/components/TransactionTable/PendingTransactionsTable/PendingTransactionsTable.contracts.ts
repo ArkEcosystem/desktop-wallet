@@ -14,7 +14,4 @@ interface Properties {
 	onPendingTransactionClick?: (transaction: DTO.ExtendedConfirmedTransactionData) => void;
 }
 
-export type {
-	PendingTransaction,
-	Properties,
-}
+export type { PendingTransaction, Properties };

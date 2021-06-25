@@ -8,11 +8,7 @@ import { SignedTransactionRow } from "../TransactionRow/SignedTransactionRow";
 import { PendingTransaction, Properties } from "./PendingTransactionsTable.contracts";
 import { createTableColumns } from "./PendingTransactionsTable.domain";
 
-export const PendingTransactions = ({
-	wallet,
-	onClick,
-	onPendingTransactionClick,
-}: Properties) => {
+export const PendingTransactions = ({ wallet, onClick, onPendingTransactionClick }: Properties) => {
 	const { t } = useTranslation();
 
 	const transactions: PendingTransaction[] = [];
