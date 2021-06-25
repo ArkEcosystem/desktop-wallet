@@ -103,6 +103,7 @@ import { ReactComponent as StatusFailed } from "./status-failed.svg";
 import { ReactComponent as StatusOk } from "./status-ok.svg";
 import { ReactComponent as StatusPending } from "./status-pending.svg";
 import { ReactComponent as Timelock } from "./timelock.svg";
+import { ReactComponent as Transfer } from "./transfer.svg";
 import { ReactComponent as Trash } from "./trash.svg";
 import { ReactComponent as Unvote } from "./unvote.svg";
 import { ReactComponent as Update } from "./update.svg";
@@ -218,6 +219,7 @@ export const SvgCollection: any = {
 	StatusPending,
 	Timelock,
 	Trash,
+	Transfer,
 	Unvote,
 	Update,
 	Upload,
