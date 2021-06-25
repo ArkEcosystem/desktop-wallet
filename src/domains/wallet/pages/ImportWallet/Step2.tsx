@@ -1,12 +1,11 @@
-import { Networks } from "@arkecosystem/platform-sdk";
+import { Coins, Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Input, InputAddress, InputPassword } from "app/components/Input";
 import { Select } from "app/components/SelectDropdown";
-import { useActiveProfile } from "app/hooks";
 import { OptionsValue, useImportOptions } from "domains/wallet/hooks/use-import-options";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -53,7 +52,7 @@ const MnemonicField = ({
 	);
 };
 
-const AddressField = ({ network, profile }: { profile: Contracts.IProfile; network: Networks.Network }) => {
+const AddressField = ({ coin, profile }: { coin: Coins.Coin; profile: Contracts.IProfile }) => {
 	const { t } = useTranslation();
 	const { register } = useFormContext();
 
@@ -62,8 +61,8 @@ const AddressField = ({ network, profile }: { profile: Contracts.IProfile; netwo
 			<FormLabel label={t("COMMON.ADDRESS")} />
 			<InputAddress
 				profile={profile}
-				coin={network.coin()}
-				network={network.id()}
+				coin={coin.network().coin()}
+				network={coin.network().id()}
 				registerRef={register}
 				additionalRules={{
 					required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
@@ -81,18 +80,8 @@ const AddressField = ({ network, profile }: { profile: Contracts.IProfile; netwo
 	);
 };
 
-const ImportInputField = ({
-	type,
-	network,
-	profile,
-}: {
-	type: string;
-	network: Networks.Network;
-	profile: Contracts.IProfile;
-}) => {
+const ImportInputField = ({ type, coin, profile }: { type: string; coin: Coins.Coin; profile: Contracts.IProfile }) => {
 	const { t } = useTranslation();
-	const activeProfile = useActiveProfile();
-	const [coin] = useState(() => activeProfile.coins().set(network.coin(), network.id()));
 	const { register } = useFormContext();
 
 	if (type.startsWith("bip")) {
@@ -102,7 +91,6 @@ const ImportInputField = ({
 				label={t(`COMMON.MNEMONIC_TYPE.${type.toUpperCase()}`)}
 				data-testid="ImportWallet__mnemonic-input"
 				findAddress={async (value) => {
-					await coin.__construct();
 					const { address } = await coin.address().fromMnemonic(value);
 					return address;
 				}}
@@ -111,7 +99,7 @@ const ImportInputField = ({
 	}
 
 	if (type === OptionsValue.ADDRESS) {
-		return <AddressField network={network} profile={profile} />;
+		return <AddressField coin={coin} profile={profile} />;
 	}
 
 	if (type === OptionsValue.PUBLIC_KEY) {
@@ -122,7 +110,6 @@ const ImportInputField = ({
 				data-testid="ImportWallet__publicKey-input"
 				findAddress={async (value) => {
 					try {
-						await coin.__construct();
 						const { address } = await coin.address().fromPublicKey(value);
 						return address;
 					} catch {
@@ -142,7 +129,6 @@ const ImportInputField = ({
 				data-testid="ImportWallet__privatekey-input"
 				findAddress={async (value) => {
 					try {
-						await coin.__construct();
 						const { address } = await coin.address().fromPrivateKey(value);
 						return address;
 					} catch {
@@ -162,7 +148,6 @@ const ImportInputField = ({
 				data-testid="ImportWallet__wif-input"
 				findAddress={async (value) => {
 					try {
-						await coin.__construct();
 						const { address } = await coin.address().fromWIF(value);
 						return address;
 					} catch {
@@ -207,11 +192,29 @@ const ImportInputField = ({
 
 export const SecondStep = ({ profile }: { profile: Contracts.IProfile }) => {
 	const { t } = useTranslation();
-	const { getValues, watch, setValue, clearErrors } = useFormContext();
+	const { getValues, watch, setValue, clearErrors, setError } = useFormContext();
 
 	// getValues does not get the value of `defaultValues` on first render
 	const [defaultNetwork] = useState(() => watch("network"));
 	const network: Networks.Network = getValues("network") || defaultNetwork;
+
+	const [coin] = useState(() => profile.coins().set(network.coin(), network.id()));
+
+	useEffect(() => {
+		setError("coin", {
+			type: "manual",
+			message: "coin",
+		});
+	}, [setError]);
+
+	useEffect(() => {
+		const constructCoin = async () => {
+			await coin.__construct();
+			clearErrors("coin");
+		};
+
+		constructCoin();
+	}, [coin, clearErrors]);
 
 	const { options, defaultOption } = useImportOptions(network.importMethods());
 
@@ -240,7 +243,7 @@ export const SecondStep = ({ profile }: { profile: Contracts.IProfile }) => {
 					/>
 				</FormField>
 
-				<ImportInputField type={type} network={network} profile={profile} />
+				<ImportInputField type={type} coin={coin} profile={profile} />
 			</div>
 		</section>
 	);
