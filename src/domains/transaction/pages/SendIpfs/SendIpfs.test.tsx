@@ -39,6 +39,7 @@ const createTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 		fee: () => +ipfsFixture.data.fee / 1e8,
 		hash: () => ipfsFixture.data.asset.ipfs,
 		data: () => ({ data: () => ipfsFixture.data }),
+		type: () => "ipfs",
 	});
 
 let profile: Contracts.IProfile;

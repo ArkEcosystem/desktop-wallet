@@ -5,6 +5,7 @@ import {
 	TransactionExplorerLink,
 	TransactionNetwork,
 	TransactionSender,
+	TransactionType,
 } from "domains/transaction/components/TransactionDetail";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -35,6 +36,8 @@ export const TransactionSuccessful = ({ children, transaction, senderWallet }: T
 							border={false}
 							paddingPosition="bottom"
 						/>
+
+						<TransactionType type={transaction.type()} />
 
 						<TransactionNetwork network={senderWallet.network()} />
 
