@@ -1,24 +1,12 @@
-import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
+import { DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Table } from "app/components/Table";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { PendingTransferRow } from "../TransactionRow/PendingTransferRow";
 import { SignedTransactionRow } from "../TransactionRow/SignedTransactionRow";
-
-interface Properties {
-	wallet: Contracts.IReadWriteWallet;
-	onClick?: (transaction: DTO.ExtendedSignedTransactionData) => void;
-	onPendingTransactionClick?: (transaction: DTO.ExtendedConfirmedTransactionData) => void;
-}
-
-interface PendingTransaction {
-	transaction: DTO.ExtendedConfirmedTransactionData | DTO.ExtendedSignedTransactionData;
-	hasBeenSigned: boolean;
-	isAwaitingConfirmation: boolean;
-	isAwaitingOurSignature: boolean;
-	isAwaitingOtherSignatures: boolean;
-}
+import { PendingTransaction, Properties } from "./PendingTransactionsTable.contracts";
+import { createTableColumns } from "./PendingTransactionsTable.domain";
 
 export const PendingTransactions = ({
 	wallet,
@@ -26,42 +14,6 @@ export const PendingTransactions = ({
 	onPendingTransactionClick,
 }: Properties) => {
 	const { t } = useTranslation();
-
-	const columns = [
-		{
-			Header: t("COMMON.ID"),
-			minimumWidth: true,
-		},
-		{
-			Header: t("COMMON.DATE"),
-			accessor: "timestamp",
-			sortDescFirst: true,
-			cellWidth: "w-50",
-		},
-		{
-			Header: t("COMMON.RECIPIENT"),
-			cellWidth: "w-96",
-		},
-		{
-			Header: t("COMMON.INFO"),
-			className: "justify-center",
-		},
-		{
-			Header: t("COMMON.STATUS"),
-			className: "justify-center",
-			minimumWidth: true,
-		},
-		{
-			Header: t("COMMON.AMOUNT"),
-			accessor: "amount",
-			className: "justify-end no-border",
-		},
-		{
-			Header: "Sign",
-			className: "hidden",
-			cellWidth: "w-24",
-		},
-	];
 
 	const transactions: PendingTransaction[] = [];
 
@@ -79,7 +31,7 @@ export const PendingTransactions = ({
 		<div data-testid="PendingTransactions" className="relative">
 			<h2 className="mb-6">{t("WALLETS.PAGE_WALLET_DETAILS.PENDING_TRANSACTIONS")}</h2>
 
-			<Table columns={columns} data={transactions}>
+			<Table columns={createTableColumns(t)} data={transactions}>
 				{(transaction: PendingTransaction) => {
 					if (transaction.hasBeenSigned || transaction.isAwaitingConfirmation) {
 						return (
