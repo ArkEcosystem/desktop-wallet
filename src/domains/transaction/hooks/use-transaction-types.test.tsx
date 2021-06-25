@@ -4,12 +4,17 @@ import { env } from "utils/testing-library";
 import { useTransactionTypes } from "./use-transaction-types";
 
 describe("useTransactionTypes", () => {
+	it("should get type icon", () => {
+		const { result } = renderHook(() => useTransactionTypes());
+		expect(result.current.getIcon("transfer")).toBe("Transfer");
+	});
+
 	it("should get type label", () => {
 		const { result } = renderHook(() => useTransactionTypes());
 		expect(result.current.getLabel("transfer")).toBe("Transfer");
 	});
 
-	it("should have core  types", () => {
+	it("should have core types", () => {
 		const { result } = renderHook(() => useTransactionTypes());
 		expect(Object.keys(result.current.types)).toEqual(["core", "magistrate"]);
 	});

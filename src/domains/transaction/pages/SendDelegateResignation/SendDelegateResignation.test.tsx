@@ -48,6 +48,7 @@ const transactionResponse = {
 	amount: () => transactionFixture.data.amount / 1e8,
 	fee: () => transactionFixture.data.fee / 1e8,
 	data: () => ({ data: () => transactionFixture.data }),
+	type: () => "delegateResignation",
 };
 
 const createTransactionMock = (wallet: Contracts.IReadWriteWallet) =>

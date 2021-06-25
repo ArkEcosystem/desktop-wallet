@@ -106,40 +106,38 @@ export const WalletHeader = ({
 		options: [],
 	};
 
-	if (!wallet.isLedger() && wallet.hasBeenFullyRestored()) {
-		if (wallet.hasSyncedWithNetwork()) {
-			if (wallet.network().allows(Enums.FeatureFlag.TransactionDelegateRegistration) && !wallet.isDelegate()) {
-				registrationOptions.options.push({
-					label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.REGISTER_DELEGATE"),
-					value: "delegate-registration",
-				});
-			}
-
-			if (
-				wallet.network().allows(Enums.FeatureFlag.TransactionDelegateResignation) &&
-				wallet.isDelegate() &&
-				!wallet.isResignedDelegate()
-			) {
-				registrationOptions.options.push({
-					label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.RESIGN_DELEGATE"),
-					value: "delegate-resignation",
-				});
-			}
-
-			if (wallet.network().allows(Enums.FeatureFlag.TransactionSecondSignature) && !wallet.isSecondSignature()) {
-				registrationOptions.options.push({
-					label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SECOND_SIGNATURE"),
-					value: "second-signature",
-				});
-			}
-		}
-
-		if (wallet.network().allows(Enums.FeatureFlag.TransactionMultiSignature)) {
+	if (!wallet.isLedger() && wallet.hasBeenFullyRestored() && wallet.hasSyncedWithNetwork()) {
+		if (wallet.network().allows(Enums.FeatureFlag.TransactionDelegateRegistration) && !wallet.isDelegate()) {
 			registrationOptions.options.push({
-				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.MULTISIGNATURE"),
-				value: "multi-signature",
+				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.REGISTER_DELEGATE"),
+				value: "delegate-registration",
 			});
 		}
+
+		if (
+			wallet.network().allows(Enums.FeatureFlag.TransactionDelegateResignation) &&
+			wallet.isDelegate() &&
+			!wallet.isResignedDelegate()
+		) {
+			registrationOptions.options.push({
+				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.RESIGN_DELEGATE"),
+				value: "delegate-resignation",
+			});
+		}
+
+		if (wallet.network().allows(Enums.FeatureFlag.TransactionSecondSignature) && !wallet.isSecondSignature()) {
+			registrationOptions.options.push({
+				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SECOND_SIGNATURE"),
+				value: "second-signature",
+			});
+		}
+	}
+
+	if (wallet.network().allows(Enums.FeatureFlag.TransactionMultiSignature)) {
+		registrationOptions.options.push({
+			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.MULTISIGNATURE"),
+			value: "multi-signature",
+		});
 	}
 
 	const additionalOptions: DropdownOptionGroup = {
