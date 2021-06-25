@@ -42,7 +42,7 @@ export const BaseTransactionRowInfo = ({ memo, isMultiSignatureRegistration, isL
 	);
 };
 
-export const TransactionRowInfo = ({ transaction }: { transaction: DTO.ExtendedTransactionData }) => (
+export const TransactionRowInfo = ({ transaction }: { transaction: DTO.ExtendedConfirmedTransactionData }) => (
 	<BaseTransactionRowInfo
 		memo={transaction.memo()}
 		isMultiSignatureRegistration={transaction.isMultiSignatureRegistration()}

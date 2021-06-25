@@ -7,7 +7,7 @@ import { TransactionStatus } from "../TransactionTable.models";
 
 interface Properties {
 	isSignaturePending?: boolean;
-	transaction: DTO.ExtendedTransactionData;
+	transaction: DTO.ExtendedConfirmedTransactionData;
 }
 
 const getStatus = (isConfirmed: boolean, isSignaturePending?: boolean): TransactionStatus => {

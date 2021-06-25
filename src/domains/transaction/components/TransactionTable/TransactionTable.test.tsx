@@ -18,7 +18,7 @@ import { TransactionTable } from "./TransactionTable";
 describe("TransactionTable", () => {
 	let profile: Contracts.IProfile;
 	let wallet: Contracts.IReadWriteWallet;
-	let transactions: DTO.ExtendedTransactionData[];
+	let transactions: DTO.ExtendedConfirmedTransactionData[];
 
 	beforeAll(() => {
 		nock("https://dwallets.ark.io/api")

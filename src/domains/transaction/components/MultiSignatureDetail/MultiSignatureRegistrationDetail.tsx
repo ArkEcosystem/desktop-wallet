@@ -14,7 +14,7 @@ import { useTranslation } from "react-i18next";
 
 interface MultisignatureRegistrationDetailProperties {
 	isOpen: boolean;
-	transaction: DTO.ExtendedTransactionData;
+	transaction: DTO.ExtendedConfirmedTransactionData;
 	onClose?: () => void;
 }
 
@@ -32,17 +32,14 @@ export const MultiSignatureRegistrationDetail = ({
 	useEffect(() => {
 		const fetchData = async () => {
 			const addresses: string[] = [];
-			for (const publicKey of (transaction as DTO.MultiSignatureData).publicKeys()) {
+			for (const publicKey of transaction.publicKeys()) {
 				addresses.push((await wallet.coin().address().fromPublicKey(publicKey)).address);
 			}
 
 			const { address } = await wallet
 				.coin()
 				.address()
-				.fromMultiSignature(
-					(transaction as DTO.MultiSignatureData).min(),
-					(transaction as DTO.MultiSignatureData).publicKeys(),
-				);
+				.fromMultiSignature(transaction.min(), transaction.publicKeys());
 
 			setGeneratedAddress(address);
 			setParticipants(addresses);
@@ -73,8 +70,7 @@ export const MultiSignatureRegistrationDetail = ({
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.MULTISIGNATURE.MIN_SIGNATURES")}>
-				{(transaction as DTO.MultiSignatureData).min()} /{" "}
-				{(transaction as DTO.MultiSignatureData).publicKeys().length}
+				{transaction.min()} / {transaction.publicKeys().length}
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.MULTISIGNATURE.GENERATED_ADDRESS")}>
