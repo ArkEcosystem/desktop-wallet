@@ -310,6 +310,7 @@ export const SendVote = () => {
 				await confirmSendVote(isUnvote ? "unvote" : "vote");
 			}
 		} catch (error) {
+			/* istanbul ignore next */
 			if (isMnemonicError(error)) {
 				/* istanbul ignore next */
 				setValue("mnemonic", "");
