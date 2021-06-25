@@ -106,7 +106,12 @@ export const WalletHeader = ({
 		options: [],
 	};
 
-	if (!wallet.isLedger() && !wallet.isMultiSignature() && wallet.hasBeenFullyRestored() && wallet.hasSyncedWithNetwork()) {
+	if (
+		!wallet.isLedger() &&
+		!wallet.isMultiSignature() &&
+		wallet.hasBeenFullyRestored() &&
+		wallet.hasSyncedWithNetwork()
+	) {
 		if (wallet.network().allows(Enums.FeatureFlag.TransactionDelegateRegistration) && !wallet.isDelegate()) {
 			registrationOptions.options.push({
 				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.REGISTER_DELEGATE"),
