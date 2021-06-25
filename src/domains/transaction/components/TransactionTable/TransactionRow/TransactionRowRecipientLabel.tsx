@@ -72,8 +72,8 @@ export const BaseTransactionRowRecipientLabel = ({ transaction, type, recipient,
 	useEffect(() => {
 		if (transaction?.isVote() || transaction?.isUnvote()) {
 			setDelegates({
-				votes: env.delegates().map(transaction.wallet(), (transaction as DTO.VoteData).votes()),
-				unvotes: env.delegates().map(transaction.wallet(), (transaction as DTO.VoteData).unvotes()),
+				votes: env.delegates().map(transaction.wallet(), transaction.votes()),
+				unvotes: env.delegates().map(transaction.wallet(), transaction.unvotes()),
 			});
 		}
 	}, [env, transaction]);
@@ -96,8 +96,8 @@ export const BaseTransactionRowRecipientLabel = ({ transaction, type, recipient,
 	if (transaction?.isVoteCombination()) {
 		return (
 			<VoteCombinationLabel
-				votes={(transaction as DTO.VoteData)?.votes()}
-				unvotes={(transaction as DTO.VoteData)?.unvotes()}
+				votes={transaction?.votes()}
+				unvotes={transaction?.unvotes()}
 			/>
 		);
 	}

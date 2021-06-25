@@ -32,7 +32,7 @@ export const MultiSignatureRegistrationDetail = ({
 	useEffect(() => {
 		const fetchData = async () => {
 			const addresses: string[] = [];
-			for (const publicKey of (transaction as DTO.MultiSignatureData).publicKeys()) {
+			for (const publicKey of transaction.publicKeys()) {
 				addresses.push((await wallet.coin().address().fromPublicKey(publicKey)).address);
 			}
 
@@ -40,8 +40,8 @@ export const MultiSignatureRegistrationDetail = ({
 				.coin()
 				.address()
 				.fromMultiSignature(
-					(transaction as DTO.MultiSignatureData).min(),
-					(transaction as DTO.MultiSignatureData).publicKeys(),
+					transaction.min(),
+					transaction.publicKeys(),
 				);
 
 			setGeneratedAddress(address);
@@ -73,8 +73,8 @@ export const MultiSignatureRegistrationDetail = ({
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.MULTISIGNATURE.MIN_SIGNATURES")}>
-				{(transaction as DTO.MultiSignatureData).min()} /{" "}
-				{(transaction as DTO.MultiSignatureData).publicKeys().length}
+				{transaction.min()} /{" "}
+				{transaction.publicKeys().length}
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.MULTISIGNATURE.GENERATED_ADDRESS")}>
