@@ -191,14 +191,14 @@ export const CreateWallet = () => {
 
 								<div className="flex justify-end space-x-3">
 									{activeTab < 5 && (
-                                        <Button
-                                            disabled={isSubmitting}
-                                            data-testid="CreateWallet__back-button"
-                                            variant="secondary"
-                                            onClick={handleBack}
-                                        >
-                                            {t("COMMON.BACK")}
-                                        </Button>
+										<Button
+											disabled={isSubmitting}
+											data-testid="CreateWallet__back-button"
+											variant="secondary"
+											onClick={handleBack}
+										>
+											{t("COMMON.BACK")}
+										</Button>
 									)}
 
 									{activeTab < 4 && (
