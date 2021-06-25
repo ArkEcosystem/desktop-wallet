@@ -118,11 +118,15 @@ export const CreateWallet = () => {
 			forgetTemporaryWallet();
 		}
 
-		if ((activeTab === 4 || activeTab === 5) && getValues("network").importMethods().bip39.canBeEncrypted) {
+		if (activeTab === 4 || activeTab === 5) {
 			setEncryptionPassword(undefined);
 		}
 
-		setActiveTab(activeTab - 1);
+		if (activeTab === 5 && !getValues("network").importMethods().bip39.canBeEncrypted) {
+			setActiveTab(activeTab - 2);
+		} else {
+			setActiveTab(activeTab - 1);
+		}
 	};
 
 	const handleNext = async () => {
