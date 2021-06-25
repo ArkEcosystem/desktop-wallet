@@ -2,6 +2,7 @@ import { Selector } from "testcafe";
 
 import { buildTranslations as translations } from "../../../app/i18n/helpers";
 import { BASEURL, createFixture, mockRequest } from "../../../utils/e2e-utils";
+import { goToProfile } from "../../profile/e2e/common";
 
 // match(new RegExp(base + "wallets\/([-0-9a-zA-Z]{1,34})"))
 
@@ -44,9 +45,8 @@ createFixture(
 
 test("should create a wallet", async (t) => {
 	const mnemonicWords = [];
-	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 60_000 });
-	await t.click(Selector("span").withText("John Doe"));
-	await t.expect(Selector("div").withText(translations().COMMON.WALLETS).exists).ok();
+
+	await goToProfile(t);
 
 	// Navigate to create page
 	await t.click(Selector("button").withExactText(translations().COMMON.CREATE));

@@ -1,13 +1,12 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
+import { goToProfile } from "../../profile/e2e/common";
 
 const translations = buildTranslations();
 
 export const goToSettings = async (t: any) => {
-	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 60_000 });
-	await t.click(Selector("span").withText("John Doe"));
-	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok();
+	await goToProfile(t);
 
 	await t.click(Selector('[data-testid="navbar__useractions"]'));
 	await t.expect(Selector('[data-testid="dropdown__options"] li').withText(translations.COMMON.SETTINGS).exists).ok();

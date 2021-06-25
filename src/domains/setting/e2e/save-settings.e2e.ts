@@ -2,6 +2,7 @@ import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
 import { createFixture, mockRequest, scrollToTop } from "../../../utils/e2e-utils";
+import { goToProfile } from "../../profile/e2e/common";
 import { importWalletByAddress } from "../../wallet/e2e/common";
 import { goToSettings } from "./common";
 
@@ -47,9 +48,7 @@ test("should save settings", async (t) => {
 });
 
 test("should update converted balance in the navbar after changing the currency", async (t) => {
-	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 60_000 });
-	await t.click(Selector("span").withText("John Doe"));
-	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok();
+	await goToProfile(t);
 
 	// import a mainnet address
 	await importWalletByAddress(t, "AThxYTVgpzZfW7K6UxyB8vBZVMoPAwQS3D", undefined, true);

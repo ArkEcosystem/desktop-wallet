@@ -47,7 +47,7 @@ const walletMock = mockRequest(
 	},
 );
 
-createFixture(`Votes`, [
+createFixture("Multisignature Votes", [
 	transactionMock,
 	walletMock,
 	mockRequest(
