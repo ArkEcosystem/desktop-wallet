@@ -7,16 +7,20 @@ import { PendingTransferRow } from "../TransactionRow/PendingTransferRow";
 import { SignedTransactionRow } from "../TransactionRow/SignedTransactionRow";
 
 interface Properties {
-	transfers?: DTO.ExtendedConfirmedTransactionData[];
-	signed?: DTO.ExtendedSignedTransactionData[];
 	wallet: Contracts.IReadWriteWallet;
 	onClick?: (transaction: DTO.ExtendedSignedTransactionData) => void;
 	onPendingTransactionClick?: (transaction: DTO.ExtendedConfirmedTransactionData) => void;
 }
 
+interface PendingTransaction {
+	transaction: DTO.ExtendedConfirmedTransactionData | DTO.ExtendedSignedTransactionData;
+	hasBeenSigned: boolean;
+	isAwaitingConfirmation: boolean;
+	isAwaitingOurSignature: boolean;
+	isAwaitingOtherSignatures: boolean;
+}
+
 export const PendingTransactions = ({
-	transfers = [],
-	signed = [],
 	wallet,
 	onClick,
 	onPendingTransactionClick,
@@ -59,17 +63,29 @@ export const PendingTransactions = ({
 		},
 	];
 
+	const transactions: PendingTransaction[] = [];
+
+	for (const [id, transaction] of Object.entries(wallet.transaction().pending())) {
+		transactions.push({
+			transaction,
+			hasBeenSigned: wallet.transaction().hasBeenSigned(id),
+			isAwaitingConfirmation: wallet.transaction().isAwaitingConfirmation(id),
+			isAwaitingOurSignature: wallet.transaction().isAwaitingOurSignature(id),
+			isAwaitingOtherSignatures: wallet.transaction().isAwaitingOtherSignatures(id),
+		});
+	}
+
 	return (
 		<div data-testid="PendingTransactions" className="relative">
 			<h2 className="mb-6">{t("WALLETS.PAGE_WALLET_DETAILS.PENDING_TRANSACTIONS")}</h2>
 
-			<Table columns={columns} data={[...transfers, ...signed]}>
-				{(transaction: DTO.ExtendedConfirmedTransactionData | DTO.ExtendedSignedTransactionData) => {
-					if (transaction.isMultiPayment() || transaction.isTransfer()) {
+			<Table columns={columns} data={transactions}>
+				{(transaction: PendingTransaction) => {
+					if (transaction.hasBeenSigned || transaction.isAwaitingConfirmation) {
 						return (
 							<PendingTransferRow
 								wallet={wallet}
-								transaction={transaction as DTO.ExtendedConfirmedTransactionData}
+								transaction={transaction.transaction as DTO.ExtendedConfirmedTransactionData}
 								onRowClick={onPendingTransactionClick}
 							/>
 						);
@@ -77,7 +93,7 @@ export const PendingTransactions = ({
 
 					return (
 						<SignedTransactionRow
-							transaction={transaction as DTO.ExtendedSignedTransactionData}
+							transaction={transaction.transaction as DTO.ExtendedSignedTransactionData}
 							wallet={wallet}
 							onSign={onClick}
 							onRowClick={onClick}
