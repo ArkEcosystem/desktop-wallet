@@ -94,12 +94,7 @@ export const BaseTransactionRowRecipientLabel = ({ transaction, type, recipient,
 	}
 
 	if (transaction?.isVoteCombination()) {
-		return (
-			<VoteCombinationLabel
-				votes={transaction?.votes()}
-				unvotes={transaction?.unvotes()}
-			/>
-		);
+		return <VoteCombinationLabel votes={transaction?.votes()} unvotes={transaction?.unvotes()} />;
 	}
 
 	if (transaction?.isVote() || transaction?.isUnvote()) {
