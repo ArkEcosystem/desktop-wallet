@@ -20,7 +20,7 @@ export const ReviewStep = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) =
 	}, [unregister]);
 
 	return (
-		<section data-testid="SecondSignature__review-step">
+		<section data-testid="SecondSignatureRegistrationForm__review-step">
 			<Header title={t("TRANSACTION.REVIEW_STEP.TITLE")} subtitle={t("TRANSACTION.REVIEW_STEP.DESCRIPTION")} />
 
 			<TransactionNetwork network={wallet.network()} border={false} paddingPosition="bottom" className="mt-8" />

@@ -962,17 +962,26 @@ exports[`Signed Transaction Table should render signed transactions 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
-                    data-testid="Avatar"
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600 ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-background"
+                    data-testid="TransactionRowRecipientIcon"
                   >
                     <div
-                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
-                    />
+                      class="sc-bdfBwQ iSzUah"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        vote.svg
+                      </svg>
+                    </div>
                   </div>
                 </div>
-                <div
-                  class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
-                />
+                <span
+                  class="font-semibold text-theme-text"
+                  data-testid="TransactionRowRecipientLabel"
+                >
+                  Vote
+                </span>
               </div>
             </td>
             <td>
@@ -1099,17 +1108,26 @@ exports[`Signed Transaction Table should render signed transactions 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
-                    data-testid="Avatar"
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600 ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-background"
+                    data-testid="TransactionRowRecipientIcon"
                   >
                     <div
-                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
-                    />
+                      class="sc-bdfBwQ iSzUah"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        unvote.svg
+                      </svg>
+                    </div>
                   </div>
                 </div>
-                <div
-                  class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
-                />
+                <span
+                  class="font-semibold text-theme-text"
+                  data-testid="TransactionRowRecipientLabel"
+                >
+                  Unvote
+                </span>
               </div>
             </td>
             <td>

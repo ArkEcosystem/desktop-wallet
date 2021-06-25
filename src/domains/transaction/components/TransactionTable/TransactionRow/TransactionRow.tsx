@@ -15,7 +15,7 @@ import { TransactionRowRecipientLabel } from "./TransactionRowRecipientLabel";
 import { TransactionRowSkeleton } from "./TransactionRowSkeleton";
 
 type Properties = {
-	transaction: DTO.ExtendedTransactionData;
+	transaction: DTO.ExtendedConfirmedTransactionData;
 	exchangeCurrency?: string;
 	onSign?: () => void;
 	onClick?: () => void;

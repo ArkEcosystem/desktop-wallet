@@ -7,11 +7,11 @@ import { PendingTransferRow } from "../TransactionRow/PendingTransferRow";
 import { SignedTransactionRow } from "../TransactionRow/SignedTransactionRow";
 
 interface Properties {
-	transfers?: DTO.ExtendedTransactionData[];
+	transfers?: DTO.ExtendedConfirmedTransactionData[];
 	signed?: DTO.ExtendedSignedTransactionData[];
 	wallet: Contracts.IReadWriteWallet;
 	onClick?: (transaction: DTO.ExtendedSignedTransactionData) => void;
-	onPendingTransactionClick?: (transaction: DTO.ExtendedTransactionData) => void;
+	onPendingTransactionClick?: (transaction: DTO.ExtendedConfirmedTransactionData) => void;
 }
 
 export const PendingTransactions = ({
@@ -64,12 +64,12 @@ export const PendingTransactions = ({
 			<h2 className="mb-6">{t("WALLETS.PAGE_WALLET_DETAILS.PENDING_TRANSACTIONS")}</h2>
 
 			<Table columns={columns} data={[...transfers, ...signed]}>
-				{(transaction: DTO.ExtendedTransactionData | DTO.ExtendedSignedTransactionData) => {
+				{(transaction: DTO.ExtendedConfirmedTransactionData | DTO.ExtendedSignedTransactionData) => {
 					if (transaction.isMultiPayment() || transaction.isTransfer()) {
 						return (
 							<PendingTransferRow
 								wallet={wallet}
-								transaction={transaction as DTO.ExtendedTransactionData}
+								transaction={transaction as DTO.ExtendedConfirmedTransactionData}
 								onRowClick={onPendingTransactionClick}
 							/>
 						);

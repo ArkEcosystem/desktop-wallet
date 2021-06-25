@@ -11,7 +11,7 @@ import { Trans, useTranslation } from "react-i18next";
 
 interface TransactionsProperties {
 	fetchMoreAction?: Function;
-	onRowClick?: (row: DTO.ExtendedTransactionData) => void;
+	onRowClick?: (row: DTO.ExtendedConfirmedTransactionData) => void;
 	emptyText?: string;
 	hideHeader?: boolean;
 	isCompact?: boolean;
@@ -40,9 +40,9 @@ export const Transactions = memo(
 	}: TransactionsProperties) => {
 		const { t } = useTranslation();
 
-		const [transactionModalItem, setTransactionModalItem] = useState<DTO.ExtendedTransactionData | undefined>(
-			undefined,
-		);
+		const [transactionModalItem, setTransactionModalItem] = useState<
+			DTO.ExtendedConfirmedTransactionData | undefined
+		>(undefined);
 
 		const [activeTransactionTypeLabel, setActiveTransactionTypeLabel] = useState("");
 

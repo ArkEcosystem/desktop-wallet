@@ -16,8 +16,8 @@ export const PendingTransferRow = ({
 	onRowClick,
 	wallet,
 }: {
-	transaction: DTO.ExtendedTransactionData;
-	onRowClick?: (transaction: DTO.ExtendedTransactionData) => void;
+	transaction: DTO.ExtendedConfirmedTransactionData;
+	onRowClick?: (transaction: DTO.ExtendedConfirmedTransactionData) => void;
 	wallet: Contracts.IReadWriteWallet;
 }) => {
 	const { t } = useTranslation();

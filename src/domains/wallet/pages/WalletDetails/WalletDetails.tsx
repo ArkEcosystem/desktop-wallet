@@ -18,7 +18,7 @@ import { useWalletTransactions } from "./hooks/use-wallet-transactions";
 
 export const WalletDetails = () => {
 	const [signedTransactionModalItem, setSignedTransactionModalItem] = useState<DTO.ExtendedSignedTransactionData>();
-	const [transactionModalItem, setTransactionModalItem] = useState<DTO.ExtendedTransactionData>();
+	const [transactionModalItem, setTransactionModalItem] = useState<DTO.ExtendedConfirmedTransactionData>();
 
 	const [isUpdatingTransactions, setIsUpdatingTransactions] = useState(false);
 	const [isUpdatingWallet, setIsUpdatingWallet] = useState(false);

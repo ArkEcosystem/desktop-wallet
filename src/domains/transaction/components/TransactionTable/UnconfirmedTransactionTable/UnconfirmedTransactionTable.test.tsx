@@ -6,7 +6,7 @@ import { env, getDefaultProfileId, render } from "utils/testing-library";
 
 import { UnconfirmedTransactionTable } from "./UnconfirmedTransactionTable";
 
-let transactions: DTO.ExtendedTransactionData[];
+let transactions: DTO.ExtendedConfirmedTransactionData[];
 let profile: Contracts.IProfile;
 let wallet: Contracts.IReadWriteWallet;
 
