@@ -122,7 +122,11 @@ export const CreateWallet = () => {
 			setEncryptionPassword(undefined);
 		}
 
-		setActiveTab(activeTab - 1);
+		if (activeTab === 5 && !getValues("network").importMethods().bip39.canBeEncrypted) {
+			setActiveTab(activeTab - 2);
+		} else {
+			setActiveTab(activeTab - 1);
+		}
 	};
 
 	const handleNext = async () => {
@@ -141,7 +145,11 @@ export const CreateWallet = () => {
 				setIsGeneratingWallet(false);
 			}
 		} else {
-			setActiveTab(newIndex);
+			if (newIndex === 4 && !getValues("network").importMethods().bip39.canBeEncrypted) {
+				setActiveTab(newIndex + 1);
+			} else {
+				setActiveTab(newIndex);
+			}
 		}
 	};
 
