@@ -47,10 +47,14 @@ export const Notifications = ({ profile, onNotificationAction, onTransactionClic
 	}
 
 	return (
-		<NotificationsWrapper ref={wrapperReference as React.MutableRefObject<any>} data-testid="NotificationsWrapper">
+		<NotificationsWrapper
+			wider
+			ref={wrapperReference as React.MutableRefObject<any>}
+			data-testid="NotificationsWrapper"
+		>
 			{notifications.length > 0 && (
-				<>
-					<div className="-top-5 z-10 py-4 pr-8 pl-4 -mx-4 mb-2 text-sm font-bold text-theme-secondary-500">
+				<div className="space-y-2">
+					<div className="text-base font-semibold text-theme-secondary-500">
 						{t("COMMON.NOTIFICATIONS.PLUGINS_TITLE")}
 					</div>
 					<Table hideHeader columns={[{ Header: "-", className: "hidden" }]} data={notifications}>
@@ -65,12 +69,12 @@ export const Notifications = ({ profile, onNotificationAction, onTransactionClic
 							/>
 						)}
 					</Table>
-				</>
+				</div>
 			)}
 
 			{transactions.length > 0 && (
-				<div className="mt-4">
-					<div className="-top-5 z-10 py-1 pr-8 pl-4 -mx-4 text-sm font-bold text-theme-secondary-500">
+				<div className="space-y-2">
+					<div className="text-base font-semibold text-theme-secondary-500">
 						{t("COMMON.NOTIFICATIONS.TRANSACTIONS_TITLE")}
 					</div>
 					<Table hideHeader columns={[{ Header: "-", className: "hidden" }]} data={transactions}>

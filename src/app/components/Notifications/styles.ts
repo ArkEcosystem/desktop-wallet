@@ -2,8 +2,15 @@ import tw, { css, styled } from "twin.macro";
 
 const baseStyles = css`
 	max-height: 30rem;
-	${tw`overflow-y-auto p-8 py-3`};
+	${tw`px-10 pt-5 pb-7 space-y-4 overflow-y-auto`};
 `;
-export const NotificationsWrapper = styled.div`
+
+export const NotificationsWrapper = styled.div<{ wider?: boolean }>`
 	${baseStyles}
+
+	${({ wider }) =>
+		wider &&
+		css`
+			width: 35rem;
+		`}
 `;
