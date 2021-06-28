@@ -3,13 +3,16 @@ import { Form, FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { InputPassword } from "app/components/Input";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useValidation } from "app/hooks";
+import { useActiveProfile, useReloadPath,useValidation } from "app/hooks";
+import { toasts } from "app/services";
+import { useSettingsPrompt } from "domains/setting/hooks/use-settings-prompt";
 import React from "react";
+import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { Prompt } from "react-router-dom";
 
-import { SettingsProperties } from "../Settings.models";
-
-export const PasswordSettings = ({ formConfig, onSuccess, onError }: SettingsProperties) => {
+export const PasswordSettings = () => {
+	const reloadPath = useReloadPath();
 	const activeProfile = useActiveProfile();
 	const { persist } = useEnvironmentContext();
 
@@ -18,8 +21,10 @@ export const PasswordSettings = ({ formConfig, onSuccess, onError }: SettingsPro
 
 	const { t } = useTranslation();
 
-	const { formState, register, reset, trigger, watch } = formConfig.context;
+	const form = useForm({ mode: "onChange" });
+	const { formState, register, reset, trigger, watch } = form;
 	const { currentPassword, confirmPassword, password } = watch();
+	const { getPromptMessage } = useSettingsPrompt({ isDirty: formState.isDirty });
 
 	const handleSubmit = async ({ currentPassword, password }: any) => {
 		try {
@@ -29,7 +34,7 @@ export const PasswordSettings = ({ formConfig, onSuccess, onError }: SettingsPro
 				activeProfile.auth().setPassword(password);
 			}
 		} catch {
-			return onError(t("SETTINGS.PASSWORD.ERROR.MISMATCH"));
+			toasts.error("SETTINGS.PASSWORD.ERROR.MISMATCH");
 		}
 
 		reset();
@@ -37,7 +42,8 @@ export const PasswordSettings = ({ formConfig, onSuccess, onError }: SettingsPro
 		// the profile has already been saved by the changePassword / setPassword methods above
 		await persist();
 
-		onSuccess(t("SETTINGS.PASSWORD.SUCCESS"));
+		reloadPath();
+		toasts.success("SETTINGS.PASSWORD.SUCCESS");
 	};
 
 	return (
@@ -49,12 +55,7 @@ export const PasswordSettings = ({ formConfig, onSuccess, onError }: SettingsPro
 				}
 			/>
 
-			<Form
-				id="password-settings__form"
-				context={formConfig.context}
-				onSubmit={handleSubmit}
-				className="space-y-5"
-			>
+			<Form id="password-settings__form" context={form} onSubmit={handleSubmit} className="space-y-5">
 				{usesPassword && (
 					<FormField name="currentPassword">
 						<FormLabel label={t("SETTINGS.PASSWORD.CURRENT")} />
@@ -96,6 +97,8 @@ export const PasswordSettings = ({ formConfig, onSuccess, onError }: SettingsPro
 					</Button>
 				</div>
 			</Form>
+
+			<Prompt message={getPromptMessage} />
 		</div>
 	);
 };
