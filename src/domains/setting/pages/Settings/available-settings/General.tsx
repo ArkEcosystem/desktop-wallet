@@ -11,17 +11,18 @@ import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useProfileJobs, useReloadPath, useValidation } from "app/hooks";
 import { useTheme } from "app/hooks/use-theme";
+import { toasts } from "app/services";
 import { PlatformSdkChoices } from "data";
 import { ResetProfile } from "domains/profile/components/ResetProfile";
 import { DevelopmentNetwork } from "domains/setting/components/DevelopmentNetwork";
+import { useSettingsPrompt } from "domains/setting/hooks/use-settings-prompt";
 import React, { useEffect, useMemo, useState } from "react";
+import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { useHistory } from "react-router-dom";
+import { Prompt,useHistory  } from "react-router-dom";
 import { setScreenshotProtection } from "utils/electron-utils";
 
-import { SettingsProperties } from "../Settings.models";
-
-export const General = ({ formConfig, onSuccess }: SettingsProperties) => {
+export const General = () => {
 	const reloadPath = useReloadPath();
 	const { persist } = useEnvironmentContext();
 	const { setProfileTheme } = useTheme();
@@ -32,14 +33,16 @@ export const General = ({ formConfig, onSuccess }: SettingsProperties) => {
 	const history = useHistory();
 	const { t } = useTranslation();
 
-	const { context, register } = formConfig;
-	const { isValid, isSubmitting } = context.formState;
+	const form = useForm({ mode: "onChange" });
+	const { register, watch } = form;
+	const { isValid, isSubmitting, isDirty } = form.formState;
 
-	const name = context.watch("name", activeProfile.settings().get(Contracts.ProfileSetting.Name));
+	const name = watch("name", activeProfile.settings().get(Contracts.ProfileSetting.Name));
 
 	const formattedName = name?.trim?.();
 
 	const { settings } = useValidation();
+	const { getPromptMessage } = useSettingsPrompt({ isDirty });
 
 	const [avatarImage, setAvatarImage] = useState(
 		activeProfile.settings().get(Contracts.ProfileSetting.Avatar) || Helpers.Avatar.make(formattedName || ""),
@@ -78,7 +81,7 @@ export const General = ({ formConfig, onSuccess }: SettingsProperties) => {
 	const handleOnReset = () => {
 		setIsResetProfileOpen(false);
 		setIsDevelopmentNetwork(activeProfile.settings().get<boolean>(Contracts.ProfileSetting.UseTestNetworks)!);
-		context.reset();
+		form.reset();
 		reloadPath();
 	};
 
@@ -218,14 +221,15 @@ export const General = ({ formConfig, onSuccess }: SettingsProperties) => {
 
 		await persist();
 
-		onSuccess();
+		reloadPath();
+		toasts.success(t("SETTINGS.GENERAL.SUCCESS"));
 	};
 
 	return (
 		<>
 			<Header title={t("SETTINGS.GENERAL.TITLE")} subtitle={t("SETTINGS.GENERAL.SUBTITLE")} />
 
-			<Form data-testid="General-settings__form" context={context} onSubmit={handleSubmit}>
+			<Form data-testid="General-settings__form" context={form} onSubmit={handleSubmit}>
 				<div className="relative mt-8">
 					<h2 className="mb-3">{t("SETTINGS.GENERAL.PERSONAL.TITLE")}</h2>
 
@@ -238,11 +242,6 @@ export const General = ({ formConfig, onSuccess }: SettingsProperties) => {
 								<InputDefault
 									ref={register(settings.name(activeProfile.id()))}
 									defaultValue={activeProfile.settings().get(Contracts.ProfileSetting.Name)}
-									onBlur={() => {
-										if (!avatarImage || isSvg) {
-											setAvatarImage(formattedName ? Helpers.Avatar.make(formattedName) : "");
-										}
-									}}
 									data-testid="General-settings__input--name"
 								/>
 							</FormField>
@@ -389,6 +388,8 @@ export const General = ({ formConfig, onSuccess }: SettingsProperties) => {
 				onClose={() => setIsResetProfileOpen(false)}
 				onReset={handleOnReset}
 			/>
+
+			<Prompt message={getPromptMessage} />
 		</>
 	);
 };
