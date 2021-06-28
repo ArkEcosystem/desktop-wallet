@@ -20,7 +20,7 @@ import tw, { css, styled } from "twin.macro";
 import { AddRecipientProperties, ToggleButtonProperties } from "./AddRecipient.models";
 import { AddRecipientWrapper } from "./AddRecipient.styles";
 
-const TransferType = ({ isSingle, disableMultiple, onChange, wallet }: ToggleButtonProperties) => {
+const TransferType = ({ isSingle, disableMultiple, onChange, maxRecipients }: ToggleButtonProperties) => {
 	const { t } = useTranslation();
 
 	return (
@@ -47,9 +47,7 @@ const TransferType = ({ isSingle, disableMultiple, onChange, wallet }: ToggleBut
 				</span>
 			</Tooltip>
 
-			<Tooltip
-				content={t("TRANSACTION.RECIPIENTS_HELPTEXT", { count: wallet?.network().multiPaymentRecipients() })}
-			>
+			<Tooltip content={t("TRANSACTION.RECIPIENTS_HELPTEXT", { count: maxRecipients })}>
 				<div className="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer questionmark bg-theme-primary-100 hover:bg-theme-primary-700 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 hover:text-white">
 					<Icon width={10} height={10} name="QuestionMark" />
 				</div>
@@ -104,21 +102,21 @@ export const AddRecipient = ({
 	const { network, senderAddress, fee, recipientAddress, amount } = watch();
 	const { sendTransfer } = useValidation();
 
-	const senderWallet = useMemo(() => profile.wallets().findByAddress(senderAddress), [profile, senderAddress]);
-
 	const ticker = network?.ticker();
 	const exchangeTicker = profile.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency) as string;
 	const { convert } = useExchangeRate({ ticker, exchangeTicker });
 
+	const maxRecipients = wallet?.network().multiPaymentRecipients() ?? 0;
+
 	const remainingBalance = useMemo(() => {
-		const senderBalance = senderWallet?.balance() || 0;
+		const senderBalance = wallet?.balance() || 0;
 
 		if (isSingle) {
 			return senderBalance;
 		}
 
 		return addedRecipients.reduce((sum, item) => sum - Number(item.amount || 0), senderBalance);
-	}, [addedRecipients, senderWallet, isSingle]);
+	}, [addedRecipients, wallet, isSingle]);
 
 	const remainingNetBalance = useMemo(() => {
 		const netBalance = remainingBalance - (+fee || 0);
@@ -260,7 +258,7 @@ export const AddRecipient = ({
 		};
 
 		/* istanbul ignore next */
-		if (!senderWallet?.network().isTest()) {
+		if (!wallet?.network().isTest()) {
 			newRecipient = {
 				...newRecipient,
 				exchangeAmount: convert(+amount),
@@ -284,7 +282,7 @@ export const AddRecipient = ({
 	};
 
 	const amountAddons =
-		!errors.amount && !errors.fee && isSenderFilled && !senderWallet?.network().isTest()
+		!errors.amount && !errors.fee && isSenderFilled && !wallet?.network().isTest()
 			? {
 					end: (
 						<AmountCrypto
@@ -304,7 +302,7 @@ export const AddRecipient = ({
 
 				{showMultiPaymentOption && (
 					<TransferType
-						wallet={wallet}
+						maxRecipients={maxRecipients}
 						isSingle={isSingle}
 						disableMultiple={disableMultiPaymentOption}
 						onChange={(isSingle) => setIsSingle(isSingle)}
@@ -398,7 +396,8 @@ export const AddRecipient = ({
 							!!errors.amount ||
 							!!errors.recipientAddress ||
 							!getValues("amount") ||
-							!getValues("recipientAddress")
+							!getValues("recipientAddress") ||
+							addedRecipients.length >= maxRecipients
 						}
 						data-testid="AddRecipient__add-button"
 						variant="secondary"
