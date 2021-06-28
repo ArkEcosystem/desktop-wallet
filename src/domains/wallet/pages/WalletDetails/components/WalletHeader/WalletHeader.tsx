@@ -38,6 +38,14 @@ const WalletHeaderButton = styled.button`
 	${tw`inline-flex items-center justify-center w-8 h-8 transition-all duration-100 ease-linear rounded outline-none focus:(outline-none ring-2 ring-theme-primary-400) text-theme-secondary-text hover:text-theme-secondary-500 disabled:(cursor-not-allowed text-theme-secondary-800)`}
 `;
 
+const isMultiSignature = (wallet: Contracts.IReadWriteWallet): boolean => {
+	try {
+		return wallet.isMultiSignature();
+	} catch {
+		return false;
+	}
+};
+
 export const WalletHeader = ({
 	profile,
 	wallet,
@@ -106,40 +114,43 @@ export const WalletHeader = ({
 		options: [],
 	};
 
-	if (!wallet.isLedger() && wallet.hasBeenFullyRestored()) {
-		if (wallet.hasSyncedWithNetwork()) {
-			if (wallet.network().allows(Enums.FeatureFlag.TransactionDelegateRegistration) && !wallet.isDelegate()) {
-				registrationOptions.options.push({
-					label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.REGISTER_DELEGATE"),
-					value: "delegate-registration",
-				});
-			}
-
-			if (
-				wallet.network().allows(Enums.FeatureFlag.TransactionDelegateResignation) &&
-				wallet.isDelegate() &&
-				!wallet.isResignedDelegate()
-			) {
-				registrationOptions.options.push({
-					label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.RESIGN_DELEGATE"),
-					value: "delegate-resignation",
-				});
-			}
-
-			if (wallet.network().allows(Enums.FeatureFlag.TransactionSecondSignature) && !wallet.isSecondSignature()) {
-				registrationOptions.options.push({
-					label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SECOND_SIGNATURE"),
-					value: "second-signature",
-				});
-			}
-		}
-
-		if (wallet.network().allows(Enums.FeatureFlag.TransactionMultiSignature)) {
+	if (
+		!wallet.isLedger() &&
+		!isMultiSignature(wallet) &&
+		wallet.hasBeenFullyRestored() &&
+		wallet.hasSyncedWithNetwork()
+	) {
+		if (wallet.network().allows(Enums.FeatureFlag.TransactionDelegateRegistration) && !wallet.isDelegate()) {
 			registrationOptions.options.push({
-				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.MULTISIGNATURE"),
-				value: "multi-signature",
+				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.REGISTER_DELEGATE"),
+				value: "delegate-registration",
 			});
 		}
+
+		if (
+			wallet.network().allows(Enums.FeatureFlag.TransactionDelegateResignation) &&
+			wallet.isDelegate() &&
+			!wallet.isResignedDelegate()
+		) {
+			registrationOptions.options.push({
+				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.RESIGN_DELEGATE"),
+				value: "delegate-resignation",
+			});
+		}
+
+		if (wallet.network().allows(Enums.FeatureFlag.TransactionSecondSignature) && !wallet.isSecondSignature()) {
+			registrationOptions.options.push({
+				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SECOND_SIGNATURE"),
+				value: "second-signature",
+			});
+		}
+	}
+
+	if (!isMultiSignature(wallet) && wallet.network().allows(Enums.FeatureFlag.TransactionMultiSignature)) {
+		registrationOptions.options.push({
+			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.MULTISIGNATURE"),
+			value: "multi-signature",
+		});
 	}
 
 	const additionalOptions: DropdownOptionGroup = {
@@ -148,14 +159,14 @@ export const WalletHeader = ({
 		options: [],
 	};
 
-	if (wallet.network().allows(Enums.FeatureFlag.MessageSign)) {
+	if (!isMultiSignature(wallet) && wallet.network().allows(Enums.FeatureFlag.MessageSign)) {
 		additionalOptions.options.push({
 			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SIGN_MESSAGE"),
 			value: "sign-message",
 		});
 	}
 
-	if (wallet.network().allows(Enums.FeatureFlag.MessageVerify)) {
+	if (!isMultiSignature(wallet) && wallet.network().allows(Enums.FeatureFlag.MessageVerify)) {
 		additionalOptions.options.push({
 			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.VERIFY_MESSAGE"),
 			value: "verify-message",

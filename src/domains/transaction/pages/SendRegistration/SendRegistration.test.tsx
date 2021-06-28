@@ -60,7 +60,7 @@ const renderPage = async (wallet: Contracts.IReadWriteWallet, type = "delegateRe
 	};
 };
 
-const createTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
+const createDelegateRegistrationMock = (wallet: Contracts.IReadWriteWallet) =>
 	// @ts-ignore
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 		id: () => DelegateRegistrationFixture.data.id,
@@ -70,6 +70,19 @@ const createTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 		fee: () => +DelegateRegistrationFixture.data.fee / 1e8,
 		username: () => DelegateRegistrationFixture.data.asset.delegate.username,
 		data: () => ({ data: () => DelegateRegistrationFixture.data }),
+		type: () => "delegateRegistration",
+	});
+
+const createSecondSignatureRegistrationMock = (wallet: Contracts.IReadWriteWallet) =>
+	// @ts-ignore
+	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
+		id: () => SecondSignatureRegistrationFixture.data.id,
+		sender: () => SecondSignatureRegistrationFixture.data.sender,
+		recipient: () => SecondSignatureRegistrationFixture.data.recipient,
+		amount: () => 0,
+		fee: () => +SecondSignatureRegistrationFixture.data.fee / 1e8,
+		data: () => ({ data: () => SecondSignatureRegistrationFixture.data }),
+		type: () => "secondSignature",
 	});
 
 describe("Registration", () => {
@@ -180,7 +193,7 @@ describe("Registration", () => {
 				rejected: [],
 				errors: {},
 			});
-			const transactionMock = createTransactionMock(wallet);
+			const transactionMock = createDelegateRegistrationMock(wallet);
 
 			fireEvent.click(getByTestId("Registration__send-button"));
 
@@ -267,7 +280,7 @@ describe("Registration", () => {
 			errors: {},
 		});
 
-		const transactionMock = createTransactionMock(wallet);
+		const transactionMock = createSecondSignatureRegistrationMock(wallet);
 
 		fireEvent.click(screen.getByTestId("Registration__send-button"));
 

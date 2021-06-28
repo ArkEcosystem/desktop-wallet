@@ -54,6 +54,7 @@ const createTransactionMultipleMock = (wallet: Contracts.IReadWriteWallet) =>
 			},
 		],
 		data: () => ({ data: () => transactionMultipleFixture.data }),
+		type: () => "multiPayment",
 	});
 
 const createTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
@@ -71,6 +72,7 @@ const createTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 			},
 		],
 		data: () => ({ data: () => transactionFixture.data }),
+		type: () => "transfer",
 	});
 
 let profile: Contracts.IProfile;

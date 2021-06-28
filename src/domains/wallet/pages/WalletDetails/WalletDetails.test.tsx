@@ -180,6 +180,8 @@ describe("WalletDetails", () => {
 	});
 
 	it("should render when wallet not found for votes", async () => {
+		jest.spyOn(blankWallet, "isMultiSignature").mockReturnValue(false);
+
 		walletUrl = `/profiles/${profile.id()}/wallets/${blankWallet.id()}`;
 		history.push(walletUrl);
 

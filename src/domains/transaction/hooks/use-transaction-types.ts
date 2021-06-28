@@ -87,6 +87,23 @@ const magistrateTypes = Object.keys(magistrate);
 export const useTransactionTypes = ({ wallets = [] }: TransactionTypeProperties = {}) => {
 	const { t } = useTranslation();
 
+	const transactionTypeIcons: Record<string, string> = {
+		transfer: "Transfer",
+		multiPayment: "Multipayment",
+		secondSignature: "Key",
+		multiSignature: "Multisig",
+		delegateRegistration: "Delegate",
+		delegateResignation: "DelegateResigned",
+		vote: "Vote",
+		unvote: "Unvote",
+		voteCombination: "VoteCombination",
+		ipfs: "Ipfs",
+		htlcLock: "Timelock",
+		htlcClaim: "Timelock",
+		htlcRefund: "Timelock",
+		magistrate: "Magistrate",
+	};
+
 	const allTransactionTypeLabels: Record<string, string> = {
 		// core
 		transfer: t("TRANSACTION.TRANSACTION_TYPES.TRANSFER"),
@@ -119,6 +136,7 @@ export const useTransactionTypes = ({ wallets = [] }: TransactionTypeProperties 
 		magistrate: t("TRANSACTION.TRANSACTION_TYPES.MAGISTRATE"),
 	};
 
+	const getIcon = (type: string) => transactionTypeIcons[type];
 	const getLabel = (type: string) => allTransactionTypeLabels[type];
 
 	const getQueryParametersByType = (type: string) => core[type] || magistrate[type];
@@ -145,6 +163,7 @@ export const useTransactionTypes = ({ wallets = [] }: TransactionTypeProperties 
 	);
 
 	return {
+		getIcon,
 		getLabel,
 		hasMagistrationTypesEnabled,
 		types: {

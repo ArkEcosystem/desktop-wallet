@@ -190,7 +190,7 @@ export const SendRegistration = () => {
 								/>
 							</TabPanel>
 
-							{registrationForm && fees && (
+							{registrationForm && (
 								<>
 									<registrationForm.component
 										activeTab={activeTab}

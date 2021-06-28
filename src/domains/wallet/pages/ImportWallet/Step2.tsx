@@ -113,6 +113,7 @@ const ImportInputField = ({ type, coin, profile }: { type: string; coin: Coins.C
 						const { address } = await coin.address().fromPublicKey(value);
 						return address;
 					} catch {
+						/* istanbul ignore next */
 						throw new Error(t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.INVALID_PUBLIC_KEY"));
 					}
 				}}
