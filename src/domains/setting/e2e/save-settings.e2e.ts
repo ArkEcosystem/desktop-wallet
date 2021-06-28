@@ -39,8 +39,8 @@ test("should save settings", async (t) => {
 
 	await scrollToTop();
 
-	await t.click(Selector("[data-testid=Input__suggestion]").withText("1 minute"));
-	await t.click('[data-testid="SelectDropdown__option--2"]');
+	await t.click(Selector("[data-testid=Input__suggestion]").withText("15 minutes"));
+	await t.click('[data-testid="SelectDropdown__option--0"]');
 
 	await t.click(Selector("input[name=isDarkMode]").parent());
 

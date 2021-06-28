@@ -86,10 +86,6 @@ export const useProfileJobs = (profile?: Contracts.IProfile): Record<string, any
 
 		const checkActivityState = {
 			callback: () => {
-				if (!profile.status().isRestored()) {
-					return;
-				}
-
 				const idleThreshold =
 					(profile.settings().get(Contracts.ProfileSetting.AutomaticSignOutPeriod, 15) as number) * 60;
 
