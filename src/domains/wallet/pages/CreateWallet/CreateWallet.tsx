@@ -1,4 +1,3 @@
-import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { uniq } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
@@ -93,14 +92,13 @@ export const CreateWallet = () => {
 	}, [activeProfile, getValues]);
 
 	const generateWallet = async () => {
-		const network: Networks.Network = getValues("network");
+		const network = getValues("network");
 
 		const locale = activeProfile.settings().get<string>(Contracts.ProfileSetting.Bip39Locale, "english");
 		const { mnemonic, wallet } = await activeProfile.walletFactory().generate({
 			coin: network.coin(),
 			locale,
 			network: network.id(),
-			wordCount: network.wordCount(),
 		});
 
 		activeProfile.wallets().push(wallet);
@@ -177,19 +175,15 @@ export const CreateWallet = () => {
 									error={generationError}
 								/>
 							</TabPanel>
-
 							<TabPanel tabId={2}>
 								<WalletOverviewStep />
 							</TabPanel>
-
 							<TabPanel tabId={3}>
 								<ConfirmPassphraseStep />
 							</TabPanel>
-
 							<TabPanel tabId={4}>
 								<EncryptPasswordStep />
 							</TabPanel>
-
 							<TabPanel tabId={5}>
 								<SuccessStep nameMaxLength={nameMaxLength} profile={activeProfile} />
 							</TabPanel>
