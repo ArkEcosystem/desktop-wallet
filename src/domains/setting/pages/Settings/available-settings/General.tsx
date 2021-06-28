@@ -19,7 +19,7 @@ import { useSettingsPrompt } from "domains/setting/hooks/use-settings-prompt";
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { Prompt,useHistory  } from "react-router-dom";
+import { Prompt, useHistory } from "react-router-dom";
 import { setScreenshotProtection } from "utils/electron-utils";
 
 export const General = () => {

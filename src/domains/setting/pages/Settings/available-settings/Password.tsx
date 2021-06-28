@@ -3,7 +3,7 @@ import { Form, FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { InputPassword } from "app/components/Input";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useReloadPath,useValidation } from "app/hooks";
+import { useActiveProfile, useReloadPath, useValidation } from "app/hooks";
 import { toasts } from "app/services";
 import { useSettingsPrompt } from "domains/setting/hooks/use-settings-prompt";
 import React from "react";
