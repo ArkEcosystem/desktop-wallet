@@ -49,7 +49,6 @@ const formatTransactionNotification = (transaction: Contracts.ConfirmedTransacti
 	meta: {
 		timestamp: transaction.timestamp()?.toUNIX(),
 		transactionId: transaction.id(),
-		walletAddress: transaction.recipient(),
 	},
 });
 
@@ -164,6 +163,7 @@ export const useNotifications = () => {
 		return {
 			notifications: {
 				notifyReceivedTransactions,
+				fetchRecentProfileTransactions,
 				syncReceivedTransactions,
 				sortTransactionNotificationsDesc,
 				notifyWalletUpdate: notifyWalletUpdate(env, t),

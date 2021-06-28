@@ -1,9 +1,10 @@
+import { DTO } from "@arkecosystem/platform-sdk-profiles";
 import { EmptyBlock } from "app/components/EmptyBlock";
 import { Image } from "app/components/Image";
 import { Table } from "app/components/Table";
 import { useEnvironmentContext } from "app/contexts";
 import { useNotifications } from "app/hooks";
-import React, { useCallback, useRef } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import {
@@ -17,9 +18,10 @@ import {
 
 export const Notifications = ({ profile, onNotificationAction, onTransactionClick }: NotificationsProperties) => {
 	const { t } = useTranslation();
+	const [allTransactions, setAllTransactions] = useState<DTO.ExtendedConfirmedTransactionData[]>([]);
 	const environment = useEnvironmentContext();
 	const {
-		notifications: { sortTransactionNotificationsDesc },
+		notifications: { sortTransactionNotificationsDesc, fetchRecentProfileTransactions },
 	} = useNotifications();
 
 	const byType = useCallback(
@@ -34,6 +36,14 @@ export const Notifications = ({ profile, onNotificationAction, onTransactionClic
 	const wrapperReference = useRef();
 	const notifications = byType(["plugin", "wallet"]);
 	const transactions = sortTransactionNotificationsDesc(byType(["transaction"]));
+
+	useEffect(() => {
+		void (async () => {
+			const allRecentTransactions = await fetchRecentProfileTransactions(profile, 12);
+
+			setAllTransactions(allRecentTransactions);
+		})();
+	}, [fetchRecentProfileTransactions, profile]);
 
 	if (transactions.length === 0 && notifications.length === 0) {
 		return (
@@ -80,7 +90,8 @@ export const Notifications = ({ profile, onNotificationAction, onTransactionClic
 					<Table hideHeader columns={[{ Header: "-", className: "hidden" }]} data={transactions}>
 						{(notification: NotificationItemProperties) => (
 							<NotificationTransactionItem
-								notification={notification}
+								transactionId={notification?.meta?.transactionId}
+								allTransactions={allTransactions}
 								profile={profile}
 								containmentRef={wrapperReference}
 								onVisibilityChange={(isVisible) =>
