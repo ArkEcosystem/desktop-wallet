@@ -17,7 +17,7 @@ export interface AddRecipientProperties {
 }
 
 export interface ToggleButtonProperties {
-	wallet?: Contracts.IReadWriteWallet;
+	maxRecipients: number;
 	isSingle: boolean;
 	disableMultiple?: boolean;
 	onChange: (isSingle: boolean) => void;
