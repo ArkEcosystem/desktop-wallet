@@ -5,18 +5,19 @@ import { ListDivided } from "app/components/ListDivided";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
+import { toasts } from "app/services";
 import { useProfileExport } from "domains/setting/hooks/use-profile-export";
 import electron from "electron";
 import fs from "fs";
 import React from "react";
+import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-import { SettingsProperties } from "../Settings.models";
-
-export const Export = ({ formConfig, onSuccess }: SettingsProperties) => {
+export const Export = () => {
 	const { t } = useTranslation();
 
-	const { register, context } = formConfig;
+	const form = useForm({ mode: "onChange" });
+	const { register } = form;
 
 	const profile = useActiveProfile();
 	const { env } = useEnvironmentContext();
@@ -55,7 +56,7 @@ export const Export = ({ formConfig, onSuccess }: SettingsProperties) => {
 
 	const exportDataToFile = async () => {
 		const exportData = formatExportData({
-			...context.getValues(["excludeEmptyWallets", "excludeLedgerWallets"]),
+			...form.getValues(["excludeEmptyWallets", "excludeLedgerWallets"]),
 		});
 
 		const defaultPath = `profile-${profile.id()}.dwe`;
@@ -67,7 +68,7 @@ export const Export = ({ formConfig, onSuccess }: SettingsProperties) => {
 		}
 
 		fs.writeFileSync(filePath, exportData, "utf-8");
-		return onSuccess(t("SETTINGS.EXPORT.SUCCESS"));
+		return toasts.success(t("SETTINGS.EXPORT.SUCCESS"));
 	};
 
 	const handleSubmit = async () => {
@@ -78,7 +79,7 @@ export const Export = ({ formConfig, onSuccess }: SettingsProperties) => {
 		<>
 			<Header title={t("SETTINGS.EXPORT.TITLE")} subtitle={t("SETTINGS.EXPORT.SUBTITLE")} />
 
-			<Form id="export-settings__form" context={formConfig.context} onSubmit={handleSubmit} className="mt-8">
+			<Form id="export-settings__form" context={form} onSubmit={handleSubmit} className="mt-8">
 				<h2 className="mb-0">{t("COMMON.WALLETS")}</h2>
 
 				<ListDivided items={walletExportOptions} />
