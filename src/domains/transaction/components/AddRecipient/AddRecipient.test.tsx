@@ -172,6 +172,8 @@ describe("AddRecipient", () => {
 			network: "ark.devnet",
 		});
 
+		jest.spyOn(emptyWallet.network(), "isTest").mockReturnValue(false);
+
 		emptyProfile.wallets().push(emptyWallet);
 
 		const { getByTestId, container, form } = await renderWithFormProvider(
