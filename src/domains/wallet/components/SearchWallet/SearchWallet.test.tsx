@@ -13,7 +13,7 @@ const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 let wallets: Contracts.IReadWriteWallet[];
 let profile: Contracts.IProfile;
 
-describe.each([true, false])("SearchWallet uses fiat value = %s", (showFiatValue) => {
+describe.each([true, false])("SearchWallet uses fiat value = %s", (showConvertedValue) => {
 	beforeAll(() => {
 		history.push(dashboardURL);
 	});
@@ -30,7 +30,7 @@ describe.each([true, false])("SearchWallet uses fiat value = %s", (showFiatValue
 			<Route path="/profiles/:profileId/dashboard">
 				<SearchWallet
 					profile={profile}
-					showFiatValue={showFiatValue}
+					showConvertedValue={showConvertedValue}
 					isOpen={true}
 					title={translations.MODAL_SELECT_ACCOUNT.TITLE}
 					description={translations.MODAL_SELECT_ACCOUNT.DESCRIPTION}
@@ -53,12 +53,14 @@ describe.each([true, false])("SearchWallet uses fiat value = %s", (showFiatValue
 	});
 
 	it("should render with the default exchange currency enabled from profile settings", async () => {
-		const walletWithExchangeCurrencyMock = jest.spyOn(wallets[0], "exchangeCurrency").mockReturnValue(undefined);
+		const walletWithExchangeCurrencyMock = jest
+			.spyOn(wallets[0], "exchangeCurrency")
+			.mockReturnValue(undefined as any);
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<SearchWallet
 					profile={profile}
-					showFiatValue={showFiatValue}
+					showConvertedValue={showConvertedValue}
 					isOpen={true}
 					title={translations.MODAL_SELECT_ACCOUNT.TITLE}
 					description={translations.MODAL_SELECT_ACCOUNT.DESCRIPTION}
@@ -87,7 +89,14 @@ describe.each([true, false])("SearchWallet uses fiat value = %s", (showFiatValue
 
 		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<SearchWallet profile={profile} isOpen={true} onClose={onClose} showFiatValue={showFiatValue} />
+				<SearchWallet
+					profile={profile}
+					isOpen={true}
+					onClose={onClose}
+					showConvertedValue={showConvertedValue}
+					wallets={[]}
+					title={"title"}
+				/>
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -110,7 +119,7 @@ describe.each([true, false])("SearchWallet uses fiat value = %s", (showFiatValue
 					title={translations.MODAL_SELECT_ACCOUNT.TITLE}
 					description={translations.MODAL_SELECT_ACCOUNT.DESCRIPTION}
 					wallets={wallets}
-					showFiatValue={showFiatValue}
+					showConvertedValue={showConvertedValue}
 				/>
 			</Route>,
 			{
@@ -159,7 +168,7 @@ describe.each([true, false])("SearchWallet uses fiat value = %s", (showFiatValue
 					title={translations.MODAL_SELECT_ACCOUNT.TITLE}
 					description={translations.MODAL_SELECT_ACCOUNT.DESCRIPTION}
 					wallets={wallets}
-					showFiatValue={showFiatValue}
+					showConvertedValue={showConvertedValue}
 				/>
 			</Route>,
 			{
@@ -209,7 +218,7 @@ describe.each([true, false])("SearchWallet uses fiat value = %s", (showFiatValue
 					title={translations.MODAL_SELECT_ACCOUNT.TITLE}
 					description={translations.MODAL_SELECT_ACCOUNT.DESCRIPTION}
 					wallets={wallets}
-					showFiatValue={showFiatValue}
+					showConvertedValue={showConvertedValue}
 				/>
 			</Route>,
 			{
@@ -268,7 +277,7 @@ describe.each([true, false])("SearchWallet uses fiat value = %s", (showFiatValue
 					title={translations.MODAL_SELECT_ACCOUNT.TITLE}
 					description={translations.MODAL_SELECT_ACCOUNT.DESCRIPTION}
 					wallets={wallets}
-					showFiatValue={showFiatValue}
+					showConvertedValue={showConvertedValue}
 				/>
 			</Route>,
 			{
