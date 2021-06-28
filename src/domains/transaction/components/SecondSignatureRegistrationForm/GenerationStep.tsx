@@ -1,5 +1,5 @@
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
-import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { Alert } from "app/components/Alert";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -41,8 +41,10 @@ export const GenerationStep = ({
 	}, [register, common, fees, wallet]);
 
 	useEffect(() => {
-		// @TODO: respect language setting for passphrases
-		const newMnemonic = BIP39.generate(undefined, wallet.network().wordCount());
+		const newMnemonic = BIP39.generate(
+			profile.settings().get<string>(Contracts.ProfileSetting.Bip39Locale, "english"),
+			wallet.network().wordCount(),
+		);
 		setValue("secondMnemonic", newMnemonic);
 		setValue("wallet", wallet);
 	}, [setValue, wallet]);
