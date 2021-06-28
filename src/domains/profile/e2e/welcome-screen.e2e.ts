@@ -2,7 +2,7 @@ import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
 import { createFixture } from "../../../utils/e2e-utils";
-import { goToSettings } from "../../settings/e2e/common";
+import { goToSettings } from "../../setting/e2e/common";
 import { goToProfile } from "./common";
 
 const translations = buildTranslations();
