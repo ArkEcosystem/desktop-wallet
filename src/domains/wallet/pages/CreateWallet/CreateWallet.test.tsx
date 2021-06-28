@@ -164,16 +164,6 @@ describe("CreateWallet", () => {
 
 		await waitFor(() => expect(getByTestId("CreateWallet__SuccessStep")).toBeTruthy());
 
-		act(() => {
-			fireEvent.click(backButton);
-		});
-
-		await waitFor(() => expect(getByTestId("EncryptPassword")).toBeTruthy());
-
-		act(() => {
-			fireEvent.click(getByTestId("CreateWallet__skip-button"));
-		});
-
 		await waitFor(() => expect(getByTestId("CreateWallet__SuccessStep")).toBeTruthy());
 
 		act(() => {

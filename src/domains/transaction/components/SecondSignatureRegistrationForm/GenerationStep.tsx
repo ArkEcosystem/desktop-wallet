@@ -1,5 +1,5 @@
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
-import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Alert } from "app/components/Alert";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -19,9 +19,9 @@ export const GenerationStep = ({
 	profile,
 }: {
 	fees: TransactionFees;
-	wallet: ProfileContracts.IReadWriteWallet;
+	wallet: Contracts.IReadWriteWallet;
 	step?: number;
-	profile: ProfileContracts.IProfile;
+	profile: Contracts.IProfile;
 }) => {
 	const { t } = useTranslation();
 
@@ -41,10 +41,13 @@ export const GenerationStep = ({
 	}, [register, common, fees, wallet]);
 
 	useEffect(() => {
-		const newMnemonic = BIP39.generate();
+		const newMnemonic = BIP39.generate(
+			profile.settings().get<string>(Contracts.ProfileSetting.Bip39Locale, "english"),
+			wallet.network().wordCount(),
+		);
 		setValue("secondMnemonic", newMnemonic);
 		setValue("wallet", wallet);
-	}, [setValue, wallet]);
+	}, [profile, setValue, wallet]);
 
 	return (
 		<section data-testid="SecondSignatureRegistrationForm__generation-step" className="space-y-8">
