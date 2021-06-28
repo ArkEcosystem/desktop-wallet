@@ -242,6 +242,11 @@ export const General = () => {
 								<InputDefault
 									ref={register(settings.name(activeProfile.id()))}
 									defaultValue={activeProfile.settings().get(Contracts.ProfileSetting.Name)}
+									onBlur={() => {
+										if (!avatarImage || isSvg) {
+											setAvatarImage(formattedName ? Helpers.Avatar.make(formattedName) : "");
+										}
+									}}
 									data-testid="General-settings__input--name"
 								/>
 							</FormField>
