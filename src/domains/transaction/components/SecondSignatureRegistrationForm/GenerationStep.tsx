@@ -47,7 +47,7 @@ export const GenerationStep = ({
 		);
 		setValue("secondMnemonic", newMnemonic);
 		setValue("wallet", wallet);
-	}, [setValue, wallet]);
+	}, [profile, setValue, wallet]);
 
 	return (
 		<section data-testid="SecondSignatureRegistrationForm__generation-step" className="space-y-8">
