@@ -41,7 +41,8 @@ export const GenerationStep = ({
 	}, [register, common, fees, wallet]);
 
 	useEffect(() => {
-		const newMnemonic = BIP39.generate();
+		// @TODO: respect language setting for passphrases
+		const newMnemonic = BIP39.generate(undefined, wallet.network().wordCount());
 		setValue("secondMnemonic", newMnemonic);
 		setValue("wallet", wallet);
 	}, [setValue, wallet]);
