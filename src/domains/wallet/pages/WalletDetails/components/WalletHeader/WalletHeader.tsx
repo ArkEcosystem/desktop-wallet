@@ -44,7 +44,7 @@ const isMultiSignature = (wallet: Contracts.IReadWriteWallet): boolean => {
 	} catch {
 		return false;
 	}
-}
+};
 
 export const WalletHeader = ({
 	profile,
