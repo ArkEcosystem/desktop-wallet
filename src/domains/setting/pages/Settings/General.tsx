@@ -9,7 +9,7 @@ import { Select } from "app/components/SelectDropdown";
 import { SelectProfileImage } from "app/components/SelectProfileImage";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useProfileJobs, useReloadPath, useValidation } from "app/hooks";
+import { useActiveProfile, useProfileJobs, useValidation } from "app/hooks";
 import { useTheme } from "app/hooks/use-theme";
 import { toasts } from "app/services";
 import { PlatformSdkChoices } from "data";
@@ -23,7 +23,6 @@ import { Prompt, useHistory } from "react-router-dom";
 import { setScreenshotProtection } from "utils/electron-utils";
 
 export const General = () => {
-	const reloadPath = useReloadPath();
 	const { persist } = useEnvironmentContext();
 	const { setProfileTheme } = useTheme();
 
@@ -82,7 +81,9 @@ export const General = () => {
 		setIsResetProfileOpen(false);
 		setIsDevelopmentNetwork(activeProfile.settings().get<boolean>(Contracts.ProfileSetting.UseTestNetworks)!);
 		form.reset();
-		reloadPath();
+
+		setProfileTheme(activeProfile);
+		window.scrollTo({ top: 0, behavior: "smooth" });
 	};
 
 	const securityItems = [
@@ -221,8 +222,8 @@ export const General = () => {
 
 		await persist();
 
-		reloadPath();
 		toasts.success(t("SETTINGS.GENERAL.SUCCESS"));
+		window.scrollTo({ top: 0, behavior: "smooth" });
 	};
 
 	return (

@@ -3,7 +3,7 @@ import { Form, FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { InputPassword } from "app/components/Input";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useReloadPath, useValidation } from "app/hooks";
+import { useActiveProfile, useValidation } from "app/hooks";
 import { toasts } from "app/services";
 import { useSettingsPrompt } from "domains/setting/hooks/use-settings-prompt";
 import React from "react";
@@ -12,7 +12,6 @@ import { useTranslation } from "react-i18next";
 import { Prompt } from "react-router-dom";
 
 export const PasswordSettings = () => {
-	const reloadPath = useReloadPath();
 	const activeProfile = useActiveProfile();
 	const { persist } = useEnvironmentContext();
 
@@ -43,7 +42,6 @@ export const PasswordSettings = () => {
 		// the profile has already been saved by the changePassword / setPassword methods above
 		await persist();
 
-		reloadPath();
 		toasts.success(t("SETTINGS.PASSWORD.SUCCESS"));
 	};
 
