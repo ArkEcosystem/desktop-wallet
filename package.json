@@ -25,8 +25,11 @@
 		"build:ci": "cross-env GENERATE_SOURCEMAP=false yarn build",
 		"build:e2e": "cross-env REACT_APP_IS_E2E=1 GENERATE_SOURCEMAP=false yarn build",
 		"build:linux": "yarn build:ci && electron-builder --linux --publish never",
+		"build:linux:publish": "yarn build:ci && electron-builder --linux --publish always",
 		"build:mac": "yarn build:ci && electron-builder --mac --publish never",
+		"build:mac:publish": "yarn build:ci && electron-builder --mac --publish always",
 		"build:win": "yarn build:ci && electron-builder --win --x64 --ia32 --publish never",
+		"build:win:publish": "yarn build:ci && electron-builder --win --x64 --ia32 --publish always",
 		"compile": "electron-webpack",
 		"dev": "cross-env concurrently --kill-others \"yarn start\" \"wait-on http://localhost:3000 && electron-webpack dev\"",
 		"eject": "react-app-rewired eject",
@@ -350,8 +353,7 @@
 			"target": [
 				"AppImage",
 				"deb",
-				"tar.gz",
-				"snap"
+				"tar.gz"
 			],
 			"desktop": {
 				"MimeType": "x-scheme-handler/ark;"
