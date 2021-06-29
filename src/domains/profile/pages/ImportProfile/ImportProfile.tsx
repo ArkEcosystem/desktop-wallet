@@ -33,8 +33,6 @@ export const ImportProfile = () => {
 	};
 
 	const handleProfileSave = (importedProfile: Contracts.IProfile) => {
-		env.profiles().push(importedProfile);
-
 		persist();
 		history.push("/");
 	};

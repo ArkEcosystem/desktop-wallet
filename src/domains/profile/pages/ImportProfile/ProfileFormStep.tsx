@@ -111,8 +111,11 @@ const CreateProfileForm = ({
 		},
 	];
 
-	const handleSubmit = ({ name, password: enteredPassword, currency, isDarkMode }: any) => {
+	const handleSubmit = async ({ name, password: enteredPassword, currency, isDarkMode }: any) => {
 		profile = profile || env.profiles().create(name.trim());
+
+		env.profiles().push(profile);
+		await env.profiles().restore(profile, password);
 
 		profile.settings().set(Contracts.ProfileSetting.Name, name);
 		profile.settings().set(Contracts.ProfileSetting.Theme, isDarkMode ? "dark" : "light");
