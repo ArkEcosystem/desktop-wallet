@@ -206,7 +206,7 @@ describe("Settings", () => {
 		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "test profile" } });
 
 		// Toggle Screenshot Protection
-		fireEvent.click(getByTestId("General-settings__toggle--isScreenshotProtection"));
+		fireEvent.click(getByTestId("General-settings__toggle--screenshotProtection"));
 
 		// Toggle Test Development Network
 		fireEvent.click(getByTestId("General-settings__toggle--useTestNetworks"));
@@ -239,7 +239,7 @@ describe("Settings", () => {
 		await waitFor(() => expect(getByTestId("General-settings__submit-button")).toBeEnabled());
 
 		// Toggle Portfolio Transaction History
-		fireEvent.click(getByTestId("General-settings__toggle--transactionHistory"));
+		fireEvent.click(getByTestId("General-settings__toggle--dashboardTransactionHistory"));
 
 		// Toggle Dark Theme
 		fireEvent.click(getByTestId("General-settings__toggle--isDarkMode"));

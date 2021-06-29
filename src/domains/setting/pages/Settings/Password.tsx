@@ -23,7 +23,9 @@ export const PasswordSettings = () => {
 	const form = useForm({ mode: "onChange" });
 	const { formState, register, reset, trigger, watch } = form;
 	const { currentPassword, confirmPassword, password } = watch();
-	const { getPromptMessage } = useSettingsPrompt({ isDirty: formState.isDirty });
+
+	const { isDirty, dirtyFields } = formState;
+	const { getPromptMessage } = useSettingsPrompt({ isDirty, dirtyFields });
 
 	const handleSubmit = async ({ currentPassword, password }: any) => {
 		try {
