@@ -3611,7 +3611,13 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                     <span
                                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                                     >
-                                      (Available 33.67769203)
+                                      (Available 
+                                      <span
+                                        data-testid="AmountCrypto"
+                                      >
+                                        33.67769203  
+                                      </span>
+                                      )
                                     </span>
                                   </label>
                                   <div
@@ -4622,7 +4628,13 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                     <span
                                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                                     >
-                                      (Available 33.67769203)
+                                      (Available 
+                                      <span
+                                        data-testid="AmountCrypto"
+                                      >
+                                        33.67769203  
+                                      </span>
+                                      )
                                     </span>
                                   </label>
                                   <div
@@ -8428,7 +8440,15 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                     <span
                                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                                     >
-                                      (Available 57.60679402)
+                                      (
+                                      Available
+                                       
+                                      <span
+                                        data-testid="AmountCrypto"
+                                      >
+                                        57.60679402  
+                                      </span>
+                                      )
                                     </span>
                                   </label>
                                   <div

@@ -10,7 +10,7 @@ import { Select } from "app/components/SelectDropdown";
 import { SelectProfileImage } from "app/components/SelectProfileImage";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
-import { useTheme, useValidation } from "app/hooks";
+import { useProfileRestore, useTheme, useValidation } from "app/hooks";
 import { PlatformSdkChoices } from "data";
 import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -23,6 +23,7 @@ export const CreateProfile = () => {
 	const form = useForm({ mode: "onChange" });
 	const history = useHistory();
 	const { t } = useTranslation();
+	const { restoreProfileConfig } = useProfileRestore();
 
 	const { watch, register, formState, setValue, trigger } = form;
 	const { name, confirmPassword, isDarkMode } = watch(["name", "confirmPassword", "isDarkMode"], { name: "" });
@@ -80,6 +81,7 @@ export const CreateProfile = () => {
 			profile.auth().setPassword(password);
 		}
 
+		restoreProfileConfig(profile);
 		await persist();
 
 		history.push("/");
