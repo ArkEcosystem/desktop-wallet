@@ -75,7 +75,7 @@ export const General: React.FC = () => {
 		defaultValues: getDefaultValues(),
 	});
 
-	const { register, watch, formState, setValue } = form;
+	const { register, watch, formState, setValue, reset } = form;
 	const { isValid, isSubmitting, isDirty, dirtyFields } = formState;
 
 	const { name, avatar, useTestNetworks } = watch();
@@ -117,7 +117,7 @@ export const General: React.FC = () => {
 
 	const handleOnReset = () => {
 		setIsResetProfileOpen(false);
-		form.reset();
+		reset(getDefaultValues());
 
 		setProfileTheme(activeProfile);
 		window.scrollTo({ top: 0, behavior: "smooth" });
@@ -257,7 +257,7 @@ export const General: React.FC = () => {
 
 		await persist();
 
-		form.reset(getDefaultValues());
+		reset(getDefaultValues());
 
 		toasts.success(t("SETTINGS.GENERAL.SUCCESS"));
 		window.scrollTo({ top: 0, behavior: "smooth" });
