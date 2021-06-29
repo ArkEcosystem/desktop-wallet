@@ -12,8 +12,6 @@ jobs:
 
             - name: Create tag
               uses: actions/github-script@v4
-              env:
-                  CHANGELOG_SOURCE: ${{ secrets.CHANGELOG_SOURCE }}
               with:
                   github-token: ${{ github.token }}
                   script: |
