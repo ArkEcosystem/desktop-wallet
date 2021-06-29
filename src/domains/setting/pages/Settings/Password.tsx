@@ -34,7 +34,8 @@ export const PasswordSettings = () => {
 				activeProfile.auth().setPassword(password);
 			}
 		} catch {
-			toasts.error("SETTINGS.PASSWORD.ERROR.MISMATCH");
+			toasts.error(`${t("COMMON.ERROR")}: ${t("SETTINGS.PASSWORD.ERROR.MISMATCH")}`);
+			return;
 		}
 
 		reset();
@@ -43,7 +44,7 @@ export const PasswordSettings = () => {
 		await persist();
 
 		reloadPath();
-		toasts.success("SETTINGS.PASSWORD.SUCCESS");
+		toasts.success(t("SETTINGS.PASSWORD.SUCCESS"));
 	};
 
 	return (
