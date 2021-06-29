@@ -20,7 +20,7 @@ export const TransactionMemo = ({ memo }: TransactionMemoProperties) => {
 				</div>
 			}
 		>
-			<p className="break-all">{memo}</p>
+			<p className="break-all whitespace-pre-line">{memo}</p>
 		</TransactionDetail>
 	);
 };

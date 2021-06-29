@@ -1,3 +1,4 @@
+import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { uniq } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
@@ -68,8 +69,9 @@ export const ImportWallet = () => {
 			setIsImporting(true);
 
 			try {
-				await importWallet();
-				setActiveTab(activeTab + (getValues("type").startsWith("bip") ? 1 : 2));
+				const { canBeEncrypted } = await importWallet();
+
+				setActiveTab(activeTab + (canBeEncrypted ? 1 : 2));
 			} catch (error) {
 				/* istanbul ignore next */
 				toasts.error(error.message);
@@ -96,7 +98,7 @@ export const ImportWallet = () => {
 		setActiveTab(activeTab - 1);
 	};
 
-	const importWallet = async () => {
+	const importWallet = async (): Promise<Networks.ImportMethod> => {
 		const { network, type, encryptedWif } = getValues();
 
 		const wallet: any = await importWalletByType({
@@ -112,10 +114,16 @@ export const ImportWallet = () => {
 		await syncAll(wallet);
 
 		await persist();
+
+		return network.importMethods()[type];
 	};
 
 	const encryptMnemonic = async () => {
 		await walletData!.wif().set(walletGenerationInput!, getValues("encryptionPassword"));
+
+		walletData
+			?.data()
+			.set(Contracts.WalletData.ImportMethod, Contracts.WalletImportMethod.BIP39.MNEMONIC_WITH_ENCRYPTION);
 
 		await persist();
 	};

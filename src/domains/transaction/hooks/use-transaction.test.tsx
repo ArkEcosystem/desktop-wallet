@@ -16,7 +16,7 @@ describe("useTransaction", () => {
 			.query(true)
 			.reply(200, () => {
 				const { meta, data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
-				data[0].confirmations = 1;
+				data[0].confirmations = 0;
 				return {
 					meta,
 					data: data.slice(0, 2),

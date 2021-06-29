@@ -10,49 +10,6 @@ exports[`Transactions should fetch more transactions 1`] = `
     >
       Transaction History
     </div>
-    <div
-      class="mt-6"
-      data-testid="FilterTransactions"
-    >
-      <div
-        class="relative"
-      >
-        <span
-          data-testid="dropdown__toggle"
-        >
-          <button
-            class="flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-secondary-500"
-            data-testid="CollapseToggleButton"
-          >
-            <span>
-              <span
-                class="text-theme-secondary-500 dark:text-theme-secondary-600"
-              >
-                Type: 
-              </span>
-              <span
-                class="text-theme-secondary-700 dark:text-theme-secondary-200"
-              >
-                All
-              </span>
-            </span>
-            <span
-              class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 jmsVky"
-            >
-              <div
-                class="sc-bdfBwQ kJrqvM"
-                height="5"
-                width="8"
-              >
-                <svg>
-                  chevron-down.svg
-                </svg>
-              </div>
-            </span>
-          </button>
-        </span>
-      </div>
-    </div>
   </div>
   <div
     class="mb-8"
@@ -105,6 +62,52 @@ exports[`Transactions should fetch more transactions 1`] = `
           Outgoing
         </span>
       </button>
+      <div
+        class="flex flex-1"
+      />
+      <div
+        class="my-auto mr-6"
+        data-testid="FilterTransactions"
+      >
+        <div
+          class="relative"
+        >
+          <span
+            data-testid="dropdown__toggle"
+          >
+            <button
+              class="flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-secondary-500"
+              data-testid="CollapseToggleButton"
+            >
+              <span>
+                <span
+                  class="text-theme-secondary-500 dark:text-theme-secondary-600"
+                >
+                  Type: 
+                </span>
+                <span
+                  class="text-theme-secondary-700 dark:text-theme-secondary-200"
+                >
+                  All
+                </span>
+              </span>
+              <span
+                class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 jmsVky"
+              >
+                <div
+                  class="sc-bdfBwQ kJrqvM"
+                  height="5"
+                  width="8"
+                >
+                  <svg>
+                    chevron-down.svg
+                  </svg>
+                </div>
+              </span>
+            </button>
+          </span>
+        </div>
+      </div>
     </div>
   </div>
   <div
@@ -260,7 +263,7 @@ exports[`Transactions should fetch more transactions 1`] = `
           role="rowgroup"
         >
           <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ group"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 bFBpUs group"
             data-testid="TableRow"
           >
             <td>
@@ -411,18 +414,13 @@ exports[`Transactions should fetch more transactions 1`] = `
                   class="whitespace-nowrap"
                   data-testid="TransactionRow__currency"
                 >
-                  <span
-                    class="text-theme-secondary-text"
-                    data-testid="AmountCrypto"
-                  >
-                    0 BTC
-                  </span>
+                  N/A
                 </span>
               </div>
             </td>
           </tr>
           <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ group"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 bFBpUs group"
             data-testid="TableRow"
           >
             <td>
@@ -573,18 +571,13 @@ exports[`Transactions should fetch more transactions 1`] = `
                   class="whitespace-nowrap"
                   data-testid="TransactionRow__currency"
                 >
-                  <span
-                    class="text-theme-secondary-text"
-                    data-testid="AmountCrypto"
-                  >
-                    0 BTC
-                  </span>
+                  N/A
                 </span>
               </div>
             </td>
           </tr>
           <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ group"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 bFBpUs group"
             data-testid="TableRow"
           >
             <td>
@@ -735,18 +728,13 @@ exports[`Transactions should fetch more transactions 1`] = `
                   class="whitespace-nowrap"
                   data-testid="TransactionRow__currency"
                 >
-                  <span
-                    class="text-theme-secondary-text"
-                    data-testid="AmountCrypto"
-                  >
-                    0 BTC
-                  </span>
+                  N/A
                 </span>
               </div>
             </td>
           </tr>
           <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ group"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 bFBpUs group"
             data-testid="TableRow"
           >
             <td>
@@ -897,12 +885,7 @@ exports[`Transactions should fetch more transactions 1`] = `
                   class="whitespace-nowrap"
                   data-testid="TransactionRow__currency"
                 >
-                  <span
-                    class="text-theme-secondary-text"
-                    data-testid="AmountCrypto"
-                  >
-                    0 BTC
-                  </span>
+                  N/A
                 </span>
               </div>
             </td>
@@ -924,49 +907,6 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
     >
       Transaction History
     </div>
-    <div
-      class="mt-6"
-      data-testid="FilterTransactions"
-    >
-      <div
-        class="relative"
-      >
-        <span
-          data-testid="dropdown__toggle"
-        >
-          <button
-            class="flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-secondary-500"
-            data-testid="CollapseToggleButton"
-          >
-            <span>
-              <span
-                class="text-theme-secondary-500 dark:text-theme-secondary-600"
-              >
-                Type: 
-              </span>
-              <span
-                class="text-theme-secondary-700 dark:text-theme-secondary-200"
-              >
-                All
-              </span>
-            </span>
-            <span
-              class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 jmsVky"
-            >
-              <div
-                class="sc-bdfBwQ kJrqvM"
-                height="5"
-                width="8"
-              >
-                <svg>
-                  chevron-down.svg
-                </svg>
-              </div>
-            </span>
-          </button>
-        </span>
-      </div>
-    </div>
   </div>
   <div
     class="mb-8"
@@ -1019,6 +959,52 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
           Outgoing
         </span>
       </button>
+      <div
+        class="flex flex-1"
+      />
+      <div
+        class="my-auto mr-6"
+        data-testid="FilterTransactions"
+      >
+        <div
+          class="relative"
+        >
+          <span
+            data-testid="dropdown__toggle"
+          >
+            <button
+              class="flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-secondary-500"
+              data-testid="CollapseToggleButton"
+            >
+              <span>
+                <span
+                  class="text-theme-secondary-500 dark:text-theme-secondary-600"
+                >
+                  Type: 
+                </span>
+                <span
+                  class="text-theme-secondary-700 dark:text-theme-secondary-200"
+                >
+                  All
+                </span>
+              </span>
+              <span
+                class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 jmsVky"
+              >
+                <div
+                  class="sc-bdfBwQ kJrqvM"
+                  height="5"
+                  width="8"
+                >
+                  <svg>
+                    chevron-down.svg
+                  </svg>
+                </div>
+              </span>
+            </button>
+          </span>
+        </div>
+      </div>
     </div>
   </div>
   <div
@@ -1174,7 +1160,7 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
           role="rowgroup"
         >
           <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ group"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 bFBpUs group"
             data-testid="TableRow"
           >
             <td>
@@ -1325,18 +1311,13 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                   class="whitespace-nowrap"
                   data-testid="TransactionRow__currency"
                 >
-                  <span
-                    class="text-theme-secondary-text"
-                    data-testid="AmountCrypto"
-                  >
-                    0 BTC
-                  </span>
+                  N/A
                 </span>
               </div>
             </td>
           </tr>
           <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ group"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 bFBpUs group"
             data-testid="TableRow"
           >
             <td>
@@ -1487,18 +1468,13 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                   class="whitespace-nowrap"
                   data-testid="TransactionRow__currency"
                 >
-                  <span
-                    class="text-theme-secondary-text"
-                    data-testid="AmountCrypto"
-                  >
-                    0 BTC
-                  </span>
+                  N/A
                 </span>
               </div>
             </td>
           </tr>
           <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ group"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 bFBpUs group"
             data-testid="TableRow"
           >
             <td>
@@ -1649,18 +1625,13 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                   class="whitespace-nowrap"
                   data-testid="TransactionRow__currency"
                 >
-                  <span
-                    class="text-theme-secondary-text"
-                    data-testid="AmountCrypto"
-                  >
-                    0 BTC
-                  </span>
+                  N/A
                 </span>
               </div>
             </td>
           </tr>
           <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ group"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 bFBpUs group"
             data-testid="TableRow"
           >
             <td>
@@ -1811,12 +1782,7 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                   class="whitespace-nowrap"
                   data-testid="TransactionRow__currency"
                 >
-                  <span
-                    class="text-theme-secondary-text"
-                    data-testid="AmountCrypto"
-                  >
-                    0 BTC
-                  </span>
+                  N/A
                 </span>
               </div>
             </td>
@@ -1826,7 +1792,7 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
     </div>
   </div>
   <button
-    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP mt-10 mb-5 w-full"
+    class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST mt-10 mb-5 w-full"
     data-testid="transactions__fetch-more-button"
     type="button"
   >
@@ -1849,49 +1815,6 @@ exports[`Transactions should render 1`] = `
     >
       Transaction History
     </div>
-    <div
-      class="mt-6"
-      data-testid="FilterTransactions"
-    >
-      <div
-        class="relative"
-      >
-        <span
-          data-testid="dropdown__toggle"
-        >
-          <button
-            class="flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-secondary-500"
-            data-testid="CollapseToggleButton"
-          >
-            <span>
-              <span
-                class="text-theme-secondary-500 dark:text-theme-secondary-600"
-              >
-                Type: 
-              </span>
-              <span
-                class="text-theme-secondary-700 dark:text-theme-secondary-200"
-              >
-                All
-              </span>
-            </span>
-            <span
-              class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 jmsVky"
-            >
-              <div
-                class="sc-bdfBwQ kJrqvM"
-                height="5"
-                width="8"
-              >
-                <svg>
-                  chevron-down.svg
-                </svg>
-              </div>
-            </span>
-          </button>
-        </span>
-      </div>
-    </div>
   </div>
   <div
     class="mb-8"
@@ -1944,6 +1867,52 @@ exports[`Transactions should render 1`] = `
           Outgoing
         </span>
       </button>
+      <div
+        class="flex flex-1"
+      />
+      <div
+        class="my-auto mr-6"
+        data-testid="FilterTransactions"
+      >
+        <div
+          class="relative"
+        >
+          <span
+            data-testid="dropdown__toggle"
+          >
+            <button
+              class="flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-secondary-500"
+              data-testid="CollapseToggleButton"
+            >
+              <span>
+                <span
+                  class="text-theme-secondary-500 dark:text-theme-secondary-600"
+                >
+                  Type: 
+                </span>
+                <span
+                  class="text-theme-secondary-700 dark:text-theme-secondary-200"
+                >
+                  All
+                </span>
+              </span>
+              <span
+                class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 jmsVky"
+              >
+                <div
+                  class="sc-bdfBwQ kJrqvM"
+                  height="5"
+                  width="8"
+                >
+                  <svg>
+                    chevron-down.svg
+                  </svg>
+                </div>
+              </span>
+            </button>
+          </span>
+        </div>
+      </div>
     </div>
   </div>
   <div
@@ -2099,7 +2068,7 @@ exports[`Transactions should render 1`] = `
           role="rowgroup"
         >
           <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ group"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 bFBpUs group"
             data-testid="TableRow"
           >
             <td>
@@ -2250,18 +2219,13 @@ exports[`Transactions should render 1`] = `
                   class="whitespace-nowrap"
                   data-testid="TransactionRow__currency"
                 >
-                  <span
-                    class="text-theme-secondary-text"
-                    data-testid="AmountCrypto"
-                  >
-                    0 BTC
-                  </span>
+                  N/A
                 </span>
               </div>
             </td>
           </tr>
           <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ group"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 bFBpUs group"
             data-testid="TableRow"
           >
             <td>
@@ -2412,18 +2376,13 @@ exports[`Transactions should render 1`] = `
                   class="whitespace-nowrap"
                   data-testid="TransactionRow__currency"
                 >
-                  <span
-                    class="text-theme-secondary-text"
-                    data-testid="AmountCrypto"
-                  >
-                    0 BTC
-                  </span>
+                  N/A
                 </span>
               </div>
             </td>
           </tr>
           <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ group"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 bFBpUs group"
             data-testid="TableRow"
           >
             <td>
@@ -2574,18 +2533,13 @@ exports[`Transactions should render 1`] = `
                   class="whitespace-nowrap"
                   data-testid="TransactionRow__currency"
                 >
-                  <span
-                    class="text-theme-secondary-text"
-                    data-testid="AmountCrypto"
-                  >
-                    0 BTC
-                  </span>
+                  N/A
                 </span>
               </div>
             </td>
           </tr>
           <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ group"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 bFBpUs group"
             data-testid="TableRow"
           >
             <td>
@@ -2736,12 +2690,7 @@ exports[`Transactions should render 1`] = `
                   class="whitespace-nowrap"
                   data-testid="TransactionRow__currency"
                 >
-                  <span
-                    class="text-theme-secondary-text"
-                    data-testid="AmountCrypto"
-                  >
-                    0 BTC
-                  </span>
+                  N/A
                 </span>
               </div>
             </td>
@@ -2751,7 +2700,7 @@ exports[`Transactions should render 1`] = `
     </div>
   </div>
   <button
-    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP mt-10 mb-5 w-full"
+    class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST mt-10 mb-5 w-full"
     data-testid="transactions__fetch-more-button"
     type="button"
   >
@@ -2774,49 +2723,6 @@ exports[`Transactions should render with custom title 1`] = `
     <h1>
       Test
     </h1>
-    <div
-      class="mt-6"
-      data-testid="FilterTransactions"
-    >
-      <div
-        class="relative"
-      >
-        <span
-          data-testid="dropdown__toggle"
-        >
-          <button
-            class="flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-secondary-500"
-            data-testid="CollapseToggleButton"
-          >
-            <span>
-              <span
-                class="text-theme-secondary-500 dark:text-theme-secondary-600"
-              >
-                Type: 
-              </span>
-              <span
-                class="text-theme-secondary-700 dark:text-theme-secondary-200"
-              >
-                All
-              </span>
-            </span>
-            <span
-              class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 jmsVky"
-            >
-              <div
-                class="sc-bdfBwQ kJrqvM"
-                height="5"
-                width="8"
-              >
-                <svg>
-                  chevron-down.svg
-                </svg>
-              </div>
-            </span>
-          </button>
-        </span>
-      </div>
-    </div>
   </div>
   <div
     class="mb-8"
@@ -2869,6 +2775,52 @@ exports[`Transactions should render with custom title 1`] = `
           Outgoing
         </span>
       </button>
+      <div
+        class="flex flex-1"
+      />
+      <div
+        class="my-auto mr-6"
+        data-testid="FilterTransactions"
+      >
+        <div
+          class="relative"
+        >
+          <span
+            data-testid="dropdown__toggle"
+          >
+            <button
+              class="flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-secondary-500"
+              data-testid="CollapseToggleButton"
+            >
+              <span>
+                <span
+                  class="text-theme-secondary-500 dark:text-theme-secondary-600"
+                >
+                  Type: 
+                </span>
+                <span
+                  class="text-theme-secondary-700 dark:text-theme-secondary-200"
+                >
+                  All
+                </span>
+              </span>
+              <span
+                class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 jmsVky"
+              >
+                <div
+                  class="sc-bdfBwQ kJrqvM"
+                  height="5"
+                  width="8"
+                >
+                  <svg>
+                    chevron-down.svg
+                  </svg>
+                </div>
+              </span>
+            </button>
+          </span>
+        </div>
+      </div>
     </div>
   </div>
   <div
@@ -3024,7 +2976,7 @@ exports[`Transactions should render with custom title 1`] = `
           role="rowgroup"
         >
           <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ group"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 bFBpUs group"
             data-testid="TableRow"
           >
             <td>
@@ -3175,18 +3127,13 @@ exports[`Transactions should render with custom title 1`] = `
                   class="whitespace-nowrap"
                   data-testid="TransactionRow__currency"
                 >
-                  <span
-                    class="text-theme-secondary-text"
-                    data-testid="AmountCrypto"
-                  >
-                    0 BTC
-                  </span>
+                  N/A
                 </span>
               </div>
             </td>
           </tr>
           <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ group"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 bFBpUs group"
             data-testid="TableRow"
           >
             <td>
@@ -3337,18 +3284,13 @@ exports[`Transactions should render with custom title 1`] = `
                   class="whitespace-nowrap"
                   data-testid="TransactionRow__currency"
                 >
-                  <span
-                    class="text-theme-secondary-text"
-                    data-testid="AmountCrypto"
-                  >
-                    0 BTC
-                  </span>
+                  N/A
                 </span>
               </div>
             </td>
           </tr>
           <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ group"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 bFBpUs group"
             data-testid="TableRow"
           >
             <td>
@@ -3499,18 +3441,13 @@ exports[`Transactions should render with custom title 1`] = `
                   class="whitespace-nowrap"
                   data-testid="TransactionRow__currency"
                 >
-                  <span
-                    class="text-theme-secondary-text"
-                    data-testid="AmountCrypto"
-                  >
-                    0 BTC
-                  </span>
+                  N/A
                 </span>
               </div>
             </td>
           </tr>
           <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ group"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 bFBpUs group"
             data-testid="TableRow"
           >
             <td>
@@ -3661,12 +3598,7 @@ exports[`Transactions should render with custom title 1`] = `
                   class="whitespace-nowrap"
                   data-testid="TransactionRow__currency"
                 >
-                  <span
-                    class="text-theme-secondary-text"
-                    data-testid="AmountCrypto"
-                  >
-                    0 BTC
-                  </span>
+                  N/A
                 </span>
               </div>
             </td>
@@ -3676,7 +3608,7 @@ exports[`Transactions should render with custom title 1`] = `
     </div>
   </div>
   <button
-    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP mt-10 mb-5 w-full"
+    class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST mt-10 mb-5 w-full"
     data-testid="transactions__fetch-more-button"
     type="button"
   >
@@ -3698,50 +3630,6 @@ exports[`Transactions should update wallet filters 1`] = `
       class="mb-8 text-4xl font-bold"
     >
       Transaction History
-    </div>
-    <div
-      class="mt-6"
-      data-testid="FilterTransactions"
-    >
-      <div
-        class="relative"
-      >
-        <span
-          data-testid="dropdown__toggle"
-        >
-          <button
-            class="flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-secondary-400 dark:text-theme-secondary-800 cursor-not-allowed"
-            data-testid="CollapseToggleButton"
-            disabled=""
-          >
-            <span>
-              <span
-                class=""
-              >
-                Type: 
-              </span>
-              <span
-                class=""
-              >
-                All
-              </span>
-            </span>
-            <span
-              class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 hdzQGX"
-            >
-              <div
-                class="sc-bdfBwQ kJrqvM"
-                height="5"
-                width="8"
-              >
-                <svg>
-                  chevron-down.svg
-                </svg>
-              </div>
-            </span>
-          </button>
-        </span>
-      </div>
     </div>
   </div>
   <div
@@ -3795,6 +3683,53 @@ exports[`Transactions should update wallet filters 1`] = `
           Outgoing
         </span>
       </button>
+      <div
+        class="flex flex-1"
+      />
+      <div
+        class="my-auto mr-6"
+        data-testid="FilterTransactions"
+      >
+        <div
+          class="relative"
+        >
+          <span
+            data-testid="dropdown__toggle"
+          >
+            <button
+              class="flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-secondary-400 dark:text-theme-secondary-800 cursor-not-allowed"
+              data-testid="CollapseToggleButton"
+              disabled=""
+            >
+              <span>
+                <span
+                  class=""
+                >
+                  Type: 
+                </span>
+                <span
+                  class=""
+                >
+                  All
+                </span>
+              </span>
+              <span
+                class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 hdzQGX"
+              >
+                <div
+                  class="sc-bdfBwQ kJrqvM"
+                  height="5"
+                  width="8"
+                >
+                  <svg>
+                    chevron-down.svg
+                  </svg>
+                </div>
+              </span>
+            </button>
+          </span>
+        </div>
+      </div>
     </div>
   </div>
   <div

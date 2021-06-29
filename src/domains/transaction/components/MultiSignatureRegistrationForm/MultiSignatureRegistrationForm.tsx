@@ -54,20 +54,18 @@ const signTransaction = async ({ env, form, profile }: SendRegistrationSignOptio
 	const { clearErrors, getValues } = form;
 
 	clearErrors("mnemonic");
-	const { fee, minParticipants, participants, senderAddress } = getValues();
+	const { fee, minParticipants, participants, senderAddress, mnemonic } = getValues();
 	const senderWallet = profile.wallets().findByAddress(senderAddress);
 
 	const publicKeys = (participants as Participant[]).map((item) => item.publicKey);
 
-	const signatory = await senderWallet!
-		.coin()
-		.signatory()
-		.multiSignature(+minParticipants, [...publicKeys]);
-
 	const uuid = await senderWallet!.transaction().signMultiSignature({
 		nonce: senderWallet!.nonce().plus(1).toString(),
 		fee: +fee,
-		signatory,
+		signatory: await senderWallet!
+			.coin()
+			.signatory()
+			.multiSignature(+minParticipants, publicKeys),
 		data: {
 			publicKeys: [...publicKeys],
 			min: +minParticipants,
@@ -82,7 +80,11 @@ const signTransaction = async ({ env, form, profile }: SendRegistrationSignOptio
 	const transactionId = accepted[0];
 
 	await senderWallet!.transaction().sync();
-	await senderWallet!.transaction().addSignature(transactionId, signatory);
+	await senderWallet!.transaction().addSignature(
+		transactionId,
+		// @TODO: support WIF
+		(await senderWallet?.signatory().mnemonic(mnemonic))!,
+	);
 
 	await env.persist();
 

@@ -8,7 +8,7 @@ import { goToTransferPage } from "./common";
 
 const translations = buildTranslations();
 
-createFixture(`Multiple Transfer action`, [
+createFixture("Multiple Transfer action", [
 	mockRequest(
 		{
 			url: "https://dwallets.ark.io/api/transactions",

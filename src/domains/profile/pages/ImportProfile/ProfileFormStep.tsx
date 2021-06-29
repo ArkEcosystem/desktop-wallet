@@ -9,16 +9,16 @@ import { Select } from "app/components/SelectDropdown";
 import { SelectProfileImage } from "app/components/SelectProfileImage";
 import { Toggle } from "app/components/Toggle";
 import { useTheme, useValidation } from "app/hooks";
+import { ReadableFile } from "app/hooks/use-files";
 import { PlatformSdkChoices } from "data";
 import { FilePreview } from "domains/profile/components/FilePreview";
-import { ImportFile } from "domains/profile/pages/ImportProfile/models";
 import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { setThemeSource } from "utils/electron-utils";
 
 interface CreateProfileFormProperties {
-	file?: ImportFile;
+	file?: ReadableFile;
 	profile: Contracts.IProfile;
 	password?: string;
 	env: Environment;
@@ -138,6 +138,7 @@ const CreateProfileForm = ({
 									<InputDefault
 										ref={register(createProfile.name())}
 										onBlur={() => {
+											/* istanbul ignore else */
 											if (!avatarImage?.length || isSvg) {
 												setAvatarImage(Helpers.Avatar.make(formattedName));
 											}

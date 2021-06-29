@@ -11,6 +11,7 @@ import { TruncateMiddleDynamic } from "app/components/TruncateMiddleDynamic";
 import { WalletIcons } from "app/components/WalletIcons";
 import { useEnvironmentContext } from "app/contexts";
 import { usePrevious } from "app/hooks";
+import cn from "classnames";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { DeleteWallet } from "domains/wallet/components/DeleteWallet";
 import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
@@ -21,6 +22,7 @@ import { useWalletSync } from "domains/wallet/hooks/use-wallet-sync";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
+import tw, { styled } from "twin.macro";
 import { openExternal } from "utils/electron-utils";
 
 interface WalletHeaderProperties {
@@ -31,6 +33,18 @@ interface WalletHeaderProperties {
 	isUpdatingTransactions?: boolean;
 	onUpdate?: (status: boolean) => void;
 }
+
+const WalletHeaderButton = styled.button`
+	${tw`inline-flex items-center justify-center w-8 h-8 transition-all duration-100 ease-linear rounded outline-none focus:(outline-none ring-2 ring-theme-primary-400) text-theme-secondary-text hover:text-theme-secondary-500 disabled:(cursor-not-allowed text-theme-secondary-800)`}
+`;
+
+const isMultiSignature = (wallet: Contracts.IReadWriteWallet): boolean => {
+	try {
+		return wallet.isMultiSignature();
+	} catch {
+		return false;
+	}
+};
 
 export const WalletHeader = ({
 	profile,
@@ -100,40 +114,43 @@ export const WalletHeader = ({
 		options: [],
 	};
 
-	if (!wallet.isLedger() && wallet.hasBeenFullyRestored()) {
-		if (wallet.hasSyncedWithNetwork()) {
-			if (wallet.network().allows(Enums.FeatureFlag.TransactionDelegateRegistration) && !wallet.isDelegate()) {
-				registrationOptions.options.push({
-					label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.REGISTER_DELEGATE"),
-					value: "delegate-registration",
-				});
-			}
-
-			if (
-				wallet.network().allows(Enums.FeatureFlag.TransactionDelegateResignation) &&
-				wallet.isDelegate() &&
-				!wallet.isResignedDelegate()
-			) {
-				registrationOptions.options.push({
-					label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.RESIGN_DELEGATE"),
-					value: "delegate-resignation",
-				});
-			}
-
-			if (wallet.network().allows(Enums.FeatureFlag.TransactionSecondSignature) && !wallet.isSecondSignature()) {
-				registrationOptions.options.push({
-					label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SECOND_SIGNATURE"),
-					value: "second-signature",
-				});
-			}
-		}
-
-		if (wallet.network().allows(Enums.FeatureFlag.TransactionMultiSignature)) {
+	if (
+		!wallet.isLedger() &&
+		!isMultiSignature(wallet) &&
+		wallet.hasBeenFullyRestored() &&
+		wallet.hasSyncedWithNetwork()
+	) {
+		if (wallet.network().allows(Enums.FeatureFlag.TransactionDelegateRegistration) && !wallet.isDelegate()) {
 			registrationOptions.options.push({
-				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.MULTISIGNATURE"),
-				value: "multi-signature",
+				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.REGISTER_DELEGATE"),
+				value: "delegate-registration",
 			});
 		}
+
+		if (
+			wallet.network().allows(Enums.FeatureFlag.TransactionDelegateResignation) &&
+			wallet.isDelegate() &&
+			!wallet.isResignedDelegate()
+		) {
+			registrationOptions.options.push({
+				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.RESIGN_DELEGATE"),
+				value: "delegate-resignation",
+			});
+		}
+
+		if (wallet.network().allows(Enums.FeatureFlag.TransactionSecondSignature) && !wallet.isSecondSignature()) {
+			registrationOptions.options.push({
+				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SECOND_SIGNATURE"),
+				value: "second-signature",
+			});
+		}
+	}
+
+	if (!isMultiSignature(wallet) && wallet.network().allows(Enums.FeatureFlag.TransactionMultiSignature)) {
+		registrationOptions.options.push({
+			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.MULTISIGNATURE"),
+			value: "multi-signature",
+		});
 	}
 
 	const additionalOptions: DropdownOptionGroup = {
@@ -142,14 +159,14 @@ export const WalletHeader = ({
 		options: [],
 	};
 
-	if (wallet.network().allows(Enums.FeatureFlag.MessageSign)) {
+	if (!isMultiSignature(wallet) && wallet.network().allows(Enums.FeatureFlag.MessageSign)) {
 		additionalOptions.options.push({
 			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SIGN_MESSAGE"),
 			value: "sign-message",
 		});
 	}
 
-	if (wallet.network().allows(Enums.FeatureFlag.MessageVerify)) {
+	if (!isMultiSignature(wallet) && wallet.network().allows(Enums.FeatureFlag.MessageVerify)) {
 		additionalOptions.options.push({
 			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.VERIFY_MESSAGE"),
 			value: "verify-message",
@@ -344,26 +361,25 @@ export const WalletHeader = ({
 						/>
 					</div>
 
-					<div className="flex items-center my-auto -space-x-2">
+					<div className="flex items-center my-auto space-x-3">
 						<Tooltip
 							content={isSyncing ? t("WALLETS.UPDATING_WALLET_DATA") : t("WALLETS.UPDATE_WALLET_DATA")}
+							theme="dark"
 							disabled={!wallet.hasSyncedWithNetwork()}
 						>
-							<Button
-								aria-busy={isSyncing}
+							<WalletHeaderButton
 								data-testid="WalletHeader__refresh"
-								size="icon"
-								variant="transparent"
-								className="w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
+								type="button"
+								aria-busy={isSyncing}
 								onClick={syncWallet}
 								disabled={!wallet.hasSyncedWithNetwork() || isSyncing}
 							>
 								<Icon
 									name="Reload"
-									className={isSyncing ? "animate-spin" : ""}
+									className={cn({ "animate-spin": isSyncing })}
 									style={{ animationDirection: "reverse" }}
 								/>
-							</Button>
+							</WalletHeaderButton>
 						</Tooltip>
 
 						<Tooltip
@@ -372,18 +388,18 @@ export const WalletHeader = ({
 									? t("WALLETS.PAGE_WALLET_DETAILS.UNSTAR_WALLET")
 									: t("WALLETS.PAGE_WALLET_DETAILS.STAR_WALLET")
 							}
+							theme="dark"
 						>
-							<Button
-								size="icon"
-								variant="transparent"
-								className="w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
+							<WalletHeaderButton
 								data-testid="WalletHeader__star-button"
+								type="button"
 								onClick={handleStar}
 							>
-								<span className={wallet.isStarred() ? "text-theme-warning-400" : ""}>
-									<Icon name={wallet.isStarred() ? "Star" : "StarOutline"} />
-								</span>
-							</Button>
+								<Icon
+									className={cn({ "text-theme-warning-400": wallet.isStarred() })}
+									name={wallet.isStarred() ? "Star" : "StarOutline"}
+								/>
+							</WalletHeaderButton>
 						</Tooltip>
 					</div>
 
@@ -392,7 +408,7 @@ export const WalletHeader = ({
 						disabled={
 							wallet.balance() === 0 || !wallet.hasBeenFullyRestored() || !wallet.hasSyncedWithNetwork()
 						}
-						className="my-auto ml-1"
+						className="my-auto ml-3"
 						onClick={onSend}
 					>
 						{t("COMMON.SEND")}

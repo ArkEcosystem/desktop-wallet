@@ -1,6 +1,6 @@
 import electron from "electron";
 
-import { isIdle, openExternal, openFile, saveFile, setScreenshotProtection, setThemeSource } from "./electron-utils";
+import { isIdle, openExternal, saveFile, setScreenshotProtection, setThemeSource } from "./electron-utils";
 
 const defaultFilters = [
 	{ name: "JSON", extensions: ["json"] },
@@ -157,78 +157,6 @@ describe("Electron utils", () => {
 				}));
 
 				await expect(saveFile(null, null, { restrictToPath: "/home/foo" })).rejects.toThrow();
-			});
-		});
-	});
-
-	describe("openFile", () => {
-		let showOpenDialogMock: jest.SpyInstance;
-
-		beforeEach(() => {
-			showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
-				filePaths: ["filePath"],
-			}));
-		});
-
-		afterEach(() => {
-			showOpenDialogMock.mockRestore();
-		});
-
-		it("should return early when the obtained filePaths is falsy", async () => {
-			showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
-				filePaths: undefined,
-			}));
-
-			await expect(openFile()).resolves.toEqual(undefined);
-		});
-
-		describe("with filter parameter", () => {
-			it("should parse a single FileFilter correctly", async () => {
-				await openFile("path", { filters: defaultFilters[0] });
-
-				expect(showOpenDialogMock).toHaveBeenCalledWith({
-					defaultPath: "path",
-					properties: ["openFile"],
-					filters: [defaultFilters[0]],
-				});
-			});
-
-			it("should parse an array of FileFilters correctly", async () => {
-				await openFile("path", { filters: [defaultFilters[1]] });
-
-				expect(showOpenDialogMock).toHaveBeenCalledWith({
-					defaultPath: "path",
-					properties: ["openFile"],
-					filters: [defaultFilters[1]],
-				});
-			});
-
-			it.each([null, undefined])("should fallback to the default filters when filters is %s", async (filters) => {
-				await openFile("path", { filters });
-
-				expect(showOpenDialogMock).toHaveBeenCalledWith({
-					defaultPath: "path",
-					properties: ["openFile"],
-					filters: defaultFilters,
-				});
-			});
-		});
-
-		describe("when restricting the file path", () => {
-			it("should not throw an error if the given filepath is valid", async () => {
-				showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
-					filePaths: ["./filePath"],
-				}));
-
-				await expect(openFile(null, { restrictToPath: "./" })).resolves.not.toThrow();
-			});
-
-			it("should throw an error if the given filepath is invalid", async () => {
-				showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
-					filePaths: ["/home/bar/foo"],
-				}));
-
-				await expect(openFile(null, { restrictToPath: "/home/foo" })).rejects.toThrow();
 			});
 		});
 	});

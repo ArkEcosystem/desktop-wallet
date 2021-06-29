@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
+import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { translations as transactionTranslations } from "domains/transaction/i18n";
 import { createMemoryHistory } from "history";
@@ -6,6 +7,7 @@ import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
 import DelegateRegistrationFixture from "tests/fixtures/coins/ark/devnet/transactions/delegate-registration.json";
+import SecondSignatureRegistrationFixture from "tests/fixtures/coins/ark/devnet/transactions/second-signature-registration.json";
 import {
 	act,
 	defaultNetMocks,
@@ -15,6 +17,7 @@ import {
 	getDefaultWalletMnemonic,
 	RenderResult,
 	renderWithRouter,
+	screen,
 	syncDelegates,
 	syncFees,
 	waitFor,
@@ -57,7 +60,7 @@ const renderPage = async (wallet: Contracts.IReadWriteWallet, type = "delegateRe
 	};
 };
 
-const createTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
+const createDelegateRegistrationMock = (wallet: Contracts.IReadWriteWallet) =>
 	// @ts-ignore
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 		id: () => DelegateRegistrationFixture.data.id,
@@ -67,6 +70,19 @@ const createTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 		fee: () => +DelegateRegistrationFixture.data.fee / 1e8,
 		username: () => DelegateRegistrationFixture.data.asset.delegate.username,
 		data: () => ({ data: () => DelegateRegistrationFixture.data }),
+		type: () => "delegateRegistration",
+	});
+
+const createSecondSignatureRegistrationMock = (wallet: Contracts.IReadWriteWallet) =>
+	// @ts-ignore
+	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
+		id: () => SecondSignatureRegistrationFixture.data.id,
+		sender: () => SecondSignatureRegistrationFixture.data.sender,
+		recipient: () => SecondSignatureRegistrationFixture.data.recipient,
+		amount: () => 0,
+		fee: () => +SecondSignatureRegistrationFixture.data.fee / 1e8,
+		data: () => ({ data: () => SecondSignatureRegistrationFixture.data }),
+		type: () => "secondSignature",
 	});
 
 describe("Registration", () => {
@@ -177,7 +193,7 @@ describe("Registration", () => {
 				rejected: [],
 				errors: {},
 			});
-			const transactionMock = createTransactionMock(wallet);
+			const transactionMock = createDelegateRegistrationMock(wallet);
 
 			fireEvent.click(getByTestId("Registration__send-button"));
 
@@ -199,6 +215,84 @@ describe("Registration", () => {
 			historySpy.mockRestore();
 			await waitFor(() => expect(asFragment()).toMatchSnapshot());
 		});
+	});
+
+	it("should register second signature", async () => {
+		const bip39GenerateMock = jest.spyOn(BIP39, "generate").mockReturnValue(passphrase);
+
+		const { asFragment } = await renderPage(wallet, "secondSignature");
+
+		await waitFor(() =>
+			expect(screen.getByTestId("SecondSignatureRegistrationForm__generation-step")).toBeTruthy(),
+		);
+
+		const fees = within(screen.getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
+		fireEvent.click(fees[1]);
+
+		fireEvent.click(
+			within(screen.getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+		);
+
+		await waitFor(() => expect(screen.getByTestId("InputCurrency")).not.toHaveValue("0"));
+
+		fireEvent.click(screen.getByTestId("Registration__continue-button"));
+		await waitFor(() => expect(screen.getByTestId("SecondSignatureRegistrationForm__backup-step")).toBeTruthy());
+
+		fireEvent.click(screen.getByTestId("Registration__continue-button"));
+		await waitFor(() =>
+			expect(screen.getByTestId("SecondSignatureRegistrationForm__verification-step")).toBeTruthy(),
+		);
+
+		const words = passphrase.split(" ");
+
+		for (let index = 0; index < 3; index++) {
+			const wordNumber = Number.parseInt(screen.getByText(/Select the/).innerHTML.replace(/Select the/, ""));
+
+			fireEvent.click(screen.getByText(words[wordNumber - 1]));
+
+			if (index < 2) {
+				await waitFor(() => expect(screen.queryAllByText(/The (\d+)/).length === 2 - index));
+			}
+		}
+
+		await waitFor(() => expect(screen.getByTestId("Registration__continue-button")).not.toBeDisabled());
+
+		fireEvent.click(screen.getByTestId("Registration__continue-button"));
+		await waitFor(() => expect(screen.getByTestId("SecondSignatureRegistrationForm__review-step")).toBeTruthy());
+
+		fireEvent.click(screen.getByTestId("Registration__continue-button"));
+		await waitFor(() => expect(screen.getByTestId("AuthenticationStep")).toBeTruthy());
+
+		fireEvent.input(screen.getByTestId("AuthenticationStep__mnemonic"), { target: { value: passphrase } });
+		await waitFor(() => expect(screen.getByTestId("AuthenticationStep__mnemonic")).toHaveValue(passphrase));
+
+		await waitFor(() => expect(screen.getByTestId("Registration__send-button")).not.toHaveAttribute("disabled"));
+
+		expect(asFragment()).toMatchSnapshot();
+
+		const signMock = jest
+			.spyOn(wallet.transaction(), "signSecondSignature")
+			.mockReturnValue(Promise.resolve(SecondSignatureRegistrationFixture.data.id));
+
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
+			accepted: [SecondSignatureRegistrationFixture.data.id],
+			rejected: [],
+			errors: {},
+		});
+
+		const transactionMock = createSecondSignatureRegistrationMock(wallet);
+
+		fireEvent.click(screen.getByTestId("Registration__send-button"));
+
+		await waitFor(() => expect(signMock).toHaveBeenCalled());
+		await waitFor(() => expect(broadcastMock).toHaveBeenCalled());
+		await waitFor(() => expect(transactionMock).toHaveBeenCalled());
+
+		signMock.mockRestore();
+		broadcastMock.mockRestore();
+		transactionMock.mockRestore();
+
+		bip39GenerateMock.mockRestore();
 	});
 
 	it("should set fee", async () => {

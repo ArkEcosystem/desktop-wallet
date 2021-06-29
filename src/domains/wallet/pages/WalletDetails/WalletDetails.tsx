@@ -18,7 +18,7 @@ import { useWalletTransactions } from "./hooks/use-wallet-transactions";
 
 export const WalletDetails = () => {
 	const [signedTransactionModalItem, setSignedTransactionModalItem] = useState<DTO.ExtendedSignedTransactionData>();
-	const [transactionModalItem, setTransactionModalItem] = useState<DTO.ExtendedTransactionData>();
+	const [transactionModalItem, setTransactionModalItem] = useState<DTO.ExtendedConfirmedTransactionData>();
 
 	const [isUpdatingTransactions, setIsUpdatingTransactions] = useState(false);
 	const [isUpdatingWallet, setIsUpdatingWallet] = useState(false);
@@ -100,7 +100,7 @@ export const WalletDetails = () => {
 
 				<Section className="flex-1">
 					{[...pendingSigned, ...pendingTransfers].length > 0 && (
-						<div className="mb-16">
+						<div className="mb-8">
 							<PendingTransactions
 								transfers={pendingTransfers}
 								signed={pendingSigned}
@@ -112,11 +112,7 @@ export const WalletDetails = () => {
 					)}
 
 					<Transactions
-						title={
-							<h2 className="mb-8 font-bold">
-								{t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY.TITLE")}
-							</h2>
-						}
+						title={<h2 className="mb-6">{t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY.TITLE")}</h2>}
 						showUnconfirmed={false}
 						profile={activeProfile}
 						wallets={[activeWallet]}

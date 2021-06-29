@@ -26,21 +26,21 @@ const fetchRecentProfileTransactions = async (profile: ProfileContracts.IProfile
 	return recentTransactions.items();
 };
 
-const isRecipient = (profile: ProfileContracts.IProfile, transaction: Contracts.TransactionDataType) => {
+const isRecipient = (profile: ProfileContracts.IProfile, transaction: Contracts.ConfirmedTransactionData) => {
 	const allRecipients = [transaction.recipient(), ...transaction.recipients().map((r) => r.address)];
 	return allRecipients.some((address: string) => profile.wallets().findByAddress(address));
 };
 
 const transactionNotificationExists = (
 	profile: ProfileContracts.IProfile,
-	transaction: Contracts.TransactionDataType,
+	transaction: Contracts.ConfirmedTransactionData,
 ) =>
 	profile
 		.notifications()
 		.values()
 		.some((n) => n.type === "transaction" && n?.meta?.transactionId === transaction.id());
 
-const formatTransactionNotification = (transaction: Contracts.TransactionDataType) => ({
+const formatTransactionNotification = (transaction: Contracts.ConfirmedTransactionData) => ({
 	icon: undefined,
 	body: undefined,
 	name: undefined,
@@ -68,11 +68,11 @@ const formatNotification = (input: any) =>
 
 const filterUnseenTransactions = (
 	profile: ProfileContracts.IProfile,
-	transactions: Contracts.TransactionDataType[],
+	transactions: Contracts.ConfirmedTransactionData[],
 	allowedTransactionTypes: string[],
 ) =>
 	transactions.reduce(
-		(addedTransactions: Contracts.TransactionDataType[], transaction: Contracts.TransactionDataType) => {
+		(addedTransactions: Contracts.ConfirmedTransactionData[], transaction: Contracts.ConfirmedTransactionData) => {
 			if (
 				allowedTransactionTypes.includes(transaction.type()) &&
 				isRecipient(profile, transaction) &&
@@ -94,7 +94,7 @@ const notifyReceivedTransactions: any = async ({
 	// @ts-ignore
 	const newUnseenTransactions = filterUnseenTransactions(profile, allRecentTransactions, allowedTransactionTypes);
 
-	return newUnseenTransactions.map((transaction: Contracts.TransactionDataType) =>
+	return newUnseenTransactions.map((transaction: Contracts.ConfirmedTransactionData) =>
 		profile.notifications().push(formatTransactionNotification(transaction)),
 	);
 };

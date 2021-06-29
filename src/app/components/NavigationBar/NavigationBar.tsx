@@ -8,7 +8,7 @@ import { NotificationsDropdown } from "app/components/Notifications";
 import { Action } from "app/components/Notifications/models";
 import { Tooltip } from "app/components/Tooltip";
 import { useConfiguration } from "app/contexts";
-import { useScroll } from "app/hooks";
+import { useScroll, useTheme } from "app/hooks";
 import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
 import { SearchWallet } from "domains/wallet/components/SearchWallet";
 import { SelectedWallet } from "domains/wallet/components/SearchWallet/SearchWallet.models";
@@ -123,6 +123,7 @@ const NavigationBar = ({
 }: NavigationBarProperties) => {
 	const history = useHistory();
 	const { t } = useTranslation();
+	const { setTheme } = useTheme();
 
 	const [searchWalletIsOpen, setSearchWalletIsOpen] = useState(false);
 
@@ -265,6 +266,8 @@ const NavigationBar = ({
 										if (action?.value === "sign-out") {
 											profile?.status().reset();
 										}
+
+										setTheme("system");
 
 										return history.push(action.mountPath(profile?.id()));
 									}}

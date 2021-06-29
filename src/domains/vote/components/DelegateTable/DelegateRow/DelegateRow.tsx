@@ -62,6 +62,42 @@ export const DelegateRow = ({
 		return <DelegateRowSkeleton />;
 	}
 
+	const renderButton = () => {
+		if (isVoted) {
+			return (
+				<Button
+					variant={isSelectedUnvote ? "danger" : "primary"}
+					onClick={() => onUnvoteSelect?.(delegate.address())}
+					data-testid={`DelegateRow__toggle-${index}`}
+				>
+					{!isSelectedUnvote ? t("COMMON.CURRENT") : t("COMMON.UNSELECTED")}
+				</Button>
+			);
+		}
+
+		if (isVoteDisabled && !isSelectedVote) {
+			return (
+				<Tooltip content={t("VOTE.DELEGATE_TABLE.TOOLTIP.MAX_VOTES")}>
+					<span>
+						<Button variant="primary" disabled data-testid={`DelegateRow__toggle-${index}`}>
+							{t("COMMON.SELECT")}
+						</Button>
+					</span>
+				</Tooltip>
+			);
+		}
+
+		return (
+			<Button
+				variant={isSelectedVote ? "info" : "secondary"}
+				onClick={() => onVoteSelect?.(delegate.address())}
+				data-testid={`DelegateRow__toggle-${index}`}
+			>
+				{isSelectedVote ? t("COMMON.SELECTED") : t("COMMON.SELECT")}
+			</Button>
+		);
+	};
+
 	return (
 		<TableRow>
 			<TableCell
@@ -92,43 +128,7 @@ export const DelegateRow = ({
 				className="w-40"
 				innerClassName={cn("justify-end border border-l-0 border-transparent", rowColor)}
 			>
-				{isVoted ? (
-					<Button
-						variant="secondary"
-						color={!isSelectedUnvote ? "primary" : "danger"}
-						onClick={() => onUnvoteSelect?.(delegate.address())}
-						data-testid={`DelegateRow__toggle-${index}`}
-					>
-						{!isSelectedUnvote ? t("COMMON.CURRENT") : t("COMMON.UNSELECTED")}
-					</Button>
-				) : (
-					<Tooltip
-						content={t("VOTE.DELEGATE_TABLE.TOOLTIP.VOTE_ONE_DELEGATE")}
-						disabled={isSelectedVote || !isVoteDisabled}
-					>
-						{!isSelectedVote && isVoteDisabled ? (
-							<span>
-								<Button
-									variant="secondary"
-									color="primary"
-									disabled
-									data-testid={`DelegateRow__toggle-${index}`}
-								>
-									{t("COMMON.SELECT")}
-								</Button>
-							</span>
-						) : (
-							<Button
-								variant={isSelectedVote ? "info" : "secondary"}
-								color={isSelectedVote ? "success" : "primary"}
-								onClick={() => onVoteSelect?.(delegate.address())}
-								data-testid={`DelegateRow__toggle-${index}`}
-							>
-								{isSelectedVote ? t("COMMON.SELECTED") : t("COMMON.SELECT")}
-							</Button>
-						)}
-					</Tooltip>
-				)}
+				{renderButton()}
 			</TableCell>
 		</TableRow>
 	);

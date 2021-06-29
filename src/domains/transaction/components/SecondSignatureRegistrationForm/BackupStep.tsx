@@ -52,7 +52,7 @@ export const BackupStep = () => {
 	};
 
 	return (
-		<section data-testid="SecondSignature__backup-step" className="space-y-8">
+		<section data-testid="SecondSignatureRegistrationForm__backup-step" className="space-y-8">
 			<Header title={t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_STEP.TITLE")} />
 
 			<Alert>{t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_STEP.WARNING")}</Alert>

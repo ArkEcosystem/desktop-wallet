@@ -4,7 +4,7 @@ import nock from "nock";
 import React from "react";
 import * as utils from "utils/electron-utils";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
-let transfers: DTO.ExtendedTransactionData[];
+let transfers: DTO.ExtendedConfirmedTransactionData[];
 
 describe("Signed Transaction Table", () => {
 	let profile: Contracts.IProfile;
@@ -26,7 +26,7 @@ describe("Signed Transaction Table", () => {
 			.query(true)
 			.reply(200, () => {
 				const { meta, data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
-				data[0].confirmations = 1;
+				data[0].confirmations = 0;
 				return {
 					meta,
 					data: data.slice(0, 2),

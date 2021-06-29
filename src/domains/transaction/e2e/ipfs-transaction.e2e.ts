@@ -7,7 +7,7 @@ import { goToWallet, importWallet } from "../../wallet/e2e/common";
 
 const translations = buildTranslations();
 
-createFixture(`IPFS Transaction action`, [
+createFixture("IPFS Transaction action", [
 	mockRequest(
 		{
 			url: "https://dwallets.ark.io/api/transactions",

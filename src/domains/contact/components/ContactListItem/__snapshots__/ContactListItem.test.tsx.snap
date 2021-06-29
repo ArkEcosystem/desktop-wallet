@@ -5,7 +5,7 @@ exports[`ContactListItem should render 1`] = `
   <table>
     <tbody>
       <tr
-        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+        class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
         data-testid="TableRow"
       >
         <td>
@@ -63,6 +63,7 @@ exports[`ContactListItem should render 1`] = `
         </td>
         <td
           class=""
+          data-testid="ContactListItem__address"
         >
           <div
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
@@ -140,7 +141,7 @@ exports[`ContactListItem should render 1`] = `
               class="flex items-center space-x-2"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                 data-testid="ContactListItem__send-button"
                 type="button"
               >
@@ -160,7 +161,7 @@ exports[`ContactListItem should render 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 cKXcvs"
                       type="button"
                     >
                       <div
@@ -194,7 +195,7 @@ exports[`ContactListItem should render as delegate 1`] = `
   <table>
     <tbody>
       <tr
-        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+        class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
         data-testid="TableRow"
       >
         <td>
@@ -252,6 +253,7 @@ exports[`ContactListItem should render as delegate 1`] = `
         </td>
         <td
           class=""
+          data-testid="ContactListItem__address"
         >
           <div
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
@@ -343,7 +345,7 @@ exports[`ContactListItem should render as delegate 1`] = `
               class="flex items-center space-x-2"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                 data-testid="ContactListItem__send-button"
                 type="button"
               >
@@ -363,7 +365,7 @@ exports[`ContactListItem should render as delegate 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 cKXcvs"
                       type="button"
                     >
                       <div
@@ -397,7 +399,7 @@ exports[`ContactListItem should render using variant 1`] = `
   <table>
     <tbody>
       <tr
-        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+        class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
         data-testid="TableRow"
       >
         <td>
@@ -455,6 +457,7 @@ exports[`ContactListItem should render using variant 1`] = `
         </td>
         <td
           class=""
+          data-testid="ContactListItem__address"
         >
           <div
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
@@ -525,7 +528,7 @@ exports[`ContactListItem should render using variant 1`] = `
               class="flex items-center space-x-2"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                 data-testid="ContactListItem__send-button"
                 type="button"
               >
@@ -545,7 +548,7 @@ exports[`ContactListItem should render using variant 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 cKXcvs"
                       type="button"
                     >
                       <div
@@ -579,7 +582,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
   <table>
     <tbody>
       <tr
-        class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP group"
+        class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP"
         data-testid="TableRow"
       >
         <td>
@@ -637,6 +640,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
         </td>
         <td
           class="border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
+          data-testid="ContactListItem__address"
         >
           <div
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
@@ -714,7 +718,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
               class="flex items-center space-x-2"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                 data-testid="ContactListItem__send-button"
                 type="button"
               >
@@ -734,7 +738,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 cKXcvs"
                       type="button"
                     >
                       <div
@@ -759,7 +763,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
         </td>
       </tr>
       <tr
-        class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP group"
+        class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP"
         data-testid="TableRow"
       >
         <td>
@@ -791,6 +795,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
         </td>
         <td
           class="border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
+          data-testid="ContactListItem__address"
         >
           <div
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
@@ -868,7 +873,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
               class="flex items-center space-x-2"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                 data-testid="ContactListItem__send-button"
                 type="button"
               >
@@ -888,7 +893,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 cKXcvs"
                       type="button"
                     >
                       <div
@@ -913,7 +918,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
         </td>
       </tr>
       <tr
-        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+        class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
         data-testid="TableRow"
       >
         <td>
@@ -945,6 +950,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
         </td>
         <td
           class=""
+          data-testid="ContactListItem__address"
         >
           <div
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
@@ -1036,7 +1042,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
               class="flex items-center space-x-2"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                 data-testid="ContactListItem__send-button"
                 type="button"
               >
@@ -1056,7 +1062,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 cKXcvs"
                       type="button"
                     >
                       <div
@@ -1090,7 +1096,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
   <table>
     <tbody>
       <tr
-        class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP group"
+        class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP"
         data-testid="TableRow"
       >
         <td>
@@ -1148,6 +1154,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
         </td>
         <td
           class="border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
+          data-testid="ContactListItem__address"
         >
           <div
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
@@ -1225,7 +1232,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
               class="flex items-center space-x-2"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                 data-testid="ContactListItem__send-button"
                 type="button"
               >
@@ -1245,7 +1252,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 cKXcvs"
                       type="button"
                     >
                       <div
@@ -1270,7 +1277,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
         </td>
       </tr>
       <tr
-        class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP group"
+        class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP"
         data-testid="TableRow"
       >
         <td>
@@ -1302,6 +1309,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
         </td>
         <td
           class="border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
+          data-testid="ContactListItem__address"
         >
           <div
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
@@ -1379,7 +1387,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
               class="flex items-center space-x-2"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                 data-testid="ContactListItem__send-button"
                 type="button"
               >
@@ -1399,7 +1407,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 cKXcvs"
                       type="button"
                     >
                       <div
@@ -1424,7 +1432,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
         </td>
       </tr>
       <tr
-        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+        class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
         data-testid="TableRow"
       >
         <td>
@@ -1456,6 +1464,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
         </td>
         <td
           class=""
+          data-testid="ContactListItem__address"
         >
           <div
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
@@ -1547,7 +1556,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
               class="flex items-center space-x-2"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                 data-testid="ContactListItem__send-button"
                 type="button"
               >
@@ -1567,7 +1576,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 cKXcvs"
                       type="button"
                     >
                       <div
@@ -1601,7 +1610,7 @@ exports[`ContactListItem should render with one option 1`] = `
   <table>
     <tbody>
       <tr
-        class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP group"
+        class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP"
         data-testid="TableRow"
       >
         <td>
@@ -1659,6 +1668,7 @@ exports[`ContactListItem should render with one option 1`] = `
         </td>
         <td
           class="border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
+          data-testid="ContactListItem__address"
         >
           <div
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
@@ -1736,7 +1746,7 @@ exports[`ContactListItem should render with one option 1`] = `
               class="flex items-center space-x-2"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                 data-testid="ContactListItem__send-button"
                 type="button"
               >
@@ -1750,7 +1760,7 @@ exports[`ContactListItem should render with one option 1`] = `
                 class="visible"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                   data-testid="ContactListItem__one-option-button-0"
                   type="button"
                 >
@@ -1766,7 +1776,7 @@ exports[`ContactListItem should render with one option 1`] = `
         </td>
       </tr>
       <tr
-        class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP group"
+        class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP"
         data-testid="TableRow"
       >
         <td>
@@ -1798,6 +1808,7 @@ exports[`ContactListItem should render with one option 1`] = `
         </td>
         <td
           class="border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
+          data-testid="ContactListItem__address"
         >
           <div
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
@@ -1875,7 +1886,7 @@ exports[`ContactListItem should render with one option 1`] = `
               class="flex items-center space-x-2"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                 data-testid="ContactListItem__send-button"
                 type="button"
               >
@@ -1889,7 +1900,7 @@ exports[`ContactListItem should render with one option 1`] = `
                 class="invisible"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                   data-testid="ContactListItem__one-option-button-1"
                   type="button"
                 >
@@ -1905,7 +1916,7 @@ exports[`ContactListItem should render with one option 1`] = `
         </td>
       </tr>
       <tr
-        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+        class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
         data-testid="TableRow"
       >
         <td>
@@ -1937,6 +1948,7 @@ exports[`ContactListItem should render with one option 1`] = `
         </td>
         <td
           class=""
+          data-testid="ContactListItem__address"
         >
           <div
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
@@ -2028,7 +2040,7 @@ exports[`ContactListItem should render with one option 1`] = `
               class="flex items-center space-x-2"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                 data-testid="ContactListItem__send-button"
                 type="button"
               >
@@ -2042,7 +2054,7 @@ exports[`ContactListItem should render with one option 1`] = `
                 class="invisible"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                   data-testid="ContactListItem__one-option-button-2"
                   type="button"
                 >

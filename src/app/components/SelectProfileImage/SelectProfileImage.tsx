@@ -1,10 +1,12 @@
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
-import { Tooltip } from "app/components/Tooltip";
+import { useFiles } from "app/hooks/use-files";
+import { toasts } from "app/services";
+import cn from "classnames";
+import { fromBuffer } from "file-type";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import tw, { styled } from "twin.macro";
-import { openFile } from "utils/electron-utils";
 
 interface SelectProfileImageProperties {
 	className?: string;
@@ -44,101 +46,115 @@ const ProfileImageStyled = styled.div`
 	}
 `;
 
+const ALLOWED_EXTENSIONS = ["png", "jpg", "jpeg", "bmp"];
+
 export const SelectProfileImage = ({ className, value, name, showLabel, onSelect }: SelectProfileImageProperties) => {
 	const { t } = useTranslation();
+	const { openFile } = useFiles();
 
 	const handleUploadImage = async () => {
-		const raw = await openFile(null, {
-			filters: { name: "Images", extensions: ["png", "jpg", "jpeg", "bmp"] },
-			encoding: "base64",
+		const file = await openFile({
+			extensions: ALLOWED_EXTENSIONS,
 		});
 
-		if (raw) {
-			onSelect(`data:image/png;base64,${raw}`);
+		if (!file) {
+			return;
 		}
+
+		const type = await fromBuffer(file.content);
+
+		if (!ALLOWED_EXTENSIONS.includes(type?.ext ?? "")) {
+			toasts.error(t("COMMON.ERRORS.INVALID_IMAGE"));
+			return;
+		}
+
+		const imageBase64 = file.content.toString("base64");
+		onSelect(`data:image/png;base64,${imageBase64}`);
 	};
 
 	const isSvg = useMemo(() => value?.endsWith("</svg>"), [value]);
 
+	const renderButton = () => {
+		if (value) {
+			return (
+				<div className="relative w-20 h-20">
+					<ProfileImageStyled>
+						<img
+							data-testid="SelectProfileImage__avatar"
+							src={isSvg ? `data:image/svg+xml;utf8,${value}` : value}
+							className="object-cover min-h-full"
+							alt="Avatar"
+						/>
+
+						{isSvg && (
+							<span className="absolute text-2xl font-semibold text-theme-background">
+								{name?.slice(0, 2).toUpperCase()}
+							</span>
+						)}
+
+						<button
+							type="button"
+							className="overflow-hidden absolute z-10 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
+							onClick={handleUploadImage}
+							data-testid="SelectProfileImage__upload-button"
+						>
+							<div className="flex justify-center items-center h-full rounded-full dark:bg-black bg-theme-secondary-900 opacity-85">
+								<Icon
+									name="Upload"
+									className="text-white dark:text-theme-secondary-200"
+									width={24}
+									height={18}
+								/>
+							</div>
+						</button>
+					</ProfileImageStyled>
+
+					{!isSvg && (
+						<Button
+							size="icon"
+							variant="danger"
+							className="flex absolute z-20 -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
+							onClick={() => onSelect("")}
+							data-testid="SelectProfileImage__remove-button"
+						>
+							<Icon name="Close" width={12} height={12} />
+						</Button>
+					)}
+				</div>
+			);
+		}
+
+		return (
+			<div className="p-1 w-20 h-20 rounded-md border-2 border-dashed focus-within:border-solid border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-theme-primary-400">
+				<div className="overflow-hidden h-full rounded-full">
+					<UploadButtonWrapper>
+						<Button
+							variant="secondary"
+							onClick={handleUploadImage}
+							data-testid="SelectProfileImage__upload-button"
+						>
+							<Icon
+								name="Upload"
+								className="text-theme-primary-600 dark:text-theme-secondary-200"
+								width={24}
+								height={18}
+							/>
+						</Button>
+					</UploadButtonWrapper>
+				</div>
+			</div>
+		);
+	};
+
 	return (
-		<div className={`group space-y-2 ${className}`}>
+		<div className={cn("group space-y-2", className)}>
 			{showLabel && (
 				<span className="text-sm font-semibold transition-colors duration-100 cursor-default text-theme-secondary-text group-hover:text-theme-primary-600">
 					{t("SETTINGS.GENERAL.PERSONAL.PROFILE_IMAGE")}
 				</span>
 			)}
 
-			<div className="flex flex-row">
-				{value ? (
-					<div className="relative w-20 h-20">
-						<Tooltip content={t("SETTINGS.GENERAL.PERSONAL.UPLOAD_AVATAR")}>
-							<ProfileImageStyled>
-								<img
-									data-testid="SelectProfileImage__avatar"
-									src={isSvg ? `data:image/svg+xml;utf8,${value}` : value}
-									className="object-cover min-h-full"
-									alt="Avatar"
-								/>
-								{isSvg && (
-									<span className="absolute text-2xl font-semibold text-theme-background">
-										{name?.slice(0, 2).toUpperCase()}
-									</span>
-								)}
-
-								<button
-									type="button"
-									className="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
-									onClick={handleUploadImage}
-									data-testid="SelectProfileImage__upload-button"
-								>
-									<div className="flex justify-center items-center h-full rounded-full dark:bg-black bg-theme-secondary-900 opacity-85">
-										<Icon
-											name="Upload"
-											className="text-white dark:text-theme-secondary-200"
-											width={24}
-											height={18}
-										/>
-									</div>
-								</button>
-							</ProfileImageStyled>
-						</Tooltip>
-						{!isSvg && (
-							<Tooltip content={t("SETTINGS.GENERAL.PERSONAL.REMOVE_AVATAR")}>
-								<Button
-									size="icon"
-									variant="danger"
-									className="flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
-									onClick={() => onSelect("")}
-									data-testid="SelectProfileImage__remove-button"
-								>
-									<Icon name="Close" width={12} height={12} />
-								</Button>
-							</Tooltip>
-						)}
-					</div>
-				) : (
-					<Tooltip content={t("SETTINGS.GENERAL.PERSONAL.UPLOAD_AVATAR")}>
-						<div className="p-1 w-20 h-20 rounded-md border-2 border-dashed focus-within:border-solid border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-theme-primary-400">
-							<div className="overflow-hidden h-full rounded-full">
-								<UploadButtonWrapper>
-									<Button
-										variant="secondary"
-										onClick={handleUploadImage}
-										data-testid="SelectProfileImage__upload-button"
-									>
-										<Icon
-											name="Upload"
-											className="text-theme-primary-600 dark:text-theme-secondary-200"
-											width={24}
-											height={18}
-										/>
-									</Button>
-								</UploadButtonWrapper>
-							</div>
-						</div>
-					</Tooltip>
-				)}
-			</div>
+			<div className="flex flex-row">{renderButton()}</div>
 		</div>
 	);
 };

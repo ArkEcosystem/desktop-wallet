@@ -82,7 +82,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                   </fieldset>
                 </div>
                 <div
-                  class="group space-y-2 undefined"
+                  class="group space-y-2"
                 >
                   <div
                     class="flex flex-row"
@@ -105,7 +105,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                           AS
                         </span>
                         <button
-                          class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
+                          class="overflow-hidden absolute z-10 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                           data-testid="SelectProfileImage__upload-button"
                           type="button"
                         >
@@ -318,12 +318,12 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                     <div
                       aria-expanded="true"
                       aria-haspopup="listbox"
-                      aria-owns="downshift-47-menu"
+                      aria-owns="downshift-45-menu"
                       role="combobox"
                     >
                       <label
-                        for="downshift-47-input"
-                        id="downshift-47-label"
+                        for="downshift-45-input"
+                        id="downshift-45-label"
                       />
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -337,14 +337,14 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                           class="relative flex flex-1 h-full"
                         >
                           <input
-                            aria-activedescendant="downshift-47-item-0"
+                            aria-activedescendant="downshift-45-item-0"
                             aria-autocomplete="list"
-                            aria-controls="downshift-47-menu"
-                            aria-labelledby="downshift-47-label"
+                            aria-controls="downshift-45-menu"
+                            aria-labelledby="downshift-45-label"
                             autocomplete="off"
                             class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                             data-testid="SelectDropdown__input"
-                            id="downshift-47-input"
+                            id="downshift-45-input"
                             name="currency"
                             placeholder="Select Currency"
                             value="BTC (Ƀ)"
@@ -384,16 +384,16 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                         </div>
                       </div>
                       <ul
-                        aria-labelledby="downshift-47-label"
+                        aria-labelledby="downshift-45-label"
                         class="styles__SelectOptionsList-b2falt-0 dyOwRR is-open"
-                        id="downshift-47-menu"
+                        id="downshift-45-menu"
                         role="listbox"
                       >
                         <li
                           aria-selected="true"
                           class="select-list-option is-highlighted is-selected"
                           data-testid="SelectDropdown__option--0"
-                          id="downshift-47-item-0"
+                          id="downshift-45-item-0"
                           role="option"
                         >
                           <div
@@ -406,7 +406,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--1"
-                          id="downshift-47-item-1"
+                          id="downshift-45-item-1"
                           role="option"
                         >
                           <div
@@ -419,7 +419,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--2"
-                          id="downshift-47-item-2"
+                          id="downshift-45-item-2"
                           role="option"
                         >
                           <div
@@ -432,7 +432,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--3"
-                          id="downshift-47-item-3"
+                          id="downshift-45-item-3"
                           role="option"
                         >
                           <div
@@ -445,7 +445,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--4"
-                          id="downshift-47-item-4"
+                          id="downshift-45-item-4"
                           role="option"
                         >
                           <div
@@ -458,7 +458,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--5"
-                          id="downshift-47-item-5"
+                          id="downshift-45-item-5"
                           role="option"
                         >
                           <div
@@ -471,7 +471,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--6"
-                          id="downshift-47-item-6"
+                          id="downshift-45-item-6"
                           role="option"
                         >
                           <div
@@ -484,7 +484,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--7"
-                          id="downshift-47-item-7"
+                          id="downshift-45-item-7"
                           role="option"
                         >
                           <div
@@ -497,7 +497,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--8"
-                          id="downshift-47-item-8"
+                          id="downshift-45-item-8"
                           role="option"
                         >
                           <div
@@ -510,7 +510,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--9"
-                          id="downshift-47-item-9"
+                          id="downshift-45-item-9"
                           role="option"
                         >
                           <div
@@ -523,7 +523,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--10"
-                          id="downshift-47-item-10"
+                          id="downshift-45-item-10"
                           role="option"
                         >
                           <div
@@ -536,7 +536,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--11"
-                          id="downshift-47-item-11"
+                          id="downshift-45-item-11"
                           role="option"
                         >
                           <div
@@ -549,7 +549,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--12"
-                          id="downshift-47-item-12"
+                          id="downshift-45-item-12"
                           role="option"
                         >
                           <div
@@ -562,7 +562,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--13"
-                          id="downshift-47-item-13"
+                          id="downshift-45-item-13"
                           role="option"
                         >
                           <div
@@ -575,7 +575,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--14"
-                          id="downshift-47-item-14"
+                          id="downshift-45-item-14"
                           role="option"
                         >
                           <div
@@ -588,7 +588,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--15"
-                          id="downshift-47-item-15"
+                          id="downshift-45-item-15"
                           role="option"
                         >
                           <div
@@ -601,7 +601,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--16"
-                          id="downshift-47-item-16"
+                          id="downshift-45-item-16"
                           role="option"
                         >
                           <div
@@ -614,7 +614,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--17"
-                          id="downshift-47-item-17"
+                          id="downshift-45-item-17"
                           role="option"
                         >
                           <div
@@ -698,7 +698,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
             class="flex justify-end pt-4 space-x-3"
           >
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
               data-testid="CreateProfile__back-button"
               type="button"
             >
@@ -810,7 +810,7 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
                   </fieldset>
                 </div>
                 <div
-                  class="group space-y-2 undefined"
+                  class="group space-y-2"
                 >
                   <div
                     class="flex flex-row"
@@ -833,7 +833,7 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
                           JO
                         </span>
                         <button
-                          class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
+                          class="overflow-hidden absolute z-10 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                           data-testid="SelectProfileImage__upload-button"
                           type="button"
                         >
@@ -1168,7 +1168,7 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
             class="flex justify-end pt-4 space-x-3"
           >
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
               data-testid="CreateProfile__back-button"
               type="button"
             >
@@ -1280,7 +1280,7 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
                   </fieldset>
                 </div>
                 <div
-                  class="group space-y-2 undefined"
+                  class="group space-y-2"
                 >
                   <div
                     class="flex flex-row"
@@ -1303,7 +1303,7 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
                           TE
                         </span>
                         <button
-                          class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
+                          class="overflow-hidden absolute z-10 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                           data-testid="SelectProfileImage__upload-button"
                           type="button"
                         >
@@ -1638,7 +1638,7 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
             class="flex justify-end pt-4 space-x-3"
           >
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
               data-testid="CreateProfile__back-button"
               type="button"
             >
@@ -1750,7 +1750,7 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
                   </fieldset>
                 </div>
                 <div
-                  class="group space-y-2 undefined"
+                  class="group space-y-2"
                 >
                   <div
                     class="flex flex-row"
@@ -1773,7 +1773,7 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
                           JO
                         </span>
                         <button
-                          class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
+                          class="overflow-hidden absolute z-10 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                           data-testid="SelectProfileImage__upload-button"
                           type="button"
                         >
@@ -2108,7 +2108,7 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
             class="flex justify-end pt-4 space-x-3"
           >
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
               data-testid="CreateProfile__back-button"
               type="button"
             >
@@ -2220,62 +2220,41 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                   </fieldset>
                 </div>
                 <div
-                  class="group space-y-2 undefined"
+                  class="group space-y-2"
                 >
                   <div
                     class="flex flex-row"
                   >
                     <div
-                      class="relative w-20 h-20"
+                      class="p-1 w-20 h-20 rounded-md border-2 border-dashed focus-within:border-solid border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-theme-primary-400"
                     >
                       <div
-                        class="SelectProfileImage__ProfileImageStyled-t6smk3-1 bVbLLU"
-                      >
-                        <img
-                          alt="Avatar"
-                          class="object-cover min-h-full"
-                          data-testid="SelectProfileImage__avatar"
-                          src="data:image/png;base64,dGVzdCBtbmVtb25pYw=="
-                        />
-                        <button
-                          class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
-                          data-testid="SelectProfileImage__upload-button"
-                          type="button"
-                        >
-                          <div
-                            class="flex justify-center items-center h-full rounded-full dark:bg-black bg-theme-secondary-900 opacity-85"
-                          >
-                            <div
-                              class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
-                              height="18"
-                              width="24"
-                            >
-                              <svg>
-                                upload.svg
-                              </svg>
-                            </div>
-                          </div>
-                        </button>
-                      </div>
-                      <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
-                        data-testid="SelectProfileImage__remove-button"
-                        type="button"
+                        class="overflow-hidden h-full rounded-full"
                       >
                         <div
-                          class="flex relative items-center space-x-2"
+                          class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 euBdNq"
                         >
-                          <div
-                            class="sc-bdfBwQ fdfkzt"
-                            height="12"
-                            width="12"
+                          <button
+                            class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
+                            data-testid="SelectProfileImage__upload-button"
+                            type="button"
                           >
-                            <svg>
-                              close.svg
-                            </svg>
-                          </div>
+                            <div
+                              class="flex relative items-center space-x-2"
+                            >
+                              <div
+                                class="sc-bdfBwQ cdgnVS text-theme-primary-600 dark:text-theme-secondary-200"
+                                height="18"
+                                width="24"
+                              >
+                                <svg>
+                                  upload.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </button>
                         </div>
-                      </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -2440,12 +2419,12 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                     <div
                       aria-expanded="true"
                       aria-haspopup="listbox"
-                      aria-owns="downshift-33-menu"
+                      aria-owns="downshift-32-menu"
                       role="combobox"
                     >
                       <label
-                        for="downshift-33-input"
-                        id="downshift-33-label"
+                        for="downshift-32-input"
+                        id="downshift-32-label"
                       />
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -2459,14 +2438,14 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                           class="relative flex flex-1 h-full"
                         >
                           <input
-                            aria-activedescendant="downshift-33-item-0"
+                            aria-activedescendant="downshift-32-item-0"
                             aria-autocomplete="list"
-                            aria-controls="downshift-33-menu"
-                            aria-labelledby="downshift-33-label"
+                            aria-controls="downshift-32-menu"
+                            aria-labelledby="downshift-32-label"
                             autocomplete="off"
                             class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                             data-testid="SelectDropdown__input"
-                            id="downshift-33-input"
+                            id="downshift-32-input"
                             name="currency"
                             placeholder="Select Currency"
                             value="BTC (Ƀ)"
@@ -2506,16 +2485,16 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                         </div>
                       </div>
                       <ul
-                        aria-labelledby="downshift-33-label"
+                        aria-labelledby="downshift-32-label"
                         class="styles__SelectOptionsList-b2falt-0 dyOwRR is-open"
-                        id="downshift-33-menu"
+                        id="downshift-32-menu"
                         role="listbox"
                       >
                         <li
                           aria-selected="true"
                           class="select-list-option is-highlighted is-selected"
                           data-testid="SelectDropdown__option--0"
-                          id="downshift-33-item-0"
+                          id="downshift-32-item-0"
                           role="option"
                         >
                           <div
@@ -2528,7 +2507,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--1"
-                          id="downshift-33-item-1"
+                          id="downshift-32-item-1"
                           role="option"
                         >
                           <div
@@ -2541,7 +2520,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--2"
-                          id="downshift-33-item-2"
+                          id="downshift-32-item-2"
                           role="option"
                         >
                           <div
@@ -2554,7 +2533,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--3"
-                          id="downshift-33-item-3"
+                          id="downshift-32-item-3"
                           role="option"
                         >
                           <div
@@ -2567,7 +2546,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--4"
-                          id="downshift-33-item-4"
+                          id="downshift-32-item-4"
                           role="option"
                         >
                           <div
@@ -2580,7 +2559,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--5"
-                          id="downshift-33-item-5"
+                          id="downshift-32-item-5"
                           role="option"
                         >
                           <div
@@ -2593,7 +2572,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--6"
-                          id="downshift-33-item-6"
+                          id="downshift-32-item-6"
                           role="option"
                         >
                           <div
@@ -2606,7 +2585,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--7"
-                          id="downshift-33-item-7"
+                          id="downshift-32-item-7"
                           role="option"
                         >
                           <div
@@ -2619,7 +2598,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--8"
-                          id="downshift-33-item-8"
+                          id="downshift-32-item-8"
                           role="option"
                         >
                           <div
@@ -2632,7 +2611,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--9"
-                          id="downshift-33-item-9"
+                          id="downshift-32-item-9"
                           role="option"
                         >
                           <div
@@ -2645,7 +2624,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--10"
-                          id="downshift-33-item-10"
+                          id="downshift-32-item-10"
                           role="option"
                         >
                           <div
@@ -2658,7 +2637,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--11"
-                          id="downshift-33-item-11"
+                          id="downshift-32-item-11"
                           role="option"
                         >
                           <div
@@ -2671,7 +2650,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--12"
-                          id="downshift-33-item-12"
+                          id="downshift-32-item-12"
                           role="option"
                         >
                           <div
@@ -2684,7 +2663,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--13"
-                          id="downshift-33-item-13"
+                          id="downshift-32-item-13"
                           role="option"
                         >
                           <div
@@ -2697,7 +2676,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--14"
-                          id="downshift-33-item-14"
+                          id="downshift-32-item-14"
                           role="option"
                         >
                           <div
@@ -2710,7 +2689,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--15"
-                          id="downshift-33-item-15"
+                          id="downshift-32-item-15"
                           role="option"
                         >
                           <div
@@ -2723,7 +2702,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--16"
-                          id="downshift-33-item-16"
+                          id="downshift-32-item-16"
                           role="option"
                         >
                           <div
@@ -2736,7 +2715,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                           aria-selected="false"
                           class="select-list-option"
                           data-testid="SelectDropdown__option--17"
-                          id="downshift-33-item-17"
+                          id="downshift-32-item-17"
                           role="option"
                         >
                           <div
@@ -2817,7 +2796,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
             class="flex justify-end pt-4 space-x-3"
           >
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
               data-testid="CreateProfile__back-button"
               type="button"
             >
@@ -2828,7 +2807,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
               </div>
             </button>
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW"
               data-testid="CreateProfile__submit-button"
               type="submit"
             >
@@ -2928,7 +2907,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                   </fieldset>
                 </div>
                 <div
-                  class="group space-y-2 undefined"
+                  class="group space-y-2"
                 >
                   <div
                     class="flex flex-row"
@@ -2943,10 +2922,15 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                           alt="Avatar"
                           class="object-cover min-h-full"
                           data-testid="SelectProfileImage__avatar"
-                          src="data:image/png;base64,dGVzdCBtbmVtb25pYw=="
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"40\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"55\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
                         />
+                        <span
+                          class="absolute text-2xl font-semibold text-theme-background"
+                        >
+                          TE
+                        </span>
                         <button
-                          class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
+                          class="overflow-hidden absolute z-10 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                           data-testid="SelectProfileImage__upload-button"
                           type="button"
                         >
@@ -2965,25 +2949,6 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                           </div>
                         </button>
                       </div>
-                      <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
-                        data-testid="SelectProfileImage__remove-button"
-                        type="button"
-                      >
-                        <div
-                          class="flex relative items-center space-x-2"
-                        >
-                          <div
-                            class="sc-bdfBwQ fdfkzt"
-                            height="12"
-                            width="12"
-                          >
-                            <svg>
-                              close.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </button>
                     </div>
                   </div>
                 </div>
@@ -3531,7 +3496,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
             class="flex justify-end pt-4 space-x-3"
           >
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
               data-testid="CreateProfile__back-button"
               type="button"
             >
@@ -3542,7 +3507,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
               </div>
             </button>
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW"
               data-testid="CreateProfile__submit-button"
               type="submit"
             >
@@ -3642,7 +3607,7 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                   </fieldset>
                 </div>
                 <div
-                  class="group space-y-2 undefined"
+                  class="group space-y-2"
                 >
                   <div
                     class="flex flex-row"
@@ -3665,7 +3630,7 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                           TE
                         </span>
                         <button
-                          class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
+                          class="overflow-hidden absolute z-10 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                           data-testid="SelectProfileImage__upload-button"
                           type="button"
                         >
@@ -3820,7 +3785,7 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
             class="flex justify-end pt-4 space-x-3"
           >
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
               data-testid="CreateProfile__back-button"
               type="button"
             >
@@ -3831,7 +3796,7 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
               </div>
             </button>
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW"
               data-testid="CreateProfile__submit-button"
               type="submit"
             >
@@ -3931,7 +3896,7 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                   </fieldset>
                 </div>
                 <div
-                  class="group space-y-2 undefined"
+                  class="group space-y-2"
                 >
                   <div
                     class="flex flex-row"
@@ -3946,10 +3911,15 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                           alt="Avatar"
                           class="object-cover min-h-full"
                           data-testid="SelectProfileImage__avatar"
-                          src="data:image/png;base64,dGVzdCBtbmVtb25pYw=="
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"30\\" cy=\\"70\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"40\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
                         />
+                        <span
+                          class="absolute text-2xl font-semibold text-theme-background"
+                        >
+                          T
+                        </span>
                         <button
-                          class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
+                          class="overflow-hidden absolute z-10 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                           data-testid="SelectProfileImage__upload-button"
                           type="button"
                         >
@@ -3968,25 +3938,6 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                           </div>
                         </button>
                       </div>
-                      <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
-                        data-testid="SelectProfileImage__remove-button"
-                        type="button"
-                      >
-                        <div
-                          class="flex relative items-center space-x-2"
-                        >
-                          <div
-                            class="sc-bdfBwQ fdfkzt"
-                            height="12"
-                            width="12"
-                          >
-                            <svg>
-                              close.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </button>
                     </div>
                   </div>
                 </div>
@@ -4123,7 +4074,7 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
             class="flex justify-end pt-4 space-x-3"
           >
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
               data-testid="CreateProfile__back-button"
               type="button"
             >
@@ -4134,7 +4085,7 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
               </div>
             </button>
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW"
               data-testid="CreateProfile__submit-button"
               type="submit"
             >

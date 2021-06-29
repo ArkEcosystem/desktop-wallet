@@ -34,16 +34,59 @@ describe("TransactionRow", () => {
 	});
 
 	it("should show transaction with currency", () => {
-		const { getAllByTestId } = renderWithRouter(
+		const { asFragment, queryAllByTestId, queryByText } = renderWithRouter(
 			<table>
 				<tbody>
 					{/* @ts-ignore */}
-					<TransactionRow transaction={fixture} exchangeCurrency="BTC" />
+					<TransactionRow
+						transaction={{
+							...fixture,
+							// @ts-ignore
+							wallet: () => ({
+								currency: () => "BTC",
+								isLedger: () => false,
+								network: () => ({
+									isTest: () => false,
+								}),
+							}),
+						}}
+						exchangeCurrency="BTC"
+					/>
 				</tbody>
 			</table>,
 		);
-		const amounts = getAllByTestId("AmountCrypto");
-		expect(amounts).toHaveLength(2);
+
+		expect(asFragment()).toMatchSnapshot();
+		expect(queryAllByTestId("AmountCrypto")).toHaveLength(2);
+		expect(queryByText("N/A")).toBeNull();
+	});
+
+	it("should omit the currency for transactions from test networks", () => {
+		const { asFragment, queryAllByTestId, getByText } = renderWithRouter(
+			<table>
+				<tbody>
+					{/* @ts-ignore */}
+					<TransactionRow
+						transaction={{
+							...fixture,
+							// @ts-ignore
+							wallet: () => ({
+								currency: () => "BTC",
+								isLedger: () => false,
+								network: () => ({
+									isTest: () => true,
+								}),
+							}),
+						}}
+						exchangeCurrency="BTC"
+					/>
+				</tbody>
+			</table>,
+		);
+
+		expect(asFragment()).toMatchSnapshot();
+		expect(queryAllByTestId("AmountCrypto")).toHaveLength(1);
+		expect(getByText("N/A")).toBeInTheDocument();
 	});
 
 	it("should show transaction with signature pending", () => {

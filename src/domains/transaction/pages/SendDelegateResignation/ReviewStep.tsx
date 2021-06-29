@@ -35,7 +35,7 @@ export const ReviewStep = ({ senderWallet }: { senderWallet: Contracts.IReadWrit
 			<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>{senderWallet.username()}</TransactionDetail>
 
 			<div className="mt-2">
-				<TotalAmountBox fee={getValues("fee")} ticker={senderWallet.currency()} />
+				<TotalAmountBox amount={0} fee={getValues("fee")} ticker={senderWallet.currency()} />
 			</div>
 		</section>
 	);

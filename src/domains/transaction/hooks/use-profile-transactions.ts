@@ -3,7 +3,7 @@ import { useSynchronizer } from "app/hooks";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 interface TransactionsState {
-	transactions: DTO.ExtendedTransactionData[];
+	transactions: DTO.ExtendedConfirmedTransactionData[];
 	isLoadingTransactions: boolean;
 	isLoadingMore: boolean;
 	activeMode?: string;
@@ -28,7 +28,7 @@ interface FetchTransactionProperties {
 
 interface FilterTransactionProperties {
 	showUnconfirmed?: boolean;
-	transactions: DTO.ExtendedTransactionDataCollection;
+	transactions: DTO.ExtendedConfirmedTransactionDataCollection;
 }
 
 export const useProfileTransactions = ({
@@ -131,7 +131,7 @@ export const useProfileTransactions = ({
 	);
 
 	const fetchTransactions = useCallback(
-		({ flush = false, mode = "all", transactionType, wallets = [], cursor = 1 }: FetchTransactionProperties) => {
+		({ flush = false, mode = "all", transactionType, wallets = [] }: FetchTransactionProperties) => {
 			if (wallets.length === 0) {
 				return { items: () => [], hasMorePages: () => false };
 			}
@@ -140,7 +140,7 @@ export const useProfileTransactions = ({
 				profile.transactionAggregate().flush(mode);
 			}
 
-			const defaultQuery = { limit: 30, addresses: wallets.map((wallet) => wallet.address(), cursor) };
+			const defaultQuery = { limit: 30, addresses: wallets.map((wallet) => wallet.address()) };
 			const queryParameters = transactionType ? { ...defaultQuery, ...transactionType } : defaultQuery;
 
 			// @ts-ignore

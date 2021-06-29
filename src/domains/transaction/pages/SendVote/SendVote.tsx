@@ -11,7 +11,7 @@ import { AuthenticationStep } from "domains/transaction/components/Authenticatio
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
 import { FeeWarning } from "domains/transaction/components/FeeWarning";
 import { useFeeConfirmation, useTransactionBuilder, useWalletSignatory } from "domains/transaction/hooks";
-import { handleBroadcastError } from "domains/transaction/utils";
+import { handleBroadcastError, isMnemonicError } from "domains/transaction/utils";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -37,11 +37,12 @@ export const SendVote = () => {
 	const [unvotes, setUnvotes] = useState<Contracts.IReadOnlyWallet[]>([]);
 	const [votes, setVotes] = useState<Contracts.IReadOnlyWallet[]>([]);
 	const [transaction, setTransaction] = useState((null as unknown) as DTO.ExtendedSignedTransactionData);
+	const [errorMessage, setErrorMessage] = useState<string | undefined>();
 
 	const form = useForm({ mode: "onChange" });
 
 	const { hasDeviceAvailable, isConnected } = useLedgerContext();
-	const { clearErrors, formState, getValues, handleSubmit, register, setValue, watch } = form;
+	const { clearErrors, formState, getValues, handleSubmit, register, setError, setValue, watch } = form;
 	const { isValid, isSubmitting } = formState;
 
 	const { fee, fees } = watch();
@@ -308,7 +309,16 @@ export const SendVote = () => {
 
 				await confirmSendVote(isUnvote ? "unvote" : "vote");
 			}
-		} catch {
+		} catch (error) {
+			/* istanbul ignore next */
+			if (isMnemonicError(error)) {
+				/* istanbul ignore next */
+				setValue("mnemonic", "");
+				/* istanbul ignore next */
+				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
+			}
+
+			setErrorMessage(JSON.stringify({ type: error.name, message: error.message }));
 			setActiveTab(5);
 		}
 	};
@@ -358,6 +368,7 @@ export const SendVote = () => {
 									}
 									isRepeatDisabled={isSubmitting}
 									onRepeat={handleSubmit(submitForm)}
+									errorMessage={errorMessage}
 								/>
 							</TabPanel>
 

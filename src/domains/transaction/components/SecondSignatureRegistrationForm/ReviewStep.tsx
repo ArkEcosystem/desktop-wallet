@@ -1,13 +1,7 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { Circle } from "app/components/Circle";
 import { Header } from "app/components/Header";
-import { Icon } from "app/components/Icon";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
-import {
-	TransactionDetail,
-	TransactionNetwork,
-	TransactionSender,
-} from "domains/transaction/components/TransactionDetail";
+import { TransactionNetwork, TransactionSender } from "domains/transaction/components/TransactionDetail";
 import React, { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -22,26 +16,15 @@ export const ReviewStep = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) =
 	}, [unregister]);
 
 	return (
-		<section data-testid="SecondSignature__review-step">
+		<section data-testid="SecondSignatureRegistrationForm__review-step">
 			<Header title={t("TRANSACTION.REVIEW_STEP.TITLE")} subtitle={t("TRANSACTION.REVIEW_STEP.DESCRIPTION")} />
 
 			<TransactionNetwork network={wallet.network()} border={false} paddingPosition="bottom" className="mt-8" />
 
 			<TransactionSender address={wallet.address()} alias={wallet.alias()} />
 
-			<TransactionDetail
-				label={t("TRANSACTION.TRANSACTION_TYPE")}
-				extra={
-					<Circle className="border-theme-text" size="lg">
-						<Icon name="SecondSignature" width={20} height={20} />
-					</Circle>
-				}
-			>
-				{t("TRANSACTION.TRANSACTION_TYPES.SECOND_SIGNATURE")}
-			</TransactionDetail>
-
 			<div className="mt-2">
-				<TotalAmountBox fee={fee} ticker={wallet.currency()} />
+				<TotalAmountBox amount={0} fee={fee} ticker={wallet.currency()} />
 			</div>
 		</section>
 	);

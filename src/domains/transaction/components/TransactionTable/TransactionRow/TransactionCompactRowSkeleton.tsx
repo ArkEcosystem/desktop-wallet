@@ -4,15 +4,16 @@ import { TableCell, TableRow } from "app/components/Table";
 import { useRandomNumber } from "app/hooks";
 import React from "react";
 
-export const NotificationTransactionItemSkeleton = () => {
+interface Properties {
+	borderDotted?: boolean;
+}
+
+export const TransactionCompactRowSkeleton: React.FC<Properties> = ({ borderDotted }: Properties) => {
 	const recipientWidth = useRandomNumber(120, 150);
 	const amountWidth = useRandomNumber(100, 130);
 
 	return (
-		<TableRow
-			data-testid="NotificationTransactionItemSkeleton"
-			className="border-b border-dotted last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
-		>
+		<TableRow dotted={borderDotted}>
 			<TableCell variant="start" innerClassName="space-x-3" isCompact>
 				<div className="flex items-center -space-x-1">
 					<Circle className="leading-none border-transparent" size="sm">

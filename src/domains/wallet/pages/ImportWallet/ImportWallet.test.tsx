@@ -35,6 +35,8 @@ const fixtureProfileId = getDefaultProfileId();
 const identityAddress = "DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P";
 const mnemonic = "buddy year cost vendor honey tonight viable nut female alarm duck symptom";
 const randomAddress = "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib";
+const randomPublicKey = "034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192";
+const randomPublicKeyInvalid = "a34151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192";
 
 const route = `/profiles/${fixtureProfileId}/wallets/import`;
 const history = createMemoryHistory();
@@ -429,6 +431,96 @@ describe("ImportWallet", () => {
 		await waitFor(() => {
 			expect(profile.wallets().findByAddress(randomAddress)).toBeTruthy();
 		});
+	});
+
+	it("should import by publicKey", async () => {
+		const history = createMemoryHistory();
+		history.push(route);
+
+		const { getByTestId, getByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/import">
+				<ImportWallet />
+			</Route>,
+			{
+				routes: [route],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(getByTestId("NetworkStep")).toBeTruthy());
+
+		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+
+		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+
+		expect(selectNetworkInput).toHaveValue("ARK Devnet");
+
+		await waitFor(() => expect(getByTestId("ImportWallet__continue-button")).not.toBeDisabled());
+		fireEvent.click(getByTestId("ImportWallet__continue-button"));
+
+		expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
+
+		fireEvent.focus(getByTestId("SelectDropdown__input"));
+
+		await waitFor(() => expect(getByText(commonTranslations.PUBLIC_KEY)).toBeInTheDocument());
+		fireEvent.mouseDown(getByText(commonTranslations.PUBLIC_KEY));
+
+		await waitFor(() => expect(getByTestId("ImportWallet__publicKey-input")).toBeTruthy());
+		fireEvent.input(getByTestId("ImportWallet__publicKey-input"), { target: { value: randomPublicKey } });
+
+		await waitFor(() => expect(getByTestId("ImportWallet__continue-button")).not.toBeDisabled());
+		fireEvent.click(getByTestId("ImportWallet__continue-button"));
+
+		await waitFor(() => {
+			expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
+		});
+
+		await waitFor(() => expect(getByTestId("ImportWallet__save-button")).not.toBeDisabled());
+		fireEvent.click(getByTestId("ImportWallet__save-button"));
+
+		await waitFor(() => {
+			expect(profile.wallets().findByAddress(randomAddress)).toBeTruthy();
+		});
+	});
+
+	it("should not allow importing from an invalid publicKey", async () => {
+		const history = createMemoryHistory();
+		history.push(route);
+
+		const { getByTestId, getByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/import">
+				<ImportWallet />
+			</Route>,
+			{
+				routes: [route],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(getByTestId("NetworkStep")).toBeTruthy());
+
+		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+
+		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+
+		expect(selectNetworkInput).toHaveValue("ARK Devnet");
+
+		await waitFor(() => expect(getByTestId("ImportWallet__continue-button")).not.toBeDisabled());
+		fireEvent.click(getByTestId("ImportWallet__continue-button"));
+
+		expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
+
+		fireEvent.focus(getByTestId("SelectDropdown__input"));
+
+		await waitFor(() => expect(getByText(commonTranslations.PUBLIC_KEY)).toBeInTheDocument());
+		fireEvent.mouseDown(getByText(commonTranslations.PUBLIC_KEY));
+
+		await waitFor(() => expect(getByTestId("ImportWallet__publicKey-input")).toBeTruthy());
+		fireEvent.input(getByTestId("ImportWallet__publicKey-input"), { target: { value: randomPublicKeyInvalid } });
+
+		await waitFor(() => expect(getByTestId("ImportWallet__continue-button")).toBeDisabled());
 	});
 
 	it("should get options depend on the network", async () => {

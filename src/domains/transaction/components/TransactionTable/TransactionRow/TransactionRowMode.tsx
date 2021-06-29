@@ -22,7 +22,7 @@ export const BaseTransactionRowMode = ({ type, isSent, isReturn, recipient, icon
 	const { t } = useTranslation();
 
 	const { modeIconName, tooltipContent, modeCircleStyle } = useMemo(() => {
-		if (isReturn) {
+		if (isReturn && (type === "transfer" || type === "multiPayment")) {
 			return {
 				modeIconName: "Return",
 				tooltipContent: t("TRANSACTION.RETURN"),
@@ -43,7 +43,7 @@ export const BaseTransactionRowMode = ({ type, isSent, isReturn, recipient, icon
 			tooltipContent: t("TRANSACTION.RECEIVED"),
 			modeCircleStyle: "border-theme-success-200 text-theme-success-600 dark:border-theme-success-600",
 		};
-	}, [isSent, isReturn, t]);
+	}, [isSent, isReturn, t, type]);
 
 	const shadowClasses =
 		"ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black";
@@ -70,7 +70,7 @@ export const TransactionRowMode = ({
 	transaction,
 }: {
 	iconSize?: Size;
-	transaction: DTO.ExtendedTransactionData | Contracts.TransactionData;
+	transaction: DTO.ExtendedConfirmedTransactionData | Contracts.ConfirmedTransactionData;
 }) => (
 	<BaseTransactionRowMode
 		iconSize={iconSize}

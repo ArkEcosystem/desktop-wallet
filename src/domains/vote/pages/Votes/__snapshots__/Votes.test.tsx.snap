@@ -520,7 +520,7 @@ exports[`Votes should filter current delegates 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -582,8 +582,7 @@ exports[`Votes should filter current delegates 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kKpqmt justify-end border border-l-0 border-transparent bg-theme-primary-50 dark:bg-theme-background dark:border-theme-primary-600"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-                          color="primary"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
                         >
@@ -745,9 +744,11 @@ exports[`Votes should filter current delegates 1`] = `
                       </div>
                     </div>
                   </div>
-                  <span>
+                  <span
+                    class="ml-auto"
+                  >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ ml-auto"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
                       data-testid="DelegateTable__continue-button"
                       disabled=""
                       type="button"
@@ -1234,7 +1235,7 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -1296,8 +1297,7 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kKpqmt justify-end border border-l-0 border-transparent bg-theme-info-50 dark:bg-theme-background dark:border-theme-info-600"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 fPvguF"
-                          color="success"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 elgwZC"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
                         >
@@ -1311,7 +1311,7 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -1373,8 +1373,7 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kKpqmt justify-end border border-l-0 border-transparent"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-                          color="primary"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                           data-testid="DelegateRow__toggle-1"
                           type="button"
                         >
@@ -1388,7 +1387,7 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -1450,8 +1449,7 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kKpqmt justify-end border border-l-0 border-transparent"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-                          color="primary"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                           data-testid="DelegateRow__toggle-2"
                           type="button"
                         >
@@ -1613,9 +1611,11 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                       </div>
                     </div>
                   </div>
-                  <span>
+                  <span
+                    class="ml-auto"
+                  >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS ml-auto"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW"
                       data-testid="DelegateTable__continue-button"
                       type="button"
                     >
@@ -2133,7 +2133,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                   role="rowgroup"
                 >
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -2195,8 +2195,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kKpqmt justify-end border border-l-0 border-transparent"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-                          color="primary"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
                         >
@@ -2210,7 +2209,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -2272,8 +2271,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kKpqmt justify-end border border-l-0 border-transparent"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-                          color="primary"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                           data-testid="DelegateRow__toggle-1"
                           type="button"
                         >
@@ -2287,7 +2285,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -2349,8 +2347,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kKpqmt justify-end border border-l-0 border-transparent"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-                          color="primary"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                           data-testid="DelegateRow__toggle-2"
                           type="button"
                         >
@@ -2512,9 +2509,11 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       </div>
                     </div>
                   </div>
-                  <span>
+                  <span
+                    class="ml-auto"
+                  >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ ml-auto"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
                       data-testid="DelegateTable__continue-button"
                       disabled=""
                       type="button"
@@ -3039,7 +3038,7 @@ exports[`Votes should render 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -3101,8 +3100,7 @@ exports[`Votes should render 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kKpqmt justify-end border border-l-0 border-transparent"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-                          color="primary"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
                         >
@@ -3116,7 +3114,7 @@ exports[`Votes should render 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -3178,8 +3176,7 @@ exports[`Votes should render 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kKpqmt justify-end border border-l-0 border-transparent"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-                          color="primary"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                           data-testid="DelegateRow__toggle-1"
                           type="button"
                         >
@@ -3193,7 +3190,7 @@ exports[`Votes should render 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -3255,8 +3252,7 @@ exports[`Votes should render 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kKpqmt justify-end border border-l-0 border-transparent"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-                          color="primary"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                           data-testid="DelegateRow__toggle-2"
                           type="button"
                         >
@@ -3418,9 +3414,11 @@ exports[`Votes should render 1`] = `
                       </div>
                     </div>
                   </div>
-                  <span>
+                  <span
+                    class="ml-auto"
+                  >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ ml-auto"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
                       data-testid="DelegateTable__continue-button"
                       disabled=""
                       type="button"
@@ -3763,7 +3761,7 @@ exports[`Votes should render with no wallets 1`] = `
                   class="flex -m-3 space-x-3"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                     type="button"
                   >
                     <div
@@ -3788,7 +3786,7 @@ exports[`Votes should render with no wallets 1`] = `
                     </div>
                   </button>
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                     type="button"
                   >
                     <div
@@ -4287,7 +4285,7 @@ exports[`Votes should select a delegate 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -4349,8 +4347,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kKpqmt justify-end border border-l-0 border-transparent bg-theme-danger-50 dark:bg-theme-background dark:border-theme-danger-400"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-                          color="danger"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 fJhVAA"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
                         >
@@ -4364,7 +4361,7 @@ exports[`Votes should select a delegate 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -4426,8 +4423,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kKpqmt justify-end border border-l-0 border-transparent"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-                          color="primary"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                           data-testid="DelegateRow__toggle-1"
                           type="button"
                         >
@@ -4441,7 +4437,7 @@ exports[`Votes should select a delegate 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -4503,8 +4499,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kKpqmt justify-end border border-l-0 border-transparent"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-                          color="primary"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                           data-testid="DelegateRow__toggle-2"
                           type="button"
                         >
@@ -4666,9 +4661,11 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                     </div>
                   </div>
-                  <span>
+                  <span
+                    class="ml-auto"
+                  >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS ml-auto"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW"
                       data-testid="DelegateTable__continue-button"
                       type="button"
                     >
@@ -5156,7 +5153,7 @@ exports[`Votes should select an address without vote 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -5218,8 +5215,7 @@ exports[`Votes should select an address without vote 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kKpqmt justify-end border border-l-0 border-transparent"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-                          color="primary"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
                         >
@@ -5233,7 +5229,7 @@ exports[`Votes should select an address without vote 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -5295,8 +5291,7 @@ exports[`Votes should select an address without vote 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kKpqmt justify-end border border-l-0 border-transparent"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-                          color="primary"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                           data-testid="DelegateRow__toggle-1"
                           type="button"
                         >
@@ -5310,7 +5305,7 @@ exports[`Votes should select an address without vote 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -5372,8 +5367,7 @@ exports[`Votes should select an address without vote 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kKpqmt justify-end border border-l-0 border-transparent"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-                          color="primary"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                           data-testid="DelegateRow__toggle-2"
                           type="button"
                         >
@@ -5535,9 +5529,11 @@ exports[`Votes should select an address without vote 1`] = `
                       </div>
                     </div>
                   </div>
-                  <span>
+                  <span
+                    class="ml-auto"
+                  >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ ml-auto"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
                       data-testid="DelegateTable__continue-button"
                       disabled=""
                       type="button"
@@ -7086,7 +7082,7 @@ exports[`Votes should show network warning 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -7148,8 +7144,7 @@ exports[`Votes should show network warning 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kKpqmt justify-end border border-l-0 border-transparent bg-theme-info-50 dark:bg-theme-background dark:border-theme-info-600"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 fPvguF"
-                          color="success"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 elgwZC"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
                         >
@@ -7163,7 +7158,7 @@ exports[`Votes should show network warning 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -7227,7 +7222,6 @@ exports[`Votes should show network warning 1`] = `
                         <span>
                           <button
                             class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
-                            color="primary"
                             data-testid="DelegateRow__toggle-1"
                             disabled=""
                             type="button"
@@ -7243,7 +7237,7 @@ exports[`Votes should show network warning 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -7307,7 +7301,6 @@ exports[`Votes should show network warning 1`] = `
                         <span>
                           <button
                             class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
-                            color="primary"
                             data-testid="DelegateRow__toggle-2"
                             disabled=""
                             type="button"
@@ -7471,9 +7464,11 @@ exports[`Votes should show network warning 1`] = `
                       </div>
                     </div>
                   </div>
-                  <span>
+                  <span
+                    class="ml-auto"
+                  >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS ml-auto"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW"
                       data-testid="DelegateTable__continue-button"
                       type="button"
                     >
@@ -7993,7 +7988,7 @@ exports[`Votes should show resigned delegate notice 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -8055,8 +8050,7 @@ exports[`Votes should show resigned delegate notice 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kKpqmt justify-end border border-l-0 border-transparent bg-theme-primary-50 dark:bg-theme-background dark:border-theme-primary-600"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-                          color="primary"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
                         >
@@ -8070,7 +8064,7 @@ exports[`Votes should show resigned delegate notice 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -8132,8 +8126,7 @@ exports[`Votes should show resigned delegate notice 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kKpqmt justify-end border border-l-0 border-transparent"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-                          color="primary"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                           data-testid="DelegateRow__toggle-1"
                           type="button"
                         >
@@ -8147,7 +8140,7 @@ exports[`Votes should show resigned delegate notice 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -8209,8 +8202,7 @@ exports[`Votes should show resigned delegate notice 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kKpqmt justify-end border border-l-0 border-transparent"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-                          color="primary"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                           data-testid="DelegateRow__toggle-2"
                           type="button"
                         >
@@ -8374,9 +8366,11 @@ exports[`Votes should show resigned delegate notice 1`] = `
                       </div>
                     </div>
                   </div>
-                  <span>
+                  <span
+                    class="ml-auto"
+                  >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ ml-auto"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
                       data-testid="DelegateTable__continue-button"
                       disabled=""
                       type="button"
@@ -9093,7 +9087,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -9210,7 +9204,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kKpqmt justify-end"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                           data-testid="AddressRow__select-0"
                           type="button"
                         >
@@ -9224,7 +9218,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>
@@ -9317,7 +9311,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kKpqmt justify-end"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                           data-testid="AddressRow__select-1"
                           type="button"
                         >
@@ -9331,7 +9325,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 iSFAiI"
                     data-testid="TableRow"
                   >
                     <td>

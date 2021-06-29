@@ -2,6 +2,7 @@ import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import cn from "classnames";
+import { useTransactionTypes } from "domains/transaction/hooks/use-transaction-types";
 import React from "react";
 import { Size } from "types";
 
@@ -12,22 +13,7 @@ interface Properties {
 }
 
 export const TransactionRowRecipientIcon = ({ type, recipient, size }: Properties) => {
-	const transactionIcon: Record<string, string> = {
-		transfer: "Transfer",
-		multiPayment: "Multipayment",
-		secondSignature: "SecondSignature",
-		multiSignature: "Multisig",
-		delegateRegistration: "Delegate",
-		delegateResignation: "DelegateResigned",
-		vote: "Vote",
-		unvote: "Unvote",
-		voteCombination: "VoteCombination",
-		ipfs: "Ipfs",
-		htlcLock: "Timelock",
-		htlcClaim: "Timelock",
-		htlcRefund: "Timelock",
-		magistrate: "Magistrate",
-	};
+	const { getIcon } = useTransactionTypes();
 
 	const shadowClasses =
 		"ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black";
@@ -45,7 +31,7 @@ export const TransactionRowRecipientIcon = ({ type, recipient, size }: Propertie
 				shadowClasses,
 			)}
 		>
-			<Icon name={transactionIcon[type]} width={20} height={20} />
+			<Icon name={getIcon(type)} width={20} height={20} />
 		</Circle>
 	);
 };

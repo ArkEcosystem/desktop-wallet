@@ -292,9 +292,8 @@ export const DelegateTable = ({
 							content={t("VOTE.DELEGATE_TABLE.TOOLTIP.SELECTED_DELEGATE")}
 							disabled={!!getTotalVotes()}
 						>
-							<span>
+							<span className="ml-auto">
 								<Button
-									className="ml-auto"
 									disabled={!getTotalVotes()}
 									onClick={() => onContinue?.(selectedUnvotes, selectedVotes)}
 									data-testid="DelegateTable__continue-button"

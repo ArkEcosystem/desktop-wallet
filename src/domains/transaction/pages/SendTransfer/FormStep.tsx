@@ -1,6 +1,5 @@
 import { Enums, Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { InputCounter } from "app/components/Input";
@@ -36,7 +35,7 @@ export const FormStep = ({
 			return [
 				{
 					address: deeplinkProps.recipient,
-					amount: BigNumber.make(deeplinkProps.amount),
+					amount: senderWallet?.coin().bigNumber().make(deeplinkProps.amount),
 				},
 			];
 		}
@@ -67,6 +66,7 @@ export const FormStep = ({
 						<AddRecipient
 							assetSymbol={senderWallet?.currency()}
 							profile={profile}
+							wallet={senderWallet}
 							recipients={getRecipients()}
 							showMultiPaymentOption={network?.allows(Enums.FeatureFlag.TransactionMultiPayment)}
 							disableMultiPaymentOption={senderWallet?.isLedger()}

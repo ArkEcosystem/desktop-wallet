@@ -1,8 +1,9 @@
 import { TransactionCompactRow } from "domains/transaction/components/TransactionTable/TransactionRow/TransactionCompactRow";
+import { TransactionCompactRowSkeleton } from "domains/transaction/components/TransactionTable/TransactionRow/TransactionCompactRowSkeleton";
 import React, { useEffect, useState } from "react";
 import VisibilitySensor from "react-visibility-sensor";
 
-import { NotificationTransactionItemProperties, NotificationTransactionItemSkeleton } from ".";
+import { NotificationTransactionItemProperties } from ".";
 
 export const NotificationTransactionItem = ({
 	notification,
@@ -26,11 +27,12 @@ export const NotificationTransactionItem = ({
 			setWalletName(senderWallet[0]?.name());
 			setTransaction(notificationTransaction);
 		};
+
 		fetchTransaction();
 	}, [profile, notification]);
 
 	if (!transaction) {
-		return <NotificationTransactionItemSkeleton />;
+		return <TransactionCompactRowSkeleton borderDotted />;
 	}
 
 	return (
@@ -43,7 +45,6 @@ export const NotificationTransactionItem = ({
 			<TransactionCompactRow
 				walletName={walletName}
 				transaction={transaction}
-				iconSize="sm"
 				onClick={() => onTransactionClick?.(transaction)}
 			/>
 		</VisibilitySensor>

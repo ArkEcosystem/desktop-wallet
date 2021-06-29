@@ -25,10 +25,8 @@ const BaseTransactionRowAmount: React.FC<Properties> = ({
 		return <Amount value={convertedTotal} ticker={exchangeCurrency} className="text-theme-secondary-text" />;
 	}
 
-	const color = isSent ? "danger" : "success";
-
 	return (
-		<Label color={color} className="whitespace-nowrap">
+		<Label color={isSent ? "danger" : "success"} className="whitespace-nowrap">
 			<AmountCrypto withSign ticker={wallet.currency()} value={total} isNegative={isNegative} />
 		</Label>
 	);
@@ -38,7 +36,7 @@ const TransactionRowAmount = ({
 	transaction,
 	exchangeCurrency,
 }: {
-	transaction: DTO.ExtendedTransactionData;
+	transaction: DTO.ExtendedConfirmedTransactionData;
 	exchangeCurrency?: string;
 }): JSX.Element => (
 	<BaseTransactionRowAmount

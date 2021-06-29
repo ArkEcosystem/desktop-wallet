@@ -49,7 +49,7 @@ const WalletTable = ({
 			className: "justify-end",
 		},
 		{
-			Header: t("COMMON.FIAT_VALUE"),
+			Header: t("COMMON.CURRENCY"),
 			accessor: "fiat",
 			className: "justify-end",
 		},

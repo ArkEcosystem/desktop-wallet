@@ -1,16 +1,11 @@
-import { Selector } from "testcafe";
-
-import { buildTranslations } from "../../../app/i18n/helpers";
 import { createFixture, getLocation } from "../../../utils/e2e-utils";
+import { goToProfile } from "../../profile/e2e/common";
 
-const translations = buildTranslations();
+// const translations = buildTranslations();
 
-createFixture(`Dashboard routing`);
+createFixture("Dashboard routing").beforeEach(async (t) => await goToProfile(t));
 
 test("should navigate to dashboard", async (t) => {
-	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 60_000 });
-	await t.click(Selector("span").withText("John Doe"));
-	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok();
 	await t.expect(getLocation()).contains("/dashboard");
 });
 
@@ -30,12 +25,3 @@ test("should navigate to dashboard", async (t) => {
 // 	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok({ timeout: 60000 });
 // 	await t.expect(getLocation()).contains("/dashboard");
 // });
-
-test("should show ledger waiting device modal", async (t) => {
-	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 60_000 });
-	await t.click(Selector("span").withText("John Doe"));
-	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok({ timeout: 60_000 });
-
-	await t.click(Selector("button").withExactText(translations.DASHBOARD.WALLET_CONTROLS.IMPORT_LEDGER));
-	await t.expect(Selector("span").withText(translations.WALLETS.MODAL_LEDGER_WALLET.WAITING_DEVICE).exists).ok();
-});

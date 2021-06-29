@@ -1031,7 +1031,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                       Personal Details
                     </h2>
                     <div
-                      class="group space-y-2 undefined"
+                      class="group space-y-2"
                     >
                       <span
                         class="text-sm font-semibold transition-colors duration-100 cursor-default text-theme-secondary-text group-hover:text-theme-primary-600"
@@ -1051,10 +1051,10 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                               alt="Avatar"
                               class="object-cover min-h-full"
                               data-testid="SelectProfileImage__avatar"
-                              src="data:image/png;base64,dGVzdCBtbmVtb25pYw=="
+                              src="data:image/png;base64,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"
                             />
                             <button
-                              class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
+                              class="overflow-hidden absolute z-10 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                               data-testid="SelectProfileImage__upload-button"
                               type="button"
                             >
@@ -1074,7 +1074,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                             </button>
                           </div>
                           <button
-                            class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
+                            class="OriginalButton__StyledButton-sc-1y2wptt-0 gkZwMr flex absolute z-20 -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
                             data-testid="SelectProfileImage__remove-button"
                             type="button"
                           >
@@ -1810,7 +1810,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                               <div
                                 class="fixed invisible w-auto whitespace-nowrap"
                               >
-                                1…
+                                15…
                               </div>
                               <div
                                 class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
@@ -1824,7 +1824,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                     name="automaticSignOutPeriod"
                                     readonly=""
                                     tabindex="-1"
-                                    value="1"
+                                    value="15"
                                   />
                                 </div>
                               </div>
@@ -1844,7 +1844,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                   <div
                                     class="fixed invisible w-auto whitespace-nowrap"
                                   >
-                                    1 minute…
+                                    15 minutes…
                                   </div>
                                   <div
                                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
@@ -1862,7 +1862,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                         id="select-auto-signout-input"
                                         name="automaticSignOutPeriod"
                                         placeholder="Select Auto Log-Off"
-                                        value="1 minute"
+                                        value="15 minutes"
                                       />
                                       <span
                                         class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
@@ -1871,7 +1871,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                         <span
                                           class="truncate"
                                         >
-                                          1 minute
+                                          15 minutes
                                         </span>
                                       </span>
                                     </div>
@@ -2128,7 +2128,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                     class="flex justify-between pt-2 w-full"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 gDVvgk"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fJhVAA"
                       type="button"
                     >
                       <div
@@ -2152,7 +2152,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                       class="space-x-3"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                         data-testid="General-settings__cancel-button"
                         type="button"
                       >
@@ -2163,7 +2163,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                         </div>
                       </button>
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW"
                         data-testid="General-settings__submit-button"
                         type="submit"
                       >
@@ -2596,7 +2596,7 @@ exports[`Settings should render 1`] = `
                       Personal Details
                     </h2>
                     <div
-                      class="group space-y-2 undefined"
+                      class="group space-y-2"
                     >
                       <span
                         class="text-sm font-semibold transition-colors duration-100 cursor-default text-theme-secondary-text group-hover:text-theme-primary-600"
@@ -2624,7 +2624,7 @@ exports[`Settings should render 1`] = `
                               JO
                             </span>
                             <button
-                              class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
+                              class="overflow-hidden absolute z-10 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                               data-testid="SelectProfileImage__upload-button"
                               type="button"
                             >
@@ -3361,7 +3361,7 @@ exports[`Settings should render 1`] = `
                               <div
                                 class="fixed invisible w-auto whitespace-nowrap"
                               >
-                                1…
+                                15…
                               </div>
                               <div
                                 class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
@@ -3375,7 +3375,7 @@ exports[`Settings should render 1`] = `
                                     name="automaticSignOutPeriod"
                                     readonly=""
                                     tabindex="-1"
-                                    value="1"
+                                    value="15"
                                   />
                                 </div>
                               </div>
@@ -3395,7 +3395,7 @@ exports[`Settings should render 1`] = `
                                   <div
                                     class="fixed invisible w-auto whitespace-nowrap"
                                   >
-                                    1 minute…
+                                    15 minutes…
                                   </div>
                                   <div
                                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
@@ -3413,7 +3413,7 @@ exports[`Settings should render 1`] = `
                                         id="select-auto-signout-input"
                                         name="automaticSignOutPeriod"
                                         placeholder="Select Auto Log-Off"
-                                        value="1 minute"
+                                        value="15 minutes"
                                       />
                                       <span
                                         class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
@@ -3422,7 +3422,7 @@ exports[`Settings should render 1`] = `
                                         <span
                                           class="truncate"
                                         >
-                                          1 minute
+                                          15 minutes
                                         </span>
                                       </span>
                                     </div>
@@ -3679,7 +3679,7 @@ exports[`Settings should render 1`] = `
                     class="flex justify-between pt-2 w-full"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 gDVvgk"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fJhVAA"
                       type="button"
                     >
                       <div
@@ -3703,7 +3703,7 @@ exports[`Settings should render 1`] = `
                       class="space-x-3"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                         data-testid="General-settings__cancel-button"
                         type="button"
                       >
@@ -3714,7 +3714,7 @@ exports[`Settings should render 1`] = `
                         </div>
                       </button>
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW"
                         data-testid="General-settings__submit-button"
                         type="submit"
                       >
@@ -4253,7 +4253,7 @@ exports[`Settings should render export settings 1`] = `
                     class="flex justify-end mt-8 space-x-3 w-full"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW"
                       data-testid="Export-settings__submit-button"
                       type="submit"
                     >
@@ -6012,7 +6012,7 @@ exports[`Settings should show an error toast if the current password does not ma
                       class="flex justify-end mt-8 w-full"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW"
                         data-testid="Password-settings__submit-button"
                         type="submit"
                       >
@@ -7081,7 +7081,7 @@ exports[`Settings should update profile 1`] = `
                       Personal Details
                     </h2>
                     <div
-                      class="group space-y-2 undefined"
+                      class="group space-y-2"
                     >
                       <span
                         class="text-sm font-semibold transition-colors duration-100 cursor-default text-theme-secondary-text group-hover:text-theme-primary-600"
@@ -7101,7 +7101,7 @@ exports[`Settings should update profile 1`] = `
                               class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 euBdNq"
                             >
                               <button
-                                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                                class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                                 data-testid="SelectProfileImage__upload-button"
                                 type="button"
                               >
@@ -7840,7 +7840,7 @@ exports[`Settings should update profile 1`] = `
                               <div
                                 class="fixed invisible w-auto whitespace-nowrap"
                               >
-                                1…
+                                15…
                               </div>
                               <div
                                 class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
@@ -7854,7 +7854,7 @@ exports[`Settings should update profile 1`] = `
                                     name="automaticSignOutPeriod"
                                     readonly=""
                                     tabindex="-1"
-                                    value="1"
+                                    value="15"
                                   />
                                 </div>
                               </div>
@@ -7874,7 +7874,7 @@ exports[`Settings should update profile 1`] = `
                                   <div
                                     class="fixed invisible w-auto whitespace-nowrap"
                                   >
-                                    1 minute…
+                                    15 minutes…
                                   </div>
                                   <div
                                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
@@ -7892,7 +7892,7 @@ exports[`Settings should update profile 1`] = `
                                         id="select-auto-signout-input"
                                         name="automaticSignOutPeriod"
                                         placeholder="Select Auto Log-Off"
-                                        value="1 minute"
+                                        value="15 minutes"
                                       />
                                       <span
                                         class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
@@ -7901,7 +7901,7 @@ exports[`Settings should update profile 1`] = `
                                         <span
                                           class="truncate"
                                         >
-                                          1 minute
+                                          15 minutes
                                         </span>
                                       </span>
                                     </div>
@@ -8158,7 +8158,7 @@ exports[`Settings should update profile 1`] = `
                     class="flex justify-between pt-2 w-full"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 gDVvgk"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fJhVAA"
                       type="button"
                     >
                       <div
@@ -8182,7 +8182,7 @@ exports[`Settings should update profile 1`] = `
                       class="space-x-3"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                         data-testid="General-settings__cancel-button"
                         type="button"
                       >
@@ -8193,7 +8193,7 @@ exports[`Settings should update profile 1`] = `
                         </div>
                       </button>
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW"
                         data-testid="General-settings__submit-button"
                         type="submit"
                       >
@@ -8626,7 +8626,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                       Personal Details
                     </h2>
                     <div
-                      class="group space-y-2 undefined"
+                      class="group space-y-2"
                     >
                       <span
                         class="text-sm font-semibold transition-colors duration-100 cursor-default text-theme-secondary-text group-hover:text-theme-primary-600"
@@ -8654,7 +8654,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                               T
                             </span>
                             <button
-                              class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
+                              class="overflow-hidden absolute z-10 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                               data-testid="SelectProfileImage__upload-button"
                               type="button"
                             >
@@ -9391,7 +9391,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                               <div
                                 class="fixed invisible w-auto whitespace-nowrap"
                               >
-                                1…
+                                15…
                               </div>
                               <div
                                 class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
@@ -9405,7 +9405,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                     name="automaticSignOutPeriod"
                                     readonly=""
                                     tabindex="-1"
-                                    value="1"
+                                    value="15"
                                   />
                                 </div>
                               </div>
@@ -9425,7 +9425,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                   <div
                                     class="fixed invisible w-auto whitespace-nowrap"
                                   >
-                                    1 minute…
+                                    15 minutes…
                                   </div>
                                   <div
                                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
@@ -9443,7 +9443,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                         id="select-auto-signout-input"
                                         name="automaticSignOutPeriod"
                                         placeholder="Select Auto Log-Off"
-                                        value="1 minute"
+                                        value="15 minutes"
                                       />
                                       <span
                                         class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
@@ -9452,7 +9452,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                         <span
                                           class="truncate"
                                         >
-                                          1 minute
+                                          15 minutes
                                         </span>
                                       </span>
                                     </div>
@@ -9709,7 +9709,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                     class="flex justify-between pt-2 w-full"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 gDVvgk"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fJhVAA"
                       type="button"
                     >
                       <div
@@ -9733,7 +9733,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                       class="space-x-3"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                         data-testid="General-settings__cancel-button"
                         type="button"
                       >
@@ -9744,7 +9744,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                         </div>
                       </button>
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW"
                         data-testid="General-settings__submit-button"
                         type="submit"
                       >
@@ -10177,7 +10177,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                       Personal Details
                     </h2>
                     <div
-                      class="group space-y-2 undefined"
+                      class="group space-y-2"
                     >
                       <span
                         class="text-sm font-semibold transition-colors duration-100 cursor-default text-theme-secondary-text group-hover:text-theme-primary-600"
@@ -10197,7 +10197,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                               class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 euBdNq"
                             >
                               <button
-                                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                                class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                                 data-testid="SelectProfileImage__upload-button"
                                 type="button"
                               >
@@ -10954,7 +10954,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                               <div
                                 class="fixed invisible w-auto whitespace-nowrap"
                               >
-                                1…
+                                15…
                               </div>
                               <div
                                 class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
@@ -10968,7 +10968,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                     name="automaticSignOutPeriod"
                                     readonly=""
                                     tabindex="-1"
-                                    value="1"
+                                    value="15"
                                   />
                                 </div>
                               </div>
@@ -10988,7 +10988,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                   <div
                                     class="fixed invisible w-auto whitespace-nowrap"
                                   >
-                                    1 minute…
+                                    15 minutes…
                                   </div>
                                   <div
                                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
@@ -11006,7 +11006,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                         id="select-auto-signout-input"
                                         name="automaticSignOutPeriod"
                                         placeholder="Select Auto Log-Off"
-                                        value="1 minute"
+                                        value="15 minutes"
                                       />
                                       <span
                                         class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
@@ -11015,7 +11015,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                         <span
                                           class="truncate"
                                         >
-                                          1 minute
+                                          15 minutes
                                         </span>
                                       </span>
                                     </div>
@@ -11272,7 +11272,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                     class="flex justify-between pt-2 w-full"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 gDVvgk"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fJhVAA"
                       type="button"
                     >
                       <div
@@ -11296,7 +11296,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                       class="space-x-3"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
                         data-testid="General-settings__cancel-button"
                         type="button"
                       >
