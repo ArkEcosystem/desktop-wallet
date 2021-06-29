@@ -1,14 +1,22 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import nock from "nock";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
 
 import { NotificationItem } from "./NotificationItem";
+
+const TransactionsFixture = require("tests/fixtures/coins/ark/devnet/transactions.json");
 
 let profile: Contracts.IProfile;
 let notification: any;
 
 describe("Notifications", () => {
 	beforeAll(() => {
+		nock("https://dwallets.ark.io").get("/api/transactions").query(true).reply(200, {
+			data: TransactionsFixture.data,
+			meta: TransactionsFixture.meta,
+		});
+
 		profile = env.profiles().findById(getDefaultProfileId());
 		notification = profile.notifications().first();
 	});
