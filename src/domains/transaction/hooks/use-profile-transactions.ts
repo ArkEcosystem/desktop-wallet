@@ -131,7 +131,7 @@ export const useProfileTransactions = ({
 	);
 
 	const fetchTransactions = useCallback(
-		({ flush = false, mode = "all", transactionType, wallets = [], cursor = 1 }: FetchTransactionProperties) => {
+		({ flush = false, mode = "all", transactionType, wallets = [] }: FetchTransactionProperties) => {
 			if (wallets.length === 0) {
 				return { items: () => [], hasMorePages: () => false };
 			}
@@ -140,7 +140,7 @@ export const useProfileTransactions = ({
 				profile.transactionAggregate().flush(mode);
 			}
 
-			const defaultQuery = { limit: 30, addresses: wallets.map((wallet) => wallet.address(), cursor) };
+			const defaultQuery = { limit: 30, addresses: wallets.map((wallet) => wallet.address()) };
 			const queryParameters = transactionType ? { ...defaultQuery, ...transactionType } : defaultQuery;
 
 			// @ts-ignore
