@@ -89,6 +89,7 @@ import { ReactComponent as Report } from "./report.svg";
 import { ReactComponent as Reset } from "./reset.svg";
 import { ReactComponent as Return } from "./return.svg";
 import { ReactComponent as Search } from "./search.svg";
+import { ReactComponent as SecondSignature } from "./second-signature.svg";
 import { ReactComponent as Send } from "./send.svg";
 import { ReactComponent as Sent } from "./sent.svg";
 import { ReactComponent as Settings } from "./settings.svg";
@@ -203,6 +204,7 @@ export const SvgCollection: any = {
 	Report,
 	Reset,
 	Search,
+	SecondSignature,
 	Send,
 	Sent,
 	Settings,
