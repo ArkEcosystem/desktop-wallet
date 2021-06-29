@@ -336,9 +336,7 @@ describe("Contacts", () => {
 
 		renderComponent();
 
-		expect(screen.getAllByTestId("ContactListItem__address")).toHaveLength(
-			contact1.addresses().count() + contact2.addresses().count(),
-		);
+		expect(screen.getAllByTestId("ContactListItem__address")).toHaveLength(6);
 		expect(screen.getByText(contact1Address)).toBeInTheDocument();
 		expect(screen.getByText(contact2Address)).toBeInTheDocument();
 
