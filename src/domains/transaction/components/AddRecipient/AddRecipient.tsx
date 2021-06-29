@@ -333,9 +333,9 @@ export const AddRecipient = ({
 					<FormField name="amount">
 						<FormLabel>
 							<span>{t("COMMON.AMOUNT")}</span>
-							{isSenderFilled && (
+							{isSenderFilled && !!remainingNetBalance && (
 								<span className="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700">
-									{`(${t("COMMON.AVAILABLE")} ${remainingNetBalance})`}
+									({t("COMMON.AVAILABLE")} <AmountCrypto value={remainingNetBalance} ticker={""} />)
 								</span>
 							)}
 						</FormLabel>

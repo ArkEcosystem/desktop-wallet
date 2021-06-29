@@ -195,7 +195,15 @@ exports[`AddRecipient should render 1`] = `
             <span
               class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
             >
-              (Available 33.75089801)
+              (
+              Available
+               
+              <span
+                data-testid="AmountCrypto"
+              >
+                33.75089801 
+              </span>
+              )
             </span>
           </label>
           <div
@@ -445,7 +453,15 @@ exports[`AddRecipient should render with multiple recipients switch 1`] = `
             <span
               class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
             >
-              (Available 33.75089801)
+              (
+              Available
+               
+              <span
+                data-testid="AmountCrypto"
+              >
+                33.75089801 
+              </span>
+              )
             </span>
           </label>
           <div
@@ -706,7 +722,15 @@ exports[`AddRecipient should render with single recipient data 1`] = `
             <span
               class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
             >
-              (Available 33.75089801)
+              (
+              Available
+               
+              <span
+                data-testid="AmountCrypto"
+              >
+                33.75089801 
+              </span>
+              )
             </span>
           </label>
           <div
@@ -956,7 +980,15 @@ exports[`AddRecipient should render without recipients 1`] = `
             <span
               class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
             >
-              (Available 33.75089801)
+              (
+              Available
+               
+              <span
+                data-testid="AmountCrypto"
+              >
+                33.75089801 
+              </span>
+              )
             </span>
           </label>
           <div
@@ -1156,7 +1188,15 @@ exports[`AddRecipient should render without the single & multiple switch 1`] = `
             <span
               class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
             >
-              (Available 33.75089801)
+              (
+              Available
+               
+              <span
+                data-testid="AmountCrypto"
+              >
+                33.75089801 
+              </span>
+              )
             </span>
           </label>
           <div
@@ -1406,7 +1446,15 @@ exports[`AddRecipient should set available amount 1`] = `
             <span
               class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
             >
-              (Available 33.75089801)
+              (
+              Available
+               
+              <span
+                data-testid="AmountCrypto"
+              >
+                33.75089801 
+              </span>
+              )
             </span>
           </label>
           <div
@@ -1652,11 +1700,6 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
           >
             <span>
               Amount
-            </span>
-            <span
-              class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-            >
-              (Available undefined)
             </span>
           </label>
           <div

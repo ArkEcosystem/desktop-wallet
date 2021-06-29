@@ -1,15 +1,14 @@
 import { CURRENCIES, Money, Numeral } from "@arkecosystem/platform-sdk-intl";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 
-import { DEFAULT_DECIMALS, DEFAULT_TICKER, FormatParameters } from "./Amount.contracts";
+import { DEFAULT_DECIMALS, FormatParameters } from "./Amount.contracts";
 
 const getDecimalsByTicker = (ticker: string): number => {
 	const key = ticker as keyof typeof CURRENCIES;
 	return CURRENCIES[key]?.decimals ?? DEFAULT_DECIMALS;
 };
 
-const formatCrypto = ({ locale, value, ...parameters }: FormatParameters): string => {
-	const ticker = parameters.ticker || DEFAULT_TICKER;
+const formatCrypto = ({ locale, value, ticker }: FormatParameters): string => {
 	const decimals = getDecimalsByTicker(ticker);
 
 	const numeral = Numeral.make(locale as string, {
@@ -23,10 +22,7 @@ const formatCrypto = ({ locale, value, ...parameters }: FormatParameters): strin
 	return numeral.formatAsCurrency(value, "BTC").replace("BTC", ticker.toUpperCase());
 };
 
-const formatFiat = ({ value, ...parameters }: FormatParameters): string => {
-	// @TODO: remove ignore coverage after making ticker required
-	/* istanbul ignore next */
-	const ticker = parameters.ticker || DEFAULT_TICKER;
+const formatFiat = ({ value, ticker }: FormatParameters): string => {
 	const decimals = getDecimalsByTicker(ticker);
 
 	const cents = BigNumber.make(value).times(Math.pow(10, decimals)).decimalPlaces(0).toNumber();
