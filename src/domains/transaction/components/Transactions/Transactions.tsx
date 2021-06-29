@@ -6,7 +6,7 @@ import { FilterTransactions } from "domains/transaction/components/FilterTransac
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
 import { useProfileTransactions } from "domains/transaction/hooks/use-profile-transactions";
-import React, { memo, useEffect, useMemo, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 
 interface TransactionsProperties {
@@ -45,11 +45,6 @@ export const Transactions = memo(
 		>(undefined);
 
 		const [activeTransactionTypeLabel, setActiveTransactionTypeLabel] = useState("");
-
-		const exchangeCurrency = useMemo(
-			() => profile.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency),
-			[profile],
-		);
 
 		const {
 			updateFilters,
@@ -139,7 +134,7 @@ export const Transactions = memo(
 
 				<TransactionTable
 					transactions={transactions}
-					exchangeCurrency={exchangeCurrency}
+					exchangeCurrency={profile.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency)}
 					hideHeader={!isLoadingTransactions && transactions.length === 0}
 					isLoading={isLoadingTransactions}
 					skeletonRowsLimit={8}

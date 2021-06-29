@@ -8,6 +8,9 @@ describe("AmountCrypto", () => {
 		const { rerender } = render(<AmountCrypto value={1} ticker="ARK" />);
 		expect(screen.getByTestId("AmountCrypto")).toHaveTextContent("1 ARK");
 
+		rerender(<AmountCrypto value={1234.56} ticker=" " />);
+		expect(screen.getByTestId("AmountCrypto")).toHaveTextContent("1,234.56");
+
 		rerender(<AmountCrypto value={123_456} ticker="BTC" />);
 		expect(screen.getByTestId("AmountCrypto")).toHaveTextContent("123,456 BTC");
 
