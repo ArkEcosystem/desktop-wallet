@@ -1,12 +1,13 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
+import { goToProfile } from "../../profile/e2e/common";
 
 const translations = buildTranslations();
 
 export const goToNews = async (t: any) => {
-	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 60_000 });
-	await t.click(Selector("span").withText("John Doe"));
+	await goToProfile(t);
+
 	await t.click(Selector("a").withText(translations.NEWS.NEWS));
 	await t.expect(Selector("h1").withText(translations.NEWS.PAGE_NEWS.TITLE).exists).ok();
 };

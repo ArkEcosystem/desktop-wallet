@@ -26,6 +26,7 @@ export const CreateContact = ({ isOpen, profile, onClose, onCancel, onSave }: Cr
 		await profile.contacts().update(contact.id(), { addresses });
 		await persist();
 		onSave?.(contact.id());
+		setErrors({});
 	};
 
 	const handleChange = (fieldName: string) => {

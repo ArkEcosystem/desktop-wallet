@@ -25,7 +25,7 @@ const prepareTest = async (t: any) => {
 	await openUpdateWalletName(t);
 };
 
-createFixture(`Wallet Labeling`).beforeEach(async (t) => await prepareTest(t));
+createFixture("Wallet Labeling").beforeEach(async (t) => await prepareTest(t));
 
 test("Should open and close wallet update name modal", async (t) => {
 	await t.click(Selector('[data-testid="modal__close-btn"]'));

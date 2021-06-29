@@ -47,7 +47,7 @@ const walletMock = mockRequest(
 	},
 );
 
-createFixture(`Vote action`, [transactionMock, walletMock]);
+createFixture("Vote action", [transactionMock, walletMock]);
 test("should successfully send a vote transaction", async (t) => {
 	// Navigate to profile page
 	await goToProfile(t);
