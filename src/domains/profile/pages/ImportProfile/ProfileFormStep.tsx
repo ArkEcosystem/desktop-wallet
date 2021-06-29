@@ -49,7 +49,12 @@ const CreateProfileForm = ({
 	});
 
 	const { watch, register, formState, setValue, trigger } = form;
-	const { name, confirmPassword, isDarkMode, currency } = watch(["name", "confirmPassword", "currency", "isDarkMode"]);
+	const { name, confirmPassword, isDarkMode, currency } = watch([
+		"name",
+		"confirmPassword",
+		"currency",
+		"isDarkMode",
+	]);
 
 	const [avatarImage, setAvatarImage] = useState(profile?.avatar());
 
@@ -108,12 +113,14 @@ const CreateProfileForm = ({
 		profile.settings().set(Contracts.ProfileSetting.Avatar, avatarImage);
 		profile.settings().set(Contracts.ProfileSetting.ExchangeCurrency, currency);
 
-		if (enteredPassword) {
-			profile.auth().setPassword(enteredPassword);
+		if (enteredPassword || password) {
+			profile.auth().setPassword(enteredPassword || password);
 		}
 
 		onSubmit?.(profile);
 	};
+
+	const showPasswordFields = !profile?.usesPassword();
 
 	return (
 		<div>
@@ -144,27 +151,31 @@ const CreateProfileForm = ({
 							/>
 						</div>
 
-						<FormField name="password">
-							<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.PASSWORD")} optional />
-							<InputPassword
-								ref={register(passwordValidation.password())}
-								onChange={() => {
-									if (confirmPassword) {
-										trigger("confirmPassword");
-									}
-								}}
-							/>
-						</FormField>
+						{showPasswordFields && (
+							<>
+								<FormField name="password">
+									<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.PASSWORD")} optional />
+									<InputPassword
+										ref={register(passwordValidation.password())}
+										onChange={() => {
+											if (confirmPassword) {
+												trigger("confirmPassword");
+											}
+										}}
+									/>
+								</FormField>
 
-						<FormField name="confirmPassword">
-							<FormLabel
-								label={t("SETTINGS.GENERAL.PERSONAL.CONFIRM_PASSWORD")}
-								optional={!watch("password")}
-							/>
-							<InputPassword
-								ref={register(passwordValidation.confirmOptionalPassword(watch("password")!))}
-							/>
-						</FormField>
+								<FormField name="confirmPassword">
+									<FormLabel
+										label={t("SETTINGS.GENERAL.PERSONAL.CONFIRM_PASSWORD")}
+										optional={!watch("password")}
+									/>
+									<InputPassword
+										ref={register(passwordValidation.confirmOptionalPassword(watch("password")!))}
+									/>
+								</FormField>
+							</>
+						)}
 
 						<FormField name="currency">
 							<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.CURRENCY")} />
