@@ -57,7 +57,10 @@ export const Contacts = () => {
 		return contacts.filter((contact) => {
 			const identifiers: string[] = [
 				contact.name().toLowerCase(),
-				...contact.addresses().values().map((address) => address.address().toLowerCase()),
+				...contact
+					.addresses()
+					.values()
+					.map((address) => address.address().toLowerCase()),
 			];
 
 			for (const identifier of identifiers) {

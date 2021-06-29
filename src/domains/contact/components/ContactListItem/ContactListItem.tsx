@@ -58,7 +58,11 @@ export const ContactListItem = ({ item, variant, onAction, onSend, options }: Co
 								<NetworkIcon coin={address.coin()} network={address.network()} size="lg" noShadow />
 							</TableCell>
 
-							<TableCell data-testid="ContactListItem__address" className={borderClasses()} innerClassName="space-x-4">
+							<TableCell
+								data-testid="ContactListItem__address"
+								className={borderClasses()}
+								innerClassName="space-x-4"
+							>
 								<Avatar address={address.address()} size="lg" noShadow />
 								<Address address={address.address()} />
 							</TableCell>
