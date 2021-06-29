@@ -54,7 +54,20 @@ export const Contacts = () => {
 			return contacts;
 		}
 
-		return contacts.filter((contact) => contact.name().toLowerCase().includes(query.toLowerCase()));
+		return contacts.filter((contact) => {
+			const identifiers: string[] = [
+				contact.name().toLowerCase(),
+				...contact.addresses().values().map((address) => address.address().toLowerCase()),
+			];
+
+			for (const identifier of identifiers) {
+				if (identifier.includes(query.toLowerCase())) {
+					return true;
+				}
+			}
+
+			return false;
+		});
 	}, [contacts, query]);
 
 	const [createIsOpen, setCreateIsOpen] = useState(false);

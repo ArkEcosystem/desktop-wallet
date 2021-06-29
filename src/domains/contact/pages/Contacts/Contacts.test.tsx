@@ -298,7 +298,7 @@ describe("Contacts", () => {
 		contactsSpy.mockRestore();
 	});
 
-	it("should search for contact", async () => {
+	it("should search for contact by name", async () => {
 		const [contact1, contact2] = profile.contacts().values();
 
 		renderComponent();
@@ -323,6 +323,41 @@ describe("Contacts", () => {
 
 		fireEvent.input(within(screen.getByTestId("HeaderSearchBar__input")).getByTestId("Input"), {
 			target: { value: "Unknown Name" },
+		});
+
+		await waitFor(() => expect(screen.queryByTestId("Contacts--empty-results")).toBeInTheDocument());
+	});
+
+	it("should search for contact by name", async () => {
+		const [contact1, contact2] = profile.contacts().values();
+
+		const contact1Address = contact1.addresses().first().address();
+		const contact2Address = contact2.addresses().first().address();
+
+		renderComponent();
+
+		expect(screen.getAllByTestId("ContactListItem__address")).toHaveLength(
+			contact1.addresses().count() + contact2.addresses().count(),
+		);
+		expect(screen.getByText(contact1Address)).toBeInTheDocument();
+		expect(screen.getByText(contact2Address)).toBeInTheDocument();
+
+		fireEvent.click(within(screen.getByTestId("HeaderSearchBar")).getByRole("button"));
+
+		await waitFor(() =>
+			expect(within(screen.getByTestId("HeaderSearchBar__input")).getByTestId("Input")).toBeTruthy(),
+		);
+
+		fireEvent.input(within(screen.getByTestId("HeaderSearchBar__input")).getByTestId("Input"), {
+			target: { value: contact1Address },
+		});
+
+		await waitFor(() => expect(screen.getAllByTestId("ContactListItem__address")).toHaveLength(1));
+
+		expect(screen.queryByText(contact2.name())).not.toBeInTheDocument();
+
+		fireEvent.input(within(screen.getByTestId("HeaderSearchBar__input")).getByTestId("Input"), {
+			target: { value: "Unknown Address" },
 		});
 
 		await waitFor(() => expect(screen.queryByTestId("Contacts--empty-results")).toBeInTheDocument());
