@@ -3,7 +3,7 @@ import { goToProfile } from "../../profile/e2e/common";
 import { goToWallet, importWalletByAddress } from "../../wallet/e2e/common";
 import { goToDelegateResignationPage, goToTransferPage } from "./common";
 
-createFixture(`Transactions routing`, [
+createFixture("Transactions routing", [
 	mockRequest("https://dwallets.ark.io/api/wallets/DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS", {
 		data: {
 			address: "DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS",

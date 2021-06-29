@@ -7,7 +7,7 @@ import { goToWallet } from "./common";
 
 const translations = buildTranslations();
 
-createFixture(`Delete Wallet action`).beforeEach(async (t) => {
+createFixture("Delete Wallet action").beforeEach(async (t) => {
 	await goToProfile(t);
 	await goToWallet(t);
 });

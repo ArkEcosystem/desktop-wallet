@@ -2,11 +2,19 @@ import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
 import { BASEURL, createFixture, mockRequest } from "../../../utils/e2e-utils";
+import { goToProfile } from "../../profile/e2e/common";
 
 const translations = buildTranslations();
 
+const prepareTest = async (t: any) => {
+	await goToProfile(t);
+
+	await t.click(Selector("button").withExactText(translations.COMMON.IMPORT));
+	await t.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists).ok();
+};
+
 createFixture(
-	`Import Wallet action`,
+	"Import Wallet action",
 	[],
 	[
 		mockRequest(
@@ -15,17 +23,9 @@ createFixture(
 			404,
 		),
 	],
-);
+).beforeEach(async (t) => await prepareTest(t));
 
 test("should import a wallet by mnemonic", async (t) => {
-	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 60_000 });
-	await t.click(Selector("span").withText("John Doe"));
-	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok();
-
-	// Navigate to import page
-	await t.click(Selector("button").withExactText(translations.COMMON.IMPORT));
-	await t.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists).ok();
-
 	// Select a cryptoasset and advance to second step
 	await t.click('[data-testid="SelectNetworkInput__input"]');
 	await t.click(Selector('[data-testid="NetworkIcon-ARK-ark.devnet"]'));
@@ -52,14 +52,6 @@ test("should import a wallet by mnemonic", async (t) => {
 });
 
 test("should import a wallet by address", async (t) => {
-	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 60_000 });
-	await t.click(Selector("span").withText("John Doe"));
-	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok();
-
-	// Navigate to import page
-	await t.click(Selector("button").withExactText(translations.COMMON.IMPORT));
-	await t.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists).ok();
-
 	// Select a cryptoasset and advance to the step two
 	await t.click('[data-testid="SelectNetworkInput__input"]');
 	await t.click(Selector('[data-testid="NetworkIcon-ARK-ark.devnet"]'));
@@ -86,14 +78,6 @@ test("should import a wallet by address", async (t) => {
 });
 
 test("should show an error message for invalid address", async (t) => {
-	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 60_000 });
-	await t.click(Selector("span").withText("John Doe"));
-	await t.expect(Selector("div").withText("Wallets").exists).ok();
-
-	// Navigate to import page
-	await t.click(Selector("button").withExactText("Import"));
-	await t.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists).ok();
-
 	// Select a cryptoasset and advance to step two
 	await t.click('[data-testid="SelectNetworkInput__input"]');
 	await t.click(Selector('[data-testid="NetworkIcon-ARK-ark.devnet"]'));
@@ -118,14 +102,6 @@ test("should show an error message for invalid address", async (t) => {
 test("should show an error message for duplicate address", async (t) => {
 	let passphraseInput: Selector;
 
-	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 60_000 });
-	await t.click(Selector("span").withText("John Doe"));
-	await t.expect(Selector("div").withText("Wallets").exists).ok();
-
-	// Navigate to import page
-	await t.click(Selector("button").withExactText("Import"));
-	await t.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists).ok();
-
 	// Select a cryptoasset and advance to step two
 	await t.click('[data-testid="SelectNetworkInput__input"]');
 	await t.click(Selector('[data-testid="NetworkIcon-ARK-ark.devnet"]'));
@@ -148,7 +124,7 @@ test("should show an error message for duplicate address", async (t) => {
 	await t.click(Selector("a").withExactText("Portfolio"));
 
 	// Navigate to import page
-	await t.click(Selector("button").withExactText("Import"));
+	await t.click(Selector("button").withExactText(translations.COMMON.IMPORT));
 	await t.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists).ok();
 
 	// Select a cryptoasset and advance to step two
