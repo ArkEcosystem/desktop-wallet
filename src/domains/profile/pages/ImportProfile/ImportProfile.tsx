@@ -32,7 +32,7 @@ export const ImportProfile = () => {
 		setActiveTab(10);
 	};
 
-	const handleProfileSave = (importedProfile: Contracts.IProfile) => {
+	const handleProfileSave = () => {
 		persist();
 		history.push("/");
 	};
