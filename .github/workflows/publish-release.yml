@@ -1,6 +1,9 @@
 name: Publish Release
 
-on: [push]
+on:
+    push:
+        branches:
+            - "master"
 
 jobs:
     create-release:
