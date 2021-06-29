@@ -98,7 +98,7 @@ const CreateProfileForm = ({
 			label: t("SETTINGS.GENERAL.OTHER.DARK_THEME.TITLE"),
 			labelClass: "text-xl font-semibold",
 			labelDescription: t("SETTINGS.GENERAL.OTHER.DARK_THEME.DESCRIPTION"),
-			labelAddon: <Toggle ref={register()} name="isDarkMode" disabled={isDarkMode} />,
+			labelAddon: <Toggle ref={register()} name="isDarkMode" />,
 		},
 	];
 
