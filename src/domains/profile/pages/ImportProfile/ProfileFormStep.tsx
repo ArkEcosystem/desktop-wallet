@@ -22,8 +22,6 @@ interface CreateProfileFormProperties {
 	profile: Contracts.IProfile;
 	password?: string;
 	env: Environment;
-	showThemeToggleField?: boolean;
-	showCurrencyField?: boolean;
 	shouldValidate?: boolean;
 	onSubmit?: (profile: Contracts.IProfile) => void;
 	onBack?: () => void;
@@ -35,8 +33,6 @@ const CreateProfileForm = ({
 	password,
 	onSubmit,
 	onBack,
-	showThemeToggleField = true,
-	showCurrencyField = true,
 	shouldValidate = false,
 }: CreateProfileFormProperties) => {
 	const { t } = useTranslation();
@@ -53,17 +49,7 @@ const CreateProfileForm = ({
 	});
 
 	const { watch, register, formState, setValue, trigger } = form;
-	const watchedFields = ["name", "confirmPassword"];
-
-	if (showCurrencyField) {
-		watchedFields.push("currency");
-	}
-
-	if (showThemeToggleField) {
-		watchedFields.push("isDarkMode");
-	}
-
-	const { name, confirmPassword, isDarkMode, currency } = watch(watchedFields);
+	const { name, confirmPassword, isDarkMode, currency } = watch(["name", "confirmPassword", "currency", "isDarkMode"]);
 
 	const [avatarImage, setAvatarImage] = useState(profile?.avatar());
 
@@ -180,36 +166,31 @@ const CreateProfileForm = ({
 							/>
 						</FormField>
 
-						{showCurrencyField && (
-							<FormField name="currency">
-								<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.CURRENCY")} />
-								<Select
-									defaultValue={currency}
-									placeholder={t("COMMON.SELECT_OPTION", {
-										option: t("SETTINGS.GENERAL.PERSONAL.CURRENCY"),
-									})}
-									ref={register(createProfile.currency())}
-									options={PlatformSdkChoices.currencies}
-									onChange={(currency: any) =>
-										setValue("currency", currency?.value, {
-											shouldDirty: true,
-											shouldValidate: true,
-										})
-									}
-								/>
-							</FormField>
-						)}
+						<FormField name="currency">
+							<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.CURRENCY")} />
+							<Select
+								defaultValue={currency}
+								placeholder={t("COMMON.SELECT_OPTION", {
+									option: t("SETTINGS.GENERAL.PERSONAL.CURRENCY"),
+								})}
+								ref={register(createProfile.currency())}
+								options={PlatformSdkChoices.currencies}
+								onChange={(currency: any) =>
+									setValue("currency", currency?.value, {
+										shouldDirty: true,
+										shouldValidate: true,
+									})
+								}
+							/>
+						</FormField>
 					</div>
 
-					{showThemeToggleField && (
-						<>
-							<div className="pb-4 mt-8">
-								<ListDivided items={otherItems} />
-							</div>
-							<Divider />
-						</>
-					)}
+					<div className="pb-4 mt-8">
+						<ListDivided items={otherItems} />
+					</div>
 				</div>
+
+				<Divider />
 
 				<div className="flex justify-end pt-4 space-x-3">
 					<Button variant="secondary" onClick={onBack} data-testid="CreateProfile__back-button">
@@ -232,8 +213,6 @@ export const ImportProfileForm = ({
 	onBack,
 	file,
 	password,
-	showThemeToggleField,
-	showCurrencyField,
 	shouldValidate,
 }: CreateProfileFormProperties) => {
 	const { t } = useTranslation();
@@ -251,8 +230,6 @@ export const ImportProfileForm = ({
 
 				<CreateProfileForm
 					shouldValidate={shouldValidate}
-					showThemeToggleField={showThemeToggleField}
-					showCurrencyField={showCurrencyField}
 					profile={profile}
 					env={env}
 					onSubmit={onSubmit}
