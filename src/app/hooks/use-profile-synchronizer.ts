@@ -233,6 +233,7 @@ export const useProfileRestore = () => {
 
 	return {
 		restoreProfile,
+		restoreProfileConfig,
 	};
 };
 
