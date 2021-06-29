@@ -8,7 +8,7 @@ import { goToDelegateResignationPage } from "./common";
 
 const translations = buildTranslations();
 
-createFixture(`Delegate Resignation action`, [
+createFixture("Delegate Resignation action", [
 	mockRequest(
 		{
 			url: "https://dwallets.ark.io/api/transactions",

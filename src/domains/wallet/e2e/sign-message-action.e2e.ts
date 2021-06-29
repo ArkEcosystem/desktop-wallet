@@ -7,7 +7,7 @@ import { goToWallet, importWallet } from "./common";
 
 const translations = buildTranslations();
 
-createFixture(`Sign Message`).beforeEach(async (t) => {
+createFixture("Sign Message").beforeEach(async (t) => {
 	await goToProfile(t);
 });
 
