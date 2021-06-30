@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles/distribution/contracts";
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/distribution/read-only-wallet";
 import { toasts } from "app/services";
 import { createMemoryHistory } from "history";
@@ -18,7 +19,6 @@ import {
 } from "utils/testing-library";
 
 import { Votes } from "./Votes";
-import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles/distribution/contracts";
 
 const history = createMemoryHistory();
 

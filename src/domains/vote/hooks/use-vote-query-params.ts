@@ -7,5 +7,5 @@ export const useVoteQueryParams = () => {
 	const voteAddresses = queryParameters.get("votes")?.split(",");
 	const filter = (queryParameters.get("filter") || "all") as FilterOption;
 
-	return { unvoteAddresses, voteAddresses, filter };
+	return { filter, unvoteAddresses, voteAddresses };
 };

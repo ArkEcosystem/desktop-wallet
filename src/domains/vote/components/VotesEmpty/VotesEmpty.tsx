@@ -1,13 +1,13 @@
-import React from "react";
+import { Icon } from "app/components//Icon";
 import { Button } from "app/components/Button";
 import { EmptyBlock } from "app/components/EmptyBlock";
+import React from "react";
 import { Trans, useTranslation } from "react-i18next";
-import { Icon } from "app/components//Icon";
 
-type VotesEmptyProps = {
+interface VotesEmptyProps {
 	onCreateWallet?: () => void;
 	onImportWallet?: () => void;
-};
+}
 export const VotesEmpty = ({ onCreateWallet, onImportWallet }: VotesEmptyProps) => {
 	const { t } = useTranslation();
 

@@ -1,6 +1,6 @@
-import { useState, useCallback, useMemo } from "react";
 import { Contracts, Environment } from "@arkecosystem/platform-sdk-profiles";
 import { FilterOption } from "domains/vote/components/VotesFilter";
+import { useCallback, useMemo, useState } from "react";
 
 export const useDelegates = ({
 	env,
@@ -73,13 +73,13 @@ export const useDelegates = ({
 	]);
 
 	return {
+		currentVotes,
 		delegates,
 		fetchDelegates,
-		isLoadingDelegates,
-		filteredDelegates,
-		currentVotes,
 		fetchVotes,
-		votes,
+		filteredDelegates,
 		hasResignedDelegateVotes,
+		isLoadingDelegates,
+		votes,
 	};
 };

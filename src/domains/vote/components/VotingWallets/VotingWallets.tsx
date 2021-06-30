@@ -1,15 +1,15 @@
-import React from "react";
-import { Section } from "app/components/Layout";
-import { EmptyResults } from "app/components/EmptyResults";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { useTranslation } from "react-i18next";
+import { EmptyResults } from "app/components/EmptyResults";
+import { Section } from "app/components/Layout";
 import { AddressTable } from "domains/vote/components/AddressTable";
+import React from "react";
+import { useTranslation } from "react-i18next";
 
-type VotingWalletsProps = {
+interface VotingWalletsProps {
 	showEmptyResults: boolean;
 	walletsByCoin: Record<string, Contracts.IReadWriteWallet[]>;
 	onSelectAddress: (address: string) => void;
-};
+}
 
 export const VotingWallets = ({ showEmptyResults, walletsByCoin, onSelectAddress }: VotingWalletsProps) => {
 	const { t } = useTranslation();

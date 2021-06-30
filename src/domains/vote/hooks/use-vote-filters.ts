@@ -1,8 +1,8 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { isEmptyObject, uniq,uniqBy } from "@arkecosystem/utils";
+import { isEmptyObject, uniq, uniqBy } from "@arkecosystem/utils";
 import { useWalletFilters } from "domains/dashboard/components/FilterWallets";
 import { FilterOption } from "domains/vote/components/VotesFilter";
-import { useMemo,useState } from "react";
+import { useMemo, useState } from "react";
 
 export const useVoteFilters = ({
 	profile,

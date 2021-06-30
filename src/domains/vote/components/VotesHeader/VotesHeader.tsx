@@ -1,15 +1,15 @@
-import React from "react";
-import { Header } from "app/components/Header";
-import { useTranslation } from "react-i18next";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
-import { Dropdown } from "app/components/Dropdown";
-import { ControlButton } from "app/components/ControlButton";
 import { Icon } from "app/components//Icon";
+import { ControlButton } from "app/components/ControlButton";
+import { Dropdown } from "app/components/Dropdown";
+import { Header } from "app/components/Header";
+import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { FilterWallets } from "domains/dashboard/components/FilterWallets";
-import { VotesFilter, FilterOption } from "domains/vote/components/VotesFilter";
+import { FilterOption, VotesFilter } from "domains/vote/components/VotesFilter";
+import React from "react";
+import { useTranslation } from "react-i18next";
 
-type VotesHeaderProps = {
+interface VotesHeaderProps {
 	profile: Contracts.IProfile;
 	setSearchQuery: (query: string) => void;
 	selectedAddress?: string;
@@ -18,7 +18,7 @@ type VotesHeaderProps = {
 	totalCurrentVotes: number;
 	selectedFilter?: FilterOption;
 	setSelectedFilter?: (selected: FilterOption) => void;
-};
+}
 
 export const VotesHeader = ({
 	profile,

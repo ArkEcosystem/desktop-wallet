@@ -4,16 +4,16 @@ import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useProfileUtils } from "app/hooks";
 import { toasts } from "app/services";
 import { DelegateTable } from "domains/vote/components/DelegateTable";
+import { VotesEmpty } from "domains/vote/components/VotesEmpty";
+import { VotesHeader } from "domains/vote/components/VotesHeader";
+import { VotingWallets } from "domains/vote/components/VotingWallets/VotingWallets";
+import { useDelegates } from "domains/vote/hooks/use-delegates";
+import { useVoteActions } from "domains/vote/hooks/use-vote-actions";
+import { useVoteFilters } from "domains/vote/hooks/use-vote-filters";
+import { useVoteQueryParams } from "domains/vote/hooks/use-vote-query-params";
 import React, { useEffect } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
-import { VotesHeader } from "domains/vote/components/VotesHeader";
-import { VotesEmpty } from "domains/vote/components/VotesEmpty";
-import { VotingWallets } from "domains/vote/components/VotingWallets/VotingWallets";
-import { useDelegates } from "domains/vote/hooks/use-delegates";
-import { useVoteFilters } from "domains/vote/hooks/use-vote-filters";
-import { useVoteActions } from "domains/vote/hooks/use-vote-actions";
-import { useVoteQueryParams } from "domains/vote/hooks/use-vote-query-params";
 
 export const Votes = () => {
 	const { t } = useTranslation();
@@ -42,10 +42,10 @@ export const Votes = () => {
 		maxVotes,
 		setMaxVotes,
 	} = useVoteFilters({
+		filter,
+		hasWalletId,
 		profile: activeProfile,
 		wallet: activeWallet,
-		hasWalletId,
-		filter,
 	});
 
 	const {
@@ -59,15 +59,15 @@ export const Votes = () => {
 	} = useDelegates({
 		env,
 		profile: activeProfile,
-		voteFilter,
 		searchQuery,
+		voteFilter,
 	});
 
 	const { navigateToSendVote } = useVoteActions({
-		profile: activeProfile,
-		wallet: activeWallet,
-		selectedAddress,
 		hasWalletId,
+		profile: activeProfile,
+		selectedAddress,
+		wallet: activeWallet,
 	});
 
 	useEffect(() => {
