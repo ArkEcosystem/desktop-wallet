@@ -60,13 +60,10 @@ test("should prevent navigating away with unsaved settings", async (t) => {
 	const originalValue = await nameInput.value;
 
 	// clear input and type new name
-	await t
-		.click(nameInput)
-		.pressKey("ctrl+a delete")
-		.typeText(nameInput, "Jane Doe");
+	await t.click(nameInput).pressKey("ctrl+a delete").typeText(nameInput, "Jane Doe");
 
 	// try navigate to portfolio
-	await t.click(Selector('a').withText(translations.COMMON.PORTFOLIO));
+	await t.click(Selector("a").withText(translations.COMMON.PORTFOLIO));
 
 	// check that modal showed up
 	await t.expect(Selector('[data-testid="ConfirmationModal"]').exists).ok();
@@ -81,11 +78,11 @@ test("should prevent navigating away with unsaved settings", async (t) => {
 		.typeText(nameInput, originalValue || "");
 
 	// try navigate to portfolio
-	await t.click(Selector('a').withText(translations.COMMON.PORTFOLIO));
+	await t.click(Selector("a").withText(translations.COMMON.PORTFOLIO));
 
 	// check that modal did not show up
 	await t.expect(Selector('[data-testid="ConfirmationModal"]').exists).notOk();
-})
+});
 
 test("should update converted balance in the navbar after changing the currency", async (t) => {
 	await goToProfile(t);
