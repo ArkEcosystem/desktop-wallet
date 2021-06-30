@@ -17,7 +17,7 @@ const TransactionFee: React.FC<TransactionFeeProperties> = ({
 	const { t } = useTranslation();
 
 	return (
-		<TransactionDetail label={t("TRANSACTION.TRANSACTION_FEE")} {...properties}>
+		<TransactionDetail data-testid="TransactionFee" label={t("TRANSACTION.TRANSACTION_FEE")} {...properties}>
 			<AmountCrypto ticker={currency} value={value} />
 		</TransactionDetail>
 	);

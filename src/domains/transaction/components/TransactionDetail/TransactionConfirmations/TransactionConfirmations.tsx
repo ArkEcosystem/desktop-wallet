@@ -39,7 +39,7 @@ export const TransactionConfirmations = ({ isConfirmed, confirmations }: Transac
 	};
 
 	return (
-		<TransactionDetail label={t("TRANSACTION.CONFIRMATIONS")}>
+		<TransactionDetail data-testid="TransactionConfirmations" label={t("TRANSACTION.CONFIRMATIONS")}>
 			{renderConfirmationStatus(isConfirmed, confirmations)}
 		</TransactionDetail>
 	);

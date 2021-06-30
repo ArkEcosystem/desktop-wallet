@@ -22,6 +22,7 @@ export const TransactionExplorerLink = ({ id, link, variant, ...properties }: Tr
 
 	return (
 		<TransactionDetail
+			data-testid="TransactionExplorerLink"
 			label={isTransactionLink() ? t("TRANSACTION.ID") : t("TRANSACTION.BLOCK_ID")}
 			{...properties}
 		>

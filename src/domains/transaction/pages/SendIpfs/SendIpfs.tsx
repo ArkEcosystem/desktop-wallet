@@ -1,6 +1,7 @@
 import { Services } from "@arkecosystem/platform-sdk";
 import { DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
+import { Divider } from "app/components/Divider";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
@@ -157,6 +158,72 @@ export const SendIpfs = () => {
 		setActiveTab(newIndex);
 	};
 
+	const renderButtons = () => {
+		if (activeTab === 4) {
+			return (
+				<Button
+					data-testid="SendIpfs__button--back-to-wallet"
+					variant="secondary"
+					className="block"
+					onClick={() =>
+						history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
+					}
+				>
+					{t("COMMON.BACK_TO_WALLET")}
+				</Button>
+			);
+		}
+
+		if (activeTab === 3 && !activeWallet.isLedger()) {
+			return (
+				<>
+					<Button
+						data-testid="SendIpfs__button--back"
+						variant="secondary"
+						onClick={handleBack}
+					>
+						{t("COMMON.BACK")}
+					</Button>
+
+					<Button
+						type="submit"
+						data-testid="SendIpfs__button--submit"
+						disabled={!isValid || isSubmitting}
+						isLoading={isSubmitting}
+						icon="Send"
+						iconWidth={16}
+						iconHeight={16}
+						iconPosition="right"
+					>
+						<span>{t("COMMON.SEND")}</span>
+					</Button>
+				</>
+			);
+		}
+
+		return (
+			<>
+				<Button
+					disabled={isSubmitting}
+					data-testid="SendIpfs__button--back"
+					variant="secondary"
+					onClick={handleBack}
+				>
+					{t("COMMON.BACK")}
+				</Button>
+
+				<Button
+					data-testid="SendIpfs__button--continue"
+					disabled={!isValid || isSubmitting}
+					isLoading={isSubmitting}
+					onClick={async () => await handleNext()}
+				>
+					{t("COMMON.CONTINUE")}
+				</Button>
+			</>
+		);
+	};
+
 	return (
 		<Page profile={activeProfile}>
 			<Section className="flex-1">
@@ -166,11 +233,13 @@ export const SendIpfs = () => {
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FormStep networks={networks} profile={activeProfile} />
+								<FormStep profile={activeProfile} wallet={activeWallet} />
 							</TabPanel>
+
 							<TabPanel tabId={2}>
 								<ReviewStep wallet={activeWallet} />
 							</TabPanel>
+
 							<TabPanel tabId={3}>
 								<AuthenticationStep
 									wallet={activeWallet}
@@ -179,6 +248,7 @@ export const SendIpfs = () => {
 									ledgerIsAwaitingApp={hasDeviceAvailable && !isConnected}
 								/>
 							</TabPanel>
+
 							<TabPanel tabId={4}>
 								<SummaryStep transaction={transaction} senderWallet={activeWallet} />
 							</TabPanel>
@@ -193,69 +263,12 @@ export const SendIpfs = () => {
 								/>
 							</TabPanel>
 
-							<div className="flex justify-end mt-10 space-x-2">
-								{activeTab < 4 && (
-									<>
-										{activeTab < 3 && (
-											<>
-												<Button
-													disabled={isSubmitting}
-													data-testid="SendIpfs__button--back"
-													variant="secondary"
-													onClick={handleBack}
-												>
-													{t("COMMON.BACK")}
-												</Button>
-												<Button
-													data-testid="SendIpfs__button--continue"
-													disabled={!isValid || isSubmitting}
-													isLoading={isSubmitting}
-													onClick={async () => await handleNext()}
-												>
-													{t("COMMON.CONTINUE")}
-												</Button>
-											</>
-										)}
+							<div className="py-2">
+								<Divider dashed />
+							</div>
 
-										{activeTab === 3 && !activeWallet.isLedger() && (
-											<>
-												<Button
-													data-testid="SendIpfs__button--back"
-													variant="secondary"
-													onClick={handleBack}
-												>
-													{t("COMMON.BACK")}
-												</Button>
-
-												<Button
-													type="submit"
-													data-testid="SendIpfs__button--submit"
-													disabled={!isValid || isSubmitting}
-													isLoading={isSubmitting}
-													icon="Send"
-													iconWidth={16}
-													iconHeight={16}
-													iconPosition="right"
-												>
-													<span>{t("COMMON.SEND")}</span>
-												</Button>
-											</>
-										)}
-									</>
-								)}
-
-								{activeTab === 4 && (
-									<Button
-										data-testid="SendIpfs__button--back-to-wallet"
-										variant="secondary"
-										className="block"
-										onClick={() =>
-											history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
-										}
-									>
-										{t("COMMON.BACK_TO_WALLET")}
-									</Button>
-								)}
+							<div className="flex justify-end space-x-2">
+								{renderButtons()}
 							</div>
 						</div>
 					</Tabs>

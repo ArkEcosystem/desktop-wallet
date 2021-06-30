@@ -33,13 +33,13 @@ export const TransactionVotes = ({ isLoading, votes, unvotes }: TransactionVotes
 	return (
 		<>
 			{votes.length > 0 && (
-				<TransactionDetail label={t("TRANSACTION.VOTES_COUNT", { count: votes.length })}>
+				<TransactionDetail data-testid="TransactionVotes" label={t("TRANSACTION.VOTES_COUNT", { count: votes.length })}>
 					<VoteList votes={votes} />
 				</TransactionDetail>
 			)}
 
 			{unvotes.length > 0 && (
-				<TransactionDetail label={t("TRANSACTION.UNVOTES_COUNT", { count: unvotes.length })}>
+				<TransactionDetail data-testid="TransactionUnvotes" label={t("TRANSACTION.UNVOTES_COUNT", { count: unvotes.length })}>
 					<VoteList votes={unvotes} />
 				</TransactionDetail>
 			)}

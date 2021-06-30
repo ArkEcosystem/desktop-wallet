@@ -13,6 +13,7 @@ export const TransactionMemo = ({ memo }: TransactionMemoProperties) => {
 
 	return (
 		<TransactionDetail
+			data-testid="TransactionMemo"
 			label={t("TRANSACTION.MEMO")}
 			extra={
 				<div className="flex justify-center w-11 text-theme-secondary-900 dark:text-theme-secondary-600">

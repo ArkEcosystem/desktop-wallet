@@ -1317,7 +1317,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                     <div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 UsFpT no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionExplorerLink"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -1396,7 +1396,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionType"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -1428,7 +1428,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionNetwork"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -1463,7 +1463,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionSender"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -1520,7 +1520,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionRecipients"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -1562,7 +1562,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionAmount"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -1603,7 +1603,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 jxdofB no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionFee"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -2198,7 +2198,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                   data-testid="tab-pabel__active-panel"
                 >
                   <div
-                    class="space-y-8"
+                    class="space-y-6"
                     data-testid="AuthenticationStep"
                   >
                     <div
@@ -7099,7 +7099,7 @@ exports[`SendTransfer should render review step 1`] = `
     </div>
     <div
       class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 UsFpT no-ligatures mt-8"
-      data-testid="TransactionDetail"
+      data-testid="TransactionNetwork"
     >
       <div
         class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -7134,7 +7134,7 @@ exports[`SendTransfer should render review step 1`] = `
     </div>
     <div
       class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-      data-testid="TransactionDetail"
+      data-testid="TransactionSender"
     >
       <div
         class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -7191,7 +7191,7 @@ exports[`SendTransfer should render review step 1`] = `
     </div>
     <div
       class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-      data-testid="TransactionDetail"
+      data-testid="TransactionRecipients"
     >
       <div
         class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -7233,7 +7233,7 @@ exports[`SendTransfer should render review step 1`] = `
     </div>
     <div
       class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-      data-testid="TransactionDetail"
+      data-testid="TransactionMemo"
     >
       <div
         class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -7382,7 +7382,7 @@ exports[`SendTransfer should render summary step 1`] = `
     <div>
       <div
         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 UsFpT no-ligatures"
-        data-testid="TransactionDetail"
+        data-testid="TransactionExplorerLink"
       >
         <div
           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -7461,7 +7461,7 @@ exports[`SendTransfer should render summary step 1`] = `
       </div>
       <div
         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-        data-testid="TransactionDetail"
+        data-testid="TransactionType"
       >
         <div
           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -7493,7 +7493,7 @@ exports[`SendTransfer should render summary step 1`] = `
       </div>
       <div
         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-        data-testid="TransactionDetail"
+        data-testid="TransactionNetwork"
       >
         <div
           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -7528,7 +7528,7 @@ exports[`SendTransfer should render summary step 1`] = `
       </div>
       <div
         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-        data-testid="TransactionDetail"
+        data-testid="TransactionSender"
       >
         <div
           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -7585,7 +7585,7 @@ exports[`SendTransfer should render summary step 1`] = `
       </div>
       <div
         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-        data-testid="TransactionDetail"
+        data-testid="TransactionRecipients"
       >
         <div
           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -7627,7 +7627,7 @@ exports[`SendTransfer should render summary step 1`] = `
       </div>
       <div
         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-        data-testid="TransactionDetail"
+        data-testid="TransactionAmount"
       >
         <div
           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -7668,7 +7668,7 @@ exports[`SendTransfer should render summary step 1`] = `
       </div>
       <div
         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 jxdofB no-ligatures"
-        data-testid="TransactionDetail"
+        data-testid="TransactionFee"
       >
         <div
           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -9535,7 +9535,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                     <div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 UsFpT no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionExplorerLink"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -9614,7 +9614,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionType"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -9646,7 +9646,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionNetwork"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -9681,7 +9681,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionSender"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -9738,7 +9738,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionRecipients"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -9780,7 +9780,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionAmount"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -9821,7 +9821,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 jxdofB no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionFee"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -10204,7 +10204,7 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
                     <div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 UsFpT no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionExplorerLink"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -10283,7 +10283,7 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionType"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -10315,7 +10315,7 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionNetwork"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -10350,7 +10350,7 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionSender"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -10407,7 +10407,7 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionRecipients"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -10449,7 +10449,7 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionAmount"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -10490,7 +10490,7 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 jxdofB no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionFee"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -10873,7 +10873,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                     <div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 UsFpT no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionExplorerLink"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -10952,7 +10952,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionType"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -10984,7 +10984,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionNetwork"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -11019,7 +11019,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionSender"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -11076,7 +11076,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionRecipients"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -11118,7 +11118,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionAmount"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -11159,7 +11159,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 jxdofB no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionFee"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -11851,7 +11851,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                     <div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 UsFpT no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionExplorerLink"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -11930,7 +11930,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionType"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -11962,7 +11962,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionNetwork"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -11997,7 +11997,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionSender"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -12054,7 +12054,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionRecipients"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -12096,7 +12096,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionAmount"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -12137,7 +12137,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 jxdofB no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionFee"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -12520,7 +12520,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                     <div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 UsFpT no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionExplorerLink"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -12599,7 +12599,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionType"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -12631,7 +12631,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionNetwork"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -12666,7 +12666,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionSender"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -12723,7 +12723,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionRecipients"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -12765,7 +12765,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionAmount"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -12806,7 +12806,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 jxdofB no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionFee"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -13189,7 +13189,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                     <div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 UsFpT no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionExplorerLink"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -13268,7 +13268,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionType"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -13300,7 +13300,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionNetwork"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -13335,7 +13335,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionSender"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -13392,7 +13392,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionRecipients"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -13434,7 +13434,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionAmount"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -13475,7 +13475,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 jxdofB no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionFee"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"

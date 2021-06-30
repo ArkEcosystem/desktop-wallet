@@ -259,7 +259,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
           </div>
           <div
             class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 bRHEGF no-ligatures"
-            data-testid="TransactionDetail"
+            data-testid="TransactionSender"
           >
             <div
               class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -445,7 +445,7 @@ exports[`SecondSignatureRegistrationForm should render transaction details 1`] =
 <DocumentFragment>
   <div
     class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-    data-testid="TransactionDetail"
+    data-testid="TransactionType"
   >
     <div
       class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -462,7 +462,7 @@ exports[`SecondSignatureRegistrationForm should render transaction details 1`] =
       </div>
     </div>
     <div
-      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text ring-theme-background"
+      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-text border-theme-text dark:text-theme-secondary-600 dark:border-theme-secondary-600 ring-theme-background"
     >
       <div
         class="sc-bdfBwQ hjDozt"
@@ -477,7 +477,7 @@ exports[`SecondSignatureRegistrationForm should render transaction details 1`] =
   </div>
   <div
     class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 jxdofB no-ligatures"
-    data-testid="TransactionDetail"
+    data-testid="TransactionFee"
   >
     <div
       class="flex-1 space-y-2 w-40 whitespace-nowrap"

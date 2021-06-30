@@ -18,6 +18,7 @@ export const TransactionSender = ({ address, alias, isDelegate, ...properties }:
 
 	return (
 		<TransactionDetail
+			data-testid="TransactionSender"
 			label={t("TRANSACTION.SENDER")}
 			extra={
 				<div className="flex items-center -space-x-2">

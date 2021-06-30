@@ -17,6 +17,7 @@ export const TransactionNetwork = ({ network, ...properties }: TransactionNetwor
 
 	return (
 		<TransactionDetail
+			data-testid="TransactionNetwork"
 			label={t("TRANSACTION.CRYPTOASSET")}
 			extra={<NetworkIcon size="lg" coin={network.coin()} network={network.id()} />}
 			{...properties}

@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
-import { screen } from "@testing-library/react";
 import { act as hookAct, renderHook } from "@testing-library/react-hooks";
 import { LedgerProvider } from "app/contexts";
 import { translations } from "domains/transaction/i18n";
@@ -11,7 +10,6 @@ import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
 import ipfsFixture from "tests/fixtures/coins/ark/devnet/transactions/ipfs.json";
 import {
-	act,
 	env,
 	fireEvent,
 	getDefaultLedgerTransport,
@@ -20,8 +18,10 @@ import {
 	getDefaultWalletMnemonic,
 	render,
 	renderWithRouter,
+	screen,
 	syncFees,
 	waitFor,
+	within,
 } from "utils/testing-library";
 
 import { FormStep, ReviewStep, SendIpfs, SummaryStep } from ".";
@@ -59,29 +59,28 @@ describe("SendIpfs", () => {
 
 		await env.profiles().restore(profile);
 		await profile.sync();
-		await syncFees(profile);
 
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 		await wallet.synchroniser().identity();
 
-		jest.spyOn(wallet, "isDelegate").mockImplementation(() => true);
+		await syncFees(profile);
 	});
 
 	it("should render form step", async () => {
 		const { result: form } = renderHook(() => useForm());
 
-		hookAct(() => {
-			const { getByTestId, asFragment } = render(
+		await hookAct(async () => {
+			const { asFragment } = render(
 				<FormProvider {...form.current}>
 					<LedgerProvider transport={transport}>
-						<FormStep networks={[]} profile={profile} />
+						<FormStep profile={profile} wallet={wallet} />
 					</LedgerProvider>
 				</FormProvider>,
 			);
 
-			expect(getByTestId("SendIpfs__form-step")).toBeTruthy();
+			await waitFor(() => expect(screen.getByTestId("SendIpfs__form-step")).toBeTruthy());
 			expect(asFragment()).toMatchSnapshot();
-		});
+		})
 	});
 
 	it("should render review step", async () => {
@@ -153,7 +152,7 @@ describe("SendIpfs", () => {
 
 		history.push(ipfsURL);
 
-		const { getByTestId } = renderWithRouter(
+		const { getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
 				<LedgerProvider transport={transport}>
 					<SendIpfs />
@@ -168,48 +167,35 @@ describe("SendIpfs", () => {
 		await waitFor(() => expect(getByTestId("SendIpfs__form-step")).toBeTruthy());
 
 		const networkLabel = `${wallet.network().coin()} ${wallet.network().name()}`;
-		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(networkLabel));
-		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
+		await waitFor(() => expect(getByTestId("TransactionNetwork")).toHaveTextContent(networkLabel));
+		await waitFor(() => expect(getByTestId("TransactionSender")).toHaveTextContent(wallet.address()));
 
-		// Hash
-		act(() => {
-			fireEvent.input(getByTestId("Input__hash"), {
-				target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
-			});
+		fireEvent.input(getByTestId("Input__hash"), {
+			target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
 		});
-		expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
+		await waitFor(() => expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco"));
 
-		// Fee
-		await waitFor(() => expect(screen.getAllByRole("radio")[1]).toBeChecked());
+		fireEvent.click(getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
+		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
+		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
 
-		// Step 2
-		act(() => {
-			fireEvent.click(getByTestId("SendIpfs__button--continue"));
-		});
+		fireEvent.click(getByTestId("SendIpfs__button--continue"));
 		await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
 
-		// Step 3
-		act(() => {
-			fireEvent.click(getByTestId("SendIpfs__button--continue"));
-		});
-		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+		fireEvent.click(getByTestId("SendIpfs__button--back"));
+		await waitFor(() => expect(getByTestId("SendIpfs__form-step")).toBeTruthy());
 
-		// Back to Step 2
-		act(() => {
-			fireEvent.click(getByTestId("SendIpfs__button--back"));
-		});
+		fireEvent.click(getByTestId("SendIpfs__button--continue"));
 		await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
 
-		// Step 3
-		act(() => {
-			fireEvent.click(getByTestId("SendIpfs__button--continue"));
-		});
+		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+
+		if (!profile.settings().get(Contracts.ProfileSetting.DoNotShowFeeWarning)) {
+			await waitFor(() => expect(getByTestId("FeeWarning__continue-button")).toBeTruthy());
+			fireEvent.click(getByTestId("FeeWarning__continue-button"));
+		}
+
 		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
-		const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-		act(() => {
-			fireEvent.input(passwordInput, { target: { value: passphrase } });
-		});
-		await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
 	});
 
 	it("should send an IPFS transaction and go back to wallet page", async () => {
@@ -218,7 +204,7 @@ describe("SendIpfs", () => {
 
 		history.push(ipfsURL);
 
-		const { getByTestId, container } = renderWithRouter(
+		const { getByTestId, getByText, container } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
 				<LedgerProvider transport={transport}>
 					<SendIpfs />
@@ -233,38 +219,32 @@ describe("SendIpfs", () => {
 		await waitFor(() => expect(getByTestId("SendIpfs__form-step")).toBeTruthy());
 
 		const networkLabel = `${wallet.network().coin()} ${wallet.network().name()}`;
-		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(networkLabel));
-		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
+		await waitFor(() => expect(getByTestId("TransactionNetwork")).toHaveTextContent(networkLabel));
+		await waitFor(() => expect(getByTestId("TransactionSender")).toHaveTextContent(wallet.address()));
 
-		// Hash
-		act(() => {
-			fireEvent.input(getByTestId("Input__hash"), {
-				target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
-			});
+		fireEvent.input(getByTestId("Input__hash"), {
+			target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
 		});
-		expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
+		await waitFor(() => expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco"));
 
-		// Fee
-		await waitFor(() => expect(screen.getAllByRole("radio")[1]).toBeChecked());
+		fireEvent.click(getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
+		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
+		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
 
-		// Step 2
-		act(() => {
-			fireEvent.click(getByTestId("SendIpfs__button--continue"));
-		});
+		fireEvent.click(getByTestId("SendIpfs__button--continue"));
 		await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
 
-		// Step 3
-		act(() => {
-			fireEvent.click(getByTestId("SendIpfs__button--continue"));
-		});
+		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+
+		if (!profile.settings().get(Contracts.ProfileSetting.DoNotShowFeeWarning)) {
+			await waitFor(() => expect(getByTestId("FeeWarning__continue-button")).toBeTruthy());
+			fireEvent.click(getByTestId("FeeWarning__continue-button"));
+		}
+
 		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 
-		// Step 3
-		const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-		act(() => {
-			fireEvent.input(passwordInput, { target: { value: passphrase } });
-		});
-		await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
+		fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), { target: { value: passphrase } });
+		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(passphrase));
 
 		// Step 4
 		const signMock = jest
@@ -277,11 +257,11 @@ describe("SendIpfs", () => {
 		});
 		const transactionMock = createTransactionMock(wallet);
 
-		act(() => {
-			fireEvent.click(getByTestId("SendIpfs__button--submit"));
-		});
+		await waitFor(() => expect(getByTestId("SendIpfs__button--submit")).not.toBeDisabled());
 
+		fireEvent.click(getByTestId("SendIpfs__button--submit"));
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
+
 		expect(getByTestId("TransactionSuccessful")).toHaveTextContent(
 			"1e9b975eff66a731095876c3b6cbff14fd4dec3bb37a4127c46db3d69131067e",
 		);
@@ -290,17 +270,17 @@ describe("SendIpfs", () => {
 		broadcastMock.mockRestore();
 		transactionMock.mockRestore();
 
-		await waitFor(() => expect(container).toMatchSnapshot());
+		expect(container).toMatchSnapshot();
 
 		// Go back to wallet
 		const historySpy = jest.spyOn(history, "push");
-		act(() => {
-			fireEvent.click(getByTestId("SendIpfs__button--back-to-wallet"));
-		});
+
+		fireEvent.click(getByTestId("SendIpfs__button--back-to-wallet"));
 		expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
+
 		historySpy.mockRestore();
 
-		await waitFor(() => expect(container).toMatchSnapshot());
+		expect(container).toMatchSnapshot();
 	});
 
 	it("should return to form step by cancelling fee warning", async () => {
@@ -321,37 +301,30 @@ describe("SendIpfs", () => {
 			},
 		);
 
-		expect(getByTestId("SendIpfs__form-step")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("SendIpfs__form-step")).toBeTruthy());
 
 		const networkLabel = `${wallet.network().coin()} ${wallet.network().name()}`;
-		expect(getByTestId("SelectNetworkInput__input")).toHaveValue(networkLabel);
-		expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address());
+		await waitFor(() => expect(getByTestId("TransactionNetwork")).toHaveTextContent(networkLabel));
+		await waitFor(() => expect(getByTestId("TransactionSender")).toHaveTextContent(wallet.address()));
 
-		// Hash
 		fireEvent.input(getByTestId("Input__hash"), {
 			target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
 		});
-		expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
+		await waitFor(() => expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco"));
 
-		// Fee
-		await waitFor(() => expect(getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED)).toBeTruthy());
-		act(() => {
-			fireEvent.click(getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
-		});
+		fireEvent.click(getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
 		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
 		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
 
-		await waitFor(() => expect(getByTestId("SendIpfs__button--continue")).not.toBeDisabled());
-		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+		expect(getByTestId("SendIpfs__button--continue")).not.toBeDisabled();
 
-		// Review Step
-		expect(getByTestId("SendIpfs__review-step")).toBeTruthy();
 		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+		await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
 
-		// Fee warning
+		fireEvent.click(getByTestId("SendIpfs__button--continue"));
 		expect(getByTestId("FeeWarning__cancel-button")).toBeTruthy();
-		fireEvent.click(getByTestId("FeeWarning__cancel-button"));
 
+		fireEvent.click(getByTestId("FeeWarning__cancel-button"));
 		await waitFor(() => expect(getByTestId("SendIpfs__form-step")).toBeTruthy());
 	});
 
@@ -373,35 +346,31 @@ describe("SendIpfs", () => {
 			},
 		);
 
-		expect(getByTestId("SendIpfs__form-step")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("SendIpfs__form-step")).toBeTruthy());
 
 		const networkLabel = `${wallet.network().coin()} ${wallet.network().name()}`;
-		expect(getByTestId("SelectNetworkInput__input")).toHaveValue(networkLabel);
-		expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address());
+		await waitFor(() => expect(getByTestId("TransactionNetwork")).toHaveTextContent(networkLabel));
+		await waitFor(() => expect(getByTestId("TransactionSender")).toHaveTextContent(wallet.address()));
 
-		// Hash
 		fireEvent.input(getByTestId("Input__hash"), {
 			target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
 		});
-		expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
+		await waitFor(() => expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco"));
 
 		// Fee
-		await waitFor(() => expect(getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED)).toBeVisible());
 		fireEvent.click(getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
 		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
 		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
 
-		await waitFor(() => expect(getByTestId("SendIpfs__button--continue")).not.toBeDisabled());
-		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+		expect(getByTestId("SendIpfs__button--continue")).not.toBeDisabled();
 
-		// Review Step
-		expect(getByTestId("SendIpfs__review-step")).toBeTruthy();
 		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+		await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
 
-		// Fee warning
-		expect(getByTestId("FeeWarning__continue-button")).toBeTruthy();
+		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+		await waitFor(() => expect(getByTestId("FeeWarning__continue-button")).toBeTruthy());
+
 		fireEvent.click(getByTestId("FeeWarning__continue-button"));
-
 		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 	});
 
@@ -411,7 +380,7 @@ describe("SendIpfs", () => {
 
 		history.push(ipfsURL);
 
-		const { getByTestId, container } = renderWithRouter(
+		const { getByTestId, getByText, container } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
 				<LedgerProvider transport={transport}>
 					<SendIpfs />
@@ -425,63 +394,41 @@ describe("SendIpfs", () => {
 
 		await waitFor(() => expect(getByTestId("SendIpfs__form-step")).toBeTruthy());
 
-		// Hash
-		act(() => {
-			fireEvent.input(getByTestId("Input__hash"), {
-				target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
-			});
+		const networkLabel = `${wallet.network().coin()} ${wallet.network().name()}`;
+		await waitFor(() => expect(getByTestId("TransactionNetwork")).toHaveTextContent(networkLabel));
+		await waitFor(() => expect(getByTestId("TransactionSender")).toHaveTextContent(wallet.address()));
+
+		fireEvent.input(getByTestId("Input__hash"), {
+			target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
 		});
-		expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
+		await waitFor(() => expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco"));
 
 		// Fee
-		await waitFor(() => expect(screen.getAllByRole("radio")[1]).toBeChecked());
+		fireEvent.click(getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
+		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
+		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
 
-		// Step 2
-		act(() => {
-			fireEvent.click(getByTestId("SendIpfs__button--continue"));
-		});
+		expect(getByTestId("SendIpfs__button--continue")).not.toBeDisabled();
+
+		fireEvent.click(getByTestId("SendIpfs__button--continue"));
 		await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
 
-		// Step 3
-		act(() => {
-			fireEvent.click(getByTestId("SendIpfs__button--continue"));
-		});
+		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+
+		if (!profile.settings().get(Contracts.ProfileSetting.DoNotShowFeeWarning)) {
+			await waitFor(() => expect(getByTestId("FeeWarning__continue-button")).toBeTruthy());
+			fireEvent.click(getByTestId("FeeWarning__continue-button"));
+		}
+
 		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 
-		// Back to Step 2
-		act(() => {
-			fireEvent.click(getByTestId("SendIpfs__button--back"));
-		});
-		await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
+		fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), { target: { value: "wrong-mnemonic" } });
+		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue("wrong-mnemonic"));
 
-		// Step 3
-		act(() => {
-			fireEvent.click(getByTestId("SendIpfs__button--continue"));
-		});
-		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
-		const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-		act(() => {
-			fireEvent.input(passwordInput, { target: { value: passphrase } });
-		});
-		await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
+		expect(getByTestId("SendIpfs__button--submit")).toBeDisabled();
+		expect(getByTestId("Input__error")).toBeVisible();
 
-		// Step 5 (skip step 4 for now - ledger confirmation)
-		const signMock = jest.spyOn(wallet.transaction(), "signIpfs").mockImplementation(() => {
-			throw new Error("Signatory should be");
-		});
-
-		act(() => {
-			fireEvent.click(getByTestId("SendIpfs__button--submit"));
-		});
-
-		await waitFor(() => expect(passwordInput).toHaveValue(""));
-		await waitFor(() => {
-			expect(getByTestId("Input__error")).toBeVisible();
-		});
-
-		signMock.mockRestore();
-
-		await waitFor(() => expect(container).toMatchSnapshot());
+		expect(container).toMatchSnapshot();
 	});
 
 	it("should go back to wallet details", async () => {
@@ -506,12 +453,7 @@ describe("SendIpfs", () => {
 
 		const historySpy = jest.spyOn(history, "push").mockImplementation();
 
-		await waitFor(() => expect(getByTestId("SendIpfs__form-step")).toBeTruthy());
-
-		act(() => {
-			fireEvent.click(getByTestId("SendIpfs__button--back"));
-		});
-
+		fireEvent.click(getByTestId("SendIpfs__button--back"));
 		expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
 
 		historySpy.mockRestore();
@@ -523,7 +465,7 @@ describe("SendIpfs", () => {
 
 		history.push(ipfsURL);
 
-		const { getByTestId, container } = renderWithRouter(
+		const { getByTestId, getByText, container } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
 				<LedgerProvider transport={transport}>
 					<SendIpfs />
@@ -537,67 +479,52 @@ describe("SendIpfs", () => {
 
 		await waitFor(() => expect(getByTestId("SendIpfs__form-step")).toBeTruthy());
 
-		// Hash
-		act(() => {
-			fireEvent.input(getByTestId("Input__hash"), {
-				target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
-			});
-		});
-		expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
+		const networkLabel = `${wallet.network().coin()} ${wallet.network().name()}`;
+		await waitFor(() => expect(getByTestId("TransactionNetwork")).toHaveTextContent(networkLabel));
+		await waitFor(() => expect(getByTestId("TransactionSender")).toHaveTextContent(wallet.address()));
 
-		// Fee
-		await waitFor(() => expect(screen.getAllByRole("radio")[1]).toBeChecked());
-
-		// Step 2
-		act(() => {
-			fireEvent.click(getByTestId("SendIpfs__button--continue"));
+		fireEvent.input(getByTestId("Input__hash"), {
+			target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
 		});
+		await waitFor(() => expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco"));
+
+		fireEvent.click(getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
+		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
+		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
+
+		expect(getByTestId("SendIpfs__button--continue")).not.toBeDisabled();
+
+		fireEvent.click(getByTestId("SendIpfs__button--continue"));
 		await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
 
-		// Step 3
-		act(() => {
-			fireEvent.click(getByTestId("SendIpfs__button--continue"));
-		});
+		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+
+		if (!profile.settings().get(Contracts.ProfileSetting.DoNotShowFeeWarning)) {
+			await waitFor(() => expect(getByTestId("FeeWarning__continue-button")).toBeTruthy());
+			fireEvent.click(getByTestId("FeeWarning__continue-button"));
+		}
+
 		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 
-		// Back to Step 2
-		act(() => {
-			fireEvent.click(getByTestId("SendIpfs__button--back"));
-		});
-		await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
-
-		// Step 3
-		act(() => {
-			fireEvent.click(getByTestId("SendIpfs__button--continue"));
-		});
-		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
-		const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-		act(() => {
-			fireEvent.input(passwordInput, { target: { value: passphrase } });
-		});
-		await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
+		fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), { target: { value: passphrase } });
+		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(passphrase));
 
 		// Step 5 (skip step 4 for now - ledger confirmation)
 		const signMock = jest.spyOn(wallet.transaction(), "signIpfs").mockImplementation(() => {
 			throw new Error();
 		});
 
-		const historyMock = jest.spyOn(history, "push").mockReturnValue();
-
-		act(() => {
-			fireEvent.click(getByTestId("SendIpfs__button--submit"));
-		});
+		fireEvent.click(getByTestId("SendIpfs__button--submit"));
 
 		await waitFor(() => expect(getByTestId("ErrorStep")).toBeInTheDocument());
-		await waitFor(() => expect(getByTestId("ErrorStep__wallet-button")).toBeInTheDocument());
-		await waitFor(() => expect(container).toMatchSnapshot());
+		expect(getByTestId("ErrorStep__wallet-button")).toBeInTheDocument();
+		expect(container).toMatchSnapshot();
 
-		act(() => {
-			fireEvent.click(getByTestId("ErrorStep__wallet-button"));
-		});
+		const historyMock = jest.spyOn(history, "push").mockReturnValue();
+		
+		fireEvent.click(getByTestId("ErrorStep__wallet-button"));
+		expect(historyMock).toHaveBeenCalledWith(`/profiles/${getDefaultProfileId()}/wallets/${getDefaultWalletId()}`);
 
-		const walletDetailPage = `/profiles/${getDefaultProfileId()}/wallets/${getDefaultWalletId()}`;
-		await waitFor(() => expect(historyMock).toHaveBeenCalledWith(walletDetailPage));
 		signMock.mockRestore();
 	});
 
@@ -619,19 +546,14 @@ describe("SendIpfs", () => {
 			},
 		);
 
-		act(() => {
-			fireEvent.input(getByTestId("Input__hash"), {
-				target: { value: "invalid-ipfs-hash" },
-			});
+		fireEvent.input(getByTestId("Input__hash"), {
+			target: { value: "invalid-ipfs-hash" },
 		});
-
 		await waitFor(() => expect(getByTestId("Input__hash")).toHaveValue("invalid-ipfs-hash"));
 
-		await waitFor(() => {
-			expect(getByTestId("Input__error")).toBeVisible();
-		});
+		expect(getByTestId("Input__error")).toBeVisible();
 
-		await waitFor(() => expect(container).toMatchSnapshot());
+		expect(container).toMatchSnapshot();
 	});
 
 	it("should send an ipfs transaction with a multisig wallet", async () => {
@@ -645,7 +567,7 @@ describe("SendIpfs", () => {
 
 		history.push(ipfsURL);
 
-		const { getByTestId } = renderWithRouter(
+		const { getByTestId, getByText, container } = renderWithRouter(
 			<Route path="/profiles/:profileId/transactions/:walletId/ipfs">
 				<LedgerProvider transport={transport}>
 					<SendIpfs />
@@ -660,42 +582,46 @@ describe("SendIpfs", () => {
 		await waitFor(() => expect(getByTestId("SendIpfs__form-step")).toBeTruthy());
 
 		const networkLabel = `${wallet.network().coin()} ${wallet.network().name()}`;
-		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(networkLabel));
-		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
+		await waitFor(() => expect(getByTestId("TransactionNetwork")).toHaveTextContent(networkLabel));
+		await waitFor(() => expect(getByTestId("TransactionSender")).toHaveTextContent(wallet.address()));
 
-		// Hash
-		act(() => {
-			fireEvent.input(getByTestId("Input__hash"), {
-				target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
-			});
+		fireEvent.input(getByTestId("Input__hash"), {
+			target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
 		});
-		expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
+		await waitFor(() => expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco"));
 
-		// Fee
-		await waitFor(() => expect(screen.getAllByRole("radio")[1]).toBeChecked());
+		fireEvent.click(getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
+		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
+		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
 
-		// Step 2
-		act(() => {
-			fireEvent.click(getByTestId("SendIpfs__button--continue"));
-		});
+		expect(getByTestId("SendIpfs__button--continue")).not.toBeDisabled();
+
+		fireEvent.click(getByTestId("SendIpfs__button--continue"));
 		await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
+
+		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+
+		if (!profile.settings().get(Contracts.ProfileSetting.DoNotShowFeeWarning)) {
+			await waitFor(() => expect(getByTestId("FeeWarning__continue-button")).toBeTruthy());
+			fireEvent.click(getByTestId("FeeWarning__continue-button"));
+		}
 
 		// Step 4
 		const signMock = jest
 			.spyOn(wallet.transaction(), "signIpfs")
 			.mockReturnValue(Promise.resolve(ipfsFixture.data.id));
+
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [ipfsFixture.data.id],
 			errors: {},
 			rejected: [],
 		});
+
 		const transactionMock = createTransactionMock(wallet);
 
-		act(() => {
-			fireEvent.click(getByTestId("SendIpfs__button--continue"));
-		});
-
+		fireEvent.click(getByTestId("SendIpfs__button--continue"));
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
+
 		expect(getByTestId("TransactionSuccessful")).toHaveTextContent(
 			"1e9b975eff66a731095876c3b6cbff14fd4dec3bb37a4127c46db3d69131067e",
 		);
@@ -712,9 +638,10 @@ describe("SendIpfs", () => {
 		signMock.mockRestore();
 		broadcastMock.mockRestore();
 		transactionMock.mockRestore();
-
 		multisignatureSpy.mockRestore();
 		isMultiSignatureSpy.mockRestore();
+
+		expect(container).toMatchSnapshot();
 	});
 
 	it("should send a ipfs transfer with a ledger wallet", async () => {
@@ -743,7 +670,7 @@ describe("SendIpfs", () => {
 
 		history.push(ipfsURL);
 
-		const { getByTestId } = renderWithRouter(
+		const { getByTestId, getByText, container } = renderWithRouter(
 			<Route path="/profiles/:profileId/transactions/:walletId/ipfs">
 				<LedgerProvider transport={transport}>
 					<SendIpfs />
@@ -758,31 +685,29 @@ describe("SendIpfs", () => {
 		await waitFor(() => expect(getByTestId("SendIpfs__form-step")).toBeTruthy());
 
 		const networkLabel = `${wallet.network().coin()} ${wallet.network().name()}`;
-		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(networkLabel));
-		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
+		await waitFor(() => expect(getByTestId("TransactionNetwork")).toHaveTextContent(networkLabel));
+		await waitFor(() => expect(getByTestId("TransactionSender")).toHaveTextContent(wallet.address()));
 
-		// Hash
-		act(() => {
-			fireEvent.input(getByTestId("Input__hash"), {
-				target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
-			});
+		fireEvent.input(getByTestId("Input__hash"), {
+			target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
 		});
-		expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
+		await waitFor(() => expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco"));
 
-		// Fee
-		await waitFor(() => expect(screen.getAllByRole("radio")[1]).toBeChecked());
+		fireEvent.click(getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
+		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
+		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
 
-		// Step 2
-		act(() => {
-			fireEvent.click(getByTestId("SendIpfs__button--continue"));
-		});
+		expect(getByTestId("SendIpfs__button--continue")).not.toBeDisabled();
+
+		fireEvent.click(getByTestId("SendIpfs__button--continue"));
 		await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
 
-		// Step 3
-		expect(getByTestId("SendIpfs__button--continue")).not.toBeDisabled();
-		act(() => {
-			fireEvent.click(getByTestId("SendIpfs__button--continue"));
-		});
+		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+
+		if (!profile.settings().get(Contracts.ProfileSetting.DoNotShowFeeWarning)) {
+			await waitFor(() => expect(getByTestId("FeeWarning__continue-button")).toBeTruthy());
+			fireEvent.click(getByTestId("FeeWarning__continue-button"));
+		}
 
 		// Auto broadcast
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
@@ -792,6 +717,8 @@ describe("SendIpfs", () => {
 		isLedgerSpy.mockRestore();
 		signTransactionSpy.mockRestore();
 		transactionMock.mockRestore();
+
+		expect(container).toMatchSnapshot();
 	});
 
 	it("should send an IPFS transaction using encryption password", async () => {
@@ -809,7 +736,7 @@ describe("SendIpfs", () => {
 
 		history.push(ipfsURL);
 
-		const { getByTestId, container } = renderWithRouter(
+		const { getByTestId, getByText, container } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
 				<LedgerProvider transport={transport}>
 					<SendIpfs />
@@ -824,57 +751,50 @@ describe("SendIpfs", () => {
 		await waitFor(() => expect(getByTestId("SendIpfs__form-step")).toBeTruthy());
 
 		const networkLabel = `${wallet.network().coin()} ${wallet.network().name()}`;
-		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(networkLabel));
-		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(encryptedWallet.address()));
+		await waitFor(() => expect(getByTestId("TransactionNetwork")).toHaveTextContent(networkLabel));
+		await waitFor(() => expect(getByTestId("TransactionSender")).toHaveTextContent(encryptedWallet.address()));
 
-		// Hash
-		act(() => {
-			fireEvent.input(getByTestId("Input__hash"), {
-				target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
-			});
+		fireEvent.input(getByTestId("Input__hash"), {
+			target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
 		});
-		expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
+		await waitFor(() => expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco"));
 
-		// Fee
-		await waitFor(() => expect(screen.getAllByRole("radio")[1]).toBeChecked());
+		fireEvent.click(getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
+		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
+		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
 
-		// Step 2
-		act(() => {
-			fireEvent.click(getByTestId("SendIpfs__button--continue"));
-		});
+		expect(getByTestId("SendIpfs__button--continue")).not.toBeDisabled();
+
+		fireEvent.click(getByTestId("SendIpfs__button--continue"));
 		await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
 
-		// Step 3
-		act(() => {
-			fireEvent.click(getByTestId("SendIpfs__button--continue"));
-		});
+		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+
+		if (!profile.settings().get(Contracts.ProfileSetting.DoNotShowFeeWarning)) {
+			await waitFor(() => expect(getByTestId("FeeWarning__continue-button")).toBeTruthy());
+			fireEvent.click(getByTestId("FeeWarning__continue-button"));
+		}
+
 		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 
-		// Step 3
-		const passwordInput = getByTestId("AuthenticationStep__encryption-password");
+		fireEvent.input(getByTestId("AuthenticationStep__encryption-password"), { target: { value: "password" } });
+		await waitFor(() => expect(getByTestId("AuthenticationStep__encryption-password")).toHaveValue("password"));
 
-		await act(async () => {
-			fireEvent.input(passwordInput, { target: { value: "password" } });
-		});
-
-		await waitFor(() => expect(passwordInput).toHaveValue("password"));
-
-		// Step 4
 		const signMock = jest
 			.spyOn(encryptedWallet.transaction(), "signIpfs")
 			.mockReturnValue(Promise.resolve(ipfsFixture.data.id));
+
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [ipfsFixture.data.id],
 			errors: {},
 			rejected: [],
 		});
+
 		const transactionMock = createTransactionMock(encryptedWallet);
 
 		await waitFor(() => expect(getByTestId("SendIpfs__button--submit")).not.toBeDisabled());
-		act(() => {
-			fireEvent.click(getByTestId("SendIpfs__button--submit"));
-		});
 
+		fireEvent.click(getByTestId("SendIpfs__button--submit"));
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 
 		signMock.mockRestore();
@@ -884,6 +804,6 @@ describe("SendIpfs", () => {
 		actsWithWifWithEncryptionMock.mockRestore();
 		wifGetMock.mockRestore();
 
-		await waitFor(() => expect(container).toMatchSnapshot());
+		expect(container).toMatchSnapshot();
 	});
 });

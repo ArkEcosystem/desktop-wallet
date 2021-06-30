@@ -2,7 +2,7 @@ import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { TabPanel, Tabs } from "app/components/Tabs";
-import { TransactionDetail, TransactionFee } from "domains/transaction/components/TransactionDetail";
+import { TransactionDetail, TransactionFee, TransactionType } from "domains/transaction/components/TransactionDetail";
 import { SendRegistrationForm } from "domains/transaction/pages/SendRegistration/SendRegistration.models";
 import { handleBroadcastError } from "domains/transaction/utils";
 import React from "react";
@@ -40,16 +40,7 @@ const transactionDetails = ({
 	wallet: Contracts.IReadWriteWallet;
 }) => (
 	<>
-		<TransactionDetail
-			label={translations("TRANSACTION.TRANSACTION_TYPE")}
-			extra={
-				<Circle className="border-theme-text" size="lg">
-					<Icon name="Delegate" width={25} height={25} />
-				</Circle>
-			}
-		>
-			{translations("TRANSACTION.TRANSACTION_TYPES.DELEGATE_REGISTRATION")}
-		</TransactionDetail>
+		<TransactionType type="delegateRegistration" />
 
 		<TransactionDetail label={translations("TRANSACTION.DELEGATE_NAME")}>
 			{transaction.username()}
