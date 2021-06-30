@@ -13,13 +13,10 @@ let profile: Contracts.IProfile;
 
 describe("Notifications", () => {
 	beforeEach(() => {
-		nock("https://dwallets.ark.io")
-			.get("/api/transactions")
-			.query(true)
-			.reply(200, {
-				data: [...NotificationTransactionsFixtures.data, ...TransactionsFixture.data],
-				meta: TransactionsFixture.meta,
-			});
+		nock("https://dwallets.ark.io").get("/api/transactions").query(true).reply(200, {
+			data: NotificationTransactionsFixtures.data,
+			meta: TransactionsFixture.meta,
+		});
 
 		profile = env.profiles().findById(getDefaultProfileId());
 	});
