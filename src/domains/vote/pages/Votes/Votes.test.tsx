@@ -99,6 +99,22 @@ describe("Votes", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render and handle wallet current voting exception", async () => {
+		const currentWallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
+		const currentMock = jest.spyOn(currentWallet.voting(), "current").mockImplementation(() => {
+			throw new Error("Error");
+		});
+
+		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}/votes`;
+		const { asFragment, container, getByTestId } = renderPage(route);
+
+		expect(container).toBeTruthy();
+		expect(getByTestId("DelegateTable")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy());
+		expect(asFragment()).toMatchSnapshot();
+		currentMock.mockRestore();
+	});
+
 	it("should render with no wallets", () => {
 		const route = `/profiles/${emptyProfile.id()}/votes`;
 		const routePath = "/profiles/:profileId/votes";
