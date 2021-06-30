@@ -52,7 +52,7 @@ export const TransactionAmount: React.FC<TransactionAmountProperties> = ({
 			{...properties}
 		>
 			<Label color={isSent ? "danger" : "success"}>
-				<AmountCrypto withSign ticker={currency} value={amount} isNegative={isSent} />
+				<AmountCrypto showSign ticker={currency} value={amount} isNegative={isSent} />
 			</Label>
 
 			{!!exchangeCurrency && !!convertedAmount && (
