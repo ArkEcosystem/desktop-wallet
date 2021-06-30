@@ -1,4 +1,5 @@
 import { Coins, Networks } from "@arkecosystem/platform-sdk";
+import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -13,11 +14,13 @@ const MnemonicField = ({
 	profile,
 	label,
 	findAddress,
+	validateValue,
 	...properties
 }: {
 	profile: Contracts.IProfile;
 	label: string;
 	findAddress: (value: string) => Promise<string>;
+	validateValue?: (value: string) => boolean;
 } & Omit<React.HTMLProps<any>, "ref">) => {
 	const { t } = useTranslation();
 	const { register } = useFormContext();
@@ -34,12 +37,19 @@ const MnemonicField = ({
 						try {
 							const address = await findAddress(value);
 
-							return (
-								!profile.wallets().findByAddress(address) ||
-								t("COMMON.INPUT_PASSPHRASE.VALIDATION.ADDRESS_ALREADY_EXISTS", {
+							if (profile.wallets().findByAddress(address)) {
+								return t("COMMON.INPUT_PASSPHRASE.VALIDATION.ADDRESS_ALREADY_EXISTS", {
 									address,
-								}).toString()
-							);
+								}).toString();
+							}
+
+							if (validateValue && !validateValue(value)) {
+								return t("COMMON.INPUT_PASSPHRASE.VALIDATION.MNEMONIC_NOT_COMPLIANT", {
+									address,
+								}).toString();
+							}
+
+							return true;
 						} catch (error) {
 							/* istanbul ignore next */
 							return error.message;
@@ -94,6 +104,7 @@ const ImportInputField = ({ type, coin, profile }: { type: string; coin: Coins.C
 					const { address } = await coin.address().fromMnemonic(value);
 					return address;
 				}}
+				validateValue={(value) => BIP39.validate(value)}
 			/>
 		);
 	}
@@ -134,6 +145,25 @@ const ImportInputField = ({ type, coin, profile }: { type: string; coin: Coins.C
 						return address;
 					} catch {
 						throw new Error(t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.INVALID_PRIVATE_KEY"));
+					}
+				}}
+			/>
+		);
+	}
+
+	/* istanbul ignore next */
+	if (type === OptionsValue.SECRET) {
+		return (
+			<MnemonicField
+				profile={profile}
+				label={t("COMMON.SECRET")}
+				data-testid="ImportWallet__secret-input"
+				findAddress={async (value) => {
+					try {
+						const { address } = await coin.address().fromSecret(value);
+						return address;
+					} catch {
+						throw new Error(t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.INVALID_SECRET"));
 					}
 				}}
 			/>
