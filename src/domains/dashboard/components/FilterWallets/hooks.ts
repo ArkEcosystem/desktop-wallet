@@ -48,6 +48,7 @@ export const useWalletFilters = ({ profile }: { profile: Contracts.IProfile }) =
 			useTestNetworks: profile.settings().get(Contracts.ProfileSetting.UseTestNetworks),
 			viewType,
 			walletsDisplayType,
+			defaultConfiguration,
 		}),
 		[walletsDisplayType, selectedNetworkIds, viewType, isFilterChanged, networks, profile, setValue],
 	);
