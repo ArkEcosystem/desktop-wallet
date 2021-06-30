@@ -142,6 +142,7 @@ export const translations: { [key: string]: any } = {
 	MULTIPLE: "Multiple",
 	MULTISIGNATURE: {
 		"PARTICIPANT_#": "Participant #{{count}}",
+		// eslint-disable-next-line
 		ADD_PARTICIPANT: "Add Participant",
 		AWAITING_CONFIRMATIONS: "Awaiting confirmations",
 		AWAITING_FINAL_SIGNATURE: "Awaiting final signature",
@@ -205,12 +206,10 @@ export const translations: { [key: string]: any } = {
 			WARNING:
 				"Before creating the second mnemonic, we strongly recommend that you save it, as its loss will lead to a loss of access to your money.",
 		},
-
 		PASSPHRASE_CONFIRMATION_STEP: {
 			SUBTITLE: "Confirm your mnemonic passphrase to continue.",
 			TITLE: "Confirm Your Passphrase",
 		},
-
 		PASSPHRASE_STEP: {
 			COPY_OR_DOWNLOAD: {
 				DESCRIPTION: "You can copy or download your mnemonic, but store it safely.",
