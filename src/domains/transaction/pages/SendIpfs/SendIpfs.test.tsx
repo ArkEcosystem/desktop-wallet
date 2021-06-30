@@ -32,13 +32,13 @@ const fixtureProfileId = getDefaultProfileId();
 const createTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 	// @ts-ignore
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
-		id: () => ipfsFixture.data.id,
-		sender: () => ipfsFixture.data.sender,
-		recipient: () => ipfsFixture.data.recipient,
 		amount: () => +ipfsFixture.data.amount / 1e8,
+		data: () => ({ data: () => ipfsFixture.data }),
 		fee: () => +ipfsFixture.data.fee / 1e8,
 		hash: () => ipfsFixture.data.asset.ipfs,
-		data: () => ({ data: () => ipfsFixture.data }),
+		id: () => ipfsFixture.data.id,
+		recipient: () => ipfsFixture.data.recipient,
+		sender: () => ipfsFixture.data.sender,
 		type: () => "ipfs",
 	});
 
@@ -121,11 +121,11 @@ describe("SendIpfs", () => {
 				.coin()
 				.transaction()
 				.ipfs({
-					nonce: "1",
-					fee: "1",
 					data: {
 						hash: ipfsFixture.data.asset.ipfs,
 					},
+					fee: "1",
+					nonce: "1",
 					signatory: await wallet
 						.coin()
 						.signatory()
@@ -160,8 +160,8 @@ describe("SendIpfs", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [ipfsURL],
 				history,
+				routes: [ipfsURL],
 			},
 		);
 
@@ -225,8 +225,8 @@ describe("SendIpfs", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [ipfsURL],
 				history,
+				routes: [ipfsURL],
 			},
 		);
 
@@ -272,8 +272,8 @@ describe("SendIpfs", () => {
 			.mockReturnValue(Promise.resolve(ipfsFixture.data.id));
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [ipfsFixture.data.id],
-			rejected: [],
 			errors: {},
+			rejected: [],
 		});
 		const transactionMock = createTransactionMock(wallet);
 
@@ -316,8 +316,8 @@ describe("SendIpfs", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [ipfsURL],
 				history,
+				routes: [ipfsURL],
 			},
 		);
 
@@ -368,8 +368,8 @@ describe("SendIpfs", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [ipfsURL],
 				history,
+				routes: [ipfsURL],
 			},
 		);
 
@@ -418,8 +418,8 @@ describe("SendIpfs", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [ipfsURL],
 				history,
+				routes: [ipfsURL],
 			},
 		);
 
@@ -497,8 +497,8 @@ describe("SendIpfs", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [ipfsURL],
 				history,
+				routes: [ipfsURL],
 			},
 		);
 
@@ -530,8 +530,8 @@ describe("SendIpfs", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [ipfsURL],
 				history,
+				routes: [ipfsURL],
 			},
 		);
 
@@ -614,8 +614,8 @@ describe("SendIpfs", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [ipfsURL],
 				history,
+				routes: [ipfsURL],
 			},
 		);
 
@@ -652,8 +652,8 @@ describe("SendIpfs", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [ipfsURL],
 				history,
+				routes: [ipfsURL],
 			},
 		);
 
@@ -686,8 +686,8 @@ describe("SendIpfs", () => {
 			.mockReturnValue(Promise.resolve(ipfsFixture.data.id));
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [ipfsFixture.data.id],
-			rejected: [],
 			errors: {},
+			rejected: [],
 		});
 		const transactionMock = createTransactionMock(wallet);
 
@@ -732,8 +732,8 @@ describe("SendIpfs", () => {
 
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [ipfsFixture.data.id],
-			rejected: [],
 			errors: {},
+			rejected: [],
 		});
 
 		const transactionMock = createTransactionMock(wallet);
@@ -750,8 +750,8 @@ describe("SendIpfs", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [ipfsURL],
 				history,
+				routes: [ipfsURL],
 			},
 		);
 
@@ -816,8 +816,8 @@ describe("SendIpfs", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [ipfsURL],
 				history,
+				routes: [ipfsURL],
 			},
 		);
 
@@ -865,8 +865,8 @@ describe("SendIpfs", () => {
 			.mockReturnValue(Promise.resolve(ipfsFixture.data.id));
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [ipfsFixture.data.id],
-			rejected: [],
 			errors: {},
+			rejected: [],
 		});
 		const transactionMock = createTransactionMock(encryptedWallet);
 

@@ -12,18 +12,26 @@ interface Properties {
 }
 
 const defaultOptions = {
-	// Custom component options
-	slideHeight: 192, // default slideheight (used for wallet cards),
-	// Swiper options
-	slidesPerView: 1,
-	slidesPerColumn: 1,
+	
+	pagination: {
+		clickable: true,
+		el: ".swiper-pagination",
+	}, 
+	
+	
+roundLengths: true,
+	
+
+// Custom component options
+slideHeight: 192,
+	
+
+slidesPerColumn: 1,
+	// default slideheight (used for wallet cards),
+// Swiper options
+slidesPerView: 1,
 	touchStartPreventDefault: false,
 	watchOverflow: true,
-	roundLengths: true,
-	pagination: {
-		el: ".swiper-pagination",
-		clickable: true,
-	},
 };
 
 export const useSlider = ({ container, options, data, paginationPosition }: Properties) => {
@@ -85,5 +93,5 @@ export const useSlider = ({ container, options, data, paginationPosition }: Prop
 		};
 	}, [container, swiperOptions, data.length, resetWrapperStyles]);
 
-	return { swiperOptions, showPagination, containerHeight, slideStyles, wrapperRef: wrapperReference };
+	return { containerHeight, showPagination, slideStyles, swiperOptions, wrapperRef: wrapperReference };
 };

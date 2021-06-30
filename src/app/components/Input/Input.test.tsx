@@ -34,7 +34,7 @@ describe("Input", () => {
 
 	it("should render with addons", () => {
 		const { asFragment, getByText } = render(
-			<Input addons={{ start: <span>start</span>, end: <span>end</span> }} />,
+			<Input addons={{ end: <span>end</span>, start: <span>start</span> }} />,
 		);
 
 		expect(getByText("start")).toBeTruthy();

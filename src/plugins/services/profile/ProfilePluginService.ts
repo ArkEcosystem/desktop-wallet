@@ -7,8 +7,8 @@ export class ProfilePluginService implements PluginService {
 
 	config() {
 		return {
-			id: PluginServiceIdentifier.Profile,
 			accessor: "profile",
+			id: PluginServiceIdentifier.Profile,
 		};
 	}
 

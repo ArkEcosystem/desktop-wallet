@@ -71,13 +71,13 @@ export const PluginList = ({
 		{
 			Header: t("COMMON.STATUS"),
 			accessor: "isInstalled",
-			disableSortBy: true,
 			className: "justify-center no-border",
+			disableSortBy: true,
 		},
 		{
 			Header: "Actions",
-			disableSortBy: true,
 			className: "hidden",
+			disableSortBy: true,
 		},
 	];
 

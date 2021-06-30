@@ -19,9 +19,9 @@ import {
 import { MessagePluginService } from "./MessagePluginService";
 
 const pluginDescription = {
+	"desktop-wallet": { permissions: ["MESSAGE"] },
 	name: "test",
 	version: "1.1",
-	"desktop-wallet": { permissions: ["MESSAGE"] },
 };
 
 describe("MessagePluginService", () => {

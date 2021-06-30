@@ -49,6 +49,6 @@ export const TransactionVotes = ({ isLoading, votes, unvotes }: TransactionVotes
 
 TransactionVotes.defaultProps = {
 	isLoading: false,
-	votes: [],
 	unvotes: [],
+	votes: [],
 };

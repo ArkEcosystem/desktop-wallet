@@ -55,8 +55,8 @@ export class HttpClient extends AbstractRequest {
 			if (method === "POST") {
 				response = await fetch(url, {
 					...this._options,
-					method: "POST",
 					body: JSON.stringify(data?.data),
+					method: "POST",
 				});
 			}
 

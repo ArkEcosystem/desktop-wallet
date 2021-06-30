@@ -25,8 +25,8 @@ export const setupPlugins = () => {
 
 		await download(win, url, {
 			directory: downloadPath,
-			onStarted: (item) => (savedPath = item.getSavePath()),
 			onProgress: (progress) => win.webContents.send("plugin:download-progress", { ...progress, name }),
+			onStarted: (item) => (savedPath = item.getSavePath()),
 		});
 
 		return savedPath!;

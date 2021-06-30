@@ -12,6 +12,6 @@ type CheckboxProperties = {
 export const Checkbox = styled.input<CheckboxProperties>(getStyles);
 
 Checkbox.defaultProps = {
-	type: "checkbox",
 	color: "success",
+	type: "checkbox",
 };

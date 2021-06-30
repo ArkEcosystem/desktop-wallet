@@ -114,8 +114,8 @@ describe("WalletVote", () => {
 					address: wallet.address(),
 					explorerLink: "",
 					publicKey: wallet.publicKey(),
-					username: "arkx",
 					rank: 10,
+					username: "arkx",
 				}),
 			]);
 
@@ -141,8 +141,8 @@ describe("WalletVote", () => {
 					address: wallet.address(),
 					explorerLink: "",
 					publicKey: wallet.publicKey(),
-					username: "arkx",
 					rank: 52,
+					username: "arkx",
 				}),
 			]);
 
@@ -203,15 +203,15 @@ describe("WalletVote", () => {
 					address: wallet.address(),
 					explorerLink: "",
 					publicKey: wallet.publicKey(),
-					username: "arkx",
 					rank: 1,
+					username: "arkx",
 				}),
 				new ReadOnlyWallet({
 					address: wallet.address(),
 					explorerLink: "",
 					publicKey: wallet.publicKey(),
-					username: "arky",
 					rank: 2,
+					username: "arky",
 				}),
 			]);
 
@@ -263,8 +263,8 @@ describe("WalletVote", () => {
 					address: wallet.address(),
 					explorerLink: "",
 					publicKey: wallet.publicKey(),
-					username: "arkx",
 					rank: 1,
+					username: "arkx",
 				}),
 				new ReadOnlyWallet({
 					address: wallet.address(),
@@ -296,15 +296,15 @@ describe("WalletVote", () => {
 				address: wallet.address(),
 				explorerLink: "",
 				publicKey: wallet.publicKey(),
-				username: "arkx",
 				rank: 1,
+				username: "arkx",
 			}),
 			new ReadOnlyWallet({
 				address: wallet.address(),
 				explorerLink: "",
 				publicKey: wallet.publicKey(),
-				username: "arky",
 				rank: 2,
+				username: "arky",
 			}),
 		]);
 

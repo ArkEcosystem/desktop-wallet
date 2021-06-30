@@ -116,12 +116,12 @@ export const SearchRecipient = ({
 			}
 
 			recipientsList.push({
-				id: wallet.id(),
 				address: wallet.address(),
 				alias: wallet.alias(),
 				avatar: wallet.avatar(),
-				type: "wallet",
+				id: wallet.id(),
 				network: wallet.network().id(),
+				type: "wallet",
 			});
 		}
 
@@ -132,10 +132,10 @@ export const SearchRecipient = ({
 				}
 
 				recipientsList.push({
-					id: contactAddress.id(),
 					address: contactAddress.address(),
 					alias: contact.name(),
 					avatar: contactAddress.avatar(),
+					id: contactAddress.id(),
 					network: contactAddress.network(),
 					type: "contact",
 				});

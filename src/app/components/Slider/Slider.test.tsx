@@ -85,8 +85,8 @@ describe("useSlider hook", () => {
 		const { result } = renderHook(() =>
 			useSlider({
 				container: ".slide-container",
-				paginationPosition: "bottom-center",
 				data: multiple,
+				paginationPosition: "bottom-center",
 			}),
 		);
 		expect(result.current.containerHeight).toBe(288);
@@ -98,9 +98,9 @@ describe("useSlider hook", () => {
 		const { result } = renderHook(() =>
 			useSlider({
 				container: ".slide-container",
-				paginationPosition: "bottom-center",
 				data: multiple,
 				options: { slidesPerColumn: 2 },
+				paginationPosition: "bottom-center",
 			}),
 		);
 		expect(result.current.containerHeight).toBe(480);

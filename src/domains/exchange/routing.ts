@@ -4,13 +4,13 @@ import { Exchange } from "./pages";
 
 export const ExchangeRoutes = [
 	{
-		path: "/profiles/:profileId/exchange/view",
-		exact: true,
 		component: PluginView,
+		exact: true,
+		path: "/profiles/:profileId/exchange/view",
 	},
 	{
-		path: "/profiles/:profileId/exchange",
-		exact: true,
 		component: Exchange,
+		exact: true,
+		path: "/profiles/:profileId/exchange",
 	},
 ];

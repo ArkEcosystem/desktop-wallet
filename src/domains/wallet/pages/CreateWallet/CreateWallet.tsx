@@ -59,9 +59,9 @@ export const CreateWallet = () => {
 
 				wallet = await activeProfile.walletFactory().fromMnemonicWithBIP39({
 					coin,
+					mnemonic,
 					network,
 					password: encryptionPassword,
-					mnemonic,
 				});
 
 				activeProfile.wallets().push(wallet);
@@ -105,8 +105,8 @@ export const CreateWallet = () => {
 
 		activeProfile.wallets().push(wallet);
 
-		setValue("wallet", wallet, { shouldValidate: true, shouldDirty: true });
-		setValue("mnemonic", mnemonic, { shouldValidate: true, shouldDirty: true });
+		setValue("wallet", wallet, { shouldDirty: true, shouldValidate: true });
+		setValue("mnemonic", mnemonic, { shouldDirty: true, shouldValidate: true });
 	};
 
 	useEffect(() => forgetTemporaryWallet, [forgetTemporaryWallet]);

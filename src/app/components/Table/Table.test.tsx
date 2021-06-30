@@ -16,8 +16,8 @@ const columns = [
 	{
 		Header: "Header 1",
 		accessor: "col1",
-		minimumWidth: true,
 		className: "flex-row-reverse",
+		minimumWidth: true,
 	},
 	{
 		Header: "Header 2",

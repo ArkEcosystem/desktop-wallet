@@ -44,7 +44,7 @@ export const ImportWallet = () => {
 
 	const { t } = useTranslation();
 	const { importWalletByType } = useWalletImport({ profile: activeProfile });
-	const { syncAll } = useWalletSync({ profile: activeProfile, env });
+	const { syncAll } = useWalletSync({ env, profile: activeProfile });
 
 	const form = useForm<any>({ mode: "onChange" });
 	const { getValues, formState, register, watch } = form;
@@ -102,10 +102,10 @@ export const ImportWallet = () => {
 		const { network, type, encryptedWif } = getValues();
 
 		const wallet: any = await importWalletByType({
+			encryptedWif,
 			network,
 			type,
 			value: walletGenerationInput!,
-			encryptedWif,
 		});
 
 		setValue("selectedNetworkIds", uniq([...selectedNetworkIds, wallet.network().id()]));

@@ -17,8 +17,8 @@ describe("PluginManagerControls", () => {
 			const [viewType, setViewType] = React.useState("grid");
 
 			return {
-				viewType,
 				setViewType,
+				viewType,
 			};
 		});
 

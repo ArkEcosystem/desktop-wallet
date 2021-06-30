@@ -16,17 +16,17 @@ describe("Wallet Transactions Hook", () => {
 			.reply(200, () => {
 				const { meta, data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
 				return {
-					meta,
 					data: data.slice(0, 1),
+					meta,
 				};
 			})
 			.get("/api/transactions")
-			.query({ page: "2", limit: "10", address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD" })
+			.query({ address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD", limit: "10", page: "2" })
 			.reply(200, () => {
 				const { meta, data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
 				return {
-					meta,
 					data: data.slice(1, 3),
+					meta,
 				};
 			})
 			.persist();
@@ -49,13 +49,13 @@ describe("Wallet Transactions Hook", () => {
 			.coin()
 			.transaction()
 			.transfer({
-				fee: 1,
-				signatory,
-				nonce: "1",
 				data: {
-					to: wallet.address(),
 					amount: 1,
+					to: wallet.address(),
 				},
+				fee: 1,
+				nonce: "1",
+				signatory,
 			});
 
 		jest.spyOn(wallet.transaction(), "sync").mockResolvedValue(void 0);
@@ -118,13 +118,13 @@ describe("Wallet Transactions Hook", () => {
 			.coin()
 			.transaction()
 			.transfer({
-				signatory: mnemonicSignatory,
-				nonce: "1",
-				fee: 1,
 				data: {
-					to: wallet.address(),
 					amount: 1,
+					to: wallet.address(),
 				},
+				fee: 1,
+				nonce: "1",
+				signatory: mnemonicSignatory,
 			});
 
 		const signatory = await wallet
@@ -135,12 +135,12 @@ describe("Wallet Transactions Hook", () => {
 			.coin()
 			.transaction()
 			.transfer({
-				nonce: "1",
-				fee: 1,
 				data: {
-					to: wallet.address(),
 					amount: 1,
+					to: wallet.address(),
 				},
+				fee: 1,
+				nonce: "1",
 				signatory,
 			});
 

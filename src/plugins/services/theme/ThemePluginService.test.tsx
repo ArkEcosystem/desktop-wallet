@@ -7,7 +7,7 @@ import { env, render, screen } from "utils/testing-library";
 import { ThemePluginService } from "./ThemePluginService";
 import { withThemeDecorator } from "./withThemeDecorator";
 
-const config = { name: "test", version: "1.1", "desktop-wallet": { permissions: ["THEME"] } };
+const config = { "desktop-wallet": { permissions: ["THEME"] }, name: "test", version: "1.1" };
 
 describe("ThemePluginService", () => {
 	let profile: Contracts.IProfile;

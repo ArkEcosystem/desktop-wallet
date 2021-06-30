@@ -38,8 +38,8 @@ describe("SignMessage", () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 
 		wallet = await profile.walletFactory().fromMnemonicWithBIP39({
-			mnemonic,
 			coin: "ARK",
+			mnemonic,
 			network: "ark.devnet",
 		});
 		profile.wallets().push(wallet);
@@ -67,8 +67,8 @@ describe("SignMessage", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [walletUrl],
 				history,
+				routes: [walletUrl],
 			},
 		);
 
@@ -87,8 +87,8 @@ describe("SignMessage", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [walletUrl],
 				history,
+				routes: [walletUrl],
 			},
 		);
 
@@ -131,8 +131,8 @@ describe("SignMessage", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [walletUrl],
 				history,
+				routes: [walletUrl],
 			},
 		);
 
@@ -184,8 +184,8 @@ describe("SignMessage", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [walletUrl],
 				history,
+				routes: [walletUrl],
 			},
 		);
 
@@ -241,8 +241,8 @@ describe("SignMessage", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [walletUrl],
 				history,
+				routes: [walletUrl],
 			},
 		);
 
@@ -297,8 +297,8 @@ describe("SignMessage", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [walletUrl],
 				history,
+				routes: [walletUrl],
 			},
 		);
 
@@ -319,7 +319,7 @@ describe("SignMessage", () => {
 		await waitFor(() => expect(getByTestId("LedgerWaitingDevice-loading_message")).toBeTruthy());
 
 		act(() => {
-			observer!.next({ type: "add", descriptor: "" });
+			observer!.next({ descriptor: "", type: "add" });
 		});
 
 		await waitFor(() => expect(getByTestId("LedgerWaitingApp-loading_message")).toBeTruthy());
@@ -366,8 +366,8 @@ describe("SignMessage", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [walletUrl],
 				history,
+				routes: [walletUrl],
 			},
 		);
 
@@ -390,7 +390,7 @@ describe("SignMessage", () => {
 		await waitFor(() => expect(getByTestId("LedgerWaitingDevice-loading_message")).toBeTruthy());
 
 		act(() => {
-			observer!.next({ type: "add", descriptor: "" });
+			observer!.next({ descriptor: "", type: "add" });
 		});
 
 		await waitFor(() => expect(getByTestId("LedgerWaitingApp-loading_message")).toBeTruthy());
@@ -427,8 +427,8 @@ describe("SignMessage", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [walletUrl],
 				history,
+				routes: [walletUrl],
 			},
 		);
 
@@ -480,8 +480,8 @@ describe("SignMessage", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [walletUrl],
 				history,
+				routes: [walletUrl],
 			},
 		);
 

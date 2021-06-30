@@ -13,8 +13,8 @@ describe("useExchangeRate", () => {
 		const { result } = renderHook(
 			() =>
 				useExchangeRate({
-					ticker: "ARK",
 					exchangeTicker: "USD",
+					ticker: "ARK",
 				}),
 			{
 				wrapper,
@@ -61,8 +61,8 @@ describe("useExchangeRate", () => {
 		} = renderHook(
 			() =>
 				useExchangeRate({
-					ticker: "ARK",
 					exchangeTicker: "USD",
+					ticker: "ARK",
 				}),
 			{
 				wrapper,

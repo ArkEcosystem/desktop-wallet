@@ -12,7 +12,7 @@ export const bootEnvWithProfileFixtures = async ({
 }) => {
 	const ids = Object.keys(fixtureData.profiles);
 	const fixtureProfiles: any = fixtureData.profiles;
-	const storageData: StorageData = { profiles: {}, data: {} };
+	const storageData: StorageData = { data: {}, profiles: {} };
 
 	for (const id of ids) {
 		//@ts-ignore
@@ -25,11 +25,11 @@ export const bootEnvWithProfileFixtures = async ({
 			data = Base64.encode(
 				PBKDF2.encrypt(
 					JSON.stringify({
+						avatar: undefined,
+						data: profileData,
 						id: profileData.id,
 						name: profileData.settings.NAME,
-						avatar: undefined,
 						password: profileData.settings.PASSWORD,
-						data: profileData,
 					}),
 					password,
 				),
@@ -37,10 +37,10 @@ export const bootEnvWithProfileFixtures = async ({
 		}
 
 		storageData.profiles[id] = {
-			id,
-			password: fixtureProfiles[id].settings.PASSWORD,
-			name: fixtureProfiles[id].settings.NAME,
 			data,
+			id,
+			name: fixtureProfiles[id].settings.NAME,
+			password: fixtureProfiles[id].settings.PASSWORD,
 		};
 	}
 

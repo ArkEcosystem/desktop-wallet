@@ -14,7 +14,7 @@ export const ConfirmPassphraseStep = () => {
 	const { t } = useTranslation();
 
 	const handleComplete = () => {
-		setValue("verification", true, { shouldValidate: true, shouldDirty: true });
+		setValue("verification", true, { shouldDirty: true, shouldValidate: true });
 	};
 
 	useEffect(() => {

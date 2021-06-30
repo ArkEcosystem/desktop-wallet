@@ -18,7 +18,7 @@ type Action =
 	| { type: "disconnected" }
 	| { type: "failed"; message: string };
 
-export const defaultConnectionState = { isConnected: false, isBusy: false, isWaiting: false };
+export const defaultConnectionState = { isBusy: false, isConnected: false, isWaiting: false };
 
 export const connectionReducer = (state: State, action: Action): State => {
 	switch (action.type) {
@@ -26,21 +26,21 @@ export const connectionReducer = (state: State, action: Action): State => {
 			return {
 				...state,
 				device: {
-					path: action.path,
 					id: action.id,
+					path: action.path,
 				},
 			};
 		case "remove":
 			return {
 				...state,
-				isConnected: false,
 				device: undefined,
+				isConnected: false,
 			};
 		case "connected":
 			return {
 				...state,
-				isConnected: true,
 				isBusy: false,
+				isConnected: true,
 				isWaiting: false,
 			};
 		case "busy": {
@@ -61,17 +61,17 @@ export const connectionReducer = (state: State, action: Action): State => {
 		case "disconnected": {
 			return {
 				...state,
-				isConnected: false,
 				isBusy: false,
+				isConnected: false,
 				isWaiting: false,
 			};
 		}
 		case "failed": {
 			return {
 				...state,
+				error: action.message,
 				isBusy: false,
 				isWaiting: false,
-				error: action.message,
 			};
 		}
 		/* istanbul ignore next */

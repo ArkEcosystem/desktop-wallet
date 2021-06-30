@@ -6,8 +6,8 @@ import { PluginService, PluginServiceIdentifier } from "plugins/types";
 export class HttpPluginService implements PluginService {
 	config() {
 		return {
-			id: PluginServiceIdentifier.HTTP,
 			accessor: "http",
+			id: PluginServiceIdentifier.HTTP,
 		};
 	}
 

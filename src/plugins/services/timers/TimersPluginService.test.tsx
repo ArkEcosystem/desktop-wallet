@@ -5,7 +5,7 @@ import { env, waitFor } from "utils/testing-library";
 
 import { TimersPluginService } from "./TimersPluginService";
 
-const config = { name: "test", version: "1.1", "desktop-wallet": { permissions: ["TIMERS"] } };
+const config = { "desktop-wallet": { permissions: ["TIMERS"] }, name: "test", version: "1.1" };
 
 describe("TimersPluginService", () => {
 	let profile: Contracts.IProfile;

@@ -23,7 +23,7 @@ describe("FormField", () => {
 		const errorMessage = "Error message";
 
 		act(() => {
-			form.current.setError("test", { type: "fail", message: errorMessage });
+			form.current.setError("test", { message: errorMessage, type: "fail" });
 		});
 
 		const tree = (

@@ -17,7 +17,7 @@ export const Balance: React.FC<BalanceProperties> = ({ profile, isLoading }: Bal
 	const reference = useRef<HTMLDivElement>(null);
 
 	const { t } = useTranslation();
-	const { convertedBalance } = useProfileBalance({ profile, isLoading });
+	const { convertedBalance } = useProfileBalance({ isLoading, profile });
 
 	useEffect(() => setWidth((width) => reference?.current?.clientWidth || width), [convertedBalance]);
 

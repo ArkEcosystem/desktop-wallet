@@ -88,7 +88,7 @@ export const PluginDetails = () => {
 			pluginCtrl?.enable(activeProfile, { autoRun: true });
 			trigger();
 		} catch (error) {
-			toasts.error(t("PLUGINS.ENABLE_FAILURE", { name: pluginData.title, msg: error.message }));
+			toasts.error(t("PLUGINS.ENABLE_FAILURE", { msg: error.message, name: pluginData.title }));
 		}
 	};
 

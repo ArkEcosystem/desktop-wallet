@@ -47,8 +47,8 @@ beforeAll(async () => {
 		.reply(200, () => {
 			const { meta, data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
 			return {
-				meta,
 				data: data.slice(0, 2),
+				meta,
 			};
 		})
 		.persist();
@@ -85,8 +85,8 @@ describe("Dashboard", () => {
 				<Dashboard />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 				withProfileSynchronizer: true,
 			},
 		);
@@ -110,8 +110,8 @@ describe("Dashboard", () => {
 				<Dashboard />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 				withProfileSynchronizer: true,
 			},
 		);
@@ -132,8 +132,8 @@ describe("Dashboard", () => {
 				<Dashboard />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 				withProfileSynchronizer: true,
 			},
 		);
@@ -172,8 +172,8 @@ describe("Dashboard", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 				withProfileSynchronizer: true,
 			},
 		);
@@ -205,7 +205,7 @@ describe("Dashboard", () => {
 		);
 
 		act(() => {
-			observer!.next({ type: "add", descriptor: "" });
+			observer!.next({ descriptor: "", type: "add" });
 		});
 
 		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/wallets/import`);
@@ -219,8 +219,8 @@ describe("Dashboard", () => {
 				<Dashboard />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 				withProfileSynchronizer: true,
 			},
 		);
@@ -242,8 +242,8 @@ describe("Dashboard", () => {
 				<Dashboard />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 				withProfileSynchronizer: true,
 			},
 		);
@@ -274,8 +274,8 @@ describe("Dashboard", () => {
 				<Dashboard />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 				withProfileSynchronizer: true,
 			},
 		);
@@ -298,8 +298,8 @@ describe("Dashboard", () => {
 				<Dashboard />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 

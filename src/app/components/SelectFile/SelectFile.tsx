@@ -85,8 +85,8 @@ export const SelectFile = ({ onSelect, fileFormat }: SelectFileStepProperties) =
 				className={cn(
 					"h-full flex flex-col items-center justify-center rounded-lg transition-colors duration-200",
 					{
-						"bg-theme-primary-100 dark:bg-black": isDragging,
 						"bg-theme-primary-50 dark:bg-theme-secondary-800": !isDragging,
+						"bg-theme-primary-100 dark:bg-black": isDragging,
 					},
 				)}
 			>

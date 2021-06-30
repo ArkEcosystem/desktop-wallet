@@ -17,6 +17,20 @@ export const authentication = (t: any) => {
 	const addressFromPassword = debounceAsync(addressFromEncryptedPassword, 700);
 
 	return {
+		encryptionPassword: (wallet: Contracts.IReadWriteWallet) => ({
+			required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+				field: t("TRANSACTION.ENCRYPTION_PASSWORD"),
+			}),
+			validate: async (password: string) => {
+				const address = await addressFromPassword(wallet, password);
+
+				if (address === wallet.address()) {
+					return true;
+				}
+
+				return t("COMMON.INPUT_PASSPHRASE.VALIDATION.PASSWORD_NOT_MATCH_WALLET");
+			},
+		}),
 		mnemonic: (wallet: Contracts.IReadWriteWallet) => ({
 			required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 				field: t("COMMON.MNEMONIC"),
@@ -30,22 +44,6 @@ export const authentication = (t: any) => {
 					}
 
 					return t("COMMON.INPUT_PASSPHRASE.VALIDATION.MNEMONIC_NOT_MATCH_WALLET");
-				},
-			},
-		}),
-		wif: (wallet: Contracts.IReadWriteWallet) => ({
-			required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-				field: t("COMMON.WIF"),
-			}),
-			validate: {
-				matchSenderAddress: async (wif: string) => {
-					const { address } = await wallet.coin().address().fromWIF(wif);
-
-					if (address === wallet.address()) {
-						return true;
-					}
-
-					return t("COMMON.INPUT_PASSPHRASE.VALIDATION.WIF_NOT_MATCH_WALLET");
 				},
 			},
 		}),
@@ -79,18 +77,20 @@ export const authentication = (t: any) => {
 				},
 			},
 		}),
-		encryptionPassword: (wallet: Contracts.IReadWriteWallet) => ({
+		wif: (wallet: Contracts.IReadWriteWallet) => ({
 			required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-				field: t("TRANSACTION.ENCRYPTION_PASSWORD"),
+				field: t("COMMON.WIF"),
 			}),
-			validate: async (password: string) => {
-				const address = await addressFromPassword(wallet, password);
+			validate: {
+				matchSenderAddress: async (wif: string) => {
+					const { address } = await wallet.coin().address().fromWIF(wif);
 
-				if (address === wallet.address()) {
-					return true;
-				}
+					if (address === wallet.address()) {
+						return true;
+					}
 
-				return t("COMMON.INPUT_PASSPHRASE.VALIDATION.PASSWORD_NOT_MATCH_WALLET");
+					return t("COMMON.INPUT_PASSPHRASE.VALIDATION.WIF_NOT_MATCH_WALLET");
+				},
 			},
 		}),
 	};

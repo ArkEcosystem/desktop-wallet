@@ -13,8 +13,8 @@ let profile: Contracts.IProfile;
 let showOpenDialogMock: jest.SpyInstance;
 const showOpenDialogParameters = {
 	defaultPath: os.homedir(),
+	filters: [{ extensions: ["png", "jpg", "jpeg", "bmp"], name: "" }],
 	properties: ["openFile"],
-	filters: [{ name: "", extensions: ["png", "jpg", "jpeg", "bmp"] }],
 };
 
 jest.mock("fs", () => ({

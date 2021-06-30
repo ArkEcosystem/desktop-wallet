@@ -76,7 +76,7 @@ describe("App", () => {
 		jest.spyOn(electron.ipcRenderer, "on").mockImplementation(
 			(event_: any, callback: (event__: any, progress: any) => void) => {
 				if (event_ === "updater:download-progress") {
-					callback(event_, { total: 10, percent: 30, transferred: 3 });
+					callback(event_, { percent: 30, total: 10, transferred: 3 });
 				}
 			},
 		);

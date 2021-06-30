@@ -60,8 +60,8 @@ export const useImportOptions = (methods: Networks.NetworkManifestImportMethods)
 					return network;
 				},
 				{
-					options: [],
 					defaultOption: undefined,
+					options: [],
 				},
 			),
 		[methods],
@@ -82,6 +82,6 @@ export const useImportOptions = (methods: Networks.NetworkManifestImportMethods)
 			defaultOption = options[0].value;
 		}
 
-		return { options, defaultOption };
+		return { defaultOption, options };
 	}, [allOptions, network]);
 };

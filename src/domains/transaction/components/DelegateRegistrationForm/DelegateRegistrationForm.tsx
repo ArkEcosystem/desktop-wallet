@@ -64,9 +64,7 @@ component.displayName = "DelegateRegistrationForm";
 transactionDetails.displayName = "DelegateRegistrationFormTransactionDetails";
 
 export const DelegateRegistrationForm: SendRegistrationForm = {
-	tabSteps: 2,
 	component,
-	transactionDetails,
 	formFields: ["username"],
 	signTransaction: async ({ env, form, profile, signatory }: any) => {
 		const { clearErrors, getValues } = form;
@@ -76,11 +74,11 @@ export const DelegateRegistrationForm: SendRegistrationForm = {
 		const senderWallet = profile.wallets().findByAddress(senderAddress);
 
 		const transactionId = await senderWallet.transaction().signDelegateRegistration({
-			fee: +fee,
-			signatory,
 			data: {
 				username,
 			},
+			fee: +fee,
+			signatory,
 		});
 
 		const response = await senderWallet.transaction().broadcast(transactionId);
@@ -91,4 +89,6 @@ export const DelegateRegistrationForm: SendRegistrationForm = {
 
 		return senderWallet.transaction().transaction(transactionId);
 	},
+	tabSteps: 2,
+	transactionDetails,
 };

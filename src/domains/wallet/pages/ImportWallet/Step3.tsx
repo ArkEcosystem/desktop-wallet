@@ -58,10 +58,10 @@ export const ThirdStep = ({
 				<InputDefault
 					ref={register({
 						maxLength: {
-							value: nameMaxLength,
 							message: t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.MAXLENGTH_ERROR", {
 								maxLength: nameMaxLength,
 							}),
+							value: nameMaxLength,
 						},
 						validate: {
 							duplicateAlias: (alias) =>

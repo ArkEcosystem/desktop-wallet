@@ -7,11 +7,11 @@ const baseStyle = [
 
 const getColor = (color: Color) => {
 	const baseColors: Record<string, string> = {
+		danger: "danger-400",
+		hint: "hint-500",
 		info: "primary-600",
 		success: "success-600",
 		warning: "warning-600",
-		danger: "danger-400",
-		hint: "hint-500",
 	};
 
 	return css`

@@ -1,6 +1,26 @@
 import { pwnd, strong } from "password-pwnd";
 
 export const password = (t: any) => ({
+	confirmOptionalPassword: (password: string) => ({
+		validate: (confirmPassword: string) =>
+			!!password && password !== confirmPassword ? t("COMMON.VALIDATION.PASSWORD_MISMATCH") : true,
+	}),
+	confirmPassword: (password: string) => ({
+		required: t("COMMON.VALIDATION.CONFIRM_PASSWORD_REQUIRED"),
+		validate: (confirmPassword: string) => {
+			if (!password) {
+				return t("COMMON.VALIDATION.FIELD_REQUIRED", {
+					field: t("SETTINGS.GENERAL.PERSONAL.PASSWORD"),
+				}).toString();
+			}
+
+			if (password !== confirmPassword) {
+				return t("COMMON.VALIDATION.PASSWORD_MISMATCH");
+			}
+
+			return true;
+		},
+	}),
 	password: (currentPassword?: string) => ({
 		validate: async (password: string) => {
 			if (!password) {
@@ -28,25 +48,5 @@ export const password = (t: any) => ({
 
 			return true;
 		},
-	}),
-	confirmPassword: (password: string) => ({
-		required: t("COMMON.VALIDATION.CONFIRM_PASSWORD_REQUIRED"),
-		validate: (confirmPassword: string) => {
-			if (!password) {
-				return t("COMMON.VALIDATION.FIELD_REQUIRED", {
-					field: t("SETTINGS.GENERAL.PERSONAL.PASSWORD"),
-				}).toString();
-			}
-
-			if (password !== confirmPassword) {
-				return t("COMMON.VALIDATION.PASSWORD_MISMATCH");
-			}
-
-			return true;
-		},
-	}),
-	confirmOptionalPassword: (password: string) => ({
-		validate: (confirmPassword: string) =>
-			!!password && password !== confirmPassword ? t("COMMON.VALIDATION.PASSWORD_MISMATCH") : true,
 	}),
 });

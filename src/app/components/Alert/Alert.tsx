@@ -14,11 +14,11 @@ interface AlertProperties {
 
 const AlertIcon = ({ variant }: { variant: string }) => {
 	const iconVariant: Record<string, string> = {
+		danger: "AlertDanger",
+		hint: "AlertHint",
 		info: "AlertInfo",
 		success: "AlertSuccess",
 		warning: "AlertWarning",
-		danger: "AlertDanger",
-		hint: "AlertHint",
 	};
 
 	return <Icon name={iconVariant[variant]} width="1.25em" height="1.25em" />;
@@ -26,11 +26,11 @@ const AlertIcon = ({ variant }: { variant: string }) => {
 
 const getColorVariant = (variant: string) => {
 	const colorVariant: Record<string, string> = {
+		danger: "danger-400",
+		hint: "hint-500",
 		info: "primary-600",
 		success: "success-600",
 		warning: "warning-600",
-		danger: "danger-400",
-		hint: "hint-500",
 	};
 
 	return colorVariant[variant];

@@ -25,17 +25,17 @@ export const FilterTransactions = memo(
 					options: [{ label: t("COMMON.ALL"), value: "all" }],
 				},
 				{
-					key: "core",
-					title: t("TRANSACTION.CORE"),
 					hasDivider: true,
+					key: "core",
 					options: types.core.map((type) => ({ label: getLabel(type), value: type })),
+					title: t("TRANSACTION.CORE"),
 				},
 			];
 
 			if (hasMagistrationTypesEnabled) {
 				options.push({
-					key: "magistrate",
 					hasDivider: true,
+					key: "magistrate",
 					options: [
 						{
 							label: t("TRANSACTION.MAGISTRATE"),

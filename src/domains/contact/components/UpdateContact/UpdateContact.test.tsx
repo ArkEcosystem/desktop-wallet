@@ -49,10 +49,10 @@ describe("UpdateContact", () => {
 		const onSave = jest.fn();
 
 		const newAddress = {
-			name: "Test name",
-			network: "ark.devnet",
 			address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 			coin: "ARK",
+			name: "Test name",
+			network: "ark.devnet",
 		};
 
 		const newContact = profile.contacts().create("New name");
@@ -66,7 +66,7 @@ describe("UpdateContact", () => {
 		const selectNetworkInput = screen.getByTestId("SelectDropdown__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
-		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		fireEvent.keyDown(selectNetworkInput, { code: 13, key: "Enter" });
 
 		await waitFor(() => {
 			expect(selectNetworkInput).toHaveValue("ARK Devnet");
@@ -128,10 +128,10 @@ describe("UpdateContact", () => {
 
 		const newName = "Updated name";
 		const newAddress = {
-			name: "Test Address",
-			network: "ark.devnet",
 			address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 			coin: "ARK",
+			name: "Test Address",
+			network: "ark.devnet",
 		};
 
 		renderWithRouter(<UpdateContact isOpen={true} onSave={onSave} profile={profile} contact={contact} />);
@@ -155,7 +155,7 @@ describe("UpdateContact", () => {
 		const selectNetworkInput = screen.getByTestId("SelectDropdown__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
-		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		fireEvent.keyDown(selectNetworkInput, { code: 13, key: "Enter" });
 
 		await waitFor(() => {
 			expect(selectNetworkInput).toHaveValue("ARK Devnet");

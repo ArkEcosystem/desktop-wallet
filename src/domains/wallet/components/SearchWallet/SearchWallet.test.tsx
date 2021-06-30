@@ -38,8 +38,8 @@ describe.each([true, false])("SearchWallet uses fiat value = %s", (showConverted
 				/>
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -68,8 +68,8 @@ describe.each([true, false])("SearchWallet uses fiat value = %s", (showConverted
 				/>
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -99,8 +99,8 @@ describe.each([true, false])("SearchWallet uses fiat value = %s", (showConverted
 				/>
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -123,8 +123,8 @@ describe.each([true, false])("SearchWallet uses fiat value = %s", (showConverted
 				/>
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -172,8 +172,8 @@ describe.each([true, false])("SearchWallet uses fiat value = %s", (showConverted
 				/>
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -222,8 +222,8 @@ describe.each([true, false])("SearchWallet uses fiat value = %s", (showConverted
 				/>
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -281,8 +281,8 @@ describe.each([true, false])("SearchWallet uses fiat value = %s", (showConverted
 				/>
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 

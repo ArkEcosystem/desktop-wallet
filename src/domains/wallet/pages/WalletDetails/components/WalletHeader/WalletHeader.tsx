@@ -57,7 +57,7 @@ export const WalletHeader = ({
 	const [modal, setModal] = useState<string | undefined>();
 
 	const { env } = useEnvironmentContext();
-	const { syncAll } = useWalletSync({ profile, env });
+	const { syncAll } = useWalletSync({ env, profile });
 	const [isSyncing, setIsSyncing] = useState(false);
 	const previousIsUpdatingTransactions = usePrevious(isUpdatingTransactions);
 
@@ -94,7 +94,6 @@ export const WalletHeader = ({
 
 	const primaryOptions: DropdownOptionGroup = {
 		key: "primary",
-		title: t("WALLETS.PAGE_WALLET_DETAILS.PRIMARY_OPTIONS"),
 		options: [
 			{
 				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.WALLET_NAME"),
@@ -106,12 +105,13 @@ export const WalletHeader = ({
 				value: "receive-funds",
 			},
 		],
+		title: t("WALLETS.PAGE_WALLET_DETAILS.PRIMARY_OPTIONS"),
 	};
 
 	const registrationOptions: DropdownOptionGroup = {
 		key: "registrations",
-		title: t("WALLETS.PAGE_WALLET_DETAILS.REGISTRATION_OPTIONS"),
 		options: [],
+		title: t("WALLETS.PAGE_WALLET_DETAILS.REGISTRATION_OPTIONS"),
 	};
 
 	if (
@@ -155,8 +155,8 @@ export const WalletHeader = ({
 
 	const additionalOptions: DropdownOptionGroup = {
 		key: "additional",
-		title: t("WALLETS.PAGE_WALLET_DETAILS.ADDITIONAL_OPTIONS"),
 		options: [],
+		title: t("WALLETS.PAGE_WALLET_DETAILS.ADDITIONAL_OPTIONS"),
 	};
 
 	if (!isMultiSignature(wallet) && wallet.network().allows(Enums.FeatureFlag.MessageSign)) {
@@ -185,22 +185,22 @@ export const WalletHeader = ({
 	}
 
 	const secondaryOptions = {
-		key: "secondary",
 		hasDivider: true,
+		key: "secondary",
 		options: [
 			{
 				icon: "OpenExplorer",
+				iconHeight: 18,
 				iconPosition: "start",
 				iconWidth: 18,
-				iconHeight: 18,
 				label: t("COMMON.OPEN_IN_EXPLORER"),
 				value: "open-explorer",
 			},
 			{
 				icon: "Trash",
+				iconHeight: 18,
 				iconPosition: "start",
 				iconWidth: 18,
-				iconHeight: 18,
 				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.DELETE"),
 				value: "delete-wallet",
 			},

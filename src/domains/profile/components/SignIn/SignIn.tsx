@@ -48,8 +48,8 @@ export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignIn
 	useEffect(() => {
 		if (remainingTime) {
 			setError("password", {
-				type: "maxAttempts",
 				message: t("PROFILE.MODAL_SIGN_IN.MAX_ATTEMPTS_ERROR", { remainingTime }),
+				type: "maxAttempts",
 			});
 
 			const timer = setInterval(() => {
@@ -59,10 +59,10 @@ export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignIn
 			return () => clearInterval(timer);
 		} else if (errors.password) {
 			setError("password", {
-				type: "invalid",
 				message: t("COMMON.VALIDATION.FIELD_INVALID", {
 					field: t("COMMON.PASSWORD"),
 				}),
+				type: "invalid",
 			});
 		}
 	}, [errors, remainingTime, setError, t]);
@@ -72,10 +72,10 @@ export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignIn
 			setCount(count + 1);
 
 			setError("password", {
-				type: "invalid",
 				message: t("COMMON.VALIDATION.FIELD_INVALID", {
 					field: t("COMMON.PASSWORD"),
 				}),
+				type: "invalid",
 			});
 			return;
 		}

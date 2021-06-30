@@ -40,7 +40,7 @@ export const SecondStep = ({ transferred, total, percent }: DownloadProgress) =>
 };
 
 SecondStep.defaultProps = {
-	transferred: 0,
-	total: 0,
 	percent: 0,
+	total: 0,
+	transferred: 0,
 };

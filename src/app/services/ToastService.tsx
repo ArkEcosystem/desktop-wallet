@@ -15,9 +15,9 @@ export const ToastMessage = ({
 	closeToast,
 }: { children: React.ReactNode; type: ToastTypeOptions } & ToastContentProps) => {
 	const typeVariants: Record<ToastTypeOptions, AlertVariant> = {
+		error: "danger",
 		info: "info",
 		success: "success",
-		error: "danger",
 		warning: "warning",
 	};
 

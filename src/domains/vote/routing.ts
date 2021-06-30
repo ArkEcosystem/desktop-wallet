@@ -2,13 +2,13 @@ import { Votes } from "./pages";
 
 export const VoteRoutes = [
 	{
-		path: "/profiles/:profileId/votes",
-		exact: true,
 		component: Votes,
+		exact: true,
+		path: "/profiles/:profileId/votes",
 	},
 	{
-		path: "/profiles/:profileId/wallets/:walletId/votes",
-		exact: true,
 		component: Votes,
+		exact: true,
+		path: "/profiles/:profileId/wallets/:walletId/votes",
 	},
 ];

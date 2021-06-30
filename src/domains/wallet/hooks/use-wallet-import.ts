@@ -104,8 +104,8 @@ export const useWalletImport = ({ profile }: { profile: Contracts.IProfile }) =>
 							.walletFactory()
 							.fromWIF({
 								...defaultOptions,
-								wif: encryptedWif,
 								password: value,
+								wif: encryptedWif,
 							})
 							.then((wallet) => {
 								profile.wallets().push(wallet);

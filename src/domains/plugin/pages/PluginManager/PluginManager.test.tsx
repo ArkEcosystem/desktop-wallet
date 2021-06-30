@@ -69,8 +69,8 @@ describe("PluginManager", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [pluginsURL],
 				history,
+				routes: [pluginsURL],
 			},
 		);
 
@@ -96,8 +96,8 @@ describe("PluginManager", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [pluginsURL],
 				history,
+				routes: [pluginsURL],
 			},
 		);
 
@@ -128,8 +128,8 @@ describe("PluginManager", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [pluginsURL],
 				history,
+				routes: [pluginsURL],
 			},
 		);
 
@@ -160,8 +160,8 @@ describe("PluginManager", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [pluginsURL],
 				history,
+				routes: [pluginsURL],
 			},
 		);
 
@@ -197,8 +197,8 @@ describe("PluginManager", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [pluginsURL],
 				history,
+				routes: [pluginsURL],
 			},
 		);
 
@@ -222,8 +222,8 @@ describe("PluginManager", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [pluginsURL],
 				history,
+				routes: [pluginsURL],
 			},
 		);
 
@@ -263,8 +263,8 @@ describe("PluginManager", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [pluginsURL],
 				history,
+				routes: [pluginsURL],
 			},
 		);
 
@@ -297,8 +297,8 @@ describe("PluginManager", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [pluginsURL],
 				history,
+				routes: [pluginsURL],
 			},
 		);
 
@@ -341,8 +341,8 @@ describe("PluginManager", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [pluginsURL],
 				history,
+				routes: [pluginsURL],
 			},
 		);
 
@@ -363,7 +363,7 @@ describe("PluginManager", () => {
 	it("should install plugin from header install button", async () => {
 		nock("https://github.com/")
 			.get("/arkecosystem/test-plugin/raw/master/package.json")
-			.reply(200, { name: "test-plugin", keywords: ["@arkecosystem", "desktop-wallet"] });
+			.reply(200, { keywords: ["@arkecosystem", "desktop-wallet"], name: "test-plugin" });
 
 		renderWithRouter(
 			<Route path="/profiles/:profileId/plugins">
@@ -372,8 +372,8 @@ describe("PluginManager", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [pluginsURL],
 				history,
+				routes: [pluginsURL],
 			},
 		);
 
@@ -412,8 +412,8 @@ describe("PluginManager", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [pluginsURL],
 				history,
+				routes: [pluginsURL],
 			},
 		);
 
@@ -441,8 +441,8 @@ describe("PluginManager", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [pluginsURL],
 				history,
+				routes: [pluginsURL],
 			},
 		);
 
@@ -488,8 +488,8 @@ describe("PluginManager", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [pluginsURL],
 				history,
+				routes: [pluginsURL],
 			},
 		);
 
@@ -529,8 +529,8 @@ describe("PluginManager", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [pluginsURL],
 				history,
+				routes: [pluginsURL],
 			},
 		);
 
@@ -568,8 +568,8 @@ describe("PluginManager", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [pluginsURL],
 				history,
+				routes: [pluginsURL],
 			},
 		);
 
@@ -596,8 +596,8 @@ describe("PluginManager", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [pluginsURL],
 				history,
+				routes: [pluginsURL],
 			},
 		);
 
@@ -636,8 +636,8 @@ describe("PluginManager", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [pluginsURL],
 				history,
+				routes: [pluginsURL],
 			},
 		);
 
@@ -673,8 +673,8 @@ describe("PluginManager", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [pluginsURL],
 				history,
+				routes: [pluginsURL],
 			},
 		);
 
@@ -709,8 +709,8 @@ describe("PluginManager", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [pluginsURL],
 				history,
+				routes: [pluginsURL],
 			},
 		);
 
@@ -749,8 +749,8 @@ describe("PluginManager", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [pluginsURL],
 				history,
+				routes: [pluginsURL],
 			},
 		);
 
@@ -788,8 +788,8 @@ describe("PluginManager", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [pluginsURL],
 				history,
+				routes: [pluginsURL],
 			},
 		);
 
@@ -816,7 +816,7 @@ describe("PluginManager", () => {
 
 	it("should open the plugin view page", async () => {
 		const plugin = new PluginController(
-			{ name: "test-plugin", "desktop-wallet": { permissions: ["LAUNCH"] } },
+			{ "desktop-wallet": { permissions: ["LAUNCH"] }, name: "test-plugin" },
 			(api) => api.launch().render(<h1>My Plugin View</h1>),
 		);
 
@@ -832,8 +832,8 @@ describe("PluginManager", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [pluginsURL],
 				history,
+				routes: [pluginsURL],
 			},
 		);
 
@@ -868,8 +868,8 @@ describe("PluginManager", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [pluginsURL],
 				history,
+				routes: [pluginsURL],
 			},
 		);
 
@@ -896,8 +896,8 @@ describe("PluginManager", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [pluginsURL],
 				history,
+				routes: [pluginsURL],
 			},
 		);
 
@@ -956,8 +956,8 @@ describe("PluginManager", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [pluginsURL],
 				history,
+				routes: [pluginsURL],
 			},
 		);
 

@@ -71,8 +71,8 @@ export const AddressTable = ({ wallets, onSelect }: AddressTableProperties) => {
 			{
 				Header: t("COMMON.VOTES"),
 				accessor: "votes",
-				disableSortBy: true,
 				className: "no-border",
+				disableSortBy: true,
 			},
 			{
 				accessor: "onSelect",

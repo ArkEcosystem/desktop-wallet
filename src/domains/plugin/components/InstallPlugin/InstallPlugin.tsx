@@ -44,7 +44,7 @@ export const InstallPlugin = ({ isOpen, onClose, onCancel, plugin, repositoryURL
 			toasts.success(t("PLUGINS.MODAL_INSTALL_PLUGIN.SUCCESS", { name: plugin.title }));
 		} catch (error) {
 			/* istanbul ignore next */
-			toasts.error(t("PLUGINS.MODAL_INSTALL_PLUGIN.INSTALL_FAILURE", { name: plugin.title, msg: error.message }));
+			toasts.error(t("PLUGINS.MODAL_INSTALL_PLUGIN.INSTALL_FAILURE", { msg: error.message, name: plugin.title }));
 		} finally {
 			onClose?.();
 		}

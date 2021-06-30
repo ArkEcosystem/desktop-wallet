@@ -25,9 +25,9 @@ export const Table = ({ children, data, columns, hideHeader, className, initialS
 
 	const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable(
 		{
-			data: tableData,
-			columns: tableColumns,
 			autoResetSortBy: false,
+			columns: tableColumns,
+			data: tableData,
 			disableSortRemove: true,
 			initialState,
 		},
@@ -80,8 +80,8 @@ export const Table = ({ children, data, columns, hideHeader, className, initialS
 														"flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity",
 														{ "opacity-0 group-hover:opacity-100": !column.isSorted },
 														{
-															"ml-auto mr-2": column.className?.includes("justify-end"),
 															"ml-2": !column.className?.includes("justify-end"),
+															"ml-auto mr-2": column.className?.includes("justify-end"),
 														},
 													)}
 												>
@@ -118,7 +118,7 @@ export const Table = ({ children, data, columns, hideHeader, className, initialS
 };
 
 Table.defaultProps = {
-	data: [],
 	columns: [],
+	data: [],
 	hideColumns: false,
 };

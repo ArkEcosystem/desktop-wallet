@@ -38,14 +38,14 @@ const CreateProfileForm = ({
 	const { t } = useTranslation();
 
 	const form = useForm<any>({
-		mode: "onChange",
 		defaultValues: {
-			name: profile?.name() || "",
+			confirmPassword: password,
 			currency: profile?.settings().get(Contracts.ProfileSetting.ExchangeCurrency),
 			isDarkMode: profile?.settings().get(Contracts.ProfileSetting.Theme) === "dark",
+			name: profile?.name() || "",
 			password,
-			confirmPassword: password,
 		},
+		mode: "onChange",
 	});
 
 	const { watch, register, formState, setValue, trigger } = form;
@@ -96,9 +96,9 @@ const CreateProfileForm = ({
 		{
 			isFloatingLabel: true,
 			label: t("SETTINGS.GENERAL.OTHER.DARK_THEME.TITLE"),
+			labelAddon: <Toggle ref={register()} name="isDarkMode" />,
 			labelClass: "text-xl font-semibold",
 			labelDescription: t("SETTINGS.GENERAL.OTHER.DARK_THEME.DESCRIPTION"),
-			labelAddon: <Toggle ref={register()} name="isDarkMode" />,
 		},
 	];
 

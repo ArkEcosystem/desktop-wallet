@@ -18,16 +18,18 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 	const listenDevice = useCallback(
 		() =>
 			transport.listen({
+				
+				complete: () => void 0,
+				
+error: (e) => dispatch({ message: e.message, type: "failed" }),
 				// @ts-ignore
-				next: ({ type, descriptor, deviceModel }) => {
+next: ({ type, descriptor, deviceModel }) => {
 					if (type === "add") {
-						dispatch({ type: "add", path: descriptor, id: deviceModel?.id || "nanoS" });
+						dispatch({ id: deviceModel?.id || "nanoS", path: descriptor, type: "add" });
 						return;
 					}
 					dispatch({ type: "remove" });
 				},
-				error: (e) => dispatch({ type: "failed", message: e.message }),
-				complete: () => void 0,
 			}),
 		[transport],
 	);
@@ -54,7 +56,7 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 			profile: Contracts.IProfile,
 			coin: string,
 			network: string,
-			retryOptions: retry.Options = { retries: 50, randomize: false, factor: 1 },
+			retryOptions: retry.Options = { factor: 1, randomize: false, retries: 50 },
 		) => {
 			dispatch({ type: "waiting" });
 			abortRetryReference.current = false;
@@ -83,7 +85,7 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 				} catch {
 					//
 				}
-				dispatch({ type: "failed", message: connectError.message });
+				dispatch({ message: connectError.message, type: "failed" });
 				throw connectError;
 			}
 		},
@@ -116,14 +118,14 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 		disconnect,
 		dispatch,
 		error,
-		setBusy,
-		setIdle,
 		hasDeviceAvailable,
 		importLedgerWallets,
 		isAwaitingConnection,
 		isAwaitingDeviceConfirmation,
 		isBusy,
 		isConnected,
+		setBusy,
+		setIdle,
 		transport,
 	};
 };

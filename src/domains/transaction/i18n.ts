@@ -28,12 +28,13 @@ export const translations: { [key: string]: any } = {
 	NOT_CONFIRMED: "Not confirmed",
 	OUTGOING: "Outgoing",
 	RECEIVED: "Received",
-	RETURN: "Return",
 	RECIPIENT: "Recipient",
 	RECIPIENTS: "Recipients",
 	RECIPIENTS_COUNT: "Recipients ({{count}})",
 	RECIPIENTS_HELPTEXT: "A multiple recipient transaction allows up to {{count}} recipients in one transaction",
+	MEMO: "Memo",
 	REGISTRATION_TYPE: "Registration Type",
+	RETURN: "Return",
 	SECOND_MNEMONIC: "2nd Mnemonic",
 	SEND_ALL: "Send All",
 	SENDER: "Sender",
@@ -42,32 +43,114 @@ export const translations: { [key: string]: any } = {
 	SIGN_CONTINUE: "Sign & Continue",
 	SIGNATURES: "Signatures",
 	SINGLE: "Single",
-	MEMO: "Memo",
 	TIMESTAMP: "Timestamp",
 	TOTAL_AMOUNT: "Total Amount",
 	TRANSACTION_AMOUNT: "Transaction Amount",
-	TRANSACTION_FEE: "Transaction Fee",
-	TRANSACTION_TYPE: "Transaction Type",
 	TRANSACTION_DETAILS: "Transaction Details",
-	TYPE: "Type",
-	UNVOTES: "Unvotes",
-	UNVOTES_COUNT: "Unvotes ({{count}})",
-	VOTER: "Voter",
-	VOTES: "Votes",
-	VOTES_COUNT: "Votes ({{count}})",
-	WEBSITE: "Website",
-	WELL_CONFIRMED: "Well confirmed",
-	YOUR_ADDRESS: "Your address",
+	TRANSACTION_FEE: "Transaction Fee",
 	BROADCASTING: "Broadcasting transaction to the network",
-	NOT_FOUND: "Unable to find transaction for [{{transactionId}}]",
+	TRANSACTION_TYPE: "Transaction Type",
 	IPFS_NOT_FOUND: "Unable to find ipfs data for transaction [{{transactionId}}]",
+	TYPE: "Type",
 	CORE: "CORE",
-	MAGISTRATE: "Magistrate",
-	WAITING: "Waiting",
-
+	UNVOTES: "Unvotes",
 	EXPIRATION: {
 		HEIGHT: "Block Height Expiration",
 		TIMESTAMP: "Timestamp Expiration",
+	},
+	UNVOTES_COUNT: "Unvotes ({{count}})",
+	INPUT_FEE_VIEW_TYPE: {
+		SIMPLE: "Simple",
+		ADVANCED: "Advanced",
+	},
+	VOTER: "Voter",
+	FEES: {
+		AVERAGE: "Average",
+		SLOW: "Slow",
+		FAST: "Fast",
+	},
+	VOTES: "Votes",
+	MAGISTRATE: "Magistrate",
+	VOTES_COUNT: "Votes ({{count}})",
+	MODAL_DELEGATE_REGISTRATION_DETAIL: {
+		TITLE: "Delegate Registration",
+	},
+	WEBSITE: "Website",
+
+	MODAL_DELEGATE_RESIGNATION_DETAIL: {
+		TITLE: "Delegate Resignation",
+	},
+
+	WELL_CONFIRMED: "Well confirmed",
+
+	MODAL_FEE_WARNING: {
+		DESCRIPTION: {
+			TOO_HIGH:
+				"You have selected a high fee. Your transaction can be confirmed with a lower fee. Do you wish to continue anyway?",
+			TOO_LOW:
+				"You have selected a low fee. Your transaction may never be confirmed. Do you wish to continue anyway?",
+		},
+		DO_NOT_WARN: "Don’t warn me about fees again",
+		TITLE: "Fee Warning",
+	},
+
+	YOUR_ADDRESS: "Your address",
+
+	MODAL_CONFIRM_SEND_TRANSACTION: {
+		DESCRIPTION:
+			"You have unconfirmed transactions which will affect your balance when confirmed. Are you sure you wish to continue?",
+		TITLE: "Confirm Transaction",
+	},
+
+	NOT_FOUND: "Unable to find transaction for [{{transactionId}}]",
+
+	MODAL_IPFS_DETAIL: {
+		TITLE: "Transaction IPFS Hash",
+	},
+
+	MODAL_MULTISIGNATURE_DETAIL: {
+		STEP_1: {
+			TITLE: "Multisignature",
+		},
+		STEP_2: {
+			DESCRIPTION: "Enter your passphrase in order to sign the Multisignature transaction.",
+			TITLE: "Multisignature Passphrase",
+		},
+		STEP_3: {
+			DESCRIPTION: "Your signature was successfully confirmed and sent.",
+			TITLE: "Transaction Sent",
+		},
+		WAITING_FOR_SIGNATURES: "Waiting for Signatures",
+	},
+
+	LEDGER_CONFIRMATION: {
+		DESCRIPTION:
+			"Please review and verify the information on your Ledger device. Choose Accept to complete your transaction.",
+		LOADING_MESSAGE: "Waiting for confirmation …",
+		REJECTED: "The operation was rejected by the user",
+		TITLE: "Confirm Your Transaction",
+	},
+
+	WAITING: "Waiting",
+
+	LINK_TYPES: {
+		BITBUCKET: "BitBucket",
+		FACEBOOK: "Facebook",
+		FLICKR: "Flickr",
+		GITHUB: "GitHub",
+		GITLAB: "GitLab",
+		LINKEDIN: "LinkedIn",
+		DISCORD: "Discord",
+		NPM: "Npm",
+		INSTAGRAM: "Instagram",
+		TWITTER: "Twitter",
+		MEDIUM: "Medium",
+		VIMEO: "Vimeo",
+		REDDIT: "Reddit",
+		YOUTUBE: "YouTube",
+		SLACK: "Slack",
+		TELEGRAM: "Telegram",
+		WECHAT: "Wechat",
 	},
 
 	MULTISIGNATURE: {
@@ -94,15 +177,14 @@ export const translations: { [key: string]: any } = {
 		},
 	},
 
-	INPUT_FEE_VIEW_TYPE: {
-		SIMPLE: "Simple",
-		ADVANCED: "Advanced",
+	MODAL_SEARCH_RECIPIENT: {
+		DESCRIPTION: "Find and select a recipient from your contacts and wallets",
+		SEARCH_PLACEHOLDER: "Enter name or address",
+		TITLE: "Select Recipient",
 	},
 
-	FEES: {
-		SLOW: "Slow",
-		AVERAGE: "Average",
-		FAST: "Fast",
+	MODAL_SECOND_SIGNATURE_DETAIL: {
+		TITLE: "Second Signature",
 	},
 
 	TRANSACTION_TYPES: {
@@ -122,179 +204,6 @@ export const translations: { [key: string]: any } = {
 		MAGISTRATE: "Magistrate",
 	},
 
-	MODAL_FEE_WARNING: {
-		TITLE: "Fee Warning",
-		DESCRIPTION: {
-			TOO_LOW:
-				"You have selected a low fee. Your transaction may never be confirmed. Do you wish to continue anyway?",
-			TOO_HIGH:
-				"You have selected a high fee. Your transaction can be confirmed with a lower fee. Do you wish to continue anyway?",
-		},
-		DO_NOT_WARN: "Don’t warn me about fees again",
-	},
-
-	MODAL_TRANSFER_DETAIL: {
-		TITLE: "Transfer",
-	},
-
-	MODAL_DELEGATE_REGISTRATION_DETAIL: {
-		TITLE: "Delegate Registration",
-	},
-
-	MODAL_DELEGATE_RESIGNATION_DETAIL: {
-		TITLE: "Delegate Resignation",
-	},
-
-	MODAL_MULTISIGNATURE_DETAIL: {
-		STEP_1: {
-			TITLE: "Multisignature",
-		},
-		STEP_2: {
-			TITLE: "Multisignature Passphrase",
-			DESCRIPTION: "Enter your passphrase in order to sign the Multisignature transaction.",
-		},
-		STEP_3: {
-			TITLE: "Transaction Sent",
-			DESCRIPTION: "Your signature was successfully confirmed and sent.",
-		},
-		WAITING_FOR_SIGNATURES: "Waiting for Signatures",
-	},
-
-	MODAL_VOTE_DETAIL: {
-		TITLE: "Delegate Vote",
-	},
-
-	MODAL_IPFS_DETAIL: {
-		TITLE: "Transaction IPFS Hash",
-	},
-
-	MODAL_CONFIRM_SEND_TRANSACTION: {
-		TITLE: "Confirm Transaction",
-		DESCRIPTION:
-			"You have unconfirmed transactions which will affect your balance when confirmed. Are you sure you wish to continue?",
-	},
-
-	MODAL_SECOND_SIGNATURE_DETAIL: {
-		TITLE: "Second Signature",
-	},
-
-	MODAL_SEARCH_RECIPIENT: {
-		TITLE: "Select Recipient",
-		DESCRIPTION: "Find and select a recipient from your contacts and wallets",
-		SEARCH_PLACEHOLDER: "Enter name or address",
-	},
-
-	LEDGER_CONFIRMATION: {
-		TITLE: "Confirm Your Transaction",
-		DESCRIPTION:
-			"Please review and verify the information on your Ledger device. Choose Accept to complete your transaction.",
-		LOADING_MESSAGE: "Waiting for confirmation …",
-		REJECTED: "The operation was rejected by the user",
-	},
-
-	LINK_TYPES: {
-		BITBUCKET: "BitBucket",
-		FACEBOOK: "Facebook",
-		FLICKR: "Flickr",
-		GITHUB: "GitHub",
-		GITLAB: "GitLab",
-		LINKEDIN: "LinkedIn",
-		NPM: "Npm",
-		TWITTER: "Twitter",
-		VIMEO: "Vimeo",
-		YOUTUBE: "YouTube",
-		DISCORD: "Discord",
-		INSTAGRAM: "Instagram",
-		MEDIUM: "Medium",
-		REDDIT: "Reddit",
-		SLACK: "Slack",
-		TELEGRAM: "Telegram",
-		WECHAT: "Wechat",
-	},
-
-	PAGE_DELEGATE_REGISTRATION: {
-		FORM_STEP: {
-			TITLE: "Register Delegate",
-			DESCRIPTION: "Register a new Delegate address on the network below.",
-			WARNING: "The Delegate name is permanent and cannot be modified later. It is registered on the network.",
-		},
-	},
-
-	PAGE_DELEGATE_RESIGNATION: {
-		FORM_STEP: {
-			TITLE: "Resign Delegate",
-			DESCRIPTION: "This transaction type permanently retires a Delegate address.",
-			WARNING: "This action is permanent and cannot be undone. It is registered on the network.",
-		},
-	},
-
-	PAGE_SECOND_SIGNATURE: {
-		GENERATION_STEP: {
-			TITLE: "Register Second Signature",
-			DESCRIPTION: "You can additionaly secure your address with a second mnemonic passphrase.",
-			WARNING:
-				"Before creating the second mnemonic, we strongly recommend that you save it, as its loss will lead to a loss of access to your money.",
-		},
-
-		PASSPHRASE_STEP: {
-			TITLE: "Your Second Signature",
-			WARNING:
-				"You are responsible for storing and protecting this mnemonic passphrase offline. The ARK Desktop Wallet cannot reveal this to you at a later time. If you lose this mnemonic passphrase, you will lose your funds.",
-			COPY_OR_DOWNLOAD: {
-				TITLE: "Copy or Download Mnemonic Passphrase",
-				DESCRIPTION: "You can copy or download your mnemonic, but store it safely.",
-			},
-		},
-
-		PASSPHRASE_CONFIRMATION_STEP: {
-			TITLE: "Confirm Your Passphrase",
-			SUBTITLE: "Confirm your mnemonic passphrase to continue.",
-		},
-	},
-
-	PAGE_MULTISIGNATURE: {
-		FORM_STEP: {
-			TITLE: "Multisignature Registration",
-			DESCRIPTION: "Register Multisignature details below.",
-		},
-	},
-
-	PAGE_IPFS: {
-		FIRST_STEP: {
-			TITLE: "IPFS",
-			DESCRIPTION: "Store an IPFS hash on the network.",
-		},
-		SECOND_STEP: {
-			TITLE: "Transaction Review",
-			DESCRIPTION: "Review the IPFS transaction details before sending",
-		},
-	},
-
-	PAGE_VOTE: {
-		FORM_STEP: {
-			TITLE: "Vote Transaction",
-			DESCRIPTION: "Select a fee to continue.",
-		},
-	},
-
-	PAGE_TRANSACTION_SEND: {
-		NETWORK_STEP: {
-			TITLE: "Select a Cryptoasset",
-			SUBTITLE: "Select a cryptoasset to send funds from.",
-		},
-
-		FORM_STEP: {
-			TITLE: "Send {{ticker}}",
-			DESCRIPTION: "Enter details below to send your transaction.",
-			MULTIPLE_UNAVAILBLE: "Multiple Recipient Transactions are not available from Ledger wallets.",
-		},
-	},
-
-	REVIEW_STEP: {
-		TITLE: "Transaction Review",
-		DESCRIPTION: "Review the transaction details below.",
-	},
-
 	AUTHENTICATION_STEP: {
 		TITLE: "Authenticate",
 		DESCRIPTION_MNEMONIC: "Enter your mnemonic passphrase to authenticate the transaction.",
@@ -303,24 +212,81 @@ export const translations: { [key: string]: any } = {
 		DESCRIPTION_PRIVATE_KEY: "Enter your private key to authenticate the transaction.",
 	},
 
-	REPOSITORIES: {
-		TITLE: "Repository",
-		DESCRIPTION: "Show your projects through your repository",
+	MODAL_TRANSFER_DETAIL: {
+		TITLE: "Transfer",
 	},
 
-	SOCIAL_MEDIA: {
-		TITLE: "Social Media",
-		DESCRIPTION: "Tell people more about yourself through social media",
+	MODAL_VOTE_DETAIL: {
+		TITLE: "Delegate Vote",
 	},
 
-	PHOTO_VIDEO: {
-		TITLE: "Photo and Video",
-		DESCRIPTION: "Get more users and add more information about yourself",
+	PAGE_DELEGATE_REGISTRATION: {
+		FORM_STEP: {
+			DESCRIPTION: "Register a new Delegate address on the network below.",
+			TITLE: "Register Delegate",
+			WARNING: "The Delegate name is permanent and cannot be modified later. It is registered on the network.",
+		},
+	},
+
+	PAGE_DELEGATE_RESIGNATION: {
+		FORM_STEP: {
+			DESCRIPTION: "This transaction type permanently retires a Delegate address.",
+			TITLE: "Resign Delegate",
+			WARNING: "This action is permanent and cannot be undone. It is registered on the network.",
+		},
+	},
+
+	PAGE_IPFS: {
+		FIRST_STEP: {
+			DESCRIPTION: "Store an IPFS hash on the network.",
+			TITLE: "IPFS",
+		},
+		SECOND_STEP: {
+			DESCRIPTION: "Review the IPFS transaction details before sending",
+			TITLE: "Transaction Review",
+		},
 	},
 
 	CONTACT_SEACH: {
-		TITLE: "My addresses",
 		DESCRIPTION: "Find and select preferred address from you saved wallets",
+		TITLE: "My addresses",
+	},
+
+	PAGE_MULTISIGNATURE: {
+		FORM_STEP: {
+			DESCRIPTION: "Register Multisignature details below.",
+			TITLE: "Multisignature Registration",
+		},
+	},
+
+	ERROR: {
+		DESCRIPTION:
+			"An error occurred that prevented the broadcast of this transaction. Select Retry to attempt to broadcast the transaction again. Alternatively, return to your wallet",
+		TITLE: "Transaction Error",
+	},
+
+	PAGE_SECOND_SIGNATURE: {
+		GENERATION_STEP: {
+			DESCRIPTION: "You can additionaly secure your address with a second mnemonic passphrase.",
+			TITLE: "Register Second Signature",
+			WARNING:
+				"Before creating the second mnemonic, we strongly recommend that you save it, as its loss will lead to a loss of access to your money.",
+		},
+
+		PASSPHRASE_CONFIRMATION_STEP: {
+			SUBTITLE: "Confirm your mnemonic passphrase to continue.",
+			TITLE: "Confirm Your Passphrase",
+		},
+
+		PASSPHRASE_STEP: {
+			COPY_OR_DOWNLOAD: {
+				DESCRIPTION: "You can copy or download your mnemonic, but store it safely.",
+				TITLE: "Copy or Download Mnemonic Passphrase",
+			},
+			TITLE: "Your Second Signature",
+			WARNING:
+				"You are responsible for storing and protecting this mnemonic passphrase offline. The ARK Desktop Wallet cannot reveal this to you at a later time. If you lose this mnemonic passphrase, you will lose your funds.",
+		},
 	},
 
 	INPUT_IPFS_HASH: {
@@ -328,22 +294,56 @@ export const translations: { [key: string]: any } = {
 			NOT_VALID: "The IPFS hash is not valid",
 		},
 	},
-	SUCCESS: {
-		TITLE: "Transaction Sent",
-		DESCRIPTION:
-			"Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:",
+
+	PAGE_TRANSACTION_SEND: {
+		FORM_STEP: {
+			DESCRIPTION: "Enter details below to send your transaction.",
+			MULTIPLE_UNAVAILBLE: "Multiple Recipient Transactions are not available from Ledger wallets.",
+			TITLE: "Send {{ticker}}",
+		},
+
+		NETWORK_STEP: {
+			SUBTITLE: "Select a cryptoasset to send funds from.",
+			TITLE: "Select a Cryptoasset",
+		},
 	},
 
-	ERROR: {
-		TITLE: "Transaction Error",
+	PAGE_VOTE: {
+		FORM_STEP: {
+			DESCRIPTION: "Select a fee to continue.",
+			TITLE: "Vote Transaction",
+		},
+	},
+
+	PHOTO_VIDEO: {
+		DESCRIPTION: "Get more users and add more information about yourself",
+		TITLE: "Photo and Video",
+	},
+
+	REPOSITORIES: {
+		DESCRIPTION: "Show your projects through your repository",
+		TITLE: "Repository",
+	},
+
+	REVIEW_STEP: {
+		DESCRIPTION: "Review the transaction details below.",
+		TITLE: "Transaction Review",
+	},
+	SOCIAL_MEDIA: {
+		DESCRIPTION: "Tell people more about yourself through social media",
+		TITLE: "Social Media",
+	},
+
+	SUCCESS: {
 		DESCRIPTION:
-			"An error occurred that prevented the broadcast of this transaction. Select Retry to attempt to broadcast the transaction again. Alternatively, return to your wallet",
+			"Your transaction was successfully sent. Please monitor the blockchain to ensure your transaction is confirmed and processed. The following is relevant information for your transaction:",
+		TITLE: "Transaction Sent",
 	},
 
 	VALIDATION: {
-		LOW_BALANCE: "The balance is too low",
-		LOW_BALANCE_AMOUNT: "The balance is too low ({{balance}} {{ coinId }})",
 		AMOUNT_BELOW_MINIMUM: "The amount is below the minimum ({{min}} {{ coinId }})",
 		FEE_NEGATIVE: "Fee cannot be negative",
+		LOW_BALANCE: "The balance is too low",
+		LOW_BALANCE_AMOUNT: "The balance is too low ({{balance}} {{ coinId }})",
 	},
 };

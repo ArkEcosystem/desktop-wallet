@@ -78,14 +78,14 @@ export const GenerationStep = ({
 					network={wallet.network()}
 					profile={profile}
 					onChange={(value) => {
-						setValue("fee", value, { shouldValidate: true, shouldDirty: true });
+						setValue("fee", value, { shouldDirty: true, shouldValidate: true });
 					}}
 					viewType={inputFeeSettings.viewType}
 					onChangeViewType={(viewType) => {
 						setValue(
 							"inputFeeSettings",
 							{ ...inputFeeSettings, viewType },
-							{ shouldValidate: true, shouldDirty: true },
+							{ shouldDirty: true, shouldValidate: true },
 						);
 					}}
 					simpleValue={inputFeeSettings.simpleValue}
@@ -93,7 +93,7 @@ export const GenerationStep = ({
 						setValue(
 							"inputFeeSettings",
 							{ ...inputFeeSettings, simpleValue },
-							{ shouldValidate: true, shouldDirty: true },
+							{ shouldDirty: true, shouldValidate: true },
 						);
 					}}
 				/>

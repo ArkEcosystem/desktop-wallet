@@ -4,11 +4,11 @@ import { act, fireEvent, renderWithRouter } from "testing-library";
 import { SideBarItem } from "./SideBarItem";
 
 const item = {
-	label: "General",
-	itemKey: "plugin",
 	icon: "Plugin",
-	route: "/settings/general",
 	isActive: false,
+	itemKey: "plugin",
+	label: "General",
+	route: "/settings/general",
 };
 
 describe("SideBarItem", () => {

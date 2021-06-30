@@ -15,27 +15,27 @@ export const AddExchange = ({ isOpen, onClose }: AddExchangeProperties) => {
 
 	const data = [
 		{
-			title: "ChangeNOW Plugin",
 			author: "ChangeNOW",
 			category: "Other",
+			title: "ChangeNOW Plugin",
 			version: "1.3.8",
 		},
 		{
-			title: "Binance",
 			author: "Binance",
 			category: "Other",
+			title: "Binance",
 			version: "1.3.8",
 		},
 		{
-			title: "Atomars",
 			author: "Atomars",
 			category: "Other",
+			title: "Atomars",
 			version: "1.3.8",
 		},
 		{
-			title: "OKEx",
 			author: "ARK Ecosystem",
 			category: "Other",
+			title: "OKEx",
 			version: "1.3.8",
 		},
 	];

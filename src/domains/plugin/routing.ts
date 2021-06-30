@@ -2,18 +2,18 @@ import { PluginDetails, PluginManager, PluginView } from "./pages";
 
 export const PluginRoutes = [
 	{
-		path: "/profiles/:profileId/plugins/view",
-		exact: true,
 		component: PluginView,
+		exact: true,
+		path: "/profiles/:profileId/plugins/view",
 	},
 	{
-		path: "/profiles/:profileId/plugins/details",
-		exact: true,
 		component: PluginDetails,
+		exact: true,
+		path: "/profiles/:profileId/plugins/details",
 	},
 	{
-		path: "/profiles/:profileId/plugins",
-		exact: true,
 		component: PluginManager,
+		exact: true,
+		path: "/profiles/:profileId/plugins",
 	},
 ];

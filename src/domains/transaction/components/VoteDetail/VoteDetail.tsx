@@ -29,8 +29,8 @@ export const VoteDetail = ({ transaction, isOpen, onClose }: VoteDetailPropertie
 		votes: Contracts.IReadOnlyWallet[];
 		unvotes: Contracts.IReadOnlyWallet[];
 	}>({
-		votes: [],
 		unvotes: [],
+		votes: [],
 	});
 
 	useEffect(() => {
@@ -38,8 +38,8 @@ export const VoteDetail = ({ transaction, isOpen, onClose }: VoteDetailPropertie
 			setIsLoadingDelegates(true);
 
 			setDelegates({
-				votes: env.delegates().map(wallet, transaction.votes()),
 				unvotes: env.delegates().map(wallet, transaction.unvotes()),
+				votes: env.delegates().map(wallet, transaction.votes()),
 			});
 
 			setIsLoadingDelegates(false);
@@ -49,7 +49,7 @@ export const VoteDetail = ({ transaction, isOpen, onClose }: VoteDetailPropertie
 
 		return () => {
 			setIsLoadingDelegates(false);
-			setDelegates({ votes: [], unvotes: [] });
+			setDelegates({ unvotes: [], votes: [] });
 		};
 	}, [env, wallet, transaction, isOpen]);
 

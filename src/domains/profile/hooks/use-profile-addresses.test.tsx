@@ -16,9 +16,9 @@ describe("useProfileAddresses", () => {
 			.last()
 			.setAddresses([
 				{
-					name: "test",
 					address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 					coin: "ARK",
+					name: "test",
 					network: "ark.devnet",
 				},
 			]);
@@ -37,12 +37,12 @@ describe("useProfileAddresses", () => {
 
 	it("should filter address by selected network", async () => {
 		const wallet = await profile.walletFactory().fromMnemonicWithBIP39({
-			mnemonic: "test",
 			coin: "ARK",
+			mnemonic: "test",
 			network: "ark.mainnet",
 		});
 		await profile.sync();
-		const { result } = renderHook(() => useProfileAddresses({ profile, network: wallet.network() }));
+		const { result } = renderHook(() => useProfileAddresses({ network: wallet.network(), profile }));
 
 		expect(result.current.allAddresses).toHaveLength(0);
 		expect(result.current.contactAddresses).toHaveLength(0);

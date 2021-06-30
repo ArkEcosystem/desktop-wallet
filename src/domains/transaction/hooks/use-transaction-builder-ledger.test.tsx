@@ -20,12 +20,12 @@ import { useTransactionBuilder } from "./use-transaction-builder";
 const createTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 	// @ts-ignore
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
-		id: () => transactionFixture.data.id,
-		sender: () => transactionFixture.data.sender,
-		recipient: () => transactionFixture.data.recipient,
 		amount: () => BigNumber.make(transactionFixture.data.amount),
-		fee: () => BigNumber.make(transactionFixture.data.fee),
 		data: () => ({ data: () => transactionFixture.data }),
+		fee: () => BigNumber.make(transactionFixture.data.fee),
+		id: () => transactionFixture.data.id,
+		recipient: () => transactionFixture.data.recipient,
+		sender: () => transactionFixture.data.sender,
 	});
 
 describe("Use Transaction Builder with Ledger", () => {
@@ -59,12 +59,12 @@ describe("Use Transaction Builder with Ledger", () => {
 		const signatory = await wallet.signatory().mnemonic(getDefaultWalletMnemonic());
 
 		const input: Contracts.TransferInput = {
-			fee: "1",
-			nonce: "1",
 			data: {
 				amount: "1",
 				to: wallet.address(),
 			},
+			fee: "1",
+			nonce: "1",
 			signatory,
 		};
 
@@ -94,12 +94,12 @@ describe("Use Transaction Builder with Ledger", () => {
 
 		const signatory = await wallet.signatory().mnemonic(getDefaultWalletMnemonic());
 		const input: Contracts.TransferInput = {
-			fee: "1",
-			nonce: "1",
 			data: {
 				amount: "1",
 				to: wallet.address(),
 			},
+			fee: "1",
+			nonce: "1",
 			signatory,
 		};
 
@@ -134,12 +134,12 @@ describe("Use Transaction Builder with Ledger", () => {
 		const signatory = await wallet.signatory().mnemonic(getDefaultWalletMnemonic());
 
 		const input: Contracts.TransferInput = {
-			fee: "1",
-			nonce: "1",
 			data: {
 				amount: "1",
 				to: wallet.address(),
 			},
+			fee: "1",
+			nonce: "1",
 			signatory,
 		};
 

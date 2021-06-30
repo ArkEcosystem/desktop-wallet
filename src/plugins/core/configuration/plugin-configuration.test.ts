@@ -5,8 +5,8 @@ import { PluginConfigurationData } from "./plugin-configuration";
 describe("Plugin Configuration", () => {
 	it("should validate successful", () => {
 		const subject = PluginConfigurationData.make({
-			name: "plugin-test",
 			keywords: ["@arkecosystem", "desktop-wallet"],
+			name: "plugin-test",
 		});
 		expect(subject.validate()).toBeTruthy();
 	});
@@ -27,7 +27,7 @@ describe("Plugin Configuration", () => {
 	});
 
 	it("should format a custom title", () => {
-		const subject = PluginConfigurationData.make({ name: "plugin-test", "desktop-wallet": { title: "My Plugin" } });
+		const subject = PluginConfigurationData.make({ "desktop-wallet": { title: "My Plugin" }, name: "plugin-test" });
 		expect(subject.title()).toBe("My Plugin");
 	});
 
@@ -50,22 +50,22 @@ describe("Plugin Configuration", () => {
 	});
 
 	it("should return author", () => {
-		const subject = PluginConfigurationData.make({ name: "plugin-test", author: "Jhon" });
+		const subject = PluginConfigurationData.make({ author: "Jhon", name: "plugin-test" });
 		expect(subject.author()).toBe("Jhon");
 	});
 
 	it("should return author with object", () => {
-		const subject = PluginConfigurationData.make({ name: "plugin-test", author: { name: "Jhon" } });
+		const subject = PluginConfigurationData.make({ author: { name: "Jhon" }, name: "plugin-test" });
 		expect(subject.author()).toBe("Jhon");
 	});
 
 	it("should return author from contributors", () => {
-		const subject = PluginConfigurationData.make({ name: "plugin-test", contributors: [{ name: "Jhon" }] });
+		const subject = PluginConfigurationData.make({ contributors: [{ name: "Jhon" }], name: "plugin-test" });
 		expect(subject.author()).toBe("Jhon");
 	});
 
 	it("should return author from contributors with array of strings", () => {
-		const subject = PluginConfigurationData.make({ name: "plugin-test", contributors: ["Jhon"] });
+		const subject = PluginConfigurationData.make({ contributors: ["Jhon"], name: "plugin-test" });
 		expect(subject.author()).toBe("Jhon");
 	});
 
@@ -81,32 +81,32 @@ describe("Plugin Configuration", () => {
 
 	it("should return keywords", () => {
 		const subject = PluginConfigurationData.make({
-			name: "plugin-test",
 			keywords: ["desktop", "plugin", "desktop-wallet"],
+			name: "plugin-test",
 		});
 		expect(subject.keywords()).toEqual(["Desktop", "Plugin", "Desktop Wallet"]);
 	});
 
 	it("should return permissions", () => {
 		const subject = PluginConfigurationData.make({
-			name: "plugin-test",
 			"desktop-wallet": { permissions: ["LAUNCH", "HTTP"] },
+			name: "plugin-test",
 		});
 		expect(subject.permissions()).toEqual(["LAUNCH", "HTTP"]);
 	});
 
 	it("should return only valid permissions", () => {
 		const subject = PluginConfigurationData.make({
-			name: "plugin-test",
 			"desktop-wallet": { permissions: ["launch", "HTTP", "MY_CUSTOM_PERMISSION"] },
+			name: "plugin-test",
 		});
 		expect(subject.permissions()).toEqual(["LAUNCH", "HTTP"]);
 	});
 
 	it("should return urls", () => {
 		const subject = PluginConfigurationData.make({
-			name: "plugin-test",
 			"desktop-wallet": { urls: ["http://github.com"] },
+			name: "plugin-test",
 		});
 		expect(subject.urls()).toEqual(["http://github.com"]);
 	});
@@ -118,16 +118,16 @@ describe("Plugin Configuration", () => {
 
 	it("should return valid categories", () => {
 		const subject = PluginConfigurationData.make({
-			name: "plugin-test",
 			"desktop-wallet": { categories: ["exchange", "finance"] },
+			name: "plugin-test",
 		});
 		expect(subject.categories()).toEqual(["exchange"]);
 	});
 
 	it("should return other categories if categories is empty", () => {
 		const subject = PluginConfigurationData.make({
-			name: "plugin-test",
 			"desktop-wallet": { categories: [] },
+			name: "plugin-test",
 		});
 		expect(subject.categories()).toEqual(["other"]);
 	});
@@ -143,7 +143,7 @@ describe("Plugin Configuration", () => {
 
 	it("should return plugin size from package", async () => {
 		const subject1 = PluginConfigurationData.make({ name: "plugin-test" });
-		const subject2 = PluginConfigurationData.make({ name: "plugin-test", dist: { unpackedSize: 15_000 } });
+		const subject2 = PluginConfigurationData.make({ dist: { unpackedSize: 15_000 }, name: "plugin-test" });
 
 		await subject1.syncSize();
 		await subject2.syncSize();
@@ -154,8 +154,8 @@ describe("Plugin Configuration", () => {
 
 	it("should return logo", () => {
 		const subject = PluginConfigurationData.make({
-			name: "plugin-test",
 			logo: "https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/sound-notifications/master/logo.png",
+			name: "plugin-test",
 		});
 
 		expect(subject.logo()).toBe(
@@ -165,11 +165,11 @@ describe("Plugin Configuration", () => {
 
 	it("should return logo from manifest", () => {
 		const subject = PluginConfigurationData.make({
-			name: "plugin-test",
 			"desktop-wallet": {
 				logo:
 					"https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/sound-notifications/master/logo.png",
 			},
+			name: "plugin-test",
 		});
 
 		expect(subject.logo()).toBe(
@@ -179,8 +179,8 @@ describe("Plugin Configuration", () => {
 
 	it("should not return invalid logo", () => {
 		const subject = PluginConfigurationData.make({
-			name: "plugin-test",
 			"desktop-wallet": { logo: "https://google.com" },
+			name: "plugin-test",
 		});
 		expect(subject.logo()).toBeUndefined();
 	});

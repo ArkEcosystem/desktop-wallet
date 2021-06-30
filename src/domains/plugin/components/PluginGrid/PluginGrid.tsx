@@ -70,9 +70,9 @@ export const PluginGrid = ({
 
 				if (plugin.hasUpdateAvailable) {
 					result.push({
+						disabled: plugin.isCompatible === false,
 						label: t("COMMON.UPDATE"),
 						value: "update",
-						disabled: plugin.isCompatible === false,
 					});
 				}
 

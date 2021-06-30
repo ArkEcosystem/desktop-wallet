@@ -35,8 +35,8 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 
 	const [categories, setCategories] = useState<Option[]>(
 		AVAILABLE_CATEGORIES.map((name: string) => ({
-			name,
 			isSelected: selectedCategories.length === 0 || selectedCategories.includes(name),
+			name,
 		})),
 	);
 

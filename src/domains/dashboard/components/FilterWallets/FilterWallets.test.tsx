@@ -7,38 +7,38 @@ import { FilterWallets } from "./FilterWallets";
 const networks = [
 	{
 		coin: "ARK",
-		name: "ARK Devnet",
 		id: "ark.mainnet",
-		isSelected: false,
 		isLive: true,
+		isSelected: false,
+		name: "ARK Devnet",
 	},
 	{
-		name: "LSK Testnet",
 		coin: "LSK",
 		id: "lsk.testnet",
-		isSelected: true,
 		isLive: false,
+		isSelected: true,
+		name: "LSK Testnet",
 	},
 	{
-		name: "Compedia",
 		coin: "BIND",
 		id: "compedia.mainnet",
-		isSelected: false,
 		isLive: false,
+		isSelected: false,
+		name: "Compedia",
 	},
 	{
-		name: "Ethereum",
 		coin: "ETH",
 		id: "eth.mainnet",
-		isSelected: true,
 		isLive: true,
+		isSelected: true,
+		name: "Ethereum",
 	},
 	{
-		name: "Bitcoin",
 		coin: "BTC",
 		id: "btc.mainnet",
-		isSelected: false,
 		isLive: true,
+		isSelected: false,
+		name: "Bitcoin",
 	},
 ];
 

@@ -22,10 +22,10 @@ describe("useFees", () => {
 
 		await env.fees().sync(profile, "ARK", "ark.devnet");
 		await expect(current.findByType("ARK", "ark.devnet", "ipfs")).resolves.toEqual({
-			static: 5,
+			avg: 5,
 			max: 5,
 			min: 5,
-			avg: 5,
+			static: 5,
 		});
 	});
 
@@ -47,10 +47,10 @@ describe("useFees", () => {
 
 		await env.fees().sync(profile, "ARK", "ark.devnet");
 		await expect(current.findByType("ARK", "ark.devnet", "ipfs")).resolves.toEqual({
-			static: 5,
+			avg: 5,
 			max: 5,
 			min: 5,
-			avg: 5,
+			static: 5,
 		});
 	});
 
@@ -76,10 +76,10 @@ describe("useFees", () => {
 
 		await env.fees().sync(profile, "ARK", "ark.devnet");
 		await expect(current.findByType("ARK", "ark.devnet", "ipfs")).resolves.toEqual({
-			static: 5,
+			avg: 5,
 			max: 5,
 			min: 5,
-			avg: 5,
+			static: 5,
 		});
 
 		mockFind.mockRestore();

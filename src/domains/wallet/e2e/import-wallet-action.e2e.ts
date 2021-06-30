@@ -114,7 +114,7 @@ test("should show an error message for duplicate address", async (t) => {
 	// Input passphrase
 	passphraseInput = Selector("[data-testid=ImportWallet__mnemonic-input]");
 
-	await t.typeText(passphraseInput, "imaginary passphrase", { replace: true, paste: true });
+	await t.typeText(passphraseInput, "imaginary passphrase", { paste: true, replace: true });
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 
 	await t.expect(Selector("[data-testid=EncryptPassword]").exists).ok();
@@ -139,7 +139,7 @@ test("should show an error message for duplicate address", async (t) => {
 	// Input passphrase
 	passphraseInput = Selector("[data-testid=ImportWallet__mnemonic-input]");
 
-	await t.typeText(passphraseInput, "imaginary passphrase", { replace: true, paste: true });
+	await t.typeText(passphraseInput, "imaginary passphrase", { paste: true, replace: true });
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 
 	await t.expect(Selector('[data-testid="Input__error"]').exists).ok();

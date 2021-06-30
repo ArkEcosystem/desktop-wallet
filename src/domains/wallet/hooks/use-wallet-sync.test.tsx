@@ -17,7 +17,7 @@ describe("useWalletSync", () => {
 	it("#syncAll", async () => {
 		const {
 			result: { current },
-		} = renderHook(() => useWalletSync({ profile, env }));
+		} = renderHook(() => useWalletSync({ env, profile }));
 
 		const wallet = profile.wallets().first();
 		const network = wallet.network();

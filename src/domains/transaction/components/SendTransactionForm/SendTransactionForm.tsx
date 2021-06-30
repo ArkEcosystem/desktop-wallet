@@ -49,8 +49,8 @@ export const SendTransactionForm = ({
 
 			if (!getValues("fee")) {
 				setValue("fee", transactionFees.avg !== 0 ? transactionFees.avg : transactionFees.static, {
-					shouldValidate: true,
 					shouldDirty: true,
+					shouldValidate: true,
 				});
 			}
 		};
@@ -70,14 +70,14 @@ export const SendTransactionForm = ({
 	const handleSelectNetwork = (selectedNetwork: Networks.Network | null | undefined) => {
 		/* istanbul ignore next */
 		if (senderAddress && network?.id() !== selectedNetwork?.id()) {
-			setValue("senderAddress", "", { shouldValidate: false, shouldDirty: true });
+			setValue("senderAddress", "", { shouldDirty: true, shouldValidate: false });
 		}
 
 		setValue("network", selectedNetwork);
 	};
 
 	const handleSelectSender = (address: any) => {
-		setValue("senderAddress", address, { shouldValidate: false, shouldDirty: true });
+		setValue("senderAddress", address, { shouldDirty: true, shouldValidate: false });
 
 		const senderWallet = profile.wallets().findByAddress(address);
 		const isFullyRestoredAndSynced = senderWallet?.hasBeenFullyRestored() && senderWallet?.hasSyncedWithNetwork();
@@ -150,14 +150,14 @@ export const SendTransactionForm = ({
 							network={network}
 							profile={profile}
 							onChange={(value) => {
-								setValue("fee", value, { shouldValidate: true, shouldDirty: true });
+								setValue("fee", value, { shouldDirty: true, shouldValidate: true });
 							}}
 							viewType={inputFeeSettings.viewType}
 							onChangeViewType={(viewType) => {
 								setValue(
 									"inputFeeSettings",
 									{ ...inputFeeSettings, viewType },
-									{ shouldValidate: true, shouldDirty: true },
+									{ shouldDirty: true, shouldValidate: true },
 								);
 							}}
 							simpleValue={inputFeeSettings.simpleValue}
@@ -165,7 +165,7 @@ export const SendTransactionForm = ({
 								setValue(
 									"inputFeeSettings",
 									{ ...inputFeeSettings, simpleValue },
-									{ shouldValidate: true, shouldDirty: true },
+									{ shouldDirty: true, shouldValidate: true },
 								);
 							}}
 						/>
@@ -182,6 +182,6 @@ export const SendTransactionForm = ({
 
 SendTransactionForm.defaultProps = {
 	disableNetworkField: false,
-	transactionType: "transfer",
 	hasWalletId: false,
+	transactionType: "transfer",
 };

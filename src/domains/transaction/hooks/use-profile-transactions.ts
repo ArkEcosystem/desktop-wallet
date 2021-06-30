@@ -49,22 +49,22 @@ export const useProfileTransactions = ({
 		setState,
 		// @ts-ignore
 	] = useState<TransactionsState>({
+		activeMode: undefined,
+		activeTransactionType: undefined,
 		hasMore: true,
 		isLoadingMore: false,
 		isLoadingTransactions: true,
-		transactions: [],
-		activeMode: undefined,
-		activeTransactionType: undefined,
 		timestamp: undefined,
+		transactions: [],
 	});
 
 	useEffect(() => {
 		const loadTransactions = async () => {
 			const response = await fetchTransactions({
-				wallets,
 				flush: true,
 				mode: activeMode!,
 				transactionType: activeTransactionType,
+				wallets,
 			});
 
 			const isAborted = () => {
@@ -85,9 +85,9 @@ export const useProfileTransactions = ({
 
 			setState((state) => ({
 				...state,
-				transactions: items,
-				isLoadingTransactions: false,
 				hasMore: items.length > 0 && response.hasMorePages(),
+				isLoadingTransactions: false,
+				transactions: items,
 			}));
 		};
 
@@ -119,12 +119,14 @@ export const useProfileTransactions = ({
 
 			// @ts-ignore
 			setState({
-				transactions: [],
-				isLoadingTransactions: hasWallets, // Don't set isLoading when there are no wallets
-				activeMode,
-				activeTransactionType,
+				// Don't set isLoading when there are no wallets
+activeMode,
+				
+activeTransactionType, 
 				isLoadingMore: false,
+				isLoadingTransactions: hasWallets,
 				timestamp,
+				transactions: [],
 			});
 		},
 		[wallets.length],
@@ -133,14 +135,14 @@ export const useProfileTransactions = ({
 	const fetchTransactions = useCallback(
 		({ flush = false, mode = "all", transactionType, wallets = [] }: FetchTransactionProperties) => {
 			if (wallets.length === 0) {
-				return { items: () => [], hasMorePages: () => false };
+				return { hasMorePages: () => false, items: () => [] };
 			}
 
 			if (flush) {
 				profile.transactionAggregate().flush(mode);
 			}
 
-			const defaultQuery = { limit: 30, addresses: wallets.map((wallet) => wallet.address()) };
+			const defaultQuery = { addresses: wallets.map((wallet) => wallet.address()), limit: 30 };
 			const queryParameters = transactionType ? { ...defaultQuery, ...transactionType } : defaultQuery;
 
 			// @ts-ignore
@@ -162,19 +164,19 @@ export const useProfileTransactions = ({
 		setState((state) => ({ ...state, isLoadingMore: true }));
 
 		const response = await fetchTransactions({
+			cursor: cursor.current,
 			flush: false,
 			mode: activeMode,
 			transactionType: activeTransactionType,
 			wallets,
-			cursor: cursor.current,
 		});
 
 		const items = filterTransactions({ showUnconfirmed, transactions: response });
 
 		setState((state) => ({
 			...state,
-			isLoadingMore: false,
 			hasMore: items.length > 0 && response.hasMorePages(),
+			isLoadingMore: false,
 			transactions: [...state.transactions, ...items],
 		}));
 	}, [activeMode, activeTransactionType, wallets.length]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -184,11 +186,11 @@ export const useProfileTransactions = ({
 	 */
 	const checkNewTransactions = async () => {
 		const response = await fetchTransactions({
+			cursor: 1,
 			flush: true,
 			mode: activeMode,
 			transactionType: activeTransactionType,
 			wallets,
-			cursor: 1,
 		});
 
 		const items = filterTransactions({ showUnconfirmed, transactions: response });
@@ -204,8 +206,8 @@ export const useProfileTransactions = ({
 
 		setState((state) => ({
 			...state,
-			isLoadingMore: false,
 			hasMore: items.length > 0 && response.hasMorePages(),
+			isLoadingMore: false,
 			transactions: items,
 		}));
 	};
@@ -223,14 +225,14 @@ export const useProfileTransactions = ({
 	}, [start, stop]);
 
 	return {
-		fetchTransactions,
-		fetchMore,
-		updateFilters,
-		transactions,
 		activeMode,
 		activeTransactionType,
-		isLoadingTransactions,
-		isLoadingMore,
+		fetchMore,
+		fetchTransactions,
 		hasMore,
+		isLoadingMore,
+		isLoadingTransactions,
+		transactions,
+		updateFilters,
 	};
 };

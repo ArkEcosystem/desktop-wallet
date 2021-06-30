@@ -30,28 +30,16 @@ interface TransactionTypeProperties {
 }
 
 const core: Record<string, any> = {
-	transfer: {
-		type: CoreTransactionType.Transfer,
+	"delegate-registration": {
+		type: CoreTransactionType.DelegateRegistration,
 		typeGroup: TransactionTypeGroup.Core,
 	},
-	vote: {
-		type: CoreTransactionType.Vote,
+	"htlc-claim": {
+		type: CoreTransactionType.HtlcClaim,
 		typeGroup: TransactionTypeGroup.Core,
 	},
-	"second-signature": {
-		type: CoreTransactionType.SecondSignature,
-		typeGroup: TransactionTypeGroup.Core,
-	},
-	"multi-signature": {
-		type: CoreTransactionType.MultiSignature,
-		typeGroup: TransactionTypeGroup.Core,
-	},
-	"multi-payment": {
-		type: CoreTransactionType.MultiPayment,
-		typeGroup: TransactionTypeGroup.Core,
-	},
-	ipfs: {
-		type: CoreTransactionType.Ipfs,
+	"delegate-resignation": {
+		type: CoreTransactionType.DelegateResignation,
 		typeGroup: TransactionTypeGroup.Core,
 	},
 	"htlc-refund": {
@@ -62,16 +50,28 @@ const core: Record<string, any> = {
 		type: CoreTransactionType.HtlcLock,
 		typeGroup: TransactionTypeGroup.Core,
 	},
-	"htlc-claim": {
-		type: CoreTransactionType.HtlcClaim,
+	"multi-payment": {
+		type: CoreTransactionType.MultiPayment,
 		typeGroup: TransactionTypeGroup.Core,
 	},
-	"delegate-registration": {
-		type: CoreTransactionType.DelegateRegistration,
+	ipfs: {
+		type: CoreTransactionType.Ipfs,
 		typeGroup: TransactionTypeGroup.Core,
 	},
-	"delegate-resignation": {
-		type: CoreTransactionType.DelegateResignation,
+	"second-signature": {
+		type: CoreTransactionType.SecondSignature,
+		typeGroup: TransactionTypeGroup.Core,
+	},
+	"multi-signature": {
+		type: CoreTransactionType.MultiSignature,
+		typeGroup: TransactionTypeGroup.Core,
+	},
+	transfer: {
+		type: CoreTransactionType.Transfer,
+		typeGroup: TransactionTypeGroup.Core,
+	},
+	vote: {
+		type: CoreTransactionType.Vote,
 		typeGroup: TransactionTypeGroup.Core,
 	},
 };
@@ -88,52 +88,67 @@ export const useTransactionTypes = ({ wallets = [] }: TransactionTypeProperties 
 	const { t } = useTranslation();
 
 	const transactionTypeIcons: Record<string, string> = {
-		transfer: "Transfer",
-		multiPayment: "Multipayment",
-		secondSignature: "Key",
-		multiSignature: "Multisig",
 		delegateRegistration: "Delegate",
 		delegateResignation: "DelegateResigned",
-		vote: "Vote",
-		unvote: "Unvote",
-		voteCombination: "VoteCombination",
-		ipfs: "Ipfs",
-		htlcLock: "Timelock",
 		htlcClaim: "Timelock",
+		htlcLock: "Timelock",
+		ipfs: "Ipfs",
 		htlcRefund: "Timelock",
+		multiPayment: "Multipayment",
 		magistrate: "Magistrate",
+		multiSignature: "Multisig",
+		secondSignature: "Key",
+		transfer: "Transfer",
+		unvote: "Unvote",
+		vote: "Vote",
+		voteCombination: "VoteCombination",
 	};
 
 	const allTransactionTypeLabels: Record<string, string> = {
+		
+		"delegate-registration": t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_REGISTRATION"),
+		
+"htlc-lock": t("TRANSACTION.TRANSACTION_TYPES.HTLC_LOCK"),
+		
+"delegate-resignation": t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_RESIGNATION"),
+
+		
+ipfs: t("TRANSACTION.TRANSACTION_TYPES.IPFS"),
+		
+delegateRegistration: t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_REGISTRATION"),
+
+		
+"multi-signature": t("TRANSACTION.TRANSACTION_TYPES.MULTI_SIGNATURE"),
+		
+"htlc-claim": t("TRANSACTION.TRANSACTION_TYPES.HTLC_CLAIM"),
+
 		// core
-		transfer: t("TRANSACTION.TRANSACTION_TYPES.TRANSFER"),
-		vote: t("TRANSACTION.TRANSACTION_TYPES.VOTE"),
+transfer: t("TRANSACTION.TRANSACTION_TYPES.TRANSFER"),
+		delegateResignation: t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_RESIGNATION"),
 		unvote: t("TRANSACTION.TRANSACTION_TYPES.UNVOTE"),
 
-		"second-signature": t("TRANSACTION.TRANSACTION_TYPES.SECOND_SIGNATURE"),
-		"multi-signature": t("TRANSACTION.TRANSACTION_TYPES.MULTI_SIGNATURE"),
-
-		"multi-payment": t("TRANSACTION.TRANSACTION_TYPES.MULTI_PAYMENT"),
-		ipfs: t("TRANSACTION.TRANSACTION_TYPES.IPFS"),
-
 		"htlc-refund": t("TRANSACTION.TRANSACTION_TYPES.HTLC_REFUND"),
-		"htlc-lock": t("TRANSACTION.TRANSACTION_TYPES.HTLC_LOCK"),
-		"htlc-claim": t("TRANSACTION.TRANSACTION_TYPES.HTLC_CLAIM"),
+		vote: t("TRANSACTION.TRANSACTION_TYPES.VOTE"),
 
-		"delegate-registration": t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_REGISTRATION"),
-		"delegate-resignation": t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_RESIGNATION"),
-
-		// Labels in transaction type format as in ExtendedTransactionData
-		secondSignature: t("TRANSACTION.TRANSACTION_TYPES.SECOND_SIGNATURE"),
-		delegateRegistration: t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_REGISTRATION"),
-		voteCombination: t("TRANSACTION.TRANSACTION_TYPES.VOTE_COMBINATION"),
-		multiSignature: t("TRANSACTION.TRANSACTION_TYPES.MULTI_SIGNATURE"),
-		multiPayment: t("TRANSACTION.TRANSACTION_TYPES.MULTI_PAYMENT"),
-		delegateResignation: t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_RESIGNATION"),
-		htlcLock: t("TRANSACTION.TRANSACTION_TYPES.HTLC_LOCK"),
+		
 		htlcClaim: t("TRANSACTION.TRANSACTION_TYPES.HTLC_CLAIM"),
-		htlcRefund: t("TRANSACTION.TRANSACTION_TYPES.HTLC_REFUND"),
-		magistrate: t("TRANSACTION.TRANSACTION_TYPES.MAGISTRATE"),
+		
+"second-signature": t("TRANSACTION.TRANSACTION_TYPES.SECOND_SIGNATURE"),
+		
+htlcLock: t("TRANSACTION.TRANSACTION_TYPES.HTLC_LOCK"),
+		
+"multi-payment": t("TRANSACTION.TRANSACTION_TYPES.MULTI_PAYMENT"),
+		
+htlcRefund: t("TRANSACTION.TRANSACTION_TYPES.HTLC_REFUND"),
+		
+magistrate: t("TRANSACTION.TRANSACTION_TYPES.MAGISTRATE"),
+		
+multiPayment: t("TRANSACTION.TRANSACTION_TYPES.MULTI_PAYMENT"),
+		
+multiSignature: t("TRANSACTION.TRANSACTION_TYPES.MULTI_SIGNATURE"),
+		// Labels in transaction type format as in ExtendedTransactionData
+secondSignature: t("TRANSACTION.TRANSACTION_TYPES.SECOND_SIGNATURE"),
+		voteCombination: t("TRANSACTION.TRANSACTION_TYPES.VOTE_COMBINATION"),
 	};
 
 	const getIcon = (type: string) => transactionTypeIcons[type];
@@ -165,11 +180,11 @@ export const useTransactionTypes = ({ wallets = [] }: TransactionTypeProperties 
 	return {
 		getIcon,
 		getLabel,
+		getQueryParamsByType: getQueryParametersByType,
 		hasMagistrationTypesEnabled,
 		types: {
 			core: availableTypes,
 			magistrate: Object.keys(magistrate),
 		},
-		getQueryParamsByType: getQueryParametersByType,
 	};
 };

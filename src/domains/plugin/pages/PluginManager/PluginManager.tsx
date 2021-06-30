@@ -245,7 +245,7 @@ export const PluginManager = () => {
 			pluginManager.plugins().findById(pluginData.id)?.enable(activeProfile, { autoRun: true });
 			persist();
 		} catch (error) {
-			toasts.error(t("PLUGINS.ENABLE_FAILURE", { name: pluginData.title, msg: error.message }));
+			toasts.error(t("PLUGINS.ENABLE_FAILURE", { msg: error.message, name: pluginData.title }));
 		}
 	};
 
@@ -336,8 +336,8 @@ export const PluginManager = () => {
 
 	const menu = ["latest", "all", ...categories].map((name: string) => {
 		const menuItem: PluginManagerNavigationBarItem = {
-			title: t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${name.toUpperCase()}`),
 			name,
+			title: t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${name.toUpperCase()}`),
 		};
 
 		if (name !== "latest" && name !== "all") {

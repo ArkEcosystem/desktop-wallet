@@ -43,6 +43,6 @@ export const TransactionExplorerLink = ({ id, link, variant, ...properties }: Tr
 };
 
 TransactionExplorerLink.defaultProps = {
-	variant: "transaction",
 	borderPosition: "top",
+	variant: "transaction",
 };

@@ -61,8 +61,8 @@ export const useTransactionBuilder = () => {
 		const uuid = await signFunction(data);
 
 		return {
-			uuid,
 			transaction: wallet.transaction().transaction(uuid),
+			uuid,
 		};
 	};
 

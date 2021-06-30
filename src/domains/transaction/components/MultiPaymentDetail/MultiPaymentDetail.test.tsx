@@ -42,6 +42,7 @@ describe("MultiPaymentDetail", () => {
 				isOpen={true}
 				transaction={{
 					...TransactionFixture,
+					blockId: () => "adsad12312xsd1w312e1s13203e12",
 					isConfirmed: () => true,
 					recipients: () => [
 						{
@@ -57,7 +58,6 @@ describe("MultiPaymentDetail", () => {
 							amount: 1990,
 						},
 					],
-					blockId: () => "adsad12312xsd1w312e1s13203e12",
 				}}
 			/>,
 		);

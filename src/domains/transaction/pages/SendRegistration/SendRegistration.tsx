@@ -88,7 +88,7 @@ export const SendRegistration = () => {
 	} = useFeeConfirmation(fee, fees);
 
 	useEffect(() => {
-		setValue("senderAddress", activeWallet.address(), { shouldValidate: true, shouldDirty: true });
+		setValue("senderAddress", activeWallet.address(), { shouldDirty: true, shouldValidate: true });
 
 		const network = env
 			.availableNetworks()
@@ -96,7 +96,7 @@ export const SendRegistration = () => {
 				(network: Networks.Network) =>
 					network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId(),
 			);
-		setValue("network", network, { shouldValidate: true, shouldDirty: true });
+		setValue("network", network, { shouldDirty: true, shouldValidate: true });
 	}, [activeWallet, env, setValue]);
 
 	useLayoutEffect(() => {
@@ -120,12 +120,14 @@ export const SendRegistration = () => {
 			const { mnemonic, secondMnemonic, encryptionPassword, wif, privateKey } = getValues();
 
 			const signatory = await sign({
-				mnemonic,
-				/* istanbul ignore next */
-				secondMnemonic: registrationType === "secondSignature" ? undefined : secondMnemonic,
 				encryptionPassword,
+				
+				mnemonic,
+				
+privateKey,
+				/* istanbul ignore next */
+secondMnemonic: registrationType === "secondSignature" ? undefined : secondMnemonic,
 				wif,
-				privateKey,
 			});
 
 			const transaction = await registrationForm!.signTransaction({
@@ -140,10 +142,10 @@ export const SendRegistration = () => {
 		} catch (error) {
 			if (isMnemonicError(error)) {
 				setValue("mnemonic", "");
-				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
+				return setError("mnemonic", { message: t("TRANSACTION.INVALID_MNEMONIC"), type: "manual" });
 			}
 
-			setErrorMessage(JSON.stringify({ type: error.name, message: error.message }));
+			setErrorMessage(JSON.stringify({ message: error.message, type: error.name }));
 			setActiveTab(10);
 		}
 	};

@@ -217,23 +217,23 @@ export class PluginConfigurationData {
 
 	toObject() {
 		return {
-			id: this.id(),
-			name: this.name(),
-			title: this.title(),
-			version: this.version(),
 			author: this.author(),
 			categories: this.categories(),
 			category: this.categories()?.[0],
-			permissions: this.permissions(),
-			images: this.images(),
-			logo: this.logo(),
-			size: this.size(),
 			homepage: this.homepage(),
 			date: this.date(),
+			id: this.id(),
 			description: this.description(),
-			isOfficial: this.isOfficial(),
-			minimumVersion: this.minimumVersion(),
+			images: this.images(),
 			isCompatible: this.isCompatible(),
+			name: this.name(),
+			isOfficial: this.isOfficial(),
+			title: this.title(),
+			logo: this.logo(),
+			version: this.version(),
+			minimumVersion: this.minimumVersion(),
+			permissions: this.permissions(),
+			size: this.size(),
 			url: this.url(),
 		};
 	}

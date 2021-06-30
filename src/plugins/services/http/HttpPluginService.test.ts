@@ -6,9 +6,9 @@ import { defaultNetMocks, env, waitFor } from "utils/testing-library";
 import { HttpPluginService } from "./HttpPluginService";
 
 const config = {
+	"desktop-wallet": { permissions: ["HTTP"], urls: ["https://dwallets.ark.io"] },
 	name: "test",
 	version: "1.1",
-	"desktop-wallet": { permissions: ["HTTP"], urls: ["https://dwallets.ark.io"] },
 };
 
 describe("HttpPluginService", () => {

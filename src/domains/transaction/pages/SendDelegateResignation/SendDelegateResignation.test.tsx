@@ -35,19 +35,19 @@ const renderPage = () => {
 			<SendDelegateResignation />
 		</Route>,
 		{
-			routes: [resignationUrl],
 			history,
+			routes: [resignationUrl],
 		},
 	);
 };
 
 const transactionResponse = {
-	id: () => transactionFixture.data.id,
-	sender: () => transactionFixture.data.sender,
-	recipient: () => transactionFixture.data.recipient,
 	amount: () => transactionFixture.data.amount / 1e8,
-	fee: () => transactionFixture.data.fee / 1e8,
 	data: () => ({ data: () => transactionFixture.data }),
+	fee: () => transactionFixture.data.fee / 1e8,
+	id: () => transactionFixture.data.id,
+	recipient: () => transactionFixture.data.recipient,
+	sender: () => transactionFixture.data.sender,
 	type: () => "delegateResignation",
 };
 
@@ -402,8 +402,8 @@ describe("SendDelegateResignation", () => {
 				.mockReturnValue(Promise.resolve(transactionFixture.data.id));
 			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 				accepted: [transactionFixture.data.id],
-				rejected: [],
 				errors: {},
+				rejected: [],
 			});
 			const transactionMock = createTransactionMock(wallet);
 
@@ -462,8 +462,8 @@ describe("SendDelegateResignation", () => {
 				.mockReturnValue(Promise.resolve(transactionFixture.data.id));
 			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 				accepted: [transactionFixture.data.id],
-				rejected: [],
 				errors: {},
+				rejected: [],
 			});
 			const transactionMock = createTransactionMock(wallet);
 
@@ -538,8 +538,8 @@ describe("SendDelegateResignation", () => {
 				.mockReturnValue(Promise.resolve(transactionFixture.data.id));
 			const broadcastMock = jest.spyOn(encryptedWallet.transaction(), "broadcast").mockResolvedValue({
 				accepted: [transactionFixture.data.id],
-				rejected: [],
 				errors: {},
+				rejected: [],
 			});
 			const transactionMock = createTransactionMock(encryptedWallet);
 
@@ -551,8 +551,8 @@ describe("SendDelegateResignation", () => {
 					<SendDelegateResignation />
 				</Route>,
 				{
-					routes: [resignationEncryptedUrl],
 					history,
+					routes: [resignationEncryptedUrl],
 				},
 			);
 

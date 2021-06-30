@@ -73,7 +73,7 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 			setSelectedAddress(address);
 		}, [address, setSelectedAddress]); // eslint-disable-line react-hooks/exhaustive-deps
 
-		const { allAddresses } = useProfileAddresses({ profile, network });
+		const { allAddresses } = useProfileAddresses({ network, profile });
 		const recipientAddresses = allAddresses.map(({ address }) => ({
 			label: address,
 			value: address,
@@ -120,7 +120,6 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 						allowFreeInput={true}
 						onChange={(option: any) => onInputChange(option.value)}
 						addons={{
-							start: <ProfileAvatar address={selectedAddress} />,
 							end: (
 								<div
 									data-testid="SelectRecipient__select-recipient"
@@ -130,6 +129,7 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 									<Icon name="User" width={20} height={20} />
 								</div>
 							),
+							start: <ProfileAvatar address={selectedAddress} />,
 						}}
 						renderLabel={(option) => <OptionLabel option={option} profile={profile} />}
 					/>

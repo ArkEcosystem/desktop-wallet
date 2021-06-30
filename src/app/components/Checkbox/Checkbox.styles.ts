@@ -38,11 +38,11 @@ type baseColorsType = Record<
 >;
 const getColor = (color: Color) => {
 	const baseColors: baseColorsType = {
+		danger: { color: "danger-400" },
+		hint: { color: "hint-500" },
 		info: { color: "primary-600" },
 		success: { color: "success-600", onHover: "success-700" },
 		warning: { color: "warning-600" },
-		danger: { color: "danger-400" },
-		hint: { color: "hint-500" },
 	};
 
 	return [

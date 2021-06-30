@@ -6,12 +6,12 @@ import { WalletsControls } from "./WalletsControls";
 
 describe("WalletsControls", () => {
 	const filterProperties = {
+		isFilterChanged: false,
 		networks: [],
-		viewType: "list",
-		walletsDisplayType: "all",
 		selectedNetworkIds: [],
 		useTestNetworks: true,
-		isFilterChanged: false,
+		viewType: "list",
+		walletsDisplayType: "all",
 	};
 
 	it("should render", () => {

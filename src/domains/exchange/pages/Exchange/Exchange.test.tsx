@@ -31,8 +31,8 @@ describe("Exchange", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [exchangeURL],
 				history,
+				routes: [exchangeURL],
 			},
 		);
 
@@ -46,7 +46,7 @@ describe("Exchange", () => {
 		const onEnabled = jest.fn();
 
 		const plugin = new PluginController(
-			{ name: "test-exchange", "desktop-wallet": { categories: ["exchange"] } },
+			{ "desktop-wallet": { categories: ["exchange"] }, name: "test-exchange" },
 			onEnabled,
 		);
 		pluginManager.plugins().push(plugin);
@@ -60,8 +60,8 @@ describe("Exchange", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [exchangeURL],
 				history,
+				routes: [exchangeURL],
 			},
 		);
 
@@ -77,7 +77,7 @@ describe("Exchange", () => {
 
 	it("should launch exchange", async () => {
 		const plugin = new PluginController(
-			{ name: "test-exchange", "desktop-wallet": { categories: ["exchange"], permissions: ["LAUNCH"] } },
+			{ "desktop-wallet": { categories: ["exchange"], permissions: ["LAUNCH"] }, name: "test-exchange" },
 			(api) => api.launch().render(<h1>My Exchange View</h1>),
 		);
 
@@ -93,8 +93,8 @@ describe("Exchange", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [exchangeURL],
 				history,
+				routes: [exchangeURL],
 			},
 		);
 
@@ -119,7 +119,7 @@ describe("Exchange", () => {
 		const onEnabled = jest.fn();
 
 		const plugin = new PluginController(
-			{ name: "test-exchange", "desktop-wallet": { categories: ["exchange"] } },
+			{ "desktop-wallet": { categories: ["exchange"] }, name: "test-exchange" },
 			onEnabled,
 		);
 
@@ -134,8 +134,8 @@ describe("Exchange", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [exchangeURL],
 				history,
+				routes: [exchangeURL],
 			},
 		);
 
@@ -166,8 +166,8 @@ describe("Exchange", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [exchangeURL],
 				history,
+				routes: [exchangeURL],
 			},
 		);
 
@@ -181,15 +181,15 @@ describe("Exchange", () => {
 		const onEnabled = jest.fn();
 
 		const plugin1 = new PluginController(
-			{ name: "test-exchange-1", "desktop-wallet": { categories: ["exchange"] } },
+			{ "desktop-wallet": { categories: ["exchange"] }, name: "test-exchange-1" },
 			onEnabled,
 		);
 		const plugin2 = new PluginController(
-			{ name: "test-exchange-2", "desktop-wallet": { categories: ["exchange"] } },
+			{ "desktop-wallet": { categories: ["exchange"] }, name: "test-exchange-2" },
 			onEnabled,
 		);
 		const plugin3 = new PluginController(
-			{ name: "test-exchange-3", "desktop-wallet": { categories: ["exchange"] } },
+			{ "desktop-wallet": { categories: ["exchange"] }, name: "test-exchange-3" },
 			onEnabled,
 		);
 
@@ -205,8 +205,8 @@ describe("Exchange", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [exchangeURL],
 				history,
+				routes: [exchangeURL],
 			},
 		);
 
@@ -232,7 +232,7 @@ describe("Exchange", () => {
 		const onEnabled = jest.fn();
 
 		const plugin = new PluginController(
-			{ name: "test-exchange", "desktop-wallet": { categories: ["exchange"] } },
+			{ "desktop-wallet": { categories: ["exchange"] }, name: "test-exchange" },
 			onEnabled,
 		);
 
@@ -250,8 +250,8 @@ describe("Exchange", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [exchangeURL],
 				history,
+				routes: [exchangeURL],
 			},
 		);
 
@@ -279,7 +279,7 @@ describe("Exchange", () => {
 		const onEnabled = jest.fn();
 
 		const plugin = new PluginController(
-			{ name: "test-exchange", "desktop-wallet": { categories: ["exchange"] } },
+			{ "desktop-wallet": { categories: ["exchange"] }, name: "test-exchange" },
 			onEnabled,
 		);
 
@@ -295,8 +295,8 @@ describe("Exchange", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [exchangeURL],
 				history,
+				routes: [exchangeURL],
 			},
 		);
 
@@ -326,8 +326,8 @@ describe("Exchange", () => {
 				</PluginProviders>
 			</Route>,
 			{
-				routes: [exchangeURL],
 				history,
+				routes: [exchangeURL],
 			},
 		);
 

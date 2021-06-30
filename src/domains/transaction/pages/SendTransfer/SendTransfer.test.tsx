@@ -42,36 +42,36 @@ const fixtureWalletId = getDefaultWalletId();
 const createTransactionMultipleMock = (wallet: Contracts.IReadWriteWallet) =>
 	// @ts-ignore
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
-		id: () => transactionMultipleFixture.data.id,
-		sender: () => transactionMultipleFixture.data.sender,
-		recipient: () => transactionMultipleFixture.data.recipient,
 		amount: () => +transactionMultipleFixture.data.amount / 1e8,
+		data: () => ({ data: () => transactionMultipleFixture.data }),
 		fee: () => +transactionMultipleFixture.data.fee / 1e8,
+		id: () => transactionMultipleFixture.data.id,
+		recipient: () => transactionMultipleFixture.data.recipient,
 		recipients: () => [
 			{
 				address: transactionMultipleFixture.data.recipient,
 				amount: +transactionMultipleFixture.data.amount / 1e8,
 			},
 		],
-		data: () => ({ data: () => transactionMultipleFixture.data }),
+		sender: () => transactionMultipleFixture.data.sender,
 		type: () => "multiPayment",
 	});
 
 const createTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 	// @ts-ignore
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
-		id: () => transactionFixture.data.id,
-		sender: () => transactionFixture.data.sender,
-		recipient: () => transactionFixture.data.recipient,
 		amount: () => +transactionFixture.data.amount / 1e8,
+		data: () => ({ data: () => transactionFixture.data }),
 		fee: () => +transactionFixture.data.fee / 1e8,
+		id: () => transactionFixture.data.id,
+		recipient: () => transactionFixture.data.recipient,
 		recipients: () => [
 			{
 				address: transactionFixture.data.recipient,
 				amount: +transactionFixture.data.amount / 1e8,
 			},
 		],
-		data: () => ({ data: () => transactionFixture.data }),
+		sender: () => transactionFixture.data.sender,
 		type: () => "transfer",
 	});
 
@@ -91,7 +91,7 @@ describe("SendTransfer", () => {
 			.get("/api/transactions?address=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")
 			.reply(200, require("tests/fixtures/coins/ark/devnet/transactions.json"))
 			.get("/api/transactions?page=1&limit=20&senderId=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")
-			.reply(200, { meta: {}, data: [] })
+			.reply(200, { data: [], meta: {} })
 			.get("/api/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877")
 			.reply(200, () => require("tests/fixtures/coins/ark/devnet/transactions.json"));
 
@@ -247,6 +247,7 @@ describe("SendTransfer", () => {
 			useForm({
 				defaultValues: {
 					fee: "1",
+					memo: "test memo",
 					recipients: [
 						{
 							address: wallet.address(),
@@ -254,7 +255,6 @@ describe("SendTransfer", () => {
 						},
 					],
 					senderAddress: wallet.address(),
-					memo: "test memo",
 				},
 			}),
 		);
@@ -288,12 +288,12 @@ describe("SendTransfer", () => {
 				.coin()
 				.transaction()
 				.transfer({
-					nonce: "1",
-					fee: "1",
 					data: {
-						to: wallet.address(),
 						amount: "1",
+						to: wallet.address(),
 					},
+					fee: "1",
+					nonce: "1",
 					signatory: await wallet
 						.coin()
 						.signatory()
@@ -324,8 +324,8 @@ describe("SendTransfer", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [transferURL],
 				history,
+				routes: [transferURL],
 			},
 		);
 
@@ -349,8 +349,8 @@ describe("SendTransfer", () => {
 					</LedgerProvider>
 				</Route>,
 				{
-					routes: [transferURL],
 					history,
+					routes: [transferURL],
 				},
 			);
 
@@ -373,8 +373,8 @@ describe("SendTransfer", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [transferURL],
 				history,
+				routes: [transferURL],
 			},
 		);
 
@@ -396,8 +396,8 @@ describe("SendTransfer", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [transferURL],
 				history,
+				routes: [transferURL],
 			},
 		);
 
@@ -455,8 +455,8 @@ describe("SendTransfer", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [transferURL],
 				history,
+				routes: [transferURL],
 			},
 		);
 
@@ -500,8 +500,8 @@ describe("SendTransfer", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [transferURL],
 				history,
+				routes: [transferURL],
 			},
 		);
 
@@ -556,8 +556,8 @@ describe("SendTransfer", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [transferURL],
 				history,
+				routes: [transferURL],
 			},
 		);
 
@@ -625,8 +625,8 @@ describe("SendTransfer", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [transferURL],
 				history,
+				routes: [transferURL],
 			},
 		);
 
@@ -689,8 +689,8 @@ describe("SendTransfer", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [transferURL],
 				history,
+				routes: [transferURL],
 			},
 		);
 
@@ -782,8 +782,8 @@ describe("SendTransfer", () => {
 			.mockReturnValue(Promise.resolve(transactionFixture.data.id));
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [transactionFixture.data.id],
-			rejected: [],
 			errors: {},
+			rejected: [],
 		});
 		const transactionMock = createTransactionMock(wallet);
 
@@ -831,8 +831,8 @@ describe("SendTransfer", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [transferURL],
 				history,
+				routes: [transferURL],
 			},
 		);
 
@@ -923,9 +923,10 @@ describe("SendTransfer", () => {
 			.mockReturnValue(Promise.resolve(transactionFixture.data.id));
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [],
-			rejected: [transactionFixture.data.id],
 			//@ts-ignore
-			errors: { [transactionFixture.data.id]: "ERROR" },
+errors: { [transactionFixture.data.id]: "ERROR" },
+			
+			rejected: [transactionFixture.data.id],
 		});
 		const transactionMock = createTransactionMock(wallet);
 
@@ -954,8 +955,8 @@ describe("SendTransfer", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [transferURL],
 				history,
+				routes: [transferURL],
 			},
 		);
 
@@ -1046,8 +1047,8 @@ describe("SendTransfer", () => {
 			.mockReturnValue(Promise.resolve(transactionFixture.data.id));
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [transactionFixture.data.id],
-			rejected: [],
 			errors: {},
+			rejected: [],
 		});
 		const transactionMock = createTransactionMock(wallet);
 		const expirationMock = jest
@@ -1104,8 +1105,8 @@ describe("SendTransfer", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [transferURL],
 				history,
+				routes: [transferURL],
 			},
 		);
 
@@ -1154,8 +1155,8 @@ describe("SendTransfer", () => {
 			.mockReturnValue(Promise.resolve(transactionFixture.data.id));
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [transactionFixture.data.id],
-			rejected: [],
 			errors: {},
+			rejected: [],
 		});
 		const transactionMock = createTransactionMock(wallet);
 
@@ -1201,8 +1202,8 @@ describe("SendTransfer", () => {
 
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [transactionFixture.data.id],
-			rejected: [],
 			errors: {},
+			rejected: [],
 		});
 
 		const transferURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/transfer`;
@@ -1217,8 +1218,8 @@ describe("SendTransfer", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [transferURL],
 				history,
+				routes: [transferURL],
 			},
 		);
 
@@ -1295,8 +1296,8 @@ describe("SendTransfer", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [transferURL],
 				history,
+				routes: [transferURL],
 			},
 		);
 
@@ -1388,8 +1389,8 @@ describe("SendTransfer", () => {
 					</LedgerProvider>
 				</Route>,
 				{
-					routes: [transferURL],
 					history,
+					routes: [transferURL],
 				},
 			);
 
@@ -1488,8 +1489,8 @@ describe("SendTransfer", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [transferURL],
 				history,
+				routes: [transferURL],
 			},
 		);
 
@@ -1567,8 +1568,8 @@ describe("SendTransfer", () => {
 			.mockReturnValue(Promise.resolve(transactionFixture.data.id));
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [transactionFixture.data.id],
-			rejected: [],
 			errors: {},
+			rejected: [],
 		});
 		const transactionMock = createTransactionMock(wallet);
 
@@ -1615,8 +1616,8 @@ describe("SendTransfer", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [transferURL],
 				history,
+				routes: [transferURL],
 			},
 		);
 
@@ -1711,8 +1712,8 @@ describe("SendTransfer", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [transferURL],
 				history,
+				routes: [transferURL],
 			},
 		);
 
@@ -1821,8 +1822,8 @@ describe("SendTransfer", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [transferURL],
 				history,
+				routes: [transferURL],
 			},
 		);
 
@@ -1921,8 +1922,8 @@ describe("SendTransfer", () => {
 			.mockReturnValue(Promise.resolve(transactionMultipleFixture.data.id));
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [transactionFixture.data.id],
-			rejected: [],
 			errors: {},
+			rejected: [],
 		});
 		const transactionMock = createTransactionMultipleMock(wallet);
 
@@ -1952,8 +1953,8 @@ describe("SendTransfer", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [transferURL],
 				history,
+				routes: [transferURL],
 			},
 		);
 
@@ -1994,34 +1995,34 @@ describe("SendTransfer", () => {
 			Promise.resolve({
 				items: () => [
 					{
-						isTransfer: () => true,
-						isMultiPayment: () => false,
 						isConfirmed: () => false,
-						timestamp: () => DateTime.make(),
-						total: () => 1,
+						convertedTotal: () => 0,
+						isMultiPayment: () => false,
 						isSent: () => true,
-						wallet: () => wallet,
-						type: () => "transfer",
+						isTransfer: () => true,
+						isUnvote: () => false,
+						isVote: () => false,
 						recipient: () => "D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
 						recipients: () => ["D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb", wallet.address()],
-						convertedTotal: () => 0,
-						isVote: () => false,
-						isUnvote: () => false,
+						timestamp: () => DateTime.make(),
+						total: () => 1,
+						type: () => "transfer",
+						wallet: () => wallet,
 					},
 					{
-						isTransfer: () => false,
-						isMultiPayment: () => true,
 						isConfirmed: () => false,
-						timestamp: () => DateTime.make(),
-						total: () => 1,
+						convertedTotal: () => 0,
+						isMultiPayment: () => true,
 						isSent: () => true,
-						wallet: () => wallet,
-						type: () => "multiPayment",
+						isTransfer: () => false,
+						isUnvote: () => false,
+						isVote: () => false,
 						recipient: () => "D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
 						recipients: () => ["D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb", wallet.address()],
-						convertedTotal: () => 0,
-						isVote: () => false,
-						isUnvote: () => false,
+						timestamp: () => DateTime.make(),
+						total: () => 1,
+						type: () => "multiPayment",
+						wallet: () => wallet,
 					},
 				],
 			}),
@@ -2039,8 +2040,8 @@ describe("SendTransfer", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [transferURL],
 				history,
+				routes: [transferURL],
 			},
 		);
 
@@ -2130,8 +2131,8 @@ describe("SendTransfer", () => {
 			.mockReturnValue(Promise.resolve(transactionFixture.data.id));
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [transactionFixture.data.id],
-			rejected: [],
 			errors: {},
+			rejected: [],
 		});
 		const transactionMock = createTransactionMock(wallet);
 
@@ -2187,19 +2188,19 @@ describe("SendTransfer", () => {
 			Promise.resolve<any>({
 				items: () => [
 					{
-						isTransfer: () => true,
-						isMultiPayment: () => false,
 						isConfirmed: () => false,
-						timestamp: () => DateTime.make(),
-						total: () => 1,
+						convertedTotal: () => 0,
+						isMultiPayment: () => false,
 						isSent: () => true,
-						wallet: () => wallet,
-						type: () => "transfer",
+						isTransfer: () => true,
+						isUnvote: () => false,
+						isVote: () => false,
 						recipient: () => "D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
 						recipients: () => ["D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb", wallet.address()],
-						convertedTotal: () => 0,
-						isVote: () => false,
-						isUnvote: () => false,
+						timestamp: () => DateTime.make(),
+						total: () => 1,
+						type: () => "transfer",
+						wallet: () => wallet,
 					},
 				],
 			}),
@@ -2210,8 +2211,8 @@ describe("SendTransfer", () => {
 			.mockReturnValue(Promise.resolve(transactionFixture.data.id));
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [transactionFixture.data.id],
-			rejected: [],
 			errors: {},
+			rejected: [],
 		});
 		const transactionMock = createTransactionMock(wallet);
 
@@ -2227,8 +2228,8 @@ describe("SendTransfer", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [transferURL],
 				history,
+				routes: [transferURL],
 			},
 		);
 
@@ -2331,8 +2332,8 @@ describe("SendTransfer", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [transferURL],
 				history,
+				routes: [transferURL],
 			},
 		);
 
@@ -2409,8 +2410,8 @@ describe("SendTransfer", () => {
 			.mockReturnValue(Promise.resolve(transactionFixture.data.id));
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [transactionFixture.data.id],
-			rejected: [],
 			errors: {},
+			rejected: [],
 		});
 		const transactionMock = createTransactionMock(wallet);
 
