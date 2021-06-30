@@ -1,9 +1,9 @@
 export const translations: { [key: string]: any } = {
 	CATEGORIES: {
+		EXCHANGE: "Exchange",
 		GAME: "Game",
 		GAMING: "Gaming",
 		LANGUAGE: "Language",
-		EXCHANGE: "Exchange",
 		OTHER: "Other",
 		UTILITY: "Utility",
 	},
