@@ -441,6 +441,4 @@ const GeneralSettingsForm: React.FC<Properties> = ({ profile }: Properties) => {
 	);
 };
 
-export {
-	GeneralSettingsForm,
-}
+export { GeneralSettingsForm };

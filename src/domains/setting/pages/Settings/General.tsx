@@ -9,5 +9,5 @@ export const General: React.FC = () => {
 		return <p>Loading</p>; // @TODO add skeleton
 	}
 
-	return <GeneralSettingsForm profile={activeProfile} />
+	return <GeneralSettingsForm profile={activeProfile} />;
 };
