@@ -135,9 +135,9 @@ export const DelegateRow = ({
 };
 
 DelegateRow.defaultProps = {
+	isLoading: false,
+	isVoteDisabled: false,
+	isVoted: false,
 	selectedUnvotes: [],
 	selectedVotes: [],
-	isVoted: false,
-	isVoteDisabled: false,
-	isLoading: false,
 };

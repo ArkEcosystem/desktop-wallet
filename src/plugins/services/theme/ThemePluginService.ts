@@ -4,8 +4,8 @@ import { PluginService, PluginServiceIdentifier } from "plugins/types";
 export class ThemePluginService implements PluginService {
 	config() {
 		return {
-			id: PluginServiceIdentifier.Theme,
 			accessor: "theme",
+			id: PluginServiceIdentifier.Theme,
 		};
 	}
 

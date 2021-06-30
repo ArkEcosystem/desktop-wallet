@@ -85,6 +85,6 @@ export function MnemonicVerification({
 }
 
 MnemonicVerification.defaultProps = {
-	wordPositions: [],
 	isCompleted: false,
+	wordPositions: [],
 };

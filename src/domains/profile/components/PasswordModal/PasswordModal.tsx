@@ -27,8 +27,8 @@ export const PasswordModal = ({ isOpen, title, description, onClose, onSubmit, e
 		}
 
 		form.setError("password", {
-			type: "invalid",
 			message: error,
+			type: "invalid",
 		});
 	}, [error]); // eslint-disable-line react-hooks/exhaustive-deps
 

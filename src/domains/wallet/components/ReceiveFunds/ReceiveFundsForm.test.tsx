@@ -74,7 +74,7 @@ describe("ReceiveFundsForm", () => {
 
 	it("should not show memo if is not supported by network", async () => {
 		const memo = Array.from({ length: 256 }).fill("x").join("");
-		const { result: form } = renderHook(() => useForm({ mode: "onChange", defaultValues: { memo } }));
+		const { result: form } = renderHook(() => useForm({ defaultValues: { memo }, mode: "onChange" }));
 
 		const memoMock = jest.spyOn(network, "usesMemo").mockReturnValue(false);
 

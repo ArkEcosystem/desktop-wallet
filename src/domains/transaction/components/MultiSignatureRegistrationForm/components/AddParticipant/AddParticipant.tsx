@@ -120,8 +120,8 @@ export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants 
 							ref={register({
 								required: true,
 								validate: {
-									findDuplicate,
 									findByAddress,
+									findDuplicate,
 								},
 							})}
 							onChange={(address: string) => setValue("address", address, { shouldDirty: true })}

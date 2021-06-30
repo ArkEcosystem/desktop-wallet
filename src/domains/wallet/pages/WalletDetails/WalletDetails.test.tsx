@@ -52,8 +52,8 @@ const renderPage = async ({
 			<WalletDetails />
 		</Route>,
 		{
-			routes: [walletUrl],
 			history,
+			routes: [walletUrl],
 			withProfileSynchronizer,
 		},
 	);
@@ -86,22 +86,22 @@ describe("WalletDetails", () => {
 
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 		blankWallet = await profile.walletFactory().fromMnemonicWithBIP39({
-			mnemonic: passphrase2,
 			coin: "ARK",
+			mnemonic: passphrase2,
 			network: "ark.devnet",
 		});
 
 		unvotedWallet = await profile.walletFactory().fromMnemonicWithBIP39({
-			mnemonic: "unvoted wallet",
 			coin: "ARK",
+			mnemonic: "unvoted wallet",
 			network: "ark.devnet",
 		});
 
 		emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 
 		wallet2 = await emptyProfile.walletFactory().fromMnemonicWithBIP39({
-			mnemonic: "wallet 2",
 			coin: "ARK",
+			mnemonic: "wallet 2",
 			network: "ark.devnet",
 		});
 
@@ -119,15 +119,15 @@ describe("WalletDetails", () => {
 			.reply(200, walletMock)
 			.get(`/api/wallets/${blankWallet.address()}`)
 			.reply(404, {
-				statusCode: 404,
 				error: "Not Found",
 				message: "Wallet not found",
+				statusCode: 404,
 			})
 			.get(`/api/wallets/${wallet2.address()}`)
 			.reply(404, {
-				statusCode: 404,
 				error: "Not Found",
 				message: "Wallet not found",
+				statusCode: 404,
 			})
 			.get("/api/transactions")
 			.query((parameters) => !!parameters.address)
@@ -136,12 +136,12 @@ describe("WalletDetails", () => {
 				const filteredUrl =
 					"/api/transactions?page=1&limit=1&address=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD&type=0&typeGroup=1";
 				if (url === filteredUrl) {
-					return { meta, data: [] };
+					return { data: [], meta };
 				}
 
 				return {
-					meta,
 					data: data.slice(0, 1),
+					meta,
 				};
 			})
 			.persist();
@@ -216,15 +216,15 @@ describe("WalletDetails", () => {
 				address: wallet.address(),
 				explorerLink: "",
 				publicKey: wallet.publicKey(),
-				username: "arkx",
 				rank: 1,
+				username: "arkx",
 			}),
 			new ReadOnlyWallet({
 				address: wallet.address(),
 				explorerLink: "",
 				publicKey: wallet.publicKey(),
-				username: "arky",
 				rank: 2,
+				username: "arky",
 			}),
 		]);
 		const maxVotesSpy = jest.spyOn(wallet.network(), "maximumVotesPerWallet").mockReturnValue(101);
@@ -434,8 +434,8 @@ describe("WalletDetails", () => {
 
 	it("should not fail if the votes have not yet been synchronized", async () => {
 		const newWallet = await profile.walletFactory().fromMnemonicWithBIP39({
-			mnemonic: "test mnemonic",
 			coin: "ARK",
+			mnemonic: "test mnemonic",
 			network: "ark.devnet",
 		});
 

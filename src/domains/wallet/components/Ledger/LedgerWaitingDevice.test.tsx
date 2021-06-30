@@ -42,7 +42,7 @@ describe("LedgerWaitingDevice", () => {
 		);
 
 		act(() => {
-			observer!.next({ type: "add", descriptor: "" });
+			observer!.next({ descriptor: "", type: "add" });
 		});
 
 		expect(onDeviceAvailable).toHaveBeenCalledWith(true);

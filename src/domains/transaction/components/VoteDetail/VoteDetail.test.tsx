@@ -55,8 +55,8 @@ describe("VoteDetail", () => {
 				<VoteDetail isOpen={false} transaction={TransactionFixture} />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -71,14 +71,14 @@ describe("VoteDetail", () => {
 					isOpen={true}
 					transaction={{
 						...TransactionFixture,
-						votes: () => ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
 						unvotes: () => [],
+						votes: () => ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
 					}}
 				/>
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -99,14 +99,14 @@ describe("VoteDetail", () => {
 					isOpen={true}
 					transaction={{
 						...TransactionFixture,
-						votes: () => [],
 						unvotes: () => ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
+						votes: () => [],
 					}}
 				/>
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -127,14 +127,14 @@ describe("VoteDetail", () => {
 					isOpen={true}
 					transaction={{
 						...TransactionFixture,
-						votes: () => ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
 						unvotes: () => ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
+						votes: () => ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
 					}}
 				/>
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 

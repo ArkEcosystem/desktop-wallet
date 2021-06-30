@@ -11,8 +11,8 @@ const translations = buildTranslations();
 createFixture("Single Transfer action", [
 	mockRequest(
 		{
-			url: "https://dwallets.ark.io/api/transactions",
 			method: "POST",
+			url: "https://dwallets.ark.io/api/transactions",
 		},
 		{
 			data: {
@@ -25,8 +25,8 @@ createFixture("Single Transfer action", [
 	),
 	mockRequest(
 		{
-			url: "https://dmusig1.ark.io/transaction",
 			method: "POST",
+			url: "https://dmusig1.ark.io/transaction",
 		},
 		{
 			id: "transaction-id",

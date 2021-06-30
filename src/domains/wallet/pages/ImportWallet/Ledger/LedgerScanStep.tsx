@@ -69,8 +69,8 @@ export const LedgerTable = ({
 				</Tippy>
 			),
 			className: "justify-center",
-			minimumWidth: true,
 			id: "select",
+			minimumWidth: true,
 		},
 	];
 
@@ -181,7 +181,7 @@ export const LedgerScanStep = ({
 	}, [register, unregister]);
 
 	useEffect(() => {
-		setValue("wallets", selectedWallets, { shouldValidate: true, shouldDirty: true });
+		setValue("wallets", selectedWallets, { shouldDirty: true, shouldValidate: true });
 	}, [selectedWallets, setValue]);
 
 	return (

@@ -8,22 +8,22 @@ import { RecipientList } from ".";
 const recipients = [
 	{
 		address: "FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ",
-		walletName: "Recipient 1",
 		amount: 100,
 		assetSymbol: "ARK",
+		walletName: "Recipient 1",
 	},
 	{
 		address: "AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ",
-		walletName: "Recipient 2",
-		isMultisig: true,
 		amount: 100,
 		assetSymbol: "ARK",
+		isMultisig: true,
+		walletName: "Recipient 2",
 	},
 	{
 		address: "FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ",
-		walletName: "Recipient 3",
 		amount: 100,
 		assetSymbol: "ARK",
+		walletName: "Recipient 3",
 	},
 	{
 		address: "FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ",
@@ -116,11 +116,11 @@ describe("RecipientList", () => {
 		const recipients = [
 			{
 				address: "FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ",
-				walletName: "Recipient 1",
 				amount: 100,
+				assetSymbol: "ARK",
 				exchangeAmount: 1,
 				exchangeTicker: "USD",
-				assetSymbol: "ARK",
+				walletName: "Recipient 1",
 			},
 		];
 

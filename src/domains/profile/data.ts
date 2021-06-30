@@ -3,16 +3,16 @@ export const blockchainRegistrations = [
 		agent: "OLEBank",
 		blockchainName: "ARK Ecosystem",
 		history: [],
-		website: "",
 		msq: true,
 		repository: [],
+		website: "",
 	},
 	{
 		agent: "OLEBank",
 		blockchainName: "ARK Ecosystem",
 		history: [],
-		website: "",
 		msq: true,
 		repository: [],
+		website: "",
 	},
 ];

@@ -48,8 +48,8 @@ describe("DelegateResignationDetail", () => {
 				isOpen={true}
 				transaction={{
 					...TransactionFixture,
-					username: () => "Ark Wallet",
 					isConfirmed: () => true,
+					username: () => "Ark Wallet",
 					wallet: () => ({
 						...TransactionFixture.wallet(),
 						username: () => "ARK Wallet",

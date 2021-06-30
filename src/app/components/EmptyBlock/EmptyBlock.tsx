@@ -27,6 +27,6 @@ export const EmptyBlock = ({ className, children, size, ...properties }: EmptyBl
 };
 
 EmptyBlock.defaultProps = {
-	size: "md",
 	className: "",
+	size: "md",
 };

@@ -16,7 +16,7 @@ describe("RouterView", () => {
 	it("should render", () => {
 		const { getByTestId, asFragment } = render(
 			<MemoryRouter>
-				<RouterView routes={[{ path: "/", component: () => <h1>Test</h1> }]} />
+				<RouterView routes={[{ component: () => <h1>Test</h1>, path: "/" }]} />
 			</MemoryRouter>,
 		);
 		expect(getByTestId("RouterView__wrapper")).toHaveTextContent("Test");
@@ -26,7 +26,7 @@ describe("RouterView", () => {
 	it("should render with custom wrapper", () => {
 		const { getByTestId, asFragment } = render(
 			<MemoryRouter>
-				<RouterView wrapper="section" routes={[{ path: "/", component: () => <h1>Test</h1> }]} />
+				<RouterView wrapper="section" routes={[{ component: () => <h1>Test</h1>, path: "/" }]} />
 			</MemoryRouter>,
 		);
 		expect(getByTestId("RouterView__wrapper").tagName).toEqual("SECTION");
@@ -43,8 +43,8 @@ describe("RouterView", () => {
 			<Router history={history}>
 				<RouterView
 					routes={[
-						{ path: "/test", component: () => <h1>Test 1</h1> },
-						{ path: "/test2", component: () => <h1>Test 2</h1> },
+						{ component: () => <h1>Test 1</h1>, path: "/test" },
+						{ component: () => <h1>Test 2</h1>, path: "/test2" },
 					]}
 				/>
 			</Router>,
@@ -64,7 +64,7 @@ describe("RouterView", () => {
 
 		render(
 			<Router history={history}>
-				<RouterView routes={[{ path: "/test", component: () => <h1>Test</h1> }]} />
+				<RouterView routes={[{ component: () => <h1>Test</h1>, path: "/test" }]} />
 			</Router>,
 		);
 
@@ -86,7 +86,7 @@ describe("RouterView", () => {
 		const { getByTestId } = render(
 			<Router history={history}>
 				<RouterView
-					routes={[{ path: "/test", component: () => <h1>Test</h1> }, { component: () => <h1>Home</h1> }]}
+					routes={[{ component: () => <h1>Test</h1>, path: "/test" }, { component: () => <h1>Home</h1> }]}
 					middlewares={[testMiddleware]}
 				/>
 			</Router>,
@@ -117,8 +117,8 @@ describe("RouterView", () => {
 				<>
 					<RouterView
 						routes={[
-							{ path: "/test", component: () => <h1>Test</h1> },
-							{ path: "/custom", component: () => <h1>Custom</h1> },
+							{ component: () => <h1>Test</h1>, path: "/test" },
+							{ component: () => <h1>Custom</h1>, path: "/custom" },
 						]}
 						middlewares={[testMiddleware]}
 					/>

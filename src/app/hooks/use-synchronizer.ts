@@ -25,7 +25,7 @@ export const useSynchronizer = (jobs: Job[]) => {
 				await callback();
 				await persist();
 			} catch (error) {
-				setError({ timestamp: DateTime.make().toUNIX(), error });
+				setError({ error, timestamp: DateTime.make().toUNIX() });
 			}
 		},
 		[persist, setError],
@@ -61,7 +61,7 @@ export const useSynchronizer = (jobs: Job[]) => {
 		};
 	}, [timers]);
 
-	return useMemo(() => ({ start, stop, runAll, error, clearError: () => setError(undefined) }), [
+	return useMemo(() => ({ clearError: () => setError(undefined), error, runAll, start, stop }), [
 		error,
 		setError,
 		start,

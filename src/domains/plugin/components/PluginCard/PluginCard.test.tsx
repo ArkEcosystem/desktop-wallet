@@ -6,12 +6,12 @@ import { fireEvent, render, screen } from "utils/testing-library";
 import { BlankPluginCard, PluginCard } from "./PluginCard";
 
 const basePlugin = {
-	id: "ark-explorer",
-	title: "ARK Explorer",
 	author: "ARK.io",
 	category: "utility",
-	version: "1.3.8",
+	id: "ark-explorer",
 	size: "4.2 MB",
+	title: "ARK Explorer",
+	version: "1.3.8",
 };
 
 describe("PluginCard", () => {
@@ -71,8 +71,8 @@ describe("PluginCard", () => {
 	it("should render grant icon", () => {
 		const plugin = {
 			...basePlugin,
-			isInstalled: false,
 			isGrant: true,
+			isInstalled: false,
 		};
 
 		const { asFragment, container } = render(<PluginCard plugin={plugin} />);
@@ -84,9 +84,9 @@ describe("PluginCard", () => {
 	it("should render alert icon", () => {
 		const plugin = {
 			...basePlugin,
-			isInstalled: true,
 			hasUpdateAvailable: true,
 			isCompatible: false,
+			isInstalled: true,
 		};
 
 		const { asFragment, container } = render(<PluginCard plugin={plugin} />);
@@ -98,8 +98,8 @@ describe("PluginCard", () => {
 	it("should render update icon", () => {
 		const plugin = {
 			...basePlugin,
-			isInstalled: true,
 			hasUpdateAvailable: true,
+			isInstalled: true,
 		};
 
 		const { asFragment, container } = render(<PluginCard plugin={plugin} />);
@@ -113,8 +113,8 @@ describe("PluginCard", () => {
 
 		const plugin = {
 			...basePlugin,
-			isInstalled: true,
 			hasUpdateAvailable: true,
+			isInstalled: true,
 		};
 
 		render(<PluginCard plugin={plugin} onSelect={onSelect} />);
@@ -131,8 +131,8 @@ describe("PluginCard", () => {
 
 		const plugin = {
 			...basePlugin,
-			isInstalled: true,
 			hasUpdateAvailable: true,
+			isInstalled: true,
 		};
 
 		render(<PluginCard plugin={plugin} onSelect={onSelect} />);
@@ -146,8 +146,8 @@ describe("PluginCard", () => {
 
 		const plugin = {
 			...basePlugin,
-			isInstalled: true,
 			hasUpdateAvailable: true,
+			isInstalled: true,
 		};
 
 		render(<PluginCard plugin={plugin} onSelect={onSelect} />);

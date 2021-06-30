@@ -40,8 +40,8 @@ describe("Wallet Card", () => {
 				<WalletCard wallet={wallet} />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -54,8 +54,8 @@ describe("Wallet Card", () => {
 				<WalletCard isLoading={true} wallet={wallet} />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -71,8 +71,8 @@ describe("Wallet Card", () => {
 				<WalletCard wallet={wallet} actions={actions} />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -85,8 +85,8 @@ describe("Wallet Card", () => {
 				<WalletCard />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -99,8 +99,8 @@ describe("Wallet Card", () => {
 				<WalletCard displayType="starred" />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -114,8 +114,8 @@ describe("Wallet Card", () => {
 				<WalletCard displayType="ledger" />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -131,8 +131,8 @@ describe("Wallet Card", () => {
 				<WalletCard wallet={wallet} />,
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -147,8 +147,8 @@ describe("Wallet Card", () => {
 				<WalletCard wallet={wallet} />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -161,8 +161,8 @@ describe("Wallet Card", () => {
 				<WalletCard wallet={wallet} />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 

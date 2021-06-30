@@ -26,24 +26,24 @@ describe("News", () => {
 			.reply(200, () => {
 				const { meta, data } = page1Fixture;
 				return {
-					meta,
 					data: data.slice(0, 1),
+					meta,
 				};
 			})
 			.get("/coins/signals?coins=ARK&page=1")
 			.reply(200, () => {
 				const { meta, data } = page1Fixture;
 				return {
-					meta,
 					data: data.slice(0, 1),
+					meta,
 				};
 			})
 			.get("/coins/signals?coins=ARK&page=2")
 			.reply(200, () => {
 				const { meta, data } = require("tests/fixtures/news/page-2.json");
 				return {
-					meta,
 					data: data.slice(0, 1),
+					meta,
 				};
 			})
 			.get("/coins/signals?coins=ARK&query=NoResult&page=1")
@@ -66,8 +66,8 @@ describe("News", () => {
 				<News />
 			</Route>,
 			{
-				routes: [newsURL],
 				history,
+				routes: [newsURL],
 			},
 		);
 
@@ -80,8 +80,8 @@ describe("News", () => {
 				<News />
 			</Route>,
 			{
-				routes: [newsURL],
 				history,
+				routes: [newsURL],
 			},
 		);
 
@@ -104,8 +104,8 @@ describe("News", () => {
 				<News defaultAssets={assets} />
 			</Route>,
 			{
-				routes: [newsURL],
 				history,
+				routes: [newsURL],
 			},
 		);
 
@@ -129,8 +129,8 @@ describe("News", () => {
 				<News />
 			</Route>,
 			{
-				routes: [newsURL],
 				history,
+				routes: [newsURL],
 			},
 		);
 
@@ -173,8 +173,8 @@ describe("News", () => {
 				<News />
 			</Route>,
 			{
-				routes: [newsURL],
 				history,
+				routes: [newsURL],
 			},
 		);
 

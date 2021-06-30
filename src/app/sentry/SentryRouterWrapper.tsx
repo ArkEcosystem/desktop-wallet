@@ -55,7 +55,7 @@ export const SentryRouterWrapper = ({ children }: { children: React.ReactNode })
 	}, [wallet, setWalletContext]);
 
 	useEffect(() => {
-		setLedgerContext({ isAwaitingConnection, hasDeviceAvailable, isConnected });
+		setLedgerContext({ hasDeviceAvailable, isAwaitingConnection, isConnected });
 	}, [setLedgerContext, isAwaitingConnection, hasDeviceAvailable, isConnected]);
 
 	return <>{children}</>;

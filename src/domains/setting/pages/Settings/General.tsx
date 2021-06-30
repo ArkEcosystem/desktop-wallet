@@ -83,13 +83,12 @@ export const General = () => {
 		form.reset();
 
 		setProfileTheme(activeProfile);
-		window.scrollTo({ top: 0, behavior: "smooth" });
+		window.scrollTo({ behavior: "smooth", top: 0 });
 	};
 
 	const securityItems = [
 		{
 			label: t("SETTINGS.GENERAL.SECURITY.SCREENSHOT_PROTECTION.TITLE"),
-			labelDescription: t("SETTINGS.GENERAL.SECURITY.SCREENSHOT_PROTECTION.DESCRIPTION"),
 			labelAddon: (
 				<Toggle
 					ref={register()}
@@ -98,6 +97,7 @@ export const General = () => {
 					data-testid="General-settings__toggle--isScreenshotProtection"
 				/>
 			),
+			labelDescription: t("SETTINGS.GENERAL.SECURITY.SCREENSHOT_PROTECTION.DESCRIPTION"),
 			wrapperClass: "pb-6",
 		},
 		{
@@ -127,7 +127,6 @@ export const General = () => {
 	const otherItems = [
 		{
 			label: t("SETTINGS.GENERAL.OTHER.DEVELOPMENT_NETWORKS.TITLE"),
-			labelDescription: t("SETTINGS.GENERAL.OTHER.DEVELOPMENT_NETWORKS.DESCRIPTION"),
 			labelAddon: (
 				<Toggle
 					ref={register()}
@@ -137,11 +136,11 @@ export const General = () => {
 					data-testid="General-settings__toggle--useTestNetworks"
 				/>
 			),
+			labelDescription: t("SETTINGS.GENERAL.OTHER.DEVELOPMENT_NETWORKS.DESCRIPTION"),
 			wrapperClass: "pb-6",
 		},
 		{
 			label: t("SETTINGS.GENERAL.OTHER.ERROR_REPORTING.TITLE"),
-			labelDescription: t("SETTINGS.GENERAL.OTHER.ERROR_REPORTING.DESCRIPTION"),
 			labelAddon: (
 				<Toggle
 					ref={register()}
@@ -150,11 +149,11 @@ export const General = () => {
 					data-testid="General-settings__toggle--errorReporting"
 				/>
 			),
+			labelDescription: t("SETTINGS.GENERAL.OTHER.ERROR_REPORTING.DESCRIPTION"),
 			wrapperClass: "py-6",
 		},
 		{
 			label: t("SETTINGS.GENERAL.OTHER.TRANSACTION_HISTORY.TITLE"),
-			labelDescription: t("SETTINGS.GENERAL.OTHER.TRANSACTION_HISTORY.DESCRIPTION"),
 			labelAddon: (
 				<Toggle
 					ref={register()}
@@ -165,11 +164,11 @@ export const General = () => {
 					data-testid="General-settings__toggle--transactionHistory"
 				/>
 			),
+			labelDescription: t("SETTINGS.GENERAL.OTHER.TRANSACTION_HISTORY.DESCRIPTION"),
 			wrapperClass: "py-6",
 		},
 		{
 			label: t("SETTINGS.GENERAL.OTHER.DARK_THEME.TITLE"),
-			labelDescription: t("SETTINGS.GENERAL.OTHER.DARK_THEME.DESCRIPTION"),
 			labelAddon: (
 				<Toggle
 					ref={register()}
@@ -178,6 +177,7 @@ export const General = () => {
 					data-testid="General-settings__toggle--isDarkMode"
 				/>
 			),
+			labelDescription: t("SETTINGS.GENERAL.OTHER.DARK_THEME.DESCRIPTION"),
 			wrapperClass: "py-6",
 		},
 	];
@@ -223,7 +223,7 @@ export const General = () => {
 		await persist();
 
 		toasts.success(t("SETTINGS.GENERAL.SUCCESS"));
-		window.scrollTo({ top: 0, behavior: "smooth" });
+		window.scrollTo({ behavior: "smooth", top: 0 });
 	};
 
 	return (

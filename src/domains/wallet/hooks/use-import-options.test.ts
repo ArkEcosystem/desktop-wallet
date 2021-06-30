@@ -49,12 +49,12 @@ describe("useImportOptions", () => {
 			result: { current },
 		} = renderHook(() =>
 			useImportOptions({
-				bip84: {
-					default: true,
-					permissions: [],
-				},
 				bip38: {
 					default: false,
+					permissions: [],
+				},
+				bip84: {
+					default: true,
 					permissions: [],
 				},
 			}),
@@ -89,11 +89,11 @@ describe("useImportOptions", () => {
 			result: { current },
 		} = renderHook(() =>
 			useImportOptions({
-				bip39: {
+				address: {
 					default: false,
 					permissions: [],
 				},
-				address: {
+				bip39: {
 					default: false,
 					permissions: [],
 				},

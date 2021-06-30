@@ -173,8 +173,8 @@ describe("useProfileSynchronizer", () => {
 					<div data-testid="ProfileSynced">test</div>
 				</Route>,
 				{
-					routes: [dashboardURL],
 					history,
+					routes: [dashboardURL],
 					withProfileSynchronizer: true,
 				},
 			);
@@ -191,8 +191,8 @@ describe("useProfileSynchronizer", () => {
 				<div data-testid="ProfileSynced">test</div>
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 				withProfileSynchronizer: true,
 			},
 		);
@@ -220,8 +220,8 @@ describe("useProfileSynchronizer", () => {
 				<div data-testid="RenderedContent">test</div>
 			</Route>,
 			{
-				routes: ["/"],
 				history,
+				routes: ["/"],
 				withProfileSynchronizer: true,
 			},
 		);
@@ -238,8 +238,8 @@ describe("useProfileSynchronizer", () => {
 				<div data-testid="RenderedContent">test</div>
 			</Route>,
 			{
-				routes: ["/profiles/:profileId/dashboard"],
 				history,
+				routes: ["/profiles/:profileId/dashboard"],
 				withProfileSynchronizer: true,
 			},
 		);
@@ -258,8 +258,8 @@ describe("useProfileSynchronizer", () => {
 				<div data-testid="ProfileRestored">test</div>
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 				withProfileSynchronizer: true,
 			},
 		);
@@ -286,8 +286,8 @@ describe("useProfileSynchronizer", () => {
 				<div data-testid="Content">test</div>
 			</Route>,
 			{
-				routes: [passwordProtectedUrl],
 				history,
+				routes: [passwordProtectedUrl],
 				withProfileSynchronizer: true,
 			},
 		);
@@ -308,8 +308,8 @@ describe("useProfileSynchronizer", () => {
 				<div data-testid="ProfileRestored">test</div>
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 				withProfileSynchronizer: true,
 			},
 		);
@@ -347,8 +347,8 @@ describe("useProfileRestore", () => {
 		profile.wallets().flush();
 
 		const mockProfileFromUrl = jest.spyOn(profileUtilsHook, "useProfileUtils").mockImplementation(() => ({
-			getProfileStoredPassword: () => undefined,
 			getProfileFromUrl: () => profile,
+			getProfileStoredPassword: () => undefined,
 		}));
 
 		const wrapper = ({ children }: any) => (
@@ -381,8 +381,8 @@ describe("useProfileRestore", () => {
 		const profileStatusMock = jest.spyOn(profile.status(), "isRestored").mockReturnValue(false);
 
 		const mockProfileFromUrl = jest.spyOn(profileUtilsHook, "useProfileUtils").mockImplementation(() => ({
-			getProfileStoredPassword: () => "password",
 			getProfileFromUrl: () => profile,
+			getProfileStoredPassword: () => "password",
 		}));
 
 		const wrapper = ({ children }: any) => (
@@ -416,8 +416,8 @@ describe("useProfileRestore", () => {
 		profile.wallets().flush();
 
 		const mockProfileFromUrl = jest.spyOn(profileUtilsHook, "useProfileUtils").mockImplementation(() => ({
-			getProfileStoredPassword: () => undefined,
 			getProfileFromUrl: () => undefined,
+			getProfileStoredPassword: () => undefined,
 		}));
 
 		const wrapper = ({ children }: any) => (
@@ -490,8 +490,8 @@ describe("useProfileRestore", () => {
 				<div data-testid="ProfileRestored">test</div>
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 				withProfileSynchronizer: true,
 			},
 		);

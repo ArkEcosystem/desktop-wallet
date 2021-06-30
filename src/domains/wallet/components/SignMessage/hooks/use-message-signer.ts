@@ -20,8 +20,8 @@ const signWithLedger = async (
 	const signature = await wallet.ledger().signMessage(path!, Buffer.from(message));
 
 	return {
-		signatory,
 		message,
+		signatory,
 		signature,
 	};
 };

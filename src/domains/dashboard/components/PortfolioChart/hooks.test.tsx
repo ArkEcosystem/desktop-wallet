@@ -33,7 +33,7 @@ describe("usePortfolioData hook", () => {
 		//@ts-ignore
 		const balancePerCoinMock = jest
 			.spyOn(profile.portfolio(), "breakdown")
-			.mockImplementation(() => ({ ARK: { total: 10, percentage: 3 } }));
+			.mockImplementation(() => ({ ARK: { percentage: 3, total: 10 } }));
 
 		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}> {children} </EnvironmentProvider>;
 		const { result } = renderHook(() => usePortfolioData({ profile }), { wrapper });

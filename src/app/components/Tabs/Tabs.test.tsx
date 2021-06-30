@@ -112,12 +112,12 @@ describe("Tabs", () => {
 		expect(firstTab).toHaveFocus();
 
 		// got right to second tab
-		fireEvent.keyDown(document.activeElement, { key: "ArrowRight", code: "ArrowRight" });
+		fireEvent.keyDown(document.activeElement, { code: "ArrowRight", key: "ArrowRight" });
 
 		expect(firstTab).not.toHaveFocus();
 		expect(secondTab).toHaveFocus();
 
-		fireEvent.keyDown(document.activeElement, { key: "Enter", code: "Enter" });
+		fireEvent.keyDown(document.activeElement, { code: "Enter", key: "Enter" });
 
 		expect(getByTestId("tab-pabel__active-panel")).toHaveTextContent("2");
 
@@ -125,36 +125,36 @@ describe("Tabs", () => {
 		expect(secondTab).toHaveAttribute("aria-selected", "true");
 
 		// go right to first tab
-		fireEvent.keyDown(document.activeElement, { key: "ArrowRight", code: "ArrowRight" });
+		fireEvent.keyDown(document.activeElement, { code: "ArrowRight", key: "ArrowRight" });
 
 		expect(firstTab).toHaveFocus();
 		expect(secondTab).not.toHaveFocus();
 
-		fireEvent.keyDown(document.activeElement, { key: " ", code: "Space" });
+		fireEvent.keyDown(document.activeElement, { code: "Space", key: " " });
 
 		expect(getByTestId("tab-pabel__active-panel")).toHaveTextContent("1");
 
 		// go left to second tab
-		fireEvent.keyDown(document.activeElement, { key: "ArrowLeft", code: "ArrowLeft" });
+		fireEvent.keyDown(document.activeElement, { code: "ArrowLeft", key: "ArrowLeft" });
 
 		expect(firstTab).not.toHaveFocus();
 		expect(secondTab).toHaveFocus();
 
-		fireEvent.keyDown(document.activeElement, { key: "Enter", code: "Enter" });
+		fireEvent.keyDown(document.activeElement, { code: "Enter", key: "Enter" });
 
 		expect(getByTestId("tab-pabel__active-panel")).toHaveTextContent("2");
 
 		// go left to first tab
-		fireEvent.keyDown(document.activeElement, { key: "ArrowLeft", code: "ArrowLeft" });
+		fireEvent.keyDown(document.activeElement, { code: "ArrowLeft", key: "ArrowLeft" });
 
 		expect(firstTab).toHaveFocus();
 		expect(secondTab).not.toHaveFocus();
 
-		fireEvent.keyDown(document.activeElement, { key: " ", code: "Space" });
+		fireEvent.keyDown(document.activeElement, { code: "Space", key: " " });
 
 		expect(getByTestId("tab-pabel__active-panel")).toHaveTextContent("1");
 
 		// tab away
-		fireEvent.keyDown(document.activeElement, { key: "Tab", code: "Tab" });
+		fireEvent.keyDown(document.activeElement, { code: "Tab", key: "Tab" });
 	});
 });

@@ -102,10 +102,10 @@ export const ContactForm = ({
 					.addresses()
 					.values()
 					.map((address: Contracts.IContactAddress) => ({
-						network: address.network(),
 						address: address.address(),
-						name: contact.name(),
 						coin: address.coin(),
+						name: contact.name(),
+						network: address.network(),
 					}))
 			: [],
 	);
@@ -124,7 +124,7 @@ export const ContactForm = ({
 
 	useEffect(() => {
 		for (const [field, message] of Object.entries(errors)) {
-			setError(field, { type: "manual", message: message as string });
+			setError(field, { message: message as string, type: "manual" });
 		}
 	}, [errors, setError]);
 
@@ -141,15 +141,15 @@ export const ContactForm = ({
 		const isValidAddress: boolean = await instance.address().validate(address);
 
 		if (!isValidAddress) {
-			return setError("address", { type: "manual", message: t("CONTACTS.VALIDATION.ADDRESS_IS_INVALID") });
+			return setError("address", { message: t("CONTACTS.VALIDATION.ADDRESS_IS_INVALID"), type: "manual" });
 		}
 
 		setAddresses(
 			addresses.concat({
-				network: network.id(),
 				address,
-				name: address,
 				coin: network.coin(),
+				name: address,
+				network: network.id(),
 			}),
 		);
 
@@ -164,7 +164,7 @@ export const ContactForm = ({
 	};
 
 	const handleSelectNetwork = (networkOption?: NetworkOption) => {
-		setValue("network", networkById(networkOption?.value), { shouldValidate: true, shouldDirty: true });
+		setValue("network", networkById(networkOption?.value), { shouldDirty: true, shouldValidate: true });
 	};
 
 	return (
@@ -173,8 +173,8 @@ export const ContactForm = ({
 			context={form}
 			onSubmit={() =>
 				onSave({
-					name,
 					addresses,
+					name,
 				})
 			}
 		>
@@ -191,11 +191,6 @@ export const ContactForm = ({
 							value: nameMaxLength,
 						},
 						validate: {
-							required: (name) =>
-								!!name?.trim() ||
-								t("COMMON.VALIDATION.FIELD_REQUIRED", {
-									field: t("CONTACTS.CONTACT_FORM.NAME"),
-								}).toString(),
 							duplicateName: (name) =>
 								profile
 									.contacts()
@@ -207,6 +202,11 @@ export const ContactForm = ({
 									).length === 0 ||
 								t("CONTACTS.VALIDATION.NAME_EXISTS", {
 									name: name.trim(),
+								}).toString(),
+							required: (name) =>
+								!!name?.trim() ||
+								t("COMMON.VALIDATION.FIELD_REQUIRED", {
+									field: t("CONTACTS.CONTACT_FORM.NAME"),
 								}).toString(),
 						},
 					})}

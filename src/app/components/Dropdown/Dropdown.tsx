@@ -224,10 +224,10 @@ export const Dropdown = ({
 					spaceBefore > dropdownElement.offsetHeight + numberFromPixels(styles.marginTop) + OFFSET
 				) {
 					setStyles({
-						opacity: 1,
 						marginTop: `-${
 							dropdownElement.offsetHeight + toggleHeight + numberFromPixels(styles.marginTop)
 						}px`,
+						opacity: 1,
 					});
 				} else {
 					const newHeight = spaceAfter - numberFromPixels(styles.marginTop) - OFFSET;
@@ -300,6 +300,6 @@ export const Dropdown = ({
 };
 
 Dropdown.defaultProps = {
-	toggleIcon: "Settings",
 	position: "right",
+	toggleIcon: "Settings",
 };

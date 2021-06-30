@@ -22,8 +22,8 @@ const renderComponent = () => {
 			<Contacts />
 		</Route>,
 		{
-			routes: [contactsURL],
 			history,
+			routes: [contactsURL],
 		},
 	);
 };
@@ -100,7 +100,7 @@ describe("Contacts", () => {
 		const selectNetworkInput = screen.getByTestId("SelectDropdown__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
-		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		fireEvent.keyDown(selectNetworkInput, { code: 13, key: "Enter" });
 
 		await waitFor(() => {
 			expect(selectNetworkInput).toHaveValue("ARK Devnet");
@@ -138,10 +138,10 @@ describe("Contacts", () => {
 		await profile.contacts().update(newContact.id(), {
 			addresses: [
 				{
-					network: "ark.devnet",
 					address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
-					name: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 					coin: "ARK",
+					name: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+					network: "ark.devnet",
 				},
 			],
 		});
@@ -219,10 +219,10 @@ describe("Contacts", () => {
 		await profile.contacts().update(newContact.id(), {
 			addresses: [
 				{
-					network: "ark.devnet",
 					address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
-					name: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 					coin: "ARK",
+					name: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+					network: "ark.devnet",
 				},
 			],
 		});
@@ -270,10 +270,10 @@ describe("Contacts", () => {
 		await profile.contacts().update(newContact.id(), {
 			addresses: [
 				{
-					network: "ark.devnet",
 					address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
-					name: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 					coin: "ARK",
+					name: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+					network: "ark.devnet",
 				},
 			],
 		});

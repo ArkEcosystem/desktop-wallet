@@ -13,9 +13,9 @@ export const useWalletDisplay = ({
 }: UseWalletDisplayProperties) => {
 	const sliderOptions = {
 		slideHeight: 192,
-		slidesPerView: 3,
 		slidesPerColumn: 2,
 		slidesPerGroup: 3,
+		slidesPerView: 3,
 		spaceBetween: 18,
 	};
 
@@ -53,14 +53,14 @@ export const useWalletDisplay = ({
 
 			if (walletObjects.length <= sliderOptions.slidesPerView) {
 				return walletObjects.concat(
-					new Array(sliderOptions.slidesPerView - walletObjects.length).fill({ isBlank: true, displayType }),
+					new Array(sliderOptions.slidesPerView - walletObjects.length).fill({ displayType, isBlank: true }),
 				);
 			}
 
 			const walletsPerPage = sliderOptions.slidesPerView * 2;
 			const desiredLength = Math.ceil(walletObjects.length / walletsPerPage) * walletsPerPage;
 
-			walletObjects.push(...new Array(desiredLength - walletObjects.length).fill({ isBlank: true, displayType }));
+			walletObjects.push(...new Array(desiredLength - walletObjects.length).fill({ displayType, isBlank: true }));
 
 			const result: GridWallet[] = [];
 
@@ -77,11 +77,11 @@ export const useWalletDisplay = ({
 		};
 
 		return {
-			listWallets: viewMore ? listWallets : listWallets.slice(0, listPagerLimit),
 			gridWallets: loadGridWallets(),
 			listHasMore: wallets.length > 0 && listWallets.length > listPagerLimit && !viewMore,
+			listWallets: viewMore ? listWallets : listWallets.slice(0, listPagerLimit),
 		};
 	}, [wallets, selectedNetworkIds, displayType, viewMore, sliderOptions.slidesPerView, listPagerLimit]);
 
-	return { listWallets, gridWallets, sliderOptions, listHasMore };
+	return { gridWallets, listHasMore, listWallets, sliderOptions };
 };

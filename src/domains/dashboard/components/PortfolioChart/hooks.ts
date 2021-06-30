@@ -7,27 +7,27 @@ import { useMemo } from "react";
 
 export const usePortfolioData = ({ profile }: { profile: Contracts.IProfile }) => {
 	const balances = [
-		{ name: "Mon", label: "22 Jun, 2020", usd: 1000, btc: 2400, formatted: { usd: "1,000", btc: "0.26" } },
-		{ name: "Tue", label: "23 Jun, 2020", usd: 3000, btc: 5400, formatted: { usd: "3,000", btc: "0.58" } },
-		{ name: "Wed", label: "24 Jun, 2020", usd: 15_100, btc: 1398, formatted: { usd: "15,100", btc: "0.15" } },
-		{ name: "Thu", label: "25 Jun, 2020", usd: 4000, btc: 9800, formatted: { usd: "4,000", btc: "1.06" } },
-		{ name: "Fri", label: "26 Jun, 2020", usd: 11_200, btc: 2000, formatted: { usd: "11,200", btc: "0.22" } },
-		{ name: "Sat", label: "27 Jun, 2020", usd: 3000, btc: 4800, formatted: { usd: "3,000", btc: "0.52" } },
-		{ name: "Sun", label: "28 Jun, 2020", usd: 8000, btc: 18_000, formatted: { usd: "8,000", btc: "2.16" } },
+		{ btc: 2400, formatted: { btc: "0.26", usd: "1,000" }, label: "22 Jun, 2020", name: "Mon", usd: 1000 },
+		{ btc: 5400, formatted: { btc: "0.58", usd: "3,000" }, label: "23 Jun, 2020", name: "Tue", usd: 3000 },
+		{ btc: 1398, formatted: { btc: "0.15", usd: "15,100" }, label: "24 Jun, 2020", name: "Wed", usd: 15_100 },
+		{ btc: 9800, formatted: { btc: "1.06", usd: "4,000" }, label: "25 Jun, 2020", name: "Thu", usd: 4000 },
+		{ btc: 2000, formatted: { btc: "0.22", usd: "11,200" }, label: "26 Jun, 2020", name: "Fri", usd: 11_200 },
+		{ btc: 4800, formatted: { btc: "0.52", usd: "3,000" }, label: "27 Jun, 2020", name: "Sat", usd: 3000 },
+		{ btc: 18_000, formatted: { btc: "2.16", usd: "8,000" }, label: "28 Jun, 2020", name: "Sun", usd: 8000 },
 	];
 
 	const { env } = useEnvironmentContext();
 
 	const chartLines = [
 		{
+			color: "warning-600",
 			dataKey: "btc",
 			label: "BTC",
-			color: "warning-600",
 		},
 		{
+			color: "success-600",
 			dataKey: "usd",
 			label: "USD",
-			color: "success-600",
 		},
 	];
 
@@ -64,8 +64,8 @@ export const usePortfolioData = ({ profile }: { profile: Contracts.IProfile }) =
 	}, [availableNetworks, balancePerCoin]);
 
 	return {
+		balances,
 		chartLines,
 		percentages,
-		balances,
 	};
 };

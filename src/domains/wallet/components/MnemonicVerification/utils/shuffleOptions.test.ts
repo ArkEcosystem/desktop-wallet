@@ -6,20 +6,20 @@ describe("#shuffleOptions", () => {
 	const limit = 7;
 
 	it("should get diff results", () => {
-		const result1 = shuffleOptions({ options, value, limit });
-		const result2 = shuffleOptions({ options, value, limit });
+		const result1 = shuffleOptions({ limit, options, value });
+		const result2 = shuffleOptions({ limit, options, value });
 		expect(result1).not.toEqual(result2);
 	});
 
 	it("should contain the value", () => {
 		for (let index = 0; index < 10; index++) {
-			expect(shuffleOptions({ options, value, limit })).toContain(value);
+			expect(shuffleOptions({ limit, options, value })).toContain(value);
 		}
 	});
 
 	it("should get limit length", () => {
 		for (let index = 0; index < 10; index++) {
-			expect(shuffleOptions({ options, value, limit })).toHaveLength(limit);
+			expect(shuffleOptions({ limit, options, value })).toHaveLength(limit);
 		}
 	});
 });

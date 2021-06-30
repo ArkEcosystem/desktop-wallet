@@ -11,6 +11,6 @@ type RadioButtonProperties = {
 export const RadioButton = styled.input<RadioButtonProperties>(getStyles);
 
 RadioButton.defaultProps = {
-	type: "radio",
 	color: "success",
+	type: "radio",
 };

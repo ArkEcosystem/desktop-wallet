@@ -84,7 +84,7 @@ describe("Dropdown", () => {
 		expect(firstOption).toBeTruthy();
 
 		act(() => {
-			fireEvent.keyDown(firstOption, { key: "Enter", code: 13 });
+			fireEvent.keyDown(firstOption, { code: 13, key: "Enter" });
 		});
 
 		expect(onSelect).toBeCalledWith({ label: "Option 1", value: "1" });
@@ -262,7 +262,6 @@ describe("Dropdown", () => {
 	it("should render dropdown group options with divider, icon and secondary label", () => {
 		const primaryOptions: DropdownOptionGroup = {
 			key: "primary",
-			title: "Primary Options 1",
 			options: [
 				{
 					label: "Primary Options 1.1",
@@ -273,27 +272,28 @@ describe("Dropdown", () => {
 					value: "value 1.2",
 				},
 			],
+			title: "Primary Options 1",
 		};
 
 		const secondaryOptions: DropdownOptionGroup = {
-			key: "secondary",
 			hasDivider: true,
-			title: "Secondary Options 1",
+			key: "secondary",
 			options: [
 				{
-					label: "Secondary Options 1.1",
-					value: "value 1.1",
 					icon: "icon-1",
 					iconPosition: "end",
+					label: "Secondary Options 1.1",
+					value: "value 1.1",
 				},
 				{
-					label: "Secondary Options 1.2",
-					value: "value 1.2",
 					icon: "icon-2",
-					secondaryLabel: "secondary label",
 					iconPosition: "start",
+					label: "Secondary Options 1.2",
+					secondaryLabel: "secondary label",
+					value: "value 1.2",
 				},
 			],
+			title: "Secondary Options 1",
 		};
 		const { getByTestId, container } = render(
 			<Dropdown options={[primaryOptions, secondaryOptions]} position="top-right" />,
@@ -310,15 +310,15 @@ describe("Dropdown", () => {
 	it("should render without options one", () => {
 		const primaryOptions: DropdownOptionGroup = {
 			key: "primary",
-			title: "Primary Options 1",
 			options: [],
+			title: "Primary Options 1",
 		};
 
 		const secondaryOptions: DropdownOptionGroup = {
-			key: "secondary",
 			hasDivider: true,
-			title: "Secondary Options 1",
+			key: "secondary",
 			options: [],
+			title: "Secondary Options 1",
 		};
 		const { getByTestId, container } = render(
 			<Dropdown options={[primaryOptions, secondaryOptions]} position="top-right" />,
@@ -334,7 +334,7 @@ describe("Dropdown", () => {
 
 	it("should render with a disabled option", () => {
 		const { getByTestId, container } = render(
-			<Dropdown options={[{ label: "Disabled Option", value: "disabled", disabled: true }]} />,
+			<Dropdown options={[{ disabled: true, label: "Disabled Option", value: "disabled" }]} />,
 		);
 
 		const toggle = getByTestId("dropdown__toggle");
@@ -463,7 +463,7 @@ describe("ClickOutside Hook", () => {
 				fireEvent.click(toggle);
 			});
 
-			expect(getByTestId("dropdown__content")).toHaveAttribute("style", "opacity: 1; margin-top: -100px;");
+			expect(getByTestId("dropdown__content")).toHaveAttribute("style", "margin-top: -100px; opacity: 1;");
 
 			getBoundingClientRectSpy.mockRestore();
 			offsetHeightSpy.mockRestore();

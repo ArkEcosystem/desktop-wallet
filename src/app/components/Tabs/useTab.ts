@@ -7,7 +7,7 @@ export function useTab({ initialId }: { initialId: TabId }) {
 
 	const isIdActive = React.useCallback((id: TabId) => currentId === id, [currentId]);
 
-	return { currentId, setCurrentId, isIdActive };
+	return { currentId, isIdActive, setCurrentId };
 }
 
 export const TabContext = React.createContext<ReturnType<typeof useTab> | undefined>(undefined);

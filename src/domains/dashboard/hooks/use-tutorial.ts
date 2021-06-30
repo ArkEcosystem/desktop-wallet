@@ -26,7 +26,7 @@ export const useTutorial = (environment: Environment, profile: Contracts.IProfil
 
 	return {
 		showTutorial,
-		startTutorial,
 		skipTutorial,
+		startTutorial,
 	};
 };

@@ -6,7 +6,7 @@ export const getPageURL = () => resolve("build/index.html");
 export const getLocation = ClientFunction(() => document.location.href);
 
 export const scrollTo = ClientFunction((top: number, left = 0, behavior = "auto") => {
-	window.scrollTo({ top, left, behavior });
+	window.scrollTo({ behavior, left, top });
 });
 
 export const scrollToTop = ClientFunction(() => window.scrollTo({ top: 0 }));
@@ -80,36 +80,36 @@ const multisignatureMocks = () => {
 
 const searchAddressesMocks = () => {
 	const addresses = {
-		D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD: [
-			{ page: 1, limit: 10 },
-			{ page: 1, limit: 15 },
-			{ page: 2, limit: 15 },
-			{ page: 1, limit: 30 },
-		],
-		DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS: [
-			{ page: 1, limit: 10 },
-			{ page: 1, limit: 15 },
-			{ page: 1, limit: 30 },
-		],
-		DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P: [
-			{ page: 1, limit: 10 },
-			{ page: 1, limit: 15 },
-			{ page: 1, limit: 30 },
+		AThxYTVgpzZfW7K6UxyB8vBZVMoPAwQS3D: [
+			{ limit: 10, page: 1 },
+			{ limit: 15, page: 1 },
+			{ limit: 30, page: 1 },
 		],
 		D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb: [
-			{ page: 1, limit: 10 },
-			{ page: 1, limit: 15 },
-			{ page: 1, limit: 30 },
+			{ limit: 10, page: 1 },
+			{ limit: 15, page: 1 },
+			{ limit: 30, page: 1 },
+		],
+		D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD: [
+			{ limit: 10, page: 1 },
+			{ limit: 15, page: 1 },
+			{ limit: 15, page: 2 },
+			{ limit: 30, page: 1 },
+		],
+		DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P: [
+			{ limit: 10, page: 1 },
+			{ limit: 15, page: 1 },
+			{ limit: 30, page: 1 },
+		],
+		DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS: [
+			{ limit: 10, page: 1 },
+			{ limit: 15, page: 1 },
+			{ limit: 30, page: 1 },
 		],
 		DJXg9Vqg2tofRNrMAvMzhZTkegu8QyyNQq: [
-			{ page: 1, limit: 10 },
-			{ page: 1, limit: 15 },
-			{ page: 1, limit: 30 },
-		],
-		AThxYTVgpzZfW7K6UxyB8vBZVMoPAwQS3D: [
-			{ page: 1, limit: 10 },
-			{ page: 1, limit: 15 },
-			{ page: 1, limit: 30 },
+			{ limit: 10, page: 1 },
+			{ limit: 15, page: 1 },
+			{ limit: 30, page: 1 },
 		],
 	};
 
@@ -153,8 +153,8 @@ export const mockRequest = (url: string | object | Function, fixture: string | o
 			},
 			statusCode,
 			{
-				"access-control-allow-origin": "*",
 				"access-control-allow-headers": "Content-Type",
+				"access-control-allow-origin": "*",
 			},
 		);
 
@@ -185,7 +185,62 @@ export const requestMocks = {
 		// mainnet
 		mockRequest("https://wallets.ark.io/api/delegates", "coins/ark/mainnet/delegates"),
 	],
+	exchange: [
+		mockRequest(
+			// eslint-disable-next-line
+			/https:\/\/min-api\.cryptocompare\.com\/data\/dayAvg\?fsym=ARK\&tsym=BTC\&toTs=[0-9]/,
+			"exchange/cryptocompare",
+		),
+		mockRequest(
+			// eslint-disable-next-line
+			/https:\/\/min-api\.cryptocompare\.com\/data\/dayAvg\?fsym=ARK\&tsym=ETH\&toTs=[0-9]/,
+			"exchange/cryptocompare-eth",
+		),
+		mockRequest(/https:\/\/min-api\.cryptocompare\.com\/data\/histoday/, "exchange/cryptocompare-historical"),
+	],
 	multisignature: [...multisignatureMocks()],
+	other: [
+		mockRequest(
+			"https://raw.githubusercontent.com/ArkEcosystem/common/master/devnet/known-wallets-extended.json",
+			knownWallets,
+		),
+	],
+	plugins: [
+		mockRequest(
+			"https://raw.githubusercontent.com/ArkEcosystem/common/master/desktop-wallet/whitelist.json",
+			"plugins/whitelist",
+		),
+		mockRequest(
+			"https://raw.github.com/dated/transaction-export-plugin/master/package.json",
+			"plugins/github/@dated/transaction-export-plugin/package",
+		),
+		mockRequest(
+			"https://raw.github.com/dated/delegate-calculator-plugin/master/package.json",
+			"plugins/github/@dated/delegate-calculator-plugin/package",
+		),
+		mockRequest(
+			"https://raw.github.com/ark-ecosystem-desktop-plugins/sound-notifications/master/package.json",
+			"plugins/github/@arkecosystem/desktop-wallet-sound-notifications/package",
+		),
+		mockRequest(
+			"https://raw.github.com/ark-ecosystem-desktop-plugins/explorer/master/package.json",
+			"plugins/github/@arkecosystem/desktop-wallet-explorer/package",
+		),
+		mockRequest(/https:\/\/registry\.npmjs\.com\/-\/v1\/search.*from=0.*/, "plugins/registry-response"),
+		mockRequest(/https:\/\/registry\.npmjs\.com\/-\/v1\/search.*from=250.*/, () => ({})),
+		mockRequest(/logo.png$/, () => "/assets/background.png"),
+		mockRequest(/master\/images\/preview-\d.png$/, () => "/assets/background.png"),
+		...pluginNames.map((pluginName) =>
+			mockRequest(`https://registry.npmjs.com/${pluginName}`, `plugins/registry/${pluginName}`),
+		),
+		...pluginNames.map((pluginName) =>
+			mockRequest(
+				new RegExp(`https://api.npmjs.org/downloads.*/${pluginNames}`),
+				`plugins/downloads/${pluginName}`,
+			),
+		),
+	],
+
 	transactions: [
 		// devnet
 		mockRequest("https://dwallets.ark.io/api/transactions/fees", "coins/ark/devnet/transaction-fees"),
@@ -234,7 +289,7 @@ export const requestMocks = {
 
 		mockRequest(
 			"https://dwallets.ark.io/api/transactions?page=1&limit=10&orderBy=timestamp&address=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD%2CD5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
-			{ meta: {}, data: [] },
+			{ data: [], meta: {} },
 		),
 
 		// mainnet
@@ -249,61 +304,6 @@ export const requestMocks = {
 		),
 
 		...walletMocks(),
-	],
-	plugins: [
-		mockRequest(
-			"https://raw.githubusercontent.com/ArkEcosystem/common/master/desktop-wallet/whitelist.json",
-			"plugins/whitelist",
-		),
-		mockRequest(
-			"https://raw.github.com/dated/transaction-export-plugin/master/package.json",
-			"plugins/github/@dated/transaction-export-plugin/package",
-		),
-		mockRequest(
-			"https://raw.github.com/dated/delegate-calculator-plugin/master/package.json",
-			"plugins/github/@dated/delegate-calculator-plugin/package",
-		),
-		mockRequest(
-			"https://raw.github.com/ark-ecosystem-desktop-plugins/sound-notifications/master/package.json",
-			"plugins/github/@arkecosystem/desktop-wallet-sound-notifications/package",
-		),
-		mockRequest(
-			"https://raw.github.com/ark-ecosystem-desktop-plugins/explorer/master/package.json",
-			"plugins/github/@arkecosystem/desktop-wallet-explorer/package",
-		),
-		mockRequest(/https:\/\/registry\.npmjs\.com\/-\/v1\/search.*from=0.*/, "plugins/registry-response"),
-		mockRequest(/https:\/\/registry\.npmjs\.com\/-\/v1\/search.*from=250.*/, () => ({})),
-		mockRequest(/logo.png$/, () => "/assets/background.png"),
-		mockRequest(/master\/images\/preview-\d.png$/, () => "/assets/background.png"),
-		...pluginNames.map((pluginName) =>
-			mockRequest(`https://registry.npmjs.com/${pluginName}`, `plugins/registry/${pluginName}`),
-		),
-		...pluginNames.map((pluginName) =>
-			mockRequest(
-				new RegExp(`https://api.npmjs.org/downloads.*/${pluginNames}`),
-				`plugins/downloads/${pluginName}`,
-			),
-		),
-	],
-
-	exchange: [
-		mockRequest(
-			// eslint-disable-next-line
-			/https:\/\/min-api\.cryptocompare\.com\/data\/dayAvg\?fsym=ARK\&tsym=BTC\&toTs=[0-9]/,
-			"exchange/cryptocompare",
-		),
-		mockRequest(
-			// eslint-disable-next-line
-			/https:\/\/min-api\.cryptocompare\.com\/data\/dayAvg\?fsym=ARK\&tsym=ETH\&toTs=[0-9]/,
-			"exchange/cryptocompare-eth",
-		),
-		mockRequest(/https:\/\/min-api\.cryptocompare\.com\/data\/histoday/, "exchange/cryptocompare-historical"),
-	],
-	other: [
-		mockRequest(
-			"https://raw.githubusercontent.com/ArkEcosystem/common/master/devnet/known-wallets-extended.json",
-			knownWallets,
-		),
 	],
 };
 
@@ -323,8 +323,8 @@ export const createFixture = (name: string, preHooks: RequestMock[] = [], postHo
 			...postHooks,
 			mockRequest(/^https?:\/\//, (request: any) => {
 				const mock: { url: string; method: string; body?: string } = {
-					url: request.url,
 					method: request.method,
+					url: request.url,
 				};
 
 				if (request.method === "OPTIONS") {

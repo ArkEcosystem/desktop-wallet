@@ -37,7 +37,7 @@ describe("Plugin Controller subject", () => {
 	it("should filter by category", () => {
 		const plugin1 = new PluginController({ name: "plugin-test1" }, () => void 0);
 		const plugin2 = new PluginController(
-			{ name: "plugin-test2", "desktop-wallet": { categories: ["exchange"] } },
+			{ "desktop-wallet": { categories: ["exchange"] }, name: "plugin-test2" },
 			() => void 0,
 		);
 		subject.push(plugin1);
@@ -82,7 +82,7 @@ describe("Plugin Controller subject", () => {
 		const consoleMock = jest.spyOn(console, "error").mockImplementation();
 		subject.fill([
 			{
-				config: { name: "plugin1", keywords: ["@arkecosystem", "desktop-wallet"] },
+				config: { keywords: ["@arkecosystem", "desktop-wallet"], name: "plugin1" },
 				dir: "/plugin1",
 				source: "module.exports = () => void 0",
 				sourcePath: "/plugin1/index.js",

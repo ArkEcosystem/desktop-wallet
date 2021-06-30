@@ -10,7 +10,7 @@ const AmountFiat: React.FC<AmountProperties> = ({
 	withSign,
 	className,
 }: AmountProperties) => {
-	const amount = formatFiat({ value, ticker });
+	const amount = formatFiat({ ticker, value });
 
 	const formatted = !withSign ? amount : formatWithSign(amount, !!isNegative);
 

@@ -129,7 +129,7 @@ describe("SelectDropdown", () => {
 		});
 
 		act(() => {
-			fireEvent.keyDown(selectDropdown, { key: "Tab", code: 9 });
+			fireEvent.keyDown(selectDropdown, { code: 9, key: "Tab" });
 		});
 
 		const firstOption = getByTestId("SelectDropdown__option--0");
@@ -148,11 +148,11 @@ describe("SelectDropdown", () => {
 		});
 
 		act(() => {
-			fireEvent.keyDown(selectDropdown, { key: "Tab", code: 9 });
+			fireEvent.keyDown(selectDropdown, { code: 9, key: "Tab" });
 		});
 
 		act(() => {
-			fireEvent.keyDown(selectDropdown, { key: "Backspace", code: 8 });
+			fireEvent.keyDown(selectDropdown, { code: 8, key: "Backspace" });
 		});
 
 		const firstOption = getByTestId("SelectDropdown__option--0");
@@ -163,13 +163,13 @@ describe("SelectDropdown", () => {
 		});
 
 		act(() => {
-			fireEvent.keyDown(selectDropdown, { key: "ArrowDown", code: 40 });
+			fireEvent.keyDown(selectDropdown, { code: 40, key: "ArrowDown" });
 		});
 
 		expect(firstOption).toHaveClass("is-highlighted");
 
 		act(() => {
-			fireEvent.keyDown(firstOption, { key: "Enter", code: 13 });
+			fireEvent.keyDown(firstOption, { code: 13, key: "Enter" });
 		});
 
 		expect(getByTestId("select-list__input")).toHaveValue("1");
@@ -195,7 +195,7 @@ describe("SelectDropdown", () => {
 		});
 
 		act(() => {
-			fireEvent.keyDown(selectDropdown, { key: "Enter", code: 13 });
+			fireEvent.keyDown(selectDropdown, { code: 13, key: "Enter" });
 		});
 
 		expect(getByTestId("select-list__input")).toHaveValue("1");
@@ -210,7 +210,7 @@ describe("SelectDropdown", () => {
 		});
 
 		act(() => {
-			fireEvent.keyDown(selectDropdown, { key: "Tab", code: 9 });
+			fireEvent.keyDown(selectDropdown, { code: 9, key: "Tab" });
 		});
 
 		expect(getByTestId("select-list__input")).toHaveValue("1");
@@ -225,17 +225,17 @@ describe("SelectDropdown", () => {
 		});
 
 		act(() => {
-			fireEvent.keyDown(selectDropdown, { key: "Enter", code: 13 });
+			fireEvent.keyDown(selectDropdown, { code: 13, key: "Enter" });
 		});
 
 		expect(selectDropdown).toHaveValue("Option 1");
 
 		act(() => {
-			fireEvent.keyDown(selectDropdown, { key: "ArrowDown", code: 40 });
+			fireEvent.keyDown(selectDropdown, { code: 40, key: "ArrowDown" });
 		});
 
 		act(() => {
-			fireEvent.keyDown(selectDropdown, { key: "Enter", code: 13 });
+			fireEvent.keyDown(selectDropdown, { code: 13, key: "Enter" });
 		});
 
 		expect(selectDropdown).toHaveValue("Option 2");
@@ -250,7 +250,7 @@ describe("SelectDropdown", () => {
 		});
 
 		act(() => {
-			fireEvent.keyDown(selectDropdown, { key: "Tab", code: 9 });
+			fireEvent.keyDown(selectDropdown, { code: 9, key: "Tab" });
 		});
 
 		expect(getByTestId("select-list__input")).toHaveValue("");
@@ -265,7 +265,7 @@ describe("SelectDropdown", () => {
 		});
 
 		act(() => {
-			fireEvent.keyDown(selectDropdown, { key: "A", code: 65 });
+			fireEvent.keyDown(selectDropdown, { code: 65, key: "A" });
 		});
 
 		expect(getByTestId("select-list__input")).toHaveValue("");
@@ -280,7 +280,7 @@ describe("SelectDropdown", () => {
 		});
 
 		act(() => {
-			fireEvent.keyDown(selectDropdown, { key: "Enter", code: 13 });
+			fireEvent.keyDown(selectDropdown, { code: 13, key: "Enter" });
 		});
 
 		expect(getByTestId("select-list__input")).toHaveValue("1");
@@ -290,10 +290,10 @@ describe("SelectDropdown", () => {
 		});
 
 		act(() => {
-			fireEvent.keyDown(selectDropdown, { key: "A", code: 65 });
+			fireEvent.keyDown(selectDropdown, { code: 65, key: "A" });
 		});
 		act(() => {
-			fireEvent.keyDown(selectDropdown, { key: "B", code: 65 });
+			fireEvent.keyDown(selectDropdown, { code: 65, key: "B" });
 		});
 
 		expect(getByTestId("select-list__input")).toHaveValue("");
@@ -338,7 +338,7 @@ describe("SelectDropdown", () => {
 		});
 
 		act(() => {
-			fireEvent.keyDown(selectDropdown, { key: "Enter", code: 13 });
+			fireEvent.keyDown(selectDropdown, { code: 13, key: "Enter" });
 		});
 
 		expect(selectDropdown).toHaveValue("Option 1");

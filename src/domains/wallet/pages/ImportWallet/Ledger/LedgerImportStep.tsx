@@ -156,10 +156,10 @@ const SingleImport = ({
 					}}
 					ref={register({
 						maxLength: {
-							value: 42,
 							message: t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.MAXLENGTH_ERROR", {
 								maxLength: 42,
 							}),
+							value: 42,
 						},
 						validate: {
 							duplicateAlias: (alias) =>

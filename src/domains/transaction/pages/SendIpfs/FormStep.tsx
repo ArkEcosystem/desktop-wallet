@@ -31,8 +31,8 @@ export const FormStep = ({ networks, profile }: { networks: Networks.Network[]; 
 						defaultValue={hash}
 						onChange={(event: any) =>
 							setValue("hash", event.target.value, {
-								shouldValidate: true,
 								shouldDirty: true,
+								shouldValidate: true,
 							})
 						}
 					/>

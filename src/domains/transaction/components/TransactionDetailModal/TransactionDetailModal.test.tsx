@@ -55,8 +55,8 @@ describe("TransactionDetailModal", () => {
 				/>
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -78,8 +78,8 @@ describe("TransactionDetailModal", () => {
 				,
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -97,17 +97,17 @@ describe("TransactionDetailModal", () => {
 					transactionItem={{
 						...TransactionFixture,
 						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
-						type: () => "multiSignature",
 						min: () => 2,
 						publicKeys: () => [wallet.publicKey(), profile.wallets().last().publicKey()],
+						type: () => "multiSignature",
 						wallet: () => wallet,
 					}}
 				/>
 				,
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -140,8 +140,8 @@ describe("TransactionDetailModal", () => {
 				,
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -166,8 +166,8 @@ describe("TransactionDetailModal", () => {
 				,
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -200,8 +200,8 @@ describe("TransactionDetailModal", () => {
 				,
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -234,8 +234,8 @@ describe("TransactionDetailModal", () => {
 				,
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -251,15 +251,15 @@ describe("TransactionDetailModal", () => {
 					transactionItem={{
 						...TransactionFixture,
 						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
-						username: () => "ARK Wallet",
 						type: () => "delegateRegistration",
+						username: () => "ARK Wallet",
 					}}
 				/>
 				,
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -285,8 +285,8 @@ describe("TransactionDetailModal", () => {
 				,
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -308,8 +308,8 @@ describe("TransactionDetailModal", () => {
 				,
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -324,17 +324,17 @@ describe("TransactionDetailModal", () => {
 					isOpen={true}
 					transactionItem={{
 						...TransactionFixture,
-						isTransfer: () => false,
-						isMagistrate: () => true,
 						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
+						isMagistrate: () => true,
+						isTransfer: () => false,
 						type: () => "magistrate",
 					}}
 				/>
 				,
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -359,8 +359,8 @@ describe("TransactionDetailModal", () => {
 					,
 				</Route>,
 				{
-					routes: [dashboardURL],
 					history,
+					routes: [dashboardURL],
 				},
 			),
 		).toThrow();

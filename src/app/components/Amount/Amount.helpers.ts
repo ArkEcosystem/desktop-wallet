@@ -13,9 +13,9 @@ const formatCrypto = ({ locale, value, ...parameters }: FormatParameters): strin
 	const decimals = getDecimalsByTicker(ticker);
 
 	const numeral = Numeral.make(locale as string, {
-		minimumFractionDigits: 0,
-		maximumFractionDigits: decimals,
 		currencyDisplay: "name",
+		maximumFractionDigits: decimals,
+		minimumFractionDigits: 0,
 	});
 
 	// Intl.NumberFormat throws error for some tickers like DARK

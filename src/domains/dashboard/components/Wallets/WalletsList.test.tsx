@@ -20,7 +20,7 @@ describe("WalletsList", () => {
 		wallets = profile
 			.wallets()
 			.values()
-			.map((wallet) => ({ wallet: wallet, actions: [] }));
+			.map((wallet) => ({ actions: [], wallet: wallet }));
 
 		history.push(dashboardURL);
 	});
@@ -31,8 +31,8 @@ describe("WalletsList", () => {
 				<WalletsList wallets={wallets} />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -53,8 +53,8 @@ describe("WalletsList", () => {
 				<WalletsList wallets={wallets} hasMore={true} />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 

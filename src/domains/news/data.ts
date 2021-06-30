@@ -2,50 +2,50 @@ export const AVAILABLE_CATEGORIES = ["Technical", "Marketing", "Community", "Eme
 
 export const assets = [
 	{
-		id: "ark.mainnet",
-		name: "ARK",
-		isSelected: true,
 		coin: "ARK",
+		id: "ark.mainnet",
+		isSelected: true,
+		name: "ARK",
 	},
 	{
-		id: "eth.mainnet",
-		name: "Ethereum",
-		isSelected: false,
 		coin: "ETH",
+		id: "eth.mainnet",
+		isSelected: false,
+		name: "Ethereum",
 	},
 	{
-		id: "btc.livenet",
-		name: "Bitcoin",
-		isSelected: false,
 		coin: "BTC",
+		id: "btc.livenet",
+		isSelected: false,
+		name: "Bitcoin",
 	},
 	{
-		id: "lsk.mainnet",
-		name: "Lisk",
-		isSelected: false,
 		coin: "LSK",
+		id: "lsk.mainnet",
+		isSelected: false,
+		name: "Lisk",
 	},
 ];
 
 export const coins: any = {
-	eth: {
-		name: "Ethereum",
-		coin: "ETH",
-		network: "eth.mainnet",
-	},
 	ark: {
-		name: "ARK Ecosystem",
 		coin: "ARK",
+		name: "ARK Ecosystem",
 		network: "ark.mainnet",
 	},
 	btc: {
-		name: "Bitcoin",
 		coin: "BTC",
+		name: "Bitcoin",
 		network: "btc.livenet",
 	},
+	eth: {
+		coin: "ETH",
+		name: "Ethereum",
+		network: "eth.mainnet",
+	},
 	lsk: {
-		name: "Lisk",
 		coin: "LSK",
+		name: "Lisk",
 		network: "lsk.mainnet",
 	},
 };

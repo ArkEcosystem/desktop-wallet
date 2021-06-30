@@ -118,8 +118,8 @@ interface ProfileSyncState {
 export const useProfileSyncStatus = () => {
 	const { profileIsRestoring, setConfiguration } = useConfiguration();
 	const { current } = useRef<ProfileSyncState>({
-		status: "idle",
 		restored: [],
+		status: "idle",
 	});
 
 	const isIdle = () => current.status === "idle";
@@ -144,10 +144,19 @@ export const useProfileSyncStatus = () => {
 
 	return {
 		isIdle,
-		shouldSync,
-		status: () => current.status,
-		shouldRestore,
-		shouldMarkCompleted,
+		markAsRestored: (profileId: string) => {
+			current.status = "restored";
+			current.restored.push(profileId);
+			setConfiguration({ profileIsRestoring: false });
+		},
+		resetStatuses: (profiles: Contracts.IProfile[]) => {
+			current.status = "idle";
+			current.restored = [];
+			setConfiguration({ profileIsRestoring: false, profileIsSyncing: true });
+			for (const profile of profiles) {
+				profile.status().reset();
+			}
+		},
 		setStatus: (status: string) => {
 			current.status = status;
 			if (status === "restoring") {
@@ -162,19 +171,10 @@ export const useProfileSyncStatus = () => {
 				setConfiguration({ profileIsSyncingExchangeRates: true });
 			}
 		},
-		markAsRestored: (profileId: string) => {
-			current.status = "restored";
-			current.restored.push(profileId);
-			setConfiguration({ profileIsRestoring: false });
-		},
-		resetStatuses: (profiles: Contracts.IProfile[]) => {
-			current.status = "idle";
-			current.restored = [];
-			setConfiguration({ profileIsRestoring: false, profileIsSyncing: true });
-			for (const profile of profiles) {
-				profile.status().reset();
-			}
-		},
+		shouldMarkCompleted,
+		shouldRestore,
+		shouldSync,
+		status: () => current.status,
 	};
 };
 
@@ -187,14 +187,14 @@ export const useProfileRestore = () => {
 
 	const restoreProfileConfig = (profile: Contracts.IProfile) => {
 		const defaultConfiguration: DashboardConfiguration = {
-			walletsDisplayType: "all",
-			viewType: "grid",
 			selectedNetworkIds: uniq(
 				profile
 					.wallets()
 					.values()
 					.map((wallet) => wallet.network().id()),
 			),
+			viewType: "grid",
+			walletsDisplayType: "all",
 		};
 
 		const config = profile

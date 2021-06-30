@@ -62,8 +62,8 @@ describe("CreateWallet", () => {
 				<CreateWallet />
 			</Route>,
 			{
-				routes: [createURL],
 				history,
+				routes: [createURL],
 			},
 		);
 
@@ -85,7 +85,7 @@ describe("CreateWallet", () => {
 
 		act(() => {
 			fireEvent.change(selectNetworkInput, { target: { value: "Ark Dev" } });
-			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+			fireEvent.keyDown(selectNetworkInput, { code: 13, key: "Enter" });
 		});
 		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
 
@@ -96,7 +96,7 @@ describe("CreateWallet", () => {
 
 		act(() => {
 			fireEvent.change(selectNetworkInput, { target: { value: "Ark Dev" } });
-			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+			fireEvent.keyDown(selectNetworkInput, { code: 13, key: "Enter" });
 		});
 
 		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
@@ -197,8 +197,8 @@ describe("CreateWallet", () => {
 				<CreateWallet />
 			</Route>,
 			{
-				routes: [createURL, "/"],
 				history,
+				routes: [createURL, "/"],
 			},
 		);
 		await waitFor(() => expect(getByTestId("NetworkStep")).toBeTruthy());
@@ -219,8 +219,8 @@ describe("CreateWallet", () => {
 				<CreateWallet />
 			</Route>,
 			{
-				routes: [createURL, "/"],
 				history,
+				routes: [createURL, "/"],
 			},
 		);
 		await waitFor(() => expect(getByTestId("NetworkStep")).toBeTruthy());
@@ -231,7 +231,7 @@ describe("CreateWallet", () => {
 
 		act(() => {
 			fireEvent.change(selectNetworkInput, { target: { value: "Ark Dev" } });
-			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+			fireEvent.keyDown(selectNetworkInput, { code: 13, key: "Enter" });
 		});
 		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
 
@@ -276,8 +276,8 @@ describe("CreateWallet", () => {
 				<CreateWallet />
 			</Route>,
 			{
-				routes: [createURL, "/"],
 				history,
+				routes: [createURL, "/"],
 			},
 		);
 
@@ -290,7 +290,7 @@ describe("CreateWallet", () => {
 		});
 
 		await actAsync(async () => {
-			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+			fireEvent.keyDown(selectNetworkInput, { code: 13, key: "Enter" });
 		});
 
 		expect(selectNetworkInput).toHaveValue("ARK Devnet");
@@ -333,8 +333,8 @@ describe("CreateWallet", () => {
 				<CreateWallet />
 			</Route>,
 			{
-				routes: [createURL],
 				history,
+				routes: [createURL],
 			},
 		);
 
@@ -346,7 +346,7 @@ describe("CreateWallet", () => {
 
 		act(() => {
 			fireEvent.change(selectNetworkInput, { target: { value: "Ark Dev" } });
-			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+			fireEvent.keyDown(selectNetworkInput, { code: 13, key: "Enter" });
 		});
 		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
 
@@ -357,7 +357,7 @@ describe("CreateWallet", () => {
 
 		act(() => {
 			fireEvent.change(selectNetworkInput, { target: { value: "Ark Dev" } });
-			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+			fireEvent.keyDown(selectNetworkInput, { code: 13, key: "Enter" });
 		});
 		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
 

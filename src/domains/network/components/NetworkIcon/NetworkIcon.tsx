@@ -50,6 +50,6 @@ export const NetworkIcon = ({ coin, network, iconSize, className, showTooltip, .
 };
 
 NetworkIcon.defaultProps = {
-	showTooltip: true,
 	iconSize: 20,
+	showTooltip: true,
 };

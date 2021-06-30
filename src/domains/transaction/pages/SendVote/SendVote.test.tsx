@@ -35,24 +35,24 @@ const fixtureProfileId = getDefaultProfileId();
 const createVoteTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 	// @ts-ignore
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
-		id: () => voteFixture.data.id,
-		sender: () => voteFixture.data.sender,
-		recipient: () => voteFixture.data.recipient,
 		amount: () => voteFixture.data.amount / 1e8,
-		fee: () => voteFixture.data.fee / 1e8,
 		data: () => ({ data: () => voteFixture.data }),
+		fee: () => voteFixture.data.fee / 1e8,
+		id: () => voteFixture.data.id,
+		recipient: () => voteFixture.data.recipient,
+		sender: () => voteFixture.data.sender,
 		type: () => "vote",
 	});
 
 const createUnvoteTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 	// @ts-ignore
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
-		id: () => unvoteFixture.data.id,
-		sender: () => unvoteFixture.data.sender,
-		recipient: () => unvoteFixture.data.recipient,
 		amount: () => unvoteFixture.data.amount / 1e8,
-		fee: () => unvoteFixture.data.fee / 1e8,
 		data: () => ({ data: () => voteFixture.data }),
+		fee: () => unvoteFixture.data.fee / 1e8,
+		id: () => unvoteFixture.data.id,
+		recipient: () => unvoteFixture.data.recipient,
+		sender: () => unvoteFixture.data.sender,
 		type: () => "unvote",
 	});
 
@@ -118,8 +118,8 @@ describe("SendVote", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [voteURL],
 				history,
+				routes: [voteURL],
 			},
 		);
 
@@ -156,8 +156,8 @@ describe("SendVote", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [voteURL],
 				history,
+				routes: [voteURL],
 			},
 		);
 
@@ -195,8 +195,8 @@ describe("SendVote", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [voteURL],
 				history,
+				routes: [voteURL],
 			},
 		);
 
@@ -219,8 +219,8 @@ describe("SendVote", () => {
 				address: delegateData[1].address,
 				explorerLink: "",
 				publicKey: delegateData[1].publicKey,
-				username: delegateData[1].username,
 				rank: delegateData[1].rank,
+				username: delegateData[1].username,
 			}),
 		]);
 		await wallet.synchroniser().votes();
@@ -245,8 +245,8 @@ describe("SendVote", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [voteURL],
 				history,
+				routes: [voteURL],
 			},
 		);
 
@@ -270,8 +270,8 @@ describe("SendVote", () => {
 			.mockReturnValue(Promise.resolve(unvoteFixture.data.id));
 		const broadcastUnvoteMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [unvoteFixture.data.id],
-			rejected: [],
 			errors: {},
+			rejected: [],
 		});
 		const transactionUnvoteMock = createVoteTransactionMock(wallet);
 
@@ -280,8 +280,8 @@ describe("SendVote", () => {
 			.mockReturnValue(Promise.resolve(voteFixture.data.id));
 		const broadcastVoteMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [voteFixture.data.id],
-			rejected: [],
 			errors: {},
+			rejected: [],
 		});
 		const transactionVoteMock = createVoteTransactionMock(wallet);
 
@@ -356,8 +356,8 @@ describe("SendVote", () => {
 				</FormProvider>
 			</Route>,
 			{
-				routes: [voteURL],
 				history,
+				routes: [voteURL],
 			},
 		);
 
@@ -386,8 +386,8 @@ describe("SendVote", () => {
 			.mockReturnValue(Promise.resolve(voteFixture.data.id));
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [voteFixture.data.id],
-			rejected: [],
 			errors: {},
+			rejected: [],
 		});
 		const transactionMock = createVoteTransactionMock(wallet);
 
@@ -431,8 +431,8 @@ describe("SendVote", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [voteURL],
 				history,
+				routes: [voteURL],
 			},
 		);
 
@@ -496,8 +496,8 @@ describe("SendVote", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [voteURL],
 				history,
+				routes: [voteURL],
 			},
 		);
 
@@ -519,8 +519,8 @@ describe("SendVote", () => {
 			.mockReturnValue(Promise.resolve(unvoteFixture.data.id));
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [unvoteFixture.data.id],
-			rejected: [],
 			errors: {},
+			rejected: [],
 		});
 		const transactionMock = createUnvoteTransactionMock(wallet);
 
@@ -564,8 +564,8 @@ describe("SendVote", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [voteURL],
 				history,
+				routes: [voteURL],
 			},
 		);
 
@@ -613,8 +613,8 @@ describe("SendVote", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [voteURL],
 				history,
+				routes: [voteURL],
 			},
 		);
 
@@ -662,8 +662,8 @@ describe("SendVote", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [voteURL],
 				history,
+				routes: [voteURL],
 			},
 		);
 
@@ -714,8 +714,8 @@ describe("SendVote", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [voteURL],
 				history,
+				routes: [voteURL],
 			},
 		);
 
@@ -793,8 +793,8 @@ describe("SendVote", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [voteURL],
 				history,
+				routes: [voteURL],
 			},
 		);
 
@@ -812,8 +812,8 @@ describe("SendVote", () => {
 			.mockReturnValue(Promise.resolve(unvoteFixture.data.id));
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [unvoteFixture.data.id],
-			rejected: [],
 			errors: {},
+			rejected: [],
 		});
 		const transactionMock = createUnvoteTransactionMock(wallet);
 
@@ -861,8 +861,8 @@ describe("SendVote", () => {
 
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [voteFixture.data.id],
-			rejected: [],
 			errors: {},
+			rejected: [],
 		});
 
 		const history = createMemoryHistory();
@@ -884,8 +884,8 @@ describe("SendVote", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [voteURL],
 				history,
+				routes: [voteURL],
 			},
 		);
 
@@ -951,8 +951,8 @@ describe("SendVote", () => {
 				</FormProvider>
 			</Route>,
 			{
-				routes: [voteURL],
 				history,
+				routes: [voteURL],
 			},
 		);
 
@@ -974,8 +974,8 @@ describe("SendVote", () => {
 			.mockReturnValue(Promise.resolve(voteFixture.data.id));
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [voteFixture.data.id],
-			rejected: [],
 			errors: {},
+			rejected: [],
 		});
 		const transactionMock = createVoteTransactionMock(wallet);
 

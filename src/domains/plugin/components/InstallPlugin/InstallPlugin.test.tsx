@@ -33,7 +33,7 @@ describe("InstallPlugin", () => {
 
 	it("should render 2st step with partial download progress", async () => {
 		const { getByTestId, asFragment } = render(
-			<SecondStep plugin={{ title: "My Plugin", size: "0 B" }} downloadProgress={{ totalBytes: 100 }} />,
+			<SecondStep plugin={{ size: "0 B", title: "My Plugin" }} downloadProgress={{ totalBytes: 100 }} />,
 		);
 
 		expect(getByTestId("InstallPlugin__step--second__progress")).toHaveTextContent("0 B / 100 B");
@@ -43,8 +43,8 @@ describe("InstallPlugin", () => {
 	it("should render 2st step with full download progress", async () => {
 		const { getByTestId, asFragment } = render(
 			<SecondStep
-				plugin={{ title: "My Plugin", logo: "https://ark.io/logo.png", size: "100 B" }}
-				downloadProgress={{ totalBytes: 100, percent: 1, transferredBytes: 100 }}
+				plugin={{ logo: "https://ark.io/logo.png", size: "100 B", title: "My Plugin" }}
+				downloadProgress={{ percent: 1, totalBytes: 100, transferredBytes: 100 }}
 			/>,
 		);
 
@@ -61,7 +61,7 @@ describe("InstallPlugin", () => {
 
 	it("should render 3st step with plugin logo", async () => {
 		const { getByTestId, asFragment } = render(
-			<ThirdStep plugin={{ title: "My Plugin", logo: "https://ark.io/logo.png" }} />,
+			<ThirdStep plugin={{ logo: "https://ark.io/logo.png", title: "My Plugin" }} />,
 		);
 
 		expect(getByTestId("InstallPlugin__step--third__logo")).toBeInTheDocument();
@@ -78,10 +78,10 @@ describe("InstallPlugin", () => {
 		const invokeSpy = jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {
 			if (channel === "plugin:loader-fs.find") {
 				return {
-					config: { name: "remote-plugin", version: "0.0.1", keywords: ["@arkecosystem", "desktop-wallet"] },
+					config: { keywords: ["@arkecosystem", "desktop-wallet"], name: "remote-plugin", version: "0.0.1" },
+					dir: "/plugins/remote-plugin",
 					source: () => void 0,
 					sourcePath: "/plugins/remote-plugin/index.js",
-					dir: "/plugins/remote-plugin",
 				};
 			}
 
@@ -100,7 +100,7 @@ describe("InstallPlugin", () => {
 				<InstallPlugin
 					repositoryURL="https://github.com/my-plugin"
 					isOpen={true}
-					plugin={{ id: "remote-plugin", title: "Remote Plugin", permissions: ["PROFILE"] }}
+					plugin={{ id: "remote-plugin", permissions: ["PROFILE"], title: "Remote Plugin" }}
 					onClose={onClose}
 				/>
 			</PluginManagerProvider>,

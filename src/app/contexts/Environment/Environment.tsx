@@ -32,7 +32,7 @@ export const EnvironmentProvider = ({ children, env }: Properties) => {
 	}, [env]);
 
 	return (
-		<EnvironmentContext.Provider value={{ env, state, persist } as Context}>{children}</EnvironmentContext.Provider>
+		<EnvironmentContext.Provider value={{ env, persist, state } as Context}>{children}</EnvironmentContext.Provider>
 	);
 };
 

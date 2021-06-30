@@ -19,7 +19,7 @@ describe("WalletsGrid", () => {
 		wallets = profile
 			.wallets()
 			.values()
-			.map((wallet) => ({ wallet: wallet, actions: [] }));
+			.map((wallet) => ({ actions: [], wallet: wallet }));
 	});
 
 	beforeEach(() => {
@@ -38,8 +38,8 @@ describe("WalletsGrid", () => {
 				<WalletsGrid wallets={wallets} isVisible={true} isLoading={true} />,
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -52,8 +52,8 @@ describe("WalletsGrid", () => {
 				<WalletsGrid wallets={wallets} isVisible={true} />,
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 

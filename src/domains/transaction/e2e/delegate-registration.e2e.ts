@@ -11,8 +11,8 @@ const translations = buildTranslations();
 createFixture("Delegate Registration action", [
 	mockRequest(
 		{
-			url: "https://dwallets.ark.io/api/transactions",
 			method: "POST",
+			url: "https://dwallets.ark.io/api/transactions",
 		},
 		{
 			data: {

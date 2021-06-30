@@ -203,8 +203,8 @@ export const SecondStep = ({ profile }: { profile: Contracts.IProfile }) => {
 
 	useEffect(() => {
 		setError("coin", {
-			type: "manual",
 			message: "coin",
+			type: "manual",
 		});
 	}, [setError]);
 

@@ -95,7 +95,7 @@ describe("SelectNetwork", () => {
 		});
 
 		act(() => {
-			fireEvent.keyDown(input, { key: "Enter", code: 13 });
+			fireEvent.keyDown(input, { code: 13, key: "Enter" });
 		});
 
 		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK");
@@ -109,7 +109,7 @@ describe("SelectNetwork", () => {
 		});
 
 		act(() => {
-			fireEvent.keyDown(input, { key: "Tab", code: 9 });
+			fireEvent.keyDown(input, { code: 9, key: "Tab" });
 		});
 
 		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK");
@@ -123,7 +123,7 @@ describe("SelectNetwork", () => {
 		});
 
 		act(() => {
-			fireEvent.keyDown(input, { key: "Tab", code: 9 });
+			fireEvent.keyDown(input, { code: 9, key: "Tab" });
 		});
 
 		expect(within(getByTestId("SelectNetworkInput__network")).queryByTestId("CoinIcon")).toBeNull();
@@ -138,7 +138,7 @@ describe("SelectNetwork", () => {
 		});
 
 		act(() => {
-			fireEvent.keyDown(input, { key: "A", code: 65 });
+			fireEvent.keyDown(input, { code: 65, key: "A" });
 		});
 
 		expect(within(getByTestId("SelectNetworkInput__network")).queryByTestId("CoinIcon")).toBeNull();
@@ -153,7 +153,7 @@ describe("SelectNetwork", () => {
 		});
 
 		act(() => {
-			fireEvent.keyDown(input, { key: "Enter", code: 13 });
+			fireEvent.keyDown(input, { code: 13, key: "Enter" });
 		});
 
 		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK");
@@ -163,10 +163,10 @@ describe("SelectNetwork", () => {
 		});
 
 		act(() => {
-			fireEvent.keyDown(input, { key: "A", code: 65 });
+			fireEvent.keyDown(input, { code: 65, key: "A" });
 		});
 		act(() => {
-			fireEvent.keyDown(input, { key: "B", code: 65 });
+			fireEvent.keyDown(input, { code: 65, key: "B" });
 		});
 
 		expect(within(getByTestId("SelectNetworkInput__network")).queryByTestId("CoinIcon")).toBeNull();

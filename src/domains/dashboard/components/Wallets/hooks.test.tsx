@@ -44,7 +44,7 @@ describe("useWalletDisplay", () => {
 
 	it("should return list type wallets", async () => {
 		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}> {children} </EnvironmentProvider>;
-		const { result } = renderHook(() => useWalletDisplay({ wallets, selectedNetworkIds: ["ark.devnet"] }), {
+		const { result } = renderHook(() => useWalletDisplay({ selectedNetworkIds: ["ark.devnet"], wallets }), {
 			wrapper,
 		});
 
@@ -57,10 +57,10 @@ describe("useWalletDisplay", () => {
 		const { result } = renderHook(
 			() =>
 				useWalletDisplay({
-					wallets,
+					listPagerLimit: 1,
 					selectedNetworkIds: ["ark.devnet", "ark.mainnet"],
 					viewMore: true,
-					listPagerLimit: 1,
+					wallets,
 				}),
 			{
 				wrapper,
@@ -75,10 +75,10 @@ describe("useWalletDisplay", () => {
 		const { result } = renderHook(
 			() =>
 				useWalletDisplay({
-					wallets,
+					listPagerLimit: 1,
 					selectedNetworkIds: ["ark.devnet", "ark.mainnet"],
 					viewMore: true,
-					listPagerLimit: 1,
+					wallets,
 				}),
 			{
 				wrapper,
@@ -90,7 +90,7 @@ describe("useWalletDisplay", () => {
 
 	it("should filter wallets by selectedNetworkIds", async () => {
 		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}> {children} </EnvironmentProvider>;
-		const { result } = renderHook(() => useWalletDisplay({ wallets, selectedNetworkIds: [] }), {
+		const { result } = renderHook(() => useWalletDisplay({ selectedNetworkIds: [], wallets }), {
 			wrapper,
 		});
 
@@ -100,7 +100,7 @@ describe("useWalletDisplay", () => {
 	it("should return listHasMore boolean", async () => {
 		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}> {children} </EnvironmentProvider>;
 		const { result } = renderHook(
-			() => useWalletDisplay({ wallets, selectedNetworkIds: ["ark.devnet"], listPagerLimit: 1, viewMore: false }),
+			() => useWalletDisplay({ listPagerLimit: 1, selectedNetworkIds: ["ark.devnet"], viewMore: false, wallets }),
 			{
 				wrapper,
 			},
@@ -114,9 +114,9 @@ describe("useWalletDisplay", () => {
 		const { result } = renderHook(
 			() =>
 				useWalletDisplay({
-					wallets,
-					selectedNetworkIds: ["ark.devnet", "ark.mainnet"],
 					displayType: "starred",
+					selectedNetworkIds: ["ark.devnet", "ark.mainnet"],
+					wallets,
 				}),
 			{
 				wrapper,
@@ -128,7 +128,7 @@ describe("useWalletDisplay", () => {
 
 	it("shoudl return 2 grid wallet padded with 1 additional empty grid wallet", async () => {
 		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}> {children} </EnvironmentProvider>;
-		const { result } = renderHook(() => useWalletDisplay({ wallets, selectedNetworkIds: ["ark.devnet"] }), {
+		const { result } = renderHook(() => useWalletDisplay({ selectedNetworkIds: ["ark.devnet"], wallets }), {
 			wrapper,
 		});
 
@@ -139,19 +139,19 @@ describe("useWalletDisplay", () => {
 		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}> {children} </EnvironmentProvider>;
 
 		const testWallet = await profile.walletFactory().fromMnemonicWithBIP39({
-			mnemonic: "test",
 			coin: "ARK",
+			mnemonic: "test",
 			network: "ark.devnet",
 		});
 		const test2Wallet = await profile.walletFactory().fromMnemonicWithBIP39({
-			mnemonic: "test2",
 			coin: "ARK",
+			mnemonic: "test2",
 			network: "ark.devnet",
 		});
 
 		const ledger = await profile.walletFactory().fromMnemonicWithBIP39({
-			mnemonic: "test3",
 			coin: "ARK",
+			mnemonic: "test3",
 			network: "ark.devnet",
 		});
 
@@ -164,8 +164,8 @@ describe("useWalletDisplay", () => {
 		const { result } = renderHook(
 			() =>
 				useWalletDisplay({
-					wallets: profile.wallets().values(),
 					selectedNetworkIds: ["ark.devnet", "ark.mainnet"],
+					wallets: profile.wallets().values(),
 				}),
 			{
 				wrapper,
@@ -179,8 +179,8 @@ describe("useWalletDisplay", () => {
 	it("should filter ledger grid wallets", async () => {
 		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}> {children} </EnvironmentProvider>;
 		const ledger = await profile.walletFactory().fromMnemonicWithBIP39({
-			mnemonic: "test4",
 			coin: "ARK",
+			mnemonic: "test4",
 			network: "ark.devnet",
 		});
 
@@ -191,9 +191,9 @@ describe("useWalletDisplay", () => {
 		const { result } = renderHook(
 			() =>
 				useWalletDisplay({
-					wallets: profile.wallets().values(),
-					selectedNetworkIds: ["ark.devnet", "ark.mainnet"],
 					displayType: "ledger",
+					selectedNetworkIds: ["ark.devnet", "ark.mainnet"],
+					wallets: profile.wallets().values(),
 				}),
 			{
 				wrapper,

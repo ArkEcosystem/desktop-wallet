@@ -30,9 +30,9 @@ export const WalletListItem: React.FC<WalletListItemProperties> = ({
 			cn(
 				"group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black",
 				{
-					"ring-theme-success-900": isSelected && shouldUseDarkColors(),
-					"ring-theme-success-100": isSelected && !shouldUseDarkColors(),
 					"ring-theme-background": !isSelected,
+					"ring-theme-success-100": isSelected && !shouldUseDarkColors(),
+					"ring-theme-success-900": isSelected && shouldUseDarkColors(),
 				},
 			),
 		[isSelected],
@@ -40,9 +40,9 @@ export const WalletListItem: React.FC<WalletListItemProperties> = ({
 
 	const alias = useWalletAlias({
 		address: wallet.address(),
-		profile: activeProfile,
 		coinId: wallet.coinId(),
 		networkId: wallet.networkId(),
+		profile: activeProfile,
 	});
 
 	let lastCellContent = undefined;

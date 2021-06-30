@@ -21,8 +21,8 @@ export const scannerReducer = (state: State, action: Action): State => {
 			return {
 				...state,
 				error: undefined,
-				wallets: action.payload,
 				selected: action.payload.map(pathMapper),
+				wallets: action.payload,
 			};
 		}
 		case "toggleSelect": {

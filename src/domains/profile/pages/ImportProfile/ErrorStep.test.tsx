@@ -3,8 +3,8 @@ import React from "react";
 import { act, fireEvent, render } from "utils/testing-library";
 
 jest.mock("fs", () => ({
-	writeFileSync: jest.fn(),
 	readFileSync: jest.fn().mockReturnValue({ toString: () => "{test:'test'}" }),
+	writeFileSync: jest.fn(),
 }));
 
 describe("Import Profile - Error Step", () => {

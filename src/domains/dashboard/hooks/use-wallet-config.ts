@@ -14,14 +14,14 @@ export const useWalletConfig = ({
 	const environment = useEnvironmentContext();
 
 	const defaultConfiguration: DashboardConfiguration = {
-		walletsDisplayType: "all",
-		viewType: "grid",
 		selectedNetworkIds: uniq(
 			profile
 				.wallets()
 				.values()
 				.map((wallet) => wallet.network().id()),
 		),
+		viewType: "grid",
+		walletsDisplayType: "all",
 		...defaults,
 	};
 
@@ -75,8 +75,8 @@ export const useWalletConfig = ({
 	);
 
 	return {
-		setValue,
 		selectedWallets,
+		setValue,
 		...dashboardConfiguration,
 		defaultConfiguration,
 	};

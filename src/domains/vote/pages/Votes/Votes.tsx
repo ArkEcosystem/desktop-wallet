@@ -42,13 +42,13 @@ export const Votes = () => {
 
 	const defaultConfiguration = useMemo(
 		() => ({
-			walletsDisplayType: "all",
 			selectedNetworkIds: uniq(
 				activeProfile
 					.wallets()
 					.values()
 					.map((wallet) => wallet.network().id()),
 			),
+			walletsDisplayType: "all",
 		}),
 		[activeProfile],
 	);
@@ -106,11 +106,11 @@ export const Votes = () => {
 			.wallets()
 			.values()
 			.map((wallet) => ({
-				id: wallet.network().id(),
-				name: wallet.network().name(),
 				coin: wallet.network().coin(),
+				id: wallet.network().id(),
 				isLive: wallet.network().isLive(),
 				isSelected: selectedNetworkIds.includes(wallet.network().id()),
+				name: wallet.network().name(),
 			}));
 
 		return uniqBy(networks, (network) => network.id);
@@ -132,9 +132,6 @@ export const Votes = () => {
 
 	const filterProperties = {
 		networks,
-		useTestNetworks: activeProfile.settings().get(Contracts.ProfileSetting.UseTestNetworks) as boolean,
-		selectedNetworkIds,
-		walletsDisplayType,
 		onChange: (key: string, value: any) => {
 			if (key === "walletsDisplayType") {
 				setWalletsDisplayType(value);
@@ -143,6 +140,9 @@ export const Votes = () => {
 				setSelectedNetworkIds(value);
 			}
 		},
+		selectedNetworkIds,
+		useTestNetworks: activeProfile.settings().get(Contracts.ProfileSetting.UseTestNetworks) as boolean,
+		walletsDisplayType,
 	};
 
 	const isFilterChanged = useMemo(() => {

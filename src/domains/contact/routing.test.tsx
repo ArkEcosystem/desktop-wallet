@@ -8,7 +8,7 @@ describe("ContactRoutes", () => {
 	it("should render", () => {
 		const { getAllByText, asFragment } = render(
 			<MemoryRouter>
-				<RouterView routes={[{ path: "/", component: () => <h1>ContactRoutes</h1> }]} />
+				<RouterView routes={[{ component: () => <h1>ContactRoutes</h1>, path: "/" }]} />
 			</MemoryRouter>,
 		);
 		expect(getAllByText("ContactRoutes").length).toBeGreaterThan(0);

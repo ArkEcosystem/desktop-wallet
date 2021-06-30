@@ -80,6 +80,6 @@ export const TransactionRowSkeleton = ({ showSignColumn, showCurrencyColumn }: P
 };
 
 TransactionRowSkeleton.defaultProps = {
-	showSignColumn: false,
 	showCurrencyColumn: false,
+	showSignColumn: false,
 };

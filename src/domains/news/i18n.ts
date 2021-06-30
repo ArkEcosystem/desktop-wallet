@@ -1,6 +1,12 @@
 export const translations: { [key: string]: any } = {
 	AD: "Ad",
-	NEWS: "News",
+	ADD_ASSETS: {
+		ALL_ASSETS: "All Cryptoassets",
+		DESCRIPTION: "Select which assets you would like to follow",
+		PLACEHOLDER: "Enter the asset name",
+		SELECTIONS: "Your Selections",
+		TITLE: "Add Assets",
+	},
 
 	CATEGORIES: {
 		ALL: "All",
@@ -10,13 +16,7 @@ export const translations: { [key: string]: any } = {
 		TECHNICAL: "Technical",
 	},
 
-	ADD_ASSETS: {
-		ALL_ASSETS: "All Cryptoassets",
-		DESCRIPTION: "Select which assets you would like to follow",
-		PLACEHOLDER: "Enter the asset name",
-		SELECTIONS: "Your Selections",
-		TITLE: "Add Assets",
-	},
+	NEWS: "News",
 
 	NEWS_OPTIONS: {
 		FILTER_ASSETS: "Filter Assets",
@@ -27,7 +27,7 @@ export const translations: { [key: string]: any } = {
 	},
 
 	PAGE_NEWS: {
-		TITLE: "Blockchain News",
 		POWERED_BY: "Powered by",
+		TITLE: "Blockchain News",
 	},
 };

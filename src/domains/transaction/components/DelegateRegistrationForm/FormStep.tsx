@@ -69,7 +69,7 @@ export const FormStep = ({ fees, wallet, step = 0.001, profile }: any) => {
 						data-testid="Input__username"
 						defaultValue={username}
 						onChange={(event: any) =>
-							setValue("username", event.target.value, { shouldValidate: true, shouldDirty: true })
+							setValue("username", event.target.value, { shouldDirty: true, shouldValidate: true })
 						}
 					/>
 				</FormField>
@@ -87,14 +87,14 @@ export const FormStep = ({ fees, wallet, step = 0.001, profile }: any) => {
 						network={wallet.network()}
 						profile={profile}
 						onChange={(value) => {
-							setValue("fee", value, { shouldValidate: true, shouldDirty: true });
+							setValue("fee", value, { shouldDirty: true, shouldValidate: true });
 						}}
 						viewType={inputFeeSettings.viewType}
 						onChangeViewType={(viewType) => {
 							setValue(
 								"inputFeeSettings",
 								{ ...inputFeeSettings, viewType },
-								{ shouldValidate: true, shouldDirty: true },
+								{ shouldDirty: true, shouldValidate: true },
 							);
 						}}
 						simpleValue={inputFeeSettings.simpleValue}
@@ -102,7 +102,7 @@ export const FormStep = ({ fees, wallet, step = 0.001, profile }: any) => {
 							setValue(
 								"inputFeeSettings",
 								{ ...inputFeeSettings, simpleValue },
-								{ shouldValidate: true, shouldDirty: true },
+								{ shouldDirty: true, shouldValidate: true },
 							);
 						}}
 					/>

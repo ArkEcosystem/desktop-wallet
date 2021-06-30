@@ -10,4 +10,4 @@ const isStepDivisible = ({ min, max, step }: RangeInput) => {
 };
 
 export const sanitizeStep = ({ min, max, step }: RangeInput): number =>
-	isStepDivisible({ min, max, step }) ? step : (max - min) / 100;
+	isStepDivisible({ max, min, step }) ? step : (max - min) / 100;

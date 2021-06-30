@@ -7,13 +7,13 @@ import { PluginListItem } from "./PluginListItem";
 describe("PluginListItem", () => {
 	it("should render", () => {
 		const plugin = {
-			id: "ark-explorer",
-			title: "ARK Explorer",
 			author: "ARK.io",
 			category: "utility",
-			version: "1.3.8",
-			size: "4.2 MB",
+			id: "ark-explorer",
 			isInstalled: false,
+			size: "4.2 MB",
+			title: "ARK Explorer",
+			version: "1.3.8",
 		};
 
 		const { asFragment, getByTestId } = render(
@@ -30,13 +30,13 @@ describe("PluginListItem", () => {
 
 	it("should trigger install", () => {
 		const plugin = {
-			id: "ark-explorer",
-			title: "ARK Explorer",
 			author: "ARK.io",
 			category: "utility",
-			version: "1.3.8",
-			size: "4.2 MB",
+			id: "ark-explorer",
 			isInstalled: false,
+			size: "4.2 MB",
+			title: "ARK Explorer",
+			version: "1.3.8",
 		};
 
 		const onInstall = jest.fn();
@@ -57,14 +57,14 @@ describe("PluginListItem", () => {
 
 	it("should trigger update", () => {
 		const plugin = {
-			id: "ark-explorer",
-			title: "ARK Explorer",
 			author: "ARK.io",
 			category: "utility",
-			version: "1.3.8",
-			size: "4.2 MB",
-			isInstalled: true,
 			hasUpdateAvailable: true,
+			id: "ark-explorer",
+			isInstalled: true,
+			size: "4.2 MB",
+			title: "ARK Explorer",
+			version: "1.3.8",
 		};
 
 		const onUpdate = jest.fn();
@@ -87,13 +87,13 @@ describe("PluginListItem", () => {
 
 	it("should trigger delete", () => {
 		const plugin = {
-			id: "ark-explorer",
-			title: "ARK Explorer",
 			author: "ARK.io",
 			category: "utility",
-			version: "1.3.8",
-			size: "4.2 MB",
+			id: "ark-explorer",
 			isInstalled: true,
+			size: "4.2 MB",
+			title: "ARK Explorer",
+			version: "1.3.8",
 		};
 
 		const onDelete = jest.fn();
@@ -114,13 +114,13 @@ describe("PluginListItem", () => {
 
 	it("should trigger enable", () => {
 		const plugin = {
-			id: "ark-explorer",
-			title: "ARK Explorer",
 			author: "ARK.io",
 			category: "utility",
-			version: "1.3.8",
-			size: "4.2 MB",
+			id: "ark-explorer",
 			isInstalled: true,
+			size: "4.2 MB",
+			title: "ARK Explorer",
+			version: "1.3.8",
 		};
 
 		const onEnable = jest.fn();
@@ -141,12 +141,12 @@ describe("PluginListItem", () => {
 
 	it("should trigger click", () => {
 		const plugin = {
-			id: "ark-explorer",
-			title: "ARK Explorer",
 			author: "ARK.io",
 			category: "utility",
-			version: "1.3.8",
+			id: "ark-explorer",
 			size: "4.2 MB",
+			title: "ARK Explorer",
+			version: "1.3.8",
 		};
 
 		const onClick = jest.fn();
@@ -166,14 +166,14 @@ describe("PluginListItem", () => {
 
 	it("should trigger disable", () => {
 		const plugin = {
-			id: "ark-explorer",
-			title: "ARK Explorer",
 			author: "ARK.io",
 			category: "utility",
-			version: "1.3.8",
-			size: "4.2 MB",
-			isInstalled: true,
+			id: "ark-explorer",
 			isEnabled: true,
+			isInstalled: true,
+			size: "4.2 MB",
+			title: "ARK Explorer",
+			version: "1.3.8",
 		};
 
 		const onDisable = jest.fn();
@@ -194,15 +194,15 @@ describe("PluginListItem", () => {
 
 	it("should render launch button", () => {
 		const plugin = {
-			id: "ark-explorer",
-			title: "ARK Explorer",
 			author: "ARK.io",
 			category: "utility",
-			version: "1.3.8",
-			size: "4.2 MB",
-			isInstalled: true,
-			isEnabled: true,
 			hasLaunch: true,
+			id: "ark-explorer",
+			isEnabled: true,
+			isInstalled: true,
+			size: "4.2 MB",
+			title: "ARK Explorer",
+			version: "1.3.8",
 		};
 
 		const onLaunch = jest.fn();
@@ -222,15 +222,15 @@ describe("PluginListItem", () => {
 
 	it("should render minimum version warning", () => {
 		const plugin = {
-			id: "ark-explorer",
-			name: "ARK Explorer",
-			title: "ARK.io",
 			category: "utility",
-			version: "1.3.8",
-			size: "4.2 MB",
-			isInstalled: true,
 			hasUpdateAvailable: true,
+			id: "ark-explorer",
 			isCompatible: false,
+			isInstalled: true,
+			name: "ARK Explorer",
+			size: "4.2 MB",
+			title: "ARK.io",
+			version: "1.3.8",
 		};
 
 		const { getByTestId } = render(
@@ -246,14 +246,14 @@ describe("PluginListItem", () => {
 
 	it("should render official icon", () => {
 		const plugin = {
-			id: "ark-explorer",
-			title: "ARK Explorer",
 			author: "ARK.io",
 			category: "utility",
-			version: "1.3.8",
-			size: "4.2 MB",
+			id: "ark-explorer",
 			isInstalled: false,
 			isOfficial: true,
+			size: "4.2 MB",
+			title: "ARK Explorer",
+			version: "1.3.8",
 		};
 
 		const { asFragment, getByText } = render(
@@ -270,14 +270,14 @@ describe("PluginListItem", () => {
 
 	it("should render grant icon", () => {
 		const plugin = {
-			id: "ark-explorer",
-			title: "ARK Explorer",
 			author: "ARK.io",
 			category: "utility",
-			version: "1.3.8",
-			size: "4.2 MB",
-			isInstalled: false,
+			id: "ark-explorer",
 			isGrant: true,
+			isInstalled: false,
+			size: "4.2 MB",
+			title: "ARK Explorer",
+			version: "1.3.8",
 		};
 
 		const { asFragment, getByText } = render(

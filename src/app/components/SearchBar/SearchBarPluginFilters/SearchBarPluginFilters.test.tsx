@@ -75,9 +75,9 @@ describe("SearchBarPluginFilters", () => {
 		];
 
 		const initialValues = {
-			rating: 1,
 			categories: [],
 			claimed: true,
+			rating: 1,
 		};
 
 		const { getByTestId } = render(
@@ -211,9 +211,9 @@ describe("SearchBarPluginFilters", () => {
 		];
 
 		const initialValues = {
-			rating: null,
 			categories: null,
 			claimed: true,
+			rating: null,
 		};
 		const { getByTestId, asFragment } = render(
 			<SearchBarPluginFilters categories={categories} initialValues={initialValues} />,

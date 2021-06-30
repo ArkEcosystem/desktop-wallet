@@ -53,16 +53,16 @@ export const PluginHeader = ({
 
 		if (properties.hasUpdateAvailable) {
 			result.push({
+				disabled: properties.isCompatible === false,
 				label: t("COMMON.UPDATE"),
 				value: "update",
-				disabled: properties.isCompatible === false,
 			});
 		}
 
 		if (properties.isEnabled) {
 			result.push({ label: t("COMMON.DISABLE"), value: "disable" });
 		} else {
-			result.push({ label: t("COMMON.ENABLE"), value: "enable", disabled: properties.isCompatible === false });
+			result.push({ disabled: properties.isCompatible === false, label: t("COMMON.ENABLE"), value: "enable" });
 		}
 
 		result.push({ label: t("COMMON.DELETE"), value: "delete" });

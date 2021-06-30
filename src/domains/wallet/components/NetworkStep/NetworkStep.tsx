@@ -37,7 +37,7 @@ export const NetworkStep = ({ profile, title, subtitle, disabled, error }: Netwo
 	const { t } = useTranslation();
 
 	const handleSelect = (network?: Networks.Network | null) => {
-		setValue("network", network, { shouldValidate: true, shouldDirty: true });
+		setValue("network", network, { shouldDirty: true, shouldValidate: true });
 	};
 
 	const handleInputChange = (value?: string, suggestion?: string) => {
@@ -47,17 +47,17 @@ export const NetworkStep = ({ profile, title, subtitle, disabled, error }: Netwo
 
 		if (!value) {
 			return setError("network", {
-				type: "manual",
 				message: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 					field: t("COMMON.CRYPTOASSET"),
 				}),
+				type: "manual",
 			});
 		}
 
 		if (!suggestion) {
 			return setError("network", {
-				type: "manual",
 				message: t("COMMON.INPUT_NETWORK.VALIDATION.NETWORK_NOT_FOUND"),
+				type: "manual",
 			});
 		}
 	};

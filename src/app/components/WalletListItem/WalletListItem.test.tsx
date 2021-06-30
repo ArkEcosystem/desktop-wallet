@@ -38,8 +38,8 @@ describe("WalletListItem", () => {
 				</tbody>
 			</table>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -62,8 +62,8 @@ describe("WalletListItem", () => {
 				</tbody>
 			</table>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -85,8 +85,8 @@ describe("WalletListItem", () => {
 				</tbody>
 			</table>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -105,8 +105,8 @@ describe("WalletListItem", () => {
 				</tbody>
 			</table>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -129,8 +129,8 @@ describe("WalletListItem", () => {
 				</tbody>
 			</table>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 

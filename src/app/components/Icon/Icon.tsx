@@ -18,8 +18,8 @@ interface WrapperProperties {
 
 const Wrapper = styled.div(({ width, height }: WrapperProperties) => ({
 	svg: {
-		width,
 		height,
+		width,
 	},
 }));
 
@@ -34,6 +34,6 @@ export const Icon = ({ name, width, height, fallback, ...properties }: Propertie
 };
 
 Icon.defaultProps = {
-	width: "1em",
 	height: "1em",
+	width: "1em",
 };

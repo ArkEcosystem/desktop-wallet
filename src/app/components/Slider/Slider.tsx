@@ -13,9 +13,9 @@ interface SliderProperties {
 export const Slider = ({ children, data, options, className, paginationPosition }: SliderProperties) => {
 	const { showPagination, containerHeight, slideStyles, wrapperRef } = useSlider({
 		container: ".slide-container",
-		paginationPosition,
-		options,
 		data,
+		options,
+		paginationPosition,
 	});
 
 	const renderChildNode = (data: any, index: number) => {

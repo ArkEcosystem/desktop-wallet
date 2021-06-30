@@ -31,7 +31,7 @@ export const Badge = forwardRef<HTMLSpanElement, BadgeProperties>(
 Badge.displayName = "Badge";
 
 Badge.defaultProps = {
-	iconWidth: 12,
 	iconHeight: 12,
+	iconWidth: 12,
 	position: "bottom-right",
 };

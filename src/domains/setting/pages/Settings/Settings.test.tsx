@@ -18,8 +18,8 @@ jest.setTimeout(8000);
 jest.mock("react-router-dom", () => ({
 	...jest.requireActual("react-router-dom"),
 	useHistory: () => ({
-		replace: jest.fn(),
 		go: jest.fn(),
+		replace: jest.fn(),
 	}),
 }));
 
@@ -28,13 +28,13 @@ let showOpenDialogMock: jest.SpyInstance;
 
 const showOpenDialogParameters = {
 	defaultPath: os.homedir(),
+	filters: [{ extensions: ["png", "jpg", "jpeg", "bmp"], name: "" }],
 	properties: ["openFile"],
-	filters: [{ name: "", extensions: ["png", "jpg", "jpeg", "bmp"] }],
 };
 
 jest.mock("fs", () => ({
-	writeFileSync: jest.fn(),
 	readFileSync: jest.fn(() => "avatarImage"),
+	writeFileSync: jest.fn(),
 }));
 
 describe("Settings", () => {
@@ -795,8 +795,8 @@ describe("Settings", () => {
 				<Settings />
 			</Route>,
 			{
-				withProfileSynchronizer: true,
 				routes: [`/profiles/${exportingProfile.id()}/settings`],
+				withProfileSynchronizer: true,
 			},
 		);
 

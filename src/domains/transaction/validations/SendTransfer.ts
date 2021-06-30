@@ -4,29 +4,57 @@ import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { RecipientListItem } from "../components/RecipientList/RecipientList.models";
 
 export const sendTransfer = (t: any) => ({
-	senderAddress: () => ({
-		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-			field: t("COMMON.SENDER_ADDRESS"),
-		}),
+	amount: (
+		network: Networks.Network,
+		balance: number,
+		recipients: RecipientListItem[],
+		isSingleRecipient: boolean,
+	) => ({
+		validate: {
+			valid: (amountValue: any) => {
+				const amount = amountValue || 0;
+				const hasSufficientBalance = Number(balance || 0) >= amount && balance !== 0;
+				const shouldRequire = isSingleRecipient || recipients.length === 0;
+
+				if (!hasSufficientBalance) {
+					return t("TRANSACTION.VALIDATION.LOW_BALANCE", {
+						balance,
+						coinId: network?.coin(),
+					});
+				}
+
+				if (shouldRequire) {
+					if (amountValue === undefined || amountValue === "") {
+						return t("COMMON.VALIDATION.FIELD_REQUIRED", {
+							field: t("COMMON.AMOUNT"),
+						});
+					}
+
+					if (amount === 0) {
+						return t("TRANSACTION.VALIDATION.AMOUNT_BELOW_MINIMUM", {
+							coinId: network?.coin(),
+							min: "0.00000001",
+						});
+					}
+				}
+
+				return true;
+			},
+		},
 	}),
 	memo: () => ({
 		maxLength: {
-			value: 255,
 			message: t("COMMON.VALIDATION.MAX_LENGTH", {
 				field: t("COMMON.MEMO"),
 				maxLength: 255,
 			}),
+			value: 255,
 		},
 	}),
 	network: () => ({
 		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 			field: t("COMMON.CRYPTOASSET"),
 		}),
-	}),
-	recipients: () => ({
-		validate: {
-			valid: (recipients: RecipientListItem[]) => recipients.length > 0,
-		},
 	}),
 	recipientAddress: (
 		profile: Contracts.IProfile,
@@ -60,42 +88,14 @@ export const sendTransfer = (t: any) => ({
 			},
 		},
 	}),
-	amount: (
-		network: Networks.Network,
-		balance: number,
-		recipients: RecipientListItem[],
-		isSingleRecipient: boolean,
-	) => ({
+	recipients: () => ({
 		validate: {
-			valid: (amountValue: any) => {
-				const amount = amountValue || 0;
-				const hasSufficientBalance = Number(balance || 0) >= amount && balance !== 0;
-				const shouldRequire = isSingleRecipient || recipients.length === 0;
-
-				if (!hasSufficientBalance) {
-					return t("TRANSACTION.VALIDATION.LOW_BALANCE", {
-						balance,
-						coinId: network?.coin(),
-					});
-				}
-
-				if (shouldRequire) {
-					if (amountValue === undefined || amountValue === "") {
-						return t("COMMON.VALIDATION.FIELD_REQUIRED", {
-							field: t("COMMON.AMOUNT"),
-						});
-					}
-
-					if (amount === 0) {
-						return t("TRANSACTION.VALIDATION.AMOUNT_BELOW_MINIMUM", {
-							min: "0.00000001",
-							coinId: network?.coin(),
-						});
-					}
-				}
-
-				return true;
-			},
+			valid: (recipients: RecipientListItem[]) => recipients.length > 0,
 		},
+	}),
+	senderAddress: () => ({
+		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+			field: t("COMMON.SENDER_ADDRESS"),
+		}),
 	}),
 });

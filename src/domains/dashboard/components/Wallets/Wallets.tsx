@@ -54,11 +54,11 @@ export const Wallets = ({
 	}, [activeProfile, walletsCount]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	const { listWallets, listHasMore, gridWallets, sliderOptions } = useWalletDisplay({
-		wallets,
-		selectedNetworkIds,
 		displayType: walletsDisplayType,
-		viewMore,
 		listPagerLimit,
+		selectedNetworkIds,
+		viewMore,
+		wallets,
 	});
 
 	const handleClick = (walletId: string) => {

@@ -7,38 +7,38 @@ import { FilterNetwork, FilterNetworks, NetworkOptions, ToggleAllOption } from "
 const networks = () => [
 	{
 		coin: "ARK",
-		name: "ARK Devnet",
 		id: "ark.mainnet",
-		isSelected: false,
 		isLive: true,
+		isSelected: false,
+		name: "ARK Devnet",
 	},
 	{
-		name: "LSK Testnet",
 		coin: "LSK",
 		id: "lsk.testnet",
-		isSelected: true,
 		isLive: false,
+		isSelected: true,
+		name: "LSK Testnet",
 	},
 	{
-		name: "Compedia",
 		coin: "BIND",
 		id: "compedia.mainnet",
-		isSelected: false,
 		isLive: false,
+		isSelected: false,
+		name: "Compedia",
 	},
 	{
-		name: "Ethereum",
 		coin: "ETH",
 		id: "eth.mainnet",
-		isSelected: true,
 		isLive: true,
+		isSelected: true,
+		name: "Ethereum",
 	},
 	{
-		name: "Bitcoin",
 		coin: "BTC",
 		id: "btc.mainnet",
-		isSelected: false,
 		isLive: true,
+		isSelected: false,
+		name: "Bitcoin",
 	},
 ];
 
@@ -75,10 +75,10 @@ describe("NetworkOptions", () => {
 	it("should render networks that have coin and id defined", () => {
 		const onClick = jest.fn();
 		const unknownNetwork = {
-			name: "Unknown",
 			coin: "UNKNOWN",
-			isSelected: false,
 			isLive: false,
+			isSelected: false,
+			name: "Unknown",
 		};
 
 		const allNetworks = [...networks(), unknownNetwork];
@@ -89,11 +89,11 @@ describe("NetworkOptions", () => {
 	it("should not render unknown networks", () => {
 		const onClick = jest.fn();
 		const unknownNetwork = {
-			name: "Unknown",
 			coin: "UNKNOWN",
 			id: "unknown.unknown",
-			isSelected: false,
 			isLive: false,
+			isSelected: false,
+			name: "Unknown",
 		};
 
 		const allNetworks = [...networks(), unknownNetwork];
@@ -152,11 +152,11 @@ describe("FilterNetwork", () => {
 
 		expect(onChange).toHaveBeenCalledWith(
 			{
-				name: "ARK Devnet",
 				coin: "ARK",
 				id: "ark.mainnet",
-				isSelected: true,
 				isLive: true,
+				isSelected: true,
+				name: "ARK Devnet",
 			},
 			expect.anything(),
 		);
@@ -265,11 +265,11 @@ describe("FilterNetworks", () => {
 
 		expect(onChange).toHaveBeenCalledWith(
 			{
-				name: "LSK Testnet",
 				coin: "LSK",
 				id: "lsk.testnet",
-				isSelected: false,
 				isLive: false,
+				isSelected: false,
+				name: "LSK Testnet",
 			},
 			expect.anything(),
 		);

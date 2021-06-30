@@ -50,9 +50,9 @@ describe("TransferDetail", () => {
 				isOpen={true}
 				transaction={{
 					...TransactionFixture,
-					isConfirmed: () => true,
-					confirmations: () => BigNumber.ONE,
 					blockId: () => "adsad12312xsd1w312e1s13203e12",
+					confirmations: () => BigNumber.ONE,
+					isConfirmed: () => true,
 				}}
 				ticker="BTC"
 			/>,
@@ -69,8 +69,8 @@ describe("TransferDetail", () => {
 				isOpen={true}
 				transaction={{
 					...TransactionFixture,
-					isSent: () => false,
 					blockId: () => "adsad12312xsd1w312e1s13203e12",
+					isSent: () => false,
 				}}
 				ticker="BTC"
 			/>,
@@ -86,8 +86,8 @@ describe("TransferDetail", () => {
 				isOpen={true}
 				transaction={{
 					...TransactionFixture,
-					isSent: () => false,
 					blockId: () => "adsad12312xsd1w312e1s13203e12",
+					isSent: () => false,
 				}}
 				walletAlias="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
 				ticker="BTC"

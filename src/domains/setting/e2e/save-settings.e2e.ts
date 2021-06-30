@@ -11,8 +11,8 @@ const translations = buildTranslations();
 createFixture(`Save settings`, [
 	mockRequest(
 		{
-			url: "https://wallets.ark.io/api/transactions/search?page=1&limit=20",
 			method: "POST",
+			url: "https://wallets.ark.io/api/transactions/search?page=1&limit=20",
 		},
 		{
 			addresses: ["AThxYTVgpzZfW7K6UxyB8vBZVMoPAwQS3D"],
@@ -20,8 +20,8 @@ createFixture(`Save settings`, [
 	),
 	mockRequest(
 		{
-			url: "https://wallets.ark.io/api/transactions/search?limit=30",
 			method: "POST",
+			url: "https://wallets.ark.io/api/transactions/search?limit=30",
 		},
 		{
 			addresses: ["AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"],

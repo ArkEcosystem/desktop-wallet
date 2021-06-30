@@ -2,33 +2,33 @@ import { SendDelegateResignation, SendIpfs, SendRegistration, SendTransfer, Send
 
 export const TransactionRoutes = [
 	{
-		path: "/profiles/:profileId/wallets/:walletId/send-registration/:registrationType",
-		exact: true,
 		component: SendRegistration,
+		exact: true,
+		path: "/profiles/:profileId/wallets/:walletId/send-registration/:registrationType",
 	},
 	{
-		path: "/profiles/:profileId/wallets/:walletId/send-delegate-resignation",
-		exact: true,
 		component: SendDelegateResignation,
+		exact: true,
+		path: "/profiles/:profileId/wallets/:walletId/send-delegate-resignation",
 	},
 	{
+		component: SendTransfer,
+		exact: true,
 		path: "/profiles/:profileId/wallets/:walletId/send-transfer",
-		exact: true,
-		component: SendTransfer,
 	},
 	{
+		component: SendTransfer,
+		exact: true,
 		path: "/profiles/:profileId/send-transfer",
-		exact: true,
-		component: SendTransfer,
 	},
 	{
-		path: "/profiles/:profileId/wallets/:walletId/send-ipfs",
-		exact: true,
 		component: SendIpfs,
+		exact: true,
+		path: "/profiles/:profileId/wallets/:walletId/send-ipfs",
 	},
 	{
-		path: "/profiles/:profileId/wallets/:walletId/send-vote",
-		exact: true,
 		component: SendVote,
+		exact: true,
+		path: "/profiles/:profileId/wallets/:walletId/send-vote",
 	},
 ];

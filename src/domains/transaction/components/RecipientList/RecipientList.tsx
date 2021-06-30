@@ -167,7 +167,7 @@ export const RecipientList = ({
 };
 
 RecipientList.defaultProps = {
-	showAmount: true,
-	recipients: [],
 	isEditable: false,
+	recipients: [],
+	showAmount: true,
 };
