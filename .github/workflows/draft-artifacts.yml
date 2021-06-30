@@ -15,6 +15,10 @@ jobs:
             matrix:
                 node-version: [14.x]
 
+        concurrency:
+            group: ${{ github.head_ref }}-draft-linux
+            cancel-in-progress: true
+
         steps:
             - uses: actions/checkout@v2
               with:
@@ -74,6 +78,10 @@ jobs:
             matrix:
                 node-version: [14.x]
 
+        concurrency:
+            group: ${{ github.head_ref }}-draft-macOS
+            cancel-in-progress: true
+
         steps:
             - uses: actions/checkout@v2
               with:
@@ -130,6 +138,10 @@ jobs:
         strategy:
             matrix:
                 node-version: [14.x]
+
+        concurrency:
+            group: ${{ github.head_ref }}-draft-windows
+            cancel-in-progress: true
 
         steps:
             - uses: actions/checkout@v2
