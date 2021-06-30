@@ -34,10 +34,7 @@ test("should save settings", async (t) => {
 
 	const nameInput = Selector('input[data-testid="General-settings__input--name"]');
 
-	await t
-		.click(nameInput)
-		.pressKey("ctrl+a delete")
-		.typeText(nameInput, "Anne Doe");
+	await t.click(nameInput).pressKey("ctrl+a delete").typeText(nameInput, "Anne Doe");
 
 	await t.click(Selector("input[name=screenshotProtection]").parent());
 

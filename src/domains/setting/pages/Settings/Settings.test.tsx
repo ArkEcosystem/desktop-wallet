@@ -92,7 +92,7 @@ describe("Settings", () => {
 	});
 
 	it("should disable submit button when profile is not restored yet", async () => {
-		const isProfileRestoredMock = jest.spyOn(profile.status(), 'isRestored').mockReturnValue(false);
+		const isProfileRestoredMock = jest.spyOn(profile.status(), "isRestored").mockReturnValue(false);
 
 		const { asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
