@@ -1,9 +1,26 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useMemo } from "react";
 import { Contracts, Environment } from "@arkecosystem/platform-sdk-profiles";
+import { FilterOption } from "domains/vote/components/VotesFilter";
 
-export const useDelegates = ({ env, profile }: { env: Environment; profile: Contracts.IProfile }) => {
+export const useDelegates = ({
+	env,
+	profile,
+	searchQuery,
+	voteFilter,
+}: {
+	env: Environment;
+	profile: Contracts.IProfile;
+	searchQuery: string;
+	voteFilter: FilterOption;
+}) => {
 	const [delegates, setDelegates] = useState<Contracts.IReadOnlyWallet[]>([]);
+	const [votes, setVotes] = useState<Contracts.IReadOnlyWallet[] | undefined>();
 	const [isLoadingDelegates, setIsLoadingDelegates] = useState(false);
+
+	const currentVotes = useMemo(
+		() => votes?.filter((vote) => delegates.some((delegate) => vote.address() === delegate.address())),
+		[votes, delegates],
+	);
 
 	const fetchDelegates = useCallback(
 		async (wallet) => {
@@ -17,5 +34,52 @@ export const useDelegates = ({ env, profile }: { env: Environment; profile: Cont
 		[env, profile],
 	);
 
-	return { delegates, fetchDelegates, isLoadingDelegates };
+	const filteredDelegatesVotes = useMemo(() => {
+		const value = voteFilter === "all" ? delegates : currentVotes;
+		return value?.filter((delegate) => !delegate.isResignedDelegate());
+	}, [delegates, currentVotes, voteFilter]);
+
+	const filteredDelegates = useMemo(() => {
+		if (searchQuery.length === 0) {
+			return filteredDelegatesVotes;
+		}
+
+		/* istanbul ignore next */
+		return filteredDelegatesVotes?.filter(
+			(delegate) =>
+				delegate.address().toLowerCase().includes(searchQuery.toLowerCase()) ||
+				delegate.username()?.toLowerCase()?.includes(searchQuery.toLowerCase()),
+		);
+	}, [filteredDelegatesVotes, searchQuery]);
+
+	const fetchVotes = useCallback(
+		(address) => {
+			const wallet = profile.wallets().findByAddress(address);
+			let votes: Contracts.IReadOnlyWallet[] = [];
+
+			try {
+				votes = wallet!.voting().current();
+			} catch {
+				votes = [];
+			}
+
+			setVotes(votes);
+		},
+		[profile],
+	);
+
+	const hasResignedDelegateVotes = useMemo(() => currentVotes?.some((vote) => vote.isResignedDelegate()), [
+		currentVotes,
+	]);
+
+	return {
+		delegates,
+		fetchDelegates,
+		isLoadingDelegates,
+		filteredDelegates,
+		currentVotes,
+		fetchVotes,
+		votes,
+		hasResignedDelegateVotes,
+	};
 };
