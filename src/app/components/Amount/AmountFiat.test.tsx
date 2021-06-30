@@ -11,10 +11,10 @@ describe("AmountFiat", () => {
 		rerender(<AmountFiat value={1} ticker="EUR" />);
 		expect(screen.getByTestId("AmountFiat")).toHaveTextContent("€1.00");
 
-		rerender(<AmountFiat value={1} ticker="EUR" withSign />);
+		rerender(<AmountFiat value={1} ticker="EUR" showSign />);
 		expect(screen.getByTestId("AmountFiat")).toHaveTextContent("+ €1.00");
 
-		rerender(<AmountFiat value={1} ticker="EUR" withSign isNegative />);
+		rerender(<AmountFiat value={1} ticker="EUR" showSign isNegative />);
 		expect(screen.getByTestId("AmountFiat")).toHaveTextContent("- €1.00");
 	});
 });
