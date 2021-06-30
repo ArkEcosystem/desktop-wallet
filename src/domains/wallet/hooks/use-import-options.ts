@@ -20,6 +20,7 @@ export enum OptionsValue {
 	PRIVATE_KEY = "privateKey",
 	PUBLIC_KEY = "publicKey",
 	SECRET = "secret",
+	SECRET_WITH_ENCRYPTION = "secretWithEncryption",
 	WIF = "wif",
 }
 

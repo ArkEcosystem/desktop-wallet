@@ -124,6 +124,42 @@ export const useWalletImport = ({ profile }: { profile: Contracts.IProfile }) =>
 					}, 0);
 				});
 
+			case OptionsValue.SECRET:
+				return profile.wallets().push(
+					await profile.walletFactory().fromSecret({
+						...defaultOptions,
+						wif: value,
+					}),
+				);
+
+			case OptionsValue.SECRET_WITH_ENCRYPTION:
+				return new Promise((resolve, reject) => {
+					// `setTimeout` being used here to avoid blocking the thread
+					// as the decryption is a expensive calculation
+					setTimeout(() => {
+						profile
+							.walletFactory()
+							.fromSecret({
+								...defaultOptions,
+								password: value,
+							})
+							.then((wallet) => {
+								profile.wallets().push(wallet);
+								return resolve(wallet);
+							})
+							.catch((error) => {
+								/* istanbul ignore next */
+								if (error.code === "ERR_ASSERTION") {
+									return reject(
+										new Error(t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.DECRYPT_WIF_ASSERTION")),
+									);
+								}
+
+								reject(error);
+							});
+					}, 0);
+				});
+
 			default:
 				return;
 		}
