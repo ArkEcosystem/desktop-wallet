@@ -6,17 +6,21 @@ import { formatFiat, formatWithSign } from "./Amount.helpers";
 const AmountFiat: React.FC<AmountProperties> = ({
 	ticker,
 	value,
-	isNegative,
-	withSign,
+	isNegative = false,
+	showSign,
 	className,
 }: AmountProperties) => {
 	const amount = formatFiat({ ticker, value });
 
-	const formatted = !withSign ? amount : formatWithSign(amount, !!isNegative);
+	let formattedAmount = amount;
+
+	if (showSign) {
+		formattedAmount = formatWithSign(formattedAmount, isNegative);
+	}
 
 	return (
 		<span data-testid="AmountFiat" className={className}>
-			{formatted}
+			{formattedAmount}
 		</span>
 	);
 };
