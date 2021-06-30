@@ -74,6 +74,7 @@ export const General: React.FC = () => {
 	const form = useForm<GeneralSettingsState>({
 		defaultValues: getDefaultValues(),
 		mode: "onChange",
+		shouldUnregister: false,
 	});
 
 	const { register, watch, formState, setValue, reset } = form;
