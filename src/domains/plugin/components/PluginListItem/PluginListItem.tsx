@@ -47,16 +47,16 @@ export const PluginListItem = ({
 
 		if (plugin.hasUpdateAvailable) {
 			result.push({
+				disabled: plugin.isCompatible === false,
 				label: t("COMMON.UPDATE"),
 				value: "update",
-				disabled: plugin.isCompatible === false,
 			});
 		}
 
 		if (plugin.isEnabled) {
 			result.push({ label: t("COMMON.DISABLE"), value: "disable" });
 		} else {
-			result.push({ label: t("COMMON.ENABLE"), value: "enable", disabled: plugin.isCompatible === false });
+			result.push({ disabled: plugin.isCompatible === false, label: t("COMMON.ENABLE"), value: "enable" });
 		}
 
 		result.push({ label: t("COMMON.DELETE"), value: "delete" });

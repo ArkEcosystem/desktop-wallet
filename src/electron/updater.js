@@ -37,10 +37,10 @@ const sendToWindow = (key, value, mainWindow) => {
 };
 
 const ipcEvents = (prefix = "updater") => ({
-	QUIT_INSTALL: `${prefix}:quit-and-install`,
 	CANCEL: `${prefix}:cancel`,
 	CHECK_UPDATES: `${prefix}:check-for-updates`,
 	DOWNLOAD_UPDATE: `${prefix}:download-update`,
+	QUIT_INSTALL: `${prefix}:quit-and-install`,
 });
 
 const updaterEvents = [

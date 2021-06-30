@@ -6,21 +6,6 @@
  * you would expect without having to implement any wrappers.
  */
 export const PlatformSdkChoices = {
-	marketProviders: [
-		{ label: "CoinCap", value: "coincap" },
-		{ label: "CoinGecko", value: "coingecko" },
-		{ label: "CryptoCompare", value: "cryptocompare" },
-	],
-	passphraseLanguages: [
-		{ label: "Chinese Simplified", value: "chinese_simplified" },
-		{ label: "Chinese Traditional", value: "chinese_traditional" },
-		{ label: "English", value: "english" },
-		{ label: "French", value: "french" },
-		{ label: "Italian", value: "italian" },
-		{ label: "Japanese", value: "japanese" },
-		{ label: "Korean", value: "korean" },
-		{ label: "Spanish", value: "spanish" },
-	],
 	currencies: [
 		{ label: "BTC (Ƀ)", value: "BTC" },
 		{ label: "ETH (Ξ)", value: "ETH" },
@@ -42,6 +27,21 @@ export const PlatformSdkChoices = {
 		{ label: "USD ($)", value: "USD" },
 	],
 	languages: [{ label: "English", value: "en-US" }],
+	marketProviders: [
+		{ label: "CoinCap", value: "coincap" },
+		{ label: "CoinGecko", value: "coingecko" },
+		{ label: "CryptoCompare", value: "cryptocompare" },
+	],
+	passphraseLanguages: [
+		{ label: "Chinese Simplified", value: "chinese_simplified" },
+		{ label: "Chinese Traditional", value: "chinese_traditional" },
+		{ label: "English", value: "english" },
+		{ label: "French", value: "french" },
+		{ label: "Italian", value: "italian" },
+		{ label: "Japanese", value: "japanese" },
+		{ label: "Korean", value: "korean" },
+		{ label: "Spanish", value: "spanish" },
+	],
 	timeFormats: [
 		{ label: "12h", value: "h:mm A" },
 		{ label: "24h", value: "HH:mm" },

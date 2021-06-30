@@ -74,12 +74,12 @@ export const SendTransfer = () => {
 	}, [profile]);
 
 	const form = useForm<any>({
-		mode: "onChange",
 		defaultValues: {
 			amount: 0,
-			remainingBalance: wallet?.balance?.(),
 			recipients: [],
+			remainingBalance: wallet?.balance?.(),
 		},
+		mode: "onChange",
 	});
 
 	const { clearErrors, formState, getValues, register, setError, setValue, handleSubmit, watch } = form;
@@ -159,12 +159,12 @@ export const SendTransfer = () => {
 			return;
 		}
 
-		setValue("senderAddress", wallet.address(), { shouldValidate: true, shouldDirty: true });
+		setValue("senderAddress", wallet.address(), { shouldDirty: true, shouldValidate: true });
 
 		for (const network of networks) {
 			/* istanbul ignore else */
 			if (network.coin() === wallet.coinId() && network.id() === wallet.networkId()) {
-				setValue("network", network, { shouldValidate: true, shouldDirty: true });
+				setValue("network", network, { shouldDirty: true, shouldValidate: true });
 
 				break;
 			}
@@ -209,29 +209,29 @@ export const SendTransfer = () => {
 
 		try {
 			const signatory = await sign({
-				mnemonic,
-				secondMnemonic,
 				encryptionPassword,
-				wif,
+				mnemonic,
 				privateKey,
+				secondMnemonic,
+				wif,
 			});
 
 			const transactionInput: Services.TransactionInputs = {
+				data: {},
 				fee: +fee,
 				signatory,
-				data: {},
 			};
 
 			transactionInput.data = isMultiPayment
 				? {
 						payments: recipients.map(({ address, amount }: { address: string; amount: number }) => ({
-							to: address,
 							amount: +amount,
+							to: address,
 						})),
 				  }
 				: {
-						to: recipients[0].address,
 						amount: +recipients[0].amount,
+						to: recipients[0].address,
 				  };
 
 			if (memo) {
@@ -270,10 +270,10 @@ export const SendTransfer = () => {
 		} catch (error) {
 			if (isMnemonicError(error)) {
 				setValue("mnemonic", "");
-				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
+				return setError("mnemonic", { message: t("TRANSACTION.INVALID_MNEMONIC"), type: "manual" });
 			}
 
-			setErrorMessage(JSON.stringify({ type: error.name, message: error.message }));
+			setErrorMessage(JSON.stringify({ message: error.message, type: error.name }));
 			setActiveTab(5);
 		}
 	};

@@ -19,7 +19,7 @@ describe("LedgerImportStep", () => {
 
 	const walletsData: LedgerData[] = [
 		{ address: "DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq", balance: BigNumber.make(0), index: 0, path: "" },
-		{ address: "DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES", balance: BigNumber.make(0), index: 2, path: "", isNew: true },
+		{ address: "DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES", balance: BigNumber.make(0), index: 2, isNew: true, path: "" },
 	];
 
 	const renderComponent = (wallets: LedgerData[] = walletsData) => {

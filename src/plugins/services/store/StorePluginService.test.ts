@@ -5,7 +5,7 @@ import { env } from "utils/testing-library";
 
 import { StorePluginService } from "./StorePluginService";
 
-const config = { name: "test", version: "1.1", "desktop-wallet": { permissions: ["STORE"] } };
+const config = { "desktop-wallet": { permissions: ["STORE"] }, name: "test", version: "1.1" };
 
 describe("StorePluginService", () => {
 	let profile: Contracts.IProfile;

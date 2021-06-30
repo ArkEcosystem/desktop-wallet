@@ -23,6 +23,12 @@ export interface CoinNetworkExtended {
 }
 
 export const coinsNetworkExtendedData: Record<string, CoinNetworkExtended> = {
+	"ark.devnet": {
+		borderClass: "border-theme-primary-100",
+		displayName: "ARK Devnet",
+		iconName: "ARK",
+		textClass: "text-theme-primary-400",
+	},
 	// 'ada.mainnet': {
 	// 	displayName: "Cardano",
 	// 	borderClass: "border-theme-primary-500",
@@ -36,28 +42,22 @@ export const coinsNetworkExtendedData: Record<string, CoinNetworkExtended> = {
 	// 	iconName: "ADA",
 	// },
 	"ark.mainnet": {
-		displayName: "ARK",
 		borderClass: "border-theme-danger-200",
+		displayName: "ARK",
+		iconName: "ARK",
 		textClass: "text-theme-danger-400",
-		iconName: "ARK",
-	},
-	"ark.devnet": {
-		displayName: "ARK Devnet",
-		borderClass: "border-theme-primary-100",
-		textClass: "text-theme-primary-400",
-		iconName: "ARK",
 	},
 	"bind.mainnet": {
-		displayName: "Compendia",
 		borderClass: "border-theme-primary-100",
-		textClass: "text-theme-primary-400",
+		displayName: "Compendia",
 		iconName: "BIND",
+		textClass: "text-theme-primary-400",
 	},
 	"bind.testnet": {
-		displayName: "Compendia Testnet",
 		borderClass: "border-theme-primary-100",
-		textClass: "text-theme-primary-400",
+		displayName: "Compendia Testnet",
 		iconName: "BIND",
+		textClass: "text-theme-primary-400",
 	},
 	// "atom.mainnet": {
 	// 	displayName: "Cosmos",
@@ -114,16 +114,16 @@ export const coinsNetworkExtendedData: Record<string, CoinNetworkExtended> = {
 	// 	iconName: "ETH",
 	// },
 	"lsk.mainnet": {
-		displayName: "Lisk",
 		borderClass: "border-theme-primary-400",
-		textClass: "text-theme-primary-600",
+		displayName: "Lisk",
 		iconName: "LSK",
+		textClass: "text-theme-primary-600",
 	},
 	"lsk.testnet": {
-		displayName: "Lisk Testnet",
 		borderClass: "border-theme-primary-100",
-		textClass: "text-theme-primary-400",
+		displayName: "Lisk Testnet",
 		iconName: "LSK",
+		textClass: "text-theme-primary-400",
 	},
 	// "nano.mainnet": {
 	// 	displayName: "NANO",

@@ -28,15 +28,15 @@ describe("AddressRow", () => {
 		wallet.data().set(Contracts.WalletData.DerivationPath, "0");
 
 		blankWallet = await profile.walletFactory().fromMnemonicWithBIP39({
-			mnemonic: blankWalletPassphrase,
 			coin: "ARK",
+			mnemonic: blankWalletPassphrase,
 			network: "ark.devnet",
 		});
 		profile.wallets().push(blankWallet);
 
 		unvotedWallet = await profile.walletFactory().fromMnemonicWithBIP39({
-			mnemonic: "unvoted wallet",
 			coin: "ARK",
+			mnemonic: "unvoted wallet",
 			network: "ark.devnet",
 		});
 		profile.wallets().push(unvotedWallet);
@@ -44,8 +44,8 @@ describe("AddressRow", () => {
 		emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 
 		wallet2 = await emptyProfile.walletFactory().fromMnemonicWithBIP39({
-			mnemonic: "wallet 2",
 			coin: "ARK",
+			mnemonic: "wallet 2",
 			network: "ark.devnet",
 		});
 		profile.wallets().push(wallet2);
@@ -60,15 +60,15 @@ describe("AddressRow", () => {
 			.reply(200, walletMock)
 			.get(`/api/wallets/${blankWallet.address()}`)
 			.reply(404, {
-				statusCode: 404,
 				error: "Not Found",
 				message: "Wallet not found",
+				statusCode: 404,
 			})
 			.get(`/api/wallets/${wallet2.address()}`)
 			.reply(404, {
-				statusCode: 404,
 				error: "Not Found",
 				message: "Wallet not found",
+				statusCode: 404,
 			})
 			.persist();
 
@@ -100,8 +100,8 @@ describe("AddressRow", () => {
 						address: data[index].address,
 						explorerLink: "",
 						publicKey: data[index].publicKey,
-						username: data[index].username,
 						rank: data[index].rank,
+						username: data[index].username,
 					}),
 			),
 		);
@@ -128,8 +128,8 @@ describe("AddressRow", () => {
 						address: data[index].address,
 						explorerLink: "",
 						publicKey: data[index].publicKey,
-						username: data[index].username,
 						rank: data[index].rank,
+						username: data[index].username,
 					}),
 			),
 		);

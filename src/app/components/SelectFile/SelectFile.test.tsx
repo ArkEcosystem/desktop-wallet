@@ -6,8 +6,8 @@ import { act, fireEvent, render, waitFor } from "utils/testing-library";
 import { SelectFile } from "./SelectFile";
 
 jest.mock("fs", () => ({
-	writeFileSync: jest.fn(),
 	readFileSync: jest.fn().mockReturnValue({ toString: () => "{test:'test'}" }),
+	writeFileSync: jest.fn(),
 }));
 
 describe("SelectFile", () => {

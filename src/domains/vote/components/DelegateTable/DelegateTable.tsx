@@ -92,7 +92,7 @@ export const DelegateTable = ({
 		}
 	}, [hasVotes, maxVotes, selectedVotes]);
 
-	useEffect(() => window.scrollTo({ top: 0, behavior: "smooth" }), [currentPage]);
+	useEffect(() => window.scrollTo({ behavior: "smooth", top: 0 }), [currentPage]);
 
 	const toggleUnvotesSelected = (address: string) => {
 		if (selectedUnvotes.find((delegateAddress) => delegateAddress === address)) {
@@ -311,7 +311,7 @@ export const DelegateTable = ({
 
 DelegateTable.defaultProps = {
 	delegates: [],
-	votes: [],
 	isLoading: false,
 	itemsPerPage: 51,
+	votes: [],
 };

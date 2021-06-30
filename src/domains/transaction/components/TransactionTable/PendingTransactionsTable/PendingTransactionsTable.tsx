@@ -31,8 +31,8 @@ export const PendingTransactions = ({
 		{
 			Header: t("COMMON.DATE"),
 			accessor: "timestamp",
-			sortDescFirst: true,
 			cellWidth: "w-50",
+			sortDescFirst: true,
 		},
 		{
 			Header: t("COMMON.RECIPIENT"),
@@ -54,8 +54,8 @@ export const PendingTransactions = ({
 		},
 		{
 			Header: "Sign",
-			className: "hidden",
 			cellWidth: "w-24",
+			className: "hidden",
 		},
 	];
 

@@ -219,7 +219,7 @@ export const SearchWallet = ({
 
 SearchWallet.defaultProps = {
 	isOpen: false,
-	size: "5xl",
 	showConvertedValue: true,
 	showNetwork: true,
+	size: "5xl",
 };

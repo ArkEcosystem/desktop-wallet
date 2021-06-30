@@ -39,19 +39,19 @@ export const FormStep = ({
 
 	useEffect(() => {
 		if (minParticipants === undefined) {
-			setValue("minParticipants", 2, { shouldValidate: true, shouldDirty: true });
+			setValue("minParticipants", 2, { shouldDirty: true, shouldValidate: true });
 		}
 	}, [setValue, minParticipants]);
 
 	const handleParticipants = useCallback(
 		(values: Participant[]) => {
-			setValue("participants", values, { shouldValidate: true, shouldDirty: true });
+			setValue("participants", values, { shouldDirty: true, shouldValidate: true });
 		},
 		[setValue],
 	);
 
 	const handleInput = (event_: ChangeEvent<HTMLInputElement>) => {
-		setValue(event_.target.name, event_.target.value, { shouldValidate: true, shouldDirty: true });
+		setValue(event_.target.name, event_.target.value, { shouldDirty: true, shouldValidate: true });
 	};
 
 	const minParticipantsLimit = Math.max(2, participants?.length || 0);
@@ -106,7 +106,7 @@ export const FormStep = ({
 						value={fee}
 						step={step}
 						disabled={wallet.network().feeType() !== "dynamic"}
-						onChange={(value) => setValue("fee", value, { shouldValidate: true, shouldDirty: true })}
+						onChange={(value) => setValue("fee", value, { shouldDirty: true, shouldValidate: true })}
 						network={wallet.network()}
 						profile={profile}
 						viewType={inputFeeSettings.viewType}
@@ -114,7 +114,7 @@ export const FormStep = ({
 							setValue(
 								"inputFeeSettings",
 								{ ...inputFeeSettings, viewType },
-								{ shouldValidate: true, shouldDirty: true },
+								{ shouldDirty: true, shouldValidate: true },
 							);
 						}}
 						simpleValue={inputFeeSettings.simpleValue}
@@ -122,7 +122,7 @@ export const FormStep = ({
 							setValue(
 								"inputFeeSettings",
 								{ ...inputFeeSettings, simpleValue },
-								{ shouldValidate: true, shouldDirty: true },
+								{ shouldDirty: true, shouldValidate: true },
 							);
 						}}
 					/>

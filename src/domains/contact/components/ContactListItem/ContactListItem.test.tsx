@@ -32,21 +32,21 @@ describe("ContactListItem", () => {
 
 	it("should render as delegate", () => {
 		const delegateContact = {
-			id: () => "id5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
-			name: () => "Caio",
-			avatar: () => "data:image/png;base64,avatarImage",
 			addresses: () => ({
 				count: () => 1,
 				values: () => [
 					{
 						address: () => "id5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
 						coin: () => "ARK",
-						network: () => "ark.devnet",
-						isDelegate: () => true,
 						hasSyncedWithNetwork: () => true,
+						isDelegate: () => true,
+						network: () => "ark.devnet",
 					},
 				],
 			}),
+			avatar: () => "data:image/png;base64,avatarImage",
+			id: () => "id5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
+			name: () => "Caio",
 		};
 
 		const { asFragment } = render(
@@ -74,17 +74,17 @@ describe("ContactListItem", () => {
 
 	it("should render with multiple addresses", async () => {
 		await contact.addresses().create({
-			coin: "ARK",
-			network: "ark.devnet",
-			name: "test",
 			address: "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
+			coin: "ARK",
+			name: "test",
+			network: "ark.devnet",
 		});
 
 		await contact.addresses().create({
-			coin: "ARK",
-			network: "ark.devnet",
-			name: "test2",
 			address: "DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu",
+			coin: "ARK",
+			name: "test2",
+			network: "ark.devnet",
 		});
 
 		const { asFragment } = render(

@@ -12,6 +12,6 @@ interface DividerProperties {
 export const Divider = styled.div<DividerProperties>(getStyles);
 
 Divider.defaultProps = {
-	type: "horizontal",
 	className: "border-theme-secondary-300 dark:border-theme-secondary-800",
+	type: "horizontal",
 };

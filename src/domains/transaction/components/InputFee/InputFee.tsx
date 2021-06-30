@@ -47,23 +47,23 @@ export const InputFee: React.FC<InputFeeProperties> = memo(
 
 		const ticker = network?.ticker();
 		const exchangeTicker = profile?.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency);
-		const { convert } = useExchangeRate({ ticker, exchangeTicker });
+		const { convert } = useExchangeRate({ exchangeTicker, ticker });
 
 		const options: InputFeeSimpleOptions = {
 			[InputFeeSimpleValue.Slow]: {
-				label: t("TRANSACTION.FEES.SLOW"),
 				displayValue: min,
 				displayValueConverted: convert(min),
+				label: t("TRANSACTION.FEES.SLOW"),
 			},
 			[InputFeeSimpleValue.Average]: {
-				label: t("TRANSACTION.FEES.AVERAGE"),
 				displayValue: avg,
 				displayValueConverted: convert(avg),
+				label: t("TRANSACTION.FEES.AVERAGE"),
 			},
 			[InputFeeSimpleValue.Fast]: {
-				label: t("TRANSACTION.FEES.FAST"),
 				displayValue: max,
 				displayValueConverted: convert(max),
+				label: t("TRANSACTION.FEES.FAST"),
 			},
 		};
 

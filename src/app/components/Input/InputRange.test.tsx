@@ -7,11 +7,11 @@ import { FormField } from "../Form";
 import { InputRange } from "./InputRange";
 
 const properties = {
-	value: "5",
 	max: 10,
 	min: 0,
-	step: 1,
 	onChange: jest.fn(),
+	step: 1,
+	value: "5",
 };
 
 describe("InputRange", () => {
@@ -66,7 +66,7 @@ describe("InputRange", () => {
 		const { getByTestId } = render(<InputRange {...properties} />);
 		const thumb = getByTestId("Range__thumb");
 
-		fireEvent.keyDown(thumb, { key: "ArrowRight", code: "ArrowRight" });
+		fireEvent.keyDown(thumb, { code: "ArrowRight", key: "ArrowRight" });
 
 		waitFor(() => expect(thumb).toHaveAttribute("aria-valuenow", "6"));
 		waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("6"));
@@ -85,7 +85,7 @@ describe("InputRange", () => {
 	});
 
 	it("should track background min value", async () => {
-		const properties_ = { ...properties, min: 4, value: "2", step: 3 };
+		const properties_ = { ...properties, min: 4, step: 3, value: "2" };
 		const { getByTestId, asFragment } = render(<InputRange {...properties_} />);
 		await waitFor(() => {
 			expect(getByTestId("InputCurrency")).toHaveValue("2");
@@ -97,9 +97,9 @@ describe("InputRange", () => {
 
 	it("should render invalid", async () => {
 		const { result: form } = renderHook(() => useForm());
-		const properties_ = { ...properties, min: 4, value: "2", step: 3 };
+		const properties_ = { ...properties, min: 4, step: 3, value: "2" };
 		hookAct(() => {
-			form.current.setError("test", { type: "fail", message: "test" });
+			form.current.setError("test", { message: "test", type: "fail" });
 		});
 
 		const { getByTestId, asFragment } = render(

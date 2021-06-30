@@ -6,12 +6,12 @@ import { PluginHeader } from "./PluginHeader";
 
 describe("PluginHeader", () => {
 	const pluginDataFixture = {
-		title: "Test Plugin",
 		author: "ARK Ecosystem",
 		category: "Utility",
+		size: "4.2 Mb",
+		title: "Test Plugin",
 		url: "https://github.com/arkecosystem",
 		version: "1.3.8",
-		size: "4.2 Mb",
 	};
 
 	it("should render properly", () => {

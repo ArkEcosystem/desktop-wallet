@@ -71,8 +71,8 @@ export const General: React.FC = () => {
 	};
 
 	const form = useForm<GeneralSettingsState>({
-		mode: "onChange",
 		defaultValues: getDefaultValues(),
+		mode: "onChange",
 	});
 
 	const { register, watch, formState, setValue, reset } = form;
@@ -89,7 +89,7 @@ export const General: React.FC = () => {
 	const hasDefaultAvatar = !!avatar?.endsWith("</svg>");
 
 	const { settings: settingsValidation } = useValidation();
-	const { getPromptMessage } = useSettingsPrompt({ isDirty, dirtyFields });
+	const { getPromptMessage } = useSettingsPrompt({ dirtyFields, isDirty });
 
 	const [isOpenDevelopmentNetworkModal, setIsOpenDevelopmentNetworkModal] = useState(false);
 	const [isResetProfileOpen, setIsResetProfileOpen] = useState(false);
@@ -120,13 +120,12 @@ export const General: React.FC = () => {
 		reset(getDefaultValues());
 
 		setProfileTheme(activeProfile);
-		window.scrollTo({ top: 0, behavior: "smooth" });
+		window.scrollTo({ behavior: "smooth", top: 0 });
 	};
 
 	const securityItems = [
 		{
 			label: t("SETTINGS.GENERAL.SECURITY.SCREENSHOT_PROTECTION.TITLE"),
-			labelDescription: t("SETTINGS.GENERAL.SECURITY.SCREENSHOT_PROTECTION.DESCRIPTION"),
 			labelAddon: (
 				<Toggle
 					ref={register()}
@@ -135,6 +134,7 @@ export const General: React.FC = () => {
 					data-testid="General-settings__toggle--screenshotProtection"
 				/>
 			),
+			labelDescription: t("SETTINGS.GENERAL.SECURITY.SCREENSHOT_PROTECTION.DESCRIPTION"),
 			wrapperClass: "pb-6",
 		},
 		{
@@ -162,7 +162,6 @@ export const General: React.FC = () => {
 	const otherItems = [
 		{
 			label: t("SETTINGS.GENERAL.OTHER.DEVELOPMENT_NETWORKS.TITLE"),
-			labelDescription: t("SETTINGS.GENERAL.OTHER.DEVELOPMENT_NETWORKS.DESCRIPTION"),
 			labelAddon: (
 				<Toggle
 					ref={register()}
@@ -172,11 +171,11 @@ export const General: React.FC = () => {
 					data-testid="General-settings__toggle--useTestNetworks"
 				/>
 			),
+			labelDescription: t("SETTINGS.GENERAL.OTHER.DEVELOPMENT_NETWORKS.DESCRIPTION"),
 			wrapperClass: "pb-6",
 		},
 		{
 			label: t("SETTINGS.GENERAL.OTHER.ERROR_REPORTING.TITLE"),
-			labelDescription: t("SETTINGS.GENERAL.OTHER.ERROR_REPORTING.DESCRIPTION"),
 			labelAddon: (
 				<Toggle
 					ref={register()}
@@ -185,11 +184,11 @@ export const General: React.FC = () => {
 					data-testid="General-settings__toggle--errorReporting"
 				/>
 			),
+			labelDescription: t("SETTINGS.GENERAL.OTHER.ERROR_REPORTING.DESCRIPTION"),
 			wrapperClass: "py-6",
 		},
 		{
 			label: t("SETTINGS.GENERAL.OTHER.TRANSACTION_HISTORY.TITLE"),
-			labelDescription: t("SETTINGS.GENERAL.OTHER.TRANSACTION_HISTORY.DESCRIPTION"),
 			labelAddon: (
 				<Toggle
 					ref={register()}
@@ -198,11 +197,11 @@ export const General: React.FC = () => {
 					data-testid="General-settings__toggle--dashboardTransactionHistory"
 				/>
 			),
+			labelDescription: t("SETTINGS.GENERAL.OTHER.TRANSACTION_HISTORY.DESCRIPTION"),
 			wrapperClass: "py-6",
 		},
 		{
 			label: t("SETTINGS.GENERAL.OTHER.DARK_THEME.TITLE"),
-			labelDescription: t("SETTINGS.GENERAL.OTHER.DARK_THEME.DESCRIPTION"),
 			labelAddon: (
 				<Toggle
 					ref={register()}
@@ -211,6 +210,7 @@ export const General: React.FC = () => {
 					data-testid="General-settings__toggle--isDarkMode"
 				/>
 			),
+			labelDescription: t("SETTINGS.GENERAL.OTHER.DARK_THEME.DESCRIPTION"),
 			wrapperClass: "py-6",
 		},
 	];
@@ -230,18 +230,18 @@ export const General: React.FC = () => {
 		timeFormat,
 		useTestNetworks,
 	}: GeneralSettingsState) => {
-		activeProfile.settings().set(Contracts.ProfileSetting.Name, name);
-		activeProfile.settings().set(Contracts.ProfileSetting.Locale, locale);
-		activeProfile.settings().set(Contracts.ProfileSetting.Bip39Locale, bip39Locale);
-		activeProfile.settings().set(Contracts.ProfileSetting.MarketProvider, marketProvider);
-		activeProfile.settings().set(Contracts.ProfileSetting.ExchangeCurrency, exchangeCurrency);
-		activeProfile.settings().set(Contracts.ProfileSetting.TimeFormat, timeFormat);
-		activeProfile.settings().set(Contracts.ProfileSetting.ScreenshotProtection, screenshotProtection);
 		activeProfile.settings().set(Contracts.ProfileSetting.AutomaticSignOutPeriod, +automaticSignOutPeriod);
-		activeProfile.settings().set(Contracts.ProfileSetting.Theme, isDarkMode ? "dark" : "light");
-		activeProfile.settings().set(Contracts.ProfileSetting.UseTestNetworks, useTestNetworks);
-		activeProfile.settings().set(Contracts.ProfileSetting.ErrorReporting, errorReporting);
+		activeProfile.settings().set(Contracts.ProfileSetting.Bip39Locale, bip39Locale);
 		activeProfile.settings().set(Contracts.ProfileSetting.DashboardTransactionHistory, dashboardTransactionHistory);
+		activeProfile.settings().set(Contracts.ProfileSetting.ErrorReporting, errorReporting);
+		activeProfile.settings().set(Contracts.ProfileSetting.ExchangeCurrency, exchangeCurrency);
+		activeProfile.settings().set(Contracts.ProfileSetting.Locale, locale);
+		activeProfile.settings().set(Contracts.ProfileSetting.MarketProvider, marketProvider);
+		activeProfile.settings().set(Contracts.ProfileSetting.Name, name);
+		activeProfile.settings().set(Contracts.ProfileSetting.ScreenshotProtection, screenshotProtection);
+		activeProfile.settings().set(Contracts.ProfileSetting.Theme, isDarkMode ? "dark" : "light");
+		activeProfile.settings().set(Contracts.ProfileSetting.TimeFormat, timeFormat);
+		activeProfile.settings().set(Contracts.ProfileSetting.UseTestNetworks, useTestNetworks);
 
 		if (!avatar || hasDefaultAvatar) {
 			activeProfile.settings().forget(Contracts.ProfileSetting.Avatar);
@@ -260,7 +260,7 @@ export const General: React.FC = () => {
 		reset(getDefaultValues());
 
 		toasts.success(t("SETTINGS.GENERAL.SUCCESS"));
-		window.scrollTo({ top: 0, behavior: "smooth" });
+		window.scrollTo({ behavior: "smooth", top: 0 });
 	};
 
 	return (

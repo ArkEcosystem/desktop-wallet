@@ -37,7 +37,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Properties>(
 			? "rgba(var(--theme-color-primary-rgb), 0.1)"
 			: "rgba(var(--theme-color-danger-rgb), 0.1)";
 
-		const sanitizedStep = sanitizeStep({ min, max, step });
+		const sanitizedStep = sanitizeStep({ max, min, step });
 
 		const handleRangeChange = ([rangeValue]: number[]) => {
 			onChange(rangeValue.toString());
@@ -51,10 +51,10 @@ export const InputRange = React.forwardRef<HTMLInputElement, Properties>(
 						? undefined
 						: {
 								background: getTrackBackground({
-									values: [+value],
 									colors: [backgroundColor, "transparent"],
-									min,
 									max,
+									min,
+									values: [+value],
 								}),
 						  }
 				}

@@ -26,7 +26,7 @@ export class PluginServiceRepository {
 		const result = {};
 
 		for (const service of this.#services.values()) {
-			const guard = applyPluginMiddlewares({ profile, plugin, service }, [
+			const guard = applyPluginMiddlewares({ plugin, profile, service }, [
 				isServiceEnabled,
 				isServiceDefinedInConfig,
 			]);

@@ -11,7 +11,7 @@ const AmountCrypto: React.FC<AmountProperties> = ({
 	withSign,
 	className,
 }: AmountProperties) => {
-	const amount = formatCrypto({ locale, value, ticker });
+	const amount = formatCrypto({ locale, ticker, value });
 
 	const formatted = !withSign ? amount : formatWithSign(amount, !!isNegative);
 

@@ -59,12 +59,12 @@ describe("NavigationBar", () => {
 	it("should render with custom menu", () => {
 		const menu = [
 			{
-				title: "Portfolio",
 				mountPath: (profileId: string) => `/profiles/${profileId}/dashboard`,
+				title: "Portfolio",
 			},
 			{
-				title: "test",
 				mountPath: () => "/test",
+				title: "test",
 			},
 		];
 		const { container, asFragment } = renderWithRouter(<NavigationBar profile={profile} menu={menu} />);
@@ -82,12 +82,12 @@ describe("NavigationBar", () => {
 	it("should handle menu click", () => {
 		const menu = [
 			{
-				title: "Portfolio",
 				mountPath: (profileId: string) => `/profiles/${profileId}/dashboard`,
+				title: "Portfolio",
 			},
 			{
-				title: "Test",
 				mountPath: () => "/test",
+				title: "Test",
 			},
 		];
 
@@ -99,8 +99,8 @@ describe("NavigationBar", () => {
 
 	it("should open user actions dropdown on click", () => {
 		const options = [
-			{ label: "Option 1", value: "/test", mountPath: () => "/test" },
-			{ label: "Option 2", value: "/test2", mountPath: () => "/test2" },
+			{ label: "Option 1", mountPath: () => "/test", value: "/test" },
+			{ label: "Option 2", mountPath: () => "/test2", value: "/test2" },
 		];
 
 		const { getByTestId, getByText, history } = renderWithRouter(
@@ -135,8 +135,8 @@ describe("NavigationBar", () => {
 				<NavigationBar profile={profile} />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -167,8 +167,8 @@ describe("NavigationBar", () => {
 				<NavigationBar profile={profile} />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -190,12 +190,12 @@ describe("NavigationBar", () => {
 	it("should not render if no active profile", () => {
 		const menu = [
 			{
-				title: "Portfolio",
 				mountPath: (profileId: string) => `/profiles/${profileId}/dashboard`,
+				title: "Portfolio",
 			},
 			{
-				title: "test",
 				mountPath: () => "/test",
+				title: "test",
 			},
 		];
 

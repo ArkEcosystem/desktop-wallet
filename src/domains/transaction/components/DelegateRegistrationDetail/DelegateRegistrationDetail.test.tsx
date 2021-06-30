@@ -36,8 +36,8 @@ describe("DelegateRegistrationDetail", () => {
 				isOpen={true}
 				transaction={{
 					...TransactionFixture,
-					username: () => "Ark Wallet",
 					isConfirmed: () => true,
+					username: () => "Ark Wallet",
 				}}
 			/>,
 		);

@@ -14,12 +14,12 @@ type NotifyReceivedTransactionsParameters = SyncReceivedTransactionsParameters &
 
 const fetchRecentProfileTransactions = async (profile: ProfileContracts.IProfile, limit: number) => {
 	const query = {
-		cursor: 1,
-		limit,
 		addresses: profile
 			.wallets()
 			.values()
 			.map((wallet) => wallet.address()),
+		cursor: 1,
+		limit,
 	};
 
 	const recentTransactions = await profile.transactionAggregate().all(query);
@@ -41,26 +41,26 @@ const transactionNotificationExists = (
 		.some((n) => n.type === "transaction" && n?.meta?.transactionId === transaction.id());
 
 const formatTransactionNotification = (transaction: Contracts.ConfirmedTransactionData) => ({
-	icon: undefined,
-	body: undefined,
-	name: undefined,
 	action: undefined,
-	type: "transaction",
+	body: undefined,
+	icon: undefined,
 	meta: {
 		timestamp: transaction.timestamp()?.toUNIX(),
 		transactionId: transaction.id(),
 	},
+	name: undefined,
+	type: "transaction",
 });
 
 const formatNotification = (input: any) =>
 	Object.assign(
 		{
-			icon: undefined,
-			body: undefined,
-			name: undefined,
 			action: "update",
-			type: "wallet",
+			body: undefined,
+			icon: undefined,
 			meta: {},
+			name: undefined,
+			type: "wallet",
 		},
 		input,
 	);
@@ -115,11 +115,11 @@ const notifyWalletUpdate = (environment: Environment, t: any) => ({ version }: {
 
 			profile.notifications().push(
 				formatNotification({
-					name: t("COMMON.APP_NAME"),
-					body: `- ${t("COMMON.UPDATE").toLowerCase()} v${version}`,
-					type: "wallet",
 					action: "update",
+					body: `- ${t("COMMON.UPDATE").toLowerCase()} v${version}`,
 					meta: { version },
+					name: t("COMMON.APP_NAME"),
+					type: "wallet",
 				}),
 			);
 		});
@@ -162,12 +162,12 @@ export const useNotifications = () => {
 
 		return {
 			notifications: {
-				notifyReceivedTransactions,
-				fetchRecentProfileTransactions,
-				syncReceivedTransactions,
-				sortTransactionNotificationsDesc,
-				notifyWalletUpdate: notifyWalletUpdate(env, t),
 				deleteNotificationsByVersion: deleteNotificationsByVersion(env),
+				fetchRecentProfileTransactions,
+				notifyReceivedTransactions,
+				notifyWalletUpdate: notifyWalletUpdate(env, t),
+				sortTransactionNotificationsDesc,
+				syncReceivedTransactions,
 			},
 		};
 	}, [profiles, env, persist, t]);

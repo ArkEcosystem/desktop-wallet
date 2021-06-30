@@ -170,10 +170,10 @@ describe("PluginManagerProvider", () => {
 
 			if (channel === "plugin:loader-fs.find") {
 				return {
-					config: { name: "test-plugin", version: "0.0.1", keywords: ["@arkecosystem", "desktop-wallet"] },
+					config: { keywords: ["@arkecosystem", "desktop-wallet"], name: "test-plugin", version: "0.0.1" },
+					dir: "/plugins/test-plugin",
 					source: () => void 0,
 					sourcePath: "/plugins/test-plugin/index.js",
-					dir: "/plugins/test-plugin",
 				};
 			}
 		});
@@ -228,10 +228,10 @@ describe("PluginManagerProvider", () => {
 		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {
 			if (channel === "plugin:loader-fs.find") {
 				return {
-					config: { name: "test-plugin", version: "0.0.1", keywords: ["@arkecosystem", "desktop-wallet"] },
+					config: { keywords: ["@arkecosystem", "desktop-wallet"], name: "test-plugin", version: "0.0.1" },
+					dir: "/plugins/test-plugin",
 					source: () => void 0,
 					sourcePath: "/plugins/test-plugin/index.js",
-					dir: "/plugins/test-plugin",
 				};
 			}
 
@@ -276,7 +276,7 @@ describe("PluginManagerProvider", () => {
 	it("should render properly for remote package", async () => {
 		nock("https://github.com/")
 			.get("/arkecosystem/remote-plugin/raw/master/package.json")
-			.reply(200, { name: "remote-plugin", keywords: ["@arkecosystem", "desktop-wallet"] });
+			.reply(200, { keywords: ["@arkecosystem", "desktop-wallet"], name: "remote-plugin" });
 
 		const Component = () => {
 			const { fetchLatestPackageConfiguration, pluginConfigurations } = usePluginManagerContext();
@@ -333,9 +333,9 @@ describe("PluginManagerProvider", () => {
 	it("should check if plugin update is available", async () => {
 		const plugin = new PluginController(
 			{
+				"desktop-wallet": { minimumVersion: "4.0.0" },
 				name: "@dated/transaction-export-plugin",
 				version: "1.0.0",
-				"desktop-wallet": { minimumVersion: "4.0.0" },
 			},
 			() => void 0,
 		);
@@ -375,9 +375,9 @@ describe("PluginManagerProvider", () => {
 		jest.useFakeTimers();
 		const plugin = new PluginController(
 			{
+				"desktop-wallet": { minimumVersion: "4.0.0" },
 				name: "@dated/transaction-export-plugin",
 				version: "1.0.0",
-				"desktop-wallet": { minimumVersion: "4.0.0" },
 			},
 			() => void 0,
 		);
@@ -387,11 +387,11 @@ describe("PluginManagerProvider", () => {
 			if (channel === "plugin:download-progress") {
 				listener(undefined, {
 					name: plugin.config().name(),
-					totalBytes: 200,
 					percent: 1,
+					totalBytes: 200,
 					transferredBytes: 200,
 				});
-				listener(undefined, { name: "other-plugin", totalBytes: 200, percent: 1, transferredBytes: 200 });
+				listener(undefined, { name: "other-plugin", percent: 1, totalBytes: 200, transferredBytes: 200 });
 			}
 		});
 
@@ -403,13 +403,13 @@ describe("PluginManagerProvider", () => {
 			if (channel === "plugin:loader-fs.find") {
 				return {
 					config: {
+						keywords: ["@arkecosystem", "desktop-wallet"],
 						name: "@dated/transaction-export-plugin",
 						version: "1.0.1",
-						keywords: ["@arkecosystem", "desktop-wallet"],
 					},
+					dir: "/plugins/test-plugin",
 					source: () => void 0,
 					sourcePath: "/plugins/test-plugin/index.js",
-					dir: "/plugins/test-plugin",
 				};
 			}
 
@@ -495,9 +495,9 @@ describe("PluginManagerProvider", () => {
 
 		const plugin = new PluginController(
 			{
+				"desktop-wallet": { minimumVersion: "4.0.0" },
 				name: "@dated/transaction-export-plugin",
 				version: "1.0.0",
-				"desktop-wallet": { minimumVersion: "4.0.0" },
 			},
 			() => void 0,
 		);

@@ -43,8 +43,8 @@ describe("Page", () => {
 					<Page profile={profile} />
 				</Route>,
 				{
-					routes: [dashboardURL],
 					history,
+					routes: [dashboardURL],
 				},
 			);
 
@@ -78,8 +78,8 @@ describe("Page", () => {
 				<Page profile={profile} />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 

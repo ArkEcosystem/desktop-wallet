@@ -6,8 +6,8 @@ import { useSignMessageModal } from "./use-sign-message-modal";
 export class MessagePluginService implements PluginService {
 	config() {
 		return {
-			id: PluginServiceIdentifier.Message,
 			accessor: "message",
+			id: PluginServiceIdentifier.Message,
 		};
 	}
 

@@ -62,7 +62,7 @@ export const useFeeConfirmation = (fee: number | string, fees: TransactionFees) 
 		dismissFeeWarning,
 		feeWarningVariant,
 		requireFeeConfirmation,
-		showFeeWarning,
 		setShowFeeWarning,
+		showFeeWarning,
 	};
 };

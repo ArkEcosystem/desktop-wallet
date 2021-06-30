@@ -30,11 +30,11 @@ const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: Receive
 	const { amount, memo } = form.watch();
 
 	const { uri, image } = useQRCode({
+		address,
 		amount,
+		coin: network.coin(),
 		memo,
 		network: network.id(),
-		coin: network.coin(),
-		address,
 	});
 
 	return (

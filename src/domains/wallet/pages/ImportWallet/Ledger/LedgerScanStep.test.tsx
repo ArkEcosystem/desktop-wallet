@@ -22,7 +22,6 @@ describe("LedgerScanStep", () => {
 			.get("/wallets")
 			.query((parameters) => !!parameters.address)
 			.reply(200, {
-				meta: {},
 				data: [
 					{
 						address: "DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq",
@@ -33,18 +32,19 @@ describe("LedgerScanStep", () => {
 						balance: "3",
 					},
 				],
+				meta: {},
 			})
 			.get("/wallets")
 			.query((parameters) => !!parameters.address)
 			.reply(200, {
-				meta: {},
 				data: [],
+				meta: {},
 			})
 			.get("/wallets")
 			.query((parameters) => !!parameters.address)
 			.reply(200, {
-				meta: {},
 				data: [],
+				meta: {},
 			});
 	});
 

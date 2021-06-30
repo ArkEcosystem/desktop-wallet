@@ -8,15 +8,15 @@ export const useActionNameMap = () => {
 	const mapActionName = (actionName: string) => {
 		const actionsMap: { [key: string]: Action } = {
 			"Read Changelog": {
-				value: "changelog",
 				label: t("COMMON.NOTIFICATIONS.ACTIONS.READ_CHANGELOG"),
+				value: "changelog",
 			},
 			update: {
 				label: t("COMMON.NOTIFICATIONS.ACTIONS.UPDATE"),
 				value: "update",
 			},
 		};
-		return actionsMap[actionName] || { value: actionName, label: actionName };
+		return actionsMap[actionName] || { label: actionName, value: actionName };
 	};
 
 	return { mapActionName };

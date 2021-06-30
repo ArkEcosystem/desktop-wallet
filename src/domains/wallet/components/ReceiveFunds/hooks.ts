@@ -13,8 +13,8 @@ interface QRCodeProperties {
 
 export const useQRCode = ({ network, amount, address, memo, coin, method }: QRCodeProperties) => {
 	const [qrCodeData, setQrCodeData] = useState<{ uri?: string; image?: string }>({
-		uri: undefined,
 		image: undefined,
+		uri: undefined,
 	});
 
 	const maxLength = 255;
@@ -23,8 +23,8 @@ export const useQRCode = ({ network, amount, address, memo, coin, method }: QRCo
 		const uri = new URI();
 
 		return uri.serialize({
-			method,
 			coin,
+			method,
 			network,
 			recipient: address,
 			...(amount && { amount }),
@@ -44,19 +44,19 @@ export const useQRCode = ({ network, amount, address, memo, coin, method }: QRCo
 			  };
 
 		const generateQrCode = async () => {
-			const qrCodeDataUri = address ? formatQR({ network, amount, address, memo, coin, method }) : undefined;
+			const qrCodeDataUri = address ? formatQR({ address, amount, coin, memo, method, network }) : undefined;
 
 			let qrCodeDataImage: string | undefined;
 
 			try {
-				qrCodeDataImage = await QRCode.fromString(qrCodeDataUri!).toDataURL({ width: 250, margin: 0, color });
+				qrCodeDataImage = await QRCode.fromString(qrCodeDataUri!).toDataURL({ color, margin: 0, width: 250 });
 			} catch {
 				qrCodeDataImage = undefined;
 			}
 
 			setQrCodeData({
-				uri: qrCodeDataUri,
 				image: qrCodeDataImage,
+				uri: qrCodeDataUri,
 			});
 		};
 

@@ -28,7 +28,7 @@ export class Cache {
 			result = await value();
 		}
 
-		this.store[key] = { value: result, expires_at: DateTime.make().addSeconds(this.ttl) };
+		this.store[key] = { expires_at: DateTime.make().addSeconds(this.ttl), value: result };
 
 		return result;
 	}

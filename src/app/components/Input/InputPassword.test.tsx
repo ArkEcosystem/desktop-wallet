@@ -24,9 +24,9 @@ describe("InputPassword", () => {
 
 	it("should render as a password isInvalid", () => {
 		const context = {
-			name: "test",
-			isInvalid: true,
 			errorMessage: "Error message for password",
+			isInvalid: true,
+			name: "test",
 		};
 		const tree = (
 			<FormFieldProvider value={context}>

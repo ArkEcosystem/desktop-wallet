@@ -24,14 +24,14 @@ const useFiles = (): UseFilesOutput => {
 		const content = fs.readFileSync(filePath);
 		const name = path.basename(filePath);
 
-		return { name, content, extension };
+		return { content, extension, name };
 	};
 
 	const openFile = async ({ extensions }: OpenFileParameters): Promise<ReadableFile | undefined> => {
 		const { filePaths } = await electron.remote.dialog.showOpenDialog({
 			defaultPath: os.homedir(),
+			filters: [{ extensions, name: "" }],
 			properties: ["openFile"],
-			filters: [{ name: "", extensions }],
 		});
 
 		if (!filePaths?.length) {

@@ -65,15 +65,15 @@ export const BaseTransactionRowRecipientLabel = ({ transaction, type, recipient,
 		votes: Contracts.IReadOnlyWallet[];
 		unvotes: Contracts.IReadOnlyWallet[];
 	}>({
-		votes: [],
 		unvotes: [],
+		votes: [],
 	});
 
 	useEffect(() => {
 		if (transaction?.isVote() || transaction?.isUnvote()) {
 			setDelegates({
-				votes: env.delegates().map(transaction.wallet(), transaction.votes()),
 				unvotes: env.delegates().map(transaction.wallet(), transaction.unvotes()),
+				votes: env.delegates().map(transaction.wallet(), transaction.votes()),
 			});
 		}
 	}, [env, transaction]);

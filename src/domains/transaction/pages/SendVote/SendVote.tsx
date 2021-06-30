@@ -59,13 +59,13 @@ export const SendVote = () => {
 		register("fee", common.fee(activeWallet?.balance?.(), activeWallet?.network?.()));
 		register("inputFeeSettings");
 
-		setValue("senderAddress", activeWallet.address(), { shouldValidate: true, shouldDirty: true });
+		setValue("senderAddress", activeWallet.address(), { shouldDirty: true, shouldValidate: true });
 
 		register("suppressWarning");
 
 		for (const network of networks) {
 			if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
-				setValue("network", network, { shouldValidate: true, shouldDirty: true });
+				setValue("network", network, { shouldDirty: true, shouldValidate: true });
 
 				break;
 			}
@@ -188,11 +188,11 @@ export const SendVote = () => {
 
 		try {
 			const signatory = await sign({
-				mnemonic,
-				secondMnemonic,
 				encryptionPassword,
-				wif,
+				mnemonic,
 				privateKey,
+				secondMnemonic,
+				wif,
 			});
 
 			const voteTransactionInput: Services.TransactionInput = {
@@ -259,8 +259,8 @@ export const SendVote = () => {
 						{
 							...voteTransactionInput,
 							data: {
-								votes: votes.map((wallet: Contracts.IReadOnlyWallet) => wallet.publicKey()),
 								unvotes: unvotes.map((wallet: Contracts.IReadOnlyWallet) => wallet.publicKey()),
+								votes: votes.map((wallet: Contracts.IReadOnlyWallet) => wallet.publicKey()),
 							},
 						},
 						senderWallet!,
@@ -315,10 +315,10 @@ export const SendVote = () => {
 				/* istanbul ignore next */
 				setValue("mnemonic", "");
 				/* istanbul ignore next */
-				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
+				return setError("mnemonic", { message: t("TRANSACTION.INVALID_MNEMONIC"), type: "manual" });
 			}
 
-			setErrorMessage(JSON.stringify({ type: error.name, message: error.message }));
+			setErrorMessage(JSON.stringify({ message: error.message, type: error.name }));
 			setActiveTab(5);
 		}
 	};

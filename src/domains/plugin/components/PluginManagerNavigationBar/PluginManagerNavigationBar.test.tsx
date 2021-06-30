@@ -11,8 +11,8 @@ let menu: any[];
 describe("PluginManagerNavigationBar", () => {
 	beforeAll(() => {
 		menu = ["latest", "gaming", "utility", "exchange", "other"].map((name: string) => ({
-			title: pluginTranslations.PAGE_PLUGIN_MANAGER.VIEW[name.toUpperCase()],
 			name,
+			title: pluginTranslations.PAGE_PLUGIN_MANAGER.VIEW[name.toUpperCase()],
 		}));
 	});
 

@@ -2,18 +2,18 @@ import { CreateProfile, ImportProfile, Welcome } from "./pages";
 
 export const ProfileRoutes = [
 	{
-		path: "/profiles/create",
-		exact: true,
 		component: CreateProfile,
+		exact: true,
+		path: "/profiles/create",
 	},
 	{
-		path: "/profiles/import",
-		exact: true,
 		component: ImportProfile,
+		exact: true,
+		path: "/profiles/import",
 	},
 	{
-		path: "/",
-		exact: true,
 		component: Welcome,
+		exact: true,
+		path: "/",
 	},
 ];

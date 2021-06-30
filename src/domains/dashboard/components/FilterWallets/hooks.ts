@@ -16,11 +16,11 @@ export const useWalletFilters = ({ profile }: { profile: Contracts.IProfile }) =
 			.wallets()
 			.values()
 			.map((wallet) => ({
+				coin: wallet.network().coin(),
 				id: wallet.network().id(),
 				isLive: wallet.network().isLive(),
-				name: wallet.network().name(),
-				coin: wallet.network().coin(),
 				isSelected: selectedNetworkIds.includes(wallet.network().id()),
+				name: wallet.network().name(),
 			}));
 
 		return uniqBy(networks, (network) => network.id);
@@ -40,14 +40,14 @@ export const useWalletFilters = ({ profile }: { profile: Contracts.IProfile }) =
 
 	return useMemo<FilterWalletsHookProperties>(
 		() => ({
-			networks,
-			useTestNetworks: profile.settings().get(Contracts.ProfileSetting.UseTestNetworks),
-			walletsDisplayType,
-			selectedNetworkIds,
-			isFilterChanged,
-			viewType,
-			update: setValue,
 			disabled: !profile.wallets().count(),
+			isFilterChanged,
+			networks,
+			selectedNetworkIds,
+			update: setValue,
+			useTestNetworks: profile.settings().get(Contracts.ProfileSetting.UseTestNetworks),
+			viewType,
+			walletsDisplayType,
 		}),
 		[walletsDisplayType, selectedNetworkIds, viewType, isFilterChanged, networks, profile, setValue],
 	);

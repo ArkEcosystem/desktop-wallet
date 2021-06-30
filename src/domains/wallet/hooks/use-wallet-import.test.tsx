@@ -30,10 +30,10 @@ describe("useWalletImport", () => {
 		await act(async () => {
 			await expect(
 				current.importWalletByType({
+					encryptedWif: "",
 					network,
 					type: OptionsValue.BIP39,
 					value: "mnemonic",
-					encryptedWif: "",
 				}),
 			).resolves.toMatchObject({});
 		});
@@ -57,10 +57,10 @@ describe("useWalletImport", () => {
 			await act(async () => {
 				await expect(
 					current.importWalletByType({
+						encryptedWif: "",
 						network,
 						type: mnemonicType,
 						value: "mnemonic",
-						encryptedWif: "",
 					}),
 				).rejects.toBeTruthy();
 			});
@@ -84,10 +84,10 @@ describe("useWalletImport", () => {
 			await act(async () => {
 				await expect(
 					current.importWalletByType({
+						encryptedWif: "",
 						network,
 						type: importType,
 						value: importType,
-						encryptedWif: "",
 					}),
 				).rejects.toBeTruthy();
 			});
@@ -108,10 +108,10 @@ describe("useWalletImport", () => {
 		await act(async () => {
 			await expect(
 				current.importWalletByType({
+					encryptedWif: "",
 					network,
 					type: OptionsValue.WIF,
 					value: "WIF",
-					encryptedWif: "",
 				}),
 			).rejects.toBeTruthy();
 		});
@@ -131,10 +131,10 @@ describe("useWalletImport", () => {
 		await act(async () => {
 			await expect(
 				current.importWalletByType({
+					encryptedWif: "wif",
 					network,
 					type: OptionsValue.ENCRYPTED_WIF,
 					value: "password",
-					encryptedWif: "wif",
 				}),
 			).rejects.toBeTruthy();
 		});
@@ -149,7 +149,7 @@ describe("useWalletImport", () => {
 
 		await act(async () => {
 			await expect(
-				current.importWalletByType({ network, type: "unknown", value: "value", encryptedWif: "" }),
+				current.importWalletByType({ encryptedWif: "", network, type: "unknown", value: "value" }),
 			).resolves.toBeUndefined();
 		});
 	});

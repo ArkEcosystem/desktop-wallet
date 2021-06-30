@@ -28,15 +28,15 @@ export const TransactionRowConfirmation = ({ transaction, isSignaturePending }: 
 		status === "actionRequired" ? "Action Required" : `${transaction?.confirmations()} confirmations`;
 
 	const iconName = {
+		actionRequired: "Edit",
 		confirmed: "StatusOk",
 		pending: "StatusPending",
-		actionRequired: "Edit",
 	};
 
 	const iconStyle = {
+		actionRequired: "text-theme-danger-400",
 		confirmed: "text-theme-success-600",
 		pending: "text-theme-warning-600",
-		actionRequired: "text-theme-danger-400",
 	};
 
 	return (

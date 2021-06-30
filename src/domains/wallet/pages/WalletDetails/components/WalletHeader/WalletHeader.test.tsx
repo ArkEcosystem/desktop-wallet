@@ -168,8 +168,8 @@ describe("WalletHeader", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [walletUrl],
 				history,
+				routes: [walletUrl],
 			},
 		);
 
@@ -280,8 +280,8 @@ describe("WalletHeader", () => {
 				<WalletHeader profile={profile} wallet={wallet} />
 			</Route>,
 			{
-				routes: [walletUrl],
 				history,
+				routes: [walletUrl],
 			},
 		);
 
@@ -304,8 +304,8 @@ describe("WalletHeader", () => {
 				<WalletHeader profile={profile} wallet={wallet} />
 			</Route>,
 			{
-				routes: [walletUrl],
 				history,
+				routes: [walletUrl],
 			},
 		);
 
@@ -328,8 +328,8 @@ describe("WalletHeader", () => {
 				<WalletHeader profile={profile} wallet={wallet} />
 			</Route>,
 			{
-				routes: [walletUrl],
 				history,
+				routes: [walletUrl],
 			},
 		);
 
@@ -353,8 +353,8 @@ describe("WalletHeader", () => {
 				<WalletHeader profile={profile} wallet={wallet} />
 			</Route>,
 			{
-				routes: [walletUrl],
 				history,
+				routes: [walletUrl],
 			},
 		);
 
@@ -378,8 +378,8 @@ describe("WalletHeader", () => {
 				<WalletHeader profile={profile} wallet={wallet} />
 			</Route>,
 			{
-				routes: [walletUrl],
 				history,
+				routes: [walletUrl],
 			},
 		);
 

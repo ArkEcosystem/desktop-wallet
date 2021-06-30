@@ -104,7 +104,7 @@ export const AddRecipient = ({
 
 	const ticker = network?.ticker();
 	const exchangeTicker = profile.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency) as string;
-	const { convert } = useExchangeRate({ ticker, exchangeTicker });
+	const { convert } = useExchangeRate({ exchangeTicker, ticker });
 
 	const maxRecipients = wallet?.network().multiPaymentRecipients() ?? 0;
 
@@ -244,17 +244,17 @@ export const AddRecipient = ({
 
 		onChange?.([
 			{
-				amount: +amountValue,
 				address: recipientAddressValue,
+				amount: +amountValue,
 			},
 		]);
 	};
 
 	const handleAddRecipient = (address: string, amount: number, displayAmount: string) => {
 		let newRecipient: RecipientListItem = {
+			address,
 			amount: +amount,
 			displayAmount,
-			address,
 		};
 
 		/* istanbul ignore next */
@@ -324,7 +324,7 @@ export const AddRecipient = ({
 							profile={profile}
 							placeholder={t("COMMON.ADDRESS")}
 							onChange={(address: any) => {
-								setValue("recipientAddress", address, { shouldValidate: true, shouldDirty: true });
+								setValue("recipientAddress", address, { shouldDirty: true, shouldValidate: true });
 								singleRecipientOnChange(getValues("amount"), address);
 							}}
 						/>
@@ -351,7 +351,7 @@ export const AddRecipient = ({
 									onChange={(amount: string) => {
 										setValue("isSendAllSelected", false);
 										setValue("displayAmount", amount);
-										setValue("amount", amount, { shouldValidate: true, shouldDirty: true });
+										setValue("amount", amount, { shouldDirty: true, shouldValidate: true });
 										singleRecipientOnChange(+amount, recipientAddress);
 									}}
 								/>
@@ -373,8 +373,8 @@ export const AddRecipient = ({
 												setValue("displayAmount", remaining);
 
 												setValue("amount", remaining, {
-													shouldValidate: true,
 													shouldDirty: true,
+													shouldValidate: true,
 												});
 
 												singleRecipientOnChange(remaining!, recipientAddress);

@@ -26,8 +26,8 @@ describe("TransactionRowRecipientLabel", () => {
 			<TransactionRowRecipientLabel
 				transaction={{
 					...TransactionFixture,
-					isTransfer: () => false,
 					isMultiPayment: () => true,
+					isTransfer: () => false,
 					type: () => "multiPayment",
 				}}
 			/>,
@@ -131,12 +131,12 @@ describe("TransactionRowRecipientLabel", () => {
 					transaction={{
 						...TransactionFixture,
 						isTransfer: () => false,
-						isVoteCombination: () => true,
-						isVote: () => true,
 						isUnvote: () => true,
+						isVote: () => true,
+						isVoteCombination: () => true,
 						type: () => "voteCombination",
-						votes: () => ["-vote"],
 						unvotes: () => ["-vote"],
+						votes: () => ["-vote"],
 					}}
 				/>,
 			);
@@ -154,12 +154,12 @@ describe("TransactionRowRecipientLabel", () => {
 					transaction={{
 						...TransactionFixture,
 						isTransfer: () => false,
-						isVoteCombination: () => true,
-						isVote: () => true,
 						isUnvote: () => true,
+						isVote: () => true,
+						isVoteCombination: () => true,
 						type: () => "voteCombination",
-						votes: () => ["+vote-1", "+vote-2"],
 						unvotes: () => ["-vote-1", "-vote-2"],
+						votes: () => ["+vote-1", "+vote-2"],
 					}}
 				/>,
 			);

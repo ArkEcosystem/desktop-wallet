@@ -33,8 +33,8 @@ export const UpdateContact = ({
 
 	const handleSave = async ({ name, addresses }: any) => {
 		await profile.contacts().update(contact.id(), {
-			name,
 			addresses,
+			name,
 		});
 		await persist();
 		onSave?.(contact.id());

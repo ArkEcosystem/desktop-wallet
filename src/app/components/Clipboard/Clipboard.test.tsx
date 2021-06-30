@@ -45,7 +45,7 @@ describe("Clipboard", () => {
 		const onError = jest.fn();
 
 		const { getByTestId } = render(
-			<Clipboard variant="icon" data={data} options={{ resetAfter: 1000, onError }}>
+			<Clipboard variant="icon" data={data} options={{ onError, resetAfter: 1000 }}>
 				<span>Hello!</span>
 			</Clipboard>,
 		);

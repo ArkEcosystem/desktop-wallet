@@ -19,18 +19,18 @@ createFixture(
 			(request: any) =>
 				!!new RegExp(BASEURL + "transactions\\?page=1&limit=15&address=([-0-9a-zA-Z]{1,34})").test(request.url),
 			{
+				data: [],
 				meta: {
-					totalCountIsEstimate: true,
 					count: 0,
-					pageCount: 0,
-					totalCount: 0,
-					next: null,
-					previous: null,
-					self: null,
 					first: null,
 					last: null,
+					next: null,
+					pageCount: 0,
+					previous: null,
+					self: null,
+					totalCount: 0,
+					totalCountIsEstimate: true,
 				},
-				data: [],
 			},
 		),
 		mockRequest(

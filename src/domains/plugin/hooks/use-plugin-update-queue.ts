@@ -50,10 +50,10 @@ export const usePluginUpdateQueue = () => {
 	}, [isUpdating, queue, update]);
 
 	return {
-		startUpdate,
-		isUpdateCompleted,
-		isUpdating,
 		hasInUpdateQueue,
 		hasUpdateComplete,
+		isUpdateCompleted,
+		isUpdating,
+		startUpdate,
 	};
 };

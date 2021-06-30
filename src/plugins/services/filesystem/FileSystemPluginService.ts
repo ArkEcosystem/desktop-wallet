@@ -5,15 +5,15 @@ import { PluginService, PluginServiceIdentifier } from "plugins/types";
 export class FileSystemPluginService implements PluginService {
 	config() {
 		return {
-			id: PluginServiceIdentifier.FileSystem,
 			accessor: "filesystem",
+			id: PluginServiceIdentifier.FileSystem,
 		};
 	}
 
 	api() {
 		return {
-			askUserToSaveFile: this.askUserToSaveFile.bind(undefined),
 			askUserToOpenFile: this.askUserToOpenFile.bind(undefined),
+			askUserToSaveFile: this.askUserToSaveFile.bind(undefined),
 		};
 	}
 

@@ -21,13 +21,12 @@ export const Export = () => {
 
 	const profile = useActiveProfile();
 	const { env } = useEnvironmentContext();
-	const { formatExportData } = useProfileExport({ profile, env });
+	const { formatExportData } = useProfileExport({ env, profile });
 
 	const walletExportOptions = [
 		{
 			isFloatingLabel: true,
 			label: t("SETTINGS.EXPORT.OPTIONS.EXCLUDE_EMPTY_WALLETS.TITLE"),
-			labelDescription: t("SETTINGS.EXPORT.OPTIONS.EXCLUDE_EMPTY_WALLETS.DESCRIPTION"),
 			labelAddon: (
 				<Toggle
 					ref={register}
@@ -36,12 +35,12 @@ export const Export = () => {
 					data-testid="Plugin-settings__toggle--exclude-empty-wallets"
 				/>
 			),
+			labelDescription: t("SETTINGS.EXPORT.OPTIONS.EXCLUDE_EMPTY_WALLETS.DESCRIPTION"),
 			wrapperClass: "pt-4 pb-6",
 		},
 		{
 			isFloatingLabel: true,
 			label: t("SETTINGS.EXPORT.OPTIONS.EXCLUDE_LEDGER_WALLETS.TITLE"),
-			labelDescription: t("SETTINGS.EXPORT.OPTIONS.EXCLUDE_LEDGER_WALLETS.DESCRIPTION"),
 			labelAddon: (
 				<Toggle
 					ref={register}
@@ -50,6 +49,7 @@ export const Export = () => {
 					data-testid="Plugin-settings__toggle--exclude-ledger-wallets"
 				/>
 			),
+			labelDescription: t("SETTINGS.EXPORT.OPTIONS.EXCLUDE_LEDGER_WALLETS.DESCRIPTION"),
 			wrapperClass: "pt-6",
 		},
 	];

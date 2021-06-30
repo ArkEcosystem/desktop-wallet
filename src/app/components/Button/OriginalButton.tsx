@@ -57,11 +57,11 @@ export const OriginalButton = React.forwardRef<HTMLButtonElement, ButtonProperti
 );
 
 OriginalButton.defaultProps = {
-	type: "button",
-	variant: "primary",
-	iconWidth: 14,
 	iconHeight: 14,
 	iconPosition: "left",
+	iconWidth: 14,
+	type: "button",
+	variant: "primary",
 };
 
 OriginalButton.displayName = "Button";

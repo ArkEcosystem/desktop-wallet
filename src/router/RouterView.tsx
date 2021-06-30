@@ -33,7 +33,7 @@ export const RouterView = ({ routes, wrapper, middlewares }: Properties) => {
 	const canActivate = useMemo(
 		() =>
 			middlewares!.every((middleware) =>
-				middleware.handler({ location, env, redirect: setRedirectUrl, history }),
+				middleware.handler({ env, history, location, redirect: setRedirectUrl }),
 			),
 		[location, middlewares, env, history],
 	);

@@ -18,50 +18,50 @@ export const Page = ({ navbarVariant, title, isBackDisabled, profile, sidebar, c
 
 	const menu = [
 		{
-			title: t("COMMON.PORTFOLIO"),
 			mountPath: (profileId: string) => `/profiles/${profileId}/dashboard`,
+			title: t("COMMON.PORTFOLIO"),
 		},
 		{
-			title: t("COMMON.PLUGINS"),
 			mountPath: (profileId: string) => `/profiles/${profileId}/plugins`,
+			title: t("COMMON.PLUGINS"),
 		},
 		{
-			title: t("COMMON.EXCHANGE"),
 			mountPath: (profileId: string) => `/profiles/${profileId}/exchange`,
+			title: t("COMMON.EXCHANGE"),
 		},
 		{
-			title: t("COMMON.NEWS"),
 			mountPath: (profileId: string) => `/profiles/${profileId}/news`,
+			title: t("COMMON.NEWS"),
 		},
 	];
 
 	const userActions = [
 		{
 			label: t("COMMON.CONTACTS"),
-			value: "contacts",
 			mountPath: (profileId: string) => `/profiles/${profileId}/contacts`,
+			value: "contacts",
 		},
 		{
 			label: t("COMMON.VOTES"),
-			value: "votes",
 			mountPath: (profileId: string) => `/profiles/${profileId}/votes`,
+			value: "votes",
 		},
 		{
 			label: t("COMMON.SETTINGS"),
-			value: "settings",
 			mountPath: (profileId: string) => `/profiles/${profileId}/settings`,
+			value: "settings",
 		},
 		{
 			icon: "Redirect",
 			isExternal: true,
 			label: t("COMMON.SUPPORT"),
-			value: "support",
 			mountPath: () => "https://ark.io/contact",
+			value: "support",
 		},
 		{
 			label: t("COMMON.SIGN_OUT"),
-			value: "sign-out",
 			mountPath: () => `/`,
+			value: "sign-out",
 		},
 	];
 

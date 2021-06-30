@@ -27,11 +27,11 @@ describe("TransactionRowInfo", () => {
 			<TransactionRowInfo
 				transaction={{
 					...TransactionFixture,
+					isMultiSignatureRegistration: () => true,
 					wallet: () => ({
 						...TransactionFixture.wallet(),
 						isLedger: () => true,
 					}),
-					isMultiSignatureRegistration: () => true,
 				}}
 			/>,
 		);

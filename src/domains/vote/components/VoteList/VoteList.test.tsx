@@ -15,8 +15,8 @@ describe("VoteList", () => {
 					address: data[index].address,
 					explorerLink: "",
 					publicKey: data[index].publicKey,
-					username: data[index].username,
 					rank: data[index].rank,
+					username: data[index].username,
 				}),
 		);
 	});

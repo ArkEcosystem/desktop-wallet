@@ -7,16 +7,16 @@ createFixture("Transactions routing", [
 	mockRequest("https://dwallets.ark.io/api/wallets/DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS", {
 		data: {
 			address: "DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS",
-			publicKey: "02e012f0a7cac12a74bdc17d844cbc9f637177b470019c32a53cef94c7a56e2ea9",
-			nonce: "1",
-			balance: "10000000000",
 			attributes: {
 				delegate: {
 					username: "testwallet",
 				},
 			},
+			balance: "10000000000",
 			isDelegate: true,
 			isResigned: false,
+			nonce: "1",
+			publicKey: "02e012f0a7cac12a74bdc17d844cbc9f637177b470019c32a53cef94c7a56e2ea9",
 		},
 	}),
 ]);

@@ -45,7 +45,7 @@ export class PluginController {
 		}
 
 		// @ts-ignore
-		const { id } = profile.plugins().push({ name: this.config().name(), isEnabled: true });
+		const { id } = profile.plugins().push({ isEnabled: true, name: this.config().name() });
 
 		return id;
 	}
@@ -59,7 +59,7 @@ export class PluginController {
 
 	run(profile: Contracts.IProfile) {
 		const pluginAPI = container.services().api(this, profile);
-		const guard = applyPluginMiddlewares({ profile, plugin: this }, [isPluginEnabled]);
+		const guard = applyPluginMiddlewares({ plugin: this, profile }, [isPluginEnabled]);
 
 		try {
 			// @ts-ignore

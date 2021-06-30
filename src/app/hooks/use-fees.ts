@@ -20,10 +20,10 @@ export const useFees = (profile: ProfileContracts.IProfile) => {
 			}
 
 			return {
-				static: transactionFees.static.toHuman(),
 				avg: transactionFees.avg.toHuman(),
-				min: transactionFees.min.toHuman(),
 				max: transactionFees.max.toHuman(),
+				min: transactionFees.min.toHuman(),
+				static: transactionFees.static.toHuman(),
 			};
 		},
 		[env, profile],

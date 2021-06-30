@@ -66,10 +66,10 @@ describe("Notifications", () => {
 	it("should render with custom action name", () => {
 		const onVisibilityChange = jest.fn();
 		profile.notifications().push({
+			action: "custom action name",
+			body: "test",
 			icon: "ArkLogo",
 			name: "New plugin updates",
-			body: "test",
-			action: "custom action name",
 			type: "plugin",
 		});
 		profile.notifications().last();

@@ -9,8 +9,8 @@ export class StorePluginService implements PluginService {
 
 	config() {
 		return {
-			id: PluginServiceIdentifier.Store,
 			accessor: "store",
+			id: PluginServiceIdentifier.Store,
 		};
 	}
 

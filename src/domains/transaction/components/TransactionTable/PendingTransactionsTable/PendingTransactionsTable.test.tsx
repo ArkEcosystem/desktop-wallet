@@ -11,12 +11,12 @@ describe("Signed Transaction Table", () => {
 	let wallet: Contracts.IReadWriteWallet;
 
 	const fixtures: Record<string, any> = {
-		transfer: undefined,
-		multiSignature: undefined,
-		multiPayment: undefined,
-		vote: undefined,
-		unvote: undefined,
 		ipfs: undefined,
+		multiPayment: undefined,
+		multiSignature: undefined,
+		transfer: undefined,
+		unvote: undefined,
+		vote: undefined,
 	};
 
 	beforeAll(async () => {
@@ -28,15 +28,15 @@ describe("Signed Transaction Table", () => {
 				const { meta, data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
 				data[0].confirmations = 0;
 				return {
-					meta,
 					data: data.slice(0, 2),
+					meta,
 				};
 			});
 
 		profile = env.profiles().findById(getDefaultProfileId());
 
 		wallet = profile.wallets().first();
-		const sent = await wallet.transactionIndex().sent({ limit: 20, cursor: 1 });
+		const sent = await wallet.transactionIndex().sent({ cursor: 1, limit: 20 });
 		transfers = sent
 			.items()
 			.filter(
@@ -57,12 +57,12 @@ describe("Signed Transaction Table", () => {
 				.coin()
 				.transaction()
 				.transfer({
-					nonce: "1",
-					fee: 0.1,
 					data: {
-						to: wallet.address(),
 						amount: 1,
+						to: wallet.address(),
 					},
+					fee: 0.1,
+					nonce: "1",
 					signatory: await wallet
 						.coin()
 						.signatory()
@@ -75,13 +75,13 @@ describe("Signed Transaction Table", () => {
 				.coin()
 				.transaction()
 				.multiSignature({
-					nonce: "1",
-					fee: 0.1,
 					data: {
 						min: 2,
 						publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
 						senderPublicKey: wallet.publicKey()!,
 					},
+					fee: 0.1,
+					nonce: "1",
 					signatory: await wallet
 						.coin()
 						.signatory()
@@ -94,8 +94,6 @@ describe("Signed Transaction Table", () => {
 				.coin()
 				.transaction()
 				.multiPayment({
-					nonce: "1",
-					fee: 0.1,
 					data: {
 						payments: [
 							{
@@ -108,6 +106,8 @@ describe("Signed Transaction Table", () => {
 							},
 						],
 					},
+					fee: 0.1,
+					nonce: "1",
 					signatory: await wallet
 						.coin()
 						.signatory()
@@ -120,12 +120,12 @@ describe("Signed Transaction Table", () => {
 				.coin()
 				.transaction()
 				.vote({
-					nonce: "1",
-					fee: 0.1,
 					data: {
-						votes: ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
 						unvotes: [],
+						votes: ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
 					},
+					fee: 0.1,
+					nonce: "1",
 					signatory: await wallet
 						.coin()
 						.signatory()
@@ -138,12 +138,12 @@ describe("Signed Transaction Table", () => {
 				.coin()
 				.transaction()
 				.vote({
-					nonce: "1",
-					fee: 0.1,
 					data: {
-						votes: [],
 						unvotes: ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
+						votes: [],
 					},
+					fee: 0.1,
+					nonce: "1",
 					signatory: await wallet
 						.coin()
 						.signatory()
@@ -156,11 +156,11 @@ describe("Signed Transaction Table", () => {
 				.coin()
 				.transaction()
 				.ipfs({
-					nonce: "1",
-					fee: 0.1,
 					data: {
 						hash: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco",
 					},
+					fee: 0.1,
+					nonce: "1",
 					signatory: await wallet
 						.coin()
 						.signatory()

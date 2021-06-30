@@ -6,8 +6,8 @@ import { Switch, SwitchOption } from "./Switch";
 describe("Switch", () => {
 	const onChange = jest.fn();
 
-	const leftOption: SwitchOption = { value: "a", label: "Option A" };
-	const rightOption: SwitchOption = { value: "b", label: "Option B" };
+	const leftOption: SwitchOption = { label: "Option A", value: "a" };
+	const rightOption: SwitchOption = { label: "Option B", value: "b" };
 
 	const Wrapper = () => {
 		const [value, setValue] = useState("a");

@@ -49,8 +49,8 @@ const Tab = ({ activeTab, tabId, wordPosition }: TabProperties) => {
 			) : (
 				<span>
 					{t("WALLETS.MNEMONIC_VERIFICATION.WORD_NUMBER", {
-						position: wordPosition,
 						ordinalIndicator: getOrdinalIndicator(wordPosition),
+						position: wordPosition,
 					})}
 				</span>
 			)}

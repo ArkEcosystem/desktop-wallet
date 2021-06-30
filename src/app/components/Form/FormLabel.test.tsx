@@ -22,9 +22,9 @@ describe("FormLabel", () => {
 	it("should render with name from context", () => {
 		const label = "Test Label";
 		const context = {
-			name: "test",
-			isInvalid: true,
 			errorMessage: "Error message from context",
+			isInvalid: true,
+			name: "test",
 		};
 		const tree = (
 			<FormFieldProvider value={context}>

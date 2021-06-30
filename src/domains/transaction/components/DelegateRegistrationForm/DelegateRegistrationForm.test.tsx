@@ -45,13 +45,13 @@ const renderComponent = async (defaultValues = { fee: "2" }) => {
 const createTransactionMock = (wallet: ProfilesContracts.IReadWriteWallet) =>
 	// @ts-ignore
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
-		id: () => delegateRegistrationFixture.data.id,
-		sender: () => delegateRegistrationFixture.data.sender,
-		recipient: () => delegateRegistrationFixture.data.recipient,
 		amount: () => +delegateRegistrationFixture.data.amount / 1e8,
-		fee: () => +delegateRegistrationFixture.data.fee / 1e8,
-		username: () => delegateRegistrationFixture.data.asset.delegate.username,
 		data: () => ({ data: () => delegateRegistrationFixture.data }),
+		fee: () => +delegateRegistrationFixture.data.fee / 1e8,
+		id: () => delegateRegistrationFixture.data.id,
+		recipient: () => delegateRegistrationFixture.data.recipient,
+		sender: () => delegateRegistrationFixture.data.sender,
+		username: () => delegateRegistrationFixture.data.asset.delegate.username,
 	});
 
 describe("DelegateRegistrationForm", () => {
@@ -66,9 +66,9 @@ describe("DelegateRegistrationForm", () => {
 		await syncDelegates(profile);
 
 		fees = {
-			min: "0",
-			max: "10",
 			avg: "1.354",
+			max: "10",
+			min: "0",
 		};
 	});
 
@@ -234,8 +234,8 @@ describe("DelegateRegistrationForm", () => {
 			.mockReturnValue(Promise.resolve(delegateRegistrationFixture.data.id));
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [delegateRegistrationFixture.data.id],
-			rejected: [],
 			errors: {},
+			rejected: [],
 		});
 		const transactionMock = createTransactionMock(wallet);
 
@@ -272,8 +272,8 @@ describe("DelegateRegistrationForm", () => {
 		});
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [delegateRegistrationFixture.data.id],
-			rejected: [],
 			errors: {},
+			rejected: [],
 		});
 		const transactionMock = createTransactionMock(wallet);
 
@@ -300,13 +300,13 @@ describe("DelegateRegistrationForm", () => {
 	it("should output transaction details", () => {
 		const translations = jest.fn((translation) => translation);
 		const transaction = {
-			id: () => delegateRegistrationFixture.data.id,
-			sender: () => delegateRegistrationFixture.data.sender,
-			recipient: () => delegateRegistrationFixture.data.recipient,
 			amount: () => delegateRegistrationFixture.data.amount / 1e8,
-			fee: () => delegateRegistrationFixture.data.fee / 1e8,
-			username: () => delegateRegistrationFixture.data.asset.delegate.username,
 			data: () => ({ data: () => delegateRegistrationFixture.data }),
+			fee: () => delegateRegistrationFixture.data.fee / 1e8,
+			id: () => delegateRegistrationFixture.data.id,
+			recipient: () => delegateRegistrationFixture.data.recipient,
+			sender: () => delegateRegistrationFixture.data.sender,
+			username: () => delegateRegistrationFixture.data.asset.delegate.username,
 		} as Contracts.SignedTransactionData;
 
 		const { getByText } = render(
@@ -331,11 +331,11 @@ describe("DelegateRegistrationForm", () => {
 		const form = {
 			clearErrors: jest.fn(),
 			getValues: () => ({
+				encryptionPassword: "password",
 				fee: "1",
 				mnemonic: "sample passphrase",
 				senderAddress: wallet.address(),
 				username: "test_delegate",
-				encryptionPassword: "password",
 			}),
 			setError: jest.fn(),
 			setValue: jest.fn(),
@@ -345,8 +345,8 @@ describe("DelegateRegistrationForm", () => {
 			.mockReturnValue(Promise.resolve(delegateRegistrationFixture.data.id));
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [delegateRegistrationFixture.data.id],
-			rejected: [],
 			errors: {},
+			rejected: [],
 		});
 		const transactionMock = createTransactionMock(wallet);
 

@@ -19,22 +19,22 @@ describe("SearchRecipient", () => {
 		await profile.contacts().update(newContact.id(), {
 			addresses: [
 				{
-					coin: "ARK",
-					network: "ark.devnet",
-					name: "DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T",
 					address: "DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T",
+					coin: "ARK",
+					name: "DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T",
+					network: "ark.devnet",
 				},
 				{
-					coin: "ARK",
-					network: "ark.devnet",
-					name: "D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f",
 					address: "D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f",
+					coin: "ARK",
+					name: "D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f",
+					network: "ark.devnet",
 				},
 				{
-					coin: "ARK",
-					network: "ark.devnet",
-					name: "DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu",
 					address: "DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu",
+					coin: "ARK",
+					name: "DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu",
+					network: "ark.devnet",
 				},
 			],
 		});

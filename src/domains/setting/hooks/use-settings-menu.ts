@@ -7,21 +7,21 @@ export const useSettingsMenu = () => {
 
 	const menuItems = [
 		{
+			icon: "SettingsHorizontal",
 			itemKey: "General",
 			label: t("SETTINGS.GENERAL.MENU_ITEM"),
-			icon: "SettingsHorizontal",
 		},
 		{
+			icon: "Lock",
 			itemKey: "Password",
 			label: t("SETTINGS.PASSWORD.MENU_ITEM"),
-			icon: "Lock",
 		},
 		{
+			icon: "Export",
 			itemKey: "Export",
 			label: t("SETTINGS.EXPORT.MENU_ITEM"),
-			icon: "Export",
 		},
 	];
 
-	return { menuItems, activeSettings, setActiveSettings };
+	return { activeSettings, menuItems, setActiveSettings };
 };

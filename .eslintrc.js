@@ -22,6 +22,7 @@ module.exports = {
 		"react",
 		"simple-import-sort",
 		"sonarjs",
+		"sort-keys-fix",
 		"testcafe",
 		"testing-library",
 		"unicorn",
@@ -116,6 +117,8 @@ module.exports = {
 		"promise/param-names": "warn",
 		"react-hooks/rules-of-hooks": "error",
 		"react/self-closing-comp": "error",
+		"simple-import-sort/exports": "error",
+		"simple-import-sort/imports": "error",
 		"sonarjs/cognitive-complexity": "warn", // @TODO: set to error and resolve issues
 		"sonarjs/no-all-duplicated-branches": "warn", // @TODO: set to error and resolve issues
 		"sonarjs/no-collapsible-if": "warn", // @TODO: set to error and resolve issues
@@ -125,8 +128,7 @@ module.exports = {
 		"sonarjs/no-redundant-jump": "warn", // @TODO: set to error and resolve issues
 		"sonarjs/no-small-switch": "warn", // @TODO: set to error and resolve issues
 		"sonarjs/no-use-of-empty-return-value": "warn", // @TODO: set to error and resolve issues
-		"simple-import-sort/imports": "error",
-		"simple-import-sort/exports": "error",
+		"sort-keys-fix/sort-keys-fix": ["error", "asc", { caseSensitive: true }],
 		"testing-library/await-async-query": "warn", // @TODO: set to error and fix
 		"testing-library/await-async-utils": "warn", // @TODO: set to error and fix
 		"testing-library/await-fire-event": "warn", // @TODO: set to error and fix

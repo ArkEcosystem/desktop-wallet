@@ -41,8 +41,8 @@ describe("WalletBottomSheetMenu", () => {
 				<WalletBottomSheetMenu wallets={wallets} />
 			</Route>,
 			{
-				routes: [walletURL],
 				history,
+				routes: [walletURL],
 			},
 		);
 
@@ -56,8 +56,8 @@ describe("WalletBottomSheetMenu", () => {
 				<WalletBottomSheetMenu wallets={wallets} />
 			</Route>,
 			{
-				routes: [walletURL],
 				history,
+				routes: [walletURL],
 			},
 		);
 
@@ -70,8 +70,8 @@ describe("WalletBottomSheetMenu", () => {
 				<WalletBottomSheetMenu wallets={wallets} defaultIsOpen={true} />
 			</Route>,
 			{
-				routes: [walletURL],
 				history,
+				routes: [walletURL],
 			},
 		);
 
@@ -84,8 +84,8 @@ describe("WalletBottomSheetMenu", () => {
 				<WalletBottomSheetMenu wallets={wallets} defaultIsOpen={true} />
 			</Route>,
 			{
-				routes: [walletURL],
 				history,
+				routes: [walletURL],
 			},
 		);
 
@@ -102,8 +102,8 @@ describe("WalletBottomSheetMenu", () => {
 				<WalletBottomSheetMenu wallets={wallets} defaultIsOpen={true} />
 			</Route>,
 			{
-				routes: [walletURL],
 				history,
+				routes: [walletURL],
 			},
 		);
 
@@ -120,8 +120,8 @@ describe("WalletBottomSheetMenu", () => {
 				<WalletBottomSheetMenu wallets={wallets} defaultIsOpen={true} />
 			</Route>,
 			{
-				routes: [walletURL],
 				history,
+				routes: [walletURL],
 			},
 		);
 

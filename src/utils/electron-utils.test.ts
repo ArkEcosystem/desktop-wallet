@@ -3,8 +3,8 @@ import electron from "electron";
 import { isIdle, openExternal, saveFile, setScreenshotProtection, setThemeSource } from "./electron-utils";
 
 const defaultFilters = [
-	{ name: "JSON", extensions: ["json"] },
-	{ name: "All Files", extensions: ["*"] },
+	{ extensions: ["json"], name: "JSON" },
+	{ extensions: ["*"], name: "All Files" },
 ];
 
 describe("Electron utils", () => {
@@ -21,8 +21,8 @@ describe("Electron utils", () => {
 
 			// Set Development mode
 			Object.defineProperty(electron.remote.app, "isPackaged", {
-				value: false,
 				configurable: true,
+				value: false,
 			});
 
 			setScreenshotProtection(true);
@@ -44,8 +44,8 @@ describe("Electron utils", () => {
 
 			// Set Production mode
 			Object.defineProperty(electron.remote.app, "isPackaged", {
-				value: true,
 				configurable: true,
+				value: true,
 			});
 
 			setScreenshotProtection(true);

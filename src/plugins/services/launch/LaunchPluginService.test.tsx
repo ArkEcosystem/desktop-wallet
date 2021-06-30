@@ -8,9 +8,9 @@ import { LaunchRender } from "./LaunchPluginComponent";
 import { LaunchPluginService } from "./LaunchPluginService";
 
 const config = {
+	"desktop-wallet": { permissions: ["LAUNCH"], urls: [] },
 	name: "test",
 	version: "1.1",
-	"desktop-wallet": { permissions: ["LAUNCH"], urls: [] },
 };
 const fixture = (api: PluginAPI) => api.launch().render(<h1>My Plugin</h1>);
 

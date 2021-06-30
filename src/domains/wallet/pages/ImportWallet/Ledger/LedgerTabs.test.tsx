@@ -23,7 +23,6 @@ describe("LedgerTabs", () => {
 			.get("/wallets")
 			.query((parameters) => !!parameters.address)
 			.reply(200, {
-				meta: {},
 				data: [
 					{
 						address: "DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq",
@@ -34,18 +33,19 @@ describe("LedgerTabs", () => {
 						balance: "3",
 					},
 				],
+				meta: {},
 			})
 			.get("/wallets")
 			.query((parameters) => !!parameters.address)
 			.reply(200, {
-				meta: {},
 				data: [],
+				meta: {},
 			})
 			.get("/wallets")
 			.query((parameters) => !!parameters.address)
 			.reply(200, {
-				meta: {},
 				data: [],
+				meta: {},
 			});
 	});
 
@@ -166,10 +166,10 @@ describe("LedgerTabs", () => {
 
 		const Component = () => {
 			const form = useForm({
-				mode: "onChange",
 				defaultValues: {
 					network: wallet.network(),
 				},
+				mode: "onChange",
 			});
 
 			const { register } = form;
@@ -205,10 +205,10 @@ describe("LedgerTabs", () => {
 
 		const Component = () => {
 			const form = useForm({
-				mode: "onChange",
 				defaultValues: {
 					network: wallet.network(),
 				},
+				mode: "onChange",
 			});
 
 			const { register } = form;
@@ -248,10 +248,10 @@ describe("LedgerTabs", () => {
 
 		const Component = () => {
 			const form = useForm({
-				mode: "onChange",
 				defaultValues: {
 					network: wallet.network(),
 				},
+				mode: "onChange",
 			});
 
 			const { register } = form;
@@ -321,10 +321,10 @@ describe("LedgerTabs", () => {
 
 		const Component = () => {
 			const form = useForm({
-				mode: "onChange",
 				defaultValues: {
 					network: wallet.network(),
 				},
+				mode: "onChange",
 			});
 
 			const { register } = form;

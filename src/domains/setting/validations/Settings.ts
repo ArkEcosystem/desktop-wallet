@@ -4,11 +4,6 @@ import { lowerCaseEquals } from "utils/equals";
 export const settings = (t: any, environment: Environment) => ({
 	name: (id: string) => ({
 		validate: {
-			required: (name: string) =>
-				!!name?.trim() ||
-				t("COMMON.VALIDATION.FIELD_REQUIRED", {
-					field: t("SETTINGS.GENERAL.PERSONAL.NAME"),
-				}).toString(),
 			maxLength: (name: string) =>
 				name.trim().length > 42
 					? t("COMMON.VALIDATION.MAX_LENGTH", {
@@ -16,6 +11,11 @@ export const settings = (t: any, environment: Environment) => ({
 							maxLength: 42,
 					  })
 					: true,
+			required: (name: string) =>
+				!!name?.trim() ||
+				t("COMMON.VALIDATION.FIELD_REQUIRED", {
+					field: t("SETTINGS.GENERAL.PERSONAL.NAME"),
+				}).toString(),
 			unique: (name: string) => {
 				if (
 					environment

@@ -24,7 +24,7 @@ export const MnemonicVerificationOptions = ({ handleChange, options, limit, answ
 
 	const { t } = useTranslation();
 
-	const [shuffled] = React.useState(() => shuffleOptions({ options, limit, value: answer }));
+	const [shuffled] = React.useState(() => shuffleOptions({ limit, options, value: answer }));
 
 	const handleClick = (value: string, index: number) => {
 		handleChange(value);
@@ -33,11 +33,11 @@ export const MnemonicVerificationOptions = ({ handleChange, options, limit, answ
 				return {};
 			}
 			return {
-				x: [-3, 3, 0],
 				transition: {
-					repeat: 2,
 					duration: 0.1,
+					repeat: 2,
 				},
+				x: [-3, 3, 0],
 			};
 		});
 	};
@@ -49,8 +49,8 @@ export const MnemonicVerificationOptions = ({ handleChange, options, limit, answ
 				className="mb-2 text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
 			>
 				{t(`WALLETS.MNEMONIC_VERIFICATION.SELECT_WORD`, {
-					position,
 					ordinalIndicator: getOrdinalIndicator(position),
+					position,
 				})}
 			</p>
 			<div className="grid grid-cols-3 gap-2">

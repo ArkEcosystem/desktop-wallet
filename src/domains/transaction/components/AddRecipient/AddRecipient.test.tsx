@@ -19,12 +19,12 @@ const renderWithFormProvider = async (children: any, defaultValues?: any) => {
 
 	const { result: form, waitForNextUpdate } = renderHook(() =>
 		useForm({
-			mode: "onChange",
-			shouldUnregister: false,
 			defaultValues: {
-				...{ senderAddress: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD", network, fee: 0 },
+				...{ fee: 0, network, senderAddress: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD" },
 				...defaultValues,
 			},
+			mode: "onChange",
+			shouldUnregister: false,
 		}),
 	);
 
@@ -60,8 +60,8 @@ describe("AddRecipient", () => {
 
 	it("should render with single recipient data", async () => {
 		const values = {
-			displayAmount: "1",
 			amount: "1",
+			displayAmount: "1",
 			recipientAddress: "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
 		};
 
@@ -120,7 +120,7 @@ describe("AddRecipient", () => {
 			expect(form.current.getValues("amount")).toEqual("1");
 			expect(getByTestId("SelectDropdown__input")).toHaveValue("bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT");
 			expect(onChange).toHaveBeenCalledWith([
-				{ amount: expect.any(Number), address: "bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" },
+				{ address: "bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT", amount: expect.any(Number) },
 			]);
 		});
 	});
@@ -167,8 +167,8 @@ describe("AddRecipient", () => {
 		const emptyProfile = env.profiles().create("Empty");
 
 		const emptyWallet = await emptyProfile.walletFactory().fromMnemonicWithBIP39({
-			mnemonic: "test test",
 			coin: "ARK",
+			mnemonic: "test test",
 			network: "ark.devnet",
 		});
 
@@ -218,8 +218,8 @@ describe("AddRecipient", () => {
 		jest.useFakeTimers();
 
 		const values = {
-			displayAmount: "1",
 			amount: "1",
+			displayAmount: "1",
 			recipientAddress: "bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT",
 		};
 
@@ -227,8 +227,8 @@ describe("AddRecipient", () => {
 
 		const Component = () => {
 			form = useForm({
+				defaultValues: { fee: 0, network, senderAddress: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD" },
 				mode: "onChange",
-				defaultValues: { senderAddress: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD", network, fee: 0 },
 				shouldUnregister: false,
 			});
 
@@ -432,8 +432,8 @@ describe("AddRecipient", () => {
 
 	it("should remove recipient in multiple tab", async () => {
 		const values = {
-			displayAmount: "1",
 			amount: "1",
+			displayAmount: "1",
 			recipientAddress: "DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T",
 		};
 
@@ -441,8 +441,8 @@ describe("AddRecipient", () => {
 
 		const Component = () => {
 			form = useForm({
+				defaultValues: { fee: 0, network, senderAddress: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD" },
 				mode: "onChange",
-				defaultValues: { senderAddress: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD", network, fee: 0 },
 			});
 
 			useEffect(() => {
@@ -492,8 +492,8 @@ describe("AddRecipient", () => {
 
 	it("should not override default values in single tab", async () => {
 		const values = {
-			displayAmount: "1",
 			amount: "1",
+			displayAmount: "1",
 			recipientAddress: "DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T",
 		};
 
@@ -501,8 +501,8 @@ describe("AddRecipient", () => {
 
 		const Component = () => {
 			form = useForm({
+				defaultValues: { fee: 0, network, senderAddress: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD", ...values },
 				mode: "onChange",
-				defaultValues: { senderAddress: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD", network, fee: 0, ...values },
 			});
 
 			useEffect(() => {
@@ -532,8 +532,8 @@ describe("AddRecipient", () => {
 
 		const Component = () => {
 			form = useForm({
+				defaultValues: { fee: 0, network, senderAddress: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD" },
 				mode: "onChange",
-				defaultValues: { senderAddress: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD", network, fee: 0 },
 			});
 
 			useEffect(() => {

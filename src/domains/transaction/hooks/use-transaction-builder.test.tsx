@@ -38,12 +38,12 @@ describe("Use Transaction Builder Hook", () => {
 
 		const signatory = await wallet.signatory().mnemonic(getDefaultWalletMnemonic());
 		const input: Contracts.TransferInput = {
-			fee: "1",
-			nonce: "1",
 			data: {
 				amount: "1",
 				to: wallet.address(),
 			},
+			fee: "1",
+			nonce: "1",
 			signatory,
 		};
 
@@ -67,12 +67,12 @@ describe("Use Transaction Builder Hook", () => {
 
 		const signatory = await wallet.signatory().mnemonic(getDefaultWalletMnemonic());
 		const input: Contracts.TransferInput = {
-			fee: "1",
-			nonce: "1",
 			data: {
 				amount: "1",
 				to: wallet.address(),
 			},
+			fee: "1",
+			nonce: "1",
 			signatory,
 		};
 

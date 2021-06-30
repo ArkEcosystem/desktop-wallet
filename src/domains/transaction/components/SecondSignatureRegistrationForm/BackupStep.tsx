@@ -33,7 +33,7 @@ export const BackupStep = () => {
 
 		try {
 			const filePath = await saveFile(mnemonic, fileName, {
-				filters: { name: "Text Document", extensions: ["txt"] },
+				filters: { extensions: ["txt"], name: "Text Document" },
 				returnBasename: true,
 			});
 
