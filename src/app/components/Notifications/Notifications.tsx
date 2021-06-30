@@ -1,9 +1,10 @@
+import { DTO } from "@arkecosystem/platform-sdk-profiles";
 import { EmptyBlock } from "app/components/EmptyBlock";
 import { Image } from "app/components/Image";
 import { Table } from "app/components/Table";
 import { useEnvironmentContext } from "app/contexts";
 import { useNotifications } from "app/hooks";
-import React, { useCallback, useRef } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import {
@@ -17,9 +18,10 @@ import {
 
 export const Notifications = ({ profile, onNotificationAction, onTransactionClick }: NotificationsProperties) => {
 	const { t } = useTranslation();
+	const [allTransactions, setAllTransactions] = useState<DTO.ExtendedConfirmedTransactionData[]>([]);
 	const environment = useEnvironmentContext();
 	const {
-		notifications: { sortTransactionNotificationsDesc },
+		notifications: { sortTransactionNotificationsDesc, fetchRecentProfileTransactions },
 	} = useNotifications();
 
 	const byType = useCallback(
@@ -35,6 +37,14 @@ export const Notifications = ({ profile, onNotificationAction, onTransactionClic
 	const notifications = byType(["plugin", "wallet"]);
 	const transactions = sortTransactionNotificationsDesc(byType(["transaction"]));
 
+	useEffect(() => {
+		void (async () => {
+			const allRecentTransactions = await fetchRecentProfileTransactions(profile, 12);
+
+			setAllTransactions(allRecentTransactions);
+		})();
+	}, [fetchRecentProfileTransactions, profile]);
+
 	if (transactions.length === 0 && notifications.length === 0) {
 		return (
 			<NotificationsWrapper>
@@ -47,10 +57,14 @@ export const Notifications = ({ profile, onNotificationAction, onTransactionClic
 	}
 
 	return (
-		<NotificationsWrapper ref={wrapperReference as React.MutableRefObject<any>} data-testid="NotificationsWrapper">
+		<NotificationsWrapper
+			wider
+			ref={wrapperReference as React.MutableRefObject<any>}
+			data-testid="NotificationsWrapper"
+		>
 			{notifications.length > 0 && (
-				<>
-					<div className="-top-5 z-10 py-4 pr-8 pl-4 -mx-4 mb-2 text-sm font-bold text-theme-secondary-500">
+				<div className="space-y-2">
+					<div className="text-base font-semibold text-theme-secondary-500">
 						{t("COMMON.NOTIFICATIONS.PLUGINS_TITLE")}
 					</div>
 					<Table hideHeader columns={[{ Header: "-", className: "hidden" }]} data={notifications}>
@@ -65,18 +79,19 @@ export const Notifications = ({ profile, onNotificationAction, onTransactionClic
 							/>
 						)}
 					</Table>
-				</>
+				</div>
 			)}
 
 			{transactions.length > 0 && (
-				<div className="mt-4">
-					<div className="-top-5 z-10 py-1 pr-8 pl-4 -mx-4 text-sm font-bold text-theme-secondary-500">
+				<div className="space-y-2">
+					<div className="text-base font-semibold text-theme-secondary-500">
 						{t("COMMON.NOTIFICATIONS.TRANSACTIONS_TITLE")}
 					</div>
 					<Table hideHeader columns={[{ Header: "-", className: "hidden" }]} data={transactions}>
 						{(notification: NotificationItemProperties) => (
 							<NotificationTransactionItem
-								notification={notification}
+								transactionId={notification?.meta?.transactionId}
+								allTransactions={allTransactions}
 								profile={profile}
 								containmentRef={wrapperReference}
 								onVisibilityChange={(isVisible) =>
