@@ -18,12 +18,11 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 	const listenDevice = useCallback(
 		() =>
 			transport.listen({
-				
 				complete: () => void 0,
-				
-error: (e) => dispatch({ message: e.message, type: "failed" }),
+
+				error: (e) => dispatch({ message: e.message, type: "failed" }),
 				// @ts-ignore
-next: ({ type, descriptor, deviceModel }) => {
+				next: ({ type, descriptor, deviceModel }) => {
 					if (type === "add") {
 						dispatch({ id: deviceModel?.id || "nanoS", path: descriptor, type: "add" });
 						return;

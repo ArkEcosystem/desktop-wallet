@@ -121,12 +121,12 @@ export const SendRegistration = () => {
 
 			const signatory = await sign({
 				encryptionPassword,
-				
+
 				mnemonic,
-				
-privateKey,
+
+				privateKey,
 				/* istanbul ignore next */
-secondMnemonic: registrationType === "secondSignature" ? undefined : secondMnemonic,
+				secondMnemonic: registrationType === "secondSignature" ? undefined : secondMnemonic,
 				wif,
 			});
 

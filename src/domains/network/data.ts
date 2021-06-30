@@ -23,18 +23,6 @@ export interface CoinNetworkExtended {
 }
 
 export const coinsNetworkExtendedData: Record<string, CoinNetworkExtended> = {
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	"ark.devnet": {
 		borderClass: "border-theme-primary-100",
 		displayName: "ARK Devnet",
@@ -42,18 +30,18 @@ export const coinsNetworkExtendedData: Record<string, CoinNetworkExtended> = {
 		textClass: "text-theme-primary-400",
 	},
 	// 'ada.mainnet': {
-// 	displayName: "Cardano",
-// 	borderClass: "border-theme-primary-500",
-// 	textClass: "text-theme-primary-700",
-// 	iconName: "ADA",
-// },
-// 'ada.testnet': {
-// 	displayName: "Cardano Testnet",
-// 	borderClass: "border-theme-primary-500",
-// 	textClass: "text-theme-primary-700",
-// 	iconName: "ADA",
-// },
-"ark.mainnet": {
+	// 	displayName: "Cardano",
+	// 	borderClass: "border-theme-primary-500",
+	// 	textClass: "text-theme-primary-700",
+	// 	iconName: "ADA",
+	// },
+	// 'ada.testnet': {
+	// 	displayName: "Cardano Testnet",
+	// 	borderClass: "border-theme-primary-500",
+	// 	textClass: "text-theme-primary-700",
+	// 	iconName: "ADA",
+	// },
+	"ark.mainnet": {
 		borderClass: "border-theme-danger-200",
 		displayName: "ARK",
 		iconName: "ARK",

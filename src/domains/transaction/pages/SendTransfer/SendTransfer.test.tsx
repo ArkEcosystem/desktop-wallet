@@ -924,8 +924,8 @@ describe("SendTransfer", () => {
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [],
 			//@ts-ignore
-errors: { [transactionFixture.data.id]: "ERROR" },
-			
+			errors: { [transactionFixture.data.id]: "ERROR" },
+
 			rejected: [transactionFixture.data.id],
 		});
 		const transactionMock = createTransactionMock(wallet);

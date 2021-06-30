@@ -12,24 +12,20 @@ interface Properties {
 }
 
 const defaultOptions = {
-	
 	pagination: {
 		clickable: true,
 		el: ".swiper-pagination",
-	}, 
-	
-	
-roundLengths: true,
-	
+	},
 
-// Custom component options
-slideHeight: 192,
-	
+	roundLengths: true,
 
-slidesPerColumn: 1,
+	// Custom component options
+	slideHeight: 192,
+
+	slidesPerColumn: 1,
 	// default slideheight (used for wallet cards),
-// Swiper options
-slidesPerView: 1,
+	// Swiper options
+	slidesPerView: 1,
 	touchStartPreventDefault: false,
 	watchOverflow: true,
 };

@@ -120,9 +120,9 @@ export const useProfileTransactions = ({
 			// @ts-ignore
 			setState({
 				// Don't set isLoading when there are no wallets
-activeMode,
-				
-activeTransactionType, 
+				activeMode,
+
+				activeTransactionType,
 				isLoadingMore: false,
 				isLoadingTransactions: hasWallets,
 				timestamp,

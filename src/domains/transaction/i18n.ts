@@ -7,7 +7,7 @@ export const translations: { [key: string]: any } = {
 	ALL: "All",
 	AMOUNT: "Amount",
 	AUTHENTICATION_STEP: {
-        DESCRIPTION_ENCRYPTION_PASSWORD: "Enter your encryption password to authenticate the transaction.",
+		DESCRIPTION_ENCRYPTION_PASSWORD: "Enter your encryption password to authenticate the transaction.",
 		DESCRIPTION_MNEMONIC: "Enter your mnemonic passphrase to authenticate the transaction.",
 		DESCRIPTION_PRIVATE_KEY: "Enter your private key to authenticate the transaction.",
 		DESCRIPTION_WIF: "Enter your WIF to authenticate the transaction.",
@@ -29,13 +29,13 @@ export const translations: { [key: string]: any } = {
 	DESCRIPTION: "Description",
 	DISPLAY_NAME: "Display Name",
 	ENCRYPTION_PASSWORD: "Encryption Password",
-    ERROR: {
-        DESCRIPTION:
-            "An error occurred that prevented the broadcast of this transaction. Select Retry to attempt to broadcast the transaction again. Alternatively, return to your wallet",
-        TITLE: "Transaction Error",
-    },
+	ERROR: {
+		DESCRIPTION:
+			"An error occurred that prevented the broadcast of this transaction. Select Retry to attempt to broadcast the transaction again. Alternatively, return to your wallet",
+		TITLE: "Transaction Error",
+	},
 	EXPIRATION: {
-        HEIGHT: "Block Height Expiration",
+		HEIGHT: "Block Height Expiration",
 		TIMESTAMP: "Timestamp Expiration",
 	},
 	FEES: {
