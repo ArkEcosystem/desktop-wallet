@@ -35,7 +35,7 @@ test("should save settings", async (t) => {
 	const nameInput = Selector('input[data-testid="General-settings__input--name"]');
 	await t.typeText(nameInput, "Anne Doe");
 
-	await t.click(Selector("input[name=isScreenshotProtection]").parent());
+	await t.click(Selector("input[name=screenshotProtection]").parent());
 
 	await scrollToTop();
 
@@ -46,6 +46,42 @@ test("should save settings", async (t) => {
 
 	await t.click(Selector("button").withText(translations.COMMON.SAVE));
 });
+
+test("should prevent navigating away with unsaved settings", async (t) => {
+	await goToSettings(t);
+
+	const nameInput = Selector('input[data-testid="General-settings__input--name"]');
+
+	// store original name
+	const originalValue = await nameInput.value;
+
+	// clear input and type new name
+	await t
+		.click(nameInput)
+		.pressKey("ctrl+a delete")
+		.typeText(nameInput, "Jane Doe");
+
+	// try navigate to portfolio
+	await t.click(Selector('a').withText(translations.COMMON.PORTFOLIO));
+
+	// check that modal showed up
+	await t.expect(Selector('[data-testid="ConfirmationModal"]').exists).ok();
+
+	// cancel navigation to portfolio
+	await t.click(Selector('[data-testid="ConfirmationModal__no-button"]'));
+
+	// restore original name value
+	await t
+		.click(nameInput)
+		.pressKey("ctrl+a delete")
+		.typeText(nameInput, originalValue || "");
+
+	// try navigate to portfolio
+	await t.click(Selector('a').withText(translations.COMMON.PORTFOLIO));
+
+	// check that modal did not show up
+	await t.expect(Selector('[data-testid="ConfirmationModal"]').exists).notOk();
+})
 
 test("should update converted balance in the navbar after changing the currency", async (t) => {
 	await goToProfile(t);
