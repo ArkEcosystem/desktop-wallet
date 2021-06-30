@@ -248,6 +248,8 @@ export const translations: { [key: string]: any } = {
 	},
 	SECOND_MNEMONIC: "2nd Mnemonic",
 	SECOND_SIGNATURE: "Second Signature",
+	SECRET: "Secret",
+	SECRET_WITH_ENCRYPTION: "Secret With Encryption",
 	SECURITY: "Security",
 	SELECT: "Select",
 	SELECTED: "Selected",
