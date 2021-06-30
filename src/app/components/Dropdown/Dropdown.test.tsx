@@ -463,7 +463,7 @@ describe("ClickOutside Hook", () => {
 				fireEvent.click(toggle);
 			});
 
-			expect(getByTestId("dropdown__content")).toHaveAttribute("style", "opacity: 1; margin-top: -100px;");
+			expect(getByTestId("dropdown__content")).toHaveAttribute("style", "margin-top: -100px; opacity: 1;");
 
 			getBoundingClientRectSpy.mockRestore();
 			offsetHeightSpy.mockRestore();

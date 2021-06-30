@@ -71,7 +71,7 @@ exports[`InputRange should render invalid 1`] = `
                 data-testid="Range__thumb"
                 draggable="false"
                 role="slider"
-                style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(NaNpx, 0px);"
                 tabindex="0"
               />
             </div>
@@ -161,7 +161,7 @@ exports[`InputRange should render with default value 1`] = `
               data-testid="Range__thumb"
               draggable="false"
               role="slider"
-              style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+              style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(NaNpx, 0px);"
               tabindex="0"
             />
           </div>
@@ -220,7 +220,7 @@ exports[`InputRange should track background min value 1`] = `
               data-testid="Range__thumb"
               draggable="false"
               role="slider"
-              style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+              style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(NaNpx, 0px);"
               tabindex="0"
             />
           </div>
