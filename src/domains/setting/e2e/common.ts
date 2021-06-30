@@ -16,7 +16,11 @@ export const goToSettings = async (t: any) => {
 
 export const saveSettings = async (t: any) => {
 	await t.click(Selector("button").withText(translations.COMMON.SAVE));
-	await t.expect(Selector("[data-testid=ToastMessage__content]").withText(translations.SETTINGS.GENERAL.SUCCESS).exists).ok();
+	await t
+		.expect(Selector("[data-testid=ToastMessage__content]").withText(translations.SETTINGS.GENERAL.SUCCESS).exists)
+		.ok();
 	await t.click(Selector("[data-testid=ToastMessage__close-button]"));
-	await t.expect(Selector("[data-testid=ToastMessage__content]").withText(translations.SETTINGS.GENERAL.SUCCESS).exists).notOk();
+	await t
+		.expect(Selector("[data-testid=ToastMessage__content]").withText(translations.SETTINGS.GENERAL.SUCCESS).exists)
+		.notOk();
 };
