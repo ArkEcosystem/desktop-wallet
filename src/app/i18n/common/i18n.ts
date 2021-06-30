@@ -1,7 +1,7 @@
-/* eslint-disable sort-keys-fix/sort-keys-fix */
 export const translations: { [key: string]: any } = {
 	"PAGE_#": "Page {{page}}",
 	"RECIPIENT_#": "Recipient #{{count}}",
+	// eslint-disable-next-line sort-keys-fix/sort-keys-fix
 	ACCOUNT_TYPE: "Account Type",
 	ACTION: "Action",
 	ADAPTER: "Adapter",
