@@ -188,6 +188,25 @@ const ImportInputField = ({ type, coin, profile }: { type: string; coin: Coins.C
 	}
 
 	/* istanbul ignore next */
+	if (type === OptionsValue.SECRET) {
+		return (
+			<MnemonicField
+				profile={profile}
+				label={t("COMMON.SECRET")}
+				data-testid="ImportWallet__secret-input"
+				findAddress={async (value) => {
+					try {
+						const { address } = await coin.address().fromSecret(value);
+						return address;
+					} catch {
+						throw new Error(t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.INVALID_SECRET"));
+					}
+				}}
+			/>
+		);
+	}
+
+	/* istanbul ignore next */
 	return null;
 };
 
