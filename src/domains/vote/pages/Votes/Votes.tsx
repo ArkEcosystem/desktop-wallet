@@ -279,9 +279,9 @@ export const Votes = () => {
 		);
 	}, [filteredDelegatesVotes, searchQuery]);
 
-	const isEmptyWalletsByCoin =
-		searchQuery.length > 0 &&
-		Object.keys(filteredWalletsByCoin).every((coin: string) => filteredWalletsByCoin[coin].length === 0);
+	const isEmptyWalletsByCoin = Object.keys(filteredWalletsByCoin).every(
+		(coin: string) => filteredWalletsByCoin[coin].length === 0,
+	);
 
 	return (
 		<Page profile={activeProfile}>
