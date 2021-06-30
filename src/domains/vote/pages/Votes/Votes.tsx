@@ -1,9 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { isEmptyObject, uniq, uniqBy } from "@arkecosystem/utils";
-import { Icon } from "app/components//Icon";
 import { Alert } from "app/components/Alert";
-import { Button } from "app/components/Button";
-import { EmptyBlock } from "app/components/EmptyBlock";
 import { EmptyResults } from "app/components/EmptyResults";
 import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
@@ -16,6 +13,7 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
 import { VotesHeader } from "domains/vote/components/VotesHeader";
+import { VotesEmpty } from "domains/vote/components/VotesEmpty";
 
 export const Votes = () => {
 	const { t } = useTranslation();
@@ -296,42 +294,10 @@ export const Votes = () => {
 
 			{isEmptyObject(walletsByCoin) ? (
 				<Section>
-					<EmptyBlock>
-						<div className="flex justify-between items-center">
-							<span>
-								<Trans
-									i18nKey="VOTE.VOTES_PAGE.EMPTY_MESSAGE"
-									values={{
-										create: t("DASHBOARD.WALLET_CONTROLS.CREATE"),
-										import: t("DASHBOARD.WALLET_CONTROLS.IMPORT"),
-									}}
-									components={{ bold: <strong /> }}
-								/>
-							</span>
-
-							<div className="flex -m-3 space-x-3">
-								<Button
-									onClick={() => history.push(`/profiles/${activeProfile.id()}/wallets/create`)}
-									variant="secondary"
-								>
-									<div className="flex items-center space-x-2">
-										<Icon name="Plus" width={12} height={12} />
-										<span>{t("DASHBOARD.WALLET_CONTROLS.CREATE")}</span>
-									</div>
-								</Button>
-
-								<Button
-									onClick={() => history.push(`/profiles/${activeProfile.id()}/wallets/import`)}
-									variant="secondary"
-								>
-									<div className="flex items-center space-x-2">
-										<Icon name="Import" width={15} height={15} />
-										<span>{t("DASHBOARD.WALLET_CONTROLS.IMPORT")}</span>
-									</div>
-								</Button>
-							</div>
-						</div>
-					</EmptyBlock>
+					<VotesEmpty
+						onCreateWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/create`)}
+						onImportWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/import`)}
+					/>
 				</Section>
 			) : !selectedAddress ? (
 				isEmptyWalletsByCoin ? (
