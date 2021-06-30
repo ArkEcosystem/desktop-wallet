@@ -74,7 +74,6 @@ export const General: React.FC = () => {
 		defaultValues: getDefaultValues(),
 		mode: "onChange",
 	});
-
 	const { register, watch, formState, setValue, reset } = form;
 	const { isValid, isSubmitting, isDirty, dirtyFields } = formState;
 
@@ -82,6 +81,7 @@ export const General: React.FC = () => {
 
 	useEffect(() => {
 		register("avatar");
+		register("useTestNetworks");
 	}, [register]);
 
 	const formattedName = name?.trim();
@@ -104,7 +104,7 @@ export const General: React.FC = () => {
 		const { checked } = event.target;
 
 		if (checked) {
-			setValue("useTestNetworks", checked);
+			setValue("useTestNetworks", checked, { shouldDirty: true });
 		} else {
 			setIsOpenDevelopmentNetworkModal(!checked);
 		}
@@ -112,7 +112,9 @@ export const General: React.FC = () => {
 
 	const handleDevelopmentNetwork = (isAccepted: boolean) => {
 		setIsOpenDevelopmentNetworkModal(false);
-		setValue("useTestNetworks", isAccepted);
+		setValue("useTestNetworks", isAccepted, {
+			shouldDirty: useTestNetworks !== isAccepted,
+		});
 	};
 
 	const handleOnReset = () => {
@@ -164,8 +166,6 @@ export const General: React.FC = () => {
 			label: t("SETTINGS.GENERAL.OTHER.DEVELOPMENT_NETWORKS.TITLE"),
 			labelAddon: (
 				<Toggle
-					ref={register()}
-					name="useTestNetworks"
 					checked={useTestNetworks}
 					onChange={handleOpenDevelopmentNetworkModal}
 					data-testid="General-settings__toggle--useTestNetworks"
