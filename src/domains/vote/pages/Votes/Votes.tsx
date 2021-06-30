@@ -13,6 +13,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { VotesHeader } from "domains/vote/components/VotesHeader";
 import { VotesEmpty } from "domains/vote/components/VotesEmpty";
 import { VotingWallets } from "domains/vote/components/VotingWallets/VotingWallets";
+import { useDelegates } from "domains/vote/hooks/use-delegates";
 
 export const Votes = () => {
 	const { t } = useTranslation();
@@ -53,10 +54,10 @@ export const Votes = () => {
 
 	const [selectedAddress, setSelectedAddress] = useState(walletAddress);
 	const [maxVotes, setMaxVotes] = useState(walletMaxVotes);
-	const [delegates, setDelegates] = useState<Contracts.IReadOnlyWallet[]>([]);
 	const [votes, setVotes] = useState<Contracts.IReadOnlyWallet[] | undefined>();
-	const [isLoadingDelegates, setIsLoadingDelegates] = useState(false);
 	const [selectedFilter, setSelectedFilter] = useState<FilterOption>(filter);
+
+	const { isLoadingDelegates, fetchDelegates, delegates } = useDelegates({ env, profile: activeProfile });
 
 	const walletsByCoin = useMemo(() => {
 		const wallets = activeProfile.wallets().allByCoin();
@@ -187,23 +188,11 @@ export const Votes = () => {
 		);
 	}, [getErroredNetworks, activeProfile, t]);
 
-	const loadDelegates = useCallback(
-		async (wallet) => {
-			setIsLoadingDelegates(true);
-			await env.delegates().sync(activeProfile, wallet.coinId(), wallet.networkId());
-			const delegates = env.delegates().all(wallet.coinId(), wallet.networkId());
-
-			setDelegates(delegates);
-			setIsLoadingDelegates(false);
-		},
-		[env, activeProfile],
-	);
-
 	useEffect(() => {
 		if (hasWalletId) {
-			loadDelegates(activeWallet);
+			fetchDelegates(activeWallet);
 		}
-	}, [activeWallet, loadDelegates, hasWalletId]);
+	}, [activeWallet, fetchDelegates, hasWalletId]);
 
 	const handleSelectAddress = (address: string) => {
 		const wallet = activeProfile.wallets().findByAddress(address);
@@ -212,7 +201,7 @@ export const Votes = () => {
 		setSelectedAddress(address);
 		setMaxVotes(wallet?.network().maximumVotesPerWallet());
 
-		loadDelegates(wallet);
+		fetchDelegates(wallet);
 	};
 
 	const handleContinue = (unvotes: string[], votes: string[]) => {
