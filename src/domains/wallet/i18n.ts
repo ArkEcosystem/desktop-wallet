@@ -169,11 +169,6 @@ export const translations: { [key: string]: any } = {
 		VALIDATION: {
 			ALIAS_ASSIGNED: "The name '{{alias}}' is already assigned to another wallet",
 			ALIAS_EXISTS: "A Wallet named '{{alias}}' already exists on this profile",
-			MAXLENGTH_ERROR: "The Name should have less than {{maxLength}} characters",
-			INVALID_WIF: "Invalid WIF",
-			INVALID_PUBLIC_KEY: "Invalid Public Key",
-			INVALID_PRIVATE_KEY: "Invalid Private Key",
-			INVALID_SECRET: "Invalid Secret",
 			DECRYPT_WIF_ASSERTION: "Failed to decrypt WIF. Please check your password.",
 			INVALID_PRIVATE_KEY: "Invalid Private Key",
 			INVALID_PUBLIC_KEY: "Invalid Public Key",
