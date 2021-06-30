@@ -91,6 +91,24 @@ describe("Settings", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should disable submit button when profile is not restored yet", async () => {
+		const isProfileRestoredMock = jest.spyOn(profile.status(), "isRestored").mockReturnValue(false);
+
+		const { asFragment } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		expect(screen.getByTestId("General-settings__submit-button")).toBeDisabled();
+		expect(asFragment()).toMatchSnapshot();
+
+		isProfileRestoredMock.mockRestore();
+	});
+
 	it("should update the avatar when removing focus from name input", async () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
@@ -206,7 +224,7 @@ describe("Settings", () => {
 		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "test profile" } });
 
 		// Toggle Screenshot Protection
-		fireEvent.click(getByTestId("General-settings__toggle--isScreenshotProtection"));
+		fireEvent.click(getByTestId("General-settings__toggle--screenshotProtection"));
 
 		// Toggle Test Development Network
 		fireEvent.click(getByTestId("General-settings__toggle--useTestNetworks"));
@@ -239,7 +257,7 @@ describe("Settings", () => {
 		await waitFor(() => expect(getByTestId("General-settings__submit-button")).toBeEnabled());
 
 		// Toggle Portfolio Transaction History
-		fireEvent.click(getByTestId("General-settings__toggle--transactionHistory"));
+		fireEvent.click(getByTestId("General-settings__toggle--dashboardTransactionHistory"));
 
 		// Toggle Dark Theme
 		fireEvent.click(getByTestId("General-settings__toggle--isDarkMode"));

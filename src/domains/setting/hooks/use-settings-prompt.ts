@@ -1,7 +1,13 @@
 import { useCallback } from "react";
+import { FieldNamesMarkedBoolean } from "react-hook-form";
 import { matchPath } from "react-router-dom";
 
-export const useSettingsPrompt = ({ isDirty }: { isDirty: boolean }) => {
+interface UseSettingsPromptInput<TFieldValues> {
+	isDirty: boolean;
+	dirtyFields: FieldNamesMarkedBoolean<TFieldValues>;
+}
+
+export const useSettingsPrompt = <TFieldValues>({ isDirty, dirtyFields }: UseSettingsPromptInput<TFieldValues>) => {
 	const getPromptMessage = useCallback(
 		(location: any) => {
 			/* istanbul ignore next */
@@ -17,13 +23,13 @@ export const useSettingsPrompt = ({ isDirty }: { isDirty: boolean }) => {
 				return true;
 			}
 
-			if (isDirty) {
+			if (isDirty && Object.keys(dirtyFields).length > 0) {
 				return "block";
 			}
 
 			return true;
 		},
-		[isDirty],
+		[isDirty, dirtyFields],
 	);
 
 	return { getPromptMessage };
