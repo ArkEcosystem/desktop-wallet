@@ -64,7 +64,7 @@ describe("WalletIcons", () => {
 		render(<WalletIcons wallet={wallet} />);
 
 		expect(screen.getByTestId("WalletIcon__Multisig")).toBeTruthy();
-		expect(screen.getByTestId("WalletIcon__Multisig")).toHaveTextContent("multisig.svg");
+		expect(screen.getByTestId("WalletIcon__Multisig")).toHaveTextContent("multisignature.svg");
 
 		hasSyncedWithNetworkSpy.mockRestore();
 		isMultiSignatureSpy.mockRestore();
