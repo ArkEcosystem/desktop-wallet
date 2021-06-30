@@ -234,10 +234,13 @@ export const translations: { [key: string]: any } = {
 	RESET_SETTINGS: "Reset Settings",
 	RESIGN: "Resign",
 	RESIGNED: "Resigned",
-	EXPORT: "Export",
 	RETRY: "Retry",
-	SAVE_FINISH: "Save & Finish",
 	SAVE: "Save",
+	SAVE_FILE: {
+		ERROR: "Could not save file: {{error}}",
+		SUCCESS: "<bold>{{filePath}}</bold> was saved successfully",
+	},
+	SAVE_FINISH: "Save & Finish",
 	SEARCH: "Search",
 	SEARCH_BAR: {
 		FIND_IT: "Find it",
@@ -245,24 +248,23 @@ export const translations: { [key: string]: any } = {
 	},
 	SECOND_MNEMONIC: "2nd Mnemonic",
 	SECOND_SIGNATURE: "Second Signature",
-	SECRET: "Secret",
 	SECURITY: "Security",
-	SELECT_A_PROFILE: "You should select a profile to access this URL",
-	SELECT_A_WALLET: "You should select a wallet to deeplink transactions",
-	SELECT_ALL: "Select All",
-	SELECT_OPTION: "Select {{option}}",
 	SELECT: "Select",
 	SELECTED: "Selected",
+	SELECT_ALL: "Select All",
+	SELECT_A_PROFILE: "You should select a profile to access this URL",
+	SELECT_A_WALLET: "You should select a wallet to deeplink transactions",
+	SELECT_OPTION: "Select {{option}}",
 	SEND: "Send",
 	SENDER_ADDRESS: "Sender address",
 	SETTINGS: "Settings",
-	SHOW_ALL: "Show All",
 	SHOW: "Show",
-	SIGN_IN: "Sign In",
-	SIGN_OUT: "Sign Out",
+	SHOW_ALL: "Show All",
 	SIGN: "Sign",
 	SIGNATURE: "Signature",
 	SIGNED: "Signed",
+	SIGN_IN: "Sign In",
+	SIGN_OUT: "Sign Out",
 	SIZE: "Size",
 	SKIP: "Skip",
 	SORT_BY: "Sort by",
@@ -279,14 +281,13 @@ export const translations: { [key: string]: any } = {
 	TRANSACTION: "Transaction",
 	TRANSFER: "Transfer",
 	TYPE: "Type",
-	UNSELECT_ALL: "Unselect All",
 	UNSELECT: "Unselect",
 	UNSELECTED: "Unselected",
 	UNSELECT_ALL: "Unselect All",
 	UNVOTE: "Unvote",
+	UPDATE: "Update",
 	UPDATE_LATER: "Update Later",
 	UPDATE_NOW: "Update Now",
-	UPDATE: "Update",
 	UPDATING: "Updating...",
 	URL: "URL",
 	VALIDATION: {
@@ -312,136 +313,25 @@ export const translations: { [key: string]: any } = {
 	VALUE: "Value",
 	VERIFIED: "Verified Address: {{value}}",
 	VERSION: "Version",
+	VIEW: "View",
 	VIEW_ALL: "View All",
 	VIEW_MORE: "View More",
-	VIEW: "View",
 	VOTE: "Vote",
 	VOTES: "Votes",
 	VOTING: "Voting",
-	WALLET_ADDRESS: "Wallet Address",
-	WALLET_TYPE: "Wallet Type",
 	WALLET: "Wallet",
 	WALLETS: "Wallets",
+	WALLET_ADDRESS: "Wallet Address",
+	WALLET_TYPE: "Wallet Type",
 	WARNING: "Warning",
 	WEBSITE: "Website",
 	WELCOME: "Welcome to ARK",
 	WIF: "WIF",
 	WILL: "will",
-	ENCRYPTED_WIF: "Encrypted WIF",
 	WORD: "Word",
 	X_OF_Y: "{{0}} of {{1}}",
 	YES: "Yes",
 	YOU: "You",
 	YOUR_BALANCE: "Your Balance",
 	YOUR_PASSPHRASE: "Your Passphrase",
-
-	NOTICE_NO_WALLETS: "Create or import a wallet first",
-
-	CLIPBOARD: {
-		SUCCESS: "Copied!",
-		TOOLTIP_TEXT: "Copy to clipboard",
-	},
-
-	SEARCH_BAR: {
-		FIND_IT: "Find it",
-		PLACEHOLDER: "What would you like to search for?",
-	},
-
-	VALIDATION: {
-		OPTIONAL: "This field is optional",
-		FIELD_REQUIRED: "{{field}} required",
-		FIELD_INVALID: "{{field}} invalid",
-		ILLEGAL_CHARACTERS: "The following characters are not allowed: {{- characters}}",
-		IS_REQUIRED: "is required",
-		EXISTS: "{{field}} already exists",
-		MAX_LENGTH: "{{field}} should have at most {{maxLength}} characters",
-		MIN_LENGTH: "{{field}} should have at least {{minLength}} characters",
-		SUBJECT_INVALID: "The {{subject}} is invalid",
-		SUBJECT_MISMATCH: "The {{subject}} do not match",
-		PASSWORD_MISMATCH: "Passwords do not match",
-		CONFIRM_PASSWORD_REQUIRED: "Password confirmation is required",
-		MIN_RECIPIENTS: "At least one recipient is required",
-		RECIPIENT_INVALID: "Recipient address is invalid",
-		PASSWORD_SAME_AS_OLD: "New password cannot be old password",
-		PASSWORD_WEAK:
-			"The password must contain at least 1 lowercase character, 1 uppercase character, 1 numeric character, 1 special character and must be 8 characters or longer",
-		PASSWORD_LEAKED: "Please change your password, it has been found in a previous breach",
-	},
-
-	DATETIME: {
-		MINUTES: "{{count}} minute",
-		MINUTES_plural: "{{count}} minutes",
-
-		FEW_SECONDS_AGO: "A few seconds ago",
-		MINUTES_AGO: "A minute ago",
-		MINUTES_AGO_plural: "{{count}} minutes ago",
-		HOURS_AGO: "An hour ago",
-		HOURS_AGO_plural: "{{count}} hours ago",
-		DAYS_AGO: "A day ago",
-		DAYS_AGO_plural: "{{count}} days ago",
-		WEEKS_AGO: "A week ago",
-		WEEKS_AGO_plural: "{{count}} weeks ago",
-		MONTHS_AGO: "A month ago",
-		MONTHS_AGO_plural: "{{count}} months ago",
-		YEARS_AGO: "A year ago",
-		YEARS_AGO_plural: "{{count}} years ago",
-	},
-
-	PERIODS: {
-		DAILY: "Daily",
-	},
-
-	INPUT_PASSPHRASE: {
-		VALIDATION: {
-			ADDRESS_ALREADY_EXISTS: "Address {{address}} already exists",
-			MNEMONIC_NOT_COMPLIANT: "This mnemonic is not BIP39 compliant. Please use the 'Secret' import type.",
-			MNEMONIC_NOT_MATCH_WALLET: "This mnemonic does not correspond to your wallet",
-			PASSWORD_NOT_MATCH_WALLET: "This password does not correspond to your wallet",
-			WIF_NOT_MATCH_WALLET: "This WIF does not correspond to your wallet",
-			PRIVATE_KEY_NOT_MATCH_WALLET: "This private key does not correspond to your wallet",
-		},
-	},
-
-	INPUT_ADDRESS: {
-		VALIDATION: {
-			NOT_VALID: "The address is not valid",
-			ADDRESS_ALREADY_EXISTS: "Address {{address}} already exists",
-		},
-	},
-
-	INPUT_NETWORK: {
-		PLACEHOLDER: "Enter a cryptoasset name",
-		VALIDATION: {
-			NETWORK_NOT_FOUND: "No cryptoasset with this name found",
-		},
-	},
-
-	EMPTY_RESULTS: {
-		TITLE: "No Results",
-		SUBTITLE: "No results found. Refine your search and try again.",
-	},
-
-	SAVE_FILE: {
-		SUCCESS: "<bold>{{filePath}}</bold> was saved successfully",
-		ERROR: "Could not save file: {{error}}",
-	},
-
-	NOTIFICATIONS: {
-		ACTIONS: {
-			READ_CHANGELOG: "Read Changelog",
-			UPDATE: "Update",
-		},
-		PLUGINS_TITLE: "Plugins",
-		TRANSACTIONS_TITLE: "Transactions",
-		EMPTY: "You have no notifications at this time.",
-	},
-
-	PAGINATION: {
-		ENTER_NUMBER: "Enter the page number",
-	},
-
-	CONFIRMATION_MODAL: {
-		TITLE: "Confirmation",
-		DESCRIPTION: "Are you sure you wish to navigate away from this page without saving?",
-	},
 };
