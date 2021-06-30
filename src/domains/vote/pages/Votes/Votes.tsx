@@ -3,23 +3,19 @@ import { isEmptyObject, uniq, uniqBy } from "@arkecosystem/utils";
 import { Icon } from "app/components//Icon";
 import { Alert } from "app/components/Alert";
 import { Button } from "app/components/Button";
-import { ControlButton } from "app/components/ControlButton";
-import { Dropdown } from "app/components/Dropdown";
 import { EmptyBlock } from "app/components/EmptyBlock";
 import { EmptyResults } from "app/components/EmptyResults";
-import { Header } from "app/components/Header";
-import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useProfileUtils, useQueryParams } from "app/hooks";
 import { toasts } from "app/services";
-import { FilterWallets } from "domains/dashboard/components/FilterWallets";
 import { AddressTable } from "domains/vote/components/AddressTable";
 import { DelegateTable } from "domains/vote/components/DelegateTable";
-import { FilterOption, VotesFilter } from "domains/vote/components/VotesFilter";
+import { FilterOption } from "domains/vote/components/VotesFilter";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
+import { VotesHeader } from "domains/vote/components/VotesHeader";
 
 export const Votes = () => {
 	const { t } = useTranslation();
@@ -286,48 +282,15 @@ export const Votes = () => {
 	return (
 		<Page profile={activeProfile}>
 			<Section border>
-				<Header
-					title={t("VOTE.VOTES_PAGE.TITLE")}
-					subtitle={t("VOTE.VOTES_PAGE.SUBTITLE")}
-					extra={
-						activeProfile.wallets().count() ? (
-							<div className="flex items-center space-x-5 text-theme-primary-200">
-								<HeaderSearchBar
-									placeholder={t("VOTE.VOTES_PAGE.SEARCH_PLACEHOLDER")}
-									onSearch={setSearchQuery}
-									onReset={() => setSearchQuery("")}
-									debounceTimeout={100}
-								/>
-
-								<div className="h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800" />
-
-								{!selectedAddress ? (
-									<div data-testid="Votes__FilterWallets">
-										<Dropdown
-											position="right"
-											toggleContent={
-												<ControlButton isChanged={isFilterChanged}>
-													<div className="flex justify-center items-center w-5 h-5">
-														<Icon name="Filters" width={17} height={19} />
-													</div>
-												</ControlButton>
-											}
-										>
-											<div className="py-7 px-10 w-128">
-												<FilterWallets {...filterProperties} />
-											</div>
-										</Dropdown>
-									</div>
-								) : (
-									<VotesFilter
-										totalCurrentVotes={currentVotes?.length || 0}
-										selectedOption={selectedFilter}
-										onChange={setSelectedFilter}
-									/>
-								)}
-							</div>
-						) : null
-					}
+				<VotesHeader
+					profile={activeProfile}
+					setSearchQuery={setSearchQuery}
+					selectedAddress={selectedAddress}
+					isFilterChanged={isFilterChanged}
+					filterProperties={filterProperties}
+					totalCurrentVotes={currentVotes?.length || 0}
+					selectedFilter={selectedFilter}
+					setSelectedFilter={setSelectedFilter}
 				/>
 			</Section>
 
