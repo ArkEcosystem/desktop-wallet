@@ -207,6 +207,34 @@ const ImportInputField = ({ type, coin, profile }: { type: string; coin: Coins.C
 	}
 
 	/* istanbul ignore next */
+	if (type === OptionsValue.SECRET_WITH_ENCRYPTION) {
+		return (
+			<>
+				<FormField name="secretWithEncryption">
+					<FormLabel label={t("COMMON.SECRET_WITH_ENCRYPTION")} />
+					<div className="relative">
+						<Input
+							ref={register({
+								required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+									field: t("COMMON.SECRET_WITH_ENCRYPTION"),
+								}).toString(),
+							})}
+							data-testid="ImportWallet__secretWithEncryption-input"
+						/>
+					</div>
+				</FormField>
+
+				<MnemonicField
+					profile={profile}
+					label={t("COMMON.PASSWORD")}
+					data-testid="ImportWallet__secretWithEncryption__password-input"
+					findAddress={(value) => Promise.resolve(value)}
+				/>
+			</>
+		);
+	}
+
+	/* istanbul ignore next */
 	return null;
 };
 
