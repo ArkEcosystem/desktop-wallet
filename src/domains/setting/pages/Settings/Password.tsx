@@ -27,19 +27,19 @@ export const PasswordSettings = () => {
 	const { t } = useTranslation();
 
 	const form = useForm<PasswordSettingsState>({
-		mode: "onChange",
 		defaultValues: {
 			confirmPassword: "",
-			password: "",
 			currentPassword: "",
+			password: "",
 		},
+		mode: "onChange",
 	});
 
 	const { formState, register, reset, trigger, watch } = form;
 	const { currentPassword, confirmPassword, password } = watch();
 
 	const { isDirty, dirtyFields, isValid } = formState;
-	const { getPromptMessage } = useSettingsPrompt({ isDirty, dirtyFields });
+	const { getPromptMessage } = useSettingsPrompt({ dirtyFields, isDirty });
 
 	const handleSubmit = async ({ currentPassword, password }: PasswordSettingsState) => {
 		try {
