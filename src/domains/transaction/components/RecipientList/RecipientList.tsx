@@ -56,7 +56,7 @@ const RecipientListItem = ({
 				{showAmount && (
 					<td className="py-4 text-right">
 						<Label color="danger">
-							<AmountCrypto withSign ticker={assetSymbol} value={amount!} />
+							<AmountCrypto showSign ticker={assetSymbol} value={amount!} />
 						</Label>
 					</td>
 				)}

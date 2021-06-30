@@ -8,7 +8,8 @@ type CurrencyKey = keyof typeof CURRENCIES;
 interface AmountProperties {
 	ticker?: string;
 	value: number;
-	withSign?: boolean;
+	showSign?: boolean;
+	showTicker?: boolean;
 	isNegative?: boolean;
 	locale?: string;
 	className?: string;
