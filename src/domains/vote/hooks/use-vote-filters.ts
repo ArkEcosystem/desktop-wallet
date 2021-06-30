@@ -130,22 +130,22 @@ export const useVoteFilters = ({
 
 	return {
 		networks,
+		setSearchQuery,
+		setMaxVotes,
 		useTestNetworks,
 		walletsDisplayType,
+		selectedAddress,
 		selectedNetworkIds,
 		filterProperties,
 		isFilterChanged,
+		voteFilter,
 		walletsByCoin,
 		filteredWalletsByCoin,
 		hasEmptyResults,
 		hasWallets,
-		voteFilter,
 		setVoteFilter,
-		selectedAddress,
 		setSelectedAddress,
-		searchQuery,
-		setSearchQuery,
 		maxVotes,
-		setMaxVotes,
+		searchQuery,
 	};
 };
