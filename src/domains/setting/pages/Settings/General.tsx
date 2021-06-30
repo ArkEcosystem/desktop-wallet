@@ -52,7 +52,8 @@ export const General: React.FC = () => {
 	const getDefaultValues = (): Partial<GeneralSettingsState> => {
 		const settings = profile.settings();
 
-		const name = profile.settings().get<string>(Contracts.ProfileSetting.Name) as string;
+		/* istanbul ignore next */
+		const name = profile.settings().get<string>(Contracts.ProfileSetting.Name) || "";
 
 		return {
 			automaticSignOutPeriod: settings.get<number>(Contracts.ProfileSetting.AutomaticSignOutPeriod),
