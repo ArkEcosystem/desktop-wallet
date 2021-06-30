@@ -1,9 +1,9 @@
 export const translations: { [key: string]: any } = {
 	ACCOUNT: "Account",
 	ACCOUNT_NICKNAME: "Account Nickname",
+	ADDRESS: "Address",
 	ADD_LINK: "Add Link",
 	ADD_RECIPIENT: "Add Recipient",
-	ADDRESS: "Address",
 	ALL: "All",
 	AMOUNT: "Amount",
 	BLOCK_ID: "Block ID",
@@ -22,6 +22,7 @@ export const translations: { [key: string]: any } = {
 	INVALID_URL: "Invalid URL",
 	IPFS_HASH: "IPFS Hash",
 	MNEMONIC: "Mnemonic",
+	MEMO: "Memo",
 	MULTIPLE: "Multiple",
 	NAME: "Name",
 	NETWORK: "Network",
@@ -32,57 +33,43 @@ export const translations: { [key: string]: any } = {
 	RECIPIENTS: "Recipients",
 	RECIPIENTS_COUNT: "Recipients ({{count}})",
 	RECIPIENTS_HELPTEXT: "A multiple recipient transaction allows up to {{count}} recipients in one transaction",
-	MEMO: "Memo",
 	REGISTRATION_TYPE: "Registration Type",
 	RETURN: "Return",
 	SECOND_MNEMONIC: "2nd Mnemonic",
-	SEND_ALL: "Send All",
 	SENDER: "Sender",
-	SENT: "Sent",
-	SIGN: "Sign",
-	SIGN_CONTINUE: "Sign & Continue",
-	SIGNATURES: "Signatures",
-	SINGLE: "Single",
-	TIMESTAMP: "Timestamp",
-	TOTAL_AMOUNT: "Total Amount",
-	TRANSACTION_AMOUNT: "Transaction Amount",
-	TRANSACTION_DETAILS: "Transaction Details",
-	TRANSACTION_FEE: "Transaction Fee",
+	SEND_ALL: "Send All",
 	BROADCASTING: "Broadcasting transaction to the network",
-	TRANSACTION_TYPE: "Transaction Type",
+	SENT: "Sent",
 	IPFS_NOT_FOUND: "Unable to find ipfs data for transaction [{{transactionId}}]",
-	TYPE: "Type",
+	SIGN: "Sign",
 	CORE: "CORE",
-	UNVOTES: "Unvotes",
+	SIGNATURES: "Signatures",
 	EXPIRATION: {
 		HEIGHT: "Block Height Expiration",
 		TIMESTAMP: "Timestamp Expiration",
 	},
-	UNVOTES_COUNT: "Unvotes ({{count}})",
+	SIGN_CONTINUE: "Sign & Continue",
 	INPUT_FEE_VIEW_TYPE: {
 		SIMPLE: "Simple",
 		ADVANCED: "Advanced",
 	},
-	VOTER: "Voter",
+	SINGLE: "Single",
 	FEES: {
 		AVERAGE: "Average",
 		SLOW: "Slow",
 		FAST: "Fast",
 	},
-	VOTES: "Votes",
+	TIMESTAMP: "Timestamp",
 	MAGISTRATE: "Magistrate",
-	VOTES_COUNT: "Votes ({{count}})",
+	TOTAL_AMOUNT: "Total Amount",
 	MODAL_DELEGATE_REGISTRATION_DETAIL: {
 		TITLE: "Delegate Registration",
 	},
-	WEBSITE: "Website",
-
+	TRANSACTION_AMOUNT: "Transaction Amount",
 	MODAL_DELEGATE_RESIGNATION_DETAIL: {
 		TITLE: "Delegate Resignation",
 	},
-
-	WELL_CONFIRMED: "Well confirmed",
-
+	TRANSACTION_DETAILS: "Transaction Details",
 	MODAL_FEE_WARNING: {
 		DESCRIPTION: {
 			TOO_HIGH:
@@ -93,36 +80,17 @@ export const translations: { [key: string]: any } = {
 		DO_NOT_WARN: "Don’t warn me about fees again",
 		TITLE: "Fee Warning",
 	},
-
-	YOUR_ADDRESS: "Your address",
-
+	TRANSACTION_FEE: "Transaction Fee",
 	MODAL_CONFIRM_SEND_TRANSACTION: {
 		DESCRIPTION:
 			"You have unconfirmed transactions which will affect your balance when confirmed. Are you sure you wish to continue?",
 		TITLE: "Confirm Transaction",
 	},
-
-	NOT_FOUND: "Unable to find transaction for [{{transactionId}}]",
-
+	TRANSACTION_TYPE: "Transaction Type",
 	MODAL_IPFS_DETAIL: {
 		TITLE: "Transaction IPFS Hash",
 	},
-
-	MODAL_MULTISIGNATURE_DETAIL: {
-		STEP_1: {
-			TITLE: "Multisignature",
-		},
-		STEP_2: {
-			DESCRIPTION: "Enter your passphrase in order to sign the Multisignature transaction.",
-			TITLE: "Multisignature Passphrase",
-		},
-		STEP_3: {
-			DESCRIPTION: "Your signature was successfully confirmed and sent.",
-			TITLE: "Transaction Sent",
-		},
-		WAITING_FOR_SIGNATURES: "Waiting for Signatures",
-	},
-
+	TYPE: "Type",
 	LEDGER_CONFIRMATION: {
 		DESCRIPTION:
 			"Please review and verify the information on your Ledger device. Choose Accept to complete your transaction.",
@@ -130,8 +98,7 @@ export const translations: { [key: string]: any } = {
 		REJECTED: "The operation was rejected by the user",
 		TITLE: "Confirm Your Transaction",
 	},
-
-	WAITING: "Waiting",
+	UNVOTES: "Unvotes",
 
 	LINK_TYPES: {
 		BITBUCKET: "BitBucket",
@@ -153,29 +120,24 @@ export const translations: { [key: string]: any } = {
 		WECHAT: "Wechat",
 	},
 
-	MULTISIGNATURE: {
-		GENERATED_ADDRESS: "Generated Address",
-		AWAITING_CONFIRMATIONS: "Awaiting confirmations",
-		AWAITING_OUR_SIGNATURE: "Awaiting our signature",
-		AWAITING_OTHER_SIGNATURE_COUNT: "Awaiting {{count}} other signature",
-		AWAITING_OTHER_SIGNATURE_COUNT_plural: "Awaiting {{count}} other signatures",
-		AWAITING_FINAL_SIGNATURE: "Awaiting final signature",
-		READY: "Ready to broadcast",
-		MIN_SIGNATURES: "Minimum Required Signatures",
-		PARTICIPANT: "Multisignature Participant",
-		"PARTICIPANT_#": "Participant #{{count}}",
-		PARTICIPANTS: "Multisignature Participants",
-		ADD_PARTICIPANT: "Add Participant",
-		REMOVE_NOT_ALLOWED: "Your own address cannot be removed",
-		OUT_OF_LENGTH: "out of {{ length }}",
-		ERROR: {
-			ADDRESS_ALREADY_ADDED: "The address is already in the list",
-			ADDRESS_NOT_FOUND: "The address could not be found",
-			PUBLIC_KEY_NOT_FOUND: "The public key could not be found",
-			FAILED_TO_BROADCAST: "Failed to broadcast your transaction",
-			FAILED_TO_SIGN: "Failed to sign the transaction",
+	UNVOTES_COUNT: "Unvotes ({{count}})",
+
+	MODAL_MULTISIGNATURE_DETAIL: {
+		STEP_1: {
+			TITLE: "Multisignature",
 		},
+		STEP_2: {
+			DESCRIPTION: "Enter your passphrase in order to sign the Multisignature transaction.",
+			TITLE: "Multisignature Passphrase",
+		},
+		STEP_3: {
+			DESCRIPTION: "Your signature was successfully confirmed and sent.",
+			TITLE: "Transaction Sent",
+		},
+		WAITING_FOR_SIGNATURES: "Waiting for Signatures",
 	},
+
+	VOTER: "Voter",
 
 	MODAL_SEARCH_RECIPIENT: {
 		DESCRIPTION: "Find and select a recipient from your contacts and wallets",
@@ -183,42 +145,80 @@ export const translations: { [key: string]: any } = {
 		TITLE: "Select Recipient",
 	},
 
+	VOTES: "Votes",
+
+	AUTHENTICATION_STEP: {
+		DESCRIPTION_MNEMONIC: "Enter your mnemonic passphrase to authenticate the transaction.",
+		TITLE: "Authenticate",
+		DESCRIPTION_ENCRYPTION_PASSWORD: "Enter your encryption password to authenticate the transaction.",
+		DESCRIPTION_PRIVATE_KEY: "Enter your private key to authenticate the transaction.",
+		DESCRIPTION_WIF: "Enter your WIF to authenticate the transaction.",
+	},
+
+	VOTES_COUNT: "Votes ({{count}})",
+
 	MODAL_SECOND_SIGNATURE_DETAIL: {
 		TITLE: "Second Signature",
 	},
 
-	TRANSACTION_TYPES: {
-		TRANSFER: "Transfer",
-		SECOND_SIGNATURE: "Second Signature",
-		DELEGATE_REGISTRATION: "Delegate Registration",
-		VOTE: "Vote",
-		UNVOTE: "Unvote",
-		VOTE_COMBINATION: "Vote / Unvote",
-		MULTI_SIGNATURE: "Multisignature",
-		IPFS: "IPFS",
-		MULTI_PAYMENT: "Multipayment",
-		DELEGATE_RESIGNATION: "Delegate Resignation",
-		HTLC_LOCK: "Timelock",
-		HTLC_CLAIM: "Timelock Claim",
-		HTLC_REFUND: "Timelock Refund",
-		MAGISTRATE: "Magistrate",
-	},
-
-	AUTHENTICATION_STEP: {
-		TITLE: "Authenticate",
-		DESCRIPTION_MNEMONIC: "Enter your mnemonic passphrase to authenticate the transaction.",
-		DESCRIPTION_ENCRYPTION_PASSWORD: "Enter your encryption password to authenticate the transaction.",
-		DESCRIPTION_WIF: "Enter your WIF to authenticate the transaction.",
-		DESCRIPTION_PRIVATE_KEY: "Enter your private key to authenticate the transaction.",
-	},
+	WEBSITE: "Website",
 
 	MODAL_TRANSFER_DETAIL: {
 		TITLE: "Transfer",
 	},
 
+	WELL_CONFIRMED: "Well confirmed",
+
+	CONTACT_SEACH: {
+		DESCRIPTION: "Find and select preferred address from you saved wallets",
+		TITLE: "My addresses",
+	},
+
+	YOUR_ADDRESS: "Your address",
+
+	ERROR: {
+		DESCRIPTION:
+			"An error occurred that prevented the broadcast of this transaction. Select Retry to attempt to broadcast the transaction again. Alternatively, return to your wallet",
+		TITLE: "Transaction Error",
+	},
+
+	NOT_FOUND: "Unable to find transaction for [{{transactionId}}]",
+
+	INPUT_IPFS_HASH: {
+		VALIDATION: {
+			NOT_VALID: "The IPFS hash is not valid",
+		},
+	},
+
 	MODAL_VOTE_DETAIL: {
 		TITLE: "Delegate Vote",
 	},
+
+	MULTISIGNATURE: {
+		"PARTICIPANT_#": "Participant #{{count}}",
+		ADD_PARTICIPANT: "Add Participant",
+		AWAITING_CONFIRMATIONS: "Awaiting confirmations",
+		AWAITING_FINAL_SIGNATURE: "Awaiting final signature",
+		AWAITING_OTHER_SIGNATURE_COUNT: "Awaiting {{count}} other signature",
+		AWAITING_OTHER_SIGNATURE_COUNT_plural: "Awaiting {{count}} other signatures",
+		AWAITING_OUR_SIGNATURE: "Awaiting our signature",
+		ERROR: {
+			ADDRESS_ALREADY_ADDED: "The address is already in the list",
+			ADDRESS_NOT_FOUND: "The address could not be found",
+			FAILED_TO_BROADCAST: "Failed to broadcast your transaction",
+			FAILED_TO_SIGN: "Failed to sign the transaction",
+			PUBLIC_KEY_NOT_FOUND: "The public key could not be found",
+		},
+		GENERATED_ADDRESS: "Generated Address",
+		MIN_SIGNATURES: "Minimum Required Signatures",
+		OUT_OF_LENGTH: "out of {{ length }}",
+		PARTICIPANT: "Multisignature Participant",
+		PARTICIPANTS: "Multisignature Participants",
+		READY: "Ready to broadcast",
+		REMOVE_NOT_ALLOWED: "Your own address cannot be removed",
+	},
+
+	WAITING: "Waiting",
 
 	PAGE_DELEGATE_REGISTRATION: {
 		FORM_STEP: {
@@ -247,11 +247,6 @@ export const translations: { [key: string]: any } = {
 		},
 	},
 
-	CONTACT_SEACH: {
-		DESCRIPTION: "Find and select preferred address from you saved wallets",
-		TITLE: "My addresses",
-	},
-
 	PAGE_MULTISIGNATURE: {
 		FORM_STEP: {
 			DESCRIPTION: "Register Multisignature details below.",
@@ -259,10 +254,21 @@ export const translations: { [key: string]: any } = {
 		},
 	},
 
-	ERROR: {
-		DESCRIPTION:
-			"An error occurred that prevented the broadcast of this transaction. Select Retry to attempt to broadcast the transaction again. Alternatively, return to your wallet",
-		TITLE: "Transaction Error",
+	TRANSACTION_TYPES: {
+		TRANSFER: "Transfer",
+		SECOND_SIGNATURE: "Second Signature",
+		DELEGATE_REGISTRATION: "Delegate Registration",
+		VOTE: "Vote",
+		UNVOTE: "Unvote",
+		VOTE_COMBINATION: "Vote / Unvote",
+		MULTI_SIGNATURE: "Multisignature",
+		IPFS: "IPFS",
+		MULTI_PAYMENT: "Multipayment",
+		DELEGATE_RESIGNATION: "Delegate Resignation",
+		HTLC_LOCK: "Timelock",
+		HTLC_CLAIM: "Timelock Claim",
+		HTLC_REFUND: "Timelock Refund",
+		MAGISTRATE: "Magistrate",
 	},
 
 	PAGE_SECOND_SIGNATURE: {
@@ -286,12 +292,6 @@ export const translations: { [key: string]: any } = {
 			TITLE: "Your Second Signature",
 			WARNING:
 				"You are responsible for storing and protecting this mnemonic passphrase offline. The ARK Desktop Wallet cannot reveal this to you at a later time. If you lose this mnemonic passphrase, you will lose your funds.",
-		},
-	},
-
-	INPUT_IPFS_HASH: {
-		VALIDATION: {
-			NOT_VALID: "The IPFS hash is not valid",
 		},
 	},
 

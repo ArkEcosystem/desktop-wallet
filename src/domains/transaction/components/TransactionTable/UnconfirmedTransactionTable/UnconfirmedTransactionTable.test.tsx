@@ -18,8 +18,8 @@ describe("Unconfirmed transaction table", () => {
 		//@ts-ignore
 		transactions = [
 			{
-				isConfirmed: () => false,
 				convertedTotal: () => BigNumber.ZERO,
+				isConfirmed: () => false,
 				isMultiPayment: () => false,
 				isSent: () => true,
 				isTransfer: () => true,
@@ -33,8 +33,8 @@ describe("Unconfirmed transaction table", () => {
 				wallet: () => wallet,
 			},
 			{
-				isConfirmed: () => false,
 				convertedTotal: () => BigNumber.ZERO,
+				isConfirmed: () => false,
 				isMultiPayment: () => true,
 				isSent: () => true,
 				isTransfer: () => false,

@@ -1,13 +1,4 @@
 export const translations: { [key: string]: any } = {
-	CONTACT_FORM: {
-		ADD_ADDRESS: "Add Address",
-		ADDRESS: "Address",
-		ADDRESSES: "Addresses",
-		CRYPTOASSET: "Cryptoasset",
-		DELETE_CONTACT: "Delete Contact",
-		NAME: "Name",
-	},
-
 	CONTACTS_PAGE: {
 		ADD_CONTACT: "Add Contact",
 		EMPTY_MESSAGE:
@@ -15,6 +6,15 @@ export const translations: { [key: string]: any } = {
 		NO_CONTACTS_FOUND: `Your search query "{{query}}" does not match any Contacts.`,
 		SUBTITLE: "Manage your frequent Contacts",
 		TITLE: "My Contacts",
+	},
+
+	CONTACT_FORM: {
+		ADDRESS: "Address",
+		ADDRESSES: "Addresses",
+		ADD_ADDRESS: "Add Address",
+		CRYPTOASSET: "Cryptoasset",
+		DELETE_CONTACT: "Delete Contact",
+		NAME: "Name",
 	},
 
 	MODAL_CREATE_CONTACT: {

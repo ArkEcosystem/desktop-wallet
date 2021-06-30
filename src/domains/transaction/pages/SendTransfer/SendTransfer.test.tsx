@@ -1995,8 +1995,8 @@ errors: { [transactionFixture.data.id]: "ERROR" },
 			Promise.resolve({
 				items: () => [
 					{
-						isConfirmed: () => false,
 						convertedTotal: () => 0,
+						isConfirmed: () => false,
 						isMultiPayment: () => false,
 						isSent: () => true,
 						isTransfer: () => true,
@@ -2010,8 +2010,8 @@ errors: { [transactionFixture.data.id]: "ERROR" },
 						wallet: () => wallet,
 					},
 					{
-						isConfirmed: () => false,
 						convertedTotal: () => 0,
+						isConfirmed: () => false,
 						isMultiPayment: () => true,
 						isSent: () => true,
 						isTransfer: () => false,
@@ -2188,8 +2188,8 @@ errors: { [transactionFixture.data.id]: "ERROR" },
 			Promise.resolve<any>({
 				items: () => [
 					{
-						isConfirmed: () => false,
 						convertedTotal: () => 0,
+						isConfirmed: () => false,
 						isMultiPayment: () => false,
 						isSent: () => true,
 						isTransfer: () => true,

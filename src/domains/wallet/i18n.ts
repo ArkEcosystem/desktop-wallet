@@ -1,5 +1,9 @@
 export const translations: { [key: string]: any } = {
 	MESSAGE: "Message",
+	MNEMONIC_VERIFICATION: {
+		SELECT_WORD: "Select the {{position}}{{ordinalIndicator}} word",
+		WORD_NUMBER: "The {{position}}{{ordinalIndicator}} word",
+	},
 	MODAL_DELETE_WALLET: {
 		DESCRIPTION:
 			"Are you sure you wish to delete this wallet? Before deleting, make sure the mnemonic passphrase is secured safely.",
@@ -7,10 +11,10 @@ export const translations: { [key: string]: any } = {
 	},
 	MODAL_LEDGER_WALLET: {
 		CONNECT_DEVICE: "Connect your Ledger and confirm input.",
-		OPEN_APP: "Open the {{coin}} app on your device ...",
 		CONNECT_SUCCESS: "Successfully connected",
-		TITLE: "Ledger Wallet",
 		NO_DEVICE_FOUND: "Ledger device was not found in time",
+		OPEN_APP: "Open the {{coin}} app on your device ...",
+		TITLE: "Ledger Wallet",
 		WAITING_DEVICE: "Waiting for Ledger ...",
 	},
 	MODAL_NAME_WALLET: {
@@ -24,6 +28,7 @@ export const translations: { [key: string]: any } = {
 		WARNING:
 			"Please note that you have exceeded the number of characters allowed, anything over {{maxLength}} characters will not appear in memos.",
 	},
+
 	MODAL_SELECT_ACCOUNT: {
 		DESCRIPTION: "Locate and select the address for receiving funds.",
 		SEARCH_PLACEHOLDER: "Enter name or address",
@@ -34,8 +39,8 @@ export const translations: { [key: string]: any } = {
 		COPY_SIGNATURE: "Copy Signature",
 		FORM_STEP: {
 			DESCRIPTION_ENCRYPTION_PASSWORD: "Provide a message below and sign with your encryption password.",
-			DESCRIPTION_MNEMONIC: "Provide a message below and sign with your mnemonic passphrase.",
 			DESCRIPTION_LEDGER: "Provide a message below and sign with your ledger.",
+			DESCRIPTION_MNEMONIC: "Provide a message below and sign with your mnemonic passphrase.",
 			TITLE: "Sign Message",
 		},
 
@@ -50,22 +55,13 @@ export const translations: { [key: string]: any } = {
 		},
 	},
 
-	SIGNATORY: "Signatory",
-
-	MNEMONIC_VERIFICATION: {
-		SELECT_WORD: "Select the {{position}}{{ordinalIndicator}} word",
-		WORD_NUMBER: "The {{position}}{{ordinalIndicator}} word",
-	},
-
-	SIGNATURE: "Signature",
-
 	MODAL_VERIFY_MESSAGE: {
 		DESCRIPTION: "Authenticate a message from an address below.",
-		JSON_STRING: "JSON String",
 		ERROR: {
 			DESCRIPTION: "Message could not be verified.",
 			TITLE: "Failure",
 		},
+		JSON_STRING: "JSON String",
 		SUCCESS: {
 			DESCRIPTION: "Message was successfully verified.",
 			TITLE: "Success",
@@ -74,21 +70,17 @@ export const translations: { [key: string]: any } = {
 		VERIFICATION_METHOD: {
 			DESCRIPTION: "Input fields manually or provide a JSON string.",
 			JSON: "JSON",
-			TITLE: "Verification Method",
 			MANUAL: "Manual",
+			TITLE: "Verification Method",
 		},
 		VERIFY: "Verify",
 	},
-
-	UPDATE_WALLET_DATA: "Update Wallet Data",
 
 	MODAL_WALLET_UPDATE: {
 		DESCRIPTION_1: "A new update has been released for your wallet. You can download or postpone the update.",
 		DESCRIPTION_2: "The update has been succesfully downloaded and is ready to be installed.",
 		TITLE: "Wallet Update {{version}}",
 	},
-
-	WALLET_NAME: "Wallet Name",
 
 	PAGE_CREATE_WALLET: {
 		NETWORK_STEP: {
@@ -125,8 +117,6 @@ export const translations: { [key: string]: any } = {
 			MAXLENGTH_ERROR: "The Name should have less than {{maxLength}} characters",
 		},
 	},
-
-	UPDATING_WALLET_DATA: "Updating Wallet Data",
 
 	PAGE_IMPORT_WALLET: {
 		ENCRYPT_PASSWORD_STEP: {
@@ -221,21 +211,31 @@ export const translations: { [key: string]: any } = {
 		VOTES: {
 			ACTIVE: "Active",
 			ACTIVE_COUNT: "Active {{count}}",
-			EMPTY_DESCRIPTION: "You have not voted for a Delegate yet.",
 			ACTIVE_plural: "All Active",
-			MULTIVOTE: "Multivote",
 			DELEGATE_STATUS: "Delegate Status",
-			TITLE: "My Vote",
+			EMPTY_DESCRIPTION: "You have not voted for a Delegate yet.",
+			MULTIVOTE: "Multivote",
 			NOT_FORGING: "Your delegate is currently not in a forging position",
-			TITLE_plural: "My Votes",
 			NOT_FORGING_COUNT: "{{count}} of your delegates are currently not in a forging position",
-			VOTING_FOR: "Voting for",
 			NOT_FORGING_plural: "Your delegates are currently not in a forging position",
 			STANDBY: "Standby",
 			STANDBY_COUNT: "Standby {{count}}",
 			STANDBY_plural: "All Standby",
+			TITLE: "My Vote",
+			TITLE_plural: "My Votes",
+			VOTING_FOR: "Voting for",
 		},
 
 		YOUR_WALLETS: "Your Wallets",
 	},
+
+	SIGNATORY: "Signatory",
+
+	SIGNATURE: "Signature",
+
+	UPDATE_WALLET_DATA: "Update Wallet Data",
+
+	UPDATING_WALLET_DATA: "Updating Wallet Data",
+
+	WALLET_NAME: "Wallet Name",
 };

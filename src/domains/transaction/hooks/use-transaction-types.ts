@@ -34,36 +34,36 @@ const core: Record<string, any> = {
 		type: CoreTransactionType.DelegateRegistration,
 		typeGroup: TransactionTypeGroup.Core,
 	},
-	"htlc-claim": {
-		type: CoreTransactionType.HtlcClaim,
-		typeGroup: TransactionTypeGroup.Core,
-	},
 	"delegate-resignation": {
 		type: CoreTransactionType.DelegateResignation,
 		typeGroup: TransactionTypeGroup.Core,
 	},
-	"htlc-refund": {
-		type: CoreTransactionType.HtlcRefund,
+	"htlc-claim": {
+		type: CoreTransactionType.HtlcClaim,
 		typeGroup: TransactionTypeGroup.Core,
 	},
 	"htlc-lock": {
 		type: CoreTransactionType.HtlcLock,
 		typeGroup: TransactionTypeGroup.Core,
 	},
-	"multi-payment": {
-		type: CoreTransactionType.MultiPayment,
+	"htlc-refund": {
+		type: CoreTransactionType.HtlcRefund,
 		typeGroup: TransactionTypeGroup.Core,
 	},
 	ipfs: {
 		type: CoreTransactionType.Ipfs,
 		typeGroup: TransactionTypeGroup.Core,
 	},
-	"second-signature": {
-		type: CoreTransactionType.SecondSignature,
+	"multi-payment": {
+		type: CoreTransactionType.MultiPayment,
 		typeGroup: TransactionTypeGroup.Core,
 	},
 	"multi-signature": {
 		type: CoreTransactionType.MultiSignature,
+		typeGroup: TransactionTypeGroup.Core,
+	},
+	"second-signature": {
+		type: CoreTransactionType.SecondSignature,
 		typeGroup: TransactionTypeGroup.Core,
 	},
 	transfer: {
@@ -92,10 +92,10 @@ export const useTransactionTypes = ({ wallets = [] }: TransactionTypeProperties 
 		delegateResignation: "DelegateResigned",
 		htlcClaim: "Timelock",
 		htlcLock: "Timelock",
-		ipfs: "Ipfs",
 		htlcRefund: "Timelock",
-		multiPayment: "Multipayment",
+		ipfs: "Ipfs",
 		magistrate: "Magistrate",
+		multiPayment: "Multipayment",
 		multiSignature: "Multisig",
 		secondSignature: "Key",
 		transfer: "Transfer",
@@ -105,49 +105,29 @@ export const useTransactionTypes = ({ wallets = [] }: TransactionTypeProperties 
 	};
 
 	const allTransactionTypeLabels: Record<string, string> = {
-		
 		"delegate-registration": t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_REGISTRATION"),
-		
-"htlc-lock": t("TRANSACTION.TRANSACTION_TYPES.HTLC_LOCK"),
-		
-"delegate-resignation": t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_RESIGNATION"),
-
-		
-ipfs: t("TRANSACTION.TRANSACTION_TYPES.IPFS"),
-		
-delegateRegistration: t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_REGISTRATION"),
-
-		
-"multi-signature": t("TRANSACTION.TRANSACTION_TYPES.MULTI_SIGNATURE"),
-		
-"htlc-claim": t("TRANSACTION.TRANSACTION_TYPES.HTLC_CLAIM"),
-
-		// core
-transfer: t("TRANSACTION.TRANSACTION_TYPES.TRANSFER"),
+		"delegate-resignation": t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_RESIGNATION"),
+		delegateRegistration: t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_REGISTRATION"),
 		delegateResignation: t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_RESIGNATION"),
-		unvote: t("TRANSACTION.TRANSACTION_TYPES.UNVOTE"),
-
+		"htlc-claim": t("TRANSACTION.TRANSACTION_TYPES.HTLC_CLAIM"),
+		"htlc-lock": t("TRANSACTION.TRANSACTION_TYPES.HTLC_LOCK"),
 		"htlc-refund": t("TRANSACTION.TRANSACTION_TYPES.HTLC_REFUND"),
-		vote: t("TRANSACTION.TRANSACTION_TYPES.VOTE"),
-
-		
 		htlcClaim: t("TRANSACTION.TRANSACTION_TYPES.HTLC_CLAIM"),
-		
-"second-signature": t("TRANSACTION.TRANSACTION_TYPES.SECOND_SIGNATURE"),
-		
-htlcLock: t("TRANSACTION.TRANSACTION_TYPES.HTLC_LOCK"),
-		
-"multi-payment": t("TRANSACTION.TRANSACTION_TYPES.MULTI_PAYMENT"),
-		
-htlcRefund: t("TRANSACTION.TRANSACTION_TYPES.HTLC_REFUND"),
-		
-magistrate: t("TRANSACTION.TRANSACTION_TYPES.MAGISTRATE"),
-		
-multiPayment: t("TRANSACTION.TRANSACTION_TYPES.MULTI_PAYMENT"),
-		
-multiSignature: t("TRANSACTION.TRANSACTION_TYPES.MULTI_SIGNATURE"),
+		htlcLock: t("TRANSACTION.TRANSACTION_TYPES.HTLC_LOCK"),
+		htlcRefund: t("TRANSACTION.TRANSACTION_TYPES.HTLC_REFUND"),
+		ipfs: t("TRANSACTION.TRANSACTION_TYPES.IPFS"),
+		magistrate: t("TRANSACTION.TRANSACTION_TYPES.MAGISTRATE"),
+		"multi-payment": t("TRANSACTION.TRANSACTION_TYPES.MULTI_PAYMENT"),
+		"multi-signature": t("TRANSACTION.TRANSACTION_TYPES.MULTI_SIGNATURE"),
+		multiPayment: t("TRANSACTION.TRANSACTION_TYPES.MULTI_PAYMENT"),
+		multiSignature: t("TRANSACTION.TRANSACTION_TYPES.MULTI_SIGNATURE"),
+		"second-signature": t("TRANSACTION.TRANSACTION_TYPES.SECOND_SIGNATURE"),
 		// Labels in transaction type format as in ExtendedTransactionData
-secondSignature: t("TRANSACTION.TRANSACTION_TYPES.SECOND_SIGNATURE"),
+		secondSignature: t("TRANSACTION.TRANSACTION_TYPES.SECOND_SIGNATURE"),
+		// core
+		transfer: t("TRANSACTION.TRANSACTION_TYPES.TRANSFER"),
+		unvote: t("TRANSACTION.TRANSACTION_TYPES.UNVOTE"),
+		vote: t("TRANSACTION.TRANSACTION_TYPES.VOTE"),
 		voteCombination: t("TRANSACTION.TRANSACTION_TYPES.VOTE_COMBINATION"),
 	};
 
