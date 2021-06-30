@@ -232,8 +232,11 @@ export const SendTransfer = () => {
 				: {
 						to: recipients[0].address,
 						amount: +recipients[0].amount,
-						memo: memo,
 				  };
+
+			if (memo) {
+				transactionInput.data.memo = memo;
+			}
 
 			const expiration = await wallet?.coin()?.transaction()?.estimateExpiration();
 			if (expiration) {
