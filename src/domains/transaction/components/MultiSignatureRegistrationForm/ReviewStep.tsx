@@ -1,7 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { Circle } from "app/components/Circle";
 import { Header } from "app/components/Header";
-import { Icon } from "app/components/Icon";
 import {
 	TransactionDetail,
 	TransactionNetwork,
@@ -42,19 +40,6 @@ export const ReviewStep = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) =
 						{t("TRANSACTION.MULTISIGNATURE.OUT_OF_LENGTH", { length: participants.length })}
 					</span>
 				</div>
-			</TransactionDetail>
-
-			<TransactionDetail
-				label={t("TRANSACTION.TYPE")}
-				extra={
-					<div>
-						<Circle className="border-black bg-theme-background" size="lg">
-							<Icon name="Multisig" width={20} height={20} />
-						</Circle>
-					</div>
-				}
-			>
-				{t("TRANSACTION.TRANSACTION_TYPES.MULTI_SIGNATURE")}
 			</TransactionDetail>
 
 			<div className="mt-2">

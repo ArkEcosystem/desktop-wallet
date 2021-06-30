@@ -8,16 +8,18 @@ exports[`Notifications should render notification item 1`] = `
         class="TableRow__TableRowStyled-sc-1br46dw-0 bFBpUs group"
         data-testid="TableRow"
       >
-        <td>
+        <td
+          class="w-3/5"
+        >
           <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jVzLGo space-x-3"
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jVzLGo flex space-x-3"
           >
             <div
               class="flex items-center -space-x-1"
               data-testid="TransactionRowMode"
             >
               <div
-                class="Circle__CircleWrapper-uw7h4j-0 byFmWC ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
+                class="Circle__CircleWrapper-uw7h4j-0 byFmWC ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-danger-100 text-theme-danger-400 dark:border-theme-danger-400 ring-theme-background"
               >
                 <div
                   class="sc-bdfBwQ fpbFeh"
@@ -25,7 +27,7 @@ exports[`Notifications should render notification item 1`] = `
                   width="16"
                 >
                   <svg>
-                    received.svg
+                    sent.svg
                   </svg>
                 </div>
               </div>
@@ -45,14 +47,18 @@ exports[`Notifications should render notification item 1`] = `
               </div>
             </div>
             <div
-              class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
+              class="w-20 flex-1"
             >
-              <span
-                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
-                data-testid="Address__address"
+              <div
+                class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
               >
-                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-              </span>
+                <span
+                  class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                  data-testid="Address__address"
+                >
+                  D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                </span>
+              </div>
             </div>
           </div>
         </td>
@@ -61,13 +67,13 @@ exports[`Notifications should render notification item 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ixsuTA justify-end"
           >
             <div
-              class="Label-sc-1tj9hzr-0 fMWESr whitespace-nowrap"
-              color="success"
+              class="Label-sc-1tj9hzr-0 ganlOQ whitespace-nowrap"
+              color="danger"
             >
               <span
                 data-testid="AmountCrypto"
               >
-                + 20 DARK
+                - 121 ARK
               </span>
             </div>
           </div>

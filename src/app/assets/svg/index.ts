@@ -67,7 +67,7 @@ import { ReactComponent as Magistrate } from "./magistrate.svg";
 import { ReactComponent as Memo } from "./memo.svg";
 import { ReactComponent as Msq } from "./msq.svg";
 import { ReactComponent as Multipayment } from "./multipayment.svg";
-import { ReactComponent as Multisig } from "./multisig.svg";
+import { ReactComponent as Multisig } from "./multisignature.svg";
 import { ReactComponent as Notification } from "./notification.svg";
 import { ReactComponent as OfficialArkPlugin } from "./official-ark-plugin.svg";
 import { ReactComponent as OpenExplorer } from "./open-explorer.svg";
@@ -89,6 +89,7 @@ import { ReactComponent as Report } from "./report.svg";
 import { ReactComponent as Reset } from "./reset.svg";
 import { ReactComponent as Return } from "./return.svg";
 import { ReactComponent as Search } from "./search.svg";
+import { ReactComponent as SecondSignature } from "./second-signature.svg";
 import { ReactComponent as Send } from "./send.svg";
 import { ReactComponent as Sent } from "./sent.svg";
 import { ReactComponent as Settings } from "./settings.svg";
@@ -103,6 +104,7 @@ import { ReactComponent as StatusFailed } from "./status-failed.svg";
 import { ReactComponent as StatusOk } from "./status-ok.svg";
 import { ReactComponent as StatusPending } from "./status-pending.svg";
 import { ReactComponent as Timelock } from "./timelock.svg";
+import { ReactComponent as Transfer } from "./transfer.svg";
 import { ReactComponent as Trash } from "./trash.svg";
 import { ReactComponent as Unvote } from "./unvote.svg";
 import { ReactComponent as Update } from "./update.svg";
@@ -202,6 +204,7 @@ export const SvgCollection: any = {
 	Report,
 	Reset,
 	Search,
+	SecondSignature,
 	Send,
 	Sent,
 	Settings,
@@ -218,6 +221,7 @@ export const SvgCollection: any = {
 	StatusPending,
 	Timelock,
 	Trash,
+	Transfer,
 	Unvote,
 	Update,
 	Upload,

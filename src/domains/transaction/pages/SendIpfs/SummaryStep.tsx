@@ -1,6 +1,4 @@
 import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
-import { Circle } from "app/components/Circle";
-import { Icon } from "app/components/Icon";
 import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import { TransactionSuccessful } from "domains/transaction/components/TransactionSuccessful";
 import React from "react";
@@ -17,17 +15,7 @@ export const SummaryStep = ({
 
 	return (
 		<TransactionSuccessful transaction={transaction} senderWallet={senderWallet}>
-			<TransactionDetail
-				label={t("TRANSACTION.IPFS_HASH")}
-				extra={
-					<Circle className="border-theme-text" size="lg">
-						<Icon name="Ipfs" width={23} height={23} />
-					</Circle>
-				}
-				paddingPosition="top"
-			>
-				{transaction.hash()}
-			</TransactionDetail>
+			<TransactionDetail label={t("TRANSACTION.IPFS_HASH")}>{transaction.hash()}</TransactionDetail>
 		</TransactionSuccessful>
 	);
 };

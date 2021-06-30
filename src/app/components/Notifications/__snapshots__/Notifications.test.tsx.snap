@@ -3,101 +3,105 @@
 exports[`Notifications should emit transactionClick event 1`] = `
 <div>
   <div
-    class="styles__NotificationsWrapper-fnayqc-0 ktUseg"
+    class="styles__NotificationsWrapper-fnayqc-0 dYgshp"
     data-testid="NotificationsWrapper"
   >
     <div
-      class="-top-5 z-10 py-4 pr-8 pl-4 -mx-4 mb-2 text-sm font-bold text-theme-secondary-500"
-    >
-      Plugins
-    </div>
-    <div
-      class="Table__TableWrapper-sc-84pst5-0 ccYCKK"
-      role="table"
-    >
-      <table
-        cellpadding="0"
-        class="table-auto"
-      >
-        <tbody
-          role="rowgroup"
-        >
-          <tr
-            data-testid="NotificationItem"
-          >
-            <td
-              class="w-8 h-8"
-            >
-              <div
-                class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
-              />
-            </td>
-            <td>
-              <div>
-                <span
-                  class="font-bold text-md text-theme-secondary-600"
-                >
-                  ARK Desktop Wallet
-                </span>
-                <span
-                  class="text-md text-theme-secondary-600"
-                >
-                   
-                  - update v2.5.6
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="font-bold text-right cursor-pointer text-md text-theme-primary-500"
-                data-testid="NotificationItem__action"
-              >
-                Update
-              </div>
-            </td>
-          </tr>
-          <tr
-            data-testid="NotificationItem"
-          >
-            <td
-              class="w-8 h-8"
-            >
-              <div
-                class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
-              />
-            </td>
-            <td>
-              <div>
-                <span
-                  class="font-bold text-md text-theme-secondary-600"
-                >
-                  ARK Avatars
-                </span>
-                <span
-                  class="text-md text-theme-secondary-600"
-                >
-                   
-                  - update v4
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="font-bold text-right cursor-pointer text-md text-theme-primary-500"
-                data-testid="NotificationItem__action"
-              >
-                Update
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div
-      class="mt-4"
+      class="space-y-2"
     >
       <div
-        class="-top-5 z-10 py-1 pr-8 pl-4 -mx-4 text-sm font-bold text-theme-secondary-500"
+        class="text-base font-semibold text-theme-secondary-500"
+      >
+        Plugins
+      </div>
+      <div
+        class="Table__TableWrapper-sc-84pst5-0 ccYCKK"
+        role="table"
+      >
+        <table
+          cellpadding="0"
+          class="table-auto"
+        >
+          <tbody
+            role="rowgroup"
+          >
+            <tr
+              data-testid="NotificationItem"
+            >
+              <td
+                class="w-8 h-8"
+              >
+                <div
+                  class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
+                />
+              </td>
+              <td>
+                <div>
+                  <span
+                    class="font-bold text-md text-theme-secondary-600"
+                  >
+                    ARK Desktop Wallet
+                  </span>
+                  <span
+                    class="text-md text-theme-secondary-600"
+                  >
+                     
+                    - update v2.5.6
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="font-bold text-right cursor-pointer text-md text-theme-primary-500"
+                  data-testid="NotificationItem__action"
+                >
+                  Update
+                </div>
+              </td>
+            </tr>
+            <tr
+              data-testid="NotificationItem"
+            >
+              <td
+                class="w-8 h-8"
+              >
+                <div
+                  class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
+                />
+              </td>
+              <td>
+                <div>
+                  <span
+                    class="font-bold text-md text-theme-secondary-600"
+                  >
+                    ARK Avatars
+                  </span>
+                  <span
+                    class="text-md text-theme-secondary-600"
+                  >
+                     
+                    - update v4
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="font-bold text-right cursor-pointer text-md text-theme-primary-500"
+                  data-testid="NotificationItem__action"
+                >
+                  Update
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div
+      class="space-y-2"
+    >
+      <div
+        class="text-base font-semibold text-theme-secondary-500"
       >
         Transactions
       </div>
@@ -116,9 +120,11 @@ exports[`Notifications should emit transactionClick event 1`] = `
               class="TableRow__TableRowStyled-sc-1br46dw-0 bFBpUs group"
               data-testid="TableRow"
             >
-              <td>
+              <td
+                class="w-3/5"
+              >
                 <div
-                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jVzLGo space-x-3"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jVzLGo flex space-x-3"
                 >
                   <div
                     class="flex items-center -space-x-1"
@@ -153,14 +159,18 @@ exports[`Notifications should emit transactionClick event 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
+                    class="w-20 flex-1"
                   >
-                    <span
-                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
-                      data-testid="Address__address"
+                    <div
+                      class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                     >
-                      D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                    </span>
+                      <span
+                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                        data-testid="Address__address"
+                      >
+                        D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                      </span>
+                    </div>
                   </div>
                 </div>
               </td>
@@ -185,9 +195,11 @@ exports[`Notifications should emit transactionClick event 1`] = `
               class="TableRow__TableRowStyled-sc-1br46dw-0 bFBpUs group"
               data-testid="TableRow"
             >
-              <td>
+              <td
+                class="w-3/5"
+              >
                 <div
-                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jVzLGo space-x-3"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jVzLGo flex space-x-3"
                 >
                   <div
                     class="flex items-center -space-x-1"
@@ -222,14 +234,18 @@ exports[`Notifications should emit transactionClick event 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
+                    class="w-20 flex-1"
                   >
-                    <span
-                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
-                      data-testid="Address__address"
+                    <div
+                      class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                     >
-                      D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                    </span>
+                      <span
+                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                        data-testid="Address__address"
+                      >
+                        D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                      </span>
+                    </div>
                   </div>
                 </div>
               </td>
@@ -261,7 +277,7 @@ exports[`Notifications should emit transactionClick event 1`] = `
 exports[`Notifications should render with empty notifications 1`] = `
 <div>
   <div
-    class="styles__NotificationsWrapper-fnayqc-0 ktUseg"
+    class="styles__NotificationsWrapper-fnayqc-0 eGgAvC"
   >
     <div
       class="border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 rounded-lg text-theme-secondary-text text-center leading-5 p-6"
@@ -287,101 +303,105 @@ exports[`Notifications should render with empty notifications 1`] = `
 exports[`Notifications should render with plugins 1`] = `
 <div>
   <div
-    class="styles__NotificationsWrapper-fnayqc-0 ktUseg"
+    class="styles__NotificationsWrapper-fnayqc-0 dYgshp"
     data-testid="NotificationsWrapper"
   >
     <div
-      class="-top-5 z-10 py-4 pr-8 pl-4 -mx-4 mb-2 text-sm font-bold text-theme-secondary-500"
-    >
-      Plugins
-    </div>
-    <div
-      class="Table__TableWrapper-sc-84pst5-0 ccYCKK"
-      role="table"
-    >
-      <table
-        cellpadding="0"
-        class="table-auto"
-      >
-        <tbody
-          role="rowgroup"
-        >
-          <tr
-            data-testid="NotificationItem"
-          >
-            <td
-              class="w-8 h-8"
-            >
-              <div
-                class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
-              />
-            </td>
-            <td>
-              <div>
-                <span
-                  class="font-bold text-md text-theme-secondary-600"
-                >
-                  ARK Desktop Wallet
-                </span>
-                <span
-                  class="text-md text-theme-secondary-600"
-                >
-                   
-                  - update v2.5.6
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="font-bold text-right cursor-pointer text-md text-theme-primary-500"
-                data-testid="NotificationItem__action"
-              >
-                Update
-              </div>
-            </td>
-          </tr>
-          <tr
-            data-testid="NotificationItem"
-          >
-            <td
-              class="w-8 h-8"
-            >
-              <div
-                class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
-              />
-            </td>
-            <td>
-              <div>
-                <span
-                  class="font-bold text-md text-theme-secondary-600"
-                >
-                  ARK Avatars
-                </span>
-                <span
-                  class="text-md text-theme-secondary-600"
-                >
-                   
-                  - update v4
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="font-bold text-right cursor-pointer text-md text-theme-primary-500"
-                data-testid="NotificationItem__action"
-              >
-                Update
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div
-      class="mt-4"
+      class="space-y-2"
     >
       <div
-        class="-top-5 z-10 py-1 pr-8 pl-4 -mx-4 text-sm font-bold text-theme-secondary-500"
+        class="text-base font-semibold text-theme-secondary-500"
+      >
+        Plugins
+      </div>
+      <div
+        class="Table__TableWrapper-sc-84pst5-0 ccYCKK"
+        role="table"
+      >
+        <table
+          cellpadding="0"
+          class="table-auto"
+        >
+          <tbody
+            role="rowgroup"
+          >
+            <tr
+              data-testid="NotificationItem"
+            >
+              <td
+                class="w-8 h-8"
+              >
+                <div
+                  class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
+                />
+              </td>
+              <td>
+                <div>
+                  <span
+                    class="font-bold text-md text-theme-secondary-600"
+                  >
+                    ARK Desktop Wallet
+                  </span>
+                  <span
+                    class="text-md text-theme-secondary-600"
+                  >
+                     
+                    - update v2.5.6
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="font-bold text-right cursor-pointer text-md text-theme-primary-500"
+                  data-testid="NotificationItem__action"
+                >
+                  Update
+                </div>
+              </td>
+            </tr>
+            <tr
+              data-testid="NotificationItem"
+            >
+              <td
+                class="w-8 h-8"
+              >
+                <div
+                  class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
+                />
+              </td>
+              <td>
+                <div>
+                  <span
+                    class="font-bold text-md text-theme-secondary-600"
+                  >
+                    ARK Avatars
+                  </span>
+                  <span
+                    class="text-md text-theme-secondary-600"
+                  >
+                     
+                    - update v4
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="font-bold text-right cursor-pointer text-md text-theme-primary-500"
+                  data-testid="NotificationItem__action"
+                >
+                  Update
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div
+      class="space-y-2"
+    >
+      <div
+        class="text-base font-semibold text-theme-secondary-500"
       >
         Transactions
       </div>
@@ -400,9 +420,11 @@ exports[`Notifications should render with plugins 1`] = `
               class="TableRow__TableRowStyled-sc-1br46dw-0 bFBpUs group"
               data-testid="TableRow"
             >
-              <td>
+              <td
+                class="w-3/5"
+              >
                 <div
-                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jVzLGo space-x-3"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jVzLGo flex space-x-3"
                 >
                   <div
                     class="flex items-center -space-x-1"
@@ -437,14 +459,18 @@ exports[`Notifications should render with plugins 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
+                    class="w-20 flex-1"
                   >
-                    <span
-                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
-                      data-testid="Address__address"
+                    <div
+                      class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                     >
-                      D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                    </span>
+                      <span
+                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                        data-testid="Address__address"
+                      >
+                        D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                      </span>
+                    </div>
                   </div>
                 </div>
               </td>
@@ -469,9 +495,11 @@ exports[`Notifications should render with plugins 1`] = `
               class="TableRow__TableRowStyled-sc-1br46dw-0 bFBpUs group"
               data-testid="TableRow"
             >
-              <td>
+              <td
+                class="w-3/5"
+              >
                 <div
-                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jVzLGo space-x-3"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jVzLGo flex space-x-3"
                 >
                   <div
                     class="flex items-center -space-x-1"
@@ -506,14 +534,18 @@ exports[`Notifications should render with plugins 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
+                    class="w-20 flex-1"
                   >
-                    <span
-                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
-                      data-testid="Address__address"
+                    <div
+                      class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                     >
-                      D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                    </span>
+                      <span
+                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                        data-testid="Address__address"
+                      >
+                        D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                      </span>
+                    </div>
                   </div>
                 </div>
               </td>
@@ -545,101 +577,105 @@ exports[`Notifications should render with plugins 1`] = `
 exports[`Notifications should render with transactions and plugins 1`] = `
 <div>
   <div
-    class="styles__NotificationsWrapper-fnayqc-0 ktUseg"
+    class="styles__NotificationsWrapper-fnayqc-0 dYgshp"
     data-testid="NotificationsWrapper"
   >
     <div
-      class="-top-5 z-10 py-4 pr-8 pl-4 -mx-4 mb-2 text-sm font-bold text-theme-secondary-500"
-    >
-      Plugins
-    </div>
-    <div
-      class="Table__TableWrapper-sc-84pst5-0 ccYCKK"
-      role="table"
-    >
-      <table
-        cellpadding="0"
-        class="table-auto"
-      >
-        <tbody
-          role="rowgroup"
-        >
-          <tr
-            data-testid="NotificationItem"
-          >
-            <td
-              class="w-8 h-8"
-            >
-              <div
-                class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
-              />
-            </td>
-            <td>
-              <div>
-                <span
-                  class="font-bold text-md text-theme-secondary-600"
-                >
-                  ARK Desktop Wallet
-                </span>
-                <span
-                  class="text-md text-theme-secondary-600"
-                >
-                   
-                  - update v2.5.6
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="font-bold text-right cursor-pointer text-md text-theme-primary-500"
-                data-testid="NotificationItem__action"
-              >
-                Update
-              </div>
-            </td>
-          </tr>
-          <tr
-            data-testid="NotificationItem"
-          >
-            <td
-              class="w-8 h-8"
-            >
-              <div
-                class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
-              />
-            </td>
-            <td>
-              <div>
-                <span
-                  class="font-bold text-md text-theme-secondary-600"
-                >
-                  ARK Avatars
-                </span>
-                <span
-                  class="text-md text-theme-secondary-600"
-                >
-                   
-                  - update v4
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="font-bold text-right cursor-pointer text-md text-theme-primary-500"
-                data-testid="NotificationItem__action"
-              >
-                Update
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div
-      class="mt-4"
+      class="space-y-2"
     >
       <div
-        class="-top-5 z-10 py-1 pr-8 pl-4 -mx-4 text-sm font-bold text-theme-secondary-500"
+        class="text-base font-semibold text-theme-secondary-500"
+      >
+        Plugins
+      </div>
+      <div
+        class="Table__TableWrapper-sc-84pst5-0 ccYCKK"
+        role="table"
+      >
+        <table
+          cellpadding="0"
+          class="table-auto"
+        >
+          <tbody
+            role="rowgroup"
+          >
+            <tr
+              data-testid="NotificationItem"
+            >
+              <td
+                class="w-8 h-8"
+              >
+                <div
+                  class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
+                />
+              </td>
+              <td>
+                <div>
+                  <span
+                    class="font-bold text-md text-theme-secondary-600"
+                  >
+                    ARK Desktop Wallet
+                  </span>
+                  <span
+                    class="text-md text-theme-secondary-600"
+                  >
+                     
+                    - update v2.5.6
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="font-bold text-right cursor-pointer text-md text-theme-primary-500"
+                  data-testid="NotificationItem__action"
+                >
+                  Update
+                </div>
+              </td>
+            </tr>
+            <tr
+              data-testid="NotificationItem"
+            >
+              <td
+                class="w-8 h-8"
+              >
+                <div
+                  class="flex justify-center items-center my-2 mr-4 w-8 h-8 text-white align-middle rounded-lg bg-logo"
+                />
+              </td>
+              <td>
+                <div>
+                  <span
+                    class="font-bold text-md text-theme-secondary-600"
+                  >
+                    ARK Avatars
+                  </span>
+                  <span
+                    class="text-md text-theme-secondary-600"
+                  >
+                     
+                    - update v4
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="font-bold text-right cursor-pointer text-md text-theme-primary-500"
+                  data-testid="NotificationItem__action"
+                >
+                  Update
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div
+      class="space-y-2"
+    >
+      <div
+        class="text-base font-semibold text-theme-secondary-500"
       >
         Transactions
       </div>
@@ -658,9 +694,11 @@ exports[`Notifications should render with transactions and plugins 1`] = `
               class="TableRow__TableRowStyled-sc-1br46dw-0 bFBpUs group"
               data-testid="TableRow"
             >
-              <td>
+              <td
+                class="w-3/5"
+              >
                 <div
-                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jVzLGo space-x-3"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jVzLGo flex space-x-3"
                 >
                   <div
                     class="flex items-center -space-x-1"
@@ -695,14 +733,18 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
+                    class="w-20 flex-1"
                   >
-                    <span
-                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
-                      data-testid="Address__address"
+                    <div
+                      class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                     >
-                      D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                    </span>
+                      <span
+                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                        data-testid="Address__address"
+                      >
+                        D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                      </span>
+                    </div>
                   </div>
                 </div>
               </td>
@@ -727,9 +769,11 @@ exports[`Notifications should render with transactions and plugins 1`] = `
               class="TableRow__TableRowStyled-sc-1br46dw-0 bFBpUs group"
               data-testid="TableRow"
             >
-              <td>
+              <td
+                class="w-3/5"
+              >
                 <div
-                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jVzLGo space-x-3"
+                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jVzLGo flex space-x-3"
                 >
                   <div
                     class="flex items-center -space-x-1"
@@ -764,14 +808,18 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                     </div>
                   </div>
                   <div
-                    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
+                    class="w-20 flex-1"
                   >
-                    <span
-                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
-                      data-testid="Address__address"
+                    <div
+                      class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                     >
-                      D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                    </span>
+                      <span
+                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                        data-testid="Address__address"
+                      >
+                        D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                      </span>
+                    </div>
                   </div>
                 </div>
               </td>

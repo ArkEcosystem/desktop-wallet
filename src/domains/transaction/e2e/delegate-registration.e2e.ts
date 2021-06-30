@@ -8,7 +8,7 @@ import { goToDelegateRegistrationPage } from "./common";
 
 const translations = buildTranslations();
 
-createFixture(`Delegate Registration action`, [
+createFixture("Delegate Registration action", [
 	mockRequest(
 		{
 			url: "https://dwallets.ark.io/api/transactions",

@@ -161,6 +161,7 @@ module.exports = {
 		"unicorn/no-abusive-eslint-disable": "warn", // @TODO: set to error and fix resulting issues
 		"unicorn/no-array-callback-reference": "warn", // @TODO: set to error and fix resulting issues
 		"unicorn/no-array-for-each": "warn", // @TODO: set to error and fix resulting issues
+		"unicorn/no-array-method-this-argument": "warn", // @TODO: set to error and fix resulting issues
 		"unicorn/no-array-reduce": "warn", // @TODO: set to error and fix resulting issues
 		"unicorn/no-new-array": "warn", // @TODO: set to error and fix resulting issues
 		"unicorn/no-null": "warn", // @TODO: set to error and fix resulting issues

@@ -1404,6 +1404,38 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                           <div
                             class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
                           >
+                            Transaction Type
+                          </div>
+                          <div
+                            class="font-semibold"
+                          >
+                            Transfer
+                          </div>
+                        </div>
+                        <div
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-text border-theme-text dark:text-theme-secondary-600 dark:border-theme-secondary-600 ring-theme-background"
+                        >
+                          <div
+                            class="sc-bdfBwQ iyevwF"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              transfer.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
+                        data-testid="TransactionDetail"
+                      >
+                        <div
+                          class="flex-1 space-y-2 w-40 whitespace-nowrap"
+                        >
+                          <div
+                            class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+                          >
                             Cryptoasset
                           </div>
                           <div
@@ -3579,7 +3611,13 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                     <span
                                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                                     >
-                                      (Available 33.67769203)
+                                      (Available 
+                                      <span
+                                        data-testid="AmountCrypto"
+                                      >
+                                        33.67769203  
+                                      </span>
+                                      )
                                     </span>
                                   </label>
                                   <div
@@ -4590,7 +4628,13 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                     <span
                                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                                     >
-                                      (Available 33.67769203)
+                                      (Available 
+                                      <span
+                                        data-testid="AmountCrypto"
+                                      >
+                                        33.67769203  
+                                      </span>
+                                      )
                                     </span>
                                   </label>
                                   <div
@@ -7425,6 +7469,38 @@ exports[`SendTransfer should render summary step 1`] = `
           <div
             class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
           >
+            Transaction Type
+          </div>
+          <div
+            class="font-semibold"
+          >
+            Transfer
+          </div>
+        </div>
+        <div
+          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-text border-theme-text dark:text-theme-secondary-600 dark:border-theme-secondary-600 ring-theme-background"
+        >
+          <div
+            class="sc-bdfBwQ iyevwF"
+            height="20"
+            width="20"
+          >
+            <svg>
+              transfer.svg
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
+        data-testid="TransactionDetail"
+      >
+        <div
+          class="flex-1 space-y-2 w-40 whitespace-nowrap"
+        >
+          <div
+            class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+          >
             Cryptoasset
           </div>
           <div
@@ -8364,7 +8440,15 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                     <span
                                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                                     >
-                                      (Available 57.60679402)
+                                      (
+                                      Available
+                                       
+                                      <span
+                                        data-testid="AmountCrypto"
+                                      >
+                                        57.60679402  
+                                      </span>
+                                      )
                                     </span>
                                   </label>
                                   <div
@@ -9538,6 +9622,38 @@ exports[`SendTransfer should send a single transfer 1`] = `
                           <div
                             class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
                           >
+                            Transaction Type
+                          </div>
+                          <div
+                            class="font-semibold"
+                          >
+                            Transfer
+                          </div>
+                        </div>
+                        <div
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-text border-theme-text dark:text-theme-secondary-600 dark:border-theme-secondary-600 ring-theme-background"
+                        >
+                          <div
+                            class="sc-bdfBwQ iyevwF"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              transfer.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
+                        data-testid="TransactionDetail"
+                      >
+                        <div
+                          class="flex-1 space-y-2 w-40 whitespace-nowrap"
+                        >
+                          <div
+                            class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+                          >
                             Cryptoasset
                           </div>
                           <div
@@ -10162,6 +10278,38 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
                                 </button>
                               </span>
                             </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
+                        data-testid="TransactionDetail"
+                      >
+                        <div
+                          class="flex-1 space-y-2 w-40 whitespace-nowrap"
+                        >
+                          <div
+                            class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+                          >
+                            Transaction Type
+                          </div>
+                          <div
+                            class="font-semibold"
+                          >
+                            Transfer
+                          </div>
+                        </div>
+                        <div
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-text border-theme-text dark:text-theme-secondary-600 dark:border-theme-secondary-600 ring-theme-background"
+                        >
+                          <div
+                            class="sc-bdfBwQ iyevwF"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              transfer.svg
+                            </svg>
                           </div>
                         </div>
                       </div>
@@ -10812,6 +10960,38 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                           <div
                             class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
                           >
+                            Transaction Type
+                          </div>
+                          <div
+                            class="font-semibold"
+                          >
+                            Transfer
+                          </div>
+                        </div>
+                        <div
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-text border-theme-text dark:text-theme-secondary-600 dark:border-theme-secondary-600 ring-theme-background"
+                        >
+                          <div
+                            class="sc-bdfBwQ iyevwF"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              transfer.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
+                        data-testid="TransactionDetail"
+                      >
+                        <div
+                          class="flex-1 space-y-2 w-40 whitespace-nowrap"
+                        >
+                          <div
+                            class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+                          >
                             Cryptoasset
                           </div>
                           <div
@@ -11253,9 +11433,9 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                                       data-testid="TransactionRowRecipientIcon"
                                     >
                                       <div
-                                        class="sc-bdfBwQ iSzUah"
-                                        height="22"
-                                        width="22"
+                                        class="sc-bdfBwQ iyevwF"
+                                        height="20"
+                                        width="20"
                                       >
                                         <svg>
                                           multipayment.svg
@@ -11745,6 +11925,38 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                                 </button>
                               </span>
                             </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
+                        data-testid="TransactionDetail"
+                      >
+                        <div
+                          class="flex-1 space-y-2 w-40 whitespace-nowrap"
+                        >
+                          <div
+                            class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+                          >
+                            Transaction Type
+                          </div>
+                          <div
+                            class="font-semibold"
+                          >
+                            Transfer
+                          </div>
+                        </div>
+                        <div
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-text border-theme-text dark:text-theme-secondary-600 dark:border-theme-secondary-600 ring-theme-background"
+                        >
+                          <div
+                            class="sc-bdfBwQ iyevwF"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              transfer.svg
+                            </svg>
                           </div>
                         </div>
                       </div>
@@ -12395,6 +12607,38 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                           <div
                             class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
                           >
+                            Transaction Type
+                          </div>
+                          <div
+                            class="font-semibold"
+                          >
+                            Transfer
+                          </div>
+                        </div>
+                        <div
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-text border-theme-text dark:text-theme-secondary-600 dark:border-theme-secondary-600 ring-theme-background"
+                        >
+                          <div
+                            class="sc-bdfBwQ iyevwF"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              transfer.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
+                        data-testid="TransactionDetail"
+                      >
+                        <div
+                          class="flex-1 space-y-2 w-40 whitespace-nowrap"
+                        >
+                          <div
+                            class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+                          >
                             Cryptoasset
                           </div>
                           <div
@@ -13019,6 +13263,38 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                                 </button>
                               </span>
                             </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
+                        data-testid="TransactionDetail"
+                      >
+                        <div
+                          class="flex-1 space-y-2 w-40 whitespace-nowrap"
+                        >
+                          <div
+                            class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+                          >
+                            Transaction Type
+                          </div>
+                          <div
+                            class="font-semibold"
+                          >
+                            Transfer
+                          </div>
+                        </div>
+                        <div
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-text border-theme-text dark:text-theme-secondary-600 dark:border-theme-secondary-600 ring-theme-background"
+                        >
+                          <div
+                            class="sc-bdfBwQ iyevwF"
+                            height="20"
+                            width="20"
+                          >
+                            <svg>
+                              transfer.svg
+                            </svg>
                           </div>
                         </div>
                       </div>

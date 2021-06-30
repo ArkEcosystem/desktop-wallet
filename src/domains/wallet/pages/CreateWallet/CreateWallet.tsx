@@ -1,3 +1,4 @@
+import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { uniq } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
@@ -92,13 +93,14 @@ export const CreateWallet = () => {
 	}, [activeProfile, getValues]);
 
 	const generateWallet = async () => {
-		const network = getValues("network");
+		const network: Networks.Network = getValues("network");
 
 		const locale = activeProfile.settings().get<string>(Contracts.ProfileSetting.Bip39Locale, "english");
 		const { mnemonic, wallet } = await activeProfile.walletFactory().generate({
 			coin: network.coin(),
 			locale,
 			network: network.id(),
+			wordCount: network.wordCount(),
 		});
 
 		activeProfile.wallets().push(wallet);
@@ -122,7 +124,11 @@ export const CreateWallet = () => {
 			setEncryptionPassword(undefined);
 		}
 
-		setActiveTab(activeTab - 1);
+		if (activeTab === 5 && !getValues("network").importMethods().bip39.canBeEncrypted) {
+			setActiveTab(activeTab - 2);
+		} else {
+			setActiveTab(activeTab - 1);
+		}
 	};
 
 	const handleNext = async () => {
@@ -141,7 +147,11 @@ export const CreateWallet = () => {
 				setIsGeneratingWallet(false);
 			}
 		} else {
-			setActiveTab(newIndex);
+			if (newIndex === 4 && !getValues("network").importMethods().bip39.canBeEncrypted) {
+				setActiveTab(newIndex + 1);
+			} else {
+				setActiveTab(newIndex);
+			}
 		}
 	};
 
@@ -167,15 +177,19 @@ export const CreateWallet = () => {
 									error={generationError}
 								/>
 							</TabPanel>
+
 							<TabPanel tabId={2}>
 								<WalletOverviewStep />
 							</TabPanel>
+
 							<TabPanel tabId={3}>
 								<ConfirmPassphraseStep />
 							</TabPanel>
+
 							<TabPanel tabId={4}>
 								<EncryptPasswordStep />
 							</TabPanel>
+
 							<TabPanel tabId={5}>
 								<SuccessStep nameMaxLength={nameMaxLength} profile={activeProfile} />
 							</TabPanel>
@@ -190,14 +204,16 @@ export const CreateWallet = () => {
 								</div>
 
 								<div className="flex justify-end space-x-3">
-									<Button
-										disabled={isSubmitting}
-										data-testid="CreateWallet__back-button"
-										variant="secondary"
-										onClick={handleBack}
-									>
-										{t("COMMON.BACK")}
-									</Button>
+									{activeTab < 5 && (
+										<Button
+											disabled={isSubmitting}
+											data-testid="CreateWallet__back-button"
+											variant="secondary"
+											onClick={handleBack}
+										>
+											{t("COMMON.BACK")}
+										</Button>
+									)}
 
 									{activeTab < 4 && (
 										<Button

@@ -41,6 +41,7 @@ const createVoteTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 		amount: () => voteFixture.data.amount / 1e8,
 		fee: () => voteFixture.data.fee / 1e8,
 		data: () => ({ data: () => voteFixture.data }),
+		type: () => "vote",
 	});
 
 const createUnvoteTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
@@ -52,6 +53,7 @@ const createUnvoteTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 		amount: () => unvoteFixture.data.amount / 1e8,
 		fee: () => unvoteFixture.data.fee / 1e8,
 		data: () => ({ data: () => voteFixture.data }),
+		type: () => "unvote",
 	});
 
 const passphrase = getDefaultWalletMnemonic();

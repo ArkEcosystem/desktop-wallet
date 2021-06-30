@@ -4,8 +4,8 @@ import { useConfiguration, useEnvironmentContext } from "app/contexts";
 import { DashboardConfiguration } from "domains/dashboard/pages/Dashboard";
 import { useEffect, useMemo, useRef } from "react";
 import { matchPath, useHistory, useLocation } from "react-router-dom";
+import { isIdle } from "utils/electron-utils";
 
-import { useAutomaticSignout } from "./use-automatic-signout";
 import { useNotifications } from "./use-notifications";
 import { useProfileUtils } from "./use-profile-utils";
 import { useScreenshotProtection } from "./use-screenshot-protection";
@@ -13,6 +13,7 @@ import { useSynchronizer } from "./use-synchronizer";
 import { useTheme } from "./use-theme";
 
 enum Intervals {
+	VeryShort = 15_000,
 	Short = 30_000,
 	Medium = 60_000,
 	Long = 120_000,
@@ -36,8 +37,10 @@ export const useProfileJobs = (profile?: Contracts.IProfile): Record<string, any
 	const { env } = useEnvironmentContext();
 	const { notifications } = useNotifications();
 	const { setConfiguration } = useConfiguration();
+	const history = useHistory();
 
 	const walletsCount = profile?.wallets().count();
+
 	return useMemo(() => {
 		if (!profile) {
 			return [];
@@ -81,8 +84,27 @@ export const useProfileJobs = (profile?: Contracts.IProfile): Record<string, any
 			interval: Intervals.Long,
 		};
 
+		const checkActivityState = {
+			callback: () => {
+				const idleThreshold =
+					(profile.settings().get(Contracts.ProfileSetting.AutomaticSignOutPeriod, 15) as number) * 60;
+
+				if (isIdle(idleThreshold)) {
+					history.push("/");
+				}
+			},
+			interval: Intervals.VeryShort,
+		};
+
 		return {
-			allJobs: [syncWallets, syncExchangeRates, syncNotifications, syncKnownWallets, syncDelegates],
+			allJobs: [
+				syncWallets,
+				syncExchangeRates,
+				syncNotifications,
+				syncKnownWallets,
+				syncDelegates,
+				checkActivityState,
+			],
 			syncExchangeRates: syncExchangeRates.callback,
 		};
 	}, [env, profile, walletsCount, notifications, setConfiguration]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -211,6 +233,7 @@ export const useProfileRestore = () => {
 
 	return {
 		restoreProfile,
+		restoreProfileConfig,
 	};
 };
 
@@ -237,7 +260,6 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 	const { allJobs } = useProfileJobs(profile);
 	const { start, stop, runAll } = useSynchronizer(allJobs);
 	const { setProfileTheme, resetTheme } = useTheme();
-	const { monitorIdleTime, resetAutomatiSignout } = useAutomaticSignout();
 	const { setScreenshotProtection } = useScreenshotProtection();
 	const history = useHistory();
 
@@ -248,7 +270,6 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 			}
 
 			resetTheme();
-			resetAutomatiSignout();
 			resetStatuses(env.profiles().values());
 
 			stop({ clearTimers: true });
@@ -273,11 +294,6 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 
 				setProfileTheme(profile);
 				setScreenshotProtection(profile);
-
-				monitorIdleTime({
-					profile,
-					onTimeout: () => history.push("/"),
-				});
 			}
 
 			if (shouldSync()) {
@@ -321,8 +337,6 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 		restoreProfile,
 		status,
 		onProfileRestoreError,
-		monitorIdleTime,
-		resetAutomatiSignout,
 		resetStatuses,
 		history,
 		setScreenshotProtection,
