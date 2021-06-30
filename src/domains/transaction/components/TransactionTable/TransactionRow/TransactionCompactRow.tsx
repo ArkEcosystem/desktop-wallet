@@ -25,9 +25,11 @@ export const TransactionCompactRow: React.FC<Properties> = ({
 
 	return (
 		<TableRow {...properties}>
-			<TableCell variant="start" innerClassName="space-x-3" isCompact>
+			<TableCell variant="start" className="w-3/5" innerClassName="flex space-x-3" isCompact>
 				<TransactionRowMode transaction={transaction} iconSize={"sm"} />
-				<TransactionRowRecipientLabel transaction={transaction} walletName={walletName} />
+				<div className="w-20 flex-1">
+					<TransactionRowRecipientLabel transaction={transaction} walletName={walletName} />
+				</div>
 			</TableCell>
 
 			<TableCell variant="end" innerClassName="justify-end" isCompact>
