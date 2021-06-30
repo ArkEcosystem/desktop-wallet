@@ -52,11 +52,11 @@ export const General: React.FC = () => {
 	const getDefaultValues = (): Partial<GeneralSettingsState> => {
 		const settings = profile.settings();
 
-		const name = profile.settings().get<string>(Contracts.ProfileSetting.Name);
+		const name = profile.settings().get<string>(Contracts.ProfileSetting.Name) as string;
 
 		return {
 			automaticSignOutPeriod: settings.get<number>(Contracts.ProfileSetting.AutomaticSignOutPeriod),
-			avatar: settings.get(Contracts.ProfileSetting.Avatar) || Helpers.Avatar.make(name || ""),
+			avatar: settings.get(Contracts.ProfileSetting.Avatar) || Helpers.Avatar.make(name),
 			bip39Locale: settings.get(Contracts.ProfileSetting.Bip39Locale),
 			dashboardTransactionHistory: settings.get(Contracts.ProfileSetting.DashboardTransactionHistory),
 			errorReporting: settings.get(Contracts.ProfileSetting.ErrorReporting),
@@ -101,6 +101,9 @@ export const General: React.FC = () => {
 	const formattedName = name?.trim();
 
 	const hasDefaultAvatar = !!avatar?.endsWith("</svg>");
+
+	/* istanbul ignore next */
+	const isUseTestNetworksChecked = useTestNetworks ?? false;
 
 	const { settings: settingsValidation } = useValidation();
 	const { getPromptMessage } = useSettingsPrompt({ dirtyFields, isDirty });
@@ -184,7 +187,7 @@ export const General: React.FC = () => {
 			label: t("SETTINGS.GENERAL.OTHER.DEVELOPMENT_NETWORKS.TITLE"),
 			labelAddon: (
 				<Toggle
-					checked={useTestNetworks ?? false}
+					checked={isUseTestNetworksChecked}
 					onChange={handleOpenDevelopmentNetworkModal}
 					data-testid="General-settings__toggle--useTestNetworks"
 				/>

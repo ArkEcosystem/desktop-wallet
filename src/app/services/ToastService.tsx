@@ -26,7 +26,7 @@ export const ToastMessage = ({
 	return (
 		<Alert variant={variant}>
 			<div className="flex items-center space-x-4">
-				<div className="flex-1 text-theme-text">{children}</div>
+				<div data-testid="ToastMessage__content" className="flex-1 text-theme-text">{children}</div>
 
 				<OriginalButton
 					data-testid="ToastMessage__close-button"

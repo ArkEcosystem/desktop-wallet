@@ -33,7 +33,11 @@ test("should save settings", async (t) => {
 	await goToSettings(t);
 
 	const nameInput = Selector('input[data-testid="General-settings__input--name"]');
-	await t.typeText(nameInput, "Anne Doe");
+
+	await t
+		.click(nameInput)
+		.pressKey("ctrl+a delete")
+		.typeText(nameInput, "Anne Doe");
 
 	await t.click(Selector("input[name=screenshotProtection]").parent());
 
@@ -100,6 +104,10 @@ test("should update converted balance in the navbar after changing the currency"
 	await t.click(Selector("#select-currency-menu .select-list-option").withText("BTC (Ƀ)"));
 	await t.click(Selector("button").withText(translations.COMMON.SAVE));
 	await t.expect(Selector("[data-testid=Balance__value]").withText("0 BTC").exists).notOk();
+
+	// wait for settings to be saved
+	await t.expect(Selector("[data-testid=ToastMessage__content]").withText(translations.SETTINGS.GENERAL.SUCCESS).exists).ok();
+	await t.expect(Selector("[data-testid=ToastMessage__content]").withText(translations.SETTINGS.GENERAL.SUCCESS).exists).notOk();
 
 	// select ETH
 	await t.click(Selector("[aria-owns=select-currency-menu] [data-testid=SelectDropdown__caret]"));

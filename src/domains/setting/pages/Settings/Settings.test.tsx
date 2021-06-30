@@ -91,6 +91,24 @@ describe("Settings", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should disable submit button when profile is not restored yet", async () => {
+		const isProfileRestoredMock = jest.spyOn(profile.status(), 'isRestored').mockReturnValue(false);
+
+		const { asFragment } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		expect(screen.getByTestId("General-settings__submit-button")).toBeDisabled();
+		expect(asFragment()).toMatchSnapshot();
+
+		isProfileRestoredMock.mockRestore();
+	});
+
 	it("should update the avatar when removing focus from name input", async () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
