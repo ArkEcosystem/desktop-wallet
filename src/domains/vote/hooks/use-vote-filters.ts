@@ -1,8 +1,8 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import { isEmptyObject, uniq,uniqBy } from "@arkecosystem/utils";
 import { useWalletFilters } from "domains/dashboard/components/FilterWallets";
-import { useState, useMemo } from "react";
-import { isEmptyObject, uniqBy, uniq } from "@arkecosystem/utils";
 import { FilterOption } from "domains/vote/components/VotesFilter";
+import { useMemo,useState } from "react";
 
 export const useVoteFilters = ({
 	profile,
@@ -129,23 +129,23 @@ export const useVoteFilters = ({
 	const hasWallets = !isEmptyObject(walletsByCoin);
 
 	return {
-		networks,
-		setSearchQuery,
-		setMaxVotes,
-		useTestNetworks,
-		walletsDisplayType,
-		selectedAddress,
-		selectedNetworkIds,
 		filterProperties,
-		isFilterChanged,
-		voteFilter,
-		walletsByCoin,
 		filteredWalletsByCoin,
 		hasEmptyResults,
 		hasWallets,
-		setVoteFilter,
-		setSelectedAddress,
+		isFilterChanged,
 		maxVotes,
+		networks,
 		searchQuery,
+		selectedAddress,
+		selectedNetworkIds,
+		setMaxVotes,
+		setSearchQuery,
+		setSelectedAddress,
+		setVoteFilter,
+		useTestNetworks,
+		voteFilter,
+		walletsByCoin,
+		walletsDisplayType,
 	};
 };
