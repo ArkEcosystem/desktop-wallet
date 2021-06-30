@@ -50,6 +50,7 @@ export function Switch<TOptionValue = string>({
 
 			<Toggle
 				alwaysOn
+				small={size === "sm"}
 				disabled={disabled}
 				checked={rightOption.value === value}
 				onChange={() => onChange(rightOption.value === value ? leftOption.value : rightOption.value)}
