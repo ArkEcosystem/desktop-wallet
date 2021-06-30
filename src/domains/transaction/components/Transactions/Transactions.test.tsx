@@ -34,8 +34,8 @@ describe("Transactions", () => {
 			.reply(200, []);
 
 		const emptyResponse = {
-			meta: {},
 			data: [],
+			meta: {},
 		};
 
 		nock("https://dwallets.ark.io")
@@ -58,8 +58,8 @@ describe("Transactions", () => {
 			.reply(200, () => {
 				const { meta, data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
 				return {
-					meta,
 					data: data.slice(0, 2),
+					meta,
 				};
 			})
 			.persist();
@@ -90,8 +90,8 @@ describe("Transactions", () => {
 				<Transactions profile={profile} wallets={profile.wallets().values()} />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -108,8 +108,8 @@ describe("Transactions", () => {
 				<Transactions profile={profile} wallets={profile.wallets().values()} title={<h1>Test</h1>} />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -126,8 +126,8 @@ describe("Transactions", () => {
 				<Transactions profile={profile} wallets={profile.wallets().values()} isVisible={false} />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -140,8 +140,8 @@ describe("Transactions", () => {
 				<Transactions profile={profile} wallets={profile.wallets().values()} />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -170,8 +170,8 @@ describe("Transactions", () => {
 
 		emptyProfile.wallets().push(
 			await emptyProfile.walletFactory().fromMnemonicWithBIP39({
-				mnemonic: "test",
 				coin: "ARK",
+				mnemonic: "test",
 				network: "ark.devnet",
 			}),
 		);
@@ -181,8 +181,8 @@ describe("Transactions", () => {
 				<Transactions profile={emptyProfile} wallets={emptyProfile.wallets().values()} />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -206,8 +206,8 @@ describe("Transactions", () => {
 
 		emptyProfile.wallets().push(
 			await emptyProfile.walletFactory().fromMnemonicWithBIP39({
-				mnemonic: "test",
 				coin: "ARK",
+				mnemonic: "test",
 				network: "ark.devnet",
 			}),
 		);
@@ -217,8 +217,8 @@ describe("Transactions", () => {
 				<Transactions profile={emptyProfile} wallets={emptyProfile.wallets().values()} />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -246,8 +246,8 @@ describe("Transactions", () => {
 				<Transactions profile={profile} wallets={profile.wallets().values()} />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -280,8 +280,8 @@ describe("Transactions", () => {
 				<Transactions profile={profile} isLoading={false} wallets={profile.wallets().values()} />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -313,8 +313,8 @@ describe("Transactions", () => {
 				<Transactions isLoading={true} profile={profile} wallets={profile.wallets().values()} />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -331,21 +331,21 @@ describe("Transactions", () => {
 			.get("/api/transactions")
 			.query(true)
 			.reply(200, () => ({
-				meta,
 				data: data.slice(0, 4),
+				meta,
 			}))
 			.get("/api/transactions")
 			.query((parameters) => !!parameters.senderId)
 			.delayBody(500)
 			.reply(200, () => ({
-				meta,
 				data: data.slice(0, 1),
+				meta,
 			}))
 			.get("/api/transactions")
 			.query((parameters) => !!parameters.recipientId)
 			.reply(200, () => ({
-				meta,
 				data: data.slice(0, 3),
+				meta,
 			}));
 
 		const { getAllByTestId, getByTestId } = renderWithRouter(
@@ -353,8 +353,8 @@ describe("Transactions", () => {
 				<Transactions profile={profile} isLoading={false} wallets={profile.wallets().values()} />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -372,8 +372,8 @@ describe("Transactions", () => {
 				<Transactions profile={profile} wallets={profile.wallets().values()} />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -392,8 +392,8 @@ describe("Transactions", () => {
 				<Transactions profile={profile} wallets={profile.wallets().values()} isLoading={true} />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -416,8 +416,8 @@ describe("Transactions", () => {
 				<Transactions profile={emptyProfile} wallets={[]} />
 			</Route>,
 			{
-				routes: [emptyProfileURL],
 				history,
+				routes: [emptyProfileURL],
 			},
 		);
 
@@ -430,8 +430,8 @@ describe("Transactions", () => {
 				<Transactions isUpdatingWallet={true} profile={profile} wallets={[]} />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 

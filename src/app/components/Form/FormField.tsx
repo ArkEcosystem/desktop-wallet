@@ -27,14 +27,14 @@ export function FormField({ name, ...properties }: FormFieldProperties) {
 		const error: { message: string } | undefined = get(FormProvider?.errors, name);
 
 		return {
-			isInvalid: !!error,
 			errorMessage: error?.message,
+			isInvalid: !!error,
 		};
 	}, [FormProvider, name]);
 
 	return (
 		<FormFieldStyled isInvalid={isInvalid} className="flex flex-col space-y-2" {...properties}>
-			<FormFieldProvider value={{ isInvalid, name, errorMessage }}>{properties.children}</FormFieldProvider>
+			<FormFieldProvider value={{ errorMessage, isInvalid, name }}>{properties.children}</FormFieldProvider>
 		</FormFieldStyled>
 	);
 }

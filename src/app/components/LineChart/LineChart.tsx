@@ -115,7 +115,7 @@ export const ChartContent = ({
 					setLegend(Object.assign({}, defaultValue, payload));
 				}}
 				data={data}
-				margin={{ top: 0, bottom: 0, left: 26, right: 0 }}
+				margin={{ bottom: 0, left: 26, right: 0, top: 0 }}
 			>
 				<XAxis dataKey="name" axisLine={false} tick={{ fill: "currentcolor" }} tickSize={20} minTickGap={40} />
 				<YAxis axisLine={false} tick={{ fill: "currentColor" }} tickSize={40} />
@@ -159,6 +159,6 @@ export const LineChart = (properties: LineChartProperties) => {
 
 LineChart.defaultProps = {
 	data: [],
-	lines: [],
 	height: 300,
+	lines: [],
 };

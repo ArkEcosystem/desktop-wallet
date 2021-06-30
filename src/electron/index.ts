@@ -77,25 +77,25 @@ function createWindow() {
 	const { width, height } = screen.getPrimaryDisplay().workAreaSize;
 
 	windowState = winState({
-		defaultWidth: width,
 		defaultHeight: height,
+		defaultWidth: width,
 		fullScreen: false,
 	});
 
 	mainWindow = new BrowserWindow({
-		width: windowState.width,
-		height: windowState.height,
-		minWidth: 1024,
-		minHeight: 600,
-		x: windowState.x,
-		y: windowState.y,
 		backgroundColor: "#f7fafb",
 		center: true,
+		height: windowState.height,
+		minHeight: 600,
+		minWidth: 1024,
 		show: true,
 		webPreferences: {
 			nodeIntegration: true,
 			webviewTag: true,
 		},
+		width: windowState.width,
+		x: windowState.x,
+		y: windowState.y,
 	});
 
 	windowState.manage(mainWindow);
@@ -126,7 +126,7 @@ assignMenu();
 app.on("ready", () => {
 	createWindow();
 	setupUpdater({ ipcMain, isDev, mainWindow });
-	handleSingleInstance({ mainWindow, broadcastURL });
+	handleSingleInstance({ broadcastURL, mainWindow });
 });
 
 app.on("window-all-closed", () => {

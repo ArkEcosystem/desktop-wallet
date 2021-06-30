@@ -22,8 +22,8 @@ enum IpcEvent {
 }
 
 const downloadProgressDefaults = () => ({
-	total: 0,
 	percent: 0,
+	total: 0,
 	transferred: 0,
 });
 
@@ -74,7 +74,7 @@ export const useUpdater = () => {
 		};
 
 		const updateDownloadProgress = (_: any, { total, percent, transferred }: any) => {
-			setDownloadProgress({ total, percent, transferred });
+			setDownloadProgress({ percent, total, transferred });
 		};
 
 		ipcRenderer.on(IpcEvent.UPDATE_DOWNLOADED, updateDownloaded);
@@ -88,10 +88,10 @@ export const useUpdater = () => {
 
 	return {
 		cancel,
-		notifyForUpdates,
-		downloadUpdate,
-		quitInstall,
 		downloadProgress,
 		downloadStatus,
+		downloadUpdate,
+		notifyForUpdates,
+		quitInstall,
 	};
 };

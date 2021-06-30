@@ -79,11 +79,11 @@ export const SendDelegateResignation = () => {
 
 		try {
 			const signatory = await sign({
-				mnemonic,
-				secondMnemonic,
 				encryptionPassword,
-				wif,
+				mnemonic,
 				privateKey,
+				secondMnemonic,
+				wif,
 			});
 
 			const signedTransactionId = await activeWallet.transaction().signDelegateResignation({
@@ -103,7 +103,7 @@ export const SendDelegateResignation = () => {
 		} catch (error) {
 			if (isMnemonicError(error)) {
 				setValue("mnemonic", "");
-				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
+				return setError("mnemonic", { message: t("TRANSACTION.INVALID_MNEMONIC"), type: "manual" });
 			}
 
 			setActiveTab(5);

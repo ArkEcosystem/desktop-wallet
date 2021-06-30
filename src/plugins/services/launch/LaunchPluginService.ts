@@ -4,8 +4,8 @@ import { PluginService, PluginServiceIdentifier } from "plugins/types";
 export class LaunchPluginService implements PluginService {
 	config() {
 		return {
-			id: PluginServiceIdentifier.Launch,
 			accessor: "launch",
+			id: PluginServiceIdentifier.Launch,
 		};
 	}
 

@@ -47,10 +47,10 @@ export const SuccessStep = ({ nameMaxLength, profile }: { nameMaxLength: number;
 					data-testid="CreateWallet__wallet-name"
 					ref={register({
 						maxLength: {
-							value: nameMaxLength,
 							message: t("WALLETS.PAGE_CREATE_WALLET.VALIDATION.MAXLENGTH_ERROR", {
 								maxLength: nameMaxLength,
 							}),
+							value: nameMaxLength,
 						},
 						validate: {
 							duplicateAlias: (alias) =>

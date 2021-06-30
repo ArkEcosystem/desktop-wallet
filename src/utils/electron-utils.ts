@@ -11,8 +11,8 @@ interface DialogOptions {
 }
 
 const defaultFilters = [
-	{ name: "JSON", extensions: ["json"] },
-	{ name: "All Files", extensions: ["*"] },
+	{ extensions: ["json"], name: "JSON" },
+	{ extensions: ["*"], name: "All Files" },
 ];
 
 const defaultEncode = "utf8";

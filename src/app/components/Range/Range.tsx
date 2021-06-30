@@ -59,10 +59,10 @@ export const Range = ({ values, min, max, step, onChange, isInvalid }: Propertie
 							data-testid="Range__track__filled"
 							style={{
 								background: getTrackBackground({
-									values,
 									colors: [color, "transparent"],
-									min,
 									max,
+									min,
+									values,
 								}),
 							}}
 							ref={track.ref}
@@ -80,8 +80,8 @@ export const Range = ({ values, min, max, step, onChange, isInvalid }: Propertie
 };
 
 Range.defaultProps = {
-	min: 1,
-	max: 100,
-	step: 1,
 	colors: ["var(--theme-color-primary-600)", "var(--theme-color-secondary-400)"],
+	max: 100,
+	min: 1,
+	step: 1,
 };

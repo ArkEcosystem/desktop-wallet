@@ -33,6 +33,6 @@ export const TransactionField = ({
 );
 
 TransactionField.defaultProps = {
-	className: "",
 	border: false,
+	className: "",
 };

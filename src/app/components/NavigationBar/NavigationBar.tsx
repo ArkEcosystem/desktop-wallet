@@ -308,9 +308,9 @@ const NavigationBar = ({
 };
 
 NavigationBar.defaultProps = {
-	variant: "full",
 	menu: [],
 	userActions: [],
+	variant: "full",
 };
 
 export { NavigationBar, NavigationButtonWrapper };

@@ -24,7 +24,7 @@ describe("useProfileBalance", () => {
 
 		const {
 			result: { current },
-		} = renderHook(() => useProfileBalance({ profile, isLoading: true }), { wrapper });
+		} = renderHook(() => useProfileBalance({ isLoading: true, profile }), { wrapper });
 
 		expect(current.convertedBalance).toEqual(0);
 	});

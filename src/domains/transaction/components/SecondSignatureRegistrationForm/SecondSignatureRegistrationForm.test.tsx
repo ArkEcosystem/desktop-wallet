@@ -28,21 +28,21 @@ describe("SecondSignatureRegistrationForm", () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
 		fees = {
-			min: "0",
-			max: "10",
 			avg: "1.354",
+			max: "10",
+			min: "0",
 		};
 	});
 
 	const createTransactionMock = (wallet: ProfilesContracts.IReadWriteWallet) =>
 		// @ts-ignore
 		jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
-			id: () => secondSignatureFixture.data.id,
-			sender: () => secondSignatureFixture.data.sender,
-			recipient: () => secondSignatureFixture.data.recipient,
 			amount: () => secondSignatureFixture.data.amount / 1e8,
-			fee: () => secondSignatureFixture.data.fee / 1e8,
 			data: () => ({ data: () => secondSignatureFixture.data }),
+			fee: () => secondSignatureFixture.data.fee / 1e8,
+			id: () => secondSignatureFixture.data.id,
+			recipient: () => secondSignatureFixture.data.recipient,
+			sender: () => secondSignatureFixture.data.sender,
 		});
 
 	const Component = ({
@@ -297,12 +297,12 @@ describe("SecondSignatureRegistrationForm", () => {
 			);
 		};
 		const transaction = {
-			id: () => secondSignatureFixture.data.id,
-			sender: () => secondSignatureFixture.data.sender,
-			recipient: () => secondSignatureFixture.data.recipient,
 			amount: () => secondSignatureFixture.data.amount / 1e8,
-			fee: () => secondSignatureFixture.data.fee / 1e8,
 			data: () => ({ data: () => secondSignatureFixture.data }),
+			fee: () => secondSignatureFixture.data.fee / 1e8,
+			id: () => secondSignatureFixture.data.id,
+			recipient: () => secondSignatureFixture.data.recipient,
+			sender: () => secondSignatureFixture.data.sender,
 		} as Contracts.SignedTransactionData;
 		const { asFragment } = render(<DetailsComponent />);
 
@@ -320,8 +320,8 @@ describe("SecondSignatureRegistrationForm", () => {
 			getValues: () => ({
 				fee: "1",
 				mnemonic: "sample passphrase",
-				senderAddress: wallet.address(),
 				secondMnemonic: "second sample passphrase",
+				senderAddress: wallet.address(),
 			}),
 			setError: jest.fn(),
 			setValue: jest.fn(),
@@ -331,8 +331,8 @@ describe("SecondSignatureRegistrationForm", () => {
 			.mockReturnValue(Promise.resolve(secondSignatureFixture.data.id));
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [secondSignatureFixture.data.id],
-			rejected: [],
 			errors: {},
+			rejected: [],
 		});
 		const transactionMock = createTransactionMock(wallet);
 
@@ -357,8 +357,8 @@ describe("SecondSignatureRegistrationForm", () => {
 			getValues: () => ({
 				fee: "1",
 				mnemonic: "sample passphrase",
-				senderAddress: wallet.address(),
 				secondMnemonic: "second sample passphrase",
+				senderAddress: wallet.address(),
 			}),
 			setError: jest.fn(),
 			setValue: jest.fn(),
@@ -370,8 +370,8 @@ describe("SecondSignatureRegistrationForm", () => {
 		});
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [secondSignatureFixture.data.id],
-			rejected: [],
 			errors: {},
+			rejected: [],
 		});
 		const transactionMock = createTransactionMock(wallet);
 
@@ -404,9 +404,9 @@ describe("SecondSignatureRegistrationForm", () => {
 		const form = {
 			clearErrors: jest.fn(),
 			getValues: () => ({
+				encryptionPassword: "password",
 				fee: "1",
 				senderAddress: wallet.address(),
-				encryptionPassword: "password",
 			}),
 			setError: jest.fn(),
 			setValue: jest.fn(),
@@ -416,8 +416,8 @@ describe("SecondSignatureRegistrationForm", () => {
 			.mockReturnValue(Promise.resolve(secondSignatureFixture.data.id));
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [secondSignatureFixture.data.id],
-			rejected: [],
 			errors: {},
+			rejected: [],
 		});
 		const transactionMock = createTransactionMock(wallet);
 

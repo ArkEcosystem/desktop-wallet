@@ -28,7 +28,7 @@ export const ReviewRating = (properties: ReviewRatingProperties) => (
 );
 
 ReviewRating.defaultProps = {
+	showTotal: false,
 	value: 0,
 	width: 4,
-	showTotal: false,
 };

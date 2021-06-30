@@ -21,18 +21,18 @@ export const useValidation = () => {
 
 	return useMemo(
 		() => ({
-			common: common(t),
 			authentication: authentication(t),
-			delegateRegistration: delegateRegistration(t),
-			sendTransfer: sendTransfer(t),
-			sendIpfs: sendIpfs(t),
-			sendVote: sendVote(t),
-			multiSignatureRegistration: multiSignatureRegistration(t),
-			receiveFunds: receiveFunds(t),
-			verifyMessage: verifyMessage(t),
+			common: common(t),
 			createProfile: createProfile(t, env),
-			settings: settings(t, env),
+			delegateRegistration: delegateRegistration(t),
+			multiSignatureRegistration: multiSignatureRegistration(t),
 			password: password(t),
+			receiveFunds: receiveFunds(t),
+			sendIpfs: sendIpfs(t),
+			sendTransfer: sendTransfer(t),
+			sendVote: sendVote(t),
+			settings: settings(t, env),
+			verifyMessage: verifyMessage(t),
 		}),
 		[t, env],
 	);

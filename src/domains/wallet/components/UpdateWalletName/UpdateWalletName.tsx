@@ -29,7 +29,7 @@ export const UpdateWalletName = ({
 	onSave,
 	validation,
 }: UpdateWalletNameProperties) => {
-	const methods = useForm<Record<string, any>>({ mode: "onChange", defaultValues: { name: currentAlias } });
+	const methods = useForm<Record<string, any>>({ defaultValues: { name: currentAlias }, mode: "onChange" });
 	const { formState, register, setValue } = methods;
 	const { isValid, errors } = formState;
 
@@ -63,19 +63,14 @@ export const UpdateWalletName = ({
 							isInvalid={!isValid}
 							data-testid="UpdateWalletName__input"
 							ref={register({
+								maxLength: {
+									message: t("COMMON.VALIDATION.MAX_LENGTH", {
+										field: t("COMMON.NAME"),
+										maxLength: nameMaxLength,
+									}),
+									value: nameMaxLength,
+								},
 								validate: {
-									whitespaceOnly: (alias) => {
-										if (alias.length > 0) {
-											return (
-												alias.trim().length > 0 ||
-												t("COMMON.VALIDATION.FIELD_INVALID", {
-													field: t("WALLETS.WALLET_NAME"),
-												}).toString()
-											);
-										}
-
-										return true;
-									},
 									duplicateAlias: (alias) =>
 										!alias ||
 										profile
@@ -91,13 +86,18 @@ export const UpdateWalletName = ({
 											alias: alias.trim(),
 										}).toString(),
 									validation: validation!,
-								},
-								maxLength: {
-									value: nameMaxLength,
-									message: t("COMMON.VALIDATION.MAX_LENGTH", {
-										field: t("COMMON.NAME"),
-										maxLength: nameMaxLength,
-									}),
+									whitespaceOnly: (alias) => {
+										if (alias.length > 0) {
+											return (
+												alias.trim().length > 0 ||
+												t("COMMON.VALIDATION.FIELD_INVALID", {
+													field: t("WALLETS.WALLET_NAME"),
+												}).toString()
+											);
+										}
+
+										return true;
+									},
 								},
 							})}
 						/>

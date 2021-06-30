@@ -55,7 +55,7 @@ export const News = ({ itemsPerPage = 15 }: Properties) => {
 
 	const { t } = useTranslation();
 
-	useEffect(() => window.scrollTo({ top: 0, behavior: "smooth" }), [currentPage, coins]);
+	useEffect(() => window.scrollTo({ behavior: "smooth", top: 0 }), [currentPage, coins]);
 
 	useEffect(() => {
 		const fetchNews = async () => {

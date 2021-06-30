@@ -26,8 +26,8 @@ const useSentry = () => {
 					.map((wallet) => wallet.networkId()),
 			),
 			settings: {
-				screenshotProtection: profile.settings().get(Contracts.ProfileSetting.ScreenshotProtection),
 				advancedMode: profile.settings().get(Contracts.ProfileSetting.AdvancedMode),
+				screenshotProtection: profile.settings().get(Contracts.ProfileSetting.ScreenshotProtection),
 				signOutPeriod: profile.settings().get(Contracts.ProfileSetting.AutomaticSignOutPeriod),
 				useTestNetworks: profile.settings().get(Contracts.ProfileSetting.UseTestNetworks),
 			},
@@ -43,8 +43,8 @@ const useSentry = () => {
 
 		Sentry.setContext("wallet", {
 			id: wallet.id(),
-			networkId: wallet.networkId(),
 			isLedger: wallet.isLedger(),
+			networkId: wallet.networkId(),
 		});
 	};
 
@@ -95,10 +95,10 @@ const useSentry = () => {
 		captureException,
 		captureMessage,
 		initSentry,
-		stopSentry,
 		setLedgerContext,
 		setProfileContext,
 		setWalletContext,
+		stopSentry,
 	};
 };
 

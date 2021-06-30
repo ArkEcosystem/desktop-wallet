@@ -39,9 +39,9 @@ export const WalletCard = ({
 
 	const alias = useWalletAlias({
 		address: wallet?.address() || "",
-		profile: activeProfile,
 		coinId: wallet?.coinId(),
 		networkId: wallet?.networkId(),
+		profile: activeProfile,
 	});
 
 	if (isLoading) {

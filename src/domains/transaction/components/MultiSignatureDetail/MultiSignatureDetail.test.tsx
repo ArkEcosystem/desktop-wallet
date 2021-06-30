@@ -23,12 +23,12 @@ describe("MultiSignatureDetail", () => {
 	let wallet: Contracts.IReadWriteWallet;
 
 	const fixtures: Record<string, any> = {
-		transfer: undefined,
-		multiSignature: undefined,
-		multiPayment: undefined,
-		vote: undefined,
-		unvote: undefined,
 		ipfs: undefined,
+		multiPayment: undefined,
+		multiSignature: undefined,
+		transfer: undefined,
+		unvote: undefined,
+		vote: undefined,
 	};
 
 	beforeEach(async () => {
@@ -48,12 +48,12 @@ describe("MultiSignatureDetail", () => {
 				.coin()
 				.transaction()
 				.transfer({
-					nonce: "1",
-					fee: "1",
 					data: {
-						to: wallet.address(),
 						amount: "1",
+						to: wallet.address(),
 					},
+					fee: "1",
+					nonce: "1",
 					signatory: await wallet
 						.coin()
 						.signatory()
@@ -66,13 +66,13 @@ describe("MultiSignatureDetail", () => {
 				.coin()
 				.transaction()
 				.multiSignature({
-					nonce: "1",
-					fee: "1",
 					data: {
 						min: 2,
 						publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
 						senderPublicKey: wallet.publicKey()!,
 					},
+					fee: "1",
+					nonce: "1",
 					signatory: await wallet
 						.coin()
 						.signatory()
@@ -85,8 +85,6 @@ describe("MultiSignatureDetail", () => {
 				.coin()
 				.transaction()
 				.multiPayment({
-					nonce: "1",
-					fee: "1",
 					data: {
 						payments: [
 							{
@@ -99,6 +97,8 @@ describe("MultiSignatureDetail", () => {
 							},
 						],
 					},
+					fee: "1",
+					nonce: "1",
 					signatory: await wallet
 						.coin()
 						.signatory()
@@ -111,12 +111,12 @@ describe("MultiSignatureDetail", () => {
 				.coin()
 				.transaction()
 				.vote({
-					nonce: "1",
-					fee: "1",
 					data: {
-						votes: ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
 						unvotes: [],
+						votes: ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
 					},
+					fee: "1",
+					nonce: "1",
 					signatory: await wallet
 						.coin()
 						.signatory()
@@ -129,12 +129,12 @@ describe("MultiSignatureDetail", () => {
 				.coin()
 				.transaction()
 				.vote({
-					nonce: "1",
-					fee: "1",
 					data: {
-						votes: [],
 						unvotes: ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
+						votes: [],
 					},
+					fee: "1",
+					nonce: "1",
 					signatory: await wallet
 						.coin()
 						.signatory()
@@ -147,11 +147,11 @@ describe("MultiSignatureDetail", () => {
 				.coin()
 				.transaction()
 				.ipfs({
-					nonce: "1",
-					fee: "1",
 					data: {
 						hash: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco",
 					},
+					fee: "1",
+					nonce: "1",
 					signatory: await wallet
 						.coin()
 						.signatory()

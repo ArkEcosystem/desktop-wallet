@@ -55,7 +55,7 @@ export const Transactions = memo(
 			activeTransactionType,
 			fetchMore,
 			hasMore,
-		} = useProfileTransactions({ profile, wallets, showUnconfirmed });
+		} = useProfileTransactions({ profile, showUnconfirmed, wallets });
 
 		useEffect(() => {
 			if (isLoading) {

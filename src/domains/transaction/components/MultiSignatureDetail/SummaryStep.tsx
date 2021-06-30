@@ -48,17 +48,17 @@ export const SummaryStep = ({
 		votes: Contracts.IReadOnlyWallet[];
 		unvotes: Contracts.IReadOnlyWallet[];
 	}>({
-		votes: [],
 		unvotes: [],
+		votes: [],
 	});
 
 	const titles: Record<string, string> = {
-		transfer: "TRANSACTION.TRANSACTION_TYPES.TRANSFER",
-		multiSignature: "TRANSACTION.TRANSACTION_TYPES.MULTI_SIGNATURE",
-		multiPayment: "TRANSACTION.TRANSACTION_TYPES.MULTI_PAYMENT",
-		vote: "TRANSACTION.TRANSACTION_TYPES.VOTE",
-		unvote: "TRANSACTION.TRANSACTION_TYPES.UNVOTE",
 		ipfs: "TRANSACTION.TRANSACTION_TYPES.IPFS",
+		multiPayment: "TRANSACTION.TRANSACTION_TYPES.MULTI_PAYMENT",
+		multiSignature: "TRANSACTION.TRANSACTION_TYPES.MULTI_SIGNATURE",
+		transfer: "TRANSACTION.TRANSACTION_TYPES.TRANSFER",
+		unvote: "TRANSACTION.TRANSACTION_TYPES.UNVOTE",
+		vote: "TRANSACTION.TRANSACTION_TYPES.VOTE",
 	};
 
 	useEffect(() => {
@@ -74,8 +74,8 @@ export const SummaryStep = ({
 				const unvotes = asset.votes.filter((vote) => vote.startsWith("-")).map((s) => s.slice(1));
 
 				setDelegates({
-					votes: env.delegates().map(wallet, votes),
 					unvotes: env.delegates().map(wallet, unvotes),
+					votes: env.delegates().map(wallet, votes),
 				});
 			}
 		};

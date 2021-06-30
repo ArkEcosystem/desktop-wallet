@@ -5,12 +5,12 @@ import { fireEvent, render, waitFor } from "testing-library";
 import { LineChart } from "./LineChart";
 
 const period = "22 Jun - 28 Jun";
-const data = [{ name: "Mmn", label: "22 Jun, 2020", usd: 1000, btc: 2400, formatted: { usd: "1,000", btc: "0.26" } }];
+const data = [{ btc: 2400, formatted: { btc: "0.26", usd: "1,000" }, label: "22 Jun, 2020", name: "Mmn", usd: 1000 }];
 const lines = [
 	{
+		color: "warning-600",
 		dataKey: "btc",
 		label: "BTC",
-		color: "warning-600",
 	},
 ];
 

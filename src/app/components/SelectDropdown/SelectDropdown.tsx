@@ -89,15 +89,8 @@ const SelectDropdown = ({
 		selectedItem,
 	} = useCombobox<Option | null>({
 		id,
-		items: options,
 		itemToString,
-		onSelectedItemChange: ({ selectedItem }) => {
-			if (allowFreeInput) {
-				return;
-			}
-
-			onSelectedItemChange?.({ selected: selectedItem });
-		},
+		items: options,
 		onInputValueChange: ({ inputValue, selectedItem, type }) => {
 			if (type === "__input_change__") {
 				setIsTyping(true);
@@ -127,6 +120,13 @@ const SelectDropdown = ({
 			if (selectedItem && selectedItem.label !== inputValue) {
 				reset();
 			}
+		},
+		onSelectedItemChange: ({ selectedItem }) => {
+			if (allowFreeInput) {
+				return;
+			}
+
+			onSelectedItemChange?.({ selected: selectedItem });
 		},
 	});
 
@@ -221,11 +221,11 @@ const SelectDropdown = ({
 					addons={addons}
 					innerClassName={cn({ "cursor-default": !inputValue }, innerClassName)}
 					{...getInputProps({
-						placeholder,
 						className,
-						onFocus: openMenu,
 						onBlur: handleBlur,
+						onFocus: openMenu,
 						onKeyDown: handleKeyDown,
+						placeholder,
 					})}
 				/>
 				<SelectOptionsList {...getMenuProps({ className: isOpen ? "is-open" : "" })}>
@@ -236,13 +236,13 @@ const SelectDropdown = ({
 									key={`${item.value}${index}`}
 									data-testid={`SelectDropdown__option--${index}`}
 									{...getItemProps({
-										index,
-										item,
 										className: cn(
 											"select-list-option",
 											{ "is-highlighted": highlightedIndex === index },
 											{ "is-selected": item.label === inputValue },
 										),
+										index,
+										item,
 										onMouseDown: () => {
 											selectItem(item);
 											handleInputChange({ selectedItem: item });
@@ -288,7 +288,7 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProperties>(
 		const defaultSelectedItem = useMemo(
 			() =>
 				allowFreeInput
-					? ({ value: defaultValue, label: defaultValue } as Option)
+					? ({ label: defaultValue, value: defaultValue } as Option)
 					: options.find((option: Option) => option.value === defaultValue),
 			[defaultValue, allowFreeInput, options],
 		);
@@ -334,8 +334,8 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProperties>(
 
 Select.displayName = "Select";
 Select.defaultProps = {
-	options: [],
 	defaultValue: "",
-	placeholder: "Select option",
 	disabled: false,
+	options: [],
+	placeholder: "Select option",
 };

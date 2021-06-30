@@ -2,18 +2,18 @@ import { CreateWallet, ImportWallet, WalletDetails } from "./pages";
 
 export const WalletRoutes = [
 	{
-		path: "/profiles/:profileId/wallets/create",
-		exact: true,
 		component: CreateWallet,
+		exact: true,
+		path: "/profiles/:profileId/wallets/create",
 	},
 	{
-		path: "/profiles/:profileId/wallets/import",
-		exact: true,
 		component: ImportWallet,
+		exact: true,
+		path: "/profiles/:profileId/wallets/import",
 	},
 	{
-		path: "/profiles/:profileId/wallets/:walletId",
-		exact: true,
 		component: WalletDetails,
+		exact: true,
+		path: "/profiles/:profileId/wallets/:walletId",
 	},
 ];

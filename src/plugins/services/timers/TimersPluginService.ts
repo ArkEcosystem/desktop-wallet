@@ -3,8 +3,8 @@ import { PluginService, PluginServiceIdentifier } from "plugins/types";
 export class TimersPluginService implements PluginService {
 	config() {
 		return {
-			id: PluginServiceIdentifier.Timers,
 			accessor: "timers",
+			id: PluginServiceIdentifier.Timers,
 		};
 	}
 

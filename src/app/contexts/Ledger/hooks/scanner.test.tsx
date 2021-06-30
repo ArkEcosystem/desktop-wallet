@@ -19,7 +19,6 @@ describe("Use Ledger Scanner", () => {
 			.get("/wallets")
 			.query((parameters) => !!parameters.address)
 			.reply(200, {
-				meta: {},
 				data: [
 					{
 						address: "DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES",
@@ -34,18 +33,19 @@ describe("Use Ledger Scanner", () => {
 						balance: "3",
 					},
 				],
+				meta: {},
 			})
 			.get("/wallets")
 			.query((parameters) => !!parameters.address)
 			.reply(200, {
-				meta: {},
 				data: [],
+				meta: {},
 			})
 			.get("/wallets")
 			.query((parameters) => !!parameters.address)
 			.reply(200, {
-				meta: {},
 				data: [],
+				meta: {},
 			});
 	});
 

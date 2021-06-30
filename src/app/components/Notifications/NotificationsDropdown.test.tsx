@@ -51,8 +51,8 @@ describe("Notifications", () => {
 				<NotificationsDropdown profile={profile} />
 			</Route>,
 			{
-				routes: [`/profiles/${getDefaultProfileId()}/dashboard`],
 				history,
+				routes: [`/profiles/${getDefaultProfileId()}/dashboard`],
 			},
 		);
 
@@ -84,8 +84,8 @@ describe("Notifications", () => {
 				<NotificationsDropdown profile={profile} />
 			</Route>,
 			{
-				routes: [`/profiles/${getDefaultProfileId()}/dashboard`],
 				history,
+				routes: [`/profiles/${getDefaultProfileId()}/dashboard`],
 			},
 		);
 
@@ -117,8 +117,8 @@ describe("Notifications", () => {
 				<NotificationsDropdown profile={profile} />
 			</Route>,
 			{
-				routes: [`/profiles/${getDefaultProfileId()}/dashboard`],
 				history,
+				routes: [`/profiles/${getDefaultProfileId()}/dashboard`],
 			},
 		);
 

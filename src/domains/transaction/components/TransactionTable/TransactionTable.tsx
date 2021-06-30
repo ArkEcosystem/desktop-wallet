@@ -37,8 +37,8 @@ export const TransactionTable = memo(
 		const initialState = {
 			sortBy: [
 				{
-					id: "date",
 					desc: true,
+					id: "date",
 				},
 			],
 		};
@@ -47,11 +47,11 @@ export const TransactionTable = memo(
 			const commonColumns: any = [
 				{
 					Header: t("COMMON.DATE"),
-					id: "date",
 					accessor: (transaction: DTO.ExtendedConfirmedTransactionData) =>
 						transaction.timestamp?.()?.toUNIX(),
-					sortDescFirst: true,
 					cellWidth: "w-50",
+					id: "date",
+					sortDescFirst: true,
 				},
 				{
 					Header: t("COMMON.RECIPIENT"),
@@ -68,10 +68,10 @@ export const TransactionTable = memo(
 				},
 				{
 					Header: t("COMMON.AMOUNT"),
-					id: "amount",
 					accessor: (transaction: DTO.ExtendedConfirmedTransactionData) => transaction.total?.(),
-					sortDescFirst: true,
 					className: "justify-end",
+					id: "amount",
+					sortDescFirst: true,
 				},
 			];
 
@@ -82,9 +82,9 @@ export const TransactionTable = memo(
 					},
 					{
 						Header: t("COMMON.AMOUNT"),
-						id: "amount",
 						accessor: (transaction: DTO.ExtendedConfirmedTransactionData) => transaction.total?.(),
 						className: "justify-end",
+						id: "amount",
 					},
 				];
 			}
@@ -99,12 +99,12 @@ export const TransactionTable = memo(
 			if (exchangeCurrency) {
 				return [
 					...commonColumns,
-					{ Header: t("COMMON.CURRENCY"), className: "justify-end float-right", cellWidth: "w-24" },
+					{ Header: t("COMMON.CURRENCY"), cellWidth: "w-24", className: "justify-end float-right" },
 				];
 			}
 
 			if (showSignColumn) {
-				return [...commonColumns, { Header: "Sign", className: "invisible", cellWidth: "w-24" }];
+				return [...commonColumns, { Header: "Sign", cellWidth: "w-24", className: "invisible" }];
 			}
 
 			return commonColumns;

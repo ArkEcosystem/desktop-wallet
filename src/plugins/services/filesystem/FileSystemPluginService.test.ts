@@ -7,9 +7,9 @@ import { env } from "utils/testing-library";
 import { FileSystemPluginService } from "./FileSystemPluginService";
 
 const config = {
+	"desktop-wallet": { permissions: ["FILESYSTEM"] },
 	name: "test",
 	version: "1.1",
-	"desktop-wallet": { permissions: ["FILESYSTEM"] },
 };
 
 describe("FileSystemPluginService", () => {

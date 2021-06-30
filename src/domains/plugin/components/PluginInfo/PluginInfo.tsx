@@ -79,13 +79,13 @@ export const PluginInfo = ({ description, permissions, images, minimumVersion }:
 							data={images}
 							options={{
 								pagination: {
-									el: ".screenshots-pagination",
 									clickable: true,
+									el: ".screenshots-pagination",
 								},
 								slideHeight: 200,
-								slidesPerView: 3,
 								slidesPerColumn: 1,
 								slidesPerGroup: 3,
+								slidesPerView: 3,
 								spaceBetween: 18,
 							}}
 						>
@@ -118,6 +118,6 @@ export const PluginInfo = ({ description, permissions, images, minimumVersion }:
 };
 
 PluginInfo.defaultProps = {
-	permissions: [],
 	images: [],
+	permissions: [],
 };

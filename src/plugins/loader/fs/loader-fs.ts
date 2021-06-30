@@ -61,10 +61,10 @@ export class PluginLoaderFileSystem {
 			const source = fs.readFileSync(sourcePath, "utf-8");
 
 			return {
-				sourcePath,
-				source,
 				config,
 				dir,
+				source,
+				sourcePath,
 			};
 		}
 	}
@@ -74,11 +74,11 @@ export class PluginLoaderFileSystem {
 
 		for (const cwd of this.#roots) {
 			const match = glob.sync("**/package.json", {
-				cwd,
-				matchBase: true,
-				ignore: "**/node_modules/**/*",
-				nodir: true,
 				absolute: true,
+				cwd,
+				ignore: "**/node_modules/**/*",
+				matchBase: true,
+				nodir: true,
 			});
 
 			files.push(...match);

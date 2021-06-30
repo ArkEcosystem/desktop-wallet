@@ -11,17 +11,17 @@ import { InputFee } from "./InputFee";
 import { InputFeeProperties, InputFeeSimpleValue, InputFeeViewType } from "./InputFee.contracts";
 
 const getDefaultProperties = (): InputFeeProperties => ({
-	min: 0.006,
-	max: 0.5,
 	avg: 0.456,
-	value: "0.3",
-	step: 0.001,
 	disabled: false,
-	viewType: InputFeeViewType.Simple,
-	simpleValue: InputFeeSimpleValue.Average,
+	max: 0.5,
+	min: 0.006,
 	onChange: jest.fn(),
-	onChangeViewType: jest.fn(),
 	onChangeSimpleValue: jest.fn(),
+	onChangeViewType: jest.fn(),
+	simpleValue: InputFeeSimpleValue.Average,
+	step: 0.001,
+	value: "0.3",
+	viewType: InputFeeViewType.Simple,
 });
 
 let defaultProps: InputFeeProperties;

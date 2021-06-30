@@ -23,7 +23,7 @@ describe("Plugin View", () => {
 
 	it("should render plugin content", async () => {
 		const plugin = new PluginController(
-			{ name: "test-plugin", "desktop-wallet": { permissions: ["LAUNCH"] } },
+			{ "desktop-wallet": { permissions: ["LAUNCH"] }, name: "test-plugin" },
 			(api) => api.launch().render(<h1>My Plugin View</h1>),
 		);
 

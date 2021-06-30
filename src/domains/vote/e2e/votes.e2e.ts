@@ -9,8 +9,8 @@ const translations = buildTranslations();
 
 const transactionMock = mockRequest(
 	{
-		url: "https://dwallets.ark.io/api/transactions",
 		method: "POST",
+		url: "https://dwallets.ark.io/api/transactions",
 	},
 	{
 		data: {
@@ -24,25 +24,25 @@ const transactionMock = mockRequest(
 
 const walletMock = mockRequest(
 	{
-		url: "https://dwallets.ark.io/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 		method: "POST",
+		url: "https://dwallets.ark.io/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 	},
 	{
 		data: {
 			address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
-			publicKey: "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
-			nonce: "245",
-			balance: "3375089801",
 			attributes: {
 				htlc: {
-					locks: {},
 					lockedBalance: "0",
+					locks: {},
 				},
 			},
-			multiSignature: {},
-			lockedBalance: "0",
+			balance: "3375089801",
 			isDelegate: false,
 			isResigned: false,
+			lockedBalance: "0",
+			multiSignature: {},
+			nonce: "245",
+			publicKey: "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
 		},
 	},
 );
@@ -52,8 +52,8 @@ createFixture("Votes", [
 	walletMock,
 	mockRequest(
 		{
-			url: "https://dmusig1.ark.io/transaction",
 			method: "POST",
+			url: "https://dmusig1.ark.io/transaction",
 		},
 		{
 			id: "transaction-id",

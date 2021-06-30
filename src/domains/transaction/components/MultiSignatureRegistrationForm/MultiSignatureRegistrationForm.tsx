@@ -60,22 +60,22 @@ const signTransaction = async ({ env, form, profile }: SendRegistrationSignOptio
 	const publicKeys = (participants as Participant[]).map((item) => item.publicKey);
 
 	const uuid = await senderWallet!.transaction().signMultiSignature({
-		nonce: senderWallet!.nonce().plus(1).toString(),
+		data: {
+			min: +minParticipants,
+			publicKeys: [...publicKeys],
+			senderPublicKey: senderWallet!.publicKey(),
+		},
 		fee: +fee,
+		nonce: senderWallet!.nonce().plus(1).toString(),
 		signatory: await senderWallet!
 			.coin()
 			.signatory()
 			.multiSignature(+minParticipants, publicKeys),
-		data: {
-			publicKeys: [...publicKeys],
-			min: +minParticipants,
-			senderPublicKey: senderWallet!.publicKey(),
-		},
 	});
 
 	const { accepted, rejected, errors } = await senderWallet!.transaction().broadcast(uuid);
 
-	handleBroadcastError({ accepted, rejected, errors });
+	handleBroadcastError({ accepted, errors, rejected });
 
 	const transactionId = accepted[0];
 
@@ -97,10 +97,10 @@ const signTransaction = async ({ env, form, profile }: SendRegistrationSignOptio
 };
 
 export const MultiSignatureRegistrationForm: SendRegistrationForm = {
-	tabSteps: 2,
 	component: StepsComponent,
-	transactionDetails,
 	formFields: ["participants", "minParticipants"],
-
 	signTransaction,
+	tabSteps: 2,
+
+	transactionDetails,
 };

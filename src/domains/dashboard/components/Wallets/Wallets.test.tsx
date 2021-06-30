@@ -70,8 +70,8 @@ describe("Wallets", () => {
 				<Wallets />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -85,8 +85,8 @@ describe("Wallets", () => {
 				<Wallets isLoading={true} />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -100,8 +100,8 @@ describe("Wallets", () => {
 				<Wallets />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -120,8 +120,8 @@ describe("Wallets", () => {
 				<Wallets />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -147,8 +147,8 @@ describe("Wallets", () => {
 				<Wallets />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -162,8 +162,8 @@ describe("Wallets", () => {
 				<Wallets listPagerLimit={1} />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -191,8 +191,8 @@ describe("Wallets", () => {
 				<Wallets onCreateWallet={onCreateWallet} />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -208,8 +208,8 @@ describe("Wallets", () => {
 				<Wallets onImportWallet={onImportWallet} />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -224,8 +224,8 @@ describe("Wallets", () => {
 				<Wallets />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -267,8 +267,8 @@ describe("Wallets", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -306,8 +306,8 @@ describe("Wallets", () => {
 				<Wallets />
 			</Route>,
 			{
-				routes: [dashboardURL],
 				history,
+				routes: [dashboardURL],
 			},
 		);
 
@@ -331,8 +331,8 @@ describe("Wallets", () => {
 				<Wallets />
 			</Route>,
 			{
-				routes: [`/profiles/${emptyProfile.id()}/dashboard`],
 				history,
+				routes: [`/profiles/${emptyProfile.id()}/dashboard`],
 			},
 		);
 

@@ -54,10 +54,10 @@ export const SignMessage = ({
 	const { t } = useTranslation();
 
 	const form = useForm({
-		mode: "onChange",
 		defaultValues: {
 			message: messageText,
 		},
+		mode: "onChange",
 	});
 	const { formState } = form;
 

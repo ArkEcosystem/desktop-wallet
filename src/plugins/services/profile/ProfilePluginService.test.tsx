@@ -6,9 +6,9 @@ import { env, getDefaultProfileId } from "utils/testing-library";
 import { ProfilePluginService } from "./ProfilePluginService";
 
 const config = {
+	"desktop-wallet": { permissions: ["PROFILE"], urls: [] },
 	name: "test",
 	version: "1.1",
-	"desktop-wallet": { permissions: ["PROFILE"], urls: [] },
 };
 
 describe("ProfilePluginService", () => {

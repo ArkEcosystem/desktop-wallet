@@ -15,7 +15,7 @@ describe("WalletMiddleware", () => {
 			pathname: "/profiles/create",
 		};
 		const redirect = jest.fn();
-		const parameters = { location, redirect, env };
+		const parameters = { env, location, redirect };
 		// @ts-ignore
 		expect(subject.handler(parameters)).toBe(true);
 	});
@@ -25,7 +25,7 @@ describe("WalletMiddleware", () => {
 			pathname: "/profiles/1/wallets/create",
 		};
 		const redirect = jest.fn();
-		const parameters = { location, redirect, env };
+		const parameters = { env, location, redirect };
 		// @ts-ignore
 		expect(subject.handler(parameters)).toBe(true);
 	});
@@ -35,7 +35,7 @@ describe("WalletMiddleware", () => {
 			pathname: "/profiles/1/wallets/1",
 		};
 		const redirect = jest.fn();
-		const parameters = { location, redirect, env };
+		const parameters = { env, location, redirect };
 		// @ts-ignore
 		expect(subject.handler(parameters)).toBe(false);
 		expect(redirect).toHaveBeenCalled();
@@ -49,7 +49,7 @@ describe("WalletMiddleware", () => {
 			pathname: `/profiles/${profile.id()}/wallets/${wallet.id()}`,
 		};
 		const redirect = jest.fn();
-		const parameters = { location, redirect, env };
+		const parameters = { env, location, redirect };
 		// @ts-ignore
 		expect(subject.handler(parameters)).toBe(true);
 	});

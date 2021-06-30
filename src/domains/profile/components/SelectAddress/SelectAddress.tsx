@@ -78,7 +78,6 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 						readOnly
 						isInvalid={isInvalidField}
 						addons={{
-							start: <WalletAvatar address={selectedAddress} />,
 							end: (
 								<div className="flex items-center space-x-3 text-theme-primary-300 dark:text-theme-secondary-600">
 									{isVerified && (
@@ -89,6 +88,7 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 									<Icon name="User" width={20} height={20} />
 								</div>
 							),
+							start: <WalletAvatar address={selectedAddress} />,
 						}}
 					/>
 				</button>

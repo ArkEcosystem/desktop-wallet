@@ -48,7 +48,7 @@ describe("useWalletConfig", () => {
 			</EnvironmentProvider>
 		);
 
-		const { result } = renderHook(() => useWalletConfig({ profile, defaults: { walletsDisplayType: "ledger" } }), {
+		const { result } = renderHook(() => useWalletConfig({ defaults: { walletsDisplayType: "ledger" }, profile }), {
 			wrapper,
 		});
 
@@ -66,7 +66,7 @@ describe("useWalletConfig", () => {
 			</EnvironmentProvider>
 		);
 
-		const { result } = renderHook(() => useWalletConfig({ profile, defaults: { walletsDisplayType: "starred" } }), {
+		const { result } = renderHook(() => useWalletConfig({ defaults: { walletsDisplayType: "starred" }, profile }), {
 			wrapper,
 		});
 
@@ -84,7 +84,7 @@ describe("useWalletConfig", () => {
 			</EnvironmentProvider>
 		);
 
-		const { result } = renderHook(() => useWalletConfig({ profile, defaults: { selectedNetworkIds: [] } }), {
+		const { result } = renderHook(() => useWalletConfig({ defaults: { selectedNetworkIds: [] }, profile }), {
 			wrapper,
 		});
 
@@ -102,7 +102,7 @@ describe("useWalletConfig", () => {
 			</EnvironmentProvider>
 		);
 
-		const { result } = renderHook(() => useWalletConfig({ profile, defaults: { selectedNetworkIds: [] } }), {
+		const { result } = renderHook(() => useWalletConfig({ defaults: { selectedNetworkIds: [] }, profile }), {
 			wrapper,
 		});
 

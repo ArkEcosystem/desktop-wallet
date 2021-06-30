@@ -17,8 +17,8 @@ describe("useProfileTransactions", () => {
 			.reply(200, () => {
 				const { meta, data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
 				return {
-					meta,
 					data: data.slice(0, 2),
+					meta,
 				};
 			})
 			.persist();
@@ -126,10 +126,10 @@ describe("useProfileTransactions", () => {
 		} = renderHook(() => useProfileTransactions({ profile, wallets: profile.wallets().values() }), { wrapper });
 
 		const response = await current.fetchTransactions({
-			wallets: profile.wallets().values(),
 			cursor: 1,
-			mode: "all",
 			flush: true,
+			mode: "all",
+			wallets: profile.wallets().values(),
 		});
 		await waitFor(() => expect(response.items()).toHaveLength(4));
 
@@ -222,7 +222,7 @@ describe("useProfileTransactions", () => {
 		const {
 			result: { current },
 		} = renderHook(
-			() => useProfileTransactions({ profile, wallets: profile.wallets().values(), showUnconfirmed: false }),
+			() => useProfileTransactions({ profile, showUnconfirmed: false, wallets: profile.wallets().values() }),
 			{ wrapper },
 		);
 

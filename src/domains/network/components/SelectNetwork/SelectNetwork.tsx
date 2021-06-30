@@ -70,12 +70,8 @@ export const SelectNetwork = ({
 		reset,
 	} = useCombobox<Network | null>({
 		id,
-		items,
 		itemToString,
-		onSelectedItemChange: ({ selectedItem }) => {
-			setSuggestion("");
-			onSelect?.(selectedItem);
-		},
+		items,
 		onInputValueChange: ({ inputValue, selectedItem }) => {
 			// Clear selection when user is changing input,
 			// and input does not match previously selected item
@@ -101,6 +97,10 @@ export const SelectNetwork = ({
 			setSuggestion(newSuggestion);
 
 			onInputChange?.(inputValue, newSuggestion);
+		},
+		onSelectedItemChange: ({ selectedItem }) => {
+			setSuggestion("");
+			onSelect?.(selectedItem);
 		},
 	});
 
@@ -150,7 +150,6 @@ export const SelectNetwork = ({
 					disabled={disabled}
 					{...getInputProps({
 						name,
-						placeholder: placeholder || t("COMMON.INPUT_NETWORK.PLACEHOLDER"),
 						onFocus: openMenu,
 						onKeyDown: (event: any) => {
 							if (event.key === "Tab" || event.key === "Enter") {
@@ -165,6 +164,7 @@ export const SelectNetwork = ({
 								return;
 							}
 						},
+						placeholder: placeholder || t("COMMON.INPUT_NETWORK.PLACEHOLDER"),
 					})}
 				/>
 			</div>
@@ -217,6 +217,6 @@ export const SelectNetwork = ({
 };
 
 SelectNetwork.defaultProps = {
-	networks: [],
 	disabled: false,
+	networks: [],
 };

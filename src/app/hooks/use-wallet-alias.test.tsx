@@ -37,7 +37,7 @@ describe("UseWalletAlias", () => {
 	it("should return contact name", async () => {
 		const contact = profile.contacts().create("Test");
 		await contact.setAddresses([
-			{ name: wallet.address(), address: wallet.address(), coin: wallet.coinId(), network: wallet.networkId() },
+			{ address: wallet.address(), coin: wallet.coinId(), name: wallet.address(), network: wallet.networkId() },
 		]);
 
 		const { result } = renderHook(() => useWalletAlias({ address: wallet.address(), profile }), { wrapper });
@@ -63,9 +63,9 @@ describe("UseWalletAlias", () => {
 			() =>
 				useWalletAlias({
 					address: delegate.address(),
-					profile,
 					coinId: wallet.coinId(),
 					networkId: wallet.networkId(),
+					profile,
 				}),
 			{ wrapper },
 		);
@@ -85,9 +85,9 @@ describe("UseWalletAlias", () => {
 			() =>
 				useWalletAlias({
 					address: wallet.address(),
-					profile,
 					coinId: wallet.coinId(),
 					networkId: wallet.networkId(),
+					profile,
 				}),
 			{ wrapper },
 		);

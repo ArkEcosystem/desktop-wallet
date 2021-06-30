@@ -14,21 +14,21 @@ describe("SideBar", () => {
 	it("should render with items", () => {
 		const items = [
 			{
+				icon: "General",
 				key: "general",
 				label: "General",
-				icon: "General",
 				route: "/settings/general",
 			},
 			{
+				icon: "Peer",
 				key: "peer",
 				label: "Peer",
-				icon: "Peer",
 				route: "/settings/peer",
 			},
 			{
+				icon: "Plugin",
 				key: "plugins",
 				label: "Plugins",
-				icon: "Plugin",
 				route: "/settings/plugins",
 			},
 		];

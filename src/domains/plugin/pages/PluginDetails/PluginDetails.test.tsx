@@ -32,7 +32,7 @@ describe("PluginDetails", () => {
 
 	it("should render properly", async () => {
 		const plugin = new PluginController(
-			{ name: "test-plugin", "desktop-wallet": { categories: ["exchange"] } },
+			{ "desktop-wallet": { categories: ["exchange"] }, name: "test-plugin" },
 			() => void 0,
 		);
 
@@ -64,7 +64,7 @@ describe("PluginDetails", () => {
 	it("should render properly for remote package", async () => {
 		nock("https://github.com/")
 			.get("/arkecosystem/remote-plugin/raw/master/package.json")
-			.reply(200, { name: "remote-plugin", keywords: ["@arkecosystem", "desktop-wallet"] });
+			.reply(200, { keywords: ["@arkecosystem", "desktop-wallet"], name: "remote-plugin" });
 
 		const FetchComponent = () => {
 			const { fetchLatestPackageConfiguration } = usePluginManagerContext();
@@ -111,8 +111,8 @@ describe("PluginDetails", () => {
 		nock("https://raw.github.com")
 			.get("/dated/transaction-export-plugin/master/package.json")
 			.reply(200, {
-				name: "@dated/transaction-export-plugin",
 				"desktop-wallet": { title: "My Export Transaction" },
+				name: "@dated/transaction-export-plugin",
 			})
 			.get("/dated/delegate-calculator-plugin/master/package.json")
 			.reply(200, require("tests/fixtures/plugins/registry/@dated/delegate-calculator-plugin.json"))
@@ -152,7 +152,7 @@ describe("PluginDetails", () => {
 		const ipcRendererMock = jest.spyOn(ipcRenderer, "send").mockImplementation();
 
 		const plugin = new PluginController(
-			{ name: "test-plugin", "desktop-wallet": { categories: ["exchange"] } },
+			{ "desktop-wallet": { categories: ["exchange"] }, name: "test-plugin" },
 			() => void 0,
 		);
 
@@ -193,7 +193,7 @@ describe("PluginDetails", () => {
 
 	it("should open the plugin view", async () => {
 		const plugin = new PluginController(
-			{ name: "test-plugin", "desktop-wallet": { permissions: ["LAUNCH"] } },
+			{ "desktop-wallet": { permissions: ["LAUNCH"] }, name: "test-plugin" },
 			(api) => api.launch().render(<h1>Test</h1>),
 		);
 		manager.services().register([new LaunchPluginService()]);
@@ -231,7 +231,7 @@ describe("PluginDetails", () => {
 
 	it("should enable package from header", async () => {
 		const plugin = new PluginController(
-			{ name: "test-plugin", "desktop-wallet": { categories: ["exchange"] } },
+			{ "desktop-wallet": { categories: ["exchange"] }, name: "test-plugin" },
 			() => void 0,
 		);
 
@@ -270,7 +270,7 @@ describe("PluginDetails", () => {
 		const toastSpy = jest.spyOn(toasts, "error").mockImplementation();
 
 		const plugin = new PluginController(
-			{ name: "test-plugin", "desktop-wallet": { categories: ["exchange"] } },
+			{ "desktop-wallet": { categories: ["exchange"] }, name: "test-plugin" },
 			{ incompatible: true },
 		);
 
@@ -307,7 +307,7 @@ describe("PluginDetails", () => {
 
 	it("should disable package from header", async () => {
 		const plugin = new PluginController(
-			{ name: "test-plugin", "desktop-wallet": { categories: ["exchange"] } },
+			{ "desktop-wallet": { categories: ["exchange"] }, name: "test-plugin" },
 			() => void 0,
 		);
 
@@ -344,7 +344,7 @@ describe("PluginDetails", () => {
 
 	it("should remove package", async () => {
 		const plugin = new PluginController(
-			{ name: "test-plugin", "desktop-wallet": { categories: ["exchange"] } },
+			{ "desktop-wallet": { categories: ["exchange"] }, name: "test-plugin" },
 			() => void 0,
 		);
 
@@ -385,7 +385,7 @@ describe("PluginDetails", () => {
 
 	it("should close remove confirmation", async () => {
 		const plugin = new PluginController(
-			{ name: "test-plugin", "desktop-wallet": { categories: ["exchange"] } },
+			{ "desktop-wallet": { categories: ["exchange"] }, name: "test-plugin" },
 			() => void 0,
 		);
 
@@ -426,10 +426,10 @@ describe("PluginDetails", () => {
 		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {
 			if (channel === "plugin:loader-fs.find") {
 				return {
-					config: { name: "remote-plugin", version: "0.0.1", keywords: ["@arkecosystem", "desktop-wallet"] },
+					config: { keywords: ["@arkecosystem", "desktop-wallet"], name: "remote-plugin", version: "0.0.1" },
+					dir: "/plugins/remote-plugin",
 					source: () => void 0,
 					sourcePath: "/plugins/remote-plugin/index.js",
-					dir: "/plugins/remote-plugin",
 				};
 			}
 

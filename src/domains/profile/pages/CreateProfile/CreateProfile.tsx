@@ -62,9 +62,9 @@ export const CreateProfile = () => {
 		{
 			isFloatingLabel: true,
 			label: t("SETTINGS.GENERAL.OTHER.DARK_THEME.TITLE"),
+			labelAddon: <Toggle ref={register()} name="isDarkMode" />,
 			labelClass: "text-xl font-semibold",
 			labelDescription: t("SETTINGS.GENERAL.OTHER.DARK_THEME.DESCRIPTION"),
-			labelAddon: <Toggle ref={register()} name="isDarkMode" />,
 		},
 	];
 

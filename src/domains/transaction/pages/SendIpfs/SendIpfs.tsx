@@ -53,13 +53,13 @@ export const SendIpfs = () => {
 		register("fee", common.fee(activeWallet?.balance?.(), activeWallet?.network?.()));
 		register("inputFeeSettings");
 
-		setValue("senderAddress", activeWallet.address(), { shouldValidate: true, shouldDirty: true });
+		setValue("senderAddress", activeWallet.address(), { shouldDirty: true, shouldValidate: true });
 
 		register("suppressWarning");
 
 		for (const network of networks) {
 			if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
-				setValue("network", network, { shouldValidate: true, shouldDirty: true });
+				setValue("network", network, { shouldDirty: true, shouldValidate: true });
 
 				break;
 			}
@@ -80,17 +80,17 @@ export const SendIpfs = () => {
 		const { fee, mnemonic, secondMnemonic, hash, encryptionPassword, wif, privateKey } = getValues();
 
 		const signatory = await sign({
-			mnemonic,
-			secondMnemonic,
 			encryptionPassword,
-			wif,
+			mnemonic,
 			privateKey,
+			secondMnemonic,
+			wif,
 		});
 
 		const transactionInput: Services.IpfsInput = {
+			data: { hash },
 			fee: +fee,
 			signatory,
-			data: { hash },
 		};
 
 		try {
@@ -115,7 +115,7 @@ export const SendIpfs = () => {
 		} catch (error) {
 			if (isMnemonicError(error)) {
 				setValue("mnemonic", "");
-				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
+				return setError("mnemonic", { message: t("TRANSACTION.INVALID_MNEMONIC"), type: "manual" });
 			}
 
 			setActiveTab(5);

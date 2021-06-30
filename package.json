@@ -43,17 +43,7 @@
 		"test": "react-app-rewired --expose-gc test --env=./src/tests/custom-env.js --logHeapUsage",
 		"test:coverage": "react-app-rewired --expose-gc test --env=./src/tests/custom-env.js --logHeapUsage --coverage --watchAll=false",
 		"test:e2e": "cross-env ELECTRON_IS_E2E=1 ELECTRON_IS_DEV=0 testcafe",
-		"preversion": "cross-env ./scripts/version-artifacts.sh",
-		"prepare": "husky install"
-	},
-	"lint-staged": {
-		"*.{css,html,json,md}": [
-			"prettier --write"
-		],
-		"*.{js,ts,tsx}": [
-			"prettier --write",
-			"eslint --fix"
-		]
+		"preversion": "cross-env ./scripts/version-artifacts.sh"
 	},
 	"browserslist": {
 		"production": [
@@ -250,17 +240,16 @@
 		"eslint-plugin-react-hooks": "^4.2.0",
 		"eslint-plugin-simple-import-sort": "^7.0.0",
 		"eslint-plugin-sonarjs": "^0.8.0-125",
+		"eslint-plugin-sort-keys-fix": "^1.1.1",
 		"eslint-plugin-testcafe": "^0.2.1",
 		"eslint-plugin-testing-library": "^4.6.0",
 		"eslint-plugin-unicorn": "^34.0.0",
 		"eslint-plugin-unused-imports": "^1.1.0",
 		"history": "^5.0.0",
-		"husky": "^6.0.0",
 		"jest-circus": "^26.6.3",
 		"jest-extended": "^0.11.5",
 		"jest-fetch-mock": "^3.0.3",
 		"jest-when": "^3.2.1",
-		"lint-staged": "^10.5.4",
 		"mockdate": "^3.0.5",
 		"mutationobserver-shim": "^0.3.7",
 		"nock": "^13.0.11",

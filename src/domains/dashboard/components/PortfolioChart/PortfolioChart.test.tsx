@@ -25,7 +25,7 @@ describe("PortfolioChart", () => {
 		//@ts-ignore
 		const balancePerCoinMock = jest
 			.spyOn(profile.walletAggregate(), "balancePerCoin")
-			.mockImplementation(() => ({ ARK: { total: 10, percentage: 3 } }));
+			.mockImplementation(() => ({ ARK: { percentage: 3, total: 10 } }));
 
 		const zeroBalanceMock = jest.spyOn(profile, "balance").mockReturnValue(10);
 

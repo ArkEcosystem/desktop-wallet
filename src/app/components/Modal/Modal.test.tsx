@@ -66,11 +66,11 @@ describe("Modal", () => {
 		expect(getByTestId("modal__overlay")).toBeTruthy();
 
 		act(() => {
-			fireEvent.keyUp(getByTestId("modal__inner"), { key: "Enter", code: 13 });
+			fireEvent.keyUp(getByTestId("modal__inner"), { code: 13, key: "Enter" });
 		});
 
 		act(() => {
-			fireEvent.keyUp(getByTestId("modal__inner"), { key: "Escape", code: 27 });
+			fireEvent.keyUp(getByTestId("modal__inner"), { code: 27, key: "Escape" });
 		});
 
 		expect(onClose).toHaveBeenCalledTimes(1);

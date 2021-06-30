@@ -22,11 +22,11 @@ describe("useQRCode hook", () => {
 		await act(async () => {
 			hook = renderHook(() =>
 				useQRCode({
-					coin: "ARK",
+					address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 					amount: "10",
+					coin: "ARK",
 					memo: "test",
 					network: "ark",
-					address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 				}),
 			);
 		});
@@ -52,11 +52,11 @@ describe("useQRCode hook", () => {
 		await act(async () => {
 			hook = renderHook(() =>
 				useQRCode({
-					coin: "ARK",
+					address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 					amount: "10",
+					coin: "ARK",
 					memo: "test",
 					network: "ark",
-					address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 				}),
 			);
 		});
@@ -83,9 +83,9 @@ describe("useQRCode hook", () => {
 		await act(async () => {
 			hook = renderHook(() =>
 				useQRCode({
+					address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 					coin: "ARK",
 					network: "ark",
-					address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 				}),
 			);
 		});

@@ -1,8 +1,8 @@
 export const translations: { [key: string]: any } = {
 	BRAND: "ARK Desktop Wallet",
-	LOADING: "Initializing...",
 	COPYRIGHT: "© ARK.io",
-	RIGHTS: "All Rights Reserved",
+	LOADING: "Initializing...",
 	PRODUCT: "An ARK.io Product",
+	RIGHTS: "All Rights Reserved",
 	VERSION: "Version",
 };

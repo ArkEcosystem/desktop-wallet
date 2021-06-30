@@ -11,9 +11,9 @@ describe("#assertProfile", () => {
 		expect(() =>
 			assertProfile(
 				new Profile({
+					data: "{}",
 					id: "id",
 					name: "John Doe",
-					data: "{}",
 				}),
 			),
 		).not.toThrow();

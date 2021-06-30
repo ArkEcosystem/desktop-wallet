@@ -22,8 +22,8 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		configurations: PluginConfigurationData[];
 		registryPlugins: Contracts.IRegistryPlugin[];
 	}>({
-		packages: [],
 		configurations: [],
+		packages: [],
 		registryPlugins: [],
 	});
 	const [isFetchingPackages, setIsFetchingPackages] = useState(false);
@@ -104,21 +104,21 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 			.filter((config) => !!config.sourceProvider())
 			.map((config) =>
 				PluginConfigurationData.make({
+					author: config.author(),
+					date: config.date(),
+					description: config.description(),
+					"desktop-wallet": {
+						categories: config.categories(),
+						images: config.images(),
+						logo: config.logo(),
+						minimumVersion: config.minimumVersion(),
+						permissions: config.permissions(),
+						title: config.alias(),
+					},
 					id: config.id(),
 					name: config.name(),
-					date: config.date(),
-					version: process.env.REACT_APP_PLUGIN_VERSION ?? config.version(),
-					description: config.description(),
-					author: config.author(),
 					sourceProvider: config.sourceProvider(),
-					"desktop-wallet": {
-						logo: config.logo(),
-						categories: config.categories(),
-						title: config.alias(),
-						permissions: config.permissions(),
-						images: config.images(),
-						minimumVersion: config.minimumVersion(),
-					},
+					version: process.env.REACT_APP_PLUGIN_VERSION ?? config.version(),
 				}),
 			);
 
@@ -198,14 +198,14 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 
 			const archiveUrl = `${realRepositoryURL}/archive/master.zip`;
 
-			return await ipcRenderer.invoke("plugin:download", { url: archiveUrl, name });
+			return await ipcRenderer.invoke("plugin:download", { name, url: archiveUrl });
 		},
 		[pluginPackages],
 	);
 
 	const installPlugin = useCallback(
 		async (savedPath, name) => {
-			const pluginPath = await ipcRenderer.invoke("plugin:install", { savedPath, name });
+			const pluginPath = await ipcRenderer.invoke("plugin:install", { name, savedPath });
 
 			await loadPlugin(pluginPath);
 
@@ -236,10 +236,10 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 			const localPlugin = pluginManager.plugins().findById(config.id());
 			return {
 				...config.toObject(),
-				isInstalled: !!localPlugin,
-				isEnabled: !!localPlugin?.isEnabled(profile),
 				hasLaunch: !!localPlugin?.hooks().hasCommand("service:launch.render"),
 				hasUpdateAvailable: hasUpdateAvailable(config.id()),
+				isEnabled: !!localPlugin?.isEnabled(profile),
+				isInstalled: !!localPlugin,
 			};
 		},
 		[hasUpdateAvailable, pluginManager],
@@ -292,33 +292,33 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 	};
 
 	return {
-		pluginRegistry,
-		fetchPluginPackages,
-		downloadPlugin,
-		installPlugin,
-		isFetchingPackages,
 		allPlugins,
-		hasUpdateAvailable,
-		pluginPackages,
-		pluginManager,
-		loadPlugins,
-		trigger,
-		state,
-		reportPlugin,
 		deletePlugin,
+		downloadPlugin,
 		fetchLatestPackageConfiguration,
-		pluginConfigurations,
-		mapConfigToPluginData,
-		updatePlugin,
-		updatingStats,
-		filters,
+		fetchPluginPackages,
 		fetchSize,
 		filterBy: (appliedFilters: any) => {
 			setFilters({ ...filters, ...appliedFilters });
 		},
-		searchResults,
-		resetFilters: () => setFilters(defaultFilters),
+		filters,
 		hasFilters,
+		hasUpdateAvailable,
+		installPlugin,
+		isFetchingPackages,
+		loadPlugins,
+		mapConfigToPluginData,
+		pluginConfigurations,
+		pluginManager,
+		pluginPackages,
+		pluginRegistry,
+		reportPlugin,
+		resetFilters: () => setFilters(defaultFilters),
+		searchResults,
+		state,
+		trigger,
+		updatePlugin,
+		updatingStats,
 	};
 };
 

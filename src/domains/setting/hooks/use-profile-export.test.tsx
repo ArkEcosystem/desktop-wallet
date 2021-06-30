@@ -15,7 +15,7 @@ describe("useProfileExport", () => {
 	});
 
 	it("should export with all settings enabled", async () => {
-		const { result } = renderHook(() => useProfileExport({ profile, env }));
+		const { result } = renderHook(() => useProfileExport({ env, profile }));
 
 		const exportedData = result.current.formatExportData({
 			excludeEmptyWallets: true,
@@ -28,7 +28,7 @@ describe("useProfileExport", () => {
 	});
 
 	it("should export with all settings disabled", async () => {
-		const { result } = renderHook(() => useProfileExport({ profile, env }));
+		const { result } = renderHook(() => useProfileExport({ env, profile }));
 
 		const exportedData = result.current.formatExportData({
 			excludeEmptyWallets: false,
@@ -44,7 +44,7 @@ describe("useProfileExport", () => {
 		await env.profiles().restore(passwordProtectedProfile, getDefaultPassword());
 		await passwordProtectedProfile.sync();
 
-		const { result } = renderHook(() => useProfileExport({ profile: passwordProtectedProfile, env }));
+		const { result } = renderHook(() => useProfileExport({ env, profile: passwordProtectedProfile }));
 
 		passwordProtectedProfile.password().set(getDefaultPassword());
 

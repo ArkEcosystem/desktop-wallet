@@ -21,12 +21,12 @@ describe("MultiSignature Registration Form", () => {
 	const createTransactionMock = (wallet: ProfilesContracts.IReadWriteWallet) =>
 		// @ts-ignore
 		jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
-			id: () => multiSignatureFixture.data.id,
-			sender: () => multiSignatureFixture.data.sender,
-			recipient: () => multiSignatureFixture.data.recipient,
 			amount: () => multiSignatureFixture.data.amount / 1e8,
-			fee: () => multiSignatureFixture.data.fee / 1e8,
 			data: () => ({ data: () => multiSignatureFixture.data }),
+			fee: () => multiSignatureFixture.data.fee / 1e8,
+			id: () => multiSignatureFixture.data.id,
+			recipient: () => multiSignatureFixture.data.recipient,
+			sender: () => multiSignatureFixture.data.sender,
 		});
 
 	beforeEach(async () => {
@@ -34,10 +34,10 @@ describe("MultiSignature Registration Form", () => {
 		wallet = profile.wallets().first();
 		wallet2 = profile.wallets().last();
 		fees = {
-			static: "0",
-			min: "0",
-			max: "10",
 			avg: "1.354",
+			max: "10",
+			min: "0",
+			static: "0",
 		};
 
 		await profile.sync();
@@ -148,6 +148,7 @@ describe("MultiSignature Registration Form", () => {
 			useForm({
 				defaultValues: {
 					fee: fees.avg,
+					minParticipants: 2,
 					participants: [
 						{
 							address: wallet.address(),
@@ -158,7 +159,6 @@ describe("MultiSignature Registration Form", () => {
 							publicKey: wallet2.publicKey()!,
 						},
 					],
-					minParticipants: 2,
 				},
 			}),
 		);
@@ -183,12 +183,12 @@ describe("MultiSignature Registration Form", () => {
 			);
 		};
 		const transaction = {
-			id: () => multiSignatureFixture.data.id,
-			sender: () => multiSignatureFixture.data.sender,
-			recipient: () => multiSignatureFixture.data.recipient,
 			amount: () => multiSignatureFixture.data.amount / 1e8,
-			fee: () => multiSignatureFixture.data.fee / 1e8,
 			data: () => ({ data: () => multiSignatureFixture.data }),
+			fee: () => multiSignatureFixture.data.fee / 1e8,
+			id: () => multiSignatureFixture.data.id,
+			recipient: () => multiSignatureFixture.data.recipient,
+			sender: () => multiSignatureFixture.data.sender,
 		} as Contracts.SignedTransactionData;
 		const { asFragment } = render(<DetailsComponent />);
 
@@ -201,9 +201,8 @@ describe("MultiSignature Registration Form", () => {
 			clearErrors: jest.fn(),
 			getValues: () => ({
 				fee: "1",
-				mnemonic: "sample passphrase",
-				senderAddress: wallet.address(),
 				minParticipants: 2,
+				mnemonic: "sample passphrase",
 				participants: [
 					{
 						address: wallet.address(),
@@ -214,6 +213,7 @@ describe("MultiSignature Registration Form", () => {
 						publicKey: wallet2.publicKey()!,
 					},
 				],
+				senderAddress: wallet.address(),
 			}),
 			setError: jest.fn(),
 			setValue: jest.fn(),
@@ -224,7 +224,7 @@ describe("MultiSignature Registration Form", () => {
 		const addSignatureMock = jest.spyOn(wallet.transaction(), "addSignature").mockImplementation();
 		const broadcastMock = jest
 			.spyOn(wallet.transaction(), "broadcast")
-			.mockResolvedValue({ accepted: ["id"], rejected: [], errors: {} });
+			.mockResolvedValue({ accepted: ["id"], errors: {}, rejected: [] });
 		const transactionMock = createTransactionMock(wallet);
 
 		await MultiSignatureRegistrationForm.signTransaction({
@@ -248,9 +248,8 @@ describe("MultiSignature Registration Form", () => {
 			clearErrors: jest.fn(),
 			getValues: () => ({
 				fee: "1",
-				mnemonic: "sample passphrase",
-				senderAddress: wallet.address(),
 				minParticipants: 2,
+				mnemonic: "sample passphrase",
 				participants: [
 					{
 						address: wallet.address(),
@@ -261,6 +260,7 @@ describe("MultiSignature Registration Form", () => {
 						publicKey: wallet2.publicKey()!,
 					},
 				],
+				senderAddress: wallet.address(),
 			}),
 			setError: jest.fn(),
 			setValue: jest.fn(),
@@ -298,10 +298,10 @@ describe("MultiSignature Registration Form", () => {
 		const form = {
 			clearErrors: jest.fn(),
 			getValues: () => ({
+				encryptionPassword: "password",
 				fee: "1",
-				mnemonic: "sample passphrase",
-				senderAddress: wallet.address(),
 				minParticipants: 2,
+				mnemonic: "sample passphrase",
 				participants: [
 					{
 						address: wallet.address(),
@@ -312,7 +312,7 @@ describe("MultiSignature Registration Form", () => {
 						publicKey: wallet2.publicKey()!,
 					},
 				],
-				encryptionPassword: "password",
+				senderAddress: wallet.address(),
 			}),
 			setError: jest.fn(),
 			setValue: jest.fn(),
@@ -323,7 +323,7 @@ describe("MultiSignature Registration Form", () => {
 		const addSignatureMock = jest.spyOn(wallet.transaction(), "addSignature").mockImplementation();
 		const broadcastMock = jest
 			.spyOn(wallet.transaction(), "broadcast")
-			.mockResolvedValue({ accepted: ["id"], rejected: [], errors: {} });
+			.mockResolvedValue({ accepted: ["id"], errors: {}, rejected: [] });
 		const transactionMock = createTransactionMock(wallet);
 
 		await MultiSignatureRegistrationForm.signTransaction({

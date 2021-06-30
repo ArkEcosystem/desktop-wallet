@@ -78,7 +78,7 @@ describe("ContactForm", () => {
 		const selectNetworkInput = screen.getByTestId("SelectDropdown__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
-		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		fireEvent.keyDown(selectNetworkInput, { code: 13, key: "Enter" });
 
 		await waitFor(() => {
 			expect(selectNetworkInput).toHaveValue("ARK Devnet");
@@ -101,7 +101,7 @@ describe("ContactForm", () => {
 		const selectNetworkInput = screen.getByTestId("SelectDropdown__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
-		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		fireEvent.keyDown(selectNetworkInput, { code: 13, key: "Enter" });
 
 		await waitFor(() => {
 			expect(selectNetworkInput).toHaveValue("ARK Devnet");
@@ -142,7 +142,7 @@ describe("ContactForm", () => {
 		const selectNetworkInput = screen.getByTestId("SelectDropdown__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
-		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		fireEvent.keyDown(selectNetworkInput, { code: 13, key: "Enter" });
 
 		await waitFor(() => {
 			expect(selectNetworkInput).toHaveValue("ARK Devnet");
@@ -185,7 +185,7 @@ describe("ContactForm", () => {
 		const selectNetworkInput = screen.getByTestId("SelectDropdown__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK" } });
-		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		fireEvent.keyDown(selectNetworkInput, { code: 13, key: "Enter" });
 
 		await waitFor(() => {
 			expect(selectNetworkInput).toHaveValue("ARK Mainnet");
@@ -212,7 +212,7 @@ describe("ContactForm", () => {
 		// Second addition
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK" } });
-		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		fireEvent.keyDown(selectNetworkInput, { code: 13, key: "Enter" });
 
 		await waitFor(() => {
 			expect(selectNetworkInput).toHaveValue("ARK Devnet");
@@ -247,7 +247,7 @@ describe("ContactForm", () => {
 		const selectNetworkInput = screen.getByTestId("SelectDropdown__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
-		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		fireEvent.keyDown(selectNetworkInput, { code: 13, key: "Enter" });
 
 		await waitFor(() => {
 			expect(selectNetworkInput).toHaveValue("ARK Devnet");

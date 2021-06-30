@@ -12,9 +12,9 @@ describe("useNetworkOptions hook", () => {
 
 		const networks = result.current.networkOptions;
 
-		expect(networks).toContainEqual({ value: "ark.mainnet", label: "ARK Mainnet" });
-		expect(networks).toContainEqual({ value: "ark.devnet", label: "ARK Devnet" });
-		expect(networks).toContainEqual({ value: "bind.mainnet", label: "Compendia Mainnet" });
+		expect(networks).toContainEqual({ label: "ARK Mainnet", value: "ark.mainnet" });
+		expect(networks).toContainEqual({ label: "ARK Devnet", value: "ark.devnet" });
+		expect(networks).toContainEqual({ label: "Compendia Mainnet", value: "bind.mainnet" });
 	});
 
 	it("should get a network by its id", () => {

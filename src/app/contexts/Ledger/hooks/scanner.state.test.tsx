@@ -21,8 +21,8 @@ describe("Scanner State", () => {
 
 		act(() => {
 			dispatch({
-				type: "toggleSelect",
 				path: `44'/1'/1'/0/0`,
+				type: "toggleSelect",
 			});
 		});
 
@@ -45,8 +45,8 @@ describe("Scanner State", () => {
 
 		act(() => {
 			dispatch({
-				type: "toggleSelect",
 				path: `44'/1'/1'/0/0`,
+				type: "toggleSelect",
 			});
 		});
 
@@ -119,8 +119,8 @@ describe("Scanner State", () => {
 
 		act(() => {
 			dispatch({
-				type: "failed",
 				error: "Failed",
+				type: "failed",
 			});
 		});
 

@@ -24,24 +24,24 @@ export const BaseTransactionRowMode = ({ type, isSent, isReturn, recipient, icon
 	const { modeIconName, tooltipContent, modeCircleStyle } = useMemo(() => {
 		if (isReturn && (type === "transfer" || type === "multiPayment")) {
 			return {
+				modeCircleStyle: "border-theme-success-200 text-theme-success-600 dark:border-theme-success-600",
 				modeIconName: "Return",
 				tooltipContent: t("TRANSACTION.RETURN"),
-				modeCircleStyle: "border-theme-success-200 text-theme-success-600 dark:border-theme-success-600",
 			};
 		}
 
 		if (isSent) {
 			return {
+				modeCircleStyle: "border-theme-danger-100 text-theme-danger-400 dark:border-theme-danger-400",
 				modeIconName: "Sent",
 				tooltipContent: t("TRANSACTION.SENT"),
-				modeCircleStyle: "border-theme-danger-100 text-theme-danger-400 dark:border-theme-danger-400",
 			};
 		}
 
 		return {
+			modeCircleStyle: "border-theme-success-200 text-theme-success-600 dark:border-theme-success-600",
 			modeIconName: "Received",
 			tooltipContent: t("TRANSACTION.RECEIVED"),
-			modeCircleStyle: "border-theme-success-200 text-theme-success-600 dark:border-theme-success-600",
 		};
 	}, [isSent, isReturn, t, type]);
 

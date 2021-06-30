@@ -51,10 +51,10 @@ export const useProfileUtils = (environment: Environment) => {
 			.filter((wallet) => wallet.hasBeenPartiallyRestored())
 			.map((wallet) => `${wallet.network().name()}`);
 
-		return { hasErroredNetworks: erroredNetworks.length > 0, erroredNetworks: uniq(erroredNetworks) };
+		return { erroredNetworks: uniq(erroredNetworks), hasErroredNetworks: erroredNetworks.length > 0 };
 	}, []);
 
-	return useMemo(() => ({ getProfileById, getProfileFromUrl, getProfileStoredPassword, getErroredNetworks }), [
+	return useMemo(() => ({ getErroredNetworks, getProfileById, getProfileFromUrl, getProfileStoredPassword }), [
 		getProfileFromUrl,
 		getProfileById,
 		getProfileStoredPassword,

@@ -58,10 +58,10 @@ test("Should fail verification", async (t) => {
 	);
 
 	const mockFailingMessage = {
+		message: "Wrong message",
 		signatory: "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
 		signature:
 			"7915d8c22ec9dab41bd93d9e003970b2f6aaa5d9a5e837d4d17847308f6e880f31e2c1ad141d9b080d9a151baa31dcd36dd05faa51e5db95586d630b66485e1e",
-		message: "Wrong message",
 	};
 
 	await t.click(Selector("input[type=checkbox]").parent());
@@ -89,10 +89,10 @@ test("Should successfully verify message", async (t) => {
 	);
 
 	const mockSuccessMessage = {
+		message: "Hello World",
 		signatory: "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
 		signature:
 			"7915d8c22ec9dab41bd93d9e003970b2f6aaa5d9a5e837d4d17847308f6e880f31e2c1ad141d9b080d9a151baa31dcd36dd05faa51e5db95586d630b66485e1e",
-		message: "Hello World",
 	};
 
 	await t.click(Selector("input[type=checkbox]").parent());

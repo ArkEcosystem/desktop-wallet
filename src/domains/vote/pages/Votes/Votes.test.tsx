@@ -61,8 +61,8 @@ describe("Votes", () => {
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 		blankWallet = profile.wallets().push(
 			await profile.walletFactory().fromMnemonicWithBIP39({
-				mnemonic: blankWalletPassphrase,
 				coin: "ARK",
+				mnemonic: blankWalletPassphrase,
 				network: "ark.devnet",
 			}),
 		);
@@ -77,9 +77,9 @@ describe("Votes", () => {
 			.reply(200, require("tests/fixtures/coins/ark/devnet/delegates.json"))
 			.get(`/api/wallets/${blankWallet.address()}`)
 			.reply(404, {
-				statusCode: 404,
 				error: "Not Found",
 				message: "Wallet not found",
+				statusCode: 404,
 			})
 			.persist();
 
@@ -206,10 +206,10 @@ describe("Votes", () => {
 			new ReadOnlyWallet({
 				address: "D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr",
 				explorerLink: "",
-				publicKey: wallet.publicKey(),
-				username: "arkx",
-				rank: 52,
 				isResignedDelegate: false,
+				publicKey: wallet.publicKey(),
+				rank: 52,
+				username: "arkx",
 			}),
 		]);
 
@@ -574,10 +574,10 @@ describe("Votes", () => {
 			new ReadOnlyWallet({
 				address: "D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr",
 				explorerLink: "",
-				publicKey: wallet.publicKey(),
-				username: "arkx",
-				rank: 52,
 				isResignedDelegate: true,
+				publicKey: wallet.publicKey(),
+				rank: 52,
+				username: "arkx",
 			}),
 		]);
 		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}/votes`;

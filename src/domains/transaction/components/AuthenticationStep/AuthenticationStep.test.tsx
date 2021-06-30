@@ -24,8 +24,8 @@ describe("AuthenticationStep", () => {
 
 	it("should validate if mnemonic match the wallet address", async () => {
 		wallet = await profile.walletFactory().fromMnemonicWithBIP39({
-			mnemonic: "passphrase",
 			coin: "ARK",
+			mnemonic: "passphrase",
 			network: "ark.devnet",
 		});
 
@@ -74,8 +74,8 @@ describe("AuthenticationStep", () => {
 
 	it("should validate if second mnemonic match the wallet second public key", async () => {
 		wallet = await profile.walletFactory().fromMnemonicWithBIP39({
-			mnemonic: "passphrase",
 			coin: "ARK",
+			mnemonic: "passphrase",
 			network: "ark.devnet",
 		});
 
@@ -136,8 +136,8 @@ describe("AuthenticationStep", () => {
 
 	it("should request mnemonic if wallet was imported using mnemonic", async () => {
 		wallet = await profile.walletFactory().fromMnemonicWithBIP39({
-			mnemonic: "some random mnemonic",
 			coin: "ARK",
+			mnemonic: "some random mnemonic",
 			network: "ark.devnet",
 		});
 
@@ -190,9 +190,9 @@ describe("AuthenticationStep", () => {
 
 	it("should request private key if wallet was imported using private key", async () => {
 		wallet = await profile.walletFactory().fromPrivateKey({
-			privateKey: "d8839c2432bfd0a67ef10a804ba991eabba19f154a3d707917681d45822a5712",
 			coin: "ARK",
 			network: "ark.devnet",
+			privateKey: "d8839c2432bfd0a67ef10a804ba991eabba19f154a3d707917681d45822a5712",
 		});
 
 		jest.spyOn(wallet, "isSecondSignature").mockReturnValueOnce(false);
@@ -208,9 +208,9 @@ describe("AuthenticationStep", () => {
 
 	it("should request WIF if wallet was imported using WIF", async () => {
 		wallet = await profile.walletFactory().fromWIF({
-			wif: "SGq4xLgZKCGxs7bjmwnBrWcT4C1ADFEermj846KC97FSv1WFD1dA",
 			coin: "ARK",
 			network: "ark.devnet",
+			wif: "SGq4xLgZKCGxs7bjmwnBrWcT4C1ADFEermj846KC97FSv1WFD1dA",
 		});
 
 		jest.spyOn(wallet, "isSecondSignature").mockReturnValueOnce(false);

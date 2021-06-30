@@ -55,9 +55,9 @@ export const useLedgerScanner = (coin: string, network: string) => {
 					/* istanbul ignore next */
 					if (!profile.wallets().findByAddress(address)) {
 						ledgerData.push({
-							path,
 							address,
 							balance: data.balance().available.toHuman(),
+							path,
 						});
 					}
 				}
@@ -68,9 +68,9 @@ export const useLedgerScanner = (coin: string, network: string) => {
 					return;
 				}
 
-				dispatch({ type: "success", payload: ledgerData });
+				dispatch({ payload: ledgerData, type: "success" });
 			} catch (error) {
-				dispatch({ type: "failed", error: error.message });
+				dispatch({ error: error.message, type: "failed" });
 			}
 
 			setIdle();
@@ -84,19 +84,19 @@ export const useLedgerScanner = (coin: string, network: string) => {
 		setIdle();
 	}, [setIdle]);
 
-	const toggleSelect = (path: string) => dispatch({ type: "toggleSelect", path });
+	const toggleSelect = (path: string) => dispatch({ path, type: "toggleSelect" });
 	const toggleSelectAll = () => dispatch({ type: "toggleSelectAll" });
 
 	return {
+		abortScanner,
+		canRetry,
+		error,
 		isScanning,
 		isSelected,
-		canRetry,
 		scan,
-		toggleSelectAll,
-		toggleSelect,
-		wallets,
 		selectedWallets,
-		abortScanner,
-		error,
+		toggleSelect,
+		toggleSelectAll,
+		wallets,
 	};
 };

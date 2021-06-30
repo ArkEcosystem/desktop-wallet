@@ -69,7 +69,7 @@ describe("SendTransactionForm", () => {
 
 		for (const network of env.availableNetworks()) {
 			if (network.id() === wallet.networkId() && network.coin() === wallet.coinId()) {
-				form.current.setValue("network", network, { shouldValidate: true, shouldDirty: true });
+				form.current.setValue("network", network, { shouldDirty: true, shouldValidate: true });
 
 				break;
 			}
@@ -114,7 +114,7 @@ describe("SendTransactionForm", () => {
 
 		for (const network of env.availableNetworks()) {
 			if (network.id() === wallet.networkId() && network.coin() === wallet.coinId()) {
-				form.current.setValue("network", network, { shouldValidate: true, shouldDirty: true });
+				form.current.setValue("network", network, { shouldDirty: true, shouldValidate: true });
 
 				break;
 			}
@@ -151,10 +151,10 @@ describe("SendTransactionForm", () => {
 	it("should use static fees if avg is not available", async () => {
 		const { result: form } = renderHook(() => useForm());
 		const mockFees = jest.spyOn(env.fees(), "findByType").mockReturnValue({
-			static: BigNumber.make(10_000_000, 8),
+			avg: BigNumber.make(0, 8),
 			max: BigNumber.make(663_000_000, 8),
 			min: BigNumber.make(357_000, 8),
-			avg: BigNumber.make(0, 8),
+			static: BigNumber.make(10_000_000, 8),
 		});
 
 		form.current.register("fee");
@@ -164,7 +164,7 @@ describe("SendTransactionForm", () => {
 
 		for (const network of env.availableNetworks()) {
 			if (network.id() === wallet.networkId() && network.coin() === wallet.coinId()) {
-				form.current.setValue("network", network, { shouldValidate: true, shouldDirty: true });
+				form.current.setValue("network", network, { shouldDirty: true, shouldValidate: true });
 
 				break;
 			}

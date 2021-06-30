@@ -25,7 +25,7 @@ describe("TransactionRowAmount", () => {
 	it("should show as received", () => {
 		const { asFragment } = render(
 			<TransactionRowAmount
-				transaction={{ ...TransactionFixture, wallet: () => ({ currency: () => "ARK" }), isSent: () => false }}
+				transaction={{ ...TransactionFixture, isSent: () => false, wallet: () => ({ currency: () => "ARK" }) }}
 			/>,
 		);
 		expect(screen.getByText("+ 121 ARK")).toBeTruthy();

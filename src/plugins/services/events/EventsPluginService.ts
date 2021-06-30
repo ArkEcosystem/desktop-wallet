@@ -4,8 +4,8 @@ import { PluginService, PluginServiceIdentifier } from "plugins/types";
 export class EventsPluginService implements PluginService {
 	config() {
 		return {
-			id: PluginServiceIdentifier.Events,
 			accessor: "events",
+			id: PluginServiceIdentifier.Events,
 		};
 	}
 

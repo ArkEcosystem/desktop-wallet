@@ -34,10 +34,10 @@ export const FormStep = ({
 	const { getValues, setValue, watch, register } = form;
 
 	const [fees, setFees] = useState<TransactionFees>({
-		static: 5,
-		min: 0,
 		avg: 0,
 		max: 0,
+		min: 0,
+		static: 5,
 	});
 
 	useEffect(() => {
@@ -62,7 +62,7 @@ export const FormStep = ({
 	}, [env, setFees, wallet, setValue, findByType]);
 
 	useEffect(() => {
-		setValue("fee", defaultFee ?? fees.avg, { shouldValidate: true, shouldDirty: true });
+		setValue("fee", defaultFee ?? fees.avg, { shouldDirty: true, shouldValidate: true });
 	}, [setValue, fees, defaultFee]);
 
 	return (
@@ -106,14 +106,14 @@ export const FormStep = ({
 						network={wallet.network()}
 						profile={profile}
 						onChange={(value) => {
-							setValue("fee", value, { shouldValidate: true, shouldDirty: true });
+							setValue("fee", value, { shouldDirty: true, shouldValidate: true });
 						}}
 						viewType={inputFeeSettings.viewType}
 						onChangeViewType={(viewType) => {
 							setValue(
 								"inputFeeSettings",
 								{ ...inputFeeSettings, viewType },
-								{ shouldValidate: true, shouldDirty: true },
+								{ shouldDirty: true, shouldValidate: true },
 							);
 						}}
 						simpleValue={inputFeeSettings.simpleValue}
@@ -121,7 +121,7 @@ export const FormStep = ({
 							setValue(
 								"inputFeeSettings",
 								{ ...inputFeeSettings, simpleValue },
-								{ shouldValidate: true, shouldDirty: true },
+								{ shouldDirty: true, shouldValidate: true },
 							);
 						}}
 					/>

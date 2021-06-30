@@ -6,9 +6,9 @@ import { env } from "utils/testing-library";
 import { EventsPluginService } from "./EventsPluginService";
 
 const config = {
+	"desktop-wallet": { permissions: ["EVENTS"] },
 	name: "test",
 	version: "1.1",
-	"desktop-wallet": { permissions: ["EVENTS"] },
 };
 
 describe("EventsPluginService", () => {

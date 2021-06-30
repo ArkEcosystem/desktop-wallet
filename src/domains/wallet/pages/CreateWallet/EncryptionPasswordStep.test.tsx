@@ -40,8 +40,8 @@ describe("EncryptionPasswordStep", () => {
 				<CreateWallet />
 			</Route>,
 			{
-				routes: [createURL],
 				history,
+				routes: [createURL],
 			},
 		);
 
@@ -62,7 +62,7 @@ describe("EncryptionPasswordStep", () => {
 
 		act(() => {
 			fireEvent.change(selectNetworkInput, { target: { value: "Ark Dev" } });
-			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+			fireEvent.keyDown(selectNetworkInput, { code: 13, key: "Enter" });
 		});
 		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
 
@@ -73,7 +73,7 @@ describe("EncryptionPasswordStep", () => {
 
 		act(() => {
 			fireEvent.change(selectNetworkInput, { target: { value: "Ark Dev" } });
-			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+			fireEvent.keyDown(selectNetworkInput, { code: 13, key: "Enter" });
 		});
 
 		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
@@ -178,8 +178,8 @@ describe("EncryptionPasswordStep", () => {
 				<CreateWallet />
 			</Route>,
 			{
-				routes: [createURL],
 				history,
+				routes: [createURL],
 			},
 		);
 
@@ -200,7 +200,7 @@ describe("EncryptionPasswordStep", () => {
 
 		act(() => {
 			fireEvent.change(selectNetworkInput, { target: { value: "Ark Dev" } });
-			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+			fireEvent.keyDown(selectNetworkInput, { code: 13, key: "Enter" });
 		});
 		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
 
@@ -211,7 +211,7 @@ describe("EncryptionPasswordStep", () => {
 
 		act(() => {
 			fireEvent.change(selectNetworkInput, { target: { value: "Ark Dev" } });
-			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+			fireEvent.keyDown(selectNetworkInput, { code: 13, key: "Enter" });
 		});
 
 		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
@@ -272,8 +272,8 @@ describe("EncryptionPasswordStep", () => {
 		});
 
 		const sampleWallet = profile.walletFactory().fromMnemonicWithBIP39({
-			mnemonic: "test",
 			coin: "ARK",
+			mnemonic: "test",
 			network: "ark.devnet",
 		});
 

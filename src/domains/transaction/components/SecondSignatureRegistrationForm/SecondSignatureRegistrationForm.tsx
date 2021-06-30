@@ -66,11 +66,8 @@ component.displayName = "SecondSignatureRegistrationForm";
 transactionDetails.displayName = "SecondSignatureRegistrationFormTransactionDetails";
 
 export const SecondSignatureRegistrationForm: SendRegistrationForm = {
-	tabSteps: 4,
 	component,
-	transactionDetails,
 	formFields: ["secondMnemonic", "verification"],
-
 	signTransaction: async ({ env, form, profile, signatory }: any) => {
 		const { clearErrors, getValues } = form;
 
@@ -79,11 +76,11 @@ export const SecondSignatureRegistrationForm: SendRegistrationForm = {
 		const senderWallet = profile.wallets().findByAddress(senderAddress);
 
 		const transactionId = await senderWallet.transaction().signSecondSignature({
-			fee: +fee,
-			signatory,
 			data: {
 				mnemonic: secondMnemonic,
 			},
+			fee: +fee,
+			signatory,
 		});
 
 		const response = await senderWallet.transaction().broadcast(transactionId);
@@ -94,4 +91,7 @@ export const SecondSignatureRegistrationForm: SendRegistrationForm = {
 
 		return senderWallet.transaction().transaction(transactionId);
 	},
+	tabSteps: 4,
+
+	transactionDetails,
 };

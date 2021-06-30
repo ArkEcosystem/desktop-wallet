@@ -84,7 +84,7 @@ describe("ImportWallet", () => {
 		});
 
 		await act(async () => {
-			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+			fireEvent.keyDown(selectNetworkInput, { code: 13, key: "Enter" });
 		});
 
 		expect(selectNetworkInput).toHaveValue("ARK Devnet");
@@ -124,8 +124,8 @@ describe("ImportWallet", () => {
 			form = useForm({
 				defaultValues: {
 					network: {
-						id: () => "ark.devnet",
 						coin: () => "ARK",
+						id: () => "ark.devnet",
 						importMethods: () => ({
 							bip39: {
 								default: false,
@@ -176,8 +176,8 @@ describe("ImportWallet", () => {
 			form = useForm({
 				defaultValues: {
 					network: {
-						id: () => "ark.devnet",
 						coin: () => "ARK",
+						id: () => "ark.devnet",
 						ticker: () => "DARK",
 					},
 				},
@@ -218,8 +218,8 @@ describe("ImportWallet", () => {
 				<ImportWallet />
 			</Route>,
 			{
-				routes: [route],
 				history,
+				routes: [route],
 			},
 		);
 
@@ -242,8 +242,8 @@ describe("ImportWallet", () => {
 				<ImportWallet />
 			</Route>,
 			{
-				routes: [route],
 				history,
+				routes: [route],
 			},
 		);
 
@@ -252,7 +252,7 @@ describe("ImportWallet", () => {
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
-		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		fireEvent.keyDown(selectNetworkInput, { code: 13, key: "Enter" });
 
 		expect(selectNetworkInput).toHaveValue("ARK Devnet");
 
@@ -280,8 +280,8 @@ describe("ImportWallet", () => {
 				<ImportWallet />
 			</Route>,
 			{
-				routes: [route],
 				history,
+				routes: [route],
 			},
 		);
 
@@ -290,7 +290,7 @@ describe("ImportWallet", () => {
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
-		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		fireEvent.keyDown(selectNetworkInput, { code: 13, key: "Enter" });
 
 		expect(selectNetworkInput).toHaveValue("ARK Devnet");
 
@@ -332,8 +332,8 @@ describe("ImportWallet", () => {
 				<ImportWallet />
 			</Route>,
 			{
-				routes: [route],
 				history,
+				routes: [route],
 			},
 		);
 
@@ -342,7 +342,7 @@ describe("ImportWallet", () => {
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
-		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		fireEvent.keyDown(selectNetworkInput, { code: 13, key: "Enter" });
 
 		expect(selectNetworkInput).toHaveValue("ARK Devnet");
 
@@ -391,8 +391,8 @@ describe("ImportWallet", () => {
 				<ImportWallet />
 			</Route>,
 			{
-				routes: [route],
 				history,
+				routes: [route],
 			},
 		);
 
@@ -401,7 +401,7 @@ describe("ImportWallet", () => {
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
-		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		fireEvent.keyDown(selectNetworkInput, { code: 13, key: "Enter" });
 
 		expect(selectNetworkInput).toHaveValue("ARK Devnet");
 
@@ -442,8 +442,8 @@ describe("ImportWallet", () => {
 				<ImportWallet />
 			</Route>,
 			{
-				routes: [route],
 				history,
+				routes: [route],
 			},
 		);
 
@@ -452,7 +452,7 @@ describe("ImportWallet", () => {
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
-		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		fireEvent.keyDown(selectNetworkInput, { code: 13, key: "Enter" });
 
 		expect(selectNetworkInput).toHaveValue("ARK Devnet");
 
@@ -493,8 +493,8 @@ describe("ImportWallet", () => {
 				<ImportWallet />
 			</Route>,
 			{
-				routes: [route],
 				history,
+				routes: [route],
 			},
 		);
 
@@ -503,7 +503,7 @@ describe("ImportWallet", () => {
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
-		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		fireEvent.keyDown(selectNetworkInput, { code: 13, key: "Enter" });
 
 		expect(selectNetworkInput).toHaveValue("ARK Devnet");
 
@@ -532,8 +532,8 @@ describe("ImportWallet", () => {
 				<ImportWallet />
 			</Route>,
 			{
-				routes: [route],
 				history,
+				routes: [route],
 			},
 		);
 
@@ -542,7 +542,7 @@ describe("ImportWallet", () => {
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
-		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		fireEvent.keyDown(selectNetworkInput, { code: 13, key: "Enter" });
 
 		expect(selectNetworkInput).toHaveValue("ARK Devnet");
 
@@ -570,8 +570,8 @@ describe("ImportWallet", () => {
 				<ImportWallet />
 			</Route>,
 			{
-				routes: [route],
 				history,
+				routes: [route],
 			},
 		);
 
@@ -580,7 +580,7 @@ describe("ImportWallet", () => {
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
-		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		fireEvent.keyDown(selectNetworkInput, { code: 13, key: "Enter" });
 
 		expect(selectNetworkInput).toHaveValue("ARK Devnet");
 
@@ -621,8 +621,8 @@ describe("ImportWallet", () => {
 				<ImportWallet />
 			</Route>,
 			{
-				routes: [route],
 				history,
+				routes: [route],
 			},
 		);
 
@@ -631,7 +631,7 @@ describe("ImportWallet", () => {
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
-		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		fireEvent.keyDown(selectNetworkInput, { code: 13, key: "Enter" });
 
 		expect(selectNetworkInput).toHaveValue("ARK Devnet");
 
@@ -676,8 +676,8 @@ describe("ImportWallet", () => {
 				</LedgerProvider>
 			</Route>,
 			{
-				routes: [route],
 				history,
+				routes: [route],
 			},
 		);
 
@@ -701,8 +701,8 @@ describe("ImportWallet", () => {
 				<ImportWallet />
 			</Route>,
 			{
-				routes: [emptyProfileRoute],
 				history,
+				routes: [emptyProfileRoute],
 			},
 		);
 
@@ -711,7 +711,7 @@ describe("ImportWallet", () => {
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
-		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		fireEvent.keyDown(selectNetworkInput, { code: 13, key: "Enter" });
 
 		expect(selectNetworkInput).toHaveValue("ARK Devnet");
 
@@ -740,7 +740,7 @@ describe("ImportWallet", () => {
 		const historySpy = jest.spyOn(history, "push").mockImplementation();
 
 		fireEvent.input(getByTestId("ImportWallet__name-input"), { target: { value: alias } });
-		fireEvent.submit(getByTestId("ImportWallet__name-input"), { key: "Enter", code: 13 });
+		fireEvent.submit(getByTestId("ImportWallet__name-input"), { code: 13, key: "Enter" });
 
 		await waitFor(() => {
 			expect(historySpy).toHaveBeenCalled();
@@ -761,8 +761,8 @@ describe("ImportWallet", () => {
 		const randomNewAddress = "D6pPxYLwwCptuhVRvLQQYXEQiQMB5x6iY3";
 
 		const wallet = await emptyProfile.walletFactory().fromMnemonicWithBIP39({
-			mnemonic: "random mnemonic",
 			coin: "ARK",
+			mnemonic: "random mnemonic",
 			network: "ark.devnet",
 		});
 
@@ -775,8 +775,8 @@ describe("ImportWallet", () => {
 				<ImportWallet />
 			</Route>,
 			{
-				routes: [emptyProfileRoute],
 				history,
+				routes: [emptyProfileRoute],
 			},
 		);
 
@@ -785,7 +785,7 @@ describe("ImportWallet", () => {
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
-		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		fireEvent.keyDown(selectNetworkInput, { code: 13, key: "Enter" });
 
 		expect(selectNetworkInput).toHaveValue("ARK Devnet");
 
@@ -812,7 +812,7 @@ describe("ImportWallet", () => {
 		const alias = "My Wallet";
 
 		fireEvent.input(getByTestId("ImportWallet__name-input"), { target: { value: alias } });
-		fireEvent.submit(getByTestId("ImportWallet__name-input"), { key: "Enter", code: 13 });
+		fireEvent.submit(getByTestId("ImportWallet__name-input"), { code: 13, key: "Enter" });
 
 		await waitFor(() => {
 			expect(getByTestId("Input__error")).toHaveAttribute(

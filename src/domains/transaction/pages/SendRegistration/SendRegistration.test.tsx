@@ -46,8 +46,8 @@ const renderPage = async (wallet: Contracts.IReadWriteWallet, type = "delegateRe
 				<SendRegistration />
 			</Route>,
 			{
-				routes: [registrationURL],
 				history,
+				routes: [registrationURL],
 			},
 		);
 
@@ -63,25 +63,25 @@ const renderPage = async (wallet: Contracts.IReadWriteWallet, type = "delegateRe
 const createDelegateRegistrationMock = (wallet: Contracts.IReadWriteWallet) =>
 	// @ts-ignore
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
-		id: () => DelegateRegistrationFixture.data.id,
-		sender: () => DelegateRegistrationFixture.data.sender,
-		recipient: () => DelegateRegistrationFixture.data.recipient,
 		amount: () => +DelegateRegistrationFixture.data.amount / 1e8,
-		fee: () => +DelegateRegistrationFixture.data.fee / 1e8,
-		username: () => DelegateRegistrationFixture.data.asset.delegate.username,
 		data: () => ({ data: () => DelegateRegistrationFixture.data }),
+		fee: () => +DelegateRegistrationFixture.data.fee / 1e8,
+		id: () => DelegateRegistrationFixture.data.id,
+		recipient: () => DelegateRegistrationFixture.data.recipient,
+		sender: () => DelegateRegistrationFixture.data.sender,
 		type: () => "delegateRegistration",
+		username: () => DelegateRegistrationFixture.data.asset.delegate.username,
 	});
 
 const createSecondSignatureRegistrationMock = (wallet: Contracts.IReadWriteWallet) =>
 	// @ts-ignore
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
-		id: () => SecondSignatureRegistrationFixture.data.id,
-		sender: () => SecondSignatureRegistrationFixture.data.sender,
-		recipient: () => SecondSignatureRegistrationFixture.data.recipient,
 		amount: () => 0,
-		fee: () => +SecondSignatureRegistrationFixture.data.fee / 1e8,
 		data: () => ({ data: () => SecondSignatureRegistrationFixture.data }),
+		fee: () => +SecondSignatureRegistrationFixture.data.fee / 1e8,
+		id: () => SecondSignatureRegistrationFixture.data.id,
+		recipient: () => SecondSignatureRegistrationFixture.data.recipient,
+		sender: () => SecondSignatureRegistrationFixture.data.sender,
 		type: () => "secondSignature",
 	});
 
@@ -133,8 +133,8 @@ describe("Registration", () => {
 					<SendRegistration />
 				</Route>,
 				{
-					routes: [registrationPath],
 					history,
+					routes: [registrationPath],
 				},
 			);
 
@@ -190,8 +190,8 @@ describe("Registration", () => {
 				.mockReturnValue(Promise.resolve(DelegateRegistrationFixture.data.id));
 			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 				accepted: [DelegateRegistrationFixture.data.id],
-				rejected: [],
 				errors: {},
+				rejected: [],
 			});
 			const transactionMock = createDelegateRegistrationMock(wallet);
 
@@ -276,8 +276,8 @@ describe("Registration", () => {
 
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [SecondSignatureRegistrationFixture.data.id],
-			rejected: [],
 			errors: {},
+			rejected: [],
 		});
 
 		const transactionMock = createSecondSignatureRegistrationMock(wallet);

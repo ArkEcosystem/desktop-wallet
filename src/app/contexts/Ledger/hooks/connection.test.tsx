@@ -59,19 +59,19 @@ describe("Use Ledger Connection", () => {
 		render(<Component />);
 
 		act(() => {
-			observer!.next({ type: "add", descriptor: "" });
+			observer!.next({ descriptor: "", type: "add" });
 		});
 
 		await waitFor(() => expect(screen.queryByText("On")).toBeInTheDocument());
 
 		act(() => {
-			observer!.next({ type: "remove", descriptor: "" });
+			observer!.next({ descriptor: "", type: "remove" });
 		});
 
 		await waitFor(() => expect(screen.queryByText("Off")).toBeInTheDocument());
 
 		act(() => {
-			observer!.next({ type: "add", descriptor: "", deviceModel: { id: "nanoX" } });
+			observer!.next({ descriptor: "", deviceModel: { id: "nanoX" }, type: "add" });
 		});
 
 		await waitFor(() => expect(screen.queryByText("On")).toBeInTheDocument());
@@ -155,10 +155,10 @@ describe("Use Ledger Connection", () => {
 			const handleConnect = async () => {
 				try {
 					await connect(profile, wallet.coinId(), wallet.networkId(), {
-						retries,
 						factor: 1,
-						randomize: false,
 						minTimeout: 10,
+						randomize: false,
+						retries,
 					});
 				} catch {
 					//

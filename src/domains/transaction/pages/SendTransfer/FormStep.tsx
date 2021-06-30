@@ -72,7 +72,7 @@ export const FormStep = ({
 							disableMultiPaymentOption={senderWallet?.isLedger()}
 							withDeeplink={!!deeplinkProps?.recipient}
 							onChange={(value: RecipientListItem[]) =>
-								setValue("recipients", value, { shouldValidate: true, shouldDirty: true })
+								setValue("recipients", value, { shouldDirty: true, shouldValidate: true })
 							}
 						/>
 					</div>

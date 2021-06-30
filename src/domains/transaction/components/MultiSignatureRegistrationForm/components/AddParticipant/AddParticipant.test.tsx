@@ -63,8 +63,8 @@ describe("Add Participant", () => {
 			.get("/api/wallets")
 			.query({ address: "DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P" })
 			.reply(200, {
-				meta: { count: 1, pageCount: 1, totalCount: 1 },
 				data: [coldWalletFixture.data],
+				meta: { count: 1, pageCount: 1, totalCount: 1 },
 			});
 
 		const { asFragment } = render(<AddParticipant profile={profile} wallet={wallet} />);
@@ -100,8 +100,8 @@ describe("Add Participant", () => {
 				defaultParticipants={[
 					{
 						address: wallet.address(),
-						publicKey: wallet.publicKey()!,
 						balance: wallet.balance().toString(),
+						publicKey: wallet.publicKey()!,
 					},
 				]}
 			/>,
@@ -135,8 +135,8 @@ describe("Add Participant", () => {
 			.get("/api/wallets")
 			.query({ address: "DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq20" })
 			.reply(200, {
-				meta: { count: 0, pageCount: 1, totalCount: 0 },
 				data: [],
+				meta: { count: 0, pageCount: 1, totalCount: 0 },
 			});
 
 		const { asFragment } = render(<AddParticipant profile={profile} wallet={wallet} />);
@@ -196,8 +196,8 @@ describe("Add Participant", () => {
 			.get("/api/wallets")
 			.query((parameters) => !!parameters.address)
 			.reply(200, {
-				meta: { count: 1, pageCount: 1, totalCount: 1 },
 				data: [walletFixture.data],
+				meta: { count: 1, pageCount: 1, totalCount: 1 },
 			});
 
 		const { asFragment } = render(<AddParticipant profile={profile} wallet={wallet} />);
