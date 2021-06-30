@@ -50,6 +50,15 @@ export const useWalletFilters = ({ profile }: { profile: Contracts.IProfile }) =
 			walletsDisplayType,
 			defaultConfiguration,
 		}),
-		[walletsDisplayType, selectedNetworkIds, viewType, isFilterChanged, networks, profile, setValue],
+		[
+			walletsDisplayType,
+			selectedNetworkIds,
+			viewType,
+			isFilterChanged,
+			networks,
+			profile,
+			setValue,
+			defaultConfiguration,
+		],
 	);
 };

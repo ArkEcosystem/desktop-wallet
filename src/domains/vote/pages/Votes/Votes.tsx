@@ -4,7 +4,7 @@ import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useProfileUtils } from "app/hooks";
 import { toasts } from "app/services";
 import { DelegateTable } from "domains/vote/components/DelegateTable";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
 import { VotesHeader } from "domains/vote/components/VotesHeader";
@@ -86,7 +86,7 @@ export const Votes = () => {
 		if (votes?.length === 0) {
 			setVoteFilter("all");
 		}
-	}, [votes]);
+	}, [votes, setVoteFilter]);
 
 	useEffect(() => {
 		const { hasErroredNetworks, erroredNetworks } = getErroredNetworks(activeProfile);
