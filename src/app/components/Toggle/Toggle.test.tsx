@@ -22,6 +22,14 @@ describe("Toggle", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render small", () => {
+		const { container, asFragment, getByRole } = render(<Toggle small />);
+
+		expect(container).toBeTruthy();
+		expect(getByRole("checkbox")).not.toHaveAttribute("checked", "");
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should render always on", () => {
 		const { container, asFragment, getByRole } = render(<Toggle alwaysOn />);
 
