@@ -1,12 +1,10 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { isEmptyObject, uniq, uniqBy } from "@arkecosystem/utils";
 import { Alert } from "app/components/Alert";
-import { EmptyResults } from "app/components/EmptyResults";
 import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useProfileUtils, useQueryParams } from "app/hooks";
 import { toasts } from "app/services";
-import { AddressTable } from "domains/vote/components/AddressTable";
 import { DelegateTable } from "domains/vote/components/DelegateTable";
 import { FilterOption } from "domains/vote/components/VotesFilter";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
@@ -14,6 +12,7 @@ import { Trans, useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
 import { VotesHeader } from "domains/vote/components/VotesHeader";
 import { VotesEmpty } from "domains/vote/components/VotesEmpty";
+import { VotingWallets } from "domains/vote/components/VotingWallets/VotingWallets";
 
 export const Votes = () => {
 	const { t } = useTranslation();
@@ -273,9 +272,12 @@ export const Votes = () => {
 		);
 	}, [filteredDelegatesVotes, searchQuery]);
 
-	const isEmptyWalletsByCoin = Object.keys(filteredWalletsByCoin).every(
+	const hasEmptyResults = Object.keys(filteredWalletsByCoin).every(
 		(coin: string) => filteredWalletsByCoin[coin].length === 0,
 	);
+
+	const hasWallets = !isEmptyObject(walletsByCoin);
+	const hasSelectedAddress = !!selectedAddress;
 
 	return (
 		<Page profile={activeProfile}>
@@ -292,36 +294,24 @@ export const Votes = () => {
 				/>
 			</Section>
 
-			{isEmptyObject(walletsByCoin) ? (
+			{!hasWallets && (
 				<Section>
 					<VotesEmpty
 						onCreateWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/create`)}
 						onImportWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/import`)}
 					/>
 				</Section>
-			) : !selectedAddress ? (
-				isEmptyWalletsByCoin ? (
-					<Section>
-						<EmptyResults
-							className="mt-16"
-							title={t("COMMON.EMPTY_RESULTS.TITLE")}
-							subtitle={t("COMMON.EMPTY_RESULTS.SUBTITLE")}
-						/>
-					</Section>
-				) : (
-					Object.keys(filteredWalletsByCoin).map(
-						(coin, index) =>
-							filteredWalletsByCoin[coin].length > 0 && (
-								<Section key={index}>
-									<AddressTable
-										wallets={filteredWalletsByCoin[coin]}
-										onSelect={handleSelectAddress}
-									/>
-								</Section>
-							),
-					)
-				)
-			) : (
+			)}
+
+			{hasWallets && !hasSelectedAddress && (
+				<VotingWallets
+					showEmptyResults={hasEmptyResults}
+					walletsByCoin={filteredWalletsByCoin}
+					onSelectAddress={handleSelectAddress}
+				/>
+			)}
+
+			{hasSelectedAddress && (
 				<Section innerClassName="mb-27">
 					<DelegateTable
 						delegates={filteredDelegates}
