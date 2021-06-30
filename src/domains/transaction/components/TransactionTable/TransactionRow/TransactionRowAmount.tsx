@@ -27,7 +27,7 @@ const BaseTransactionRowAmount: React.FC<Properties> = ({
 
 	return (
 		<Label color={isSent ? "danger" : "success"} className="whitespace-nowrap">
-			<AmountCrypto withSign ticker={wallet.currency()} value={total} isNegative={isNegative} />
+			<AmountCrypto showSign ticker={wallet.currency()} value={total} isNegative={isNegative} />
 		</Label>
 	);
 };
