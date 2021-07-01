@@ -100,6 +100,12 @@ const searchAddressesMocks = () => {
 			{ limit: 15, page: 2 },
 			{ limit: 30, page: 1 },
 		],
+		DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr: [
+			{ limit: 10, page: 1 },
+			{ limit: 15, page: 1 },
+			{ limit: 15, page: 2 },
+			{ limit: 30, page: 1 },
+		],
 		DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P: [
 			{ limit: 10, page: 1 },
 			{ limit: 15, page: 1 },
@@ -266,6 +272,22 @@ export const requestMocks = {
 			"https://dwallets.ark.io/api/transactions?limit=30&address=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD%2CD5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb%2CDH4Xyyt5zPqM9KwUkevUZPbzM3KjjW8fp5",
 			"coins/ark/devnet/transactions",
 		),
+		mockRequest(
+			"https://dwallets.ark.io/api/transactions?page=2&limit=30&address=DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr",
+			"coins/ark/devnet/transactions",
+		),
+		mockRequest(
+			"https://dwallets.ark.io/api/transactions?page=1&limit=20&senderId=DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr",
+			"coins/ark/devnet/transactions",
+		),
+		mockRequest(
+			"https://dwallets.ark.io/api/transactions?limit=30&address=DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr%2CD5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
+			"coins/ark/devnet/transactions",
+		),
+		mockRequest(
+			"https://dwallets.ark.io/api/transactions?limit=30&address=DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr%2CD5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb%2CDH4Xyyt5zPqM9KwUkevUZPbzM3KjjW8fp5",
+			"coins/ark/devnet/transactions",
+		),
 		// unconfirmed transactions list before sending single or multiPayment transaction
 		mockRequest(
 			"https://dwallets.ark.io/api/transactions?page=1&limit=20&senderId=DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS",
@@ -286,13 +308,24 @@ export const requestMocks = {
 			"https://dwallets.ark.io/api/transactions?page=1&limit=10&orderBy=timestamp&address=D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
 			"coins/ark/devnet/transactions",
 		),
+
 		mockRequest(
 			"https://dwallets.ark.io/api/transactions?page=1&limit=10&orderBy=timestamp&address=DJXg9Vqg2tofRNrMAvMzhZTkegu8QyyNQq",
 			"coins/ark/devnet/transactions",
 		),
 
 		mockRequest(
+			"https://dwallets.ark.io/api/transactions?page=1&limit=10&orderBy=timestamp&address=DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr",
+			"coins/ark/devnet/transactions",
+		),
+
+		mockRequest(
 			"https://dwallets.ark.io/api/transactions?page=1&limit=10&orderBy=timestamp&address=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD%2CD5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
+			{ data: [], meta: {} },
+		),
+
+		mockRequest(
+			"https://dwallets.ark.io/api/transactions?page=1&limit=10&orderBy=timestamp&address=DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr%2CD5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
 			{ data: [], meta: {} },
 		),
 
