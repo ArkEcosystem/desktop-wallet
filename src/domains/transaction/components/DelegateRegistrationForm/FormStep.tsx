@@ -47,7 +47,7 @@ export const FormStep = ({ fees, wallet, step = 0.001, profile }: any) => {
 	}, [delegateRegistration, usernames, register, username, t]);
 
 	return (
-		<section data-testid="DelegateRegistrationForm__form-step" className="space-y-8">
+		<section data-testid="DelegateRegistrationForm__form-step" className="space-y-6">
 			<Header
 				title={t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.FORM_STEP.TITLE")}
 				subtitle={t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.FORM_STEP.DESCRIPTION")}
@@ -62,7 +62,7 @@ export const FormStep = ({ fees, wallet, step = 0.001, profile }: any) => {
 				paddingPosition="bottom"
 			/>
 
-			<div className="space-y-5">
+			<div className="space-y-5 pt-2">
 				<FormField name="username">
 					<FormLabel label={t("TRANSACTION.DELEGATE_NAME")} />
 					<InputDefault
