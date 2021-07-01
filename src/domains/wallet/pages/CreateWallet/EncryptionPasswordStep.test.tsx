@@ -319,7 +319,7 @@ describe("EncryptionPasswordStep", () => {
 
 		await waitFor(() => expect(walletSpy).toHaveBeenCalled());
 
-		expect(profile.wallets().values().length).toBe(1)
+		expect(profile.wallets().values().length).toBe(1);
 
 		historySpy.mockRestore();
 	});
