@@ -5,12 +5,12 @@ import { InputPassword } from "app/components/Input";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useValidation } from "app/hooks";
 import { toasts } from "app/services";
+import { SettingsWrapper } from "domains/setting/components/SettingsPageWrapper";
 import { useSettingsPrompt } from "domains/setting/hooks/use-settings-prompt";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { Prompt } from "react-router-dom";
-import { SettingsWrapper } from "domains/setting/components/SettingsPageWrapper";
 
 interface PasswordSettingsState {
 	currentPassword: string;

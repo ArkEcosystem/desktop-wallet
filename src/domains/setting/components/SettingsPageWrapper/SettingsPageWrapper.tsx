@@ -1,9 +1,9 @@
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Page, Section } from "app/components/Layout";
 import { SideBar } from "app/components/SideBar";
 import { useSettingsMenu } from "domains/setting/hooks/use-settings-menu";
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 
 type ActiveSettings = "general" | "export" | "password";
 

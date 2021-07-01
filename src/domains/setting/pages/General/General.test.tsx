@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { buildTranslations } from "app/i18n/helpers";
+import { GeneralSettings } from "domains/setting/pages";
 import electron from "electron";
 import { createHashHistory } from "history";
 import os from "os";
 import React from "react";
 import { Route } from "react-router-dom";
 import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, screen, waitFor } from "utils/testing-library";
-
-import { GeneralSettings } from "domains/setting/pages";
 
 const translations = buildTranslations();
 

@@ -14,8 +14,8 @@ export const useSettingsPrompt = <TFieldValues>({ isDirty, dirtyFields }: UseSet
 			const pathname = location.pathname || location.location?.pathname;
 
 			const matchCurrent = matchPath(pathname, {
-				path: "/profiles/:profileId/settings",
 				exact: true,
+				path: "/profiles/:profileId/settings",
 				strict: true,
 			});
 
