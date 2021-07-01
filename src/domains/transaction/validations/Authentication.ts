@@ -37,13 +37,17 @@ export const authentication = (t: any) => {
 			}),
 			validate: {
 				matchSenderAddress: async (mnemonic: string) => {
-					const { address } = await wallet.coin().address().fromMnemonic(mnemonic);
+					try {
+						const { address } = await wallet.coin().address().fromMnemonic(mnemonic);
 
-					if (address === wallet.address()) {
-						return true;
+						if (address === wallet.address()) {
+							return true;
+						}
+
+						return t("COMMON.INPUT_PASSPHRASE.VALIDATION.MNEMONIC_NOT_MATCH_WALLET");
+					} catch {
+						return t("COMMON.INPUT_PASSPHRASE.VALIDATION.MNEMONIC_NOT_MATCH_WALLET");
 					}
-
-					return t("COMMON.INPUT_PASSPHRASE.VALIDATION.MNEMONIC_NOT_MATCH_WALLET");
 				},
 			},
 		}),
@@ -67,13 +71,17 @@ export const authentication = (t: any) => {
 			}),
 			validate: {
 				matchSenderPublicKey: async (mnemonic: string) => {
-					const { publicKey } = await coin.publicKey().fromMnemonic(mnemonic);
+					try {
+						const { publicKey } = await coin.publicKey().fromMnemonic(mnemonic);
 
-					if (publicKey === secondPublicKey) {
-						return true;
+						if (publicKey === secondPublicKey) {
+							return true;
+						}
+
+						return t("COMMON.INPUT_PASSPHRASE.VALIDATION.MNEMONIC_NOT_MATCH_WALLET");
+					} catch {
+						return t("COMMON.INPUT_PASSPHRASE.VALIDATION.MNEMONIC_NOT_MATCH_WALLET");
 					}
-
-					return t("COMMON.INPUT_PASSPHRASE.VALIDATION.MNEMONIC_NOT_MATCH_WALLET");
 				},
 			},
 		}),

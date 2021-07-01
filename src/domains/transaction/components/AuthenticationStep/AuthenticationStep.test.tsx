@@ -25,7 +25,7 @@ describe("AuthenticationStep", () => {
 	it("should validate if mnemonic match the wallet address", async () => {
 		wallet = await profile.walletFactory().fromMnemonicWithBIP39({
 			coin: "ARK",
-			mnemonic: "passphrase",
+			mnemonic: MNEMONICS[0],
 			network: "ark.devnet",
 		});
 
@@ -61,7 +61,7 @@ describe("AuthenticationStep", () => {
 		act(() => {
 			fireEvent.input(screen.getByTestId("AuthenticationStep__mnemonic"), {
 				target: {
-					value: "passphrase",
+					value: MNEMONICS[0],
 				},
 			});
 		});
@@ -75,12 +75,12 @@ describe("AuthenticationStep", () => {
 	it("should validate if second mnemonic match the wallet second public key", async () => {
 		wallet = await profile.walletFactory().fromMnemonicWithBIP39({
 			coin: "ARK",
-			mnemonic: "passphrase",
+			mnemonic: MNEMONICS[0],
 			network: "ark.devnet",
 		});
 
 		profile.wallets().push(wallet);
-		const secondMnemonic = "my second mnemonic";
+		const secondMnemonic = MNEMONICS[1];
 
 		jest.spyOn(wallet, "isSecondSignature").mockReturnValue(true);
 		jest.spyOn(wallet, "secondPublicKey").mockReturnValue(
@@ -105,7 +105,7 @@ describe("AuthenticationStep", () => {
 		act(() => {
 			fireEvent.input(screen.getByTestId("AuthenticationStep__mnemonic"), {
 				target: {
-					value: "passphrase",
+					value: MNEMONICS[0],
 				},
 			});
 		});
@@ -137,7 +137,7 @@ describe("AuthenticationStep", () => {
 	it("should request mnemonic if wallet was imported using mnemonic", async () => {
 		wallet = await profile.walletFactory().fromMnemonicWithBIP39({
 			coin: "ARK",
-			mnemonic: MNEMONICS[0],
+			mnemonic: MNEMONICS[2],
 			network: "ark.devnet",
 		});
 
@@ -245,7 +245,7 @@ describe("AuthenticationStep", () => {
 		act(() => {
 			fireEvent.change(screen.getByTestId("AuthenticationStep__second-mnemonic"), {
 				target: {
-					value: "my second mnemonic",
+					value: MNEMONICS[1],
 				},
 			});
 		});
@@ -253,7 +253,7 @@ describe("AuthenticationStep", () => {
 		await waitFor(() =>
 			expect(result.current.getValues()).toEqual({
 				mnemonic: "my mnemonic",
-				secondMnemonic: "my second mnemonic",
+				secondMnemonic: MNEMONICS[1],
 			}),
 		);
 		expect(asFragment()).toMatchSnapshot();

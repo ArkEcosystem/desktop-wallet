@@ -5,7 +5,7 @@ import { act, renderHook } from "@testing-library/react-hooks";
 import userEvent from "@testing-library/user-event";
 import React, { useEffect } from "react";
 import { FormProvider, useForm } from "react-hook-form";
-import { env, fireEvent, getDefaultProfileId, render, screen, waitFor, within } from "utils/testing-library";
+import { env, fireEvent, getDefaultProfileId, MNEMONICS, render, screen, waitFor, within } from "utils/testing-library";
 
 import { translations as transactionTranslations } from "../../i18n";
 import { AddRecipient } from "./AddRecipient";
@@ -168,7 +168,7 @@ describe("AddRecipient", () => {
 
 		const emptyWallet = await emptyProfile.walletFactory().fromMnemonicWithBIP39({
 			coin: "ARK",
-			mnemonic: "test test",
+			mnemonic: MNEMONICS[0],
 			network: "ark.devnet",
 		});
 
