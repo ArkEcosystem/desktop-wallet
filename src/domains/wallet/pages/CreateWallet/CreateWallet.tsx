@@ -21,29 +21,20 @@ import { ConfirmPassphraseStep } from "./ConfirmPassphraseStep";
 import { SuccessStep } from "./SuccessStep";
 import { WalletOverviewStep } from "./WalletOverviewStep";
 
-interface CreateWalletFormState {
-	network: Networks.Network;
-	wallet: Contracts.IReadWriteWallet;
-	mnemonic: string;
-	name: string;
-	encryptionPassword: string;
-	confirmEncryptionPassword: string;
-	verification: boolean;
-}
-
 export const CreateWallet = () => {
 	const { persist } = useEnvironmentContext();
 	const history = useHistory();
 	const { t } = useTranslation();
 
 	const [activeTab, setActiveTab] = useState(1);
+	const [encryptionPassword, setEncryptionPassword] = useState<string>();
 	const activeProfile = useActiveProfile();
 
 	const nameMaxLength = 42;
 
 	const { selectedNetworkIds, setValue: setConfiguration } = useWalletConfig({ profile: activeProfile });
 
-	const form = useForm<CreateWalletFormState>({ mode: "onChange" });
+	const form = useForm({ mode: "onChange" });
 	const { getValues, formState, register, setValue } = form;
 	const { isSubmitting, isValid } = formState;
 
@@ -56,7 +47,7 @@ export const CreateWallet = () => {
 		register("mnemonic");
 	}, [register]);
 
-	const submitForm = async ({ mnemonic, name, network, wallet, encryptionPassword }: CreateWalletFormState) => {
+	const submitForm = async ({ mnemonic, name, network, wallet }: any) => {
 		let finalWallet = wallet;
 
 		assertNetwork(network);
@@ -113,8 +104,7 @@ export const CreateWallet = () => {
 		}
 
 		if (activeTab === 4 || activeTab === 5) {
-			setValue("encryptionPassword", undefined);
-			setValue("confirmEncryptionPassword", undefined);
+			setEncryptionPassword(undefined);
 		}
 
 		const network = getValues("network");
@@ -154,16 +144,15 @@ export const CreateWallet = () => {
 		}
 	};
 
-	const handleSkipEncryption = () => {
-		setValue("encryptionPassword", undefined);
-		setValue("confirmEncryptionPassword", undefined);
+	const handlePasswordSubmit = () => {
+		setEncryptionPassword(form.getValues("encryptionPassword"));
 		handleNext();
 	};
 
 	return (
 		<Page profile={activeProfile}>
 			<Section className="flex-1">
-				<Form className="mx-auto max-w-xl" context={form as any} onSubmit={submitForm as any}>
+				<Form className="mx-auto max-w-xl" context={form} onSubmit={submitForm}>
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={5} activeIndex={activeTab} />
 
@@ -197,7 +186,7 @@ export const CreateWallet = () => {
 							<div className="flex justify-between mt-10">
 								<div>
 									{activeTab === 4 && (
-										<Button data-testid="CreateWallet__skip-button" onClick={handleSkipEncryption}>
+										<Button data-testid="CreateWallet__skip-button" onClick={handleNext}>
 											{t("COMMON.SKIP")}
 										</Button>
 									)}
@@ -236,7 +225,7 @@ export const CreateWallet = () => {
 												!form.watch("confirmEncryptionPassword")
 											}
 											isLoading={isGeneratingWallet}
-											onClick={handleNext}
+											onClick={handlePasswordSubmit}
 										>
 											{t("COMMON.CONTINUE")}
 										</Button>
