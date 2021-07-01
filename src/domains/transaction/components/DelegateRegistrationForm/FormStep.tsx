@@ -6,8 +6,8 @@ import { InputDefault } from "app/components/Input";
 import { useEnvironmentContext } from "app/contexts";
 import { useValidation } from "app/hooks";
 import { InputFee } from "domains/transaction/components/InputFee";
-import { TransactionSender } from "domains/transaction/components/TransactionDetail";
-import React, { useEffect, useState } from "react";
+import { TransactionNetwork, TransactionSender } from "domains/transaction/components/TransactionDetail";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -47,28 +47,29 @@ export const FormStep = ({ fees, wallet, step = 0.001, profile }: any) => {
 	}, [delegateRegistration, usernames, register, username, t]);
 
 	return (
-		<section data-testid="DelegateRegistrationForm__form-step" className="space-y-6">
+		<section data-testid="DelegateRegistrationForm__form-step">
 			<Header
 				title={t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.FORM_STEP.TITLE")}
 				subtitle={t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.FORM_STEP.DESCRIPTION")}
 			/>
 
-			<Alert>{t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.FORM_STEP.WARNING")}</Alert>
+			<Alert className="mt-6">{t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.FORM_STEP.WARNING")}</Alert>
+
+			<TransactionNetwork network={wallet.network()} borderPosition="bottom" />
 
 			<TransactionSender
 				address={wallet.address()}
 				alias={wallet.alias()}
 				borderPosition="bottom"
-				paddingPosition="bottom"
 			/>
 
-			<div className="space-y-5 pt-2">
+			<div className="pt-6 space-y-6">
 				<FormField name="username">
 					<FormLabel label={t("TRANSACTION.DELEGATE_NAME")} />
 					<InputDefault
 						data-testid="Input__username"
 						defaultValue={username}
-						onChange={(event: any) =>
+						onChange={(event: ChangeEvent<HTMLInputElement>) =>
 							setValue("username", event.target.value, { shouldDirty: true, shouldValidate: true })
 						}
 					/>
