@@ -15,7 +15,7 @@ interface Properties {
 const randomWordPositions = (wordCount: number): number[] => {
 	const positions: number[] = [];
 	while (positions.length < 3) {
-		const randomNumber = Math.floor(Math.random() * (wordCount + 1);
+		const randomNumber = Math.floor(Math.random() * wordCount) + 1;
 		if (!positions.includes(randomNumber)) {
 			positions.push(randomNumber);
 		}
