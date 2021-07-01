@@ -94,7 +94,14 @@ describe("Registration", () => {
 		await profile.sync();
 
 		wallet = profile.wallets().findByAddress("D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")!;
-		secondWallet = profile.wallets().findByAddress("D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb")!;
+		// secondWallet = profile.wallets().findByAddress("D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb")!;
+		secondWallet = profile.wallets().push(
+			await profile.walletFactory().fromAddress({
+				address: "DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr",
+				coin: "ARK",
+				network: "ark.devnet",
+			}),
+		);
 
 		await wallet.synchroniser().identity();
 		await secondWallet.synchroniser().identity();
@@ -389,7 +396,7 @@ describe("Registration", () => {
 
 		const secondPublicKeyMock = jest
 			.spyOn(secondWallet, "secondPublicKey")
-			.mockReturnValue((await secondWallet.coin().publicKey().fromMnemonic(MNEMONICS[0])).publicKey);
+			.mockReturnValue((await secondWallet.coin().publicKey().fromMnemonic(MNEMONICS[1])).publicKey);
 
 		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
 
