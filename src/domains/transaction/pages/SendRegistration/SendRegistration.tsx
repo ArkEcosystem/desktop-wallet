@@ -1,9 +1,9 @@
 import { Networks } from "@arkecosystem/platform-sdk";
 import { DTO } from "@arkecosystem/platform-sdk-profiles";
-import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
+import { StepNavigation } from "app/components/StepNavigation";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useFees, usePrevious } from "app/hooks";
@@ -168,6 +168,8 @@ export const SendRegistration = () => {
 		setActiveTab(newIndex);
 	};
 
+	const showErrorStep = activeTab === 10;
+
 	return (
 		<Page profile={activeProfile}>
 			<Section className="flex-1">
@@ -214,57 +216,20 @@ export const SendRegistration = () => {
 									</TabPanel>
 								</>
 							)}
-
-							<div className="flex justify-end mt-10 space-x-3">
-								{activeTab < stepCount && (
-									<Button
-										disabled={isSubmitting}
-										data-testid="Registration__back-button"
-										variant="secondary"
-										onClick={handleBack}
-									>
-										{t("COMMON.BACK")}
-									</Button>
-								)}
-
-								{activeTab < stepCount - 1 && (
-									<Button
-										data-testid="Registration__continue-button"
-										disabled={!isValid}
-										onClick={() => handleNext()}
-									>
-										{t("COMMON.CONTINUE")}
-									</Button>
-								)}
-
-								{registrationForm && activeTab === stepCount - 1 && (
-									<Button
-										type="submit"
-										data-testid="Registration__send-button"
-										disabled={!isValid}
-										className="space-x-2"
-										isLoading={isSubmitting}
-										icon="Send"
-										iconWidth={16}
-										iconHeight={16}
-										iconPosition="right"
-									>
-										<span>{t("COMMON.SEND")}</span>
-									</Button>
-								)}
-
-								{registrationForm && activeTab === stepCount && (
-									<Button
-										data-testid="Registration__button--back-to-wallet"
-										variant="secondary"
-										onClick={() =>
-											history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
-										}
-									>
-										{t("COMMON.BACK_TO_WALLET")}
-									</Button>
-								)}
-							</div>
+	
+							{!showErrorStep && (
+								<StepNavigation
+									onBackClick={handleBack}
+									onBackToWalletClick={() =>
+										history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
+									}
+									onContinueClick={() => handleNext()}
+									isSubmitting={isSubmitting}
+									isValid={isValid}
+									size={stepCount}
+									activeIndex={activeTab}
+								/>
+							)}
 						</div>
 					</Tabs>
 
