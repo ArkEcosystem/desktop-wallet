@@ -142,7 +142,7 @@ export const useWalletImport = ({ profile }: { profile: Contracts.IProfile }) =>
 							.fromSecret({
 								...defaultOptions,
 								password: value,
-                                secret: value,
+								secret: value,
 							})
 							.then((wallet) => {
 								profile.wallets().push(wallet);
