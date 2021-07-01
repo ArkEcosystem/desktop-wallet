@@ -32,6 +32,18 @@ describe("useWalletSignatory", () => {
 		expect(() => signatory.confirmKey()).toThrow();
 	});
 
+	it("should sign with secret", async () => {
+		const { result } = renderHook(() => useWalletSignatory(wallet));
+		await expect(result.current.sign({ secret: "secret" })).resolves.toBeInstanceOf(Signatories.Signatory);
+
+		const signatory = await result.current.sign({ secret: "secret" });
+
+		expect(signatory).toBeInstanceOf(Signatories.Signatory);
+		expect(signatory.actsWithSecret()).toBeTrue();
+		expect(signatory.signingKey()).toBe("secret");
+		expect(() => signatory.confirmKey()).toThrow();
+	});
+
 	it("should sign with secondMnemonic", async () => {
 		const { result } = renderHook(() => useWalletSignatory(wallet));
 
