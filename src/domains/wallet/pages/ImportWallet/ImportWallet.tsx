@@ -131,7 +131,6 @@ export const ImportWallet = () => {
 			walletData
 				?.data()
 				.set(Contracts.WalletData.ImportMethod, Contracts.WalletImportMethod.SECRET_WITH_ENCRYPTION);
-
 		}
 
 		await persist();
