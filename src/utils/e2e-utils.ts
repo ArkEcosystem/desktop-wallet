@@ -39,9 +39,7 @@ const walletMocks = () => {
 		"DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr",
 	];
 
-	const publicKeys = [
-		"034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192",
-	];
+	const publicKeys = ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"];
 
 	const devnetMocks = [...addresses, ...publicKeys].map((identifier: string) =>
 		mockRequest(`https://dwallets.ark.io/api/wallets/${identifier}`, `coins/ark/devnet/wallets/${identifier}`),

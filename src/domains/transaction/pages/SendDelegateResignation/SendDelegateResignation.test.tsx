@@ -260,9 +260,7 @@ describe("SendDelegateResignation", () => {
 				});
 			});
 
-			await waitFor(() =>
-				expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue(MNEMONICS[1]),
-			);
+			await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue(MNEMONICS[1]));
 
 			act(() => {
 				fireEvent.click(getByTestId("SendDelegateResignation__send-button"));
@@ -317,9 +315,7 @@ describe("SendDelegateResignation", () => {
 				});
 			});
 
-			await waitFor(() =>
-				expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue(MNEMONICS[1]),
-			);
+			await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue(MNEMONICS[1]));
 
 			act(() => {
 				fireEvent.click(getByTestId("SendDelegateResignation__send-button"));
@@ -371,9 +367,7 @@ describe("SendDelegateResignation", () => {
 				});
 			});
 
-			await waitFor(() =>
-				expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue(MNEMONICS[1]),
-			);
+			await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue(MNEMONICS[1]));
 
 			act(() => {
 				fireEvent.click(getByTestId("SendDelegateResignation__send-button"));
@@ -437,9 +431,7 @@ describe("SendDelegateResignation", () => {
 				});
 			});
 
-			await waitFor(() =>
-				expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue(MNEMONICS[1]),
-			);
+			await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue(MNEMONICS[1]));
 
 			act(() => {
 				fireEvent.click(getByTestId("SendDelegateResignation__send-button"));
@@ -497,9 +489,7 @@ describe("SendDelegateResignation", () => {
 				});
 			});
 
-			await waitFor(() =>
-				expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue(MNEMONICS[1]),
-			);
+			await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue(MNEMONICS[1]));
 
 			act(() => {
 				fireEvent.click(getByTestId("SendDelegateResignation__send-button"));
