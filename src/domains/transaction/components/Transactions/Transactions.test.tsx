@@ -10,6 +10,7 @@ import {
 	env,
 	fireEvent,
 	getDefaultProfileId,
+	MNEMONICS,
 	renderWithRouter,
 	syncDelegates,
 	useDefaultNetMocks,
@@ -171,7 +172,7 @@ describe("Transactions", () => {
 		emptyProfile.wallets().push(
 			await emptyProfile.walletFactory().fromMnemonicWithBIP39({
 				coin: "ARK",
-				mnemonic: "test",
+				mnemonic: MNEMONICS[0],
 				network: "ark.devnet",
 			}),
 		);
@@ -202,12 +203,12 @@ describe("Transactions", () => {
 	});
 
 	it("should filter by type and see empty screen", async () => {
-		const emptyProfile = env.profiles().create("test");
+		const emptyProfile = env.profiles().create(MNEMONICS[0]);
 
 		emptyProfile.wallets().push(
 			await emptyProfile.walletFactory().fromMnemonicWithBIP39({
 				coin: "ARK",
-				mnemonic: "test",
+				mnemonic: MNEMONICS[0],
 				network: "ark.devnet",
 			}),
 		);

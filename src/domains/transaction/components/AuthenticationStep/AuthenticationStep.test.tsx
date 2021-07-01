@@ -3,7 +3,7 @@ import { act, renderHook } from "@testing-library/react-hooks";
 import { Form } from "app/components/Form";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { env, fireEvent, getDefaultProfileId, renderWithRouter, screen, waitFor } from "utils/testing-library";
+import { env, fireEvent, getDefaultProfileId, MNEMONICS, renderWithRouter, screen, waitFor } from "utils/testing-library";
 
 import { AuthenticationStep } from "./AuthenticationStep";
 
@@ -137,7 +137,7 @@ describe("AuthenticationStep", () => {
 	it("should request mnemonic if wallet was imported using mnemonic", async () => {
 		wallet = await profile.walletFactory().fromMnemonicWithBIP39({
 			coin: "ARK",
-			mnemonic: "some random mnemonic",
+			mnemonic: MNEMONICS[0],
 			network: "ark.devnet",
 		});
 
