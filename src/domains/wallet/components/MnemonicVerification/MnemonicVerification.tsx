@@ -12,8 +12,7 @@ interface Properties {
 	isCompleted?: boolean;
 }
 
-const randomWordPositions = (mnemonic: string): number[] => {
-	const wordCount: number = mnemonic.split(" ").length;
+const randomWordPositions = (wordCount: number): number[] => {
 	const positions: number[] = [];
 	while (positions.length < 3) {
 		const randomNumber = Math.floor(Math.random() * wordCount) + 1;
@@ -41,7 +40,7 @@ export function MnemonicVerification({
 	mnemonicWords = /\u3000/.test(mnemonic) ? mnemonic.split("\u3000") : mnemonic.split(" ");
 
 	if (!wordPositions?.length && activeTab === 0 && positions.length === 0) {
-		setPositions(randomWordPositions(mnemonic));
+		setPositions(randomWordPositions(mnemonicWords.length));
 	} else if (activeTab === 0 && positions.length === 0) {
 		setPositions(wordPositions as number[]);
 	}
