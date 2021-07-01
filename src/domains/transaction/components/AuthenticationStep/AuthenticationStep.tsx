@@ -124,7 +124,7 @@ export const AuthenticationStep = ({
 				<>
 					<Header title={title} subtitle={t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION_SECRET")} />
 
-					<FormField name="SECRET">
+					<FormField name="secret">
 						<FormLabel>{t("COMMON.secret")}</FormLabel>
 						<InputPassword
 							data-testid="AuthenticationStep__secret"

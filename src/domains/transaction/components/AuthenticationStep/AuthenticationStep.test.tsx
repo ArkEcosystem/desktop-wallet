@@ -169,6 +169,33 @@ describe("AuthenticationStep", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should request secret if wallet was imported using secret", async () => {
+		wallet = await profile.walletFactory().fromSecret({
+			coin: "ARK",
+			secret: "secret",
+			network: "ark.devnet",
+		});
+
+		jest.spyOn(wallet, "isSecondSignature").mockReturnValueOnce(false);
+
+		const { result } = renderHook(() => useForm({ mode: "onChange", shouldUnregister: false }));
+		const { asFragment } = renderWithRouter(<Component form={result.current} />);
+
+		await waitFor(() => expect(screen.queryByTestId("AuthenticationStep__second-mnemonic")).toBeNull());
+		await waitFor(() => expect(screen.queryByTestId("AuthenticationStep__secret")).toBeInTheDocument());
+
+		act(() => {
+			fireEvent.change(screen.getByTestId("AuthenticationStep__secret"), {
+				target: {
+					value: "secret",
+				},
+			});
+		});
+
+		await waitFor(() => expect(result.current.getValues()).toEqual({ secret: "secret" }));
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should request mnemonic if wallet was imported using address", async () => {
 		wallet = await profile.walletFactory().fromAddress({
 			address: "DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq",
