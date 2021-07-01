@@ -14,6 +14,7 @@ import {
 	env,
 	fireEvent,
 	getDefaultProfileId,
+	MNEMONICS,
 	render,
 	renderWithRouter,
 	screen,
@@ -29,7 +30,7 @@ let walletUrl: string;
 let profile: Contracts.IProfile;
 let wallet: Contracts.IReadWriteWallet;
 
-const mnemonic = "this is a top secret password";
+const mnemonic = MNEMONICS[0];
 
 let transport: typeof Transport;
 
@@ -103,9 +104,9 @@ describe("SignMessage", () => {
 		const aliasMock = jest.spyOn(wallet, "alias").mockReturnValue("my-alias");
 		const signedMessage = {
 			message: "Hello World",
-			signatory: "0360e26c8ab14e1bebf4d5f36ab16dcefc9e7b9d9e000ae2470397eccdf1280f6f",
+			signatory: "03d7001f0cfff639c0e458356581c919d5885868f14f72ba3be74c8f105cce34ac",
 			signature:
-				"b9791983a2b2b529dad23e0798cf4df30b3880f4fda5f4587f1c3171f02d0c9f4491f8c6d3e76b5cd2e2fd11c9fdcc7958e77d1f19c1b57a55e9c99ed1e6a2b1",
+				"e16e8badc6475e2eb4eb814fa0ae434e9ca2240b6131f3bf560969989366baa270786fb87ae2fe2945d60408cedc0a757768ebc768b03bf78e5e9b7a20291ac6",
 		};
 
 		const { container, getByText } = render(<SignedStep wallet={wallet} signedMessage={signedMessage} />);
@@ -117,9 +118,9 @@ describe("SignMessage", () => {
 	it("should sign message", async () => {
 		const signedMessage = {
 			message: "Hello World",
-			signatory: "0360e26c8ab14e1bebf4d5f36ab16dcefc9e7b9d9e000ae2470397eccdf1280f6f",
+			signatory: "03d7001f0cfff639c0e458356581c919d5885868f14f72ba3be74c8f105cce34ac",
 			signature:
-				"b9791983a2b2b529dad23e0798cf4df30b3880f4fda5f4587f1c3171f02d0c9f4491f8c6d3e76b5cd2e2fd11c9fdcc7958e77d1f19c1b57a55e9c99ed1e6a2b1",
+				"e16e8badc6475e2eb4eb814fa0ae434e9ca2240b6131f3bf560969989366baa270786fb87ae2fe2945d60408cedc0a757768ebc768b03bf78e5e9b7a20291ac6",
 		};
 
 		const onSign = jest.fn();
@@ -221,9 +222,9 @@ describe("SignMessage", () => {
 	it("should sign message with encryption password", async () => {
 		const signedMessage = {
 			message: "Hello World",
-			signatory: "0360e26c8ab14e1bebf4d5f36ab16dcefc9e7b9d9e000ae2470397eccdf1280f6f",
+			signatory: "03d7001f0cfff639c0e458356581c919d5885868f14f72ba3be74c8f105cce34ac",
 			signature:
-				"b9791983a2b2b529dad23e0798cf4df30b3880f4fda5f4587f1c3171f02d0c9f4491f8c6d3e76b5cd2e2fd11c9fdcc7958e77d1f19c1b57a55e9c99ed1e6a2b1",
+				"e16e8badc6475e2eb4eb814fa0ae434e9ca2240b6131f3bf560969989366baa270786fb87ae2fe2945d60408cedc0a757768ebc768b03bf78e5e9b7a20291ac6",
 		};
 
 		const walletUsesWIFMock = jest.spyOn(wallet.wif(), "exists").mockReturnValue(true);
