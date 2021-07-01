@@ -85,6 +85,20 @@ export const authentication = (t: any) => {
 				},
 			},
 		}),
+		secret: (wallet: Contracts.IReadWriteWallet) => ({
+			required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+				field: t("COMMON.SECRET"),
+			}),
+			validate: async (secret: string) => {
+				const { address } = await wallet.coin().address().fromSecret(secret);
+
+				if (address === wallet.address()) {
+					return true;
+				}
+
+				return t("COMMON.INPUT_PASSPHRASE.VALIDATION.SECRET_NOT_MATCH_WALLET");
+			},
+		}),
 		wif: (wallet: Contracts.IReadWriteWallet) => ({
 			required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 				field: t("COMMON.WIF"),

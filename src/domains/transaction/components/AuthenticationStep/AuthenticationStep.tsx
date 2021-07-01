@@ -66,10 +66,8 @@ export const AuthenticationStep = ({
 
 	const title = t("TRANSACTION.AUTHENTICATION_STEP.TITLE");
 
-	const requireWif = wallet.actsWithWif();
-	const requirePrivateKey = wallet.actsWithPrivateKey();
 	const requireMnemonic = wallet.actsWithMnemonic() || wallet.actsWithAddress() || wallet.actsWithPublicKey();
-	const requireEncryptionPassword = wallet.actsWithMnemonicWithEncryption() || wallet.actsWithWifWithEncryption();
+	const requireEncryptionPassword = wallet.actsWithMnemonicWithEncryption() || wallet.actsWithWifWithEncryption() || wallet.actsWithSecretWithEncryption();
 
 	const shouldRenderSecondMnemonicField = !skipSecondSignature && wallet.isSecondSignature();
 
@@ -91,7 +89,7 @@ export const AuthenticationStep = ({
 
 	return (
 		<div data-testid="AuthenticationStep" className="space-y-8">
-			{requireWif && (
+			{wallet.actsWithWif() && (
 				<>
 					<Header title={title} subtitle={t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION_WIF")} />
 
@@ -105,7 +103,7 @@ export const AuthenticationStep = ({
 				</>
 			)}
 
-			{requirePrivateKey && (
+			{wallet.actsWithPrivateKey() && (
 				<>
 					<Header title={title} subtitle={t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION_PRIVATE_KEY")} />
 
@@ -114,6 +112,20 @@ export const AuthenticationStep = ({
 						<InputPassword
 							data-testid="AuthenticationStep__private-key"
 							ref={register(authentication.privateKey(wallet))}
+						/>
+					</FormField>
+				</>
+			)}
+
+			{wallet.actsWithSecret() && (
+				<>
+					<Header title={title} subtitle={t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION_SECRET")} />
+
+					<FormField name="SECRET">
+						<FormLabel>{t("COMMON.secret")}</FormLabel>
+						<InputPassword
+							data-testid="AuthenticationStep__secret"
+							ref={register(authentication.secret(wallet))}
 						/>
 					</FormField>
 				</>
