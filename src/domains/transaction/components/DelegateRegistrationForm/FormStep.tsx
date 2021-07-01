@@ -55,12 +55,12 @@ export const FormStep = ({ fees, wallet, step = 0.001, profile }: any) => {
 
 			<Alert className="mt-6">{t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.FORM_STEP.WARNING")}</Alert>
 
-			<TransactionNetwork network={wallet.network()} borderPosition="bottom" />
+			<TransactionNetwork network={wallet.network()} border={false} />
 
 			<TransactionSender
 				address={wallet.address()}
 				alias={wallet.alias()}
-				borderPosition="bottom"
+				borderPosition="both"
 			/>
 
 			<div className="pt-6 space-y-6">

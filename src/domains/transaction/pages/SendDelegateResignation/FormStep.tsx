@@ -64,15 +64,14 @@ export const FormStep = ({
 
 			<Alert className="mt-6">{t("TRANSACTION.PAGE_DELEGATE_RESIGNATION.FORM_STEP.WARNING")}</Alert>
 
-			<TransactionNetwork network={senderWallet.network()} borderPosition="bottom" />
+			<TransactionNetwork network={senderWallet.network()} border={false} />
 
 			<TransactionSender
 				address={senderWallet.address()}
 				alias={senderWallet.alias()}
-				borderPosition="bottom"
 			/>
 
-			<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")} borderPosition="bottom">
+			<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")} borderPosition="both">
 				{senderWallet.username()}
 			</TransactionDetail>
 

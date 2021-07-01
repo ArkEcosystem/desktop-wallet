@@ -14,7 +14,7 @@ export const EncryptPasswordStep = () => {
 	const { password } = useValidation();
 
 	return (
-		<section data-testid="EncryptPassword" className="space-y-8">
+		<section data-testid="EncryptPassword">
 			<Header
 				title={t("WALLETS.PAGE_IMPORT_WALLET.ENCRYPT_PASSWORD_STEP.TITLE")}
 				titleSuffix={
@@ -24,27 +24,29 @@ export const EncryptPasswordStep = () => {
 				}
 			/>
 
-			<Alert variant="warning">{t("WALLETS.PAGE_IMPORT_WALLET.ENCRYPT_PASSWORD_STEP.WARNING")}</Alert>
+			<Alert className="mt-6" variant="warning">{t("WALLETS.PAGE_IMPORT_WALLET.ENCRYPT_PASSWORD_STEP.WARNING")}</Alert>
 
-			<FormField name="encryptionPassword">
-				<FormLabel label={t("WALLETS.PAGE_IMPORT_WALLET.ENCRYPT_PASSWORD_STEP.PASSWORD_LABEL")} optional />
-				<InputPassword
-					ref={register(password.password())}
-					onChange={() => {
-						if (confirmEncryptionPassword) {
-							trigger("confirmEncryptionPassword");
-						}
-					}}
-				/>
-			</FormField>
+			<div className="pt-6 space-y-6">
+				<FormField name="encryptionPassword">
+					<FormLabel label={t("WALLETS.PAGE_IMPORT_WALLET.ENCRYPT_PASSWORD_STEP.PASSWORD_LABEL")} optional />
+					<InputPassword
+						ref={register(password.password())}
+						onChange={() => {
+							if (confirmEncryptionPassword) {
+								trigger("confirmEncryptionPassword");
+							}
+						}}
+					/>
+				</FormField>
 
-			<FormField name="confirmEncryptionPassword">
-				<FormLabel
-					label={t("WALLETS.PAGE_IMPORT_WALLET.ENCRYPT_PASSWORD_STEP.CONFIRM_PASSWORD_LABEL")}
-					optional={!encryptionPassword}
-				/>
-				<InputPassword ref={register(password.confirmPassword(watch("encryptionPassword")))} />
-			</FormField>
+				<FormField name="confirmEncryptionPassword">
+					<FormLabel
+						label={t("WALLETS.PAGE_IMPORT_WALLET.ENCRYPT_PASSWORD_STEP.CONFIRM_PASSWORD_LABEL")}
+						optional={!encryptionPassword}
+					/>
+					<InputPassword ref={register(password.confirmPassword(watch("encryptionPassword")))} />
+				</FormField>
+			</div>
 		</section>
 	);
 };

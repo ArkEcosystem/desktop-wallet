@@ -194,7 +194,7 @@ export const CreateWallet = () => {
 								<SuccessStep nameMaxLength={nameMaxLength} profile={activeProfile} />
 							</TabPanel>
 
-							<div className="flex justify-between mt-10">
+							<div className="flex justify-between mt-8">
 								<div>
 									{activeTab === 4 && (
 										<Button data-testid="CreateWallet__skip-button" onClick={handleNext}>

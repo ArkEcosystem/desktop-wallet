@@ -180,7 +180,7 @@ export const ImportWallet = () => {
 									/>
 								</TabPanel>
 
-								<div className="flex justify-between mt-10">
+								<div className="flex justify-between mt-8">
 									<div>
 										{activeTab === 3 && (
 											<Button
