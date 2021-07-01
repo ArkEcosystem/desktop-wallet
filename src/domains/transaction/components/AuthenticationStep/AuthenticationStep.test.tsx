@@ -172,8 +172,8 @@ describe("AuthenticationStep", () => {
 	it("should request secret if wallet was imported using secret", async () => {
 		wallet = await profile.walletFactory().fromSecret({
 			coin: "ARK",
-			secret: "secret",
 			network: "ark.devnet",
+			secret: "secret",
 		});
 
 		jest.spyOn(wallet, "isSecondSignature").mockReturnValueOnce(false);
