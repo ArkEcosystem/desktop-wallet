@@ -28,7 +28,7 @@ const walletMocks = () => {
 		"D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
 		"D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
 		"D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
-		"D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+		"DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr",
 		"DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P",
 		"DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T",
 		"D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f",
@@ -90,7 +90,7 @@ const searchAddressesMocks = () => {
 			{ limit: 15, page: 1 },
 			{ limit: 30, page: 1 },
 		],
-		D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD: [
+		DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr: [
 			{ limit: 10, page: 1 },
 			{ limit: 15, page: 1 },
 			{ limit: 15, page: 2 },
@@ -247,19 +247,19 @@ export const requestMocks = {
 		mockRequest("https://dwallets.ark.io/api/transactions?limit=10", "coins/ark/devnet/transactions"),
 		mockRequest("https://dwallets.ark.io/api/transactions?limit=20", "coins/ark/devnet/transactions"),
 		mockRequest(
-			"https://dwallets.ark.io/api/transactions?page=2&limit=30&address=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+			"https://dwallets.ark.io/api/transactions?page=2&limit=30&address=DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr",
 			"coins/ark/devnet/transactions",
 		),
 		mockRequest(
-			"https://dwallets.ark.io/api/transactions?page=1&limit=20&senderId=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+			"https://dwallets.ark.io/api/transactions?page=1&limit=20&senderId=DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr",
 			"coins/ark/devnet/transactions",
 		),
 		mockRequest(
-			"https://dwallets.ark.io/api/transactions?limit=30&address=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD%2CD5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
+			"https://dwallets.ark.io/api/transactions?limit=30&address=DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr%2CD5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
 			"coins/ark/devnet/transactions",
 		),
 		mockRequest(
-			"https://dwallets.ark.io/api/transactions?limit=30&address=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD%2CD5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb%2CDH4Xyyt5zPqM9KwUkevUZPbzM3KjjW8fp5",
+			"https://dwallets.ark.io/api/transactions?limit=30&address=DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr%2CD5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb%2CDH4Xyyt5zPqM9KwUkevUZPbzM3KjjW8fp5",
 			"coins/ark/devnet/transactions",
 		),
 		// unconfirmed transactions list before sending single or multiPayment transaction
@@ -274,7 +274,7 @@ export const requestMocks = {
 		),
 
 		mockRequest(
-			"https://dwallets.ark.io/api/transactions?page=1&limit=10&orderBy=timestamp&address=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+			"https://dwallets.ark.io/api/transactions?page=1&limit=10&orderBy=timestamp&address=DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr",
 			"coins/ark/devnet/transactions",
 		),
 
@@ -288,7 +288,7 @@ export const requestMocks = {
 		),
 
 		mockRequest(
-			"https://dwallets.ark.io/api/transactions?page=1&limit=10&orderBy=timestamp&address=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD%2CD5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
+			"https://dwallets.ark.io/api/transactions?page=1&limit=10&orderBy=timestamp&address=DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr%2CD5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
 			{ data: [], meta: {} },
 		),
 
@@ -299,7 +299,7 @@ export const requestMocks = {
 	],
 	wallets: [
 		mockRequest(
-			"https://dwallets.ark.io/api/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD/votes",
+			"https://dwallets.ark.io/api/wallets/DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr/votes",
 			"coins/ark/devnet/votes",
 		),
 
