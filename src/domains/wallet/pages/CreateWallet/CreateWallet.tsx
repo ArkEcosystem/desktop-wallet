@@ -15,11 +15,11 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
+import { assertNetwork, assertString, assertWallet } from "utils/assertions";
 
 import { ConfirmPassphraseStep } from "./ConfirmPassphraseStep";
 import { SuccessStep } from "./SuccessStep";
 import { WalletOverviewStep } from "./WalletOverviewStep";
-import { assertNetwork, assertString, assertWallet } from "utils/assertions";
 
 interface CreateWalletFormState {
 	network: Networks.Network;
@@ -143,7 +143,6 @@ export const CreateWallet = () => {
 				setIsGeneratingWallet(false);
 			}
 		} else {
-
 			const network = getValues("network");
 			assertNetwork(network);
 
