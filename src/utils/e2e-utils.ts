@@ -48,6 +48,15 @@ const walletMocks = () => {
 		mockRequest(`https://wallets.ark.io/api/wallets/${identifier}`, `coins/ark/mainnet/wallets/${identifier}`),
 	);
 
+	// We want to use a clean version of this wallet in E2E tests so we don't have
+	// any pre-defined behaviours like delegation, voting and whatever else exists
+	devnetMocks.push(
+		mockRequest(
+			"https://dwallets.ark.io/api/wallets/DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr",
+			"coins/ark/devnet/wallets/DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr-basic",
+		),
+	);
+
 	return [...devnetMocks, ...mainnetMocks];
 };
 
@@ -57,6 +66,7 @@ const publicKeys = [
 	"02e012f0a7cac12a74bdc17d844cbc9f637177b470019c32a53cef94c7a56e2ea9",
 	"029511e2507b6c70d617492308a4b34bb1bdaabb1c260a8c15c5805df8b6a64f11",
 	"03c4d1788718e39c5de7cb718ce380c66bbe2ac5a0645a6ff90f0569178ab7cd6d",
+	"03d3fdad9c5b25bf8880e6b519eb3611a5c0b31adebc8455f0e096175b28321aff",
 ];
 
 const publicKeysMainnet = ["035b3d223f75bde72d0599272ae37573e254b611896241e3688151c4228e04522c"];
@@ -91,6 +101,12 @@ const searchAddressesMocks = () => {
 			{ limit: 30, page: 1 },
 		],
 		D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD: [
+			{ limit: 10, page: 1 },
+			{ limit: 15, page: 1 },
+			{ limit: 15, page: 2 },
+			{ limit: 30, page: 1 },
+		],
+		DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr: [
 			{ limit: 10, page: 1 },
 			{ limit: 15, page: 1 },
 			{ limit: 15, page: 2 },
@@ -262,6 +278,22 @@ export const requestMocks = {
 			"https://dwallets.ark.io/api/transactions?limit=30&address=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD%2CD5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb%2CDH4Xyyt5zPqM9KwUkevUZPbzM3KjjW8fp5",
 			"coins/ark/devnet/transactions",
 		),
+		mockRequest(
+			"https://dwallets.ark.io/api/transactions?page=2&limit=30&address=DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr",
+			"coins/ark/devnet/transactions",
+		),
+		mockRequest(
+			"https://dwallets.ark.io/api/transactions?page=1&limit=20&senderId=DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr",
+			"coins/ark/devnet/transactions",
+		),
+		mockRequest(
+			"https://dwallets.ark.io/api/transactions?limit=30&address=DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr%2CD5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
+			"coins/ark/devnet/transactions",
+		),
+		mockRequest(
+			"https://dwallets.ark.io/api/transactions?limit=30&address=DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr%2CD5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb%2CDH4Xyyt5zPqM9KwUkevUZPbzM3KjjW8fp5",
+			"coins/ark/devnet/transactions",
+		),
 		// unconfirmed transactions list before sending single or multiPayment transaction
 		mockRequest(
 			"https://dwallets.ark.io/api/transactions?page=1&limit=20&senderId=DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS",
@@ -282,13 +314,24 @@ export const requestMocks = {
 			"https://dwallets.ark.io/api/transactions?page=1&limit=10&orderBy=timestamp&address=D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
 			"coins/ark/devnet/transactions",
 		),
+
 		mockRequest(
 			"https://dwallets.ark.io/api/transactions?page=1&limit=10&orderBy=timestamp&address=DJXg9Vqg2tofRNrMAvMzhZTkegu8QyyNQq",
 			"coins/ark/devnet/transactions",
 		),
 
 		mockRequest(
+			"https://dwallets.ark.io/api/transactions?page=1&limit=10&orderBy=timestamp&address=DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr",
+			"coins/ark/devnet/transactions",
+		),
+
+		mockRequest(
 			"https://dwallets.ark.io/api/transactions?page=1&limit=10&orderBy=timestamp&address=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD%2CD5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
+			{ data: [], meta: {} },
+		),
+
+		mockRequest(
+			"https://dwallets.ark.io/api/transactions?page=1&limit=10&orderBy=timestamp&address=DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr%2CD5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
 			{ data: [], meta: {} },
 		),
 
@@ -338,3 +381,16 @@ export const createFixture = (name: string, preHooks: RequestMock[] = [], postHo
 				throw new Error(`\n-- Missing mock:\n${JSON.stringify(mock, undefined, 4)}`);
 			}),
 		);
+
+export const MNEMONICS = [
+	"skin fortune security mom coin hurdle click emotion heart brisk exact rather code feature era leopard grocery tide gift power lawsuit sight vehicle coin",
+	"audit theory scheme profit away wing rescue cloth fit spell atom rely enter upon man clutch divide buddy office tuition input bundle silk scheme",
+	"uphold egg salon police home famous focus fade skin virus fence surprise hidden skate word famous movie grant ghost save fly assume motion case",
+	"dress assault rich club glass fancy hood glance install buzz blur attack room outdoor chapter melody tide blur trend into have accuse very little",
+	"already device awful potato face kingdom coral biology badge donkey ranch random when dove solve system tonight purchase foot way deliver grow raccoon blame",
+	"garden neglect enable bone inform deal shallow smart train enrich cloud police pave ignore assault wrong chef harbor river brain way essay zero mouse",
+	"analyst rifle dose thank unfair remain claim exile math foster clarify unfair gauge wasp notice crash sustain session lunch verify gasp try divorce slender",
+	"tray analyst bulk topple night swing list execute walk bronze invite title silent loud cash apology sibling wheel thumb dragon black soccer mixed curious",
+	"cool path congress harbor position ready embody hunt face field boil brown rubber toss arrange later convince anxiety foam urban monster endless essay melt",
+	"subway cradle salad cake toddler sausage neglect eight cruel fault mammal cannon south interest theory sadness pass move outside segment curtain toddler save banner",
+];

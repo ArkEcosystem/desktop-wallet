@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { renderHook } from "@testing-library/react-hooks";
-import { env, getDefaultProfileId } from "utils/testing-library";
+import { env, getDefaultProfileId, MNEMONICS } from "utils/testing-library";
 
 import { useProfileAddresses } from "./use-profile-addresses";
 
@@ -18,7 +18,7 @@ describe("useProfileAddresses", () => {
 				{
 					address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 					coin: "ARK",
-					name: "test",
+					name: MNEMONICS[0],
 					network: "ark.devnet",
 				},
 			]);
@@ -38,7 +38,7 @@ describe("useProfileAddresses", () => {
 	it("should filter address by selected network", async () => {
 		const wallet = await profile.walletFactory().fromMnemonicWithBIP39({
 			coin: "ARK",
-			mnemonic: "test",
+			mnemonic: MNEMONICS[0],
 			network: "ark.mainnet",
 		});
 		await profile.sync();

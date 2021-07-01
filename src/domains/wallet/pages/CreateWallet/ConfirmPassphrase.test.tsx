@@ -3,7 +3,7 @@ import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { renderHook } from "@testing-library/react-hooks";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
-import { env, getDefaultProfileId, render } from "utils/testing-library";
+import { env, getDefaultProfileId, MNEMONICS, render } from "utils/testing-library";
 
 import { ConfirmPassphraseStep } from "./ConfirmPassphraseStep";
 
@@ -22,7 +22,7 @@ describe("ConfirmPassphraseStep", () => {
 		const { result: form } = renderHook(() =>
 			useForm({
 				defaultValues: {
-					mnemonic: "hamster giggle left flush sock appear mule either order solve spirit neutral",
+					mnemonic: MNEMONICS[0],
 				},
 			}),
 		);

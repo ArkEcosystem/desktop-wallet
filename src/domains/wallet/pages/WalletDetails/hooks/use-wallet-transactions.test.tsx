@@ -1,7 +1,7 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import nock from "nock";
 import React, { useEffect, useState } from "react";
-import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
+import { act, env, fireEvent, getDefaultProfileId, MNEMONICS, render, screen, waitFor } from "utils/testing-library";
 
 import { useWalletTransactions } from "./use-wallet-transactions";
 
@@ -112,7 +112,7 @@ describe("Wallet Transactions Hook", () => {
 	});
 
 	it("should show only pending multisignature transactions", async () => {
-		const mnemonicSignatory = await wallet.signatory().mnemonic("test");
+		const mnemonicSignatory = await wallet.signatory().mnemonic(MNEMONICS[0]);
 
 		const transfer = await wallet
 			.coin()

@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles/distribution/contracts";
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/distribution/read-only-wallet";
 import { toasts } from "app/services";
 import { createMemoryHistory } from "history";
@@ -83,6 +84,7 @@ describe("Votes", () => {
 			})
 			.persist();
 
+		await env.profiles().restore(profile);
 		await syncDelegates(profile);
 		await wallet.synchroniser().votes();
 	});
@@ -95,6 +97,22 @@ describe("Votes", () => {
 		expect(getByTestId("DelegateTable")).toBeTruthy();
 		await waitFor(() => expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render and handle wallet current voting exception", async () => {
+		const currentWallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
+		const currentMock = jest.spyOn(currentWallet.voting(), "current").mockImplementation(() => {
+			throw new Error("Error");
+		});
+
+		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}/votes`;
+		const { asFragment, container, getByTestId } = renderPage(route);
+
+		expect(container).toBeTruthy();
+		expect(getByTestId("DelegateTable")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy());
+		expect(asFragment()).toMatchSnapshot();
+		currentMock.mockRestore();
 	});
 
 	it("should render with no wallets", () => {
@@ -202,12 +220,13 @@ describe("Votes", () => {
 	});
 
 	it("should filter current delegates", async () => {
-		jest.spyOn(wallet.voting(), "current").mockReturnValue([
+		const currentWallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
+		jest.spyOn(currentWallet.voting(), "current").mockReturnValue([
 			new ReadOnlyWallet({
 				address: "D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr",
 				explorerLink: "",
 				isResignedDelegate: false,
-				publicKey: wallet.publicKey(),
+				publicKey: currentWallet.publicKey(),
 				rank: 52,
 				username: "arkx",
 			}),
@@ -265,6 +284,18 @@ describe("Votes", () => {
 	});
 
 	it("should select an address and delegate", async () => {
+		const currentWallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
+		jest.spyOn(currentWallet.voting(), "current").mockReturnValue([
+			new ReadOnlyWallet({
+				address: "D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr",
+				explorerLink: "",
+				isResignedDelegate: false,
+				publicKey: currentWallet.publicKey(),
+				rank: 52,
+				username: "arkx",
+			}),
+		]);
+
 		const route = `/profiles/${profile.id()}/votes`;
 		const routePath = "/profiles/:profileId/votes";
 		const { asFragment, getByTestId } = renderPage(route, routePath);
@@ -345,7 +376,7 @@ describe("Votes", () => {
 			throw new Error("delegate error");
 		});
 
-		const { asFragment, getByTestId } = renderPage(route);
+		const { getByTestId } = renderPage(route);
 
 		expect(getByTestId("DelegateTable")).toBeTruthy();
 		await waitFor(() => {
@@ -360,14 +391,14 @@ describe("Votes", () => {
 
 		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
 		expect(getByTestId("DelegateTable__footer--total")).toHaveTextContent("1/1");
-		expect(asFragment()).toMatchSnapshot();
 		walletVoteMock.mockRestore();
 	});
 
 	it("should show network warning", async () => {
-		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}/votes`;
+		const currentWallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
+		const route = `/profiles/${profile.id()}/wallets/${currentWallet.id()}/votes`;
 
-		const walletRestoreMock = jest.spyOn(wallet, "hasBeenPartiallyRestored").mockReturnValue(true);
+		const walletRestoreMock = jest.spyOn(currentWallet, "hasBeenPartiallyRestored").mockReturnValue(true);
 		const warningMock = jest.fn();
 		const toastSpy = jest.spyOn(toasts, "warning").mockImplementation(warningMock);
 
@@ -461,7 +492,8 @@ describe("Votes", () => {
 	});
 
 	it("should hide testnet wallet if disabled from profile setting", async () => {
-		const useNetworksMock = jest.spyOn(profile.settings(), "get").mockReturnValue(false);
+		profile.settings().set(ProfileSetting.UseTestNetworks, false);
+
 		profile.wallets().push(
 			await profile.walletFactory().fromAddress({
 				address: "AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX",
@@ -478,7 +510,7 @@ describe("Votes", () => {
 		await waitFor(() => expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy());
 
 		expect(asFragment()).toMatchSnapshot();
-		useNetworksMock.mockRestore();
+		profile.settings().set(ProfileSetting.UseTestNetworks, true);
 	});
 
 	it("should filter wallets by address", async () => {
@@ -526,7 +558,7 @@ describe("Votes", () => {
 		await waitFor(() => expect(searchInput).toBeInTheDocument());
 
 		act(() => {
-			fireEvent.change(searchInput, { target: { value: "Sample Wallet" } });
+			fireEvent.change(searchInput, { target: { value: "ARK Wallet 2" } });
 		});
 
 		await waitFor(() => expect(queryAllByTestId("TableRow")).toHaveLength(1));
@@ -534,6 +566,7 @@ describe("Votes", () => {
 	});
 
 	it("should reset wallet search", async () => {
+		profile.settings().set(ProfileSetting.UseTestNetworks, true);
 		jest.useFakeTimers();
 		jest.advanceTimersByTime(100);
 
@@ -570,17 +603,18 @@ describe("Votes", () => {
 	});
 
 	it("should show resigned delegate notice", async () => {
-		const walletSpy = jest.spyOn(wallet.voting(), "current").mockReturnValue([
+		const currentWallet = profile.wallets().first();
+		const walletSpy = jest.spyOn(currentWallet.voting(), "current").mockReturnValue([
 			new ReadOnlyWallet({
 				address: "D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr",
 				explorerLink: "",
 				isResignedDelegate: true,
-				publicKey: wallet.publicKey(),
+				publicKey: currentWallet.publicKey(),
 				rank: 52,
 				username: "arkx",
 			}),
 		]);
-		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}/votes`;
+		const route = `/profiles/${profile.id()}/wallets/${currentWallet.id()}/votes`;
 		const { container, getByTestId } = renderPage(route);
 
 		expect(getByTestId("DelegateTable")).toBeTruthy();

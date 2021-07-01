@@ -18,6 +18,7 @@ import {
 	env,
 	fireEvent,
 	getDefaultProfileId,
+	MNEMONICS,
 	RenderResult,
 	renderWithRouter,
 	syncDelegates,
@@ -40,7 +41,7 @@ let unvotedWallet: Contracts.IReadWriteWallet;
 let emptyProfile: Contracts.IProfile;
 let wallet2: Contracts.IReadWriteWallet;
 
-const passphrase2 = "power return attend drink piece found tragic fire liar page disease combine";
+const passphrase2 = MNEMONICS[3];
 
 const renderPage = async ({
 	waitForTopSection = true,
@@ -93,7 +94,7 @@ describe("WalletDetails", () => {
 
 		unvotedWallet = await profile.walletFactory().fromMnemonicWithBIP39({
 			coin: "ARK",
-			mnemonic: "unvoted wallet",
+			mnemonic: MNEMONICS[0],
 			network: "ark.devnet",
 		});
 
@@ -101,7 +102,7 @@ describe("WalletDetails", () => {
 
 		wallet2 = await emptyProfile.walletFactory().fromMnemonicWithBIP39({
 			coin: "ARK",
-			mnemonic: "wallet 2",
+			mnemonic: MNEMONICS[1],
 			network: "ark.devnet",
 		});
 
@@ -435,7 +436,7 @@ describe("WalletDetails", () => {
 	it("should not fail if the votes have not yet been synchronized", async () => {
 		const newWallet = await profile.walletFactory().fromMnemonicWithBIP39({
 			coin: "ARK",
-			mnemonic: "test mnemonic",
+			mnemonic: MNEMONICS[2],
 			network: "ark.devnet",
 		});
 

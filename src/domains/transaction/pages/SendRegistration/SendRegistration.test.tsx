@@ -15,6 +15,7 @@ import {
 	fireEvent,
 	getDefaultProfileId,
 	getDefaultWalletMnemonic,
+	MNEMONICS,
 	RenderResult,
 	renderWithRouter,
 	screen,
@@ -93,7 +94,14 @@ describe("Registration", () => {
 		await profile.sync();
 
 		wallet = profile.wallets().findByAddress("D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")!;
-		secondWallet = profile.wallets().findByAddress("D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb")!;
+		// secondWallet = profile.wallets().findByAddress("D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb")!;
+		secondWallet = profile.wallets().push(
+			await profile.walletFactory().fromAddress({
+				address: "DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr",
+				coin: "ARK",
+				network: "ark.devnet",
+			}),
+		);
 
 		await wallet.synchroniser().identity();
 		await secondWallet.synchroniser().identity();
@@ -388,7 +396,7 @@ describe("Registration", () => {
 
 		const secondPublicKeyMock = jest
 			.spyOn(secondWallet, "secondPublicKey")
-			.mockReturnValue((await secondWallet.coin().publicKey().fromMnemonic("second mnemonic")).publicKey);
+			.mockReturnValue((await secondWallet.coin().publicKey().fromMnemonic(MNEMONICS[1])).publicKey);
 
 		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
 
@@ -418,17 +426,17 @@ describe("Registration", () => {
 		const secondMnemonic = getByTestId("AuthenticationStep__second-mnemonic");
 
 		act(() => {
-			fireEvent.input(mnemonic, { target: { value: "v3wallet2" } });
+			fireEvent.input(mnemonic, { target: { value: MNEMONICS[0] } });
 		});
 
 		act(() => {
-			fireEvent.input(secondMnemonic, { target: { value: "second mnemonic" } });
+			fireEvent.input(secondMnemonic, { target: { value: MNEMONICS[1] } });
 		});
 
-		await waitFor(() => expect(mnemonic).toHaveValue("v3wallet2"));
-		await waitFor(() => expect(secondMnemonic).toHaveValue("second mnemonic"));
+		await waitFor(() => expect(mnemonic).toHaveValue(MNEMONICS[0]));
+		await waitFor(() => expect(secondMnemonic).toHaveValue(MNEMONICS[1]));
 
-		await waitFor(() => expect(getByTestId("Registration__send-button")).not.toHaveAttribute("disabled"));
+		await waitFor(() => expect(getByTestId("Registration__send-button")).not.toHaveAttribute('disabled=""'));
 		await waitFor(() => expect(getByTestId("Registration__send-button")).toBeTruthy());
 
 		const signMock = jest.spyOn(secondWallet.transaction(), "signDelegateRegistration").mockImplementation(() => {
@@ -467,7 +475,7 @@ describe("Registration", () => {
 
 		const secondPublicKeyMock = jest
 			.spyOn(secondWallet, "secondPublicKey")
-			.mockReturnValue((await secondWallet.coin().publicKey().fromMnemonic("second mnemonic")).publicKey);
+			.mockReturnValue((await secondWallet.coin().publicKey().fromMnemonic(MNEMONICS[1])).publicKey);
 
 		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
 
@@ -497,17 +505,17 @@ describe("Registration", () => {
 		const secondMnemonic = getByTestId("AuthenticationStep__second-mnemonic");
 
 		act(() => {
-			fireEvent.input(mnemonic, { target: { value: "v3wallet2" } });
+			fireEvent.input(mnemonic, { target: { value: MNEMONICS[0] } });
 		});
 
 		act(() => {
-			fireEvent.input(secondMnemonic, { target: { value: "second mnemonic" } });
+			fireEvent.input(secondMnemonic, { target: { value: MNEMONICS[1] } });
 		});
 
-		await waitFor(() => expect(mnemonic).toHaveValue("v3wallet2"));
-		await waitFor(() => expect(secondMnemonic).toHaveValue("second mnemonic"));
+		await waitFor(() => expect(mnemonic).toHaveValue(MNEMONICS[0]));
+		await waitFor(() => expect(secondMnemonic).toHaveValue(MNEMONICS[1]));
 
-		await waitFor(() => expect(getByTestId("Registration__send-button")).not.toHaveAttribute("disabled"));
+		await waitFor(() => expect(getByTestId("Registration__send-button")).not.toHaveAttribute('disabled=""'));
 		await waitFor(() => expect(getByTestId("Registration__send-button")).toBeTruthy());
 
 		const signMock = jest.spyOn(secondWallet.transaction(), "signDelegateRegistration").mockImplementation(() => {

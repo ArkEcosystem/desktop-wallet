@@ -1,23 +1,17 @@
-import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { isEmptyObject, uniq, uniqBy } from "@arkecosystem/utils";
-import { Icon } from "app/components//Icon";
 import { Alert } from "app/components/Alert";
-import { Button } from "app/components/Button";
-import { ControlButton } from "app/components/ControlButton";
-import { Dropdown } from "app/components/Dropdown";
-import { EmptyBlock } from "app/components/EmptyBlock";
-import { EmptyResults } from "app/components/EmptyResults";
-import { Header } from "app/components/Header";
-import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useActiveWallet, useProfileUtils, useQueryParams } from "app/hooks";
+import { useActiveProfile, useActiveWallet, useProfileUtils } from "app/hooks";
 import { toasts } from "app/services";
-import { FilterWallets } from "domains/dashboard/components/FilterWallets";
-import { AddressTable } from "domains/vote/components/AddressTable";
 import { DelegateTable } from "domains/vote/components/DelegateTable";
-import { FilterOption, VotesFilter } from "domains/vote/components/VotesFilter";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { VotesEmpty } from "domains/vote/components/VotesEmpty";
+import { VotesHeader } from "domains/vote/components/VotesHeader";
+import { VotingWallets } from "domains/vote/components/VotingWallets/VotingWallets";
+import { useDelegates } from "domains/vote/hooks/use-delegates";
+import { useVoteActions } from "domains/vote/hooks/use-vote-actions";
+import { useVoteFilters } from "domains/vote/hooks/use-vote-filters";
+import { useVoteQueryParams } from "domains/vote/hooks/use-vote-query-params";
+import React, { useEffect } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
 
@@ -28,156 +22,71 @@ export const Votes = () => {
 	const { env } = useEnvironmentContext();
 
 	const activeProfile = useActiveProfile();
-	const { getErroredNetworks } = useProfileUtils(env);
-
 	const activeWallet = useActiveWallet();
 
-	const queryParameters = useQueryParams();
-	const unvoteAddresses = queryParameters.get("unvotes")?.split(",");
-	const voteAddresses = queryParameters.get("votes")?.split(",");
-	const filter = (queryParameters.get("filter") || "all") as FilterOption;
+	const { getErroredNetworks } = useProfileUtils(env);
+	const { filter, voteAddresses, unvoteAddresses } = useVoteQueryParams();
 
-	const walletAddress = hasWalletId ? activeWallet.address() : "";
-	const walletMaxVotes = hasWalletId ? activeWallet.network().maximumVotesPerWallet() : undefined;
+	const {
+		filterProperties,
+		isFilterChanged,
+		filteredWalletsByCoin,
+		hasEmptyResults,
+		hasWallets,
+		voteFilter,
+		setVoteFilter,
+		selectedAddress,
+		setSelectedAddress,
+		searchQuery,
+		setSearchQuery,
+		maxVotes,
+		setMaxVotes,
+	} = useVoteFilters({
+		filter,
+		hasWalletId,
+		profile: activeProfile,
+		wallet: activeWallet,
+	});
 
-	const defaultConfiguration = useMemo(
-		() => ({
-			selectedNetworkIds: uniq(
-				activeProfile
-					.wallets()
-					.values()
-					.map((wallet) => wallet.network().id()),
-			),
-			walletsDisplayType: "all",
-		}),
-		[activeProfile],
-	);
-
-	const [searchQuery, setSearchQuery] = useState("");
-
-	const [walletsDisplayType, setWalletsDisplayType] = useState(defaultConfiguration.walletsDisplayType);
-	const [selectedNetworkIds, setSelectedNetworkIds] = useState(defaultConfiguration.selectedNetworkIds);
-
-	const [selectedAddress, setSelectedAddress] = useState(walletAddress);
-	const [maxVotes, setMaxVotes] = useState(walletMaxVotes);
-	const [delegates, setDelegates] = useState<Contracts.IReadOnlyWallet[]>([]);
-	const [votes, setVotes] = useState<Contracts.IReadOnlyWallet[] | undefined>();
-	const [isLoadingDelegates, setIsLoadingDelegates] = useState(false);
-	const [selectedFilter, setSelectedFilter] = useState<FilterOption>(filter);
-
-	const walletsByCoin = useMemo(() => {
-		const wallets = activeProfile.wallets().allByCoin();
-
-		const usesTestNetworks = activeProfile.settings().get(Contracts.ProfileSetting.UseTestNetworks);
-		const usedWallets = usesTestNetworks
-			? activeProfile.wallets().values()
-			: activeProfile
-					.wallets()
-					.values()
-					.filter((wallet) => wallet.network().isLive());
-
-		const usedCoins = uniq(usedWallets.map((wallet) => wallet.currency()));
-
-		return usedCoins.reduce(
-			(coins, coin) => ({
-				...coins,
-				[coin]: Object.values(wallets[coin]).filter((wallet: Contracts.IReadWriteWallet) => {
-					if (!selectedNetworkIds.includes(wallet.network().id())) {
-						return false;
-					}
-
-					if (walletsDisplayType === "starred") {
-						return wallet.isStarred();
-					}
-
-					if (walletsDisplayType === "ledger") {
-						return wallet.isLedger();
-					}
-
-					return wallet;
-				}),
-			}),
-			{} as Record<string, Contracts.IReadWriteWallet[]>,
-		);
-	}, [activeProfile, selectedNetworkIds, walletsDisplayType]);
-
-	const networks = useMemo(() => {
-		const networks = activeProfile
-			.wallets()
-			.values()
-			.map((wallet) => ({
-				coin: wallet.network().coin(),
-				id: wallet.network().id(),
-				isLive: wallet.network().isLive(),
-				isSelected: selectedNetworkIds.includes(wallet.network().id()),
-				name: wallet.network().name(),
-			}));
-
-		return uniqBy(networks, (network) => network.id);
-	}, [activeProfile, selectedNetworkIds]);
-
-	const currentVotes = useMemo(
-		() => votes?.filter((vote) => delegates.some((delegate) => vote.address() === delegate.address())),
-		[votes, delegates],
-	);
-
-	const hasResignedDelegateVotes = useMemo(() => currentVotes?.some((vote) => vote.isResignedDelegate()), [
+	const {
+		isLoadingDelegates,
+		fetchDelegates,
 		currentVotes,
-	]);
+		filteredDelegates,
+		fetchVotes,
+		votes,
+		hasResignedDelegateVotes,
+	} = useDelegates({
+		env,
+		profile: activeProfile,
+		searchQuery,
+		voteFilter,
+	});
 
-	const filteredDelegatesVotes = useMemo(() => {
-		const value = selectedFilter === "all" ? delegates : currentVotes;
-		return value?.filter((delegate) => !delegate.isResignedDelegate());
-	}, [delegates, currentVotes, selectedFilter]);
-
-	const filterProperties = {
-		networks,
-		onChange: (key: string, value: any) => {
-			if (key === "walletsDisplayType") {
-				setWalletsDisplayType(value);
-			}
-			if (key === "selectedNetworkIds") {
-				setSelectedNetworkIds(value);
-			}
-		},
-		selectedNetworkIds,
-		useTestNetworks: activeProfile.settings().get(Contracts.ProfileSetting.UseTestNetworks) as boolean,
-		walletsDisplayType,
-	};
-
-	const isFilterChanged = useMemo(() => {
-		if (walletsDisplayType !== defaultConfiguration.walletsDisplayType) {
-			return true;
-		}
-
-		if (selectedNetworkIds.length < defaultConfiguration.selectedNetworkIds.length) {
-			return true;
-		}
-
-		return false;
-	}, [walletsDisplayType, selectedNetworkIds, defaultConfiguration]);
-
-	const loadVotes = useCallback(
-		(address) => {
-			const wallet = activeProfile.wallets().findByAddress(address);
-			let votes: Contracts.IReadOnlyWallet[] = [];
-
-			try {
-				votes = wallet!.voting().current();
-			} catch {
-				votes = [];
-			}
-
-			setVotes(votes);
-		},
-		[activeProfile],
-	);
+	const { navigateToSendVote } = useVoteActions({
+		hasWalletId,
+		profile: activeProfile,
+		selectedAddress,
+		wallet: activeWallet,
+	});
 
 	useEffect(() => {
 		if (selectedAddress) {
-			loadVotes(selectedAddress);
+			fetchVotes(selectedAddress);
 		}
-	}, [loadVotes, selectedAddress]);
+	}, [fetchVotes, selectedAddress]);
+
+	useEffect(() => {
+		if (hasWalletId) {
+			fetchDelegates(activeWallet);
+		}
+	}, [activeWallet, fetchDelegates, hasWalletId]);
+
+	useEffect(() => {
+		if (votes?.length === 0) {
+			setVoteFilter("all");
+		}
+	}, [votes, setVoteFilter]);
 
 	useEffect(() => {
 		const { hasErroredNetworks, erroredNetworks } = getErroredNetworks(activeProfile);
@@ -194,24 +103,6 @@ export const Votes = () => {
 		);
 	}, [getErroredNetworks, activeProfile, t]);
 
-	const loadDelegates = useCallback(
-		async (wallet) => {
-			setIsLoadingDelegates(true);
-			await env.delegates().sync(activeProfile, wallet.coinId(), wallet.networkId());
-			const delegates = env.delegates().all(wallet.coinId(), wallet.networkId());
-
-			setDelegates(delegates);
-			setIsLoadingDelegates(false);
-		},
-		[env, activeProfile],
-	);
-
-	useEffect(() => {
-		if (hasWalletId) {
-			loadDelegates(activeWallet);
-		}
-	}, [activeWallet, loadDelegates, hasWalletId]);
-
 	const handleSelectAddress = (address: string) => {
 		const wallet = activeProfile.wallets().findByAddress(address);
 
@@ -219,180 +110,44 @@ export const Votes = () => {
 		setSelectedAddress(address);
 		setMaxVotes(wallet?.network().maximumVotesPerWallet());
 
-		loadDelegates(wallet);
+		fetchDelegates(wallet);
 	};
 
-	const handleContinue = (unvotes: string[], votes: string[]) => {
-		const walletId = hasWalletId ? activeWallet.id() : activeProfile.wallets().findByAddress(selectedAddress)?.id();
-
-		const parameters = new URLSearchParams();
-
-		if (unvotes?.length > 0) {
-			parameters.append("unvotes", unvotes.join(","));
-		}
-
-		/* istanbul ignore else */
-		if (votes?.length > 0) {
-			parameters.append("votes", votes.join(","));
-		}
-
-		history.push({
-			pathname: `/profiles/${activeProfile.id()}/wallets/${walletId}/send-vote`,
-			search: `?${parameters}`,
-		});
-	};
-
-	useEffect(() => {
-		if (votes?.length === 0) {
-			setSelectedFilter("all");
-		}
-	}, [votes]);
-
-	const filteredWalletsByCoin = useMemo(() => {
-		if (searchQuery.length === 0) {
-			return walletsByCoin;
-		}
-
-		return Object.keys(walletsByCoin).reduce(
-			(coins, coin) => ({
-				...coins,
-				[coin]: Object.values(walletsByCoin[coin]).filter(
-					(wallet: Contracts.IReadWriteWallet) =>
-						wallet.address().toLowerCase().includes(searchQuery.toLowerCase()) ||
-						wallet.alias()?.toLowerCase()?.includes(searchQuery.toLowerCase()),
-				),
-			}),
-			{} as Record<string, Contracts.IReadWriteWallet[]>,
-		);
-	}, [searchQuery, walletsByCoin]);
-
-	const filteredDelegates = useMemo(() => {
-		if (searchQuery.length === 0) {
-			return filteredDelegatesVotes;
-		}
-
-		/* istanbul ignore next */
-		return filteredDelegatesVotes?.filter(
-			(delegate) =>
-				delegate.address().toLowerCase().includes(searchQuery.toLowerCase()) ||
-				delegate.username()?.toLowerCase()?.includes(searchQuery.toLowerCase()),
-		);
-	}, [filteredDelegatesVotes, searchQuery]);
-
-	const isEmptyWalletsByCoin =
-		searchQuery.length > 0 &&
-		Object.keys(filteredWalletsByCoin).every((coin: string) => filteredWalletsByCoin[coin].length === 0);
+	const hasSelectedAddress = !!selectedAddress;
 
 	return (
 		<Page profile={activeProfile}>
 			<Section border>
-				<Header
-					title={t("VOTE.VOTES_PAGE.TITLE")}
-					subtitle={t("VOTE.VOTES_PAGE.SUBTITLE")}
-					extra={
-						activeProfile.wallets().count() ? (
-							<div className="flex items-center space-x-5 text-theme-primary-200">
-								<HeaderSearchBar
-									placeholder={t("VOTE.VOTES_PAGE.SEARCH_PLACEHOLDER")}
-									onSearch={setSearchQuery}
-									onReset={() => setSearchQuery("")}
-									debounceTimeout={100}
-								/>
-
-								<div className="h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800" />
-
-								{!selectedAddress ? (
-									<div data-testid="Votes__FilterWallets">
-										<Dropdown
-											position="right"
-											toggleContent={
-												<ControlButton isChanged={isFilterChanged}>
-													<div className="flex justify-center items-center w-5 h-5">
-														<Icon name="Filters" width={17} height={19} />
-													</div>
-												</ControlButton>
-											}
-										>
-											<div className="py-7 px-10 w-128">
-												<FilterWallets {...filterProperties} />
-											</div>
-										</Dropdown>
-									</div>
-								) : (
-									<VotesFilter
-										totalCurrentVotes={currentVotes?.length || 0}
-										selectedOption={selectedFilter}
-										onChange={setSelectedFilter}
-									/>
-								)}
-							</div>
-						) : null
-					}
+				<VotesHeader
+					profile={activeProfile}
+					setSearchQuery={setSearchQuery}
+					selectedAddress={selectedAddress}
+					isFilterChanged={isFilterChanged}
+					filterProperties={filterProperties}
+					totalCurrentVotes={currentVotes?.length || 0}
+					selectedFilter={voteFilter}
+					setSelectedFilter={setVoteFilter}
 				/>
 			</Section>
 
-			{isEmptyObject(walletsByCoin) ? (
+			{!hasWallets && (
 				<Section>
-					<EmptyBlock>
-						<div className="flex justify-between items-center">
-							<span>
-								<Trans
-									i18nKey="VOTE.VOTES_PAGE.EMPTY_MESSAGE"
-									values={{
-										create: t("DASHBOARD.WALLET_CONTROLS.CREATE"),
-										import: t("DASHBOARD.WALLET_CONTROLS.IMPORT"),
-									}}
-									components={{ bold: <strong /> }}
-								/>
-							</span>
-
-							<div className="flex -m-3 space-x-3">
-								<Button
-									onClick={() => history.push(`/profiles/${activeProfile.id()}/wallets/create`)}
-									variant="secondary"
-								>
-									<div className="flex items-center space-x-2">
-										<Icon name="Plus" width={12} height={12} />
-										<span>{t("DASHBOARD.WALLET_CONTROLS.CREATE")}</span>
-									</div>
-								</Button>
-
-								<Button
-									onClick={() => history.push(`/profiles/${activeProfile.id()}/wallets/import`)}
-									variant="secondary"
-								>
-									<div className="flex items-center space-x-2">
-										<Icon name="Import" width={15} height={15} />
-										<span>{t("DASHBOARD.WALLET_CONTROLS.IMPORT")}</span>
-									</div>
-								</Button>
-							</div>
-						</div>
-					</EmptyBlock>
+					<VotesEmpty
+						onCreateWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/create`)}
+						onImportWallet={() => history.push(`/profiles/${activeProfile.id()}/wallets/import`)}
+					/>
 				</Section>
-			) : !selectedAddress ? (
-				isEmptyWalletsByCoin ? (
-					<Section>
-						<EmptyResults
-							className="mt-16"
-							title={t("COMMON.EMPTY_RESULTS.TITLE")}
-							subtitle={t("COMMON.EMPTY_RESULTS.SUBTITLE")}
-						/>
-					</Section>
-				) : (
-					Object.keys(filteredWalletsByCoin).map(
-						(coin, index) =>
-							filteredWalletsByCoin[coin].length > 0 && (
-								<Section key={index}>
-									<AddressTable
-										wallets={filteredWalletsByCoin[coin]}
-										onSelect={handleSelectAddress}
-									/>
-								</Section>
-							),
-					)
-				)
-			) : (
+			)}
+
+			{hasWallets && !hasSelectedAddress && (
+				<VotingWallets
+					showEmptyResults={hasEmptyResults}
+					walletsByCoin={filteredWalletsByCoin}
+					onSelectAddress={handleSelectAddress}
+				/>
+			)}
+
+			{hasSelectedAddress && (
 				<Section innerClassName="mb-27">
 					<DelegateTable
 						delegates={filteredDelegates}
@@ -403,7 +158,7 @@ export const Votes = () => {
 						selectedUnvoteAddresses={unvoteAddresses}
 						selectedVoteAddresses={voteAddresses}
 						selectedWallet={selectedAddress}
-						onContinue={handleContinue}
+						onContinue={navigateToSendVote}
 						isPaginationDisabled={searchQuery.length > 0}
 						subtitle={
 							hasResignedDelegateVotes ? (

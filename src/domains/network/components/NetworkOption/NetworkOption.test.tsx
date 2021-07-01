@@ -2,7 +2,7 @@ import { Networks } from "@arkecosystem/platform-sdk";
 import { CoinNetworkExtended } from "domains/network/data";
 import { getNetworkExtendedData } from "domains/network/helpers";
 import React from "react";
-import { env, fireEvent, getDefaultProfileId, render } from "utils/testing-library";
+import { env, fireEvent, getDefaultProfileId, MNEMONICS, render } from "utils/testing-library";
 
 import { NetworkOption } from "./NetworkOption";
 
@@ -17,7 +17,7 @@ describe("NetworkIcon", () => {
 
 		const wallet1 = await profile.walletFactory().fromMnemonicWithBIP39({
 			coin: "ARK",
-			mnemonic: "test",
+			mnemonic: MNEMONICS[0],
 			network: "ark.mainnet",
 		});
 

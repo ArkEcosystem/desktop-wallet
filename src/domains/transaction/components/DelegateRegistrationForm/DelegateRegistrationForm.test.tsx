@@ -10,6 +10,7 @@ import {
 	env,
 	fireEvent,
 	getDefaultProfileId,
+	MNEMONICS,
 	render,
 	RenderResult,
 	syncDelegates,
@@ -222,7 +223,7 @@ describe("DelegateRegistrationForm", () => {
 			clearErrors: jest.fn(),
 			getValues: () => ({
 				fee: "1",
-				mnemonic: "sample passphrase",
+				mnemonic: MNEMONICS[0],
 				senderAddress: wallet.address(),
 				username: "test_delegate",
 			}),
@@ -259,7 +260,7 @@ describe("DelegateRegistrationForm", () => {
 			clearErrors: jest.fn(),
 			getValues: () => ({
 				fee: "1",
-				mnemonic: "sample passphrase",
+				mnemonic: MNEMONICS[0],
 				senderAddress: wallet.address(),
 				username: "test_delegate",
 			}),
@@ -333,7 +334,7 @@ describe("DelegateRegistrationForm", () => {
 			getValues: () => ({
 				encryptionPassword: "password",
 				fee: "1",
-				mnemonic: "sample passphrase",
+				mnemonic: MNEMONICS[0],
 				senderAddress: wallet.address(),
 				username: "test_delegate",
 			}),

@@ -4,7 +4,7 @@ import { renderHook } from "@testing-library/react-hooks";
 import { EnvironmentProvider } from "app/contexts";
 import nock from "nock";
 import React from "react";
-import { env, getDefaultProfileId, syncDelegates } from "utils/testing-library";
+import { env, getDefaultProfileId, MNEMONICS, syncDelegates } from "utils/testing-library";
 
 import { useWalletDisplay } from ".";
 
@@ -140,18 +140,18 @@ describe("useWalletDisplay", () => {
 
 		const testWallet = await profile.walletFactory().fromMnemonicWithBIP39({
 			coin: "ARK",
-			mnemonic: "test",
+			mnemonic: MNEMONICS[0],
 			network: "ark.devnet",
 		});
 		const test2Wallet = await profile.walletFactory().fromMnemonicWithBIP39({
 			coin: "ARK",
-			mnemonic: "test2",
+			mnemonic: MNEMONICS[1],
 			network: "ark.devnet",
 		});
 
 		const ledger = await profile.walletFactory().fromMnemonicWithBIP39({
 			coin: "ARK",
-			mnemonic: "test3",
+			mnemonic: MNEMONICS[2],
 			network: "ark.devnet",
 		});
 
@@ -180,7 +180,7 @@ describe("useWalletDisplay", () => {
 		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}> {children} </EnvironmentProvider>;
 		const ledger = await profile.walletFactory().fromMnemonicWithBIP39({
 			coin: "ARK",
-			mnemonic: "test4",
+			mnemonic: MNEMONICS[4],
 			network: "ark.devnet",
 		});
 

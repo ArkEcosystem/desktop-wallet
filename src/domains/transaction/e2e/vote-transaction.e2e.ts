@@ -1,7 +1,7 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { createFixture, mockRequest } from "../../../utils/e2e-utils";
+import { createFixture, MNEMONICS, mockRequest } from "../../../utils/e2e-utils";
 import { goToProfile } from "../../profile/e2e/common";
 import { importWallet } from "../../wallet/e2e/common";
 
@@ -53,7 +53,7 @@ test("should successfully send a vote transaction", async (t) => {
 	await goToProfile(t);
 
 	// Import wallet
-	await importWallet(t, "passphrase");
+	await importWallet(t, MNEMONICS[0]);
 
 	// Navigate to vote page
 	await t.click(Selector('[data-testid="navbar__useractions"]'));
@@ -78,7 +78,7 @@ test("should successfully send a vote transaction", async (t) => {
 	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
 
 	// Type mnemonic
-	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "passphrase", { replace: true });
+	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), MNEMONICS[0], { replace: true });
 	await t.click(Selector("[data-testid=SendVote__button--submit]"));
 
 	// Transaction successful
@@ -90,7 +90,7 @@ test("should show an error if wrong mnemonic", async (t) => {
 	await goToProfile(t);
 
 	// Import wallet
-	await importWallet(t, "passphrase");
+	await importWallet(t, MNEMONICS[0]);
 
 	// Navigate to vote page
 	await t.click(Selector('[data-testid="navbar__useractions"]'));

@@ -19,6 +19,7 @@ import {
 	env,
 	fireEvent,
 	getDefaultProfileId,
+	MNEMONICS,
 	render,
 	renderWithRouter,
 	screen,
@@ -354,7 +355,7 @@ describe("ImportWallet", () => {
 		const passphraseInput = getByTestId("ImportWallet__mnemonic-input");
 		expect(passphraseInput).toBeTruthy();
 
-		fireEvent.input(passphraseInput, { target: { value: "some mnemonic" } });
+		fireEvent.input(passphraseInput, { target: { value: MNEMONICS[3] } });
 
 		await waitFor(() => expect(getByTestId("ImportWallet__continue-button")).not.toBeDisabled());
 		fireEvent.click(getByTestId("ImportWallet__continue-button"));
@@ -762,7 +763,7 @@ describe("ImportWallet", () => {
 
 		const wallet = await emptyProfile.walletFactory().fromMnemonicWithBIP39({
 			coin: "ARK",
-			mnemonic: "random mnemonic",
+			mnemonic: MNEMONICS[0],
 			network: "ark.devnet",
 		});
 

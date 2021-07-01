@@ -10,10 +10,10 @@ exports[`Toggle should render 1`] = `
       type="checkbox"
     />
     <div
-      class="Toggle__Handle-qyyifx-1 geejDn"
+      class="Toggle__Handle-qyyifx-1 bAIvyW"
     >
       <span
-        class="Toggle__HandleInner-qyyifx-2 ZjBSs"
+        class="Toggle__HandleInner-qyyifx-2 fdhANN"
       />
     </div>
   </label>
@@ -30,10 +30,10 @@ exports[`Toggle should render always on 1`] = `
       type="checkbox"
     />
     <div
-      class="Toggle__Handle-qyyifx-1 geejDn"
+      class="Toggle__Handle-qyyifx-1 bAIvyW"
     >
       <span
-        class="Toggle__HandleInner-qyyifx-2 eSIhju"
+        class="Toggle__HandleInner-qyyifx-2 cnqiUH"
       />
     </div>
   </label>
@@ -51,12 +51,32 @@ exports[`Toggle should render disabled 1`] = `
       type="checkbox"
     />
     <div
-      class="Toggle__Handle-qyyifx-1 jztkAY"
+      class="Toggle__Handle-qyyifx-1 hTQVlV"
       disabled=""
     >
       <span
-        class="Toggle__HandleInner-qyyifx-2 iIyzPS"
+        class="Toggle__HandleInner-qyyifx-2 ekQyLn"
         disabled=""
+      />
+    </div>
+  </label>
+</DocumentFragment>
+`;
+
+exports[`Toggle should render small 1`] = `
+<DocumentFragment>
+  <label
+    class="flex"
+  >
+    <input
+      class="Toggle__Input-qyyifx-0 WGuGL"
+      type="checkbox"
+    />
+    <div
+      class="Toggle__Handle-qyyifx-1 jKIwmR"
+    >
+      <span
+        class="Toggle__HandleInner-qyyifx-2 leJubF"
       />
     </div>
   </label>
@@ -73,10 +93,10 @@ exports[`Toggle should toggle checked 1`] = `
       type="checkbox"
     />
     <div
-      class="Toggle__Handle-qyyifx-1 geejDn"
+      class="Toggle__Handle-qyyifx-1 bAIvyW"
     >
       <span
-        class="Toggle__HandleInner-qyyifx-2 ZjBSs"
+        class="Toggle__HandleInner-qyyifx-2 fdhANN"
       />
     </div>
   </label>
