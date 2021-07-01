@@ -67,7 +67,10 @@ export const AuthenticationStep = ({
 	const title = t("TRANSACTION.AUTHENTICATION_STEP.TITLE");
 
 	const requireMnemonic = wallet.actsWithMnemonic() || wallet.actsWithAddress() || wallet.actsWithPublicKey();
-	const requireEncryptionPassword = wallet.actsWithMnemonicWithEncryption() || wallet.actsWithWifWithEncryption() || wallet.actsWithSecretWithEncryption();
+	const requireEncryptionPassword =
+		wallet.actsWithMnemonicWithEncryption() ||
+		wallet.actsWithWifWithEncryption() ||
+		wallet.actsWithSecretWithEncryption();
 
 	const shouldRenderSecondMnemonicField = !skipSecondSignature && wallet.isSecondSignature();
 
