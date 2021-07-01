@@ -140,6 +140,7 @@ export const translations: { [key: string]: any } = {
 			PASSWORD_NOT_MATCH_WALLET: "This password does not correspond to your wallet",
 			PRIVATE_KEY_NOT_MATCH_WALLET: "This private key does not correspond to your wallet",
 			WIF_NOT_MATCH_WALLET: "This WIF does not correspond to your wallet",
+			SECRET_NOT_MATCH_WALLET: "This secret does not correspond to your wallet",
 		},
 	},
 	INSTALL: "Install",
