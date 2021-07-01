@@ -65,7 +65,7 @@ test("should successfully submit delegate resignation", async (t) => {
 
 	await t.click(sendButton);
 
-	await t.expect(Selector("[data-testid=SendDelegateResignation__summary-step]").exists).ok({ timeout: 5000 });
+	await t.expect(Selector("[data-testid=TransactionSuccessfull]").exists).ok({ timeout: 5000 });
 });
 
 test("should fail delegate resignation submission", async (t: any) => {

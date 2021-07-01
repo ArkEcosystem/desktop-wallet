@@ -4,7 +4,7 @@ import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { useFees } from "app/hooks";
 import { InputFee } from "domains/transaction/components/InputFee";
-import { TransactionDetail, TransactionSender } from "domains/transaction/components/TransactionDetail";
+import { TransactionDetail, TransactionNetwork, TransactionSender } from "domains/transaction/components/TransactionDetail";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -56,58 +56,59 @@ export const FormStep = ({
 	}, [fee, fees, setValue]);
 
 	return (
-		<section data-testid="SendDelegateResignation__form-step" className="space-y-8">
+		<section data-testid="SendDelegateResignation__form-step">
 			<Header
 				title={t("TRANSACTION.PAGE_DELEGATE_RESIGNATION.FORM_STEP.TITLE")}
 				subtitle={t("TRANSACTION.PAGE_DELEGATE_RESIGNATION.FORM_STEP.DESCRIPTION")}
 			/>
 
-			<Alert>{t("TRANSACTION.PAGE_DELEGATE_RESIGNATION.FORM_STEP.WARNING")}</Alert>
+			<Alert className="mt-6">{t("TRANSACTION.PAGE_DELEGATE_RESIGNATION.FORM_STEP.WARNING")}</Alert>
 
-			<div>
-				<TransactionSender
-					address={senderWallet.address()}
-					alias={senderWallet.alias()}
-					border={false}
-					paddingPosition="bottom"
-				/>
+			<TransactionNetwork network={senderWallet.network()} borderPosition="bottom" />
 
-				<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")} borderPosition="both">
-					{senderWallet.username()}
-				</TransactionDetail>
+			<TransactionSender
+				address={senderWallet.address()}
+				alias={senderWallet.alias()}
+				borderPosition="bottom"
+			/>
+
+			<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")} borderPosition="bottom">
+				{senderWallet.username()}
+			</TransactionDetail>
+
+			<div className="pt-6">
+				<FormField name="fee">
+					<FormLabel>{t("TRANSACTION.TRANSACTION_FEE")}</FormLabel>
+					<InputFee
+						min={fees?.min}
+						avg={fees?.avg}
+						max={fees?.max}
+						loading={!fees}
+						value={fee}
+						step={0.01}
+						disabled={senderWallet.network().feeType() !== "dynamic"}
+						onChange={(value) => setValue("fee", value, { shouldDirty: true, shouldValidate: true })}
+						network={senderWallet.network()}
+						profile={profile}
+						viewType={inputFeeSettings.viewType}
+						onChangeViewType={(viewType) => {
+							setValue(
+								"inputFeeSettings",
+								{ ...inputFeeSettings, viewType },
+								{ shouldDirty: true, shouldValidate: true },
+							);
+						}}
+						simpleValue={inputFeeSettings.simpleValue}
+						onChangeSimpleValue={(simpleValue) => {
+							setValue(
+								"inputFeeSettings",
+								{ ...inputFeeSettings, simpleValue },
+								{ shouldDirty: true, shouldValidate: true },
+							);
+						}}
+					/>
+				</FormField>
 			</div>
-
-			<FormField name="fee">
-				<FormLabel>{t("TRANSACTION.TRANSACTION_FEE")}</FormLabel>
-				<InputFee
-					min={fees?.min}
-					avg={fees?.avg}
-					max={fees?.max}
-					loading={!fees}
-					value={fee}
-					step={0.01}
-					disabled={senderWallet.network().feeType() !== "dynamic"}
-					onChange={(value) => setValue("fee", value, { shouldDirty: true, shouldValidate: true })}
-					network={senderWallet.network()}
-					profile={profile}
-					viewType={inputFeeSettings.viewType}
-					onChangeViewType={(viewType) => {
-						setValue(
-							"inputFeeSettings",
-							{ ...inputFeeSettings, viewType },
-							{ shouldDirty: true, shouldValidate: true },
-						);
-					}}
-					simpleValue={inputFeeSettings.simpleValue}
-					onChangeSimpleValue={(simpleValue) => {
-						setValue(
-							"inputFeeSettings",
-							{ ...inputFeeSettings, simpleValue },
-							{ shouldDirty: true, shouldValidate: true },
-						);
-					}}
-				/>
-			</FormField>
 		</section>
 	);
 };

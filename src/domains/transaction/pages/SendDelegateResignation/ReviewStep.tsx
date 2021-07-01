@@ -23,12 +23,7 @@ export const ReviewStep = ({ senderWallet }: { senderWallet: Contracts.IReadWrit
 		<section data-testid="SendDelegateResignation__review-step">
 			<Header title={t("TRANSACTION.REVIEW_STEP.TITLE")} subtitle={t("TRANSACTION.REVIEW_STEP.DESCRIPTION")} />
 
-			<TransactionNetwork
-				network={senderWallet.network()}
-				border={false}
-				paddingPosition="bottom"
-				className="mt-8"
-			/>
+			<TransactionNetwork network={senderWallet.network()} border={false} />
 
 			<TransactionSender address={senderWallet.address()} alias={senderWallet.alias()} />
 
