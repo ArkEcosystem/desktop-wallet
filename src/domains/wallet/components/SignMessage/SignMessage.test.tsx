@@ -229,7 +229,7 @@ describe("SignMessage", () => {
 
 		const walletUsesWIFMock = jest.spyOn(wallet.wif(), "exists").mockReturnValue(true);
 		const walletWifMock = jest.spyOn(wallet.wif(), "get").mockImplementation(() => {
-			const wif = "SEyV1EJpyHxAfiRrVXo1SuAFqUP4yJkH2UBg4NZ96jMVUHe4DBpg";
+			const wif = "SDYxDiemdWw57qC5rjEDnNJJsy25XqbbQEhBbndwZ6ssNMbyWP3F";
 			return Promise.resolve(wif);
 		});
 
