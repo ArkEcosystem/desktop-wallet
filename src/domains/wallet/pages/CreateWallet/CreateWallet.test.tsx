@@ -105,7 +105,7 @@ describe("CreateWallet", () => {
 			fireEvent.click(continueButton);
 		});
 
-		await waitFor(() => expect(profile.wallets().values().length).toBe(1));
+		await waitFor(() => expect(profile.wallets().values().length).toBe(0));
 
 		await waitFor(() => expect(getByTestId("CreateWallet__WalletOverviewStep")).toBeTruthy());
 
@@ -166,6 +166,8 @@ describe("CreateWallet", () => {
 
 		await waitFor(() => expect(getByTestId("CreateWallet__SuccessStep")).toBeTruthy());
 
+		expect(profile.wallets().values().length).toBe(0);
+
 		act(() => {
 			if (alias) {
 				fireEvent.change(getByTestId("CreateWallet__wallet-name"), { target: { value: alias } });
@@ -173,6 +175,8 @@ describe("CreateWallet", () => {
 
 			fireEvent.click(getByTestId("CreateWallet__save-button"));
 		});
+
+		await waitFor(() => expect(profile.wallets().values().length).toBe(1));
 
 		const wallet = profile.wallets().first();
 
