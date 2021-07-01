@@ -47,7 +47,7 @@ test("should successfully submit delegate registration", async (t) => {
 	// Sign transaction
 	await t.expect(Selector("h1").withText(translations.TRANSACTION.AUTHENTICATION_STEP.TITLE).exists).ok();
 
-	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "passphrase");
+	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), MNEMONICS[0]);
 	await t.expect(Selector("[data-testid=AuthenticationStep__mnemonic]").hasAttribute("aria-invalid")).notOk();
 
 	const sendButton = Selector("button").withText(translations.COMMON.SEND);
