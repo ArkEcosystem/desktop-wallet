@@ -2,6 +2,7 @@ import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
 import { createFixture, scrollToTop } from "../../../utils/e2e-utils";
+import { MNEMONICS } from "../../../utils/testing-library";
 import { goToProfile } from "../../profile/e2e/common";
 import { goToWallet, importWallet } from "./common";
 
@@ -50,7 +51,7 @@ test("Should open and cancel sign message modal", async (t) => {
 });
 
 test("Should successfully sign message", async (t) => {
-	const mnemonic = "passphrase";
+	const mnemonic = MNEMONICS[0];
 
 	await importWallet(t, mnemonic);
 
