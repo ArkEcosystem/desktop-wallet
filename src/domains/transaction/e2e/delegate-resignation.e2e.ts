@@ -23,9 +23,9 @@ createFixture("Delegate Resignation action", [
 			},
 		},
 	),
-	mockRequest("https://dwallets.ark.io/api/wallets/DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS", {
+	mockRequest("https://dwallets.ark.io/api/wallets/DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr", {
 		data: {
-			address: "DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS",
+			address: "DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr",
 			attributes: {
 				delegate: {
 					username: "testwallet",
@@ -35,7 +35,7 @@ createFixture("Delegate Resignation action", [
 			isDelegate: true,
 			isResigned: false,
 			nonce: "1",
-			publicKey: "02e012f0a7cac12a74bdc17d844cbc9f637177b470019c32a53cef94c7a56e2ea9",
+			publicKey: "03d3fdad9c5b25bf8880e6b519eb3611a5c0b31adebc8455f0e096175b28321aff",
 		},
 	}),
 ]);
