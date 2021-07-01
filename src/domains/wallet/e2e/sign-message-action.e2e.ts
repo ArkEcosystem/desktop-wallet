@@ -1,8 +1,7 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { createFixture, scrollToTop } from "../../../utils/e2e-utils";
-import { MNEMONICS } from "../../../utils/testing-library";
+import { createFixture, MNEMONICS, scrollToTop } from "../../../utils/e2e-utils";
 import { goToProfile } from "../../profile/e2e/common";
 import { goToWallet, importWallet } from "./common";
 
