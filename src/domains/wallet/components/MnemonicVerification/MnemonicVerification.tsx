@@ -1,3 +1,4 @@
+import { sample } from "@arkecosystem/utils";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import React, { useEffect, useMemo, useState } from "react";
 
@@ -12,16 +13,21 @@ interface Properties {
 	isCompleted?: boolean;
 }
 
-const randomWordPositions = () => {
-	const positions: number[] = [];
-	while (positions.length < 3) {
-		const randomNumber = Math.floor(Math.random() * 12) + 1;
-		if (!positions.includes(randomNumber)) {
-			positions.push(randomNumber);
+const randomWordPositions = (length: number): number[] => {
+	const positions: number[] = [...Array.from({ length }).keys()];
+	const result: number[] = [];
+
+	while (result.length < 3) {
+		const randomNumber = sample(positions) + 1;
+
+		if (result.includes(randomNumber)) {
+			continue;
 		}
+
+		result.push(randomNumber);
 	}
 
-	return positions;
+	return result;
 };
 
 export function MnemonicVerification({
@@ -40,7 +46,7 @@ export function MnemonicVerification({
 	mnemonicWords = /\u3000/.test(mnemonic) ? mnemonic.split("\u3000") : mnemonic.split(" ");
 
 	if (!wordPositions?.length && activeTab === 0 && positions.length === 0) {
-		setPositions(randomWordPositions());
+		setPositions(randomWordPositions(mnemonicWords.length));
 	} else if (activeTab === 0 && positions.length === 0) {
 		setPositions(wordPositions as number[]);
 	}
