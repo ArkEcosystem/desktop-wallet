@@ -128,7 +128,7 @@ export const useWalletImport = ({ profile }: { profile: Contracts.IProfile }) =>
 				return profile.wallets().push(
 					await profile.walletFactory().fromSecret({
 						...defaultOptions,
-						wif: value,
+						secret: value,
 					}),
 				);
 
@@ -142,6 +142,7 @@ export const useWalletImport = ({ profile }: { profile: Contracts.IProfile }) =>
 							.fromSecret({
 								...defaultOptions,
 								password: value,
+                                secret: value,
 							})
 							.then((wallet) => {
 								profile.wallets().push(wallet);
