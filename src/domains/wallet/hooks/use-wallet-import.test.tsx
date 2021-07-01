@@ -2,7 +2,7 @@
 import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
-import { env } from "utils/testing-library";
+import { env, MNEMONICS } from "utils/testing-library";
 
 import { OptionsValue } from "./use-import-options";
 import { useWalletImport } from "./use-wallet-import";
@@ -33,7 +33,7 @@ describe("useWalletImport", () => {
 					encryptedWif: "",
 					network,
 					type: OptionsValue.BIP39,
-					value: "mnemonic",
+					value: MNEMONICS[0],
 				}),
 			).resolves.toMatchObject({});
 		});

@@ -1,6 +1,7 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
+import { MNEMONICS } from "utils/testing-library";
 
 import { SelectAddress } from "./SelectAddress";
 
@@ -12,7 +13,7 @@ beforeAll(async () => {
 
 	const wallet = await profile.walletFactory().fromMnemonicWithBIP39({
 		coin: "ARK",
-		mnemonic: "additional wallet",
+		mnemonic: MNEMONICS[0],
 		network: "ark.devnet",
 	});
 

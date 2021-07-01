@@ -5,7 +5,7 @@ import { toasts } from "app/services";
 import electron from "electron";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
-import { env, fireEvent, getDefaultProfileId, render, waitFor } from "utils/testing-library";
+import { env, fireEvent, getDefaultProfileId, MNEMONICS, render, waitFor } from "utils/testing-library";
 
 import { WalletOverviewStep } from "./WalletOverviewStep";
 
@@ -25,7 +25,7 @@ describe("WalletOverviewStep", () => {
 			const { result: form } = renderHook(() =>
 				useForm({
 					defaultValues: {
-						mnemonic: "test mnemonic",
+						mnemonic: MNEMONICS[0],
 						wallet: {
 							address: () => "address",
 						},
@@ -54,7 +54,7 @@ describe("WalletOverviewStep", () => {
 				fireEvent.click(getByTestId("CreateWallet__copy"));
 			});
 
-			await waitFor(() => expect(writeTextMock).toHaveBeenCalledWith("test mnemonic"));
+			await waitFor(() => expect(writeTextMock).toHaveBeenCalledWith(MNEMONICS[0]));
 
 			// @ts-ignore
 			navigator.clipboard = clipboardOriginal;
@@ -64,7 +64,7 @@ describe("WalletOverviewStep", () => {
 			const { result: form } = renderHook(() =>
 				useForm({
 					defaultValues: {
-						mnemonic: "test mnemonic",
+						mnemonic: MNEMONICS[0],
 						wallet: {
 							address: () => "address",
 						},
@@ -96,7 +96,7 @@ describe("WalletOverviewStep", () => {
 			const { result: form } = renderHook(() =>
 				useForm({
 					defaultValues: {
-						mnemonic: "test mnemonic",
+						mnemonic: MNEMONICS[0],
 						wallet: {
 							address: () => "address",
 						},
@@ -128,7 +128,7 @@ describe("WalletOverviewStep", () => {
 			const { result: form } = renderHook(() =>
 				useForm({
 					defaultValues: {
-						mnemonic: "test mnemonic",
+						mnemonic: MNEMONICS[0],
 						wallet: {
 							address: () => "address",
 						},

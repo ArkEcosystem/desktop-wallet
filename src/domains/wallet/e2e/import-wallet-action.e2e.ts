@@ -1,7 +1,7 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { BASEURL, createFixture, mockRequest } from "../../../utils/e2e-utils";
+import { BASEURL, createFixture, MNEMONICS, mockRequest } from "../../../utils/e2e-utils";
 import { goToProfile } from "../../profile/e2e/common";
 
 const translations = buildTranslations();
@@ -47,7 +47,7 @@ test("should import a wallet by mnemonic", async (t) => {
 	// Fill a wallet name
 	const walletNameInput = Selector("input[name=name]");
 
-	await t.typeText(walletNameInput, "Test Mnemonic");
+	await t.typeText(walletNameInput, MNEMONICS[0]);
 	await t.click(Selector("button").withExactText(translations.COMMON.SAVE_FINISH));
 });
 
@@ -114,7 +114,7 @@ test("should show an error message for duplicate address", async (t) => {
 	// Input passphrase
 	passphraseInput = Selector("[data-testid=ImportWallet__mnemonic-input]");
 
-	await t.typeText(passphraseInput, "imaginary passphrase", { paste: true, replace: true });
+	await t.typeText(passphraseInput, MNEMONICS[0], { paste: true, replace: true });
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 
 	await t.expect(Selector("[data-testid=EncryptPassword]").exists).ok();
@@ -139,7 +139,7 @@ test("should show an error message for duplicate address", async (t) => {
 	// Input passphrase
 	passphraseInput = Selector("[data-testid=ImportWallet__mnemonic-input]");
 
-	await t.typeText(passphraseInput, "imaginary passphrase", { paste: true, replace: true });
+	await t.typeText(passphraseInput, MNEMONICS[0], { paste: true, replace: true });
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 
 	await t.expect(Selector('[data-testid="Input__error"]').exists).ok();

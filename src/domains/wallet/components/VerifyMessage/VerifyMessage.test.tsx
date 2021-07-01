@@ -3,6 +3,7 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "testing-library";
+import { MNEMONICS } from "utils/testing-library";
 
 import { VerifyMessage } from "./VerifyMessage";
 
@@ -18,7 +19,7 @@ describe("VerifyMessage", () => {
 
 		signedMessageText = "Hello World";
 
-		const signatory = await wallet.coin().signatory().mnemonic("top secret");
+		const signatory = await wallet.coin().signatory().mnemonic(MNEMONICS[0]);
 
 		signedMessage = await wallet.message().sign({
 			message: signedMessageText,

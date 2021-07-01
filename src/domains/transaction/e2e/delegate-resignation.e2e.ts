@@ -1,7 +1,7 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { createFixture, mockRequest } from "../../../utils/e2e-utils";
+import { createFixture, MNEMONICS, mockRequest } from "../../../utils/e2e-utils";
 import { goToProfile } from "../../profile/e2e/common";
 import { importWallet } from "../../wallet/e2e/common";
 import { goToDelegateResignationPage } from "./common";
@@ -23,9 +23,9 @@ createFixture("Delegate Resignation action", [
 			},
 		},
 	),
-	mockRequest("https://dwallets.ark.io/api/wallets/DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS", {
+	mockRequest("https://dwallets.ark.io/api/wallets/DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr", {
 		data: {
-			address: "DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS",
+			address: "DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr",
 			attributes: {
 				delegate: {
 					username: "testwallet",
@@ -35,7 +35,7 @@ createFixture("Delegate Resignation action", [
 			isDelegate: true,
 			isResigned: false,
 			nonce: "1",
-			publicKey: "02e012f0a7cac12a74bdc17d844cbc9f637177b470019c32a53cef94c7a56e2ea9",
+			publicKey: "03d3fdad9c5b25bf8880e6b519eb3611a5c0b31adebc8455f0e096175b28321aff",
 		},
 	}),
 ]);
@@ -43,7 +43,7 @@ createFixture("Delegate Resignation action", [
 test("should successfully submit delegate resignation", async (t) => {
 	await goToProfile(t);
 
-	await importWallet(t, "passphrase");
+	await importWallet(t, MNEMONICS[0]);
 
 	await goToDelegateResignationPage(t);
 
@@ -57,7 +57,7 @@ test("should successfully submit delegate resignation", async (t) => {
 	await t.hover(Selector(continueButton));
 	await t.click(Selector(continueButton));
 
-	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "passphrase", { replace: true });
+	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), MNEMONICS[0], { replace: true });
 	await t.expect(Selector("[data-testid=AuthenticationStep__mnemonic]").hasAttribute("aria-invalid")).notOk();
 
 	const sendButton = Selector("button").withText(translations.COMMON.SEND);
@@ -71,7 +71,7 @@ test("should successfully submit delegate resignation", async (t) => {
 test("should fail delegate resignation submission", async (t: any) => {
 	await goToProfile(t);
 
-	await importWallet(t, "passphrase");
+	await importWallet(t, MNEMONICS[0]);
 
 	await goToDelegateResignationPage(t);
 
