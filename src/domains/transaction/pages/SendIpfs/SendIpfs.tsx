@@ -1,10 +1,9 @@
 import { Services } from "@arkecosystem/platform-sdk";
 import { DTO } from "@arkecosystem/platform-sdk-profiles";
-import { Button } from "app/components/Button";
-import { Divider } from "app/components/Divider";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
+import { StepNavigation } from "app/components/StepNavigation";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext, useLedgerContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useValidation } from "app/hooks";
@@ -158,71 +157,7 @@ export const SendIpfs = () => {
 		setActiveTab(newIndex);
 	};
 
-	const renderButtons = () => {
-		if (activeTab === 4) {
-			return (
-				<Button
-					data-testid="SendIpfs__button--back-to-wallet"
-					variant="secondary"
-					className="block"
-					onClick={() =>
-						history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
-					}
-				>
-					{t("COMMON.BACK_TO_WALLET")}
-				</Button>
-			);
-		}
-
-		if (activeTab === 3 && !activeWallet.isLedger()) {
-			return (
-				<>
-					<Button
-						data-testid="SendIpfs__button--back"
-						variant="secondary"
-						onClick={handleBack}
-					>
-						{t("COMMON.BACK")}
-					</Button>
-
-					<Button
-						type="submit"
-						data-testid="SendIpfs__button--submit"
-						disabled={!isValid || isSubmitting}
-						isLoading={isSubmitting}
-						icon="Send"
-						iconWidth={16}
-						iconHeight={16}
-						iconPosition="right"
-					>
-						<span>{t("COMMON.SEND")}</span>
-					</Button>
-				</>
-			);
-		}
-
-		return (
-			<>
-				<Button
-					disabled={isSubmitting}
-					data-testid="SendIpfs__button--back"
-					variant="secondary"
-					onClick={handleBack}
-				>
-					{t("COMMON.BACK")}
-				</Button>
-
-				<Button
-					data-testid="SendIpfs__button--continue"
-					disabled={!isValid || isSubmitting}
-					isLoading={isSubmitting}
-					onClick={async () => await handleNext()}
-				>
-					{t("COMMON.CONTINUE")}
-				</Button>
-			</>
-		);
-	};
+	const showErrorStep = activeTab === 5;
 
 	return (
 		<Page profile={activeProfile}>
@@ -263,13 +198,19 @@ export const SendIpfs = () => {
 								/>
 							</TabPanel>
 
-							<div className="py-2">
-								<Divider dashed />
-							</div>
-
-							<div className="flex justify-end space-x-2">
-								{renderButtons()}
-							</div>
+							{!showErrorStep && (
+								<StepNavigation
+									onBackClick={handleBack}
+									onBackToWalletClick={() =>
+										history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
+									}
+									onContinueClick={async () => await handleNext()}
+									isSubmitting={isSubmitting}
+									isValid={isValid}
+									size={4}
+									activeIndex={activeTab}
+								/>
+							)}
 						</div>
 					</Tabs>
 

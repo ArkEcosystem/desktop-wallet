@@ -179,16 +179,16 @@ describe("SendIpfs", () => {
 		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
 		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
 
-		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
 
-		fireEvent.click(getByTestId("SendIpfs__button--back"));
+		fireEvent.click(getByTestId("StepNavigation__back-button"));
 		await waitFor(() => expect(getByTestId("SendIpfs__form-step")).toBeTruthy());
 
-		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
 
-		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 
 		if (!profile.settings().get(Contracts.ProfileSetting.DoNotShowFeeWarning)) {
 			await waitFor(() => expect(getByTestId("FeeWarning__continue-button")).toBeTruthy());
@@ -231,10 +231,10 @@ describe("SendIpfs", () => {
 		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
 		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
 
-		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
 
-		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 
 		if (!profile.settings().get(Contracts.ProfileSetting.DoNotShowFeeWarning)) {
 			await waitFor(() => expect(getByTestId("FeeWarning__continue-button")).toBeTruthy());
@@ -257,9 +257,9 @@ describe("SendIpfs", () => {
 		});
 		const transactionMock = createTransactionMock(wallet);
 
-		await waitFor(() => expect(getByTestId("SendIpfs__button--submit")).not.toBeDisabled());
+		await waitFor(() => expect(getByTestId("StepNavigation__send-button")).not.toBeDisabled());
 
-		fireEvent.click(getByTestId("SendIpfs__button--submit"));
+		fireEvent.click(getByTestId("StepNavigation__send-button"));
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 
 		expect(getByTestId("TransactionSuccessful")).toHaveTextContent(
@@ -275,7 +275,7 @@ describe("SendIpfs", () => {
 		// Go back to wallet
 		const historySpy = jest.spyOn(history, "push");
 
-		fireEvent.click(getByTestId("SendIpfs__button--back-to-wallet"));
+		fireEvent.click(getByTestId("StepNavigation__back-to-wallet-button"));
 		expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
 
 		historySpy.mockRestore();
@@ -316,12 +316,12 @@ describe("SendIpfs", () => {
 		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
 		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
 
-		expect(getByTestId("SendIpfs__button--continue")).not.toBeDisabled();
+		expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled();
 
-		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
 
-		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		expect(getByTestId("FeeWarning__cancel-button")).toBeTruthy();
 
 		fireEvent.click(getByTestId("FeeWarning__cancel-button"));
@@ -362,12 +362,12 @@ describe("SendIpfs", () => {
 		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
 		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
 
-		expect(getByTestId("SendIpfs__button--continue")).not.toBeDisabled();
+		expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled();
 
-		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
 
-		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("FeeWarning__continue-button")).toBeTruthy());
 
 		fireEvent.click(getByTestId("FeeWarning__continue-button"));
@@ -408,12 +408,12 @@ describe("SendIpfs", () => {
 		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
 		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
 
-		expect(getByTestId("SendIpfs__button--continue")).not.toBeDisabled();
+		expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled();
 
-		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
 
-		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 
 		if (!profile.settings().get(Contracts.ProfileSetting.DoNotShowFeeWarning)) {
 			await waitFor(() => expect(getByTestId("FeeWarning__continue-button")).toBeTruthy());
@@ -425,7 +425,7 @@ describe("SendIpfs", () => {
 		fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), { target: { value: "wrong-mnemonic" } });
 		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue("wrong-mnemonic"));
 
-		expect(getByTestId("SendIpfs__button--submit")).toBeDisabled();
+		expect(getByTestId("StepNavigation__send-button")).toBeDisabled();
 		expect(getByTestId("Input__error")).toBeVisible();
 
 		expect(container).toMatchSnapshot();
@@ -453,7 +453,7 @@ describe("SendIpfs", () => {
 
 		const historySpy = jest.spyOn(history, "push").mockImplementation();
 
-		fireEvent.click(getByTestId("SendIpfs__button--back"));
+		fireEvent.click(getByTestId("StepNavigation__back-button"));
 		expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
 
 		historySpy.mockRestore();
@@ -492,12 +492,12 @@ describe("SendIpfs", () => {
 		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
 		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
 
-		expect(getByTestId("SendIpfs__button--continue")).not.toBeDisabled();
+		expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled();
 
-		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
 
-		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 
 		if (!profile.settings().get(Contracts.ProfileSetting.DoNotShowFeeWarning)) {
 			await waitFor(() => expect(getByTestId("FeeWarning__continue-button")).toBeTruthy());
@@ -514,7 +514,7 @@ describe("SendIpfs", () => {
 			throw new Error();
 		});
 
-		fireEvent.click(getByTestId("SendIpfs__button--submit"));
+		fireEvent.click(getByTestId("StepNavigation__send-button"));
 
 		await waitFor(() => expect(getByTestId("ErrorStep")).toBeInTheDocument());
 		expect(getByTestId("ErrorStep__wallet-button")).toBeInTheDocument();
@@ -594,12 +594,12 @@ describe("SendIpfs", () => {
 		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
 		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
 
-		expect(getByTestId("SendIpfs__button--continue")).not.toBeDisabled();
+		expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled();
 
-		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
 
-		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 
 		if (!profile.settings().get(Contracts.ProfileSetting.DoNotShowFeeWarning)) {
 			await waitFor(() => expect(getByTestId("FeeWarning__continue-button")).toBeTruthy());
@@ -619,7 +619,7 @@ describe("SendIpfs", () => {
 
 		const transactionMock = createTransactionMock(wallet);
 
-		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 
 		expect(getByTestId("TransactionSuccessful")).toHaveTextContent(
@@ -697,12 +697,12 @@ describe("SendIpfs", () => {
 		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
 		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
 
-		expect(getByTestId("SendIpfs__button--continue")).not.toBeDisabled();
+		expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled();
 
-		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
 
-		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 
 		if (!profile.settings().get(Contracts.ProfileSetting.DoNotShowFeeWarning)) {
 			await waitFor(() => expect(getByTestId("FeeWarning__continue-button")).toBeTruthy());
@@ -763,12 +763,12 @@ describe("SendIpfs", () => {
 		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
 		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
 
-		expect(getByTestId("SendIpfs__button--continue")).not.toBeDisabled();
+		expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled();
 
-		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
 
-		fireEvent.click(getByTestId("SendIpfs__button--continue"));
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 
 		if (!profile.settings().get(Contracts.ProfileSetting.DoNotShowFeeWarning)) {
 			await waitFor(() => expect(getByTestId("FeeWarning__continue-button")).toBeTruthy());
@@ -792,9 +792,9 @@ describe("SendIpfs", () => {
 
 		const transactionMock = createTransactionMock(encryptedWallet);
 
-		await waitFor(() => expect(getByTestId("SendIpfs__button--submit")).not.toBeDisabled());
+		await waitFor(() => expect(getByTestId("StepNavigation__send-button")).not.toBeDisabled());
 
-		fireEvent.click(getByTestId("SendIpfs__button--submit"));
+		fireEvent.click(getByTestId("StepNavigation__send-button"));
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 
 		signMock.mockRestore();

@@ -1,4 +1,3 @@
-import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -22,7 +21,7 @@ const FormStep = ({
 	const { findByType } = useFees(profile);
 
 	const { getValues, setValue, watch } = useFormContext();
-	const { hash, senderAddress, fee, fees } = watch();
+	const { hash, fee, fees } = watch();
 
 	const inputFeeSettings = watch("inputFeeSettings") ?? {};
 
@@ -49,9 +48,9 @@ const FormStep = ({
 				subtitle={t("TRANSACTION.PAGE_IPFS.FIRST_STEP.DESCRIPTION")}
 			/>
 
-			<TransactionNetwork network={wallet.network()} borderPosition="bottom" />
+			<TransactionNetwork network={wallet.network()} border={false} />
 
-			<TransactionSender address={wallet.address()} alias={wallet.alias()} borderPosition="bottom" />
+			<TransactionSender address={wallet.address()} alias={wallet.alias()} borderPosition="both" />
 
 			<div className="pt-6 space-y-6">
 				<FormField name="hash">

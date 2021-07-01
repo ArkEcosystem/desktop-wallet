@@ -400,19 +400,11 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                   </div>
                 </div>
                 <div
-                  class="py-2"
-                >
-                  <div
-                    class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
-                    type="horizontal"
-                  />
-                </div>
-                <div
-                  class="flex justify-end space-x-2"
+                  class="StepNavigation__StepNavigationWrapper-e8732n-0 fGWUDu"
                 >
                   <button
                     class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
-                    data-testid="SendIpfs__button--back"
+                    data-testid="StepNavigation__back-button"
                     type="button"
                   >
                     <div
@@ -423,7 +415,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                   </button>
                   <button
                     class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
-                    data-testid="SendIpfs__button--submit"
+                    data-testid="StepNavigation__send-button"
                     disabled=""
                     type="submit"
                   >
@@ -481,7 +473,7 @@ exports[`SendIpfs should render form step 1`] = `
       </div>
     </div>
     <div
-      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 eMJHaj no-ligatures"
+      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kakuTR no-ligatures"
       data-testid="TransactionNetwork"
     >
       <div
@@ -516,7 +508,7 @@ exports[`SendIpfs should render form step 1`] = `
       </div>
     </div>
     <div
-      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 eMJHaj no-ligatures"
+      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 jKmMiG no-ligatures"
       data-testid="TransactionSender"
     >
       <div
@@ -1599,19 +1591,11 @@ exports[`SendIpfs should send a ipfs transfer with a ledger wallet 1`] = `
                   </section>
                 </div>
                 <div
-                  class="py-2"
-                >
-                  <div
-                    class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
-                    type="horizontal"
-                  />
-                </div>
-                <div
-                  class="flex justify-end space-x-2"
+                  class="StepNavigation__StepNavigationWrapper-e8732n-0 fGWUDu"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST block"
-                    data-testid="SendIpfs__button--back-to-wallet"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
+                    data-testid="StepNavigation__back-to-wallet-button"
                     type="button"
                   >
                     <div
@@ -2191,19 +2175,11 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                   </section>
                 </div>
                 <div
-                  class="py-2"
-                >
-                  <div
-                    class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
-                    type="horizontal"
-                  />
-                </div>
-                <div
-                  class="flex justify-end space-x-2"
+                  class="StepNavigation__StepNavigationWrapper-e8732n-0 fGWUDu"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST block"
-                    data-testid="SendIpfs__button--back-to-wallet"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
+                    data-testid="StepNavigation__back-to-wallet-button"
                     type="button"
                   >
                     <div
@@ -2785,19 +2761,11 @@ exports[`SendIpfs should send an IPFS transaction using encryption password 1`] 
                   </section>
                 </div>
                 <div
-                  class="py-2"
-                >
-                  <div
-                    class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
-                    type="horizontal"
-                  />
-                </div>
-                <div
-                  class="flex justify-end space-x-2"
+                  class="StepNavigation__StepNavigationWrapper-e8732n-0 fGWUDu"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST block"
-                    data-testid="SendIpfs__button--back-to-wallet"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
+                    data-testid="StepNavigation__back-to-wallet-button"
                     type="button"
                   >
                     <div
@@ -3377,19 +3345,11 @@ exports[`SendIpfs should send an ipfs transaction with a multisig wallet 1`] = `
                   </section>
                 </div>
                 <div
-                  class="py-2"
-                >
-                  <div
-                    class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
-                    type="horizontal"
-                  />
-                </div>
-                <div
-                  class="flex justify-end space-x-2"
+                  class="StepNavigation__StepNavigationWrapper-e8732n-0 fGWUDu"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST block"
-                    data-testid="SendIpfs__button--back-to-wallet"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
+                    data-testid="StepNavigation__back-to-wallet-button"
                     type="button"
                   >
                     <div
@@ -3734,7 +3694,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                       </div>
                     </div>
                     <div
-                      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 eMJHaj no-ligatures"
+                      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kakuTR no-ligatures"
                       data-testid="TransactionNetwork"
                     >
                       <div
@@ -3769,7 +3729,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                       </div>
                     </div>
                     <div
-                      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 eMJHaj no-ligatures"
+                      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 jKmMiG no-ligatures"
                       data-testid="TransactionSender"
                     >
                       <div
@@ -4003,19 +3963,11 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                   </section>
                 </div>
                 <div
-                  class="py-2"
-                >
-                  <div
-                    class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
-                    type="horizontal"
-                  />
-                </div>
-                <div
-                  class="flex justify-end space-x-2"
+                  class="StepNavigation__StepNavigationWrapper-e8732n-0 fGWUDu"
                 >
                   <button
                     class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
-                    data-testid="SendIpfs__button--back"
+                    data-testid="StepNavigation__back-button"
                     type="button"
                   >
                     <div
@@ -4026,7 +3978,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                   </button>
                   <button
                     class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
-                    data-testid="SendIpfs__button--continue"
+                    data-testid="StepNavigation__continue-button"
                     disabled=""
                     type="button"
                   >
@@ -4407,40 +4359,6 @@ exports[`SendIpfs should show error step and go back 1`] = `
                       </button>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="py-2"
-                >
-                  <div
-                    class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
-                    type="horizontal"
-                  />
-                </div>
-                <div
-                  class="flex justify-end space-x-2"
-                >
-                  <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
-                    data-testid="SendIpfs__button--back"
-                    type="button"
-                  >
-                    <div
-                      class="flex relative items-center space-x-2"
-                    >
-                      Back
-                    </div>
-                  </button>
-                  <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW"
-                    data-testid="SendIpfs__button--continue"
-                    type="button"
-                  >
-                    <div
-                      class="flex relative items-center space-x-2"
-                    >
-                      Continue
-                    </div>
-                  </button>
                 </div>
               </div>
             </div>
