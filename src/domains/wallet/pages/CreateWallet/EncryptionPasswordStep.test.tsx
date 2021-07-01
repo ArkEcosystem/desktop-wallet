@@ -5,7 +5,15 @@ import { act } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act as actAsync, env, fireEvent, getDefaultProfileId, MNEMONICS, renderWithRouter, waitFor } from "utils/testing-library";
+import {
+	act as actAsync,
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	MNEMONICS,
+	renderWithRouter,
+	waitFor,
+} from "utils/testing-library";
 
 import { CreateWallet } from "./CreateWallet";
 

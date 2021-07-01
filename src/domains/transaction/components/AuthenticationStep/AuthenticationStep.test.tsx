@@ -3,7 +3,15 @@ import { act, renderHook } from "@testing-library/react-hooks";
 import { Form } from "app/components/Form";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { env, fireEvent, getDefaultProfileId, MNEMONICS, renderWithRouter, screen, waitFor } from "utils/testing-library";
+import {
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	MNEMONICS,
+	renderWithRouter,
+	screen,
+	waitFor,
+} from "utils/testing-library";
 
 import { AuthenticationStep } from "./AuthenticationStep";
 

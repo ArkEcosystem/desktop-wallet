@@ -7,7 +7,17 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import multiSignatureFixture from "tests/fixtures/coins/ark/devnet/transactions/multisignature-registration.json";
 import { TransactionFees } from "types";
-import { act, env, fireEvent, getDefaultProfileId, MNEMONICS, render, screen, syncFees, waitFor } from "utils/testing-library";
+import {
+	act,
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	MNEMONICS,
+	render,
+	screen,
+	syncFees,
+	waitFor,
+} from "utils/testing-library";
 
 import { translations as transactionTranslations } from "../../i18n";
 import { MultiSignatureRegistrationForm } from "./MultiSignatureRegistrationForm";
