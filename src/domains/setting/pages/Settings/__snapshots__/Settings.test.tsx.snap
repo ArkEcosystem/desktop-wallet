@@ -1,5 +1,1556 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Settings should disable submit button when profile is not restored yet 1`] = `
+<DocumentFragment>
+  <div
+    class="flex relative flex-col min-h-screen"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
+    >
+      <div
+        class="flex relative h-21"
+      >
+        <button
+          class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
+        >
+          <div
+            class="sc-bdfBwQ dlKckO mx-auto"
+            height="10"
+            width="6"
+          >
+            <svg>
+              arrow-left.svg
+            </svg>
+          </div>
+        </button>
+        <div
+          class="flex flex-1 px-8 "
+        >
+          <div
+            class="flex items-center my-auto"
+          >
+            <div
+              class="NavigationBar__LogoContainer-sc-1qsoskw-1 GOEfv"
+            >
+              <svg
+                width="44"
+              >
+                ark-logo.svg
+              </svg>
+            </div>
+          </div>
+          <ul
+            class="flex mr-auto ml-4 space-x-8 h-21"
+          >
+            <li
+              class="flex"
+            >
+              <a
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
+                title="Portfolio"
+              >
+                <div
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
+                />
+                Portfolio
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
+                title="Plugins"
+              >
+                <div
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
+                />
+                Plugins
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
+                title="Exchange"
+              >
+                <div
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
+                />
+                Exchange
+              </a>
+            </li>
+            <li
+              class="flex"
+            >
+              <a
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
+                href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
+                title="News"
+              >
+                <div
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
+                />
+                News
+              </a>
+            </li>
+          </ul>
+          <div
+            class="flex items-center my-auto space-x-4"
+          >
+            <div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
+                  <div
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-2 gEXBfE group"
+                  >
+                    <button
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
+                      data-testid="navbar__buttons--notifications"
+                      type="button"
+                    >
+                      <div
+                        class="flex relative items-center space-x-2"
+                      >
+                        <div
+                          class="sc-bdfBwQ fzSuZU p-1"
+                          height="18"
+                          width="15"
+                        >
+                          <svg>
+                            notification.svg
+                          </svg>
+                        </div>
+                        <div
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
+                        >
+                          <div
+                            class="w-2 h-2 rounded-full bg-theme-danger-500"
+                          />
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                </span>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+            />
+            <div
+              class="flex items-center"
+            >
+              <div
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-2 gEXBfE"
+              >
+                <button
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
+                  data-testid="navbar__buttons--send"
+                  type="button"
+                >
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    <div
+                      class="sc-bdfBwQ hjDozt p-1"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        send.svg
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+            />
+            <div
+              class="flex items-center"
+            >
+              <div
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-2 gEXBfE"
+              >
+                <button
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
+                  data-testid="navbar__buttons--receive"
+                  type="button"
+                >
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    <div
+                      class="sc-bdfBwQ fdJUih p-1"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        qr-code.svg
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <div
+              class="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+            />
+          </div>
+          <div
+            class="flex items-center my-auto ml-8 space-x-4"
+          >
+            <div
+              class="text-right"
+            >
+              <div
+                class="text-xs font-semibold text-theme-secondary-500"
+              >
+                Your Balance
+              </div>
+              <div
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
+              >
+                <span
+                  data-testid="AmountCrypto"
+                >
+                  0 BTC
+                </span>
+              </div>
+            </div>
+            <div
+              class="relative"
+            >
+              <span
+                data-testid="dropdown__toggle"
+              >
+                <div
+                  class="relative justify-center items-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
+                  >
+                    <div
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                    >
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      >
+                        JO
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex flex-col flex-1"
+    >
+      <div
+        class="flex flex-1"
+      >
+        <div
+          class="container flex mx-auto"
+        >
+          <div
+            class="px-12 my-8 border-r border-theme-primary-100 dark:border-theme-secondary-800"
+          >
+            <div
+              class="SideBar__SideBarContainer-sc-1yju7o6-0 gBtcTt"
+            >
+              <ul>
+                <div
+                  class="relative cursor-pointer"
+                  data-testid="side-menu__item--General"
+                >
+                  <li
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 dark:text-theme-secondary-200 bg-theme-primary-100 dark:bg-theme-secondary-800"
+                  >
+                    <div
+                      class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary-600"
+                    />
+                    <div
+                      class="mr-3"
+                    >
+                      <div
+                        class="sc-bdfBwQ hjDozt"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          settings-horizontal.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <span
+                      class="text-lg font-semibold"
+                    >
+                      General
+                    </span>
+                  </li>
+                </div>
+                <div
+                  class="relative cursor-pointer"
+                  data-testid="side-menu__item--Password"
+                >
+                  <li
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
+                  >
+                    <div
+                      class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
+                    >
+                      <div
+                        class="sc-bdfBwQ hjDozt"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          lock.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <span
+                      class="text-lg font-semibold"
+                    >
+                      Password
+                    </span>
+                  </li>
+                </div>
+                <div
+                  class="relative cursor-pointer"
+                  data-testid="side-menu__item--Export"
+                >
+                  <li
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
+                  >
+                    <div
+                      class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
+                    >
+                      <div
+                        class="sc-bdfBwQ hjDozt"
+                        height="20"
+                        width="20"
+                      >
+                        <svg>
+                          export.svg
+                        </svg>
+                      </div>
+                    </div>
+                    <span
+                      class="text-lg font-semibold"
+                    >
+                      Export
+                    </span>
+                  </li>
+                </div>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="w-full"
+          >
+            <div
+              class="Section__SectionWrapper-sc-8cjvre-0 Qqquu"
+            >
+              <div
+                class="container px-10 mx-auto px-12"
+              >
+                <div
+                  class="flex justify-between items-end bg-theme-background"
+                >
+                  <div
+                    class="space-y-4"
+                  >
+                    <h1
+                      class="mb-0 text-3xl"
+                      data-testid="header__title"
+                    >
+                      Profile Settings
+                    </h1>
+                    <div
+                      class="text-theme-secondary-text"
+                      data-testid="header__subtitle"
+                    >
+                      Customize your wallet to suit your needs.
+                    </div>
+                  </div>
+                </div>
+                <form
+                  class="space-y-5"
+                  data-testid="General-settings__form"
+                >
+                  <div
+                    class="relative mt-8"
+                  >
+                    <h2
+                      class="mb-3"
+                    >
+                      Personal Details
+                    </h2>
+                    <div
+                      class="group space-y-2"
+                    >
+                      <span
+                        class="text-sm font-semibold transition-colors duration-100 cursor-default text-theme-secondary-text group-hover:text-theme-primary-600"
+                      >
+                        Select Profile Image
+                      </span>
+                      <div
+                        class="flex flex-row"
+                      >
+                        <div
+                          class="relative w-20 h-20"
+                        >
+                          <div
+                            class="SelectProfileImage__ProfileImageStyled-t6smk3-1 bVbLLU"
+                          >
+                            <img
+                              alt="Avatar"
+                              class="object-cover min-h-full"
+                              data-testid="SelectProfileImage__avatar"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                            />
+                            <span
+                              class="absolute text-2xl font-semibold text-theme-background"
+                            >
+                              JO
+                            </span>
+                            <button
+                              class="overflow-hidden absolute z-10 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
+                              data-testid="SelectProfileImage__upload-button"
+                              type="button"
+                            >
+                              <div
+                                class="flex justify-center items-center h-full rounded-full dark:bg-black bg-theme-secondary-900 opacity-85"
+                              >
+                                <div
+                                  class="sc-bdfBwQ DGwSy text-white dark:text-theme-secondary-200"
+                                  height="18"
+                                  width="24"
+                                >
+                                  <svg>
+                                    upload.svg
+                                  </svg>
+                                </div>
+                              </div>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="flex justify-between mt-8 w-full"
+                    >
+                      <div
+                        class="flex flex-col w-2/4"
+                      >
+                        <fieldset
+                          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                        >
+                          <label
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            data-testid="FormLabel"
+                            for="name"
+                          >
+                            Profile Name
+                          </label>
+                          <div
+                            class="fixed invisible w-auto whitespace-nowrap"
+                          >
+                            …
+                          </div>
+                          <div
+                            class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
+                          >
+                            <div
+                              class="relative flex flex-1 h-full"
+                            >
+                              <input
+                                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                data-testid="General-settings__input--name"
+                                name="name"
+                                value="John Doe"
+                              />
+                            </div>
+                          </div>
+                        </fieldset>
+                        <fieldset
+                          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
+                        >
+                          <label
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            data-testid="FormLabel"
+                            for="bip39Locale"
+                          >
+                            Passphrase Language
+                          </label>
+                          <div
+                            class="relative w-full"
+                          >
+                            <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              english…
+                            </div>
+                            <div
+                              class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
+                            >
+                              <div
+                                class="relative flex flex-1 h-full"
+                              >
+                                <input
+                                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                  data-testid="select-list__input"
+                                  name="bip39Locale"
+                                  readonly=""
+                                  tabindex="-1"
+                                  value="english"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="relative w-full"
+                            >
+                              <div
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="select-passphrase-language-menu"
+                                role="combobox"
+                              >
+                                <label
+                                  for="select-passphrase-language-input"
+                                  id="select-passphrase-language-label"
+                                />
+                                <div
+                                  class="fixed invisible w-auto whitespace-nowrap"
+                                >
+                                  English…
+                                </div>
+                                <div
+                                  class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
+                                >
+                                  <div
+                                    class="relative flex flex-1 h-full"
+                                  >
+                                    <input
+                                      aria-autocomplete="list"
+                                      aria-controls="select-passphrase-language-menu"
+                                      aria-labelledby="select-passphrase-language-label"
+                                      autocomplete="off"
+                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                      data-testid="SelectDropdown__input"
+                                      id="select-passphrase-language-input"
+                                      name="bip39Locale"
+                                      placeholder="Select Passphrase Language"
+                                      value="English"
+                                    />
+                                    <span
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
+                                      data-testid="Input__suggestion"
+                                    >
+                                      <span
+                                        class="truncate"
+                                      >
+                                        English
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <div
+                                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                                  >
+                                    <div
+                                      class=""
+                                    >
+                                      <div
+                                        class="flex justify-center items-center py-2 px-1"
+                                        data-testid="SelectDropdown__caret"
+                                      >
+                                        <div
+                                          class="sc-bdfBwQ kBuozr transition-transform text-theme-secondary-500"
+                                          height="5"
+                                          width="7"
+                                        >
+                                          <svg>
+                                            caret-down.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <ul
+                                  aria-labelledby="select-passphrase-language-label"
+                                  class="styles__SelectOptionsList-b2falt-0 dyOwRR"
+                                  id="select-passphrase-language-menu"
+                                  role="listbox"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+                        <fieldset
+                          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
+                        >
+                          <label
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            data-testid="FormLabel"
+                            for="exchangeCurrency"
+                          >
+                            Currency
+                          </label>
+                          <div
+                            class="relative w-full"
+                          >
+                            <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              BTC…
+                            </div>
+                            <div
+                              class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
+                            >
+                              <div
+                                class="relative flex flex-1 h-full"
+                              >
+                                <input
+                                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                  data-testid="select-list__input"
+                                  name="exchangeCurrency"
+                                  readonly=""
+                                  tabindex="-1"
+                                  value="BTC"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="relative w-full"
+                            >
+                              <div
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="select-currency-menu"
+                                role="combobox"
+                              >
+                                <label
+                                  for="select-currency-input"
+                                  id="select-currency-label"
+                                />
+                                <div
+                                  class="fixed invisible w-auto whitespace-nowrap"
+                                >
+                                  BTC (Ƀ)…
+                                </div>
+                                <div
+                                  class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
+                                >
+                                  <div
+                                    class="relative flex flex-1 h-full"
+                                  >
+                                    <input
+                                      aria-autocomplete="list"
+                                      aria-controls="select-currency-menu"
+                                      aria-labelledby="select-currency-label"
+                                      autocomplete="off"
+                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                      data-testid="SelectDropdown__input"
+                                      id="select-currency-input"
+                                      name="exchangeCurrency"
+                                      placeholder="Select Currency"
+                                      value="BTC (Ƀ)"
+                                    />
+                                    <span
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
+                                      data-testid="Input__suggestion"
+                                    >
+                                      <span
+                                        class="truncate"
+                                      >
+                                        BTC (Ƀ)
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <div
+                                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                                  >
+                                    <div
+                                      class=""
+                                    >
+                                      <div
+                                        class="flex justify-center items-center py-2 px-1"
+                                        data-testid="SelectDropdown__caret"
+                                      >
+                                        <div
+                                          class="sc-bdfBwQ kBuozr transition-transform text-theme-secondary-500"
+                                          height="5"
+                                          width="7"
+                                        >
+                                          <svg>
+                                            caret-down.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <ul
+                                  aria-labelledby="select-currency-label"
+                                  class="styles__SelectOptionsList-b2falt-0 dyOwRR"
+                                  id="select-currency-menu"
+                                  role="listbox"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                      <div
+                        class="flex flex-col ml-5 w-2/4"
+                      >
+                        <fieldset
+                          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                        >
+                          <label
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            data-testid="FormLabel"
+                            for="locale"
+                          >
+                            Language
+                          </label>
+                          <div
+                            class="relative w-full"
+                          >
+                            <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              en-US…
+                            </div>
+                            <div
+                              class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
+                            >
+                              <div
+                                class="relative flex flex-1 h-full"
+                              >
+                                <input
+                                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                  data-testid="select-list__input"
+                                  name="locale"
+                                  readonly=""
+                                  tabindex="-1"
+                                  value="en-US"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="relative w-full"
+                            >
+                              <div
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="select-language-menu"
+                                role="combobox"
+                              >
+                                <label
+                                  for="select-language-input"
+                                  id="select-language-label"
+                                />
+                                <div
+                                  class="fixed invisible w-auto whitespace-nowrap"
+                                >
+                                  English…
+                                </div>
+                                <div
+                                  class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
+                                >
+                                  <div
+                                    class="relative flex flex-1 h-full"
+                                  >
+                                    <input
+                                      aria-autocomplete="list"
+                                      aria-controls="select-language-menu"
+                                      aria-labelledby="select-language-label"
+                                      autocomplete="off"
+                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                      data-testid="SelectDropdown__input"
+                                      id="select-language-input"
+                                      name="locale"
+                                      placeholder="Select Language"
+                                      value="English"
+                                    />
+                                    <span
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
+                                      data-testid="Input__suggestion"
+                                    >
+                                      <span
+                                        class="truncate"
+                                      >
+                                        English
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <div
+                                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                                  >
+                                    <div
+                                      class=""
+                                    >
+                                      <div
+                                        class="flex justify-center items-center py-2 px-1"
+                                        data-testid="SelectDropdown__caret"
+                                      >
+                                        <div
+                                          class="sc-bdfBwQ kBuozr transition-transform text-theme-secondary-500"
+                                          height="5"
+                                          width="7"
+                                        >
+                                          <svg>
+                                            caret-down.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <ul
+                                  aria-labelledby="select-language-label"
+                                  class="styles__SelectOptionsList-b2falt-0 dyOwRR"
+                                  id="select-language-menu"
+                                  role="listbox"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+                        <fieldset
+                          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
+                        >
+                          <label
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            data-testid="FormLabel"
+                            for="marketProvider"
+                          >
+                            Price Oracle
+                          </label>
+                          <div
+                            class="relative w-full"
+                          >
+                            <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              cryptocompare…
+                            </div>
+                            <div
+                              class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
+                            >
+                              <div
+                                class="relative flex flex-1 h-full"
+                              >
+                                <input
+                                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                  data-testid="select-list__input"
+                                  name="marketProvider"
+                                  readonly=""
+                                  tabindex="-1"
+                                  value="cryptocompare"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="relative w-full"
+                            >
+                              <div
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="select-market-provider-menu"
+                                role="combobox"
+                              >
+                                <label
+                                  for="select-market-provider-input"
+                                  id="select-market-provider-label"
+                                />
+                                <div
+                                  class="fixed invisible w-auto whitespace-nowrap"
+                                >
+                                  CryptoCompare…
+                                </div>
+                                <div
+                                  class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
+                                >
+                                  <div
+                                    class="relative flex flex-1 h-full"
+                                  >
+                                    <input
+                                      aria-autocomplete="list"
+                                      aria-controls="select-market-provider-menu"
+                                      aria-labelledby="select-market-provider-label"
+                                      autocomplete="off"
+                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                      data-testid="SelectDropdown__input"
+                                      id="select-market-provider-input"
+                                      name="marketProvider"
+                                      placeholder="Select Price Oracle"
+                                      value="CryptoCompare"
+                                    />
+                                    <span
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
+                                      data-testid="Input__suggestion"
+                                    >
+                                      <span
+                                        class="truncate"
+                                      >
+                                        CryptoCompare
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <div
+                                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                                  >
+                                    <div
+                                      class=""
+                                    >
+                                      <div
+                                        class="flex justify-center items-center py-2 px-1"
+                                        data-testid="SelectDropdown__caret"
+                                      >
+                                        <div
+                                          class="sc-bdfBwQ kBuozr transition-transform text-theme-secondary-500"
+                                          height="5"
+                                          width="7"
+                                        >
+                                          <svg>
+                                            caret-down.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <ul
+                                  aria-labelledby="select-market-provider-label"
+                                  class="styles__SelectOptionsList-b2falt-0 dyOwRR"
+                                  id="select-market-provider-menu"
+                                  role="listbox"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+                        <fieldset
+                          class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
+                        >
+                          <label
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            data-testid="FormLabel"
+                            for="timeFormat"
+                          >
+                            Time Format
+                          </label>
+                          <div
+                            class="relative w-full"
+                          >
+                            <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              h:mm A…
+                            </div>
+                            <div
+                              class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
+                            >
+                              <div
+                                class="relative flex flex-1 h-full"
+                              >
+                                <input
+                                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                  data-testid="select-list__input"
+                                  name="timeFormat"
+                                  readonly=""
+                                  tabindex="-1"
+                                  value="h:mm A"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="relative w-full"
+                            >
+                              <div
+                                aria-expanded="false"
+                                aria-haspopup="listbox"
+                                aria-owns="select-time-format-menu"
+                                role="combobox"
+                              >
+                                <label
+                                  for="select-time-format-input"
+                                  id="select-time-format-label"
+                                />
+                                <div
+                                  class="fixed invisible w-auto whitespace-nowrap"
+                                >
+                                  12h…
+                                </div>
+                                <div
+                                  class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
+                                >
+                                  <div
+                                    class="relative flex flex-1 h-full"
+                                  >
+                                    <input
+                                      aria-autocomplete="list"
+                                      aria-controls="select-time-format-menu"
+                                      aria-labelledby="select-time-format-label"
+                                      autocomplete="off"
+                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                      data-testid="SelectDropdown__input"
+                                      id="select-time-format-input"
+                                      name="timeFormat"
+                                      placeholder="Select Time Format"
+                                      value="12h"
+                                    />
+                                    <span
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
+                                      data-testid="Input__suggestion"
+                                    >
+                                      <span
+                                        class="truncate"
+                                      >
+                                        12h
+                                      </span>
+                                    </span>
+                                  </div>
+                                  <div
+                                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                                  >
+                                    <div
+                                      class=""
+                                    >
+                                      <div
+                                        class="flex justify-center items-center py-2 px-1"
+                                        data-testid="SelectDropdown__caret"
+                                      >
+                                        <div
+                                          class="sc-bdfBwQ kBuozr transition-transform text-theme-secondary-500"
+                                          height="5"
+                                          width="7"
+                                        >
+                                          <svg>
+                                            caret-down.svg
+                                          </svg>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <ul
+                                  aria-labelledby="select-time-format-label"
+                                  class="styles__SelectOptionsList-b2falt-0 dyOwRR"
+                                  id="select-time-format-menu"
+                                  role="listbox"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="relative mt-10"
+                  >
+                    <h2
+                      class="mb-3"
+                    >
+                      Security
+                    </h2>
+                    <ul
+                      class="sc-hKgILt gfmZFQ"
+                      data-testid="list-divided__items"
+                    >
+                      <li
+                        class="flex flex-col w-full pb-6"
+                        data-testid="list-divided-item__wrapper"
+                      >
+                        <div
+                          class="flex justify-between items-center"
+                          data-testid="list-divided-item__inner-wrapper"
+                        >
+                          <div
+                            class="flex flex-col space-y-2 w-full"
+                          >
+                            <div
+                              class="flex justify-between items-center space-x-5"
+                            >
+                              <span
+                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                data-testid="list-divided-item__label"
+                              >
+                                Screenshot Protection
+                              </span>
+                              <span>
+                                <label
+                                  class="flex"
+                                >
+                                  <input
+                                    class="Toggle__Input-qyyifx-0 WGuGL"
+                                    data-testid="General-settings__toggle--screenshotProtection"
+                                    name="screenshotProtection"
+                                    type="checkbox"
+                                  />
+                                  <div
+                                    class="Toggle__Handle-qyyifx-1 bAIvyW"
+                                  >
+                                    <span
+                                      class="Toggle__HandleInner-qyyifx-2 fdhANN"
+                                    />
+                                  </div>
+                                </label>
+                              </span>
+                            </div>
+                            <span
+                              class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
+                              data-testid="list-divided-item__label--description"
+                            >
+                              When enabled, wallet application is hidden from screen-capturing software.
+                            </span>
+                          </div>
+                        </div>
+                      </li>
+                      <li
+                        class="flex flex-col w-full pt-8"
+                        data-testid="list-divided-item__wrapper"
+                      >
+                        <div
+                          class="flex justify-between items-center"
+                          data-testid="list-divided-item__inner-wrapper"
+                        >
+                          <div
+                            class="flex flex-col space-y-2 w-full"
+                          >
+                            <div
+                              class="flex justify-between items-center space-x-5"
+                            >
+                              <span
+                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                data-testid="list-divided-item__label"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class=""
+                          data-testid="list-divided-item__content"
+                        >
+                          <fieldset
+                            class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                          >
+                            <label
+                              class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                              data-testid="FormLabel"
+                              for="automaticSignOutPeriod"
+                            >
+                              Auto Log-Off
+                            </label>
+                            <div
+                              class="relative w-full"
+                            >
+                              <div
+                                class="fixed invisible w-auto whitespace-nowrap"
+                              >
+                                15…
+                              </div>
+                              <div
+                                class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
+                              >
+                                <div
+                                  class="relative flex flex-1 h-full"
+                                >
+                                  <input
+                                    class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                    data-testid="select-list__input"
+                                    name="automaticSignOutPeriod"
+                                    readonly=""
+                                    tabindex="-1"
+                                    value="15"
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="relative w-full"
+                              >
+                                <div
+                                  aria-expanded="false"
+                                  aria-haspopup="listbox"
+                                  aria-owns="select-auto-signout-menu"
+                                  role="combobox"
+                                >
+                                  <label
+                                    for="select-auto-signout-input"
+                                    id="select-auto-signout-label"
+                                  />
+                                  <div
+                                    class="fixed invisible w-auto whitespace-nowrap"
+                                  >
+                                    15 minutes…
+                                  </div>
+                                  <div
+                                    class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
+                                  >
+                                    <div
+                                      class="relative flex flex-1 h-full"
+                                    >
+                                      <input
+                                        aria-autocomplete="list"
+                                        aria-controls="select-auto-signout-menu"
+                                        aria-labelledby="select-auto-signout-label"
+                                        autocomplete="off"
+                                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                        data-testid="SelectDropdown__input"
+                                        id="select-auto-signout-input"
+                                        name="automaticSignOutPeriod"
+                                        placeholder="Select Auto Log-Off"
+                                        value="15 minutes"
+                                      />
+                                      <span
+                                        class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
+                                        data-testid="Input__suggestion"
+                                      >
+                                        <span
+                                          class="truncate"
+                                        >
+                                          15 minutes
+                                        </span>
+                                      </span>
+                                    </div>
+                                    <div
+                                      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+                                    >
+                                      <div
+                                        class=""
+                                      >
+                                        <div
+                                          class="flex justify-center items-center py-2 px-1"
+                                          data-testid="SelectDropdown__caret"
+                                        >
+                                          <div
+                                            class="sc-bdfBwQ kBuozr transition-transform text-theme-secondary-500"
+                                            height="5"
+                                            width="7"
+                                          >
+                                            <svg>
+                                              caret-down.svg
+                                            </svg>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <ul
+                                    aria-labelledby="select-auto-signout-label"
+                                    class="styles__SelectOptionsList-b2falt-0 dyOwRR"
+                                    id="select-auto-signout-menu"
+                                    role="listbox"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div
+                    class="relative mt-10"
+                  >
+                    <h2
+                      class="mb-3"
+                    >
+                      Other
+                    </h2>
+                    <ul
+                      class="sc-hKgILt gfmZFQ"
+                      data-testid="list-divided__items"
+                    >
+                      <li
+                        class="flex flex-col w-full pb-6"
+                        data-testid="list-divided-item__wrapper"
+                      >
+                        <div
+                          class="flex justify-between items-center"
+                          data-testid="list-divided-item__inner-wrapper"
+                        >
+                          <div
+                            class="flex flex-col space-y-2 w-full"
+                          >
+                            <div
+                              class="flex justify-between items-center space-x-5"
+                            >
+                              <span
+                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                data-testid="list-divided-item__label"
+                              >
+                                Development and Test Networks
+                              </span>
+                              <span>
+                                <label
+                                  class="flex"
+                                >
+                                  <input
+                                    checked=""
+                                    class="Toggle__Input-qyyifx-0 WGuGL"
+                                    data-testid="General-settings__toggle--useTestNetworks"
+                                    type="checkbox"
+                                  />
+                                  <div
+                                    class="Toggle__Handle-qyyifx-1 bAIvyW"
+                                  >
+                                    <span
+                                      class="Toggle__HandleInner-qyyifx-2 fdhANN"
+                                    />
+                                  </div>
+                                </label>
+                              </span>
+                            </div>
+                            <span
+                              class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
+                              data-testid="list-divided-item__label--description"
+                            >
+                              To create or import wallets from development and test networks, you must first enable this feature.
+                            </span>
+                          </div>
+                        </div>
+                      </li>
+                      <li
+                        class="flex flex-col w-full py-6"
+                        data-testid="list-divided-item__wrapper"
+                      >
+                        <div
+                          class="flex justify-between items-center"
+                          data-testid="list-divided-item__inner-wrapper"
+                        >
+                          <div
+                            class="flex flex-col space-y-2 w-full"
+                          >
+                            <div
+                              class="flex justify-between items-center space-x-5"
+                            >
+                              <span
+                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                data-testid="list-divided-item__label"
+                              >
+                                Error Reporting
+                              </span>
+                              <span>
+                                <label
+                                  class="flex"
+                                >
+                                  <input
+                                    class="Toggle__Input-qyyifx-0 WGuGL"
+                                    data-testid="General-settings__toggle--errorReporting"
+                                    name="errorReporting"
+                                    type="checkbox"
+                                  />
+                                  <div
+                                    class="Toggle__Handle-qyyifx-1 bAIvyW"
+                                  >
+                                    <span
+                                      class="Toggle__HandleInner-qyyifx-2 fdhANN"
+                                    />
+                                  </div>
+                                </label>
+                              </span>
+                            </div>
+                            <span
+                              class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
+                              data-testid="list-divided-item__label--description"
+                            >
+                              Automatically send reports to help to improve our products.
+                            </span>
+                          </div>
+                        </div>
+                      </li>
+                      <li
+                        class="flex flex-col w-full py-6"
+                        data-testid="list-divided-item__wrapper"
+                      >
+                        <div
+                          class="flex justify-between items-center"
+                          data-testid="list-divided-item__inner-wrapper"
+                        >
+                          <div
+                            class="flex flex-col space-y-2 w-full"
+                          >
+                            <div
+                              class="flex justify-between items-center space-x-5"
+                            >
+                              <span
+                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                data-testid="list-divided-item__label"
+                              >
+                                Portfolio Transaction History
+                              </span>
+                              <span>
+                                <label
+                                  class="flex"
+                                >
+                                  <input
+                                    checked=""
+                                    class="Toggle__Input-qyyifx-0 WGuGL"
+                                    data-testid="General-settings__toggle--dashboardTransactionHistory"
+                                    name="dashboardTransactionHistory"
+                                    type="checkbox"
+                                  />
+                                  <div
+                                    class="Toggle__Handle-qyyifx-1 bAIvyW"
+                                  >
+                                    <span
+                                      class="Toggle__HandleInner-qyyifx-2 fdhANN"
+                                    />
+                                  </div>
+                                </label>
+                              </span>
+                            </div>
+                            <span
+                              class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
+                              data-testid="list-divided-item__label--description"
+                            >
+                              Enables transaction history on Portfolio page
+                            </span>
+                          </div>
+                        </div>
+                      </li>
+                      <li
+                        class="flex flex-col w-full py-6"
+                        data-testid="list-divided-item__wrapper"
+                      >
+                        <div
+                          class="flex justify-between items-center"
+                          data-testid="list-divided-item__inner-wrapper"
+                        >
+                          <div
+                            class="flex flex-col space-y-2 w-full"
+                          >
+                            <div
+                              class="flex justify-between items-center space-x-5"
+                            >
+                              <span
+                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                data-testid="list-divided-item__label"
+                              >
+                                Dark Theme
+                              </span>
+                              <span>
+                                <label
+                                  class="flex"
+                                >
+                                  <input
+                                    class="Toggle__Input-qyyifx-0 WGuGL"
+                                    data-testid="General-settings__toggle--isDarkMode"
+                                    name="isDarkMode"
+                                    type="checkbox"
+                                  />
+                                  <div
+                                    class="Toggle__Handle-qyyifx-1 bAIvyW"
+                                  >
+                                    <span
+                                      class="Toggle__HandleInner-qyyifx-2 fdhANN"
+                                    />
+                                  </div>
+                                </label>
+                              </span>
+                            </div>
+                            <span
+                              class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
+                              data-testid="list-divided-item__label--description"
+                            >
+                              Enables a dark, high contrast scheme.
+                            </span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div
+                    class="flex justify-between pt-2 w-full"
+                  >
+                    <button
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fJhVAA"
+                      type="button"
+                    >
+                      <div
+                        class="flex relative items-center space-x-2"
+                      >
+                        <div
+                          class="sc-bdfBwQ dnaihB"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            reset.svg
+                          </svg>
+                        </div>
+                        <span>
+                          Reset Settings
+                        </span>
+                      </div>
+                    </button>
+                    <div
+                      class="space-x-3"
+                    >
+                      <button
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
+                        data-testid="General-settings__cancel-button"
+                        type="button"
+                      >
+                        <div
+                          class="flex relative items-center space-x-2"
+                        >
+                          Cancel
+                        </div>
+                      </button>
+                      <button
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
+                        data-testid="General-settings__submit-button"
+                        disabled=""
+                        type="submit"
+                      >
+                        <div
+                          class="flex relative items-center space-x-2"
+                        >
+                          Save
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`Settings should not allow setting the current password as the new password 1`] = `
 <DocumentFragment>
   <div
@@ -1137,7 +2688,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                           <label
                             class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
-                            for="passphraseLanguage"
+                            for="bip39Locale"
                           >
                             Passphrase Language
                           </label>
@@ -1158,7 +2709,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                 <input
                                   class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                   data-testid="select-list__input"
-                                  name="passphraseLanguage"
+                                  name="bip39Locale"
                                   readonly=""
                                   tabindex="-1"
                                   value="english"
@@ -1197,7 +2748,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                       data-testid="SelectDropdown__input"
                                       id="select-passphrase-language-input"
-                                      name="passphraseLanguage"
+                                      name="bip39Locale"
                                       placeholder="Select Passphrase Language"
                                       value="English"
                                     />
@@ -1251,7 +2802,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                           <label
                             class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
-                            for="currency"
+                            for="exchangeCurrency"
                           >
                             Currency
                           </label>
@@ -1272,7 +2823,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                 <input
                                   class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                   data-testid="select-list__input"
-                                  name="currency"
+                                  name="exchangeCurrency"
                                   readonly=""
                                   tabindex="-1"
                                   value="BTC"
@@ -1311,7 +2862,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                       data-testid="SelectDropdown__input"
                                       id="select-currency-input"
-                                      name="currency"
+                                      name="exchangeCurrency"
                                       placeholder="Select Currency"
                                       value="BTC (Ƀ)"
                                     />
@@ -1369,7 +2920,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                           <label
                             class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
-                            for="language"
+                            for="locale"
                           >
                             Language
                           </label>
@@ -1390,7 +2941,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                 <input
                                   class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                   data-testid="select-list__input"
-                                  name="language"
+                                  name="locale"
                                   readonly=""
                                   tabindex="-1"
                                   value="en-US"
@@ -1429,7 +2980,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                       data-testid="SelectDropdown__input"
                                       id="select-language-input"
-                                      name="language"
+                                      name="locale"
                                       placeholder="Select Language"
                                       value="English"
                                     />
@@ -1746,15 +3297,15 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                 >
                                   <input
                                     class="Toggle__Input-qyyifx-0 WGuGL"
-                                    data-testid="General-settings__toggle--isScreenshotProtection"
-                                    name="isScreenshotProtection"
+                                    data-testid="General-settings__toggle--screenshotProtection"
+                                    name="screenshotProtection"
                                     type="checkbox"
                                   />
                                   <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
+                                    class="Toggle__Handle-qyyifx-1 bAIvyW"
                                   >
                                     <span
-                                      class="Toggle__HandleInner-qyyifx-2 ZjBSs"
+                                      class="Toggle__HandleInner-qyyifx-2 fdhANN"
                                     />
                                   </div>
                                 </label>
@@ -1952,14 +3503,13 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                     checked=""
                                     class="Toggle__Input-qyyifx-0 WGuGL"
                                     data-testid="General-settings__toggle--useTestNetworks"
-                                    name="useTestNetworks"
                                     type="checkbox"
                                   />
                                   <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
+                                    class="Toggle__Handle-qyyifx-1 bAIvyW"
                                   >
                                     <span
-                                      class="Toggle__HandleInner-qyyifx-2 ZjBSs"
+                                      class="Toggle__HandleInner-qyyifx-2 fdhANN"
                                     />
                                   </div>
                                 </label>
@@ -2005,10 +3555,10 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                     type="checkbox"
                                   />
                                   <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
+                                    class="Toggle__Handle-qyyifx-1 bAIvyW"
                                   >
                                     <span
-                                      class="Toggle__HandleInner-qyyifx-2 ZjBSs"
+                                      class="Toggle__HandleInner-qyyifx-2 fdhANN"
                                     />
                                   </div>
                                 </label>
@@ -2050,15 +3600,15 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                   <input
                                     checked=""
                                     class="Toggle__Input-qyyifx-0 WGuGL"
-                                    data-testid="General-settings__toggle--transactionHistory"
-                                    name="transactionHistory"
+                                    data-testid="General-settings__toggle--dashboardTransactionHistory"
+                                    name="dashboardTransactionHistory"
                                     type="checkbox"
                                   />
                                   <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
+                                    class="Toggle__Handle-qyyifx-1 bAIvyW"
                                   >
                                     <span
-                                      class="Toggle__HandleInner-qyyifx-2 ZjBSs"
+                                      class="Toggle__HandleInner-qyyifx-2 fdhANN"
                                     />
                                   </div>
                                 </label>
@@ -2104,10 +3654,10 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                     type="checkbox"
                                   />
                                   <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
+                                    class="Toggle__Handle-qyyifx-1 bAIvyW"
                                   >
                                     <span
-                                      class="Toggle__HandleInner-qyyifx-2 ZjBSs"
+                                      class="Toggle__HandleInner-qyyifx-2 fdhANN"
                                     />
                                   </div>
                                 </label>
@@ -2688,7 +4238,7 @@ exports[`Settings should render 1`] = `
                           <label
                             class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
-                            for="passphraseLanguage"
+                            for="bip39Locale"
                           >
                             Passphrase Language
                           </label>
@@ -2709,7 +4259,7 @@ exports[`Settings should render 1`] = `
                                 <input
                                   class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                   data-testid="select-list__input"
-                                  name="passphraseLanguage"
+                                  name="bip39Locale"
                                   readonly=""
                                   tabindex="-1"
                                   value="english"
@@ -2748,7 +4298,7 @@ exports[`Settings should render 1`] = `
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                       data-testid="SelectDropdown__input"
                                       id="select-passphrase-language-input"
-                                      name="passphraseLanguage"
+                                      name="bip39Locale"
                                       placeholder="Select Passphrase Language"
                                       value="English"
                                     />
@@ -2802,7 +4352,7 @@ exports[`Settings should render 1`] = `
                           <label
                             class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
-                            for="currency"
+                            for="exchangeCurrency"
                           >
                             Currency
                           </label>
@@ -2823,7 +4373,7 @@ exports[`Settings should render 1`] = `
                                 <input
                                   class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                   data-testid="select-list__input"
-                                  name="currency"
+                                  name="exchangeCurrency"
                                   readonly=""
                                   tabindex="-1"
                                   value="BTC"
@@ -2862,7 +4412,7 @@ exports[`Settings should render 1`] = `
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                       data-testid="SelectDropdown__input"
                                       id="select-currency-input"
-                                      name="currency"
+                                      name="exchangeCurrency"
                                       placeholder="Select Currency"
                                       value="BTC (Ƀ)"
                                     />
@@ -2920,7 +4470,7 @@ exports[`Settings should render 1`] = `
                           <label
                             class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
-                            for="language"
+                            for="locale"
                           >
                             Language
                           </label>
@@ -2941,7 +4491,7 @@ exports[`Settings should render 1`] = `
                                 <input
                                   class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                   data-testid="select-list__input"
-                                  name="language"
+                                  name="locale"
                                   readonly=""
                                   tabindex="-1"
                                   value="en-US"
@@ -2980,7 +4530,7 @@ exports[`Settings should render 1`] = `
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                       data-testid="SelectDropdown__input"
                                       id="select-language-input"
-                                      name="language"
+                                      name="locale"
                                       placeholder="Select Language"
                                       value="English"
                                     />
@@ -3297,15 +4847,15 @@ exports[`Settings should render 1`] = `
                                 >
                                   <input
                                     class="Toggle__Input-qyyifx-0 WGuGL"
-                                    data-testid="General-settings__toggle--isScreenshotProtection"
-                                    name="isScreenshotProtection"
+                                    data-testid="General-settings__toggle--screenshotProtection"
+                                    name="screenshotProtection"
                                     type="checkbox"
                                   />
                                   <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
+                                    class="Toggle__Handle-qyyifx-1 bAIvyW"
                                   >
                                     <span
-                                      class="Toggle__HandleInner-qyyifx-2 ZjBSs"
+                                      class="Toggle__HandleInner-qyyifx-2 fdhANN"
                                     />
                                   </div>
                                 </label>
@@ -3503,14 +5053,13 @@ exports[`Settings should render 1`] = `
                                     checked=""
                                     class="Toggle__Input-qyyifx-0 WGuGL"
                                     data-testid="General-settings__toggle--useTestNetworks"
-                                    name="useTestNetworks"
                                     type="checkbox"
                                   />
                                   <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
+                                    class="Toggle__Handle-qyyifx-1 bAIvyW"
                                   >
                                     <span
-                                      class="Toggle__HandleInner-qyyifx-2 ZjBSs"
+                                      class="Toggle__HandleInner-qyyifx-2 fdhANN"
                                     />
                                   </div>
                                 </label>
@@ -3556,10 +5105,10 @@ exports[`Settings should render 1`] = `
                                     type="checkbox"
                                   />
                                   <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
+                                    class="Toggle__Handle-qyyifx-1 bAIvyW"
                                   >
                                     <span
-                                      class="Toggle__HandleInner-qyyifx-2 ZjBSs"
+                                      class="Toggle__HandleInner-qyyifx-2 fdhANN"
                                     />
                                   </div>
                                 </label>
@@ -3601,15 +5150,15 @@ exports[`Settings should render 1`] = `
                                   <input
                                     checked=""
                                     class="Toggle__Input-qyyifx-0 WGuGL"
-                                    data-testid="General-settings__toggle--transactionHistory"
-                                    name="transactionHistory"
+                                    data-testid="General-settings__toggle--dashboardTransactionHistory"
+                                    name="dashboardTransactionHistory"
                                     type="checkbox"
                                   />
                                   <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
+                                    class="Toggle__Handle-qyyifx-1 bAIvyW"
                                   >
                                     <span
-                                      class="Toggle__HandleInner-qyyifx-2 ZjBSs"
+                                      class="Toggle__HandleInner-qyyifx-2 fdhANN"
                                     />
                                   </div>
                                 </label>
@@ -3655,10 +5204,10 @@ exports[`Settings should render 1`] = `
                                     type="checkbox"
                                   />
                                   <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
+                                    class="Toggle__Handle-qyyifx-1 bAIvyW"
                                   >
                                     <span
-                                      class="Toggle__HandleInner-qyyifx-2 ZjBSs"
+                                      class="Toggle__HandleInner-qyyifx-2 fdhANN"
                                     />
                                   </div>
                                 </label>
@@ -4181,10 +5730,10 @@ exports[`Settings should render export settings 1`] = `
                                   type="checkbox"
                                 />
                                 <div
-                                  class="Toggle__Handle-qyyifx-1 geejDn"
+                                  class="Toggle__Handle-qyyifx-1 bAIvyW"
                                 >
                                   <span
-                                    class="Toggle__HandleInner-qyyifx-2 ZjBSs"
+                                    class="Toggle__HandleInner-qyyifx-2 fdhANN"
                                   />
                                 </div>
                               </label>
@@ -4230,10 +5779,10 @@ exports[`Settings should render export settings 1`] = `
                                   type="checkbox"
                                 />
                                 <div
-                                  class="Toggle__Handle-qyyifx-1 geejDn"
+                                  class="Toggle__Handle-qyyifx-1 bAIvyW"
                                 >
                                   <span
-                                    class="Toggle__HandleInner-qyyifx-2 ZjBSs"
+                                    class="Toggle__HandleInner-qyyifx-2 fdhANN"
                                   />
                                 </div>
                               </label>
@@ -7092,34 +8641,41 @@ exports[`Settings should update profile 1`] = `
                         class="flex flex-row"
                       >
                         <div
-                          class="p-1 w-20 h-20 rounded-md border-2 border-dashed focus-within:border-solid border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-theme-primary-400"
+                          class="relative w-20 h-20"
                         >
                           <div
-                            class="overflow-hidden h-full rounded-full"
+                            class="SelectProfileImage__ProfileImageStyled-t6smk3-1 bVbLLU"
                           >
-                            <div
-                              class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 euBdNq"
+                            <img
+                              alt="Avatar"
+                              class="object-cover min-h-full"
+                              data-testid="SelectProfileImage__avatar"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(103, 58, 183)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/></svg>"
+                            />
+                            <span
+                              class="absolute text-2xl font-semibold text-theme-background"
                             >
-                              <button
-                                class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
-                                data-testid="SelectProfileImage__upload-button"
-                                type="button"
+                              TE
+                            </span>
+                            <button
+                              class="overflow-hidden absolute z-10 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
+                              data-testid="SelectProfileImage__upload-button"
+                              type="button"
+                            >
+                              <div
+                                class="flex justify-center items-center h-full rounded-full dark:bg-black bg-theme-secondary-900 opacity-85"
                               >
                                 <div
-                                  class="flex relative items-center space-x-2"
+                                  class="sc-bdfBwQ DGwSy text-white dark:text-theme-secondary-200"
+                                  height="18"
+                                  width="24"
                                 >
-                                  <div
-                                    class="sc-bdfBwQ DGwSy text-theme-primary-600 dark:text-theme-secondary-200"
-                                    height="18"
-                                    width="24"
-                                  >
-                                    <svg>
-                                      upload.svg
-                                    </svg>
-                                  </div>
+                                  <svg>
+                                    upload.svg
+                                  </svg>
                                 </div>
-                              </button>
-                            </div>
+                              </div>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -7166,7 +8722,7 @@ exports[`Settings should update profile 1`] = `
                           <label
                             class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
-                            for="passphraseLanguage"
+                            for="bip39Locale"
                           >
                             Passphrase Language
                           </label>
@@ -7187,7 +8743,7 @@ exports[`Settings should update profile 1`] = `
                                 <input
                                   class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                   data-testid="select-list__input"
-                                  name="passphraseLanguage"
+                                  name="bip39Locale"
                                   readonly=""
                                   tabindex="-1"
                                   value="english"
@@ -7226,7 +8782,7 @@ exports[`Settings should update profile 1`] = `
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                       data-testid="SelectDropdown__input"
                                       id="select-passphrase-language-input"
-                                      name="passphraseLanguage"
+                                      name="bip39Locale"
                                       placeholder="Select Passphrase Language"
                                       value="English"
                                     />
@@ -7280,7 +8836,7 @@ exports[`Settings should update profile 1`] = `
                           <label
                             class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
-                            for="currency"
+                            for="exchangeCurrency"
                           >
                             Currency
                           </label>
@@ -7301,7 +8857,7 @@ exports[`Settings should update profile 1`] = `
                                 <input
                                   class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                   data-testid="select-list__input"
-                                  name="currency"
+                                  name="exchangeCurrency"
                                   readonly=""
                                   tabindex="-1"
                                   value="BTC"
@@ -7340,7 +8896,7 @@ exports[`Settings should update profile 1`] = `
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                       data-testid="SelectDropdown__input"
                                       id="select-currency-input"
-                                      name="currency"
+                                      name="exchangeCurrency"
                                       placeholder="Select Currency"
                                       value="BTC (Ƀ)"
                                     />
@@ -7398,7 +8954,7 @@ exports[`Settings should update profile 1`] = `
                           <label
                             class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
-                            for="language"
+                            for="locale"
                           >
                             Language
                           </label>
@@ -7419,7 +8975,7 @@ exports[`Settings should update profile 1`] = `
                                 <input
                                   class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                   data-testid="select-list__input"
-                                  name="language"
+                                  name="locale"
                                   readonly=""
                                   tabindex="-1"
                                   value="en-US"
@@ -7458,7 +9014,7 @@ exports[`Settings should update profile 1`] = `
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                       data-testid="SelectDropdown__input"
                                       id="select-language-input"
-                                      name="language"
+                                      name="locale"
                                       placeholder="Select Language"
                                       value="English"
                                     />
@@ -7776,15 +9332,15 @@ exports[`Settings should update profile 1`] = `
                                   <input
                                     checked=""
                                     class="Toggle__Input-qyyifx-0 WGuGL"
-                                    data-testid="General-settings__toggle--isScreenshotProtection"
-                                    name="isScreenshotProtection"
+                                    data-testid="General-settings__toggle--screenshotProtection"
+                                    name="screenshotProtection"
                                     type="checkbox"
                                   />
                                   <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
+                                    class="Toggle__Handle-qyyifx-1 bAIvyW"
                                   >
                                     <span
-                                      class="Toggle__HandleInner-qyyifx-2 ZjBSs"
+                                      class="Toggle__HandleInner-qyyifx-2 fdhANN"
                                     />
                                   </div>
                                 </label>
@@ -7982,14 +9538,13 @@ exports[`Settings should update profile 1`] = `
                                     checked=""
                                     class="Toggle__Input-qyyifx-0 WGuGL"
                                     data-testid="General-settings__toggle--useTestNetworks"
-                                    name="useTestNetworks"
                                     type="checkbox"
                                   />
                                   <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
+                                    class="Toggle__Handle-qyyifx-1 bAIvyW"
                                   >
                                     <span
-                                      class="Toggle__HandleInner-qyyifx-2 ZjBSs"
+                                      class="Toggle__HandleInner-qyyifx-2 fdhANN"
                                     />
                                   </div>
                                 </label>
@@ -8035,10 +9590,10 @@ exports[`Settings should update profile 1`] = `
                                     type="checkbox"
                                   />
                                   <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
+                                    class="Toggle__Handle-qyyifx-1 bAIvyW"
                                   >
                                     <span
-                                      class="Toggle__HandleInner-qyyifx-2 ZjBSs"
+                                      class="Toggle__HandleInner-qyyifx-2 fdhANN"
                                     />
                                   </div>
                                 </label>
@@ -8079,15 +9634,15 @@ exports[`Settings should update profile 1`] = `
                                 >
                                   <input
                                     class="Toggle__Input-qyyifx-0 WGuGL"
-                                    data-testid="General-settings__toggle--transactionHistory"
-                                    name="transactionHistory"
+                                    data-testid="General-settings__toggle--dashboardTransactionHistory"
+                                    name="dashboardTransactionHistory"
                                     type="checkbox"
                                   />
                                   <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
+                                    class="Toggle__Handle-qyyifx-1 bAIvyW"
                                   >
                                     <span
-                                      class="Toggle__HandleInner-qyyifx-2 ZjBSs"
+                                      class="Toggle__HandleInner-qyyifx-2 fdhANN"
                                     />
                                   </div>
                                 </label>
@@ -8134,10 +9689,10 @@ exports[`Settings should update profile 1`] = `
                                     type="checkbox"
                                   />
                                   <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
+                                    class="Toggle__Handle-qyyifx-1 bAIvyW"
                                   >
                                     <span
-                                      class="Toggle__HandleInner-qyyifx-2 ZjBSs"
+                                      class="Toggle__HandleInner-qyyifx-2 fdhANN"
                                     />
                                   </div>
                                 </label>
@@ -8718,7 +10273,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                           <label
                             class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
-                            for="passphraseLanguage"
+                            for="bip39Locale"
                           >
                             Passphrase Language
                           </label>
@@ -8739,7 +10294,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                 <input
                                   class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                   data-testid="select-list__input"
-                                  name="passphraseLanguage"
+                                  name="bip39Locale"
                                   readonly=""
                                   tabindex="-1"
                                   value="english"
@@ -8778,7 +10333,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                       data-testid="SelectDropdown__input"
                                       id="select-passphrase-language-input"
-                                      name="passphraseLanguage"
+                                      name="bip39Locale"
                                       placeholder="Select Passphrase Language"
                                       value="English"
                                     />
@@ -8832,7 +10387,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                           <label
                             class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
-                            for="currency"
+                            for="exchangeCurrency"
                           >
                             Currency
                           </label>
@@ -8853,7 +10408,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                 <input
                                   class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                   data-testid="select-list__input"
-                                  name="currency"
+                                  name="exchangeCurrency"
                                   readonly=""
                                   tabindex="-1"
                                   value="BTC"
@@ -8892,7 +10447,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                       data-testid="SelectDropdown__input"
                                       id="select-currency-input"
-                                      name="currency"
+                                      name="exchangeCurrency"
                                       placeholder="Select Currency"
                                       value="BTC (Ƀ)"
                                     />
@@ -8950,7 +10505,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                           <label
                             class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
-                            for="language"
+                            for="locale"
                           >
                             Language
                           </label>
@@ -8971,7 +10526,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                 <input
                                   class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                   data-testid="select-list__input"
-                                  name="language"
+                                  name="locale"
                                   readonly=""
                                   tabindex="-1"
                                   value="en-US"
@@ -9010,7 +10565,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                       data-testid="SelectDropdown__input"
                                       id="select-language-input"
-                                      name="language"
+                                      name="locale"
                                       placeholder="Select Language"
                                       value="English"
                                     />
@@ -9327,15 +10882,15 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                 >
                                   <input
                                     class="Toggle__Input-qyyifx-0 WGuGL"
-                                    data-testid="General-settings__toggle--isScreenshotProtection"
-                                    name="isScreenshotProtection"
+                                    data-testid="General-settings__toggle--screenshotProtection"
+                                    name="screenshotProtection"
                                     type="checkbox"
                                   />
                                   <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
+                                    class="Toggle__Handle-qyyifx-1 bAIvyW"
                                   >
                                     <span
-                                      class="Toggle__HandleInner-qyyifx-2 ZjBSs"
+                                      class="Toggle__HandleInner-qyyifx-2 fdhANN"
                                     />
                                   </div>
                                 </label>
@@ -9533,14 +11088,13 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                     checked=""
                                     class="Toggle__Input-qyyifx-0 WGuGL"
                                     data-testid="General-settings__toggle--useTestNetworks"
-                                    name="useTestNetworks"
                                     type="checkbox"
                                   />
                                   <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
+                                    class="Toggle__Handle-qyyifx-1 bAIvyW"
                                   >
                                     <span
-                                      class="Toggle__HandleInner-qyyifx-2 ZjBSs"
+                                      class="Toggle__HandleInner-qyyifx-2 fdhANN"
                                     />
                                   </div>
                                 </label>
@@ -9586,10 +11140,10 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                     type="checkbox"
                                   />
                                   <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
+                                    class="Toggle__Handle-qyyifx-1 bAIvyW"
                                   >
                                     <span
-                                      class="Toggle__HandleInner-qyyifx-2 ZjBSs"
+                                      class="Toggle__HandleInner-qyyifx-2 fdhANN"
                                     />
                                   </div>
                                 </label>
@@ -9631,15 +11185,15 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                   <input
                                     checked=""
                                     class="Toggle__Input-qyyifx-0 WGuGL"
-                                    data-testid="General-settings__toggle--transactionHistory"
-                                    name="transactionHistory"
+                                    data-testid="General-settings__toggle--dashboardTransactionHistory"
+                                    name="dashboardTransactionHistory"
                                     type="checkbox"
                                   />
                                   <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
+                                    class="Toggle__Handle-qyyifx-1 bAIvyW"
                                   >
                                     <span
-                                      class="Toggle__HandleInner-qyyifx-2 ZjBSs"
+                                      class="Toggle__HandleInner-qyyifx-2 fdhANN"
                                     />
                                   </div>
                                 </label>
@@ -9685,10 +11239,10 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                     type="checkbox"
                                   />
                                   <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
+                                    class="Toggle__Handle-qyyifx-1 bAIvyW"
                                   >
                                     <span
-                                      class="Toggle__HandleInner-qyyifx-2 ZjBSs"
+                                      class="Toggle__HandleInner-qyyifx-2 fdhANN"
                                     />
                                   </div>
                                 </label>
@@ -10281,7 +11835,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                           <label
                             class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
-                            for="passphraseLanguage"
+                            for="bip39Locale"
                           >
                             Passphrase Language
                           </label>
@@ -10302,7 +11856,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                 <input
                                   class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                   data-testid="select-list__input"
-                                  name="passphraseLanguage"
+                                  name="bip39Locale"
                                   readonly=""
                                   tabindex="-1"
                                   value="english"
@@ -10341,7 +11895,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                       data-testid="SelectDropdown__input"
                                       id="select-passphrase-language-input"
-                                      name="passphraseLanguage"
+                                      name="bip39Locale"
                                       placeholder="Select Passphrase Language"
                                       value="English"
                                     />
@@ -10395,7 +11949,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                           <label
                             class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
-                            for="currency"
+                            for="exchangeCurrency"
                           >
                             Currency
                           </label>
@@ -10416,7 +11970,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                 <input
                                   class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                   data-testid="select-list__input"
-                                  name="currency"
+                                  name="exchangeCurrency"
                                   readonly=""
                                   tabindex="-1"
                                   value="BTC"
@@ -10455,7 +12009,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                       data-testid="SelectDropdown__input"
                                       id="select-currency-input"
-                                      name="currency"
+                                      name="exchangeCurrency"
                                       placeholder="Select Currency"
                                       value="BTC (Ƀ)"
                                     />
@@ -10513,7 +12067,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                           <label
                             class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
-                            for="language"
+                            for="locale"
                           >
                             Language
                           </label>
@@ -10534,7 +12088,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                 <input
                                   class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                   data-testid="select-list__input"
-                                  name="language"
+                                  name="locale"
                                   readonly=""
                                   tabindex="-1"
                                   value="en-US"
@@ -10573,7 +12127,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                       data-testid="SelectDropdown__input"
                                       id="select-language-input"
-                                      name="language"
+                                      name="locale"
                                       placeholder="Select Language"
                                       value="English"
                                     />
@@ -10890,15 +12444,15 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                 >
                                   <input
                                     class="Toggle__Input-qyyifx-0 WGuGL"
-                                    data-testid="General-settings__toggle--isScreenshotProtection"
-                                    name="isScreenshotProtection"
+                                    data-testid="General-settings__toggle--screenshotProtection"
+                                    name="screenshotProtection"
                                     type="checkbox"
                                   />
                                   <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
+                                    class="Toggle__Handle-qyyifx-1 bAIvyW"
                                   >
                                     <span
-                                      class="Toggle__HandleInner-qyyifx-2 ZjBSs"
+                                      class="Toggle__HandleInner-qyyifx-2 fdhANN"
                                     />
                                   </div>
                                 </label>
@@ -11096,14 +12650,13 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                     checked=""
                                     class="Toggle__Input-qyyifx-0 WGuGL"
                                     data-testid="General-settings__toggle--useTestNetworks"
-                                    name="useTestNetworks"
                                     type="checkbox"
                                   />
                                   <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
+                                    class="Toggle__Handle-qyyifx-1 bAIvyW"
                                   >
                                     <span
-                                      class="Toggle__HandleInner-qyyifx-2 ZjBSs"
+                                      class="Toggle__HandleInner-qyyifx-2 fdhANN"
                                     />
                                   </div>
                                 </label>
@@ -11149,10 +12702,10 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                     type="checkbox"
                                   />
                                   <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
+                                    class="Toggle__Handle-qyyifx-1 bAIvyW"
                                   >
                                     <span
-                                      class="Toggle__HandleInner-qyyifx-2 ZjBSs"
+                                      class="Toggle__HandleInner-qyyifx-2 fdhANN"
                                     />
                                   </div>
                                 </label>
@@ -11194,15 +12747,15 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                   <input
                                     checked=""
                                     class="Toggle__Input-qyyifx-0 WGuGL"
-                                    data-testid="General-settings__toggle--transactionHistory"
-                                    name="transactionHistory"
+                                    data-testid="General-settings__toggle--dashboardTransactionHistory"
+                                    name="dashboardTransactionHistory"
                                     type="checkbox"
                                   />
                                   <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
+                                    class="Toggle__Handle-qyyifx-1 bAIvyW"
                                   >
                                     <span
-                                      class="Toggle__HandleInner-qyyifx-2 ZjBSs"
+                                      class="Toggle__HandleInner-qyyifx-2 fdhANN"
                                     />
                                   </div>
                                 </label>
@@ -11248,10 +12801,10 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                     type="checkbox"
                                   />
                                   <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
+                                    class="Toggle__Handle-qyyifx-1 bAIvyW"
                                   >
                                     <span
-                                      class="Toggle__HandleInner-qyyifx-2 ZjBSs"
+                                      class="Toggle__HandleInner-qyyifx-2 fdhANN"
                                     />
                                   </div>
                                 </label>

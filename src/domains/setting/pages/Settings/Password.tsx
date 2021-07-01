@@ -11,6 +11,12 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { Prompt } from "react-router-dom";
 
+interface PasswordSettingsState {
+	currentPassword: string;
+	password: string;
+	confirmPassword: string;
+}
+
 export const PasswordSettings = () => {
 	const activeProfile = useActiveProfile();
 	const { persist } = useEnvironmentContext();
@@ -20,12 +26,22 @@ export const PasswordSettings = () => {
 
 	const { t } = useTranslation();
 
-	const form = useForm({ mode: "onChange" });
+	const form = useForm<PasswordSettingsState>({
+		defaultValues: {
+			confirmPassword: "",
+			currentPassword: "",
+			password: "",
+		},
+		mode: "onChange",
+	});
+
 	const { formState, register, reset, trigger, watch } = form;
 	const { currentPassword, confirmPassword, password } = watch();
-	const { getPromptMessage } = useSettingsPrompt({ isDirty: formState.isDirty });
 
-	const handleSubmit = async ({ currentPassword, password }: any) => {
+	const { isDirty, dirtyFields, isValid } = formState;
+	const { getPromptMessage } = useSettingsPrompt({ dirtyFields, isDirty });
+
+	const handleSubmit = async ({ currentPassword, password }: PasswordSettingsState) => {
 		try {
 			if (usesPassword) {
 				activeProfile.auth().changePassword(currentPassword, password);
@@ -54,7 +70,12 @@ export const PasswordSettings = () => {
 				}
 			/>
 
-			<Form id="password-settings__form" context={form} onSubmit={handleSubmit} className="space-y-5">
+			<Form
+				id="password-settings__form"
+				context={form as any}
+				onSubmit={handleSubmit as any}
+				className="space-y-5"
+			>
 				{usesPassword && (
 					<FormField name="currentPassword">
 						<FormLabel label={t("SETTINGS.PASSWORD.CURRENT")} />
@@ -91,7 +112,7 @@ export const PasswordSettings = () => {
 				</FormField>
 
 				<div className="flex justify-end mt-8 w-full">
-					<Button data-testid="Password-settings__submit-button" disabled={!formState.isValid} type="submit">
+					<Button data-testid="Password-settings__submit-button" disabled={!isValid} type="submit">
 						{usesPassword ? t("SETTINGS.PASSWORD.BUTTON.UPDATE") : t("SETTINGS.PASSWORD.BUTTON.CREATE")}
 					</Button>
 				</div>

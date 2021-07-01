@@ -9,64 +9,124 @@ import { Select } from "app/components/SelectDropdown";
 import { SelectProfileImage } from "app/components/SelectProfileImage";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useProfileJobs, useValidation } from "app/hooks";
-import { useTheme } from "app/hooks/use-theme";
+import { useActiveProfile, useProfileJobs, useTheme, useValidation } from "app/hooks";
 import { toasts } from "app/services";
 import { PlatformSdkChoices } from "data";
 import { ResetProfile } from "domains/profile/components/ResetProfile";
 import { DevelopmentNetwork } from "domains/setting/components/DevelopmentNetwork";
 import { useSettingsPrompt } from "domains/setting/hooks/use-settings-prompt";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { Prompt, useHistory } from "react-router-dom";
 import { setScreenshotProtection } from "utils/electron-utils";
 
-export const General = () => {
+interface GeneralSettingsState {
+	automaticSignOutPeriod: number;
+	avatar: string;
+	bip39Locale: string;
+	dashboardTransactionHistory: boolean;
+	errorReporting: boolean;
+	exchangeCurrency: string;
+	isDarkMode: boolean;
+	locale: string;
+	marketProvider: string;
+	name: string;
+	screenshotProtection: boolean;
+	timeFormat: string;
+	useTestNetworks: boolean;
+}
+
+export const General: React.FC = () => {
+	const profile = useActiveProfile();
+
+	const isProfileRestored = profile.status().isRestored();
+
 	const { persist } = useEnvironmentContext();
 	const { setProfileTheme } = useTheme();
-
-	const activeProfile = useActiveProfile();
-	const { syncExchangeRates } = useProfileJobs(activeProfile);
+	const { syncExchangeRates } = useProfileJobs(profile);
 
 	const history = useHistory();
 	const { t } = useTranslation();
 
-	const form = useForm({ mode: "onChange" });
-	const { register, watch } = form;
-	const { isValid, isSubmitting, isDirty } = form.formState;
+	const getDefaultValues = (): Partial<GeneralSettingsState> => {
+		const settings = profile.settings();
 
-	const name = watch("name", activeProfile.settings().get(Contracts.ProfileSetting.Name));
+		/* istanbul ignore next */
+		const name = profile.settings().get<string>(Contracts.ProfileSetting.Name) || "";
 
-	const formattedName = name?.trim?.();
+		return {
+			automaticSignOutPeriod: settings.get<number>(Contracts.ProfileSetting.AutomaticSignOutPeriod),
+			avatar: settings.get(Contracts.ProfileSetting.Avatar) || Helpers.Avatar.make(name),
+			bip39Locale: settings.get(Contracts.ProfileSetting.Bip39Locale),
+			dashboardTransactionHistory: settings.get(Contracts.ProfileSetting.DashboardTransactionHistory),
+			errorReporting: settings.get(Contracts.ProfileSetting.ErrorReporting),
+			exchangeCurrency: settings.get(Contracts.ProfileSetting.ExchangeCurrency),
+			isDarkMode: settings.get(Contracts.ProfileSetting.Theme) === "dark",
+			locale: settings.get(Contracts.ProfileSetting.Locale),
+			marketProvider: settings.get(Contracts.ProfileSetting.MarketProvider),
+			name,
+			screenshotProtection: settings.get(Contracts.ProfileSetting.ScreenshotProtection),
+			timeFormat: settings.get(Contracts.ProfileSetting.TimeFormat),
+			useTestNetworks: settings.get(Contracts.ProfileSetting.UseTestNetworks),
+		};
+	};
 
-	const { settings } = useValidation();
-	const { getPromptMessage } = useSettingsPrompt({ isDirty });
+	const form = useForm<GeneralSettingsState>({
+		defaultValues: getDefaultValues(),
+		mode: "onChange",
+		shouldUnregister: false,
+	});
 
-	const [avatarImage, setAvatarImage] = useState(
-		activeProfile.settings().get(Contracts.ProfileSetting.Avatar) || Helpers.Avatar.make(formattedName || ""),
-	);
+	const { register, watch, formState, setValue, reset } = form;
+	const { isValid, isSubmitting, isDirty, dirtyFields } = formState;
+
+	const { name, avatar, useTestNetworks } = watch();
+
+	useEffect(() => {
+		const initializeForm = () => {
+			if (isProfileRestored) {
+				reset(getDefaultValues());
+			}
+		};
+
+		initializeForm();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [isProfileRestored]);
+
+	useEffect(() => {
+		register("avatar");
+		register("useTestNetworks");
+	}, [register]);
+
+	const formattedName = name?.trim();
+
+	const hasDefaultAvatar = !!avatar?.endsWith("</svg>");
+
+	/* istanbul ignore next */
+	const isUseTestNetworksChecked = useTestNetworks ?? false;
+
+	const { settings: settingsValidation } = useValidation();
+	const { getPromptMessage } = useSettingsPrompt({ dirtyFields, isDirty });
 
 	const [isOpenDevelopmentNetworkModal, setIsOpenDevelopmentNetworkModal] = useState(false);
 	const [isResetProfileOpen, setIsResetProfileOpen] = useState(false);
 
-	const [isDevelopmentNetwork, setIsDevelopmentNetwork] = useState(
-		activeProfile.settings().get(Contracts.ProfileSetting.UseTestNetworks) || false,
-	);
-
-	const isSvg = useMemo(() => avatarImage && avatarImage.endsWith("</svg>"), [avatarImage]);
-
 	useEffect(() => {
-		if (!formattedName && isSvg) {
-			setAvatarImage("");
-		}
-	}, [formattedName, isSvg, setAvatarImage]);
+		const clearAvatarWhenNameIsEmpty = () => {
+			if (formattedName === "" && hasDefaultAvatar) {
+				setValue("avatar", "");
+			}
+		};
+
+		clearAvatarWhenNameIsEmpty();
+	}, [formattedName, hasDefaultAvatar, setValue]);
 
 	const handleOpenDevelopmentNetworkModal = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const { checked } = event.target;
 
 		if (checked) {
-			setIsDevelopmentNetwork(checked);
+			setValue("useTestNetworks", checked, { shouldDirty: true });
 		} else {
 			setIsOpenDevelopmentNetworkModal(!checked);
 		}
@@ -74,15 +134,16 @@ export const General = () => {
 
 	const handleDevelopmentNetwork = (isAccepted: boolean) => {
 		setIsOpenDevelopmentNetworkModal(false);
-		setIsDevelopmentNetwork(isAccepted);
+		setValue("useTestNetworks", isAccepted, {
+			shouldDirty: useTestNetworks !== isAccepted,
+		});
 	};
 
 	const handleOnReset = () => {
 		setIsResetProfileOpen(false);
-		setIsDevelopmentNetwork(activeProfile.settings().get<boolean>(Contracts.ProfileSetting.UseTestNetworks)!);
-		form.reset();
+		reset(getDefaultValues());
 
-		setProfileTheme(activeProfile);
+		setProfileTheme(profile);
 		window.scrollTo({ behavior: "smooth", top: 0 });
 	};
 
@@ -92,9 +153,9 @@ export const General = () => {
 			labelAddon: (
 				<Toggle
 					ref={register()}
-					name="isScreenshotProtection"
-					defaultChecked={activeProfile.settings().get(Contracts.ProfileSetting.ScreenshotProtection)}
-					data-testid="General-settings__toggle--isScreenshotProtection"
+					name="screenshotProtection"
+					defaultChecked={getDefaultValues().screenshotProtection}
+					data-testid="General-settings__toggle--screenshotProtection"
 				/>
 			),
 			labelDescription: t("SETTINGS.GENERAL.SECURITY.SCREENSHOT_PROTECTION.DESCRIPTION"),
@@ -114,9 +175,7 @@ export const General = () => {
 							label: t("COMMON.DATETIME.MINUTES", { count }),
 							value: `${count}`,
 						}))}
-						defaultValue={`${activeProfile
-							.settings()
-							.get(Contracts.ProfileSetting.AutomaticSignOutPeriod)}`}
+						defaultValue={`${getDefaultValues().automaticSignOutPeriod}`}
 					/>
 				</FormField>
 			),
@@ -129,9 +188,7 @@ export const General = () => {
 			label: t("SETTINGS.GENERAL.OTHER.DEVELOPMENT_NETWORKS.TITLE"),
 			labelAddon: (
 				<Toggle
-					ref={register()}
-					name="useTestNetworks"
-					checked={isDevelopmentNetwork}
+					checked={isUseTestNetworksChecked}
 					onChange={handleOpenDevelopmentNetworkModal}
 					data-testid="General-settings__toggle--useTestNetworks"
 				/>
@@ -145,7 +202,7 @@ export const General = () => {
 				<Toggle
 					ref={register()}
 					name="errorReporting"
-					defaultChecked={activeProfile.settings().get(Contracts.ProfileSetting.ErrorReporting)}
+					defaultChecked={getDefaultValues().errorReporting}
 					data-testid="General-settings__toggle--errorReporting"
 				/>
 			),
@@ -157,11 +214,9 @@ export const General = () => {
 			labelAddon: (
 				<Toggle
 					ref={register()}
-					name="transactionHistory"
-					defaultChecked={activeProfile
-						.settings()
-						.get(Contracts.ProfileSetting.DashboardTransactionHistory, true)}
-					data-testid="General-settings__toggle--transactionHistory"
+					name="dashboardTransactionHistory"
+					defaultChecked={getDefaultValues().dashboardTransactionHistory}
+					data-testid="General-settings__toggle--dashboardTransactionHistory"
 				/>
 			),
 			labelDescription: t("SETTINGS.GENERAL.OTHER.TRANSACTION_HISTORY.DESCRIPTION"),
@@ -173,7 +228,7 @@ export const General = () => {
 				<Toggle
 					ref={register()}
 					name="isDarkMode"
-					defaultChecked={activeProfile.settings().get(Contracts.ProfileSetting.Theme) === "dark"}
+					defaultChecked={getDefaultValues().isDarkMode}
 					data-testid="General-settings__toggle--isDarkMode"
 				/>
 			),
@@ -183,44 +238,48 @@ export const General = () => {
 	];
 
 	const handleSubmit = async ({
-		name,
-		language,
-		passphraseLanguage,
-		marketProvider,
-		currency,
-		timeFormat,
 		automaticSignOutPeriod,
-		isScreenshotProtection,
-		isDarkMode,
-		useTestNetworks,
+		avatar,
+		bip39Locale,
+		dashboardTransactionHistory,
 		errorReporting,
-		transactionHistory,
-	}: any) => {
-		activeProfile.settings().set(Contracts.ProfileSetting.Name, name.trim());
-		activeProfile.settings().set(Contracts.ProfileSetting.Locale, language);
-		activeProfile.settings().set(Contracts.ProfileSetting.Bip39Locale, passphraseLanguage);
-		activeProfile.settings().set(Contracts.ProfileSetting.MarketProvider, marketProvider);
-		activeProfile.settings().set(Contracts.ProfileSetting.ExchangeCurrency, currency);
-		activeProfile.settings().set(Contracts.ProfileSetting.TimeFormat, timeFormat);
-		activeProfile.settings().set(Contracts.ProfileSetting.ScreenshotProtection, isScreenshotProtection);
-		activeProfile.settings().set(Contracts.ProfileSetting.AutomaticSignOutPeriod, +automaticSignOutPeriod);
-		activeProfile.settings().set(Contracts.ProfileSetting.Theme, isDarkMode ? "dark" : "light");
-		activeProfile.settings().set(Contracts.ProfileSetting.UseTestNetworks, useTestNetworks);
-		activeProfile.settings().set(Contracts.ProfileSetting.ErrorReporting, errorReporting);
-		activeProfile.settings().set(Contracts.ProfileSetting.DashboardTransactionHistory, transactionHistory);
+		exchangeCurrency,
+		isDarkMode,
+		locale,
+		marketProvider,
+		name,
+		screenshotProtection,
+		timeFormat,
+		useTestNetworks,
+	}: GeneralSettingsState) => {
+		profile.settings().set(Contracts.ProfileSetting.AutomaticSignOutPeriod, +automaticSignOutPeriod);
+		profile.settings().set(Contracts.ProfileSetting.Bip39Locale, bip39Locale);
+		profile.settings().set(Contracts.ProfileSetting.DashboardTransactionHistory, dashboardTransactionHistory);
+		profile.settings().set(Contracts.ProfileSetting.ErrorReporting, errorReporting);
+		profile.settings().set(Contracts.ProfileSetting.ExchangeCurrency, exchangeCurrency);
+		profile.settings().set(Contracts.ProfileSetting.Locale, locale);
+		profile.settings().set(Contracts.ProfileSetting.MarketProvider, marketProvider);
+		profile.settings().set(Contracts.ProfileSetting.Name, name);
+		profile.settings().set(Contracts.ProfileSetting.ScreenshotProtection, screenshotProtection);
+		profile.settings().set(Contracts.ProfileSetting.Theme, isDarkMode ? "dark" : "light");
+		profile.settings().set(Contracts.ProfileSetting.TimeFormat, timeFormat);
+		profile.settings().set(Contracts.ProfileSetting.UseTestNetworks, useTestNetworks);
 
-		if (!avatarImage || isSvg) {
-			activeProfile.settings().forget(Contracts.ProfileSetting.Avatar);
+		if (!avatar || hasDefaultAvatar) {
+			profile.settings().forget(Contracts.ProfileSetting.Avatar);
 		} else {
-			activeProfile.settings().set(Contracts.ProfileSetting.Avatar, avatarImage);
+			profile.settings().set(Contracts.ProfileSetting.Avatar, avatar);
 		}
 
-		setScreenshotProtection(isScreenshotProtection);
+		setScreenshotProtection(screenshotProtection);
 
-		setProfileTheme(activeProfile);
+		setProfileTheme(profile);
+
 		await syncExchangeRates();
 
 		await persist();
+
+		reset(getDefaultValues());
 
 		toasts.success(t("SETTINGS.GENERAL.SUCCESS"));
 		window.scrollTo({ behavior: "smooth", top: 0 });
@@ -230,29 +289,34 @@ export const General = () => {
 		<>
 			<Header title={t("SETTINGS.GENERAL.TITLE")} subtitle={t("SETTINGS.GENERAL.SUBTITLE")} />
 
-			<Form data-testid="General-settings__form" context={form} onSubmit={handleSubmit}>
+			<Form data-testid="General-settings__form" context={form as any} onSubmit={handleSubmit as any}>
 				<div className="relative mt-8">
 					<h2 className="mb-3">{t("SETTINGS.GENERAL.PERSONAL.TITLE")}</h2>
 
-					<SelectProfileImage value={avatarImage} name={formattedName} onSelect={setAvatarImage} />
+					<SelectProfileImage
+						value={avatar}
+						name={formattedName}
+						onSelect={(value) => setValue("avatar", value)}
+					/>
 
 					<div className="flex justify-between mt-8 w-full">
 						<div className="flex flex-col w-2/4">
 							<FormField name="name">
 								<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.NAME")} />
 								<InputDefault
-									ref={register(settings.name(activeProfile.id()))}
-									defaultValue={activeProfile.settings().get(Contracts.ProfileSetting.Name)}
-									onBlur={() => {
-										if (!avatarImage || isSvg) {
-											setAvatarImage(formattedName ? Helpers.Avatar.make(formattedName) : "");
+									ref={register(settingsValidation.name(profile.id()))}
+									defaultValue={getDefaultValues().name}
+									onBlur={(event: React.FocusEvent<HTMLInputElement>) => {
+										if (!avatar || hasDefaultAvatar) {
+											const nameValue = event.target.value.trim();
+											setValue("avatar", nameValue ? Helpers.Avatar.make(nameValue) : "");
 										}
 									}}
 									data-testid="General-settings__input--name"
 								/>
 							</FormField>
 
-							<FormField className="mt-8" name="passphraseLanguage">
+							<FormField className="mt-8" name="bip39Locale">
 								<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.PASSPHRASE_LANGUAGE")} />
 								<Select
 									id="select-passphrase-language"
@@ -265,11 +329,11 @@ export const General = () => {
 										}).toString(),
 									})}
 									options={PlatformSdkChoices.passphraseLanguages}
-									defaultValue={activeProfile.settings().get(Contracts.ProfileSetting.Bip39Locale)}
+									defaultValue={getDefaultValues().bip39Locale}
 								/>
 							</FormField>
 
-							<FormField className="mt-8" name="currency">
+							<FormField className="mt-8" name="exchangeCurrency">
 								<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.CURRENCY")} />
 								<Select
 									data-testid="General-settings__input-currency"
@@ -283,15 +347,13 @@ export const General = () => {
 										}).toString(),
 									})}
 									options={PlatformSdkChoices.currencies}
-									defaultValue={activeProfile
-										.settings()
-										.get(Contracts.ProfileSetting.ExchangeCurrency)}
+									defaultValue={getDefaultValues().exchangeCurrency}
 								/>
 							</FormField>
 						</div>
 
 						<div className="flex flex-col ml-5 w-2/4">
-							<FormField name="language">
+							<FormField name="locale">
 								<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.LANGUAGE")} />
 								<Select
 									id="select-language"
@@ -304,7 +366,7 @@ export const General = () => {
 										}).toString(),
 									})}
 									options={PlatformSdkChoices.languages}
-									defaultValue={activeProfile.settings().get(Contracts.ProfileSetting.Locale)}
+									defaultValue={getDefaultValues().locale}
 								/>
 							</FormField>
 
@@ -321,7 +383,7 @@ export const General = () => {
 										}).toString(),
 									})}
 									options={PlatformSdkChoices.marketProviders}
-									defaultValue={activeProfile.settings().get(Contracts.ProfileSetting.MarketProvider)}
+									defaultValue={getDefaultValues().marketProvider}
 								/>
 							</FormField>
 
@@ -338,7 +400,7 @@ export const General = () => {
 										}).toString(),
 									})}
 									options={PlatformSdkChoices.timeFormats}
-									defaultValue={activeProfile.settings().get(Contracts.ProfileSetting.TimeFormat)}
+									defaultValue={getDefaultValues().timeFormat}
 								/>
 							</FormField>
 						</div>
@@ -370,7 +432,7 @@ export const General = () => {
 							{t("COMMON.CANCEL")}
 						</Button>
 						<Button
-							disabled={!isValid || isSubmitting}
+							disabled={!isValid || isSubmitting || !isProfileRestored}
 							type="submit"
 							data-testid="General-settings__submit-button"
 						>
@@ -389,7 +451,7 @@ export const General = () => {
 
 			<ResetProfile
 				isOpen={isResetProfileOpen}
-				profile={activeProfile}
+				profile={profile}
 				onCancel={() => setIsResetProfileOpen(false)}
 				onClose={() => setIsResetProfileOpen(false)}
 				onReset={handleOnReset}
