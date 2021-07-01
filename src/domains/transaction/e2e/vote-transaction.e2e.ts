@@ -2,6 +2,7 @@ import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
 import { createFixture, mockRequest } from "../../../utils/e2e-utils";
+import { MNEMONICS } from "../../../utils/testing-library";
 import { goToProfile } from "../../profile/e2e/common";
 import { importWallet } from "../../wallet/e2e/common";
 
@@ -53,7 +54,7 @@ test("should successfully send a vote transaction", async (t) => {
 	await goToProfile(t);
 
 	// Import wallet
-	await importWallet(t, "passphrase");
+	await importWallet(t, MNEMONICS[0]);
 
 	// Navigate to vote page
 	await t.click(Selector('[data-testid="navbar__useractions"]'));
@@ -90,7 +91,7 @@ test("should show an error if wrong mnemonic", async (t) => {
 	await goToProfile(t);
 
 	// Import wallet
-	await importWallet(t, "passphrase");
+	await importWallet(t, MNEMONICS[0]);
 
 	// Navigate to vote page
 	await t.click(Selector('[data-testid="navbar__useractions"]'));

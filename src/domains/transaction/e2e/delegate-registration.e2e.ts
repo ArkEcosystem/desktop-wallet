@@ -2,6 +2,7 @@ import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
 import { createFixture, mockRequest } from "../../../utils/e2e-utils";
+import { MNEMONICS } from "../../../utils/testing-library";
 import { goToProfile } from "../../profile/e2e/common";
 import { importWallet } from "../../wallet/e2e/common";
 import { goToDelegateRegistrationPage } from "./common";
@@ -30,7 +31,7 @@ test("should successfully submit delegate registration", async (t) => {
 	await goToProfile(t);
 
 	// Import wallet
-	await importWallet(t, "passphrase");
+	await importWallet(t, MNEMONICS[0]);
 
 	// Navigate to Registration page
 	await goToDelegateRegistrationPage(t);

@@ -2,6 +2,7 @@ import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
 import { createFixture, mockRequest } from "../../../utils/e2e-utils";
+import { MNEMONICS } from "../../../utils/testing-library";
 import { goToProfile } from "../../profile/e2e/common";
 import { importWallet } from "../../wallet/e2e/common";
 import { goToDelegateResignationPage } from "./common";
@@ -43,7 +44,7 @@ createFixture("Delegate Resignation action", [
 test("should successfully submit delegate resignation", async (t) => {
 	await goToProfile(t);
 
-	await importWallet(t, "passphrase");
+	await importWallet(t, MNEMONICS[0]);
 
 	await goToDelegateResignationPage(t);
 
@@ -71,7 +72,7 @@ test("should successfully submit delegate resignation", async (t) => {
 test("should fail delegate resignation submission", async (t: any) => {
 	await goToProfile(t);
 
-	await importWallet(t, "passphrase");
+	await importWallet(t, MNEMONICS[0]);
 
 	await goToDelegateResignationPage(t);
 
