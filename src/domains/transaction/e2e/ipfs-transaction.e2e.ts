@@ -1,7 +1,7 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { createFixture, mockRequest } from "../../../utils/e2e-utils";
+import { createFixture, MNEMONICS, mockRequest } from "../../../utils/e2e-utils";
 import { goToProfile } from "../../profile/e2e/common";
 import { goToWallet, importWallet } from "../../wallet/e2e/common";
 
@@ -38,7 +38,7 @@ test("should send IPFS successfully", async (t) => {
 	await goToProfile(t);
 
 	// Import wallet
-	await importWallet(t, "passphrase");
+	await importWallet(t, MNEMONICS[0]);
 
 	// Click store hash option in dropdown menu
 	await t.click(Selector('[data-testid="WalletHeader__more-button"]'));
@@ -58,7 +58,7 @@ test("should send IPFS successfully", async (t) => {
 	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
 
 	// Type mnemonic
-	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "passphrase", { replace: true });
+	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), MNEMONICS[0], { replace: true });
 	await t.click(Selector("[data-testid=SendIpfs__button--submit]"));
 
 	// Transaction successful

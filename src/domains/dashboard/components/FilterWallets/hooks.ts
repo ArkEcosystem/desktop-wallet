@@ -40,6 +40,7 @@ export const useWalletFilters = ({ profile }: { profile: Contracts.IProfile }) =
 
 	return useMemo<FilterWalletsHookProperties>(
 		() => ({
+			defaultConfiguration,
 			disabled: !profile.wallets().count(),
 			isFilterChanged,
 			networks,
@@ -49,6 +50,15 @@ export const useWalletFilters = ({ profile }: { profile: Contracts.IProfile }) =
 			viewType,
 			walletsDisplayType,
 		}),
-		[walletsDisplayType, selectedNetworkIds, viewType, isFilterChanged, networks, profile, setValue],
+		[
+			walletsDisplayType,
+			selectedNetworkIds,
+			viewType,
+			isFilterChanged,
+			networks,
+			profile,
+			setValue,
+			defaultConfiguration,
+		],
 	);
 };

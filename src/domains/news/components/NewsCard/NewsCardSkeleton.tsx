@@ -13,7 +13,7 @@ export const NewsCardSkeleton = () => {
 
 	return (
 		<Card className="bg-theme-background">
-			<div className="flex flex-col p-4 space-y-8" data-testid="NewsCard__skeleton">
+			<div className="flex flex-col p-4 space-y-6" data-testid="NewsCard__skeleton">
 				<div className="flex justify-between w-full">
 					<div className="flex items-center space-x-4">
 						<div className="flex relative justify-center items-center h-12">

@@ -7,7 +7,17 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import multiSignatureFixture from "tests/fixtures/coins/ark/devnet/transactions/multisignature-registration.json";
 import { TransactionFees } from "types";
-import { act, env, fireEvent, getDefaultProfileId, render, screen, syncFees, waitFor } from "utils/testing-library";
+import {
+	act,
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	MNEMONICS,
+	render,
+	screen,
+	syncFees,
+	waitFor,
+} from "utils/testing-library";
 
 import { translations as transactionTranslations } from "../../i18n";
 import { MultiSignatureRegistrationForm } from "./MultiSignatureRegistrationForm";
@@ -202,7 +212,7 @@ describe("MultiSignature Registration Form", () => {
 			getValues: () => ({
 				fee: "1",
 				minParticipants: 2,
-				mnemonic: "sample passphrase",
+				mnemonic: MNEMONICS[0],
 				participants: [
 					{
 						address: wallet.address(),
@@ -249,7 +259,7 @@ describe("MultiSignature Registration Form", () => {
 			getValues: () => ({
 				fee: "1",
 				minParticipants: 2,
-				mnemonic: "sample passphrase",
+				mnemonic: MNEMONICS[0],
 				participants: [
 					{
 						address: wallet.address(),
@@ -301,7 +311,7 @@ describe("MultiSignature Registration Form", () => {
 				encryptionPassword: "password",
 				fee: "1",
 				minParticipants: 2,
-				mnemonic: "sample passphrase",
+				mnemonic: MNEMONICS[0],
 				participants: [
 					{
 						address: wallet.address(),

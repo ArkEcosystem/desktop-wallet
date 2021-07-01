@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { env } from "utils/testing-library";
+import { env, MNEMONICS } from "utils/testing-library";
 
 import { authentication } from "./Authentication";
 
@@ -22,13 +22,13 @@ describe("Authentication", () => {
 
 		wallet = await profile.walletFactory().fromMnemonicWithBIP39({
 			coin: "ARK",
-			mnemonic: "test",
+			mnemonic: MNEMONICS[0],
 			network: "ark.devnet",
 		});
 
 		walletWithPassword = await profile.walletFactory().fromMnemonicWithBIP39({
 			coin: "ARK",
-			mnemonic: "test2",
+			mnemonic: MNEMONICS[1],
 			network: "ark.devnet",
 			password: "password",
 		});
@@ -46,14 +46,14 @@ describe("Authentication", () => {
 			.mockResolvedValue({ address: wallet.address(), type: "bip39" });
 
 		const mnemonic = authentication(translationMock).mnemonic(wallet);
-		await expect(mnemonic.validate.matchSenderAddress("test")).resolves.toBe(true);
+		await expect(mnemonic.validate.matchSenderAddress(MNEMONICS[0])).resolves.toBe(true);
 
 		fromWifMock.mockRestore();
 	});
 
 	it("should fail mnemonic validation", async () => {
 		const mnemonic = authentication(translationMock).mnemonic(wallet);
-		await expect(mnemonic.validate.matchSenderAddress("test2")).resolves.toBe(
+		await expect(mnemonic.validate.matchSenderAddress(MNEMONICS[1])).resolves.toBe(
 			"COMMON.INPUT_PASSPHRASE.VALIDATION.MNEMONIC_NOT_MATCH_WALLET",
 		);
 	});
@@ -149,15 +149,14 @@ describe("Authentication", () => {
 	it("should validate second mnemonic", async () => {
 		const secondMnemonic = authentication(translationMock).secondMnemonic(
 			wallet.coin(),
-			// @ts-ignore
-			wallet.publicKey()?.toString(),
+			"03312610168770136faee0c97bd252914f7146eb09e0172661f526f32e416f93f4",
 		);
-		await expect(secondMnemonic.validate.matchSenderPublicKey("test")).resolves.toBe(true);
+		await expect(secondMnemonic.validate.matchSenderPublicKey(MNEMONICS[1])).resolves.toBe(true);
 	});
 
 	it("should fail validation for second mnemonic", async () => {
 		const secondMnemonic = authentication(translationMock).secondMnemonic(wallet.coin(), wallet.address());
-		await expect(secondMnemonic.validate.matchSenderPublicKey("test")).resolves.toBe(
+		await expect(secondMnemonic.validate.matchSenderPublicKey(MNEMONICS[0])).resolves.toBe(
 			"COMMON.INPUT_PASSPHRASE.VALIDATION.MNEMONIC_NOT_MATCH_WALLET",
 		);
 	});

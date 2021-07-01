@@ -13,7 +13,7 @@ import { act } from "react-test-renderer";
 import secondSignatureFixture from "tests/fixtures/coins/ark/devnet/transactions/second-signature-registration.json";
 import { TransactionFees } from "types";
 import * as utils from "utils/electron-utils";
-import { env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
+import { env, fireEvent, getDefaultProfileId, MNEMONICS, render, screen, waitFor } from "utils/testing-library";
 
 import { translations as transactionTranslations } from "../../i18n";
 import { SecondSignatureRegistrationForm } from "./SecondSignatureRegistrationForm";
@@ -319,8 +319,8 @@ describe("SecondSignatureRegistrationForm", () => {
 			clearErrors: jest.fn(),
 			getValues: () => ({
 				fee: "1",
-				mnemonic: "sample passphrase",
-				secondMnemonic: "second sample passphrase",
+				mnemonic: MNEMONICS[0],
+				secondMnemonic: MNEMONICS[1],
 				senderAddress: wallet.address(),
 			}),
 			setError: jest.fn(),
@@ -356,8 +356,8 @@ describe("SecondSignatureRegistrationForm", () => {
 			clearErrors: jest.fn(),
 			getValues: () => ({
 				fee: "1",
-				mnemonic: "sample passphrase",
-				secondMnemonic: "second sample passphrase",
+				mnemonic: MNEMONICS[0],
+				secondMnemonic: MNEMONICS[1],
 				senderAddress: wallet.address(),
 			}),
 			setError: jest.fn(),

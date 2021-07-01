@@ -3,7 +3,7 @@ import "jest-extended";
 import { Signatories } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { renderHook } from "@testing-library/react-hooks";
-import { env, getDefaultProfileId } from "utils/testing-library";
+import { env, getDefaultProfileId, MNEMONICS } from "utils/testing-library";
 
 import { useWalletSignatory } from "./use-wallet-signatory";
 
@@ -22,25 +22,25 @@ describe("useWalletSignatory", () => {
 
 	it("should sign with mnemonic", async () => {
 		const { result } = renderHook(() => useWalletSignatory(wallet));
-		await expect(result.current.sign({ mnemonic: "mnemonic" })).resolves.toBeInstanceOf(Signatories.Signatory);
+		await expect(result.current.sign({ mnemonic: MNEMONICS[0] })).resolves.toBeInstanceOf(Signatories.Signatory);
 
-		const signatory = await result.current.sign({ mnemonic: "mnemonic" });
+		const signatory = await result.current.sign({ mnemonic: MNEMONICS[0] });
 
 		expect(signatory).toBeInstanceOf(Signatories.Signatory);
 		expect(signatory.actsWithMnemonic()).toBeTrue();
-		expect(signatory.signingKey()).toBe("mnemonic");
+		expect(signatory.signingKey()).toBe(MNEMONICS[0]);
 		expect(() => signatory.confirmKey()).toThrow();
 	});
 
 	it("should sign with secondMnemonic", async () => {
 		const { result } = renderHook(() => useWalletSignatory(wallet));
 
-		const signatory = await result.current.sign({ mnemonic: "mnemonic", secondMnemonic: "second mnemonic" });
+		const signatory = await result.current.sign({ mnemonic: MNEMONICS[0], secondMnemonic: MNEMONICS[1] });
 
 		expect(signatory).toBeInstanceOf(Signatories.Signatory);
 		expect(signatory.actsWithSecondaryMnemonic()).toBeTrue();
-		expect(signatory.signingKey()).toBe("mnemonic");
-		expect(signatory.confirmKey()).toBe("second mnemonic");
+		expect(signatory.signingKey()).toBe(MNEMONICS[0]);
+		expect(signatory.confirmKey()).toBe(MNEMONICS[1]);
 	});
 
 	it("should sign with WIF", async () => {

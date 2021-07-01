@@ -1,3 +1,5 @@
+import { DashboardConfiguration } from "domains/dashboard/pages/Dashboard";
+
 interface BaseProperties {
 	networks?: any;
 	viewType?: "list" | "grid";
@@ -5,6 +7,7 @@ interface BaseProperties {
 	walletsDisplayType?: string;
 	selectedNetworkIds?: string[];
 	isFilterChanged?: boolean;
+	defaultConfiguration: DashboardConfiguration;
 }
 
 export type FilterWalletsHookProperties = {

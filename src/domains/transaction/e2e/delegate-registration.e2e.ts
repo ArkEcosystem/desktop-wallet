@@ -1,7 +1,7 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { createFixture, mockRequest } from "../../../utils/e2e-utils";
+import { createFixture, MNEMONICS, mockRequest } from "../../../utils/e2e-utils";
 import { goToProfile } from "../../profile/e2e/common";
 import { importWallet } from "../../wallet/e2e/common";
 import { goToDelegateRegistrationPage } from "./common";
@@ -30,7 +30,7 @@ test("should successfully submit delegate registration", async (t) => {
 	await goToProfile(t);
 
 	// Import wallet
-	await importWallet(t, "passphrase");
+	await importWallet(t, MNEMONICS[0]);
 
 	// Navigate to Registration page
 	await goToDelegateRegistrationPage(t);
@@ -47,7 +47,7 @@ test("should successfully submit delegate registration", async (t) => {
 	// Sign transaction
 	await t.expect(Selector("h1").withText(translations.TRANSACTION.AUTHENTICATION_STEP.TITLE).exists).ok();
 
-	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "passphrase");
+	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), MNEMONICS[0]);
 	await t.expect(Selector("[data-testid=AuthenticationStep__mnemonic]").hasAttribute("aria-invalid")).notOk();
 
 	const sendButton = Selector("button").withText(translations.COMMON.SEND);
