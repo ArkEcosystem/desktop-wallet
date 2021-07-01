@@ -1,7 +1,5 @@
-import { Circle } from "app/components/Circle";
-import { Icon } from "app/components/Icon";
 import { TabPanel, Tabs } from "app/components/Tabs";
-import { TransactionDetail, TransactionFee, TransactionType } from "domains/transaction/components/TransactionDetail";
+import { TransactionDetail, TransactionFee } from "domains/transaction/components/TransactionDetail";
 import {
 	ExtendedSignedTransactionData,
 	SendRegistrationComponent,
@@ -28,8 +26,6 @@ const StepsComponent = ({ activeTab, fees, wallet, profile }: SendRegistrationCo
 
 const transactionDetails = ({ transaction, translations, wallet }: SendRegistrationDetailsOptions) => (
 	<>
-		<TransactionType type="multiSignature" />
-
 		<TransactionDetail label={translations("TRANSACTION.MULTISIGNATURE.GENERATED_ADDRESS")}>
 			{transaction.generatedAddress}
 		</TransactionDetail>
