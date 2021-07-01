@@ -57,7 +57,7 @@ test("should successfully submit delegate resignation", async (t) => {
 	await t.hover(Selector(continueButton));
 	await t.click(Selector(continueButton));
 
-	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "passphrase", { replace: true });
+	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), MNEMONICS[0], { replace: true });
 	await t.expect(Selector("[data-testid=AuthenticationStep__mnemonic]").hasAttribute("aria-invalid")).notOk();
 
 	const sendButton = Selector("button").withText(translations.COMMON.SEND);

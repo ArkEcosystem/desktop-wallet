@@ -58,7 +58,7 @@ test("should send IPFS successfully", async (t) => {
 	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
 
 	// Type mnemonic
-	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "passphrase", { replace: true });
+	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), MNEMONICS[0], { replace: true });
 	await t.click(Selector("[data-testid=SendIpfs__button--submit]"));
 
 	// Transaction successful

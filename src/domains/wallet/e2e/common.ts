@@ -1,6 +1,7 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
+import { MNEMONICS } from "../../../utils/e2e-utils";
 
 const translations = buildTranslations();
 
@@ -16,7 +17,7 @@ export const goToWallet = async (t: any, wallet = "D8rr7B1d6TL6pf14LgMz4sKp1VBMs
 	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
 };
 
-export const importWallet = async (t: any, passphrase = "passphrase", alias = "Test Wallet") => {
+export const importWallet = async (t: any, passphrase = MNEMONICS[0], alias = "Test Wallet") => {
 	await t.click(Selector("a").withText(translations.COMMON.PORTFOLIO));
 	await t.click(Selector("button").withExactText(translations.COMMON.IMPORT));
 	await t.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists).ok();

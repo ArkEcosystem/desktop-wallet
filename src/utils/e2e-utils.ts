@@ -36,9 +36,12 @@ const walletMocks = () => {
 		"DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS",
 		"D68sFcspN2LVd9HZpf98c7bXkNimK3M6AZ",
 		"DJXg9Vqg2tofRNrMAvMzhZTkegu8QyyNQq",
+		"DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr",
 	];
 
-	const publicKeys = ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"];
+	const publicKeys = [
+		"034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192",
+	];
 
 	const devnetMocks = [...addresses, ...publicKeys].map((identifier: string) =>
 		mockRequest(`https://dwallets.ark.io/api/wallets/${identifier}`, `coins/ark/devnet/wallets/${identifier}`),
@@ -57,6 +60,7 @@ const publicKeys = [
 	"02e012f0a7cac12a74bdc17d844cbc9f637177b470019c32a53cef94c7a56e2ea9",
 	"029511e2507b6c70d617492308a4b34bb1bdaabb1c260a8c15c5805df8b6a64f11",
 	"03c4d1788718e39c5de7cb718ce380c66bbe2ac5a0645a6ff90f0569178ab7cd6d",
+	"03d3fdad9c5b25bf8880e6b519eb3611a5c0b31adebc8455f0e096175b28321aff",
 ];
 
 const publicKeysMainnet = ["035b3d223f75bde72d0599272ae37573e254b611896241e3688151c4228e04522c"];
