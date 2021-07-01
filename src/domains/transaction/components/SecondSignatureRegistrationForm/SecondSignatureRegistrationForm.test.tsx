@@ -306,10 +306,7 @@ describe("SecondSignatureRegistrationForm", () => {
 		} as Contracts.SignedTransactionData;
 		const { asFragment } = render(<DetailsComponent />);
 
-		await waitFor(() => {
-			expect(screen.getByText(transactionTranslations.TRANSACTION_TYPE)).toBeInTheDocument();
-			expect(screen.getByText(transactionTranslations.TRANSACTION_TYPES.SECOND_SIGNATURE)).toBeInTheDocument();
-		});
+		await waitFor(() => expect(screen.getByTestId("TransactionFee")).toBeTruthy());
 
 		expect(asFragment()).toMatchSnapshot();
 	});

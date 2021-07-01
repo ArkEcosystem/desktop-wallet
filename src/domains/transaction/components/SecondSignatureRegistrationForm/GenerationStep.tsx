@@ -50,54 +50,55 @@ export const GenerationStep = ({
 	}, [profile, setValue, wallet]);
 
 	return (
-		<section data-testid="SecondSignatureRegistrationForm__generation-step" className="space-y-8">
+		<section data-testid="SecondSignatureRegistrationForm__generation-step">
 			<Header
 				title={t("TRANSACTION.PAGE_SECOND_SIGNATURE.GENERATION_STEP.TITLE")}
 				subtitle={t("TRANSACTION.PAGE_SECOND_SIGNATURE.GENERATION_STEP.DESCRIPTION")}
 			/>
 
-			<Alert>{t("TRANSACTION.PAGE_SECOND_SIGNATURE.GENERATION_STEP.WARNING")}</Alert>
+			<Alert className="mt-6">{t("TRANSACTION.PAGE_SECOND_SIGNATURE.GENERATION_STEP.WARNING")}</Alert>
 
 			<TransactionSender
 				address={wallet.address()}
 				alias={wallet.alias()}
 				borderPosition="bottom"
-				paddingPosition="bottom"
 			/>
 
-			<FormField name="fee">
-				<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
-				<InputFee
-					min={fees?.min}
-					avg={fees?.avg}
-					max={fees?.max}
-					loading={!fees}
-					value={fee}
-					step={step}
-					disabled={wallet.network().feeType() !== "dynamic"}
-					network={wallet.network()}
-					profile={profile}
-					onChange={(value) => {
-						setValue("fee", value, { shouldDirty: true, shouldValidate: true });
-					}}
-					viewType={inputFeeSettings.viewType}
-					onChangeViewType={(viewType) => {
-						setValue(
-							"inputFeeSettings",
-							{ ...inputFeeSettings, viewType },
-							{ shouldDirty: true, shouldValidate: true },
-						);
-					}}
-					simpleValue={inputFeeSettings.simpleValue}
-					onChangeSimpleValue={(simpleValue) => {
-						setValue(
-							"inputFeeSettings",
-							{ ...inputFeeSettings, simpleValue },
-							{ shouldDirty: true, shouldValidate: true },
-						);
-					}}
-				/>
-			</FormField>
+			<div className="pt-6">
+				<FormField name="fee">
+					<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
+					<InputFee
+						min={fees?.min}
+						avg={fees?.avg}
+						max={fees?.max}
+						loading={!fees}
+						value={fee}
+						step={step}
+						disabled={wallet.network().feeType() !== "dynamic"}
+						network={wallet.network()}
+						profile={profile}
+						onChange={(value) => {
+							setValue("fee", value, { shouldDirty: true, shouldValidate: true });
+						}}
+						viewType={inputFeeSettings.viewType}
+						onChangeViewType={(viewType) => {
+							setValue(
+								"inputFeeSettings",
+								{ ...inputFeeSettings, viewType },
+								{ shouldDirty: true, shouldValidate: true },
+							);
+						}}
+						simpleValue={inputFeeSettings.simpleValue}
+						onChangeSimpleValue={(simpleValue) => {
+							setValue(
+								"inputFeeSettings",
+								{ ...inputFeeSettings, simpleValue },
+								{ shouldDirty: true, shouldValidate: true },
+							);
+						}}
+					/>
+				</FormField>
+			</div>
 		</section>
 	);
 };
