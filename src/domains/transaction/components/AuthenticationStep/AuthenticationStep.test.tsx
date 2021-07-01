@@ -152,12 +152,12 @@ describe("AuthenticationStep", () => {
 		act(() => {
 			fireEvent.change(screen.getByTestId("AuthenticationStep__mnemonic"), {
 				target: {
-					value: "my mnemonic",
+					value: MNEMONICS[0],
 				},
 			});
 		});
 
-		await waitFor(() => expect(result.current.getValues()).toEqual({ mnemonic: "my mnemonic" }));
+		await waitFor(() => expect(result.current.getValues()).toEqual({ mnemonic: MNEMONICS[0] }));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -179,12 +179,12 @@ describe("AuthenticationStep", () => {
 		act(() => {
 			fireEvent.change(screen.getByTestId("AuthenticationStep__mnemonic"), {
 				target: {
-					value: "my mnemonic",
+					value: MNEMONICS[0],
 				},
 			});
 		});
 
-		await waitFor(() => expect(result.current.getValues()).toEqual({ mnemonic: "my mnemonic" }));
+		await waitFor(() => expect(result.current.getValues()).toEqual({ mnemonic: MNEMONICS[0] }));
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -237,7 +237,7 @@ describe("AuthenticationStep", () => {
 		act(() => {
 			fireEvent.change(screen.getByTestId("AuthenticationStep__mnemonic"), {
 				target: {
-					value: "my mnemonic",
+					value: MNEMONICS[0],
 				},
 			});
 		});
@@ -252,7 +252,7 @@ describe("AuthenticationStep", () => {
 
 		await waitFor(() =>
 			expect(result.current.getValues()).toEqual({
-				mnemonic: "my mnemonic",
+				mnemonic: MNEMONICS[0],
 				secondMnemonic: MNEMONICS[1],
 			}),
 		);

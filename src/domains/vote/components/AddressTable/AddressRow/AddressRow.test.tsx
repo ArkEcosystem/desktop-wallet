@@ -7,6 +7,7 @@ import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, syncDelegates, waitFor } from "testing-library";
 import { data } from "tests/fixtures/coins/ark/devnet/delegates.json";
 import walletMock from "tests/fixtures/coins/ark/devnet/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json";
+import { MNEMONICS } from "utils/testing-library";
 
 import { AddressRow } from "./AddressRow";
 
@@ -36,7 +37,7 @@ describe("AddressRow", () => {
 
 		unvotedWallet = await profile.walletFactory().fromMnemonicWithBIP39({
 			coin: "ARK",
-			mnemonic: "unvoted wallet",
+			mnemonic: MNEMONICS[0],
 			network: "ark.devnet",
 		});
 		profile.wallets().push(unvotedWallet);
@@ -45,7 +46,7 @@ describe("AddressRow", () => {
 
 		wallet2 = await emptyProfile.walletFactory().fromMnemonicWithBIP39({
 			coin: "ARK",
-			mnemonic: "wallet 2",
+			mnemonic: MNEMONICS[1],
 			network: "ark.devnet",
 		});
 		profile.wallets().push(wallet2);
