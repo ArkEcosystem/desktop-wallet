@@ -18,7 +18,7 @@ const randomWordPositions = (length: number): number[] => {
 	const result: number[] = [];
 
 	while (result.length < 3) {
-		const randomNumber = sample(positions);
+		const randomNumber = sample(positions) + 1;
 
 		if (result.includes(randomNumber)) {
 			continue;
