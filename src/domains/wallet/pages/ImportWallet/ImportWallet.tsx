@@ -121,9 +121,17 @@ export const ImportWallet = () => {
 	const encryptMnemonic = async () => {
 		await walletData!.wif().set(walletGenerationInput!, getValues("encryptionPassword"));
 
-		walletData
-			?.data()
-			.set(Contracts.WalletData.ImportMethod, Contracts.WalletImportMethod.BIP39.MNEMONIC_WITH_ENCRYPTION);
+		if (walletData?.actsWithMnemonic()) {
+			walletData
+				?.data()
+				.set(Contracts.WalletData.ImportMethod, Contracts.WalletImportMethod.BIP39.MNEMONIC_WITH_ENCRYPTION);
+		}
+
+		if (walletData?.actsWithSecret()) {
+			walletData
+				?.data()
+				.set(Contracts.WalletData.ImportMethod, Contracts.WalletImportMethod.SECRET_WITH_ENCRYPTION);
+		}
 
 		await persist();
 	};

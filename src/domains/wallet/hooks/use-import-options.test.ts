@@ -40,8 +40,9 @@ describe("useImportOptions", () => {
 			}),
 		);
 
-		expect(current.options).toHaveLength(1);
+		expect(current.options).toHaveLength(2);
 		expect(current.options[0].value).toBe(OptionsValue.ADDRESS);
+		expect(current.options[1].value).toBe(OptionsValue.SECRET);
 	});
 
 	it("should convert method name", () => {
@@ -81,7 +82,7 @@ describe("useImportOptions", () => {
 			}),
 		);
 
-		expect(current.defaultOption).not.toBe("secret");
+		expect(current.defaultOption).not.toBe("address");
 	});
 
 	it("should return first option as default if doesn't have default option in network", () => {

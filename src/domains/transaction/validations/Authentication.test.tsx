@@ -58,6 +58,31 @@ describe("Authentication", () => {
 		);
 	});
 
+	it("should validate secret", async () => {
+		const fromWifMock = jest
+			.spyOn(wallet.coin().address(), "fromSecret")
+			.mockResolvedValue({ address: wallet.address(), type: "secret" });
+
+		const secret = authentication(translationMock).secret(wallet);
+		await expect(secret.validate("secret")).resolves.toBe(true);
+
+		fromWifMock.mockRestore();
+	});
+
+	it("should fail secret validation if the secret belongs to another address", async () => {
+		const secret = authentication(translationMock).secret(wallet);
+		await expect(secret.validate("secret1")).resolves.toBe(
+			"COMMON.INPUT_PASSPHRASE.VALIDATION.SECRET_NOT_MATCH_WALLET",
+		);
+	});
+
+	it("should fail secret validation if an mnemonic is used", async () => {
+		const secret = authentication(translationMock).secret(wallet);
+		await expect(secret.validate(MNEMONICS[0])).resolves.toBe(
+			"COMMON.INPUT_PASSPHRASE.VALIDATION.SECRET_NOT_MATCH_WALLET",
+		);
+	});
+
 	it("should validate encryption password", async () => {
 		const wif = "SCoAuLqLrD6rfSBVhgcLqbdLKz2Gum2j4JR7pvLyiKaK9oiUfobg";
 
