@@ -11,7 +11,7 @@ import { useActiveProfile } from "app/hooks";
 import { useWalletConfig } from "domains/dashboard/hooks";
 import { EncryptPasswordStep } from "domains/wallet/components/EncryptPasswordStep";
 import { NetworkStep } from "domains/wallet/components/NetworkStep";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
@@ -19,6 +19,17 @@ import { useHistory } from "react-router-dom";
 import { ConfirmPassphraseStep } from "./ConfirmPassphraseStep";
 import { SuccessStep } from "./SuccessStep";
 import { WalletOverviewStep } from "./WalletOverviewStep";
+import { assertNetwork, assertString, assertWallet } from "utils/assertions";
+
+interface CreateWalletFormState {
+	network: Networks.Network;
+	wallet: Contracts.IReadWriteWallet;
+	mnemonic: string;
+	name: string;
+	encryptionPassword: string;
+	confirmEncryptionPassword: string;
+	verification: boolean;
+}
 
 export const CreateWallet = () => {
 	const { persist } = useEnvironmentContext();
@@ -26,14 +37,13 @@ export const CreateWallet = () => {
 	const { t } = useTranslation();
 
 	const [activeTab, setActiveTab] = useState(1);
-	const [encryptionPassword, setEncryptionPassword] = useState<string>();
 	const activeProfile = useActiveProfile();
 
 	const nameMaxLength = 42;
 
 	const { selectedNetworkIds, setValue: setConfiguration } = useWalletConfig({ profile: activeProfile });
 
-	const form = useForm({ mode: "onChange" });
+	const form = useForm<CreateWalletFormState>({ mode: "onChange" });
 	const { getValues, formState, register, setValue } = form;
 	const { isSubmitting, isValid } = formState;
 
@@ -46,51 +56,41 @@ export const CreateWallet = () => {
 		register("mnemonic");
 	}, [register]);
 
-	const submitForm = async ({ name }: any) => {
-		let wallet = getValues("wallet");
+	const submitForm = async ({ mnemonic, name, network, wallet, encryptionPassword }: CreateWalletFormState) => {
+		let finalWallet = wallet;
+
+		assertNetwork(network);
+		assertWallet(finalWallet);
+		assertString(mnemonic);
 
 		if (encryptionPassword) {
 			try {
-				const mnemonic = getValues("mnemonic");
-				const coin = wallet.network().coin();
-				const network = wallet.network().id();
-
-				forgetTemporaryWallet();
-
-				wallet = await activeProfile.walletFactory().fromMnemonicWithBIP39({
-					coin,
+				finalWallet = await activeProfile.walletFactory().fromMnemonicWithBIP39({
+					coin: network.coin(),
 					mnemonic,
-					network,
+					network: network.id(),
 					password: encryptionPassword,
 				});
-
-				activeProfile.wallets().push(wallet);
 			} catch {
 				setGenerationError(t("WALLETS.PAGE_CREATE_WALLET.NETWORK_STEP.GENERATION_ERROR"));
 			}
 		}
 
+		activeProfile.wallets().push(finalWallet);
+
 		if (name) {
 			const formattedName = name.trim().slice(0, Math.max(0, nameMaxLength));
-			activeProfile.wallets().update(wallet.id(), { alias: formattedName });
+			activeProfile.wallets().update(finalWallet.id(), { alias: formattedName });
 		}
 
-		setConfiguration("selectedNetworkIds", uniq([...selectedNetworkIds, wallet.network().id()]));
+		setConfiguration("selectedNetworkIds", uniq([...selectedNetworkIds, network.id()]));
 
 		await persist();
 
-		setValue("wallet", null);
+		setValue("wallet", undefined);
 
-		history.push(`/profiles/${activeProfile.id()}/wallets/${wallet.id()}`);
+		history.push(`/profiles/${activeProfile.id()}/wallets/${finalWallet.id()}`);
 	};
-
-	const forgetTemporaryWallet = useCallback(() => {
-		const currentWallet = getValues("wallet");
-
-		if (currentWallet) {
-			activeProfile.wallets().forget(currentWallet.id());
-		}
-	}, [activeProfile, getValues]);
 
 	const generateWallet = async () => {
 		const network: Networks.Network = getValues("network");
@@ -103,28 +103,24 @@ export const CreateWallet = () => {
 			wordCount: network.wordCount(),
 		});
 
-		activeProfile.wallets().push(wallet);
-
 		setValue("wallet", wallet, { shouldDirty: true, shouldValidate: true });
 		setValue("mnemonic", mnemonic, { shouldDirty: true, shouldValidate: true });
 	};
-
-	useEffect(() => forgetTemporaryWallet, [forgetTemporaryWallet]);
 
 	const handleBack = () => {
 		if (activeTab === 1) {
 			return history.push(`/profiles/${activeProfile.id()}/dashboard`);
 		}
 
-		if (activeTab === 2) {
-			forgetTemporaryWallet();
-		}
-
 		if (activeTab === 4 || activeTab === 5) {
-			setEncryptionPassword(undefined);
+			setValue("encryptionPassword", undefined);
+			setValue("confirmEncryptionPassword", undefined);
 		}
 
-		if (activeTab === 5 && !getValues("network").importMethods().bip39.canBeEncrypted) {
+		const network = getValues("network");
+		assertNetwork(network);
+
+		if (activeTab === 5 && !network.importMethods()?.bip39?.canBeEncrypted) {
 			setActiveTab(activeTab - 2);
 		} else {
 			setActiveTab(activeTab - 1);
@@ -147,7 +143,11 @@ export const CreateWallet = () => {
 				setIsGeneratingWallet(false);
 			}
 		} else {
-			if (newIndex === 4 && !getValues("network").importMethods().bip39.canBeEncrypted) {
+
+			const network = getValues("network");
+			assertNetwork(network);
+
+			if (newIndex === 4 && !network.importMethods()?.bip39?.canBeEncrypted) {
 				setActiveTab(newIndex + 1);
 			} else {
 				setActiveTab(newIndex);
@@ -155,15 +155,16 @@ export const CreateWallet = () => {
 		}
 	};
 
-	const handlePasswordSubmit = () => {
-		setEncryptionPassword(form.getValues("encryptionPassword"));
+	const handleSkipEncryption = () => {
+		setValue("encryptionPassword", undefined);
+		setValue("confirmEncryptionPassword", undefined);
 		handleNext();
 	};
 
 	return (
 		<Page profile={activeProfile}>
 			<Section className="flex-1">
-				<Form className="mx-auto max-w-xl" context={form} onSubmit={submitForm}>
+				<Form className="mx-auto max-w-xl" context={form as any} onSubmit={submitForm as any}>
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={5} activeIndex={activeTab} />
 
@@ -197,7 +198,7 @@ export const CreateWallet = () => {
 							<div className="flex justify-between mt-10">
 								<div>
 									{activeTab === 4 && (
-										<Button data-testid="CreateWallet__skip-button" onClick={handleNext}>
+										<Button data-testid="CreateWallet__skip-button" onClick={handleSkipEncryption}>
 											{t("COMMON.SKIP")}
 										</Button>
 									)}
@@ -236,7 +237,7 @@ export const CreateWallet = () => {
 												!form.watch("confirmEncryptionPassword")
 											}
 											isLoading={isGeneratingWallet}
-											onClick={handlePasswordSubmit}
+											onClick={handleNext}
 										>
 											{t("COMMON.CONTINUE")}
 										</Button>
