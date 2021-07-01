@@ -265,9 +265,9 @@ const NavigationBar = ({
 
 										if (action?.value === "sign-out") {
 											profile?.status().reset();
-										}
 
-										setTheme("system");
+											setTheme("system");
+										}
 
 										return history.push(action.mountPath(profile?.id()));
 									}}
