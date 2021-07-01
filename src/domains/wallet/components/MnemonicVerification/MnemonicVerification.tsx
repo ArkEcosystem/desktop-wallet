@@ -12,10 +12,11 @@ interface Properties {
 	isCompleted?: boolean;
 }
 
-const randomWordPositions = () => {
+const randomWordPositions = (mnemonic: string): number[] => {
+	const wordCount: number = mnemonic.split(" ").length;
 	const positions: number[] = [];
 	while (positions.length < 3) {
-		const randomNumber = Math.floor(Math.random() * 24) + 1;
+		const randomNumber = Math.floor(Math.random() * wordCount) + 1;
 		if (!positions.includes(randomNumber)) {
 			positions.push(randomNumber);
 		}
@@ -40,7 +41,7 @@ export function MnemonicVerification({
 	mnemonicWords = /\u3000/.test(mnemonic) ? mnemonic.split("\u3000") : mnemonic.split(" ");
 
 	if (!wordPositions?.length && activeTab === 0 && positions.length === 0) {
-		setPositions(randomWordPositions());
+		setPositions(randomWordPositions(mnemonic));
 	} else if (activeTab === 0 && positions.length === 0) {
 		setPositions(wordPositions as number[]);
 	}
