@@ -120,7 +120,11 @@ export const WalletHeader = ({
 		wallet.hasBeenFullyRestored() &&
 		wallet.hasSyncedWithNetwork()
 	) {
-		if (wallet.network().allows(Enums.FeatureFlag.TransactionDelegateRegistration) && !wallet.isDelegate()) {
+		if (
+			wallet.network().allows(Enums.FeatureFlag.TransactionDelegateRegistration) &&
+			!wallet.isDelegate() &&
+			!wallet.isResignedDelegate()
+		) {
 			registrationOptions.options.push({
 				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.REGISTER_DELEGATE"),
 				value: "delegate-registration",
