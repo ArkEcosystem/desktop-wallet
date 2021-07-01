@@ -1,3 +1,4 @@
+import { sample } from "@arkecosystem/utils";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import React, { useEffect, useMemo, useState } from "react";
 
@@ -13,15 +14,20 @@ interface Properties {
 }
 
 const randomWordPositions = (wordCount: number): number[] => {
-	const positions: number[] = [];
-	while (positions.length < 3) {
-		const randomNumber = Math.floor(Math.random() * wordCount) + 1;
-		if (!positions.includes(randomNumber)) {
-			positions.push(randomNumber);
+	const positions: number[] = [...new Array(wordCount).keys()];
+	const result: number[] = [];
+
+	while (result.length < 3) {
+		const randomNumber = sample(positions);
+
+		if (result.includes(randomNumber)) {
+			continue;
 		}
+
+		result.push(randomNumber);
 	}
 
-	return positions;
+	return result;
 };
 
 export function MnemonicVerification({
