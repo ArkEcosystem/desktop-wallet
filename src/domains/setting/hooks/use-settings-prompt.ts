@@ -15,6 +15,8 @@ export const useSettingsPrompt = <TFieldValues>({ isDirty, dirtyFields }: UseSet
 
 			const matchCurrent = matchPath(pathname, {
 				path: "/profiles/:profileId/settings",
+				exact: true,
+				strict: true,
 			});
 
 			const isReload = matchCurrent !== null;

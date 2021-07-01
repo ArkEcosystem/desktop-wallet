@@ -1,27 +1,25 @@
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 export const useSettingsMenu = () => {
-	const [activeSettings, setActiveSettings] = useState("General");
 	const { t } = useTranslation();
 
 	const menuItems = [
 		{
 			icon: "SettingsHorizontal",
-			itemKey: "General",
+			itemKey: "general",
 			label: t("SETTINGS.GENERAL.MENU_ITEM"),
 		},
 		{
 			icon: "Lock",
-			itemKey: "Password",
+			itemKey: "password",
 			label: t("SETTINGS.PASSWORD.MENU_ITEM"),
 		},
 		{
 			icon: "Export",
-			itemKey: "Export",
+			itemKey: "export",
 			label: t("SETTINGS.EXPORT.MENU_ITEM"),
 		},
 	];
 
-	return { activeSettings, menuItems, setActiveSettings };
+	return { menuItems };
 };
