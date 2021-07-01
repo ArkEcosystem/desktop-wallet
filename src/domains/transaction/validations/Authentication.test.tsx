@@ -149,10 +149,9 @@ describe("Authentication", () => {
 	it("should validate second mnemonic", async () => {
 		const secondMnemonic = authentication(translationMock).secondMnemonic(
 			wallet.coin(),
-			// @ts-ignore
-			wallet.publicKey()?.toString(),
+			"03312610168770136faee0c97bd252914f7146eb09e0172661f526f32e416f93f4",
 		);
-		await expect(secondMnemonic.validate.matchSenderPublicKey(MNEMONICS[0])).resolves.toBe(true);
+		await expect(secondMnemonic.validate.matchSenderPublicKey(MNEMONICS[1])).resolves.toBe(true);
 	});
 
 	it("should fail validation for second mnemonic", async () => {

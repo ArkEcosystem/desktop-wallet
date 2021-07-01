@@ -172,6 +172,7 @@ describe("AddRecipient", () => {
 			network: "ark.devnet",
 		});
 
+		jest.spyOn(emptyWallet, "balance").mockReturnValue(0);
 		jest.spyOn(emptyWallet.network(), "isTest").mockReturnValue(false);
 
 		emptyProfile.wallets().push(emptyWallet);

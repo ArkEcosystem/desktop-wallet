@@ -36,7 +36,6 @@ const walletMocks = () => {
 		"DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS",
 		"D68sFcspN2LVd9HZpf98c7bXkNimK3M6AZ",
 		"DJXg9Vqg2tofRNrMAvMzhZTkegu8QyyNQq",
-		"DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr",
 	];
 
 	const publicKeys = ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"];
@@ -47,6 +46,15 @@ const walletMocks = () => {
 
 	const mainnetMocks = ["AThxYTVgpzZfW7K6UxyB8vBZVMoPAwQS3D"].map((identifier: string) =>
 		mockRequest(`https://wallets.ark.io/api/wallets/${identifier}`, `coins/ark/mainnet/wallets/${identifier}`),
+	);
+
+	// We want to use a clean version of this wallet in E2E tests so we don't have
+	// any pre-defined behaviours like delegation, voting and whatever else exists
+	devnetMocks.push(
+		mockRequest(
+			"https://dwallets.ark.io/api/wallets/DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr",
+			"coins/ark/devnet/wallets/DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr-basic",
+		),
 	);
 
 	return [...devnetMocks, ...mainnetMocks];

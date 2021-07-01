@@ -389,7 +389,7 @@ describe("Registration", () => {
 
 		const secondPublicKeyMock = jest
 			.spyOn(secondWallet, "secondPublicKey")
-			.mockReturnValue((await secondWallet.coin().publicKey().fromMnemonic(MNEMONICS[1])).publicKey);
+			.mockReturnValue((await secondWallet.coin().publicKey().fromMnemonic(MNEMONICS[0])).publicKey);
 
 		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
 
@@ -429,7 +429,7 @@ describe("Registration", () => {
 		await waitFor(() => expect(mnemonic).toHaveValue(MNEMONICS[0]));
 		await waitFor(() => expect(secondMnemonic).toHaveValue(MNEMONICS[1]));
 
-		await waitFor(() => expect(getByTestId("Registration__send-button")).not.toHaveAttribute("disabled"));
+		await waitFor(() => expect(getByTestId("Registration__send-button")).not.toHaveAttribute('disabled=""'));
 		await waitFor(() => expect(getByTestId("Registration__send-button")).toBeTruthy());
 
 		const signMock = jest.spyOn(secondWallet.transaction(), "signDelegateRegistration").mockImplementation(() => {
@@ -508,7 +508,7 @@ describe("Registration", () => {
 		await waitFor(() => expect(mnemonic).toHaveValue(MNEMONICS[0]));
 		await waitFor(() => expect(secondMnemonic).toHaveValue(MNEMONICS[1]));
 
-		await waitFor(() => expect(getByTestId("Registration__send-button")).not.toHaveAttribute("disabled"));
+		await waitFor(() => expect(getByTestId("Registration__send-button")).not.toHaveAttribute('disabled=""'));
 		await waitFor(() => expect(getByTestId("Registration__send-button")).toBeTruthy());
 
 		const signMock = jest.spyOn(secondWallet.transaction(), "signDelegateRegistration").mockImplementation(() => {

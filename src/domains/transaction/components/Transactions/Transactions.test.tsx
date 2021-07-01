@@ -44,12 +44,16 @@ describe("Transactions", () => {
 			.reply(200, () => emptyResponse)
 			.get("/api/transactions?limit=30&address=D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb&typeGroup=2")
 			.reply(200, () => emptyResponse)
+			.get("/api/transactions?limit=30&address=DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr&typeGroup=2")
+			.reply(200, () => emptyResponse)
 			.persist();
 
 		nock("https://dwallets.ark.io")
 			.get("/api/transactions?page=2&limit=30&address=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")
 			.reply(200, () => emptyResponse)
 			.get("/api/transactions?page=2&limit=30&address=D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb")
+			.reply(200, () => emptyResponse)
+			.get("/api/transactions?page=2&limit=30&address=DABCrsfEqhtdzmBrE2AU5NNmdUFCGXKEkr")
 			.reply(200, () => emptyResponse)
 			.persist();
 
@@ -172,7 +176,7 @@ describe("Transactions", () => {
 		emptyProfile.wallets().push(
 			await emptyProfile.walletFactory().fromMnemonicWithBIP39({
 				coin: "ARK",
-				mnemonic: MNEMONICS[0],
+				mnemonic: MNEMONICS[1],
 				network: "ark.devnet",
 			}),
 		);
