@@ -90,13 +90,17 @@ export const authentication = (t: any) => {
 				field: t("COMMON.SECRET"),
 			}),
 			validate: async (secret: string) => {
-				const { address } = await wallet.coin().address().fromSecret(secret);
+				try {
+					const { address } = await wallet.coin().address().fromSecret(secret);
 
-				if (address === wallet.address()) {
-					return true;
+					if (address === wallet.address()) {
+						return true;
+					}
+
+					return t("COMMON.INPUT_PASSPHRASE.VALIDATION.SECRET_NOT_MATCH_WALLET");
+				} catch {
+					return t("COMMON.INPUT_PASSPHRASE.VALIDATION.SECRET_NOT_MATCH_WALLET");
 				}
-
-				return t("COMMON.INPUT_PASSPHRASE.VALIDATION.SECRET_NOT_MATCH_WALLET");
 			},
 		}),
 		wif: (wallet: Contracts.IReadWriteWallet) => ({
