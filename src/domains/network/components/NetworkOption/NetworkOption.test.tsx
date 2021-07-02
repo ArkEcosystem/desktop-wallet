@@ -31,6 +31,7 @@ describe("NetworkIcon", () => {
 
 	it("should render network", () => {
 		const { getByTestId } = render(<NetworkOption network={network} />, {});
+
 		expect(getByTestId("NetworkIcon-ARK-ark.mainnet")).toHaveAttribute("aria-label", network.extra?.displayName);
 		expect(getByTestId("NetworkIcon__icon")).toBeTruthy();
 	});
@@ -39,6 +40,7 @@ describe("NetworkIcon", () => {
 		const onClick = jest.fn();
 
 		const { getByTestId } = render(<NetworkOption network={network} onClick={onClick} />, {});
+
 		expect(getByTestId("NetworkIcon-ARK-ark.mainnet")).toHaveAttribute("aria-label", network.extra?.displayName);
 		expect(getByTestId("NetworkIcon__icon")).toBeTruthy();
 
@@ -51,6 +53,7 @@ describe("NetworkIcon", () => {
 		const onClick = jest.fn();
 
 		const { getByTestId } = render(<NetworkOption network={network} onClick={onClick} disabled />, {});
+
 		expect(getByTestId("NetworkIcon-ARK-ark.mainnet")).toHaveAttribute("aria-label", network.extra?.displayName);
 		expect(getByTestId("NetworkIcon__icon")).toBeTruthy();
 
@@ -61,6 +64,7 @@ describe("NetworkIcon", () => {
 
 	it("should not render different class for testnet network", () => {
 		const { getByTestId, asFragment } = render(<NetworkOption network={networkTestnet} />, {});
+
 		expect(getByTestId("NetworkIcon-ARK-ark.devnet")).toHaveAttribute(
 			"aria-label",
 			networkTestnet.extra?.displayName,
@@ -72,6 +76,7 @@ describe("NetworkIcon", () => {
 	it("should not render network if extended options are not available", () => {
 		network.extra = undefined;
 		const { getByTestId } = render(<NetworkOption network={network} />, {});
+
 		expect(() => getByTestId("NetworkIcon-ARK-ark.mainnet")).toThrow();
 		expect(() => getByTestId("NetworkIcon__icon")).toThrow();
 	});

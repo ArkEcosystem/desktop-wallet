@@ -12,6 +12,7 @@ describe("TableRow", () => {
 				</tbody>
 			</table>,
 		);
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -23,6 +24,7 @@ describe("TableRow", () => {
 				</tbody>
 			</table>,
 		);
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -34,6 +36,7 @@ describe("TableRow", () => {
 				</tbody>
 			</table>,
 		);
+
 		expect(screen.getByTestId("TableRow")).toHaveClass("group");
 		expect(container).toMatchSnapshot();
 	});
@@ -46,6 +49,7 @@ describe("TableRow", () => {
 				</tbody>
 			</table>,
 		);
+
 		expect(screen.getByTestId("TableRow")).not.toHaveClass("group");
 		expect(container).toMatchSnapshot();
 	});

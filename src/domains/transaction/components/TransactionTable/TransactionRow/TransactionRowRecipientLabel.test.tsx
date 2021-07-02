@@ -11,6 +11,7 @@ import { TransactionRowRecipientLabel } from "./TransactionRowRecipientLabel";
 describe("TransactionRowRecipientLabel", () => {
 	it("should show address", () => {
 		const { getByTestId } = render(<TransactionRowRecipientLabel transaction={TransactionFixture} />);
+
 		expect(getByTestId("Address__address")).toHaveTextContent("D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD");
 	});
 
@@ -18,6 +19,7 @@ describe("TransactionRowRecipientLabel", () => {
 		const { getByText } = render(
 			<TransactionRowRecipientLabel transaction={{ ...TransactionFixture, type: () => "secondSignature" }} />,
 		);
+
 		expect(getByText(translations.TRANSACTION_TYPES.SECOND_SIGNATURE)).toBeTruthy();
 	});
 
@@ -32,6 +34,7 @@ describe("TransactionRowRecipientLabel", () => {
 				}}
 			/>,
 		);
+
 		expect(getByText(translations.TRANSACTION_TYPES.MULTI_PAYMENT)).toBeTruthy();
 	});
 
@@ -44,6 +47,7 @@ describe("TransactionRowRecipientLabel", () => {
 				}}
 			/>,
 		);
+
 		expect(getByText(translations.TRANSACTION_TYPES.MAGISTRATE)).toBeTruthy();
 	});
 
@@ -71,6 +75,7 @@ describe("TransactionRowRecipientLabel", () => {
 					}}
 				/>,
 			);
+
 			expect(getByTestId("TransactionRowVoteLabel")).toHaveTextContent(translations.TRANSACTION_TYPES.VOTE);
 			expect(getByTestId("TransactionRowVoteLabel")).toHaveTextContent("delegate-0");
 		});
@@ -87,6 +92,7 @@ describe("TransactionRowRecipientLabel", () => {
 					}}
 				/>,
 			);
+
 			expect(getByTestId("TransactionRowVoteLabel")).toHaveTextContent(translations.TRANSACTION_TYPES.VOTE);
 			expect(getByTestId("TransactionRowVoteLabel")).toHaveTextContent("delegate-0");
 			expect(getByTestId("TransactionRowVoteLabel")).toHaveTextContent("+1");
@@ -104,6 +110,7 @@ describe("TransactionRowRecipientLabel", () => {
 					}}
 				/>,
 			);
+
 			expect(getByTestId("TransactionRowVoteLabel")).toHaveTextContent(translations.TRANSACTION_TYPES.UNVOTE);
 			expect(getByTestId("TransactionRowVoteLabel")).toHaveTextContent("delegate-0");
 		});
@@ -120,6 +127,7 @@ describe("TransactionRowRecipientLabel", () => {
 					}}
 				/>,
 			);
+
 			expect(getByTestId("TransactionRowVoteLabel")).toHaveTextContent(translations.TRANSACTION_TYPES.UNVOTE);
 			expect(getByTestId("TransactionRowVoteLabel")).toHaveTextContent("delegate-0");
 			expect(getByTestId("TransactionRowVoteLabel")).toHaveTextContent("+1");
@@ -140,6 +148,7 @@ describe("TransactionRowRecipientLabel", () => {
 					}}
 				/>,
 			);
+
 			expect(getByTestId("TransactionRowVoteCombinationLabel")).toHaveTextContent(
 				translations.TRANSACTION_TYPES.VOTE,
 			);
@@ -163,6 +172,7 @@ describe("TransactionRowRecipientLabel", () => {
 					}}
 				/>,
 			);
+
 			expect(getByTestId("TransactionRowVoteCombinationLabel")).toHaveTextContent(
 				`${translations.TRANSACTION_TYPES.VOTE}2`,
 			);

@@ -14,21 +14,25 @@ describe("SelectRecipient", () => {
 
 	it("should render empty", () => {
 		const { container } = render(<SelectRecipient profile={profile} />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render disabled", () => {
 		const { container } = render(<SelectRecipient profile={profile} disabled />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render invalid", () => {
 		const { container } = render(<SelectRecipient profile={profile} isInvalid />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render with preselected address", () => {
 		const { container } = render(<SelectRecipient profile={profile} />);
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -36,6 +40,7 @@ describe("SelectRecipient", () => {
 		const { container, rerender } = render(<SelectRecipient profile={profile} />);
 
 		rerender(<SelectRecipient profile={profile} address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" />);
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -123,6 +128,7 @@ describe("SelectRecipient", () => {
 
 		expect(getByTestId("SelectDropdown__input")).toHaveValue(address);
 		expect(function_).toBeCalledWith(address);
+
 		contactsSpy.mockRestore();
 	});
 
@@ -210,6 +216,7 @@ describe("SelectRecipient", () => {
 
 		await act(async () => {
 			fireEvent.click(getByTestId("SelectRecipient__select-recipient"));
+
 			expect(() => getAllByTestId("RecipientListItem__select-button").toThrow());
 		});
 	});

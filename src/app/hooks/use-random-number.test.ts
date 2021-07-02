@@ -5,11 +5,13 @@ import { useRandomNumber } from "./use-random-number";
 describe("useRandomNumber", () => {
 	it("should throw if minimum is not an integer", () => {
 		const { result } = renderHook(() => useRandomNumber("no integer", 42));
+
 		expect(result.error).toBeInstanceOf(Error);
 	});
 
 	it("should throw if maximum is not an integer", () => {
 		const { result } = renderHook(() => useRandomNumber(42, "no integer"));
+
 		expect(result.error).toBeInstanceOf(Error);
 	});
 

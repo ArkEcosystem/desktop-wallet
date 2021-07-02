@@ -13,11 +13,13 @@ describe("PortfolioChart", () => {
 
 	it("should render", () => {
 		const { container } = render(<PortfolioChart profile={profile} />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render hidden", () => {
 		const { container } = render(<PortfolioChart profile={profile} isVisible={false} />);
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -30,6 +32,7 @@ describe("PortfolioChart", () => {
 		const zeroBalanceMock = jest.spyOn(profile, "balance").mockReturnValue(10);
 
 		const { container } = render(<PortfolioChart profile={profile} />);
+
 		expect(container).toMatchSnapshot();
 
 		balancePerCoinMock.mockRestore();

@@ -87,6 +87,7 @@ describe("SendDelegateResignation", () => {
 			const { asFragment, getByTestId } = renderPage();
 
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
+
 			expect(asFragment()).toMatchSnapshot();
 		});
 
@@ -97,9 +98,11 @@ describe("SendDelegateResignation", () => {
 
 			// Fee (simple)
 			expect(screen.getAllByRole("radio")[1]).toBeChecked();
+
 			act(() => {
 				fireEvent.click(within(screen.getByTestId("InputFee")).getAllByRole("radio")[2]);
 			});
+
 			expect(screen.getAllByRole("radio")[2]).toBeChecked();
 
 			// Fee (advanced)
@@ -187,6 +190,7 @@ describe("SendDelegateResignation", () => {
 				fireEvent.click(getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
 			});
 			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "30" } });
+
 			expect(getByTestId("InputCurrency")).toHaveValue("30");
 
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__continue-button")).not.toBeDisabled());
@@ -194,10 +198,12 @@ describe("SendDelegateResignation", () => {
 
 			// Review Step
 			expect(getByTestId("SendDelegateResignation__review-step")).toBeTruthy();
+
 			fireEvent.click(getByTestId("SendDelegateResignation__continue-button"));
 
 			// Fee warning
 			expect(getByTestId("FeeWarning__cancel-button")).toBeTruthy();
+
 			fireEvent.click(getByTestId("FeeWarning__cancel-button"));
 
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
@@ -213,6 +219,7 @@ describe("SendDelegateResignation", () => {
 				fireEvent.click(getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
 			});
 			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "30" } });
+
 			expect(getByTestId("InputCurrency")).toHaveValue("30");
 
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__continue-button")).not.toBeDisabled());
@@ -220,10 +227,12 @@ describe("SendDelegateResignation", () => {
 
 			// Review Step
 			expect(getByTestId("SendDelegateResignation__review-step")).toBeTruthy();
+
 			fireEvent.click(getByTestId("SendDelegateResignation__continue-button"));
 
 			// Fee warning
 			expect(getByTestId("FeeWarning__continue-button")).toBeTruthy();
+
 			fireEvent.click(getByTestId("FeeWarning__continue-button"));
 
 			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
@@ -328,6 +337,7 @@ describe("SendDelegateResignation", () => {
 			});
 
 			await waitFor(() => expect(getByTestId("ErrorStep")).toBeTruthy());
+
 			expect(asFragment()).toMatchSnapshot();
 
 			secondPublicKeyMock.mockRestore();
@@ -379,6 +389,7 @@ describe("SendDelegateResignation", () => {
 			});
 
 			await waitFor(() => expect(getByTestId("ErrorStep")).toBeTruthy());
+
 			expect(asFragment()).toMatchSnapshot();
 
 			act(() => {
@@ -442,6 +453,7 @@ describe("SendDelegateResignation", () => {
 			});
 
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__summary-step")).toBeTruthy());
+
 			expect(asFragment()).toMatchSnapshot();
 
 			secondPublicKeyMock.mockRestore();
@@ -578,6 +590,7 @@ describe("SendDelegateResignation", () => {
 			});
 
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__summary-step")).toBeTruthy());
+
 			expect(asFragment()).toMatchSnapshot();
 
 			secondPublicKeyMock.mockRestore();

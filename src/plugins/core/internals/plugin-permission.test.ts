@@ -8,6 +8,7 @@ import { isPluginEnabled, isServiceDefinedInConfig } from "./plugin-permission";
 
 describe("Plugin Permissions", () => {
 	let profile: Contracts.IProfile;
+
 	beforeEach(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
 	});

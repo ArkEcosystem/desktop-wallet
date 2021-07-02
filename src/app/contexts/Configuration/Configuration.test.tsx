@@ -26,6 +26,7 @@ describe("Configuration Context", () => {
 		};
 
 		expect(() => renderWithRouter(<Test />, { withProviders: false })).toThrowError();
+
 		console.error.mockRestore();
 	});
 
@@ -54,7 +55,9 @@ describe("Configuration Context", () => {
 		};
 
 		const { getByTestId, asFragment } = renderWithRouter(<Test />);
+
 		expect(getByTestId("Configuration__consumer")).toBeInTheDocument();
+
 		await waitFor(() => expect(() => getByTestId("Configuration__list")).toThrowError(/Unable to find/));
 
 		act(() => {
@@ -62,6 +65,7 @@ describe("Configuration Context", () => {
 		});
 
 		await waitFor(() => expect(getByTestId("Configuration__list")).toBeInTheDocument());
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

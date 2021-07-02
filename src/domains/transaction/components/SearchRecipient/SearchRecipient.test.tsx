@@ -100,6 +100,7 @@ describe("SearchRecipient", () => {
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_SEARCH_RECIPIENT.DESCRIPTION);
 		expect(() => getByTestId("TableRow")).toThrow();
 		expect(asFragment()).toMatchSnapshot();
+
 		mockContactNetwork.mockRestore();
 	});
 
@@ -111,6 +112,7 @@ describe("SearchRecipient", () => {
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_SEARCH_RECIPIENT.TITLE);
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_SEARCH_RECIPIENT.DESCRIPTION);
+
 		await waitFor(() => expect(getAllByTestId("RecipientListItem__select-button").length).toBeGreaterThan(0));
 
 		act(() => {

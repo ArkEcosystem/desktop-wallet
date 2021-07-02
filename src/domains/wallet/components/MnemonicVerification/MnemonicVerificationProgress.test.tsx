@@ -10,6 +10,7 @@ describe("MnemonicVerificationProgress", () => {
 			<MnemonicVerificationProgress activeTab={1} wordPositions={positions} />,
 		);
 		const tabs = getAllByTestId("MnemonicVerificationProgress__Tab");
+
 		expect(tabs.length).toBe(positions.length);
 		expect(asFragment()).toMatchSnapshot();
 	});

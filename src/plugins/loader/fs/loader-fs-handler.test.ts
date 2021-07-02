@@ -10,6 +10,7 @@ describe("Plugin Loader Handler", () => {
 	it("should handle", () => {
 		const spyIpc = jest.spyOn(electron.ipcMain, "handle").mockImplementation();
 		injectHandler();
+
 		expect(spyIpc).toHaveBeenCalledTimes(3);
 	});
 });

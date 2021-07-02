@@ -483,6 +483,7 @@ describe("SendTransfer", () => {
 		await waitFor(() =>
 			expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet"),
 		);
+
 		expect(getByTestId("SelectAddress__wrapper")).not.toHaveAttribute("disabled");
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -538,6 +539,7 @@ describe("SendTransfer", () => {
 		act(() => {
 			fireEvent.click(firstAddress);
 		});
+
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 		await waitFor(() => expect(container).toMatchSnapshot());
@@ -571,6 +573,7 @@ describe("SendTransfer", () => {
 		act(() => {
 			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 		});
+
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
 		act(() => {
@@ -586,28 +589,34 @@ describe("SendTransfer", () => {
 			fireEvent.click(sendAll);
 		});
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).not.toHaveValue("0"));
+
 		expect(screen.getByTestId("AddRecipient__send-all")).toHaveClass("active");
+
 		act(() => {
 			fireEvent.click(sendAll);
 		});
+
 		expect(screen.getByTestId("AddRecipient__send-all")).not.toHaveClass("active");
 
 		// Fee
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
 		});
+
 		expect(screen.getAllByRole("radio")[0]).toBeChecked();
 		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.AVERAGE));
 		});
+
 		expect(screen.getAllByRole("radio")[1]).toBeChecked();
 		expect(screen.getAllByRole("radio")[1]).toHaveTextContent("0.07320598");
 
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.FAST));
 		});
+
 		expect(screen.getAllByRole("radio")[2]).toBeChecked();
 		expect(screen.getAllByRole("radio")[2]).toHaveTextContent("0.1");
 	});
@@ -636,6 +645,7 @@ describe("SendTransfer", () => {
 		act(() => {
 			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 		});
+
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
 		// Amount
@@ -649,18 +659,21 @@ describe("SendTransfer", () => {
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
 		});
+
 		expect(screen.getAllByRole("radio")[0]).toBeChecked();
 		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.AVERAGE));
 		});
+
 		expect(screen.getAllByRole("radio")[1]).toBeChecked();
 		expect(screen.getAllByRole("radio")[1]).toHaveTextContent("0.07320598");
 
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.FAST));
 		});
+
 		expect(screen.getAllByRole("radio")[2]).toBeChecked();
 		expect(screen.getAllByRole("radio")[2]).toHaveTextContent("0.1");
 
@@ -673,6 +686,7 @@ describe("SendTransfer", () => {
 		await act(async () => {
 			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "1000000000" } });
 		});
+
 		expect(getByTestId("InputCurrency")).toHaveValue("1000000000");
 	});
 
@@ -703,7 +717,9 @@ describe("SendTransfer", () => {
 		const goSpy = jest.spyOn(history, "go").mockImplementation();
 
 		const backButton = getByTestId("SendTransfer__button--back");
+
 		expect(backButton).not.toHaveAttribute("disabled");
+
 		act(() => {
 			fireEvent.click(backButton);
 		});
@@ -714,6 +730,7 @@ describe("SendTransfer", () => {
 		act(() => {
 			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 		});
+
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
 		act(() => {
@@ -739,6 +756,7 @@ describe("SendTransfer", () => {
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
 		});
+
 		expect(screen.getAllByRole("radio")[0]).toBeChecked();
 		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
@@ -755,6 +773,7 @@ describe("SendTransfer", () => {
 		});
 
 		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
+
 		expect(screen.getAllByRole("radio")[0]).toBeChecked();
 
 		// Step 2
@@ -766,6 +785,7 @@ describe("SendTransfer", () => {
 
 		// Step 3
 		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+
 		await act(async () => {
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
 		});
@@ -810,6 +830,7 @@ describe("SendTransfer", () => {
 		act(() => {
 			fireEvent.click(getByTestId("SendTransfer__button--back-to-wallet"));
 		});
+
 		expect(pushSpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
 
 		goSpy.mockRestore();
@@ -845,7 +866,9 @@ describe("SendTransfer", () => {
 		const goSpy = jest.spyOn(history, "go").mockImplementation();
 
 		const backButton = getByTestId("SendTransfer__button--back");
+
 		expect(backButton).not.toHaveAttribute("disabled");
+
 		act(() => {
 			fireEvent.click(backButton);
 		});
@@ -856,6 +879,7 @@ describe("SendTransfer", () => {
 		act(() => {
 			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 		});
+
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
 		act(() => {
@@ -881,6 +905,7 @@ describe("SendTransfer", () => {
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
 		});
+
 		expect(screen.getAllByRole("radio")[0]).toBeChecked();
 		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
@@ -907,6 +932,7 @@ describe("SendTransfer", () => {
 
 		// Step 3
 		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+
 		await act(async () => {
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
 		});
@@ -969,7 +995,9 @@ describe("SendTransfer", () => {
 		const goSpy = jest.spyOn(history, "go").mockImplementation();
 
 		const backButton = getByTestId("SendTransfer__button--back");
+
 		expect(backButton).not.toHaveAttribute("disabled");
+
 		act(() => {
 			fireEvent.click(backButton);
 		});
@@ -980,6 +1008,7 @@ describe("SendTransfer", () => {
 		act(() => {
 			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 		});
+
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
 		act(() => {
@@ -1005,6 +1034,7 @@ describe("SendTransfer", () => {
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
 		});
+
 		expect(screen.getAllByRole("radio")[0]).toBeChecked();
 		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
@@ -1031,6 +1061,7 @@ describe("SendTransfer", () => {
 
 		// Step 3
 		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+
 		await act(async () => {
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
 		});
@@ -1078,6 +1109,7 @@ describe("SendTransfer", () => {
 		act(() => {
 			fireEvent.click(getByTestId("SendTransfer__button--back-to-wallet"));
 		});
+
 		expect(pushSpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
 
 		goSpy.mockRestore();
@@ -1120,6 +1152,7 @@ describe("SendTransfer", () => {
 		act(() => {
 			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 		});
+
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
 		act(() => {
@@ -1140,6 +1173,7 @@ describe("SendTransfer", () => {
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
 		});
+
 		expect(screen.getAllByRole("radio")[0]).toBeChecked();
 		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
@@ -1165,6 +1199,7 @@ describe("SendTransfer", () => {
 		});
 
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
+
 		expect(getByTestId("TransactionSuccessful")).toHaveTextContent(
 			"8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877",
 		);
@@ -1233,6 +1268,7 @@ describe("SendTransfer", () => {
 		act(() => {
 			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 		});
+
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
 		act(() => {
@@ -1252,12 +1288,14 @@ describe("SendTransfer", () => {
 		act(() => {
 			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		});
+
 		expect(getByTestId("Input__memo")).toHaveValue("test memo");
 
 		// Fee
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
 		});
+
 		expect(screen.getAllByRole("radio")[0]).toBeChecked();
 		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
@@ -1269,6 +1307,7 @@ describe("SendTransfer", () => {
 
 		// Step 3
 		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+
 		act(() => {
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
 		});
@@ -1311,6 +1350,7 @@ describe("SendTransfer", () => {
 		act(() => {
 			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 		});
+
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
 		act(() => {
@@ -1361,7 +1401,9 @@ describe("SendTransfer", () => {
 
 		// Review Step
 		await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
+
 		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+
 		act(() => {
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
 		});
@@ -1406,6 +1448,7 @@ describe("SendTransfer", () => {
 					within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"),
 				);
 			});
+
 			expect(getByTestId("modal__inner")).toBeTruthy();
 
 			act(() => {
@@ -1445,7 +1488,9 @@ describe("SendTransfer", () => {
 
 			// Review Step
 			await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
+
 			expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+
 			act(() => {
 				fireEvent.click(getByTestId("SendTransfer__button--continue"));
 			});
@@ -1504,6 +1549,7 @@ describe("SendTransfer", () => {
 		act(() => {
 			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 		});
+
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
 		act(() => {
@@ -1543,7 +1589,9 @@ describe("SendTransfer", () => {
 
 		// Review Step
 		await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
+
 		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+
 		act(() => {
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
 		});
@@ -1596,6 +1644,7 @@ describe("SendTransfer", () => {
 		act(() => {
 			fireEvent.click(getByTestId("SendTransfer__button--back-to-wallet"));
 		});
+
 		expect(pushSpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
 
 		pushSpy.mockRestore();
@@ -1631,11 +1680,13 @@ describe("SendTransfer", () => {
 		act(() => {
 			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 		});
+
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
 		act(() => {
 			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 		});
+
 		expect(getByTestId("SelectDropdown__input")).toHaveValue(profile.wallets().first().address());
 
 		// Amount
@@ -1648,23 +1699,28 @@ describe("SendTransfer", () => {
 		act(() => {
 			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		});
+
 		expect(getByTestId("Input__memo")).toHaveValue("test memo");
 
 		// Fee
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
 		});
+
 		expect(screen.getAllByRole("radio")[0]).toBeChecked();
 		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
 		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+
 		act(() => {
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
 		});
 
 		// Review Step
 		await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
+
 		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+
 		act(() => {
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
 		});
@@ -1727,11 +1783,13 @@ describe("SendTransfer", () => {
 		act(() => {
 			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 		});
+
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
 		act(() => {
 			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 		});
+
 		expect(getByTestId("SelectDropdown__input")).toHaveValue(profile.wallets().first().address());
 
 		// Amount
@@ -1744,17 +1802,20 @@ describe("SendTransfer", () => {
 		act(() => {
 			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		});
+
 		expect(getByTestId("Input__memo")).toHaveValue("test memo");
 
 		// Fee
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
 		});
+
 		expect(screen.getAllByRole("radio")[0]).toBeChecked();
 		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
 		// Step 2
 		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+
 		act(() => {
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
 		});
@@ -1762,6 +1823,7 @@ describe("SendTransfer", () => {
 
 		// Step 3
 		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+
 		act(() => {
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
 		});
@@ -1849,6 +1911,7 @@ describe("SendTransfer", () => {
 		act(() => {
 			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 		});
+
 		expect(getByTestId("SelectDropdown__input")).toHaveValue(profile.wallets().first().address());
 
 		act(() => {
@@ -1869,11 +1932,13 @@ describe("SendTransfer", () => {
 		act(() => {
 			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 		});
+
 		expect(getByTestId("SelectDropdown__input")).toHaveValue(profile.wallets().first().address());
 
 		act(() => {
 			fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
 		});
+
 		expect(getByTestId("AddRecipient__amount")).toHaveValue("1");
 
 		act(() => {
@@ -1885,17 +1950,20 @@ describe("SendTransfer", () => {
 		act(() => {
 			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		});
+
 		expect(getByTestId("Input__memo")).toHaveValue("test memo");
 
 		// Fee
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
 		});
+
 		expect(screen.getAllByRole("radio")[0]).toBeChecked();
 		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
 		// Step 2
 		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+
 		act(() => {
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
 		});
@@ -1903,6 +1971,7 @@ describe("SendTransfer", () => {
 
 		// Step 3
 		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+
 		act(() => {
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
 		});
@@ -1968,6 +2037,7 @@ describe("SendTransfer", () => {
 		act(() => {
 			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 		});
+
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
 		act(() => {
@@ -2054,7 +2124,9 @@ describe("SendTransfer", () => {
 		const goSpy = jest.spyOn(history, "go").mockImplementation();
 
 		const backButton = getByTestId("SendTransfer__button--back");
+
 		expect(backButton).not.toHaveAttribute("disabled");
+
 		act(() => {
 			fireEvent.click(backButton);
 		});
@@ -2065,6 +2137,7 @@ describe("SendTransfer", () => {
 		act(() => {
 			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 		});
+
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
 		act(() => {
@@ -2090,6 +2163,7 @@ describe("SendTransfer", () => {
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
 		});
+
 		expect(screen.getAllByRole("radio")[0]).toBeChecked();
 		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
@@ -2115,6 +2189,7 @@ describe("SendTransfer", () => {
 
 		// Step 3
 		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+
 		act(() => {
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
 		});
@@ -2174,6 +2249,7 @@ describe("SendTransfer", () => {
 		act(() => {
 			fireEvent.click(getByTestId("SendTransfer__button--back-to-wallet"));
 		});
+
 		expect(pushSpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
 
 		goSpy.mockRestore();
@@ -2243,6 +2319,7 @@ describe("SendTransfer", () => {
 		act(() => {
 			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 		});
+
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
 		act(() => {
@@ -2262,6 +2339,7 @@ describe("SendTransfer", () => {
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
 		});
+
 		expect(screen.getAllByRole("radio")[0]).toBeChecked();
 		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
@@ -2346,7 +2424,9 @@ describe("SendTransfer", () => {
 		const goSpy = jest.spyOn(history, "go").mockImplementation();
 
 		const backButton = getByTestId("SendTransfer__button--back");
+
 		expect(backButton).not.toHaveAttribute("disabled");
+
 		act(() => {
 			fireEvent.click(backButton);
 		});
@@ -2357,6 +2437,7 @@ describe("SendTransfer", () => {
 		act(() => {
 			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 		});
+
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
 		act(() => {
@@ -2382,6 +2463,7 @@ describe("SendTransfer", () => {
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
 		});
+
 		expect(screen.getAllByRole("radio")[0]).toBeChecked();
 		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
@@ -2394,6 +2476,7 @@ describe("SendTransfer", () => {
 
 		// Step 3
 		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+
 		await act(async () => {
 			fireEvent.click(getByTestId("SendTransfer__button--continue"));
 		});
@@ -2441,6 +2524,7 @@ describe("SendTransfer", () => {
 		act(() => {
 			fireEvent.click(getByTestId("SendTransfer__button--back-to-wallet"));
 		});
+
 		expect(pushSpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
 
 		goSpy.mockRestore();

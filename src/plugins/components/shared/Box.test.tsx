@@ -6,6 +6,7 @@ import { Box } from "./Box";
 describe("Shared Box", () => {
 	it("should render", () => {
 		const { container } = render(<Box styled={{ color: "black" }} />);
+
 		expect(container).toMatchInlineSnapshot(`
 		<div>
 		  <div

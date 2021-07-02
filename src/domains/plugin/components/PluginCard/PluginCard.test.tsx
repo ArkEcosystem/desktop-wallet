@@ -120,6 +120,7 @@ describe("PluginCard", () => {
 		render(<PluginCard plugin={plugin} onSelect={onSelect} />);
 
 		fireEvent.click(screen.getByText("update.svg"));
+
 		expect(onSelect).toHaveBeenCalledWith({ value: "update" });
 	});
 
@@ -138,6 +139,7 @@ describe("PluginCard", () => {
 		render(<PluginCard plugin={plugin} onSelect={onSelect} />);
 
 		fireEvent.keyDown(screen.getByText("update.svg"), key);
+
 		expect(onSelect).toHaveBeenCalledWith({ value: "update" });
 	});
 
@@ -153,6 +155,7 @@ describe("PluginCard", () => {
 		render(<PluginCard plugin={plugin} onSelect={onSelect} />);
 
 		fireEvent.keyDown(screen.getByText("update.svg"), { key: "Escape", keyCode: 27 });
+
 		expect(onSelect).not.toHaveBeenCalled();
 	});
 });

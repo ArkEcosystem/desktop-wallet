@@ -112,9 +112,11 @@ describe("PluginManager", () => {
 		expect(within(screen.getByTestId("PluginManager__latest__utility")).getByTestId("PluginGrid")).toBeTruthy();
 
 		fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
+
 		expect(within(screen.getByTestId("PluginManager__latest__utility")).getByTestId("PluginList")).toBeTruthy();
 
 		fireEvent.click(screen.getByTestId("LayoutControls__grid--icon"));
+
 		expect(within(screen.getByTestId("PluginManager__latest__utility")).getByTestId("PluginGrid")).toBeTruthy();
 
 		expect(asFragment()).toMatchSnapshot();
@@ -142,6 +144,7 @@ describe("PluginManager", () => {
 		);
 
 		fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
+
 		expect(within(screen.getByTestId("PluginManager__container--all")).getByTestId("PluginList")).toBeTruthy(),
 			act(() => {
 				fireEvent.click(screen.getByTestId("LayoutControls__grid--icon"));
@@ -172,16 +175,19 @@ describe("PluginManager", () => {
 		);
 
 		fireEvent.click(screen.getByTestId(`tabs__tab-button-${category}`));
+
 		expect(
 			within(screen.getByTestId(`PluginManager__container--${category}`)).getByTestId("PluginGrid"),
 		).toBeTruthy();
 
 		fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
+
 		expect(
 			within(screen.getByTestId(`PluginManager__container--${category}`)).getByTestId("PluginList"),
 		).toBeTruthy();
 
 		fireEvent.click(screen.getByTestId("LayoutControls__grid--icon"));
+
 		expect(
 			within(screen.getByTestId(`PluginManager__container--${category}`)).getByTestId("PluginGrid"),
 		).toBeTruthy();
@@ -209,6 +215,7 @@ describe("PluginManager", () => {
 		);
 
 		fireEvent.click(screen.getByTestId("PluginManager__latest__utility__view-all"));
+
 		expect(screen.getByTestId("PluginManager__container--utility")).toBeTruthy();
 
 		expect(asFragment()).toMatchSnapshot();
@@ -248,6 +255,7 @@ describe("PluginManager", () => {
 		fireEvent.click(screen.getByTestId("InstallPlugin__install-button"));
 
 		await waitFor(() => expect(screen.getByTestId("InstallPlugin__step--third")).toBeTruthy());
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -323,6 +331,7 @@ describe("PluginManager", () => {
 		mockAcceptedManualInstallation.mockRestore();
 
 		fireEvent.click(screen.getByTestId("PluginManager_header--install"));
+
 		expect(screen.getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_MANUAL_INSTALL_PLUGIN.TITLE);
 	});
 
@@ -425,6 +434,7 @@ describe("PluginManager", () => {
 		await waitFor(() => expect(screen.getAllByTestId("PluginListItem__install")[0]).toBeTruthy());
 
 		fireEvent.click(screen.getAllByTestId("PluginListItem__install")[0]);
+
 		expect(screen.getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION);
 
 		fireEvent.click(screen.getByTestId("InstallPlugin__cancel-button"));
@@ -451,6 +461,7 @@ describe("PluginManager", () => {
 		);
 
 		fireEvent.click(within(screen.getByTestId("HeaderSearchBar")).getByRole("button"));
+
 		expect(within(screen.getByTestId("HeaderSearchBar__input")).getByTestId("Input")).toBeTruthy();
 
 		fireEvent.input(within(screen.getByTestId("HeaderSearchBar__input")).getByTestId("Input"), {
@@ -657,6 +668,7 @@ describe("PluginManager", () => {
 		);
 
 		expect(toastSpy).toHaveBeenCalled();
+
 		pluginManager.plugins().removeById(plugin.config().id(), profile);
 	});
 
@@ -693,6 +705,7 @@ describe("PluginManager", () => {
 		await waitFor(() => expect(screen.getByTestId("PluginListItem__disabled")).toBeInTheDocument());
 
 		expect(asFragment()).toMatchSnapshot();
+
 		pluginManager.plugins().removeById(plugin.config().id(), profile);
 	});
 
@@ -734,6 +747,7 @@ describe("PluginManager", () => {
 		);
 
 		expect(asFragment()).toMatchSnapshot();
+
 		pluginManager.plugins().removeById(plugin.config().id(), profile);
 	});
 
@@ -809,6 +823,7 @@ describe("PluginManager", () => {
 		fireEvent.click(screen.getByTestId("PluginUninstall__submit-button"));
 
 		await waitFor(() => expect(pluginManager.plugins().findById(plugin.config().id())).toBeUndefined());
+
 		expect(() => screen.getByTestId("PluginUninstallConfirmation")).toThrow(/Unable to find an element by/);
 
 		invokeMock.mockRestore();

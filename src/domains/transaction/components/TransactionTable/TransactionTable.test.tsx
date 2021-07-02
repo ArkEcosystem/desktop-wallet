@@ -37,6 +37,7 @@ describe("TransactionTable", () => {
 
 	it("should render", () => {
 		const { getAllByTestId, asFragment } = renderWithRouter(<TransactionTable transactions={transactions} />);
+
 		expect(getAllByTestId("TableRow")).toHaveLength(transactions.length);
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -45,6 +46,7 @@ describe("TransactionTable", () => {
 		const { getAllByTestId } = renderWithRouter(
 			<TransactionTable transactions={transactions} exchangeCurrency="BTC" />,
 		);
+
 		expect(getAllByTestId("TransactionRow__currency")).toHaveLength(transactions.length);
 	});
 
@@ -56,8 +58,10 @@ describe("TransactionTable", () => {
 		const { getAllByTestId, asFragment } = renderWithRouter(
 			<TransactionTable transactions={transactions} showSignColumn />,
 		);
+
 		expect(getAllByTestId("TransactionRow__sign")).toHaveLength(1);
 		expect(asFragment()).toMatchSnapshot();
+
 		mockIsMultiSignatureRegistration.mockRestore();
 	});
 
@@ -66,6 +70,7 @@ describe("TransactionTable", () => {
 			// @ts-ignore - TODO: brittle fixtures
 			<TransactionTable transactions={transactions} showExplorerLinkColumn={false} />,
 		);
+
 		expect(() => getAllByTestId("TransactionRow__ID")).toThrow(/Unable to find an element by/);
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -74,6 +79,7 @@ describe("TransactionTable", () => {
 		const { getAllByTestId, asFragment } = renderWithRouter(
 			<TransactionTable transactions={transactions} isCompact />,
 		);
+
 		expect(getAllByTestId("TableRow")).toHaveLength(transactions.length);
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -91,6 +97,7 @@ describe("TransactionTable", () => {
 			const { getAllByTestId, asFragment } = renderWithRouter(
 				<TransactionTable transactions={[]} isLoading skeletonRowsLimit={5} />,
 			);
+
 			expect(getAllByTestId("TableRow")).toHaveLength(5);
 			expect(asFragment()).toMatchSnapshot();
 		});
@@ -99,6 +106,7 @@ describe("TransactionTable", () => {
 			const { getAllByTestId, asFragment } = renderWithRouter(
 				<TransactionTable transactions={[]} isLoading showSignColumn skeletonRowsLimit={5} />,
 			);
+
 			expect(getAllByTestId("TableRow")).toHaveLength(5);
 			expect(asFragment()).toMatchSnapshot();
 		});
@@ -107,6 +115,7 @@ describe("TransactionTable", () => {
 			const { getAllByTestId, asFragment } = renderWithRouter(
 				<TransactionTable transactions={[]} isLoading exchangeCurrency="BTC" skeletonRowsLimit={5} />,
 			);
+
 			expect(getAllByTestId("TableRow")).toHaveLength(5);
 			expect(asFragment()).toMatchSnapshot();
 		});
@@ -122,6 +131,7 @@ describe("TransactionTable", () => {
 		act(() => {
 			fireEvent.click(rows[0]);
 		});
+
 		expect(onClick).toHaveBeenCalledWith(sortedByDateDesc[0]);
 	});
 

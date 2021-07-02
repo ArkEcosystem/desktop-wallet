@@ -29,16 +29,19 @@ const data = [
 describe("PercentageBar", () => {
 	it("should render", () => {
 		const { container } = render(<PercentageBar />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render with title", () => {
 		const { container } = render(<PercentageBar title="Total portfolio" />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render with data", () => {
 		const { container } = render(<PercentageBar data={data} />);
+
 		expect(container).toMatchSnapshot();
 	});
 });

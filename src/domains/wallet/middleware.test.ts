@@ -16,6 +16,7 @@ describe("WalletMiddleware", () => {
 		};
 		const redirect = jest.fn();
 		const parameters = { env, location, redirect };
+
 		// @ts-ignore
 		expect(subject.handler(parameters)).toBe(true);
 	});
@@ -26,6 +27,7 @@ describe("WalletMiddleware", () => {
 		};
 		const redirect = jest.fn();
 		const parameters = { env, location, redirect };
+
 		// @ts-ignore
 		expect(subject.handler(parameters)).toBe(true);
 	});
@@ -36,6 +38,7 @@ describe("WalletMiddleware", () => {
 		};
 		const redirect = jest.fn();
 		const parameters = { env, location, redirect };
+
 		// @ts-ignore
 		expect(subject.handler(parameters)).toBe(false);
 		expect(redirect).toHaveBeenCalled();
@@ -50,6 +53,7 @@ describe("WalletMiddleware", () => {
 		};
 		const redirect = jest.fn();
 		const parameters = { env, location, redirect };
+
 		// @ts-ignore
 		expect(subject.handler(parameters)).toBe(true);
 	});

@@ -22,6 +22,7 @@ const options = [
 describe("SelectDropdown", () => {
 	it("should render", () => {
 		const { container } = render(<Select options={options} />);
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -38,16 +39,19 @@ describe("SelectDropdown", () => {
 
 	it("should render invalid", () => {
 		const { container } = render(<Select options={options} isInvalid />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render disabled", () => {
 		const { container } = render(<Select options={options} disabled />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render without caret", () => {
 		const { container } = render(<Select options={options} showCaret={false} />);
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -65,21 +69,25 @@ describe("SelectDropdown", () => {
 
 	it("should render with initial default value", () => {
 		const { container } = render(<Select options={options} defaultValue="3" />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render with wrong default value", () => {
 		const { container } = render(<Select options={options} defaultValue="4" />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render with empty options", () => {
 		const { container } = render(<Select options={[]} defaultValue="4" />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render with options values as numbers", () => {
 		const { container } = render(<Select options={[{ label: "Value 1", value: 1 }]} defaultValue="4" />);
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -93,6 +101,7 @@ describe("SelectDropdown", () => {
 		});
 
 		const firstOption = getByTestId("SelectDropdown__option--0");
+
 		expect(firstOption).toBeTruthy();
 
 		act(() => {
@@ -110,6 +119,7 @@ describe("SelectDropdown", () => {
 		});
 
 		const firstOption = getByTestId("SelectDropdown__option--0");
+
 		expect(firstOption).toBeTruthy();
 
 		act(() => {
@@ -133,6 +143,7 @@ describe("SelectDropdown", () => {
 		});
 
 		const firstOption = getByTestId("SelectDropdown__option--0");
+
 		expect(firstOption).toBeTruthy();
 
 		expect(firstOption).toHaveClass("is-selected");
@@ -156,6 +167,7 @@ describe("SelectDropdown", () => {
 		});
 
 		const firstOption = getByTestId("SelectDropdown__option--0");
+
 		expect(firstOption).toBeTruthy();
 
 		act(() => {
@@ -427,6 +439,7 @@ describe("SelectDropdown", () => {
 
 	it("should render with default value when free text is allowed", () => {
 		const { container, getByTestId } = render(<Select options={options} defaultValue="3" allowFreeInput />);
+
 		expect(getByTestId("select-list__input")).toHaveValue("3");
 		expect(container).toMatchSnapshot();
 	});
@@ -437,11 +450,13 @@ describe("SelectDropdown", () => {
 		act(() => {
 			fireEvent.change(selectDropdown, { target: { value: options[0].label } });
 		});
+
 		expect(getByTestId("select-list__input")).toHaveValue(options[0].label);
 
 		act(() => {
 			fireEvent.change(selectDropdown, { target: { value: "Unmatched" } });
 		});
+
 		expect(() => getByTestId("SelectDropdown__option--0")).toThrow();
 	});
 
@@ -451,6 +466,7 @@ describe("SelectDropdown", () => {
 		act(() => {
 			fireEvent.change(selectDropdown, { target: { value: options[0].label } });
 		});
+
 		expect(getByTestId("select-list__input")).toHaveValue(options[0].label);
 
 		act(() => {

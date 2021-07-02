@@ -34,6 +34,7 @@ describe("MultiSignatureRegistrationDetail", () => {
 		await waitFor(() =>
 			expect(screen.getByText(translations.MODAL_MULTISIGNATURE_DETAIL.STEP_1.TITLE)).toBeInTheDocument(),
 		);
+
 		expect(container).toMatchSnapshot();
 	});
 });

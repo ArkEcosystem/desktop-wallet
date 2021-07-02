@@ -9,6 +9,7 @@ describe("TransactionRowAmount", () => {
 		render(
 			<TransactionRowAmount transaction={{ ...TransactionFixture, wallet: () => ({ currency: () => "ARK" }) }} />,
 		);
+
 		expect(screen.getByText("- 121 ARK")).toBeTruthy();
 	});
 
@@ -19,6 +20,7 @@ describe("TransactionRowAmount", () => {
 				exchangeCurrency="BTC"
 			/>,
 		);
+
 		expect(screen.getByText("0 BTC")).toBeTruthy();
 	});
 
@@ -28,6 +30,7 @@ describe("TransactionRowAmount", () => {
 				transaction={{ ...TransactionFixture, isSent: () => false, wallet: () => ({ currency: () => "ARK" }) }}
 			/>,
 		);
+
 		expect(screen.getByText("+ 121 ARK")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});

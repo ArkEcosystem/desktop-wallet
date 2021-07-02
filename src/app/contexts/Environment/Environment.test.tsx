@@ -23,6 +23,7 @@ describe("Environment Context", () => {
 		};
 
 		expect(() => renderWithRouter(<Test />, { withProviders: false })).toThrowError();
+
 		console.error.mockRestore();
 	});
 
@@ -79,6 +80,7 @@ describe("Environment Context", () => {
 		await waitFor(() => expect(getByRole("heading")).toHaveTextContent("Counter 1"));
 
 		const profiles = await database.get<any>("profiles");
+
 		expect(Object.keys(profiles)).toHaveLength(1);
 	});
 
@@ -152,6 +154,7 @@ describe("Environment Context", () => {
 		await waitFor(() => expect(getByRole("heading")).toHaveTextContent("Counter 1"));
 
 		const profiles = await database.get<any>("profiles");
+
 		expect(profiles).toBeUndefined();
 	});
 });

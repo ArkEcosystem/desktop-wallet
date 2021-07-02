@@ -75,6 +75,7 @@ describe("useProfileUtils", () => {
 		} = renderHook(() => useProfileUtils(env), { wrapper });
 
 		await profile.wallets().restore();
+
 		expect(current.getErroredNetworks(profile).hasErroredNetworks).toEqual(false);
 		expect(current.getErroredNetworks(profile).erroredNetworks).toHaveLength(0);
 	});
@@ -93,6 +94,7 @@ describe("useProfileUtils", () => {
 
 		expect(current.getErroredNetworks(profile).hasErroredNetworks).toEqual(true);
 		expect(current.getErroredNetworks(profile).erroredNetworks).toHaveLength(1);
+
 		walletRestoreMock.mockRestore();
 	});
 });

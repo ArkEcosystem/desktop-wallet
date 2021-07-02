@@ -32,7 +32,9 @@ describe("AddressTable", () => {
 		const { asFragment, container, getByTestId } = render(<AddressTable wallets={[wallet]} />);
 
 		expect(container).toBeTruthy();
+
 		await waitFor(() => expect(getByTestId("AddressRow__status")).toBeTruthy());
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 

@@ -33,6 +33,7 @@ describe("useProfileSyncStatus", () => {
 		} = renderHook(() => useProfileSyncStatus(), { wrapper });
 
 		expect(current.shouldRestore(profile)).toEqual(true);
+
 		process.env.TEST_PROFILES_RESTORE_STATUS = "restored";
 
 		profileStatusMock.mockRestore();

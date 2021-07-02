@@ -36,6 +36,7 @@ describe("Notifications Hook", () => {
 		const initialNotifications = profile.notifications().values();
 
 		const transactionNotifications = await notifications.syncReceivedTransactions();
+
 		expect(transactionNotifications.length).toEqual(2);
 
 		// shouldn't have new notifications previously
@@ -53,6 +54,7 @@ describe("Notifications Hook", () => {
 		const { notifications } = result.current;
 
 		const transactionNotifications = await notifications.syncReceivedTransactions();
+
 		expect(transactionNotifications.length).toEqual(0);
 	});
 
@@ -129,6 +131,7 @@ describe("Notifications Hook", () => {
 			},
 		];
 		const sorted = result.current.notifications.sortTransactionNotificationsDesc(unsortedTransactionNotifications);
+
 		expect(sorted[0].meta.transactionId).toEqual(
 			"127d323ff3c3a40cb7abec8aa3b045e8c45c72c8feb7dc667d2f85978f8b10cd",
 		);
@@ -167,6 +170,7 @@ describe("Notifications Hook", () => {
 		const initialNotificationsCount = profile.notifications().count();
 		notifications.notifyWalletUpdate({ version: "2.5.6" });
 		const notificationsCount = profile.notifications().count();
+
 		expect(notificationsCount).toEqual(initialNotificationsCount);
 	});
 
@@ -180,6 +184,7 @@ describe("Notifications Hook", () => {
 		notifications.deleteNotificationsByVersion({ version: "2.5.6" });
 
 		const notificationsCount = profile.notifications().count();
+
 		expect(notificationsCount).toBeLessThan(initialNotificationsCount);
 	});
 
@@ -191,6 +196,7 @@ describe("Notifications Hook", () => {
 		const initialNotificationsCount = profile.notifications().count();
 		notifications.deleteNotificationsByVersion({ version: "2.5.8" });
 		const notificationsCount = profile.notifications().count();
+
 		expect(notificationsCount).toEqual(initialNotificationsCount);
 	});
 });

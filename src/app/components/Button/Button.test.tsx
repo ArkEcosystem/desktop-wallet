@@ -68,6 +68,7 @@ describe("Button", () => {
 		const { getByText } = render(<Button onClick={onClick}>Click Me</Button>);
 
 		fireEvent.click(getByText("Click Me"));
+
 		expect(onClick).toHaveBeenCalled();
 	});
 
@@ -77,6 +78,7 @@ describe("Button", () => {
 				Click Me
 			</Button>,
 		);
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -86,6 +88,7 @@ describe("Button", () => {
 				Click Me
 			</Button>,
 		);
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -95,6 +98,7 @@ describe("Button", () => {
 				Click Me
 			</Button>,
 		);
+
 		expect(container).toMatchSnapshot();
 	});
 

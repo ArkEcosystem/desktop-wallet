@@ -95,7 +95,9 @@ describe("Votes", () => {
 
 		expect(container).toBeTruthy();
 		expect(getByTestId("DelegateTable")).toBeTruthy();
+
 		await waitFor(() => expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy());
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -110,8 +112,11 @@ describe("Votes", () => {
 
 		expect(container).toBeTruthy();
 		expect(getByTestId("DelegateTable")).toBeTruthy();
+
 		await waitFor(() => expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy());
+
 		expect(asFragment()).toMatchSnapshot();
+
 		currentMock.mockRestore();
 	});
 
@@ -136,6 +141,7 @@ describe("Votes", () => {
 
 		expect(container).toBeTruthy();
 		expect(getByTestId("AddressTable")).toBeTruthy();
+
 		await waitFor(() => expect(getByTestId("AddressRow__select-0")).toBeTruthy());
 
 		act(() => {
@@ -166,6 +172,7 @@ describe("Votes", () => {
 
 		expect(container).toBeTruthy();
 		expect(getByTestId("AddressTable")).toBeTruthy();
+
 		await waitFor(() => expect(getByTestId("AddressRow__select-0")).toBeTruthy());
 
 		act(() => {
@@ -197,6 +204,7 @@ describe("Votes", () => {
 
 		expect(container).toBeTruthy();
 		expect(getByTestId("AddressTable")).toBeTruthy();
+
 		await waitFor(() => expect(getByTestId("AddressRow__select-0")).toBeTruthy());
 
 		act(() => {
@@ -237,6 +245,7 @@ describe("Votes", () => {
 
 		expect(container).toBeTruthy();
 		expect(getByTestId("DelegateTable")).toBeTruthy();
+
 		await waitFor(() => expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy());
 
 		act(() => {
@@ -250,6 +259,7 @@ describe("Votes", () => {
 		});
 
 		await waitFor(() => expect(getAllByTestId("DelegateRow__toggle-0")).toHaveLength(1));
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -311,6 +321,7 @@ describe("Votes", () => {
 		});
 
 		expect(getByTestId("DelegateTable")).toBeTruthy();
+
 		await waitFor(() => {
 			expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy();
 		});
@@ -346,6 +357,7 @@ describe("Votes", () => {
 		});
 
 		await waitFor(() => expect(getByTestId("DelegateTable")).toBeTruthy());
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -354,6 +366,7 @@ describe("Votes", () => {
 		const { asFragment, getByTestId } = renderPage(route);
 
 		expect(getByTestId("DelegateTable")).toBeTruthy();
+
 		await waitFor(() => {
 			expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy();
 		});
@@ -379,6 +392,7 @@ describe("Votes", () => {
 		const { getByTestId } = renderPage(route);
 
 		expect(getByTestId("DelegateTable")).toBeTruthy();
+
 		await waitFor(() => {
 			expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy();
 		});
@@ -391,6 +405,7 @@ describe("Votes", () => {
 
 		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
 		expect(getByTestId("DelegateTable__footer--total")).toHaveTextContent("1/1");
+
 		walletVoteMock.mockRestore();
 	});
 
@@ -405,6 +420,7 @@ describe("Votes", () => {
 		const { asFragment, getByTestId } = renderPage(route);
 
 		expect(getByTestId("DelegateTable")).toBeTruthy();
+
 		await waitFor(() => {
 			expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy();
 		});
@@ -418,9 +434,11 @@ describe("Votes", () => {
 		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
 		expect(getByTestId("DelegateTable__footer--total")).toHaveTextContent("1/1");
 		expect(asFragment()).toMatchSnapshot();
+
 		walletRestoreMock.mockRestore();
 
 		expect(toastSpy).toHaveBeenCalled();
+
 		toastSpy.mockRestore();
 	});
 
@@ -429,6 +447,7 @@ describe("Votes", () => {
 		const { asFragment, getByTestId } = renderPage(route);
 
 		expect(getByTestId("DelegateTable")).toBeTruthy();
+
 		await waitFor(() => {
 			expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy();
 		});
@@ -464,6 +483,7 @@ describe("Votes", () => {
 		});
 
 		expect(getByTestId("DelegateTable")).toBeTruthy();
+
 		await waitFor(() => {
 			expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy();
 		});
@@ -507,9 +527,11 @@ describe("Votes", () => {
 
 		expect(container).toBeTruthy();
 		expect(getByTestId("DelegateTable")).toBeTruthy();
+
 		await waitFor(() => expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy());
 
 		expect(asFragment()).toMatchSnapshot();
+
 		profile.settings().set(ProfileSetting.UseTestNetworks, true);
 	});
 

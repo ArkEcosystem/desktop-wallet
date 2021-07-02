@@ -10,12 +10,14 @@ describe("FormLabel", () => {
 	it("should render from children", () => {
 		const label = "Test Label";
 		const { queryByText } = render(<FormLabel>{label}</FormLabel>);
+
 		expect(queryByText(label)).toBeTruthy();
 	});
 
 	it("should render from prop", () => {
 		const label = "Test Label";
 		const { queryByText } = render(<FormLabel label={label} />);
+
 		expect(queryByText(label)).toBeTruthy();
 	});
 
@@ -32,6 +34,7 @@ describe("FormLabel", () => {
 			</FormFieldProvider>
 		);
 		const { queryByTestId, asFragment } = render(tree);
+
 		expect(queryByTestId("FormLabel")).toHaveAttribute("for", context.name);
 		expect(asFragment()).toMatchSnapshot();
 	});

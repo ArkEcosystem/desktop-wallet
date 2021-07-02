@@ -17,6 +17,7 @@ describe("ResetProfile", () => {
 		const { getByTestId, asFragment } = render(<ResetProfile isOpen profile={profile} />);
 
 		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
+
 		expect(getByTestId("ResetProfile__submit-button")).toBeInTheDocument();
 		expect(asFragment()).toMatchSnapshot();
 	});

@@ -73,6 +73,7 @@ describe("ProfileCard", () => {
 		expect(getByTestId("dropdown__content")).toBeTruthy();
 
 		const firstOption = getByTestId("dropdown__option--0");
+
 		expect(firstOption).toBeTruthy();
 
 		act(() => {
@@ -93,6 +94,7 @@ describe("ProfileCard", () => {
 		expect(getByTestId("dropdown__content")).toBeTruthy();
 
 		const firstOption = getByTestId("dropdown__option--0");
+
 		expect(firstOption).toBeTruthy();
 
 		act(() => {

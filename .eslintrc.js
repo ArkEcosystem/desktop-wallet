@@ -15,6 +15,7 @@ module.exports = {
 	},
 	plugins: [
 		"@typescript-eslint",
+		"jest-formatting",
 		"jest",
 		"prettier",
 		"promise",
@@ -36,6 +37,7 @@ module.exports = {
 		"plugin:import/errors",
 		"plugin:import/typescript",
 		"plugin:import/warnings",
+		"plugin:jest-formatting/strict",
 		"plugin:jest/recommended",
 		"plugin:prettier/recommended",
 		"plugin:promise/recommended",

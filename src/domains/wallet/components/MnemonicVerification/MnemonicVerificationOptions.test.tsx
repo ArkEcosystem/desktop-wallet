@@ -20,6 +20,7 @@ describe("MnemonicVerificationOptions", () => {
 			/>,
 		);
 		const buttons = getAllByTestId("MnemonicVerificationOptions__button");
+
 		expect(buttons.length).toEqual(limit);
 	});
 
@@ -35,6 +36,7 @@ describe("MnemonicVerificationOptions", () => {
 			/>,
 		);
 		fireEvent.click(getByText(answer));
+
 		expect(handleChange).toHaveBeenCalledWith(answer);
 	});
 });

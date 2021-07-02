@@ -14,6 +14,7 @@ describe("FilterTransactions", () => {
 
 	it("should render", () => {
 		const { container, getByRole } = render(<FilterTransactions />);
+
 		expect(getByRole("button", { name: /Type/ })).toBeInTheDocument();
 		expect(container).toMatchSnapshot();
 	});
@@ -22,6 +23,7 @@ describe("FilterTransactions", () => {
 		const { container, getByRole } = render(
 			<FilterTransactions defaultSelected={{ label: "All", value: "all" }} />,
 		);
+
 		expect(getByRole("button", { name: /Type/ })).toBeInTheDocument();
 		expect(container).toMatchSnapshot();
 	});
@@ -30,12 +32,15 @@ describe("FilterTransactions", () => {
 		const { container, getByRole, getByTestId } = render(
 			<FilterTransactions wallets={profile.wallets().values()} />,
 		);
+
 		expect(getByRole("button", { name: /Type/ })).toBeInTheDocument();
+
 		act(() => {
 			fireEvent.click(getByRole("button", { name: /Type/ }));
 		});
 
 		await waitFor(() => expect(getByTestId("dropdown__option--core-0")).toBeInTheDocument());
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -45,6 +50,7 @@ describe("FilterTransactions", () => {
 		const { getByRole, getByTestId } = render(
 			<FilterTransactions wallets={profile.wallets().values()} onSelect={onSelect} />,
 		);
+
 		expect(getByRole("button", { name: /Type/ })).toBeInTheDocument();
 
 		act(() => {

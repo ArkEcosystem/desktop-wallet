@@ -24,6 +24,7 @@ describe("useNetworkOptions hook", () => {
 		const { result } = renderHook(() => useNetworkOptions(), { wrapper });
 
 		const network = result.current.networkById(id);
+
 		expect(network?.id()).toEqual(id);
 	});
 });

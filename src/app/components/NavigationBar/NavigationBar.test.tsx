@@ -94,6 +94,7 @@ describe("NavigationBar", () => {
 		const { getByText, history } = renderWithRouter(<NavigationBar profile={profile} menu={menu} />);
 
 		fireEvent.click(getByText("Test"));
+
 		expect(history.location.pathname).toEqual("/test");
 	});
 
@@ -113,7 +114,9 @@ describe("NavigationBar", () => {
 		});
 
 		expect(getByText("Option 1")).toBeTruthy();
+
 		fireEvent.click(getByText("Option 1"));
+
 		expect(history.location.pathname).toMatch("/test");
 	});
 
@@ -200,6 +203,7 @@ describe("NavigationBar", () => {
 		];
 
 		const { asFragment } = renderWithRouter(<NavigationBar profile={profile} menu={menu} />);
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 

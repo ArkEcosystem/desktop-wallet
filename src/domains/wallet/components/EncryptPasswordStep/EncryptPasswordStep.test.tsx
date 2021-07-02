@@ -28,6 +28,7 @@ describe("EncryptPasswordStep", () => {
 		);
 
 		expect(getAllByTestId("InputPassword").length).toEqual(2);
+
 		const passwordField = getAllByTestId("InputPassword")[0];
 
 		await act(async () => {
@@ -39,6 +40,7 @@ describe("EncryptPasswordStep", () => {
 		});
 
 		await waitFor(() => expect(passwordField).toHaveValue("password"));
+
 		expect(asFragment).toMatchSnapshot();
 	});
 
@@ -53,6 +55,7 @@ describe("EncryptPasswordStep", () => {
 		);
 
 		expect(getAllByTestId("InputPassword").length).toEqual(2);
+
 		const passwordField = getAllByTestId("InputPassword")[0];
 		const confirmPasswordField = getAllByTestId("InputPassword")[1];
 
@@ -66,6 +69,7 @@ describe("EncryptPasswordStep", () => {
 
 		await waitFor(() => expect(passwordField).toHaveValue("password"));
 		await waitFor(() => expect(confirmPasswordField).toHaveValue("password"));
+
 		expect(asFragment).toMatchSnapshot();
 	});
 });

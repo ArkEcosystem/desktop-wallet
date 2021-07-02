@@ -6,11 +6,13 @@ import { Circle } from "./Circle";
 describe("Circle", () => {
 	it("should render", () => {
 		const { container } = render(<Circle />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render as blank", () => {
 		const { container } = render(<Circle />);
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -20,11 +22,13 @@ describe("Circle", () => {
 				<div data-testid="circle__content" />
 			</Circle>,
 		);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render as avatar", () => {
 		const { container } = render(<Circle avatarId="test" />);
+
 		expect(container).toMatchSnapshot();
 	});
 

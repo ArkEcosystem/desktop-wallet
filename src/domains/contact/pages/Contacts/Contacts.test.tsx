@@ -256,6 +256,7 @@ describe("Contacts", () => {
 		fireEvent.click(screen.getByTestId("contact-form__delete-btn"));
 
 		expect(screen.getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_DELETE_CONTACT.TITLE);
+
 		fireEvent.click(screen.getByTestId("DeleteResource__submit-button"));
 
 		await waitFor(() => {

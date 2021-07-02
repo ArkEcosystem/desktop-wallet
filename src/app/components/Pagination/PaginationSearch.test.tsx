@@ -12,6 +12,7 @@ describe("PaginationSearch", () => {
 		);
 
 		await waitFor(() => expect(getByTestId("PaginationSearchToggle")).toBeInTheDocument());
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -23,6 +24,7 @@ describe("PaginationSearch", () => {
 		);
 
 		await waitFor(() => expect(getByTestId("PaginationSearchToggle")).toBeInTheDocument());
+
 		expect(asFragment()).toMatchSnapshot();
 
 		act(() => {
@@ -40,6 +42,7 @@ describe("PaginationSearch", () => {
 		);
 
 		await waitFor(() => expect(getByTestId("PaginationSearchToggle")).toBeInTheDocument());
+
 		expect(asFragment()).toMatchSnapshot();
 
 		act(() => {
@@ -65,6 +68,7 @@ describe("PaginationSearch", () => {
 		);
 
 		await waitFor(() => expect(getByTestId("PaginationSearchToggle")).toBeInTheDocument());
+
 		expect(asFragment()).toMatchSnapshot();
 
 		act(() => {
@@ -102,6 +106,7 @@ describe("PaginationSearch", () => {
 		);
 
 		await waitFor(() => expect(getByTestId("PaginationSearchToggle")).toBeInTheDocument());
+
 		expect(asFragment()).toMatchSnapshot();
 
 		act(() => {
@@ -139,6 +144,7 @@ describe("PaginationSearch", () => {
 		);
 
 		await waitFor(() => expect(getByTestId("PaginationSearchToggle")).toBeInTheDocument());
+
 		expect(asFragment()).toMatchSnapshot();
 
 		act(() => {
@@ -164,6 +170,7 @@ describe("PaginationSearch", () => {
 		);
 
 		await waitFor(() => expect(getByTestId("PaginationSearchToggle")).toBeInTheDocument());
+
 		expect(asFragment()).toMatchSnapshot();
 
 		act(() => {
@@ -201,6 +208,7 @@ describe("PaginationSearch", () => {
 		);
 
 		await waitFor(() => expect(getByTestId("PaginationSearchToggle")).toBeInTheDocument());
+
 		expect(asFragment()).toMatchSnapshot();
 
 		act(() => {
@@ -244,6 +252,7 @@ describe("PaginationSearch", () => {
 		);
 
 		await waitFor(() => expect(getByTestId("PaginationSearchToggle")).toBeInTheDocument());
+
 		expect(asFragment()).toMatchSnapshot();
 
 		act(() => {
