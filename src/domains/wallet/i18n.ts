@@ -172,6 +172,7 @@ export const translations: { [key: string]: any } = {
 			DECRYPT_WIF_ASSERTION: "Failed to decrypt WIF. Please check your password.",
 			INVALID_PRIVATE_KEY: "Invalid Private Key",
 			INVALID_PUBLIC_KEY: "Invalid Public Key",
+			INVALID_SECRET: "Invalid Secret",
 			INVALID_WIF: "Invalid WIF",
 			MAXLENGTH_ERROR: "The Name should have less than {{maxLength}} characters",
 		},

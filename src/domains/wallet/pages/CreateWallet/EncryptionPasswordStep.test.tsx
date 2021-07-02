@@ -228,8 +228,6 @@ describe("EncryptionPasswordStep", () => {
 			fireEvent.click(continueButton);
 		});
 
-		await waitFor(() => expect(profile.wallets().values().length).toBe(1));
-
 		await waitFor(() => expect(getByTestId("CreateWallet__WalletOverviewStep")).toBeTruthy());
 
 		act(() => {
@@ -312,11 +310,17 @@ describe("EncryptionPasswordStep", () => {
 		});
 		await waitFor(() => expect(getByTestId("CreateWallet__SuccessStep")).toBeTruthy());
 
+		// assert wallet not created yet
+		expect(profile.wallets().values().length).toBe(0);
+
 		act(() => {
 			fireEvent.click(getByTestId("CreateWallet__save-button"));
 		});
 
 		await waitFor(() => expect(walletSpy).toHaveBeenCalled());
+
+		expect(profile.wallets().values().length).toBe(1);
+
 		historySpy.mockRestore();
 	});
 });

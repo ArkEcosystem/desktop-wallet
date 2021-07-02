@@ -62,12 +62,22 @@ export const FormStep = ({
 				/>
 			</FormField>
 
-			{!wallet.isLedger() && !wallet.wif().exists() && (
+			{!wallet.isLedger() && !wallet.wif().exists() && wallet.actsWithMnemonic() && (
 				<FormField name="mnemonic">
 					<FormLabel label={t("COMMON.MNEMONIC")} />
 					<InputPassword
 						ref={register(authentication.mnemonic(wallet))}
 						data-testid="SignMessage__mnemonic-input"
+					/>
+				</FormField>
+			)}
+
+			{!wallet.isLedger() && !wallet.wif().exists() && wallet.actsWithSecret() && (
+				<FormField name="secret">
+					<FormLabel label={t("COMMON.SECRET")} />
+					<InputPassword
+						ref={register(authentication.secret(wallet))}
+						data-testid="SignMessage__secret-input"
 					/>
 				</FormField>
 			)}

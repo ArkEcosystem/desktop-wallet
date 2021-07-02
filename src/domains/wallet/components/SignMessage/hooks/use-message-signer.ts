@@ -41,6 +41,7 @@ export const useMessageSigner = (transport: typeof Transport) => {
 		message: string,
 		mnemonic?: string,
 		wif?: string,
+		secret?: string,
 		options?: {
 			abortSignal?: AbortSignal;
 		},
@@ -57,6 +58,10 @@ export const useMessageSigner = (transport: typeof Transport) => {
 
 		if (wif) {
 			signatory = await wallet.signatory().wif(wif);
+		}
+
+		if (secret) {
+			signatory = await wallet.signatory().secret(secret);
 		}
 
 		return wallet.message().sign({ message, signatory });
