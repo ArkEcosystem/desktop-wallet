@@ -50,6 +50,7 @@ describe("DeleteContact", () => {
 		});
 
 		await waitFor(() => expect(onDelete).toBeCalled());
+
 		expect(() => profile.contacts().findById(contact.id())).toThrowError("Failed to find");
 	});
 });

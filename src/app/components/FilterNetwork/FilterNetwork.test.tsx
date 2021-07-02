@@ -45,11 +45,13 @@ const networks = () => [
 describe("NetworkOptions", () => {
 	it("should render empty", () => {
 		const { container } = render(<NetworkOptions />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render available networks options", () => {
 		const { container } = render(<NetworkOptions networks={networks()} />);
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -83,6 +85,7 @@ describe("NetworkOptions", () => {
 
 		const allNetworks = [...networks(), unknownNetwork];
 		const { container } = render(<NetworkOptions networks={allNetworks} onClick={onClick} />);
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -98,6 +101,7 @@ describe("NetworkOptions", () => {
 
 		const allNetworks = [...networks(), unknownNetwork];
 		const { container } = render(<NetworkOptions networks={allNetworks} onClick={onClick} />);
+
 		expect(container).toMatchSnapshot();
 	});
 });
@@ -105,16 +109,19 @@ describe("NetworkOptions", () => {
 describe("ToggleAllOption", () => {
 	it("should render", () => {
 		const { container } = render(<ToggleAllOption />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render hidden", () => {
 		const { container } = render(<ToggleAllOption isHidden />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render selected", () => {
 		const { container } = render(<ToggleAllOption isSelected />);
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -132,11 +139,13 @@ describe("ToggleAllOption", () => {
 describe("FilterNetwork", () => {
 	it("should render empty", () => {
 		const { container } = render(<FilterNetwork />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render public networks", () => {
 		const { container, getAllByTestId } = render(<FilterNetwork networks={networks()} />);
+
 		expect(getAllByTestId("FilterNetwork")).toHaveLength(1);
 		expect(container).toMatchSnapshot();
 	});
@@ -144,6 +153,7 @@ describe("FilterNetwork", () => {
 	it("should toggle a network option", () => {
 		const onChange = jest.fn();
 		const { getAllByTestId, getByTestId } = render(<FilterNetwork networks={networks()} onChange={onChange} />);
+
 		expect(getAllByTestId("FilterNetwork")).toHaveLength(1);
 
 		act(() => {
@@ -166,17 +176,20 @@ describe("FilterNetwork", () => {
 describe("FilterNetworks", () => {
 	it("should render empty", () => {
 		const { container } = render(<FilterNetworks />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render public networks", () => {
 		const { container, getAllByTestId } = render(<FilterNetworks networks={networks()} />);
+
 		expect(getAllByTestId("FilterNetwork")).toHaveLength(1);
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render public and testnet networks", () => {
 		const { container, getAllByTestId } = render(<FilterNetworks useTestNetworks={true} networks={networks()} />);
+
 		expect(getAllByTestId("FilterNetwork")).toHaveLength(2);
 		expect(container).toMatchSnapshot();
 	});
@@ -185,6 +198,7 @@ describe("FilterNetworks", () => {
 		const { container, getAllByTestId, getByTestId } = render(
 			<FilterNetworks useTestNetworks={true} networks={networks()} hideViewAll={false} />,
 		);
+
 		expect(getAllByTestId("FilterNetwork")).toHaveLength(2);
 
 		act(() => {
@@ -192,6 +206,7 @@ describe("FilterNetworks", () => {
 		});
 
 		await waitFor(() => expect(getByTestId("FilterNetwork__select-all-checkbox")).toBeTruthy());
+
 		expect(container).toMatchSnapshot();
 
 		act(() => {
@@ -199,6 +214,7 @@ describe("FilterNetworks", () => {
 		});
 
 		await waitFor(() => expect(() => getByTestId("FilterNetwork__select-all-checkbox")).toThrow());
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -207,6 +223,7 @@ describe("FilterNetworks", () => {
 		const { getAllByTestId, getByTestId } = render(
 			<FilterNetworks useTestNetworks={true} networks={networks()} onChange={onChange} hideViewAll={false} />,
 		);
+
 		expect(getAllByTestId("FilterNetwork")).toHaveLength(2);
 
 		act(() => {
@@ -226,12 +243,14 @@ describe("FilterNetworks", () => {
 			{ coin: "LSK", id: "lsk.testnet", isLive: false, isSelected: true, name: "LSK Testnet" },
 			{ coin: "BIND", id: "compedia.mainnet", isLive: false, isSelected: false, name: "Compedia" },
 		];
+
 		expect(onChange).toHaveBeenCalledWith(expect.anything(), selectedOptions);
 	});
 
 	it("should toggle a public network option", () => {
 		const onChange = jest.fn();
 		const { getAllByTestId, getByTestId } = render(<FilterNetworks networks={networks()} onChange={onChange} />);
+
 		expect(getAllByTestId("FilterNetwork")).toHaveLength(1);
 
 		act(() => {

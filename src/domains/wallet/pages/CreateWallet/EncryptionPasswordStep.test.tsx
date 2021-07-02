@@ -62,6 +62,7 @@ describe("EncryptionPasswordStep", () => {
 		const historySpy = jest.spyOn(history, "push").mockImplementation();
 
 		expect(backButton).not.toHaveAttribute("disabled");
+
 		act(() => {
 			fireEvent.click(backButton);
 		});
@@ -200,6 +201,7 @@ describe("EncryptionPasswordStep", () => {
 		const historySpy = jest.spyOn(history, "push").mockImplementation();
 
 		expect(backButton).not.toHaveAttribute("disabled");
+
 		act(() => {
 			fireEvent.click(backButton);
 		});

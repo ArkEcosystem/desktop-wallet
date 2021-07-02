@@ -20,6 +20,7 @@ describe("PluginSpecs", () => {
 		);
 
 		fireEvent.click(getByTestId("PluginSpecs__url"));
+
 		expect(ipcRendererMock).toHaveBeenLastCalledWith("open-external", "https://github.com/arkecosystem/explorer");
 
 		expect(await findByText("ARK Ecosystem")).toBeTruthy();

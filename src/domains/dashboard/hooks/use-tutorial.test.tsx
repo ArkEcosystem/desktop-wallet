@@ -17,6 +17,7 @@ describe("useTutorial", () => {
 	beforeAll(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
 	});
+
 	afterEach(() => {
 		profile.flush();
 	});
@@ -26,6 +27,7 @@ describe("useTutorial", () => {
 		const { result } = renderHook(() => useTutorial(env, profile), { wrapper });
 
 		expect(result.current.showTutorial).toBeTruthy();
+
 		mockHasCompletedTutorial.mockRestore();
 	});
 

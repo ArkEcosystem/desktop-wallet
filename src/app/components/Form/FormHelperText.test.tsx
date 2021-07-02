@@ -11,6 +11,7 @@ describe("FormHelperText", () => {
 		const { queryByText, asFragment } = render(
 			<FormHelperText errorMessage={errorMessage}>{hintMessage}</FormHelperText>,
 		);
+
 		expect(queryByText(hintMessage)).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -18,6 +19,7 @@ describe("FormHelperText", () => {
 	it("should not show hint if is invalid", () => {
 		const hintMessage = "Test Message";
 		const { queryByText } = render(<FormHelperText isInvalid>{hintMessage}</FormHelperText>);
+
 		expect(queryByText(hintMessage)).toBeNull();
 	});
 
@@ -29,12 +31,14 @@ describe("FormHelperText", () => {
 				{hintMessage}
 			</FormHelperText>,
 		);
+
 		expect(queryByText(errorMessage)).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should not render if nothing is provided", () => {
 		const { container } = render(<FormHelperText />);
+
 		expect(container).toMatchInlineSnapshot(`<div />`);
 	});
 
@@ -50,6 +54,7 @@ describe("FormHelperText", () => {
 			</FormFieldProvider>
 		);
 		const { queryByText } = render(tree);
+
 		expect(queryByText(context.errorMessage)).toBeTruthy();
 	});
 });

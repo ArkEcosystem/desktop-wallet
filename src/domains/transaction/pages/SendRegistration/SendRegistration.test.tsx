@@ -61,6 +61,7 @@ const createDelegateRegistrationMock = (wallet: Contracts.IReadWriteWallet) =>
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 		amount: () => +DelegateRegistrationFixture.data.amount / 1e8,
 		data: () => ({ data: () => DelegateRegistrationFixture.data }),
+		explorerLink: () => `https://dexplorer.ark.io/transaction/${DelegateRegistrationFixture.data.id}`,
 		fee: () => +DelegateRegistrationFixture.data.fee / 1e8,
 		id: () => DelegateRegistrationFixture.data.id,
 		recipient: () => DelegateRegistrationFixture.data.recipient,
@@ -74,6 +75,7 @@ const createSecondSignatureRegistrationMock = (wallet: Contracts.IReadWriteWalle
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 		amount: () => 0,
 		data: () => ({ data: () => SecondSignatureRegistrationFixture.data }),
+		explorerLink: () => `https://dexplorer.ark.io/transaction/${SecondSignatureRegistrationFixture.data.id}`,
 		fee: () => +SecondSignatureRegistrationFixture.data.fee / 1e8,
 		id: () => SecondSignatureRegistrationFixture.data.id,
 		recipient: () => SecondSignatureRegistrationFixture.data.recipient,
@@ -311,6 +313,7 @@ describe("Registration", () => {
 		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
 
 		fireEvent.change(getByTestId("Input__username"), { target: { value: "test_delegate" } });
+
 		expect(getByTestId("Input__username")).toHaveValue("test_delegate");
 
 		// Fee
@@ -329,6 +332,7 @@ describe("Registration", () => {
 
 		// Fee warning
 		expect(getByTestId("FeeWarning__cancel-button")).toBeTruthy();
+
 		fireEvent.click(getByTestId("FeeWarning__cancel-button"));
 
 		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
@@ -340,6 +344,7 @@ describe("Registration", () => {
 		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
 
 		fireEvent.change(getByTestId("Input__username"), { target: { value: "test_delegate" } });
+
 		expect(getByTestId("Input__username")).toHaveValue("test_delegate");
 
 		// Fee
@@ -358,6 +363,7 @@ describe("Registration", () => {
 
 		// Fee warning
 		expect(getByTestId("FeeWarning__continue-button")).toBeTruthy();
+
 		fireEvent.click(getByTestId("FeeWarning__continue-button"));
 
 		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
@@ -469,6 +475,7 @@ describe("Registration", () => {
 		fireEvent.click(getByTestId("StepNavigation__send-button"));
 
 		await waitFor(() => expect(getByTestId("ErrorStep")).toBeTruthy());
+
 		expect(asFragment()).toMatchSnapshot();
 
 		fireEvent.click(getByTestId("ErrorStep__wallet-button"));

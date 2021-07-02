@@ -31,6 +31,7 @@ describe("SelectProfileImage", () => {
 		const onSelect = jest.fn();
 
 		const { asFragment } = render(<SelectProfileImage value="test" onSelect={onSelect} />);
+
 		expect(asFragment()).toMatchSnapshot();
 
 		userEvent.click(screen.getByTestId("SelectProfileImage__remove-button"));
@@ -45,6 +46,7 @@ describe("SelectProfileImage", () => {
 		const { result: useFilesResult } = renderHook(() => useFiles());
 
 		expect(asFragment()).toMatchSnapshot();
+
 		const openFileDialog = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(
 			() =>
 				({

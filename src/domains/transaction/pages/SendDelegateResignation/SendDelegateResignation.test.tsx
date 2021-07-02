@@ -44,6 +44,7 @@ const renderPage = () => {
 const transactionResponse = {
 	amount: () => transactionFixture.data.amount / 1e8,
 	data: () => ({ data: () => transactionFixture.data }),
+	explorerLink: () => `https://dexplorer.ark.io/transaction/${transactionFixture.data.id}`,
 	fee: () => transactionFixture.data.fee / 1e8,
 	id: () => transactionFixture.data.id,
 	recipient: () => transactionFixture.data.recipient,
@@ -86,6 +87,7 @@ describe("SendDelegateResignation", () => {
 			const { asFragment, getByTestId } = renderPage();
 
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
+
 			expect(asFragment()).toMatchSnapshot();
 		});
 
@@ -282,6 +284,7 @@ describe("SendDelegateResignation", () => {
 			fireEvent.click(getByTestId("StepNavigation__send-button"));
 
 			await waitFor(() => expect(getByTestId("ErrorStep")).toBeTruthy());
+
 			expect(asFragment()).toMatchSnapshot();
 
 			secondPublicKeyMock.mockRestore();
@@ -324,6 +327,7 @@ describe("SendDelegateResignation", () => {
 			fireEvent.click(getByTestId("StepNavigation__send-button"));
 
 			await waitFor(() => expect(getByTestId("ErrorStep")).toBeTruthy());
+
 			expect(asFragment()).toMatchSnapshot();
 
 			const historyMock = jest.spyOn(history, "push").mockReturnValue();

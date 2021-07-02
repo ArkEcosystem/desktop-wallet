@@ -113,6 +113,7 @@ describe("WalletListItem", () => {
 		expect(getByText(wallet.alias())).toBeTruthy();
 
 		expect(container).toMatchSnapshot();
+
 		mockExchangeCurrency.mockRestore();
 	});
 

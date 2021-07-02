@@ -14,6 +14,7 @@ describe("FormField", () => {
 			</FormField>
 		);
 		const { queryByTestId } = render(tree);
+
 		expect(queryByTestId("input")).toBeTruthy();
 	});
 
@@ -34,6 +35,7 @@ describe("FormField", () => {
 			</FormProvider>
 		);
 		const { queryByText } = render(tree);
+
 		expect(queryByText(errorMessage)).toBeTruthy();
 	});
 });

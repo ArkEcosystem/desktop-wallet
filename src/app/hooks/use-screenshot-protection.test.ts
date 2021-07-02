@@ -17,7 +17,9 @@ describe("useScreenshotProtection", () => {
 
 		const { result } = renderHook(() => useScreenshotProtection());
 		result.current.setScreenshotProtection(profile);
+
 		expect(profileSettingMock).toHaveBeenCalled();
+
 		profileSettingMock.mockRestore();
 	});
 
@@ -26,7 +28,9 @@ describe("useScreenshotProtection", () => {
 
 		const { result } = renderHook(() => useScreenshotProtection());
 		result.current.setScreenshotProtection(profile);
+
 		expect(profileSettingMock).toHaveBeenCalled();
+
 		profileSettingMock.mockRestore();
 	});
 });

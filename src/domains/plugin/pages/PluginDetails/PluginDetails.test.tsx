@@ -58,6 +58,7 @@ describe("PluginDetails", () => {
 		fireEvent.click(screen.getByText("Fetch Packages"));
 
 		await waitFor(() => expect(screen.getAllByText("Test Plugin").length).toBeGreaterThan(0));
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -597,6 +598,7 @@ describe("PluginDetails", () => {
 		);
 
 		expect(container).toMatchSnapshot();
+
 		jest.useRealTimers();
 	});
 });

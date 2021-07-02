@@ -7,6 +7,7 @@ import { ConfirmationModal } from "./ConfirmationModal";
 describe("Confirmation Modal", () => {
 	it("should render with default title and description", () => {
 		const { container } = render(<ConfirmationModal isOpen />);
+
 		expect(screen.getByText(translations.CONFIRMATION_MODAL.TITLE)).toBeInTheDocument();
 		expect(screen.getByText(translations.CONFIRMATION_MODAL.DESCRIPTION)).toBeInTheDocument();
 		expect(container).toMatchSnapshot();
@@ -16,6 +17,7 @@ describe("Confirmation Modal", () => {
 		const title = "My Title";
 		const description = "My Description";
 		const { container } = render(<ConfirmationModal title={title} description={description} isOpen />);
+
 		expect(screen.getByText(title)).toBeInTheDocument();
 		expect(screen.getByText(description)).toBeInTheDocument();
 		expect(container).toMatchSnapshot();

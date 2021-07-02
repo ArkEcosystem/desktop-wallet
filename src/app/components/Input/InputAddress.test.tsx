@@ -26,6 +26,7 @@ describe("InputAddress", () => {
 		const { getByTestId, asFragment } = render(
 			<TestInputAddress coin="ARK" network="ark.devnet" profile={profile} />,
 		);
+
 		expect(getByTestId("InputAddress__input")).toBeInTheDocument();
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -43,6 +44,7 @@ describe("InputAddress", () => {
 		});
 
 		await waitForNextUpdate();
+
 		expect(errors.address?.message).toBe(commonTranslations.INPUT_ADDRESS.VALIDATION.NOT_VALID);
 	});
 
@@ -69,6 +71,7 @@ describe("InputAddress", () => {
 		});
 
 		await waitForNextUpdate();
+
 		expect(errors.address?.message).toBe(undefined);
 		expect(onValidAddress).toHaveBeenCalledWith(validAddress);
 	});
@@ -92,6 +95,7 @@ describe("InputAddress", () => {
 		});
 
 		await waitForNextUpdate();
+
 		expect(errors.address?.type).toBe("minLength");
 	});
 

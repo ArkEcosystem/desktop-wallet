@@ -26,6 +26,7 @@ describe("Select", () => {
 
 		fireEvent.change(getByTestId("Select"), { target: { value: 2 } });
 		const options = getAllByTestId("select-option");
+
 		expect((options[0] as HTMLOptionElement).selected).toBeFalsy();
 		expect((options[1] as HTMLOptionElement).selected).toBeTruthy();
 

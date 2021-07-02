@@ -41,6 +41,7 @@ describe("HeaderSearchBar", () => {
 		rerender(<HeaderSearchBar onReset={onReset} resetFields={true} />);
 
 		await waitFor(() => expect(input.value).not.toBe("test"));
+
 		expect(onReset).toHaveBeenCalled();
 	});
 
@@ -68,6 +69,7 @@ describe("HeaderSearchBar", () => {
 		fireEvent.click(getByRole("button"));
 
 		const outsideElement = getByTestId("header-search-bar__outside");
+
 		expect(outsideElement).toBeTruthy();
 
 		expect(() => getByTestId("Input")).toBeTruthy();

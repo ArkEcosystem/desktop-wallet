@@ -35,14 +35,18 @@ describe("useTheme", () => {
 	describe("setTheme", () => {
 		it("should set light theme", () => {
 			utils.shouldUseDarkColors = jest.fn(() => true);
+
 			expect(electron.remote.nativeTheme.themeSource).toBe("system");
+
 			useTheme().setTheme("light");
+
 			expect(electron.remote.nativeTheme.themeSource).toBe("light");
 		});
 
 		it("should set dark theme", () => {
 			utils.shouldUseDarkColors = jest.fn(() => true);
 			useTheme().setTheme("dark");
+
 			expect(electron.remote.nativeTheme.themeSource).toBe("dark");
 		});
 	});
@@ -54,9 +58,11 @@ describe("useTheme", () => {
 
 			utils.shouldUseDarkColors = jest.fn(() => true);
 			useTheme().setTheme("dark");
+
 			expect(electron.remote.nativeTheme.themeSource).toBe("dark");
 
 			useTheme().setProfileTheme(profile);
+
 			expect(electron.remote.nativeTheme.themeSource).toBe("light");
 		});
 
@@ -66,9 +72,11 @@ describe("useTheme", () => {
 
 			utils.shouldUseDarkColors = jest.fn(() => false);
 			useTheme().setTheme("dark");
+
 			expect(electron.remote.nativeTheme.themeSource).toBe("dark");
 
 			useTheme().setProfileTheme(profile);
+
 			expect(electron.remote.nativeTheme.themeSource).toBe("dark");
 		});
 	});
@@ -77,9 +85,11 @@ describe("useTheme", () => {
 		it("should reset theme to defaults", () => {
 			utils.shouldUseDarkColors = jest.fn(() => true);
 			useTheme().setTheme("dark");
+
 			expect(electron.remote.nativeTheme.themeSource).toBe("dark");
 
 			useTheme().resetTheme();
+
 			expect(electron.remote.nativeTheme.themeSource).toBe("system");
 		});
 	});

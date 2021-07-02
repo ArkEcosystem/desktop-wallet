@@ -56,10 +56,7 @@ export const MultiSignatureRegistrationDetail = ({
 
 			<TransactionTimestamp timestamp={transaction.timestamp()!} />
 
-			<TransactionConfirmations
-				isConfirmed={transaction.isConfirmed()}
-				confirmations={transaction.confirmations()}
-			/>
+			<TransactionConfirmations transaction={transaction} />
 
 			<TransactionDetail label={t("TRANSACTION.MULTISIGNATURE.PARTICIPANTS")}>
 				<div className="flex flex-col space-y-2">
@@ -77,15 +74,7 @@ export const MultiSignatureRegistrationDetail = ({
 				{generatedAddress}
 			</TransactionDetail>
 
-			<TransactionExplorerLink id={transaction.id()} link={transaction.explorerLink()} />
-
-			{transaction.blockId() && (
-				<TransactionExplorerLink
-					id={transaction.blockId()!}
-					link={transaction.explorerLinkForBlock()!}
-					variant="block"
-				/>
-			)}
+			<TransactionExplorerLink transaction={transaction} />
 		</Modal>
 	);
 };

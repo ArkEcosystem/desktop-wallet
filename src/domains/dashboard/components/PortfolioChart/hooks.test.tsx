@@ -8,6 +8,7 @@ import { env, getDefaultProfileId } from "utils/testing-library";
 import { usePortfolioData } from ".";
 
 let profile: Contracts.IProfile;
+
 describe("usePortfolioData hook", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
@@ -39,6 +40,7 @@ describe("usePortfolioData hook", () => {
 		const { result } = renderHook(() => usePortfolioData({ profile }), { wrapper });
 
 		expect(result.current.percentages).toEqual([{ color: "danger-400", label: "ARK", percentage: 3 }]);
+
 		balancePerCoinMock.mockRestore();
 	});
 

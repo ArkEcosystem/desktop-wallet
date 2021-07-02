@@ -16,6 +16,7 @@ describe("Card", () => {
 		const { container, asFragment, getByText } = render(<Card onClick={() => handleClick()}>Test</Card>);
 
 		expect(container).toBeTruthy();
+
 		fireEvent.click(getByText("Test"));
 
 		expect(handleClick).toHaveBeenCalled();

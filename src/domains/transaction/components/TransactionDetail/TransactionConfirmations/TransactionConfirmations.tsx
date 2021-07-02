@@ -1,3 +1,4 @@
+import { DTO } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Icon } from "app/components/Icon";
 import { Tooltip } from "app/components/Tooltip";
@@ -7,11 +8,10 @@ import { useTranslation } from "react-i18next";
 import { TransactionDetail } from "../TransactionDetail";
 
 interface TransactionConfirmationsProperties {
-	isConfirmed: boolean;
-	confirmations: BigNumber;
+	transaction: DTO.ExtendedConfirmedTransactionData;
 }
 
-export const TransactionConfirmations = ({ isConfirmed, confirmations }: TransactionConfirmationsProperties) => {
+export const TransactionConfirmations = ({ transaction }: TransactionConfirmationsProperties) => {
 	const { t } = useTranslation();
 
 	const renderConfirmationStatus = (isConfirmed: boolean, confirmations: BigNumber) => {
@@ -39,8 +39,8 @@ export const TransactionConfirmations = ({ isConfirmed, confirmations }: Transac
 	};
 
 	return (
-		<TransactionDetail data-testid="TransactionConfirmations" label={t("TRANSACTION.CONFIRMATIONS")}>
-			{renderConfirmationStatus(isConfirmed, confirmations)}
+		<TransactionDetail label={t("TRANSACTION.CONFIRMATIONS")}>
+			{renderConfirmationStatus(transaction.isConfirmed(), transaction.confirmations())}
 		</TransactionDetail>
 	);
 };

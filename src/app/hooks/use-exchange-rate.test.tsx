@@ -24,6 +24,7 @@ describe("useExchangeRate", () => {
 		expect(typeof result.current.convert).toBe("function");
 
 		const converted = result.current.convert(1);
+
 		expect(converted).toEqual(1);
 	});
 

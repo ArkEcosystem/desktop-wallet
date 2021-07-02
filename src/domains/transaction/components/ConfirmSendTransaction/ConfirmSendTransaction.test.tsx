@@ -23,6 +23,7 @@ describe("ConfirmSendTransaction", () => {
 		const { getByTestId } = render(<ConfirmSendTransaction isOpen={true} onConfirm={onConfirm} />);
 
 		expect(getByTestId("modal__inner")).toBeTruthy();
+
 		act(() => {
 			fireEvent.click(getByTestId("ConfirmSendTransaction__confirm"));
 		});
@@ -35,6 +36,7 @@ describe("ConfirmSendTransaction", () => {
 		const { getByTestId } = render(<ConfirmSendTransaction isOpen={true} onClose={onCancel} />);
 
 		expect(getByTestId("modal__inner")).toBeTruthy();
+
 		act(() => {
 			fireEvent.click(getByTestId("ConfirmSendTransaction__cancel"));
 		});

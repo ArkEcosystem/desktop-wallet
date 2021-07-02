@@ -68,6 +68,7 @@ describe("CreateWallet", () => {
 		);
 
 		await waitFor(() => expect(getByTestId("NetworkStep")).toBeTruthy());
+
 		expect(asFragment()).toMatchSnapshot();
 
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
@@ -77,6 +78,7 @@ describe("CreateWallet", () => {
 		const historySpy = jest.spyOn(history, "push").mockImplementation();
 
 		expect(backButton).not.toHaveAttribute("disabled");
+
 		act(() => {
 			fireEvent.click(backButton);
 		});
@@ -231,6 +233,7 @@ describe("CreateWallet", () => {
 
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 		const continueButton = getByTestId("CreateWallet__continue-button");
+
 		expect(asFragment()).toMatchSnapshot();
 
 		act(() => {
@@ -343,6 +346,7 @@ describe("CreateWallet", () => {
 		);
 
 		await waitFor(() => expect(getByTestId("NetworkStep")).toBeTruthy());
+
 		expect(asFragment()).toMatchSnapshot();
 
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
@@ -403,6 +407,7 @@ describe("CreateWallet", () => {
 		await waitFor(() => expect(getByTestId("CreateWallet__SuccessStep")).toBeTruthy());
 
 		const walletNameInput = getByTestId("CreateWallet__wallet-name");
+
 		expect(walletNameInput).toBeTruthy();
 
 		act(() => {
@@ -412,6 +417,7 @@ describe("CreateWallet", () => {
 		const submitButton = getByTestId("CreateWallet__save-button");
 
 		expect(submitButton).toBeTruthy();
+
 		await waitFor(() => {
 			expect(submitButton).toBeDisabled();
 		});

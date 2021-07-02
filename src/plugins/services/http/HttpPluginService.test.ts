@@ -87,6 +87,7 @@ describe("HttpPluginService", () => {
 		manager.plugins().runAllEnabled(profile);
 
 		await waitFor(() => expect(response).toBe(undefined));
+
 		expect(consoleSpy).toHaveBeenCalled();
 
 		jest.clearAllMocks();

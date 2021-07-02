@@ -89,7 +89,9 @@ describe("AddressRow", () => {
 		);
 
 		expect(container).toBeTruthy();
+
 		await waitFor(() => expect(getByTestId("AddressRow__status")).toBeTruthy());
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -160,8 +162,11 @@ describe("AddressRow", () => {
 		);
 
 		expect(container).toBeTruthy();
+
 		await waitFor(() => expect(getByTestId("AddressRow__status")).toBeTruthy());
+
 		expect(asFragment()).toMatchSnapshot();
+
 		isMultiSignatureSpy.mockRestore();
 	});
 
@@ -178,6 +183,7 @@ describe("AddressRow", () => {
 		await waitFor(() => expect(getByTestId("AddressRow__status")).toBeTruthy());
 		await waitFor(() => expect(getByTestId("AddressRow__select-0")).toBeTruthy());
 		await waitFor(() => expect(getByTestId("AddressRow__select-1")).toBeTruthy());
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -194,6 +200,7 @@ describe("AddressRow", () => {
 		await waitFor(() => expect(getAllByTestId("AddressRow__status")).toBeTruthy());
 		await waitFor(() => expect(getByTestId("AddressRow__select-0")).toBeTruthy());
 		await waitFor(() => expect(getByTestId("AddressRow__select-1")).toBeTruthy());
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 

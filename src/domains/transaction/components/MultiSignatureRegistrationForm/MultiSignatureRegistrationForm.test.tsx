@@ -33,6 +33,7 @@ describe("MultiSignature Registration Form", () => {
 		jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 			amount: () => multiSignatureFixture.data.amount / 1e8,
 			data: () => ({ data: () => multiSignatureFixture.data }),
+			explorerLink: () => `https://dexplorer.ark.io/transaction/${multiSignatureFixture.data.id}`,
 			fee: () => multiSignatureFixture.data.fee / 1e8,
 			id: () => multiSignatureFixture.data.id,
 			recipient: () => multiSignatureFixture.data.recipient,
@@ -78,6 +79,7 @@ describe("MultiSignature Registration Form", () => {
 		const { asFragment } = render(<Component form={result.current} />);
 		await waitForNextUpdate();
 		await waitFor(() => expect(screen.queryAllByRole("row")).toHaveLength(1));
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -292,6 +294,7 @@ describe("MultiSignature Registration Form", () => {
 		} catch (error) {}
 
 		await waitFor(() => expect(signMock).toThrow());
+
 		expect(transactionMock).not.toHaveBeenCalled();
 
 		consoleSpy.mockRestore();

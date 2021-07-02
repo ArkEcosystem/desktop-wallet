@@ -7,6 +7,7 @@ describe("VM", () => {
 
 	it("should run with callback", () => {
 		const incrementFunction = runUnknownCode("module.exports = (value) => value + 1", "./index.js");
+
 		expect(incrementFunction(1)).toBe(2);
 	});
 });

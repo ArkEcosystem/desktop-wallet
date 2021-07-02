@@ -81,6 +81,7 @@ describe("Notifications", () => {
 				</tbody>
 			</table>,
 		);
+
 		expect(getByTestId("NotificationItem__action")).toHaveTextContent(profile.notifications().last().action);
 		expect(container).toMatchSnapshot();
 	});

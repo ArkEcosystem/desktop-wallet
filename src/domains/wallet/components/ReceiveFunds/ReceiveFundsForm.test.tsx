@@ -29,6 +29,7 @@ describe("ReceiveFundsForm", () => {
 
 			await waitFor(() => expect(getByTestId("ReceiveFundsForm__amount")).toHaveValue(""));
 			await waitFor(() => expect(getByTestId("ReceiveFundsForm__memo")).toHaveValue(""));
+
 			expect(asFragment()).toMatchSnapshot();
 		});
 	});

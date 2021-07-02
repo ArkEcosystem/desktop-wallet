@@ -22,6 +22,7 @@ describe("useWalletSignatory", () => {
 
 	it("should sign with mnemonic", async () => {
 		const { result } = renderHook(() => useWalletSignatory(wallet));
+
 		await expect(result.current.sign({ mnemonic: MNEMONICS[0] })).resolves.toBeInstanceOf(Signatories.Signatory);
 
 		const signatory = await result.current.sign({ mnemonic: MNEMONICS[0] });
@@ -34,6 +35,7 @@ describe("useWalletSignatory", () => {
 
 	it("should sign with secret", async () => {
 		const { result } = renderHook(() => useWalletSignatory(wallet));
+
 		await expect(result.current.sign({ secret: "secret" })).resolves.toBeInstanceOf(Signatories.Signatory);
 
 		const signatory = await result.current.sign({ secret: "secret" });

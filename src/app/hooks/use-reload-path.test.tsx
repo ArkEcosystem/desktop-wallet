@@ -31,6 +31,7 @@ describe("useReloadPath hook", () => {
 		act(() => {
 			fireEvent.click(getByTestId("header_test"));
 		});
+
 		expect(getByText("UseReloadPath Test Component")).toBeTruthy();
 	});
 });

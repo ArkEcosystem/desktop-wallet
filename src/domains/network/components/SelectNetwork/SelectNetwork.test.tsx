@@ -7,16 +7,19 @@ import { itemToString, SelectNetwork } from "./SelectNetwork";
 describe("SelectNetwork", () => {
 	it("should render", () => {
 		const { container } = render(<SelectNetwork />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render with networks", () => {
 		const { container } = render(<SelectNetwork networks={availableNetworksMock} />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render with hidden options", () => {
 		const { container, getByTestId } = render(<SelectNetwork networks={availableNetworksMock} hideOptions />);
+
 		expect(getByTestId("SelectNetwork__options")).toHaveClass("hidden");
 		expect(container).toMatchSnapshot();
 	});

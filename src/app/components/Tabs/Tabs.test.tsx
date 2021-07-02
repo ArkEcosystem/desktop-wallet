@@ -109,6 +109,7 @@ describe("Tabs", () => {
 		expect(secondTab).toHaveAttribute("aria-selected", "false");
 
 		firstTab.focus();
+
 		expect(firstTab).toHaveFocus();
 
 		// got right to second tab

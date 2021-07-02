@@ -24,16 +24,19 @@ beforeAll(async () => {
 describe("SelectAddress", () => {
 	it("should render empty", () => {
 		const { container } = render(<SelectAddress wallets={wallets} profile={profile} />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render disabled", () => {
 		const { container } = render(<SelectAddress disabled wallets={wallets} profile={profile} />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render invalid", () => {
 		const { container, getByTestId } = render(<SelectAddress isInvalid wallets={wallets} profile={profile} />);
+
 		expect(getByTestId("Input__error")).toBeVisible();
 		expect(container).toMatchSnapshot();
 	});
@@ -42,11 +45,13 @@ describe("SelectAddress", () => {
 		const { container } = render(
 			<SelectAddress wallets={wallets} address="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" profile={profile} />,
 		);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render with preselected verified address", () => {
 		const { container } = render(<SelectAddress isVerified wallets={wallets} profile={profile} />);
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -116,6 +121,7 @@ describe("SelectAddress", () => {
 			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 			const selectedAddressValue = wallets[0].address();
+
 			expect(getByTestId("SelectAddress__input")).toHaveValue(selectedAddressValue);
 		});
 	});

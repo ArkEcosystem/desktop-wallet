@@ -63,6 +63,7 @@ describe("WalletHeader", () => {
 		await waitFor(() => expect(getByText(wallet.address())).toBeTruthy());
 
 		expect(asFragment()).toMatchSnapshot();
+
 		mockpublicKey.mockRestore();
 	});
 
@@ -72,6 +73,7 @@ describe("WalletHeader", () => {
 		await waitFor(() => expect(getByText(wallet.address())).toBeTruthy());
 
 		expect(asFragment()).toMatchSnapshot();
+
 		mockTestNetwork.mockRestore();
 	});
 
@@ -103,6 +105,7 @@ describe("WalletHeader", () => {
 		await waitFor(() => expect(getByText(wallet.address())).toBeTruthy());
 
 		expect(getByTestId("WalletHeader__send-button")).toBeEnabled();
+
 		fireEvent.click(getByTestId("WalletHeader__send-button"));
 
 		expect(onSend).toHaveBeenCalled();
@@ -267,6 +270,7 @@ describe("WalletHeader", () => {
 		fireEvent.click(getByTestId("WalletHeader__refresh"));
 
 		expect(getByTestId("WalletHeader__refresh")).toHaveAttribute("aria-busy", "true");
+
 		await waitFor(() => expect(getByTestId("WalletHeader__refresh")).toHaveAttribute("aria-busy", "false"));
 	});
 

@@ -12,6 +12,7 @@ describe("TransactionRowInfo", () => {
 				vendorField="test"
 			/>,
 		);
+
 		expect(getByTestId("TransactionRowInfo__vendorField")).toBeTruthy();
 	});
 
@@ -19,6 +20,7 @@ describe("TransactionRowInfo", () => {
 		const { getByTestId } = render(
 			<TransactionRowInfo transaction={{ ...TransactionFixture, isMultiSignatureRegistration: () => true }} />,
 		);
+
 		expect(getByTestId("TransactionRowInfo__multiSignature")).toBeTruthy();
 	});
 
@@ -35,6 +37,7 @@ describe("TransactionRowInfo", () => {
 				}}
 			/>,
 		);
+
 		expect(getByTestId("TransactionRowInfo__ledger")).toBeTruthy();
 	});
 
@@ -45,6 +48,7 @@ describe("TransactionRowInfo", () => {
 				transaction={{ ...TransactionFixture, isMultiSignatureRegistration: () => true }}
 			/>,
 		);
+
 		expect(getByTestId("TransactionRowInfo__vendorField")).toBeTruthy();
 		expect(getByTestId("TransactionRowInfo__multiSignature")).toBeTruthy();
 	});

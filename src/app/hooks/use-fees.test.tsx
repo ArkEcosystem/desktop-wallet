@@ -21,6 +21,7 @@ describe("useFees", () => {
 		} = renderHook(() => useFees(profile), { wrapper });
 
 		await env.fees().sync(profile, "ARK", "ark.devnet");
+
 		await expect(current.findByType("ARK", "ark.devnet", "ipfs")).resolves.toEqual({
 			avg: 5,
 			max: 5,
@@ -46,6 +47,7 @@ describe("useFees", () => {
 		} = renderHook(() => useFees(profile), { wrapper });
 
 		await env.fees().sync(profile, "ARK", "ark.devnet");
+
 		await expect(current.findByType("ARK", "ark.devnet", "ipfs")).resolves.toEqual({
 			avg: 5,
 			max: 5,
@@ -75,6 +77,7 @@ describe("useFees", () => {
 		} = renderHook(() => useFees(profile), { wrapper });
 
 		await env.fees().sync(profile, "ARK", "ark.devnet");
+
 		await expect(current.findByType("ARK", "ark.devnet", "ipfs")).resolves.toEqual({
 			avg: 5,
 			max: 5,

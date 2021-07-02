@@ -71,6 +71,7 @@ describe("CreateProfile", () => {
 		const { container, getByText, asFragment } = await renderComponent();
 
 		expect(container).toBeTruthy();
+
 		fireEvent.click(getByText("Back"));
 
 		expect(asFragment()).toMatchSnapshot();
@@ -121,6 +122,7 @@ describe("CreateProfile", () => {
 		});
 
 		profiles = env.profiles().values();
+
 		expect(profiles.length).toEqual(2);
 		expect(profiles[1].name()).toEqual("test profile 2");
 		expect(profiles[1].settings().all()).toEqual({

@@ -11,6 +11,7 @@ describe("CollapseToggleButton", () => {
 		const { getByTestId } = render(<CollapseToggleButton isOpen={false} onClick={onClick} />);
 
 		const button = getByTestId("CollapseToggleButton");
+
 		expect(button).toHaveTextContent(translations.SHOW);
 
 		fireEvent.click(button);

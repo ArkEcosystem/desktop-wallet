@@ -12,6 +12,7 @@ describe("ClickOutside Hook", () => {
 		act(() => {
 			fireEvent.mouseDown(element);
 		});
+
 		expect(callback).not.toBeCalled();
 	});
 
@@ -25,6 +26,7 @@ describe("ClickOutside Hook", () => {
 		act(() => {
 			fireEvent.mouseDown(document);
 		});
+
 		expect(callback).toBeCalled();
 	});
 
@@ -43,6 +45,7 @@ describe("ClickOutside Hook", () => {
 		const div = document.createElement("div");
 		const reference = { current: div };
 		const handler = clickOutsideHandler(reference, () => "test")();
+
 		expect(handler).toBeUndefined();
 	});
 });

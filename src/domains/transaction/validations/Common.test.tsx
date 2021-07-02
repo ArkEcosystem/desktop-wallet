@@ -19,6 +19,7 @@ describe("Common", () => {
 
 	it("should validate low balance", () => {
 		const commonValidation = common(t).fee(1, network);
+
 		expect(commonValidation.validate.valid("1234")).toBe(
 			t("TRANSACTION.VALIDATION.LOW_BALANCE_AMOUNT", {
 				balance: "1",
@@ -47,6 +48,7 @@ describe("Common", () => {
 
 	it("should fail to validate negative fee", () => {
 		const commonValidation = common(t).fee(1, network);
+
 		expect(commonValidation.validate.valid("-1")).toBe(t("TRANSACTION.VALIDATION.FEE_NEGATIVE"));
 	});
 });

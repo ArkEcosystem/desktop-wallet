@@ -68,27 +68,35 @@ describe("Notifications", () => {
 		});
 
 		await waitFor(() => expect(onTransactionClick).toHaveBeenCalled());
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should mark notification as read", () => {
 		const notification = profile.notifications().first();
+
 		expect(notification.read_at).toBeUndefined();
+
 		const isVisible = true;
 		markAsRead(isVisible, notification.id, profile, env);
+
 		expect(profile.notifications().get(notification.id).read_at).toBeTruthy();
 	});
 
 	it("should not mark notification if is already read", () => {
 		const notification = profile.notifications().last();
+
 		expect(notification.read_at).toBeUndefined();
+
 		const isVisible = true;
 
 		markAsRead(isVisible, notification.id, profile, env);
 		const firstReadAt = profile.notifications().get(notification.id).read_at;
+
 		expect(firstReadAt).toBeTruthy();
 
 		markAsRead(isVisible, notification.id, profile, env);
+
 		expect(profile.notifications().get(notification.id).read_at).toEqual(firstReadAt);
 	});
 
@@ -96,6 +104,7 @@ describe("Notifications", () => {
 		profile.notifications().flush();
 		const { container, queryAllByTestId } = render(<Notifications profile={profile} />);
 		await waitFor(() => expect(queryAllByTestId("TransactionRowMode")).toHaveLength(0));
+
 		expect(container).toMatchSnapshot();
 	});
 });

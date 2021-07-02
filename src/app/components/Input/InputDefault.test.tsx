@@ -13,6 +13,7 @@ describe("InputDefault", () => {
 	it("should render with a custom element", () => {
 		const { getByTestId } = render(<InputDefault as="select" />);
 		const input = getByTestId("Input");
+
 		expect(input.tagName).toEqual("SELECT");
 	});
 });

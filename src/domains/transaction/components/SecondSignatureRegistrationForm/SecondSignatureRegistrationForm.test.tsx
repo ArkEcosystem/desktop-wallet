@@ -39,6 +39,7 @@ describe("SecondSignatureRegistrationForm", () => {
 		jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 			amount: () => secondSignatureFixture.data.amount / 1e8,
 			data: () => ({ data: () => secondSignatureFixture.data }),
+			explorerLink: () => `https://dexplorer.ark.io/transaction/${secondSignatureFixture.data.id}`,
 			fee: () => secondSignatureFixture.data.fee / 1e8,
 			id: () => secondSignatureFixture.data.id,
 			recipient: () => secondSignatureFixture.data.recipient,
@@ -71,6 +72,7 @@ describe("SecondSignatureRegistrationForm", () => {
 
 		act(() => {
 			const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} activeTab={1} />);
+
 			expect(asFragment()).toMatchSnapshot();
 		});
 
@@ -179,6 +181,7 @@ describe("SecondSignatureRegistrationForm", () => {
 			});
 
 			expect(toastSpy).toHaveBeenCalled();
+
 			toastSpy.mockRestore();
 		});
 
@@ -205,6 +208,7 @@ describe("SecondSignatureRegistrationForm", () => {
 			});
 
 			expect(toastSpy).not.toHaveBeenCalled();
+
 			toastSpy.mockRestore();
 		});
 
@@ -231,6 +235,7 @@ describe("SecondSignatureRegistrationForm", () => {
 			});
 
 			expect(toastSpy).toHaveBeenCalled();
+
 			toastSpy.mockRestore();
 		});
 	});
@@ -249,6 +254,7 @@ describe("SecondSignatureRegistrationForm", () => {
 		await waitFor(() =>
 			expect(screen.getByTestId("SecondSignatureRegistrationForm__verification-step")).toBeTruthy(),
 		);
+
 		expect(result.current.getValues("verification")).toBeUndefined();
 
 		const walletMnemonic = passphrase.split(" ");

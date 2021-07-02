@@ -52,6 +52,7 @@ describe("Unconfirmed transaction table", () => {
 
 	it("should render", () => {
 		const { asFragment } = render(<UnconfirmedTransactionTable transactions={transactions} />);
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

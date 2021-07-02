@@ -91,6 +91,7 @@ describe("SendTransactionForm", () => {
 		act(() => {
 			fireEvent.click(rendered.getByTestId("SelectAddress__wrapper"));
 		});
+
 		expect(rendered.getByTestId("modal__inner")).toBeTruthy();
 
 		act(() => {
@@ -142,6 +143,7 @@ describe("SendTransactionForm", () => {
 
 			const firstAddress = getByTestId("SearchWalletListItem__select-1");
 			fireEvent.click(firstAddress);
+
 			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 			expect(rendered.container).toMatchSnapshot();
@@ -192,6 +194,7 @@ describe("SendTransactionForm", () => {
 
 			const firstAddress = getByTestId("SearchWalletListItem__select-1");
 			fireEvent.click(firstAddress);
+
 			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 			expect(rendered.container).toMatchSnapshot();

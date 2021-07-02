@@ -8,6 +8,7 @@ import { Link } from "./Link";
 describe("Link", () => {
 	it("should render", () => {
 		const { asFragment, getByTestId } = renderWithRouter(<Link to="/test">Test</Link>);
+
 		expect(getByTestId("Link")).toHaveTextContent("Test");
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -18,12 +19,14 @@ describe("Link", () => {
 				ARK.io
 			</Link>,
 		);
+
 		expect(getByTestId("Link")).toHaveAttribute("rel", "noopener noreferrer");
 		expect(getByTestId("Link__external")).toBeTruthy();
 	});
 
 	it("should render external without children", () => {
 		const { asFragment, getByTestId } = renderWithRouter(<Link to="https://ark.io" isExternal />);
+
 		expect(getByTestId("Link__external")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
