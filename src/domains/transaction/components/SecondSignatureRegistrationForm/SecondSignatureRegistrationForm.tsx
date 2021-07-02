@@ -40,11 +40,9 @@ const component = ({
 
 const transactionDetails = ({
 	transaction,
-	translations,
 	wallet,
 }: {
 	transaction: DTO.ExtendedSignedTransactionData;
-	translations: any;
 	wallet: Contracts.IReadWriteWallet;
 }) => (
 	<TransactionFee currency={wallet.currency()} value={transaction.fee()} paddingPosition="top" />

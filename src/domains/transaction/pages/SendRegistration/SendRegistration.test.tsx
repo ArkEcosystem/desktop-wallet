@@ -295,7 +295,7 @@ describe("Registration", () => {
 	});
 
 	it("should set fee", async () => {
-		const { getByTestId, getAllByTestId } = await renderPage(wallet);
+		const { getByTestId } = await renderPage(wallet);
 
 		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
 
