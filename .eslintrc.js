@@ -100,6 +100,8 @@ module.exports = {
 		"jest/valid-expect-in-promise": "off",
 		"max-lines": ["warn", { max: 300, skipBlankLines: true, skipComments: true }],
 		"max-lines-per-function": ["warn", { max: 40, skipBlankLines: true, skipComments: true }],
+		"no-nested-ternary": "warn", // @TODO: set to error and resolve issues
+		"no-unneeded-ternary": "warn", // @TODO: set to error and resolve issues
 		"no-unused-expressions": "off",
 		"no-unused-vars": "off",
 		"prefer-const": [
@@ -170,6 +172,7 @@ module.exports = {
 		"unicorn/no-object-as-default-parameter": "warn", // @TODO: set to error and fix resulting issues
 		"unicorn/no-useless-undefined": "off",
 		"unicorn/prefer-array-some": "warn", // @TODO: set to error and fix resulting issues
+		"unicorn/prefer-at": "error", // @TODO: set to error and fix resulting issues
 		"unicorn/prefer-module": "warn", // @TODO: set to error and fix resulting issues
 		"unicorn/prefer-node-protocol": "off",
 		"unicorn/prefer-number-properties": "warn", // @TODO: set to error and fix resulting issues
@@ -177,7 +180,7 @@ module.exports = {
 		"unicorn/prefer-spread": "warn", // @TODO: set to error and fix resulting issues
 		"unicorn/prefer-string-slice": "warn", // @TODO: set to error and fix resulting issues
 		"unicorn/prefer-ternary": "off",
-		"unicorn/prevent-abbreviations": "error", // @TODO: set to error and fix resulting issues
+		"unicorn/prefer-top-level-await": "error", // @TODO: set to error and fix resulting issues
 		"unicorn/prevent-abbreviations": "warn", // @TODO: set to error and fix resulting issues
 		"unused-imports/no-unused-imports-ts": "error",
 	},

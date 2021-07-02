@@ -5,13 +5,13 @@ import { AddressTable } from "domains/vote/components/AddressTable";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-interface VotingWalletsProps {
+interface VotingWalletsProperties {
 	showEmptyResults: boolean;
 	walletsByCoin: Record<string, Contracts.IReadWriteWallet[]>;
 	onSelectAddress: (address: string) => void;
 }
 
-export const VotingWallets = ({ showEmptyResults, walletsByCoin, onSelectAddress }: VotingWalletsProps) => {
+export const VotingWallets = ({ showEmptyResults, walletsByCoin, onSelectAddress }: VotingWalletsProperties) => {
 	const { t } = useTranslation();
 
 	if (showEmptyResults) {

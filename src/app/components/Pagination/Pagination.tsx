@@ -119,7 +119,7 @@ const Pagination = ({
 					</PaginationButtonStyled>
 				))}
 
-				{paginationButtons[paginationButtons.length - 1] !== totalPages && (
+				{paginationButtons.at(- 1) !== totalPages && (
 					<PaginationSearch
 						onClick={() => setButtonsDisabled(true)}
 						onSelectPage={handleSelectPage}

@@ -9,7 +9,7 @@ import { FilterOption, VotesFilter } from "domains/vote/components/VotesFilter";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-interface VotesHeaderProps {
+interface VotesHeaderProperties {
 	profile: Contracts.IProfile;
 	setSearchQuery: (query: string) => void;
 	selectedAddress?: string;
@@ -29,7 +29,7 @@ export const VotesHeader = ({
 	totalCurrentVotes,
 	selectedFilter,
 	setSelectedFilter,
-}: VotesHeaderProps) => {
+}: VotesHeaderProperties) => {
 	const { t } = useTranslation();
 
 	return (
