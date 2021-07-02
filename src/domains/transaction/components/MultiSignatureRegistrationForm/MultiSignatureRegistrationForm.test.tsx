@@ -206,6 +206,7 @@ describe("MultiSignature Registration Form", () => {
 
 		await waitFor(() => expect(screen.getByTestId("TransactionFee")).toBeTruthy());
 		await waitFor(() => expect(screen.getByTestId("TransactionDetail")).toBeTruthy());
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 

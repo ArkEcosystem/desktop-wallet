@@ -79,6 +79,7 @@ describe("SendIpfs", () => {
 			);
 
 			await waitFor(() => expect(screen.getByTestId("SendIpfs__form-step")).toBeTruthy());
+
 			expect(asFragment()).toMatchSnapshot();
 		});
 	});
@@ -280,6 +281,7 @@ describe("SendIpfs", () => {
 		const historySpy = jest.spyOn(history, "push");
 
 		fireEvent.click(getByTestId("StepNavigation__back-to-wallet-button"));
+
 		expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
 
 		historySpy.mockRestore();
@@ -328,6 +330,7 @@ describe("SendIpfs", () => {
 		await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
 
 		fireEvent.click(getByTestId("StepNavigation__continue-button"));
+
 		expect(getByTestId("FeeWarning__cancel-button")).toBeTruthy();
 
 		fireEvent.click(getByTestId("FeeWarning__cancel-button"));
@@ -464,6 +467,7 @@ describe("SendIpfs", () => {
 		const historySpy = jest.spyOn(history, "push").mockImplementation();
 
 		fireEvent.click(getByTestId("StepNavigation__back-button"));
+
 		expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
 
 		historySpy.mockRestore();
@@ -529,12 +533,14 @@ describe("SendIpfs", () => {
 		fireEvent.click(getByTestId("StepNavigation__send-button"));
 
 		await waitFor(() => expect(getByTestId("ErrorStep")).toBeInTheDocument());
+
 		expect(getByTestId("ErrorStep__wallet-button")).toBeInTheDocument();
 		expect(container).toMatchSnapshot();
 
 		const historyMock = jest.spyOn(history, "push").mockReturnValue();
 
 		fireEvent.click(getByTestId("ErrorStep__wallet-button"));
+
 		expect(historyMock).toHaveBeenCalledWith(`/profiles/${getDefaultProfileId()}/wallets/${getDefaultWalletId()}`);
 
 		signMock.mockRestore();

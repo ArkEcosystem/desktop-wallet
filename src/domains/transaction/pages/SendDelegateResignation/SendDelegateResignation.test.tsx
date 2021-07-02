@@ -98,6 +98,7 @@ describe("SendDelegateResignation", () => {
 
 			// Fee (simple)
 			expect(screen.getAllByRole("radio")[1]).toBeChecked();
+
 			fireEvent.click(within(screen.getByTestId("InputFee")).getAllByRole("radio")[2]);
 			await waitFor(() => expect(screen.getAllByRole("radio")[2]).toBeChecked());
 
@@ -128,6 +129,7 @@ describe("SendDelegateResignation", () => {
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
 
 			fireEvent.click(getByTestId("StepNavigation__back-button"));
+
 			expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
 
 			historySpy.mockRestore();

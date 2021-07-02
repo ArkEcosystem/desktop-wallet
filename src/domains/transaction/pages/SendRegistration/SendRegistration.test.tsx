@@ -210,7 +210,9 @@ describe("Registration", () => {
 		// Go back to wallet
 		const historySpy = jest.spyOn(history, "push");
 		fireEvent.click(getByTestId("StepNavigation__back-to-wallet-button"));
+
 		expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
+
 		historySpy.mockRestore();
 		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
@@ -304,6 +306,7 @@ describe("Registration", () => {
 		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("25"));
 
 		fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.SIMPLE));
+
 		expect(() => getByTestId("InputCurrency")).toThrow();
 	});
 
@@ -328,6 +331,7 @@ describe("Registration", () => {
 
 		// Review Step
 		expect(getByTestId("DelegateRegistrationForm__review-step")).toBeTruthy();
+
 		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 
 		// Fee warning
@@ -359,6 +363,7 @@ describe("Registration", () => {
 
 		// Review Step
 		expect(getByTestId("DelegateRegistrationForm__review-step")).toBeTruthy();
+
 		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 
 		// Fee warning

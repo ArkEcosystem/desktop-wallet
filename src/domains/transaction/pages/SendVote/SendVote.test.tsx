@@ -266,6 +266,7 @@ describe("SendVote", () => {
 
 		// Review Step
 		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+
 		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 
 		// AuthenticationStep
@@ -386,6 +387,7 @@ describe("SendVote", () => {
 
 		// Review Step
 		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+
 		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 
 		// AuthenticationStep
@@ -469,15 +471,19 @@ describe("SendVote", () => {
 
 		// Back to review step
 		fireEvent.click(getByTestId("StepNavigation__continue-button"));
+
 		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+
 		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 
 		// Authentication Step
 		expect(getByTestId("AuthenticationStep")).toBeTruthy();
+
 		fireEvent.click(getByTestId("StepNavigation__back-button"));
 
 		// Back to Review Step
 		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+
 		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 
 		// Back to AuthenticationStep
@@ -522,6 +528,7 @@ describe("SendVote", () => {
 
 		// Review Step
 		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+
 		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 
 		// AuthenticationStep
@@ -600,6 +607,7 @@ describe("SendVote", () => {
 
 		// Review Step
 		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+
 		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 
 		// Fee warning
@@ -652,6 +660,7 @@ describe("SendVote", () => {
 
 		// Review Step
 		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+
 		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 
 		// Fee warning
@@ -700,6 +709,7 @@ describe("SendVote", () => {
 
 		// Review Step
 		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+
 		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 
 		// AuthenticationStep
@@ -754,6 +764,7 @@ describe("SendVote", () => {
 
 		// Review Step
 		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+
 		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 
 		// AuthenticationStep
@@ -991,6 +1002,7 @@ describe("SendVote", () => {
 
 		// Review Step
 		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+
 		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 
 		// AuthenticationStep
