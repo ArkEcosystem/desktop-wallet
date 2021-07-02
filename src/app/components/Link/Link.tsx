@@ -26,6 +26,13 @@ const AnchorStyled = styled.a(() => [
 	`,
 ]);
 
+const Content = styled.span(() => [
+	tw`break-all border-b border-transparent group-hover:border-current`,
+	tw`transition-property[color, border-color]`,
+	tw`transition-duration[200ms, 350ms]`,
+	tw`transition-delay[0s, 100ms]`,
+]);
+
 type AnchorProperties = {
 	isExternal?: boolean;
 	navigate?: () => void;
@@ -47,9 +54,9 @@ const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProperties>(
 			href={href || "#"}
 			{...properties}
 		>
-			<span className="break-all border-b border-transparent duration-200 group-hover:border-current">
+			<Content>
 				{children}
-			</span>
+			</Content>
 			{isExternal && showExternalIcon && (
 				<span className="align-middle">
 					<Icon
