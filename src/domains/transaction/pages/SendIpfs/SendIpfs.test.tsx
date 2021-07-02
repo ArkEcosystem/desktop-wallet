@@ -34,6 +34,7 @@ const createTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 		amount: () => +ipfsFixture.data.amount / 1e8,
 		data: () => ({ data: () => ipfsFixture.data }),
+		explorerLink: () => `https://dexplorer.ark.io/transaction/${ipfsFixture.data.id}`,
 		fee: () => +ipfsFixture.data.fee / 1e8,
 		hash: () => ipfsFixture.data.asset.ipfs,
 		id: () => ipfsFixture.data.id,

@@ -39,6 +39,7 @@ describe("SecondSignatureRegistrationForm", () => {
 		jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 			amount: () => secondSignatureFixture.data.amount / 1e8,
 			data: () => ({ data: () => secondSignatureFixture.data }),
+			explorerLink: () => `https://dexplorer.ark.io/transaction/${secondSignatureFixture.data.id}`,
 			fee: () => secondSignatureFixture.data.fee / 1e8,
 			id: () => secondSignatureFixture.data.id,
 			recipient: () => secondSignatureFixture.data.recipient,

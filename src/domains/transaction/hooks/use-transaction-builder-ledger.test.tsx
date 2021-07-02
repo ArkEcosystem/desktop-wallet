@@ -22,6 +22,7 @@ const createTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 		amount: () => BigNumber.make(transactionFixture.data.amount),
 		data: () => ({ data: () => transactionFixture.data }),
+		explorerLink: () => `https://dexplorer.ark.io/transaction/${transactionFixture.data.id}`,
 		fee: () => BigNumber.make(transactionFixture.data.fee),
 		id: () => transactionFixture.data.id,
 		recipient: () => transactionFixture.data.recipient,
