@@ -7,9 +7,9 @@ import { TransactionConfirmations } from "./TransactionConfirmations";
 
 describe("TransactionConfirmations", () => {
 	it("should render when confirmed", () => {
-		// @ts-ignore
 		const { container } = render(
 			<TransactionConfirmations
+				// @ts-ignore
 				transaction={{
 					confirmations: () => BigNumber.ONE,
 					isConfirmed: () => true,
@@ -25,9 +25,9 @@ describe("TransactionConfirmations", () => {
 	});
 
 	it("should render when not confirmed", () => {
-		// @ts-ignore
 		const { container } = render(
 			<TransactionConfirmations
+				// @ts-ignore
 				transaction={{
 					confirmations: () => BigNumber.ONE,
 					isConfirmed: () => false,
