@@ -74,14 +74,6 @@ export const VoteDetail = ({ transaction, isOpen, onClose }: VoteDetailPropertie
 			/>
 
 			<TransactionExplorerLink id={transaction.id()} link={transaction.explorerLink()} />
-
-			{transaction.blockId() && (
-				<TransactionExplorerLink
-					id={transaction.blockId()}
-					link={transaction.explorerLinkForBlock()}
-					variant="block"
-				/>
-			)}
 		</Modal>
 	);
 };

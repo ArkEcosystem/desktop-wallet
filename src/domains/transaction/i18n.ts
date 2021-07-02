@@ -13,7 +13,6 @@ export const translations: { [key: string]: any } = {
 		DESCRIPTION_WIF: "Enter your WIF to authenticate the transaction.",
 		TITLE: "Authenticate",
 	},
-	BLOCK_ID: "Block ID",
 	BROADCASTING: "Broadcasting transaction to the network",
 	CONFIRMATIONS: "Confirmations",
 	CONFIRMATIONS_COUNT: "{{count}} Confirmations",

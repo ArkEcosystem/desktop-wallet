@@ -10,21 +10,15 @@ import { TransactionDetail, TransactionDetailProperties } from "../TransactionDe
 type TransactionExplorerLinkProperties = {
 	id: string;
 	link: string;
-	variant: "block" | "transaction";
 } & TransactionDetailProperties;
 
-export const TransactionExplorerLink = ({ id, link, variant, ...properties }: TransactionExplorerLinkProperties) => {
+export const TransactionExplorerLink = ({ id, link, ...properties }: TransactionExplorerLinkProperties) => {
 	const { t } = useTranslation();
 
 	const reference = useRef(null);
 
-	const isTransactionLink = () => variant === "transaction";
-
 	return (
-		<TransactionDetail
-			label={isTransactionLink() ? t("TRANSACTION.ID") : t("TRANSACTION.BLOCK_ID")}
-			{...properties}
-		>
+		<TransactionDetail label={t("TRANSACTION.ID")} {...properties}>
 			<div className="flex overflow-hidden items-center space-x-3">
 				<span ref={reference} className="overflow-hidden">
 					<Link to={link} isExternal>
