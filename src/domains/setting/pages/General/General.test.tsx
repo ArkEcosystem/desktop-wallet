@@ -73,8 +73,8 @@ describe("General Settings", () => {
 		fireEvent.click(screen.getByTestId("General-settings__cancel-button"));
 	});
 
-	it("should render", () => {
-		const { container, asFragment } = renderWithRouter(
+	it("should render", async () => {
+		const { container, asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
 				<GeneralSettings />
 			</Route>,
@@ -83,6 +83,7 @@ describe("General Settings", () => {
 			},
 		);
 
+		await waitFor(() => expect(getByTestId("General-settings__input--name")).toHaveValue(profile.name()));
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -90,7 +91,7 @@ describe("General Settings", () => {
 	it("should disable submit button when profile is not restored yet", async () => {
 		const isProfileRestoredMock = jest.spyOn(profile.status(), "isRestored").mockReturnValue(false);
 
-		const { asFragment } = renderWithRouter(
+		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
 				<GeneralSettings />
 			</Route>,
@@ -99,6 +100,7 @@ describe("General Settings", () => {
 			},
 		);
 
+		await waitFor(() => expect(getByTestId("General-settings__input--name")).toHaveValue(profile.name()));
 		expect(screen.getByTestId("General-settings__submit-button")).toBeDisabled();
 		expect(asFragment()).toMatchSnapshot();
 
@@ -114,6 +116,8 @@ describe("General Settings", () => {
 				routes: [`/profiles/${profile.id()}/settings`],
 			},
 		);
+
+		await waitFor(() => expect(getByTestId("General-settings__input--name")).toHaveValue(profile.name()));
 
 		expect(getByTestId("SelectProfileImage__avatar")).toBeTruthy();
 
@@ -160,6 +164,8 @@ describe("General Settings", () => {
 			},
 		);
 
+		await waitFor(() => expect(getByTestId("General-settings__input--name")).toHaveValue(profile.name()));
+
 		// Upload avatar image
 		showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
 			filePaths: ["banner.png"],
@@ -205,6 +211,8 @@ describe("General Settings", () => {
 				routes: [`/profiles/${profile.id()}/settings`],
 			},
 		);
+
+		await waitFor(() => expect(getByTestId("General-settings__input--name")).toHaveValue(profile.name()));
 
 		// Upload avatar image
 		showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
@@ -290,6 +298,7 @@ describe("General Settings", () => {
 			},
 		);
 
+		await waitFor(() => expect(getByTestId("General-settings__input--name")).toHaveValue(profile.name()));
 		fireEvent.input(getByTestId("General-settings__input--name"), {
 			target: { value: "     " },
 		});
@@ -310,6 +319,8 @@ describe("General Settings", () => {
 				routes: [`/profiles/${profile.id()}/settings`],
 			},
 		);
+
+		await waitFor(() => expect(getByTestId("General-settings__input--name")).toHaveValue(profile.name()));
 
 		const otherProfile = env
 			.profiles()
@@ -341,6 +352,7 @@ describe("General Settings", () => {
 			},
 		);
 
+		await waitFor(() => expect(getByTestId("General-settings__input--name")).toHaveValue(profile.name()));
 		const otherProfile = env
 			.profiles()
 			.values()
@@ -371,6 +383,7 @@ describe("General Settings", () => {
 			},
 		);
 
+		await waitFor(() => expect(getByTestId("General-settings__input--name")).toHaveValue(profile.name()));
 		act(() => {
 			fireEvent.input(getByTestId("General-settings__input--name"), {
 				target: { value: "test profile".repeat(10) },
@@ -396,6 +409,7 @@ describe("General Settings", () => {
 			},
 		);
 
+		await waitFor(() => expect(getByTestId("General-settings__input--name")).toHaveValue(profile.name()));
 		const otherProfile = env
 			.profiles()
 			.values()
@@ -430,6 +444,7 @@ describe("General Settings", () => {
 			},
 		);
 
+		await waitFor(() => expect(getByTestId("General-settings__input--name")).toHaveValue(profile.name()));
 		expect(container).toBeTruthy();
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -465,6 +480,7 @@ describe("General Settings", () => {
 			},
 		);
 
+		await waitFor(() => expect(getByTestId("General-settings__input--name")).toHaveValue(profile.name()));
 		expect(container).toBeTruthy();
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -494,6 +510,7 @@ describe("General Settings", () => {
 			},
 		);
 
+		await waitFor(() => expect(getByTestId("General-settings__input--name")).toHaveValue(profile.name()));
 		expect(container).toBeTruthy();
 
 		fireEvent.click(getByTestId("General-settings__toggle--isDarkMode"));
