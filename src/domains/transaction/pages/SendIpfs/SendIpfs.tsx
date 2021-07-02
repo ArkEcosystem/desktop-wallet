@@ -200,8 +200,8 @@ export const SendIpfs = () => {
 										history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
 									}
 									onContinueClick={async () => await handleNext()}
-									isSubmitting={isSubmitting}
-									isValid={isValid}
+									isLoading={isSubmitting}
+									isNextDisabled={!isValid}
 									size={4}
 									activeIndex={activeTab}
 								/>

@@ -7,8 +7,8 @@ interface StepNavigationProperties {
 	onBackClick: any;
 	onBackToWalletClick: any;
 	onContinueClick: any;
-	isSubmitting: boolean;
-	isValid: boolean;
+	isNextDisabled: boolean;
+	isLoading: boolean;
 	activeIndex: number;
 	size: number;
 }
@@ -21,8 +21,8 @@ export const StepNavigation: React.FC<StepNavigationProperties> = ({
 	onBackClick,
 	onBackToWalletClick,
 	onContinueClick,
-	isSubmitting,
-	isValid,
+	isNextDisabled,
+	isLoading,
 	activeIndex,
 	size,
 }: StepNavigationProperties) => {
@@ -37,7 +37,7 @@ export const StepNavigation: React.FC<StepNavigationProperties> = ({
 		<StepNavigationWrapper>
 			{showBack && (
 				<Button
-					disabled={isSubmitting}
+					disabled={isLoading}
 					data-testid="StepNavigation__back-button"
 					variant="secondary"
 					onClick={onBackClick}
@@ -59,8 +59,8 @@ export const StepNavigation: React.FC<StepNavigationProperties> = ({
 			{showContinue && (
 				<Button
 					data-testid="StepNavigation__continue-button"
-					disabled={!isValid || isSubmitting}
-					isLoading={isSubmitting}
+					disabled={isNextDisabled || isLoading}
+					isLoading={isLoading}
 					onClick={onContinueClick}
 				>
 					{t("COMMON.CONTINUE")}
@@ -71,8 +71,8 @@ export const StepNavigation: React.FC<StepNavigationProperties> = ({
 				<Button
 					type="submit"
 					data-testid="StepNavigation__send-button"
-					disabled={!isValid || isSubmitting}
-					isLoading={isSubmitting}
+					disabled={isNextDisabled || isLoading}
+					isLoading={isLoading}
 					icon="Send"
 					iconWidth={16}
 					iconHeight={16}

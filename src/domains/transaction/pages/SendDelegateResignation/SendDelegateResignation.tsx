@@ -153,8 +153,8 @@ export const SendDelegateResignation = () => {
 										history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
 									}
 									onContinueClick={() => handleNext()}
-									isSubmitting={isSubmitting}
-									isValid={isValid}
+									isLoading={isSubmitting}
+									isNextDisabled={!isValid}
 									size={4}
 									activeIndex={activeTab}
 								/>
