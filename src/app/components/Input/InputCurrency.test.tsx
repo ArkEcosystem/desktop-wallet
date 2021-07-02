@@ -6,6 +6,7 @@ import { InputCurrency } from "./InputCurrency";
 describe("InputCurrency", () => {
 	it("should render", () => {
 		const { getByTestId, asFragment } = render(<InputCurrency />);
+
 		expect(getByTestId("InputCurrency")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});

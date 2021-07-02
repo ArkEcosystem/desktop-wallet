@@ -116,6 +116,7 @@ describe("TransactionDetailModal", () => {
 				translations.MODAL_MULTISIGNATURE_DETAIL.STEP_1.TITLE,
 			),
 		);
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 

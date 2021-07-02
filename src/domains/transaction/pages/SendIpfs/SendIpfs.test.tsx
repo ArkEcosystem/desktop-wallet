@@ -177,6 +177,7 @@ describe("SendIpfs", () => {
 				target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
 			});
 		});
+
 		expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
 
 		// Fee
@@ -242,6 +243,7 @@ describe("SendIpfs", () => {
 				target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
 			});
 		});
+
 		expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
 
 		// Fee
@@ -282,6 +284,7 @@ describe("SendIpfs", () => {
 		});
 
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
+
 		expect(getByTestId("TransactionSuccessful")).toHaveTextContent(
 			"1e9b975eff66a731095876c3b6cbff14fd4dec3bb37a4127c46db3d69131067e",
 		);
@@ -297,7 +300,9 @@ describe("SendIpfs", () => {
 		act(() => {
 			fireEvent.click(getByTestId("SendIpfs__button--back-to-wallet"));
 		});
+
 		expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
+
 		historySpy.mockRestore();
 
 		await waitFor(() => expect(container).toMatchSnapshot());
@@ -324,6 +329,7 @@ describe("SendIpfs", () => {
 		expect(getByTestId("SendIpfs__form-step")).toBeTruthy();
 
 		const networkLabel = `${wallet.network().coin()} ${wallet.network().name()}`;
+
 		expect(getByTestId("SelectNetworkInput__input")).toHaveValue(networkLabel);
 		expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address());
 
@@ -331,6 +337,7 @@ describe("SendIpfs", () => {
 		fireEvent.input(getByTestId("Input__hash"), {
 			target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
 		});
+
 		expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
 
 		// Fee
@@ -346,10 +353,12 @@ describe("SendIpfs", () => {
 
 		// Review Step
 		expect(getByTestId("SendIpfs__review-step")).toBeTruthy();
+
 		fireEvent.click(getByTestId("SendIpfs__button--continue"));
 
 		// Fee warning
 		expect(getByTestId("FeeWarning__cancel-button")).toBeTruthy();
+
 		fireEvent.click(getByTestId("FeeWarning__cancel-button"));
 
 		await waitFor(() => expect(getByTestId("SendIpfs__form-step")).toBeTruthy());
@@ -376,6 +385,7 @@ describe("SendIpfs", () => {
 		expect(getByTestId("SendIpfs__form-step")).toBeTruthy();
 
 		const networkLabel = `${wallet.network().coin()} ${wallet.network().name()}`;
+
 		expect(getByTestId("SelectNetworkInput__input")).toHaveValue(networkLabel);
 		expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address());
 
@@ -383,6 +393,7 @@ describe("SendIpfs", () => {
 		fireEvent.input(getByTestId("Input__hash"), {
 			target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
 		});
+
 		expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
 
 		// Fee
@@ -396,10 +407,12 @@ describe("SendIpfs", () => {
 
 		// Review Step
 		expect(getByTestId("SendIpfs__review-step")).toBeTruthy();
+
 		fireEvent.click(getByTestId("SendIpfs__button--continue"));
 
 		// Fee warning
 		expect(getByTestId("FeeWarning__continue-button")).toBeTruthy();
+
 		fireEvent.click(getByTestId("FeeWarning__continue-button"));
 
 		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
@@ -431,6 +444,7 @@ describe("SendIpfs", () => {
 				target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
 			});
 		});
+
 		expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
 
 		// Fee
@@ -543,6 +557,7 @@ describe("SendIpfs", () => {
 				target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
 			});
 		});
+
 		expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
 
 		// Fee
@@ -669,6 +684,7 @@ describe("SendIpfs", () => {
 				target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
 			});
 		});
+
 		expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
 
 		// Fee
@@ -696,6 +712,7 @@ describe("SendIpfs", () => {
 		});
 
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
+
 		expect(getByTestId("TransactionSuccessful")).toHaveTextContent(
 			"1e9b975eff66a731095876c3b6cbff14fd4dec3bb37a4127c46db3d69131067e",
 		);
@@ -767,6 +784,7 @@ describe("SendIpfs", () => {
 				target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
 			});
 		});
+
 		expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
 
 		// Fee
@@ -780,6 +798,7 @@ describe("SendIpfs", () => {
 
 		// Step 3
 		expect(getByTestId("SendIpfs__button--continue")).not.toBeDisabled();
+
 		act(() => {
 			fireEvent.click(getByTestId("SendIpfs__button--continue"));
 		});
@@ -833,6 +852,7 @@ describe("SendIpfs", () => {
 				target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
 			});
 		});
+
 		expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
 
 		// Fee

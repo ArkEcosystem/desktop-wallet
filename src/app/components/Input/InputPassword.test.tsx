@@ -8,6 +8,7 @@ describe("InputPassword", () => {
 	it("should render as a password field", () => {
 		const { asFragment, getByTestId } = render(<InputPassword />);
 		const input = getByTestId("InputPassword");
+
 		expect(input).toHaveAttribute("type", "password");
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -17,8 +18,11 @@ describe("InputPassword", () => {
 		const input = getByTestId("InputPassword");
 		const toggle = getByTestId("InputPassword__toggle");
 		fireEvent.click(toggle);
+
 		expect(input).toHaveAttribute("type", "text");
+
 		fireEvent.click(toggle);
+
 		expect(input).toHaveAttribute("type", "password");
 	});
 
@@ -35,6 +39,7 @@ describe("InputPassword", () => {
 		);
 		const { asFragment, getByTestId } = render(tree);
 		const input = getByTestId("InputPassword");
+
 		expect(input).toHaveAttribute("type", "password");
 		expect(asFragment()).toMatchSnapshot();
 	});

@@ -66,6 +66,7 @@ describe("SignIn", () => {
 			expect(onCancel).toBeCalled();
 		});
 	});
+
 	it("should call onSuccess callback", async () => {
 		const onSuccess = jest.fn();
 

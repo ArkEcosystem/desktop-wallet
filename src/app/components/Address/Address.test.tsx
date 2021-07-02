@@ -8,21 +8,25 @@ const sampleAddress = "ASuusXSW9kfWnicScSgUTjttP6T9GQ3kqT";
 describe("Formatted Address", () => {
 	it("should render address only", () => {
 		const { container } = render(<Address address={sampleAddress} />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render with wallet name", () => {
 		const { container } = render(<Address address={sampleAddress} walletName="Sample Wallet" />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should not render without address", () => {
 		const { container } = render(<Address />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it.each(["sm", "lg", "xl"])("should render with size %s", (size) => {
 		const { getByTestId } = render(<Address address={sampleAddress} walletName="Sample Wallet" size={size} />);
+
 		expect(getByTestId("Address__alias")).toHaveClass(`text-${size}`);
 	});
 
@@ -30,6 +34,7 @@ describe("Formatted Address", () => {
 		const { container } = render(
 			<Address fontWeight="normal" address={sampleAddress} walletName="Sample Wallet" />,
 		);
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -42,6 +47,7 @@ describe("Formatted Address", () => {
 				size="lg"
 			/>,
 		);
+
 		expect(getByTestId("Address__address")).toHaveClass("text-theme-primary-600");
 	});
 });

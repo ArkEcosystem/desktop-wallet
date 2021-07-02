@@ -26,6 +26,7 @@ describe("WalletVote", () => {
 		);
 
 		await waitFor(() => expect(getByTestId("WalletVote")).toBeTruthy());
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -37,6 +38,7 @@ describe("WalletVote", () => {
 		);
 
 		await waitFor(() => expect(getByTestId("WalletVote")).toBeTruthy());
+
 		expect(getByText(commonTranslations.LEARN_MORE)).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 
@@ -51,6 +53,7 @@ describe("WalletVote", () => {
 		);
 
 		await waitFor(() => expect(getByTestId("WalletVote")).toBeTruthy());
+
 		expect(getByRole("button")).toBeDisabled();
 		expect(asFragment()).toMatchSnapshot();
 
@@ -67,6 +70,7 @@ describe("WalletVote", () => {
 		);
 
 		await waitFor(() => expect(getByTestId("WalletVote")).toBeTruthy());
+
 		expect(getByText(commonTranslations.LEARN_MORE)).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 
@@ -84,6 +88,7 @@ describe("WalletVote", () => {
 		);
 
 		await waitFor(() => expect(getByTestId("WalletVote")).toBeTruthy());
+
 		expect(getByText(commonTranslations.LEARN_MORE)).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 
@@ -101,6 +106,7 @@ describe("WalletVote", () => {
 
 		await waitFor(() => expect(getByTestId("WalletVote")).toBeTruthy());
 		await waitFor(() => expect(getByText("0/101")).toBeTruthy());
+
 		expect(asFragment()).toMatchSnapshot();
 
 		walletSpy.mockRestore();
@@ -126,6 +132,7 @@ describe("WalletVote", () => {
 			const delegate = wallet.voting().current()[0];
 
 			await waitFor(() => expect(getByTestId("WalletVote")).toBeTruthy());
+
 			expect(getByText(delegate.username()!)).toBeTruthy();
 			expect(getByText(`#${delegate.rank()}`)).toBeTruthy();
 			expect(getByText(walletTranslations.PAGE_WALLET_DETAILS.VOTES.ACTIVE)).toBeTruthy();
@@ -153,6 +160,7 @@ describe("WalletVote", () => {
 			const delegate = wallet.voting().current()[0];
 
 			await waitFor(() => expect(getByTestId("WalletVote")).toBeTruthy());
+
 			expect(getByText(delegate.username()!)).toBeTruthy();
 			expect(getByText(`#${delegate.rank()}`)).toBeTruthy();
 			expect(getByText(walletTranslations.PAGE_WALLET_DETAILS.VOTES.STANDBY)).toBeTruthy();
@@ -179,6 +187,7 @@ describe("WalletVote", () => {
 			const delegate = wallet.voting().current()[0];
 
 			await waitFor(() => expect(getByTestId("WalletVote")).toBeTruthy());
+
 			expect(getByText(delegate.username()!)).toBeTruthy();
 			expect(getByText(commonTranslations.NOT_AVAILABLE)).toBeTruthy();
 			expect(getByText(walletTranslations.PAGE_WALLET_DETAILS.VOTES.STANDBY)).toBeTruthy();
@@ -220,6 +229,7 @@ describe("WalletVote", () => {
 			);
 
 			await waitFor(() => expect(getByTestId("WalletVote")).toBeTruthy());
+
 			expect(getByText(walletTranslations.PAGE_WALLET_DETAILS.VOTES.MULTIVOTE)).toBeTruthy();
 			expect(getByText(walletTranslations.PAGE_WALLET_DETAILS.VOTES.ACTIVE_plural)).toBeTruthy();
 
@@ -249,6 +259,7 @@ describe("WalletVote", () => {
 			);
 
 			await waitFor(() => expect(getByTestId("WalletVote")).toBeTruthy());
+
 			expect(getByText(walletTranslations.PAGE_WALLET_DETAILS.VOTES.MULTIVOTE)).toBeTruthy();
 			expect(getByText(walletTranslations.PAGE_WALLET_DETAILS.VOTES.STANDBY_plural)).toBeTruthy();
 
@@ -279,6 +290,7 @@ describe("WalletVote", () => {
 			);
 
 			await waitFor(() => expect(getByTestId("WalletVote")).toBeTruthy());
+
 			expect(getByText(walletTranslations.PAGE_WALLET_DETAILS.VOTES.MULTIVOTE)).toBeTruthy();
 			expect(getByText("Active 1")).toBeTruthy();
 			expect(getByText("/ Standby 1")).toBeTruthy();

@@ -45,11 +45,13 @@ const networks = [
 describe("FilterWallets", () => {
 	it("should render", () => {
 		const { container } = render(<FilterWallets />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render with networks selection", () => {
 		const { container } = render(<FilterWallets networks={networks} />);
+
 		expect(container).toMatchSnapshot();
 	});
 

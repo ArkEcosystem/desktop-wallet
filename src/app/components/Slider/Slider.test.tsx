@@ -61,21 +61,25 @@ const multiple = [
 describe("Slider", () => {
 	it("should render", () => {
 		const { container } = render(<Slider data={data}>{() => <div>Slider item</div>}</Slider>);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render empty rows if template not provided", () => {
 		const { container } = render(<Slider data={data} />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render pagination", () => {
 		const { container } = render(<Slider data={multiple} />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render pagination on top right", () => {
 		const { container } = render(<Slider data={multiple} paginationPosition="top-right" />);
+
 		expect(container).toMatchSnapshot();
 	});
 });
@@ -89,6 +93,7 @@ describe("useSlider hook", () => {
 				paginationPosition: "bottom-center",
 			}),
 		);
+
 		expect(result.current.containerHeight).toBe(288);
 		expect(result.current.showPagination).toBe(true);
 		expect(result.current.slideStyles).toStrictEqual({ height: "192px", marginTop: "0" });
@@ -103,6 +108,7 @@ describe("useSlider hook", () => {
 				paginationPosition: "bottom-center",
 			}),
 		);
+
 		expect(result.current.containerHeight).toBe(480);
 		expect(result.current.showPagination).toBe(true);
 		expect(result.current.slideStyles).toStrictEqual({ height: "192px" });

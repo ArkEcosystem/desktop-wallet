@@ -43,11 +43,13 @@ describe("Table", () => {
 				)}
 			</Table>,
 		);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render empty rows if template not provided", () => {
 		const { container } = render(<Table columns={columns} data={data} />);
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -73,6 +75,7 @@ describe("Table", () => {
 
 	it("should hide header", () => {
 		const { queryAllByRole } = render(<Table hideHeader columns={columns} data={data} />);
+
 		expect(queryAllByRole("columnheader")).toHaveLength(0);
 	});
 

@@ -37,6 +37,7 @@ describe("useProfileImport", () => {
 
 		await act(async () => {
 			const profile = await result.current.importProfile({ file: dwe });
+
 			expect(profile?.name()).toEqual("test");
 		});
 	});
@@ -49,6 +50,7 @@ describe("useProfileImport", () => {
 				file: passwordProtectedDwe,
 				password: "S3cUrePa$sword",
 			});
+
 			expect(profile?.name()).toEqual("test");
 		});
 	});
@@ -92,6 +94,7 @@ describe("useProfileImport", () => {
 
 		await act(async () => {
 			const profile = await result.current.importProfile({ file: json });
+
 			expect(profile?.wallets().count()).toEqual(2);
 		});
 	});
@@ -102,6 +105,7 @@ describe("useProfileImport", () => {
 		await act(async () => {
 			//@ts-ignore
 			const profile = await result.current.importProfile({});
+
 			expect(profile).toBeUndefined();
 		});
 	});
@@ -133,6 +137,7 @@ describe("useProfileImport", () => {
 			const response = await result.current.importProfile({
 				file: { content: "", extension: ".txs", name: "test" },
 			});
+
 			expect(response).toBeUndefined();
 		});
 	});

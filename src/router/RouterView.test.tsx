@@ -19,6 +19,7 @@ describe("RouterView", () => {
 				<RouterView routes={[{ component: () => <h1>Test</h1>, path: "/" }]} />
 			</MemoryRouter>,
 		);
+
 		expect(getByTestId("RouterView__wrapper")).toHaveTextContent("Test");
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -29,6 +30,7 @@ describe("RouterView", () => {
 				<RouterView wrapper="section" routes={[{ component: () => <h1>Test</h1>, path: "/" }]} />
 			</MemoryRouter>,
 		);
+
 		expect(getByTestId("RouterView__wrapper").tagName).toEqual("SECTION");
 		expect(asFragment()).toMatchSnapshot();
 	});

@@ -184,6 +184,7 @@ describe("Pagination", () => {
 		);
 
 		fireEvent.click(getByTestId("PaginationSearchButton"));
+
 		expect(getByTestId("PaginationSearch__input")).toBeTruthy();
 
 		fireEvent.click(getByTestId("PaginationSearch__cancel"));

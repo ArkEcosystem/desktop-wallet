@@ -31,6 +31,7 @@ describe("useQueryParams hook", () => {
 		act(() => {
 			fireEvent.click(getByTestId("header_test"));
 		});
+
 		expect(getByText("useQueryParams Test Component")).toBeTruthy();
 	});
 });

@@ -10,6 +10,7 @@ describe("validatePattern", () => {
 		expect(validatePattern(translationMockFunction, "0123456789", /\d+/)).toBe(true);
 		expect(validatePattern(translationMockFunction, "!@$&_.", /[!$&.@_]+/)).toBe(true);
 	});
+
 	it("should be able to return illegal characters", () => {
 		expect(validatePattern(translationMockFunction, "lorem ipsum 0-1", /[a-z]+/)).toBe(
 			"illegal characters ' ', '-', '0', '1'",

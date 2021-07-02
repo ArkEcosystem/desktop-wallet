@@ -104,6 +104,7 @@ describe("Transactions", () => {
 			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
 			{ timeout: 4000 },
 		);
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -122,6 +123,7 @@ describe("Transactions", () => {
 			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
 			{ timeout: 4000 },
 		);
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -390,6 +392,7 @@ describe("Transactions", () => {
 
 		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(1));
 	});
+
 	//
 	it("should ignore tab change on loading state", async () => {
 		const { getByTestId } = renderWithRouter(
@@ -441,6 +444,7 @@ describe("Transactions", () => {
 		);
 
 		await waitFor(() => expect(getByTestId("EmptyBlock")).toBeInTheDocument());
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

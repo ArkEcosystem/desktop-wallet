@@ -15,6 +15,7 @@ describe("DeleteProfile", () => {
 		const { getByTestId, asFragment } = render(<DeleteProfile isOpen profileId={profile.id()} />);
 
 		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
+
 		expect(getByTestId("DeleteResource__submit-button")).toBeInTheDocument();
 		expect(asFragment()).toMatchSnapshot();
 	});

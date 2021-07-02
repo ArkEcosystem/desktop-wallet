@@ -70,6 +70,7 @@ describe("ReceiveFunds", () => {
 		act(() => {
 			fireEvent.click(getByTestId("modal__close-btn"));
 		});
+
 		expect(onClose).toHaveBeenCalled();
 	});
 

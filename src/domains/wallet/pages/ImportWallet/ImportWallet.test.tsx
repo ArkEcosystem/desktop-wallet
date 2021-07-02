@@ -78,6 +78,7 @@ describe("ImportWallet", () => {
 		expect(asFragment()).toMatchSnapshot();
 
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+
 		expect(selectNetworkInput).toBeTruthy();
 
 		await act(async () => {
@@ -104,6 +105,7 @@ describe("ImportWallet", () => {
 		expect(getByTestId("NetworkStep")).toBeTruthy();
 
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+
 		expect(selectNetworkInput).toBeTruthy();
 
 		act(() => {
@@ -160,6 +162,7 @@ describe("ImportWallet", () => {
 		await waitFor(() => expect(screen.getByTestId("ImportWallet__mnemonic-input")));
 
 		const passphraseInput = screen.getByTestId("ImportWallet__mnemonic-input");
+
 		expect(passphraseInput).toBeTruthy();
 
 		fireEvent.change(passphraseInput, { target: { value: mnemonic } });
@@ -299,6 +302,7 @@ describe("ImportWallet", () => {
 		fireEvent.click(getByTestId("ImportWallet__continue-button"));
 
 		const passphraseInput = getByTestId("ImportWallet__mnemonic-input");
+
 		expect(passphraseInput).toBeTruthy();
 
 		fireEvent.input(passphraseInput, { target: { value: mnemonic } });
@@ -353,6 +357,7 @@ describe("ImportWallet", () => {
 		expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
 
 		const passphraseInput = getByTestId("ImportWallet__mnemonic-input");
+
 		expect(passphraseInput).toBeTruthy();
 
 		fireEvent.input(passphraseInput, { target: { value: MNEMONICS[3] } });
@@ -683,6 +688,7 @@ describe("ImportWallet", () => {
 		);
 
 		expect(container).toMatchSnapshot();
+
 		await waitFor(() => expect(getByTestId("LedgerTabs")).toBeInTheDocument());
 	});
 
@@ -821,6 +827,7 @@ describe("ImportWallet", () => {
 				walletTranslations.PAGE_IMPORT_WALLET.VALIDATION.ALIAS_EXISTS.replace("{{alias}}", alias),
 			);
 		});
+
 		expect(getByTestId("ImportWallet__save-button")).toBeDisabled();
 	});
 });

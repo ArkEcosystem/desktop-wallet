@@ -173,6 +173,7 @@ describe("Registration", () => {
 			});
 
 			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
+
 			await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
 
 			fireEvent.click(getByTestId("Registration__continue-button"));
@@ -219,7 +220,9 @@ describe("Registration", () => {
 			// Go back to wallet
 			const historySpy = jest.spyOn(history, "push");
 			fireEvent.click(getByTestId("Registration__button--back-to-wallet"));
+
 			expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
+
 			historySpy.mockRestore();
 			await waitFor(() => expect(asFragment()).toMatchSnapshot());
 		});
@@ -335,6 +338,7 @@ describe("Registration", () => {
 		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
 
 		fireEvent.change(getByTestId("Input__username"), { target: { value: "test_delegate" } });
+
 		expect(getByTestId("Input__username")).toHaveValue("test_delegate");
 
 		// Fee
@@ -344,6 +348,7 @@ describe("Registration", () => {
 			);
 		});
 		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
+
 		expect(getByTestId("InputCurrency")).toHaveValue("10");
 
 		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toBeDisabled());
@@ -351,10 +356,12 @@ describe("Registration", () => {
 
 		// Review Step
 		expect(getByTestId("DelegateRegistrationForm__review-step")).toBeTruthy();
+
 		fireEvent.click(getByTestId("Registration__continue-button"));
 
 		// Fee warning
 		expect(getByTestId("FeeWarning__cancel-button")).toBeTruthy();
+
 		fireEvent.click(getByTestId("FeeWarning__cancel-button"));
 
 		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
@@ -366,6 +373,7 @@ describe("Registration", () => {
 		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
 
 		fireEvent.change(getByTestId("Input__username"), { target: { value: "test_delegate" } });
+
 		expect(getByTestId("Input__username")).toHaveValue("test_delegate");
 
 		// Fee
@@ -375,6 +383,7 @@ describe("Registration", () => {
 			);
 		});
 		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
+
 		expect(getByTestId("InputCurrency")).toHaveValue("10");
 
 		await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toBeDisabled());
@@ -382,10 +391,12 @@ describe("Registration", () => {
 
 		// Review Step
 		expect(getByTestId("DelegateRegistrationForm__review-step")).toBeTruthy();
+
 		fireEvent.click(getByTestId("Registration__continue-button"));
 
 		// Fee warning
 		expect(getByTestId("FeeWarning__continue-button")).toBeTruthy();
+
 		fireEvent.click(getByTestId("FeeWarning__continue-button"));
 
 		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
@@ -529,6 +540,7 @@ describe("Registration", () => {
 		});
 
 		await waitFor(() => expect(getByTestId("ErrorStep")).toBeTruthy());
+
 		expect(asFragment()).toMatchSnapshot();
 
 		act(() => {

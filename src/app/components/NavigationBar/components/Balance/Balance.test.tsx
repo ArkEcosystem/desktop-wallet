@@ -19,6 +19,7 @@ describe("Balance", () => {
 		const { container } = render(<Balance profile={profile} isLoading={false} />);
 
 		expect(container).toMatchSnapshot();
+
 		profileSettingsMock.mockRestore();
 		profileBalanceMock.mockRestore();
 	});

@@ -8,6 +8,7 @@ describe("#shuffleOptions", () => {
 	it("should get diff results", () => {
 		const result1 = shuffleOptions({ limit, options, value });
 		const result2 = shuffleOptions({ limit, options, value });
+
 		expect(result1).not.toEqual(result2);
 	});
 

@@ -78,6 +78,7 @@ describe("MultiSignature Registration Form", () => {
 		const { asFragment } = render(<Component form={result.current} />);
 		await waitForNextUpdate();
 		await waitFor(() => expect(screen.queryAllByRole("row")).toHaveLength(1));
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -203,6 +204,7 @@ describe("MultiSignature Registration Form", () => {
 		const { asFragment } = render(<DetailsComponent />);
 
 		await waitFor(() => expect(screen.getAllByTestId("TransactionDetail")).toHaveLength(3));
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -291,6 +293,7 @@ describe("MultiSignature Registration Form", () => {
 		} catch (error) {}
 
 		await waitFor(() => expect(signMock).toThrow());
+
 		expect(transactionMock).not.toHaveBeenCalled();
 
 		consoleSpy.mockRestore();

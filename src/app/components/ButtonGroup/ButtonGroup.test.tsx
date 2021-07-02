@@ -8,6 +8,7 @@ import { useSelectionState } from "./useSelectionState";
 describe("ButtonGroup", () => {
 	it("should render", () => {
 		const { getByTestId, asFragment } = render(<ButtonGroup />);
+
 		expect(getByTestId("ButtonGroup")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -15,7 +16,7 @@ describe("ButtonGroup", () => {
 
 describe("ButtonGroupOption", () => {
 	it("should render", () => {
-		const isSelected = jest.fn((value: any) => (value === 1 ? true : false));
+		const isSelected = jest.fn((value: any) => value === 1);
 		const setSelectedValue = jest.fn();
 		const { getAllByTestId, asFragment } = render(
 			<>
@@ -30,10 +31,12 @@ describe("ButtonGroupOption", () => {
 		);
 
 		const buttons = getAllByTestId("ButtonGroupOption");
+
 		expect(buttons[0]).toHaveAttribute("aria-checked", "true");
 		expect(buttons[1]).toHaveAttribute("aria-checked", "false");
 
 		fireEvent.click(buttons[0]);
+
 		expect(setSelectedValue).toHaveBeenCalledWith(1);
 
 		expect(asFragment()).toMatchSnapshot();
@@ -54,6 +57,7 @@ describe("ButtonGroupOption", () => {
 		);
 
 		const buttons = getAllByTestId("ButtonGroupOption");
+
 		expect(buttons[0]).toHaveAttribute("aria-checked", "false");
 		expect(buttons[1]).toHaveAttribute("aria-checked", "false");
 

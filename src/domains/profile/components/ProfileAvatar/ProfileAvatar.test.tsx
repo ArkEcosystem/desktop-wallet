@@ -11,6 +11,7 @@ describe("Avatar", () => {
 
 	it("should render with svg", () => {
 		const { getByTestId, asFragment } = render(<ProfileAvatar profile={profile} />);
+
 		expect(getByTestId("ProfileAvatar__svg")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -19,6 +20,7 @@ describe("Avatar", () => {
 		profile.settings().set(Contracts.ProfileSetting.Avatar, "avatarImage");
 
 		const { getByTestId, asFragment } = render(<ProfileAvatar profile={profile} />);
+
 		expect(getByTestId("ProfileAvatar__image")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});

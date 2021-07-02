@@ -97,6 +97,7 @@ describe("PluginManagerProvider", () => {
 			"open-external",
 			"https://ark.io/contact?subject=desktop_wallet_plugin_report&plugin_id=test-plugin&plugin_version=0.0.0",
 		);
+
 		ipcRendererMock.mockRestore();
 	});
 
@@ -691,6 +692,7 @@ describe("PluginManagerProvider", () => {
 		);
 
 		fireEvent.click(screen.getByText("Fetch Size"));
+
 		expect(screen.getByText("Size N/A")).toBeInTheDocument();
 
 		fireEvent.click(screen.getByText("Fetch Plugins"));

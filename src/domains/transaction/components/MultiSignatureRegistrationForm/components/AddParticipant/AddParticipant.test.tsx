@@ -211,6 +211,7 @@ describe("Add Participant", () => {
 		fireEvent.click(screen.getByText(transactionTranslations.MULTISIGNATURE.ADD_PARTICIPANT));
 
 		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(2));
+
 		expect(scope.isDone()).toBe(true);
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -255,6 +256,7 @@ describe("Add Participant", () => {
 		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(2));
 
 		expect(screen.getAllByTestId("recipient-list__remove-recipient")[1]).not.toBeDisabled();
+
 		fireEvent.click(screen.getAllByTestId("recipient-list__remove-recipient")[1]);
 
 		expect(onChange).toHaveBeenCalledWith([
@@ -271,6 +273,7 @@ describe("Add Participant", () => {
 		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(1));
 
 		expect(screen.getByTestId("recipient-list__remove-recipient")).toBeDisabled();
+
 		fireEvent.click(screen.getByTestId("recipient-list__remove-recipient"));
 
 		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(1));

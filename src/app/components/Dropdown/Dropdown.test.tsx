@@ -13,27 +13,32 @@ const options = [
 describe("Dropdown", () => {
 	it("should render", () => {
 		const { container } = render(<Dropdown />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render a small one", () => {
 		const { container } = render(<Dropdown toggleSize="sm" />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render a large one", () => {
 		const { container } = render(<Dropdown toggleSize="lg" />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render toggle icon", () => {
 		const { container, getByTestId } = render(<Dropdown />);
+
 		expect(container).toMatchSnapshot();
 		expect(getByTestId("dropdown__toggle")).toBeTruthy();
 	});
 
 	it("should render with options", () => {
 		const { container } = render(<Dropdown options={options} />);
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -60,6 +65,7 @@ describe("Dropdown", () => {
 		expect(getByTestId("dropdown__content")).toBeTruthy();
 
 		const firstOption = getByTestId("dropdown__option--0");
+
 		expect(firstOption).toBeTruthy();
 
 		act(() => {
@@ -81,6 +87,7 @@ describe("Dropdown", () => {
 		expect(getByTestId("dropdown__content")).toBeTruthy();
 
 		const firstOption = getByTestId("dropdown__option--0");
+
 		expect(firstOption).toBeTruthy();
 
 		act(() => {
@@ -102,6 +109,7 @@ describe("Dropdown", () => {
 		expect(getByTestId("dropdown__content")).toBeTruthy();
 
 		const firstOption = getByTestId("dropdown__option--0");
+
 		expect(firstOption).toBeTruthy();
 
 		act(() => {
@@ -122,6 +130,7 @@ describe("Dropdown", () => {
 		expect(getByTestId("dropdown__content")).toBeTruthy();
 
 		const firstOption = getByTestId("dropdown__option--0");
+
 		expect(firstOption).toBeTruthy();
 
 		act(() => {
@@ -152,9 +161,11 @@ describe("Dropdown", () => {
 		expect(getByTestId("dropdown__content")).toBeTruthy();
 
 		const firstOption = getByTestId("dropdown__option--0");
+
 		expect(firstOption).toBeTruthy();
 
 		const outsideElement = getByTestId("dropdown__outside");
+
 		expect(outsideElement).toBeTruthy();
 
 		act(() => {
@@ -183,6 +194,7 @@ describe("Dropdown", () => {
 
 	it("should render with custom toggle content as react element", () => {
 		const { container } = render(<Dropdown toggleContent={<div>custom toggle</div>} />);
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -190,6 +202,7 @@ describe("Dropdown", () => {
 		const { container } = render(
 			<Dropdown toggleContent={(isOpen: boolean) => <div>Dropdown is open: {isOpen}</div>} />,
 		);
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -362,6 +375,7 @@ describe("ClickOutside Hook", () => {
 		act(() => {
 			fireEvent.mouseDown(element);
 		});
+
 		expect(callback).not.toBeCalled();
 	});
 
@@ -375,6 +389,7 @@ describe("ClickOutside Hook", () => {
 		act(() => {
 			fireEvent.mouseDown(document);
 		});
+
 		expect(callback).toBeCalled();
 	});
 

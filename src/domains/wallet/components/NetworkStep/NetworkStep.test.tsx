@@ -32,6 +32,7 @@ describe("SelectNetworkStep", () => {
 		expect(asFragment()).toMatchSnapshot();
 
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+
 		expect(selectNetworkInput).toBeTruthy();
 	});
 
@@ -48,6 +49,7 @@ describe("SelectNetworkStep", () => {
 		expect(getByTestId("NetworkStep")).toBeTruthy();
 
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+
 		expect(selectNetworkInput).toBeTruthy();
 
 		act(() => {

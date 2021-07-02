@@ -89,6 +89,7 @@ describe("WalletOverviewStep", () => {
 			});
 
 			expect(toastSpy).toHaveBeenCalled();
+
 			toastSpy.mockRestore();
 		});
 
@@ -121,6 +122,7 @@ describe("WalletOverviewStep", () => {
 			});
 
 			expect(toastSpy).not.toHaveBeenCalled();
+
 			toastSpy.mockRestore();
 		});
 
@@ -153,6 +155,7 @@ describe("WalletOverviewStep", () => {
 			});
 
 			expect(toastSpy).toHaveBeenCalled();
+
 			toastSpy.mockRestore();
 		});
 	});

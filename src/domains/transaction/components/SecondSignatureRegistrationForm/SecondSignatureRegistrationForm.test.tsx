@@ -71,6 +71,7 @@ describe("SecondSignatureRegistrationForm", () => {
 
 		act(() => {
 			const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} activeTab={1} />);
+
 			expect(asFragment()).toMatchSnapshot();
 		});
 
@@ -179,6 +180,7 @@ describe("SecondSignatureRegistrationForm", () => {
 			});
 
 			expect(toastSpy).toHaveBeenCalled();
+
 			toastSpy.mockRestore();
 		});
 
@@ -205,6 +207,7 @@ describe("SecondSignatureRegistrationForm", () => {
 			});
 
 			expect(toastSpy).not.toHaveBeenCalled();
+
 			toastSpy.mockRestore();
 		});
 
@@ -231,6 +234,7 @@ describe("SecondSignatureRegistrationForm", () => {
 			});
 
 			expect(toastSpy).toHaveBeenCalled();
+
 			toastSpy.mockRestore();
 		});
 	});
@@ -249,6 +253,7 @@ describe("SecondSignatureRegistrationForm", () => {
 		await waitFor(() =>
 			expect(screen.getByTestId("SecondSignatureRegistrationForm__verification-step")).toBeTruthy(),
 		);
+
 		expect(result.current.getValues("verification")).toBeUndefined();
 
 		const walletMnemonic = passphrase.split(" ");

@@ -17,11 +17,13 @@ const lines = [
 describe("LineChart", () => {
 	it("should render", () => {
 		const { container } = render(<LineChart data={[]} lines={[]} />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render with data", () => {
 		const { container } = render(<LineChart period={period} data={data} lines={lines} />);
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -32,7 +34,9 @@ describe("LineChart", () => {
 			</div>,
 		);
 		const chartWrapper = getByTestId("line-chart-wrapper");
+
 		expect(chartWrapper).toBeTruthy();
+
 		await waitFor(() => expect(getByTestId("line-chart-dot-0")).toBeTruthy(), { timeout: 1000 });
 		act(() => {
 			fireEvent.mouseMove(chartWrapper.children[1].children[0]);

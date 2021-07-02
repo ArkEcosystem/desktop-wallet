@@ -40,6 +40,7 @@ describe("useProfileBalance", () => {
 		} = renderHook(() => useProfileBalance({ profile }), { wrapper });
 
 		expect(current.convertedBalance).toEqual(10_000);
+
 		profileConvertedBalanceMock.mockRestore();
 	});
 
@@ -57,6 +58,7 @@ describe("useProfileBalance", () => {
 		} = renderHook(() => useProfileBalance({ profile }), { wrapper });
 
 		expect(current.convertedBalance).toEqual(0);
+
 		profileConvertedBalanceMock.mockRestore();
 		mockProfileStatus.mockRestore();
 	});
@@ -72,6 +74,7 @@ describe("useProfileBalance", () => {
 		} = renderHook(() => useProfileBalance({ profile }), { wrapper });
 
 		expect(current.convertedBalance).toEqual(0);
+
 		profileConvertedBalanceMock.mockRestore();
 	});
 });

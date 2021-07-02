@@ -22,15 +22,18 @@ describe("Plugin Controller subject", () => {
 
 	it("should return all", () => {
 		subject.push(new PluginController({ name: "plugin-test" }, () => void 0));
+
 		expect(subject.all().length).toBe(1);
 	});
 
 	it("should remove by id", () => {
 		const plugin = new PluginController({ name: "plugin-test" }, () => void 0);
 		subject.push(plugin);
+
 		expect(subject.all().length).toBe(1);
 
 		subject.removeById(plugin.config().id(), profile);
+
 		expect(subject.all().length).toBe(0);
 	});
 
@@ -51,6 +54,7 @@ describe("Plugin Controller subject", () => {
 		const plugin = new PluginController({ name: "plugin-test" }, () => void 0);
 		plugin.hooks().addFilter("test", "plus", () => 1);
 		subject.push(plugin);
+
 		expect(subject.hasFilters("test", "plus")).toBe(true);
 	});
 
@@ -58,6 +62,7 @@ describe("Plugin Controller subject", () => {
 		const plugin = new PluginController({ name: "plugin-test" }, () => void 0);
 		subject.push(plugin);
 		subject.runAllEnabled(profile);
+
 		expect(() => subject.runAllEnabled(profile)).toThrowError();
 	});
 
@@ -94,6 +99,7 @@ describe("Plugin Controller subject", () => {
 				sourcePath: "/plugin2/index.js",
 			},
 		]);
+
 		expect(consoleMock).toHaveBeenCalledWith(
 			`Failed to parse the plugin from "/plugin2".`,
 			"name is a required field",

@@ -24,6 +24,7 @@ describe("TransactionRow", () => {
 				</tbody>
 			</table>,
 		);
+
 		expect(getByTestId("TransactionRow__ID")).toBeTruthy();
 		expect(getByTestId("TransactionRow__timestamp")).toBeTruthy();
 		expect(getByTestId("TransactionRowMode")).toBeTruthy();
@@ -109,7 +110,9 @@ describe("TransactionRow", () => {
 			</table>,
 		);
 		fireEvent.click(getByTestId("TransactionRow__sign"));
+
 		expect(onSign).toHaveBeenCalled();
+
 		isMultiSignatureRegistrationMock.mockRestore();
 	});
 });

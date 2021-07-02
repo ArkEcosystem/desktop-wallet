@@ -8,74 +8,89 @@ describe("Plugin Configuration", () => {
 			keywords: ["@arkecosystem", "desktop-wallet"],
 			name: "plugin-test",
 		});
+
 		expect(subject.validate()).toBeTruthy();
 	});
 
 	it("should fail to validate", () => {
 		const subject = PluginConfigurationData.make({ version: 1 });
+
 		expect(() => subject.validate()).toThrowError();
 	});
 
 	it("should format title with scope", () => {
 		const subject = PluginConfigurationData.make({ name: "@arkecosystem/plugin-test" });
+
 		expect(subject.title()).toBe("Plugin Test");
 	});
 
 	it("should format title", () => {
 		const subject = PluginConfigurationData.make({ name: "plugin-test" });
+
 		expect(subject.title()).toBe("Plugin Test");
 	});
 
 	it("should format a custom title", () => {
 		const subject = PluginConfigurationData.make({ "desktop-wallet": { title: "My Plugin" }, name: "plugin-test" });
+
 		expect(subject.title()).toBe("My Plugin");
 	});
 
 	it("should format id", () => {
 		const subject1 = PluginConfigurationData.make({ name: "@arkecosystem/plugin-test" });
+
 		expect(subject1.id()).toBe("@arkecosystem/plugin-test");
 
 		const subject2 = PluginConfigurationData.make({ name: "@arkecosystem/plugin-explorer" });
+
 		expect(subject2.id()).toBe("@arkecosystem/plugin-explorer");
 	});
 
 	it("should return author if official scope", () => {
 		const subject = PluginConfigurationData.make({ name: "@arkecosystem/plugin-test" });
+
 		expect(subject.author()).toBe("ARK Ecosystem");
 	});
 
 	it("should return unknown author if not defined", () => {
 		const subject = PluginConfigurationData.make({ name: "plugin-test" });
+
 		expect(subject.author()).toBe("Unknown");
 	});
 
 	it("should return author", () => {
 		const subject = PluginConfigurationData.make({ author: "Jhon", name: "plugin-test" });
+
 		expect(subject.author()).toBe("Jhon");
 	});
 
 	it("should return author with object", () => {
 		const subject = PluginConfigurationData.make({ author: { name: "Jhon" }, name: "plugin-test" });
+
 		expect(subject.author()).toBe("Jhon");
 	});
 
 	it("should return author from contributors", () => {
 		const subject = PluginConfigurationData.make({ contributors: [{ name: "Jhon" }], name: "plugin-test" });
+
 		expect(subject.author()).toBe("Jhon");
 	});
 
 	it("should return author from contributors with array of strings", () => {
 		const subject = PluginConfigurationData.make({ contributors: ["Jhon"], name: "plugin-test" });
+
 		expect(subject.author()).toBe("Jhon");
 	});
 
 	it("should return default version", () => {
 		const subject = PluginConfigurationData.make({ name: "plugin-test" });
+
 		expect(subject.version()).toBe("0.0.0");
 	});
 
 	it("should return custom version", () => {
 		const subject = PluginConfigurationData.make({ name: "plugin-test", version: "1.2.3" });
+
 		expect(subject.version()).toBe("1.2.3");
 	});
 
@@ -84,6 +99,7 @@ describe("Plugin Configuration", () => {
 			keywords: ["desktop", "plugin", "desktop-wallet"],
 			name: "plugin-test",
 		});
+
 		expect(subject.keywords()).toEqual(["Desktop", "Plugin", "Desktop Wallet"]);
 	});
 
@@ -92,6 +108,7 @@ describe("Plugin Configuration", () => {
 			"desktop-wallet": { permissions: ["LAUNCH", "HTTP"] },
 			name: "plugin-test",
 		});
+
 		expect(subject.permissions()).toEqual(["LAUNCH", "HTTP"]);
 	});
 
@@ -100,6 +117,7 @@ describe("Plugin Configuration", () => {
 			"desktop-wallet": { permissions: ["launch", "HTTP", "MY_CUSTOM_PERMISSION"] },
 			name: "plugin-test",
 		});
+
 		expect(subject.permissions()).toEqual(["LAUNCH", "HTTP"]);
 	});
 
@@ -108,11 +126,13 @@ describe("Plugin Configuration", () => {
 			"desktop-wallet": { urls: ["http://github.com"] },
 			name: "plugin-test",
 		});
+
 		expect(subject.urls()).toEqual(["http://github.com"]);
 	});
 
 	it("should return default category if not defined", () => {
 		const subject = PluginConfigurationData.make({ name: "plugin-test" });
+
 		expect(subject.categories()).toEqual(["other"]);
 	});
 
@@ -121,6 +141,7 @@ describe("Plugin Configuration", () => {
 			"desktop-wallet": { categories: ["exchange", "finance"] },
 			name: "plugin-test",
 		});
+
 		expect(subject.categories()).toEqual(["exchange"]);
 	});
 
@@ -129,6 +150,7 @@ describe("Plugin Configuration", () => {
 			"desktop-wallet": { categories: [] },
 			name: "plugin-test",
 		});
+
 		expect(subject.categories()).toEqual(["other"]);
 	});
 
@@ -138,6 +160,7 @@ describe("Plugin Configuration", () => {
 			path.resolve("src/tests/fixtures/plugins/packages/plugin-test-custom-buttom"),
 		);
 		await new Promise((r) => setTimeout(r, 100));
+
 		expect(subject.size()).toBe("0 B");
 	});
 
@@ -182,16 +205,19 @@ describe("Plugin Configuration", () => {
 			"desktop-wallet": { logo: "https://google.com" },
 			name: "plugin-test",
 		});
+
 		expect(subject.logo()).toBeUndefined();
 	});
 
 	it("should return is not official", () => {
 		const subject = PluginConfigurationData.make({});
+
 		expect(subject.isOfficial()).toBe(false);
 	});
 
 	it("should return true for existing category", () => {
 		const subject = PluginConfigurationData.make({ "desktop-wallet": { categories: ["exchange"] } });
+
 		expect(subject.hasCategory("exchange")).toBe(true);
 	});
 
@@ -201,6 +227,7 @@ describe("Plugin Configuration", () => {
 			name: "plugin-test",
 			version: "0.0.1",
 		});
+
 		expect(subject.toObject()).toMatchObject({
 			description: "The Plugin",
 			name: "plugin-test",
@@ -211,18 +238,21 @@ describe("Plugin Configuration", () => {
 	it("should return url from source provider", () => {
 		const url = "https://github.com/arkecosystem/my-plugin";
 		const subject = PluginConfigurationData.make({ sourceProvider: { url } });
+
 		expect(subject.url()).toBe(url);
 	});
 
 	it("should return url from repository field", () => {
 		const url = "git+https://github.com/arkecosystem/my-plugin.git";
 		const subject = PluginConfigurationData.make({ repository: { type: "git", url } });
+
 		expect(subject.url()).toBe("https://github.com/arkecosystem/my-plugin");
 	});
 
 	it("should return url from homepage", () => {
 		const url = "https://github.com/arkecosystem/my-plugin#readme";
 		const subject = PluginConfigurationData.make({ homepage: url });
+
 		expect(subject.url()).toBe(url);
 	});
 });

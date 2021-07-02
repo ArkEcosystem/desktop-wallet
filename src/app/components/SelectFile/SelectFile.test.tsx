@@ -13,16 +13,19 @@ jest.mock("fs", () => ({
 describe("SelectFile", () => {
 	it("should render", () => {
 		const { container } = render(<SelectFile />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render with dwe file format", () => {
 		const { container } = render(<SelectFile fileFormat=".dwe" />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render with json file format", () => {
 		const { container } = render(<SelectFile fileFormat=".json" />);
+
 		expect(container).toMatchSnapshot();
 	});
 

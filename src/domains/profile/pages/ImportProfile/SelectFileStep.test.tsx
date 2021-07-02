@@ -10,11 +10,13 @@ jest.mock("fs", () => ({
 describe("Import Profile Select File Step", () => {
 	it("should render with dwe fileFormat selected", () => {
 		const { container } = render(<SelectFileStep fileFormat=".dwe" />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render with json fileFormat selected", () => {
 		const { container } = render(<SelectFileStep fileFormat=".json" />);
+
 		expect(container).toMatchSnapshot();
 	});
 

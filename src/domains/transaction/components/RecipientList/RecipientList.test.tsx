@@ -35,6 +35,7 @@ const recipients = [
 describe("RecipientList", () => {
 	it("should render editable", () => {
 		const { container } = render(<RecipientList recipients={recipients} isEditable={true} assetSymbol="ARK" />);
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -42,11 +43,13 @@ describe("RecipientList", () => {
 		const { container } = render(
 			<RecipientList recipients={recipients} isEditable={true} assetSymbol="ARK" variant="condensed" />,
 		);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render non-editable", () => {
 		const { container } = render(<RecipientList recipients={recipients} isEditable={false} assetSymbol="ARK" />);
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -54,6 +57,7 @@ describe("RecipientList", () => {
 		const { container } = render(
 			<RecipientList recipients={recipients} isEditable={true} assetSymbol="ARK" showAmount={false} />,
 		);
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -88,7 +92,9 @@ describe("RecipientList", () => {
 		);
 
 		const removeButton = getAllByTestId("recipient-list__remove-recipient");
+
 		expect(removeButton[0]).toBeTruthy();
+
 		await act(async () => {
 			fireEvent.click(removeButton[0]);
 		});
@@ -104,7 +110,9 @@ describe("RecipientList", () => {
 		);
 
 		const removeButton = getAllByTestId("recipient-list__remove-recipient");
+
 		expect(removeButton[0]).toBeTruthy();
+
 		await act(async () => {
 			fireEvent.click(removeButton[0]);
 		});

@@ -13,6 +13,7 @@ describe("Input", () => {
 	it("should render as custom element", () => {
 		const { asFragment, getByTestId } = render(<Input as="select" />);
 		const input = getByTestId("Input");
+
 		expect(input.tagName).toEqual("SELECT");
 
 		expect(asFragment()).toMatchSnapshot();
@@ -27,6 +28,7 @@ describe("Input", () => {
 	it("should render with invalid", () => {
 		const { asFragment, getByTestId } = render(<Input isInvalid={true} errorMessage="Field invalid" />);
 		const input = getByTestId("Input__error");
+
 		expect(input).toBeVisible();
 
 		expect(asFragment()).toMatchSnapshot();
