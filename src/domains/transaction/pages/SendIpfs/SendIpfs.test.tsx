@@ -21,6 +21,7 @@ import {
 	screen,
 	syncFees,
 	waitFor,
+	within,
 } from "utils/testing-library";
 
 import { FormStep, ReviewStep, SendIpfs, SummaryStep } from ".";
@@ -231,6 +232,10 @@ describe("SendIpfs", () => {
 		await waitFor(() =>
 			expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco"),
 		);
+
+		expect(within(getByTestId("InputFee")).getAllByRole("radio")[1]).toBeChecked();
+		fireEvent.click(within(getByTestId("InputFee")).getAllByRole("radio")[2]);
+		await waitFor(() => expect(within(getByTestId("InputFee")).getAllByRole("radio")[2]).toBeChecked());
 
 		fireEvent.click(getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
 		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });

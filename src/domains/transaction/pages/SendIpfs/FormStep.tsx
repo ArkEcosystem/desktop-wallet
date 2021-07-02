@@ -25,7 +25,7 @@ const FormStep = ({ profile, wallet }: { profile: Contracts.IProfile; wallet: Co
 			setValue("fees", transactionFees);
 
 			if (!getValues("fee")) {
-				setValue("fee", transactionFees.avg !== 0 ? transactionFees.avg : transactionFees.static, {
+				setValue("fee", transactionFees?.avg, {
 					shouldDirty: true,
 					shouldValidate: true,
 				});
