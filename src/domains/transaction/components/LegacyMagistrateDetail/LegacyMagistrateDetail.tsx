@@ -35,7 +35,7 @@ export const LegacyMagistrateDetail = ({ isOpen, transaction, onClose }: LegacyM
 
 			<TransactionConfirmations transaction={transaction} />
 
-			<TransactionExplorerLink id={transaction.id()} link={transaction.explorerLink()} />
+			<TransactionExplorerLink transaction={transaction} />
 		</Modal>
 	);
 };

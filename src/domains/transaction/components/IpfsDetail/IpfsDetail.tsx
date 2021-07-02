@@ -57,7 +57,7 @@ export const IpfsDetail = ({ isOpen, transaction, onClose }: IpfsDetailPropertie
 
 			<TransactionConfirmations transaction={transaction} />
 
-			<TransactionExplorerLink id={transaction.id()} link={transaction.explorerLink()} />
+			<TransactionExplorerLink transaction={transaction} />
 		</Modal>
 	);
 };

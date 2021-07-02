@@ -70,7 +70,7 @@ export const VoteDetail = ({ transaction, isOpen, onClose }: VoteDetailPropertie
 
 			<TransactionConfirmations transaction={transaction} />
 
-			<TransactionExplorerLink id={transaction.id()} link={transaction.explorerLink()} />
+			<TransactionExplorerLink transaction={transaction} />
 		</Modal>
 	);
 };

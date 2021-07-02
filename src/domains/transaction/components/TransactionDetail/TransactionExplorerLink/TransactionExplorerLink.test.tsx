@@ -6,7 +6,15 @@ import { TransactionExplorerLink } from "./TransactionExplorerLink";
 
 describe("TransactionExplorerLink", () => {
 	it("should render a transaction link", () => {
-		const { container } = render(<TransactionExplorerLink id="test-id" link={`transaction-link`} />);
+		const { container } = render(
+			<TransactionExplorerLink
+				// @ts-ignore
+				transaction={{
+					explorerLink: () => "transaction-link",
+					id: () => "test-id",
+				}}
+			/>,
+		);
 
 		expect(container).toHaveTextContent(transactionTranslations.ID);
 		expect(container).toMatchSnapshot();

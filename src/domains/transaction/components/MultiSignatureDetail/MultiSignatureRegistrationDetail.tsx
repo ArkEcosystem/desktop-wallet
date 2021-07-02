@@ -74,7 +74,7 @@ export const MultiSignatureRegistrationDetail = ({
 				{generatedAddress}
 			</TransactionDetail>
 
-			<TransactionExplorerLink id={transaction.id()} link={transaction.explorerLink()} />
+			<TransactionExplorerLink transaction={transaction} />
 		</Modal>
 	);
 };
