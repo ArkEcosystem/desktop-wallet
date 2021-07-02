@@ -78,14 +78,6 @@ export const MultiSignatureRegistrationDetail = ({
 			</TransactionDetail>
 
 			<TransactionExplorerLink id={transaction.id()} link={transaction.explorerLink()} />
-
-			{transaction.blockId() && (
-				<TransactionExplorerLink
-					id={transaction.blockId()!}
-					link={transaction.explorerLinkForBlock()!}
-					variant="block"
-				/>
-			)}
 		</Modal>
 	);
 };

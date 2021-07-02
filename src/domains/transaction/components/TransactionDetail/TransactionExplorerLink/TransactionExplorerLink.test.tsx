@@ -5,14 +5,10 @@ import { translations as transactionTranslations } from "../../../i18n";
 import { TransactionExplorerLink } from "./TransactionExplorerLink";
 
 describe("TransactionExplorerLink", () => {
-	it.each(["transaction", "block"])("should render a '%s' link", (variant) => {
-		const { container } = render(
-			<TransactionExplorerLink id="test-id" link={`${variant}-link}`} variant={variant} />,
-		);
+	it("should render a transaction link", () => {
+		const { container } = render(<TransactionExplorerLink id="test-id" link={`transaction-link`} />);
 
-		expect(container).toHaveTextContent(
-			variant === "transaction" ? transactionTranslations.ID : transactionTranslations.BLOCK_ID,
-		);
+		expect(container).toHaveTextContent(transactionTranslations.ID);
 		expect(container).toMatchSnapshot();
 	});
 });
