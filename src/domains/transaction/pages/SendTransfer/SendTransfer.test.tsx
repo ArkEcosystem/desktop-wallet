@@ -301,6 +301,7 @@ describe("SendTransfer", () => {
 						.signatory()
 						.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
 				}),
+			wallet,
 		);
 
 		const { getByTestId, asFragment } = render(
