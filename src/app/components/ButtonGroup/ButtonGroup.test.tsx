@@ -16,7 +16,7 @@ describe("ButtonGroup", () => {
 
 describe("ButtonGroupOption", () => {
 	it("should render", () => {
-		const isSelected = jest.fn((value: any) => (value === 1));
+		const isSelected = jest.fn((value: any) => value === 1);
 		const setSelectedValue = jest.fn();
 		const { getAllByTestId, asFragment } = render(
 			<>
