@@ -6,6 +6,7 @@ import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
 import { toasts } from "app/services";
+import { SettingsWrapper } from "domains/setting/components/SettingsPageWrapper";
 import { useProfileExport } from "domains/setting/hooks/use-profile-export";
 import electron from "electron";
 import fs from "fs";
@@ -13,7 +14,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const Export = () => {
+export const ExportSettings = () => {
 	const { t } = useTranslation();
 
 	const form = useForm({ mode: "onChange" });
@@ -76,7 +77,7 @@ export const Export = () => {
 	};
 
 	return (
-		<>
+		<SettingsWrapper profile={profile} activeSettings="export">
 			<Header title={t("SETTINGS.EXPORT.TITLE")} subtitle={t("SETTINGS.EXPORT.SUBTITLE")} />
 
 			<Form id="export-settings__form" context={form} onSubmit={handleSubmit} className="mt-8">
@@ -90,6 +91,6 @@ export const Export = () => {
 					</Button>
 				</div>
 			</Form>
-		</>
+		</SettingsWrapper>
 	);
 };
