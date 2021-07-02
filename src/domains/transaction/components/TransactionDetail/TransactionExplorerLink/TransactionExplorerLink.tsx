@@ -18,10 +18,7 @@ export const TransactionExplorerLink = ({ id, link, ...properties }: Transaction
 	const reference = useRef(null);
 
 	return (
-		<TransactionDetail
-			label={t("TRANSACTION.ID")}
-			{...properties}
-		>
+		<TransactionDetail label={t("TRANSACTION.ID")} {...properties}>
 			<div className="flex overflow-hidden items-center space-x-3">
 				<span ref={reference} className="overflow-hidden">
 					<Link to={link} isExternal>
