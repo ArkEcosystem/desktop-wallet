@@ -329,6 +329,9 @@ export const GeneralSettings: React.FC = () => {
 											field: t("SETTINGS.GENERAL.PERSONAL.PASSPHRASE_LANGUAGE"),
 										}).toString(),
 									})}
+									onChange={(bip39Locale: any) =>
+										setValue("bip39Locale", bip39Locale.value, { shouldDirty: true })
+									}
 									options={PlatformSdkChoices.passphraseLanguages}
 									defaultValue={getDefaultValues().bip39Locale}
 								/>
@@ -349,6 +352,9 @@ export const GeneralSettings: React.FC = () => {
 									})}
 									options={PlatformSdkChoices.currencies}
 									defaultValue={getDefaultValues().exchangeCurrency}
+									onChange={(exchangeCurrency: any) =>
+										setValue("exchangeCurrency", exchangeCurrency.value, { shouldDirty: true })
+									}
 								/>
 							</FormField>
 						</div>
@@ -368,6 +374,7 @@ export const GeneralSettings: React.FC = () => {
 									})}
 									options={PlatformSdkChoices.languages}
 									defaultValue={getDefaultValues().locale}
+									onChange={(locale: any) => setValue("locale", locale.value, { shouldDirty: true })}
 								/>
 							</FormField>
 
@@ -385,6 +392,9 @@ export const GeneralSettings: React.FC = () => {
 									})}
 									options={PlatformSdkChoices.marketProviders}
 									defaultValue={getDefaultValues().marketProvider}
+									onChange={(marketProvider: any) =>
+										setValue("marketProvider", marketProvider.value, { shouldDirty: true })
+									}
 								/>
 							</FormField>
 
@@ -402,6 +412,9 @@ export const GeneralSettings: React.FC = () => {
 									})}
 									options={PlatformSdkChoices.timeFormats}
 									defaultValue={getDefaultValues().timeFormat}
+									onChange={(timeFormat: any) =>
+										setValue("timeFormat", timeFormat.value, { shouldDirty: true })
+									}
 								/>
 							</FormField>
 						</div>
