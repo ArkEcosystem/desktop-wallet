@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { buildTranslations } from "app/i18n/helpers";
-import { toasts } from "app/services";
+import { GeneralSettings } from "domains/setting/pages";
 import electron from "electron";
 import { createHashHistory } from "history";
 import os from "os";
@@ -9,11 +9,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, screen, waitFor } from "utils/testing-library";
 
-import { Settings } from "./Settings";
-
 const translations = buildTranslations();
-
-jest.setTimeout(8000);
 
 jest.mock("react-router-dom", () => ({
 	...jest.requireActual("react-router-dom"),
@@ -37,7 +33,7 @@ jest.mock("fs", () => ({
 	writeFileSync: jest.fn(),
 }));
 
-describe("Settings", () => {
+describe("General Settings", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		await env.profiles().restore(profile);
@@ -51,7 +47,7 @@ describe("Settings", () => {
 
 		renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings />
+				<GeneralSettings />
 			</Route>,
 			{
 				// @ts-ignore
@@ -80,7 +76,7 @@ describe("Settings", () => {
 	it("should render", () => {
 		const { container, asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings />
+				<GeneralSettings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -96,7 +92,7 @@ describe("Settings", () => {
 
 		const { asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings />
+				<GeneralSettings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -112,7 +108,7 @@ describe("Settings", () => {
 	it("should update the avatar when removing focus from name input", async () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings />
+				<GeneralSettings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -157,7 +153,7 @@ describe("Settings", () => {
 	it("should not update the uploaded avatar when removing focus from name input", async () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings />
+				<GeneralSettings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -203,7 +199,7 @@ describe("Settings", () => {
 
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings />
+				<GeneralSettings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -284,7 +280,7 @@ describe("Settings", () => {
 	it("should not update profile if name consists only of whitespace", async () => {
 		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings />
+				<GeneralSettings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -305,7 +301,7 @@ describe("Settings", () => {
 	it("should not update profile if profile name exists", async () => {
 		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings />
+				<GeneralSettings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -335,7 +331,7 @@ describe("Settings", () => {
 	it("should not update profile if profile name exists (uppercase)", async () => {
 		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings />
+				<GeneralSettings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -365,7 +361,7 @@ describe("Settings", () => {
 	it("should not update profile if profile name is too long", async () => {
 		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings />
+				<GeneralSettings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -390,7 +386,7 @@ describe("Settings", () => {
 	it("should not update profile if profile name exists (padded)", async () => {
 		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings />
+				<GeneralSettings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -424,7 +420,7 @@ describe("Settings", () => {
 	])("should open & close development network modal (%s)", async (_, buttonId) => {
 		const { container, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings />
+				<GeneralSettings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -459,7 +455,7 @@ describe("Settings", () => {
 	])("should open & close reset profile modal (%s)", async (_, buttonId) => {
 		const { container, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings />
+				<GeneralSettings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -488,7 +484,7 @@ describe("Settings", () => {
 	it("should reset fields on reset", async () => {
 		const { container, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
-				<Settings />
+				<GeneralSettings />
 			</Route>,
 			{
 				routes: [`/profiles/${profile.id()}/settings`],
@@ -518,317 +514,5 @@ describe("Settings", () => {
 		});
 
 		await waitFor(() => expect(getByTestId("General-settings__toggle--isDarkMode")).not.toBeChecked());
-	});
-
-	it("should render password settings", async () => {
-		const { container, asFragment, findByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/settings">
-				<Settings />
-			</Route>,
-			{
-				routes: [`/profiles/${profile.id()}/settings`],
-			},
-		);
-
-		expect(container).toBeTruthy();
-
-		await act(async () => {
-			fireEvent.click(await findByTestId("side-menu__item--Password"));
-		});
-
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should set a password", async () => {
-		const { container, asFragment, findByTestId, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/settings">
-				<Settings />
-			</Route>,
-			{
-				routes: [`/profiles/${profile.id()}/settings`],
-			},
-		);
-
-		expect(container).toBeTruthy();
-
-		await act(async () => {
-			fireEvent.click(await findByTestId("side-menu__item--Password"));
-		});
-
-		const currentPasswordInput = "Password-settings__input--currentPassword";
-
-		expect(() => getByTestId(currentPasswordInput)).toThrow(/Unable to find an element by/);
-
-		await act(async () => {
-			fireEvent.input(getByTestId("Password-settings__input--password_1"), {
-				target: { value: "S3cUrePa$sword" },
-			});
-		});
-
-		await act(async () => {
-			fireEvent.input(getByTestId("Password-settings__input--password_2"), {
-				target: { value: "S3cUrePa$sword" },
-			});
-		});
-
-		// wait for formState.isValid to be updated
-		await findByTestId("Password-settings__submit-button");
-
-		await act(async () => {
-			fireEvent.click(getByTestId("Password-settings__submit-button"));
-		});
-
-		await waitFor(() => expect(getByTestId(currentPasswordInput)).toBeInTheDocument());
-
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should change a password", async () => {
-		const { container, findByTestId, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/settings">
-				<Settings />
-			</Route>,
-			{
-				routes: [`/profiles/${profile.id()}/settings`],
-			},
-		);
-
-		expect(container).toBeTruthy();
-
-		await act(async () => {
-			fireEvent.click(await findByTestId("side-menu__item--Password"));
-		});
-
-		const currentPasswordInput = "Password-settings__input--currentPassword";
-
-		await waitFor(() => expect(getByTestId(currentPasswordInput)).toBeTruthy());
-
-		act(() => {
-			fireEvent.input(getByTestId(currentPasswordInput), { target: { value: "S3cUrePa$sword" } });
-		});
-		act(() => {
-			fireEvent.input(getByTestId("Password-settings__input--password_1"), {
-				target: { value: "S3cUrePa$sword2different" },
-			});
-		});
-		act(() => {
-			fireEvent.input(getByTestId("Password-settings__input--password_2"), {
-				target: { value: "S3cUrePa$sword2different" },
-			});
-		});
-
-		// wait for formState.isValid to be updated
-		await findByTestId("Password-settings__submit-button");
-
-		await act(async () => {
-			fireEvent.click(getByTestId("Password-settings__submit-button"));
-		});
-
-		await waitFor(() => expect(getByTestId(currentPasswordInput)).toBeInTheDocument());
-	});
-
-	it("should show an error toast if the current password does not match", async () => {
-		const toastSpy = jest.spyOn(toasts, "error");
-
-		const { container, asFragment, findByTestId, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/settings">
-				<Settings />
-			</Route>,
-			{
-				routes: [`/profiles/${profile.id()}/settings`],
-			},
-		);
-
-		expect(container).toBeTruthy();
-
-		await act(async () => {
-			fireEvent.click(await findByTestId("side-menu__item--Password"));
-		});
-
-		const currentPasswordInput = "Password-settings__input--currentPassword";
-
-		await waitFor(() => expect(getByTestId(currentPasswordInput)).toBeTruthy());
-
-		await act(async () => {
-			fireEvent.input(getByTestId(currentPasswordInput), { target: { value: "wrong!" } });
-		});
-
-		await act(async () => {
-			fireEvent.input(getByTestId("Password-settings__input--password_1"), {
-				target: { value: "AnotherS3cUrePa$swordNew" },
-			});
-		});
-
-		await act(async () => {
-			fireEvent.input(getByTestId("Password-settings__input--password_2"), {
-				target: { value: "AnotherS3cUrePa$swordNew" },
-			});
-		});
-
-		// wait for formState.isValid to be updated
-		await findByTestId("Password-settings__submit-button");
-
-		await act(async () => {
-			fireEvent.click(getByTestId("Password-settings__submit-button"));
-		});
-
-		expect(toastSpy).toHaveBeenCalledWith(
-			`${translations.COMMON.ERROR}: ${translations.SETTINGS.PASSWORD.ERROR.MISMATCH}`,
-		);
-
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should trigger password confirmation mismatch error", async () => {
-		const { container, asFragment, findByTestId, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/settings">
-				<Settings />
-			</Route>,
-			{
-				routes: [`/profiles/${profile.id()}/settings`],
-			},
-		);
-
-		expect(container).toBeTruthy();
-
-		await act(async () => {
-			fireEvent.click(await findByTestId("side-menu__item--Password"));
-		});
-
-		const currentPasswordInput = "Password-settings__input--currentPassword";
-
-		await waitFor(() => expect(getByTestId(currentPasswordInput)).toBeTruthy());
-
-		act(() => {
-			fireEvent.input(getByTestId(currentPasswordInput), { target: { value: "S3cUrePa$sword" } });
-		});
-
-		act(() => {
-			fireEvent.input(getByTestId("Password-settings__input--password_1"), {
-				target: { value: "S3cUrePa$sword2different" },
-			});
-		});
-
-		await waitFor(() =>
-			expect(getByTestId("Password-settings__input--password_1")).toHaveValue("S3cUrePa$sword2different"),
-		);
-
-		act(() => {
-			fireEvent.input(getByTestId("Password-settings__input--password_2"), {
-				target: { value: "S3cUrePa$sword2different1" },
-			});
-		});
-
-		await waitFor(() =>
-			expect(getByTestId("Password-settings__input--password_2")).toHaveValue("S3cUrePa$sword2different1"),
-		);
-
-		act(() => {
-			fireEvent.input(getByTestId("Password-settings__input--password_1"), {
-				target: { value: "new password 2" },
-			});
-		});
-
-		await waitFor(() =>
-			expect(getByTestId("Password-settings__input--password_2")).toHaveAttribute("aria-invalid"),
-		);
-		// wait for formState.isValid to be updated
-		await waitFor(() => expect(getByTestId("Password-settings__submit-button")).toBeDisabled());
-
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should not allow setting the current password as the new password", async () => {
-		const { asFragment, findByTestId, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/settings">
-				<Settings />
-			</Route>,
-			{
-				routes: [`/profiles/${profile.id()}/settings`],
-			},
-		);
-
-		await act(async () => {
-			fireEvent.click(await findByTestId("side-menu__item--Password"));
-		});
-
-		await waitFor(() => expect(getByTestId("Password-settings__input--currentPassword")).toBeTruthy());
-
-		act(() => {
-			fireEvent.input(getByTestId("Password-settings__input--currentPassword"), {
-				target: { value: "S3cUrePa$sword" },
-			});
-		});
-
-		await waitFor(() =>
-			expect(getByTestId("Password-settings__input--currentPassword")).toHaveValue("S3cUrePa$sword"),
-		);
-
-		act(() => {
-			fireEvent.input(getByTestId("Password-settings__input--password_1"), {
-				target: { value: "S3cUrePa$sword" },
-			});
-		});
-
-		await waitFor(() => expect(getByTestId("Password-settings__input--password_1")).toHaveValue("S3cUrePa$sword"));
-
-		await waitFor(() =>
-			expect(getByTestId("Password-settings__input--password_1")).toHaveAttribute("aria-invalid"),
-		);
-
-		await waitFor(() => expect(getByTestId("Password-settings__submit-button")).toBeDisabled());
-
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should render export settings", async () => {
-		const { container, asFragment, findByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/settings">
-				<Settings />
-			</Route>,
-			{
-				routes: [`/profiles/${profile.id()}/settings`],
-			},
-		);
-
-		expect(container).toBeTruthy();
-
-		await act(async () => {
-			fireEvent.click(await findByTestId("side-menu__item--Export"));
-		});
-
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should export data", async () => {
-		const exportingProfile = env.profiles().create("Exporting Profile");
-
-		const dialogMock = jest
-			.spyOn(electron.remote.dialog, "showSaveDialog")
-			//@ts-ignore
-			.mockResolvedValue({ filePath: ["/test.dwe"] });
-
-		const { container, findByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/settings">
-				<Settings />
-			</Route>,
-			{
-				routes: [`/profiles/${exportingProfile.id()}/settings`],
-				withProfileSynchronizer: true,
-			},
-		);
-
-		expect(container).toBeTruthy();
-
-		await act(async () => {
-			fireEvent.click(await findByTestId("side-menu__item--Export"));
-		});
-
-		await act(async () => {
-			fireEvent.click(await findByTestId("Export-settings__submit-button"));
-			await waitFor(() => expect(dialogMock).toHaveBeenCalled());
-		});
-
-		dialogMock.mockRestore();
 	});
 });

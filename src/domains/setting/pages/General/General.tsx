@@ -14,6 +14,7 @@ import { toasts } from "app/services";
 import { PlatformSdkChoices } from "data";
 import { ResetProfile } from "domains/profile/components/ResetProfile";
 import { DevelopmentNetwork } from "domains/setting/components/DevelopmentNetwork";
+import { SettingsWrapper } from "domains/setting/components/SettingsPageWrapper";
 import { useSettingsPrompt } from "domains/setting/hooks/use-settings-prompt";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -37,7 +38,7 @@ interface GeneralSettingsState {
 	useTestNetworks: boolean;
 }
 
-export const General: React.FC = () => {
+export const GeneralSettings: React.FC = () => {
 	const profile = useActiveProfile();
 
 	const isProfileRestored = profile.status().isRestored();
@@ -286,7 +287,7 @@ export const General: React.FC = () => {
 	};
 
 	return (
-		<>
+		<SettingsWrapper profile={profile} activeSettings="general">
 			<Header title={t("SETTINGS.GENERAL.TITLE")} subtitle={t("SETTINGS.GENERAL.SUBTITLE")} />
 
 			<Form data-testid="General-settings__form" context={form as any} onSubmit={handleSubmit as any}>
@@ -458,6 +459,6 @@ export const General: React.FC = () => {
 			/>
 
 			<Prompt message={getPromptMessage} />
-		</>
+		</SettingsWrapper>
 	);
 };

@@ -5,6 +5,7 @@ import { InputPassword } from "app/components/Input";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useValidation } from "app/hooks";
 import { toasts } from "app/services";
+import { SettingsWrapper } from "domains/setting/components/SettingsPageWrapper";
 import { useSettingsPrompt } from "domains/setting/hooks/use-settings-prompt";
 import React from "react";
 import { useForm } from "react-hook-form";
@@ -62,63 +63,65 @@ export const PasswordSettings = () => {
 	};
 
 	return (
-		<div className="space-y-8">
-			<Header
-				title={t("SETTINGS.PASSWORD.TITLE")}
-				subtitle={
-					usesPassword ? t("SETTINGS.PASSWORD.SUBTITLE.UPDATE") : t("SETTINGS.PASSWORD.SUBTITLE.CREATE")
-				}
-			/>
+		<SettingsWrapper profile={activeProfile} activeSettings="password">
+			<div className="space-y-8">
+				<Header
+					title={t("SETTINGS.PASSWORD.TITLE")}
+					subtitle={
+						usesPassword ? t("SETTINGS.PASSWORD.SUBTITLE.UPDATE") : t("SETTINGS.PASSWORD.SUBTITLE.CREATE")
+					}
+				/>
 
-			<Form
-				id="password-settings__form"
-				context={form as any}
-				onSubmit={handleSubmit as any}
-				className="space-y-5"
-			>
-				{usesPassword && (
-					<FormField name="currentPassword">
-						<FormLabel label={t("SETTINGS.PASSWORD.CURRENT")} />
+				<Form
+					id="password-settings__form"
+					context={form as any}
+					onSubmit={handleSubmit as any}
+					className="space-y-5"
+				>
+					{usesPassword && (
+						<FormField name="currentPassword">
+							<FormLabel label={t("SETTINGS.PASSWORD.CURRENT")} />
+							<InputPassword
+								ref={register({
+									required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+										field: t("SETTINGS.PASSWORD.CURRENT"),
+									}).toString(),
+								})}
+								data-testid="Password-settings__input--currentPassword"
+							/>
+						</FormField>
+					)}
+
+					<FormField name="password">
+						<FormLabel label={t("SETTINGS.PASSWORD.PASSWORD_1")} />
 						<InputPassword
-							ref={register({
-								required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-									field: t("SETTINGS.PASSWORD.CURRENT"),
-								}).toString(),
-							})}
-							data-testid="Password-settings__input--currentPassword"
+							ref={register(passwordValidation.password(currentPassword))}
+							onChange={() => {
+								if (confirmPassword) {
+									trigger("confirmPassword");
+								}
+							}}
+							data-testid={`Password-settings__input--password_1`}
 						/>
 					</FormField>
-				)}
 
-				<FormField name="password">
-					<FormLabel label={t("SETTINGS.PASSWORD.PASSWORD_1")} />
-					<InputPassword
-						ref={register(passwordValidation.password(currentPassword))}
-						onChange={() => {
-							if (confirmPassword) {
-								trigger("confirmPassword");
-							}
-						}}
-						data-testid={`Password-settings__input--password_1`}
-					/>
-				</FormField>
+					<FormField name="confirmPassword">
+						<FormLabel label={t("SETTINGS.PASSWORD.PASSWORD_2")} />
+						<InputPassword
+							ref={register(passwordValidation.confirmPassword(password))}
+							data-testid={`Password-settings__input--password_2`}
+						/>
+					</FormField>
 
-				<FormField name="confirmPassword">
-					<FormLabel label={t("SETTINGS.PASSWORD.PASSWORD_2")} />
-					<InputPassword
-						ref={register(passwordValidation.confirmPassword(password))}
-						data-testid={`Password-settings__input--password_2`}
-					/>
-				</FormField>
+					<div className="flex justify-end mt-8 w-full">
+						<Button data-testid="Password-settings__submit-button" disabled={!isValid} type="submit">
+							{usesPassword ? t("SETTINGS.PASSWORD.BUTTON.UPDATE") : t("SETTINGS.PASSWORD.BUTTON.CREATE")}
+						</Button>
+					</div>
+				</Form>
 
-				<div className="flex justify-end mt-8 w-full">
-					<Button data-testid="Password-settings__submit-button" disabled={!isValid} type="submit">
-						{usesPassword ? t("SETTINGS.PASSWORD.BUTTON.UPDATE") : t("SETTINGS.PASSWORD.BUTTON.CREATE")}
-					</Button>
-				</div>
-			</Form>
-
-			<Prompt message={getPromptMessage} />
-		</div>
+				<Prompt message={getPromptMessage} />
+			</div>
+		</SettingsWrapper>
 	);
 };
