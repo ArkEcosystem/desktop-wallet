@@ -41,10 +41,7 @@ export const DelegateResignationDetail = ({ isOpen, transaction, onClose }: Dele
 
 			<TransactionTimestamp timestamp={transaction.timestamp()} />
 
-			<TransactionConfirmations
-				isConfirmed={transaction.isConfirmed()}
-				confirmations={transaction.confirmations()}
-			/>
+			<TransactionConfirmations transaction={transaction} />
 
 			<TransactionExplorerLink id={transaction.id()} link={transaction.explorerLink()} />
 		</Modal>

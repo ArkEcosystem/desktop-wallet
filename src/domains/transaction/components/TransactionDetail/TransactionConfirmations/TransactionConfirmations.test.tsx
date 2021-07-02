@@ -7,7 +7,11 @@ import { TransactionConfirmations } from "./TransactionConfirmations";
 
 describe("TransactionConfirmations", () => {
 	it("should render when confirmed", () => {
-		const { container } = render(<TransactionConfirmations isConfirmed={true} confirmations={BigNumber.ONE} />);
+		// @ts-ignore
+		const { container } = render(<TransactionConfirmations transaction={{
+			isConfirmed: () => true,
+			confirmations: () => BigNumber.ONE,
+		}} />);
 
 		expect(container).toHaveTextContent(transactionTranslations.WELL_CONFIRMED);
 		expect(container).not.toHaveTextContent(transactionTranslations.NOT_CONFIRMED);
@@ -17,7 +21,11 @@ describe("TransactionConfirmations", () => {
 	});
 
 	it("should render when not confirmed", () => {
-		const { container } = render(<TransactionConfirmations isConfirmed={false} confirmations={BigNumber.ONE} />);
+		// @ts-ignore
+		const { container } = render(<TransactionConfirmations transaction={{
+			isConfirmed: () => false,
+			confirmations: () => BigNumber.ONE,
+		}} />);
 
 		expect(container).not.toHaveTextContent(transactionTranslations.WELL_CONFIRMED);
 		expect(container).toHaveTextContent(transactionTranslations.NOT_CONFIRMED);
