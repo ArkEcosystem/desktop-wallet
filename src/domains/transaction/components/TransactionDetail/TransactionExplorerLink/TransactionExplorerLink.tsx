@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 import { TransactionDetail, TransactionDetailProperties } from "../TransactionDetail";
 
 type TransactionExplorerLinkProperties = {
-	transaction: DTO.ExtendedConfirmedTransactionData;
+	transaction: DTO.ExtendedConfirmedTransactionData | DTO.ExtendedSignedTransactionData;
 } & TransactionDetailProperties;
 
 export const TransactionExplorerLink = ({ transaction, ...properties }: TransactionExplorerLinkProperties) => {

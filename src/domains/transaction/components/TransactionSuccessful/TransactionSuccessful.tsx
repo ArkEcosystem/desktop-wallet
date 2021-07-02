@@ -31,8 +31,7 @@ export const TransactionSuccessful = ({ children, transaction, senderWallet }: T
 				{senderWallet && transaction && (
 					<>
 						<TransactionExplorerLink
-							id={transaction.id()}
-							link={senderWallet.coin().link().transaction(transaction.id())}
+							transaction={transaction}
 							border={false}
 							paddingPosition="bottom"
 						/>
