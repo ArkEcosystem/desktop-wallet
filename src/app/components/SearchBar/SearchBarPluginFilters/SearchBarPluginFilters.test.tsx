@@ -6,6 +6,7 @@ import { SearchBarPluginFilters } from "./SearchBarPluginFilters";
 describe("SearchBarPluginFilters", () => {
 	it("should render", () => {
 		const { asFragment, getByTestId } = render(<SearchBarPluginFilters />);
+
 		expect(getByTestId("SearchBarPluginFilters")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -18,17 +19,22 @@ describe("SearchBarPluginFilters", () => {
 			},
 		];
 		const { asFragment, getByTestId } = render(<SearchBarPluginFilters categories={categories} />);
+
 		expect(getByTestId("SearchBarPluginFilters")).toBeTruthy();
+
 		act(() => {
 			fireEvent.click(getByTestId("dropdown__toggle"));
 		});
+
 		expect(getByTestId("SearchBarPluginFilters-category-game")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render default categories", () => {
 		const { asFragment, getByTestId } = render(<SearchBarPluginFilters />);
+
 		expect(getByTestId("SearchBarPluginFilters")).toBeTruthy();
+
 		act(() => {
 			fireEvent.click(getByTestId("dropdown__toggle"));
 		});
@@ -53,10 +59,13 @@ describe("SearchBarPluginFilters", () => {
 		const { asFragment, getByTestId } = render(
 			<SearchBarPluginFilters categories={categories} initialValues={initialValues} />,
 		);
+
 		expect(getByTestId("SearchBarPluginFilters")).toBeTruthy();
+
 		act(() => {
 			fireEvent.click(getByTestId("dropdown__toggle"));
 		});
+
 		expect(getByTestId("SearchBarPluginFilters-category-game")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -85,11 +94,13 @@ describe("SearchBarPluginFilters", () => {
 		);
 
 		expect(getByTestId("SearchBarPluginFilters")).toBeTruthy();
+
 		act(() => {
 			fireEvent.click(getByTestId("dropdown__toggle"));
 		});
 
 		const resetLink = getByTestId("SearchBarPluginFilters-reset");
+
 		expect(resetLink).toBeTruthy();
 
 		act(() => {
@@ -114,11 +125,13 @@ describe("SearchBarPluginFilters", () => {
 		const { getByTestId } = render(<SearchBarPluginFilters onChange={function_} categories={categories} />);
 
 		expect(getByTestId("SearchBarPluginFilters")).toBeTruthy();
+
 		act(() => {
 			fireEvent.click(getByTestId("dropdown__toggle"));
 		});
 
 		const gameCheckbox = getByTestId("SearchBarPluginFilters-category-game");
+
 		expect(gameCheckbox).toBeTruthy();
 
 		act(() => {
@@ -149,11 +162,13 @@ describe("SearchBarPluginFilters", () => {
 		);
 
 		expect(getByTestId("SearchBarPluginFilters")).toBeTruthy();
+
 		act(() => {
 			fireEvent.click(getByTestId("dropdown__toggle"));
 		});
 
 		const gameCheckbox = getByTestId("SearchBarPluginFilters-category-game");
+
 		expect(gameCheckbox).toBeTruthy();
 
 		act(() => {
@@ -184,11 +199,13 @@ describe("SearchBarPluginFilters", () => {
 		);
 
 		expect(getByTestId("SearchBarPluginFilters")).toBeTruthy();
+
 		act(() => {
 			fireEvent.click(getByTestId("dropdown__toggle"));
 		});
 
 		const gameCheckbox = getByTestId("SearchBarPluginFilters-category-game");
+
 		expect(gameCheckbox).toBeTruthy();
 
 		act(() => {
@@ -220,6 +237,7 @@ describe("SearchBarPluginFilters", () => {
 		);
 
 		expect(getByTestId("SearchBarPluginFilters")).toBeTruthy();
+
 		act(() => {
 			fireEvent.click(getByTestId("dropdown__toggle"));
 		});

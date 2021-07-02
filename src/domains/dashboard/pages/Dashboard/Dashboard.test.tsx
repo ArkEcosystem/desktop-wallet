@@ -210,6 +210,7 @@ describe("Dashboard", () => {
 
 		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/wallets/import`);
 		expect(asFragment()).toMatchSnapshot();
+
 		listenSpy.mockReset();
 	});
 
@@ -288,6 +289,7 @@ describe("Dashboard", () => {
 		expect(toastSpy).toHaveBeenCalled();
 
 		expect(asFragment()).toMatchSnapshot();
+
 		walletRestoreMock.mockRestore();
 		toastSpy.mockRestore();
 	});

@@ -6,6 +6,7 @@ import { TransactionField } from "./TransactionField";
 describe("TransactionField", () => {
 	it("should render", () => {
 		const { container } = render(<TransactionField label="Test">test</TransactionField>);
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -15,6 +16,7 @@ describe("TransactionField", () => {
 				test
 			</TransactionField>,
 		);
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -24,6 +26,7 @@ describe("TransactionField", () => {
 				test
 			</TransactionField>,
 		);
+
 		expect(container).toMatchSnapshot();
 	});
 

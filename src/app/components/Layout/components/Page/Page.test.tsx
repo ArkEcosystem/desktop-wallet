@@ -22,12 +22,14 @@ describe("Page", () => {
 		const sidebar = true;
 
 		const { container, asFragment } = renderWithRouter(<Page title="Test" sidebar={sidebar} />);
+
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render without sidebar", () => {
 		const { container, asFragment } = renderWithRouter(<Page title="Test" />);
+
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -59,6 +61,7 @@ describe("Page", () => {
 			});
 
 			expect(await findByText(label)).toBeTruthy();
+
 			fireEvent.click(await findByText(label));
 
 			if (label === "Support") {
@@ -96,6 +99,7 @@ describe("Page", () => {
 		});
 
 		expect(await findByText("Sign Out")).toBeTruthy();
+
 		fireEvent.click(await findByText("Sign Out"));
 
 		expect(historySpy).toHaveBeenCalledWith("/");

@@ -111,6 +111,7 @@ describe("Wallets", () => {
 		});
 
 		await waitFor(() => expect(getByTestId("WalletsList")).toBeTruthy());
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -153,6 +154,7 @@ describe("Wallets", () => {
 		);
 
 		expect(asFragment()).toMatchSnapshot();
+
 		profile.settings().set(Contracts.ProfileSetting.UseTestNetworks, true);
 	});
 
@@ -297,6 +299,7 @@ describe("Wallets", () => {
 		);
 
 		expect(asFragment()).toMatchSnapshot();
+
 		listenSpy.mockReset();
 	});
 
@@ -342,6 +345,7 @@ describe("Wallets", () => {
 		});
 
 		await waitFor(() => expect(getByTestId("WalletsList")).toBeTruthy());
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

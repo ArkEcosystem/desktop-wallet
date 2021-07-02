@@ -166,6 +166,7 @@ describe("AuthenticationStep", () => {
 		});
 
 		await waitFor(() => expect(result.current.getValues()).toEqual({ mnemonic: MNEMONICS[0] }));
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -193,6 +194,7 @@ describe("AuthenticationStep", () => {
 		});
 
 		await waitFor(() => expect(result.current.getValues()).toEqual({ secret: "secret" }));
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -220,6 +222,7 @@ describe("AuthenticationStep", () => {
 		});
 
 		await waitFor(() => expect(result.current.getValues()).toEqual({ mnemonic: MNEMONICS[0] }));
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -291,6 +294,7 @@ describe("AuthenticationStep", () => {
 				secondMnemonic: MNEMONICS[1],
 			}),
 		);
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 

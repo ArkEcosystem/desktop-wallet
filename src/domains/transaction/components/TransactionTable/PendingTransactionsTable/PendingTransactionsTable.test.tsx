@@ -180,6 +180,7 @@ describe("Signed Transaction Table", () => {
 
 	it("should render pending transfers", () => {
 		const { asFragment } = render(<PendingTransactions transfers={transfers} wallet={wallet} />);
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -207,6 +208,7 @@ describe("Signed Transaction Table", () => {
 		const canBeSignedMock = jest.spyOn(wallet.transaction(), "canBeSigned").mockReturnValue(false);
 
 		const { asFragment } = render(<PendingTransactions signed={Object.values(fixtures)} wallet={wallet} />);
+
 		expect(asFragment()).toMatchSnapshot();
 
 		canBeSignedMock.mockReset();
@@ -223,6 +225,7 @@ describe("Signed Transaction Table", () => {
 		await waitFor(() => expect(screen.getByText("status-pending.svg")).toBeInTheDocument());
 
 		expect(asFragment()).toMatchSnapshot();
+
 		isAwaitingConfirmationMock.mockRestore();
 		canBeSignedMock.mockRestore();
 	});
@@ -237,6 +240,7 @@ describe("Signed Transaction Table", () => {
 		await waitFor(() => expect(screen.getByText("awaiting-our-signature.svg")).toBeInTheDocument());
 
 		expect(asFragment()).toMatchSnapshot();
+
 		isAwaitingOurSignatureMock.mockRestore();
 		canBeSignedMock.mockRestore();
 	});
@@ -254,6 +258,7 @@ describe("Signed Transaction Table", () => {
 		await waitFor(() => expect(screen.getByText("awaiting-other-signature.svg")).toBeInTheDocument());
 
 		expect(asFragment()).toMatchSnapshot();
+
 		isAwaitingOurSignatureMock.mockRestore();
 		remainingSignatureCountMock.mockRestore();
 		canBeSignedMock.mockRestore();
@@ -271,6 +276,7 @@ describe("Signed Transaction Table", () => {
 		await waitFor(() => expect(screen.getByText("awaiting-final-signature.svg")).toBeInTheDocument());
 
 		expect(asFragment()).toMatchSnapshot();
+
 		isAwaitingOurSignatureMock.mockRestore();
 		canBeSignedMock.mockRestore();
 	});
@@ -319,6 +325,7 @@ describe("Signed Transaction Table", () => {
 		const { asFragment } = render(<PendingTransactions signed={[fixtures.transfer]} wallet={wallet} />);
 
 		expect(asFragment()).toMatchSnapshot();
+
 		isVoteMock.mockRestore();
 		canBeSignedMock.mockRestore();
 	});
@@ -330,6 +337,7 @@ describe("Signed Transaction Table", () => {
 		const { asFragment } = render(<PendingTransactions signed={[fixtures.transfer]} wallet={wallet} />);
 
 		expect(asFragment()).toMatchSnapshot();
+
 		isUnvoteMock.mockRestore();
 		canBeSignedMock.mockRestore();
 	});

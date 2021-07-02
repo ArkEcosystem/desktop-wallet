@@ -110,8 +110,10 @@ describe("SignMessage", () => {
 		};
 
 		const { container, getByText } = render(<SignedStep wallet={wallet} signedMessage={signedMessage} />);
+
 		expect(getByText("my-alias")).toBeInTheDocument();
 		expect(container).toMatchSnapshot();
+
 		aliasMock.mockRestore();
 	});
 

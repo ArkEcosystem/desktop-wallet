@@ -131,6 +131,7 @@ describe("App", () => {
 		});
 
 		await env.profiles().restore(passwordProtectedProfile, getDefaultPassword());
+
 		expect(history.location.pathname).toMatch("/");
 
 		await act(async () => {
@@ -215,6 +216,7 @@ describe("App", () => {
 		process.env.REACT_APP_IS_E2E = "1";
 
 		const { container, asFragment, getByText, getByTestId } = renderWithRouter(<App />, { withProviders: false });
+
 		expect(getByTestId("Splash__text")).toBeInTheDocument();
 
 		await act(async () => {
@@ -234,6 +236,7 @@ describe("App", () => {
 		jest.spyOn(window.navigator, "onLine", "get").mockReturnValueOnce(false);
 
 		const { container, asFragment, getByTestId } = renderWithRouter(<App />, { withProviders: false });
+
 		expect(getByTestId("Splash__text")).toBeInTheDocument();
 
 		await act(async () => {
@@ -286,6 +289,7 @@ describe("App", () => {
 		process.env.REACT_APP_IS_E2E = "1";
 
 		const { container, asFragment, getByText, getByTestId } = renderWithRouter(<App />, { withProviders: false });
+
 		expect(getByTestId("Splash__text")).toBeInTheDocument();
 
 		await act(async () => {
@@ -308,6 +312,7 @@ describe("App", () => {
 		process.env.REACT_APP_IS_E2E = undefined;
 
 		const { asFragment, getByText, getByTestId } = renderWithRouter(<App />, { withProviders: false });
+
 		expect(getByTestId("Splash__text")).toBeInTheDocument();
 
 		await act(async () => {

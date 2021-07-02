@@ -58,10 +58,12 @@ describe("MnemonicVerification", () => {
 		const firstTab = asFragment();
 		const wrongButton = getByText(mnemonicWords[4]);
 		fireEvent.click(wrongButton);
+
 		expect(firstTab).toEqual(asFragment());
 
 		const firstButton = getByText(mnemonicWords[wordPositions[0] - 1]);
 		fireEvent.click(firstButton);
+
 		expect(firstTab).not.toEqual(asFragment());
 
 		const secondButton = getByText(mnemonicWords[wordPositions[1] - 1]);

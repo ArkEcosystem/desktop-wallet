@@ -11,6 +11,7 @@ describe("Electron utils", () => {
 	describe("setThemeSource", () => {
 		it("should set theme source", () => {
 			setThemeSource("theme");
+
 			expect(electron.remote.nativeTheme.themeSource).toEqual("theme");
 		});
 	});
@@ -174,6 +175,7 @@ describe("Electron utils", () => {
 
 		it.each(["http://foo.bar/", "https://foo.bar/"])("should open links with a valid protocol (%s)", (link) => {
 			openExternal(link);
+
 			expect(ipcRendererMock).toHaveBeenCalledWith("open-external", link);
 		});
 

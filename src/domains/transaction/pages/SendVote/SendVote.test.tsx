@@ -124,6 +124,7 @@ describe("SendVote", () => {
 		);
 
 		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
 
 		// Back to select a delegate page
@@ -162,6 +163,7 @@ describe("SendVote", () => {
 		);
 
 		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[1].username));
 
 		// Back to select a delegate page
@@ -201,6 +203,7 @@ describe("SendVote", () => {
 		);
 
 		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
 
 		// Back to select a delegate page
@@ -251,6 +254,7 @@ describe("SendVote", () => {
 		);
 
 		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
 
 		expect(screen.getAllByRole("radio")[1]).toBeChecked();
@@ -260,6 +264,7 @@ describe("SendVote", () => {
 
 		// Review Step
 		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+
 		fireEvent.click(getByTestId("SendVote__button--continue"));
 
 		// AuthenticationStep
@@ -287,6 +292,7 @@ describe("SendVote", () => {
 
 		const passwordInput = getByTestId("AuthenticationStep__mnemonic");
 		fireEvent.input(passwordInput, { target: { value: passphrase } });
+
 		expect(passwordInput).toHaveValue(passphrase);
 
 		await waitFor(() => expect(getByTestId("SendVote__button--submit")).not.toBeDisabled());
@@ -362,13 +368,16 @@ describe("SendVote", () => {
 		);
 
 		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
 
 		// Fee
 		expect(screen.getAllByRole("radio")[1]).toBeChecked();
+
 		act(() => {
 			fireEvent.click(within(screen.getByTestId("InputFee")).getAllByRole("radio")[2]);
 		});
+
 		expect(screen.getAllByRole("radio")[2]).toBeChecked();
 
 		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
@@ -376,6 +385,7 @@ describe("SendVote", () => {
 
 		// Review Step
 		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+
 		fireEvent.click(getByTestId("SendVote__button--continue"));
 
 		// AuthenticationStep
@@ -393,6 +403,7 @@ describe("SendVote", () => {
 
 		const passwordInput = getByTestId("AuthenticationStep__mnemonic");
 		fireEvent.input(passwordInput, { target: { value: passphrase } });
+
 		expect(passwordInput).toHaveValue(passphrase);
 
 		await waitFor(() => expect(getByTestId("SendVote__button--submit")).not.toBeDisabled());
@@ -437,6 +448,7 @@ describe("SendVote", () => {
 		);
 
 		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[1].username));
 
 		act(() => {
@@ -457,15 +469,19 @@ describe("SendVote", () => {
 
 		// Back to review step
 		fireEvent.click(getByTestId("SendVote__button--continue"));
+
 		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+
 		fireEvent.click(getByTestId("SendVote__button--continue"));
 
 		// Authentication Step
 		expect(getByTestId("AuthenticationStep")).toBeTruthy();
+
 		fireEvent.click(getByTestId("SendVote__button--back"));
 
 		// Back to Review Step
 		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+
 		fireEvent.click(getByTestId("SendVote__button--continue"));
 
 		// Back to AuthenticationStep
@@ -502,6 +518,7 @@ describe("SendVote", () => {
 		);
 
 		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[1].username));
 
 		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
@@ -509,6 +526,7 @@ describe("SendVote", () => {
 
 		// Review Step
 		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+
 		fireEvent.click(getByTestId("SendVote__button--continue"));
 
 		// AuthenticationStep
@@ -526,6 +544,7 @@ describe("SendVote", () => {
 
 		const passwordInput = getByTestId("AuthenticationStep__mnemonic");
 		fireEvent.input(passwordInput, { target: { value: passphrase } });
+
 		expect(passwordInput).toHaveValue(passphrase);
 
 		await waitFor(() => expect(getByTestId("SendVote__button--submit")).not.toBeDisabled());
@@ -570,6 +589,7 @@ describe("SendVote", () => {
 		);
 
 		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
 
 		// Fee
@@ -577,6 +597,7 @@ describe("SendVote", () => {
 			fireEvent.click(getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
 		});
 		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
+
 		expect(getByTestId("InputCurrency")).toHaveValue("10");
 
 		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
@@ -584,10 +605,12 @@ describe("SendVote", () => {
 
 		// Review Step
 		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+
 		fireEvent.click(getByTestId("SendVote__button--continue"));
 
 		// Fee warning
 		expect(getByTestId("FeeWarning__cancel-button")).toBeTruthy();
+
 		fireEvent.click(getByTestId("FeeWarning__cancel-button"));
 
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toBeTruthy());
@@ -619,6 +642,7 @@ describe("SendVote", () => {
 		);
 
 		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
 
 		// Fee
@@ -626,6 +650,7 @@ describe("SendVote", () => {
 			fireEvent.click(getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
 		});
 		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
+
 		expect(getByTestId("InputCurrency")).toHaveValue("10");
 
 		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
@@ -633,10 +658,12 @@ describe("SendVote", () => {
 
 		// Review Step
 		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+
 		fireEvent.click(getByTestId("SendVote__button--continue"));
 
 		// Fee warning
 		expect(getByTestId("FeeWarning__continue-button")).toBeTruthy();
+
 		fireEvent.click(getByTestId("FeeWarning__continue-button"));
 
 		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
@@ -668,9 +695,11 @@ describe("SendVote", () => {
 		);
 
 		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
 
 		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
 
 		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
@@ -678,6 +707,7 @@ describe("SendVote", () => {
 
 		// Review Step
 		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+
 		fireEvent.click(getByTestId("SendVote__button--continue"));
 
 		// AuthenticationStep
@@ -720,9 +750,11 @@ describe("SendVote", () => {
 		);
 
 		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
 
 		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
 
 		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
@@ -730,6 +762,7 @@ describe("SendVote", () => {
 
 		// Review Step
 		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+
 		fireEvent.click(getByTestId("SendVote__button--continue"));
 
 		// AuthenticationStep
@@ -799,6 +832,7 @@ describe("SendVote", () => {
 		);
 
 		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[1].username));
 
 		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
@@ -890,6 +924,7 @@ describe("SendVote", () => {
 		);
 
 		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[1].username));
 
 		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
@@ -957,6 +992,7 @@ describe("SendVote", () => {
 		);
 
 		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
 
 		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
@@ -964,6 +1000,7 @@ describe("SendVote", () => {
 
 		// Review Step
 		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+
 		fireEvent.click(getByTestId("SendVote__button--continue"));
 
 		// AuthenticationStep

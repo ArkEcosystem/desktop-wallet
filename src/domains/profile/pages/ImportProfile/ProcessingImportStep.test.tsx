@@ -31,6 +31,7 @@ describe("Import Profile - Processing import", () => {
 
 	it("should not run import process if file is not provided", () => {
 		const { container } = render(<ProcessingImport env={env} />);
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -38,6 +39,7 @@ describe("Import Profile - Processing import", () => {
 		const onSuccess = jest.fn();
 		const { container } = render(<ProcessingImport env={env} file={dwe} onSuccess={onSuccess} />);
 		await waitFor(() => expect(onSuccess).toHaveBeenCalled());
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -45,6 +47,7 @@ describe("Import Profile - Processing import", () => {
 		const onSuccess = jest.fn();
 		const { container } = render(<ProcessingImport env={env} file={json} onSuccess={onSuccess} />);
 		await waitFor(() => expect(onSuccess).toHaveBeenCalled());
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -67,6 +70,7 @@ describe("Import Profile - Processing import", () => {
 
 		await waitFor(() => expect(() => getByTestId("modal__inner")).toThrow());
 		await waitFor(() => expect(onPasswordChange).toHaveBeenCalledWith("S3cUrePa$sword"));
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -108,6 +112,7 @@ describe("Import Profile - Processing import", () => {
 
 		await waitFor(() => expect(getByTestId("modal__inner")).toBeInTheDocument());
 		await waitFor(() => expect(onPasswordChange).not.toHaveBeenCalledWith("testtest2"));
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -145,6 +150,7 @@ describe("Import Profile - Processing import", () => {
 		const { container } = render(<ProcessingImport env={env} file={jsonEmpty} onError={onError} password="test" />);
 
 		await waitFor(() => expect(onError).toHaveBeenCalled());
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -160,6 +166,7 @@ describe("Import Profile - Processing import", () => {
 		);
 
 		await waitFor(() => expect(onError).toHaveBeenCalled());
+
 		expect(container).toMatchSnapshot();
 	});
 });

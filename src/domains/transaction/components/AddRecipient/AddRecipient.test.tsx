@@ -55,6 +55,7 @@ describe("AddRecipient", () => {
 		const { container } = await renderWithFormProvider(
 			<AddRecipient profile={profile} wallet={wallet} recipients={undefined} />,
 		);
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -84,6 +85,7 @@ describe("AddRecipient", () => {
 		);
 
 		await waitFor(() => expect(getByTestId("SelectDropdown__input")).toHaveValue(""));
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -146,6 +148,7 @@ describe("AddRecipient", () => {
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 		const selectedAddressValue = profile.wallets().first().address();
+
 		expect(getByTestId("SelectDropdown__input")).toHaveValue(selectedAddressValue);
 	});
 
@@ -160,6 +163,7 @@ describe("AddRecipient", () => {
 		});
 
 		await waitFor(() => expect(form.current.getValues("amount")).toEqual(wallet.balance()));
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -187,6 +191,7 @@ describe("AddRecipient", () => {
 		});
 
 		await waitFor(() => expect(form.current.getValues("amount")).toEqual(0));
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -484,6 +489,7 @@ describe("AddRecipient", () => {
 		const removeButton = within(screen.getAllByTestId("recipient-list__recipient-list-item")[0]).getAllByTestId(
 			"recipient-list__remove-recipient",
 		);
+
 		expect(removeButton[0]).toBeTruthy();
 
 		fireEvent.click(removeButton[0]);

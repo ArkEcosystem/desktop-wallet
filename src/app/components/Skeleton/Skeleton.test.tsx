@@ -6,6 +6,7 @@ import { Skeleton } from "./Skeleton";
 describe("Skeleton", () => {
 	it("should render", () => {
 		const { asFragment } = render(<Skeleton />);
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

@@ -1,14 +1,14 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { useHistory } from "react-router-dom";
 
-interface VoteActionsProps {
+interface VoteActionsProperties {
 	profile: Contracts.IProfile;
 	wallet: Contracts.IReadWriteWallet;
 	selectedAddress: string;
 	hasWalletId: boolean;
 }
 
-export const useVoteActions = ({ profile, wallet, selectedAddress, hasWalletId }: VoteActionsProps) => {
+export const useVoteActions = ({ profile, wallet, selectedAddress, hasWalletId }: VoteActionsProperties) => {
 	const history = useHistory();
 
 	const navigateToSendVote = (unvotes: string[], votes: string[]) => {

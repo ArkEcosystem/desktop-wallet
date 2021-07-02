@@ -43,6 +43,7 @@ describe("useWalletFilters", () => {
 		});
 
 		expect(result.current.isFilterChanged).toBe(false);
+
 		await waitFor(() => expect(result.current.viewType).toBe("list"));
 	});
 
@@ -61,6 +62,7 @@ describe("useWalletFilters", () => {
 		});
 
 		expect(result.current.isFilterChanged).toBe(true);
+
 		await waitFor(() => expect(result.current.viewType).toBe("grid"));
 	});
 
@@ -78,6 +80,7 @@ describe("useWalletFilters", () => {
 		});
 
 		expect(result.current.isFilterChanged).toBe(true);
+
 		await waitFor(() => expect(result.current.walletsDisplayType).toBe("starred"));
 	});
 });

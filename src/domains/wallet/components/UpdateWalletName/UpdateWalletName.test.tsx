@@ -82,7 +82,9 @@ describe("UpdateWalletName", () => {
 
 		waitFor(() => {
 			expect(onSave).toHaveBeenCalledWith({ name }, expect.anything());
+
 			wallet.settings().set(Contracts.WalletSetting.Alias, name);
+
 			expect(wallet.settings().get(Contracts.WalletSetting.Alias)).toEqual(name);
 		});
 	});

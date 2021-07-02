@@ -35,6 +35,7 @@ describe("useActiveProfile", () => {
 				routes: [`/profiles/${profile.id()}`],
 			},
 		);
+
 		expect(getByText(profile.name())).toBeTruthy();
 	});
 

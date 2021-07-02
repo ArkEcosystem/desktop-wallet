@@ -63,7 +63,9 @@ describe("MultiPaymentDetail", () => {
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_TRANSFER_DETAIL.TITLE);
+
 		await waitFor(() => expect(getByText(translations.WELL_CONFIRMED)).toBeTruthy());
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

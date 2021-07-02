@@ -70,6 +70,7 @@ describe("InputRange", () => {
 
 		waitFor(() => expect(thumb).toHaveAttribute("aria-valuenow", "6"));
 		waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("6"));
+
 		expect(properties.onChange).toHaveBeenCalledWith("6");
 	});
 
@@ -80,6 +81,7 @@ describe("InputRange", () => {
 		fireEvent.change(input, { target: { value: "11" } });
 
 		waitFor(() => expect(input).toHaveValue("10"));
+
 		expect(getByTestId("Range__thumb")).not.toHaveAttribute("aria-valuenow", "11");
 		expect(properties.onChange).toHaveBeenCalledWith("11");
 	});

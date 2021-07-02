@@ -12,6 +12,7 @@ describe("Import Profile - Error Step", () => {
 
 	it("should render", () => {
 		const { container } = render(<ImportError file={file} />);
+
 		expect(container).toMatchSnapshot();
 	});
 

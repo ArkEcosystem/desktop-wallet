@@ -224,11 +224,14 @@ describe("General Settings", () => {
 
 		// Toggle Test Development Network
 		fireEvent.click(getByTestId("General-settings__toggle--useTestNetworks"));
+
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_DEVELOPMENT_NETWORK.TITLE);
 		expect(getByTestId("modal__inner")).toHaveTextContent(
 			translations.SETTINGS.MODAL_DEVELOPMENT_NETWORK.DESCRIPTION,
 		);
+
 		fireEvent.click(getByTestId("DevelopmentNetwork__continue-button"));
+
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 		// Toggle Test Development Network

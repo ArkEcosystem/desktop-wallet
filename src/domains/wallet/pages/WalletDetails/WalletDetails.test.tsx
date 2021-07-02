@@ -379,6 +379,7 @@ describe("WalletDetails", () => {
 		const { getByTestId, getAllByTestId } = await renderPage();
 
 		const dropdown = getAllByTestId("dropdown__toggle")[2];
+
 		expect(dropdown).toBeTruthy();
 
 		act(() => {
@@ -386,6 +387,7 @@ describe("WalletDetails", () => {
 		});
 
 		const openWalletOption = getByTestId("dropdown__option--secondary-0");
+
 		expect(openWalletOption).toBeTruthy();
 
 		act(() => {
@@ -403,6 +405,7 @@ describe("WalletDetails", () => {
 		});
 
 		expect(getByTestId("WalletHeader__refresh")).toHaveAttribute("aria-busy", "true");
+
 		await waitFor(() => expect(getByTestId("WalletHeader__refresh")).toHaveAttribute("aria-busy", "false"));
 	});
 
@@ -410,6 +413,7 @@ describe("WalletDetails", () => {
 		const { getByTestId, getAllByTestId } = await renderPage();
 
 		const dropdown = getAllByTestId("dropdown__toggle")[2];
+
 		expect(dropdown).toBeTruthy();
 
 		act(() => {
@@ -417,6 +421,7 @@ describe("WalletDetails", () => {
 		});
 
 		const deleteWalletOption = getByTestId("dropdown__option--secondary-1");
+
 		expect(deleteWalletOption).toBeTruthy();
 
 		act(() => {
@@ -424,6 +429,7 @@ describe("WalletDetails", () => {
 		});
 
 		expect(profile.wallets().count()).toEqual(4);
+
 		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
 
 		act(() => {

@@ -108,6 +108,7 @@ describe("InputFee", () => {
 
 		// go back to advanced mode and repeat checks
 		userEvent.click(screen.getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
+
 		expect(defaultProps.onChangeViewType).toBeCalledWith(InputFeeViewType.Advanced);
 		expect(defaultProps.onChange).toBeCalledWith(defaultProps.value);
 	});
@@ -121,6 +122,7 @@ describe("InputFee", () => {
 			const { asFragment } = render(<Wrapper />);
 
 			userEvent.click(screen.getByText(optionText));
+
 			expect(defaultProps.onChange).toHaveBeenCalledWith(optionValue.toString());
 			expect(asFragment()).toMatchSnapshot();
 		});
@@ -145,6 +147,7 @@ describe("InputFee", () => {
 			const { asFragment } = render(<Wrapper />);
 
 			const inputElement = screen.getByTestId("InputCurrency");
+
 			expect(inputElement).toBeInTheDocument();
 
 			act(() => {

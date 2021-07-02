@@ -11,6 +11,7 @@ describe("ContactRoutes", () => {
 				<RouterView routes={[{ component: () => <h1>ContactRoutes</h1>, path: "/" }]} />
 			</MemoryRouter>,
 		);
+
 		expect(getAllByText("ContactRoutes").length).toBeGreaterThan(0);
 		expect(asFragment()).toMatchSnapshot();
 	});

@@ -23,7 +23,9 @@ describe("Welcome", () => {
 		expect(getByText(translations.PAGE_WELCOME.WITH_PROFILES.TITLE)).toBeInTheDocument();
 
 		expect(container).toBeTruthy();
+
 		fireEvent.click(getByText(profile.name()));
+
 		expect(history.location.pathname).toEqual(profileDashboardUrl);
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -36,6 +38,7 @@ describe("Welcome", () => {
 		expect(getByText(translations.PAGE_WELCOME.WITH_PROFILES.TITLE)).toBeInTheDocument();
 
 		expect(container).toBeTruthy();
+
 		act(() => {
 			fireEvent.click(getByText(profile.settings().get(Contracts.ProfileSetting.Name)));
 		});
@@ -90,6 +93,7 @@ describe("Welcome", () => {
 		});
 
 		expect(getByTestId("modal__inner")).toBeInTheDocument();
+
 		await act(async () => {
 			fireEvent.input(getByTestId("SignIn__input--password"), { target: { value: "password" } });
 		});
@@ -131,6 +135,7 @@ describe("Welcome", () => {
 		});
 
 		const settingsOption = getByTestId("dropdown__option--0");
+
 		expect(settingsOption).toBeTruthy();
 		expect(settingsOption).toHaveTextContent(commonTranslations.SETTINGS);
 
@@ -173,6 +178,7 @@ describe("Welcome", () => {
 		});
 
 		const settingsOption = getByTestId("dropdown__option--0");
+
 		expect(settingsOption).toBeTruthy();
 		expect(settingsOption).toHaveTextContent(commonTranslations.SETTINGS);
 
@@ -197,6 +203,7 @@ describe("Welcome", () => {
 		});
 
 		const deleteOption = getByTestId("dropdown__option--1");
+
 		expect(deleteOption).toHaveTextContent(commonTranslations.DELETE);
 
 		act(() => {

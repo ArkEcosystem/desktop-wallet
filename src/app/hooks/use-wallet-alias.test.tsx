@@ -30,7 +30,9 @@ describe("UseWalletAlias", () => {
 	it("should return undefined if wallet has no display name", () => {
 		const displayNameSpy = jest.spyOn(wallet, "displayName").mockReturnValue(undefined);
 		const { result } = renderHook(() => useWalletAlias({ address: wallet.address(), profile }), { wrapper });
+
 		expect(result.current).toBe(undefined);
+
 		displayNameSpy.mockRestore();
 	});
 
@@ -41,6 +43,7 @@ describe("UseWalletAlias", () => {
 		]);
 
 		const { result } = renderHook(() => useWalletAlias({ address: wallet.address(), profile }), { wrapper });
+
 		expect(result.current).toBe(contact.name());
 
 		profile.contacts().forget(contact.id());
@@ -48,6 +51,7 @@ describe("UseWalletAlias", () => {
 
 	it("should return displayName", () => {
 		const { result } = renderHook(() => useWalletAlias({ address: wallet.address(), profile }), { wrapper });
+
 		expect(result.current).toBe(wallet.displayName());
 	});
 
@@ -69,6 +73,7 @@ describe("UseWalletAlias", () => {
 				}),
 			{ wrapper },
 		);
+
 		expect(result.current).toBe(delegate.username());
 
 		walletsSpy.mockRestore();
@@ -91,6 +96,7 @@ describe("UseWalletAlias", () => {
 				}),
 			{ wrapper },
 		);
+
 		expect(result.current).toBe(undefined);
 
 		walletsSpy.mockRestore();

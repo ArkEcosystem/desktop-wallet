@@ -44,6 +44,7 @@ describe("Import Profile - Profile Form Step", () => {
 		);
 
 		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).toHaveAttribute("disabled"));
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -58,6 +59,7 @@ describe("Import Profile - Profile Form Step", () => {
 		);
 
 		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).toHaveAttribute("disabled"));
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -78,6 +80,7 @@ describe("Import Profile - Profile Form Step", () => {
 		);
 
 		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).toHaveAttribute("disabled"));
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -127,6 +130,7 @@ describe("Import Profile - Profile Form Step", () => {
 		});
 
 		const newProfile = env.profiles().findById(emptyProfile.id());
+
 		expect(newProfile.name()).toEqual("test profile 2");
 		expect(newProfile.usesPassword()).toBe(false);
 
@@ -292,6 +296,7 @@ describe("Import Profile - Profile Form Step", () => {
 		act(() => getAllByTestId("InputPassword")[0].focus());
 
 		expect(asFragment()).toMatchSnapshot();
+
 		shouldUseDarkColorsSpy.mockRestore();
 	});
 });

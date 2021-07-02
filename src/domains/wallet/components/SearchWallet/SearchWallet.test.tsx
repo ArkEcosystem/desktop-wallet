@@ -105,6 +105,7 @@ describe.each([true, false])("SearchWallet uses fiat value = %s", (showConverted
 		);
 
 		fireEvent.click(getByTestId("modal__close-btn"));
+
 		expect(onClose).toHaveBeenCalled();
 	});
 

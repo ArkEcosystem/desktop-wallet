@@ -9,6 +9,7 @@ describe("TransactionRowConfirmation", () => {
 		const { getByTestId } = render(
 			<TransactionRowConfirmation transaction={{ ...TransactionFixture, isConfirmed: () => true }} />,
 		);
+
 		expect(getByTestId("TransactionRowConfirmation__confirmed")).toBeTruthy();
 	});
 
@@ -16,6 +17,7 @@ describe("TransactionRowConfirmation", () => {
 		const { getByTestId } = render(
 			<TransactionRowConfirmation transaction={{ ...TransactionFixture, isConfirmed: () => false }} />,
 		);
+
 		expect(getByTestId("TransactionRowConfirmation__pending")).toBeTruthy();
 	});
 
@@ -23,6 +25,7 @@ describe("TransactionRowConfirmation", () => {
 		const { getByTestId } = render(
 			<TransactionRowConfirmation transaction={TransactionFixture} isSignaturePending />,
 		);
+
 		expect(getByTestId("TransactionRowConfirmation__actionRequired")).toBeTruthy();
 	});
 });

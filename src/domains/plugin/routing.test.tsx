@@ -11,6 +11,7 @@ describe("PluginRoutes", () => {
 				<RouterView routes={[{ component: () => <h1>PluginRoutes</h1>, path: "/" }]} />
 			</MemoryRouter>,
 		);
+
 		expect(getAllByText("PluginRoutes").length).toBeGreaterThan(0);
 		expect(asFragment()).toMatchSnapshot();
 	});

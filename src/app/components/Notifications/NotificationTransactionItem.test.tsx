@@ -34,6 +34,7 @@ describe("Notifications", () => {
 			</table>,
 		);
 		await waitFor(() => expect(getAllByTestId("TransactionRowMode").length).toEqual(1));
+
 		expect(container).toMatchSnapshot();
 	});
 

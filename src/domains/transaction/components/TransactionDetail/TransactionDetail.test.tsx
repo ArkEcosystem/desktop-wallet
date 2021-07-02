@@ -6,6 +6,7 @@ import { TransactionDetail } from "./TransactionDetail";
 describe("TransactionDetail", () => {
 	it("should render", () => {
 		const { container } = render(<TransactionDetail label="Test">test</TransactionDetail>);
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -15,6 +16,7 @@ describe("TransactionDetail", () => {
 				test
 			</TransactionDetail>,
 		);
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -24,6 +26,7 @@ describe("TransactionDetail", () => {
 				test
 			</TransactionDetail>,
 		);
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -33,6 +36,7 @@ describe("TransactionDetail", () => {
 				test
 			</TransactionDetail>,
 		);
+
 		expect(container).toMatchSnapshot();
 	});
 

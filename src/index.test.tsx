@@ -35,6 +35,7 @@ describe("Application root", () => {
 		);
 
 		expect(screen.getByText("First")).toBeInTheDocument();
+
 		fireEvent.click(screen.getByText("Navigate"));
 
 		await waitFor(() => expect(screen.getByTestId("ConfirmationModal")).toBeInTheDocument());

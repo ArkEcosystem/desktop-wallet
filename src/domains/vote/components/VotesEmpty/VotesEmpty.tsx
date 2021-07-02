@@ -4,11 +4,11 @@ import { EmptyBlock } from "app/components/EmptyBlock";
 import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 
-interface VotesEmptyProps {
+interface VotesEmptyProperties {
 	onCreateWallet?: () => void;
 	onImportWallet?: () => void;
 }
-export const VotesEmpty = ({ onCreateWallet, onImportWallet }: VotesEmptyProps) => {
+export const VotesEmpty = ({ onCreateWallet, onImportWallet }: VotesEmptyProperties) => {
 	const { t } = useTranslation();
 
 	return (

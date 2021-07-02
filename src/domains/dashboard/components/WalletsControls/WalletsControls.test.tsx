@@ -16,11 +16,13 @@ describe("WalletsControls", () => {
 
 	it("should render", () => {
 		const { container } = render(<WalletsControls filterProperties={filterProperties as any} />);
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render with networks selection", () => {
 		const { container } = render(<WalletsControls filterProperties={filterProperties as any} />);
+
 		expect(container).toMatchSnapshot();
 	});
 

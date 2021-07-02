@@ -173,6 +173,7 @@ describe("useWalletDisplay", () => {
 		);
 
 		expect(result.current.gridWallets).toHaveLength(6);
+
 		ledgerMock.mockRestore();
 	});
 
@@ -201,6 +202,7 @@ describe("useWalletDisplay", () => {
 		);
 
 		expect(result.current.gridWallets).toHaveLength(3);
+
 		ledgerMock.mockRestore();
 	});
 });
