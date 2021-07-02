@@ -53,7 +53,7 @@ export const TransferDetail = ({ isOpen, transaction, onClose }: TransferDetailP
 				confirmations={transaction.confirmations()}
 			/>
 
-			<TransactionExplorerLink id={transaction.id()} link={transaction.explorerLink()} />
+			<TransactionExplorerLink transaction={transaction} />
 		</Modal>
 	);
 };

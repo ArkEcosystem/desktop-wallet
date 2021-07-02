@@ -54,7 +54,7 @@ export const MultiPaymentDetail = ({ isOpen, transaction, onClose }: MultiPaymen
 				confirmations={transaction.confirmations()}
 			/>
 
-			<TransactionExplorerLink id={transaction.id()} link={transaction.explorerLink()} />
+			<TransactionExplorerLink transaction={transaction} />
 		</Modal>
 	);
 };

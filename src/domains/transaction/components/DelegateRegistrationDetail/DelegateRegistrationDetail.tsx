@@ -47,7 +47,7 @@ export const DelegateRegistrationDetail = ({ isOpen, transaction, onClose }: Del
 				confirmations={transaction.confirmations()}
 			/>
 
-			<TransactionExplorerLink id={transaction.id()} link={transaction.explorerLink()} />
+			<TransactionExplorerLink transaction={transaction} />
 		</Modal>
 	);
 };

@@ -38,7 +38,7 @@ export const SecondSignatureDetail = ({ isOpen, transaction, onClose }: SecondSi
 				confirmations={transaction.confirmations()}
 			/>
 
-			<TransactionExplorerLink id={transaction.id()} link={transaction.explorerLink()} />
+			<TransactionExplorerLink transaction={transaction} />
 		</Modal>
 	);
 };
