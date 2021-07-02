@@ -6,8 +6,8 @@ import { TransactionExplorerLink } from "./TransactionExplorerLink";
 
 describe("TransactionExplorerLink", () => {
 	it("should render a transaction link", () => {
-		// @ts-ignore
 		const { container } = render(
+			// @ts-ignore
 			<TransactionExplorerLink
 				transaction={{
 					explorerLink: () => "transaction-link",
