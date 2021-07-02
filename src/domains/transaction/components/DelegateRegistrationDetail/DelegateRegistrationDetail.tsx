@@ -42,10 +42,7 @@ export const DelegateRegistrationDetail = ({ isOpen, transaction, onClose }: Del
 
 			<TransactionTimestamp timestamp={transaction.timestamp()} />
 
-			<TransactionConfirmations
-				isConfirmed={transaction.isConfirmed()}
-				confirmations={transaction.confirmations()}
-			/>
+			<TransactionConfirmations transaction={transaction} />
 
 			<TransactionExplorerLink transaction={transaction} />
 		</Modal>
