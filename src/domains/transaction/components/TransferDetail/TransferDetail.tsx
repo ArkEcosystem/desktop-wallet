@@ -48,20 +48,9 @@ export const TransferDetail = ({ isOpen, transaction, onClose }: TransferDetailP
 
 			<TransactionTimestamp timestamp={transaction.timestamp()} />
 
-			<TransactionConfirmations
-				isConfirmed={transaction.isConfirmed()}
-				confirmations={transaction.confirmations()}
-			/>
+			<TransactionConfirmations transaction={transaction} />
 
-			<TransactionExplorerLink id={transaction.id()} link={transaction.explorerLink()} />
-
-			{transaction.blockId() && (
-				<TransactionExplorerLink
-					id={transaction.blockId()}
-					link={transaction.explorerLinkForBlock()}
-					variant="block"
-				/>
-			)}
+			<TransactionExplorerLink transaction={transaction} />
 		</Modal>
 	);
 };

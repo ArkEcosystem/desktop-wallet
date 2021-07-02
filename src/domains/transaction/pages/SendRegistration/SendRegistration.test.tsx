@@ -66,6 +66,7 @@ const createDelegateRegistrationMock = (wallet: Contracts.IReadWriteWallet) =>
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 		amount: () => +DelegateRegistrationFixture.data.amount / 1e8,
 		data: () => ({ data: () => DelegateRegistrationFixture.data }),
+		explorerLink: () => `https://dexplorer.ark.io/transaction/${DelegateRegistrationFixture.data.id}`,
 		fee: () => +DelegateRegistrationFixture.data.fee / 1e8,
 		id: () => DelegateRegistrationFixture.data.id,
 		recipient: () => DelegateRegistrationFixture.data.recipient,
@@ -79,6 +80,7 @@ const createSecondSignatureRegistrationMock = (wallet: Contracts.IReadWriteWalle
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 		amount: () => 0,
 		data: () => ({ data: () => SecondSignatureRegistrationFixture.data }),
+		explorerLink: () => `https://dexplorer.ark.io/transaction/${SecondSignatureRegistrationFixture.data.id}`,
 		fee: () => +SecondSignatureRegistrationFixture.data.fee / 1e8,
 		id: () => SecondSignatureRegistrationFixture.data.id,
 		recipient: () => SecondSignatureRegistrationFixture.data.recipient,

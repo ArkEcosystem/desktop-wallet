@@ -44,6 +44,7 @@ const createTransactionMultipleMock = (wallet: Contracts.IReadWriteWallet) =>
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 		amount: () => +transactionMultipleFixture.data.amount / 1e8,
 		data: () => ({ data: () => transactionMultipleFixture.data }),
+		explorerLink: () => `https://dexplorer.ark.io/transaction/${transactionFixture.data.id}`,
 		fee: () => +transactionMultipleFixture.data.fee / 1e8,
 		id: () => transactionMultipleFixture.data.id,
 		recipient: () => transactionMultipleFixture.data.recipient,
@@ -62,6 +63,7 @@ const createTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 		amount: () => +transactionFixture.data.amount / 1e8,
 		data: () => ({ data: () => transactionFixture.data }),
+		explorerLink: () => `https://dexplorer.ark.io/transaction/${transactionFixture.data.id}`,
 		fee: () => +transactionFixture.data.fee / 1e8,
 		id: () => transactionFixture.data.id,
 		recipient: () => transactionFixture.data.recipient,
@@ -299,6 +301,7 @@ describe("SendTransfer", () => {
 						.signatory()
 						.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
 				}),
+			wallet,
 		);
 
 		const { getByTestId, asFragment } = render(

@@ -37,6 +37,7 @@ const createVoteTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 		amount: () => voteFixture.data.amount / 1e8,
 		data: () => ({ data: () => voteFixture.data }),
+		explorerLink: () => `https://dexplorer.ark.io/transaction/${voteFixture.data.id}`,
 		fee: () => voteFixture.data.fee / 1e8,
 		id: () => voteFixture.data.id,
 		recipient: () => voteFixture.data.recipient,
@@ -49,6 +50,7 @@ const createUnvoteTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 		amount: () => unvoteFixture.data.amount / 1e8,
 		data: () => ({ data: () => voteFixture.data }),
+		explorerLink: () => `https://dexplorer.ark.io/transaction/${unvoteFixture.data.id}`,
 		fee: () => unvoteFixture.data.fee / 1e8,
 		id: () => unvoteFixture.data.id,
 		recipient: () => unvoteFixture.data.recipient,
