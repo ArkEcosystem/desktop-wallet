@@ -84,6 +84,7 @@ describe("General Settings", () => {
 		);
 
 		await waitFor(() => expect(getByTestId("General-settings__input--name")).toHaveValue(profile.name()));
+
 		expect(container).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -101,6 +102,7 @@ describe("General Settings", () => {
 		);
 
 		await waitFor(() => expect(getByTestId("General-settings__input--name")).toHaveValue(profile.name()));
+
 		expect(screen.getByTestId("General-settings__submit-button")).toBeDisabled();
 		expect(asFragment()).toMatchSnapshot();
 
@@ -445,6 +447,7 @@ describe("General Settings", () => {
 		);
 
 		await waitFor(() => expect(getByTestId("General-settings__input--name")).toHaveValue(profile.name()));
+
 		expect(container).toBeTruthy();
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -481,6 +484,7 @@ describe("General Settings", () => {
 		);
 
 		await waitFor(() => expect(getByTestId("General-settings__input--name")).toHaveValue(profile.name()));
+
 		expect(container).toBeTruthy();
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -511,6 +515,7 @@ describe("General Settings", () => {
 		);
 
 		await waitFor(() => expect(getByTestId("General-settings__input--name")).toHaveValue(profile.name()));
+
 		expect(container).toBeTruthy();
 
 		fireEvent.click(getByTestId("General-settings__toggle--isDarkMode"));
