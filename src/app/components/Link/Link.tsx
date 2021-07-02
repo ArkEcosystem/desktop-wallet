@@ -54,9 +54,7 @@ const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProperties>(
 			href={href || "#"}
 			{...properties}
 		>
-			<Content>
-				{children}
-			</Content>
+			<Content>{children}</Content>
 			{isExternal && showExternalIcon && (
 				<span className="align-middle">
 					<Icon
