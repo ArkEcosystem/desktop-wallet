@@ -216,7 +216,7 @@ describe("SendDelegateResignation", () => {
 
 			fireEvent.click(getByTestId("StepNavigation__continue-button"));
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__review-step")).toBeTruthy());
-			
+
 			fireEvent.click(getByTestId("StepNavigation__continue-button"));
 			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 
@@ -408,7 +408,7 @@ describe("SendDelegateResignation", () => {
 
 			fireEvent.click(getByTestId("StepNavigation__continue-button"));
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__review-step")).toBeTruthy());
-			
+
 			fireEvent.click(getByTestId("StepNavigation__continue-button"));
 			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 

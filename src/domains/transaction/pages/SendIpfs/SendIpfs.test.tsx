@@ -21,7 +21,6 @@ import {
 	screen,
 	syncFees,
 	waitFor,
-	within,
 } from "utils/testing-library";
 
 import { FormStep, ReviewStep, SendIpfs, SummaryStep } from ".";
@@ -80,7 +79,7 @@ describe("SendIpfs", () => {
 
 			await waitFor(() => expect(screen.getByTestId("SendIpfs__form-step")).toBeTruthy());
 			expect(asFragment()).toMatchSnapshot();
-		})
+		});
 	});
 
 	it("should render review step", async () => {
@@ -173,7 +172,9 @@ describe("SendIpfs", () => {
 		fireEvent.input(getByTestId("Input__hash"), {
 			target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
 		});
-		await waitFor(() => expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco"));
+		await waitFor(() =>
+			expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco"),
+		);
 
 		fireEvent.click(getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
 		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
@@ -225,7 +226,9 @@ describe("SendIpfs", () => {
 		fireEvent.input(getByTestId("Input__hash"), {
 			target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
 		});
-		await waitFor(() => expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco"));
+		await waitFor(() =>
+			expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco"),
+		);
 
 		fireEvent.click(getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
 		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
@@ -310,7 +313,9 @@ describe("SendIpfs", () => {
 		fireEvent.input(getByTestId("Input__hash"), {
 			target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
 		});
-		await waitFor(() => expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco"));
+		await waitFor(() =>
+			expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco"),
+		);
 
 		fireEvent.click(getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
 		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
@@ -355,7 +360,9 @@ describe("SendIpfs", () => {
 		fireEvent.input(getByTestId("Input__hash"), {
 			target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
 		});
-		await waitFor(() => expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco"));
+		await waitFor(() =>
+			expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco"),
+		);
 
 		// Fee
 		fireEvent.click(getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
@@ -401,7 +408,9 @@ describe("SendIpfs", () => {
 		fireEvent.input(getByTestId("Input__hash"), {
 			target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
 		});
-		await waitFor(() => expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco"));
+		await waitFor(() =>
+			expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco"),
+		);
 
 		// Fee
 		fireEvent.click(getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
@@ -486,7 +495,9 @@ describe("SendIpfs", () => {
 		fireEvent.input(getByTestId("Input__hash"), {
 			target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
 		});
-		await waitFor(() => expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco"));
+		await waitFor(() =>
+			expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco"),
+		);
 
 		fireEvent.click(getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
 		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
@@ -521,7 +532,7 @@ describe("SendIpfs", () => {
 		expect(container).toMatchSnapshot();
 
 		const historyMock = jest.spyOn(history, "push").mockReturnValue();
-		
+
 		fireEvent.click(getByTestId("ErrorStep__wallet-button"));
 		expect(historyMock).toHaveBeenCalledWith(`/profiles/${getDefaultProfileId()}/wallets/${getDefaultWalletId()}`);
 
@@ -588,7 +599,9 @@ describe("SendIpfs", () => {
 		fireEvent.input(getByTestId("Input__hash"), {
 			target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
 		});
-		await waitFor(() => expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco"));
+		await waitFor(() =>
+			expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco"),
+		);
 
 		fireEvent.click(getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
 		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
@@ -691,7 +704,9 @@ describe("SendIpfs", () => {
 		fireEvent.input(getByTestId("Input__hash"), {
 			target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
 		});
-		await waitFor(() => expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco"));
+		await waitFor(() =>
+			expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco"),
+		);
 
 		fireEvent.click(getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
 		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
@@ -757,7 +772,9 @@ describe("SendIpfs", () => {
 		fireEvent.input(getByTestId("Input__hash"), {
 			target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
 		});
-		await waitFor(() => expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco"));
+		await waitFor(() =>
+			expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco"),
+		);
 
 		fireEvent.click(getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
 		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });

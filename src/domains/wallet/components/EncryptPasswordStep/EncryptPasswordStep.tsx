@@ -24,7 +24,9 @@ export const EncryptPasswordStep = () => {
 				}
 			/>
 
-			<Alert className="mt-6" variant="warning">{t("WALLETS.PAGE_IMPORT_WALLET.ENCRYPT_PASSWORD_STEP.WARNING")}</Alert>
+			<Alert className="mt-6" variant="warning">
+				{t("WALLETS.PAGE_IMPORT_WALLET.ENCRYPT_PASSWORD_STEP.WARNING")}
+			</Alert>
 
 			<div className="pt-6 space-y-6">
 				<FormField name="encryptionPassword">

@@ -9,13 +9,7 @@ import React, { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-const FormStep = ({
-	profile,
-	wallet,
-}: {
-	profile: Contracts.IProfile;
-	wallet: Contracts.IReadWriteWallet;
-}) => {
+const FormStep = ({ profile, wallet }: { profile: Contracts.IProfile; wallet: Contracts.IReadWriteWallet }) => {
 	const { t } = useTranslation();
 
 	const { findByType } = useFees(profile);

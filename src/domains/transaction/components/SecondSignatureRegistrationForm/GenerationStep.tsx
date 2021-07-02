@@ -58,11 +58,7 @@ export const GenerationStep = ({
 
 			<Alert className="mt-6">{t("TRANSACTION.PAGE_SECOND_SIGNATURE.GENERATION_STEP.WARNING")}</Alert>
 
-			<TransactionSender
-				address={wallet.address()}
-				alias={wallet.alias()}
-				borderPosition="bottom"
-			/>
+			<TransactionSender address={wallet.address()} alias={wallet.alias()} borderPosition="bottom" />
 
 			<div className="pt-6">
 				<FormField name="fee">

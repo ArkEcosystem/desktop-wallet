@@ -13,5 +13,9 @@ export const TransactionTimestamp = ({ timestamp }: TransactionTimestampProperti
 	const { t } = useTranslation();
 	const format = useTimeFormat();
 
-	return <TransactionDetail data-testid="TransactionTimestamp" label={t("TRANSACTION.TIMESTAMP")}>{timestamp.format(format)}</TransactionDetail>;
+	return (
+		<TransactionDetail data-testid="TransactionTimestamp" label={t("TRANSACTION.TIMESTAMP")}>
+			{timestamp.format(format)}
+		</TransactionDetail>
+	);
 };

@@ -39,10 +39,7 @@ export const ThirdStep = ({
 
 			<TransactionNetwork network={network} border={false} />
 
-			<TransactionDetail
-				label={t("COMMON.ADDRESS")}
-				extra={<Avatar size="lg" address={address} />}
-			>
+			<TransactionDetail label={t("COMMON.ADDRESS")} extra={<Avatar size="lg" address={address} />}>
 				<Address address={address} />
 			</TransactionDetail>
 

@@ -57,11 +57,7 @@ export const FormStep = ({ fees, wallet, step = 0.001, profile }: any) => {
 
 			<TransactionNetwork network={wallet.network()} border={false} />
 
-			<TransactionSender
-				address={wallet.address()}
-				alias={wallet.alias()}
-				borderPosition="both"
-			/>
+			<TransactionSender address={wallet.address()} alias={wallet.alias()} borderPosition="both" />
 
 			<div className="pt-6 space-y-6">
 				<FormField name="username">

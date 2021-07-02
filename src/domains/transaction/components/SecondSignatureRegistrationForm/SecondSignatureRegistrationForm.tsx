@@ -44,9 +44,7 @@ const transactionDetails = ({
 }: {
 	transaction: DTO.ExtendedSignedTransactionData;
 	wallet: Contracts.IReadWriteWallet;
-}) => (
-	<TransactionFee currency={wallet.currency()} value={transaction.fee()} paddingPosition="top" />
-);
+}) => <TransactionFee currency={wallet.currency()} value={transaction.fee()} paddingPosition="top" />;
 
 component.displayName = "SecondSignatureRegistrationForm";
 transactionDetails.displayName = "SecondSignatureRegistrationFormTransactionDetails";

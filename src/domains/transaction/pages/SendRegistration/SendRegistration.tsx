@@ -216,7 +216,7 @@ export const SendRegistration = () => {
 									</TabPanel>
 								</>
 							)}
-	
+
 							{!showErrorStep && (
 								<StepNavigation
 									onBackClick={handleBack}

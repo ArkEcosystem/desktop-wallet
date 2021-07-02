@@ -4,7 +4,11 @@ import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { useFees } from "app/hooks";
 import { InputFee } from "domains/transaction/components/InputFee";
-import { TransactionDetail, TransactionNetwork, TransactionSender } from "domains/transaction/components/TransactionDetail";
+import {
+	TransactionDetail,
+	TransactionNetwork,
+	TransactionSender,
+} from "domains/transaction/components/TransactionDetail";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -66,10 +70,7 @@ export const FormStep = ({
 
 			<TransactionNetwork network={senderWallet.network()} border={false} />
 
-			<TransactionSender
-				address={senderWallet.address()}
-				alias={senderWallet.alias()}
-			/>
+			<TransactionSender address={senderWallet.address()} alias={senderWallet.alias()} />
 
 			<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")} borderPosition="both">
 				{senderWallet.username()}

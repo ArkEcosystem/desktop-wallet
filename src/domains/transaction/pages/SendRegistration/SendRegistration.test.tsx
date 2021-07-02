@@ -9,14 +9,12 @@ import { Route } from "react-router-dom";
 import DelegateRegistrationFixture from "tests/fixtures/coins/ark/devnet/transactions/delegate-registration.json";
 import SecondSignatureRegistrationFixture from "tests/fixtures/coins/ark/devnet/transactions/second-signature-registration.json";
 import {
-	act,
 	defaultNetMocks,
 	env,
 	fireEvent,
 	getDefaultProfileId,
 	getDefaultWalletMnemonic,
 	MNEMONICS,
-	RenderResult,
 	renderWithRouter,
 	screen,
 	syncDelegates,
@@ -53,7 +51,7 @@ const renderPage = async (wallet: Contracts.IReadWriteWallet, type = "delegateRe
 	await waitFor(() => expect(rendered.getByTestId("Registration__form")).toBeTruthy());
 
 	return {
-		...rendered!,
+		...rendered,
 		history,
 	};
 };
@@ -157,7 +155,6 @@ describe("Registration", () => {
 
 		const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
 		fireEvent.click(fees[1]);
-
 
 		fireEvent.click(
 			within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
@@ -304,9 +301,7 @@ describe("Registration", () => {
 		);
 		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("25"));
 
-		fireEvent.click(
-			within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.SIMPLE),
-		);
+		fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.SIMPLE));
 		expect(() => getByTestId("InputCurrency")).toThrow();
 	});
 

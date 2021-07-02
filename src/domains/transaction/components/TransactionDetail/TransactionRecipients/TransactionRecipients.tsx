@@ -19,7 +19,11 @@ export const TransactionRecipients = ({ currency, recipients, ...properties }: T
 	}
 
 	return recipients.length > 1 ? (
-		<TransactionDetail data-testid="TransactionRecipients" label={t("TRANSACTION.RECIPIENTS_COUNT", { count: recipients.length })} {...properties}>
+		<TransactionDetail
+			data-testid="TransactionRecipients"
+			label={t("TRANSACTION.RECIPIENTS_COUNT", { count: recipients.length })}
+			{...properties}
+		>
 			<div className="-my-2">
 				<RecipientList recipients={recipients} assetSymbol={currency} variant="condensed" />
 			</div>
