@@ -234,6 +234,7 @@ describe("SendIpfs", () => {
 		);
 
 		expect(within(getByTestId("InputFee")).getAllByRole("radio")[1]).toBeChecked();
+
 		fireEvent.click(within(getByTestId("InputFee")).getAllByRole("radio")[2]);
 		await waitFor(() => expect(within(getByTestId("InputFee")).getAllByRole("radio")[2]).toBeChecked());
 
