@@ -44,7 +44,7 @@ export const NetworkIcon = ({ coin, network, iconSize, className, showTooltip, .
 		}
 
 		return "text-theme-secondary-700 border-theme-secondary-300 dark:border-theme-secondary-700";
-	}
+	};
 
 	return (
 		<Tooltip content={displayName} disabled={!showTooltip || !displayName}>
