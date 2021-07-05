@@ -290,9 +290,9 @@ export const GeneralSettings: React.FC = () => {
 		<SettingsWrapper profile={profile} activeSettings="general">
 			<Header title={t("SETTINGS.GENERAL.TITLE")} subtitle={t("SETTINGS.GENERAL.SUBTITLE")} />
 
-			<Form data-testid="General-settings__form" context={form as any} onSubmit={handleSubmit as any}>
+			<Form className="space-y-12" data-testid="General-settings__form" context={form as any} onSubmit={handleSubmit as any}>
 				<div className="relative mt-8">
-					<h2 className="mb-3">{t("SETTINGS.GENERAL.PERSONAL.TITLE")}</h2>
+					<h2 className="text-lg mb-3">{t("SETTINGS.GENERAL.PERSONAL.TITLE")}</h2>
 
 					<SelectProfileImage
 						value={avatar}
@@ -421,13 +421,13 @@ export const GeneralSettings: React.FC = () => {
 					</div>
 				</div>
 
-				<div className="relative mt-10">
-					<h2 className="mb-3">{t("SETTINGS.GENERAL.SECURITY.TITLE")}</h2>
+				<div className="relative">
+					<h2 className="text-lg mb-3">{t("SETTINGS.GENERAL.SECURITY.TITLE")}</h2>
 					<ListDivided items={securityItems} />
 				</div>
 
-				<div className="relative mt-10">
-					<h2 className="mb-3">{t("SETTINGS.GENERAL.OTHER.TITLE")}</h2>
+				<div className="relative">
+					<h2 className="text-lg mb-3">{t("SETTINGS.GENERAL.OTHER.TITLE")}</h2>
 					<ListDivided items={otherItems} />
 				</div>
 
