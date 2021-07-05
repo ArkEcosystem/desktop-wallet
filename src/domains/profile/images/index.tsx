@@ -1,7 +1,11 @@
-import { ImagesDark } from "./dark";
-import { ReactComponent as ProfileCreatedBanner } from "./profile-created-banner.svg";
+import { ReactComponent as ProfileCreatedBannerDarkBlue } from "./profile-created-banner-dark-blue.svg";
+import { ReactComponent as ProfileCreatedBannerDarkGreen } from "./profile-created-banner-dark-green.svg";
+import { ReactComponent as ProfileCreatedBannerLightBlue } from "./profile-created-banner-light-blue.svg";
+import { ReactComponent as ProfileCreatedBannerLightGreen } from "./profile-created-banner-light-green.svg";
 
 export const profile = {
-	ProfileCreatedBanner,
-	...ImagesDark,
+	ProfileCreatedBannerDarkBlue,
+	ProfileCreatedBannerDarkGreen,
+	ProfileCreatedBannerLightBlue,
+	ProfileCreatedBannerLightGreen,
 };
