@@ -52,7 +52,7 @@ describe("StepNavigation", () => {
   });
 
   it("should disable buttons if loading", () => {
-    const { asFragment, rerender } = render(<StepNavigation activeIndex={1} size={2} isLoading />);
+    const { asFragment } = render(<StepNavigation activeIndex={1} size={2} isLoading />);
 
     for (const button of screen.getAllByRole("button")) {
       expect(button).toBeDisabled();
