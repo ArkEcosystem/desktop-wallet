@@ -4,7 +4,6 @@ import nock from "nock";
 import React from "react";
 import * as utils from "utils/electron-utils";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
-let transfers: DTO.ExtendedConfirmedTransactionData[];
 
 describe("Signed Transaction Table", () => {
 	let profile: Contracts.IProfile;
@@ -26,6 +25,9 @@ describe("Signed Transaction Table", () => {
 		jest.spyOn(wallet.transaction(), "canBeSigned").mockReturnValue(true);
 		jest.spyOn(wallet.transaction(), "hasBeenSigned").mockReturnValue(true);
 		jest.spyOn(wallet.transaction(), "isAwaitingConfirmation").mockReturnValue(true);
+		jest.spyOn(wallet.transaction(), "transaction").mockImplementation(() => {
+			return { get: () => undefined };
+		});
 	};
 
 	const mockMultisignatures = (wallet: Contracts.IReadWriteWallet) => {
@@ -35,6 +37,9 @@ describe("Signed Transaction Table", () => {
 		jest.spyOn(wallet.transaction(), "canBeSigned").mockReturnValue(true);
 		jest.spyOn(wallet.transaction(), "hasBeenSigned").mockReturnValue(false);
 		jest.spyOn(wallet.transaction(), "isAwaitingConfirmation").mockReturnValue(false);
+		jest.spyOn(wallet.transaction(), "transaction").mockImplementation(() => {
+			return { get: () => "data" };
+		});
 	};
 
 	beforeAll(async () => {
@@ -54,13 +59,6 @@ describe("Signed Transaction Table", () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 
 		wallet = profile.wallets().first();
-		const sent = await wallet.transactionIndex().sent({ cursor: 1, limit: 20 });
-		transfers = sent
-			.items()
-			.filter(
-				(transaction) =>
-					!transaction.isConfirmed() && (transaction.isMultiPayment() || transaction.isTransfer()),
-			);
 	});
 
 	beforeEach(async () => {
@@ -264,6 +262,35 @@ describe("Signed Transaction Table", () => {
 		jest.restoreAllMocks();
 	});
 
+	it("should show as multiSignature ready", async () => {
+		mockMultisignatures(wallet);
+		jest.spyOn(wallet.transaction(), "isAwaitingOurSignature").mockReturnValue(false);
+		jest.spyOn(wallet.transaction(), "isAwaitingOtherSignatures").mockReturnValue(false);
+		jest.spyOn(wallet.coin().multiSignature(), "isMultiSignatureReady").mockReturnValue(true);
+
+		const { asFragment, getByTestId } = render(<PendingTransactions wallet={wallet} />);
+		await waitFor(() => expect(getByTestId("TransactionRowInfo__multiSignature")).toBeInTheDocument());
+
+		expect(asFragment()).toMatchSnapshot();
+
+		jest.restoreAllMocks();
+	});
+
+	it("should show unconfirmed multiSignature transactions", async () => {
+		mockMultisignatures(wallet);
+		jest.spyOn(wallet.transaction(), "isAwaitingOurSignature").mockReturnValue(false);
+		jest.spyOn(wallet.transaction(), "isAwaitingOtherSignatures").mockReturnValue(false);
+		jest.spyOn(wallet.coin().multiSignature(), "isMultiSignatureReady").mockReturnValue(true);
+		jest.spyOn(wallet.transaction(), "isAwaitingConfirmation").mockReturnValue(true);
+
+		const { asFragment, getByTestId } = render(<PendingTransactions wallet={wallet} />);
+		await waitFor(() => expect(getByTestId("TransactionRowInfo__multiSignature")).toBeInTheDocument());
+
+		expect(asFragment()).toMatchSnapshot();
+
+		jest.restoreAllMocks();
+	});
+
 	it("should show as awaiting other wallets signatures", async () => {
 		mockMultisignatures(wallet);
 		const isAwaitingOurSignatureMock = jest
@@ -273,7 +300,7 @@ describe("Signed Transaction Table", () => {
 			.spyOn(wallet.coin().multiSignature(), "remainingSignatureCount")
 			.mockImplementation(() => 3);
 
-		const canBeSignedMock = jest.spyOn(wallet.transaction(), "canBeSigned").mockReturnValue(true);
+		const canBeSignedMock = jest.spyOn(wallet.transaction(), "canBeSigned").mockReturnValue(false);
 		const { asFragment } = render(<PendingTransactions wallet={wallet} />);
 		await waitFor(() => expect(screen.getByText("awaiting-other-signature.svg")).toBeInTheDocument());
 
@@ -309,9 +336,7 @@ describe("Signed Transaction Table", () => {
 		const onClick = jest.fn();
 		const awaitingMock = jest.spyOn(wallet.transaction(), "canBeSigned").mockReturnValue(true);
 
-		const { asFragment } = render(
-			<PendingTransactions signed={[fixtures.multiSignature]} wallet={wallet} onClick={onClick} />,
-		);
+		const { asFragment } = render(<PendingTransactions wallet={wallet} onClick={onClick} />);
 
 		act(() => {
 			fireEvent.click(screen.getByTestId("TransactionRow__sign"));
