@@ -169,6 +169,7 @@ export const translations: { [key: string]: any } = {
 		VALIDATION: {
 			ALIAS_ASSIGNED: "The name '{{alias}}' is already assigned to another wallet",
 			ALIAS_EXISTS: "A Wallet named '{{alias}}' already exists on this profile",
+			ALIAS_REQUIRED: "Name is required",
 			DECRYPT_WIF_ASSERTION: "Failed to decrypt WIF. Please check your password.",
 			INVALID_PRIVATE_KEY: "Invalid Private Key",
 			INVALID_PUBLIC_KEY: "Invalid Public Key",

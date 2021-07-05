@@ -20,19 +20,19 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
+import { getDefaultAlias } from "./ImportWallet.helpers";
 import { LedgerTabs } from "./Ledger/LedgerTabs";
 import { SecondStep } from "./Step2";
 import { ThirdStep } from "./Step3";
+import { assertWallet } from "utils/assertions";
 
 export const ImportWallet = () => {
 	const [activeTab, setActiveTab] = useState(1);
-	const [walletData, setWalletData] = useState<Contracts.IReadWriteWallet | null>(null);
+	const [importedWallet, setImportedWallet] = useState<Contracts.IReadWriteWallet | undefined>(undefined);
 	const [walletGenerationInput, setWalletGenerationInput] = useState<WalletGenerationInput>();
 
 	const [isImporting, setIsImporting] = useState(false);
 	const [isEncrypting, setIsEncrypting] = useState(false);
-
-	const [defaultAlias, setDefaultAlias] = useState<string>("");
 
 	const queryParameters = useQueryParams();
 	const isLedgerImport = !!queryParameters.get("ledger");
@@ -48,12 +48,14 @@ export const ImportWallet = () => {
 	const { importWalletByType } = useWalletImport({ profile: activeProfile });
 	const { syncAll } = useWalletSync({ env, profile: activeProfile });
 
-	const form = useForm<any>({ mode: "onChange" });
+	const form = useForm<any>({
+		mode: "onChange",
+		shouldUnregister: false,
+	});
+
 	const { getValues, formState, register, watch } = form;
 	const { isSubmitting, isValid } = formState;
 	const { value, encryptionPassword, confirmEncryptionPassword } = watch();
-
-	const nameMaxLength = 42;
 
 	useEffect(() => {
 		register("network", { required: true });
@@ -100,13 +102,6 @@ export const ImportWallet = () => {
 		setActiveTab(activeTab - 1);
 	};
 
-	const getDefaultAlias = (wallet: Contracts.IReadWriteWallet): string => {
-		const ticker = wallet.network().ticker();
-		const sameCoinWalletsCount = Object.keys(activeProfile.wallets().allByCoin()[ticker] ?? {}).length;
-
-		return `${ticker} #${sameCoinWalletsCount}`;
-	};
-
 	const importWallet = async (): Promise<Networks.ImportMethod> => {
 		const { network, type, encryptedWif } = getValues();
 
@@ -119,13 +114,13 @@ export const ImportWallet = () => {
 
 		setValue("selectedNetworkIds", uniq([...selectedNetworkIds, wallet.network().id()]));
 
-		const alias = getDefaultAlias(wallet);
-
-		setDefaultAlias(alias);
+		const alias = getDefaultAlias(activeProfile, wallet);
 
 		activeProfile.wallets().update(wallet.id(), { alias });
 
-		setWalletData(wallet);
+		form.setValue("name", alias);
+
+		setImportedWallet(wallet);
 
 		await syncAll(wallet);
 
@@ -135,16 +130,18 @@ export const ImportWallet = () => {
 	};
 
 	const encryptMnemonic = async () => {
-		await walletData!.wif().set(walletGenerationInput!, getValues("encryptionPassword"));
+		assertWallet(importedWallet);
 
-		if (walletData?.actsWithMnemonic()) {
-			walletData
+		await importedWallet.wif().set(walletGenerationInput!, getValues("encryptionPassword"));
+
+		if (importedWallet.actsWithMnemonic()) {
+			importedWallet
 				?.data()
 				.set(Contracts.WalletData.ImportMethod, Contracts.WalletImportMethod.BIP39.MNEMONIC_WITH_ENCRYPTION);
 		}
 
-		if (walletData?.actsWithSecret()) {
-			walletData
+		if (importedWallet.actsWithSecret()) {
+			importedWallet
 				?.data()
 				.set(Contracts.WalletData.ImportMethod, Contracts.WalletImportMethod.SECRET_WITH_ENCRYPTION);
 		}
@@ -153,15 +150,16 @@ export const ImportWallet = () => {
 	};
 
 	const handleFinish = async () => {
+		assertWallet(importedWallet);
+
 		const name = getValues("name");
 
 		if (name) {
-			const formattedName = name.trim().slice(0, Math.max(0, nameMaxLength));
-			walletData?.mutator().alias(formattedName);
+			importedWallet?.mutator().alias(name.trim());
 			await persist();
 		}
 
-		history.push(`/profiles/${activeProfile.id()}/wallets/${walletData?.id()}`);
+		history.push(`/profiles/${activeProfile.id()}/wallets/${importedWallet.id()}`);
 	};
 
 	return (
@@ -196,13 +194,7 @@ export const ImportWallet = () => {
 								</TabPanel>
 
 								<TabPanel tabId={4}>
-									<ThirdStep
-										address={walletData?.address() as string}
-										balance={walletData?.balance() as number}
-										nameMaxLength={nameMaxLength}
-										profile={activeProfile}
-										defaultAlias={defaultAlias}
-									/>
+									<ThirdStep importedWallet={importedWallet} profile={activeProfile} />
 								</TabPanel>
 
 								<div className="flex justify-between mt-10">

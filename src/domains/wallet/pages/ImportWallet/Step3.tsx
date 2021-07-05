@@ -10,27 +10,48 @@ import { TransactionDetail, TransactionNetwork } from "domains/transaction/compo
 import React, { useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { assertWallet } from "utils/assertions";
+
+const ALIAS_MAX_LENGTH = 42;
 
 export const ThirdStep = ({
-	address,
-	balance,
-	defaultAlias,
-	nameMaxLength,
+	importedWallet,
 	profile,
 }: {
-	address: string;
-	balance: number;
-	defaultAlias: string;
-	nameMaxLength: number;
+	importedWallet: Contracts.IReadWriteWallet | undefined;
 	profile: Contracts.IProfile;
 }) => {
+	assertWallet(importedWallet);
+
 	const { getValues, register, watch } = useFormContext();
+	const { t } = useTranslation();
 
 	// getValues does not get the value of `defaultValues` on first render
 	const [defaultNetwork] = useState(() => watch("network"));
 	const network: Networks.Network = getValues("network") || defaultNetwork;
 
-	const { t } = useTranslation();
+	const validation = {
+		maxLength: {
+			message: t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.MAXLENGTH_ERROR", {
+				maxLength: ALIAS_MAX_LENGTH,
+			}),
+			value: ALIAS_MAX_LENGTH,
+		},
+		required: t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.ALIAS_REQUIRED"),
+		validate: {
+			duplicateAlias: (alias: string) => {
+				const walletSameAlias = profile.wallets().findByAlias(alias.trim());
+
+				if (!walletSameAlias || walletSameAlias.id() === importedWallet.id()) {
+					return true;
+				}
+
+				return t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.ALIAS_EXISTS", {
+					alias: alias.trim(),
+				});
+			},
+		},
+	};
 
 	return (
 		<section data-testid="ImportWallet__third-step" className="space-y-8">
@@ -45,37 +66,21 @@ export const ThirdStep = ({
 				<TransactionDetail
 					label={t("COMMON.ADDRESS")}
 					borderPosition="bottom"
-					extra={<Avatar size="lg" address={address} />}
+					extra={<Avatar size="lg" address={importedWallet.address()} />}
 				>
-					<Address address={address} />
+					<Address address={importedWallet.address()} />
 				</TransactionDetail>
 			</div>
 
 			<TransactionDetail label={t("COMMON.BALANCE")} borderPosition="bottom" paddingPosition="bottom">
-				<AmountCrypto value={balance} ticker={network.ticker()} />
+				<AmountCrypto value={importedWallet.balance()} ticker={network.ticker()} />
 			</TransactionDetail>
 
 			<FormField name="name">
-				<FormLabel label={t("WALLETS.WALLET_NAME")} optional />
+				<FormLabel label={t("WALLETS.WALLET_NAME")} />
 				<InputDefault
-					ref={register({
-						maxLength: {
-							message: t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.MAXLENGTH_ERROR", {
-								maxLength: nameMaxLength,
-							}),
-							value: nameMaxLength,
-						},
-						validate: {
-							duplicateAlias: (alias) =>
-								!alias ||
-								!profile.wallets().findByAlias(alias.trim()) ||
-								t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.ALIAS_EXISTS", {
-									alias: alias.trim(),
-								}).toString(),
-						},
-					})}
+					ref={register(validation)}
 					data-testid="ImportWallet__name-input"
-					defaultValue={defaultAlias}
 				/>
 			</FormField>
 		</section>
