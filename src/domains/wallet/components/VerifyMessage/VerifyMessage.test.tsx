@@ -136,7 +136,7 @@ describe("VerifyMessage", () => {
 		});
 
 		await waitFor(() => {
-			expect(screen.getByTestId("modal__inner")).toHaveTextContent("success-banner.svg");
+			expect(screen.getByTestId("modal__inner")).toHaveTextContent("success-banner-dark-green.svg");
 		});
 	});
 
@@ -174,7 +174,7 @@ describe("VerifyMessage", () => {
 		});
 
 		await waitFor(() => {
-			expect(screen.getByTestId("modal__inner")).toHaveTextContent("success-banner.svg");
+			expect(screen.getByTestId("modal__inner")).toHaveTextContent("success-banner-dark-green.svg");
 		});
 	});
 
@@ -214,7 +214,7 @@ describe("VerifyMessage", () => {
 		});
 
 		await waitFor(() => {
-			expect(screen.getByTestId("modal__inner")).toHaveTextContent("error-banner.svg");
+			expect(screen.getByTestId("modal__inner")).toHaveTextContent("error-banner-dark-green.svg");
 		});
 
 		await act(async () => {
@@ -260,7 +260,7 @@ describe("VerifyMessage", () => {
 		});
 
 		await waitFor(() => {
-			expect(screen.getByTestId("modal__inner")).toHaveTextContent("error-banner.svg");
+			expect(screen.getByTestId("modal__inner")).toHaveTextContent("error-banner-dark-green.svg");
 		});
 
 		await act(async () => {
