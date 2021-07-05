@@ -103,7 +103,7 @@ export const TransactionRow = memo(
 
 				<TableCell innerClassName="flex space-x-4">
 					<TransactionRowMode transaction={transaction} />
-					<div className='w-40 flex-1'>
+					<div className="w-40 flex-1">
 						<TransactionRowRecipientLabel transaction={transaction} walletName={walletName} />
 					</div>
 				</TableCell>
