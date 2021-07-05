@@ -49,7 +49,7 @@ exports[`TransactionRow should omit the currency for transactions from test netw
         </td>
         <td>
           <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT flex space-x-4"
           >
             <div
               class="flex items-center -space-x-1"
@@ -84,7 +84,7 @@ exports[`TransactionRow should omit the currency for transactions from test netw
               </div>
             </div>
             <div
-              class="w-40 xl:w-full"
+              class="w-40 flex-1"
             >
               <div
                 class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
@@ -230,7 +230,7 @@ exports[`TransactionRow should show transaction with currency 1`] = `
         </td>
         <td>
           <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT flex space-x-4"
           >
             <div
               class="flex items-center -space-x-1"
@@ -265,7 +265,7 @@ exports[`TransactionRow should show transaction with currency 1`] = `
               </div>
             </div>
             <div
-              class="w-40 xl:w-full"
+              class="w-40 flex-1"
             >
               <div
                 class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
