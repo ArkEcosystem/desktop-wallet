@@ -40,7 +40,7 @@ export const TransferLedgerReview = ({
 		if (estimatedExpiration) {
 			return estimatedExpiration;
 		}
-		
+
 		return (
 			<span data-testid="TransferLedgerReview__expiration-skeleton" className="flex my-0.5">
 				<Skeleton height={16} width={80} />
