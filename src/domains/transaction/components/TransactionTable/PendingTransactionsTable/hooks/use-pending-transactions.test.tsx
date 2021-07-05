@@ -43,7 +43,7 @@ describe("Signed Transaction Table", () => {
 		});
 	};
 
-	beforeAll(async () => {
+	beforeAll(() => {
 		nock.disableNetConnect();
 		nock("https://dwallets.ark.io")
 			.get("/api/transactions")
