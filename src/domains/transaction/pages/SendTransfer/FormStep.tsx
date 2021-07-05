@@ -34,12 +34,14 @@ export const FormStep = ({
 	const { recipients, memo } = getValues();
 	const { network, senderAddress, fee, fees } = watch();
 
+	const [isSingle, setIsSingle] = useState((recipients || []).length <= 1);
+
 	const inputFeeSettings = watch("inputFeeSettings") ?? {};
 
 	const senderWallet = profile.wallets().findByAddress(senderAddress);
 
-	const setTransactionFees = useCallback(async (network: Networks.Network, type: string = "transfer") => {
-		const transactionFees = await findByType(network.coin(), network.id(), type);
+	const setTransactionFees = useCallback(async (network: Networks.Network) => {
+		const transactionFees = await findByType(network.coin(), network.id(), isSingle ? "transfer" : "multiPayment");
 
 		setValue("fees", transactionFees);
 
@@ -47,14 +49,14 @@ export const FormStep = ({
 			shouldDirty: true,
 			shouldValidate: true,
 		});
-	}, []);
+	}, [findByType, isSingle, setValue]);
 
 	useEffect(() => {
 		if (network) {
 			setTransactionFees(network);
 			setWallets(profile.wallets().findByCoinWithNetwork(network.coin(), network.id()));
 		}
-	}, [findByType, getValues, network, profile, setValue]);
+	}, [isSingle, network, profile, setTransactionFees]);
 
 	const getRecipients = () => {
 		if (deeplinkProps?.recipient && deeplinkProps?.amount) {
@@ -135,11 +137,8 @@ export const FormStep = ({
 							setValue("recipients", value, { shouldDirty: true, shouldValidate: true })
 						}
 						onTypeChange={(isSingle: boolean) => {
-							/* istanbul ignore else */
-							if (network) {
-								setTransactionFees(network, isSingle ? "transfer" : "multiPayment");
-								toasts.warning(t("TRANSACTION.PAGE_TRANSACTION_SEND.FORM_STEP.FEE_UPDATE"));
-							}
+							setIsSingle(isSingle);
+							toasts.warning(t("TRANSACTION.PAGE_TRANSACTION_SEND.FORM_STEP.FEE_UPDATE"));
 						}}
 					/>
 				</div>
