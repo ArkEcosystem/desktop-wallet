@@ -17,8 +17,8 @@ const createTableColumns = (
 	{
 		Header: t("COMMON.DATE"),
 		accessor: "timestamp",
-		sortDescFirst: true,
 		cellWidth: "w-50",
+		sortDescFirst: true,
 	},
 	{
 		Header: t("COMMON.RECIPIENT"),
@@ -40,8 +40,8 @@ const createTableColumns = (
 	},
 	{
 		Header: "Sign",
-		className: "hidden",
 		cellWidth: "w-24",
+		className: "hidden",
 	},
 ];
 

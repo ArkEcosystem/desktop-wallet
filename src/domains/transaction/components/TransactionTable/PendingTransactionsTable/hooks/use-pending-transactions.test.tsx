@@ -1,10 +1,9 @@
-import { renderHook } from "@testing-library/react-hooks";
 import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
-import { PendingTransactions } from "domains/transaction/components/TransactionTable/PendingTransactionsTable";
+import { renderHook } from "@testing-library/react-hooks";
 import nock from "nock";
-import React from "react";
-import { env, getDefaultProfileId, render } from "utils/testing-library";
-import { usePendingTransactions } from "../hooks/use-pending-transactions";
+import { env, getDefaultProfileId } from "utils/testing-library";
+
+import { usePendingTransactions } from "./use-pending-transactions";
 
 describe("Signed Transaction Table", () => {
 	let profile: Contracts.IProfile;
@@ -26,9 +25,7 @@ describe("Signed Transaction Table", () => {
 		jest.spyOn(wallet.transaction(), "canBeSigned").mockReturnValue(true);
 		jest.spyOn(wallet.transaction(), "hasBeenSigned").mockReturnValue(true);
 		jest.spyOn(wallet.transaction(), "isAwaitingConfirmation").mockReturnValue(true);
-		jest.spyOn(wallet.transaction(), "transaction").mockImplementation(() => {
-			return { get: () => undefined };
-		});
+		jest.spyOn(wallet.transaction(), "transaction").mockImplementation(() => ({ get: () => undefined }));
 	};
 
 	const mockMultisignatures = (wallet: Contracts.IReadWriteWallet) => {
@@ -38,9 +35,7 @@ describe("Signed Transaction Table", () => {
 		jest.spyOn(wallet.transaction(), "canBeSigned").mockReturnValue(true);
 		jest.spyOn(wallet.transaction(), "hasBeenSigned").mockReturnValue(false);
 		jest.spyOn(wallet.transaction(), "isAwaitingConfirmation").mockReturnValue(false);
-		jest.spyOn(wallet.transaction(), "transaction").mockImplementation(() => {
-			return { get: () => "data" };
-		});
+		jest.spyOn(wallet.transaction(), "transaction").mockImplementation(() => ({ get: () => "data" }));
 	};
 
 	beforeAll(() => {
@@ -98,6 +93,7 @@ describe("Signed Transaction Table", () => {
 		jest.spyOn(wallet.transaction(), "isAwaitingConfirmation").mockReturnValue(false);
 
 		const { result } = renderHook(() => usePendingTransactions({ wallet }));
+
 		expect(result.current.transactions).toHaveLength(1);
 		expect(result.current.transactions[0]).toEqual({
 			hasBeenSigned: true,
@@ -116,6 +112,7 @@ describe("Signed Transaction Table", () => {
 		jest.spyOn(wallet.transaction(), "hasBeenSigned").mockReturnValue(false);
 
 		const { result } = renderHook(() => usePendingTransactions({ wallet }));
+
 		expect(result.current.transactions).toHaveLength(1);
 		expect(result.current.transactions[0]).toEqual({
 			hasBeenSigned: false,
@@ -133,6 +130,7 @@ describe("Signed Transaction Table", () => {
 		mockMultisignatures(wallet);
 
 		const { result } = renderHook(() => usePendingTransactions({ wallet }));
+
 		expect(result.current.transactions).toHaveLength(1);
 		expect(result.current.transactions[0]).toEqual({
 			hasBeenSigned: false,

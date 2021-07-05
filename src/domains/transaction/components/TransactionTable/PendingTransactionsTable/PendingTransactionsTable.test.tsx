@@ -25,9 +25,7 @@ describe("Signed Transaction Table", () => {
 		jest.spyOn(wallet.transaction(), "canBeSigned").mockReturnValue(true);
 		jest.spyOn(wallet.transaction(), "hasBeenSigned").mockReturnValue(true);
 		jest.spyOn(wallet.transaction(), "isAwaitingConfirmation").mockReturnValue(true);
-		jest.spyOn(wallet.transaction(), "transaction").mockImplementation(() => {
-			return { get: () => undefined };
-		});
+		jest.spyOn(wallet.transaction(), "transaction").mockImplementation(() => ({ get: () => undefined }));
 	};
 
 	const mockMultisignatures = (wallet: Contracts.IReadWriteWallet) => {
@@ -37,9 +35,7 @@ describe("Signed Transaction Table", () => {
 		jest.spyOn(wallet.transaction(), "canBeSigned").mockReturnValue(true);
 		jest.spyOn(wallet.transaction(), "hasBeenSigned").mockReturnValue(false);
 		jest.spyOn(wallet.transaction(), "isAwaitingConfirmation").mockReturnValue(false);
-		jest.spyOn(wallet.transaction(), "transaction").mockImplementation(() => {
-			return { get: () => "data" };
-		});
+		jest.spyOn(wallet.transaction(), "transaction").mockImplementation(() => ({ get: () => "data" }));
 	};
 
 	beforeAll(() => {

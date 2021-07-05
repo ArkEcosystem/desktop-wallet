@@ -1,12 +1,12 @@
 import { DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Table } from "app/components/Table";
 import React from "react";
-import { PendingTransaction, Properties } from "./PendingTransactionsTable.contracts";
+import { useTranslation } from "react-i18next";
 
 import { PendingTransferRow } from "../TransactionRow/PendingTransferRow";
 import { SignedTransactionRow } from "../TransactionRow/SignedTransactionRow";
 import { usePendingTransactions } from "./hooks/use-pending-transactions";
-import { useTranslation } from "react-i18next";
+import { PendingTransaction, Properties } from "./PendingTransactionsTable.contracts";
 
 export const PendingTransactions = ({ wallet, onClick, onPendingTransactionClick }: Properties) => {
 	const { t } = useTranslation();

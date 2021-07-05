@@ -1,8 +1,9 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { createTableColumns } from "../PendingTransactionsTable.domain";
-import { PendingTransaction } from "../PendingTransactionsTable.contracts";
-import { useTranslation } from "react-i18next";
 import { useMemo } from "react";
+import { useTranslation } from "react-i18next";
+
+import { PendingTransaction } from "../PendingTransactionsTable.contracts";
+import { createTableColumns } from "../PendingTransactionsTable.domain";
 
 export const usePendingTransactions = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) => {
 	const { t } = useTranslation();
@@ -20,12 +21,12 @@ export const usePendingTransactions = ({ wallet }: { wallet: Contracts.IReadWrit
 			const isPendingTransfer = !isMultisignature && (hasBeenSigned || isAwaitingConfirmation);
 
 			transactions.push({
-				transaction,
 				hasBeenSigned,
-				isPendingTransfer,
 				isAwaitingConfirmation,
-				isAwaitingOurSignature,
 				isAwaitingOtherSignatures,
+				isAwaitingOurSignature,
+				isPendingTransfer,
+				transaction,
 			});
 		}
 
