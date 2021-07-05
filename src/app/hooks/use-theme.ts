@@ -25,9 +25,7 @@ export const useTheme = () => {
 		}
 	};
 
-	const resetTheme = () => {
-		setTheme("system");
-	};
+	const resetTheme = () => setTheme("system");
 
 	return { isDarkMode, resetTheme, setProfileTheme, setTheme, theme };
 };
