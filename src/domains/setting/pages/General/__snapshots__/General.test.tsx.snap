@@ -384,7 +384,7 @@ exports[`General Settings should disable submit button when profile is not resto
                     class="space-y-4"
                   >
                     <h1
-                      class="mb-0 text-3xl"
+                      class="mb-0 text-2xl"
                       data-testid="header__title"
                     >
                       Profile Settings
@@ -398,14 +398,14 @@ exports[`General Settings should disable submit button when profile is not resto
                   </div>
                 </div>
                 <form
-                  class="space-y-5"
+                  class="space-y-12"
                   data-testid="General-settings__form"
                 >
                   <div
                     class="relative mt-8"
                   >
                     <h2
-                      class="mb-3"
+                      class="text-lg mb-3"
                     >
                       Personal Details
                     </h2>
@@ -1074,10 +1074,10 @@ exports[`General Settings should disable submit button when profile is not resto
                     </div>
                   </div>
                   <div
-                    class="relative mt-10"
+                    class="relative"
                   >
                     <h2
-                      class="mb-3"
+                      class="text-lg mb-3"
                     >
                       Security
                     </h2>
@@ -1100,7 +1100,7 @@ exports[`General Settings should disable submit button when profile is not resto
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Screenshot Protection
@@ -1149,7 +1149,7 @@ exports[`General Settings should disable submit button when profile is not resto
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               />
                             </div>
@@ -1278,10 +1278,10 @@ exports[`General Settings should disable submit button when profile is not resto
                     </ul>
                   </div>
                   <div
-                    class="relative mt-10"
+                    class="relative"
                   >
                     <h2
-                      class="mb-3"
+                      class="text-lg mb-3"
                     >
                       Other
                     </h2>
@@ -1304,7 +1304,7 @@ exports[`General Settings should disable submit button when profile is not resto
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Development and Test Networks
@@ -1353,7 +1353,7 @@ exports[`General Settings should disable submit button when profile is not resto
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Error Reporting
@@ -1402,7 +1402,7 @@ exports[`General Settings should disable submit button when profile is not resto
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Portfolio Transaction History
@@ -1452,7 +1452,7 @@ exports[`General Settings should disable submit button when profile is not resto
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Dark Theme
@@ -1935,7 +1935,7 @@ exports[`General Settings should not update the uploaded avatar when removing fo
                     class="space-y-4"
                   >
                     <h1
-                      class="mb-0 text-3xl"
+                      class="mb-0 text-2xl"
                       data-testid="header__title"
                     >
                       Profile Settings
@@ -1949,14 +1949,14 @@ exports[`General Settings should not update the uploaded avatar when removing fo
                   </div>
                 </div>
                 <form
-                  class="space-y-5"
+                  class="space-y-12"
                   data-testid="General-settings__form"
                 >
                   <div
                     class="relative mt-8"
                   >
                     <h2
-                      class="mb-3"
+                      class="text-lg mb-3"
                     >
                       Personal Details
                     </h2>
@@ -2639,10 +2639,10 @@ exports[`General Settings should not update the uploaded avatar when removing fo
                     </div>
                   </div>
                   <div
-                    class="relative mt-10"
+                    class="relative"
                   >
                     <h2
-                      class="mb-3"
+                      class="text-lg mb-3"
                     >
                       Security
                     </h2>
@@ -2665,7 +2665,7 @@ exports[`General Settings should not update the uploaded avatar when removing fo
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Screenshot Protection
@@ -2714,7 +2714,7 @@ exports[`General Settings should not update the uploaded avatar when removing fo
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               />
                             </div>
@@ -2843,10 +2843,10 @@ exports[`General Settings should not update the uploaded avatar when removing fo
                     </ul>
                   </div>
                   <div
-                    class="relative mt-10"
+                    class="relative"
                   >
                     <h2
-                      class="mb-3"
+                      class="text-lg mb-3"
                     >
                       Other
                     </h2>
@@ -2869,7 +2869,7 @@ exports[`General Settings should not update the uploaded avatar when removing fo
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Development and Test Networks
@@ -2918,7 +2918,7 @@ exports[`General Settings should not update the uploaded avatar when removing fo
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Error Reporting
@@ -2967,7 +2967,7 @@ exports[`General Settings should not update the uploaded avatar when removing fo
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Portfolio Transaction History
@@ -3017,7 +3017,7 @@ exports[`General Settings should not update the uploaded avatar when removing fo
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Dark Theme
@@ -3499,7 +3499,7 @@ exports[`General Settings should render 1`] = `
                     class="space-y-4"
                   >
                     <h1
-                      class="mb-0 text-3xl"
+                      class="mb-0 text-2xl"
                       data-testid="header__title"
                     >
                       Profile Settings
@@ -3513,14 +3513,14 @@ exports[`General Settings should render 1`] = `
                   </div>
                 </div>
                 <form
-                  class="space-y-5"
+                  class="space-y-12"
                   data-testid="General-settings__form"
                 >
                   <div
                     class="relative mt-8"
                   >
                     <h2
-                      class="mb-3"
+                      class="text-lg mb-3"
                     >
                       Personal Details
                     </h2>
@@ -4189,10 +4189,10 @@ exports[`General Settings should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="relative mt-10"
+                    class="relative"
                   >
                     <h2
-                      class="mb-3"
+                      class="text-lg mb-3"
                     >
                       Security
                     </h2>
@@ -4215,7 +4215,7 @@ exports[`General Settings should render 1`] = `
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Screenshot Protection
@@ -4264,7 +4264,7 @@ exports[`General Settings should render 1`] = `
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               />
                             </div>
@@ -4393,10 +4393,10 @@ exports[`General Settings should render 1`] = `
                     </ul>
                   </div>
                   <div
-                    class="relative mt-10"
+                    class="relative"
                   >
                     <h2
-                      class="mb-3"
+                      class="text-lg mb-3"
                     >
                       Other
                     </h2>
@@ -4419,7 +4419,7 @@ exports[`General Settings should render 1`] = `
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Development and Test Networks
@@ -4468,7 +4468,7 @@ exports[`General Settings should render 1`] = `
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Error Reporting
@@ -4517,7 +4517,7 @@ exports[`General Settings should render 1`] = `
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Portfolio Transaction History
@@ -4567,7 +4567,7 @@ exports[`General Settings should render 1`] = `
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Dark Theme
@@ -5049,7 +5049,7 @@ exports[`General Settings should update profile 1`] = `
                     class="space-y-4"
                   >
                     <h1
-                      class="mb-0 text-3xl"
+                      class="mb-0 text-2xl"
                       data-testid="header__title"
                     >
                       Profile Settings
@@ -5063,14 +5063,14 @@ exports[`General Settings should update profile 1`] = `
                   </div>
                 </div>
                 <form
-                  class="space-y-5"
+                  class="space-y-12"
                   data-testid="General-settings__form"
                 >
                   <div
                     class="relative mt-8"
                   >
                     <h2
-                      class="mb-3"
+                      class="text-lg mb-3"
                     >
                       Personal Details
                     </h2>
@@ -5739,10 +5739,10 @@ exports[`General Settings should update profile 1`] = `
                     </div>
                   </div>
                   <div
-                    class="relative mt-10"
+                    class="relative"
                   >
                     <h2
-                      class="mb-3"
+                      class="text-lg mb-3"
                     >
                       Security
                     </h2>
@@ -5765,7 +5765,7 @@ exports[`General Settings should update profile 1`] = `
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Screenshot Protection
@@ -5815,7 +5815,7 @@ exports[`General Settings should update profile 1`] = `
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               />
                             </div>
@@ -5944,10 +5944,10 @@ exports[`General Settings should update profile 1`] = `
                     </ul>
                   </div>
                   <div
-                    class="relative mt-10"
+                    class="relative"
                   >
                     <h2
-                      class="mb-3"
+                      class="text-lg mb-3"
                     >
                       Other
                     </h2>
@@ -5970,7 +5970,7 @@ exports[`General Settings should update profile 1`] = `
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Development and Test Networks
@@ -6019,7 +6019,7 @@ exports[`General Settings should update profile 1`] = `
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Error Reporting
@@ -6068,7 +6068,7 @@ exports[`General Settings should update profile 1`] = `
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Portfolio Transaction History
@@ -6117,7 +6117,7 @@ exports[`General Settings should update profile 1`] = `
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Dark Theme
@@ -6600,7 +6600,7 @@ exports[`General Settings should update the avatar when removing focus from name
                     class="space-y-4"
                   >
                     <h1
-                      class="mb-0 text-3xl"
+                      class="mb-0 text-2xl"
                       data-testid="header__title"
                     >
                       Profile Settings
@@ -6614,14 +6614,14 @@ exports[`General Settings should update the avatar when removing focus from name
                   </div>
                 </div>
                 <form
-                  class="space-y-5"
+                  class="space-y-12"
                   data-testid="General-settings__form"
                 >
                   <div
                     class="relative mt-8"
                   >
                     <h2
-                      class="mb-3"
+                      class="text-lg mb-3"
                     >
                       Personal Details
                     </h2>
@@ -7290,10 +7290,10 @@ exports[`General Settings should update the avatar when removing focus from name
                     </div>
                   </div>
                   <div
-                    class="relative mt-10"
+                    class="relative"
                   >
                     <h2
-                      class="mb-3"
+                      class="text-lg mb-3"
                     >
                       Security
                     </h2>
@@ -7316,7 +7316,7 @@ exports[`General Settings should update the avatar when removing focus from name
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Screenshot Protection
@@ -7365,7 +7365,7 @@ exports[`General Settings should update the avatar when removing focus from name
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               />
                             </div>
@@ -7494,10 +7494,10 @@ exports[`General Settings should update the avatar when removing focus from name
                     </ul>
                   </div>
                   <div
-                    class="relative mt-10"
+                    class="relative"
                   >
                     <h2
-                      class="mb-3"
+                      class="text-lg mb-3"
                     >
                       Other
                     </h2>
@@ -7520,7 +7520,7 @@ exports[`General Settings should update the avatar when removing focus from name
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Development and Test Networks
@@ -7569,7 +7569,7 @@ exports[`General Settings should update the avatar when removing focus from name
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Error Reporting
@@ -7618,7 +7618,7 @@ exports[`General Settings should update the avatar when removing focus from name
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Portfolio Transaction History
@@ -7668,7 +7668,7 @@ exports[`General Settings should update the avatar when removing focus from name
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Dark Theme
@@ -8150,7 +8150,7 @@ exports[`General Settings should update the avatar when removing focus from name
                     class="space-y-4"
                   >
                     <h1
-                      class="mb-0 text-3xl"
+                      class="mb-0 text-2xl"
                       data-testid="header__title"
                     >
                       Profile Settings
@@ -8164,14 +8164,14 @@ exports[`General Settings should update the avatar when removing focus from name
                   </div>
                 </div>
                 <form
-                  class="space-y-5"
+                  class="space-y-12"
                   data-testid="General-settings__form"
                 >
                   <div
                     class="relative mt-8"
                   >
                     <h2
-                      class="mb-3"
+                      class="text-lg mb-3"
                     >
                       Personal Details
                     </h2>
@@ -8852,10 +8852,10 @@ exports[`General Settings should update the avatar when removing focus from name
                     </div>
                   </div>
                   <div
-                    class="relative mt-10"
+                    class="relative"
                   >
                     <h2
-                      class="mb-3"
+                      class="text-lg mb-3"
                     >
                       Security
                     </h2>
@@ -8878,7 +8878,7 @@ exports[`General Settings should update the avatar when removing focus from name
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Screenshot Protection
@@ -8927,7 +8927,7 @@ exports[`General Settings should update the avatar when removing focus from name
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               />
                             </div>
@@ -9056,10 +9056,10 @@ exports[`General Settings should update the avatar when removing focus from name
                     </ul>
                   </div>
                   <div
-                    class="relative mt-10"
+                    class="relative"
                   >
                     <h2
-                      class="mb-3"
+                      class="text-lg mb-3"
                     >
                       Other
                     </h2>
@@ -9082,7 +9082,7 @@ exports[`General Settings should update the avatar when removing focus from name
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Development and Test Networks
@@ -9131,7 +9131,7 @@ exports[`General Settings should update the avatar when removing focus from name
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Error Reporting
@@ -9180,7 +9180,7 @@ exports[`General Settings should update the avatar when removing focus from name
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Portfolio Transaction History
@@ -9230,7 +9230,7 @@ exports[`General Settings should update the avatar when removing focus from name
                               class="flex justify-between items-center space-x-5"
                             >
                               <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                                class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
                                 Dark Theme
