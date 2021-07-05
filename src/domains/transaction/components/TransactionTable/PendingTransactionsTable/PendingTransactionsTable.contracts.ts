@@ -3,6 +3,7 @@ import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 interface PendingTransaction {
 	transaction: DTO.ExtendedConfirmedTransactionData | DTO.ExtendedSignedTransactionData;
 	hasBeenSigned: boolean;
+	isPendingTransfer: boolean;
 	isAwaitingConfirmation: boolean;
 	isAwaitingOurSignature: boolean;
 	isAwaitingOtherSignatures: boolean;

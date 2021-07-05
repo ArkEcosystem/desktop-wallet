@@ -18,7 +18,7 @@ export const PendingTransactions = ({ wallet, onClick, onPendingTransactionClick
 
 			<Table columns={columns} data={transactions}>
 				{(transaction: PendingTransaction) => {
-					if (transaction.hasBeenSigned || transaction.isAwaitingConfirmation) {
+					if (transaction.isPendingTransfer) {
 						return (
 							<PendingTransferRow
 								wallet={wallet}
