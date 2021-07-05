@@ -39,7 +39,7 @@ describe("usePortfolioData hook", () => {
 		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}> {children} </EnvironmentProvider>;
 		const { result } = renderHook(() => usePortfolioData({ profile }), { wrapper });
 
-		expect(result.current.percentages).toEqual([{ color: "danger-400", label: "ARK", percentage: 3 }]);
+		expect(result.current.percentages).toEqual([{ color: "primary-400", label: "ARK", percentage: 3 }]);
 
 		balancePerCoinMock.mockRestore();
 	});
