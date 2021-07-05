@@ -32,6 +32,8 @@ export const ImportWallet = () => {
 	const [isImporting, setIsImporting] = useState(false);
 	const [isEncrypting, setIsEncrypting] = useState(false);
 
+	const [defaultAlias, setDefaultAlias] = useState<string>("");
+
 	const queryParameters = useQueryParams();
 	const isLedgerImport = !!queryParameters.get("ledger");
 
@@ -98,6 +100,13 @@ export const ImportWallet = () => {
 		setActiveTab(activeTab - 1);
 	};
 
+	const getDefaultAlias = (wallet: Contracts.IReadWriteWallet): string => {
+		const ticker = wallet.network().ticker();
+		const sameCoinWalletsCount = Object.keys(activeProfile.wallets().allByCoin()[ticker] ?? {}).length;
+
+		return `${ticker} #${sameCoinWalletsCount}`;
+	}
+
 	const importWallet = async (): Promise<Networks.ImportMethod> => {
 		const { network, type, encryptedWif } = getValues();
 
@@ -109,6 +118,13 @@ export const ImportWallet = () => {
 		});
 
 		setValue("selectedNetworkIds", uniq([...selectedNetworkIds, wallet.network().id()]));
+
+		const alias = getDefaultAlias(wallet);
+
+		setDefaultAlias(alias);
+
+		activeProfile.wallets().update(wallet.id(), { alias });
+
 		setWalletData(wallet);
 
 		await syncAll(wallet);
@@ -185,6 +201,7 @@ export const ImportWallet = () => {
 										balance={walletData?.balance() as number}
 										nameMaxLength={nameMaxLength}
 										profile={activeProfile}
+										defaultAlias={defaultAlias}
 									/>
 								</TabPanel>
 

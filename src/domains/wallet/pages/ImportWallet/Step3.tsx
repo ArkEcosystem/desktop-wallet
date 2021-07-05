@@ -14,11 +14,13 @@ import { useTranslation } from "react-i18next";
 export const ThirdStep = ({
 	address,
 	balance,
+	defaultAlias,
 	nameMaxLength,
 	profile,
 }: {
 	address: string;
 	balance: number;
+	defaultAlias: string;
 	nameMaxLength: number;
 	profile: Contracts.IProfile;
 }) => {
@@ -73,6 +75,7 @@ export const ThirdStep = ({
 						},
 					})}
 					data-testid="ImportWallet__name-input"
+					defaultValue={defaultAlias}
 				/>
 			</FormField>
 		</section>
