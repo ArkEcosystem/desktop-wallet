@@ -105,7 +105,7 @@ export const ImportWallet = () => {
 		const sameCoinWalletsCount = Object.keys(activeProfile.wallets().allByCoin()[ticker] ?? {}).length;
 
 		return `${ticker} #${sameCoinWalletsCount}`;
-	}
+	};
 
 	const importWallet = async (): Promise<Networks.ImportMethod> => {
 		const { network, type, encryptedWif } = getValues();
