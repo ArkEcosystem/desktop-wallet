@@ -28,7 +28,7 @@ export const FormStep = ({
 	const { getValues, setValue, watch } = useFormContext();
 	const { fee, fees } = watch();
 
-  const inputFeeSettings = watch("inputFeeSettings") ?? {};
+	const inputFeeSettings = watch("inputFeeSettings") ?? {};
 
 	useEffect(() => {
 		const setTransactionFees = async (network: Networks.Network) => {

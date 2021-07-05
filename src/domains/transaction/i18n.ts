@@ -222,9 +222,9 @@ export const translations: { [key: string]: any } = {
 	PAGE_TRANSACTION_SEND: {
 		FORM_STEP: {
 			DESCRIPTION: "Enter details below to send your transaction.",
+			FEE_UPDATE: "The selected fee has been changed",
 			MULTIPLE_UNAVAILBLE: "Multiple Recipient Transactions are not available from Ledger wallets.",
 			TITLE: "Send {{ticker}}",
-			FEE_UPDATE: "The selected fee has been changed",
 		},
 		NETWORK_STEP: {
 			SUBTITLE: "Select a cryptoasset to send funds from.",

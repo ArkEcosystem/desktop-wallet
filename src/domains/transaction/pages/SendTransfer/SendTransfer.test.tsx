@@ -5,10 +5,10 @@ import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { screen } from "@testing-library/react";
 import { act as hookAct, renderHook } from "@testing-library/react-hooks";
 import { LedgerProvider } from "app/contexts";
+import { toasts } from "app/services";
 import { translations as transactionTranslations } from "domains/transaction/i18n";
 import { createMemoryHistory } from "history";
 import nock from "nock";
-import { toasts } from "app/services";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
@@ -476,7 +476,7 @@ describe("SendTransfer", () => {
 
 		fireEvent.change(input, { target: { value: "" } });
 		await waitFor(() => expect(input).toHaveValue(""));
-		
+
 		expect(input).toHaveAttribute("aria-invalid", "true");
 
 		await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy());
@@ -524,7 +524,7 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
 
 		const firstAddress = getByTestId("SearchWalletListItem__select-1");
-		
+
 		fireEvent.click(firstAddress);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -640,14 +640,17 @@ describe("SendTransfer", () => {
 		// Fee
 		fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
 		await waitFor(() => expect(screen.getAllByRole("radio")[0]).toBeChecked());
+
 		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
 		fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.AVERAGE));
 		await waitFor(() => expect(screen.getAllByRole("radio")[1]).toBeChecked());
+
 		expect(screen.getAllByRole("radio")[1]).toHaveTextContent("0.07320598");
 
 		fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.FAST));
 		await waitFor(() => expect(screen.getAllByRole("radio")[2]).toBeChecked());
+
 		expect(screen.getAllByRole("radio")[2]).toHaveTextContent("0.1");
 
 		fireEvent.click(
@@ -1904,7 +1907,9 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
 
 		fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
-		await waitFor(() => expect(getByTestId("SelectDropdown__input")).toHaveValue(profile.wallets().first().address()));
+		await waitFor(() =>
+			expect(getByTestId("SelectDropdown__input")).toHaveValue(profile.wallets().first().address()),
+		);
 
 		fireEvent.change(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
@@ -1918,7 +1923,9 @@ describe("SendTransfer", () => {
 
 		fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 
-		await waitFor(() => expect(getByTestId("SelectDropdown__input")).toHaveValue(profile.wallets().first().address()));
+		await waitFor(() =>
+			expect(getByTestId("SelectDropdown__input")).toHaveValue(profile.wallets().first().address()),
+		);
 
 		fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));

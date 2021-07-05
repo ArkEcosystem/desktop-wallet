@@ -1,7 +1,7 @@
 import { Enums, Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { FormField, FormLabel } from "app/components/Form";
 import { Divider } from "app/components/Divider";
+import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { InputCounter } from "app/components/Input";
 import { useFees } from "app/hooks";
@@ -20,7 +20,7 @@ export const FormStep = ({
 	profile,
 	deeplinkProps,
 }: {
-	networks: Networks.Network[],
+	networks: Networks.Network[];
 	profile: Contracts.IProfile;
 	deeplinkProps: any;
 }) => {
@@ -40,16 +40,23 @@ export const FormStep = ({
 
 	const senderWallet = profile.wallets().findByAddress(senderAddress);
 
-	const setTransactionFees = useCallback(async (network: Networks.Network) => {
-		const transactionFees = await findByType(network.coin(), network.id(), isSingle ? "transfer" : "multiPayment");
+	const setTransactionFees = useCallback(
+		async (network: Networks.Network) => {
+			const transactionFees = await findByType(
+				network.coin(),
+				network.id(),
+				isSingle ? "transfer" : "multiPayment",
+			);
 
-		setValue("fees", transactionFees);
+			setValue("fees", transactionFees);
 
-		setValue("fee", transactionFees.avg, {
-			shouldDirty: true,
-			shouldValidate: true,
-		});
-	}, [findByType, isSingle, setValue]);
+			setValue("fee", transactionFees.avg, {
+				shouldDirty: true,
+				shouldValidate: true,
+			});
+		},
+		[findByType, isSingle, setValue],
+	);
 
 	useEffect(() => {
 		if (network) {
