@@ -114,7 +114,7 @@ function createWindow() {
 		broadcastURL(deeplinkingUrl);
 	});
 
-	mainWindow.webContents.on("new-window", event => {
+	mainWindow.webContents.on("new-window", (event) => {
 		event.preventDefault();
 	});
 
