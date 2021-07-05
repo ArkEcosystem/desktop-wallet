@@ -31,8 +31,8 @@ export const SendDelegateResignation = () => {
 	const { common } = useValidation();
 
 	const [activeTab, setActiveTab] = useState(1);
-
 	const [transaction, setTransaction] = useState((null as unknown) as DTO.ExtendedSignedTransactionData);
+	const [errorMessage, setErrorMessage] = useState<string | undefined>();
 
 	const { persist } = useEnvironmentContext();
 
@@ -107,6 +107,7 @@ export const SendDelegateResignation = () => {
 				return setError("mnemonic", { message: t("TRANSACTION.INVALID_MNEMONIC"), type: "manual" });
 			}
 
+			setErrorMessage(JSON.stringify({ message: error.message, type: error.name }));
 			setActiveTab(5);
 		}
 	};
@@ -142,6 +143,7 @@ export const SendDelegateResignation = () => {
 									}
 									isRepeatDisabled={isSubmitting || !isValid}
 									onRepeat={form.handleSubmit(handleSubmit)}
+									errorMessage={errorMessage}
 								/>
 							</TabPanel>
 
