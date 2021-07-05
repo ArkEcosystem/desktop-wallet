@@ -75,7 +75,7 @@ export const SendDelegateResignation = () => {
 	};
 
 	const handleSubmit = async () => {
-		const { fee, mnemonic, secondMnemonic, encryptionPassword, wif, privateKey } = getValues();
+		const { fee, mnemonic, secondMnemonic, encryptionPassword, wif, privateKey, secret } = getValues();
 
 		try {
 			const signatory = await sign({
@@ -83,6 +83,7 @@ export const SendDelegateResignation = () => {
 				mnemonic,
 				privateKey,
 				secondMnemonic,
+				secret,
 				wif,
 			});
 
