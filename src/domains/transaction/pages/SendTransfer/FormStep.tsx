@@ -1,34 +1,60 @@
 import { Enums, Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
+import { Divider } from "app/components/Divider";
 import { Header } from "app/components/Header";
 import { InputCounter } from "app/components/Input";
+import { useFees } from "app/hooks";
+import { toasts } from "app/services";
+import { SelectNetwork } from "domains/network/components/SelectNetwork";
+import { SelectAddress } from "domains/profile/components/SelectAddress";
 import { AddRecipient } from "domains/transaction/components/AddRecipient";
+import { InputFee } from "domains/transaction/components/InputFee";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
-import { SendTransactionForm } from "domains/transaction/components/SendTransactionForm";
-import React, { ChangeEvent, useMemo } from "react";
+import React, { ChangeEvent, useCallback, useEffect, useMemo, useState } from "react";
 import { useFormContext } from "react-hook-form";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 export const FormStep = ({
 	networks,
 	profile,
 	deeplinkProps,
-	hasWalletId,
-	disableNetworkField,
 }: {
-	networks: Networks.Network[];
+	networks: Networks.Network[],
 	profile: Contracts.IProfile;
 	deeplinkProps: any;
-	hasWalletId: boolean;
-	disableNetworkField: boolean;
 }) => {
 	const { t } = useTranslation();
+
+	const [wallets, setWallets] = useState<Contracts.IReadWriteWallet[]>([]);
+
+	const { findByType } = useFees(profile);
+
 	const { getValues, setValue, watch } = useFormContext();
 	const { recipients, memo } = getValues();
-	const { network, senderAddress } = watch();
+	const { network, senderAddress, fee, fees } = watch();
+
+	const inputFeeSettings = watch("inputFeeSettings") ?? {};
 
 	const senderWallet = profile.wallets().findByAddress(senderAddress);
+
+	const setTransactionFees = useCallback(async (network: Networks.Network, type: string = "transfer") => {
+		const transactionFees = await findByType(network.coin(), network.id(), type);
+
+		setValue("fees", transactionFees);
+
+		setValue("fee", transactionFees.avg, {
+			shouldDirty: true,
+			shouldValidate: true,
+		});
+	}, []);
+
+	useEffect(() => {
+		if (network) {
+			setTransactionFees(network);
+			setWallets(profile.wallets().findByCoinWithNetwork(network.coin(), network.id()));
+		}
+	}, [findByType, getValues, network, profile, setValue]);
 
 	const getRecipients = () => {
 		if (deeplinkProps?.recipient && deeplinkProps?.amount) {
@@ -43,59 +69,139 @@ export const FormStep = ({
 		return recipients;
 	};
 
-	const availableNetworks = useMemo(() => {
-		const usesTestNetworks = profile.settings().get(Contracts.ProfileSetting.UseTestNetworks);
-		return usesTestNetworks ? networks : networks.filter((network) => network.isLive());
-	}, [profile, networks]);
+	const handleSelectSender = (address: any) => {
+		setValue("senderAddress", address, { shouldDirty: true, shouldValidate: false });
+
+		const senderWallet = profile.wallets().findByAddress(address);
+		const isFullyRestoredAndSynced = senderWallet?.hasBeenFullyRestored() && senderWallet?.hasSyncedWithNetwork();
+
+		if (!isFullyRestoredAndSynced) {
+			toasts.warning(
+				<Trans
+					i18nKey="COMMON.ERRORS.NETWORK_ERROR"
+					values={{ network: `${network.coin()} ${network.name()}` }}
+					components={{ bold: <strong /> }}
+				/>,
+			);
+			return;
+		}
+	};
+
+	const showFeeInput = useMemo(() => !network?.chargesZeroFees(), [network]);
 
 	return (
-		<section data-testid="SendTransfer__form-step" className="space-y-8">
+		<section data-testid="SendTransfer__form-step">
 			<Header
 				title={t("TRANSACTION.PAGE_TRANSACTION_SEND.FORM_STEP.TITLE", { ticker: senderWallet?.currency() })}
 				subtitle={t("TRANSACTION.PAGE_TRANSACTION_SEND.FORM_STEP.DESCRIPTION")}
 			/>
 
-			<SendTransactionForm
-				disableNetworkField={disableNetworkField}
-				networks={availableNetworks}
-				profile={profile}
-				hasWalletId={hasWalletId}
-			>
-				<>
-					<div data-testid="recipient-address">
-						<AddRecipient
-							assetSymbol={senderWallet?.currency()}
+			<div className="pt-6 space-y-6">
+				<FormField name="network">
+					<FormLabel label={t("COMMON.CRYPTOASSET")} />
+					<SelectNetwork
+						id="SendTransfer__network"
+						networks={networks}
+						selected={network}
+						disabled
+						hideOptions
+					/>
+				</FormField>
+
+				<FormField name="senderAddress">
+					<FormLabel label={t("TRANSACTION.SENDER")} />
+
+					<div data-testid="sender-address">
+						<SelectAddress
+							address={senderAddress}
+							wallets={wallets}
 							profile={profile}
-							wallet={senderWallet}
-							recipients={getRecipients()}
-							showMultiPaymentOption={network?.allows(Enums.FeatureFlag.TransactionMultiPayment)}
-							disableMultiPaymentOption={senderWallet?.isLedger()}
-							withDeeplink={!!deeplinkProps?.recipient}
-							onChange={(value: RecipientListItem[]) =>
-								setValue("recipients", value, { shouldDirty: true, shouldValidate: true })
-							}
+							disabled={wallets.length === 0}
+							onChange={handleSelectSender}
 						/>
 					</div>
+				</FormField>
 
-					<FormField name="memo" className="relative">
-						<FormLabel label="Memo" optional />
-						<InputCounter
-							data-testid="Input__memo"
-							type="text"
-							placeholder=" "
-							maxLengthLabel="255"
-							value={memo || ""}
-							onChange={(event: ChangeEvent<HTMLInputElement>) =>
-								setValue("memo", event.target.value, { shouldDirty: true, shouldValidate: true })
+				<div data-testid="recipient-address">
+					<AddRecipient
+						assetSymbol={senderWallet?.currency()}
+						profile={profile}
+						wallet={senderWallet}
+						recipients={getRecipients()}
+						showMultiPaymentOption={network?.allows(Enums.FeatureFlag.TransactionMultiPayment)}
+						disableMultiPaymentOption={senderWallet?.isLedger()}
+						withDeeplink={!!deeplinkProps?.recipient}
+						onChange={(value: RecipientListItem[]) =>
+							setValue("recipients", value, { shouldDirty: true, shouldValidate: true })
+						}
+						onTypeChange={(isSingle: boolean) => {
+							/* istanbul ignore else */
+							if (network) {
+								setTransactionFees(network, isSingle ? "transfer" : "multiPayment");
+								toasts.warning(t("TRANSACTION.PAGE_TRANSACTION_SEND.FORM_STEP.FEE_UPDATE"));
 							}
-						/>
-					</FormField>
-				</>
-			</SendTransactionForm>
+						}}
+					/>
+				</div>
+
+				<FormField name="memo" className="relative">
+					<FormLabel label="Memo" optional />
+					<InputCounter
+						data-testid="Input__memo"
+						type="text"
+						placeholder=" "
+						maxLengthLabel="255"
+						value={memo || ""}
+						onChange={(event: ChangeEvent<HTMLInputElement>) =>
+							setValue("memo", event.target.value, { shouldDirty: true, shouldValidate: true })
+						}
+					/>
+				</FormField>
+
+				{showFeeInput && (
+					<>
+						<FormField name="fee">
+							<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
+							<InputFee
+								min={fees?.min}
+								avg={fees?.avg}
+								max={fees?.max}
+								loading={!fees}
+								value={fee}
+								step={0.01}
+								disabled={network?.feeType() !== "dynamic"}
+								network={network}
+								profile={profile}
+								onChange={(value) => {
+									setValue("fee", value, { shouldDirty: true, shouldValidate: true });
+								}}
+								viewType={inputFeeSettings.viewType}
+								onChangeViewType={(viewType) => {
+									setValue(
+										"inputFeeSettings",
+										{ ...inputFeeSettings, viewType },
+										{ shouldDirty: true, shouldValidate: true },
+									);
+								}}
+								simpleValue={inputFeeSettings.simpleValue}
+								onChangeSimpleValue={(simpleValue) => {
+									setValue(
+										"inputFeeSettings",
+										{ ...inputFeeSettings, simpleValue },
+										{ shouldDirty: true, shouldValidate: true },
+									);
+								}}
+							/>
+						</FormField>
+					</>
+				)}
+			</div>
+
+			{showFeeInput && (
+				<div className="pt-2">
+					<Divider dashed />
+				</div>
+			)}
 		</section>
 	);
-};
-
-FormStep.defaultProps = {
-	hasWalletId: false,
 };

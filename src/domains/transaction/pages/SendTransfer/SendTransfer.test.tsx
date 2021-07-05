@@ -8,6 +8,7 @@ import { LedgerProvider } from "app/contexts";
 import { translations as transactionTranslations } from "domains/transaction/i18n";
 import { createMemoryHistory } from "history";
 import nock from "nock";
+import { toasts } from "app/services";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
@@ -104,6 +105,7 @@ describe("SendTransfer", () => {
 		const { result: form } = renderHook(() =>
 			useForm({
 				defaultValues: {
+					network: wallet.network(),
 					senderAddress: wallet.address(),
 				},
 			}),
@@ -129,6 +131,7 @@ describe("SendTransfer", () => {
 		const { result: form } = renderHook(() =>
 			useForm({
 				defaultValues: {
+					network: wallet.network(),
 					senderAddress: wallet.address(),
 				},
 			}),
@@ -158,6 +161,7 @@ describe("SendTransfer", () => {
 		const { result: form } = renderHook(() =>
 			useForm({
 				defaultValues: {
+					network: wallet.network(),
 					senderAddress: wallet.address(),
 				},
 			}),
@@ -187,6 +191,7 @@ describe("SendTransfer", () => {
 		const { result: form } = renderHook(() =>
 			useForm({
 				defaultValues: {
+					network: wallet.network(),
 					senderAddress: wallet.address(),
 				},
 			}),
@@ -216,6 +221,7 @@ describe("SendTransfer", () => {
 		const { result: form } = renderHook(() =>
 			useForm({
 				defaultValues: {
+					network: wallet.network(),
 					senderAddress: wallet.address(),
 				},
 			}),
@@ -250,6 +256,7 @@ describe("SendTransfer", () => {
 				defaultValues: {
 					fee: "1",
 					memo: "test memo",
+					network: wallet.network(),
 					recipients: [
 						{
 							address: wallet.address(),
@@ -279,6 +286,7 @@ describe("SendTransfer", () => {
 		const { result: form } = renderHook(() =>
 			useForm({
 				defaultValues: {
+					network: wallet.network(),
 					senderAddress: wallet.address(),
 				},
 			}),
@@ -386,6 +394,54 @@ describe("SendTransfer", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should show network connection warning when selecting unsynced wallet", async () => {
+		const transferURL = `/profiles/${fixtureProfileId}/send-transfer`;
+
+		const history = createMemoryHistory();
+		history.push(transferURL);
+
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/send-transfer">
+				<LedgerProvider transport={getDefaultLedgerTransport()}>
+					<SendTransfer />
+				</LedgerProvider>
+			</Route>,
+			{
+				history,
+				routes: [transferURL],
+			},
+		);
+
+		await waitFor(() => expect(getByTestId("SendTransfer__network-step")).toBeTruthy());
+
+		fireEvent.click(getByTestId("NetworkIcon-ARK-ark.devnet"));
+		await waitFor(() =>
+			expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet"),
+		);
+
+		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
+
+		fireEvent.click(getByTestId("SendTransfer__button--continue"));
+		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
+
+		const walletMock = jest.spyOn(profile.wallets().first(), "hasSyncedWithNetwork").mockReturnValue(false);
+
+		const toastSpy = jest.spyOn(toasts, "warning").mockImplementation();
+
+		fireEvent.click(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper"));
+		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
+
+		fireEvent.click(getByTestId("SearchWalletListItem__select-0"));
+		await waitFor(() =>
+			expect(getByTestId("SelectAddress__input")).toHaveValue(profile.wallets().first().address()),
+		);
+
+		expect(toastSpy).toHaveBeenCalled();
+
+		walletMock.mockRestore();
+		toastSpy.mockRestore();
+	});
+
 	it("should select cryptoasset", async () => {
 		const transferURL = `/profiles/${fixtureProfileId}/send-transfer`;
 
@@ -408,86 +464,28 @@ describe("SendTransfer", () => {
 
 		const input = getByTestId("SelectNetworkInput__input");
 
-		act(() => {
-			fireEvent.change(input, { target: { value: "no match" } });
-		});
+		fireEvent.change(input, { target: { value: "no match" } });
+		await waitFor(() => expect(input).toHaveValue("no match"));
 
-		await waitFor(async () => {
-			expect(input).toHaveAttribute("aria-invalid", "true");
-		});
+		expect(input).toHaveAttribute("aria-invalid", "true");
 
-		act(() => {
-			fireEvent.change(input, { target: { value: "ARK Dev" } });
-		});
+		fireEvent.change(input, { target: { value: "ARK Dev" } });
+		await waitFor(() => expect(input).toHaveValue("ARK Dev"));
 
-		await waitFor(async () => {
-			expect(input).not.toHaveAttribute("aria-invalid");
-		});
+		expect(input).not.toHaveAttribute("aria-invalid");
 
-		act(() => {
-			fireEvent.change(input, { target: { value: "" } });
-		});
-
-		await waitFor(async () => {
-			expect(input).toHaveAttribute("aria-invalid");
-		});
+		fireEvent.change(input, { target: { value: "" } });
+		await waitFor(() => expect(input).toHaveValue(""));
+		
+		expect(input).toHaveAttribute("aria-invalid", "true");
 
 		await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy());
 
-		act(() => {
-			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.devnet"));
-		});
+		fireEvent.click(getByTestId("NetworkIcon-ARK-ark.devnet"));
+		await waitFor(() => expect(input).toHaveValue("ARK Devnet"));
 
-		await waitFor(() =>
-			expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet"),
-		);
+		expect(input).not.toHaveAttribute("aria-invalid");
 
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should display disabled address selection input if selected cryptoasset has not available wallets", async () => {
-		const transferURL = `/profiles/${fixtureProfileId}/send-transfer`;
-
-		const history = createMemoryHistory();
-		history.push(transferURL);
-
-		const { getByTestId, asFragment } = renderWithRouter(
-			<Route path="/profiles/:profileId/send-transfer">
-				<LedgerProvider transport={getDefaultLedgerTransport()}>
-					<SendTransfer />
-				</LedgerProvider>
-			</Route>,
-			{
-				history,
-				routes: [transferURL],
-			},
-		);
-
-		await waitFor(() => expect(getByTestId("SendTransfer__network-step")).toBeTruthy());
-
-		act(() => {
-			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
-		});
-
-		await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy());
-
-		act(() => {
-			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.devnet"));
-		});
-
-		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
-
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
-
-		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
-
-		await waitFor(() =>
-			expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet"),
-		);
-
-		expect(getByTestId("SelectAddress__wrapper")).not.toHaveAttribute("disabled");
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -511,37 +509,23 @@ describe("SendTransfer", () => {
 
 		await waitFor(() => expect(getByTestId("SendTransfer__network-step")).toBeTruthy());
 
-		// Select cryptoasset
-		act(() => {
-			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
-		});
-
-		await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy());
-
-		act(() => {
-			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.devnet"));
-		});
+		fireEvent.click(getByTestId("NetworkIcon-ARK-ark.devnet"));
+		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue("ARK Devnet"));
 
 		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
 
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
+		fireEvent.click(getByTestId("SendTransfer__button--continue"));
+		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
 
-		await waitFor(() =>
-			expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet"),
-		);
+		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet");
 
 		// Select sender
-		act(() => {
-			fireEvent.click(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper"));
-		});
+		fireEvent.click(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper"));
 		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
 
 		const firstAddress = getByTestId("SearchWalletListItem__select-1");
-		act(() => {
-			fireEvent.click(firstAddress);
-		});
+		
+		fireEvent.click(firstAddress);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
@@ -645,52 +629,33 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
 
 		// Select recipient
-		act(() => {
-			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
-		});
-
-		expect(getByTestId("modal__inner")).toBeTruthy();
+		fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
+		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
 
 		// Amount
 		const sendAll = getByTestId("AddRecipient__send-all");
-		act(() => {
-			fireEvent.click(sendAll);
-		});
+		fireEvent.click(sendAll);
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).not.toHaveValue("0"));
 
 		// Fee
-		await act(async () => {
-			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
-		});
-
-		expect(screen.getAllByRole("radio")[0]).toBeChecked();
+		fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
+		await waitFor(() => expect(screen.getAllByRole("radio")[0]).toBeChecked());
 		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
-		await act(async () => {
-			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.AVERAGE));
-		});
-
-		expect(screen.getAllByRole("radio")[1]).toBeChecked();
+		fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.AVERAGE));
+		await waitFor(() => expect(screen.getAllByRole("radio")[1]).toBeChecked());
 		expect(screen.getAllByRole("radio")[1]).toHaveTextContent("0.07320598");
 
-		await act(async () => {
-			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.FAST));
-		});
-
-		expect(screen.getAllByRole("radio")[2]).toBeChecked();
+		fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.FAST));
+		await waitFor(() => expect(screen.getAllByRole("radio")[2]).toBeChecked());
 		expect(screen.getAllByRole("radio")[2]).toHaveTextContent("0.1");
 
-		act(() => {
-			fireEvent.click(
-				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
-			);
-		});
+		fireEvent.click(
+			within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+		);
 
-		await act(async () => {
-			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "1000000000" } });
-		});
-
-		expect(getByTestId("InputCurrency")).toHaveValue("1000000000");
+		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "1000000000" } });
+		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("1000000000"));
 	});
 
 	it("should send a single transfer", async () => {
@@ -1866,6 +1831,37 @@ describe("SendTransfer", () => {
 		consoleErrorMock.mockRestore();
 	});
 
+	it("should show fee update warning when switching transaction type", async () => {
+		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-transfer`;
+
+		const history = createMemoryHistory();
+		history.push(transferURL);
+
+		const { asFragment, getByTestId, getByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
+				<LedgerProvider transport={getDefaultLedgerTransport()}>
+					<SendTransfer />
+				</LedgerProvider>
+			</Route>,
+			{
+				history,
+				routes: [transferURL],
+			},
+		);
+
+		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
+
+		const toastSpy = jest.spyOn(toasts, "warning").mockImplementation();
+
+		fireEvent.click(getByText(transactionTranslations.MULTIPLE));
+		await waitFor(() => expect(toastSpy).toHaveBeenCalled());
+
+		fireEvent.click(getByText(transactionTranslations.SINGLE));
+		await waitFor(() => expect(toastSpy).toHaveBeenCalled());
+
+		toastSpy.mockRestore();
+	});
+
 	it("should send a multi payment", async () => {
 		nock("https://dwallets.ark.io")
 			.get("/api/wallets/DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T")
@@ -1901,88 +1897,59 @@ describe("SendTransfer", () => {
 		});
 
 		// Select multiple type
-		act(() => {
-			fireEvent.click(getByText(transactionTranslations.MULTIPLE));
-		});
+		fireEvent.click(getByText(transactionTranslations.MULTIPLE));
 
 		// Select recipient
-		act(() => {
-			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
-		});
+		fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
 
-		act(() => {
-			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
-		});
+		fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
+		await waitFor(() => expect(getByTestId("SelectDropdown__input")).toHaveValue(profile.wallets().first().address()));
 
-		expect(getByTestId("SelectDropdown__input")).toHaveValue(profile.wallets().first().address());
+		fireEvent.change(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
+		await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
 
-		act(() => {
-			fireEvent.change(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
-		});
-
-		act(() => {
-			fireEvent.click(getByTestId("AddRecipient__add-button"));
-		});
+		fireEvent.click(getByTestId("AddRecipient__add-button"));
 		await waitFor(() => expect(getAllByTestId("recipient-list__recipient-list-item").length).toEqual(1));
 
 		// Select recipient #2
-		act(() => {
-			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
-		});
+		fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
 
-		act(() => {
-			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
-		});
+		fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 
-		expect(getByTestId("SelectDropdown__input")).toHaveValue(profile.wallets().first().address());
+		await waitFor(() => expect(getByTestId("SelectDropdown__input")).toHaveValue(profile.wallets().first().address()));
 
-		act(() => {
-			fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
-		});
+		fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
+		await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
 
-		expect(getByTestId("AddRecipient__amount")).toHaveValue("1");
-
-		act(() => {
-			fireEvent.click(getByTestId("AddRecipient__add-button"));
-		});
+		fireEvent.click(getByTestId("AddRecipient__add-button"));
 		await waitFor(() => expect(getAllByTestId("recipient-list__recipient-list-item").length).toEqual(2));
 
 		// Memo
-		act(() => {
-			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
-		});
-
-		expect(getByTestId("Input__memo")).toHaveValue("test memo");
+		fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
+		await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 		// Fee
-		await act(async () => {
-			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
-		});
+		fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
+		await waitFor(() => expect(screen.getAllByRole("radio")[0]).toBeChecked());
 
-		expect(screen.getAllByRole("radio")[0]).toBeChecked();
-		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
+		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.1");
 
 		// Step 2
 		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
 
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
+		fireEvent.click(getByTestId("SendTransfer__button--continue"));
 		await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 
 		// Step 3
 		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
 
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
+		fireEvent.click(getByTestId("SendTransfer__button--continue"));
 		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+
 		const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-		act(() => {
-			fireEvent.input(passwordInput, { target: { value: passphrase } });
-		});
+		fireEvent.input(passwordInput, { target: { value: passphrase } });
 		await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
 
 		// Step 5 (skip step 4 for now - ledger confirmation)

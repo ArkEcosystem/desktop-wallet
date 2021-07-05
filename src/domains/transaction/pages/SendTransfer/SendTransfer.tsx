@@ -333,8 +333,6 @@ export const SendTransfer = () => {
 									networks={networks}
 									profile={activeProfile}
 									deeplinkProps={deepLinkParameters}
-									hasWalletId={hasWalletId}
-									disableNetworkField={showNetworkStep}
 								/>
 							</TabPanel>
 

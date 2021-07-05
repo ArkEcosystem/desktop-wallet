@@ -1,3 +1,4 @@
+import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
 import { Alert } from "app/components/Alert";
 import { FormField, FormLabel } from "app/components/Form";
@@ -9,10 +10,9 @@ import {
 	TransactionNetwork,
 	TransactionSender,
 } from "domains/transaction/components/TransactionDetail";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { TransactionFees } from "types";
 
 export const FormStep = ({
 	senderWallet,
@@ -23,41 +23,29 @@ export const FormStep = ({
 }) => {
 	const { t } = useTranslation();
 
-	const { getValues, register, setValue, watch } = useFormContext();
-
-	const [fees, setFees] = useState<TransactionFees>({
-		avg: 0,
-		max: 0,
-		min: 0,
-		static: 25,
-	});
-
-	useEffect(() => {
-		register("fees");
-	}, [register]);
-
-	const [defaultFee] = useState(() => watch("fee"));
-	const fee = getValues("fee") || defaultFee;
-	const inputFeeSettings = watch("inputFeeSettings") ?? {};
-
 	const { findByType } = useFees(profile);
 
-	useEffect(() => {
-		const setTransactionFees = async (senderWallet: ProfilesContracts.IReadWriteWallet) => {
-			const fees = await findByType(senderWallet.coinId(), senderWallet.networkId(), "delegateResignation");
+	const { getValues, setValue, watch } = useFormContext();
+	const { fee, fees } = watch();
 
-			setFees(fees);
+  const inputFeeSettings = watch("inputFeeSettings") ?? {};
+
+	useEffect(() => {
+		const setTransactionFees = async (network: Networks.Network) => {
+			const fees = await findByType(network.coin(), network.id(), "delegateResignation");
+
 			setValue("fees", fees);
+
+			if (!getValues("fee")) {
+				setValue("fee", fees.avg, {
+					shouldDirty: true,
+					shouldValidate: true,
+				});
+			}
 		};
 
-		setTransactionFees(senderWallet);
-	}, [setValue, senderWallet, findByType]);
-
-	useEffect(() => {
-		if (fee === undefined) {
-			setValue("fee", fees.avg !== 0 ? fees.avg : fees.static, { shouldDirty: true, shouldValidate: true });
-		}
-	}, [fee, fees, setValue]);
+		setTransactionFees(senderWallet.network());
+	}, [findByType, getValues, setValue, senderWallet]);
 
 	return (
 		<section data-testid="SendDelegateResignation__form-step">
