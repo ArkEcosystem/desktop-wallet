@@ -19,6 +19,24 @@ describe("Signed Transaction Table", () => {
 		vote: undefined,
 	};
 
+	const mockPendingTransfers = (wallet: Contracts.IReadWriteWallet) => {
+		jest.spyOn(wallet.transaction(), "pending").mockReturnValue({
+			[fixtures.transfer.id()]: fixtures.transfer,
+		});
+		jest.spyOn(wallet.transaction(), "canBeSigned").mockReturnValue(true);
+		jest.spyOn(wallet.transaction(), "hasBeenSigned").mockReturnValue(true);
+		jest.spyOn(wallet.transaction(), "isAwaitingConfirmation").mockReturnValue(true);
+	};
+
+	const mockMultisignatures = (wallet: Contracts.IReadWriteWallet) => {
+		jest.spyOn(wallet.transaction(), "pending").mockReturnValue({
+			[fixtures.transfer.id()]: fixtures.transfer,
+		});
+		jest.spyOn(wallet.transaction(), "canBeSigned").mockReturnValue(true);
+		jest.spyOn(wallet.transaction(), "hasBeenSigned").mockReturnValue(false);
+		jest.spyOn(wallet.transaction(), "isAwaitingConfirmation").mockReturnValue(false);
+	};
+
 	beforeAll(async () => {
 		nock.disableNetConnect();
 		nock("https://dwallets.ark.io")
@@ -68,6 +86,7 @@ describe("Signed Transaction Table", () => {
 						.signatory()
 						.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
 				}),
+			wallet,
 		);
 
 		fixtures.multiSignature = new DTO.ExtendedSignedTransactionData(
@@ -87,6 +106,7 @@ describe("Signed Transaction Table", () => {
 						.signatory()
 						.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
 				}),
+			wallet,
 		);
 
 		fixtures.multiPayment = new DTO.ExtendedSignedTransactionData(
@@ -113,6 +133,7 @@ describe("Signed Transaction Table", () => {
 						.signatory()
 						.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
 				}),
+			wallet,
 		);
 
 		fixtures.vote = new DTO.ExtendedSignedTransactionData(
@@ -131,6 +152,7 @@ describe("Signed Transaction Table", () => {
 						.signatory()
 						.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
 				}),
+			wallet,
 		);
 
 		fixtures.unvote = new DTO.ExtendedSignedTransactionData(
@@ -149,6 +171,7 @@ describe("Signed Transaction Table", () => {
 						.signatory()
 						.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
 				}),
+			wallet,
 		);
 
 		fixtures.ipfs = new DTO.ExtendedSignedTransactionData(
@@ -166,6 +189,7 @@ describe("Signed Transaction Table", () => {
 						.signatory()
 						.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
 				}),
+			wallet,
 		);
 
 		for (const transactionFixture of Object.values(fixtures)) {
@@ -179,18 +203,20 @@ describe("Signed Transaction Table", () => {
 	});
 
 	it("should render pending transfers", () => {
-		const { asFragment } = render(<PendingTransactions transfers={transfers} wallet={wallet} />);
+		mockPendingTransfers(wallet);
+
+		const { asFragment } = render(<PendingTransactions wallet={wallet} />);
 
 		expect(asFragment()).toMatchSnapshot();
+
+		jest.restoreAllMocks();
 	});
 
 	it("should handle click on pending transfer row", async () => {
 		const onClick = jest.fn();
-		const awaitingMock = jest.spyOn(wallet.transaction(), "canBeSigned").mockReturnValue(true);
+		mockPendingTransfers(wallet);
 
-		const { getAllByTestId } = render(
-			<PendingTransactions transfers={transfers} wallet={wallet} onPendingTransactionClick={onClick} />,
-		);
+		const { getAllByTestId } = render(<PendingTransactions wallet={wallet} onPendingTransactionClick={onClick} />);
 
 		act(() => {
 			fireEvent.click(getAllByTestId("TableRow")[0]);
@@ -198,7 +224,7 @@ describe("Signed Transaction Table", () => {
 
 		await waitFor(() => expect(onClick).toHaveBeenCalled());
 
-		awaitingMock.mockReset();
+		jest.restoreAllMocks();
 	});
 
 	it("should render signed transactions", () => {
@@ -207,7 +233,7 @@ describe("Signed Transaction Table", () => {
 			.mockReturnValue(true);
 		const canBeSignedMock = jest.spyOn(wallet.transaction(), "canBeSigned").mockReturnValue(false);
 
-		const { asFragment } = render(<PendingTransactions signed={Object.values(fixtures)} wallet={wallet} />);
+		const { asFragment } = render(<PendingTransactions wallet={wallet} />);
 
 		expect(asFragment()).toMatchSnapshot();
 
@@ -216,36 +242,30 @@ describe("Signed Transaction Table", () => {
 	});
 
 	it("should show as awaiting confirmations", async () => {
-		const isAwaitingConfirmationMock = jest
-			.spyOn(wallet.transaction(), "isAwaitingConfirmation")
-			.mockImplementation(() => true);
+		mockPendingTransfers(wallet);
 
-		const canBeSignedMock = jest.spyOn(wallet.transaction(), "canBeSigned").mockReturnValue(true);
-		const { asFragment } = render(<PendingTransactions signed={[fixtures.transfer]} wallet={wallet} />);
+		const { asFragment } = render(<PendingTransactions wallet={wallet} />);
 		await waitFor(() => expect(screen.getByText("status-pending.svg")).toBeInTheDocument());
 
 		expect(asFragment()).toMatchSnapshot();
 
-		isAwaitingConfirmationMock.mockRestore();
-		canBeSignedMock.mockRestore();
+		jest.restoreAllMocks();
 	});
 
 	it("should show as awaiting the wallet signature", async () => {
-		const isAwaitingOurSignatureMock = jest
-			.spyOn(wallet.transaction(), "isAwaitingOurSignature")
-			.mockImplementation(() => true);
+		mockMultisignatures(wallet);
+		jest.spyOn(wallet.transaction(), "isAwaitingOurSignature").mockReturnValue(true);
 
-		const canBeSignedMock = jest.spyOn(wallet.transaction(), "canBeSigned").mockReturnValue(true);
-		const { asFragment } = render(<PendingTransactions signed={[fixtures.transfer]} wallet={wallet} />);
+		const { asFragment } = render(<PendingTransactions wallet={wallet} />);
 		await waitFor(() => expect(screen.getByText("awaiting-our-signature.svg")).toBeInTheDocument());
 
 		expect(asFragment()).toMatchSnapshot();
 
-		isAwaitingOurSignatureMock.mockRestore();
-		canBeSignedMock.mockRestore();
+		jest.restoreAllMocks();
 	});
 
 	it("should show as awaiting other wallets signatures", async () => {
+		mockMultisignatures(wallet);
 		const isAwaitingOurSignatureMock = jest
 			.spyOn(wallet.transaction(), "isAwaitingOtherSignatures")
 			.mockImplementation(() => true);
@@ -254,7 +274,7 @@ describe("Signed Transaction Table", () => {
 			.mockImplementation(() => 3);
 
 		const canBeSignedMock = jest.spyOn(wallet.transaction(), "canBeSigned").mockReturnValue(true);
-		const { asFragment } = render(<PendingTransactions signed={[fixtures.transfer]} wallet={wallet} />);
+		const { asFragment } = render(<PendingTransactions wallet={wallet} />);
 		await waitFor(() => expect(screen.getByText("awaiting-other-signature.svg")).toBeInTheDocument());
 
 		expect(asFragment()).toMatchSnapshot();
@@ -262,9 +282,11 @@ describe("Signed Transaction Table", () => {
 		isAwaitingOurSignatureMock.mockRestore();
 		remainingSignatureCountMock.mockRestore();
 		canBeSignedMock.mockRestore();
+		jest.restoreAllMocks();
 	});
 
 	it("should show as final signature", async () => {
+		mockMultisignatures(wallet);
 		const isAwaitingOurSignatureMock = jest
 			.spyOn(wallet.coin().multiSignature(), "isMultiSignatureReady")
 			.mockImplementation(() => {
@@ -272,16 +294,18 @@ describe("Signed Transaction Table", () => {
 			});
 
 		const canBeSignedMock = jest.spyOn(wallet.transaction(), "canBeSigned").mockReturnValue(true);
-		const { asFragment } = render(<PendingTransactions signed={[fixtures.transfer]} wallet={wallet} />);
+		const { asFragment } = render(<PendingTransactions wallet={wallet} />);
 		await waitFor(() => expect(screen.getByText("awaiting-final-signature.svg")).toBeInTheDocument());
 
 		expect(asFragment()).toMatchSnapshot();
 
 		isAwaitingOurSignatureMock.mockRestore();
 		canBeSignedMock.mockRestore();
+		jest.restoreAllMocks();
 	});
 
 	it("should show the sign button", () => {
+		mockMultisignatures(wallet);
 		const onClick = jest.fn();
 		const awaitingMock = jest.spyOn(wallet.transaction(), "canBeSigned").mockReturnValue(true);
 
@@ -297,13 +321,15 @@ describe("Signed Transaction Table", () => {
 		expect(asFragment()).toMatchSnapshot();
 
 		awaitingMock.mockReset();
+		jest.restoreAllMocks();
 	});
 
 	it.each(["light", "dark"])("should set %s shadow color on mouse events", async (theme) => {
+		mockMultisignatures(wallet);
 		jest.spyOn(utils, "shouldUseDarkColors").mockImplementation(() => theme === "dark");
 
 		const canBeSignedMock = jest.spyOn(wallet.transaction(), "canBeSigned").mockReturnValue(true);
-		render(<PendingTransactions signed={[fixtures.multiSignature]} wallet={wallet} />);
+		render(<PendingTransactions wallet={wallet} />);
 		act(() => {
 			fireEvent.mouseEnter(screen.getAllByRole("row")[1]);
 		});
@@ -316,29 +342,34 @@ describe("Signed Transaction Table", () => {
 
 		await waitFor(() => expect(screen.getAllByRole("row")[1]).toBeInTheDocument());
 		canBeSignedMock.mockRestore();
+		jest.restoreAllMocks();
 	});
 
 	it("should show as vote", () => {
+		mockMultisignatures(wallet);
 		const isVoteMock = jest.spyOn(fixtures.transfer, "type").mockReturnValue("vote");
 
 		const canBeSignedMock = jest.spyOn(wallet.transaction(), "canBeSigned").mockReturnValue(true);
-		const { asFragment } = render(<PendingTransactions signed={[fixtures.transfer]} wallet={wallet} />);
+		const { asFragment } = render(<PendingTransactions wallet={wallet} />);
 
 		expect(asFragment()).toMatchSnapshot();
 
 		isVoteMock.mockRestore();
 		canBeSignedMock.mockRestore();
+		jest.restoreAllMocks();
 	});
 
 	it("should show as unvote", () => {
+		mockPendingTransfers(wallet);
 		const isUnvoteMock = jest.spyOn(fixtures.transfer, "type").mockReturnValue("unvote");
 
 		const canBeSignedMock = jest.spyOn(wallet.transaction(), "canBeSigned").mockReturnValue(true);
-		const { asFragment } = render(<PendingTransactions signed={[fixtures.transfer]} wallet={wallet} />);
+		const { asFragment } = render(<PendingTransactions wallet={wallet} />);
 
 		expect(asFragment()).toMatchSnapshot();
 
 		isUnvoteMock.mockRestore();
 		canBeSignedMock.mockRestore();
+		jest.restoreAllMocks();
 	});
 });
