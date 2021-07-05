@@ -32,15 +32,26 @@ export const NetworkIcon = ({ coin, network, iconSize, className, showTooltip, .
 		return <Placeholder className={className} {...properties} />;
 	}
 
-	const { iconName, borderClass, textClass } = networkExtendedData;
-	const displayName = networkExtendedData.displayName;
+	const { iconName, displayName, isLive } = networkExtendedData;
+
+	const getClassName = () => {
+		if (className) {
+			return className;
+		}
+
+		if (isLive) {
+			return "text-theme-primary-600 border-theme-primary-100 dark:border-theme-primary-600";
+		}
+
+		return "text-theme-secondary-700 border-theme-secondary-300 dark:border-theme-secondary-700";
+	};
 
 	return (
 		<Tooltip content={displayName} disabled={!showTooltip || !displayName}>
 			<Circle
 				aria-label={displayName}
 				data-testid={`NetworkIcon-${coin}-${network}`}
-				className={className ? className : `${borderClass} ${textClass}`}
+				className={getClassName()}
 				{...properties}
 			>
 				<Icon data-testid="NetworkIcon__icon" name={iconName} width={iconSize} height={iconSize} />
