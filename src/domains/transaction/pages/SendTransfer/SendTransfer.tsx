@@ -203,7 +203,17 @@ export const SendTransfer = () => {
 
 		clearErrors("mnemonic");
 
-		const { fee, mnemonic, secondMnemonic, recipients, memo, encryptionPassword, wif, privateKey, secret } = getValues();
+		const {
+			fee,
+			mnemonic,
+			secondMnemonic,
+			recipients,
+			memo,
+			encryptionPassword,
+			wif,
+			privateKey,
+			secret,
+		} = getValues();
 		const isMultiPayment = recipients.length > 1;
 		const transactionType = isMultiPayment ? "multiPayment" : "transfer";
 
