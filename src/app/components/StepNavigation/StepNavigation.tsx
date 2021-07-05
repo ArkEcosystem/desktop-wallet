@@ -4,9 +4,9 @@ import { useTranslation } from "react-i18next";
 import tw, { styled } from "twin.macro";
 
 interface StepNavigationProperties {
-	onBackClick: any;
-	onBackToWalletClick: any;
-	onContinueClick: any;
+	onBackClick: () => void;
+	onBackToWalletClick: () => void;
+	onContinueClick: () => void;
 	isSubmitting: boolean;
 	isValid: boolean;
 	activeIndex: number;
