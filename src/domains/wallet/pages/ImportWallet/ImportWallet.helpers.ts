@@ -14,6 +14,4 @@ const getDefaultAlias = (profile: Contracts.IProfile, wallet: Contracts.IReadWri
 	return makeAlias(sameCoinWalletsCount);
 };
 
-export {
-	getDefaultAlias,
-};
+export { getDefaultAlias };

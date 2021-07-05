@@ -19,12 +19,12 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
+import { assertWallet } from "utils/assertions";
 
 import { getDefaultAlias } from "./ImportWallet.helpers";
 import { LedgerTabs } from "./Ledger/LedgerTabs";
 import { SecondStep } from "./Step2";
 import { ThirdStep } from "./Step3";
-import { assertWallet } from "utils/assertions";
 
 export const ImportWallet = () => {
 	const [activeTab, setActiveTab] = useState(1);
