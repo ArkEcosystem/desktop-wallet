@@ -7,7 +7,7 @@ export const translations: { [key: string]: any } = {
 	ALL: "All",
 	AMOUNT: "Amount",
 	AUTHENTICATION_STEP: {
-		DESCIRPTION_SECRET: "Enter your secret to authenticate the transaction.",
+		DESCRIPTION_SECRET: "Enter your secret to authenticate the transaction.",
 		DESCRIPTION_ENCRYPTION_PASSWORD: "Enter your encryption password to authenticate the transaction.",
 		DESCRIPTION_MNEMONIC: "Enter your mnemonic passphrase to authenticate the transaction.",
 		DESCRIPTION_PRIVATE_KEY: "Enter your private key to authenticate the transaction.",
