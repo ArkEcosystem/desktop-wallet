@@ -384,7 +384,7 @@ exports[`Export Settings should render export settings 1`] = `
                     class="space-y-4"
                   >
                     <h1
-                      class="mb-0 text-3xl"
+                      class="mb-0 text-2xl"
                       data-testid="header__title"
                     >
                       Export Profile
@@ -426,7 +426,7 @@ exports[`Export Settings should render export settings 1`] = `
                             class="flex justify-between items-center space-x-5"
                           >
                             <span
-                              class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                              class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                               data-testid="list-divided-item__label"
                             >
                               Exclude Empty Wallets
@@ -475,7 +475,7 @@ exports[`Export Settings should render export settings 1`] = `
                             class="flex justify-between items-center space-x-5"
                           >
                             <span
-                              class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                              class="font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                               data-testid="list-divided-item__label"
                             >
                               Exclude Ledger wallets

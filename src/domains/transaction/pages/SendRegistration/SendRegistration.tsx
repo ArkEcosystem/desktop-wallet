@@ -117,16 +117,15 @@ export const SendRegistration = () => {
 
 	const handleSubmit = async () => {
 		try {
-			const { mnemonic, secondMnemonic, encryptionPassword, wif, privateKey } = getValues();
+			const { mnemonic, secondMnemonic, encryptionPassword, wif, privateKey, secret } = getValues();
 
 			const signatory = await sign({
 				encryptionPassword,
-
 				mnemonic,
-
 				privateKey,
 				/* istanbul ignore next */
 				secondMnemonic: registrationType === "secondSignature" ? undefined : secondMnemonic,
+				secret,
 				wif,
 			});
 

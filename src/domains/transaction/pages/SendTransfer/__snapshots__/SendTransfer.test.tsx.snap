@@ -312,7 +312,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                         class="space-y-4"
                       >
                         <h1
-                          class="mb-0 text-3xl"
+                          class="mb-0 text-2xl"
                           data-testid="header__title"
                         >
                           Transaction Sent
@@ -359,7 +359,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                                   to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                                 >
                                   <span
-                                    class="break-all border-b border-transparent duration-200 group-hover:border-current"
+                                    class="Link__Content-sc-1q7sbxr-1 iOOQRq"
                                   >
                                     <span
                                       class="inline-flex overflow-hidden"
@@ -461,7 +461,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                         </div>
                         <div
                           aria-label="ARK Devnet"
-                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-700 border-theme-secondary-300 dark:border-theme-secondary-700 ring-theme-background"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
@@ -1223,7 +1223,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                         class="space-y-4"
                       >
                         <h1
-                          class="mb-0 text-3xl"
+                          class="mb-0 text-2xl"
                           data-testid="header__title"
                         >
                           Authenticate
@@ -1370,7 +1370,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
         class="space-y-4"
       >
         <h1
-          class="mb-0 text-3xl"
+          class="mb-0 text-2xl"
           data-testid="header__title"
         >
           Send 
@@ -2198,7 +2198,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                         class="space-y-4"
                       >
                         <h1
-                          class="mb-0 text-3xl"
+                          class="mb-0 text-2xl"
                           data-testid="header__title"
                         >
                           Send DARK
@@ -3223,7 +3223,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                         class="space-y-4"
                       >
                         <h1
-                          class="mb-0 text-3xl"
+                          class="mb-0 text-2xl"
                           data-testid="header__title"
                         >
                           Send DARK
@@ -3938,7 +3938,7 @@ exports[`SendTransfer should render form step 1`] = `
         class="space-y-4"
       >
         <h1
-          class="mb-0 text-3xl"
+          class="mb-0 text-2xl"
           data-testid="header__title"
         >
           Send 
@@ -4456,7 +4456,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
         class="space-y-4"
       >
         <h1
-          class="mb-0 text-3xl"
+          class="mb-0 text-2xl"
           data-testid="header__title"
         >
           Send 
@@ -4985,7 +4985,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
         class="space-y-4"
       >
         <h1
-          class="mb-0 text-3xl"
+          class="mb-0 text-2xl"
           data-testid="header__title"
         >
           Send 
@@ -5912,7 +5912,7 @@ exports[`SendTransfer should render network selection without selected wallet 1`
                         class="space-y-4"
                       >
                         <h1
-                          class="mb-0 text-3xl"
+                          class="mb-0 text-2xl"
                           data-testid="header__title"
                         >
                           Select a Cryptoasset
@@ -6077,7 +6077,7 @@ exports[`SendTransfer should render network step without test networks 1`] = `
         class="space-y-4"
       >
         <h1
-          class="mb-0 text-3xl"
+          class="mb-0 text-2xl"
           data-testid="header__title"
         >
           Select a Cryptoasset
@@ -6217,7 +6217,7 @@ exports[`SendTransfer should render review step 1`] = `
         class="space-y-4"
       >
         <h1
-          class="mb-0 text-3xl"
+          class="mb-0 text-2xl"
           data-testid="header__title"
         >
           Transaction Review
@@ -6250,7 +6250,7 @@ exports[`SendTransfer should render review step 1`] = `
       </div>
       <div
         aria-label="ARK Devnet"
-        class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
+        class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-700 border-theme-secondary-300 dark:border-theme-secondary-700 ring-theme-background"
         data-testid="NetworkIcon-ARK-ark.devnet"
       >
         <div
@@ -6495,7 +6495,7 @@ exports[`SendTransfer should render summary step 1`] = `
         class="space-y-4"
       >
         <h1
-          class="mb-0 text-3xl"
+          class="mb-0 text-2xl"
           data-testid="header__title"
         >
           Transaction Sent
@@ -6542,7 +6542,7 @@ exports[`SendTransfer should render summary step 1`] = `
                   to="https://dexplorer.ark.io/transaction/d41e4a07ddc5da1a52df04f2d428a43524bb621da811bead821e111094929e5a"
                 >
                   <span
-                    class="break-all border-b border-transparent duration-200 group-hover:border-current"
+                    class="Link__Content-sc-1q7sbxr-1 iOOQRq"
                   >
                     <span
                       class="inline-flex overflow-hidden"
@@ -6644,7 +6644,7 @@ exports[`SendTransfer should render summary step 1`] = `
         </div>
         <div
           aria-label="ARK Devnet"
-          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
+          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-700 border-theme-secondary-300 dark:border-theme-secondary-700 ring-theme-background"
           data-testid="NetworkIcon-ARK-ark.devnet"
         >
           <div
@@ -7141,7 +7141,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                         class="space-y-4"
                       >
                         <h1
-                          class="mb-0 text-3xl"
+                          class="mb-0 text-2xl"
                           data-testid="header__title"
                         >
                           Send DARK
@@ -8170,7 +8170,7 @@ exports[`SendTransfer should select cryptoasset 1`] = `
                         class="space-y-4"
                       >
                         <h1
-                          class="mb-0 text-3xl"
+                          class="mb-0 text-2xl"
                           data-testid="header__title"
                         >
                           Select a Cryptoasset
@@ -8645,7 +8645,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                         class="space-y-4"
                       >
                         <h1
-                          class="mb-0 text-3xl"
+                          class="mb-0 text-2xl"
                           data-testid="header__title"
                         >
                           Transaction Sent
@@ -8692,7 +8692,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                                   to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                                 >
                                   <span
-                                    class="break-all border-b border-transparent duration-200 group-hover:border-current"
+                                    class="Link__Content-sc-1q7sbxr-1 iOOQRq"
                                   >
                                     <span
                                       class="inline-flex overflow-hidden"
@@ -8794,7 +8794,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                         </div>
                         <div
                           aria-label="ARK Devnet"
-                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-700 border-theme-secondary-300 dark:border-theme-secondary-700 ring-theme-background"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
@@ -9314,7 +9314,7 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
                         class="space-y-4"
                       >
                         <h1
-                          class="mb-0 text-3xl"
+                          class="mb-0 text-2xl"
                           data-testid="header__title"
                         >
                           Transaction Sent
@@ -9361,7 +9361,7 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
                                   to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                                 >
                                   <span
-                                    class="break-all border-b border-transparent duration-200 group-hover:border-current"
+                                    class="Link__Content-sc-1q7sbxr-1 iOOQRq"
                                   >
                                     <span
                                       class="inline-flex overflow-hidden"
@@ -9463,7 +9463,7 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
                         </div>
                         <div
                           aria-label="ARK Devnet"
-                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-700 border-theme-secondary-300 dark:border-theme-secondary-700 ring-theme-background"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
@@ -9983,7 +9983,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                         class="space-y-4"
                       >
                         <h1
-                          class="mb-0 text-3xl"
+                          class="mb-0 text-2xl"
                           data-testid="header__title"
                         >
                           Transaction Sent
@@ -10030,7 +10030,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                                   to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                                 >
                                   <span
-                                    class="break-all border-b border-transparent duration-200 group-hover:border-current"
+                                    class="Link__Content-sc-1q7sbxr-1 iOOQRq"
                                   >
                                     <span
                                       class="inline-flex overflow-hidden"
@@ -10132,7 +10132,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                         </div>
                         <div
                           aria-label="ARK Devnet"
-                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-700 border-theme-secondary-300 dark:border-theme-secondary-700 ring-theme-background"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
@@ -10961,7 +10961,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                         class="space-y-4"
                       >
                         <h1
-                          class="mb-0 text-3xl"
+                          class="mb-0 text-2xl"
                           data-testid="header__title"
                         >
                           Transaction Sent
@@ -11008,7 +11008,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                                   to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                                 >
                                   <span
-                                    class="break-all border-b border-transparent duration-200 group-hover:border-current"
+                                    class="Link__Content-sc-1q7sbxr-1 iOOQRq"
                                   >
                                     <span
                                       class="inline-flex overflow-hidden"
@@ -11110,7 +11110,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                         </div>
                         <div
                           aria-label="ARK Devnet"
-                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-700 border-theme-secondary-300 dark:border-theme-secondary-700 ring-theme-background"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
@@ -11630,7 +11630,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                         class="space-y-4"
                       >
                         <h1
-                          class="mb-0 text-3xl"
+                          class="mb-0 text-2xl"
                           data-testid="header__title"
                         >
                           Transaction Sent
@@ -11677,7 +11677,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                                   to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                                 >
                                   <span
-                                    class="break-all border-b border-transparent duration-200 group-hover:border-current"
+                                    class="Link__Content-sc-1q7sbxr-1 iOOQRq"
                                   >
                                     <span
                                       class="inline-flex overflow-hidden"
@@ -11779,7 +11779,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                         </div>
                         <div
                           aria-label="ARK Devnet"
-                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-700 border-theme-secondary-300 dark:border-theme-secondary-700 ring-theme-background"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
@@ -12299,7 +12299,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                         class="space-y-4"
                       >
                         <h1
-                          class="mb-0 text-3xl"
+                          class="mb-0 text-2xl"
                           data-testid="header__title"
                         >
                           Transaction Sent
@@ -12346,7 +12346,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                                   to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                                 >
                                   <span
-                                    class="break-all border-b border-transparent duration-200 group-hover:border-current"
+                                    class="Link__Content-sc-1q7sbxr-1 iOOQRq"
                                   >
                                     <span
                                       class="inline-flex overflow-hidden"
@@ -12448,7 +12448,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                         </div>
                         <div
                           aria-label="ARK Devnet"
-                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-700 border-theme-secondary-300 dark:border-theme-secondary-700 ring-theme-background"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
@@ -12968,7 +12968,7 @@ exports[`SendTransfer should show error step and go back 1`] = `
                         class="space-y-4"
                       >
                         <h1
-                          class="mb-0 text-3xl"
+                          class="mb-0 text-2xl"
                           data-testid="header__title"
                         >
                           Transaction Error

@@ -52,7 +52,7 @@ export const usePortfolioData = ({ profile }: { profile: Contracts.IProfile }) =
 			for (const network of availableNetworks) {
 				if (network.extra && network.ticker() === coin) {
 					data.push({
-						color: network.extra.textClass.replace("text-theme-", ""),
+						color: "primary-600",
 						label: coin,
 						percentage: Number(balancePerCoin[coin].percentage),
 					});

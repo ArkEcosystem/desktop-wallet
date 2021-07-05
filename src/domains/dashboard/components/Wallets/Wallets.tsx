@@ -73,7 +73,7 @@ export const Wallets = ({
 	return (
 		<Section>
 			<div className="flex justify-between items-center mb-8">
-				<div className="text-4xl font-bold">{title}</div>
+				<div className="text-2xl font-bold">{title}</div>
 
 				<div className="text-right">
 					<WalletsControls

@@ -290,9 +290,14 @@ export const GeneralSettings: React.FC = () => {
 		<SettingsWrapper profile={profile} activeSettings="general">
 			<Header title={t("SETTINGS.GENERAL.TITLE")} subtitle={t("SETTINGS.GENERAL.SUBTITLE")} />
 
-			<Form data-testid="General-settings__form" context={form as any} onSubmit={handleSubmit as any}>
+			<Form
+				className="space-y-12"
+				data-testid="General-settings__form"
+				context={form as any}
+				onSubmit={handleSubmit as any}
+			>
 				<div className="relative mt-8">
-					<h2 className="mb-3">{t("SETTINGS.GENERAL.PERSONAL.TITLE")}</h2>
+					<h2 className="text-lg mb-3">{t("SETTINGS.GENERAL.PERSONAL.TITLE")}</h2>
 
 					<SelectProfileImage
 						value={avatar}
@@ -329,6 +334,9 @@ export const GeneralSettings: React.FC = () => {
 											field: t("SETTINGS.GENERAL.PERSONAL.PASSPHRASE_LANGUAGE"),
 										}).toString(),
 									})}
+									onChange={(bip39Locale: any) =>
+										setValue("bip39Locale", bip39Locale.value, { shouldDirty: true })
+									}
 									options={PlatformSdkChoices.passphraseLanguages}
 									defaultValue={getDefaultValues().bip39Locale}
 								/>
@@ -349,6 +357,9 @@ export const GeneralSettings: React.FC = () => {
 									})}
 									options={PlatformSdkChoices.currencies}
 									defaultValue={getDefaultValues().exchangeCurrency}
+									onChange={(exchangeCurrency: any) =>
+										setValue("exchangeCurrency", exchangeCurrency.value, { shouldDirty: true })
+									}
 								/>
 							</FormField>
 						</div>
@@ -368,6 +379,7 @@ export const GeneralSettings: React.FC = () => {
 									})}
 									options={PlatformSdkChoices.languages}
 									defaultValue={getDefaultValues().locale}
+									onChange={(locale: any) => setValue("locale", locale.value, { shouldDirty: true })}
 								/>
 							</FormField>
 
@@ -385,6 +397,9 @@ export const GeneralSettings: React.FC = () => {
 									})}
 									options={PlatformSdkChoices.marketProviders}
 									defaultValue={getDefaultValues().marketProvider}
+									onChange={(marketProvider: any) =>
+										setValue("marketProvider", marketProvider.value, { shouldDirty: true })
+									}
 								/>
 							</FormField>
 
@@ -402,19 +417,22 @@ export const GeneralSettings: React.FC = () => {
 									})}
 									options={PlatformSdkChoices.timeFormats}
 									defaultValue={getDefaultValues().timeFormat}
+									onChange={(timeFormat: any) =>
+										setValue("timeFormat", timeFormat.value, { shouldDirty: true })
+									}
 								/>
 							</FormField>
 						</div>
 					</div>
 				</div>
 
-				<div className="relative mt-10">
-					<h2 className="mb-3">{t("SETTINGS.GENERAL.SECURITY.TITLE")}</h2>
+				<div className="relative">
+					<h2 className="text-lg mb-3">{t("SETTINGS.GENERAL.SECURITY.TITLE")}</h2>
 					<ListDivided items={securityItems} />
 				</div>
 
-				<div className="relative mt-10">
-					<h2 className="mb-3">{t("SETTINGS.GENERAL.OTHER.TITLE")}</h2>
+				<div className="relative">
+					<h2 className="text-lg mb-3">{t("SETTINGS.GENERAL.OTHER.TITLE")}</h2>
 					<ListDivided items={otherItems} />
 				</div>
 

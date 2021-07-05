@@ -312,7 +312,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                         class="space-y-4"
                       >
                         <h1
-                          class="mb-0 text-3xl"
+                          class="mb-0 text-2xl"
                           data-testid="header__title"
                         >
                           Authenticate
@@ -459,7 +459,7 @@ exports[`SendIpfs should render form step 1`] = `
         class="space-y-4"
       >
         <h1
-          class="mb-0 text-3xl"
+          class="mb-0 text-2xl"
           data-testid="header__title"
         >
           IPFS
@@ -762,7 +762,7 @@ exports[`SendIpfs should render review step 1`] = `
         class="space-y-4"
       >
         <h1
-          class="mb-0 text-3xl"
+          class="mb-0 text-2xl"
           data-testid="header__title"
         >
           Transaction Review
@@ -795,7 +795,7 @@ exports[`SendIpfs should render review step 1`] = `
       </div>
       <div
         aria-label="ARK Devnet"
-        class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
+        class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-700 border-theme-secondary-300 dark:border-theme-secondary-700 ring-theme-background"
         data-testid="NetworkIcon-ARK-ark.devnet"
       >
         <div
@@ -985,7 +985,7 @@ exports[`SendIpfs should render summary step 1`] = `
         class="space-y-4"
       >
         <h1
-          class="mb-0 text-3xl"
+          class="mb-0 text-2xl"
           data-testid="header__title"
         >
           Transaction Sent
@@ -2513,7 +2513,7 @@ exports[`SendIpfs should send an IPFS transaction using encryption password 1`] 
                         class="space-y-4"
                       >
                         <h1
-                          class="mb-0 text-3xl"
+                          class="mb-0 text-2xl"
                           data-testid="header__title"
                         >
                           Transaction Sent
@@ -2560,7 +2560,7 @@ exports[`SendIpfs should send an IPFS transaction using encryption password 1`] 
                                   to="https://dexplorer.ark.io/transaction/1e9b975eff66a731095876c3b6cbff14fd4dec3bb37a4127c46db3d69131067e"
                                 >
                                   <span
-                                    class="break-all border-b border-transparent duration-200 group-hover:border-current"
+                                    class="Link__Content-sc-1q7sbxr-1 iOOQRq"
                                   >
                                     <span
                                       class="inline-flex overflow-hidden"
@@ -2662,7 +2662,7 @@ exports[`SendIpfs should send an IPFS transaction using encryption password 1`] 
                         </div>
                         <div
                           aria-label="ARK Devnet"
-                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-700 border-theme-secondary-300 dark:border-theme-secondary-700 ring-theme-background"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
@@ -3097,7 +3097,7 @@ exports[`SendIpfs should send an ipfs transaction with a multisig wallet 1`] = `
                         class="space-y-4"
                       >
                         <h1
-                          class="mb-0 text-3xl"
+                          class="mb-0 text-2xl"
                           data-testid="header__title"
                         >
                           Transaction Sent
@@ -3144,7 +3144,7 @@ exports[`SendIpfs should send an ipfs transaction with a multisig wallet 1`] = `
                                   to="https://dexplorer.ark.io/transaction/1e9b975eff66a731095876c3b6cbff14fd4dec3bb37a4127c46db3d69131067e"
                                 >
                                   <span
-                                    class="break-all border-b border-transparent duration-200 group-hover:border-current"
+                                    class="Link__Content-sc-1q7sbxr-1 iOOQRq"
                                   >
                                     <span
                                       class="inline-flex overflow-hidden"
@@ -3246,7 +3246,7 @@ exports[`SendIpfs should send an ipfs transaction with a multisig wallet 1`] = `
                         </div>
                         <div
                           aria-label="ARK Devnet"
-                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-700 border-theme-secondary-300 dark:border-theme-secondary-700 ring-theme-background"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
@@ -3680,7 +3680,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                         class="space-y-4"
                       >
                         <h1
-                          class="mb-0 text-3xl"
+                          class="mb-0 text-2xl"
                           data-testid="header__title"
                         >
                           IPFS
@@ -4311,7 +4311,7 @@ exports[`SendIpfs should show error step and go back 1`] = `
                         class="space-y-4"
                       >
                         <h1
-                          class="mb-0 text-3xl"
+                          class="mb-0 text-2xl"
                           data-testid="header__title"
                         >
                           Transaction Error
