@@ -643,11 +643,11 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                   </section>
                 </div>
                 <div
-                  class="flex justify-end mt-8 space-x-3"
+                  class="StepNavigation__StepNavigationWrapper-e8732n-0 fGWUDu"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST block"
-                    data-testid="SendTransfer__button--back-to-wallet"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
+                    data-testid="StepNavigation__back-to-wallet-button"
                     type="button"
                   >
                     <div
@@ -1311,11 +1311,11 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex justify-end mt-8 space-x-3"
+                  class="StepNavigation__StepNavigationWrapper-e8732n-0 fGWUDu"
                 >
                   <button
                     class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
-                    data-testid="SendTransfer__button--back"
+                    data-testid="StepNavigation__back-button"
                     type="button"
                   >
                     <div
@@ -1326,7 +1326,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                   </button>
                   <button
                     class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
-                    data-testid="SendTransfer__button--submit"
+                    data-testid="StepNavigation__send-button"
                     disabled=""
                     type="submit"
                   >
@@ -2876,11 +2876,11 @@ exports[`SendTransfer should render form and use location state 1`] = `
                   </section>
                 </div>
                 <div
-                  class="flex justify-end mt-8 space-x-3"
+                  class="StepNavigation__StepNavigationWrapper-e8732n-0 fGWUDu"
                 >
                   <button
                     class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
-                    data-testid="SendTransfer__button--back"
+                    data-testid="StepNavigation__back-button"
                     type="button"
                   >
                     <div
@@ -2891,7 +2891,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                   </button>
                   <button
                     class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
-                    data-testid="SendTransfer__button--continue"
+                    data-testid="StepNavigation__continue-button"
                     disabled=""
                     type="button"
                   >
@@ -3890,11 +3890,11 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                   </section>
                 </div>
                 <div
-                  class="flex justify-end mt-8 space-x-3"
+                  class="StepNavigation__StepNavigationWrapper-e8732n-0 fGWUDu"
                 >
                   <button
                     class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
-                    data-testid="SendTransfer__button--back"
+                    data-testid="StepNavigation__back-button"
                     type="button"
                   >
                     <div
@@ -3905,7 +3905,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                   </button>
                   <button
                     class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
-                    data-testid="SendTransfer__button--continue"
+                    data-testid="StepNavigation__continue-button"
                     disabled=""
                     type="button"
                   >
@@ -6028,11 +6028,11 @@ exports[`SendTransfer should render network selection without selected wallet 1`
                   </section>
                 </div>
                 <div
-                  class="flex justify-end mt-8 space-x-3"
+                  class="StepNavigation__StepNavigationWrapper-e8732n-0 fGWUDu"
                 >
                   <button
                     class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
-                    data-testid="SendTransfer__button--back"
+                    data-testid="StepNavigation__back-button"
                     type="button"
                   >
                     <div
@@ -6043,7 +6043,7 @@ exports[`SendTransfer should render network selection without selected wallet 1`
                   </button>
                   <button
                     class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
-                    data-testid="SendTransfer__button--continue"
+                    data-testid="StepNavigation__continue-button"
                     disabled=""
                     type="button"
                   >
@@ -7819,11 +7819,11 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                   </section>
                 </div>
                 <div
-                  class="flex justify-end mt-8 space-x-3"
+                  class="StepNavigation__StepNavigationWrapper-e8732n-0 fGWUDu"
                 >
                   <button
                     class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
-                    data-testid="SendTransfer__button--back"
+                    data-testid="StepNavigation__back-button"
                     type="button"
                   >
                     <div
@@ -7834,7 +7834,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                   </button>
                   <button
                     class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
-                    data-testid="SendTransfer__button--continue"
+                    data-testid="StepNavigation__continue-button"
                     disabled=""
                     type="button"
                   >
@@ -8298,11 +8298,11 @@ exports[`SendTransfer should select cryptoasset 1`] = `
                   </section>
                 </div>
                 <div
-                  class="flex justify-end mt-8 space-x-3"
+                  class="StepNavigation__StepNavigationWrapper-e8732n-0 fGWUDu"
                 >
                   <button
                     class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
-                    data-testid="SendTransfer__button--back"
+                    data-testid="StepNavigation__back-button"
                     type="button"
                   >
                     <div
@@ -8313,7 +8313,7 @@ exports[`SendTransfer should select cryptoasset 1`] = `
                   </button>
                   <button
                     class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW"
-                    data-testid="SendTransfer__button--continue"
+                    data-testid="StepNavigation__continue-button"
                     type="button"
                   >
                     <div
@@ -8976,11 +8976,11 @@ exports[`SendTransfer should send a single transfer 1`] = `
                   </section>
                 </div>
                 <div
-                  class="flex justify-end mt-8 space-x-3"
+                  class="StepNavigation__StepNavigationWrapper-e8732n-0 fGWUDu"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST block"
-                    data-testid="SendTransfer__button--back-to-wallet"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
+                    data-testid="StepNavigation__back-to-wallet-button"
                     type="button"
                   >
                     <div
@@ -9645,11 +9645,11 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
                   </section>
                 </div>
                 <div
-                  class="flex justify-end mt-8 space-x-3"
+                  class="StepNavigation__StepNavigationWrapper-e8732n-0 fGWUDu"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST block"
-                    data-testid="SendTransfer__button--back-to-wallet"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
+                    data-testid="StepNavigation__back-to-wallet-button"
                     type="button"
                   >
                     <div
@@ -10314,11 +10314,11 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                   </section>
                 </div>
                 <div
-                  class="flex justify-end mt-8 space-x-3"
+                  class="StepNavigation__StepNavigationWrapper-e8732n-0 fGWUDu"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST block"
-                    data-testid="SendTransfer__button--back-to-wallet"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
+                    data-testid="StepNavigation__back-to-wallet-button"
                     type="button"
                   >
                     <div
@@ -11292,11 +11292,11 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                   </section>
                 </div>
                 <div
-                  class="flex justify-end mt-8 space-x-3"
+                  class="StepNavigation__StepNavigationWrapper-e8732n-0 fGWUDu"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST block"
-                    data-testid="SendTransfer__button--back-to-wallet"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
+                    data-testid="StepNavigation__back-to-wallet-button"
                     type="button"
                   >
                     <div
@@ -11961,11 +11961,11 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                   </section>
                 </div>
                 <div
-                  class="flex justify-end mt-8 space-x-3"
+                  class="StepNavigation__StepNavigationWrapper-e8732n-0 fGWUDu"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST block"
-                    data-testid="SendTransfer__button--back-to-wallet"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
+                    data-testid="StepNavigation__back-to-wallet-button"
                     type="button"
                   >
                     <div
@@ -12630,11 +12630,11 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                   </section>
                 </div>
                 <div
-                  class="flex justify-end mt-8 space-x-3"
+                  class="StepNavigation__StepNavigationWrapper-e8732n-0 fGWUDu"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST block"
-                    data-testid="SendTransfer__button--back-to-wallet"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
+                    data-testid="StepNavigation__back-to-wallet-button"
                     type="button"
                   >
                     <div
@@ -13065,9 +13065,6 @@ exports[`SendTransfer should show error step and go back 1`] = `
                     </div>
                   </div>
                 </div>
-                <div
-                  class="flex justify-end mt-8 space-x-3"
-                />
               </div>
             </div>
           </form>

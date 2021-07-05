@@ -111,7 +111,7 @@ export const SendDelegateResignation = () => {
 		}
 	};
 
-	const showErrorStep = activeTab === 5;
+	const hideStepNavigation = activeTab === 5;
 
 	return (
 		<Page profile={activeProfile}>
@@ -147,7 +147,7 @@ export const SendDelegateResignation = () => {
 								/>
 							</TabPanel>
 
-							{!showErrorStep && (
+							{!hideStepNavigation && (
 								<StepNavigation
 									onBackClick={handleBack}
 									onBackToWalletClick={() =>

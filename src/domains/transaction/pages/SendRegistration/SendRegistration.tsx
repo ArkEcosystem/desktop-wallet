@@ -167,7 +167,7 @@ export const SendRegistration = () => {
 		setActiveTab(newIndex);
 	};
 
-	const showErrorStep = activeTab === 10;
+	const hideStepNavigation = activeTab === 10 || (activeTab === stepCount - 1 && activeWallet.isLedger());
 
 	return (
 		<Page profile={activeProfile}>
@@ -216,7 +216,7 @@ export const SendRegistration = () => {
 								</>
 							)}
 
-							{!showErrorStep && (
+							{!hideStepNavigation && (
 								<StepNavigation
 									onBackClick={handleBack}
 									onBackToWalletClick={() =>

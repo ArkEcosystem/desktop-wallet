@@ -324,7 +324,7 @@ export const SendVote = () => {
 		}
 	};
 
-	const showErrorStep = activeTab === 5;
+	const hideStepNavigation = activeTab === 5 || (activeTab === 3 && activeWallet.isLedger());
 
 	return (
 		<Page profile={activeProfile}>
@@ -378,7 +378,7 @@ export const SendVote = () => {
 								/>
 							</TabPanel>
 
-							{!showErrorStep && (
+							{!hideStepNavigation && (
 								<StepNavigation
 									onBackClick={handleBack}
 									onBackToWalletClick={() =>

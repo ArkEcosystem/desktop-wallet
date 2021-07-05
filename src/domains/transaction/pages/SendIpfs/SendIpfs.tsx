@@ -153,7 +153,7 @@ export const SendIpfs = () => {
 		setActiveTab(newIndex);
 	};
 
-	const showErrorStep = activeTab === 5;
+	const hideStepNavigation = activeTab === 5 || (activeTab === 3 && activeWallet.isLedger());
 
 	return (
 		<Page profile={activeProfile}>
@@ -194,7 +194,7 @@ export const SendIpfs = () => {
 								/>
 							</TabPanel>
 
-							{!showErrorStep && (
+							{!hideStepNavigation && (
 								<StepNavigation
 									onBackClick={handleBack}
 									onBackToWalletClick={() =>

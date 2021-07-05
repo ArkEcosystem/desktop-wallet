@@ -350,25 +350,21 @@ describe("SendTransfer", () => {
 		const transferURL = `/profiles/${fixtureProfileId}/wallets/${fixtureWalletId}/send-transfer?recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&memo=ARK&coin=ark&network=ark.devnet`;
 		history.push(transferURL);
 
-		let rendered: RenderResult;
+		const { asFragment } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
+				<LedgerProvider transport={getDefaultLedgerTransport()}>
+					<SendTransfer />
+				</LedgerProvider>
+			</Route>,
+			{
+				history,
+				routes: [transferURL],
+			},
+		);
 
-		await act(async () => {
-			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
-					<LedgerProvider transport={getDefaultLedgerTransport()}>
-						<SendTransfer />
-					</LedgerProvider>
-				</Route>,
-				{
-					history,
-					routes: [transferURL],
-				},
-			);
+		await waitFor(() => expect(screen.getByTestId("SendTransfer__form-step")).toBeTruthy());
 
-			await waitFor(() => expect(rendered.getByTestId("SendTransfer__form-step")).toBeTruthy());
-		});
-
-		expect(rendered.asFragment()).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render form and use location state without memo", async () => {
@@ -419,9 +415,9 @@ describe("SendTransfer", () => {
 			expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet"),
 		);
 
-		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
+		await waitFor(() => expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled());
 
-		fireEvent.click(getByTestId("SendTransfer__button--continue"));
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
 
 		const walletMock = jest.spyOn(profile.wallets().first(), "hasSyncedWithNetwork").mockReturnValue(false);
@@ -512,9 +508,9 @@ describe("SendTransfer", () => {
 		fireEvent.click(getByTestId("NetworkIcon-ARK-ark.devnet"));
 		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue("ARK Devnet"));
 
-		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
+		await waitFor(() => expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled());
 
-		fireEvent.click(getByTestId("SendTransfer__button--continue"));
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
 
 		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet");
@@ -557,54 +553,37 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
 		// Select recipient
-		act(() => {
-			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
-		});
+		fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
+		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
 
-		expect(getByTestId("modal__inner")).toBeTruthy();
-
-		act(() => {
-			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
-		});
+		fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 		await waitFor(() =>
 			expect(getByTestId("SelectDropdown__input")).toHaveValue(profile.wallets().first().address()),
 		);
 
 		// Amount
-		const sendAll = getByTestId("AddRecipient__send-all");
-		act(() => {
-			fireEvent.click(sendAll);
-		});
+		fireEvent.click(getByTestId("AddRecipient__send-all"));
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).not.toHaveValue("0"));
 
 		expect(screen.getByTestId("AddRecipient__send-all")).toHaveClass("active");
-
-		act(() => {
-			fireEvent.click(sendAll);
-		});
+		fireEvent.click(getByTestId("AddRecipient__send-all"));
 
 		expect(screen.getByTestId("AddRecipient__send-all")).not.toHaveClass("active");
 
 		// Fee
-		await act(async () => {
-			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
-		});
+		fireEvent.click(within(screen.getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
+		await waitFor(() => expect(screen.getAllByRole("radio")[0]).toBeChecked());
 
-		expect(screen.getAllByRole("radio")[0]).toBeChecked();
 		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
-		await act(async () => {
-			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.AVERAGE));
-		});
+		fireEvent.click(within(screen.getByTestId("InputFee")).getByText(transactionTranslations.FEES.AVERAGE));
+		await waitFor(() => expect(screen.getAllByRole("radio")[1]).toBeChecked());
 
-		expect(screen.getAllByRole("radio")[1]).toBeChecked();
 		expect(screen.getAllByRole("radio")[1]).toHaveTextContent("0.07320598");
 
-		await act(async () => {
-			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.FAST));
-		});
+		fireEvent.click(within(screen.getByTestId("InputFee")).getByText(transactionTranslations.FEES.FAST));
+		await waitFor(() => expect(screen.getAllByRole("radio")[2]).toBeChecked());
 
-		expect(screen.getAllByRole("radio")[2]).toBeChecked();
 		expect(screen.getAllByRole("radio")[2]).toHaveTextContent("0.1");
 	});
 
@@ -687,85 +666,52 @@ describe("SendTransfer", () => {
 
 		const goSpy = jest.spyOn(history, "go").mockImplementation();
 
-		const backButton = getByTestId("SendTransfer__button--back");
+		const backButton = getByTestId("StepNavigation__back-button");
 
 		expect(backButton).not.toHaveAttribute("disabled");
 
-		act(() => {
-			fireEvent.click(backButton);
-		});
+		fireEvent.click(backButton);
 
 		expect(goSpy).toHaveBeenCalledWith(-1);
 
 		// Select recipient
-		act(() => {
-			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
-		});
+		fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
-		act(() => {
-			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
-		});
+		fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 		await waitFor(() =>
 			expect(getByTestId("SelectDropdown__input")).toHaveValue(profile.wallets().first().address()),
 		);
 
 		// Amount
-		act(() => {
-			fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
-		});
+		fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
 
 		// Memo
-		act(() => {
-			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
-		});
+		fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 		// Fee
-		await act(async () => {
-			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
-		});
+		fireEvent.click(within(screen.getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
+		await waitFor(() => expect(screen.getAllByRole("radio")[0]).toBeChecked());
 
-		expect(screen.getAllByRole("radio")[0]).toBeChecked();
 		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
 		// Step 2
-		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
-		await act(async () => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
-		await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
-
-		// Back to Step 1
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--back"));
-		});
-
-		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
-
-		expect(screen.getAllByRole("radio")[0]).toBeChecked();
-
-		// Step 2
-		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
-		await act(async () => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
+		await waitFor(() => expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled());
+		
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 
 		// Step 3
-		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+		expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled();
 
-		await act(async () => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
-		const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-		act(() => {
-			fireEvent.input(passwordInput, { target: { value: passphrase } });
-		});
-		await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
+
+		fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), { target: { value: passphrase } });
+		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(passphrase));
 
 		// Step 5 (skip step 4 for now - ledger confirmation)
 		const signMock = jest
@@ -778,10 +724,8 @@ describe("SendTransfer", () => {
 		});
 		const transactionMock = createTransactionMock(wallet);
 
-		await waitFor(() => expect(getByTestId("SendTransfer__button--submit")).not.toBeDisabled());
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--submit"));
-		});
+		await waitFor(() => expect(getByTestId("StepNavigation__send-button")).not.toBeDisabled());
+		fireEvent.click(getByTestId("StepNavigation__send-button"));
 
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 		await waitFor(() =>
@@ -798,9 +742,7 @@ describe("SendTransfer", () => {
 
 		// Go back to wallet
 		const pushSpy = jest.spyOn(history, "push");
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--back-to-wallet"));
-		});
+		fireEvent.click(getByTestId("StepNavigation__back-to-wallet-button"));
 
 		expect(pushSpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
 
@@ -836,83 +778,62 @@ describe("SendTransfer", () => {
 
 		const goSpy = jest.spyOn(history, "go").mockImplementation();
 
-		const backButton = getByTestId("SendTransfer__button--back");
+		const backButton = getByTestId("StepNavigation__back-button");
 
 		expect(backButton).not.toHaveAttribute("disabled");
 
-		act(() => {
-			fireEvent.click(backButton);
-		});
+		fireEvent.click(backButton);
 
 		expect(goSpy).toHaveBeenCalledWith(-1);
 
 		// Select recipient
-		act(() => {
-			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
-		});
+		fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
-		act(() => {
-			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
-		});
+		fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 		await waitFor(() =>
 			expect(getByTestId("SelectDropdown__input")).toHaveValue(profile.wallets().first().address()),
 		);
 
 		// Amount
-		act(() => {
-			fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
-		});
+		fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
 
 		// Memo
-		act(() => {
-			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
-		});
+		fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 		// Fee
-		await act(async () => {
-			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
-		});
+		fireEvent.click(within(screen.getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
+		await waitFor(() => expect(screen.getAllByRole("radio")[0]).toBeChecked());
 
-		expect(screen.getAllByRole("radio")[0]).toBeChecked();
 		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
 		// Step 2
-		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
-		await act(async () => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
+		await waitFor(() => expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled());
+		
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 
 		// Back to Step 1
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--back"));
-		});
-
+		fireEvent.click(getByTestId("StepNavigation__back-button"));
 		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
 
 		// Step 2
-		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
-		await act(async () => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
+		await waitFor(() => expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled());
+		
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 
 		// Step 3
-		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+		expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled();
 
-		await act(async () => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
-		const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-		act(() => {
-			fireEvent.input(passwordInput, { target: { value: passphrase } });
-		});
-		await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
+
+		fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), { target: { value: passphrase } });
+		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(passphrase));
 
 		// Step 5 (skip step 4 for now - ledger confirmation)
 		const signMock = jest
@@ -927,10 +848,8 @@ describe("SendTransfer", () => {
 		});
 		const transactionMock = createTransactionMock(wallet);
 
-		await waitFor(() => expect(getByTestId("SendTransfer__button--submit")).not.toBeDisabled());
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--submit"));
-		});
+		await waitFor(() => expect(getByTestId("StepNavigation__send-button")).not.toBeDisabled());
+		fireEvent.click(getByTestId("StepNavigation__send-button"));
 
 		await waitFor(() => expect(getByTestId("ErrorStep")).toBeTruthy());
 
@@ -965,83 +884,52 @@ describe("SendTransfer", () => {
 
 		const goSpy = jest.spyOn(history, "go").mockImplementation();
 
-		const backButton = getByTestId("SendTransfer__button--back");
+		const backButton = getByTestId("StepNavigation__back-button");
 
 		expect(backButton).not.toHaveAttribute("disabled");
 
-		act(() => {
-			fireEvent.click(backButton);
-		});
+		fireEvent.click(backButton);
 
 		expect(goSpy).toHaveBeenCalledWith(-1);
 
 		// Select recipient
-		act(() => {
-			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
-		});
+		fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
-		act(() => {
-			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
-		});
+		fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 		await waitFor(() =>
 			expect(getByTestId("SelectDropdown__input")).toHaveValue(profile.wallets().first().address()),
 		);
 
 		// Amount
-		act(() => {
-			fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
-		});
+		fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
 
 		// Memo
-		act(() => {
-			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
-		});
+		fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 		// Fee
-		await act(async () => {
-			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
-		});
+		fireEvent.click(within(screen.getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
+		await waitFor(() => expect(screen.getAllByRole("radio")[0]).toBeChecked());
 
-		expect(screen.getAllByRole("radio")[0]).toBeChecked();
 		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
 		// Step 2
-		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
-		await act(async () => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
-		await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
-
-		// Back to Step 1
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--back"));
-		});
-
-		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
-
-		// Step 2
-		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
-		await act(async () => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
+		await waitFor(() => expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled());
+		
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 
 		// Step 3
-		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
-
-		await act(async () => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
+		expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled();
+		
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
-		const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-		act(() => {
-			fireEvent.input(passwordInput, { target: { value: passphrase } });
-		});
-		await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
+		
+		fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), { target: { value: passphrase } });
+		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(passphrase));
 
 		// Step 5 (skip step 4 for now - ledger confirmation)
 		const signMock = jest
@@ -1057,10 +945,8 @@ describe("SendTransfer", () => {
 			.spyOn(wallet.coin().transaction(), "estimateExpiration")
 			.mockResolvedValue(undefined);
 
-		await waitFor(() => expect(getByTestId("SendTransfer__button--submit")).not.toBeDisabled());
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--submit"));
-		});
+		await waitFor(() => expect(getByTestId("StepNavigation__send-button")).not.toBeDisabled());
+		fireEvent.click(getByTestId("StepNavigation__send-button"));
 
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 		await waitFor(() =>
@@ -1077,9 +963,7 @@ describe("SendTransfer", () => {
 
 		// Go back to wallet
 		const pushSpy = jest.spyOn(history, "push");
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--back-to-wallet"));
-		});
+		fireEvent.click(getByTestId("StepNavigation__back-to-wallet-button"));
 
 		expect(pushSpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
 
@@ -1120,38 +1004,28 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
 		// Select recipient
-		act(() => {
-			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
-		});
+		fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
-		act(() => {
-			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
-		});
+		fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 		await waitFor(() =>
 			expect(getByTestId("SelectDropdown__input")).toHaveValue(profile.wallets().first().address()),
 		);
 
 		// Amount
 		await waitFor(() => expect(getByTestId("AddRecipient__send-all")).toBeInTheDocument());
-		act(() => {
-			fireEvent.click(getByTestId("AddRecipient__send-all"));
-		});
+		fireEvent.click(getByTestId("AddRecipient__send-all"));
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).not.toHaveValue("0"), { timeout: 4000 });
 
 		// Fee
-		await act(async () => {
-			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
-		});
+		fireEvent.click(within(screen.getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
+		await waitFor(() => expect(screen.getAllByRole("radio")[0]).toBeChecked());
 
-		expect(screen.getAllByRole("radio")[0]).toBeChecked();
 		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
 		// Step 2
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 
 		// Step 5 (skip step 4 for now - ledger confirmation)
@@ -1165,9 +1039,7 @@ describe("SendTransfer", () => {
 		});
 		const transactionMock = createTransactionMock(wallet);
 
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 
@@ -1236,52 +1108,38 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
 		// Select recipient
-		act(() => {
-			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
-		});
+		fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
-		act(() => {
-			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
-		});
+		fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 		await waitFor(() =>
 			expect(getByTestId("SelectDropdown__input")).toHaveValue(profile.wallets().first().address()),
 		);
 
 		// Amount
-		act(() => {
-			fireEvent.click(getByTestId("AddRecipient__send-all"));
-		});
+		fireEvent.click(getByTestId("AddRecipient__send-all"));
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).not.toHaveValue("0"), { timeout: 4000 });
 
 		// Memo
-		act(() => {
-			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
-		});
+		fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 
 		expect(getByTestId("Input__memo")).toHaveValue("test memo");
 
 		// Fee
-		await act(async () => {
-			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
-		});
+		fireEvent.click(within(screen.getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
+		await waitFor(() => expect(screen.getAllByRole("radio")[0]).toBeChecked());
 
-		expect(screen.getAllByRole("radio")[0]).toBeChecked();
 		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
 		// Step 2
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 
 		// Step 3
-		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+		expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled();
 
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 
 		// Auto broadcast
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
@@ -1318,73 +1176,53 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
 		// Select recipient
-		act(() => {
-			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
-		});
+		fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
+		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
 
-		expect(getByTestId("modal__inner")).toBeTruthy();
-
-		act(() => {
-			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
-		});
+		fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 		await waitFor(() =>
 			expect(getByTestId("SelectDropdown__input")).toHaveValue(profile.wallets().first().address()),
 		);
 
 		// Amount
-		act(() => {
-			fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
-		});
+		fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
 
 		// Memo
-		act(() => {
-			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
-		});
+		fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 		// Fee
-		act(() => {
-			fireEvent.click(
-				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
-			);
-		});
-		act(() => {
-			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "" } });
-		});
+		fireEvent.click(
+			within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+		);
+		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "" } });
 		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue(""));
 
 		await waitFor(() => {
 			expect(getByTestId("Input__error")).toBeVisible();
 		});
 
-		act(() => {
-			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "1" } });
-		});
+		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "1" } });
 		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("1"));
 
 		await waitFor(() => expect(() => getByTestId("Input__error")).toThrow());
 
-		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
-		await act(async () => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
+		// Step 2
+		await waitFor(() => expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled());
 
-		// Review Step
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 
-		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+		expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled();
 
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 
 		// Fee warning
 		await waitFor(() => expect(getByTestId("FeeWarning__cancel-button")).toBeTruthy());
-		await act(async () => {
-			fireEvent.click(getByTestId("FeeWarning__cancel-button"));
-		});
-		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
+
+		fireEvent.click(getByTestId("FeeWarning__cancel-button"));
+		await waitFor(() => expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/));
 	});
 
 	it.each(["cancel", "continue"])(
@@ -1414,68 +1252,50 @@ describe("SendTransfer", () => {
 			await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
 			// Select recipient
-			act(() => {
-				fireEvent.click(
-					within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"),
-				);
-			});
+			fireEvent.click(
+				within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"),
+			);
 
 			expect(getByTestId("modal__inner")).toBeTruthy();
 
-			act(() => {
-				fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
-			});
+			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 			await waitFor(() =>
 				expect(getByTestId("SelectDropdown__input")).toHaveValue(profile.wallets().first().address()),
 			);
 
 			// Amount
-			act(() => {
-				fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
-			});
+			fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
 			await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
 
 			// Memo
-			act(() => {
-				fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
-			});
+			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 			await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 			// Fee
-			act(() => {
-				fireEvent.click(
-					within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
-				);
-			});
-			act(() => {
-				fireEvent.change(getByTestId("InputCurrency"), { target: { value: "1" } });
-			});
+			fireEvent.click(
+				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+			);
+
+			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "1" } });
 			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("1"));
 
-			await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
-			await act(async () => {
-				fireEvent.click(getByTestId("SendTransfer__button--continue"));
-			});
+			await waitFor(() => expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled());
+
+			fireEvent.click(getByTestId("StepNavigation__continue-button"));
 
 			// Review Step
 			await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 
-			expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+			expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled();
 
-			act(() => {
-				fireEvent.click(getByTestId("SendTransfer__button--continue"));
-			});
+			fireEvent.click(getByTestId("StepNavigation__continue-button"));
 
 			const profileSpy = jest.spyOn(profile.settings(), "set").mockImplementation();
 
 			// Fee warning
 			await waitFor(() => expect(getByTestId("FeeWarning__suppressWarning-toggle")).toBeTruthy());
-			await act(async () => {
-				fireEvent.click(getByTestId("FeeWarning__suppressWarning-toggle"));
-			});
-			await act(async () => {
-				fireEvent.click(getByTestId(`FeeWarning__${action}-button`));
-			});
+			fireEvent.click(getByTestId("FeeWarning__suppressWarning-toggle"));
+			fireEvent.click(getByTestId(`FeeWarning__${action}-button`));
 
 			expect(profileSpy).toHaveBeenCalledWith(Contracts.ProfileSetting.DoNotShowFeeWarning, true);
 
@@ -1517,69 +1337,49 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
 		// Select recipient
-		act(() => {
-			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
-		});
+		fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
-		act(() => {
-			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
-		});
+		fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 		await waitFor(() =>
 			expect(getByTestId("SelectDropdown__input")).toHaveValue(profile.wallets().first().address()),
 		);
 
 		// Amount
-		act(() => {
-			fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
-		});
+		fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
 
 		// Memo
-		act(() => {
-			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
-		});
+		fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 		// Fee
-		act(() => {
-			fireEvent.click(
-				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
-			);
-		});
-		act(() => {
-			fireEvent.change(getByTestId("InputCurrency"), { target: { value: fee } });
-		});
+		fireEvent.click(
+			within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+		);
+		fireEvent.change(getByTestId("InputCurrency"), { target: { value: fee } });
 		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue(fee));
 
-		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
-		await act(async () => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
+		await waitFor(() => expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled());
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 
 		// Review Step
 		await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 
-		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+		expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled();
 
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 
 		// Fee warning
 		await waitFor(() => expect(getByTestId("FeeWarning__continue-button")).toBeTruthy());
-		await act(async () => {
-			fireEvent.click(getByTestId("FeeWarning__continue-button"));
-		});
+		fireEvent.click(getByTestId("FeeWarning__continue-button"));
 
 		// Auth Step
 		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
-		const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-		act(() => {
-			fireEvent.input(passwordInput, { target: { value: passphrase } });
-		});
-		await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
+
+		fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), { target: { value: passphrase } });
+		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(passphrase));
 
 		// Summary Step (skip ledger confirmation for now)
 		const signMock = jest
@@ -1592,10 +1392,8 @@ describe("SendTransfer", () => {
 		});
 		const transactionMock = createTransactionMock(wallet);
 
-		await waitFor(() => expect(getByTestId("SendTransfer__button--submit")).not.toBeDisabled());
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--submit"));
-		});
+		await waitFor(() => expect(getByTestId("StepNavigation__send-button")).not.toBeDisabled());
+		fireEvent.click(getByTestId("StepNavigation__send-button"));
 
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 		await waitFor(() =>
@@ -1612,9 +1410,7 @@ describe("SendTransfer", () => {
 
 		// Go back to wallet
 		const pushSpy = jest.spyOn(history, "push");
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--back-to-wallet"));
-		});
+		fireEvent.click(getByTestId("StepNavigation__back-to-wallet-button"));
 
 		expect(pushSpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
 
@@ -1648,61 +1444,45 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
 		// Select recipient
-		act(() => {
-			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
-		});
+		fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
-		act(() => {
-			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
-		});
+		fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 
 		expect(getByTestId("SelectDropdown__input")).toHaveValue(profile.wallets().first().address());
 
 		// Amount
-		act(() => {
-			fireEvent.click(getByTestId("AddRecipient__send-all"));
-		});
+		fireEvent.click(getByTestId("AddRecipient__send-all"));
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).not.toHaveValue("0"), { timeout: 4000 });
 
 		// Memo
-		act(() => {
-			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
-		});
+		fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 
 		expect(getByTestId("Input__memo")).toHaveValue("test memo");
 
 		// Fee
-		await act(async () => {
-			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
-		});
+		fireEvent.click(within(screen.getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
+		await waitFor(() => expect(screen.getAllByRole("radio")[0]).toBeChecked());
 
-		expect(screen.getAllByRole("radio")[0]).toBeChecked();
 		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
-		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+		expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled();
 
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 
 		// Review Step
 		await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 
-		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+		expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled();
 
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 
 		// Auth Step
 		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
-		const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-		act(() => {
-			fireEvent.input(passwordInput, { target: { value: passphrase } });
-		});
-		await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
+
+		fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), { target: { value: passphrase } });
+		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(passphrase));
 
 		const consoleErrorMock = jest.spyOn(console, "error").mockImplementation(() => undefined);
 		// Summary Step (skip ledger confirmation for now)
@@ -1710,12 +1490,10 @@ describe("SendTransfer", () => {
 			throw new Error("Signatory should be");
 		});
 
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--submit"));
-		});
+		fireEvent.click(getByTestId("StepNavigation__send-button"));
 
 		await waitFor(() => expect(signMock).toHaveBeenCalled());
-		await waitFor(() => expect(passwordInput).toHaveValue(""));
+		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(""));
 		await waitFor(() => {
 			expect(getByTestId("Input__error")).toBeVisible();
 		});
@@ -1751,59 +1529,43 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
 		// Select recipient
-		act(() => {
-			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
-		});
+		fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
-		act(() => {
-			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
-		});
+		fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 
 		expect(getByTestId("SelectDropdown__input")).toHaveValue(profile.wallets().first().address());
 
 		// Amount
-		act(() => {
-			fireEvent.click(getByTestId("AddRecipient__send-all"));
-		});
+		fireEvent.click(getByTestId("AddRecipient__send-all"));
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).not.toHaveValue("0"), { timeout: 4000 });
 
 		// Memo
-		act(() => {
-			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
-		});
+		fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 
 		expect(getByTestId("Input__memo")).toHaveValue("test memo");
 
 		// Fee
-		await act(async () => {
-			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
-		});
+		fireEvent.click(within(screen.getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
+		await waitFor(() => expect(screen.getAllByRole("radio")[0]).toBeChecked());
 
-		expect(screen.getAllByRole("radio")[0]).toBeChecked();
 		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
 		// Step 2
-		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+		expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled();
 
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 
 		// Step 3
-		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+		expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled();
 
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
-		const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-		act(() => {
-			fireEvent.input(passwordInput, { target: { value: passphrase } });
-		});
-		await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
+
+		fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), { target: { value: passphrase } });
+		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(passphrase));
 
 		const consoleErrorMock = jest.spyOn(console, "error").mockImplementation(() => undefined);
 		// Step 5 (skip step 4 for now - ledger confirmation)
@@ -1812,9 +1574,7 @@ describe("SendTransfer", () => {
 		});
 		const historyMock = jest.spyOn(history, "push").mockReturnValue();
 
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--submit"));
-		});
+		fireEvent.click(getByTestId("StepNavigation__send-button"));
 
 		await waitFor(() => expect(getByTestId("ErrorStep")).toBeInTheDocument());
 		await waitFor(() => expect(getByTestId("ErrorStep__wallet-button")).toBeInTheDocument());
@@ -1823,9 +1583,7 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("clipboard-button__wrapper")).toBeInTheDocument());
 		await waitFor(() => expect(container).toMatchSnapshot());
 
-		act(() => {
-			fireEvent.click(getByTestId("ErrorStep__wallet-button"));
-		});
+		fireEvent.click(getByTestId("ErrorStep__wallet-button"));
 
 		const walletDetailPage = `/profiles/${getDefaultProfileId()}/wallets/${getDefaultWalletId()}`;
 		await waitFor(() => expect(historyMock).toHaveBeenCalledWith(walletDetailPage));
@@ -1944,15 +1702,15 @@ describe("SendTransfer", () => {
 		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.1");
 
 		// Step 2
-		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+		expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled();
 
-		fireEvent.click(getByTestId("SendTransfer__button--continue"));
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 
 		// Step 3
-		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+		expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled();
 
-		fireEvent.click(getByTestId("SendTransfer__button--continue"));
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 
 		const passwordInput = getByTestId("AuthenticationStep__mnemonic");
@@ -1973,10 +1731,8 @@ describe("SendTransfer", () => {
 		});
 		const transactionMock = createTransactionMultipleMock(wallet);
 
-		await waitFor(() => expect(getByTestId("SendTransfer__button--submit")).not.toBeDisabled());
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--submit"));
-		});
+		await waitFor(() => expect(getByTestId("StepNavigation__send-button")).not.toBeDisabled());
+		fireEvent.click(getByTestId("StepNavigation__send-button"));
 
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 
@@ -2011,28 +1767,20 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
 		// Select recipient
-		act(() => {
-			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
-		});
+		fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
-		act(() => {
-			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
-		});
+		fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 		await waitFor(() =>
 			expect(getByTestId("SelectDropdown__input")).toHaveValue(profile.wallets().first().address()),
 		);
 
 		// Amount
-		act(() => {
-			fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
-		});
+		fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
 
-		act(() => {
-			fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: " " } });
-		});
+		fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: " " } });
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveAttribute("aria-invalid"));
 	});
 
@@ -2100,82 +1848,51 @@ describe("SendTransfer", () => {
 
 		const goSpy = jest.spyOn(history, "go").mockImplementation();
 
-		const backButton = getByTestId("SendTransfer__button--back");
+		const backButton = getByTestId("StepNavigation__back-button");
 
 		expect(backButton).not.toHaveAttribute("disabled");
 
-		act(() => {
-			fireEvent.click(backButton);
-		});
+		fireEvent.click(backButton);
 
 		expect(goSpy).toHaveBeenCalledWith(-1);
 
 		// Select recipient
-		act(() => {
-			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
-		});
+		fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
-		act(() => {
-			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
-		});
+		fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 		await waitFor(() =>
 			expect(getByTestId("SelectDropdown__input")).toHaveValue(profile.wallets().first().address()),
 		);
 
 		// Amount
-		act(() => {
-			fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
-		});
+		fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
 
 		// Memo
-		act(() => {
-			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
-		});
+		fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 		// Fee
-		await act(async () => {
-			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
-		});
+		fireEvent.click(within(screen.getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
+		await waitFor(() => expect(screen.getAllByRole("radio")[0]).toBeChecked());
 
-		expect(screen.getAllByRole("radio")[0]).toBeChecked();
 		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
 		// Step 2
-		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
-		await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
-
-		// Back to Step 1
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--back"));
-		});
-		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
-
-		// Step 2
-		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
+		await waitFor(() => expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled());
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 
 		// Step 3
-		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+		expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled();
 
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
-		const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-		act(() => {
-			fireEvent.input(passwordInput, { target: { value: passphrase } });
-		});
-		await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
+
+		fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), { target: { value: passphrase } });
+		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(passphrase));
 
 		// Step 5 (skip step 4 for now - ledger confirmation)
 		const signMock = jest
@@ -2188,24 +1905,17 @@ describe("SendTransfer", () => {
 		});
 		const transactionMock = createTransactionMock(wallet);
 
-		await waitFor(() => expect(getByTestId("SendTransfer__button--submit")).not.toBeDisabled());
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--submit"));
-		});
+		await waitFor(() => expect(getByTestId("StepNavigation__send-button")).not.toBeDisabled());
+		fireEvent.click(getByTestId("StepNavigation__send-button"));
 
 		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
-		act(() => {
-			fireEvent.click(getByTestId("ConfirmSendTransaction__cancel"));
-		});
+		fireEvent.click(getByTestId("ConfirmSendTransaction__cancel"));
 		await waitFor(() => expect(() => getByTestId("modal__inner")).toThrow());
 
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--submit"));
-		});
+		fireEvent.click(getByTestId("StepNavigation__send-button"));
 		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
-		act(() => {
-			fireEvent.click(getByTestId("ConfirmSendTransaction__confirm"));
-		});
+
+		fireEvent.click(getByTestId("ConfirmSendTransaction__confirm"));
 		await waitFor(() => expect(() => getByTestId("modal__inner")).toThrow());
 
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
@@ -2223,9 +1933,7 @@ describe("SendTransfer", () => {
 
 		// Go back to wallet
 		const pushSpy = jest.spyOn(history, "push");
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--back-to-wallet"));
-		});
+		fireEvent.click(getByTestId("StepNavigation__back-to-wallet-button"));
 
 		expect(pushSpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
 
@@ -2293,65 +2001,47 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
 		// select recipient
-		act(() => {
-			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
-		});
+		fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
-		act(() => {
-			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
-		});
+		fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 		await waitFor(() =>
 			expect(getByTestId("SelectDropdown__input")).toHaveValue(profile.wallets().first().address()),
 		);
 
 		// enter amount
-		act(() => {
-			fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
-		});
+		fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
 
 		// Fee
-		await act(async () => {
-			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
-		});
+		fireEvent.click(within(screen.getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
+		await waitFor(() => expect(screen.getAllByRole("radio")[0]).toBeChecked());
 
-		expect(screen.getAllByRole("radio")[0]).toBeChecked();
 		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
-		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
+		await waitFor(() => expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled());
 
 		// proceed to step 2
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 
 		// proceed to step 3
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 
 		// enter mnemonic
-		const passwordInput = getByTestId("AuthenticationStep__mnemonic");
-		act(() => {
-			fireEvent.input(passwordInput, { target: { value: passphrase } });
-		});
-		await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
-		await waitFor(() => expect(getByTestId("SendTransfer__button--submit")).not.toBeDisabled());
+		fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), { target: { value: passphrase } });
+		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(passphrase));
+
+		await waitFor(() => expect(getByTestId("StepNavigation__send-button")).not.toBeDisabled());
 
 		// submit form
-		act(() => {
-			fireEvent.submit(getByTestId("Form"));
-		});
+		fireEvent.submit(getByTestId("Form"));
 		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
 
 		// confirm within the modal
-		act(() => {
-			fireEvent.click(getByTestId("ConfirmSendTransaction__confirm"));
-		});
+		fireEvent.click(getByTestId("ConfirmSendTransaction__confirm"));
 		await waitFor(() => expect(() => getByTestId("modal__inner")).toThrow());
 
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
@@ -2400,69 +2090,51 @@ describe("SendTransfer", () => {
 
 		const goSpy = jest.spyOn(history, "go").mockImplementation();
 
-		const backButton = getByTestId("SendTransfer__button--back");
+		const backButton = getByTestId("StepNavigation__back-button");
 
 		expect(backButton).not.toHaveAttribute("disabled");
 
-		act(() => {
-			fireEvent.click(backButton);
-		});
+		fireEvent.click(backButton);
 
 		expect(goSpy).toHaveBeenCalledWith(-1);
 
 		// Select recipient
-		act(() => {
-			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
-		});
+		fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
-		act(() => {
-			fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
-		});
+		fireEvent.click(getAllByTestId("RecipientListItem__select-button")[0]);
 		await waitFor(() =>
 			expect(getByTestId("SelectDropdown__input")).toHaveValue(profile.wallets().first().address()),
 		);
 
 		// Amount
-		act(() => {
-			fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
-		});
+		fireEvent.input(getByTestId("AddRecipient__amount"), { target: { value: "1" } });
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
 
 		// Memo
-		act(() => {
-			fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
-		});
+		fireEvent.input(getByTestId("Input__memo"), { target: { value: "test memo" } });
 		await waitFor(() => expect(getByTestId("Input__memo")).toHaveValue("test memo"));
 
 		// Fee
-		await act(async () => {
-			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
-		});
+		fireEvent.click(within(screen.getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
+		await waitFor(() => expect(screen.getAllByRole("radio")[0]).toBeChecked());
 
-		expect(screen.getAllByRole("radio")[0]).toBeChecked();
 		expect(screen.getAllByRole("radio")[0]).toHaveTextContent("0.00357");
 
 		// Step 2
-		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
-		await act(async () => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
+		await waitFor(() => expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled());
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 
 		// Step 3
-		expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled();
+		expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled();
 
-		await act(async () => {
-			fireEvent.click(getByTestId("SendTransfer__button--continue"));
-		});
+		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
-		const passwordInput = getByTestId("AuthenticationStep__encryption-password");
-		act(() => {
-			fireEvent.input(passwordInput, { target: { value: "password" } });
-		});
-		await waitFor(() => expect(passwordInput).toHaveValue("password"));
+
+		fireEvent.input(getByTestId("AuthenticationStep__encryption-password"), { target: { value: "password" } });
+		await waitFor(() => expect(getByTestId("AuthenticationStep__encryption-password")).toHaveValue("password"));
 
 		// Step 5 (skip step 4 for now - ledger confirmation)
 		const signMock = jest
@@ -2475,10 +2147,8 @@ describe("SendTransfer", () => {
 		});
 		const transactionMock = createTransactionMock(wallet);
 
-		await waitFor(() => expect(getByTestId("SendTransfer__button--submit")).not.toBeDisabled());
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--submit"));
-		});
+		await waitFor(() => expect(getByTestId("StepNavigation__send-button")).not.toBeDisabled());
+		fireEvent.click(getByTestId("StepNavigation__send-button"));
 
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 		await waitFor(() =>
@@ -2498,9 +2168,7 @@ describe("SendTransfer", () => {
 
 		// Go back to wallet
 		const pushSpy = jest.spyOn(history, "push");
-		act(() => {
-			fireEvent.click(getByTestId("SendTransfer__button--back-to-wallet"));
-		});
+		fireEvent.click(getByTestId("StepNavigation__back-to-wallet-button"));
 
 		expect(pushSpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
 
