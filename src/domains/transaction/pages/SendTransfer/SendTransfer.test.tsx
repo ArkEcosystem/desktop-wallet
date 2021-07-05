@@ -15,7 +15,6 @@ import { Route } from "react-router-dom";
 import transactionFixture from "tests/fixtures/coins/ark/devnet/transactions/transfer.json";
 import transactionMultipleFixture from "tests/fixtures/coins/ark/devnet/transactions/transfer-multiple.json";
 import {
-	act,
 	env,
 	fireEvent,
 	getDefaultLedgerTransport,
@@ -566,6 +565,7 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).not.toHaveValue("0"));
 
 		expect(screen.getByTestId("AddRecipient__send-all")).toHaveClass("active");
+
 		fireEvent.click(getByTestId("AddRecipient__send-all"));
 
 		expect(screen.getByTestId("AddRecipient__send-all")).not.toHaveClass("active");
@@ -700,7 +700,7 @@ describe("SendTransfer", () => {
 
 		// Step 2
 		await waitFor(() => expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled());
-		
+
 		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 
@@ -812,7 +812,7 @@ describe("SendTransfer", () => {
 
 		// Step 2
 		await waitFor(() => expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled());
-		
+
 		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 
@@ -822,7 +822,7 @@ describe("SendTransfer", () => {
 
 		// Step 2
 		await waitFor(() => expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled());
-		
+
 		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 
@@ -918,16 +918,16 @@ describe("SendTransfer", () => {
 
 		// Step 2
 		await waitFor(() => expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled());
-		
+
 		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("SendTransfer__review-step")).toBeTruthy());
 
 		// Step 3
 		expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled();
-		
+
 		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
-		
+
 		fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), { target: { value: passphrase } });
 		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(passphrase));
 
@@ -1252,9 +1252,7 @@ describe("SendTransfer", () => {
 			await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
 			// Select recipient
-			fireEvent.click(
-				within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"),
-			);
+			fireEvent.click(within(getByTestId("recipient-address")).getByTestId("SelectRecipient__select-recipient"));
 
 			expect(getByTestId("modal__inner")).toBeTruthy();
 
