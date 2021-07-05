@@ -33,8 +33,6 @@ export const Image = ({ name, domain, ...properties }: Properties) => {
 		let theme = "green";
 		theme = theme.charAt(0).toUpperCase() + theme.slice(1);
 
-		console.log(`${imageName}${theme}`, profile);
-
 		setImageName(`${imageName}${theme}`);
 	}, [name, profile]);
 
