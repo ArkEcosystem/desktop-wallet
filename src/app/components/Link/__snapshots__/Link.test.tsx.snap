@@ -10,7 +10,7 @@ exports[`Link should open an external link 1`] = `
     to="https://ark.io/"
   >
     <span
-      class="break-all border-b border-transparent duration-200 group-hover:border-current"
+      class="Link__Content-sc-1q7sbxr-1 iOOQRq"
     />
     <span
       class="align-middle"
@@ -38,7 +38,7 @@ exports[`Link should render 1`] = `
     href="/test"
   >
     <span
-      class="break-all border-b border-transparent duration-200 group-hover:border-current"
+      class="Link__Content-sc-1q7sbxr-1 iOOQRq"
     >
       Test
     </span>
@@ -56,7 +56,7 @@ exports[`Link should render external without children 1`] = `
     to="https://ark.io"
   >
     <span
-      class="break-all border-b border-transparent duration-200 group-hover:border-current"
+      class="Link__Content-sc-1q7sbxr-1 iOOQRq"
     />
     <span
       class="align-middle"
@@ -84,7 +84,7 @@ exports[`Link should render with tooltip 1`] = `
     href="/test"
   >
     <span
-      class="break-all border-b border-transparent duration-200 group-hover:border-current"
+      class="Link__Content-sc-1q7sbxr-1 iOOQRq"
     >
       Test
     </span>
@@ -102,7 +102,7 @@ exports[`Link should show a toast when trying to open an invalid external link 1
     to="invalid-url"
   >
     <span
-      class="break-all border-b border-transparent duration-200 group-hover:border-current"
+      class="Link__Content-sc-1q7sbxr-1 iOOQRq"
     />
     <span
       class="align-middle"
