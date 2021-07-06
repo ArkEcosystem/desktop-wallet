@@ -17,6 +17,7 @@ import {
 } from "utils/testing-library";
 
 import { CreateWallet } from "./CreateWallet";
+import { getDefaultAlias } from "domains/wallet/utils/get-default-alias";
 
 jest.setTimeout(8000);
 
@@ -49,10 +50,7 @@ describe("CreateWallet", () => {
 		bip39GenerateMock.mockRestore();
 	});
 
-	it.each([
-		["with alias", "Test Wallet"],
-		["without alias", undefined],
-	])("should create a wallet %s", async (type, alias) => {
+	it("should create a wallet", async () => {
 		const history = createMemoryHistory();
 		const createURL = `/profiles/${fixtureProfileId}/wallets/create`;
 		history.push(createURL);
@@ -170,11 +168,9 @@ describe("CreateWallet", () => {
 
 		expect(profile.wallets().values().length).toBe(0);
 
-		act(() => {
-			if (alias) {
-				fireEvent.change(getByTestId("CreateWallet__wallet-name"), { target: { value: alias } });
-			}
+		const defaultAlias = getDefaultAlias({ profile, ticker: "DARK" });
 
+		act(() => {
 			fireEvent.click(getByTestId("CreateWallet__save-button"));
 		});
 
@@ -186,7 +182,7 @@ describe("CreateWallet", () => {
 			expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`),
 		);
 
-		expect(wallet.alias()).toEqual(alias);
+		expect(wallet.alias()).toEqual(defaultAlias);
 
 		expect(asFragment()).toMatchSnapshot();
 

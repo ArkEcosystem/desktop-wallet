@@ -54,7 +54,7 @@ const MultipleImport = ({
 			const hasSameValue = values.some((name: any) => !!name && lowerCaseEquals(alias.trim(), name.trim()));
 
 			if (alias && hasSameValue) {
-				return t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.ALIAS_ASSIGNED", {
+				return t("WALLETS.VALIDATION.ALIAS_ASSIGNED", {
 					alias: alias.trim(),
 				}).toString();
 			}
@@ -156,7 +156,7 @@ const SingleImport = ({
 					}}
 					ref={register({
 						maxLength: {
-							message: t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.MAXLENGTH_ERROR", {
+							message: t("WALLETS.VALIDATION.ALIAS_MAXLENGTH", {
 								maxLength: 42,
 							}),
 							value: 42,
@@ -165,7 +165,7 @@ const SingleImport = ({
 							duplicateAlias: (alias) =>
 								!alias ||
 								!profile.wallets().findByAlias(alias.trim()) ||
-								t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.ALIAS_EXISTS", {
+								t("WALLETS.VALIDATION.ALIAS_ASSIGNED", {
 									alias: alias.trim(),
 								}).toString(),
 						},

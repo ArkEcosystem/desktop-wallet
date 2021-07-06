@@ -829,7 +829,7 @@ describe("ImportWallet", () => {
 		await waitFor(() => {
 			expect(getByTestId("Input__error")).toHaveAttribute(
 				"data-errortext",
-				walletTranslations.PAGE_IMPORT_WALLET.VALIDATION.ALIAS_EXISTS.replace("{{alias}}", alias),
+				walletTranslations.VALIDATION.ALIAS_ASSIGNED.replace("{{alias}}", alias),
 			);
 		});
 

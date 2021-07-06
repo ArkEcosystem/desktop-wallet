@@ -20,6 +20,7 @@ import { assertNetwork, assertString, assertWallet } from "utils/assertions";
 import { ConfirmPassphraseStep } from "./ConfirmPassphraseStep";
 import { SuccessStep } from "./SuccessStep";
 import { WalletOverviewStep } from "./WalletOverviewStep";
+import { getDefaultAlias } from "domains/wallet/utils/get-default-alias";
 
 export const CreateWallet = () => {
 	const { persist } = useEnvironmentContext();
@@ -29,8 +30,6 @@ export const CreateWallet = () => {
 	const [activeTab, setActiveTab] = useState(1);
 	const [encryptionPassword, setEncryptionPassword] = useState<string>();
 	const activeProfile = useActiveProfile();
-
-	const nameMaxLength = 42;
 
 	const { selectedNetworkIds, setValue: setConfiguration } = useWalletConfig({ profile: activeProfile });
 
@@ -53,6 +52,7 @@ export const CreateWallet = () => {
 		assertNetwork(network);
 		assertWallet(finalWallet);
 		assertString(mnemonic);
+		assertString(name);
 
 		if (encryptionPassword) {
 			try {
@@ -69,10 +69,7 @@ export const CreateWallet = () => {
 
 		activeProfile.wallets().push(finalWallet);
 
-		if (name) {
-			const formattedName = name.trim().slice(0, Math.max(0, nameMaxLength));
-			activeProfile.wallets().update(finalWallet.id(), { alias: formattedName });
-		}
+		activeProfile.wallets().update(finalWallet.id(), { alias: name.trim() });
 
 		setConfiguration("selectedNetworkIds", uniq([...selectedNetworkIds, network.id()]));
 
@@ -84,7 +81,8 @@ export const CreateWallet = () => {
 	};
 
 	const generateWallet = async () => {
-		const network: Networks.Network = getValues("network");
+		const network = getValues("network");
+		assertNetwork(network);
 
 		const locale = activeProfile.settings().get<string>(Contracts.ProfileSetting.Bip39Locale, "english");
 		const { mnemonic, wallet } = await activeProfile.walletFactory().generate({
@@ -93,6 +91,11 @@ export const CreateWallet = () => {
 			network: network.id(),
 			wordCount: network.wordCount(),
 		});
+
+		wallet.mutator().alias(getDefaultAlias({
+			profile: activeProfile,
+			ticker: network.ticker(),
+		}));
 
 		setValue("wallet", wallet, { shouldDirty: true, shouldValidate: true });
 		setValue("mnemonic", mnemonic, { shouldDirty: true, shouldValidate: true });
@@ -180,7 +183,7 @@ export const CreateWallet = () => {
 							</TabPanel>
 
 							<TabPanel tabId={5}>
-								<SuccessStep nameMaxLength={nameMaxLength} profile={activeProfile} />
+								<SuccessStep profile={activeProfile} />
 							</TabPanel>
 
 							<div className="flex justify-between mt-8">

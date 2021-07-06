@@ -14,12 +14,12 @@ export const alias = ({
 
 	return {
 		maxLength: {
-			message: t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.MAXLENGTH_ERROR", {
+			message: t("WALLETS.VALIDATION.ALIAS_MAXLENGTH", {
 				maxLength,
 			}),
 			value: maxLength,
 		},
-		required: t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.ALIAS_REQUIRED"),
+		required: t("WALLETS.VALIDATION.ALIAS_REQUIRED"),
 		validate: {
 			duplicateAlias: (alias: string) => {
 				const walletSameAlias = profile.wallets().findByAlias(alias.trim());
@@ -28,7 +28,7 @@ export const alias = ({
 					return true;
 				}
 
-				return t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.ALIAS_EXISTS", {
+				return t("WALLETS.VALIDATION.ALIAS_ASSIGNED", {
 					alias: alias.trim(),
 				});
 			},

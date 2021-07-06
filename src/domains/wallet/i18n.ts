@@ -111,11 +111,6 @@ export const translations: { [key: string]: any } = {
 		},
 
 		TITLE: "Create Wallet",
-
-		VALIDATION: {
-			ALIAS_EXISTS: "A Wallet named '{{alias}}' already exists on this profile",
-			MAXLENGTH_ERROR: "The Name should have less than {{maxLength}} characters",
-		},
 	},
 
 	PAGE_IMPORT_WALLET: {
@@ -167,15 +162,11 @@ export const translations: { [key: string]: any } = {
 		TITLE: "Import Wallet",
 
 		VALIDATION: {
-			ALIAS_ASSIGNED: "The name '{{alias}}' is already assigned to another wallet",
-			ALIAS_EXISTS: "A Wallet named '{{alias}}' already exists on this profile",
-			ALIAS_REQUIRED: "Name is required",
 			DECRYPT_WIF_ASSERTION: "Failed to decrypt WIF. Please check your password.",
 			INVALID_PRIVATE_KEY: "Invalid Private Key",
 			INVALID_PUBLIC_KEY: "Invalid Public Key",
 			INVALID_SECRET: "Invalid Secret",
 			INVALID_WIF: "Invalid WIF",
-			MAXLENGTH_ERROR: "The Name should have less than {{maxLength}} characters",
 		},
 	},
 
@@ -238,6 +229,12 @@ export const translations: { [key: string]: any } = {
 	UPDATE_WALLET_DATA: "Update Wallet Data",
 
 	UPDATING_WALLET_DATA: "Updating Wallet Data",
+
+	VALIDATION: {
+		ALIAS_ASSIGNED: "The name '{{alias}}' is already assigned to another wallet",
+		ALIAS_MAXLENGTH: "The name should have less than {{maxLength}} characters",
+		ALIAS_REQUIRED: "The name is required",
+	},
 
 	WALLET_NAME: "Wallet Name",
 };

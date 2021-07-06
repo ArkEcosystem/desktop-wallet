@@ -82,7 +82,7 @@ export const UpdateWalletName = ({
 													item.alias() &&
 													lowerCaseEquals(item.alias()!.trim(), alias.trim()),
 											).length === 0 ||
-										t("WALLETS.PAGE_CREATE_WALLET.VALIDATION.ALIAS_EXISTS", {
+										t("WALLETS.VALIDATION.ALIAS_ASSIGNED", {
 											alias: alias.trim(),
 										}).toString(),
 									validation: validation!,
