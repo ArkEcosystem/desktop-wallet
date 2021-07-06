@@ -46,12 +46,12 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 
 				profile.wallets().push(wallet);
 
-				profile.wallets().update(wallet.id(), {
-					alias: getDefaultAlias({
+				wallet.mutator().alias(
+					getDefaultAlias({
 						profile,
 						ticker: wallet.network().ticker(),
 					}),
-				});
+				);
 			}
 			await persist();
 		},
