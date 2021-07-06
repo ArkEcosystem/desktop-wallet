@@ -737,7 +737,18 @@ exports[`LedgerImportStep should show an error message for duplicate name in the
                       class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                     >
                       <span
-                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                        class="font-semibold text-base text-theme-text"
+                        data-testid="Address__alias"
+                      >
+                        <span
+                          class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
+                          data-testid="TruncateEnd"
+                        >
+                          DARK #4
+                        </span>
+                      </span>
+                      <span
+                        class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                         data-testid="Address__address"
                       >
                         DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES

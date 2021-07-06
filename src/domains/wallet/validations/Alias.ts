@@ -24,20 +24,22 @@ export const alias = ({
 		},
 		required: t("WALLETS.VALIDATION.ALIAS_REQUIRED"),
 		validate: {
-			duplicateAlias: (alias: string) => {
-				const walletSameAlias = profile.wallets().findByAlias(alias.trim());
+			duplicateAlias: (value: string) => {
+				const alias = value.trim();
+
+				const error = t("WALLETS.VALIDATION.ALIAS_ASSIGNED", { alias });
+
+				if (unsavedAliases?.some(unsavedAlias => lowerCaseEquals(unsavedAlias, alias))) {
+					return error;
+				}
+
+				const walletSameAlias = profile.wallets().findByAlias(alias);
 
 				if (!walletSameAlias || walletSameAlias.address() === walletAddress) {
 					return true;
 				}
 
-				if (unsavedAliases?.every((unsavedAlias) => !lowerCaseEquals(alias, unsavedAlias))) {
-					return true;
-				}
-
-				return t("WALLETS.VALIDATION.ALIAS_ASSIGNED", {
-					alias: alias.trim(),
-				});
+				return error;
 			},
 			empty: (alias: string) => {
 				if (alias.trim() === "") {
