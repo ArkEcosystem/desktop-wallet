@@ -235,6 +235,22 @@ describe("Signed Transaction Table", () => {
 		isMultiSignatureReadyMock.mockRestore();
 	});
 
+	it("should render signed transactions and handle exception", async () => {
+		mockMultisignatures(wallet);
+		jest.spyOn(wallet.transaction(), "isAwaitingOurSignature").mockReturnValue(true);
+
+		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => {
+			throw new Error("error");
+		});
+
+		const { asFragment } = render(<PendingTransactions wallet={wallet} />);
+		await waitFor(() => expect(screen.getByText("awaiting-our-signature.svg")).toBeInTheDocument());
+
+		expect(asFragment()).toMatchSnapshot();
+
+		jest.restoreAllMocks();
+	});
+
 	it("should show as awaiting confirmations", async () => {
 		mockPendingTransfers(wallet);
 
