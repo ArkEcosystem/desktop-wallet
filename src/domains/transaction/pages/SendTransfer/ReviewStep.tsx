@@ -36,11 +36,11 @@ export const ReviewStep = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) =
 
 			<TransactionSender address={wallet.address()} alias={wallet.alias()} />
 
-			<TransactionRecipients currency={wallet.currency()} recipients={recipients} paddingPosition='top' />
+			<TransactionRecipients currency={wallet.currency()} recipients={recipients} paddingPosition="top" />
 
 			{memo && <TransactionMemo memo={memo} />}
 
-			<div className={cn({'mt-2': memo, 'mt-4': !memo})}>
+			<div className={cn({ "mt-2": memo, "mt-4": !memo })}>
 				<TotalAmountBox amount={amount} fee={fee} ticker={wallet.currency()} />
 			</div>
 		</section>
