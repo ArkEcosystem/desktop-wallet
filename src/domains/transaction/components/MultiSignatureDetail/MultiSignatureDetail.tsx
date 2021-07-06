@@ -5,7 +5,7 @@ import { Modal } from "app/components/Modal";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { toasts } from "app/services";
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState, useMemo } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -78,11 +78,13 @@ export const MultiSignatureDetail = ({ isOpen, wallet, transaction, onClose }: M
 		wallet.transaction().canBeBroadcasted(transaction.id()) &&
 		!wallet.transaction().isAwaitingConfirmation(transaction.id());
 
-	let canBeSigned: boolean = false;
-
-	try {
-		canBeSigned = wallet.transaction().canBeSigned(transaction.id());
-	} catch {}
+	const canBeSigned = useMemo(() => {
+		try {
+			return wallet.transaction().canBeSigned(transaction.id());
+		} catch {
+			return false;
+		}
+	}, [wallet, transaction]);
 
 	const broadcast = useCallback(async () => {
 		try {
