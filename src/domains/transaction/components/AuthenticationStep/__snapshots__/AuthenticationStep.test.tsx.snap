@@ -545,7 +545,7 @@ exports[`AuthenticationStep should request secret if wallet was imported using s
             class="text-theme-secondary-text"
             data-testid="header__subtitle"
           >
-            TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION_SECRET
+            Enter your secret to authenticate the transaction.
           </div>
         </div>
       </div>
@@ -557,7 +557,7 @@ exports[`AuthenticationStep should request secret if wallet was imported using s
           data-testid="FormLabel"
           for="secret"
         >
-          COMMON.secret
+          Secret
         </label>
         <div
           class="fixed invisible w-auto whitespace-nowrap"
