@@ -209,7 +209,7 @@ const CreateProfileForm = ({
 						onClick={() => {
 							onBack?.();
 							// to prevent changing theme by component
-							setTimeout(() => setTheme('system'), 0);
+							setTimeout(() => setTheme("system"), 0);
 						}}
 						data-testid="CreateProfile__back-button"
 					>
