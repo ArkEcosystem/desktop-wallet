@@ -18,7 +18,7 @@ import { ReactComponent as ErrorBannerDarkBlue } from "./error-banner-dark-blue.
 import { ReactComponent as ErrorBannerDarkGreen } from "./error-banner-dark-green.svg";
 import { ReactComponent as ErrorBannerLightBlue } from "./error-banner-light-blue.svg";
 import { ReactComponent as ErrorBannerLightGreen } from "./error-banner-light-green.svg";
-import { ReactComponent as Exchanges } from "./Exchanges.svg";
+import { ReactComponent as Exchanges } from "./exchanges.svg";
 import { ReactComponent as GenericWarningDarkBlue } from "./generic-warning-dark-blue.svg";
 import { ReactComponent as GenericWarningDarkGreen } from "./generic-warning-dark-green.svg";
 import { ReactComponent as GenericWarningLightBlue } from "./generic-warning-light-blue.svg";
