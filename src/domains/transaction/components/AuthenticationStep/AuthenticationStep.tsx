@@ -33,13 +33,11 @@ const LedgerStateWrapper = ({
 
 export const AuthenticationStep = ({
 	wallet,
-	skipSecondSignature,
 	ledgerDetails,
 	ledgerIsAwaitingDevice,
 	ledgerIsAwaitingApp,
 }: {
 	wallet: Contracts.IReadWriteWallet;
-	skipSecondSignature?: boolean;
 	ledgerDetails?: React.ReactNode;
 } & LedgerStates) => {
 	const { t } = useTranslation();
@@ -71,8 +69,6 @@ export const AuthenticationStep = ({
 		wallet.actsWithMnemonicWithEncryption() ||
 		wallet.actsWithWifWithEncryption() ||
 		wallet.actsWithSecretWithEncryption();
-
-	const shouldRenderSecondMnemonicField = !skipSecondSignature && wallet.isSecondSignature();
 
 	const renderSecondMnemonicField = () => {
 		const mnemonicFieldName = requireEncryptionPassword ? "encryptionPassword" : "mnemonic";
@@ -165,11 +161,7 @@ export const AuthenticationStep = ({
 				</>
 			)}
 
-			{shouldRenderSecondMnemonicField && renderSecondMnemonicField()}
+			{wallet.isSecondSignature() && renderSecondMnemonicField()}
 		</div>
 	);
-};
-
-AuthenticationStep.defaultProps = {
-	skipSecondSignature: false,
 };

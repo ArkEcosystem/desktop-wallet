@@ -115,7 +115,7 @@ export const MultiSignatureDetail = ({ isOpen, wallet, transaction, onClose }: M
 					</TabPanel>
 
 					<TabPanel tabId={2}>
-						<AuthenticationStep wallet={wallet} skipSecondSignature />
+						<AuthenticationStep wallet={wallet} />
 					</TabPanel>
 
 					<TabPanel tabId={3}>
