@@ -256,49 +256,6 @@ describe("DelegateRegistrationForm", () => {
 		transactionMock.mockRestore();
 	});
 
-	it("should error if signing fails", async () => {
-		const form = {
-			clearErrors: jest.fn(),
-			getValues: () => ({
-				fee: "1",
-				mnemonic: MNEMONICS[0],
-				senderAddress: wallet.address(),
-				username: "test_delegate",
-			}),
-			setError: jest.fn(),
-			setValue: jest.fn(),
-		};
-		const consoleSpy = jest.spyOn(console, "error").mockImplementation(() => void 0);
-		const signMock = jest.spyOn(wallet.transaction(), "signDelegateRegistration").mockImplementation(() => {
-			throw new Error("Signing failed");
-		});
-		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
-			accepted: [delegateRegistrationFixture.data.id],
-			errors: {},
-			rejected: [],
-		});
-		const transactionMock = createTransactionMock(wallet);
-
-		try {
-			await DelegateRegistrationForm.signTransaction({
-				env,
-				form,
-				profile,
-			});
-			// eslint-disable-next-line
-		} catch (error) {}
-
-		await waitFor(() => expect(signMock).toThrow());
-
-		expect(broadcastMock).not.toHaveBeenCalled();
-		expect(transactionMock).not.toHaveBeenCalled();
-
-		consoleSpy.mockRestore();
-		signMock.mockRestore();
-		broadcastMock.mockRestore();
-		transactionMock.mockRestore();
-	});
-
 	it("should output transaction details", () => {
 		const translations = jest.fn((translation) => translation);
 		const transaction = {

@@ -21,6 +21,7 @@ import {
 	getDefaultProfileId,
 	getDefaultWalletId,
 	getDefaultWalletMnemonic,
+	MNEMONICS,
 	render,
 	RenderResult,
 	renderWithRouter,
@@ -1482,24 +1483,20 @@ describe("SendTransfer", () => {
 		fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), { target: { value: passphrase } });
 		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(passphrase));
 
-		const consoleErrorMock = jest.spyOn(console, "error").mockImplementation(() => undefined);
-		// Summary Step (skip ledger confirmation for now)
-		const signMock = jest.spyOn(wallet.transaction(), "signTransfer").mockImplementation(() => {
-			throw new Error("Signatory should be");
-		});
+		expect(getByTestId("StepNavigation__send-button")).not.toBeDisabled();
 
-		fireEvent.click(getByTestId("StepNavigation__send-button"));
+		fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), { target: { value: MNEMONICS[0] } });
+		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(MNEMONICS[0]));
 
-		await waitFor(() => expect(signMock).toHaveBeenCalled());
-		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(""));
-		await waitFor(() => {
-			expect(getByTestId("Input__error")).toBeVisible();
-		});
+		expect(getByTestId("StepNavigation__send-button")).toBeDisabled();
 
-		signMock.mockRestore();
-		consoleErrorMock.mockRestore();
+		await waitFor(() => expect(getByTestId("Input__error")).toBeVisible());
 
-		await waitFor(() => expect(container).toMatchSnapshot());
+		expect(getByTestId("Input__error")).toHaveAttribute(
+			"data-errortext",
+			"This mnemonic does not correspond to your wallet",
+		);
+		expect(container).toMatchSnapshot();
 	});
 
 	it("should show error step and go back", async () => {
@@ -1565,29 +1562,28 @@ describe("SendTransfer", () => {
 		fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), { target: { value: passphrase } });
 		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(passphrase));
 
-		const consoleErrorMock = jest.spyOn(console, "error").mockImplementation(() => undefined);
 		// Step 5 (skip step 4 for now - ledger confirmation)
-		const signMock = jest.spyOn(wallet.transaction(), "signTransfer").mockImplementation(() => {
-			throw new Error();
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation(() => {
+			throw new Error("broadcast error");
 		});
+
 		const historyMock = jest.spyOn(history, "push").mockReturnValue();
 
 		fireEvent.click(getByTestId("StepNavigation__send-button"));
 
 		await waitFor(() => expect(getByTestId("ErrorStep")).toBeInTheDocument());
-		await waitFor(() => expect(getByTestId("ErrorStep__wallet-button")).toBeInTheDocument());
-		// Display error details with copy button
-		await waitFor(() => expect(getByTestId("ErrorStep__errorMessage")).toBeInTheDocument());
-		await waitFor(() => expect(getByTestId("clipboard-button__wrapper")).toBeInTheDocument());
-		await waitFor(() => expect(container).toMatchSnapshot());
+
+		expect(getByTestId("ErrorStep__errorMessage")).toHaveTextContent("broadcast error");
+		expect(getByTestId("ErrorStep__wallet-button")).toBeInTheDocument();
+		expect(getByTestId("clipboard-button__wrapper")).toBeInTheDocument();
+		expect(container).toMatchSnapshot();
 
 		fireEvent.click(getByTestId("ErrorStep__wallet-button"));
 
 		const walletDetailPage = `/profiles/${getDefaultProfileId()}/wallets/${getDefaultWalletId()}`;
 		await waitFor(() => expect(historyMock).toHaveBeenCalledWith(walletDetailPage));
 
-		signMock.mockRestore();
-		consoleErrorMock.mockRestore();
+		broadcastMock.mockRestore();
 	});
 
 	it("should show fee update warning when switching transaction type", async () => {

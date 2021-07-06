@@ -1,7 +1,5 @@
 import { Services } from "@arkecosystem/platform-sdk";
 
-export const isMnemonicError = (error: any) => String(error).includes("Signatory should be");
-
 export const isNoDeviceError = (error: any) => String(error).includes("no device found");
 
 export const isRejectionError = (error: any) => String(error).includes("Condition of use not satisfied");
