@@ -30,13 +30,13 @@ describe("getDefaultAlias", () => {
 			ticker: wallet.network().ticker(),
 		});
 
-		expect(result).toBe('DARK #1');
+		expect(result).toBe("DARK #1");
 	});
 
 	it("should return a default alias when wallet does not exist yet", () => {
 		const result = getDefaultAlias({ profile, ticker: "BTC" });
 
-		expect(result).toBe('BTC #1');
+		expect(result).toBe("BTC #1");
 	});
 
 	it("should not return alias that already exist", async () => {
@@ -55,6 +55,6 @@ describe("getDefaultAlias", () => {
 			ticker: wallet.network().ticker(),
 		});
 
-		expect(result).toBe('DARK #2');
+		expect(result).toBe("DARK #2");
 	});
 });
