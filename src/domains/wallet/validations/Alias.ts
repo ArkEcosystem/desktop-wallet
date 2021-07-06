@@ -29,7 +29,7 @@ export const alias = ({
 
 				const error = t("WALLETS.VALIDATION.ALIAS_ASSIGNED", { alias });
 
-				if (unsavedAliases?.some(unsavedAlias => lowerCaseEquals(unsavedAlias, alias))) {
+				if (unsavedAliases?.some((unsavedAlias) => lowerCaseEquals(unsavedAlias, alias))) {
 					return error;
 				}
 
