@@ -26,6 +26,7 @@ export const SendIpfs = () => {
 
 	const [activeTab, setActiveTab] = useState(1);
 	const [transaction, setTransaction] = useState((null as unknown) as DTO.ExtendedSignedTransactionData);
+	const [errorMessage, setErrorMessage] = useState<string | undefined>();
 
 	const { env, persist } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
@@ -119,6 +120,7 @@ export const SendIpfs = () => {
 				return setError("mnemonic", { message: t("TRANSACTION.INVALID_MNEMONIC"), type: "manual" });
 			}
 
+			setErrorMessage(JSON.stringify({ message: error.message, type: error.name }));
 			setActiveTab(5);
 		}
 	};
@@ -191,6 +193,7 @@ export const SendIpfs = () => {
 									}
 									isRepeatDisabled={isSubmitting}
 									onRepeat={form.handleSubmit(submitForm)}
+									errorMessage={errorMessage}
 								/>
 							</TabPanel>
 
