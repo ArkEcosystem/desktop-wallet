@@ -25,7 +25,7 @@ export const ReviewStep = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) =
 		<section data-testid="MultiSignature__review-step">
 			<Header title={t("TRANSACTION.REVIEW_STEP.TITLE")} subtitle={t("TRANSACTION.REVIEW_STEP.DESCRIPTION")} />
 
-			<TransactionNetwork network={wallet.network()} border={false} paddingPosition="bottom" className="mt-8" />
+			<TransactionNetwork network={wallet.network()} border={false} />
 
 			<TransactionSender address={wallet.address()} alias={wallet.alias()} />
 
@@ -33,7 +33,7 @@ export const ReviewStep = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) =
 				<RecipientList showAmount={false} variant="condensed" recipients={participants} isEditable={false} />
 			</TransactionDetail>
 
-			<TransactionDetail label={t("TRANSACTION.MULTISIGNATURE.MIN_SIGNATURES")}>
+			<TransactionDetail label={t("TRANSACTION.MULTISIGNATURE.MIN_SIGNATURES")} className="-mt-4">
 				<div className="flex items-center space-x-1 font-semibold">
 					<span>{minParticipants}</span>
 					<span className="text-theme-secondary-500">

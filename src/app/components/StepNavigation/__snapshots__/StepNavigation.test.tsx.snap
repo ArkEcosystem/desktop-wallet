@@ -1,0 +1,278 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StepNavigation should disable buttons if loading 1`] = `
+<DocumentFragment>
+  <div
+    class="StepNavigation__StepNavigationWrapper-e8732n-0 fGWUDu"
+  >
+    <button
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
+      data-testid="StepNavigation__back-button"
+      disabled=""
+      type="button"
+    >
+      <div
+        class="flex relative items-center space-x-2"
+      >
+        Back
+      </div>
+    </button>
+    <button
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
+      data-testid="StepNavigation__send-button"
+      disabled=""
+      type="submit"
+    >
+      <div
+        class="flex relative items-center space-x-2"
+      >
+        <div
+          class="flex relative items-center"
+        >
+          <span
+            class="flex invisible items-center space-x-2"
+          >
+            <div
+              class="sc-bdfBwQ bcEVDZ"
+              height="16"
+              width="16"
+            >
+              <svg>
+                send.svg
+              </svg>
+            </div>
+            <span>
+              Send
+            </span>
+          </span>
+          <div
+            class="absolute top-0 right-0 bottom-0 left-0"
+          >
+            <div
+              class="Spinner-sc-1tybciv-0 jaZOXR m-auto"
+              color="info"
+            />
+          </div>
+        </div>
+      </div>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`StepNavigation should not render back button if on last step 1`] = `
+<DocumentFragment>
+  <div
+    class="StepNavigation__StepNavigationWrapper-e8732n-0 fGWUDu"
+  >
+    <button
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
+      data-testid="StepNavigation__back-to-wallet-button"
+      type="button"
+    >
+      <div
+        class="flex relative items-center space-x-2"
+      >
+        Back to Wallet
+      </div>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`StepNavigation should not render back to wallet button if not on last step 1`] = `
+<DocumentFragment>
+  <div
+    class="StepNavigation__StepNavigationWrapper-e8732n-0 fGWUDu"
+  >
+    <button
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
+      data-testid="StepNavigation__back-button"
+      type="button"
+    >
+      <div
+        class="flex relative items-center space-x-2"
+      >
+        Back
+      </div>
+    </button>
+    <button
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW"
+      data-testid="StepNavigation__send-button"
+      type="submit"
+    >
+      <div
+        class="flex relative items-center space-x-2"
+      >
+        <span>
+          Send
+        </span>
+        <div
+          class="sc-bdfBwQ bcEVDZ"
+          height="16"
+          width="16"
+        >
+          <svg>
+            send.svg
+          </svg>
+        </div>
+      </div>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`StepNavigation should not render continue button if on last two steps 1`] = `
+<DocumentFragment>
+  <div
+    class="StepNavigation__StepNavigationWrapper-e8732n-0 fGWUDu"
+  >
+    <button
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
+      data-testid="StepNavigation__back-button"
+      type="button"
+    >
+      <div
+        class="flex relative items-center space-x-2"
+      >
+        Back
+      </div>
+    </button>
+    <button
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW"
+      data-testid="StepNavigation__send-button"
+      type="submit"
+    >
+      <div
+        class="flex relative items-center space-x-2"
+      >
+        <span>
+          Send
+        </span>
+        <div
+          class="sc-bdfBwQ bcEVDZ"
+          height="16"
+          width="16"
+        >
+          <svg>
+            send.svg
+          </svg>
+        </div>
+      </div>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`StepNavigation should not render continue button if on last two steps 2`] = `
+<DocumentFragment>
+  <div
+    class="StepNavigation__StepNavigationWrapper-e8732n-0 fGWUDu"
+  >
+    <button
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
+      data-testid="StepNavigation__back-to-wallet-button"
+      type="button"
+    >
+      <div
+        class="flex relative items-center space-x-2"
+      >
+        Back to Wallet
+      </div>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`StepNavigation should render back button if not on last step 1`] = `
+<DocumentFragment>
+  <div
+    class="StepNavigation__StepNavigationWrapper-e8732n-0 fGWUDu"
+  >
+    <button
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
+      data-testid="StepNavigation__back-button"
+      type="button"
+    >
+      <div
+        class="flex relative items-center space-x-2"
+      >
+        Back
+      </div>
+    </button>
+    <button
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW"
+      data-testid="StepNavigation__send-button"
+      type="submit"
+    >
+      <div
+        class="flex relative items-center space-x-2"
+      >
+        <span>
+          Send
+        </span>
+        <div
+          class="sc-bdfBwQ bcEVDZ"
+          height="16"
+          width="16"
+        >
+          <svg>
+            send.svg
+          </svg>
+        </div>
+      </div>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`StepNavigation should render back to wallet button if on last step 1`] = `
+<DocumentFragment>
+  <div
+    class="StepNavigation__StepNavigationWrapper-e8732n-0 fGWUDu"
+  >
+    <button
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
+      data-testid="StepNavigation__back-to-wallet-button"
+      type="button"
+    >
+      <div
+        class="flex relative items-center space-x-2"
+      >
+        Back to Wallet
+      </div>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`StepNavigation should render continue button if not on last two steps 1`] = `
+<DocumentFragment>
+  <div
+    class="StepNavigation__StepNavigationWrapper-e8732n-0 fGWUDu"
+  >
+    <button
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
+      data-testid="StepNavigation__back-button"
+      type="button"
+    >
+      <div
+        class="flex relative items-center space-x-2"
+      >
+        Back
+      </div>
+    </button>
+    <button
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 eXxJsW"
+      data-testid="StepNavigation__continue-button"
+      type="button"
+    >
+      <div
+        class="flex relative items-center space-x-2"
+      >
+        Continue
+      </div>
+    </button>
+  </div>
+</DocumentFragment>
+`;

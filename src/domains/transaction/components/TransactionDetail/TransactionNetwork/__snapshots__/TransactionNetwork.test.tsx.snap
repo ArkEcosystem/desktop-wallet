@@ -4,7 +4,7 @@ exports[`TransactionNetwork should render 1`] = `
 <div>
   <div
     class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-    data-testid="TransactionDetail"
+    data-testid="TransactionNetwork"
   >
     <div
       class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -22,7 +22,7 @@ exports[`TransactionNetwork should render 1`] = `
     </div>
     <div
       aria-label="ARK Devnet"
-      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
+      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-700 border-theme-secondary-300 dark:border-theme-secondary-700 ring-theme-background"
       data-testid="NetworkIcon-ARK-ark.devnet"
     >
       <div

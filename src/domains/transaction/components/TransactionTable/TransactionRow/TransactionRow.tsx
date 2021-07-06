@@ -101,9 +101,9 @@ export const TransactionRow = memo(
 					</span>
 				</TableCell>
 
-				<TableCell innerClassName="space-x-4">
+				<TableCell innerClassName="flex space-x-4">
 					<TransactionRowMode transaction={transaction} />
-					<div className="w-40 xl:w-full">
+					<div className="w-40 flex-1">
 						<TransactionRowRecipientLabel transaction={transaction} walletName={walletName} />
 					</div>
 				</TableCell>

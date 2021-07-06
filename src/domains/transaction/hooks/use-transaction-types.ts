@@ -97,7 +97,7 @@ export const useTransactionTypes = ({ wallets = [] }: TransactionTypeProperties 
 		magistrate: "Magistrate",
 		multiPayment: "Multipayment",
 		multiSignature: "Multisig",
-		secondSignature: "Key",
+		secondSignature: "SecondSignature",
 		transfer: "Transfer",
 		unvote: "Unvote",
 		vote: "Vote",

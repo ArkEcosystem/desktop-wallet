@@ -140,7 +140,7 @@ exports[`Dashboard should render 1`] = `
                           </svg>
                         </div>
                         <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-100"
                         >
                           <div
                             class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -286,7 +286,7 @@ exports[`Dashboard should render 1`] = `
             class="flex justify-between items-center mb-8"
           >
             <div
-              class="text-4xl font-bold"
+              class="text-2xl font-bold"
             >
               Wallets
             </div>
@@ -520,7 +520,7 @@ exports[`Dashboard should render 1`] = `
                               >
                                 <div
                                   aria-label="ARK Devnet"
-                                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
+                                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-700 border-theme-secondary-300 dark:border-theme-secondary-700 ring-theme-background"
                                   data-testid="NetworkIcon-ARK-ark.devnet"
                                 >
                                   <div
@@ -601,7 +601,7 @@ exports[`Dashboard should render 1`] = `
                               >
                                 <div
                                   aria-label="ARK Devnet"
-                                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
+                                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-700 border-theme-secondary-300 dark:border-theme-secondary-700 ring-theme-background"
                                   data-testid="NetworkIcon-ARK-ark.devnet"
                                 >
                                   <div
@@ -697,7 +697,7 @@ exports[`Dashboard should render 1`] = `
                               >
                                 <div
                                   aria-label="ARK"
-                                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-danger-200 text-theme-danger-400 ring-theme-background"
+                                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-primary-600 border-theme-primary-100 dark:border-theme-primary-600 ring-theme-background"
                                   data-testid="NetworkIcon-ARK-ark.mainnet"
                                 >
                                   <div
@@ -782,7 +782,7 @@ exports[`Dashboard should render 1`] = `
             class="flex relative justify-between"
           >
             <div
-              class="mb-8 text-4xl font-bold"
+              class="mb-8 text-2xl font-bold"
             >
               Transaction History
             </div>
@@ -948,7 +948,7 @@ exports[`Dashboard should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-20 min-w-20"
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -962,7 +962,7 @@ exports[`Dashboard should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-24 min-w-24"
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
@@ -976,7 +976,7 @@ exports[`Dashboard should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-20 min-w-20"
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
@@ -1083,7 +1083,7 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT flex space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -1118,7 +1118,7 @@ exports[`Dashboard should render 1`] = `
                           </div>
                         </div>
                         <div
-                          class="w-40 xl:w-full"
+                          class="w-40 flex-1"
                         >
                           <div
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
@@ -1240,7 +1240,7 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT flex space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -1275,7 +1275,7 @@ exports[`Dashboard should render 1`] = `
                           </div>
                         </div>
                         <div
-                          class="w-40 xl:w-full"
+                          class="w-40 flex-1"
                         >
                           <div
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
@@ -1397,7 +1397,7 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT flex space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -1432,7 +1432,7 @@ exports[`Dashboard should render 1`] = `
                           </div>
                         </div>
                         <div
-                          class="w-40 xl:w-full"
+                          class="w-40 flex-1"
                         >
                           <div
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
@@ -1554,7 +1554,7 @@ exports[`Dashboard should render 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT flex space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -1589,7 +1589,7 @@ exports[`Dashboard should render 1`] = `
                           </div>
                         </div>
                         <div
-                          class="w-40 xl:w-full"
+                          class="w-40 flex-1"
                         >
                           <div
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
@@ -1822,7 +1822,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                           </svg>
                         </div>
                         <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-100"
                         >
                           <div
                             class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -1968,7 +1968,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
             class="flex justify-between items-center mb-8"
           >
             <div
-              class="text-4xl font-bold"
+              class="text-2xl font-bold"
             >
               Wallets
             </div>
@@ -2202,7 +2202,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                               >
                                 <div
                                   aria-label="ARK Devnet"
-                                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
+                                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-700 border-theme-secondary-300 dark:border-theme-secondary-700 ring-theme-background"
                                   data-testid="NetworkIcon-ARK-ark.devnet"
                                 >
                                   <div
@@ -2283,7 +2283,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                               >
                                 <div
                                   aria-label="ARK Devnet"
-                                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
+                                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-700 border-theme-secondary-300 dark:border-theme-secondary-700 ring-theme-background"
                                   data-testid="NetworkIcon-ARK-ark.devnet"
                                 >
                                   <div
@@ -2379,7 +2379,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                               >
                                 <div
                                   aria-label="ARK"
-                                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-danger-200 text-theme-danger-400 ring-theme-background"
+                                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-primary-600 border-theme-primary-100 dark:border-theme-primary-600 ring-theme-background"
                                   data-testid="NetworkIcon-ARK-ark.mainnet"
                                 >
                                   <div
@@ -2464,7 +2464,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
             class="flex relative justify-between"
           >
             <div
-              class="mb-8 text-4xl font-bold"
+              class="mb-8 text-2xl font-bold"
             >
               Transaction History
             </div>
@@ -2630,7 +2630,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-20 min-w-20"
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -2644,7 +2644,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-24 min-w-24"
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
@@ -2658,7 +2658,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-20 min-w-20"
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
@@ -4577,7 +4577,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                           </svg>
                         </div>
                         <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-100"
                         >
                           <div
                             class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -4723,7 +4723,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
             class="flex justify-between items-center mb-8"
           >
             <div
-              class="text-4xl font-bold"
+              class="text-2xl font-bold"
             >
               Wallets
             </div>
@@ -4957,7 +4957,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                               >
                                 <div
                                   aria-label="ARK Devnet"
-                                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
+                                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-700 border-theme-secondary-300 dark:border-theme-secondary-700 ring-theme-background"
                                   data-testid="NetworkIcon-ARK-ark.devnet"
                                 >
                                   <div
@@ -5038,7 +5038,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                               >
                                 <div
                                   aria-label="ARK Devnet"
-                                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
+                                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-700 border-theme-secondary-300 dark:border-theme-secondary-700 ring-theme-background"
                                   data-testid="NetworkIcon-ARK-ark.devnet"
                                 >
                                   <div
@@ -5134,7 +5134,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                               >
                                 <div
                                   aria-label="ARK"
-                                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-danger-200 text-theme-danger-400 ring-theme-background"
+                                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-primary-600 border-theme-primary-100 dark:border-theme-primary-600 ring-theme-background"
                                   data-testid="NetworkIcon-ARK-ark.mainnet"
                                 >
                                   <div
@@ -5219,7 +5219,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
             class="flex relative justify-between"
           >
             <div
-              class="mb-8 text-4xl font-bold"
+              class="mb-8 text-2xl font-bold"
             >
               Transaction History
             </div>
@@ -5385,7 +5385,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-20 min-w-20"
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -5399,7 +5399,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-24 min-w-24"
                       colspan="1"
                       data-testid="table__th--3"
                       role="columnheader"
@@ -5413,7 +5413,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-20 min-w-20"
                       colspan="1"
                       data-testid="table__th--4"
                       role="columnheader"
@@ -5520,7 +5520,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT flex space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -5555,7 +5555,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                           </div>
                         </div>
                         <div
-                          class="w-40 xl:w-full"
+                          class="w-40 flex-1"
                         >
                           <div
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
@@ -5677,7 +5677,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT flex space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -5712,7 +5712,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                           </div>
                         </div>
                         <div
-                          class="w-40 xl:w-full"
+                          class="w-40 flex-1"
                         >
                           <div
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
@@ -5834,7 +5834,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT flex space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -5869,7 +5869,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                           </div>
                         </div>
                         <div
-                          class="w-40 xl:w-full"
+                          class="w-40 flex-1"
                         >
                           <div
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
@@ -5991,7 +5991,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT flex space-x-4"
                       >
                         <div
                           class="flex items-center -space-x-1"
@@ -6026,7 +6026,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                           </div>
                         </div>
                         <div
-                          class="w-40 xl:w-full"
+                          class="w-40 flex-1"
                         >
                           <div
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"

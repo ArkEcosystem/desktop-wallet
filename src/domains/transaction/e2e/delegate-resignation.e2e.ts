@@ -47,15 +47,11 @@ test("should successfully submit delegate resignation", async (t) => {
 
 	await goToDelegateResignationPage(t);
 
-	const continueButton = "[data-testid=SendDelegateResignation__continue-button]";
-
 	// Go to step 2
-	await t.hover(Selector(continueButton));
-	await t.click(Selector(continueButton));
+	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
 
 	// Go to step 3 (authentication)
-	await t.hover(Selector(continueButton));
-	await t.click(Selector(continueButton));
+	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
 
 	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), MNEMONICS[0], { replace: true });
 	await t.expect(Selector("[data-testid=AuthenticationStep__mnemonic]").hasAttribute("aria-invalid")).notOk();
@@ -65,7 +61,7 @@ test("should successfully submit delegate resignation", async (t) => {
 
 	await t.click(sendButton);
 
-	await t.expect(Selector("[data-testid=SendDelegateResignation__summary-step]").exists).ok({ timeout: 5000 });
+	await t.expect(Selector("[data-testid=TransactionSuccessful]").exists).ok({ timeout: 5000 });
 });
 
 test("should fail delegate resignation submission", async (t: any) => {
@@ -75,15 +71,11 @@ test("should fail delegate resignation submission", async (t: any) => {
 
 	await goToDelegateResignationPage(t);
 
-	const continueButton = "[data-testid=SendDelegateResignation__continue-button]";
-
 	// Go to step 2
-	await t.hover(Selector(continueButton));
-	await t.click(Selector(continueButton));
+	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
 
 	// Go to step 3 (authentication)
-	await t.hover(Selector(continueButton));
-	await t.click(Selector(continueButton));
+	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
 
 	// Type wrong mnemonic
 	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "wrong mnemonic", { replace: true });

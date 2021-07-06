@@ -52,40 +52,44 @@ export const BackupStep = () => {
 	};
 
 	return (
-		<section data-testid="SecondSignatureRegistrationForm__backup-step" className="space-y-8">
+		<section data-testid="SecondSignatureRegistrationForm__backup-step">
 			<Header title={t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_STEP.TITLE")} />
 
-			<Alert>{t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_STEP.WARNING")}</Alert>
-			<MnemonicList mnemonic={mnemonic} />
+			<div className="pt-6 space-y-6">
+				<Alert>{t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_STEP.WARNING")}</Alert>
+				<MnemonicList mnemonic={mnemonic} />
 
-			<Divider dashed />
+				<Divider dashed />
 
-			<div className="flex justify-between items-center">
-				<div className="space-y-2">
-					<span className="text-lg font-semibold text-theme-secondary-text">
-						{t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_STEP.COPY_OR_DOWNLOAD.TITLE")}
-					</span>
-					<p className="text-sm text-theme-secondary-500">
-						{t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_STEP.COPY_OR_DOWNLOAD.DESCRIPTION")}
-					</p>
+				<div className="flex justify-between items-center">
+					<div className="space-y-2">
+						<span className="text-lg font-semibold text-theme-secondary-text">
+							{t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_STEP.COPY_OR_DOWNLOAD.TITLE")}
+						</span>
+						<p className="text-sm text-theme-secondary-500">
+							{t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_STEP.COPY_OR_DOWNLOAD.DESCRIPTION")}
+						</p>
+					</div>
+
+					<Icon name="FilePassword" width={40} height={40} />
 				</div>
 
-				<Icon name="FilePassword" width={40} height={40} />
+				<div className="flex justify-end space-x-3">
+					<Clipboard variant="button" data={mnemonic} data-testid="SecondSignature__copy">
+						<Icon name="Copy" />
+						<span>{t("COMMON.COPY")}</span>
+					</Clipboard>
+
+					<Button data-testid="SecondSignature__download" variant="secondary" onClick={handleDownload}>
+						<Icon name="Download" />
+						<span>{t("COMMON.DOWNLOAD")}</span>
+					</Button>
+				</div>
 			</div>
 
-			<div className="flex justify-end space-x-3 w-full">
-				<Clipboard variant="button" data={mnemonic} data-testid="SecondSignature__copy">
-					<Icon name="Copy" />
-					<span>{t("COMMON.COPY")}</span>
-				</Clipboard>
-
-				<Button data-testid="SecondSignature__download" variant="secondary" onClick={handleDownload}>
-					<Icon name="Download" />
-					<span>{t("COMMON.DOWNLOAD")}</span>
-				</Button>
+			<div className="pt-2">
+				<Divider dashed />
 			</div>
-
-			<Divider dashed />
 		</section>
 	);
 };

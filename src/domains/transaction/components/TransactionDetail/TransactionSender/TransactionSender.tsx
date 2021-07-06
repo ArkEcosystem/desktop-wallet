@@ -18,6 +18,7 @@ export const TransactionSender = ({ address, alias, isDelegate, ...properties }:
 
 	return (
 		<TransactionDetail
+			data-testid="TransactionSender"
 			label={t("TRANSACTION.SENDER")}
 			extra={
 				<div className="flex items-center -space-x-2">
@@ -26,7 +27,7 @@ export const TransactionSender = ({ address, alias, isDelegate, ...properties }:
 							className="border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600"
 							size="lg"
 						>
-							<Icon name="Delegate" width={25} height={25} />
+							<Icon name="Delegate" width={20} height={20} />
 						</Circle>
 					)}
 					<Avatar address={address} size="lg" />

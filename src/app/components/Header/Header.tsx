@@ -10,7 +10,7 @@ interface Properties {
 export const Header = ({ title, titleSuffix, subtitle, extra }: Properties) => (
 	<div className="flex justify-between items-end bg-theme-background">
 		<div className="space-y-4">
-			<h1 className="mb-0 text-3xl" data-testid="header__title">
+			<h1 className="mb-0 text-2xl" data-testid="header__title">
 				{title}
 				{titleSuffix && <span> {titleSuffix}</span>}
 			</h1>

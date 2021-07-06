@@ -88,7 +88,7 @@ export const Transactions = memo(
 					{title && title}
 
 					{!title && (
-						<div className="mb-8 text-4xl font-bold">{t("DASHBOARD.TRANSACTION_HISTORY.TITLE")}</div>
+						<div className="mb-8 text-2xl font-bold">{t("DASHBOARD.TRANSACTION_HISTORY.TITLE")}</div>
 					)}
 				</div>
 

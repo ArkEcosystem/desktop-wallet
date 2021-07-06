@@ -7,7 +7,6 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
       data-testid="tab-pabel__active-panel"
     >
       <section
-        class="space-y-6"
         data-testid="DelegateRegistrationForm__form-step"
       >
         <div
@@ -17,7 +16,7 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
             class="space-y-4"
           >
             <h1
-              class="mb-0 text-3xl"
+              class="mb-0 text-2xl"
               data-testid="header__title"
             >
               Register Delegate
@@ -31,7 +30,7 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
           </div>
         </div>
         <div
-          class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
+          class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center mt-6"
         >
           <div
             class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
@@ -57,8 +56,43 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
           </div>
         </div>
         <div
-          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 bRHEGF no-ligatures"
-          data-testid="TransactionDetail"
+          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kakuTR no-ligatures"
+          data-testid="TransactionNetwork"
+        >
+          <div
+            class="flex-1 space-y-2 w-40 whitespace-nowrap"
+          >
+            <div
+              class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+            >
+              Cryptoasset
+            </div>
+            <div
+              class="font-semibold"
+            >
+              ARK Devnet
+            </div>
+          </div>
+          <div
+            aria-label="ARK Devnet"
+            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-700 border-theme-secondary-300 dark:border-theme-secondary-700 ring-theme-background"
+            data-testid="NetworkIcon-ARK-ark.devnet"
+          >
+            <div
+              class="sc-bdfBwQ hjDozt"
+              data-testid="NetworkIcon__icon"
+              height="20"
+              width="20"
+            >
+              <svg>
+                ark.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 jKmMiG no-ligatures"
+          data-testid="TransactionSender"
         >
           <div
             class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -114,7 +148,7 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
           </div>
         </div>
         <div
-          class="space-y-5 pt-2"
+          class="pt-6 space-y-6"
         >
           <fieldset
             class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
@@ -320,7 +354,6 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
       data-testid="tab-pabel__active-panel"
     >
       <section
-        class="space-y-6"
         data-testid="DelegateRegistrationForm__form-step"
       >
         <div
@@ -330,7 +363,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
             class="space-y-4"
           >
             <h1
-              class="mb-0 text-3xl"
+              class="mb-0 text-2xl"
               data-testid="header__title"
             >
               Register Delegate
@@ -344,7 +377,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
           </div>
         </div>
         <div
-          class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
+          class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center mt-6"
         >
           <div
             class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
@@ -370,8 +403,43 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
           </div>
         </div>
         <div
-          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 bRHEGF no-ligatures"
-          data-testid="TransactionDetail"
+          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kakuTR no-ligatures"
+          data-testid="TransactionNetwork"
+        >
+          <div
+            class="flex-1 space-y-2 w-40 whitespace-nowrap"
+          >
+            <div
+              class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+            >
+              Cryptoasset
+            </div>
+            <div
+              class="font-semibold"
+            >
+              ARK Devnet
+            </div>
+          </div>
+          <div
+            aria-label="ARK Devnet"
+            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-700 border-theme-secondary-300 dark:border-theme-secondary-700 ring-theme-background"
+            data-testid="NetworkIcon-ARK-ark.devnet"
+          >
+            <div
+              class="sc-bdfBwQ hjDozt"
+              data-testid="NetworkIcon__icon"
+              height="20"
+              width="20"
+            >
+              <svg>
+                ark.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 jKmMiG no-ligatures"
+          data-testid="TransactionSender"
         >
           <div
             class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -427,7 +495,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
           </div>
         </div>
         <div
-          class="space-y-5 pt-2"
+          class="pt-6 space-y-6"
         >
           <fieldset
             class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -623,7 +691,7 @@ exports[`DelegateRegistrationForm should render review step 1`] = `
             class="space-y-4"
           >
             <h1
-              class="mb-0 text-3xl"
+              class="mb-0 text-2xl"
               data-testid="header__title"
             >
               Transaction Review
@@ -637,8 +705,8 @@ exports[`DelegateRegistrationForm should render review step 1`] = `
           </div>
         </div>
         <div
-          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 UsFpT no-ligatures mt-8"
-          data-testid="TransactionDetail"
+          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kakuTR no-ligatures"
+          data-testid="TransactionNetwork"
         >
           <div
             class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -656,7 +724,7 @@ exports[`DelegateRegistrationForm should render review step 1`] = `
           </div>
           <div
             aria-label="ARK Devnet"
-            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
+            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-700 border-theme-secondary-300 dark:border-theme-secondary-700 ring-theme-background"
             data-testid="NetworkIcon-ARK-ark.devnet"
           >
             <div
@@ -673,7 +741,7 @@ exports[`DelegateRegistrationForm should render review step 1`] = `
         </div>
         <div
           class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-          data-testid="TransactionDetail"
+          data-testid="TransactionSender"
         >
           <div
             class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -836,7 +904,6 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
       data-testid="tab-pabel__active-panel"
     >
       <section
-        class="space-y-6"
         data-testid="DelegateRegistrationForm__form-step"
       >
         <div
@@ -846,7 +913,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
             class="space-y-4"
           >
             <h1
-              class="mb-0 text-3xl"
+              class="mb-0 text-2xl"
               data-testid="header__title"
             >
               Register Delegate
@@ -860,7 +927,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
           </div>
         </div>
         <div
-          class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
+          class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center mt-6"
         >
           <div
             class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
@@ -886,8 +953,43 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
           </div>
         </div>
         <div
-          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 bRHEGF no-ligatures"
-          data-testid="TransactionDetail"
+          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kakuTR no-ligatures"
+          data-testid="TransactionNetwork"
+        >
+          <div
+            class="flex-1 space-y-2 w-40 whitespace-nowrap"
+          >
+            <div
+              class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+            >
+              Cryptoasset
+            </div>
+            <div
+              class="font-semibold"
+            >
+              ARK Devnet
+            </div>
+          </div>
+          <div
+            aria-label="ARK Devnet"
+            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-700 border-theme-secondary-300 dark:border-theme-secondary-700 ring-theme-background"
+            data-testid="NetworkIcon-ARK-ark.devnet"
+          >
+            <div
+              class="sc-bdfBwQ hjDozt"
+              data-testid="NetworkIcon__icon"
+              height="20"
+              width="20"
+            >
+              <svg>
+                ark.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 jKmMiG no-ligatures"
+          data-testid="TransactionSender"
         >
           <div
             class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -943,7 +1045,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
           </div>
         </div>
         <div
-          class="space-y-5 pt-2"
+          class="pt-6 space-y-6"
         >
           <fieldset
             class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -1095,7 +1197,6 @@ exports[`DelegateRegistrationForm should set username 1`] = `
       data-testid="tab-pabel__active-panel"
     >
       <section
-        class="space-y-6"
         data-testid="DelegateRegistrationForm__form-step"
       >
         <div
@@ -1105,7 +1206,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
             class="space-y-4"
           >
             <h1
-              class="mb-0 text-3xl"
+              class="mb-0 text-2xl"
               data-testid="header__title"
             >
               Register Delegate
@@ -1119,7 +1220,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
           </div>
         </div>
         <div
-          class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
+          class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center mt-6"
         >
           <div
             class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
@@ -1145,8 +1246,43 @@ exports[`DelegateRegistrationForm should set username 1`] = `
           </div>
         </div>
         <div
-          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 bRHEGF no-ligatures"
-          data-testid="TransactionDetail"
+          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kakuTR no-ligatures"
+          data-testid="TransactionNetwork"
+        >
+          <div
+            class="flex-1 space-y-2 w-40 whitespace-nowrap"
+          >
+            <div
+              class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+            >
+              Cryptoasset
+            </div>
+            <div
+              class="font-semibold"
+            >
+              ARK Devnet
+            </div>
+          </div>
+          <div
+            aria-label="ARK Devnet"
+            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-700 border-theme-secondary-300 dark:border-theme-secondary-700 ring-theme-background"
+            data-testid="NetworkIcon-ARK-ark.devnet"
+          >
+            <div
+              class="sc-bdfBwQ hjDozt"
+              data-testid="NetworkIcon__icon"
+              height="20"
+              width="20"
+            >
+              <svg>
+                ark.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 jKmMiG no-ligatures"
+          data-testid="TransactionSender"
         >
           <div
             class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -1202,7 +1338,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
           </div>
         </div>
         <div
-          class="space-y-5 pt-2"
+          class="pt-6 space-y-6"
         >
           <fieldset
             class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -1389,7 +1525,6 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
       data-testid="tab-pabel__active-panel"
     >
       <section
-        class="space-y-6"
         data-testid="DelegateRegistrationForm__form-step"
       >
         <div
@@ -1399,7 +1534,7 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
             class="space-y-4"
           >
             <h1
-              class="mb-0 text-3xl"
+              class="mb-0 text-2xl"
               data-testid="header__title"
             >
               Register Delegate
@@ -1413,7 +1548,7 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
           </div>
         </div>
         <div
-          class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
+          class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center mt-6"
         >
           <div
             class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
@@ -1439,8 +1574,43 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
           </div>
         </div>
         <div
-          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 bRHEGF no-ligatures"
-          data-testid="TransactionDetail"
+          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kakuTR no-ligatures"
+          data-testid="TransactionNetwork"
+        >
+          <div
+            class="flex-1 space-y-2 w-40 whitespace-nowrap"
+          >
+            <div
+              class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+            >
+              Cryptoasset
+            </div>
+            <div
+              class="font-semibold"
+            >
+              ARK Devnet
+            </div>
+          </div>
+          <div
+            aria-label="ARK Devnet"
+            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-700 border-theme-secondary-300 dark:border-theme-secondary-700 ring-theme-background"
+            data-testid="NetworkIcon-ARK-ark.devnet"
+          >
+            <div
+              class="sc-bdfBwQ hjDozt"
+              data-testid="NetworkIcon__icon"
+              height="20"
+              width="20"
+            >
+              <svg>
+                ark.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 jKmMiG no-ligatures"
+          data-testid="TransactionSender"
         >
           <div
             class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -1496,7 +1666,7 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
           </div>
         </div>
         <div
-          class="space-y-5 pt-2"
+          class="pt-6 space-y-6"
         >
           <fieldset
             class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
@@ -1702,7 +1872,6 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
       data-testid="tab-pabel__active-panel"
     >
       <section
-        class="space-y-6"
         data-testid="DelegateRegistrationForm__form-step"
       >
         <div
@@ -1712,7 +1881,7 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
             class="space-y-4"
           >
             <h1
-              class="mb-0 text-3xl"
+              class="mb-0 text-2xl"
               data-testid="header__title"
             >
               Register Delegate
@@ -1726,7 +1895,7 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
           </div>
         </div>
         <div
-          class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
+          class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center mt-6"
         >
           <div
             class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
@@ -1752,8 +1921,43 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
           </div>
         </div>
         <div
-          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 bRHEGF no-ligatures"
-          data-testid="TransactionDetail"
+          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kakuTR no-ligatures"
+          data-testid="TransactionNetwork"
+        >
+          <div
+            class="flex-1 space-y-2 w-40 whitespace-nowrap"
+          >
+            <div
+              class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+            >
+              Cryptoasset
+            </div>
+            <div
+              class="font-semibold"
+            >
+              ARK Devnet
+            </div>
+          </div>
+          <div
+            aria-label="ARK Devnet"
+            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-700 border-theme-secondary-300 dark:border-theme-secondary-700 ring-theme-background"
+            data-testid="NetworkIcon-ARK-ark.devnet"
+          >
+            <div
+              class="sc-bdfBwQ hjDozt"
+              data-testid="NetworkIcon__icon"
+              height="20"
+              width="20"
+            >
+              <svg>
+                ark.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 jKmMiG no-ligatures"
+          data-testid="TransactionSender"
         >
           <div
             class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -1809,7 +2013,7 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
           </div>
         </div>
         <div
-          class="space-y-5 pt-2"
+          class="pt-6 space-y-6"
         >
           <fieldset
             class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
