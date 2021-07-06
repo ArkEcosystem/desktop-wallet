@@ -1,4 +1,3 @@
-import { Divider } from "app/components/Divider";
 import { Header } from "app/components/Header";
 import React, { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
@@ -24,7 +23,7 @@ export const ConfirmPassphraseStep = () => {
 	}, [isVerified, register]);
 
 	return (
-		<section data-testid="CreateWallet__ConfirmPassphraseStep" className="space-y-8">
+		<section data-testid="CreateWallet__ConfirmPassphraseStep" className="space-y-6">
 			<Header
 				title={t("WALLETS.PAGE_CREATE_WALLET.PASSPHRASE_CONFIRMATION_STEP.TITLE")}
 				subtitle={t("WALLETS.PAGE_CREATE_WALLET.PASSPHRASE_CONFIRMATION_STEP.SUBTITLE")}
@@ -36,8 +35,6 @@ export const ConfirmPassphraseStep = () => {
 				handleComplete={handleComplete}
 				isCompleted={isVerified}
 			/>
-
-			<Divider dashed />
 		</section>
 	);
 };

@@ -23,46 +23,46 @@ export const SuccessStep = ({ nameMaxLength, profile }: { nameMaxLength: number;
 	const { t } = useTranslation();
 
 	return (
-		<section data-testid="CreateWallet__SuccessStep" className="space-y-8">
+		<section data-testid="CreateWallet__SuccessStep">
 			<Header
 				title={t("WALLETS.PAGE_CREATE_WALLET.PROCESS_COMPLETED_STEP.TITLE")}
 				subtitle={t("WALLETS.PAGE_CREATE_WALLET.PROCESS_COMPLETED_STEP.SUBTITLE")}
 			/>
 
-			<div>
-				<TransactionNetwork network={network} borderPosition="bottom" paddingPosition="bottom" />
+			<TransactionNetwork network={network} border={false} />
 
-				<TransactionDetail
-					label={t("COMMON.ADDRESS")}
-					borderPosition="bottom"
-					extra={<Avatar size="lg" address={wallet.address()} />}
-				>
-					<Address address={wallet.address()} />
-				</TransactionDetail>
+			<TransactionDetail
+				label={t("COMMON.ADDRESS")}
+				borderPosition="both"
+				extra={<Avatar size="lg" address={wallet.address()} />}
+			>
+				<Address address={wallet.address()} />
+			</TransactionDetail>
+
+			<div className="pt-6">
+				<FormField name="name">
+					<FormLabel label={t("WALLETS.WALLET_NAME")} optional />
+					<InputDefault
+						data-testid="CreateWallet__wallet-name"
+						ref={register({
+							maxLength: {
+								message: t("WALLETS.PAGE_CREATE_WALLET.VALIDATION.MAXLENGTH_ERROR", {
+									maxLength: nameMaxLength,
+								}),
+								value: nameMaxLength,
+							},
+							validate: {
+								duplicateAlias: (alias) =>
+									!alias ||
+									!profile.wallets().findByAlias(alias.trim()) ||
+									t("WALLETS.PAGE_CREATE_WALLET.VALIDATION.ALIAS_EXISTS", {
+										alias: alias.trim(),
+									}).toString(),
+							},
+						})}
+					/>
+				</FormField>
 			</div>
-
-			<FormField name="name">
-				<FormLabel label={t("WALLETS.WALLET_NAME")} optional />
-				<InputDefault
-					data-testid="CreateWallet__wallet-name"
-					ref={register({
-						maxLength: {
-							message: t("WALLETS.PAGE_CREATE_WALLET.VALIDATION.MAXLENGTH_ERROR", {
-								maxLength: nameMaxLength,
-							}),
-							value: nameMaxLength,
-						},
-						validate: {
-							duplicateAlias: (alias) =>
-								!alias ||
-								!profile.wallets().findByAlias(alias.trim()) ||
-								t("WALLETS.PAGE_CREATE_WALLET.VALIDATION.ALIAS_EXISTS", {
-									alias: alias.trim(),
-								}).toString(),
-						},
-					})}
-				/>
-			</FormField>
 		</section>
 	);
 };

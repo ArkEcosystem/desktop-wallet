@@ -15,7 +15,9 @@ export const SummaryStep = ({
 
 	return (
 		<TransactionSuccessful transaction={transaction} senderWallet={senderWallet}>
-			<TransactionDetail label={t("TRANSACTION.IPFS_HASH")}>{transaction.hash()}</TransactionDetail>
+			<TransactionDetail label={t("TRANSACTION.IPFS_HASH")} paddingPosition="top">
+				<span className="break-all">{transaction.hash()}</span>
+			</TransactionDetail>
 		</TransactionSuccessful>
 	);
 };

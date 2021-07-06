@@ -204,7 +204,8 @@ describe("MultiSignature Registration Form", () => {
 		} as Contracts.SignedTransactionData;
 		const { asFragment } = render(<DetailsComponent />);
 
-		await waitFor(() => expect(screen.getAllByTestId("TransactionDetail")).toHaveLength(3));
+		await waitFor(() => expect(screen.getByTestId("TransactionFee")).toBeTruthy());
+		await waitFor(() => expect(screen.getByTestId("TransactionDetail")).toBeTruthy());
 
 		expect(asFragment()).toMatchSnapshot();
 	});

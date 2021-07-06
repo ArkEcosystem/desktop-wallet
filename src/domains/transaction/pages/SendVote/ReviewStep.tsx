@@ -33,7 +33,7 @@ export const ReviewStep = ({
 		<section data-testid="SendVote__review-step">
 			<Header title={t("TRANSACTION.REVIEW_STEP.TITLE")} subtitle={t("TRANSACTION.REVIEW_STEP.DESCRIPTION")} />
 
-			<TransactionNetwork network={wallet.network()} border={false} paddingPosition="bottom" className="mt-8" />
+			<TransactionNetwork network={wallet.network()} border={false} />
 
 			<TransactionSender
 				address={wallet.address()}

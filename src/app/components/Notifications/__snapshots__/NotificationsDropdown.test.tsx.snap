@@ -30,7 +30,7 @@ exports[`Notifications should open and cancel wallet update notification modal 1
                 </svg>
               </div>
               <div
-                class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
+                class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-100"
               >
                 <div
                   class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -457,7 +457,7 @@ exports[`Notifications should open and cancel wallet update notification modal 2
                 </svg>
               </div>
               <div
-                class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
+                class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-100"
               >
                 <div
                   class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -783,7 +783,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                 </svg>
               </div>
               <div
-                class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
+                class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-100"
               >
                 <div
                   class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -1123,7 +1123,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
             >
               <div
                 class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kakuTR no-ligatures"
-                data-testid="TransactionDetail"
+                data-testid="TransactionSender"
               >
                 <div
                   class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -1180,7 +1180,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
               </div>
               <div
                 class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                data-testid="TransactionDetail"
+                data-testid="TransactionRecipients"
               >
                 <div
                   class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -1222,7 +1222,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
               </div>
               <div
                 class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                data-testid="TransactionDetail"
+                data-testid="TransactionAmount"
               >
                 <div
                   class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -1263,7 +1263,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
               </div>
               <div
                 class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                data-testid="TransactionDetail"
+                data-testid="TransactionFee"
               >
                 <div
                   class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -1286,7 +1286,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
               </div>
               <div
                 class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                data-testid="TransactionDetail"
+                data-testid="TransactionTimestamp"
               >
                 <div
                   class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -1457,7 +1457,7 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                 </svg>
               </div>
               <div
-                class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
+                class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-100"
               >
                 <div
                   class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -1783,7 +1783,7 @@ exports[`Notifications should open and close wallet update notification modal 1`
                 </svg>
               </div>
               <div
-                class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
+                class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-100"
               >
                 <div
                   class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -2210,7 +2210,7 @@ exports[`Notifications should open and close wallet update notification modal 2`
                 </svg>
               </div>
               <div
-                class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
+                class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-100"
               >
                 <div
                   class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -2536,7 +2536,7 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                 </svg>
               </div>
               <div
-                class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
+                class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-100"
               >
                 <div
                   class="w-2 h-2 rounded-full bg-theme-danger-500"

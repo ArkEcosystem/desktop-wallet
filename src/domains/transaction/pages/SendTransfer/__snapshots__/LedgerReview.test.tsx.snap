@@ -1,0 +1,262 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransferLedgerReview should render 1`] = `
+<div>
+  <div
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
+    data-testid="TransactionDetail"
+  >
+    <div
+      class="flex-1 space-y-2 w-40 whitespace-nowrap"
+    >
+      <div
+        class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+      >
+        <div
+          class="flex items-center space-x-2"
+          data-testid="LedgerReview__expiration"
+        >
+          <span>
+            Expiration
+          </span>
+          <div
+            class="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer questionmark bg-theme-primary-100 hover:bg-theme-primary-700 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 hover:text-white"
+          >
+            <div
+              class="sc-bdfBwQ eZRpTZ"
+              height="10"
+              width="10"
+            >
+              <svg>
+                questionmark.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="font-semibold"
+      >
+        123
+      </div>
+    </div>
+  </div>
+  <div
+    class="mt-2"
+  >
+    <div
+      class="rounded-lg border border-theme-secondary-300 dark:border-theme-secondary-800"
+    >
+      <div
+        class="relative p-4"
+      >
+        <div
+          class="flex divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800"
+        >
+          <div
+            class="flex flex-col justify-center py-2 px-4 w-1/2"
+          >
+            <span
+              class="TotalAmountBox__AmountLabel-sc-178fnso-0 gGuMGd"
+            >
+              Transaction Amount
+            </span>
+            <span
+              class="mt-1 text-lg font-semibold"
+              data-testid="AmountCrypto"
+            >
+              0 DARK
+            </span>
+          </div>
+          <div
+            class="flex flex-col justify-center py-2 px-4 w-1/2 text-right"
+          >
+            <span
+              class="TotalAmountBox__AmountLabel-sc-178fnso-0 gGuMGd"
+            >
+              Transaction Fee
+            </span>
+            <span
+              class="mt-1 text-lg font-semibold"
+              data-testid="AmountCrypto"
+            >
+              0 DARK
+            </span>
+          </div>
+        </div>
+        <div
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        >
+          <div
+            class="py-2 ml-px bg-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
+          >
+            <div
+              class="sc-bdfBwQ dnaihB"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                plus.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex flex-col items-center py-6 rounded-b-lg border-t border-theme-secondary-300 justfiy-center bg-theme-secondary-100 dark:border-theme-secondary-800 dark:bg-theme-secondary-800"
+      >
+        <span
+          class="TotalAmountBox__AmountLabel-sc-178fnso-0 gGuMGd"
+        >
+          Total Amount
+        </span>
+        <span
+          class="text-2xl font-bold"
+          data-testid="AmountCrypto"
+        >
+          0 DARK
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TransferLedgerReview should render skeleton while loading expiration 1`] = `
+<div>
+  <div
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
+    data-testid="TransactionDetail"
+  >
+    <div
+      class="flex-1 space-y-2 w-40 whitespace-nowrap"
+    >
+      <div
+        class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+      >
+        <div
+          class="flex items-center space-x-2"
+          data-testid="LedgerReview__expiration"
+        >
+          <span>
+            Expiration
+          </span>
+          <div
+            class="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer questionmark bg-theme-primary-100 hover:bg-theme-primary-700 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 hover:text-white"
+          >
+            <div
+              class="sc-bdfBwQ eZRpTZ"
+              height="10"
+              width="10"
+            >
+              <svg>
+                questionmark.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="font-semibold"
+      >
+        <span
+          class="flex my-0.5"
+          data-testid="TransferLedgerReview__expiration-skeleton"
+        >
+          <span>
+            <span
+              class="flex items-center leading-none"
+            >
+              <span
+                class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                style="width: 80px; height: 16px;"
+              >
+                ‌
+              </span>
+              ‌
+            </span>
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="mt-2"
+  >
+    <div
+      class="rounded-lg border border-theme-secondary-300 dark:border-theme-secondary-800"
+    >
+      <div
+        class="relative p-4"
+      >
+        <div
+          class="flex divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800"
+        >
+          <div
+            class="flex flex-col justify-center py-2 px-4 w-1/2"
+          >
+            <span
+              class="TotalAmountBox__AmountLabel-sc-178fnso-0 gGuMGd"
+            >
+              Transaction Amount
+            </span>
+            <span
+              class="mt-1 text-lg font-semibold"
+              data-testid="AmountCrypto"
+            >
+              0 DARK
+            </span>
+          </div>
+          <div
+            class="flex flex-col justify-center py-2 px-4 w-1/2 text-right"
+          >
+            <span
+              class="TotalAmountBox__AmountLabel-sc-178fnso-0 gGuMGd"
+            >
+              Transaction Fee
+            </span>
+            <span
+              class="mt-1 text-lg font-semibold"
+              data-testid="AmountCrypto"
+            >
+              0 DARK
+            </span>
+          </div>
+        </div>
+        <div
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        >
+          <div
+            class="py-2 ml-px bg-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
+          >
+            <div
+              class="sc-bdfBwQ dnaihB"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                plus.svg
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex flex-col items-center py-6 rounded-b-lg border-t border-theme-secondary-300 justfiy-center bg-theme-secondary-100 dark:border-theme-secondary-800 dark:bg-theme-secondary-800"
+      >
+        <span
+          class="TotalAmountBox__AmountLabel-sc-178fnso-0 gGuMGd"
+        >
+          Total Amount
+        </span>
+        <span
+          class="text-2xl font-bold"
+          data-testid="AmountCrypto"
+        >
+          0 DARK
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
