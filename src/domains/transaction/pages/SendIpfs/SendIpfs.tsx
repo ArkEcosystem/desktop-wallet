@@ -11,7 +11,7 @@ import { AuthenticationStep } from "domains/transaction/components/Authenticatio
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
 import { FeeWarning } from "domains/transaction/components/FeeWarning";
 import { useFeeConfirmation, useTransactionBuilder, useWalletSignatory } from "domains/transaction/hooks";
-import { handleBroadcastError } from "domains/transaction/utils";
+import { handleBroadcastError, isMnemonicError } from "domains/transaction/utils";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -37,7 +37,7 @@ export const SendIpfs = () => {
 	const form = useForm({ mode: "onChange" });
 
 	const { hasDeviceAvailable, isConnected, connect, transport } = useLedgerContext();
-	const { clearErrors, formState, getValues, handleSubmit, register, setValue, watch } = form;
+	const { clearErrors, formState, getValues, handleSubmit, register, setError, setValue, watch } = form;
 	const { isValid, isSubmitting } = formState;
 
 	const { fee, fees } = watch();
