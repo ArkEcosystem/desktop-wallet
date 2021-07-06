@@ -14,14 +14,12 @@ import { useFeeConfirmation, useTransactionBuilder, useWalletSignatory } from "d
 import { handleBroadcastError } from "domains/transaction/utils";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 import { FormStep, ReviewStep, SummaryStep } from ".";
 import { VoteLedgerReview } from "./LedgerReview";
 
 export const SendVote = () => {
-	const { t } = useTranslation();
 	const { env, persist } = useEnvironmentContext();
 	const history = useHistory();
 	const activeProfile = useActiveProfile();
@@ -42,7 +40,7 @@ export const SendVote = () => {
 	const form = useForm({ mode: "onChange" });
 
 	const { hasDeviceAvailable, isConnected } = useLedgerContext();
-	const { clearErrors, formState, getValues, handleSubmit, register, setError, setValue, watch } = form;
+	const { clearErrors, formState, getValues, handleSubmit, register, setValue, watch } = form;
 	const { isValid, isSubmitting } = formState;
 
 	const { fee, fees } = watch();

@@ -13,18 +13,16 @@ import { useFeeConfirmation, useWalletSignatory } from "domains/transaction/hook
 import { handleBroadcastError } from "domains/transaction/utils";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 import { FormStep, ReviewStep, SummaryStep } from ".";
 
 export const SendDelegateResignation = () => {
-	const { t } = useTranslation();
 	const history = useHistory();
 
 	const form = useForm({ mode: "onChange" });
 
-	const { formState, getValues, register, setError, setValue, watch } = form;
+	const { formState, getValues, register, watch } = form;
 	const { isValid, isSubmitting } = formState;
 
 	const { fee, fees } = watch();

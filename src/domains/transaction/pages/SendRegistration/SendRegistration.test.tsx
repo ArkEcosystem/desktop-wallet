@@ -411,6 +411,7 @@ describe("Registration", () => {
 
 		await waitFor(() => expect(getByTestId("Input__error")).toBeVisible());
 
+		expect(getByTestId("Input__error")).toHaveAttribute("data-errortext", "This mnemonic does not correspond to your wallet");
 		expect(container).toMatchSnapshot();
 
 		secondPublicKeyMock.mockRestore();

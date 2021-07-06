@@ -16,14 +16,12 @@ import { SecondSignatureRegistrationForm } from "domains/transaction/components/
 import { useFeeConfirmation, useWalletSignatory } from "domains/transaction/hooks";
 import React, { useCallback, useEffect, useLayoutEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
 
 import { SummaryStep } from ".";
 import { SendRegistrationForm } from "./SendRegistration.models";
 
 export const SendRegistration = () => {
-	const { t } = useTranslation();
 	const history = useHistory();
 
 	const [activeTab, setActiveTab] = useState(1);
@@ -42,7 +40,7 @@ export const SendRegistration = () => {
 
 	const form = useForm({ mode: "onChange" });
 
-	const { formState, register, setError, setValue, trigger, watch, getValues } = form;
+	const { formState, register, setValue, trigger, watch, getValues } = form;
 	const { isSubmitting, isValid } = formState;
 
 	const { fee, fees } = watch();
