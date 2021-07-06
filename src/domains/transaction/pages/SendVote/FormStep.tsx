@@ -72,7 +72,7 @@ export const FormStep = ({
 				subtitle={t("TRANSACTION.PAGE_VOTE.FORM_STEP.DESCRIPTION")}
 			/>
 
-			<TransactionNetwork network={wallet.network()} border={false} paddingPosition="bottom" className="mt-8" />
+			<TransactionNetwork network={wallet.network()} border={false} />
 
 			<TransactionSender
 				address={wallet.address()}

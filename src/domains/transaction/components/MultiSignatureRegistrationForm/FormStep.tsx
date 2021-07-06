@@ -57,20 +57,20 @@ export const FormStep = ({
 	const minParticipantsLimit = Math.max(2, participants?.length || 0);
 
 	return (
-		<section data-testid="MultiSignatureRegistrationForm--form-step" className="space-y-8">
+		<section data-testid="MultiSignatureRegistrationForm--form-step">
 			<Header
 				title={t("TRANSACTION.PAGE_MULTISIGNATURE.FORM_STEP.TITLE")}
 				subtitle={t("TRANSACTION.PAGE_MULTISIGNATURE.FORM_STEP.DESCRIPTION")}
 			/>
 
-			<AddParticipant
-				profile={profile}
-				wallet={wallet}
-				onChange={handleParticipants}
-				defaultParticipants={participants}
-			/>
+			<div className="pt-6 space-y-6">
+				<AddParticipant
+					profile={profile}
+					wallet={wallet}
+					onChange={handleParticipants}
+					defaultParticipants={participants}
+				/>
 
-			<div className="space-y-5">
 				<FormField name="minParticipants">
 					<FormLabel>{t("TRANSACTION.MULTISIGNATURE.MIN_SIGNATURES")}</FormLabel>
 					<Input

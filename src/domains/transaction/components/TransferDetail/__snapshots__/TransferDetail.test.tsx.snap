@@ -52,7 +52,7 @@ exports[`TransferDetail should render a modal 1`] = `
           >
             <div
               class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kakuTR no-ligatures"
-              data-testid="TransactionDetail"
+              data-testid="TransactionSender"
             >
               <div
                 class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -95,9 +95,9 @@ exports[`TransferDetail should render a modal 1`] = `
                   class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600 ring-theme-background"
                 >
                   <div
-                    class="sc-bdfBwQ gmQeZR"
-                    height="25"
-                    width="25"
+                    class="sc-bdfBwQ hjDozt"
+                    height="20"
+                    width="20"
                   >
                     <svg>
                       delegate.svg
@@ -122,7 +122,7 @@ exports[`TransferDetail should render a modal 1`] = `
             </div>
             <div
               class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-              data-testid="TransactionDetail"
+              data-testid="TransactionRecipients"
             >
               <div
                 class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -164,7 +164,7 @@ exports[`TransferDetail should render a modal 1`] = `
             </div>
             <div
               class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-              data-testid="TransactionDetail"
+              data-testid="TransactionAmount"
             >
               <div
                 class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -205,7 +205,7 @@ exports[`TransferDetail should render a modal 1`] = `
             </div>
             <div
               class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-              data-testid="TransactionDetail"
+              data-testid="TransactionFee"
             >
               <div
                 class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -228,7 +228,7 @@ exports[`TransferDetail should render a modal 1`] = `
             </div>
             <div
               class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-              data-testid="TransactionDetail"
+              data-testid="TransactionMemo"
             >
               <div
                 class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -264,7 +264,7 @@ exports[`TransferDetail should render a modal 1`] = `
             </div>
             <div
               class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-              data-testid="TransactionDetail"
+              data-testid="TransactionTimestamp"
             >
               <div
                 class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -452,7 +452,7 @@ exports[`TransferDetail should render as confirmed 1`] = `
           >
             <div
               class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kakuTR no-ligatures"
-              data-testid="TransactionDetail"
+              data-testid="TransactionSender"
             >
               <div
                 class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -495,9 +495,9 @@ exports[`TransferDetail should render as confirmed 1`] = `
                   class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600 ring-theme-background"
                 >
                   <div
-                    class="sc-bdfBwQ gmQeZR"
-                    height="25"
-                    width="25"
+                    class="sc-bdfBwQ hjDozt"
+                    height="20"
+                    width="20"
                   >
                     <svg>
                       delegate.svg
@@ -522,7 +522,7 @@ exports[`TransferDetail should render as confirmed 1`] = `
             </div>
             <div
               class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-              data-testid="TransactionDetail"
+              data-testid="TransactionRecipients"
             >
               <div
                 class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -564,7 +564,7 @@ exports[`TransferDetail should render as confirmed 1`] = `
             </div>
             <div
               class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-              data-testid="TransactionDetail"
+              data-testid="TransactionAmount"
             >
               <div
                 class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -605,7 +605,7 @@ exports[`TransferDetail should render as confirmed 1`] = `
             </div>
             <div
               class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-              data-testid="TransactionDetail"
+              data-testid="TransactionFee"
             >
               <div
                 class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -628,7 +628,7 @@ exports[`TransferDetail should render as confirmed 1`] = `
             </div>
             <div
               class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-              data-testid="TransactionDetail"
+              data-testid="TransactionMemo"
             >
               <div
                 class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -664,7 +664,7 @@ exports[`TransferDetail should render as confirmed 1`] = `
             </div>
             <div
               class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-              data-testid="TransactionDetail"
+              data-testid="TransactionTimestamp"
             >
               <div
                 class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -854,7 +854,7 @@ exports[`TransferDetail should render as not is sent 1`] = `
           >
             <div
               class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kakuTR no-ligatures"
-              data-testid="TransactionDetail"
+              data-testid="TransactionSender"
             >
               <div
                 class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -897,9 +897,9 @@ exports[`TransferDetail should render as not is sent 1`] = `
                   class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600 ring-theme-background"
                 >
                   <div
-                    class="sc-bdfBwQ gmQeZR"
-                    height="25"
-                    width="25"
+                    class="sc-bdfBwQ hjDozt"
+                    height="20"
+                    width="20"
                   >
                     <svg>
                       delegate.svg
@@ -924,7 +924,7 @@ exports[`TransferDetail should render as not is sent 1`] = `
             </div>
             <div
               class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-              data-testid="TransactionDetail"
+              data-testid="TransactionRecipients"
             >
               <div
                 class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -966,7 +966,7 @@ exports[`TransferDetail should render as not is sent 1`] = `
             </div>
             <div
               class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-              data-testid="TransactionDetail"
+              data-testid="TransactionAmount"
             >
               <div
                 class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -1007,7 +1007,7 @@ exports[`TransferDetail should render as not is sent 1`] = `
             </div>
             <div
               class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-              data-testid="TransactionDetail"
+              data-testid="TransactionFee"
             >
               <div
                 class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -1030,7 +1030,7 @@ exports[`TransferDetail should render as not is sent 1`] = `
             </div>
             <div
               class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-              data-testid="TransactionDetail"
+              data-testid="TransactionMemo"
             >
               <div
                 class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -1066,7 +1066,7 @@ exports[`TransferDetail should render as not is sent 1`] = `
             </div>
             <div
               class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-              data-testid="TransactionDetail"
+              data-testid="TransactionTimestamp"
             >
               <div
                 class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -1254,7 +1254,7 @@ exports[`TransferDetail should render with wallet alias 1`] = `
           >
             <div
               class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kakuTR no-ligatures"
-              data-testid="TransactionDetail"
+              data-testid="TransactionSender"
             >
               <div
                 class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -1297,9 +1297,9 @@ exports[`TransferDetail should render with wallet alias 1`] = `
                   class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600 ring-theme-background"
                 >
                   <div
-                    class="sc-bdfBwQ gmQeZR"
-                    height="25"
-                    width="25"
+                    class="sc-bdfBwQ hjDozt"
+                    height="20"
+                    width="20"
                   >
                     <svg>
                       delegate.svg
@@ -1324,7 +1324,7 @@ exports[`TransferDetail should render with wallet alias 1`] = `
             </div>
             <div
               class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-              data-testid="TransactionDetail"
+              data-testid="TransactionRecipients"
             >
               <div
                 class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -1366,7 +1366,7 @@ exports[`TransferDetail should render with wallet alias 1`] = `
             </div>
             <div
               class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-              data-testid="TransactionDetail"
+              data-testid="TransactionAmount"
             >
               <div
                 class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -1407,7 +1407,7 @@ exports[`TransferDetail should render with wallet alias 1`] = `
             </div>
             <div
               class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-              data-testid="TransactionDetail"
+              data-testid="TransactionFee"
             >
               <div
                 class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -1430,7 +1430,7 @@ exports[`TransferDetail should render with wallet alias 1`] = `
             </div>
             <div
               class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-              data-testid="TransactionDetail"
+              data-testid="TransactionMemo"
             >
               <div
                 class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -1466,7 +1466,7 @@ exports[`TransferDetail should render with wallet alias 1`] = `
             </div>
             <div
               class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-              data-testid="TransactionDetail"
+              data-testid="TransactionTimestamp"
             >
               <div
                 class="flex-1 space-y-2 w-40 whitespace-nowrap"

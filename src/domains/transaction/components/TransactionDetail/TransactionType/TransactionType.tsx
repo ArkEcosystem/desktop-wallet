@@ -17,6 +17,7 @@ export const TransactionType = ({ type, ...properties }: TransactionSenderProper
 
 	return (
 		<TransactionDetail
+			data-testid="TransactionType"
 			label={t("TRANSACTION.TRANSACTION_TYPE")}
 			extra={
 				<Circle

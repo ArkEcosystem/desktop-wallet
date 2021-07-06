@@ -1,9 +1,9 @@
 import { Services } from "@arkecosystem/platform-sdk";
 import { DTO } from "@arkecosystem/platform-sdk-profiles";
-import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
+import { StepNavigation } from "app/components/StepNavigation";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext, useLedgerContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useValidation } from "app/hooks";
@@ -11,7 +11,7 @@ import { AuthenticationStep } from "domains/transaction/components/Authenticatio
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
 import { FeeWarning } from "domains/transaction/components/FeeWarning";
 import { useFeeConfirmation, useTransactionBuilder, useWalletSignatory } from "domains/transaction/hooks";
-import { handleBroadcastError, isMnemonicError } from "domains/transaction/utils";
+import { handleBroadcastError } from "domains/transaction/utils";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -37,7 +37,7 @@ export const SendIpfs = () => {
 	const form = useForm({ mode: "onChange" });
 
 	const { hasDeviceAvailable, isConnected, connect, transport } = useLedgerContext();
-	const { clearErrors, formState, getValues, handleSubmit, register, setError, setValue, watch } = form;
+	const { clearErrors, formState, getValues, handleSubmit, register, setValue, watch } = form;
 	const { isValid, isSubmitting } = formState;
 
 	const { fee, fees } = watch();
@@ -160,6 +160,8 @@ export const SendIpfs = () => {
 		setActiveTab(newIndex);
 	};
 
+	const hideStepNavigation = activeTab === 5 || (activeTab === 3 && activeWallet.isLedger());
+
 	return (
 		<Page profile={activeProfile}>
 			<Section className="flex-1">
@@ -169,11 +171,13 @@ export const SendIpfs = () => {
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FormStep networks={networks} profile={activeProfile} />
+								<FormStep profile={activeProfile} wallet={activeWallet} />
 							</TabPanel>
+
 							<TabPanel tabId={2}>
 								<ReviewStep wallet={activeWallet} />
 							</TabPanel>
+
 							<TabPanel tabId={3}>
 								<AuthenticationStep
 									wallet={activeWallet}
@@ -182,6 +186,7 @@ export const SendIpfs = () => {
 									ledgerIsAwaitingApp={hasDeviceAvailable && !isConnected}
 								/>
 							</TabPanel>
+
 							<TabPanel tabId={4}>
 								<SummaryStep transaction={transaction} senderWallet={activeWallet} />
 							</TabPanel>
@@ -197,70 +202,19 @@ export const SendIpfs = () => {
 								/>
 							</TabPanel>
 
-							<div className="flex justify-end mt-10 space-x-2">
-								{activeTab < 4 && (
-									<>
-										{activeTab < 3 && (
-											<>
-												<Button
-													disabled={isSubmitting}
-													data-testid="SendIpfs__button--back"
-													variant="secondary"
-													onClick={handleBack}
-												>
-													{t("COMMON.BACK")}
-												</Button>
-												<Button
-													data-testid="SendIpfs__button--continue"
-													disabled={!isValid || isSubmitting}
-													isLoading={isSubmitting}
-													onClick={async () => await handleNext()}
-												>
-													{t("COMMON.CONTINUE")}
-												</Button>
-											</>
-										)}
-
-										{activeTab === 3 && !activeWallet.isLedger() && (
-											<>
-												<Button
-													data-testid="SendIpfs__button--back"
-													variant="secondary"
-													onClick={handleBack}
-												>
-													{t("COMMON.BACK")}
-												</Button>
-
-												<Button
-													type="submit"
-													data-testid="SendIpfs__button--submit"
-													disabled={!isValid || isSubmitting}
-													isLoading={isSubmitting}
-													icon="Send"
-													iconWidth={16}
-													iconHeight={16}
-													iconPosition="right"
-												>
-													<span>{t("COMMON.SEND")}</span>
-												</Button>
-											</>
-										)}
-									</>
-								)}
-
-								{activeTab === 4 && (
-									<Button
-										data-testid="SendIpfs__button--back-to-wallet"
-										variant="secondary"
-										className="block"
-										onClick={() =>
-											history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
-										}
-									>
-										{t("COMMON.BACK_TO_WALLET")}
-									</Button>
-								)}
-							</div>
+							{!hideStepNavigation && (
+								<StepNavigation
+									onBackClick={handleBack}
+									onBackToWalletClick={() =>
+										history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
+									}
+									onContinueClick={async () => await handleNext()}
+									isLoading={isSubmitting}
+									isNextDisabled={!isValid}
+									size={4}
+									activeIndex={activeTab}
+								/>
+							)}
 						</div>
 					</Tabs>
 

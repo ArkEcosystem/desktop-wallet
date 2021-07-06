@@ -46,7 +46,7 @@ export const NetworkStep = ({ profile, networks }: { profile: Contracts.IProfile
 	};
 
 	return (
-		<section data-testid="SendTransfer__network-step" className="space-y-8">
+		<section data-testid="SendTransfer__network-step" className="space-y-6">
 			<Header
 				title={t("TRANSACTION.PAGE_TRANSACTION_SEND.NETWORK_STEP.TITLE")}
 				subtitle={t("TRANSACTION.PAGE_TRANSACTION_SEND.NETWORK_STEP.SUBTITLE")}

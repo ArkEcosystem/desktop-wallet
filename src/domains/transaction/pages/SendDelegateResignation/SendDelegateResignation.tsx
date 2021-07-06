@@ -1,8 +1,8 @@
 import { DTO } from "@arkecosystem/platform-sdk-profiles";
-import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
+import { StepNavigation } from "app/components/StepNavigation";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useValidation } from "app/hooks";
@@ -112,6 +112,8 @@ export const SendDelegateResignation = () => {
 		}
 	};
 
+	const hideStepNavigation = activeTab === 5;
+
 	return (
 		<Page profile={activeProfile}>
 			<Section className="flex-1">
@@ -147,58 +149,19 @@ export const SendDelegateResignation = () => {
 								/>
 							</TabPanel>
 
-							<div className="flex justify-end mt-10 space-x-3">
-								{activeTab < 4 && (
-									<Button
-										disabled={isSubmitting}
-										data-testid="SendDelegateResignation__back-button"
-										variant="secondary"
-										onClick={handleBack}
-									>
-										{t("COMMON.BACK")}
-									</Button>
-								)}
-
-								{activeTab < 3 && (
-									<Button
-										data-testid="SendDelegateResignation__continue-button"
-										disabled={!isValid}
-										onClick={() => handleNext()}
-									>
-										{t("COMMON.CONTINUE")}
-									</Button>
-								)}
-
-								{activeTab === 3 && (
-									<Button
-										type="submit"
-										data-testid="SendDelegateResignation__send-button"
-										disabled={!isValid}
-										className="space-x-2"
-										isLoading={isSubmitting}
-										icon="Send"
-										iconWidth={16}
-										iconHeight={16}
-										iconPosition="right"
-									>
-										<span>{t("COMMON.SEND")}</span>
-									</Button>
-								)}
-
-								{activeTab === 4 && (
-									<Button
-										data-testid="SendDelegateResignation__wallet-button"
-										variant="secondary"
-										onClick={() => {
-											history.push(
-												`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`,
-											);
-										}}
-									>
-										{t("COMMON.BACK_TO_WALLET")}
-									</Button>
-								)}
-							</div>
+							{!hideStepNavigation && (
+								<StepNavigation
+									onBackClick={handleBack}
+									onBackToWalletClick={() =>
+										history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}`)
+									}
+									onContinueClick={() => handleNext()}
+									isLoading={isSubmitting}
+									isNextDisabled={!isValid}
+									size={4}
+									activeIndex={activeTab}
+								/>
+							)}
 						</div>
 					</Tabs>
 

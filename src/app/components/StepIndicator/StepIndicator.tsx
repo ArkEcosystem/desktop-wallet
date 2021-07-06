@@ -3,7 +3,7 @@ import tw, { css, styled } from "twin.macro";
 
 interface StepIndicatorProperties {
 	activeIndex?: number;
-	size?: number;
+	size: number;
 }
 
 const StepStyled = styled.li<{ isActive: boolean }>`
@@ -24,7 +24,8 @@ const StepWrapper = styled.ul`
 `;
 
 export const StepIndicator: React.FC<StepIndicatorProperties> = (properties: StepIndicatorProperties) => {
-	const steps = [...new Array(properties.size)];
+	const steps = [...Array.from({ length: properties.size })];
+
 	return (
 		<StepWrapper>
 			{steps.map((_, index) => (

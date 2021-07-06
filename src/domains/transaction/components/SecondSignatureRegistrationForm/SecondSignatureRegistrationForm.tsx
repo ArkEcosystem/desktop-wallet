@@ -1,8 +1,6 @@
 import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
-import { Circle } from "app/components/Circle";
-import { Icon } from "app/components/Icon";
 import { TabPanel, Tabs } from "app/components/Tabs";
-import { TransactionDetail, TransactionFee } from "domains/transaction/components/TransactionDetail";
+import { TransactionFee } from "domains/transaction/components/TransactionDetail";
 import { SendRegistrationForm } from "domains/transaction/pages/SendRegistration/SendRegistration.models";
 import { handleBroadcastError } from "domains/transaction/utils";
 import React from "react";
@@ -25,12 +23,15 @@ const component = ({
 		<TabPanel tabId={1}>
 			<GenerationStep wallet={wallet} fees={fees} profile={profile} />
 		</TabPanel>
+
 		<TabPanel tabId={2}>
 			<BackupStep />
 		</TabPanel>
+
 		<TabPanel tabId={3}>
 			<VerificationStep />
 		</TabPanel>
+
 		<TabPanel tabId={4}>
 			<ReviewStep wallet={wallet} />
 		</TabPanel>
@@ -39,28 +40,11 @@ const component = ({
 
 const transactionDetails = ({
 	transaction,
-	translations,
 	wallet,
 }: {
 	transaction: DTO.ExtendedSignedTransactionData;
-	translations: any;
 	wallet: Contracts.IReadWriteWallet;
-}) => (
-	<>
-		<TransactionDetail
-			label={translations("TRANSACTION.TRANSACTION_TYPE")}
-			extra={
-				<Circle className="border-theme-text" size="lg">
-					<Icon name="SecondSignature" width={20} height={20} />
-				</Circle>
-			}
-		>
-			{translations("TRANSACTION.TRANSACTION_TYPES.SECOND_SIGNATURE")}
-		</TransactionDetail>
-
-		<TransactionFee currency={wallet.currency()} value={transaction.fee()} paddingPosition="top" />
-	</>
-);
+}) => <TransactionFee currency={wallet.currency()} value={transaction.fee()} paddingPosition="top" />;
 
 component.displayName = "SecondSignatureRegistrationForm";
 transactionDetails.displayName = "SecondSignatureRegistrationFormTransactionDetails";

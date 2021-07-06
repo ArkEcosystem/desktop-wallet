@@ -91,7 +91,7 @@ export const AuthenticationStep = ({
 	};
 
 	return (
-		<div data-testid="AuthenticationStep" className="space-y-8">
+		<div data-testid="AuthenticationStep" className="space-y-6">
 			{wallet.actsWithWif() && (
 				<>
 					<Header title={title} subtitle={t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION_WIF")} />

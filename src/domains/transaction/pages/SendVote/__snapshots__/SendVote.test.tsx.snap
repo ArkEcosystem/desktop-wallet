@@ -417,7 +417,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionType"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -449,7 +449,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionNetwork"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -484,7 +484,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionSender"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -527,9 +527,9 @@ exports[`SendVote should send a unvote transaction 1`] = `
                             class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600 ring-theme-background"
                           >
                             <div
-                              class="sc-bdfBwQ gmQeZR"
-                              height="25"
-                              width="25"
+                              class="sc-bdfBwQ hjDozt"
+                              height="20"
+                              width="20"
                             >
                               <svg>
                                 delegate.svg
@@ -554,7 +554,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionUnvotes"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -619,7 +619,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 jxdofB no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionFee"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -644,11 +644,11 @@ exports[`SendVote should send a unvote transaction 1`] = `
                   </section>
                 </div>
                 <div
-                  class="flex justify-end mt-10 space-x-3"
+                  class="StepNavigation__StepNavigationWrapper-e8732n-0 fGWUDu"
                 >
                   <button
                     class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
-                    data-testid="SendVote__button--back-to-wallet"
+                    data-testid="StepNavigation__back-to-wallet-button"
                     type="button"
                   >
                     <div
@@ -1079,7 +1079,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionType"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -1111,7 +1111,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionNetwork"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -1146,7 +1146,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionSender"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -1189,9 +1189,9 @@ exports[`SendVote should send a vote transaction 1`] = `
                             class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600 ring-theme-background"
                           >
                             <div
-                              class="sc-bdfBwQ gmQeZR"
-                              height="25"
-                              width="25"
+                              class="sc-bdfBwQ hjDozt"
+                              height="20"
+                              width="20"
                             >
                               <svg>
                                 delegate.svg
@@ -1216,7 +1216,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionVotes"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -1281,7 +1281,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                       </div>
                       <div
                         class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 jxdofB no-ligatures"
-                        data-testid="TransactionDetail"
+                        data-testid="TransactionFee"
                       >
                         <div
                           class="flex-1 space-y-2 w-40 whitespace-nowrap"
@@ -1306,11 +1306,11 @@ exports[`SendVote should send a vote transaction 1`] = `
                   </section>
                 </div>
                 <div
-                  class="flex justify-end mt-10 space-x-3"
+                  class="StepNavigation__StepNavigationWrapper-e8732n-0 fGWUDu"
                 >
                   <button
                     class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
-                    data-testid="SendVote__button--back-to-wallet"
+                    data-testid="StepNavigation__back-to-wallet-button"
                     type="button"
                   >
                     <div
@@ -1632,7 +1632,7 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
                   data-testid="tab-pabel__active-panel"
                 >
                   <div
-                    class="space-y-8"
+                    class="space-y-6"
                     data-testid="AuthenticationStep"
                   >
                     <div
@@ -1730,11 +1730,11 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex justify-end mt-10 space-x-3"
+                  class="StepNavigation__StepNavigationWrapper-e8732n-0 fGWUDu"
                 >
                   <button
                     class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
-                    data-testid="SendVote__button--back"
+                    data-testid="StepNavigation__back-button"
                     type="button"
                   >
                     <div
@@ -1745,7 +1745,7 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
                   </button>
                   <button
                     class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
-                    data-testid="SendVote__button--submit"
+                    data-testid="StepNavigation__send-button"
                     disabled=""
                     type="submit"
                   >
@@ -2186,9 +2186,6 @@ exports[`SendVote should show error step and go back 1`] = `
                     </div>
                   </div>
                 </div>
-                <div
-                  class="flex justify-end mt-10 space-x-3"
-                />
               </div>
             </div>
           </form>

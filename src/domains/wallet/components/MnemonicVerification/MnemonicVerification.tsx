@@ -73,19 +73,21 @@ export function MnemonicVerification({
 		<Tabs activeId={activeTab}>
 			<MnemonicVerificationProgress activeTab={activeTab} wordPositions={positions} />
 
-			<div className="mt-10">
-				{positions.map((position, index) => (
-					<TabPanel key={index} tabId={index}>
-						<MnemonicVerificationOptions
-							limit={optionsLimit}
-							answer={currentAnswer}
-							options={mnemonicWords}
-							handleChange={handleChange}
-							position={position}
-						/>
-					</TabPanel>
-				))}
-			</div>
+			{!isCompleted && (
+				<div className="mt-8">
+					{positions.map((position, index) => (
+						<TabPanel key={index} tabId={index}>
+							<MnemonicVerificationOptions
+								limit={optionsLimit}
+								answer={currentAnswer}
+								options={mnemonicWords}
+								handleChange={handleChange}
+								position={position}
+							/>
+						</TabPanel>
+					))}
+				</div>
+			)}
 		</Tabs>
 	);
 }
