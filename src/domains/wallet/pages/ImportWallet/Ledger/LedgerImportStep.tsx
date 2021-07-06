@@ -46,13 +46,26 @@ const MultipleImport = ({
 		for (const wallet of wallets) {
 			register({ name: `names.${wallet.address}`, type: "custom" });
 		}
-	}, [register, wallets]);
+	}, [register, wallets, profile]);
+
+	const getAlias = (address: string): string => {
+		let alias = getValues(`names.${address}`);
+
+		if (!alias) {
+			const wallet = profile.wallets().findByAddress(address);
+			assertWallet(wallet);
+
+			alias = wallet.alias();
+		}
+
+		return alias;
+	};
 
 	return (
 		<div>
 			<ul>
 				{wallets.map((wallet) => {
-					const walletName = getValues(`names.${wallet.address}`);
+					const walletName = getAlias(wallet.address);
 
 					return (
 						<li key={wallet.address}>
@@ -90,6 +103,7 @@ const MultipleImport = ({
 
 			{!!selectedAddress && (
 				<UpdateWalletName
+					defaultValue={getAlias(selectedAddress)}
 					walletAddress={selectedAddress}
 					profile={profile}
 					isOpen={!!selectedAddress}

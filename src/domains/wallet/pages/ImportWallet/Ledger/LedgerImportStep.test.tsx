@@ -9,6 +9,7 @@ import { FormProvider, useForm } from "react-hook-form";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
 
 import { LedgerImportStep } from "./LedgerImportStep";
+import { getDefaultAlias } from "domains/wallet/utils/get-default-alias";
 
 describe("LedgerImportStep", () => {
 	let transport: typeof Transport;
@@ -28,11 +29,7 @@ describe("LedgerImportStep", () => {
 		// so LedgerImportStep assumes that wallets are imported already
 		// @TODO maybe refactor step component names
 
-		let ledgerWalletNumber = 0;
-
 		for (const { address, path } of ledgerWallets) {
-			ledgerWalletNumber++;
-
 			const wallet = await profile.walletFactory().fromAddressWithDerivationPath({
 				address,
 				coin: "ARK",
@@ -42,7 +39,10 @@ describe("LedgerImportStep", () => {
 
 			profile.wallets().push(wallet);
 
-			wallet.mutator().alias(`ARK Wallet ${ledgerWalletNumber}`);
+			wallet.mutator().alias(getDefaultAlias({
+				profile,
+				ticker: "DARK",
+			}));
 		}
 
 		transport = createTransportReplayer(RecordStore.fromString(""));

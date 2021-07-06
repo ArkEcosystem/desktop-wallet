@@ -7,35 +7,37 @@ import { alias } from "domains/wallet/validations";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { assertWallet } from "utils/assertions";
 
 interface UpdateWalletNameProperties {
-	walletAddress: string;
-	profile: Contracts.IProfile;
+	defaultValue: string;
 	isOpen: boolean;
-	onClose?: () => void;
 	onCancel?: () => void;
+	onClose?: () => void;
 	onSave: (alias: string) => void;
+	profile: Contracts.IProfile;
+	walletAddress: string;
 }
 
 export const UpdateWalletName = ({
-	walletAddress,
-	profile,
+	defaultValue,
 	isOpen = false,
-	onClose,
 	onCancel,
+	onClose,
 	onSave,
+	profile,
+	walletAddress,
 }: UpdateWalletNameProperties) => {
-	const methods = useForm<Record<string, any>>({ mode: "onChange" });
+	const methods = useForm<{ name: string }>({
+		defaultValues: { name: defaultValue },
+		mode: "onChange",
+	});
+
 	const { formState, register } = methods;
 	const { isValid, errors } = formState;
 
 	const { t } = useTranslation();
 
 	const aliasValidation = alias({ profile, t, walletAddress });
-
-	const wallet = profile.wallets().findByAddress(walletAddress);
-	assertWallet(wallet);
 
 	const onSubmit = ({ name }: { name: string }) => {
 		onSave(name.trim());
@@ -58,7 +60,7 @@ export const UpdateWalletName = ({
 							isInvalid={!isValid}
 							data-testid="UpdateWalletName__input"
 							ref={register(aliasValidation)}
-							defaultValue={wallet.alias()}
+							defaultValue={defaultValue}
 						/>
 					</div>
 				</FormField>

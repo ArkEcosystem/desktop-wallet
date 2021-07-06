@@ -460,6 +460,7 @@ export const WalletHeader = ({
 
 			{modal === "wallet-name" && (
 				<UpdateWalletName
+					defaultValue={wallet.alias() as string}
 					walletAddress={wallet.address()}
 					profile={profile}
 					isOpen={true}

@@ -287,101 +287,94 @@ exports[`LedgerImportStep should render with single import 1`] = `
         </div>
       </div>
     </div>
-    <div
-      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 bRHEGF no-ligatures"
-      data-testid="TransactionDetail"
-    >
-      <div
-        class="flex-1 space-y-2 w-40 whitespace-nowrap"
-      >
-        <div
-          class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-        >
-          Address
-        </div>
-        <div
-          class="font-semibold"
-        >
+    <div>
+      <ul>
+        <li>
           <div
-            class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ftQhtr no-ligatures py-4"
+            data-testid="TransactionDetail"
           >
-            <span
-              class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
-              data-testid="Address__address"
+            <div
+              class="flex-1 space-y-2 w-40 whitespace-nowrap"
             >
-              DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES
-            </span>
+              <div
+                class="font-semibold"
+              >
+                <div
+                  class="flex items-center space-x-3"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
+                  >
+                    <div
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                    >
+                      <img
+                        alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                        title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
+                    >
+                      <span
+                        class="font-semibold text-base text-theme-text"
+                        data-testid="Address__alias"
+                      >
+                        <span
+                          class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
+                          data-testid="TruncateEnd"
+                        >
+                          DARK #4
+                        </span>
+                      </span>
+                      <span
+                        class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                        data-testid="Address__address"
+                      >
+                        DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES
+                      </span>
+                    </div>
+                    <p
+                      class="mt-1 text-sm font-medium text-theme-secondary-500"
+                    >
+                      <span
+                        data-testid="AmountCrypto"
+                      >
+                        0 DARK
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
+              data-testid="LedgerImportStep__edit-alias"
+              type="button"
+            >
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                <div
+                  class="sc-bdfBwQ dnaihB"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    edit.svg
+                  </svg>
+                </div>
+              </div>
+            </button>
           </div>
-        </div>
-      </div>
-      <div
-        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-        data-testid="Avatar"
-      >
-        <div
-          class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
-        >
-          <img
-            alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-            title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-          />
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
-    <div
-      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 bRHEGF no-ligatures"
-      data-testid="TransactionDetail"
-    >
-      <div
-        class="flex-1 space-y-2 w-40 whitespace-nowrap"
-      >
-        <div
-          class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-        >
-          Balance
-        </div>
-        <div
-          class="font-semibold"
-        >
-          <span
-            data-testid="AmountCrypto"
-          >
-            0 DARK
-          </span>
-        </div>
-      </div>
-    </div>
-    <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
-    >
-      <label
-        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-        data-testid="FormLabel"
-        for="names.DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-      >
-        Wallet Name
-      </label>
-      <div
-        class="fixed invisible w-auto whitespace-nowrap"
-      >
-        …
-      </div>
-      <div
-        class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
-      >
-        <div
-          class="relative flex flex-1 h-full"
-        >
-          <input
-            class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-            data-testid="ImportWallet__name-input"
-            name="names.DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-            value="ARK Wallet 2"
-          />
-        </div>
-      </div>
-    </fieldset>
   </section>
 </div>
 `;
@@ -447,101 +440,94 @@ exports[`LedgerImportStep should show an error message for duplicate name 1`] = 
         </div>
       </div>
     </div>
-    <div
-      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 bRHEGF no-ligatures"
-      data-testid="TransactionDetail"
-    >
-      <div
-        class="flex-1 space-y-2 w-40 whitespace-nowrap"
-      >
-        <div
-          class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-        >
-          Address
-        </div>
-        <div
-          class="font-semibold"
-        >
+    <div>
+      <ul>
+        <li>
           <div
-            class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ftQhtr no-ligatures py-4"
+            data-testid="TransactionDetail"
           >
-            <span
-              class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
-              data-testid="Address__address"
+            <div
+              class="flex-1 space-y-2 w-40 whitespace-nowrap"
             >
-              DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES
-            </span>
+              <div
+                class="font-semibold"
+              >
+                <div
+                  class="flex items-center space-x-3"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
+                  >
+                    <div
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                    >
+                      <img
+                        alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+                        title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
+                    >
+                      <span
+                        class="font-semibold text-base text-theme-text"
+                        data-testid="Address__alias"
+                      >
+                        <span
+                          class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
+                          data-testid="TruncateEnd"
+                        >
+                          DARK #4
+                        </span>
+                      </span>
+                      <span
+                        class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                        data-testid="Address__address"
+                      >
+                        DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES
+                      </span>
+                    </div>
+                    <p
+                      class="mt-1 text-sm font-medium text-theme-secondary-500"
+                    >
+                      <span
+                        data-testid="AmountCrypto"
+                      >
+                        0 DARK
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 icFlST"
+              data-testid="LedgerImportStep__edit-alias"
+              type="button"
+            >
+              <div
+                class="flex relative items-center space-x-2"
+              >
+                <div
+                  class="sc-bdfBwQ dnaihB"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    edit.svg
+                  </svg>
+                </div>
+              </div>
+            </button>
           </div>
-        </div>
-      </div>
-      <div
-        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-        data-testid="Avatar"
-      >
-        <div
-          class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
-        >
-          <img
-            alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-            title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-          />
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
-    <div
-      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 bRHEGF no-ligatures"
-      data-testid="TransactionDetail"
-    >
-      <div
-        class="flex-1 space-y-2 w-40 whitespace-nowrap"
-      >
-        <div
-          class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-        >
-          Balance
-        </div>
-        <div
-          class="font-semibold"
-        >
-          <span
-            data-testid="AmountCrypto"
-          >
-            0 DARK
-          </span>
-        </div>
-      </div>
-    </div>
-    <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
-    >
-      <label
-        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-        data-testid="FormLabel"
-        for="names.DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-      >
-        Wallet Name
-      </label>
-      <div
-        class="fixed invisible w-auto whitespace-nowrap"
-      >
-        …
-      </div>
-      <div
-        class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
-      >
-        <div
-          class="relative flex flex-1 h-full"
-        >
-          <input
-            class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-            data-testid="ImportWallet__name-input"
-            name="names.DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-            value="ARK Wallet 2"
-          />
-        </div>
-      </div>
-    </fieldset>
   </section>
 </div>
 `;
