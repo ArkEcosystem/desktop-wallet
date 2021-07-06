@@ -763,15 +763,15 @@ describe("SendVote", () => {
 		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 
 		// Review Step
-		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("SendVote__review-step")).toBeTruthy());
 
 		fireEvent.click(getByTestId("StepNavigation__continue-button"));
 
 		// AuthenticationStep
-		expect(getByTestId("AuthenticationStep")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 
-		const signMock = jest.spyOn(wallet.transaction(), "signIpfs").mockImplementation(() => {
-			throw new Error();
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation(() => {
+			throw new Error("broadcast error");
 		});
 
 		const passwordInput = getByTestId("AuthenticationStep__mnemonic");
@@ -782,25 +782,19 @@ describe("SendVote", () => {
 
 		await waitFor(() => expect(getByTestId("StepNavigation__send-button")).not.toBeDisabled());
 
-		await act(async () => {
-			fireEvent.click(getByTestId("StepNavigation__send-button"));
-		});
-
-		act(() => jest.advanceTimersByTime(1000));
-
+		fireEvent.click(getByTestId("StepNavigation__send-button"));
 		await waitFor(() => expect(getByTestId("ErrorStep")).toBeInTheDocument());
-		await waitFor(() => expect(getByTestId("ErrorStep__wallet-button")).toBeInTheDocument());
 
-		await waitFor(() => expect(container).toMatchSnapshot());
+		expect(getByTestId("ErrorStep__errorMessage")).toHaveTextContent("broadcast error");
+		expect(getByTestId("ErrorStep__wallet-button")).toBeInTheDocument();
+		expect(container).toMatchSnapshot();
 
-		act(() => {
-			fireEvent.click(getByTestId("ErrorStep__wallet-button"));
-		});
+		fireEvent.click(getByTestId("ErrorStep__wallet-button"));
 
 		const walletDetailPage = `/profiles/${getDefaultProfileId()}/wallets/${getDefaultWalletId()}`;
 		await waitFor(() => expect(historyMock).toHaveBeenCalledWith(walletDetailPage));
 
-		signMock.mockRestore();
+		broadcastMock.mockRestore();
 	});
 
 	it("should send a unvote transaction with a multisignature wallet", async () => {

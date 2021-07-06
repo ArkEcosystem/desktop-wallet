@@ -16,6 +16,7 @@ import {
 	getDefaultProfileId,
 	getDefaultWalletId,
 	getDefaultWalletMnemonic,
+	MNEMONICS,
 	render,
 	renderWithRouter,
 	screen,
@@ -445,24 +446,20 @@ describe("SendIpfs", () => {
 		fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), { target: { value: passphrase } });
 		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(passphrase));
 
-		const consoleErrorMock = jest.spyOn(console, "error").mockImplementation(() => undefined);
-		// Summary Step (skip ledger confirmation for now)
-		const signMock = jest.spyOn(wallet.transaction(), "signIpfs").mockImplementation(() => {
-			throw new Error("Signatory should be");
-		});
+		expect(getByTestId("StepNavigation__send-button")).not.toBeDisabled();
 
-		fireEvent.click(getByTestId("StepNavigation__send-button"));
+		fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), { target: { value: MNEMONICS[0] } });
+		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(MNEMONICS[0]));
 
-		await waitFor(() => expect(signMock).toHaveBeenCalled());
-		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(""));
-		await waitFor(() => {
-			expect(getByTestId("Input__error")).toBeVisible();
-		});
+		expect(getByTestId("StepNavigation__send-button")).toBeDisabled();
 
-		signMock.mockRestore();
-		consoleErrorMock.mockRestore();
+		await waitFor(() => expect(getByTestId("Input__error")).toBeVisible());
 
-		await waitFor(() => expect(container).toMatchSnapshot());
+		expect(getByTestId("Input__error")).toHaveAttribute(
+			"data-errortext",
+			"This mnemonic does not correspond to your wallet",
+		);
+		expect(container).toMatchSnapshot();
 	});
 
 	it("should go back to wallet details", async () => {
@@ -547,14 +544,15 @@ describe("SendIpfs", () => {
 		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(passphrase));
 
 		// Step 5 (skip step 4 for now - ledger confirmation)
-		const signMock = jest.spyOn(wallet.transaction(), "signIpfs").mockImplementation(() => {
-			throw new Error();
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation(() => {
+			throw new Error("broadcast error");
 		});
 
 		fireEvent.click(getByTestId("StepNavigation__send-button"));
 
 		await waitFor(() => expect(getByTestId("ErrorStep")).toBeInTheDocument());
 
+		expect(getByTestId("ErrorStep__errorMessage")).toHaveTextContent("broadcast error");
 		expect(getByTestId("ErrorStep__wallet-button")).toBeInTheDocument();
 		expect(container).toMatchSnapshot();
 
@@ -564,7 +562,7 @@ describe("SendIpfs", () => {
 
 		expect(historyMock).toHaveBeenCalledWith(`/profiles/${getDefaultProfileId()}/wallets/${getDefaultWalletId()}`);
 
-		signMock.mockRestore();
+		broadcastMock.mockRestore();
 	});
 
 	it("should show an error if an invalid IPFS hash is entered", async () => {
