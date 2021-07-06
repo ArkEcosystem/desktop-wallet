@@ -206,10 +206,6 @@ describe("SendDelegateResignation", () => {
 		});
 
 		it("should show mnemonic authentication error", async () => {
-			const signMock = jest.spyOn(wallet.transaction(), "signDelegateResignation").mockImplementation(() => {
-				throw new Error("Signatory should be");
-			});
-
 			const secondPublicKeyMock = jest
 				.spyOn(wallet, "secondPublicKey")
 				.mockReturnValue((await wallet.coin().publicKey().fromMnemonic(MNEMONICS[1])).publicKey);
@@ -233,69 +229,22 @@ describe("SendDelegateResignation", () => {
 
 			fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
 				target: {
-					value: MNEMONICS[1],
+					value: MNEMONICS[2],
 				},
 			});
-			await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue(MNEMONICS[1]));
-
-			fireEvent.click(getByTestId("StepNavigation__send-button"));
-
-			await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveAttribute("aria-invalid"));
-			await waitFor(() => expect(getByTestId("StepNavigation__send-button")).toBeDisabled());
-
-			expect(getByTestId("AuthenticationStep")).toBeTruthy();
-			expect(asFragment()).toMatchSnapshot();
-
-			secondPublicKeyMock.mockRestore();
-			signMock.mockRestore();
-		});
-
-		it("should show error step", async () => {
-			const signMock = jest.spyOn(wallet.transaction(), "signDelegateResignation").mockImplementation(() => {
-				throw new Error();
-			});
-
-			const secondPublicKeyMock = jest
-				.spyOn(wallet, "secondPublicKey")
-				.mockReturnValue((await wallet.coin().publicKey().fromMnemonic(MNEMONICS[1])).publicKey);
-
-			const { asFragment, getByTestId } = renderPage();
-
-			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
-
-			fireEvent.click(getByTestId("StepNavigation__continue-button"));
-			await waitFor(() => expect(getByTestId("SendDelegateResignation__review-step")).toBeTruthy());
-
-			fireEvent.click(getByTestId("StepNavigation__continue-button"));
-			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
-
-			fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
-				target: {
-					value: passphrase,
-				},
-			});
-			await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(passphrase));
-
-			fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
-				target: {
-					value: MNEMONICS[1],
-				},
-			});
-			await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue(MNEMONICS[1]));
-
-			fireEvent.click(getByTestId("StepNavigation__send-button"));
-
-			await waitFor(() => expect(getByTestId("ErrorStep")).toBeTruthy());
+			await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue(MNEMONICS[2]));
+			
+			expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveAttribute("aria-invalid");
+			expect(getByTestId("StepNavigation__send-button")).toBeDisabled();
 
 			expect(asFragment()).toMatchSnapshot();
 
 			secondPublicKeyMock.mockRestore();
-			signMock.mockRestore();
 		});
 
 		it("should show error step and go back", async () => {
-			const signMock = jest.spyOn(wallet.transaction(), "signDelegateResignation").mockImplementation(() => {
-				throw new Error();
+			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation(() => {
+				throw new Error("broadcast error");
 			});
 
 			const secondPublicKeyMock = jest
@@ -330,6 +279,7 @@ describe("SendDelegateResignation", () => {
 
 			await waitFor(() => expect(getByTestId("ErrorStep")).toBeTruthy());
 
+			expect(getByTestId("ErrorStep__errorMessage")).toHaveTextContent("broadcast error");
 			expect(asFragment()).toMatchSnapshot();
 
 			const historyMock = jest.spyOn(history, "push").mockReturnValue();
@@ -342,7 +292,7 @@ describe("SendDelegateResignation", () => {
 			historyMock.mockRestore();
 
 			secondPublicKeyMock.mockRestore();
-			signMock.mockRestore();
+			broadcastMock.mockRestore();
 		});
 
 		it("should successfully sign and submit resignation transaction", async () => {
