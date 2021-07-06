@@ -48,10 +48,7 @@ export const ImportWallet = () => {
 	const { importWalletByType } = useWalletImport({ profile: activeProfile });
 	const { syncAll } = useWalletSync({ env, profile: activeProfile });
 
-	const form = useForm<any>({
-		mode: "onChange",
-		shouldUnregister: false,
-	});
+	const form = useForm<any>({ mode: "onChange" });
 
 	const { getValues, formState, register, watch } = form;
 	const { isSubmitting, isValid } = formState;
@@ -118,8 +115,6 @@ export const ImportWallet = () => {
 
 		activeProfile.wallets().update(wallet.id(), { alias });
 
-		form.setValue("name", alias);
-
 		setImportedWallet(wallet);
 
 		await syncAll(wallet);
@@ -152,10 +147,10 @@ export const ImportWallet = () => {
 	const handleFinish = async () => {
 		assertWallet(importedWallet);
 
-		const name = getValues("name");
+		const name = getValues("name").trim();
 
-		if (name) {
-			importedWallet?.mutator().alias(name.trim());
+		if (name !== importedWallet.alias()) {
+			importedWallet.mutator().alias(name);
 			await persist();
 		}
 

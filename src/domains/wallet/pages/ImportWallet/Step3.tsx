@@ -78,7 +78,11 @@ export const ThirdStep = ({
 
 			<FormField name="name">
 				<FormLabel label={t("WALLETS.WALLET_NAME")} />
-				<InputDefault ref={register(validation)} data-testid="ImportWallet__name-input" />
+				<InputDefault
+					ref={register(validation)}
+					data-testid="ImportWallet__name-input"
+					defaultValue={importedWallet.alias()}
+				/>
 			</FormField>
 		</section>
 	);
