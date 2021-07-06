@@ -361,12 +361,6 @@ exports[`LedgerImportStep should render with single import 1`] = `
         for="names.DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
       >
         Wallet Name
-        <span
-          class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-          data-testid="FormLabel__optional"
-        >
-          optional
-        </span>
       </label>
       <div
         class="fixed invisible w-auto whitespace-nowrap"
@@ -383,7 +377,7 @@ exports[`LedgerImportStep should render with single import 1`] = `
             class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
             data-testid="ImportWallet__name-input"
             name="names.DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-            value=""
+            value="ARK Wallet 2"
           />
         </div>
       </div>
@@ -527,12 +521,6 @@ exports[`LedgerImportStep should show an error message for duplicate name 1`] = 
         for="names.DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
       >
         Wallet Name
-        <span
-          class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-          data-testid="FormLabel__optional"
-        >
-          optional
-        </span>
       </label>
       <div
         class="fixed invisible w-auto whitespace-nowrap"
@@ -549,7 +537,7 @@ exports[`LedgerImportStep should show an error message for duplicate name 1`] = 
             class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
             data-testid="ImportWallet__name-input"
             name="names.DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-            value=""
+            value="ARK Wallet 2"
           />
         </div>
       </div>

@@ -16,7 +16,7 @@ import { alias } from "domains/wallet/validations";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { assertWallet } from "utils/assertions";
+import { assertNetwork, assertWallet } from "utils/assertions";
 
 const MultipleImport = ({
 	wallets,
@@ -158,7 +158,8 @@ export const LedgerImportStep = ({ wallets, profile }: { wallets: LedgerData[]; 
 
 	const { watch } = useFormContext();
 
-	const [network] = useState<Networks.Network>(() => watch("network"));
+	const [network] = useState(() => watch("network"));
+	assertNetwork(network);
 
 	return (
 		<section data-testid="LedgerImportStep" className="space-y-6">

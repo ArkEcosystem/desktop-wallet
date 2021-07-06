@@ -1,37 +1,83 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import Transport from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { LedgerData } from "app/contexts";
 import { LedgerProvider } from "app/contexts/Ledger/Ledger";
+import { getDefaultAlias } from "domains/wallet/utils/get-default-alias";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
 
 import { LedgerImportStep } from "./LedgerImportStep";
 
-let transport: typeof Transport;
-
 describe("LedgerImportStep", () => {
+	let transport: typeof Transport;
 	let profile: Contracts.IProfile;
-	let wallet: Contracts.IReadWriteWallet;
 
-	const walletsData: LedgerData[] = [
-		{ address: "DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq", balance: BigNumber.make(0), index: 0, path: "" },
-		{ address: "DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES", balance: BigNumber.make(0), index: 2, isNew: true, path: "" },
+	const derivationPath = "m/44'/1'/0'/0/3";
+
+	const ledgerWallets: LedgerData[] = [
+		{ address: "DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq", balance: 0, path: derivationPath },
+		{ address: "DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES", balance: 0, isNew: true, path: derivationPath },
 	];
 
-	const renderComponent = (wallets: LedgerData[] = walletsData) => {
+	beforeEach(async () => {
+		profile = env.profiles().findById(getDefaultProfileId());
+
+		// in Ledger import, wallets are imported after step 3/4
+		// so LedgerImportStep assumes that wallets are imported already
+		// @TODO maybe refactor step component names
+
+		let ledgerWalletNumber = 0;
+
+		for (const { address, path } of ledgerWallets) {
+			ledgerWalletNumber++;
+
+			const wallet = await profile.walletFactory().fromAddressWithDerivationPath({
+				address,
+				coin: "ARK",
+				network: "ark.devnet",
+				path,
+			});
+
+			profile.wallets().push(wallet);
+
+			wallet.mutator().alias(`ARK Wallet ${ledgerWalletNumber}`);
+		}
+
+		transport = createTransportReplayer(RecordStore.fromString(""));
+
+		jest.spyOn(transport, "listen").mockImplementationOnce(() => ({ unsubscribe: jest.fn() }));
+
+		jest.useFakeTimers();
+	});
+
+	afterEach(() => {
+		jest.runOnlyPendingTimers();
+		jest.useRealTimers();
+
+		for (const { address } of ledgerWallets) {
+			const wallet = profile.wallets().findByAddress(address);
+
+			if (wallet) {
+				profile.wallets().forget(wallet.id());
+			}
+		}
+	});
+
+	const renderComponent = (wallets: LedgerData[] = ledgerWallets) => {
 		let formReference: ReturnType<typeof useForm>;
 
+		const network = profile.wallets().findByAddress(wallets[0].address)?.network();
+
 		const Component = () => {
-			const form = useForm({
-				defaultValues: {
-					network: wallet.network(),
-				},
+			const form = useForm<any>({
+				defaultValues: { network },
 			});
+
 			formReference = form;
+
 			return (
 				<FormProvider {...form}>
 					<LedgerProvider transport={transport}>
@@ -43,27 +89,13 @@ describe("LedgerImportStep", () => {
 
 		return {
 			...render(<Component />),
+			// @ts-ignore
 			formRef: formReference,
 		};
 	};
 
-	beforeEach(() => {
-		profile = env.profiles().findById(getDefaultProfileId());
-		wallet = profile.wallets().first();
-		transport = createTransportReplayer(RecordStore.fromString(""));
-
-		jest.spyOn(transport, "listen").mockImplementationOnce(() => ({ unsubscribe: jest.fn() }));
-
-		jest.useFakeTimers();
-	});
-
-	afterEach(() => {
-		jest.runOnlyPendingTimers();
-		jest.useRealTimers();
-	});
-
 	it("should render with single import", async () => {
-		const { container, formRef } = renderComponent(walletsData.slice(1));
+		const { container, formRef } = renderComponent(ledgerWallets.slice(1));
 
 		expect(container).toMatchSnapshot();
 
@@ -109,7 +141,7 @@ describe("LedgerImportStep", () => {
 	});
 
 	it("should show an error message for duplicate name", async () => {
-		const { container } = renderComponent(walletsData.slice(1));
+		const { container } = renderComponent(ledgerWallets.slice(1));
 
 		expect(container).toMatchSnapshot();
 
