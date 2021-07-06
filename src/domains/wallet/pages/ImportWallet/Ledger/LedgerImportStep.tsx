@@ -12,10 +12,11 @@ import { Tooltip } from "app/components/Tooltip";
 import { LedgerData } from "app/contexts/Ledger";
 import { TransactionDetail, TransactionNetwork } from "domains/transaction/components/TransactionDetail";
 import { UpdateWalletName } from "domains/wallet/components/UpdateWalletName";
-import React, { useCallback, useEffect, useState } from "react";
+import { alias } from "domains/wallet/validations";
+import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { lowerCaseEquals } from "utils/equals";
+import { assertWallet } from "utils/assertions";
 
 const MultipleImport = ({
 	wallets,
@@ -28,8 +29,7 @@ const MultipleImport = ({
 }) => {
 	const { t } = useTranslation();
 
-	const { register, setValue, getValues, watch } = useFormContext();
-	const names = watch("names", {});
+	const { register, setValue, getValues } = useFormContext();
 
 	const [selectedAddress, setSelectedAddress] = useState<string | undefined>(undefined);
 
@@ -47,22 +47,6 @@ const MultipleImport = ({
 			register({ name: `names.${wallet.address}`, type: "custom" });
 		}
 	}, [register, wallets]);
-
-	const validation = useCallback(
-		(alias: string) => {
-			const values = Object.values(names);
-			const hasSameValue = values.some((name: any) => !!name && lowerCaseEquals(alias.trim(), name.trim()));
-
-			if (alias && hasSameValue) {
-				return t("WALLETS.VALIDATION.ALIAS_ASSIGNED", {
-					alias: alias.trim(),
-				}).toString();
-			}
-
-			return true;
-		},
-		[t, names],
-	);
 
 	return (
 		<div>
@@ -104,15 +88,16 @@ const MultipleImport = ({
 				})}
 			</ul>
 
-			<UpdateWalletName
-				currentAlias={getValues(`names.${selectedAddress}`)}
-				profile={profile}
-				isOpen={!!selectedAddress}
-				onClose={closeUpdateNameModal}
-				onCancel={closeUpdateNameModal}
-				onSave={handleUpdateName}
-				validation={validation}
-			/>
+			{!!selectedAddress && (
+				<UpdateWalletName
+					walletAddress={selectedAddress}
+					profile={profile}
+					isOpen={!!selectedAddress}
+					onClose={closeUpdateNameModal}
+					onCancel={closeUpdateNameModal}
+					onSave={handleUpdateName}
+				/>
+			)}
 		</div>
 	);
 };
@@ -129,48 +114,39 @@ const SingleImport = ({
 	const { t } = useTranslation();
 	const { register, watch, trigger } = useFormContext();
 
-	const wallet = wallets[0];
+	const ledgerWallet = wallets[0];
+
+	const wallet = profile.wallets().findByAddress(ledgerWallet.address);
+	assertWallet(wallet);
+
+	const aliasValidation = alias({ profile, t, walletAddress: ledgerWallet.address });
 
 	return (
 		<>
 			<TransactionDetail
 				label={t("COMMON.ADDRESS")}
-				extra={<Avatar size="lg" address={wallet.address} />}
+				extra={<Avatar size="lg" address={ledgerWallet.address} />}
 				borderPosition="bottom"
 				paddingPosition="bottom"
 			>
-				<Address address={wallet.address} />
+				<Address address={ledgerWallet.address} />
 			</TransactionDetail>
 
 			<TransactionDetail label={t("COMMON.BALANCE")} borderPosition="bottom" paddingPosition="bottom">
-				<AmountCrypto value={wallet.balance!} ticker={network.ticker()} />
+				<AmountCrypto value={ledgerWallet.balance!} ticker={network.ticker()} />
 			</TransactionDetail>
 
-			<FormField name={`names.${wallet.address}`}>
-				<FormLabel label={t("WALLETS.WALLET_NAME")} optional />
+			<FormField name={`names.${ledgerWallet.address}`}>
+				<FormLabel label={t("WALLETS.WALLET_NAME")} />
 				<InputDefault
 					onChange={() => {
 						for (const address of Object.keys(watch("names"))) {
 							trigger(`names.${address}`);
 						}
 					}}
-					ref={register({
-						maxLength: {
-							message: t("WALLETS.VALIDATION.ALIAS_MAXLENGTH", {
-								maxLength: 42,
-							}),
-							value: 42,
-						},
-						validate: {
-							duplicateAlias: (alias) =>
-								!alias ||
-								!profile.wallets().findByAlias(alias.trim()) ||
-								t("WALLETS.VALIDATION.ALIAS_ASSIGNED", {
-									alias: alias.trim(),
-								}).toString(),
-						},
-					})}
+					ref={register(aliasValidation)}
 					data-testid="ImportWallet__name-input"
+					defaultValue={wallet.alias()}
 				/>
 			</FormField>
 		</>

@@ -72,12 +72,7 @@ export const WalletHeader = ({
 	};
 
 	const handleUpdateName = async (name: string) => {
-		if (name) {
-			wallet.settings().set(Contracts.WalletSetting.Alias, name);
-		} else {
-			wallet.settings().forget(Contracts.WalletSetting.Alias);
-		}
-
+		wallet.mutator().alias(name);
 		await persist();
 
 		setModal(undefined);
@@ -464,8 +459,7 @@ export const WalletHeader = ({
 			/>
 
 			<UpdateWalletName
-				currentAlias={wallet.alias()}
-				walletId={wallet.id()}
+				walletAddress={wallet.address()}
 				profile={profile}
 				isOpen={modal === "wallet-name"}
 				onClose={() => setModal(undefined)}

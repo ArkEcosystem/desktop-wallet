@@ -49,7 +49,6 @@ export const CreateWallet = () => {
 		let finalWallet = wallet;
 
 		assertNetwork(network);
-		assertWallet(finalWallet);
 		assertString(mnemonic);
 		assertString(name);
 
@@ -66,10 +65,12 @@ export const CreateWallet = () => {
 			}
 		}
 
+		assertWallet(finalWallet);
+
 		activeProfile.wallets().push(finalWallet);
 
 		if (name.trim() !== finalWallet.alias()) {
-			activeProfile.wallets().update(finalWallet.id(), { alias: name.trim() });
+			finalWallet.mutator().alias(name.trim());
 		}
 
 		setConfiguration("selectedNetworkIds", uniq([...selectedNetworkIds, network.id()]));

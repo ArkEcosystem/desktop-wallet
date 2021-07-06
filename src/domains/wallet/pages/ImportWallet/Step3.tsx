@@ -29,7 +29,7 @@ export const ThirdStep = ({
 	const [defaultNetwork] = useState(() => watch("network"));
 	const network: Networks.Network = getValues("network") || defaultNetwork;
 
-	const validation = alias({ profile, t, wallet: importedWallet });
+	const validation = alias({ profile, t, walletAddress: importedWallet.address() });
 
 	return (
 		<section data-testid="ImportWallet__third-step">

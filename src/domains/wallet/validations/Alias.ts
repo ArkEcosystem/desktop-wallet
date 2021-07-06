@@ -3,11 +3,11 @@ import { TFunction } from "i18next";
 
 export const alias = ({
 	t,
-	wallet,
+	walletAddress,
 	profile,
 }: {
 	t: TFunction;
-	wallet: Contracts.IReadWriteWallet;
+	walletAddress: string;
 	profile: Contracts.IProfile;
 }) => {
 	const maxLength = 42;
@@ -24,7 +24,7 @@ export const alias = ({
 			duplicateAlias: (alias: string) => {
 				const walletSameAlias = profile.wallets().findByAlias(alias.trim());
 
-				if (!walletSameAlias || walletSameAlias.id() === wallet.id()) {
+				if (!walletSameAlias || walletSameAlias.address() === walletAddress) {
 					return true;
 				}
 

@@ -7,6 +7,7 @@ import { useCallback, useEffect, useMemo, useReducer, useRef } from "react";
 import { useEnvironmentContext } from "../../Environment";
 import { formatLedgerDerivationPath, LedgerData } from "../utils";
 import { connectionReducer, defaultConnectionState } from "./connection.state";
+import { getDefaultAlias } from "domains/wallet/utils/get-default-alias";
 
 export const useLedgerConnection = (transport: typeof Transport) => {
 	const { persist } = useEnvironmentContext();
@@ -44,6 +45,13 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 				});
 
 				profile.wallets().push(wallet);
+
+				profile.wallets().update(wallet.id(), {
+					alias: getDefaultAlias({
+						profile,
+						ticker: wallet.network().ticker(),
+					}),
+				});
 			}
 			await persist();
 		},

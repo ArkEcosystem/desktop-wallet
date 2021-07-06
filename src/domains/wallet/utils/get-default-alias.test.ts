@@ -48,7 +48,7 @@ describe("getDefaultAlias", () => {
 
 		profile.wallets().push(wallet);
 
-		profile.wallets().update(wallet.id(), { alias: "DARK #1" });
+		wallet.mutator().alias("DARK #1");
 
 		const result = getDefaultAlias({
 			profile,

@@ -102,21 +102,23 @@ export const ImportWallet = () => {
 	const importWallet = async (): Promise<Networks.ImportMethod> => {
 		const { network, type, encryptedWif } = getValues();
 
-		const wallet: any = await importWalletByType({
+		const wallet = await importWalletByType({
 			encryptedWif,
 			network,
 			type,
 			value: walletGenerationInput!,
 		});
 
+		assertWallet(wallet);
+
 		setValue("selectedNetworkIds", uniq([...selectedNetworkIds, wallet.network().id()]));
 
-		const alias = getDefaultAlias({
-			profile: activeProfile,
-			ticker: wallet.network().ticker(),
-		});
-
-		activeProfile.wallets().update(wallet.id(), { alias });
+		wallet.mutator().alias(
+			getDefaultAlias({
+				profile: activeProfile,
+				ticker: wallet.network().ticker(),
+			}),
+		);
 
 		setImportedWallet(wallet);
 

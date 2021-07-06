@@ -26,7 +26,7 @@ export const SuccessStep = ({ profile }: { profile: Contracts.IProfile }) => {
 	assertNetwork(network);
 	assertWallet(wallet);
 
-	const aliasValidation = alias({ profile, t, wallet });
+	const aliasValidation = alias({ profile, t, walletAddress: wallet.address() });
 
 	return (
 		<section data-testid="CreateWallet__SuccessStep">
