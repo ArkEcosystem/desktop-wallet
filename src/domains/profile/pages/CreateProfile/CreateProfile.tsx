@@ -30,7 +30,7 @@ export const CreateProfile = () => {
 
 	const [avatarImage, setAvatarImage] = useState("");
 
-	const { theme } = useTheme();
+	const { theme, setTheme } = useTheme();
 	const { createProfile, password: passwordValidation } = useValidation();
 
 	const formattedName = name.trim();
@@ -175,7 +175,13 @@ export const CreateProfile = () => {
 						<Divider />
 
 						<div className="flex justify-end pt-4 space-x-3">
-							<Button variant="secondary" onClick={() => history.push("/")}>
+							<Button
+								variant="secondary"
+								onClick={() => {
+									setTheme("system");
+									history.push("/");
+								}}
+							>
 								{t("COMMON.BACK")}
 							</Button>
 
