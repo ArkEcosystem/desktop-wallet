@@ -680,12 +680,10 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                         role="rowgroup"
                       >
                         <tr
-                          class="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
+                          class="flex items-center py-4 border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
                           data-testid="recipient-list__recipient-list-item"
                         >
-                          <td
-                            class="py-4 w-12"
-                          >
+                          <td>
                             <div
                               class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ flex-shrink-0"
                               data-testid="Avatar"
@@ -702,31 +700,25 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                             </div>
                           </td>
                           <td
-                            class="py-4"
+                            class="flex-1 ml-4 w-28"
                           >
                             <div
-                              class="max-w-lg"
+                              class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                             >
-                              <div
-                                class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
+                              <span
+                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                                data-testid="Address__address"
                               >
-                                <span
-                                  class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
-                                  data-testid="Address__address"
-                                >
-                                  D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                                </span>
-                              </div>
+                                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                              </span>
                             </div>
                           </td>
                         </tr>
                         <tr
-                          class="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
+                          class="flex items-center py-4 border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
                           data-testid="recipient-list__recipient-list-item"
                         >
-                          <td
-                            class="py-4 w-12"
-                          >
+                          <td>
                             <div
                               class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ flex-shrink-0"
                               data-testid="Avatar"
@@ -743,21 +735,17 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                             </div>
                           </td>
                           <td
-                            class="py-4"
+                            class="flex-1 ml-4 w-28"
                           >
                             <div
-                              class="max-w-lg"
+                              class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                             >
-                              <div
-                                class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
+                              <span
+                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                                data-testid="Address__address"
                               >
-                                <span
-                                  class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
-                                  data-testid="Address__address"
-                                >
-                                  D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
-                                </span>
-                              </div>
+                                D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
+                              </span>
                             </div>
                           </td>
                         </tr>
