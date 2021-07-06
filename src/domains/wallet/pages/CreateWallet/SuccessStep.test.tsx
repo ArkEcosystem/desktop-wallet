@@ -33,7 +33,6 @@ describe("SuccessStep", () => {
 			</FormProvider>,
 		);
 
-
 		expect(getByTestId("CreateWallet__SuccessStep")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 

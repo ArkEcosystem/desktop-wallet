@@ -1,4 +1,3 @@
-import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { uniq } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
@@ -11,6 +10,7 @@ import { useActiveProfile } from "app/hooks";
 import { useWalletConfig } from "domains/dashboard/hooks";
 import { EncryptPasswordStep } from "domains/wallet/components/EncryptPasswordStep";
 import { NetworkStep } from "domains/wallet/components/NetworkStep";
+import { getDefaultAlias } from "domains/wallet/utils/get-default-alias";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -20,7 +20,6 @@ import { assertNetwork, assertString, assertWallet } from "utils/assertions";
 import { ConfirmPassphraseStep } from "./ConfirmPassphraseStep";
 import { SuccessStep } from "./SuccessStep";
 import { WalletOverviewStep } from "./WalletOverviewStep";
-import { getDefaultAlias } from "domains/wallet/utils/get-default-alias";
 
 export const CreateWallet = () => {
 	const { persist } = useEnvironmentContext();
@@ -94,10 +93,12 @@ export const CreateWallet = () => {
 			wordCount: network.wordCount(),
 		});
 
-		wallet.mutator().alias(getDefaultAlias({
-			profile: activeProfile,
-			ticker: network.ticker(),
-		}));
+		wallet.mutator().alias(
+			getDefaultAlias({
+				profile: activeProfile,
+				ticker: network.ticker(),
+			}),
+		);
 
 		setValue("wallet", wallet, { shouldDirty: true, shouldValidate: true });
 		setValue("mnemonic", mnemonic, { shouldDirty: true, shouldValidate: true });

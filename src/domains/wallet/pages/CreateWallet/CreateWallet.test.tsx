@@ -3,6 +3,7 @@ import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { act } from "@testing-library/react-hooks";
 import { translations as walletTranslations } from "domains/wallet/i18n";
+import { getDefaultAlias } from "domains/wallet/utils/get-default-alias";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
@@ -17,7 +18,6 @@ import {
 } from "utils/testing-library";
 
 import { CreateWallet } from "./CreateWallet";
-import { getDefaultAlias } from "domains/wallet/utils/get-default-alias";
 
 jest.setTimeout(8000);
 
