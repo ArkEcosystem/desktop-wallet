@@ -19,8 +19,7 @@ describe("UpdateWalletName", () => {
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = render(
 			<UpdateWalletName
-				walletId={wallet.id()}
-				currentAlias={wallet.alias()}
+				walletAddress={wallet.address()}
 				profile={profile}
 				isOpen={false}
 				onSave={() => void 0}
@@ -34,8 +33,7 @@ describe("UpdateWalletName", () => {
 	it("should render a modal", () => {
 		const { asFragment, getByTestId } = render(
 			<UpdateWalletName
-				walletId={wallet.id()}
-				currentAlias={wallet.alias()}
+				walletAddress={wallet.address()}
 				profile={profile}
 				isOpen={true}
 				onSave={() => void 0}
@@ -53,8 +51,7 @@ describe("UpdateWalletName", () => {
 
 		const { getByTestId } = render(
 			<UpdateWalletName
-				walletId={wallet.id()}
-				currentAlias={wallet.alias()}
+				walletAddress={wallet.address()}
 				profile={profile}
 				isOpen={true}
 				onSave={onSave}
@@ -94,8 +91,7 @@ describe("UpdateWalletName", () => {
 
 		const { asFragment, getByTestId } = render(
 			<UpdateWalletName
-				walletId={wallet.id()}
-				currentAlias={wallet.alias()}
+				walletAddress={wallet.address()}
 				profile={profile}
 				isOpen={true}
 				onSave={onSave}
@@ -121,8 +117,7 @@ describe("UpdateWalletName", () => {
 
 		const { asFragment, findByTestId, getByTestId } = render(
 			<UpdateWalletName
-				walletId={wallet.id()}
-				currentAlias={wallet.alias()}
+				walletAddress={wallet.address()}
 				profile={profile}
 				isOpen={true}
 				onSave={onSave}
@@ -145,8 +140,7 @@ describe("UpdateWalletName", () => {
 
 		const { asFragment, findByTestId, getByTestId } = render(
 			<UpdateWalletName
-				walletId={wallet.id()}
-				currentAlias={wallet.alias()}
+				walletAddress={wallet.address()}
 				profile={profile}
 				isOpen={true}
 				onSave={onSave}

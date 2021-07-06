@@ -93,7 +93,7 @@ exports[`UpdateWalletName should render a modal 1`] = `
                         class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                         data-testid="UpdateWalletName__input"
                         name="name"
-                        value=""
+                        value="ARK Wallet 1"
                       />
                     </div>
                   </div>
@@ -225,7 +225,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 1`] = 
                         class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                         data-testid="UpdateWalletName__input"
                         name="name"
-                        value=""
+                        value="ARK Wallet 1"
                       />
                     </div>
                     <div
@@ -376,7 +376,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 2`] = 
                         class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                         data-testid="UpdateWalletName__input"
                         name="name"
-                        value=""
+                        value="ARK Wallet 1"
                       />
                     </div>
                     <div
@@ -527,7 +527,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 3`] = 
                         class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                         data-testid="UpdateWalletName__input"
                         name="name"
-                        value=""
+                        value="ARK Wallet 1"
                       />
                     </div>
                     <div
@@ -678,7 +678,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 4`] = 
                         class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                         data-testid="UpdateWalletName__input"
                         name="name"
-                        value=""
+                        value="ARK Wallet 1"
                       />
                     </div>
                     <div
@@ -829,14 +829,14 @@ exports[`UpdateWalletName should show error message when name consists only of w
                         class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                         data-testid="UpdateWalletName__input"
                         name="name"
-                        value=""
+                        value="ARK Wallet 1"
                       />
                     </div>
                     <div
                       class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                     >
                       <span
-                        data-errortext="Wallet Name invalid"
+                        data-errortext="The name is required"
                         data-testid="Input__error"
                       >
                         <div
@@ -980,14 +980,14 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
                         class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                         data-testid="UpdateWalletName__input"
                         name="name"
-                        value=""
+                        value="ARK Wallet 1"
                       />
                     </div>
                     <div
                       class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                     >
                       <span
-                        data-errortext="Name should have at most 42 characters"
+                        data-errortext="The name should have less than 42 characters"
                         data-testid="Input__error"
                       >
                         <div

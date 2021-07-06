@@ -32,6 +32,13 @@ export const alias = ({
 					alias: alias.trim(),
 				});
 			},
+			empty: (alias: string) => {
+				if (alias.trim() === "") {
+					return t("WALLETS.VALIDATION.ALIAS_REQUIRED");
+				}
+
+				return true;
+			},
 		},
 	};
 };
