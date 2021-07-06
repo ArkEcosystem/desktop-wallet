@@ -1,5 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Header } from "app/components/Header";
+import cn from "classnames";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import {
 	TransactionMemo,
@@ -35,11 +36,11 @@ export const ReviewStep = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) =
 
 			<TransactionSender address={wallet.address()} alias={wallet.alias()} />
 
-			<TransactionRecipients currency={wallet.currency()} recipients={recipients} />
+			<TransactionRecipients currency={wallet.currency()} recipients={recipients} paddingPosition='top' />
 
 			{memo && <TransactionMemo memo={memo} />}
 
-			<div className="mt-2">
+			<div className={cn({'mt-2': memo, 'mt-4': !memo})}>
 				<TotalAmountBox amount={amount} fee={fee} ticker={wallet.currency()} />
 			</div>
 		</section>
