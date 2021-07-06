@@ -4,12 +4,12 @@ import Transport from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { LedgerData } from "app/contexts";
 import { LedgerProvider } from "app/contexts/Ledger/Ledger";
+import { getDefaultAlias } from "domains/wallet/utils/get-default-alias";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
 
 import { LedgerImportStep } from "./LedgerImportStep";
-import { getDefaultAlias } from "domains/wallet/utils/get-default-alias";
 
 describe("LedgerImportStep", () => {
 	let transport: typeof Transport;
@@ -39,10 +39,12 @@ describe("LedgerImportStep", () => {
 
 			profile.wallets().push(wallet);
 
-			wallet.mutator().alias(getDefaultAlias({
-				profile,
-				ticker: "DARK",
-			}));
+			wallet.mutator().alias(
+				getDefaultAlias({
+					profile,
+					ticker: "DARK",
+				}),
+			);
 		}
 
 		transport = createTransportReplayer(RecordStore.fromString(""));

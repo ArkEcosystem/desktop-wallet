@@ -33,7 +33,13 @@ describe("UpdateWalletName", () => {
 
 	it("should render a modal", () => {
 		const { asFragment, getByTestId } = render(
-			<UpdateWalletName defaultValue={wallet.alias() as string} walletAddress={wallet.address()} profile={profile} isOpen={true} onSave={() => void 0} />,
+			<UpdateWalletName
+				defaultValue={wallet.alias() as string}
+				walletAddress={wallet.address()}
+				profile={profile}
+				isOpen={true}
+				onSave={() => void 0}
+			/>,
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_NAME_WALLET.TITLE);
@@ -46,7 +52,13 @@ describe("UpdateWalletName", () => {
 		const onSave = jest.fn();
 
 		const { getByTestId } = render(
-			<UpdateWalletName defaultValue={wallet.alias() as string} walletAddress={wallet.address()} profile={profile} isOpen={true} onSave={onSave} />,
+			<UpdateWalletName
+				defaultValue={wallet.alias() as string}
+				walletAddress={wallet.address()}
+				profile={profile}
+				isOpen={true}
+				onSave={onSave}
+			/>,
 		);
 
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_NAME_WALLET.TITLE);
@@ -81,7 +93,13 @@ describe("UpdateWalletName", () => {
 		const onSave = jest.fn();
 
 		const { asFragment, getByTestId } = render(
-			<UpdateWalletName defaultValue={wallet.alias() as string} walletAddress={wallet.address()} profile={profile} isOpen={true} onSave={onSave} />,
+			<UpdateWalletName
+				defaultValue={wallet.alias() as string}
+				walletAddress={wallet.address()}
+				profile={profile}
+				isOpen={true}
+				onSave={onSave}
+			/>,
 		);
 
 		const nameVariations = ["ARK Wallet 2", "ark wallet 2", " ARK Wallet 2", "ARK Wallet 2 "];
@@ -102,7 +120,13 @@ describe("UpdateWalletName", () => {
 		const onSave = jest.fn();
 
 		const { asFragment, findByTestId, getByTestId } = render(
-			<UpdateWalletName defaultValue={wallet.alias() as string} walletAddress={wallet.address()} profile={profile} isOpen={true} onSave={onSave} />,
+			<UpdateWalletName
+				defaultValue={wallet.alias() as string}
+				walletAddress={wallet.address()}
+				profile={profile}
+				isOpen={true}
+				onSave={onSave}
+			/>,
 		);
 
 		await act(async () => {
@@ -120,7 +144,13 @@ describe("UpdateWalletName", () => {
 		const onSave = jest.fn();
 
 		const { asFragment, findByTestId, getByTestId } = render(
-			<UpdateWalletName defaultValue={wallet.alias() as string} walletAddress={wallet.address()} profile={profile} isOpen={true} onSave={onSave} />,
+			<UpdateWalletName
+				defaultValue={wallet.alias() as string}
+				walletAddress={wallet.address()}
+				profile={profile}
+				isOpen={true}
+				onSave={onSave}
+			/>,
 		);
 
 		await act(async () => {
