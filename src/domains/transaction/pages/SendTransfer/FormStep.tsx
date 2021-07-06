@@ -1,6 +1,5 @@
 import { Enums, Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { Divider } from "app/components/Divider";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { InputCounter } from "app/components/Input";
@@ -165,49 +164,41 @@ export const FormStep = ({
 				</FormField>
 
 				{showFeeInput && (
-					<>
-						<FormField name="fee">
-							<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
-							<InputFee
-								min={fees?.min}
-								avg={fees?.avg}
-								max={fees?.max}
-								loading={!fees}
-								value={fee}
-								step={0.01}
-								disabled={network?.feeType() !== "dynamic"}
-								network={network}
-								profile={profile}
-								onChange={(value) => {
-									setValue("fee", value, { shouldDirty: true, shouldValidate: true });
-								}}
-								viewType={inputFeeSettings.viewType}
-								onChangeViewType={(viewType) => {
-									setValue(
-										"inputFeeSettings",
-										{ ...inputFeeSettings, viewType },
-										{ shouldDirty: true, shouldValidate: true },
-									);
-								}}
-								simpleValue={inputFeeSettings.simpleValue}
-								onChangeSimpleValue={(simpleValue) => {
-									setValue(
-										"inputFeeSettings",
-										{ ...inputFeeSettings, simpleValue },
-										{ shouldDirty: true, shouldValidate: true },
-									);
-								}}
-							/>
-						</FormField>
-					</>
+					<FormField name="fee">
+						<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
+						<InputFee
+							min={fees?.min}
+							avg={fees?.avg}
+							max={fees?.max}
+							loading={!fees}
+							value={fee}
+							step={0.01}
+							disabled={network?.feeType() !== "dynamic"}
+							network={network}
+							profile={profile}
+							onChange={(value) => {
+								setValue("fee", value, { shouldDirty: true, shouldValidate: true });
+							}}
+							viewType={inputFeeSettings.viewType}
+							onChangeViewType={(viewType) => {
+								setValue(
+									"inputFeeSettings",
+									{ ...inputFeeSettings, viewType },
+									{ shouldDirty: true, shouldValidate: true },
+								);
+							}}
+							simpleValue={inputFeeSettings.simpleValue}
+							onChangeSimpleValue={(simpleValue) => {
+								setValue(
+									"inputFeeSettings",
+									{ ...inputFeeSettings, simpleValue },
+									{ shouldDirty: true, shouldValidate: true },
+								);
+							}}
+						/>
+					</FormField>
 				)}
 			</div>
-
-			{showFeeInput && (
-				<div className="pt-2">
-					<Divider dashed />
-				</div>
-			)}
 		</section>
 	);
 };
