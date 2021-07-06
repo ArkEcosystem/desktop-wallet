@@ -69,7 +69,9 @@ export const CreateWallet = () => {
 
 		activeProfile.wallets().push(finalWallet);
 
-		activeProfile.wallets().update(finalWallet.id(), { alias: name.trim() });
+		if (name.trim() !== finalWallet.alias()) {
+			activeProfile.wallets().update(finalWallet.id(), { alias: name.trim() });
+		}
 
 		setConfiguration("selectedNetworkIds", uniq([...selectedNetworkIds, network.id()]));
 
