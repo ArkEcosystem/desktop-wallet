@@ -281,7 +281,7 @@ export const SendTransfer = () => {
 		} catch (error) {
 			if (isMnemonicError(error)) {
 				setValue("mnemonic", "");
-				return setError("mnemonic", { message: t("COMMON.INPUT_PASSPHRASE.VALIDATION.MNEMONIC_NOT_MATCH_WALLET"), type: "manual" });
+				return setError("mnemonic", { message: t("TRANSACTION.INVALID_MNEMONIC"), type: "manual" });
 			}
 
 			setErrorMessage(JSON.stringify({ message: error.message, type: error.name }));
