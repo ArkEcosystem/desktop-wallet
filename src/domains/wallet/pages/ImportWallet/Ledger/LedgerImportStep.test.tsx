@@ -157,7 +157,7 @@ describe("LedgerImportStep", () => {
 		expect(screen.getByTestId("ImportWallet__name-input")).toHaveAttribute("aria-invalid");
 	});
 
-	it.only("should show an error message for duplicate name in the form", async () => {
+	it("should show an error message for duplicate name in the form", async () => {
 		const { container, formRef } = renderComponent();
 
 		await waitFor(() => expect(screen.getAllByTestId("LedgerImportStep__edit-alias")).toHaveLength(2));
