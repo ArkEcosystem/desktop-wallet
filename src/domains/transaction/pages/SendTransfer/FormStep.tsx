@@ -61,7 +61,7 @@ export const FormStep = ({
 		if (network) {
 			setTransactionFees(network);
 			const wallets = profile.wallets().findByCoinWithNetwork(network.coin(), network.id());
-			setWallets(wallets.filter(wallet => wallet.balance()));
+			setWallets(wallets.filter((wallet) => wallet.balance()));
 		}
 	}, [isSingle, network, profile, setTransactionFees]);
 
