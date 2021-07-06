@@ -6,7 +6,7 @@ export const alias = ({
 	t,
 	walletAddress,
 	profile,
-  	unsavedAliases,
+	unsavedAliases,
 }: {
 	t: TFunction;
 	walletAddress: string;
@@ -31,7 +31,7 @@ export const alias = ({
 					return true;
 				}
 
-				if (unsavedAliases?.every(unsavedAlias => !lowerCaseEquals(alias, unsavedAlias))) {
+				if (unsavedAliases?.every((unsavedAlias) => !lowerCaseEquals(alias, unsavedAlias))) {
 					return true;
 				}
 
