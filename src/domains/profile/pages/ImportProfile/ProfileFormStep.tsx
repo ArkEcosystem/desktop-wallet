@@ -58,7 +58,7 @@ const CreateProfileForm = ({
 
 	const [avatarImage, setAvatarImage] = useState(profile?.avatar());
 
-	const { theme } = useTheme();
+	const { theme, setTheme } = useTheme();
 	const { createProfile, password: passwordValidation } = useValidation();
 
 	const formattedName = name?.trim();
@@ -204,7 +204,15 @@ const CreateProfileForm = ({
 				<Divider />
 
 				<div className="flex justify-end pt-4 space-x-3">
-					<Button variant="secondary" onClick={onBack} data-testid="CreateProfile__back-button">
+					<Button
+						variant="secondary"
+						onClick={() => {
+							onBack?.();
+							// to prevent changing theme by component
+							setTimeout(() => setTheme("system"), 0);
+						}}
+						data-testid="CreateProfile__back-button"
+					>
 						{t("COMMON.BACK")}
 					</Button>
 
