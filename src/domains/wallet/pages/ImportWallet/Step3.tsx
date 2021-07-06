@@ -7,12 +7,11 @@ import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { InputDefault } from "app/components/Input";
 import { TransactionDetail, TransactionNetwork } from "domains/transaction/components/TransactionDetail";
+import { alias } from "domains/wallet/validations";
 import React, { useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { assertWallet } from "utils/assertions";
-
-const ALIAS_MAX_LENGTH = 42;
 
 export const ThirdStep = ({
 	importedWallet,
@@ -30,28 +29,7 @@ export const ThirdStep = ({
 	const [defaultNetwork] = useState(() => watch("network"));
 	const network: Networks.Network = getValues("network") || defaultNetwork;
 
-	const validation = {
-		maxLength: {
-			message: t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.MAXLENGTH_ERROR", {
-				maxLength: ALIAS_MAX_LENGTH,
-			}),
-			value: ALIAS_MAX_LENGTH,
-		},
-		required: t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.ALIAS_REQUIRED"),
-		validate: {
-			duplicateAlias: (alias: string) => {
-				const walletSameAlias = profile.wallets().findByAlias(alias.trim());
-
-				if (!walletSameAlias || walletSameAlias.id() === importedWallet.id()) {
-					return true;
-				}
-
-				return t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.ALIAS_EXISTS", {
-					alias: alias.trim(),
-				});
-			},
-		},
-	};
+	const validation = alias({ profile, t, wallet: importedWallet });
 
 	return (
 		<section data-testid="ImportWallet__third-step">
@@ -79,9 +57,9 @@ export const ThirdStep = ({
 			<FormField name="name">
 				<FormLabel label={t("WALLETS.WALLET_NAME")} />
 				<InputDefault
-					ref={register(validation)}
 					data-testid="ImportWallet__name-input"
 					defaultValue={importedWallet.alias()}
+					ref={register(validation)}
 				/>
 			</FormField>
 		</section>

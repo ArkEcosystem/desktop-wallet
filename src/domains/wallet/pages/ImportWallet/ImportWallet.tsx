@@ -15,13 +15,13 @@ import { EncryptPasswordStep } from "domains/wallet/components/EncryptPasswordSt
 import { NetworkStep } from "domains/wallet/components/NetworkStep";
 import { useWalletImport, WalletGenerationInput } from "domains/wallet/hooks/use-wallet-import";
 import { useWalletSync } from "domains/wallet/hooks/use-wallet-sync";
+import { getDefaultAlias } from "domains/wallet/utils/get-default-alias";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 import { assertWallet } from "utils/assertions";
 
-import { getDefaultAlias } from "./ImportWallet.helpers";
 import { LedgerTabs } from "./Ledger/LedgerTabs";
 import { SecondStep } from "./Step2";
 import { ThirdStep } from "./Step3";
@@ -111,7 +111,10 @@ export const ImportWallet = () => {
 
 		setValue("selectedNetworkIds", uniq([...selectedNetworkIds, wallet.network().id()]));
 
-		const alias = getDefaultAlias(activeProfile, wallet);
+		const alias = getDefaultAlias({
+			profile: activeProfile,
+			ticker: wallet.network().ticker(),
+		});
 
 		activeProfile.wallets().update(wallet.id(), { alias });
 
