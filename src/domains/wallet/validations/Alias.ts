@@ -1,14 +1,17 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { TFunction } from "i18next";
+import { lowerCaseEquals } from "utils/equals";
 
 export const alias = ({
 	t,
 	walletAddress,
 	profile,
+  	unsavedAliases,
 }: {
 	t: TFunction;
 	walletAddress: string;
 	profile: Contracts.IProfile;
+	unsavedAliases?: string[];
 }) => {
 	const maxLength = 42;
 
@@ -25,6 +28,10 @@ export const alias = ({
 				const walletSameAlias = profile.wallets().findByAlias(alias.trim());
 
 				if (!walletSameAlias || walletSameAlias.address() === walletAddress) {
+					return true;
+				}
+
+				if (unsavedAliases?.every(unsavedAlias => !lowerCaseEquals(alias, unsavedAlias))) {
 					return true;
 				}
 

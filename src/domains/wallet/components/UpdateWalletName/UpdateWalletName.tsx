@@ -15,6 +15,7 @@ interface UpdateWalletNameProperties {
 	onClose?: () => void;
 	onSave: (alias: string) => void;
 	profile: Contracts.IProfile;
+	unsavedAliases?: string[];
 	walletAddress: string;
 }
 
@@ -25,6 +26,7 @@ export const UpdateWalletName = ({
 	onClose,
 	onSave,
 	profile,
+	unsavedAliases,
 	walletAddress,
 }: UpdateWalletNameProperties) => {
 	const methods = useForm<{ name: string }>({
@@ -37,7 +39,12 @@ export const UpdateWalletName = ({
 
 	const { t } = useTranslation();
 
-	const aliasValidation = alias({ profile, t, walletAddress });
+	const aliasValidation = alias({
+		profile,
+		t,
+		unsavedAliases,
+		walletAddress,
+	});
 
 	const onSubmit = ({ name }: { name: string }) => {
 		onSave(name.trim());

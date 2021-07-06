@@ -103,6 +103,7 @@ const MultipleImport = ({
 
 			{!!selectedAddress && (
 				<UpdateWalletName
+					unsavedAliases={wallets.map(({ address }) => getAlias(address))}
 					defaultValue={getAlias(selectedAddress)}
 					walletAddress={selectedAddress}
 					profile={profile}
