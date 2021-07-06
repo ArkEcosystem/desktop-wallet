@@ -1,4 +1,5 @@
 import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
+import { Divider } from "app/components/Divider";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { useEnvironmentContext } from "app/contexts";
@@ -127,6 +128,10 @@ export const FormStep = ({
 					/>
 				</FormField>
 			</TransactionDetail>
+
+			<div className='-mt-4'>
+				<Divider dashed/>
+			</div>
 		</section>
 	);
 };
