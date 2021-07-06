@@ -21,13 +21,13 @@ import {
 	getDefaultProfileId,
 	getDefaultWalletId,
 	getDefaultWalletMnemonic,
+	MNEMONICS,
 	render,
 	RenderResult,
 	renderWithRouter,
 	syncFees,
 	waitFor,
 	within,
-	MNEMONICS,
 } from "utils/testing-library";
 
 import { FormStep } from "./FormStep";
@@ -1492,7 +1492,10 @@ describe("SendTransfer", () => {
 
 		await waitFor(() => expect(getByTestId("Input__error")).toBeVisible());
 
-		expect(getByTestId("Input__error")).toHaveAttribute("data-errortext", "This mnemonic does not correspond to your wallet");
+		expect(getByTestId("Input__error")).toHaveAttribute(
+			"data-errortext",
+			"This mnemonic does not correspond to your wallet",
+		);
 		expect(container).toMatchSnapshot();
 	});
 
@@ -1569,6 +1572,7 @@ describe("SendTransfer", () => {
 		fireEvent.click(getByTestId("StepNavigation__send-button"));
 
 		await waitFor(() => expect(getByTestId("ErrorStep")).toBeInTheDocument());
+
 		expect(getByTestId("ErrorStep__errorMessage")).toHaveTextContent("broadcast error");
 		expect(getByTestId("ErrorStep__wallet-button")).toBeInTheDocument();
 		expect(getByTestId("clipboard-button__wrapper")).toBeInTheDocument();

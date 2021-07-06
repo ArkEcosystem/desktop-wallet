@@ -16,13 +16,13 @@ import {
 	getDefaultProfileId,
 	getDefaultWalletId,
 	getDefaultWalletMnemonic,
+	MNEMONICS,
 	render,
 	renderWithRouter,
 	screen,
 	syncFees,
 	waitFor,
 	within,
-	MNEMONICS,
 } from "utils/testing-library";
 
 import { FormStep, ReviewStep, SendIpfs, SummaryStep } from ".";
@@ -455,7 +455,10 @@ describe("SendIpfs", () => {
 
 		await waitFor(() => expect(getByTestId("Input__error")).toBeVisible());
 
-		expect(getByTestId("Input__error")).toHaveAttribute("data-errortext", "This mnemonic does not correspond to your wallet");
+		expect(getByTestId("Input__error")).toHaveAttribute(
+			"data-errortext",
+			"This mnemonic does not correspond to your wallet",
+		);
 		expect(container).toMatchSnapshot();
 	});
 

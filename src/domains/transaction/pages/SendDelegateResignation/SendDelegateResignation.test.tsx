@@ -233,7 +233,7 @@ describe("SendDelegateResignation", () => {
 				},
 			});
 			await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue(MNEMONICS[2]));
-			
+
 			expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveAttribute("aria-invalid");
 			expect(getByTestId("StepNavigation__send-button")).toBeDisabled();
 
