@@ -4,7 +4,7 @@ import { FormField, FormLabel } from "app/components/Form";
 import { Input } from "app/components/Input";
 import { Modal } from "app/components/Modal";
 import { alias } from "domains/wallet/validations";
-import React  from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { assertWallet } from "utils/assertions";
@@ -32,7 +32,7 @@ export const UpdateWalletName = ({
 
 	const { t } = useTranslation();
 
-	const aliasValidation = alias({ profile, t, walletAddress })
+	const aliasValidation = alias({ profile, t, walletAddress });
 
 	const wallet = profile.wallets().findByAddress(walletAddress);
 	assertWallet(wallet);
