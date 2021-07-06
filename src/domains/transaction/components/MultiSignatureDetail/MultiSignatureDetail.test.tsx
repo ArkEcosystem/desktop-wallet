@@ -59,6 +59,7 @@ describe("MultiSignatureDetail", () => {
 						.signatory()
 						.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
 				}),
+			wallet,
 		);
 
 		fixtures.multiSignature = new DTO.ExtendedSignedTransactionData(
@@ -78,6 +79,7 @@ describe("MultiSignatureDetail", () => {
 						.signatory()
 						.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
 				}),
+			wallet,
 		);
 
 		fixtures.multiPayment = new DTO.ExtendedSignedTransactionData(
@@ -104,6 +106,7 @@ describe("MultiSignatureDetail", () => {
 						.signatory()
 						.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
 				}),
+			wallet,
 		);
 
 		fixtures.vote = new DTO.ExtendedSignedTransactionData(
@@ -122,6 +125,7 @@ describe("MultiSignatureDetail", () => {
 						.signatory()
 						.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
 				}),
+			wallet,
 		);
 
 		fixtures.unvote = new DTO.ExtendedSignedTransactionData(
@@ -140,6 +144,7 @@ describe("MultiSignatureDetail", () => {
 						.signatory()
 						.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
 				}),
+			wallet,
 		);
 
 		fixtures.ipfs = new DTO.ExtendedSignedTransactionData(
@@ -157,12 +162,28 @@ describe("MultiSignatureDetail", () => {
 						.signatory()
 						.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
 				}),
+			wallet,
 		);
 	});
 
 	it("should render summary step for transfer", async () => {
 		jest.spyOn(wallet.transaction(), "canBeBroadcasted").mockImplementation(() => false);
 		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => false);
+		jest.spyOn(wallet.transaction(), "isAwaitingSignatureByPublicKey").mockImplementation(() => false);
+
+		const { container } = render(<MultiSignatureDetail transaction={fixtures.transfer} wallet={wallet} isOpen />);
+
+		await waitFor(() => expect(screen.getByText(translations.TRANSACTION_TYPES.TRANSFER)));
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render summary step and handle exception", async () => {
+		jest.spyOn(wallet.transaction(), "canBeBroadcasted").mockImplementation(() => false);
+		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => {
+			throw new Error("error");
+		});
+
 		jest.spyOn(wallet.transaction(), "isAwaitingSignatureByPublicKey").mockImplementation(() => false);
 
 		const { container } = render(<MultiSignatureDetail transaction={fixtures.transfer} wallet={wallet} isOpen />);

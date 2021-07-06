@@ -11,17 +11,15 @@ import { AuthenticationStep } from "domains/transaction/components/Authenticatio
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
 import { FeeWarning } from "domains/transaction/components/FeeWarning";
 import { useFeeConfirmation, useTransactionBuilder, useWalletSignatory } from "domains/transaction/hooks";
-import { handleBroadcastError, isMnemonicError } from "domains/transaction/utils";
+import { handleBroadcastError } from "domains/transaction/utils";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 import { FormStep, ReviewStep, SummaryStep } from ".";
 import { VoteLedgerReview } from "./LedgerReview";
 
 export const SendVote = () => {
-	const { t } = useTranslation();
 	const { env, persist } = useEnvironmentContext();
 	const history = useHistory();
 	const activeProfile = useActiveProfile();
@@ -42,7 +40,7 @@ export const SendVote = () => {
 	const form = useForm({ mode: "onChange" });
 
 	const { hasDeviceAvailable, isConnected } = useLedgerContext();
-	const { clearErrors, formState, getValues, handleSubmit, register, setError, setValue, watch } = form;
+	const { clearErrors, formState, getValues, handleSubmit, register, setValue, watch } = form;
 	const { isValid, isSubmitting } = formState;
 
 	const { fee, fees } = watch();
@@ -311,14 +309,6 @@ export const SendVote = () => {
 				await confirmSendVote(isUnvote ? "unvote" : "vote");
 			}
 		} catch (error) {
-			/* istanbul ignore next */
-			if (isMnemonicError(error)) {
-				/* istanbul ignore next */
-				setValue("mnemonic", "");
-				/* istanbul ignore next */
-				return setError("mnemonic", { message: t("TRANSACTION.INVALID_MNEMONIC"), type: "manual" });
-			}
-
 			setErrorMessage(JSON.stringify({ message: error.message, type: error.name }));
 			setActiveTab(5);
 		}

@@ -257,52 +257,6 @@ describe("MultiSignature Registration Form", () => {
 		transactionMock.mockRestore();
 	});
 
-	it("should error if signing fails", async () => {
-		const form = {
-			clearErrors: jest.fn(),
-			getValues: () => ({
-				fee: "1",
-				minParticipants: 2,
-				mnemonic: MNEMONICS[0],
-				participants: [
-					{
-						address: wallet.address(),
-						publicKey: wallet.publicKey()!,
-					},
-					{
-						address: wallet2.address(),
-						publicKey: wallet2.publicKey()!,
-					},
-				],
-				senderAddress: wallet.address(),
-			}),
-			setError: jest.fn(),
-			setValue: jest.fn(),
-		};
-		const consoleSpy = jest.spyOn(console, "error").mockImplementation(() => void 0);
-		const signMock = jest.spyOn(wallet.transaction(), "signMultiSignature").mockImplementation(() => {
-			throw new Error("Signing failed");
-		});
-		const transactionMock = createTransactionMock(wallet);
-
-		try {
-			await MultiSignatureRegistrationForm.signTransaction({
-				env,
-				form,
-				profile,
-			});
-			// eslint-disable-next-line
-		} catch (error) {}
-
-		await waitFor(() => expect(signMock).toThrow());
-
-		expect(transactionMock).not.toHaveBeenCalled();
-
-		consoleSpy.mockRestore();
-		signMock.mockRestore();
-		transactionMock.mockRestore();
-	});
-
 	it("should sign transaction using encryption password", async () => {
 		const walletUsesWIFMock = jest.spyOn(wallet.wif(), "exists").mockReturnValue(true);
 		const walletWifMock = jest.spyOn(wallet.wif(), "get").mockImplementation(() => {

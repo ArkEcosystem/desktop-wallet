@@ -14,17 +14,14 @@ import { FeeWarning } from "domains/transaction/components/FeeWarning";
 import { MultiSignatureRegistrationForm } from "domains/transaction/components/MultiSignatureRegistrationForm";
 import { SecondSignatureRegistrationForm } from "domains/transaction/components/SecondSignatureRegistrationForm";
 import { useFeeConfirmation, useWalletSignatory } from "domains/transaction/hooks";
-import { isMnemonicError } from "domains/transaction/utils";
 import React, { useCallback, useEffect, useLayoutEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
 
 import { SummaryStep } from ".";
 import { SendRegistrationForm } from "./SendRegistration.models";
 
 export const SendRegistration = () => {
-	const { t } = useTranslation();
 	const history = useHistory();
 
 	const [activeTab, setActiveTab] = useState(1);
@@ -43,7 +40,7 @@ export const SendRegistration = () => {
 
 	const form = useForm({ mode: "onChange" });
 
-	const { formState, register, setError, setValue, trigger, watch, getValues } = form;
+	const { formState, register, setValue, trigger, watch, getValues } = form;
 	const { isSubmitting, isValid } = formState;
 
 	const { fee, fees } = watch();
@@ -139,11 +136,6 @@ export const SendRegistration = () => {
 			setTransaction(transaction);
 			handleNext();
 		} catch (error) {
-			if (isMnemonicError(error)) {
-				setValue("mnemonic", "");
-				return setError("mnemonic", { message: t("TRANSACTION.INVALID_MNEMONIC"), type: "manual" });
-			}
-
 			setErrorMessage(JSON.stringify({ message: error.message, type: error.name }));
 			setActiveTab(10);
 		}

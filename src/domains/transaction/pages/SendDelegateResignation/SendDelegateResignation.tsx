@@ -10,21 +10,19 @@ import { AuthenticationStep } from "domains/transaction/components/Authenticatio
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
 import { FeeWarning } from "domains/transaction/components/FeeWarning";
 import { useFeeConfirmation, useWalletSignatory } from "domains/transaction/hooks";
-import { handleBroadcastError, isMnemonicError } from "domains/transaction/utils";
+import { handleBroadcastError } from "domains/transaction/utils";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 import { FormStep, ReviewStep, SummaryStep } from ".";
 
 export const SendDelegateResignation = () => {
-	const { t } = useTranslation();
 	const history = useHistory();
 
 	const form = useForm({ mode: "onChange" });
 
-	const { formState, getValues, register, setError, setValue, watch } = form;
+	const { formState, getValues, register, watch } = form;
 	const { isValid, isSubmitting } = formState;
 
 	const { fee, fees } = watch();
@@ -102,11 +100,6 @@ export const SendDelegateResignation = () => {
 
 			handleNext();
 		} catch (error) {
-			if (isMnemonicError(error)) {
-				setValue("mnemonic", "");
-				return setError("mnemonic", { message: t("TRANSACTION.INVALID_MNEMONIC"), type: "manual" });
-			}
-
 			setErrorMessage(JSON.stringify({ message: error.message, type: error.name }));
 			setActiveTab(5);
 		}
