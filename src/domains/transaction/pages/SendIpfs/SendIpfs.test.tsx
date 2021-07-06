@@ -439,15 +439,30 @@ describe("SendIpfs", () => {
 			fireEvent.click(getByTestId("FeeWarning__continue-button"));
 		}
 
+		// Auth Step
 		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 
-		fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), { target: { value: "wrong-mnemonic" } });
-		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue("wrong-mnemonic"));
+		fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), { target: { value: passphrase } });
+		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(passphrase));
 
-		expect(getByTestId("StepNavigation__send-button")).toBeDisabled();
-		expect(getByTestId("Input__error")).toBeVisible();
+		const consoleErrorMock = jest.spyOn(console, "error").mockImplementation(() => undefined);
+		// Summary Step (skip ledger confirmation for now)
+		const signMock = jest.spyOn(wallet.transaction(), "signIpfs").mockImplementation(() => {
+			throw new Error("Signatory should be");
+		});
 
-		expect(container).toMatchSnapshot();
+		fireEvent.click(getByTestId("StepNavigation__send-button"));
+
+		await waitFor(() => expect(signMock).toHaveBeenCalled());
+		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(""));
+		await waitFor(() => {
+			expect(getByTestId("Input__error")).toBeVisible();
+		});
+
+		signMock.mockRestore();
+		consoleErrorMock.mockRestore();
+
+		await waitFor(() => expect(container).toMatchSnapshot());
 	});
 
 	it("should go back to wallet details", async () => {
