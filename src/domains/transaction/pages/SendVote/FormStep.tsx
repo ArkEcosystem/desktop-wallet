@@ -129,8 +129,8 @@ export const FormStep = ({
 				</FormField>
 			</TransactionDetail>
 
-			<div className='-mt-4'>
-				<Divider dashed/>
+			<div className="-mt-4">
+				<Divider dashed />
 			</div>
 		</section>
 	);
