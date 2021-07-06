@@ -1,9 +1,9 @@
 import { Networks, Services } from "@arkecosystem/platform-sdk";
 import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
-import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
+import { StepNavigation } from "app/components/StepNavigation";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext, useLedgerContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet, useQueryParams, useValidation } from "app/hooks";
@@ -324,6 +324,8 @@ export const SendTransfer = () => {
 		setActiveTab(newIndex);
 	};
 
+	const hideStepNavigation = activeTab === 5 || (activeTab === 3 && wallet?.isLedger());
+
 	return (
 		<Page profile={activeProfile}>
 			<Section className="flex-1">
@@ -344,8 +346,6 @@ export const SendTransfer = () => {
 									networks={networks}
 									profile={activeProfile}
 									deeplinkProps={deepLinkParameters}
-									hasWalletId={hasWalletId}
-									disableNetworkField={showNetworkStep}
 								/>
 							</TabPanel>
 
@@ -382,72 +382,19 @@ export const SendTransfer = () => {
 								/>
 							</TabPanel>
 
-							<div className="flex justify-end mt-8 space-x-3">
-								{activeTab < 4 && (
-									<>
-										{activeTab < 3 && (
-											<>
-												<Button
-													disabled={isSubmitting}
-													data-testid="SendTransfer__button--back"
-													variant="secondary"
-													onClick={handleBack}
-												>
-													{t("COMMON.BACK")}
-												</Button>
-												<Button
-													data-testid="SendTransfer__button--continue"
-													disabled={
-														activeTab === 0 && network ? false : !isValid || isSubmitting
-													}
-													onClick={async () => await handleNext()}
-													isLoading={isSubmitting}
-												>
-													{t("COMMON.CONTINUE")}
-												</Button>
-											</>
-										)}
-
-										{activeTab === 3 && !wallet?.isLedger() && (
-											<>
-												<Button
-													data-testid="SendTransfer__button--back"
-													variant="secondary"
-													onClick={handleBack}
-												>
-													{t("COMMON.BACK")}
-												</Button>
-
-												<Button
-													type="submit"
-													data-testid="SendTransfer__button--submit"
-													disabled={!isValid || isSubmitting}
-													isLoading={isSubmitting}
-													icon="Send"
-													iconWidth={16}
-													iconHeight={16}
-													iconPosition="right"
-												>
-													<span>{t("COMMON.SEND")}</span>
-												</Button>
-											</>
-										)}
-									</>
-								)}
-
-								{activeTab === 4 && (
-									<Button
-										data-testid="SendTransfer__button--back-to-wallet"
-										variant="secondary"
-										className="block"
-										onClick={() =>
-											history.push(`/profiles/${activeProfile.id()}/wallets/${wallet?.id()}`)
-										}
-									>
-										{t("COMMON.BACK_TO_WALLET")}
-									</Button>
-								)}
-							</div>
+							{!hideStepNavigation && (
+								<StepNavigation
+									onBackClick={handleBack}
+									onBackToWalletClick={() =>
+										history.push(`/profiles/${activeProfile.id()}/wallets/${wallet?.id()}`)
+									}
+									onContinueClick={async () => await handleNext()}
+									isLoading={isSubmitting}
+									isNextDisabled={activeTab === 0 && network ? false : !isValid}
+									size={4}
+									activeIndex={activeTab}
+								/>
+							)}
 						</div>
 					</Tabs>
 

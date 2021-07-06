@@ -178,7 +178,7 @@ export const CreateProfile = () => {
 							<Button
 								variant="secondary"
 								onClick={() => {
-									setTheme('system');
+									setTheme("system");
 									history.push("/");
 								}}
 							>

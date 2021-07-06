@@ -102,8 +102,6 @@ export const WalletDetails = () => {
 					{[...pendingSigned, ...pendingTransfers].length > 0 && (
 						<div className="mb-8">
 							<PendingTransactions
-								transfers={pendingTransfers}
-								signed={pendingSigned}
 								wallet={activeWallet}
 								onPendingTransactionClick={setTransactionModalItem}
 								onClick={setSignedTransactionModalItem}

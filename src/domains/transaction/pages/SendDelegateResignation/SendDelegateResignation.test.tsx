@@ -7,7 +7,6 @@ import React from "react";
 import { Route } from "react-router-dom";
 import transactionFixture from "tests/fixtures/coins/ark/devnet/transactions/transfer.json";
 import {
-	act,
 	env,
 	fireEvent,
 	getDefaultProfileId,
@@ -100,19 +99,12 @@ describe("SendDelegateResignation", () => {
 			// Fee (simple)
 			expect(screen.getAllByRole("radio")[1]).toBeChecked();
 
-			act(() => {
-				fireEvent.click(within(screen.getByTestId("InputFee")).getAllByRole("radio")[2]);
-			});
-
-			expect(screen.getAllByRole("radio")[2]).toBeChecked();
+			fireEvent.click(within(screen.getByTestId("InputFee")).getAllByRole("radio")[2]);
+			await waitFor(() => expect(screen.getAllByRole("radio")[2]).toBeChecked());
 
 			// Fee (advanced)
-			act(() => {
-				fireEvent.click(getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
-			});
-			act(() => {
-				fireEvent.input(getByTestId("InputCurrency"), { target: { value: "1" } });
-			});
+			fireEvent.click(getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
+			fireEvent.input(getByTestId("InputCurrency"), { target: { value: "1" } });
 			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("1"));
 
 			expect(asFragment()).toMatchSnapshot();
@@ -123,11 +115,9 @@ describe("SendDelegateResignation", () => {
 
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
 
-			await act(async () => {
-				fireEvent.click(getByTestId("SendDelegateResignation__continue-button"));
-			});
+			fireEvent.click(getByTestId("StepNavigation__continue-button"));
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__review-step")).toBeTruthy());
 
-			expect(getByTestId("SendDelegateResignation__review-step")).toBeTruthy();
 			expect(asFragment()).toMatchSnapshot();
 		});
 
@@ -138,9 +128,7 @@ describe("SendDelegateResignation", () => {
 
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
 
-			act(() => {
-				fireEvent.click(getByTestId("SendDelegateResignation__back-button"));
-			});
+			fireEvent.click(getByTestId("StepNavigation__back-button"));
 
 			expect(historySpy).toHaveBeenCalledWith(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
 
@@ -152,16 +140,10 @@ describe("SendDelegateResignation", () => {
 
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
 
-			act(() => {
-				fireEvent.click(getByTestId("SendDelegateResignation__continue-button"));
-			});
-
+			fireEvent.click(getByTestId("StepNavigation__continue-button"));
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__review-step")).toBeTruthy());
 
-			act(() => {
-				fireEvent.click(getByTestId("SendDelegateResignation__back-button"));
-			});
-
+			fireEvent.click(getByTestId("StepNavigation__back-button"));
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
 		});
 
@@ -170,14 +152,12 @@ describe("SendDelegateResignation", () => {
 
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
 
-			await act(async () => {
-				fireEvent.click(getByTestId("SendDelegateResignation__continue-button"));
-			});
-			await act(async () => {
-				fireEvent.click(getByTestId("SendDelegateResignation__continue-button"));
-			});
+			fireEvent.click(getByTestId("StepNavigation__continue-button"));
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__review-step")).toBeTruthy());
 
-			expect(getByTestId("AuthenticationStep")).toBeTruthy();
+			fireEvent.click(getByTestId("StepNavigation__continue-button"));
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+
 			expect(asFragment()).toMatchSnapshot();
 		});
 
@@ -187,26 +167,19 @@ describe("SendDelegateResignation", () => {
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
 
 			// Fee
-			act(() => {
-				fireEvent.click(getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
-			});
+			fireEvent.click(getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
 			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "30" } });
+			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("30"));
 
-			expect(getByTestId("InputCurrency")).toHaveValue("30");
+			await waitFor(() => expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled());
 
-			await waitFor(() => expect(getByTestId("SendDelegateResignation__continue-button")).not.toBeDisabled());
-			fireEvent.click(getByTestId("SendDelegateResignation__continue-button"));
+			fireEvent.click(getByTestId("StepNavigation__continue-button"));
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__review-step")).toBeTruthy());
 
-			// Review Step
-			expect(getByTestId("SendDelegateResignation__review-step")).toBeTruthy();
-
-			fireEvent.click(getByTestId("SendDelegateResignation__continue-button"));
-
-			// Fee warning
-			expect(getByTestId("FeeWarning__cancel-button")).toBeTruthy();
+			fireEvent.click(getByTestId("StepNavigation__continue-button"));
+			await waitFor(() => expect(getByTestId("FeeWarning__cancel-button")).toBeTruthy());
 
 			fireEvent.click(getByTestId("FeeWarning__cancel-button"));
-
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
 		});
 
@@ -216,26 +189,19 @@ describe("SendDelegateResignation", () => {
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
 
 			// Fee
-			act(() => {
-				fireEvent.click(getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
-			});
+			fireEvent.click(getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
 			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "30" } });
+			await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("30"));
 
-			expect(getByTestId("InputCurrency")).toHaveValue("30");
+			await waitFor(() => expect(getByTestId("StepNavigation__continue-button")).not.toBeDisabled());
 
-			await waitFor(() => expect(getByTestId("SendDelegateResignation__continue-button")).not.toBeDisabled());
-			fireEvent.click(getByTestId("SendDelegateResignation__continue-button"));
+			fireEvent.click(getByTestId("StepNavigation__continue-button"));
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__review-step")).toBeTruthy());
 
-			// Review Step
-			expect(getByTestId("SendDelegateResignation__review-step")).toBeTruthy();
-
-			fireEvent.click(getByTestId("SendDelegateResignation__continue-button"));
-
-			// Fee warning
-			expect(getByTestId("FeeWarning__continue-button")).toBeTruthy();
+			fireEvent.click(getByTestId("StepNavigation__continue-button"));
+			await waitFor(() => expect(getByTestId("FeeWarning__continue-button")).toBeTruthy());
 
 			fireEvent.click(getByTestId("FeeWarning__continue-button"));
-
 			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 		});
 
@@ -252,39 +218,30 @@ describe("SendDelegateResignation", () => {
 
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
 
-			await act(async () => {
-				fireEvent.click(getByTestId("SendDelegateResignation__continue-button"));
-			});
-			await act(async () => {
-				fireEvent.click(getByTestId("SendDelegateResignation__continue-button"));
-			});
+			fireEvent.click(getByTestId("StepNavigation__continue-button"));
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__review-step")).toBeTruthy());
 
-			act(() => {
-				fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
-					target: {
-						value: passphrase,
-					},
-				});
-			});
+			fireEvent.click(getByTestId("StepNavigation__continue-button"));
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 
+			fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
+				target: {
+					value: passphrase,
+				},
+			});
 			await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(passphrase));
 
-			act(() => {
-				fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
-					target: {
-						value: MNEMONICS[1],
-					},
-				});
+			fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
+				target: {
+					value: MNEMONICS[1],
+				},
 			});
-
 			await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue(MNEMONICS[1]));
 
-			act(() => {
-				fireEvent.click(getByTestId("SendDelegateResignation__send-button"));
-			});
+			fireEvent.click(getByTestId("StepNavigation__send-button"));
 
 			await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveAttribute("aria-invalid"));
-			await waitFor(() => expect(getByTestId("SendDelegateResignation__send-button")).toBeDisabled());
+			await waitFor(() => expect(getByTestId("StepNavigation__send-button")).toBeDisabled());
 
 			expect(getByTestId("AuthenticationStep")).toBeTruthy();
 			expect(asFragment()).toMatchSnapshot();
@@ -306,36 +263,27 @@ describe("SendDelegateResignation", () => {
 
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
 
-			await act(async () => {
-				fireEvent.click(getByTestId("SendDelegateResignation__continue-button"));
-			});
-			await act(async () => {
-				fireEvent.click(getByTestId("SendDelegateResignation__continue-button"));
-			});
+			fireEvent.click(getByTestId("StepNavigation__continue-button"));
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__review-step")).toBeTruthy());
 
-			act(() => {
-				fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
-					target: {
-						value: passphrase,
-					},
-				});
-			});
+			fireEvent.click(getByTestId("StepNavigation__continue-button"));
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 
+			fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
+				target: {
+					value: passphrase,
+				},
+			});
 			await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(passphrase));
 
-			act(() => {
-				fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
-					target: {
-						value: MNEMONICS[1],
-					},
-				});
+			fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
+				target: {
+					value: MNEMONICS[1],
+				},
 			});
-
 			await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue(MNEMONICS[1]));
 
-			act(() => {
-				fireEvent.click(getByTestId("SendDelegateResignation__send-button"));
-			});
+			fireEvent.click(getByTestId("StepNavigation__send-button"));
 
 			await waitFor(() => expect(getByTestId("ErrorStep")).toBeTruthy());
 
@@ -358,47 +306,40 @@ describe("SendDelegateResignation", () => {
 
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
 
-			await act(async () => {
-				fireEvent.click(getByTestId("SendDelegateResignation__continue-button"));
-			});
-			await act(async () => {
-				fireEvent.click(getByTestId("SendDelegateResignation__continue-button"));
-			});
+			fireEvent.click(getByTestId("StepNavigation__continue-button"));
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__review-step")).toBeTruthy());
 
-			act(() => {
-				fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
-					target: {
-						value: passphrase,
-					},
-				});
-			});
+			fireEvent.click(getByTestId("StepNavigation__continue-button"));
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 
+			fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
+				target: {
+					value: passphrase,
+				},
+			});
 			await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(passphrase));
 
-			act(() => {
-				fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
-					target: {
-						value: MNEMONICS[1],
-					},
-				});
+			fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
+				target: {
+					value: MNEMONICS[1],
+				},
 			});
-
 			await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue(MNEMONICS[1]));
 
-			act(() => {
-				fireEvent.click(getByTestId("SendDelegateResignation__send-button"));
-			});
+			fireEvent.click(getByTestId("StepNavigation__send-button"));
 
 			await waitFor(() => expect(getByTestId("ErrorStep")).toBeTruthy());
 
 			expect(asFragment()).toMatchSnapshot();
 
-			act(() => {
-				fireEvent.click(getByTestId("ErrorStep__wallet-button"));
-			});
+			const historyMock = jest.spyOn(history, "push").mockReturnValue();
+
+			fireEvent.click(getByTestId("ErrorStep__wallet-button"));
 
 			const walletDetailPage = `/profiles/${getDefaultProfileId()}/wallets/${wallet.id()}`;
-			await waitFor(() => expect(history.location.pathname).toEqual(walletDetailPage));
+			await waitFor(() => expect(historyMock).toHaveBeenCalledWith(walletDetailPage));
+
+			historyMock.mockRestore();
 
 			secondPublicKeyMock.mockRestore();
 			signMock.mockRestore();
@@ -422,38 +363,28 @@ describe("SendDelegateResignation", () => {
 
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
 
-			await act(async () => {
-				fireEvent.click(getByTestId("SendDelegateResignation__continue-button"));
-			});
-			await act(async () => {
-				fireEvent.click(getByTestId("SendDelegateResignation__continue-button"));
-			});
+			fireEvent.click(getByTestId("StepNavigation__continue-button"));
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__review-step")).toBeTruthy());
 
-			act(() => {
-				fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
-					target: {
-						value: passphrase,
-					},
-				});
-			});
+			fireEvent.click(getByTestId("StepNavigation__continue-button"));
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 
+			fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
+				target: {
+					value: passphrase,
+				},
+			});
 			await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(passphrase));
 
-			act(() => {
-				fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
-					target: {
-						value: MNEMONICS[1],
-					},
-				});
+			fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
+				target: {
+					value: MNEMONICS[1],
+				},
 			});
-
 			await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue(MNEMONICS[1]));
 
-			act(() => {
-				fireEvent.click(getByTestId("SendDelegateResignation__send-button"));
-			});
-
-			await waitFor(() => expect(getByTestId("SendDelegateResignation__summary-step")).toBeTruthy());
+			fireEvent.click(getByTestId("StepNavigation__send-button"));
+			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 
 			expect(asFragment()).toMatchSnapshot();
 
@@ -481,44 +412,37 @@ describe("SendDelegateResignation", () => {
 
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
 
-			await act(async () => {
-				fireEvent.click(getByTestId("SendDelegateResignation__continue-button"));
-			});
-			await act(async () => {
-				fireEvent.click(getByTestId("SendDelegateResignation__continue-button"));
-			});
+			fireEvent.click(getByTestId("StepNavigation__continue-button"));
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__review-step")).toBeTruthy());
 
-			act(() => {
-				fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
-					target: {
-						value: passphrase,
-					},
-				});
-			});
+			fireEvent.click(getByTestId("StepNavigation__continue-button"));
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 
+			fireEvent.input(getByTestId("AuthenticationStep__mnemonic"), {
+				target: {
+					value: passphrase,
+				},
+			});
 			await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveValue(passphrase));
 
-			act(() => {
-				fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
-					target: {
-						value: MNEMONICS[1],
-					},
-				});
+			fireEvent.input(getByTestId("AuthenticationStep__second-mnemonic"), {
+				target: {
+					value: MNEMONICS[1],
+				},
 			});
-
 			await waitFor(() => expect(getByTestId("AuthenticationStep__second-mnemonic")).toHaveValue(MNEMONICS[1]));
 
-			act(() => {
-				fireEvent.click(getByTestId("SendDelegateResignation__send-button"));
-			});
+			fireEvent.click(getByTestId("StepNavigation__send-button"));
+			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 
-			await waitFor(() => expect(getByTestId("SendDelegateResignation__summary-step")).toBeTruthy());
+			const historyMock = jest.spyOn(history, "push").mockReturnValue();
 
-			act(() => {
-				fireEvent.click(getByTestId("SendDelegateResignation__wallet-button"));
-			});
+			fireEvent.click(getByTestId("StepNavigation__back-to-wallet-button"));
 
-			expect(history.location.pathname).toMatch(`/profiles/${getDefaultProfileId()}/wallets/${wallet.id()}`);
+			const walletDetailPage = `/profiles/${getDefaultProfileId()}/wallets/${wallet.id()}`;
+			await waitFor(() => expect(historyMock).toHaveBeenCalledWith(walletDetailPage));
+
+			historyMock.mockRestore();
 
 			secondPublicKeyMock.mockRestore();
 			signMock.mockRestore();
@@ -566,31 +490,23 @@ describe("SendDelegateResignation", () => {
 
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
 
-			await act(async () => {
-				fireEvent.click(getByTestId("SendDelegateResignation__continue-button"));
-			});
-			await act(async () => {
-				fireEvent.click(getByTestId("SendDelegateResignation__continue-button"));
-			});
+			fireEvent.click(getByTestId("StepNavigation__continue-button"));
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__review-step")).toBeTruthy());
 
-			await waitFor(() => expect(getByTestId("AuthenticationStep__encryption-password")).toBeTruthy());
+			fireEvent.click(getByTestId("StepNavigation__continue-button"));
+			await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
 
-			act(() => {
-				fireEvent.input(getByTestId("AuthenticationStep__encryption-password"), {
-					target: {
-						value: "password",
-					},
-				});
+			fireEvent.input(getByTestId("AuthenticationStep__encryption-password"), {
+				target: {
+					value: "password",
+				},
 			});
 			await waitFor(() => expect(getByTestId("AuthenticationStep__encryption-password")).toHaveValue("password"));
 
-			await waitFor(() => expect(getByTestId("SendDelegateResignation__send-button")).not.toBeDisabled());
+			await waitFor(() => expect(getByTestId("StepNavigation__send-button")).not.toBeDisabled());
 
-			act(() => {
-				fireEvent.click(getByTestId("SendDelegateResignation__send-button"));
-			});
-
-			await waitFor(() => expect(getByTestId("SendDelegateResignation__summary-step")).toBeTruthy());
+			fireEvent.click(getByTestId("StepNavigation__send-button"));
+			await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 
 			expect(asFragment()).toMatchSnapshot();
 

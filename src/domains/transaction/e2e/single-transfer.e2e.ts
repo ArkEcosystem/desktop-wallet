@@ -63,7 +63,7 @@ test("should send transfer successfully", async (t) => {
 	// Type mnemonic
 	await t.expect(Selector("[data-testid=AuthenticationStep__mnemonic]").exists).ok({ timeout: 4000 });
 	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), MNEMONICS[0], { replace: true });
-	await t.click(Selector("[data-testid=SendTransfer__button--submit]"));
+	await t.click(Selector("[data-testid=StepNavigation__send-button"));
 
 	// Transaction successful
 	await t.expect(Selector("h1").withText(translations.TRANSACTION.SUCCESS.TITLE).exists).ok({ timeout: 5000 });
@@ -96,6 +96,6 @@ test("should show an error if wrong mnemonic", async (t) => {
 
 	// Type wrong mnemonic
 	await t.typeText(Selector("[data-testid=AuthenticationStep__mnemonic]"), "wrong mnemonic", { replace: true });
-	await t.click(Selector("[data-testid=SendTransfer__button--submit]"));
+	await t.click(Selector("[data-testid=StepNavigation__send-button"));
 	await t.expect(Selector("[data-testid=AuthenticationStep__mnemonic]").hasAttribute("aria-invalid")).ok();
 });

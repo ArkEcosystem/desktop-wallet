@@ -33,13 +33,11 @@ const LedgerStateWrapper = ({
 
 export const AuthenticationStep = ({
 	wallet,
-	skipSecondSignature,
 	ledgerDetails,
 	ledgerIsAwaitingDevice,
 	ledgerIsAwaitingApp,
 }: {
 	wallet: Contracts.IReadWriteWallet;
-	skipSecondSignature?: boolean;
 	ledgerDetails?: React.ReactNode;
 } & LedgerStates) => {
 	const { t } = useTranslation();
@@ -72,8 +70,6 @@ export const AuthenticationStep = ({
 		wallet.actsWithWifWithEncryption() ||
 		wallet.actsWithSecretWithEncryption();
 
-	const shouldRenderSecondMnemonicField = !skipSecondSignature && wallet.isSecondSignature();
-
 	const renderSecondMnemonicField = () => {
 		const mnemonicFieldName = requireEncryptionPassword ? "encryptionPassword" : "mnemonic";
 		const mnemonicIsValid = !!getValues(mnemonicFieldName) && !errors[mnemonicFieldName];
@@ -91,7 +87,7 @@ export const AuthenticationStep = ({
 	};
 
 	return (
-		<div data-testid="AuthenticationStep" className="space-y-8">
+		<div data-testid="AuthenticationStep" className="space-y-6">
 			{wallet.actsWithWif() && (
 				<>
 					<Header title={title} subtitle={t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION_WIF")} />
@@ -125,7 +121,7 @@ export const AuthenticationStep = ({
 					<Header title={title} subtitle={t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION_SECRET")} />
 
 					<FormField name="secret">
-						<FormLabel>{t("COMMON.secret")}</FormLabel>
+						<FormLabel>{t("COMMON.SECRET")}</FormLabel>
 						<InputPassword
 							data-testid="AuthenticationStep__secret"
 							ref={register(authentication.secret(wallet))}
@@ -165,11 +161,7 @@ export const AuthenticationStep = ({
 				</>
 			)}
 
-			{shouldRenderSecondMnemonicField && renderSecondMnemonicField()}
+			{wallet.isSecondSignature() && renderSecondMnemonicField()}
 		</div>
 	);
-};
-
-AuthenticationStep.defaultProps = {
-	skipSecondSignature: false,
 };

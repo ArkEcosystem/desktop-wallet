@@ -14,12 +14,10 @@ export const SummaryStep = ({
 	const { t } = useTranslation();
 
 	return (
-		<section data-testid="SendDelegateResignation__summary-step" className="space-y-8">
-			<TransactionSuccessful transaction={transaction} senderWallet={senderWallet}>
-				<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>{senderWallet.username()}</TransactionDetail>
+		<TransactionSuccessful transaction={transaction} senderWallet={senderWallet}>
+			<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>{senderWallet.username()}</TransactionDetail>
 
-				<TransactionFee currency={senderWallet.currency()} value={transaction.fee()} paddingPosition="top" />
-			</TransactionSuccessful>
-		</section>
+			<TransactionFee currency={senderWallet.currency()} value={transaction.fee()} paddingPosition="top" />
+		</TransactionSuccessful>
 	);
 };
