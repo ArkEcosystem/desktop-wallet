@@ -20,7 +20,6 @@ export const useWalletTransactions = (wallet: Contracts.IReadWriteWallet) => {
 				...wallet.transaction().waitingForOtherSignatures(),
 				...wallet.transaction().waitingForOurSignature(),
 				...wallet.transaction().signed(),
-				// TODO: Use the `isMultiSignature()` method from interface when ready form sdk
 			}).filter((item) => !!item.get("multiSignature")),
 		);
 	}, [wallet, setPendingTransfers, setPendingSigned, fetchWalletUnconfirmedTransactions]);

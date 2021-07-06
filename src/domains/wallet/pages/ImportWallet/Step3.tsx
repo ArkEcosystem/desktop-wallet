@@ -54,14 +54,14 @@ export const ThirdStep = ({
 	};
 
 	return (
-		<section data-testid="ImportWallet__third-step" className="space-y-8">
+		<section data-testid="ImportWallet__third-step">
 			<Header
 				title={t("WALLETS.PAGE_IMPORT_WALLET.PROCESS_COMPLETED_STEP.TITLE")}
 				subtitle={t("WALLETS.PAGE_IMPORT_WALLET.PROCESS_COMPLETED_STEP.SUBTITLE")}
 			/>
 
-			<div>
-				<TransactionNetwork network={network} borderPosition="bottom" paddingPosition="bottom" />
+            <div>
+                <TransactionNetwork network={network} border={false} />
 
 				<TransactionDetail
 					label={t("COMMON.ADDRESS")}

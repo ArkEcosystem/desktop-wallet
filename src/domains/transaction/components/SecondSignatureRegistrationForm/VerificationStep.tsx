@@ -1,4 +1,3 @@
-import { Divider } from "app/components/Divider";
 import { Header } from "app/components/Header";
 import { MnemonicVerification } from "domains/wallet/components/MnemonicVerification";
 import React, { useEffect, useState } from "react";
@@ -24,7 +23,7 @@ export const VerificationStep = () => {
 	}, [register]);
 
 	return (
-		<section data-testid="SecondSignatureRegistrationForm__verification-step" className="space-y-8">
+		<section data-testid="SecondSignatureRegistrationForm__verification-step" className="space-y-6">
 			<Header
 				title={t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_CONFIRMATION_STEP.TITLE")}
 				subtitle={t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_CONFIRMATION_STEP.SUBTITLE")}
@@ -36,8 +35,6 @@ export const VerificationStep = () => {
 				handleComplete={handleComplete}
 				isCompleted={isVerified}
 			/>
-
-			<Divider dashed />
 		</section>
 	);
 };

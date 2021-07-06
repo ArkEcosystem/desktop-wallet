@@ -47,6 +47,7 @@ export const TransactionAmount: React.FC<TransactionAmountProperties> = ({
 
 	return (
 		<TransactionDetail
+			data-testid="TransactionAmount"
 			label={isMultiPayment ? t("TRANSACTION.TOTAL_AMOUNT") : t("TRANSACTION.AMOUNT")}
 			extra={renderModeIcon(isSent)}
 			{...properties}
