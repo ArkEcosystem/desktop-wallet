@@ -95,9 +95,15 @@ export const SignedTransactionRow = ({
 }) => {
 	const { t } = useTranslation();
 
-	const recipient = transaction.get<string>("recipientId");
-	const canBeSigned = wallet.transaction().canBeSigned(transaction.id());
 	const timeFormat = useTimeFormat();
+
+	const recipient = transaction.get<string>("recipientId");
+	let canBeSigned: boolean = false;
+
+	try {
+		canBeSigned = wallet.transaction().canBeSigned(transaction.id());
+	} catch {}
+
 
 	return (
 		<TableRow onClick={() => onRowClick?.(transaction)}>
