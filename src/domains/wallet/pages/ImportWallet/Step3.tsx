@@ -60,8 +60,8 @@ export const ThirdStep = ({
 				subtitle={t("WALLETS.PAGE_IMPORT_WALLET.PROCESS_COMPLETED_STEP.SUBTITLE")}
 			/>
 
-            <div>
-                <TransactionNetwork network={network} border={false} />
+			<div>
+				<TransactionNetwork network={network} border={false} />
 
 				<TransactionDetail
 					label={t("COMMON.ADDRESS")}
