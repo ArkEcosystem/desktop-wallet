@@ -47,16 +47,6 @@ test("Should successfully update wallet name", async (t) => {
 	await t.expect(Selector("[data-testid=modal__inner]").exists).notOk();
 });
 
-test("Should successfully remove wallet name", async (t) => {
-	const walletLabelNameInput = Selector('[data-testid="UpdateWalletName__input"]');
-	await t.selectText(walletLabelNameInput).pressKey("delete");
-
-	await t.expect(Selector("[data-testid=UpdateWalletName__submit]").hasAttribute("disabled")).notOk();
-
-	await t.click(Selector('[data-testid="UpdateWalletName__submit"]'));
-	await t.expect(Selector("[data-testid=modal__inner]").exists).notOk();
-});
-
 test("Should error when name exceeds 42 characters", async (t) => {
 	const name = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor";
 	const walletLabelNameInput = Selector('[data-testid="UpdateWalletName__input"]');

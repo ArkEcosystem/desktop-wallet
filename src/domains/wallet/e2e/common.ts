@@ -31,7 +31,10 @@ export const importWallet = async (t: any, passphrase = MNEMONICS[0], alias = "T
 	await t.expect(Selector("[data-testid=EncryptPassword]").exists).ok();
 	await t.click(Selector("[data-testid=ImportWallet__skip-button]"));
 
-	await t.typeText(Selector("[data-testid=ImportWallet__name-input]"), alias);
+	await t
+		.selectText(Selector("[data-testid=ImportWallet__name-input]"))
+		.pressKey("delete")
+		.typeText(Selector("[data-testid=ImportWallet__name-input]"), alias);
 
 	await t.click(Selector("button").withExactText(translations.COMMON.SAVE_FINISH));
 

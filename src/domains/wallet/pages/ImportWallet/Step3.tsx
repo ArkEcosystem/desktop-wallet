@@ -7,28 +7,29 @@ import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { InputDefault } from "app/components/Input";
 import { TransactionDetail, TransactionNetwork } from "domains/transaction/components/TransactionDetail";
+import { alias } from "domains/wallet/validations";
 import React, { useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { assertWallet } from "utils/assertions";
 
 export const ThirdStep = ({
-	address,
-	balance,
-	nameMaxLength,
+	importedWallet,
 	profile,
 }: {
-	address: string;
-	balance: number;
-	nameMaxLength: number;
+	importedWallet: Contracts.IReadWriteWallet | undefined;
 	profile: Contracts.IProfile;
 }) => {
+	assertWallet(importedWallet);
+
 	const { getValues, register, watch } = useFormContext();
+	const { t } = useTranslation();
 
 	// getValues does not get the value of `defaultValues` on first render
 	const [defaultNetwork] = useState(() => watch("network"));
 	const network: Networks.Network = getValues("network") || defaultNetwork;
 
-	const { t } = useTranslation();
+	const validation = alias({ profile, t, walletAddress: importedWallet.address() });
 
 	return (
 		<section data-testid="ImportWallet__third-step">
@@ -37,40 +38,30 @@ export const ThirdStep = ({
 				subtitle={t("WALLETS.PAGE_IMPORT_WALLET.PROCESS_COMPLETED_STEP.SUBTITLE")}
 			/>
 
-			<TransactionNetwork network={network} border={false} />
+			<div>
+				<TransactionNetwork network={network} border={false} />
 
-			<TransactionDetail label={t("COMMON.ADDRESS")} extra={<Avatar size="lg" address={address} />}>
-				<Address address={address} />
-			</TransactionDetail>
-
-			<TransactionDetail label={t("COMMON.BALANCE")} borderPosition="both">
-				<AmountCrypto value={balance} ticker={network.ticker()} />
-			</TransactionDetail>
-
-			<div className="pt-6">
-				<FormField name="name">
-					<FormLabel label={t("WALLETS.WALLET_NAME")} optional />
-					<InputDefault
-						ref={register({
-							maxLength: {
-								message: t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.MAXLENGTH_ERROR", {
-									maxLength: nameMaxLength,
-								}),
-								value: nameMaxLength,
-							},
-							validate: {
-								duplicateAlias: (alias) =>
-									!alias ||
-									!profile.wallets().findByAlias(alias.trim()) ||
-									t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.ALIAS_EXISTS", {
-										alias: alias.trim(),
-									}).toString(),
-							},
-						})}
-						data-testid="ImportWallet__name-input"
-					/>
-				</FormField>
+				<TransactionDetail
+					label={t("COMMON.ADDRESS")}
+					borderPosition="bottom"
+					extra={<Avatar size="lg" address={importedWallet.address()} />}
+				>
+					<Address address={importedWallet.address()} />
+				</TransactionDetail>
 			</div>
+
+			<TransactionDetail label={t("COMMON.BALANCE")} borderPosition="bottom" paddingPosition="bottom">
+				<AmountCrypto value={importedWallet.balance()} ticker={network.ticker()} />
+			</TransactionDetail>
+
+			<FormField name="name">
+				<FormLabel label={t("WALLETS.WALLET_NAME")} />
+				<InputDefault
+					data-testid="ImportWallet__name-input"
+					defaultValue={importedWallet.alias()}
+					ref={register(validation)}
+				/>
+			</FormField>
 		</section>
 	);
 };

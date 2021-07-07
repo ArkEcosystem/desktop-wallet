@@ -1,39 +1,35 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
-import { availableNetworksMock } from "domains/network/data";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { env, fireEvent, getDefaultProfileId, render } from "utils/testing-library";
 
 import { SuccessStep } from "./SuccessStep";
 
-let profile: Contracts.IProfile;
-
 describe("SuccessStep", () => {
+	let profile: Contracts.IProfile;
+	let wallet: Contracts.IReadWriteWallet;
+
 	beforeEach(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
 
-		for (const wallet of profile.wallets().values()) {
-			profile.wallets().forget(wallet.id());
-		}
+		wallet = profile.wallets().first();
 	});
 
 	it("should render 4th step", async () => {
 		const { result: form } = renderHook(() =>
 			useForm({
 				defaultValues: {
-					network: availableNetworksMock[1],
-					wallet: {
-						address: () => "TEST-WALLET-ADDRESS",
-					},
+					network: wallet.network(),
+					wallet,
 				},
 			}),
 		);
 
 		const { asFragment, getByTestId, getByText } = render(
 			<FormProvider {...form.current}>
-				<SuccessStep nameMaxLength={42} />
+				<SuccessStep profile={profile} />
 			</FormProvider>,
 		);
 
@@ -41,9 +37,11 @@ describe("SuccessStep", () => {
 		expect(asFragment()).toMatchSnapshot();
 
 		expect(getByText("ARK Devnet")).toBeTruthy();
-		expect(getByText("TEST-WALLET-ADDRESS")).toBeTruthy();
+		expect(getByText(wallet.address())).toBeTruthy();
 
 		const walletNameInput = getByTestId("CreateWallet__wallet-name");
+
+		expect(walletNameInput).toHaveValue(wallet.alias());
 
 		await act(async () => {
 			fireEvent.change(walletNameInput, { target: { value: "Test" } });

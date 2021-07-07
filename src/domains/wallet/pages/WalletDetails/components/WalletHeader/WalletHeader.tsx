@@ -72,22 +72,17 @@ export const WalletHeader = ({
 	};
 
 	const handleUpdateName = async (name: string) => {
-		if (name) {
-			wallet.settings().set(Contracts.WalletSetting.Alias, name);
-		} else {
-			wallet.settings().forget(Contracts.WalletSetting.Alias);
-		}
-
+		wallet.mutator().alias(name);
 		await persist();
 
 		setModal(undefined);
 	};
 
 	const handleDeleteWallet = async () => {
+		setModal(undefined);
+
 		profile.wallets().forget(wallet.id());
 		await persist();
-
-		setModal(undefined);
 
 		history.push(`/profiles/${profile.id()}/dashboard`);
 	};
@@ -463,15 +458,17 @@ export const WalletHeader = ({
 				onClose={() => setModal(undefined)}
 			/>
 
-			<UpdateWalletName
-				currentAlias={wallet.alias()}
-				walletId={wallet.id()}
-				profile={profile}
-				isOpen={modal === "wallet-name"}
-				onClose={() => setModal(undefined)}
-				onCancel={() => setModal(undefined)}
-				onSave={handleUpdateName}
-			/>
+			{modal === "wallet-name" && (
+				<UpdateWalletName
+					defaultValue={wallet.alias() as string}
+					walletAddress={wallet.address()}
+					profile={profile}
+					isOpen={true}
+					onClose={() => setModal(undefined)}
+					onCancel={() => setModal(undefined)}
+					onSave={handleUpdateName}
+				/>
+			)}
 
 			<DeleteWallet
 				isOpen={modal === "delete-wallet"}

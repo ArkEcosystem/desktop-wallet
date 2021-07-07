@@ -273,32 +273,6 @@ describe("WalletDetails", () => {
 		await waitFor(() => expect(wallet.settings().get(Contracts.WalletSetting.Alias)).toEqual(name));
 	});
 
-	it("should remove wallet name", async () => {
-		const { getByTestId, getAllByTestId } = await renderPage();
-
-		act(() => {
-			fireEvent.click(getAllByTestId("dropdown__toggle")[2]);
-		});
-
-		act(() => {
-			fireEvent.click(getByTestId("dropdown__option--primary-0"));
-		});
-
-		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
-
-		act(() => {
-			fireEvent.change(getByTestId("UpdateWalletName__input"), { target: { value: "" } });
-		});
-
-		getByTestId("UpdateWalletName__submit");
-
-		act(() => {
-			fireEvent.click(getByTestId("UpdateWalletName__submit"));
-		});
-
-		await waitFor(() => expect(wallet.settings().get(Contracts.WalletSetting.Alias)).toBe(undefined));
-	});
-
 	it("should star and unstar a wallet", async () => {
 		const { getByTestId } = await renderPage();
 

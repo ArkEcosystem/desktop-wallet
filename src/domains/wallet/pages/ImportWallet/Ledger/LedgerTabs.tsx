@@ -9,6 +9,7 @@ import React, { useCallback, useRef, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
+import { assertWallet } from "utils/assertions";
 
 import { LedgerConnectionStep } from "./LedgerConnectionStep";
 import { LedgerImportStep } from "./LedgerImportStep";
@@ -104,13 +105,12 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 	);
 
 	const saveNames = async ({ names }: { names: Record<string, string> }) => {
-		const nameMaxLength = 42;
-
 		for (const [address, name] of Object.entries(names)) {
-			if (name) {
-				const formattedName = name.trim().slice(0, Math.max(0, nameMaxLength));
-				const wallet = activeProfile.wallets().findByAddress(address);
-				wallet?.mutator().alias(formattedName);
+			const wallet = activeProfile.wallets().findByAddress(address);
+			assertWallet(wallet);
+
+			if (name !== wallet.alias()) {
+				wallet.mutator().alias(name);
 			}
 		}
 		await persist();

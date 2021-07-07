@@ -67,12 +67,6 @@ exports[`UpdateWalletName should render a modal 1`] = `
                   for="name"
                 >
                   Wallet Name
-                  <span
-                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    data-testid="FormLabel__optional"
-                  >
-                    optional
-                  </span>
                 </label>
                 <div
                   class="relative"
@@ -93,7 +87,7 @@ exports[`UpdateWalletName should render a modal 1`] = `
                         class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                         data-testid="UpdateWalletName__input"
                         name="name"
-                        value=""
+                        value="ARK Wallet 1"
                       />
                     </div>
                   </div>
@@ -199,12 +193,6 @@ exports[`UpdateWalletName should show an error message for duplicate name 1`] = 
                   for="name"
                 >
                   Wallet Name
-                  <span
-                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    data-testid="FormLabel__optional"
-                  >
-                    optional
-                  </span>
                 </label>
                 <div
                   class="relative"
@@ -225,14 +213,14 @@ exports[`UpdateWalletName should show an error message for duplicate name 1`] = 
                         class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                         data-testid="UpdateWalletName__input"
                         name="name"
-                        value=""
+                        value="ARK Wallet 1"
                       />
                     </div>
                     <div
                       class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                     >
                       <span
-                        data-errortext="A Wallet named 'ARK Wallet 2' already exists on this profile"
+                        data-errortext="The name 'ARK Wallet 2' is already assigned to another wallet"
                         data-testid="Input__error"
                       >
                         <div
@@ -350,12 +338,6 @@ exports[`UpdateWalletName should show an error message for duplicate name 2`] = 
                   for="name"
                 >
                   Wallet Name
-                  <span
-                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    data-testid="FormLabel__optional"
-                  >
-                    optional
-                  </span>
                 </label>
                 <div
                   class="relative"
@@ -376,14 +358,14 @@ exports[`UpdateWalletName should show an error message for duplicate name 2`] = 
                         class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                         data-testid="UpdateWalletName__input"
                         name="name"
-                        value=""
+                        value="ARK Wallet 1"
                       />
                     </div>
                     <div
                       class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                     >
                       <span
-                        data-errortext="A Wallet named 'ark wallet 2' already exists on this profile"
+                        data-errortext="The name 'ark wallet 2' is already assigned to another wallet"
                         data-testid="Input__error"
                       >
                         <div
@@ -501,12 +483,6 @@ exports[`UpdateWalletName should show an error message for duplicate name 3`] = 
                   for="name"
                 >
                   Wallet Name
-                  <span
-                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    data-testid="FormLabel__optional"
-                  >
-                    optional
-                  </span>
                 </label>
                 <div
                   class="relative"
@@ -527,14 +503,14 @@ exports[`UpdateWalletName should show an error message for duplicate name 3`] = 
                         class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                         data-testid="UpdateWalletName__input"
                         name="name"
-                        value=""
+                        value="ARK Wallet 1"
                       />
                     </div>
                     <div
                       class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                     >
                       <span
-                        data-errortext="A Wallet named 'ARK Wallet 2' already exists on this profile"
+                        data-errortext="The name 'ARK Wallet 2' is already assigned to another wallet"
                         data-testid="Input__error"
                       >
                         <div
@@ -652,12 +628,6 @@ exports[`UpdateWalletName should show an error message for duplicate name 4`] = 
                   for="name"
                 >
                   Wallet Name
-                  <span
-                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    data-testid="FormLabel__optional"
-                  >
-                    optional
-                  </span>
                 </label>
                 <div
                   class="relative"
@@ -678,14 +648,14 @@ exports[`UpdateWalletName should show an error message for duplicate name 4`] = 
                         class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                         data-testid="UpdateWalletName__input"
                         name="name"
-                        value=""
+                        value="ARK Wallet 1"
                       />
                     </div>
                     <div
                       class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                     >
                       <span
-                        data-errortext="A Wallet named 'ARK Wallet 2' already exists on this profile"
+                        data-errortext="The name 'ARK Wallet 2' is already assigned to another wallet"
                         data-testid="Input__error"
                       >
                         <div
@@ -803,12 +773,6 @@ exports[`UpdateWalletName should show error message when name consists only of w
                   for="name"
                 >
                   Wallet Name
-                  <span
-                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    data-testid="FormLabel__optional"
-                  >
-                    optional
-                  </span>
                 </label>
                 <div
                   class="relative"
@@ -829,14 +793,14 @@ exports[`UpdateWalletName should show error message when name consists only of w
                         class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                         data-testid="UpdateWalletName__input"
                         name="name"
-                        value=""
+                        value="ARK Wallet 1"
                       />
                     </div>
                     <div
                       class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                     >
                       <span
-                        data-errortext="Wallet Name invalid"
+                        data-errortext="The name is required"
                         data-testid="Input__error"
                       >
                         <div
@@ -954,12 +918,6 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
                   for="name"
                 >
                   Wallet Name
-                  <span
-                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    data-testid="FormLabel__optional"
-                  >
-                    optional
-                  </span>
                 </label>
                 <div
                   class="relative"
@@ -980,14 +938,14 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
                         class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                         data-testid="UpdateWalletName__input"
                         name="name"
-                        value=""
+                        value="ARK Wallet 1"
                       />
                     </div>
                     <div
                       class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                     >
                       <span
-                        data-errortext="Name should have at most 42 characters"
+                        data-errortext="The name should have less than 42 characters"
                         data-testid="Input__error"
                       >
                         <div
