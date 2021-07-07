@@ -1,4 +1,3 @@
-import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { uniq } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
@@ -11,6 +10,7 @@ import { useActiveProfile } from "app/hooks";
 import { useWalletConfig } from "domains/dashboard/hooks";
 import { EncryptPasswordStep } from "domains/wallet/components/EncryptPasswordStep";
 import { NetworkStep } from "domains/wallet/components/NetworkStep";
+import { getDefaultAlias } from "domains/wallet/utils/get-default-alias";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -29,8 +29,6 @@ export const CreateWallet = () => {
 	const [activeTab, setActiveTab] = useState(1);
 	const [encryptionPassword, setEncryptionPassword] = useState<string>();
 	const activeProfile = useActiveProfile();
-
-	const nameMaxLength = 42;
 
 	const { selectedNetworkIds, setValue: setConfiguration } = useWalletConfig({ profile: activeProfile });
 
@@ -51,8 +49,8 @@ export const CreateWallet = () => {
 		let finalWallet = wallet;
 
 		assertNetwork(network);
-		assertWallet(finalWallet);
 		assertString(mnemonic);
+		assertString(name);
 
 		if (encryptionPassword) {
 			try {
@@ -67,11 +65,12 @@ export const CreateWallet = () => {
 			}
 		}
 
+		assertWallet(finalWallet);
+
 		activeProfile.wallets().push(finalWallet);
 
-		if (name) {
-			const formattedName = name.trim().slice(0, Math.max(0, nameMaxLength));
-			activeProfile.wallets().update(finalWallet.id(), { alias: formattedName });
+		if (name.trim() !== finalWallet.alias()) {
+			finalWallet.mutator().alias(name.trim());
 		}
 
 		setConfiguration("selectedNetworkIds", uniq([...selectedNetworkIds, network.id()]));
@@ -84,7 +83,8 @@ export const CreateWallet = () => {
 	};
 
 	const generateWallet = async () => {
-		const network: Networks.Network = getValues("network");
+		const network = getValues("network");
+		assertNetwork(network);
 
 		const locale = activeProfile.settings().get<string>(Contracts.ProfileSetting.Bip39Locale, "english");
 		const { mnemonic, wallet } = await activeProfile.walletFactory().generate({
@@ -93,6 +93,13 @@ export const CreateWallet = () => {
 			network: network.id(),
 			wordCount: network.wordCount(),
 		});
+
+		wallet.mutator().alias(
+			getDefaultAlias({
+				profile: activeProfile,
+				ticker: network.ticker(),
+			}),
+		);
 
 		setValue("wallet", wallet, { shouldDirty: true, shouldValidate: true });
 		setValue("mnemonic", mnemonic, { shouldDirty: true, shouldValidate: true });
@@ -180,7 +187,7 @@ export const CreateWallet = () => {
 							</TabPanel>
 
 							<TabPanel tabId={5}>
-								<SuccessStep nameMaxLength={nameMaxLength} profile={activeProfile} />
+								<SuccessStep profile={activeProfile} />
 							</TabPanel>
 
 							<div className="flex justify-between mt-8">

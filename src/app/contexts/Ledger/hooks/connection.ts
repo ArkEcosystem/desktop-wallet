@@ -2,6 +2,7 @@ import { Coins } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import Transport from "@ledgerhq/hw-transport";
 import retry from "async-retry";
+import { getDefaultAlias } from "domains/wallet/utils/get-default-alias";
 import { useCallback, useEffect, useMemo, useReducer, useRef } from "react";
 
 import { useEnvironmentContext } from "../../Environment";
@@ -44,6 +45,13 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 				});
 
 				profile.wallets().push(wallet);
+
+				wallet.mutator().alias(
+					getDefaultAlias({
+						profile,
+						ticker: wallet.network().ticker(),
+					}),
+				);
 			}
 			await persist();
 		},

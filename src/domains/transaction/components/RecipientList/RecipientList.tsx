@@ -3,7 +3,6 @@ import { Amount, AmountCrypto } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { OriginalButton as Button } from "app/components/Button/OriginalButton";
 import { Icon } from "app/components/Icon";
-import { Label } from "app/components/Label";
 import { Table } from "app/components/Table";
 import { Tooltip } from "app/components/Tooltip";
 import React from "react";
@@ -40,24 +39,20 @@ const RecipientListItem = ({
 	if (variant === "condensed") {
 		return (
 			<tr
-				className="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
+				className="flex items-center py-4 border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
 				data-testid="recipient-list__recipient-list-item"
 			>
-				<td className="py-4 w-12">
+				<td>
 					<Avatar size="sm" address={address} />
 				</td>
 
-				<td className="py-4">
-					<div className="max-w-lg">
-						<Address address={address} walletName={walletName} />
-					</div>
+				<td className="flex-1 ml-4 w-28">
+					<Address address={address} walletName={walletName} />
 				</td>
 
 				{showAmount && (
-					<td className="py-4 text-right">
-						<Label color="danger">
-							<AmountCrypto showSign ticker={assetSymbol} value={amount!} />
-						</Label>
+					<td className="flex-1 flex-shrink-0 pl-3 text-right">
+						<AmountCrypto ticker={assetSymbol} value={amount!} />
 					</td>
 				)}
 			</tr>
@@ -83,13 +78,13 @@ const RecipientListItem = ({
 			</td>
 
 			{showAmount && (
-				<td className="flex-1 flex-shrink-0 py-6 pl-3">
-					<div className="mb-1 text-sm font-semibold text-right text-theme-secondary-500 dark:text-theme-secondary-700">
+				<td className="flex-1 flex-shrink-0 py-6 pl-3 text-right">
+					<div className="mb-1 text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700">
 						{exchangeAmount && <Amount ticker={exchangeTicker} value={exchangeAmount} />}
 
 						{!exchangeAmount && <span>{t("COMMON.AMOUNT")}</span>}
 					</div>
-					<div className="font-semibold text-right">
+					<div className="font-semibold">
 						<AmountCrypto ticker={assetSymbol} value={amount!} />
 					</div>
 				</td>

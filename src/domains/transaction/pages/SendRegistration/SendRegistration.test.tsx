@@ -375,7 +375,7 @@ describe("Registration", () => {
 	});
 
 	it("should show mnemonic error", async () => {
-		const { getByTestId } = await renderPage(secondWallet);
+		const { container, getByTestId } = await renderPage(secondWallet);
 
 		const secondPublicKeyMock = jest
 			.spyOn(secondWallet, "secondPublicKey")
@@ -404,21 +404,19 @@ describe("Registration", () => {
 		fireEvent.input(mnemonic, { target: { value: MNEMONICS[0] } });
 		await waitFor(() => expect(mnemonic).toHaveValue(MNEMONICS[0]));
 
-		fireEvent.input(secondMnemonic, { target: { value: MNEMONICS[1] } });
-		await waitFor(() => expect(secondMnemonic).toHaveValue(MNEMONICS[1]));
+		fireEvent.input(secondMnemonic, { target: { value: MNEMONICS[2] } });
+		await waitFor(() => expect(secondMnemonic).toHaveValue(MNEMONICS[2]));
 
-		await waitFor(() => expect(getByTestId("StepNavigation__send-button")).not.toBeDisabled());
+		expect(getByTestId("StepNavigation__send-button")).toBeDisabled();
 
-		const signMock = jest.spyOn(secondWallet.transaction(), "signDelegateRegistration").mockImplementation(() => {
-			throw new Error("Signatory should be");
-		});
+		await waitFor(() => expect(getByTestId("Input__error")).toBeVisible());
 
-		fireEvent.click(getByTestId("StepNavigation__send-button"));
+		expect(getByTestId("Input__error")).toHaveAttribute(
+			"data-errortext",
+			"This mnemonic does not correspond to your wallet",
+		);
+		expect(container).toMatchSnapshot();
 
-		await waitFor(() => expect(getByTestId("AuthenticationStep__mnemonic")).toHaveAttribute("aria-invalid"));
-		await waitFor(() => expect(signMock).toHaveBeenCalled());
-
-		signMock.mockRestore();
 		secondPublicKeyMock.mockRestore();
 	});
 
@@ -471,8 +469,8 @@ describe("Registration", () => {
 
 		await waitFor(() => expect(getByTestId("StepNavigation__send-button")).not.toBeDisabled());
 
-		const signMock = jest.spyOn(secondWallet.transaction(), "signDelegateRegistration").mockImplementation(() => {
-			throw new Error();
+		const broadcastMock = jest.spyOn(secondWallet.transaction(), "broadcast").mockImplementation(() => {
+			throw new Error("broadcast error");
 		});
 
 		const historyMock = jest.spyOn(history, "push").mockReturnValue();
@@ -481,6 +479,7 @@ describe("Registration", () => {
 
 		await waitFor(() => expect(getByTestId("ErrorStep")).toBeTruthy());
 
+		expect(getByTestId("ErrorStep__errorMessage")).toHaveTextContent("broadcast error");
 		expect(asFragment()).toMatchSnapshot();
 
 		fireEvent.click(getByTestId("ErrorStep__wallet-button"));
@@ -489,7 +488,7 @@ describe("Registration", () => {
 		await waitFor(() => expect(historyMock).toHaveBeenCalledWith(walletDetailPage));
 
 		historyMock.mockRestore();
-		signMock.mockRestore();
+		broadcastMock.mockRestore();
 		secondPublicKeyMock.mockRestore();
 	});
 });

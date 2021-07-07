@@ -176,6 +176,9 @@ describe("ImportWallet", () => {
 
 	it("should render 3rd step", async () => {
 		let form: ReturnType<typeof useForm>;
+
+		const importedWallet = profile.wallets().first();
+
 		const Component = () => {
 			form = useForm({
 				defaultValues: {
@@ -189,7 +192,7 @@ describe("ImportWallet", () => {
 
 			return (
 				<FormProvider {...form}>
-					<ThirdStep address={identityAddress} balance={80} nameMaxLength={42} profile={profile} />
+					<ThirdStep importedWallet={importedWallet} profile={profile} />
 				</FormProvider>
 			);
 		};
@@ -200,9 +203,11 @@ describe("ImportWallet", () => {
 		expect(asFragment()).toMatchSnapshot();
 
 		expect(getByText("ARK Devnet")).toBeTruthy();
-		expect(getByText(identityAddress)).toBeTruthy();
+		expect(getByText(importedWallet.address())).toBeTruthy();
 
 		const walletNameInput = getByTestId("ImportWallet__name-input");
+
+		expect(walletNameInput).toHaveValue(importedWallet.alias());
 
 		await act(async () => {
 			fireEvent.change(walletNameInput, { target: { value: "Test" } });
@@ -824,7 +829,7 @@ describe("ImportWallet", () => {
 		await waitFor(() => {
 			expect(getByTestId("Input__error")).toHaveAttribute(
 				"data-errortext",
-				walletTranslations.PAGE_IMPORT_WALLET.VALIDATION.ALIAS_EXISTS.replace("{{alias}}", alias),
+				walletTranslations.VALIDATION.ALIAS_ASSIGNED.replace("{{alias}}", alias),
 			);
 		});
 

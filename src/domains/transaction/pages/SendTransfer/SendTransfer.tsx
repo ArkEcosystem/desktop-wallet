@@ -17,10 +17,9 @@ import {
 	useTransactionBuilder,
 	useWalletSignatory,
 } from "domains/transaction/hooks";
-import { handleBroadcastError, isMnemonicError } from "domains/transaction/utils";
+import { handleBroadcastError } from "domains/transaction/utils";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
 import { lowerCaseEquals } from "utils/equals";
 
@@ -31,7 +30,6 @@ import { ReviewStep } from "./ReviewStep";
 import { SummaryStep } from "./SummaryStep";
 
 export const SendTransfer = () => {
-	const { t } = useTranslation();
 	const history = useHistory();
 	const profile = useActiveProfile();
 	const { walletId: hasWalletId } = useParams();
@@ -82,7 +80,7 @@ export const SendTransfer = () => {
 		mode: "onChange",
 	});
 
-	const { clearErrors, formState, getValues, register, setError, setValue, handleSubmit, watch } = form;
+	const { clearErrors, formState, getValues, register, setValue, handleSubmit, watch } = form;
 	const { isValid, isSubmitting } = formState;
 
 	const { senderAddress, fees, fee, remainingBalance, amount, isSendAllSelected, network } = watch();
@@ -279,11 +277,6 @@ export const SendTransfer = () => {
 			setTransaction(transaction);
 			setActiveTab(4);
 		} catch (error) {
-			if (isMnemonicError(error)) {
-				setValue("mnemonic", "");
-				return setError("mnemonic", { message: t("TRANSACTION.INVALID_MNEMONIC"), type: "manual" });
-			}
-
 			setErrorMessage(JSON.stringify({ message: error.message, type: error.name }));
 			setActiveTab(5);
 		}

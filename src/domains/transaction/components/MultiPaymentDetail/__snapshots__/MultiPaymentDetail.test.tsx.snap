@@ -494,239 +494,202 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="-my-2"
+                    class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
                   >
                     <div
-                      class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
+                      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+                      role="table"
                     >
-                      <div
-                        class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
-                        role="table"
+                      <table
+                        cellpadding="0"
+                        class="table-auto"
                       >
-                        <table
-                          cellpadding="0"
-                          class="table-auto"
-                        >
-                          <thead>
-                            <tr
-                              class="border-b border-theme-secondary-300 dark:border-theme-secondary-800"
-                              role="row"
-                            >
-                              <th
-                                class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                                colspan="1"
-                                data-testid="table__th--0"
-                                role="columnheader"
-                              >
-                                <div
-                                  class="flex flex-inline align-top hidden"
-                                >
-                                  <div>
-                                    Avatar
-                                  </div>
-                                </div>
-                              </th>
-                              <th
-                                class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                                colspan="1"
-                                data-testid="table__th--1"
-                                role="columnheader"
-                              >
-                                <div
-                                  class="flex flex-inline align-top hidden"
-                                >
-                                  <div>
-                                    Address
-                                  </div>
-                                </div>
-                              </th>
-                              <th
-                                class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                                colspan="1"
-                                data-testid="table__th--2"
-                                role="columnheader"
-                              >
-                                <div
-                                  class="flex flex-inline align-top hidden"
-                                >
-                                  <div>
-                                    Amount
-                                  </div>
-                                </div>
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody
-                            role="rowgroup"
+                        <thead>
+                          <tr
+                            class="border-b border-theme-secondary-300 dark:border-theme-secondary-800"
+                            role="row"
                           >
-                            <tr
-                              class="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
-                              data-testid="recipient-list__recipient-list-item"
+                            <th
+                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                              colspan="1"
+                              data-testid="table__th--0"
+                              role="columnheader"
                             >
-                              <td
-                                class="py-4 w-12"
+                              <div
+                                class="flex flex-inline align-top hidden"
                               >
-                                <div
-                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ flex-shrink-0"
-                                  data-testid="Avatar"
-                                >
-                                  <div
-                                    class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
-                                  >
-                                    <img
-                                      alt="adsad12312xsd1w312e1s13203e12"
-                                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(205, 220, 57)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"40\\" fill=\\"rgb(103, 58, 183)\\"/></svg>"
-                                      title="adsad12312xsd1w312e1s13203e12"
-                                    />
-                                  </div>
+                                <div>
+                                  Avatar
                                 </div>
-                              </td>
-                              <td
-                                class="py-4"
-                              >
-                                <div
-                                  class="max-w-lg"
-                                >
-                                  <div
-                                    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
-                                  >
-                                    <span
-                                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
-                                      data-testid="Address__address"
-                                    >
-                                      adsad12312xsd1w312e1s13203e12
-                                    </span>
-                                  </div>
-                                </div>
-                              </td>
-                              <td
-                                class="py-4 text-right"
-                              >
-                                <div
-                                  class="Label-sc-1tj9hzr-0 ganlOQ"
-                                  color="danger"
-                                >
-                                  <span
-                                    data-testid="AmountCrypto"
-                                  >
-                                    + 200 ARK
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
-                              data-testid="recipient-list__recipient-list-item"
+                              </div>
+                            </th>
+                            <th
+                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                              colspan="1"
+                              data-testid="table__th--1"
+                              role="columnheader"
                             >
-                              <td
-                                class="py-4 w-12"
+                              <div
+                                class="flex flex-inline align-top hidden"
                               >
-                                <div
-                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ flex-shrink-0"
-                                  data-testid="Avatar"
-                                >
-                                  <div
-                                    class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
-                                  >
-                                    <img
-                                      alt="adsad12312xsd1w312e1s13203e13"
-                                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"50\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"40\\" cy=\\"60\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                                      title="adsad12312xsd1w312e1s13203e13"
-                                    />
-                                  </div>
+                                <div>
+                                  Address
                                 </div>
-                              </td>
-                              <td
-                                class="py-4"
-                              >
-                                <div
-                                  class="max-w-lg"
-                                >
-                                  <div
-                                    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
-                                  >
-                                    <span
-                                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
-                                      data-testid="Address__address"
-                                    >
-                                      adsad12312xsd1w312e1s13203e13
-                                    </span>
-                                  </div>
-                                </div>
-                              </td>
-                              <td
-                                class="py-4 text-right"
-                              >
-                                <div
-                                  class="Label-sc-1tj9hzr-0 ganlOQ"
-                                  color="danger"
-                                >
-                                  <span
-                                    data-testid="AmountCrypto"
-                                  >
-                                    + 1,990 ARK
-                                  </span>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr
-                              class="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
-                              data-testid="recipient-list__recipient-list-item"
+                              </div>
+                            </th>
+                            <th
+                              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                              colspan="1"
+                              data-testid="table__th--2"
+                              role="columnheader"
                             >
-                              <td
-                                class="py-4 w-12"
+                              <div
+                                class="flex flex-inline align-top hidden"
+                              >
+                                <div>
+                                  Amount
+                                </div>
+                              </div>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody
+                          role="rowgroup"
+                        >
+                          <tr
+                            class="flex items-center py-4 border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
+                            data-testid="recipient-list__recipient-list-item"
+                          >
+                            <td>
+                              <div
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ flex-shrink-0"
+                                data-testid="Avatar"
                               >
                                 <div
-                                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ flex-shrink-0"
-                                  data-testid="Avatar"
+                                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                                 >
-                                  <div
-                                    class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
-                                  >
-                                    <img
-                                      alt="adsad12312xsd1w312e1s13203e14"
-                                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"60\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
-                                      title="adsad12312xsd1w312e1s13203e14"
-                                    />
-                                  </div>
+                                  <img
+                                    alt="adsad12312xsd1w312e1s13203e12"
+                                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(205, 220, 57)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"40\\" fill=\\"rgb(103, 58, 183)\\"/></svg>"
+                                    title="adsad12312xsd1w312e1s13203e12"
+                                  />
                                 </div>
-                              </td>
-                              <td
-                                class="py-4"
+                              </div>
+                            </td>
+                            <td
+                              class="flex-1 ml-4 w-28"
+                            >
+                              <div
+                                class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
+                              >
+                                <span
+                                  class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                                  data-testid="Address__address"
+                                >
+                                  adsad12312xsd1w312e1s13203e12
+                                </span>
+                              </div>
+                            </td>
+                            <td
+                              class="flex-1 flex-shrink-0 pl-3 text-right"
+                            >
+                              <span
+                                data-testid="AmountCrypto"
+                              >
+                                200 ARK
+                              </span>
+                            </td>
+                          </tr>
+                          <tr
+                            class="flex items-center py-4 border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
+                            data-testid="recipient-list__recipient-list-item"
+                          >
+                            <td>
+                              <div
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ flex-shrink-0"
+                                data-testid="Avatar"
                               >
                                 <div
-                                  class="max-w-lg"
+                                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                                 >
-                                  <div
-                                    class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
-                                  >
-                                    <span
-                                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
-                                      data-testid="Address__address"
-                                    >
-                                      adsad12312xsd1w312e1s13203e14
-                                    </span>
-                                  </div>
+                                  <img
+                                    alt="adsad12312xsd1w312e1s13203e13"
+                                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"50\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"40\\" cy=\\"60\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                    title="adsad12312xsd1w312e1s13203e13"
+                                  />
                                 </div>
-                              </td>
-                              <td
-                                class="py-4 text-right"
+                              </div>
+                            </td>
+                            <td
+                              class="flex-1 ml-4 w-28"
+                            >
+                              <div
+                                class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
+                              >
+                                <span
+                                  class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                                  data-testid="Address__address"
+                                >
+                                  adsad12312xsd1w312e1s13203e13
+                                </span>
+                              </div>
+                            </td>
+                            <td
+                              class="flex-1 flex-shrink-0 pl-3 text-right"
+                            >
+                              <span
+                                data-testid="AmountCrypto"
+                              >
+                                1,990 ARK
+                              </span>
+                            </td>
+                          </tr>
+                          <tr
+                            class="flex items-center py-4 border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
+                            data-testid="recipient-list__recipient-list-item"
+                          >
+                            <td>
+                              <div
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ flex-shrink-0"
+                                data-testid="Avatar"
                               >
                                 <div
-                                  class="Label-sc-1tj9hzr-0 ganlOQ"
-                                  color="danger"
+                                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                                 >
-                                  <span
-                                    data-testid="AmountCrypto"
-                                  >
-                                    + 1,990 ARK
-                                  </span>
+                                  <img
+                                    alt="adsad12312xsd1w312e1s13203e14"
+                                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"60\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
+                                    title="adsad12312xsd1w312e1s13203e14"
+                                  />
                                 </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
+                              </div>
+                            </td>
+                            <td
+                              class="flex-1 ml-4 w-28"
+                            >
+                              <div
+                                class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
+                              >
+                                <span
+                                  class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                                  data-testid="Address__address"
+                                >
+                                  adsad12312xsd1w312e1s13203e14
+                                </span>
+                              </div>
+                            </td>
+                            <td
+                              class="flex-1 flex-shrink-0 pl-3 text-right"
+                            >
+                              <span
+                                data-testid="AmountCrypto"
+                              >
+                                1,990 ARK
+                              </span>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                   </div>
                 </div>

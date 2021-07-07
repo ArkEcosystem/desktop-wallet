@@ -1270,7 +1270,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                           class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                         >
                           <span
-                            data-errortext="Invalid Mnemonic"
+                            data-errortext="This mnemonic does not correspond to your wallet"
                             data-testid="Input__error"
                           >
                             <div
@@ -6275,7 +6275,7 @@ exports[`SendTransfer should render review step 1`] = `
       </div>
     </div>
     <div
-      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
+      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 jxdofB no-ligatures"
       data-testid="TransactionRecipients"
     >
       <div
@@ -12950,7 +12950,7 @@ exports[`SendTransfer should show error step and go back 1`] = `
                             disabled=""
                             style="height: 4px;"
                           >
-                            {"message":"","type":"Error"}
+                            {"message":"broadcast error","type":"Error"}
                           </textarea>
                         </div>
                       </div>

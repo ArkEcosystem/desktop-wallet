@@ -82,7 +82,7 @@ exports[`SuccessStep should render 4th step 1`] = `
               class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
               data-testid="Address__address"
             >
-              TEST-WALLET-ADDRESS
+              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
             </span>
           </div>
         </div>
@@ -95,9 +95,9 @@ exports[`SuccessStep should render 4th step 1`] = `
           class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
         >
           <img
-            alt="TEST-WALLET-ADDRESS"
-            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(205, 220, 57)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"80\\" cy=\\"70\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"50\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
-            title="TEST-WALLET-ADDRESS"
+            alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+            title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
           />
         </div>
       </div>
@@ -114,12 +114,6 @@ exports[`SuccessStep should render 4th step 1`] = `
           for="name"
         >
           Wallet Name
-          <span
-            class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-            data-testid="FormLabel__optional"
-          >
-            optional
-          </span>
         </label>
         <div
           class="fixed invisible w-auto whitespace-nowrap"
@@ -136,7 +130,7 @@ exports[`SuccessStep should render 4th step 1`] = `
               class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
               data-testid="CreateWallet__wallet-name"
               name="name"
-              value=""
+              value="ARK Wallet 1"
             />
           </div>
         </div>
