@@ -24,9 +24,7 @@ export const TransactionRecipients = ({ currency, recipients, ...properties }: T
 			label={t("TRANSACTION.RECIPIENTS_COUNT", { count: recipients.length })}
 			{...properties}
 		>
-			<div className="-my-2">
-				<RecipientList recipients={recipients} assetSymbol={currency} variant="condensed" />
-			</div>
+			<RecipientList recipients={recipients} assetSymbol={currency} variant="condensed" />
 		</TransactionDetail>
 	) : (
 		<TransactionDetail
