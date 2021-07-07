@@ -91,8 +91,13 @@ const ImportInputField = ({ type, coin, profile }: { type: string; coin: Coins.C
 				label={t(`COMMON.MNEMONIC_TYPE.${type.toUpperCase()}`)}
 				data-testid="ImportWallet__mnemonic-input"
 				findAddress={async (value) => {
-					const { address } = await coin.address().fromMnemonic(value);
-					return address;
+					try {
+						const { address } = await coin.address().fromMnemonic(value);
+						return address;
+					} catch {
+						/* istanbul ignore next */
+						throw new Error(t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.INVALID_MNEMONIC"));
+					}
 				}}
 			/>
 		);
@@ -269,13 +274,13 @@ export const SecondStep = ({ profile }: { profile: Contracts.IProfile }) => {
 	const type = watch("type", defaultOption);
 
 	return (
-		<section data-testid="ImportWallet__second-step" className="space-y-8">
+		<section data-testid="ImportWallet__second-step">
 			<Header
 				title={t("WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.TITLE")}
 				subtitle={t("WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.SUBTITLE")}
 			/>
 
-			<div className="flex flex-col space-y-4">
+			<div className="pt-6 space-y-6">
 				<FormField name="">
 					<FormLabel>{t("WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.TYPE")}</FormLabel>
 					<Select
