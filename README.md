@@ -6,7 +6,8 @@
 [![Latest Version](https://badgen.now.sh/github/release/ArkEcosystem/desktop-wallet)](https://github.com/ArkEcosystem/desktop-wallet/releases)
 [![License: MIT](https://badgen.now.sh/badge/license/MIT/green)](https://opensource.org/licenses/MIT)
 
-> Lead Maintainer: [Lúcio Rubens](https://github.com/luciorubeens)
+> **Warning**
+> The ARK Desktop Wallet is no longer supported. Please use the new ARKVault wallet instead: https://app.arkvault.io
 
 ## Download
 
